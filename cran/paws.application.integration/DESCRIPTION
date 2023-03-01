@@ -20,32 +20,4 @@ Suggests:
     testthat
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE, roclets = c("rd", "namespace", "collate"))
-RoxygenNote: 7.2.2
-Collate: 
-    'eventbridge_service.R'
-    'eventbridge_interfaces.R'
-    'eventbridge_operations.R'
-    'locationservice_service.R'
-    'locationservice_interfaces.R'
-    'locationservice_operations.R'
-    'mq_service.R'
-    'mq_interfaces.R'
-    'mq_operations.R'
-    'mwaa_service.R'
-    'mwaa_interfaces.R'
-    'mwaa_operations.R'
-    'schemas_service.R'
-    'schemas_interfaces.R'
-    'schemas_operations.R'
-    'sfn_service.R'
-    'sfn_interfaces.R'
-    'sfn_operations.R'
-    'sns_service.R'
-    'sns_interfaces.R'
-    'sns_operations.R'
-    'sqs_service.R'
-    'sqs_interfaces.R'
-    'sqs_operations.R'
-    'swf_service.R'
-    'swf_interfaces.R'
-    'swf_operations.R'
+RoxygenNote: 7.2.3

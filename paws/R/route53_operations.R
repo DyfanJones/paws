@@ -4739,7 +4739,7 @@ route53_list_hosted_zones <- function(Marker = NULL, MaxItems = NULL, Delegation
 #' [`list_hosted_zones_by_name`][route53_list_hosted_zones_by_name]
 #' alphabetizes the domain name using the escaped or Punycoded value, which
 #' is the format that Amazon Route 53 saves in its database. For example,
-#' to create a hosted zone for exämple.com, you specify ex\344mple.com for
+#' to create a hosted zone for exämple.com, you specify ex\\344mple.com for
 #' the domain name.
 #' [`list_hosted_zones_by_name`][route53_list_hosted_zones_by_name]
 #' alphabetizes it as:

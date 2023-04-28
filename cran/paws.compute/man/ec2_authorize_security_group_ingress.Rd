@@ -43,8 +43,8 @@ request.}
 
 \item{IpPermissions}{The sets of IP permissions.}
 
-\item{IpProtocol}{The IP protocol name (\code{tcp}, \code{udp}, \code{icmp}) or number (see \href{http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml}{Protocol Numbers}).
-To specify \code{icmpv6}, use a set of IP permissions.
+\item{IpProtocol}{The IP protocol name (\code{tcp}, \code{udp}, \code{icmp}) or number (see Protocol
+Numbers). To specify \code{icmpv6}, use a set of IP permissions.
 
 [VPC only] Use \code{-1} to specify all protocols. If you specify \code{-1} or a
 protocol other than \code{tcp}, \code{udp}, or \code{icmp}, traffic on all ports is

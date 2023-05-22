@@ -1,0 +1,3 @@
+svc <- paws::kinesisanalyticsv2()
+
+

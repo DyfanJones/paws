@@ -41,7 +41,12 @@ SageMaker, see
 
 You can specify a maximum of 100 hyperparameters. Each hyperparameter is
 a key-value pair. Each key and value is limited to 256 characters, as
-specified by the \verb{Length Constraint}.}
+specified by the \verb{Length Constraint}.
+
+Do not include any security-sensitive information including account
+access IDs, secrets or tokens in any hyperparameter field. If the use of
+security-sensitive credentials are detected, SageMaker will reject your
+training job request and return an exception error.}
 
 \item{AlgorithmSpecification}{[required] The registry path of the Docker image that contains the training
 algorithm and algorithm-specific metadata, including the input mode. For
@@ -91,9 +96,11 @@ data, choose \code{File} as the \code{TrainingInputMode} in the algorithm
 specification. For distributed training algorithms, specify an instance
 count greater than 1.}
 
-\item{VpcConfig}{A VpcConfig object that specifies the VPC that you want your training
-job to connect to. Control access to and from your training container by
-configuring the VPC. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html}{Protect Training Jobs by Using an Amazon Virtual Private Cloud}.}
+\item{VpcConfig}{A
+\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html}{VpcConfig}
+object that specifies the VPC that you want your training job to connect
+to. Control access to and from your training container by configuring
+the VPC. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html}{Protect Training Jobs by Using an Amazon Virtual Private Cloud}.}
 
 \item{StoppingCondition}{[required] Specifies a limit to how long a model training job can run. It also
 specifies how long a managed Spot training job has to complete. When the
@@ -107,7 +114,7 @@ training are not lost.}
 
 \item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
 Web Services resources in different ways, for example, by purpose,
-owner, or environment. For more information, see \href{https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html}{Tagging Amazon Web Services Resources}.}
+owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.}
 
 \item{EnableNetworkIsolation}{Isolates the training container. No inbound or outbound network calls
 can be made, except for calls between peers within a training cluster
@@ -140,8 +147,8 @@ checkpoint data.}
 
 \item{DebugHookConfig}{}
 
-\item{DebugRuleConfigurations}{Configuration information for Debugger rules for debugging output
-tensors.}
+\item{DebugRuleConfigurations}{Configuration information for Amazon SageMaker Debugger rules for
+debugging output tensors.}
 
 \item{TensorBoardOutputConfig}{}
 
@@ -149,8 +156,8 @@ tensors.}
 
 \item{ProfilerConfig}{}
 
-\item{ProfilerRuleConfigurations}{Configuration information for Debugger rules for profiling system and
-framework metrics.}
+\item{ProfilerRuleConfigurations}{Configuration information for Amazon SageMaker Debugger rules for
+profiling system and framework metrics.}
 
 \item{Environment}{The environment variables to set in the Docker container.}
 

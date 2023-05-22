@@ -13,8 +13,8 @@ translate_translate_text(
 )
 }
 \arguments{
-\item{Text}{[required] The text to translate. The text string can be a maximum of 5,000 bytes
-long. Depending on your character set, this may be fewer than 5,000
+\item{Text}{[required] The text to translate. The text string can be a maximum of 10,000 bytes
+long. Depending on your character set, this may be fewer than 10,000
 characters.}
 
 \item{TerminologyNames}{The name of the terminology list file to be used in the TranslateText
@@ -24,7 +24,7 @@ can contain a maximum of 256 terms.}
 
 \item{SourceLanguageCode}{[required] The language code for the language of the source text. The language must
 be a language supported by Amazon Translate. For a list of language
-codes, see what-is-languages.
+codes, see \href{https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html}{Supported languages}.
 
 To have Amazon Translate determine the source language of your text, you
 can specify \code{auto} in the \code{SourceLanguageCode} field. If you specify
@@ -44,7 +44,7 @@ set the formality level of the output text and the option to mask
 profane words and phrases.}
 }
 \description{
-Translates input text from the source language to the target language. For a list of available languages and language codes, see what-is-languages.
+Translates input text from the source language to the target language. For a list of available languages and language codes, see \href{https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html}{Supported languages}.
 
 See \url{https://paws-r.github.io/docs/translate/translate_text.html} for full documentation.
 }

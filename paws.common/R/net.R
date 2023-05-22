@@ -113,14 +113,14 @@ issue <- function(http_request) {
 
   # utilize httr to write to disk
   dest <- NULL
-  if(!is.null(http_request$dest)) {
+  if (!is.null(http_request$dest)) {
     dest <- httr::write_disk(http_request$dest)
   }
   r <- with_paws_verbose(
     httr::VERB(
       method,
       url = url,
-      config = c(httr::add_headers(.headers=headers), dest),
+      config = c(httr::add_headers(.headers = headers), dest),
       body = body,
       timeout
     )
@@ -132,7 +132,7 @@ issue <- function(http_request) {
     content_length = as.integer(httr::headers(r)$`content-length`),
     # Prevent reading in data when output is set
     body = (
-      if(is.null(http_request$dest)) httr::content(r, as = "raw") else raw()
+      if (is.null(http_request$dest)) httr::content(r, as = "raw") else raw()
     )
   )
 
@@ -156,7 +156,7 @@ is_compressed <- function(http_response) {
   }
 
   if (content_encoding == "gzip") {
-    bits_to_int <- function(x) sum(as.integer(x) * 2^(1:length(x)-1))
+    bits_to_int <- function(x) sum(as.integer(x) * 2^(1:length(x) - 1))
     cmf <- http_response$body[1]
     flg <- http_response$body[2]
     compression_method <- bits_to_int(rawToBits(cmf)[1:4])

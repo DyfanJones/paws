@@ -125,6 +125,6 @@ builds are throttled and are not run.}
 \description{
 Creates a build project.
 
-See \url{https://paws-r.github.io/docs/codebuild/create_project.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_project/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ personalize_describe_algorithm(algorithmArn)
 \description{
 Describes the given algorithm.
 
-See \url{https://paws-r.github.io/docs/personalize/describe_algorithm.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_algorithm/} for full documentation.
 }
 \keyword{internal}

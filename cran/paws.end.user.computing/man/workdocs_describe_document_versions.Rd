@@ -33,6 +33,6 @@ source document.}
 \description{
 Retrieves the document versions for the specified document.
 
-See \url{https://paws-r.github.io/docs/workdocs/describe_document_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_document_versions/} for full documentation.
 }
 \keyword{internal}

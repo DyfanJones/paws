@@ -14,6 +14,6 @@ returns a description of every stack.}
 \description{
 Requests a description of one or more stacks.
 
-See \url{https://paws-r.github.io/docs/opsworks/describe_stacks.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_stacks/} for full documentation.
 }
 \keyword{internal}

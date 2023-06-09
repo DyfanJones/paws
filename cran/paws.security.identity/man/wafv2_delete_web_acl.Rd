@@ -40,6 +40,6 @@ and use the new token returned by that operation.}
 \description{
 Deletes the specified WebACL.
 
-See \url{https://paws-r.github.io/docs/wafv2/delete_web_acl.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_web_acl/} for full documentation.
 }
 \keyword{internal}

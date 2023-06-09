@@ -12,6 +12,6 @@ codeguruprofiler_get_policy(profilingGroupName)
 \description{
 Returns the JSON-formatted resource-based policy on a profiling group.
 
-See \url{https://paws-r.github.io/docs/codeguruprofiler/get_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_policy/} for full documentation.
 }
 \keyword{internal}

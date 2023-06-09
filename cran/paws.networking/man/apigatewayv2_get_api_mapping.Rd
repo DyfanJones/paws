@@ -14,6 +14,6 @@ apigatewayv2_get_api_mapping(ApiMappingId, DomainName)
 \description{
 Gets an API mapping.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/get_api_mapping.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_api_mapping/} for full documentation.
 }
 \keyword{internal}

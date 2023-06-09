@@ -12,6 +12,6 @@ auditmanager_delete_assessment(assessmentId)
 \description{
 Deletes an assessment in Audit Manager.
 
-See \url{https://paws-r.github.io/docs/auditmanager/delete_assessment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_assessment/} for full documentation.
 }
 \keyword{internal}

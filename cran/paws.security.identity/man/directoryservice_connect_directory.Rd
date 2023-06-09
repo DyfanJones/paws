@@ -34,6 +34,6 @@ for the operation.}
 \description{
 Creates an AD Connector to connect to a self-managed directory.
 
-See \url{https://paws-r.github.io/docs/directoryservice/connect_directory.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/connect_directory/} for full documentation.
 }
 \keyword{internal}

@@ -17,6 +17,6 @@ element of the collection.}
 \description{
 Gets the Routes for an API.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/get_routes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_routes/} for full documentation.
 }
 \keyword{internal}

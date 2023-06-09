@@ -12,6 +12,6 @@ codebuild_delete_resource_policy(resourceArn)
 \description{
 Deletes a resource policy that is identified by its resource ARN.
 
-See \url{https://paws-r.github.io/docs/codebuild/delete_resource_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_resource_policy/} for full documentation.
 }
 \keyword{internal}

@@ -15,6 +15,6 @@ drs_untag_resource(resourceArn, tagKeys)
 \description{
 Deletes the specified set of tags from the specified set of Elastic Disaster Recovery resources.
 
-See \url{https://paws-r.github.io/docs/drs/untag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_resource/} for full documentation.
 }
 \keyword{internal}

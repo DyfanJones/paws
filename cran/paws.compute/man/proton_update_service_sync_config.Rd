@@ -27,6 +27,6 @@ found.}
 \description{
 Update the Proton Ops config file.
 
-See \url{https://paws-r.github.io/docs/proton/update_service_sync_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_service_sync_config/} for full documentation.
 }
 \keyword{internal}

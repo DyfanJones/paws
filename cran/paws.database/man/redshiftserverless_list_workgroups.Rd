@@ -17,6 +17,6 @@ which returns results in the next page.}
 \description{
 Returns information about a list of specified workgroups.
 
-See \url{https://paws-r.github.io/docs/redshiftserverless/list_workgroups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_workgroups/} for full documentation.
 }
 \keyword{internal}

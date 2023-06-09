@@ -15,6 +15,6 @@ operation.}
 \description{
 Retrieves a list of trust stores.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/list_trust_stores.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_trust_stores/} for full documentation.
 }
 \keyword{internal}

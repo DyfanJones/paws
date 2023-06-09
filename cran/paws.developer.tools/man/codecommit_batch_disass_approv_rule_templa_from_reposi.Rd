@@ -23,6 +23,6 @@ itself can be empty.}
 \description{
 Removes the association between an approval rule template and one or more specified repositories.
 
-See \url{https://paws-r.github.io/docs/codecommit/batch_disassociate_approval_rule_template_from_repositories.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/batch_disassociate_approval_rule_template_from_repositories/} for full documentation.
 }
 \keyword{internal}

@@ -19,6 +19,6 @@ created.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/disassociate_lex_bot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_lex_bot/} for full documentation.
 }
 \keyword{internal}

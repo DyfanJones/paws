@@ -13,6 +13,6 @@ currently being trained.}
 \description{
 Stops a document classifier training job while in progress.
 
-See \url{https://paws-r.github.io/docs/comprehend/stop_training_document_classifier.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_training_document_classifier/} for full documentation.
 }
 \keyword{internal}

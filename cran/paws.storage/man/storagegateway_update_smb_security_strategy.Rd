@@ -30,6 +30,6 @@ option works with SMB clients on Microsoft Windows 8, Windows Server
 \description{
 Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
 
-See \url{https://paws-r.github.io/docs/storagegateway/update_smb_security_strategy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_smb_security_strategy/} for full documentation.
 }
 \keyword{internal}

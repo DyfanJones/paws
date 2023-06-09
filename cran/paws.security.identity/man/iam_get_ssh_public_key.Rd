@@ -25,6 +25,6 @@ public key in PEM format, use \code{PEM}.}
 \description{
 Retrieves the specified SSH public key, including metadata about the key.
 
-See \url{https://paws-r.github.io/docs/iam/get_ssh_public_key.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_ssh_public_key/} for full documentation.
 }
 \keyword{internal}

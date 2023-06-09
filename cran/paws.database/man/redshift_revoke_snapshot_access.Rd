@@ -29,6 +29,6 @@ restore the specified snapshot.}
 \description{
 Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.
 
-See \url{https://paws-r.github.io/docs/redshift/revoke_snapshot_access.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/revoke_snapshot_access/} for full documentation.
 }
 \keyword{internal}

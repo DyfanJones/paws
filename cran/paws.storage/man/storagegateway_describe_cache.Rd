@@ -12,6 +12,6 @@ storagegateway_describe_cache(GatewayARN)
 \description{
 Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape, and file gateway types.
 
-See \url{https://paws-r.github.io/docs/storagegateway/describe_cache.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_cache/} for full documentation.
 }
 \keyword{internal}

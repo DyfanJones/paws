@@ -14,6 +14,6 @@ customerprofiles_delete_integration(DomainName, Uri)
 \description{
 Removes an integration from a specific domain.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/delete_integration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_integration/} for full documentation.
 }
 \keyword{internal}

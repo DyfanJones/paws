@@ -12,6 +12,6 @@ clouddirectory_get_directory(DirectoryArn)
 \description{
 Retrieves metadata about a directory.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/get_directory.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_directory/} for full documentation.
 }
 \keyword{internal}

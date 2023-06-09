@@ -26,6 +26,6 @@ frauddetector_create_model(
 \description{
 Creates a model using the specified model type.
 
-See \url{https://paws-r.github.io/docs/frauddetector/create_model.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_model/} for full documentation.
 }
 \keyword{internal}

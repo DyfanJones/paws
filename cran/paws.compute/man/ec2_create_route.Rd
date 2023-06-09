@@ -72,6 +72,6 @@ associated with a Wavelength Zone.}
 \description{
 Creates a route in a route table within a VPC.
 
-See \url{https://paws-r.github.io/docs/ec2/create_route.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_route/} for full documentation.
 }
 \keyword{internal}

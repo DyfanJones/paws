@@ -29,6 +29,6 @@ drs_update_launch_configuration_template(
 \description{
 Updates an existing Launch Configuration Template by ID.
 
-See \url{https://paws-r.github.io/docs/drs/update_launch_configuration_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_launch_configuration_template/} for full documentation.
 }
 \keyword{internal}

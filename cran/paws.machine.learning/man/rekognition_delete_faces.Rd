@@ -14,6 +14,6 @@ rekognition_delete_faces(CollectionId, FaceIds)
 \description{
 Deletes faces from a collection. You specify a collection ID and an array of face IDs to remove from the collection.
 
-See \url{https://paws-r.github.io/docs/rekognition/delete_faces.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_faces/} for full documentation.
 }
 \keyword{internal}

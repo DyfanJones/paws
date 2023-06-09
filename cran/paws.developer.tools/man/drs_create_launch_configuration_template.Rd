@@ -30,6 +30,6 @@ Template.}
 \description{
 Creates a new Launch Configuration Template.
 
-See \url{https://paws-r.github.io/docs/drs/create_launch_configuration_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_launch_configuration_template/} for full documentation.
 }
 \keyword{internal}

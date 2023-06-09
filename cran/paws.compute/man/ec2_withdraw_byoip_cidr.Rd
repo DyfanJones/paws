@@ -18,6 +18,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Stops advertising an address range that is provisioned as an address pool.
 
-See \url{https://paws-r.github.io/docs/ec2/withdraw_byoip_cidr.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/withdraw_byoip_cidr/} for full documentation.
 }
 \keyword{internal}

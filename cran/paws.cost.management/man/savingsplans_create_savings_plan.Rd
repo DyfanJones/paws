@@ -35,6 +35,6 @@ idempotency of the request.}
 \description{
 Creates a Savings Plan.
 
-See \url{https://paws-r.github.io/docs/savingsplans/create_savings_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_savings_plan/} for full documentation.
 }
 \keyword{internal}

@@ -14,6 +14,6 @@ customerprofiles_get_workflow(DomainName, WorkflowId)
 \description{
 Get details of specified workflow.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/get_workflow.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_workflow/} for full documentation.
 }
 \keyword{internal}

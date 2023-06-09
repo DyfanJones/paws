@@ -51,6 +51,6 @@ see
 \description{
 Updates an existing Amazon Kendra index.
 
-See \url{https://paws-r.github.io/docs/kendra/update_index.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_index/} for full documentation.
 }
 \keyword{internal}

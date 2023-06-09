@@ -12,6 +12,6 @@ networkmanager_delete_peering(PeeringId)
 \description{
 Deletes an existing peering connection.
 
-See \url{https://paws-r.github.io/docs/networkmanager/delete_peering.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_peering/} for full documentation.
 }
 \keyword{internal}

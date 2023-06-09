@@ -15,6 +15,6 @@ entry.}
 \description{
 Updates a domain recordset after it is created.
 
-See \url{https://paws-r.github.io/docs/lightsail/update_domain_entry.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_domain_entry/} for full documentation.
 }
 \keyword{internal}

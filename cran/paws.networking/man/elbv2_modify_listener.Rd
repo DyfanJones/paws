@@ -56,6 +56,6 @@ in the \emph{Network Load Balancers Guide}.}
 \description{
 Replaces the specified properties of the specified listener. Any properties that you do not specify remain unchanged.
 
-See \url{https://paws-r.github.io/docs/elbv2/modify_listener.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/modify_listener/} for full documentation.
 }
 \keyword{internal}

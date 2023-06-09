@@ -32,6 +32,6 @@ a previously truncated response.}
 \description{
 Returns a list of image build versions.
 
-See \url{https://paws-r.github.io/docs/imagebuilder/list_image_build_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_image_build_versions/} for full documentation.
 }
 \keyword{internal}

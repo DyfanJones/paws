@@ -15,6 +15,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 Deletes a contact evaluation in the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/delete_contact_evaluation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_contact_evaluation/} for full documentation.
 }
 \keyword{internal}

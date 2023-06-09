@@ -37,6 +37,6 @@ results.}
 \description{
 Retrieves the list of all policies in an organization of a specified type.
 
-See \url{https://paws-r.github.io/docs/organizations/list_policies.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_policies/} for full documentation.
 }
 \keyword{internal}

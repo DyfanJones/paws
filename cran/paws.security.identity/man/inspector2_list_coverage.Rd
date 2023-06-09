@@ -24,6 +24,6 @@ the previous request to continue listing results after the first page.}
 \description{
 Lists coverage details for you environment.
 
-See \url{https://paws-r.github.io/docs/inspector2/list_coverage.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_coverage/} for full documentation.
 }
 \keyword{internal}

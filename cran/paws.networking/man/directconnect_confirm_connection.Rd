@@ -13,6 +13,6 @@ directconnect_confirm_connection(connectionId)
 \description{
 Confirms the creation of the specified hosted connection on an interconnect.
 
-See \url{https://paws-r.github.io/docs/directconnect/confirm_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/confirm_connection/} for full documentation.
 }
 \keyword{internal}

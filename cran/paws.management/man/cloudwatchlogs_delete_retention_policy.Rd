@@ -12,6 +12,6 @@ cloudwatchlogs_delete_retention_policy(logGroupName)
 \description{
 Deletes the specified retention policy.
 
-See \url{https://paws-r.github.io/docs/cloudwatchlogs/delete_retention_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_retention_policy/} for full documentation.
 }
 \keyword{internal}

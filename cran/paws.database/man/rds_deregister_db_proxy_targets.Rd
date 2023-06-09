@@ -25,6 +25,6 @@ rds_deregister_db_proxy_targets(
 \description{
 Remove the association between one or more \code{DBProxyTarget} data structures and a \code{DBProxyTargetGroup}.
 
-See \url{https://paws-r.github.io/docs/rds/deregister_db_proxy_targets.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/deregister_db_proxy_targets/} for full documentation.
 }
 \keyword{internal}

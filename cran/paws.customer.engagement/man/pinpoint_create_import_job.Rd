@@ -15,6 +15,6 @@ as the \strong{Project ID} on the Amazon Pinpoint console.}
 \description{
 Creates an import job for an application.
 
-See \url{https://paws-r.github.io/docs/pinpoint/create_import_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_import_job/} for full documentation.
 }
 \keyword{internal}

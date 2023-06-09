@@ -13,6 +13,6 @@ want to retrieve settings information.}
 \description{
 Returns settings information for a specified trail.
 
-See \url{https://paws-r.github.io/docs/cloudtrail/get_trail.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_trail/} for full documentation.
 }
 \keyword{internal}

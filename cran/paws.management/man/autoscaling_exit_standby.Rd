@@ -14,6 +14,6 @@ autoscaling_exit_standby(InstanceIds = NULL, AutoScalingGroupName)
 \description{
 Moves the specified instances out of the standby state.
 
-See \url{https://paws-r.github.io/docs/autoscaling/exit_standby.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/exit_standby/} for full documentation.
 }
 \keyword{internal}

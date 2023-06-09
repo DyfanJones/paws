@@ -13,6 +13,6 @@ backupgateway_get_gateway(GatewayArn)
 \description{
 By providing the ARN (Amazon Resource Name), this API returns the gateway.
 
-See \url{https://paws-r.github.io/docs/backupgateway/get_gateway.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_gateway/} for full documentation.
 }
 \keyword{internal}

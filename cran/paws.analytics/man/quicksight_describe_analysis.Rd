@@ -17,6 +17,6 @@ of the analysis.}
 \description{
 Provides a summary of the metadata for an analysis.
 
-See \url{https://paws-r.github.io/docs/quicksight/describe_analysis.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_analysis/} for full documentation.
 }
 \keyword{internal}

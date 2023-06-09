@@ -17,6 +17,6 @@ symbols: \verb{_ . : / = + - @}.}
 \description{
 Add a tag to a Amazon SWF domain.
 
-See \url{https://paws-r.github.io/docs/swf/tag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/tag_resource/} for full documentation.
 }
 \keyword{internal}

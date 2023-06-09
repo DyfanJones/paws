@@ -12,6 +12,6 @@ schemas_describe_registry(RegistryName)
 \description{
 Describes the registry.
 
-See \url{https://paws-r.github.io/docs/schemas/describe_registry.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_registry/} for full documentation.
 }
 \keyword{internal}

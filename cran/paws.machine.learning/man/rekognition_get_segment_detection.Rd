@@ -22,6 +22,6 @@ set of text.}
 \description{
 Gets the segment detection results of a Amazon Rekognition Video analysis started by \code{\link[=rekognition_start_segment_detection]{start_segment_detection}}.
 
-See \url{https://paws-r.github.io/docs/rekognition/get_segment_detection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_segment_detection/} for full documentation.
 }
 \keyword{internal}

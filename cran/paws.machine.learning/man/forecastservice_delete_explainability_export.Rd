@@ -12,6 +12,6 @@ forecastservice_delete_explainability_export(ExplainabilityExportArn)
 \description{
 Deletes an Explainability export.
 
-See \url{https://paws-r.github.io/docs/forecastservice/delete_explainability_export.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_explainability_export/} for full documentation.
 }
 \keyword{internal}

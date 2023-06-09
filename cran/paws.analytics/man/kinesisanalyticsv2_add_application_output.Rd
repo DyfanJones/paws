@@ -31,6 +31,6 @@ to use when writing to the destination.}
 \description{
 Adds an external destination to your SQL-based Kinesis Data Analytics application.
 
-See \url{https://paws-r.github.io/docs/kinesisanalyticsv2/add_application_output.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/add_application_output/} for full documentation.
 }
 \keyword{internal}

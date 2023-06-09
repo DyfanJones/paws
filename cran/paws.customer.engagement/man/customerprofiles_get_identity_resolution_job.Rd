@@ -15,6 +15,6 @@ customerprofiles_get_identity_resolution_job(DomainName, JobId)
 \description{
 Returns information about an Identity Resolution Job in a specific domain.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/get_identity_resolution_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_identity_resolution_job/} for full documentation.
 }
 \keyword{internal}

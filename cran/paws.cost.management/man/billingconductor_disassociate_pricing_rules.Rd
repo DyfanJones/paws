@@ -16,6 +16,6 @@ that will be disassociated.}
 \description{
 Disassociates a list of pricing rules from a pricing plan.
 
-See \url{https://paws-r.github.io/docs/billingconductor/disassociate_pricing_rules.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_pricing_rules/} for full documentation.
 }
 \keyword{internal}

@@ -24,6 +24,6 @@ licensemanager_list_received_licenses_for_organization(
 \description{
 Lists the licenses received for all accounts in the organization.
 
-See \url{https://paws-r.github.io/docs/licensemanager/list_received_licenses_for_organization.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_received_licenses_for_organization/} for full documentation.
 }
 \keyword{internal}

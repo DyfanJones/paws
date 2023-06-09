@@ -12,6 +12,6 @@ sesv2_delete_contact_list(ContactListName)
 \description{
 Deletes a contact list and all of the contacts on that list.
 
-See \url{https://paws-r.github.io/docs/sesv2/delete_contact_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_contact_list/} for full documentation.
 }
 \keyword{internal}

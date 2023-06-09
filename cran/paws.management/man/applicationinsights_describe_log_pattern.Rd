@@ -20,6 +20,6 @@ applicationinsights_describe_log_pattern(
 \description{
 Describe a specific log pattern from a \code{LogPatternSet}.
 
-See \url{https://paws-r.github.io/docs/applicationinsights/describe_log_pattern.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_log_pattern/} for full documentation.
 }
 \keyword{internal}

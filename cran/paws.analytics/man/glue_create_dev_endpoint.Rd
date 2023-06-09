@@ -114,6 +114,6 @@ the developer guide.}
 \description{
 Creates a new development endpoint.
 
-See \url{https://paws-r.github.io/docs/glue/create_dev_endpoint.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_dev_endpoint/} for full documentation.
 }
 \keyword{internal}

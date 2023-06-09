@@ -21,6 +21,6 @@ value by the number of instances detached.}
 \description{
 Removes one or more instances from the specified Auto Scaling group.
 
-See \url{https://paws-r.github.io/docs/autoscaling/detach_instances.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/detach_instances/} for full documentation.
 }
 \keyword{internal}

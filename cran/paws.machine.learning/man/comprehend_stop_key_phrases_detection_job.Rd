@@ -12,6 +12,6 @@ comprehend_stop_key_phrases_detection_job(JobId)
 \description{
 Stops a key phrases detection job in progress.
 
-See \url{https://paws-r.github.io/docs/comprehend/stop_key_phrases_detection_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_key_phrases_detection_job/} for full documentation.
 }
 \keyword{internal}

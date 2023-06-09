@@ -20,6 +20,6 @@ letters, digits, or the underscore character (_).}
 \description{
 Retrieves information about a policy.
 
-See \url{https://paws-r.github.io/docs/organizations/describe_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_policy/} for full documentation.
 }
 \keyword{internal}

@@ -55,6 +55,6 @@ of the template.
 \description{
 Updates an existing message template for messages that are sent through the email channel.
 
-See \url{https://paws-r.github.io/docs/pinpoint/update_email_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_email_template/} for full documentation.
 }
 \keyword{internal}

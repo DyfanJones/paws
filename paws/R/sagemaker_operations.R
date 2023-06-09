@@ -15962,6 +15962,14 @@ sagemaker_describe_pipeline_definition_for_execution <- function(PipelineExecuti
 #'   ),
 #'   ParallelismConfiguration = list(
 #'     MaxParallelExecutionSteps = 123
+#'   ),
+#'   SelectiveExecutionConfig = list(
+#'     SourcePipelineExecutionArn = "string",
+#'     SelectedSteps = list(
+#'       list(
+#'         StepName = "string"
+#'       )
+#'     )
 #'   )
 #' )
 #' ```
@@ -22866,6 +22874,9 @@ sagemaker_list_notebook_instances <- function(NextToken = NULL, MaxResults = NUL
 #'         AutoMLJob = list(
 #'           Arn = "string"
 #'         )
+#'       ),
+#'       SelectiveExecutionResult = list(
+#'         SourcePipelineExecutionArn = "string"
 #'       )
 #'     )
 #'   ),
@@ -26387,6 +26398,14 @@ sagemaker_retry_pipeline_execution <- function(PipelineExecutionArn, ClientReque
 #'             Name = "string",
 #'             Value = "string"
 #'           )
+#'         ),
+#'         SelectiveExecutionConfig = list(
+#'           SourcePipelineExecutionArn = "string",
+#'           SelectedSteps = list(
+#'             list(
+#'               StepName = "string"
+#'             )
+#'           )
 #'         )
 #'       ),
 #'       FeatureGroup = list(
@@ -27751,7 +27770,7 @@ sagemaker_start_notebook_instance <- function(NotebookInstanceName) {
 #' sagemaker_start_pipeline_execution(PipelineName,
 #'   PipelineExecutionDisplayName, PipelineParameters,
 #'   PipelineExecutionDescription, ClientRequestToken,
-#'   ParallelismConfiguration)
+#'   ParallelismConfiguration, SelectiveExecutionConfig)
 #'
 #' @param PipelineName &#91;required&#93; The name of the pipeline.
 #' @param PipelineExecutionDisplayName The display name of the pipeline execution.
@@ -27762,6 +27781,7 @@ sagemaker_start_notebook_instance <- function(NotebookInstanceName) {
 #' than once.
 #' @param ParallelismConfiguration This configuration, if specified, overrides the parallelism
 #' configuration of the parent pipeline for this specific run.
+#' @param SelectiveExecutionConfig The selective execution configuration applied to the pipeline run.
 #'
 #' @return
 #' A list with the following syntax:
@@ -27786,6 +27806,14 @@ sagemaker_start_notebook_instance <- function(NotebookInstanceName) {
 #'   ClientRequestToken = "string",
 #'   ParallelismConfiguration = list(
 #'     MaxParallelExecutionSteps = 123
+#'   ),
+#'   SelectiveExecutionConfig = list(
+#'     SourcePipelineExecutionArn = "string",
+#'     SelectedSteps = list(
+#'       list(
+#'         StepName = "string"
+#'       )
+#'     )
 #'   )
 #' )
 #' ```
@@ -27795,14 +27823,14 @@ sagemaker_start_notebook_instance <- function(NotebookInstanceName) {
 #' @rdname sagemaker_start_pipeline_execution
 #'
 #' @aliases sagemaker_start_pipeline_execution
-sagemaker_start_pipeline_execution <- function(PipelineName, PipelineExecutionDisplayName = NULL, PipelineParameters = NULL, PipelineExecutionDescription = NULL, ClientRequestToken, ParallelismConfiguration = NULL) {
+sagemaker_start_pipeline_execution <- function(PipelineName, PipelineExecutionDisplayName = NULL, PipelineParameters = NULL, PipelineExecutionDescription = NULL, ClientRequestToken, ParallelismConfiguration = NULL, SelectiveExecutionConfig = NULL) {
   op <- new_operation(
     name = "StartPipelineExecution",
     http_method = "POST",
     http_path = "/",
     paginator = list()
   )
-  input <- .sagemaker$start_pipeline_execution_input(PipelineName = PipelineName, PipelineExecutionDisplayName = PipelineExecutionDisplayName, PipelineParameters = PipelineParameters, PipelineExecutionDescription = PipelineExecutionDescription, ClientRequestToken = ClientRequestToken, ParallelismConfiguration = ParallelismConfiguration)
+  input <- .sagemaker$start_pipeline_execution_input(PipelineName = PipelineName, PipelineExecutionDisplayName = PipelineExecutionDisplayName, PipelineParameters = PipelineParameters, PipelineExecutionDescription = PipelineExecutionDescription, ClientRequestToken = ClientRequestToken, ParallelismConfiguration = ParallelismConfiguration, SelectiveExecutionConfig = SelectiveExecutionConfig)
   output <- .sagemaker$start_pipeline_execution_output()
   config <- get_config()
   svc <- .sagemaker$service(config)

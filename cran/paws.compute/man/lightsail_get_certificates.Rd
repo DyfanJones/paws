@@ -35,6 +35,6 @@ Amazon Web Services Region where the request is made.}
 \description{
 Returns information about one or more Amazon Lightsail SSL/TLS certificates.
 
-See \url{https://paws-r.github.io/docs/lightsail/get_certificates.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_certificates/} for full documentation.
 }
 \keyword{internal}

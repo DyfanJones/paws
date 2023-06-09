@@ -15,6 +15,6 @@ customerprofiles_delete_profile(ProfileId, DomainName)
 \description{
 Deletes the standard customer profile and all data pertaining to the profile.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/delete_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_profile/} for full documentation.
 }
 \keyword{internal}

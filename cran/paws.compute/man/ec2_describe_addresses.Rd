@@ -55,6 +55,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
 
-See \url{https://paws-r.github.io/docs/ec2/describe_addresses.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_addresses/} for full documentation.
 }
 \keyword{internal}

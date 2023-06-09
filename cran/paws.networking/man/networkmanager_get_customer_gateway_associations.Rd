@@ -25,6 +25,6 @@ is 10.}
 \description{
 Gets the association information for customer gateways that are associated with devices and links in your global network.
 
-See \url{https://paws-r.github.io/docs/networkmanager/get_customer_gateway_associations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_customer_gateway_associations/} for full documentation.
 }
 \keyword{internal}

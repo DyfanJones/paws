@@ -15,6 +15,6 @@ Queue URLs and names are case-sensitive.}
 \description{
 Deletes the queue specified by the \code{QueueUrl}, regardless of the queue's contents.
 
-See \url{https://paws-r.github.io/docs/sqs/delete_queue.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_queue/} for full documentation.
 }
 \keyword{internal}

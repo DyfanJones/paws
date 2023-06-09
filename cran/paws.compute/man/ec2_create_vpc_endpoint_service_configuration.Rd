@@ -43,6 +43,6 @@ idempotency of the request. For more information, see \href{https://docs.aws.ama
 \description{
 Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts, users, and IAM roles) can connect.
 
-See \url{https://paws-r.github.io/docs/ec2/create_vpc_endpoint_service_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_vpc_endpoint_service_configuration/} for full documentation.
 }
 \keyword{internal}

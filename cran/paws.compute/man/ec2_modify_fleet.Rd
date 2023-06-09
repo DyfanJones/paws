@@ -36,6 +36,6 @@ Supported only for fleets of type \code{maintain}.}
 \description{
 Modifies the specified EC2 Fleet.
 
-See \url{https://paws-r.github.io/docs/ec2/modify_fleet.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/modify_fleet/} for full documentation.
 }
 \keyword{internal}

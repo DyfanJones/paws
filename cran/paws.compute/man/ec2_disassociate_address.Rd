@@ -20,6 +20,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Disassociates an Elastic IP address from the instance or network interface it's associated with.
 
-See \url{https://paws-r.github.io/docs/ec2/disassociate_address.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_address/} for full documentation.
 }
 \keyword{internal}

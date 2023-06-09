@@ -20,6 +20,6 @@ in the \emph{Amazon S3 User Guide}.}
 \description{
 Returns the access control policy of the specified Multi-Region Access Point.
 
-See \url{https://paws-r.github.io/docs/s3control/get_multi_region_access_point_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_multi_region_access_point_policy/} for full documentation.
 }
 \keyword{internal}

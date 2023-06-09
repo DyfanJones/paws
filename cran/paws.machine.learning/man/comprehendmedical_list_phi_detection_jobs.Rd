@@ -24,6 +24,6 @@ only set one filter at a time.}
 \description{
 Gets a list of protected health information (PHI) detection jobs that you have submitted.
 
-See \url{https://paws-r.github.io/docs/comprehendmedical/list_phi_detection_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_phi_detection_jobs/} for full documentation.
 }
 \keyword{internal}

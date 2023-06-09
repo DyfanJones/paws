@@ -63,6 +63,6 @@ workload.}
 \description{
 Create a new workload.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/create_workload.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_workload/} for full documentation.
 }
 \keyword{internal}

@@ -37,6 +37,6 @@ receive all of the results.}
 \description{
 Lists the available versions of the specified RAM permission.
 
-See \url{https://paws-r.github.io/docs/ram/list_permission_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_permission_versions/} for full documentation.
 }
 \keyword{internal}

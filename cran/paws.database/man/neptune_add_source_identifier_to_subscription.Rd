@@ -30,6 +30,6 @@ be supplied.
 \description{
 Adds a source identifier to an existing event notification subscription.
 
-See \url{https://paws-r.github.io/docs/neptune/add_source_identifier_to_subscription.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/add_source_identifier_to_subscription/} for full documentation.
 }
 \keyword{internal}

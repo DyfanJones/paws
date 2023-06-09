@@ -14,6 +14,6 @@ services, task definitions, clusters, and container instances.}
 \description{
 List the tags for an Amazon ECS resource.
 
-See \url{https://paws-r.github.io/docs/ecs/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

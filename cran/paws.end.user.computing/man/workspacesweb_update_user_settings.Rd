@@ -52,6 +52,6 @@ streaming session.}
 \description{
 Updates the user settings.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/update_user_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_user_settings/} for full documentation.
 }
 \keyword{internal}

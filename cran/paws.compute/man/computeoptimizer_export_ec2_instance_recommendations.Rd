@@ -75,6 +75,6 @@ recommendations to export.}
 \description{
 Exports optimization recommendations for Amazon EC2 instances.
 
-See \url{https://paws-r.github.io/docs/computeoptimizer/export_ec2_instance_recommendations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/export_ec2_instance_recommendations/} for full documentation.
 }
 \keyword{internal}

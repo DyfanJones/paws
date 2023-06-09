@@ -39,6 +39,6 @@ at the beginning of the shift order.}
 \description{
 Updates the information specified for an on-call rotation.
 
-See \url{https://paws-r.github.io/docs/ssmcontacts/update_rotation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_rotation/} for full documentation.
 }
 \keyword{internal}

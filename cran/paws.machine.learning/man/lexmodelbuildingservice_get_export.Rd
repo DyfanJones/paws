@@ -18,6 +18,6 @@ lexmodelbuildingservice_get_export(name, version, resourceType, exportType)
 \description{
 Exports the contents of a Amazon Lex resource in a specified format.
 
-See \url{https://paws-r.github.io/docs/lexmodelbuildingservice/get_export.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_export/} for full documentation.
 }
 \keyword{internal}

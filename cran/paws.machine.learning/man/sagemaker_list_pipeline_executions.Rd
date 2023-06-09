@@ -37,6 +37,6 @@ set of pipeline executions, use the token in the next request.}
 \description{
 Gets a list of the pipeline executions.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_pipeline_executions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_pipeline_executions/} for full documentation.
 }
 \keyword{internal}

@@ -26,6 +26,6 @@ attribute name.}
 \description{
 Deletes the user attributes in a user pool as an administrator. Works on any user.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/admin_delete_user_attributes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/admin_delete_user_attributes/} for full documentation.
 }
 \keyword{internal}

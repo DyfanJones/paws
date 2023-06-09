@@ -33,6 +33,6 @@ for WebSocket APIs.}
 \description{
 Updates a RouteResponse.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/update_route_response.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_route_response/} for full documentation.
 }
 \keyword{internal}

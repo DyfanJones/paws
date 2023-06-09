@@ -31,6 +31,6 @@ pipeline console UI.}
 \description{
 Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.
 
-See \url{https://paws-r.github.io/docs/codepipeline/disable_stage_transition.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disable_stage_transition/} for full documentation.
 }
 \keyword{internal}

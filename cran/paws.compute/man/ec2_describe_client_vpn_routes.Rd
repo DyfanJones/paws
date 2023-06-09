@@ -38,6 +38,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Describes the routes for the specified Client VPN endpoint.
 
-See \url{https://paws-r.github.io/docs/ec2/describe_client_vpn_routes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_client_vpn_routes/} for full documentation.
 }
 \keyword{internal}

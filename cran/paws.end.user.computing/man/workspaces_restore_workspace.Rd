@@ -12,6 +12,6 @@ workspaces_restore_workspace(WorkspaceId)
 \description{
 Restores the specified WorkSpace to its last known healthy state.
 
-See \url{https://paws-r.github.io/docs/workspaces/restore_workspace.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/restore_workspace/} for full documentation.
 }
 \keyword{internal}

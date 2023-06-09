@@ -15,6 +15,6 @@ For more information, see arns.}
 \description{
 Performs all the write operations in a batch. Either all the operations succeed or none.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/batch_write.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/batch_write/} for full documentation.
 }
 \keyword{internal}

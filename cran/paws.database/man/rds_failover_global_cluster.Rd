@@ -27,6 +27,6 @@ the cluster in its Amazon Web Services Region.}
 \description{
 Initiates the failover process for an Aurora global database (GlobalCluster).
 
-See \url{https://paws-r.github.io/docs/rds/failover_global_cluster.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/failover_global_cluster/} for full documentation.
 }
 \keyword{internal}

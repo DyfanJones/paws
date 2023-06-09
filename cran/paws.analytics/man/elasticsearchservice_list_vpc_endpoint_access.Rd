@@ -17,6 +17,6 @@ for.}
 \description{
 Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 
-See \url{https://paws-r.github.io/docs/elasticsearchservice/list_vpc_endpoint_access.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_vpc_endpoint_access/} for full documentation.
 }
 \keyword{internal}

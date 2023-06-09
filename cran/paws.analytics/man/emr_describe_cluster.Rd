@@ -13,6 +13,6 @@ emr_describe_cluster(ClusterId)
 \description{
 Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on.
 
-See \url{https://paws-r.github.io/docs/emr/describe_cluster.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_cluster/} for full documentation.
 }
 \keyword{internal}

@@ -23,6 +23,6 @@ page.}
 \description{
 Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results, and pagination.
 
-See \url{https://paws-r.github.io/docs/elasticsearchservice/describe_packages.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_packages/} for full documentation.
 }
 \keyword{internal}

@@ -28,6 +28,6 @@ must be set.}
 \description{
 Used to stop and delete an app.
 
-See \url{https://paws-r.github.io/docs/sagemaker/delete_app.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_app/} for full documentation.
 }
 \keyword{internal}

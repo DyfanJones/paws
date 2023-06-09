@@ -30,6 +30,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Grants an Amazon Web Services-authorized account permission to attach the specified network interface to an instance in their account.
 
-See \url{https://paws-r.github.io/docs/ec2/create_network_interface_permission.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_network_interface_permission/} for full documentation.
 }
 \keyword{internal}

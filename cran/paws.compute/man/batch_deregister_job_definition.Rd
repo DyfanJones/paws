@@ -13,6 +13,6 @@ batch_deregister_job_definition(jobDefinition)
 \description{
 Deregisters an Batch job definition. Job definitions are permanently deleted after 180 days.
 
-See \url{https://paws-r.github.io/docs/batch/deregister_job_definition.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/deregister_job_definition/} for full documentation.
 }
 \keyword{internal}

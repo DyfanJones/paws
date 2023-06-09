@@ -20,6 +20,6 @@ tags with a space. For example,
 \description{
 Adds tags to a cluster.
 
-See \url{https://paws-r.github.io/docs/redshift/create_tags.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_tags/} for full documentation.
 }
 \keyword{internal}

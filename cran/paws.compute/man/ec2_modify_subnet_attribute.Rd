@@ -73,6 +73,6 @@ position should be disabled.}
 \description{
 Modifies a subnet attribute. You can only modify one attribute at a time.
 
-See \url{https://paws-r.github.io/docs/ec2/modify_subnet_attribute.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/modify_subnet_attribute/} for full documentation.
 }
 \keyword{internal}

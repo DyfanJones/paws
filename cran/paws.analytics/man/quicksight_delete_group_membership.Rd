@@ -26,6 +26,6 @@ contains your Amazon QuickSight account.}
 \description{
 Removes a user from a group so that the user is no longer a member of the group.
 
-See \url{https://paws-r.github.io/docs/quicksight/delete_group_membership.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_group_membership/} for full documentation.
 }
 \keyword{internal}

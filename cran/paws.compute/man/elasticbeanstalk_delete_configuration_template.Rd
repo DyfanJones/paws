@@ -14,6 +14,6 @@ elasticbeanstalk_delete_configuration_template(ApplicationName, TemplateName)
 \description{
 Deletes the specified configuration template.
 
-See \url{https://paws-r.github.io/docs/elasticbeanstalk/delete_configuration_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_configuration_template/} for full documentation.
 }
 \keyword{internal}

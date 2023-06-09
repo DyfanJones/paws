@@ -23,6 +23,6 @@ encountered.}
 \description{
 Puts an Api resource.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/reimport_api.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/reimport_api/} for full documentation.
 }
 \keyword{internal}

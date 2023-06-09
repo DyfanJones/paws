@@ -64,6 +64,6 @@ returned for each repeated request.}
 \description{
 Creates a self-service action.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/create_service_action.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_service_action/} for full documentation.
 }
 \keyword{internal}

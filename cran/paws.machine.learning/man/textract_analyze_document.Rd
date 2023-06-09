@@ -39,6 +39,6 @@ input.}
 \description{
 Analyzes an input document for relationships between detected items.
 
-See \url{https://paws-r.github.io/docs/textract/analyze_document.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/analyze_document/} for full documentation.
 }
 \keyword{internal}

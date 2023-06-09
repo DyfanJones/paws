@@ -30,6 +30,6 @@ destination.}
 \description{
 Updates an API destination.
 
-See \url{https://paws-r.github.io/docs/eventbridge/update_api_destination.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_api_destination/} for full documentation.
 }
 \keyword{internal}

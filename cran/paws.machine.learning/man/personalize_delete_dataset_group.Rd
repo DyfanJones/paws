@@ -12,6 +12,6 @@ personalize_delete_dataset_group(datasetGroupArn)
 \description{
 Deletes a dataset group. Before you delete a dataset group, you must delete the following:
 
-See \url{https://paws-r.github.io/docs/personalize/delete_dataset_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_dataset_group/} for full documentation.
 }
 \keyword{internal}

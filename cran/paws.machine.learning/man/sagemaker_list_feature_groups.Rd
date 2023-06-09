@@ -43,6 +43,6 @@ specific date and time.}
 \description{
 List \code{FeatureGroup}s based on given filter and order.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_feature_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_feature_groups/} for full documentation.
 }
 \keyword{internal}

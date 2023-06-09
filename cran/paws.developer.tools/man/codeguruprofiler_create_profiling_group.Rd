@@ -33,6 +33,6 @@ specified, \code{Default} is used.}
 \description{
 Creates a profiling group.
 
-See \url{https://paws-r.github.io/docs/codeguruprofiler/create_profiling_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_profiling_group/} for full documentation.
 }
 \keyword{internal}

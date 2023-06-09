@@ -20,6 +20,6 @@ retrieve the next page of contact lists.}
 \description{
 Lists all of the contact lists available.
 
-See \url{https://paws-r.github.io/docs/sesv2/list_contact_lists.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_contact_lists/} for full documentation.
 }
 \keyword{internal}

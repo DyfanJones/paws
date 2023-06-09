@@ -31,6 +31,6 @@ with \code{TransactionId}.}
 \description{
 Retrieves the \code{Table} definition in a Data Catalog for a specified table.
 
-See \url{https://paws-r.github.io/docs/glue/get_table.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_table/} for full documentation.
 }
 \keyword{internal}

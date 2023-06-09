@@ -41,6 +41,6 @@ regardless of the tag value.
 \description{
 Describes your IPv6 address pools.
 
-See \url{https://paws-r.github.io/docs/ec2/describe_ipv_6_pools.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_ipv_6_pools/} for full documentation.
 }
 \keyword{internal}

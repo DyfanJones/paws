@@ -13,6 +13,6 @@ are case sensitive.}
 \description{
 Provides information about the specified transcription job.
 
-See \url{https://paws-r.github.io/docs/transcribeservice/get_transcription_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_transcription_job/} for full documentation.
 }
 \keyword{internal}

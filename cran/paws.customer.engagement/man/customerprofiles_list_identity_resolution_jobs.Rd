@@ -22,6 +22,6 @@ results.}
 \description{
 Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by \code{JobStartTime}.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/list_identity_resolution_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_identity_resolution_jobs/} for full documentation.
 }
 \keyword{internal}

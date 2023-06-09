@@ -18,6 +18,6 @@ your database.}
 \description{
 Stops a specific database that is currently running in Amazon Lightsail.
 
-See \url{https://paws-r.github.io/docs/lightsail/stop_relational_database.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_relational_database/} for full documentation.
 }
 \keyword{internal}

@@ -30,6 +30,6 @@ being updated.}
 \description{
 Edits an Audit Manager assessment.
 
-See \url{https://paws-r.github.io/docs/auditmanager/update_assessment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_assessment/} for full documentation.
 }
 \keyword{internal}

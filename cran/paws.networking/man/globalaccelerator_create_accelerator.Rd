@@ -61,6 +61,6 @@ in the \emph{Global Accelerator Developer Guide}.}
 \description{
 Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/create_accelerator.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_accelerator/} for full documentation.
 }
 \keyword{internal}

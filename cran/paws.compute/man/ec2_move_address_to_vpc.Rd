@@ -18,6 +18,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform. The Elastic IP address must be allocated to your account for more than 24 hours, and it must not be associated with an instance. After the Elastic IP address is moved, it is no longer available for use in the EC2-Classic platform, unless you move it back using the \code{\link[=ec2_restore_address_to_classic]{restore_address_to_classic}} request. You cannot move an Elastic IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic platform.
 
-See \url{https://paws-r.github.io/docs/ec2/move_address_to_vpc.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/move_address_to_vpc/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ directconnect_describe_connections(connectionId = NULL)
 \description{
 Displays the specified connection or all connections in this Region.
 
-See \url{https://paws-r.github.io/docs/directconnect/describe_connections.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_connections/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ is deleted.}
 \description{
 Deletes the email monitoring configuration for a specified organization.
 
-See \url{https://paws-r.github.io/docs/workmail/delete_email_monitoring_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_email_monitoring_configuration/} for full documentation.
 }
 \keyword{internal}

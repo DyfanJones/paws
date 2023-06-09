@@ -15,6 +15,6 @@ the resource.}
 \description{
 Removes a tag or tags from a resource.
 
-See \url{https://paws-r.github.io/docs/quicksight/untag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_resource/} for full documentation.
 }
 \keyword{internal}

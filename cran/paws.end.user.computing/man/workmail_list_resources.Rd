@@ -17,6 +17,6 @@ does not contain any tokens.}
 \description{
 Returns summaries of the organization's resources.
 
-See \url{https://paws-r.github.io/docs/workmail/list_resources.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_resources/} for full documentation.
 }
 \keyword{internal}

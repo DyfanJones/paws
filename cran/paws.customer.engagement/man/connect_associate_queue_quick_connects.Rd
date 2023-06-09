@@ -18,6 +18,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/associate_queue_quick_connects.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/associate_queue_quick_connects/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ securityhub_delete_finding_aggregator(FindingAggregatorArn)
 \description{
 Deletes a finding aggregator. When you delete the finding aggregator, you stop finding aggregation.
 
-See \url{https://paws-r.github.io/docs/securityhub/delete_finding_aggregator.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_finding_aggregator/} for full documentation.
 }
 \keyword{internal}

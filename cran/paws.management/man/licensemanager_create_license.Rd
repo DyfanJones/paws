@@ -48,6 +48,6 @@ idempotency of the request.}
 \description{
 Creates a license.
 
-See \url{https://paws-r.github.io/docs/licensemanager/create_license.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_license/} for full documentation.
 }
 \keyword{internal}

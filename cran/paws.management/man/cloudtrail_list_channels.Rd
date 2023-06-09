@@ -18,6 +18,6 @@ with NextToken should include those same parameters.}
 \description{
 Lists the channels in the current account, and their source names.
 
-See \url{https://paws-r.github.io/docs/cloudtrail/list_channels.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_channels/} for full documentation.
 }
 \keyword{internal}

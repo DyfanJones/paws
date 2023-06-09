@@ -22,6 +22,6 @@ Cognito. This is the ID of the pool to modify.}
 \description{
 Sets the necessary configuration for push sync.
 
-See \url{https://paws-r.github.io/docs/cognitosync/set_identity_pool_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/set_identity_pool_configuration/} for full documentation.
 }
 \keyword{internal}

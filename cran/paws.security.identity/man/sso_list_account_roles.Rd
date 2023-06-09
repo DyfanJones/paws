@@ -27,6 +27,6 @@ in the \emph{IAM Identity Center OIDC API Reference Guide}.}
 \description{
 Lists all roles that are assigned to the user for a given AWS account.
 
-See \url{https://paws-r.github.io/docs/sso/list_account_roles.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_account_roles/} for full documentation.
 }
 \keyword{internal}

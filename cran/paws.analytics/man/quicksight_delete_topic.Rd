@@ -16,6 +16,6 @@ Amazon Web Services Region for each Amazon Web Services account.}
 \description{
 Deletes a topic.
 
-See \url{https://paws-r.github.io/docs/quicksight/delete_topic.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_topic/} for full documentation.
 }
 \keyword{internal}

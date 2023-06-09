@@ -15,6 +15,6 @@ information you want to request.}
 \description{
 Gets the device.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/get_device.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_device/} for full documentation.
 }
 \keyword{internal}

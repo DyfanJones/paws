@@ -23,6 +23,6 @@ the mesh with your account. For more information about mesh sharing, see
 \description{
 Describes an existing virtual gateway.
 
-See \url{https://paws-r.github.io/docs/appmesh/describe_virtual_gateway.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_virtual_gateway/} for full documentation.
 }
 \keyword{internal}

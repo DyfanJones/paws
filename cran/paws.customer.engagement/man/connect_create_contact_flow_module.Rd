@@ -34,6 +34,6 @@ populates this field. For more information about idempotency, see
 \description{
 Creates a flow module for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/create_contact_flow_module.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_contact_flow_module/} for full documentation.
 }
 \keyword{internal}

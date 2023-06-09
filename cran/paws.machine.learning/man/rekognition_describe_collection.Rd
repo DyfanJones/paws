@@ -12,6 +12,6 @@ rekognition_describe_collection(CollectionId)
 \description{
 Describes the specified collection. You can use \code{\link[=rekognition_describe_collection]{describe_collection}} to get information, such as the number of faces indexed into a collection and the version of the model used by the collection for face detection.
 
-See \url{https://paws-r.github.io/docs/rekognition/describe_collection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_collection/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ glue_start_ml_evaluation_task_run(TransformId)
 \description{
 Starts a task to estimate the quality of the transform.
 
-See \url{https://paws-r.github.io/docs/glue/start_ml_evaluation_task_run.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_ml_evaluation_task_run/} for full documentation.
 }
 \keyword{internal}

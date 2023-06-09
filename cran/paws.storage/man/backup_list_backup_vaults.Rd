@@ -18,6 +18,6 @@ pointed to by the next token.}
 \description{
 Returns a list of recovery point storage containers along with information about them.
 
-See \url{https://paws-r.github.io/docs/backup/list_backup_vaults.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_backup_vaults/} for full documentation.
 }
 \keyword{internal}

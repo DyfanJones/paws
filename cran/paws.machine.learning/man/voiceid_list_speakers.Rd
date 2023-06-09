@@ -21,6 +21,6 @@ arguments unchanged. Each pagination token expires after 24 hours.}
 \description{
 Lists all speakers in a specified domain.
 
-See \url{https://paws-r.github.io/docs/voiceid/list_speakers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_speakers/} for full documentation.
 }
 \keyword{internal}

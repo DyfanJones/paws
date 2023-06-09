@@ -21,6 +21,6 @@ specify a value greater than 100, at most 100 results are returned.}
 \description{
 Lists your Kinesis data streams.
 
-See \url{https://paws-r.github.io/docs/kinesis/list_streams.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_streams/} for full documentation.
 }
 \keyword{internal}

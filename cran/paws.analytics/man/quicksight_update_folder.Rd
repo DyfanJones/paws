@@ -17,6 +17,6 @@ update.}
 \description{
 Updates the name of a folder.
 
-See \url{https://paws-r.github.io/docs/quicksight/update_folder.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_folder/} for full documentation.
 }
 \keyword{internal}

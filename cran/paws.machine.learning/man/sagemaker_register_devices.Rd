@@ -16,6 +16,6 @@ sagemaker_register_devices(DeviceFleetName, Devices, Tags = NULL)
 \description{
 Register devices.
 
-See \url{https://paws-r.github.io/docs/sagemaker/register_devices.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/register_devices/} for full documentation.
 }
 \keyword{internal}

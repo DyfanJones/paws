@@ -24,6 +24,6 @@ error.}
 \description{
 Lists the existing activities.
 
-See \url{https://paws-r.github.io/docs/sfn/list_activities.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_activities/} for full documentation.
 }
 \keyword{internal}

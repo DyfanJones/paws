@@ -14,6 +14,6 @@ domains, this is the prefix alone, such as \code{auth}.}
 \description{
 Gets information about a domain.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/describe_user_pool_domain.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_user_pool_domain/} for full documentation.
 }
 \keyword{internal}

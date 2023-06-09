@@ -34,6 +34,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Releases the specified Elastic IP address.
 
-See \url{https://paws-r.github.io/docs/ec2/release_address.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/release_address/} for full documentation.
 }
 \keyword{internal}

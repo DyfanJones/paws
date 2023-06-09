@@ -38,6 +38,6 @@ resource. Logical operators are \code{EQUALS} (single account) or
 \description{
 Lists resources managed using Systems Manager inventory.
 
-See \url{https://paws-r.github.io/docs/licensemanager/list_resource_inventory.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_resource_inventory/} for full documentation.
 }
 \keyword{internal}

@@ -28,6 +28,6 @@ policy records in the Amazon Route 53 console.)
 \description{
 Gets the specified limit for the current account, for example, the maximum number of health checks that you can create using the account.
 
-See \url{https://paws-r.github.io/docs/route53/get_account_limit.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_account_limit/} for full documentation.
 }
 \keyword{internal}

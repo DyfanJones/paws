@@ -27,6 +27,6 @@ scanning will occur.}
 \description{
 Creates or updates the scanning configuration for your private registry.
 
-See \url{https://paws-r.github.io/docs/ecr/put_registry_scanning_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_registry_scanning_configuration/} for full documentation.
 }
 \keyword{internal}

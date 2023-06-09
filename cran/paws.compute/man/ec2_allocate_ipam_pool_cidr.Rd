@@ -62,6 +62,6 @@ allocation.}
 \description{
 Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from an IPAM pool to another IPAM pool or to a resource. For more information, see \href{https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html}{Allocate CIDRs} in the \emph{Amazon VPC IPAM User Guide}.
 
-See \url{https://paws-r.github.io/docs/ec2/allocate_ipam_pool_cidr.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/allocate_ipam_pool_cidr/} for full documentation.
 }
 \keyword{internal}

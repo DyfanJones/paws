@@ -29,6 +29,6 @@ previous call.}
 \description{
 Retrieves a collection of resources, including folders and documents. The only \code{CollectionType} supported is \code{SHARED_WITH_ME}.
 
-See \url{https://paws-r.github.io/docs/workdocs/get_resources.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_resources/} for full documentation.
 }
 \keyword{internal}

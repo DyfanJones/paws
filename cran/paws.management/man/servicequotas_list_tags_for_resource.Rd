@@ -18,6 +18,6 @@ operation.}
 \description{
 Returns a list of the tags assigned to the specified applied quota.
 
-See \url{https://paws-r.github.io/docs/servicequotas/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

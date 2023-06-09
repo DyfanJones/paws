@@ -65,6 +65,6 @@ stack-related events.}
 \description{
 Provisions the specified product.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/provision_product.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/provision_product/} for full documentation.
 }
 \keyword{internal}

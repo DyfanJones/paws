@@ -53,6 +53,6 @@ Elastic IP address is associated with the primary private IP address.}
 \description{
 Associates an Elastic IP address, or carrier IP address (for instances that are in subnets in Wavelength Zones) with an instance or a network interface. Before you can use an Elastic IP address, you must allocate it to your account.
 
-See \url{https://paws-r.github.io/docs/ec2/associate_address.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/associate_address/} for full documentation.
 }
 \keyword{internal}

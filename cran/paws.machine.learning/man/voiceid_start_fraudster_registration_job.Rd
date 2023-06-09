@@ -44,6 +44,6 @@ use for detecting a duplicate fraudster.}
 \description{
 Starts a new batch fraudster registration job using provided details.
 
-See \url{https://paws-r.github.io/docs/voiceid/start_fraudster_registration_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_fraudster_registration_job/} for full documentation.
 }
 \keyword{internal}

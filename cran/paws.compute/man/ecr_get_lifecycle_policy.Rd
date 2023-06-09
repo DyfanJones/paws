@@ -16,6 +16,6 @@ registry is assumed.}
 \description{
 Retrieves the lifecycle policy for the specified repository.
 
-See \url{https://paws-r.github.io/docs/ecr/get_lifecycle_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_lifecycle_policy/} for full documentation.
 }
 \keyword{internal}

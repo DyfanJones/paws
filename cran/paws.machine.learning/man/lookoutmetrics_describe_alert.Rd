@@ -12,6 +12,6 @@ lookoutmetrics_describe_alert(AlertArn)
 \description{
 Describes an alert.
 
-See \url{https://paws-r.github.io/docs/lookoutmetrics/describe_alert.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_alert/} for full documentation.
 }
 \keyword{internal}

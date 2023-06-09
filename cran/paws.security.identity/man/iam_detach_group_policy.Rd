@@ -22,6 +22,6 @@ in the \emph{Amazon Web Services General Reference}.}
 \description{
 Removes the specified managed policy from the specified IAM group.
 
-See \url{https://paws-r.github.io/docs/iam/detach_group_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/detach_group_policy/} for full documentation.
 }
 \keyword{internal}

@@ -107,6 +107,6 @@ Lightsail Developer Guide}.}
 \description{
 Creates an Amazon Lightsail container service.
 
-See \url{https://paws-r.github.io/docs/lightsail/create_container_service.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_container_service/} for full documentation.
 }
 \keyword{internal}

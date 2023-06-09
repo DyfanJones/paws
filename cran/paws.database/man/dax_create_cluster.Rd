@@ -108,6 +108,6 @@ are:
 \description{
 Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
 
-See \url{https://paws-r.github.io/docs/dax/create_cluster.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_cluster/} for full documentation.
 }
 \keyword{internal}

@@ -21,6 +21,6 @@ licensemanager_list_license_conversion_tasks(
 \description{
 Lists the license type conversion tasks for your account.
 
-See \url{https://paws-r.github.io/docs/licensemanager/list_license_conversion_tasks.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_license_conversion_tasks/} for full documentation.
 }
 \keyword{internal}

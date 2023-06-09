@@ -20,6 +20,6 @@ appstream_disassociate_application_from_entitlement(
 \description{
 Deletes the specified application from the specified entitlement.
 
-See \url{https://paws-r.github.io/docs/appstream/disassociate_application_from_entitlement.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_application_from_entitlement/} for full documentation.
 }
 \keyword{internal}

@@ -76,6 +76,6 @@ system.}
 \description{
 Use this operation to update the configuration of an existing Amazon FSx file system. You can update multiple properties in a single request.
 
-See \url{https://paws-r.github.io/docs/fsx/update_file_system.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_file_system/} for full documentation.
 }
 \keyword{internal}

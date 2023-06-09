@@ -21,6 +21,6 @@ Example: \code{mySubnetgroup}}
 \description{
 Deletes a DB subnet group.
 
-See \url{https://paws-r.github.io/docs/neptune/delete_db_subnet_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_db_subnet_group/} for full documentation.
 }
 \keyword{internal}

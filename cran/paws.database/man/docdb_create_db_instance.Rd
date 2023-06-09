@@ -95,6 +95,6 @@ has a different default KMS key for each Amazon Web Services region.}
 \description{
 Creates a new instance.
 
-See \url{https://paws-r.github.io/docs/docdb/create_db_instance.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_db_instance/} for full documentation.
 }
 \keyword{internal}

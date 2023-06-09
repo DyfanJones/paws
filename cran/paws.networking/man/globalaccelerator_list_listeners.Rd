@@ -23,6 +23,6 @@ previous call.}
 \description{
 List the listeners for an accelerator.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/list_listeners.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_listeners/} for full documentation.
 }
 \keyword{internal}

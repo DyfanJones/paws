@@ -12,6 +12,6 @@ proton_delete_environment(name)
 \description{
 Delete an environment.
 
-See \url{https://paws-r.github.io/docs/proton/delete_environment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_environment/} for full documentation.
 }
 \keyword{internal}

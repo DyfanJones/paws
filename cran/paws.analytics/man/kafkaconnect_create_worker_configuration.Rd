@@ -20,6 +20,6 @@ kafkaconnect_create_worker_configuration(
 \description{
 Creates a worker configuration using the specified properties.
 
-See \url{https://paws-r.github.io/docs/kafkaconnect/create_worker_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_worker_configuration/} for full documentation.
 }
 \keyword{internal}

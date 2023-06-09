@@ -15,6 +15,6 @@ it in your next request to receive the next set of results.}
 \description{
 Lists the domains.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_domains.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_domains/} for full documentation.
 }
 \keyword{internal}

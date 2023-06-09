@@ -19,6 +19,6 @@ DisassociateNodeResponse.}
 \description{
 Returns the current status of an existing association or disassociation request.
 
-See \url{https://paws-r.github.io/docs/opsworkscm/describe_node_association_status.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_node_association_status/} for full documentation.
 }
 \keyword{internal}

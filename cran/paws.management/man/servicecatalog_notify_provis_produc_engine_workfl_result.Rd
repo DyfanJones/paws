@@ -35,6 +35,6 @@ group.}
 \description{
 Notifies the result of the provisioning engine execution.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/notify_provision_product_engine_workflow_result.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/notify_provision_product_engine_workflow_result/} for full documentation.
 }
 \keyword{internal}

@@ -25,6 +25,6 @@ that is joined to an AD.}
 \description{
 Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
 
-See \url{https://paws-r.github.io/docs/fsx/update_storage_virtual_machine.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_storage_virtual_machine/} for full documentation.
 }
 \keyword{internal}

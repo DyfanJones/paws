@@ -20,6 +20,6 @@ API call.}
 \description{
 Describes an existing import job.
 
-See \url{https://paws-r.github.io/docs/quicksight/describe_asset_bundle_import_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_asset_bundle_import_job/} for full documentation.
 }
 \keyword{internal}

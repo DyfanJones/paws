@@ -15,6 +15,6 @@ directoryservice_describe_certificate(DirectoryId, CertificateId)
 \description{
 Displays information about the certificate registered for secure LDAP or client certificate authentication.
 
-See \url{https://paws-r.github.io/docs/directoryservice/describe_certificate.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_certificate/} for full documentation.
 }
 \keyword{internal}

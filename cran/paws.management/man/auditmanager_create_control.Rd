@@ -32,6 +32,6 @@ auditmanager_create_control(
 \description{
 Creates a new custom control in Audit Manager.
 
-See \url{https://paws-r.github.io/docs/auditmanager/create_control.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_control/} for full documentation.
 }
 \keyword{internal}

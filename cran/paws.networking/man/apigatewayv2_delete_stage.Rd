@@ -15,6 +15,6 @@ hyphens, and underscores. Maximum length is 128 characters.}
 \description{
 Deletes a Stage.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/delete_stage.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_stage/} for full documentation.
 }
 \keyword{internal}

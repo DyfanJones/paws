@@ -46,6 +46,6 @@ that are not normally returned in a standard response.}
 \description{
 Searches metadata and the content of folders, documents, document versions, and comments.
 
-See \url{https://paws-r.github.io/docs/workdocs/search_resources.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/search_resources/} for full documentation.
 }
 \keyword{internal}

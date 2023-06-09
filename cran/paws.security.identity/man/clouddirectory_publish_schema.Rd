@@ -29,6 +29,6 @@ provided, the development schema is considered.}
 \description{
 Publishes a development schema with a major version and a recommended minor version.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/publish_schema.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/publish_schema/} for full documentation.
 }
 \keyword{internal}

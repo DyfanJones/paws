@@ -269,8 +269,9 @@ securityhub_batch_disable_standards <- function(StandardsSubscriptionArns) {
 #'
 #' @examples
 #' \dontrun{
-#' # The following example imports findings from a third party provider to
-#' # Security Hub.
+#' # The following example enables the security standard specified by the
+#' # StandardArn. You can use this operation to enable one or more Security
+#' # Hub standards.
 #' svc$batch_enable_standards(
 #'   StandardsSubscriptionRequests = list(
 #'     list(
@@ -349,6 +350,18 @@ securityhub_batch_enable_standards <- function(StandardsSubscriptionRequests) {
 #'   )
 #' )
 #' ```
+#'
+#' @examples
+#' \dontrun{
+#' # The following example gets details for the specified controls in the
+#' # current AWS account and AWS Region.
+#' svc$batch_get_security_controls(
+#'   SecurityControlIds = list(
+#'     "ACM.1",
+#'     "APIGateway.1"
+#'   )
+#' )
+#' }
 #'
 #' @keywords internal
 #'
@@ -437,6 +450,24 @@ securityhub_batch_get_security_controls <- function(SecurityControlIds) {
 #'   )
 #' )
 #' ```
+#'
+#' @examples
+#' \dontrun{
+#' # The following example retrieves the enablement status of the specified
+#' # controls in the specified standards.
+#' svc$batch_get_standards_control_associations(
+#'   StandardsControlAssociationIds = list(
+#'     list(
+#'       SecurityControlId = "CloudTrail.1",
+#'       StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
+#'     ),
+#'     list(
+#'       SecurityControlId = "CloudWatch.12",
+#'       StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
+#'     )
+#'   )
+#' )
+#' }
 #'
 #' @keywords internal
 #'
@@ -4354,6 +4385,183 @@ securityhub_batch_get_standards_control_associations <- function(StandardsContro
 #'                 )
 #'               ),
 #'               VpcId = "string"
+#'             ),
+#'             AwsAmazonMqBroker = list(
+#'               AuthenticationStrategy = "string",
+#'               AutoMinorVersionUpgrade = TRUE|FALSE,
+#'               BrokerArn = "string",
+#'               BrokerName = "string",
+#'               DeploymentMode = "string",
+#'               EncryptionOptions = list(
+#'                 KmsKeyId = "string",
+#'                 UseAwsOwnedKey = TRUE|FALSE
+#'               ),
+#'               EngineType = "string",
+#'               EngineVersion = "string",
+#'               HostInstanceType = "string",
+#'               BrokerId = "string",
+#'               LdapServerMetadata = list(
+#'                 Hosts = list(
+#'                   "string"
+#'                 ),
+#'                 RoleBase = "string",
+#'                 RoleName = "string",
+#'                 RoleSearchMatching = "string",
+#'                 RoleSearchSubtree = TRUE|FALSE,
+#'                 ServiceAccountUsername = "string",
+#'                 UserBase = "string",
+#'                 UserRoleName = "string",
+#'                 UserSearchMatching = "string",
+#'                 UserSearchSubtree = TRUE|FALSE
+#'               ),
+#'               Logs = list(
+#'                 Audit = TRUE|FALSE,
+#'                 General = TRUE|FALSE,
+#'                 AuditLogGroup = "string",
+#'                 GeneralLogGroup = "string",
+#'                 Pending = list(
+#'                   Audit = TRUE|FALSE,
+#'                   General = TRUE|FALSE
+#'                 )
+#'               ),
+#'               MaintenanceWindowStartTime = list(
+#'                 DayOfWeek = "string",
+#'                 TimeOfDay = "string",
+#'                 TimeZone = "string"
+#'               ),
+#'               PubliclyAccessible = TRUE|FALSE,
+#'               SecurityGroups = list(
+#'                 "string"
+#'               ),
+#'               StorageType = "string",
+#'               SubnetIds = list(
+#'                 "string"
+#'               ),
+#'               Users = list(
+#'                 list(
+#'                   PendingChange = "string",
+#'                   Username = "string"
+#'                 )
+#'               )
+#'             ),
+#'             AwsAppSyncGraphQlApi = list(
+#'               ApiId = "string",
+#'               Id = "string",
+#'               OpenIdConnectConfig = list(
+#'                 AuthTtL = 123,
+#'                 ClientId = "string",
+#'                 IatTtL = 123,
+#'                 Issuer = "string"
+#'               ),
+#'               Name = "string",
+#'               LambdaAuthorizerConfig = list(
+#'                 AuthorizerResultTtlInSeconds = 123,
+#'                 AuthorizerUri = "string",
+#'                 IdentityValidationExpression = "string"
+#'               ),
+#'               XrayEnabled = TRUE|FALSE,
+#'               Arn = "string",
+#'               UserPoolConfig = list(
+#'                 AppIdClientRegex = "string",
+#'                 AwsRegion = "string",
+#'                 DefaultAction = "string",
+#'                 UserPoolId = "string"
+#'               ),
+#'               AuthenticationType = "string",
+#'               LogConfig = list(
+#'                 CloudWatchLogsRoleArn = "string",
+#'                 ExcludeVerboseContent = TRUE|FALSE,
+#'                 FieldLogLevel = "string"
+#'               ),
+#'               AdditionalAuthenticationProviders = list(
+#'                 list(
+#'                   AuthenticationType = "string",
+#'                   LambdaAuthorizerConfig = list(
+#'                     AuthorizerResultTtlInSeconds = 123,
+#'                     AuthorizerUri = "string",
+#'                     IdentityValidationExpression = "string"
+#'                   ),
+#'                   OpenIdConnectConfig = list(
+#'                     AuthTtL = 123,
+#'                     ClientId = "string",
+#'                     IatTtL = 123,
+#'                     Issuer = "string"
+#'                   ),
+#'                   UserPoolConfig = list(
+#'                     AppIdClientRegex = "string",
+#'                     AwsRegion = "string",
+#'                     DefaultAction = "string",
+#'                     UserPoolId = "string"
+#'                   )
+#'                 )
+#'               ),
+#'               WafWebAclArn = "string"
+#'             ),
+#'             AwsEventSchemasRegistry = list(
+#'               Description = "string",
+#'               RegistryArn = "string",
+#'               RegistryName = "string"
+#'             ),
+#'             AwsGuardDutyDetector = list(
+#'               DataSources = list(
+#'                 CloudTrail = list(
+#'                   Status = "string"
+#'                 ),
+#'                 DnsLogs = list(
+#'                   Status = "string"
+#'                 ),
+#'                 FlowLogs = list(
+#'                   Status = "string"
+#'                 ),
+#'                 Kubernetes = list(
+#'                   AuditLogs = list(
+#'                     Status = "string"
+#'                   )
+#'                 ),
+#'                 MalwareProtection = list(
+#'                   ScanEc2InstanceWithFindings = list(
+#'                     EbsVolumes = list(
+#'                       Reason = "string",
+#'                       Status = "string"
+#'                     )
+#'                   ),
+#'                   ServiceRole = "string"
+#'                 ),
+#'                 S3Logs = list(
+#'                   Status = "string"
+#'                 )
+#'               ),
+#'               Features = list(
+#'                 list(
+#'                   Name = "string",
+#'                   Status = "string"
+#'                 )
+#'               ),
+#'               FindingPublishingFrequency = "string",
+#'               ServiceRole = "string",
+#'               Status = "string"
+#'             ),
+#'             AwsStepFunctionStateMachine = list(
+#'               Label = "string",
+#'               LoggingConfiguration = list(
+#'                 Destinations = list(
+#'                   list(
+#'                     CloudWatchLogsLogGroup = list(
+#'                       LogGroupArn = "string"
+#'                     )
+#'                   )
+#'                 ),
+#'                 IncludeExecutionData = TRUE|FALSE,
+#'                 Level = "string"
+#'               ),
+#'               Name = "string",
+#'               RoleArn = "string",
+#'               StateMachineArn = "string",
+#'               Status = "string",
+#'               TracingConfiguration = list(
+#'                 Enabled = TRUE|FALSE
+#'               ),
+#'               Type = "string"
 #'             )
 #'           )
 #'         )
@@ -4921,6 +5129,29 @@ securityhub_batch_update_findings <- function(FindingIdentifiers, Note = NULL, S
 #'   )
 #' )
 #' ```
+#'
+#' @examples
+#' \dontrun{
+#' # The following example disables CloudWatch.12 in CIS AWS Foundations
+#' # Benchmark v1.2.0. The example returns an error for CloudTrail.1 because
+#' # an invalid standard ARN is provided.
+#' svc$batch_update_standards_control_associations(
+#'   StandardsControlAssociationUpdates = list(
+#'     list(
+#'       AssociationStatus = "DISABLED",
+#'       SecurityControlId = "CloudTrail.1",
+#'       StandardsArn = "arn:aws:securityhub:::ruleset/sample-standard/v/1.1.0",
+#'       UpdatedReason = "Not relevant to environment"
+#'     ),
+#'     list(
+#'       AssociationStatus = "DISABLED",
+#'       SecurityControlId = "CloudWatch.12",
+#'       StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0",
+#'       UpdatedReason = "Not relevant to environment"
+#'     )
+#'   )
+#' )
+#' }
 #'
 #' @keywords internal
 #'
@@ -11583,6 +11814,183 @@ securityhub_get_finding_history <- function(FindingIdentifier, StartTime = NULL,
 #'                 )
 #'               ),
 #'               VpcId = "string"
+#'             ),
+#'             AwsAmazonMqBroker = list(
+#'               AuthenticationStrategy = "string",
+#'               AutoMinorVersionUpgrade = TRUE|FALSE,
+#'               BrokerArn = "string",
+#'               BrokerName = "string",
+#'               DeploymentMode = "string",
+#'               EncryptionOptions = list(
+#'                 KmsKeyId = "string",
+#'                 UseAwsOwnedKey = TRUE|FALSE
+#'               ),
+#'               EngineType = "string",
+#'               EngineVersion = "string",
+#'               HostInstanceType = "string",
+#'               BrokerId = "string",
+#'               LdapServerMetadata = list(
+#'                 Hosts = list(
+#'                   "string"
+#'                 ),
+#'                 RoleBase = "string",
+#'                 RoleName = "string",
+#'                 RoleSearchMatching = "string",
+#'                 RoleSearchSubtree = TRUE|FALSE,
+#'                 ServiceAccountUsername = "string",
+#'                 UserBase = "string",
+#'                 UserRoleName = "string",
+#'                 UserSearchMatching = "string",
+#'                 UserSearchSubtree = TRUE|FALSE
+#'               ),
+#'               Logs = list(
+#'                 Audit = TRUE|FALSE,
+#'                 General = TRUE|FALSE,
+#'                 AuditLogGroup = "string",
+#'                 GeneralLogGroup = "string",
+#'                 Pending = list(
+#'                   Audit = TRUE|FALSE,
+#'                   General = TRUE|FALSE
+#'                 )
+#'               ),
+#'               MaintenanceWindowStartTime = list(
+#'                 DayOfWeek = "string",
+#'                 TimeOfDay = "string",
+#'                 TimeZone = "string"
+#'               ),
+#'               PubliclyAccessible = TRUE|FALSE,
+#'               SecurityGroups = list(
+#'                 "string"
+#'               ),
+#'               StorageType = "string",
+#'               SubnetIds = list(
+#'                 "string"
+#'               ),
+#'               Users = list(
+#'                 list(
+#'                   PendingChange = "string",
+#'                   Username = "string"
+#'                 )
+#'               )
+#'             ),
+#'             AwsAppSyncGraphQlApi = list(
+#'               ApiId = "string",
+#'               Id = "string",
+#'               OpenIdConnectConfig = list(
+#'                 AuthTtL = 123,
+#'                 ClientId = "string",
+#'                 IatTtL = 123,
+#'                 Issuer = "string"
+#'               ),
+#'               Name = "string",
+#'               LambdaAuthorizerConfig = list(
+#'                 AuthorizerResultTtlInSeconds = 123,
+#'                 AuthorizerUri = "string",
+#'                 IdentityValidationExpression = "string"
+#'               ),
+#'               XrayEnabled = TRUE|FALSE,
+#'               Arn = "string",
+#'               UserPoolConfig = list(
+#'                 AppIdClientRegex = "string",
+#'                 AwsRegion = "string",
+#'                 DefaultAction = "string",
+#'                 UserPoolId = "string"
+#'               ),
+#'               AuthenticationType = "string",
+#'               LogConfig = list(
+#'                 CloudWatchLogsRoleArn = "string",
+#'                 ExcludeVerboseContent = TRUE|FALSE,
+#'                 FieldLogLevel = "string"
+#'               ),
+#'               AdditionalAuthenticationProviders = list(
+#'                 list(
+#'                   AuthenticationType = "string",
+#'                   LambdaAuthorizerConfig = list(
+#'                     AuthorizerResultTtlInSeconds = 123,
+#'                     AuthorizerUri = "string",
+#'                     IdentityValidationExpression = "string"
+#'                   ),
+#'                   OpenIdConnectConfig = list(
+#'                     AuthTtL = 123,
+#'                     ClientId = "string",
+#'                     IatTtL = 123,
+#'                     Issuer = "string"
+#'                   ),
+#'                   UserPoolConfig = list(
+#'                     AppIdClientRegex = "string",
+#'                     AwsRegion = "string",
+#'                     DefaultAction = "string",
+#'                     UserPoolId = "string"
+#'                   )
+#'                 )
+#'               ),
+#'               WafWebAclArn = "string"
+#'             ),
+#'             AwsEventSchemasRegistry = list(
+#'               Description = "string",
+#'               RegistryArn = "string",
+#'               RegistryName = "string"
+#'             ),
+#'             AwsGuardDutyDetector = list(
+#'               DataSources = list(
+#'                 CloudTrail = list(
+#'                   Status = "string"
+#'                 ),
+#'                 DnsLogs = list(
+#'                   Status = "string"
+#'                 ),
+#'                 FlowLogs = list(
+#'                   Status = "string"
+#'                 ),
+#'                 Kubernetes = list(
+#'                   AuditLogs = list(
+#'                     Status = "string"
+#'                   )
+#'                 ),
+#'                 MalwareProtection = list(
+#'                   ScanEc2InstanceWithFindings = list(
+#'                     EbsVolumes = list(
+#'                       Reason = "string",
+#'                       Status = "string"
+#'                     )
+#'                   ),
+#'                   ServiceRole = "string"
+#'                 ),
+#'                 S3Logs = list(
+#'                   Status = "string"
+#'                 )
+#'               ),
+#'               Features = list(
+#'                 list(
+#'                   Name = "string",
+#'                   Status = "string"
+#'                 )
+#'               ),
+#'               FindingPublishingFrequency = "string",
+#'               ServiceRole = "string",
+#'               Status = "string"
+#'             ),
+#'             AwsStepFunctionStateMachine = list(
+#'               Label = "string",
+#'               LoggingConfiguration = list(
+#'                 Destinations = list(
+#'                   list(
+#'                     CloudWatchLogsLogGroup = list(
+#'                       LogGroupArn = "string"
+#'                     )
+#'                   )
+#'                 ),
+#'                 IncludeExecutionData = TRUE|FALSE,
+#'                 Level = "string"
+#'               ),
+#'               Name = "string",
+#'               RoleArn = "string",
+#'               StateMachineArn = "string",
+#'               Status = "string",
+#'               TracingConfiguration = list(
+#'                 Enabled = TRUE|FALSE
+#'               ),
+#'               Type = "string"
 #'             )
 #'           )
 #'         )

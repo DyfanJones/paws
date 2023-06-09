@@ -24,6 +24,6 @@ previous call.}
 \description{
 List the endpoint groups that are associated with a listener for a custom routing accelerator.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/list_custom_routing_endpoint_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_custom_routing_endpoint_groups/} for full documentation.
 }
 \keyword{internal}

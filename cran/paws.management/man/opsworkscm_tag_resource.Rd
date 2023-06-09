@@ -31,6 +31,6 @@ server or backup.
 \description{
 Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server, or to server backups.
 
-See \url{https://paws-r.github.io/docs/opsworkscm/tag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/tag_resource/} for full documentation.
 }
 \keyword{internal}

@@ -30,6 +30,6 @@ limits you want to list.}
 \description{
 Lists all usage limits within Amazon Redshift Serverless.
 
-See \url{https://paws-r.github.io/docs/redshiftserverless/list_usage_limits.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_usage_limits/} for full documentation.
 }
 \keyword{internal}

@@ -17,6 +17,6 @@ and \code{dualstack} (for IPv4 and IPv6 addresses). You can’t specify
 \description{
 Sets the type of IP addresses used by the subnets of the specified load balancer.
 
-See \url{https://paws-r.github.io/docs/elbv2/set_ip_address_type.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/set_ip_address_type/} for full documentation.
 }
 \keyword{internal}

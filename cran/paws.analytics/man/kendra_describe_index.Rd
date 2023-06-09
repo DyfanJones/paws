@@ -12,6 +12,6 @@ kendra_describe_index(Id)
 \description{
 Gets information about an existing Amazon Kendra index.
 
-See \url{https://paws-r.github.io/docs/kendra/describe_index.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_index/} for full documentation.
 }
 \keyword{internal}

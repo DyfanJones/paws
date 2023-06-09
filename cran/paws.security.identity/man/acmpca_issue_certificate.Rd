@@ -121,6 +121,6 @@ requesting multiple certificates.}
 \description{
 Uses your private certificate authority (CA), or one that has been shared with you, to issue a client certificate. This action returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate by calling the \code{\link[=acmpca_get_certificate]{get_certificate}} action and specifying the ARN.
 
-See \url{https://paws-r.github.io/docs/acmpca/issue_certificate.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/issue_certificate/} for full documentation.
 }
 \keyword{internal}

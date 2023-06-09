@@ -29,6 +29,6 @@ If no application version is found with this label,
 \description{
 Updates the specified application version to have the specified properties.
 
-See \url{https://paws-r.github.io/docs/elasticbeanstalk/update_application_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_application_version/} for full documentation.
 }
 \keyword{internal}

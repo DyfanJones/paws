@@ -14,6 +14,6 @@ emr_describe_step(ClusterId, StepId)
 \description{
 Provides more detail about the cluster step.
 
-See \url{https://paws-r.github.io/docs/emr/describe_step.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_step/} for full documentation.
 }
 \keyword{internal}

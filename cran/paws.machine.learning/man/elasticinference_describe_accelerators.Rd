@@ -33,6 +33,6 @@ a previously truncated response.}
 \description{
 Describes information over a provided set of accelerators belonging to an account.
 
-See \url{https://paws-r.github.io/docs/elasticinference/describe_accelerators.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_accelerators/} for full documentation.
 }
 \keyword{internal}

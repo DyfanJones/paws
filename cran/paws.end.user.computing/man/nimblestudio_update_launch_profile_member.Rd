@@ -30,6 +30,6 @@ session.}
 \description{
 Update a user persona in launch profile membership.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/update_launch_profile_member.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_launch_profile_member/} for full documentation.
 }
 \keyword{internal}

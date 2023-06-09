@@ -41,6 +41,6 @@ structure.}
 \description{
 Creates a launch template.
 
-See \url{https://paws-r.github.io/docs/ec2/create_launch_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_launch_template/} for full documentation.
 }
 \keyword{internal}

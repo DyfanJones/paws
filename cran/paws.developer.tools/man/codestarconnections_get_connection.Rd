@@ -13,6 +13,6 @@ codestarconnections_get_connection(ConnectionArn)
 \description{
 Returns the connection ARN and details such as status, owner, and provider type.
 
-See \url{https://paws-r.github.io/docs/codestarconnections/get_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_connection/} for full documentation.
 }
 \keyword{internal}

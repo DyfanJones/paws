@@ -13,6 +13,6 @@ invitation.}
 \description{
 Declines invitations to become a member account.
 
-See \url{https://paws-r.github.io/docs/securityhub/decline_invitations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/decline_invitations/} for full documentation.
 }
 \keyword{internal}

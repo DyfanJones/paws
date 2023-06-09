@@ -18,6 +18,6 @@ pointed to by the next token.}
 \description{
 Returns metadata of your saved backup plan templates, including the template ID, name, and the creation and deletion dates.
 
-See \url{https://paws-r.github.io/docs/backup/list_backup_plan_templates.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_backup_plan_templates/} for full documentation.
 }
 \keyword{internal}

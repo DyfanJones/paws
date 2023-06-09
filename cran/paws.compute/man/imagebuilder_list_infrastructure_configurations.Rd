@@ -21,6 +21,6 @@ a previously truncated response.}
 \description{
 Returns a list of infrastructure configurations.
 
-See \url{https://paws-r.github.io/docs/imagebuilder/list_infrastructure_configurations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_infrastructure_configurations/} for full documentation.
 }
 \keyword{internal}

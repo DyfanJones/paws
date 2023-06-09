@@ -26,6 +26,6 @@ wellarchitected_list_lenses(
 \description{
 List the available lenses.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/list_lenses.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_lenses/} for full documentation.
 }
 \keyword{internal}

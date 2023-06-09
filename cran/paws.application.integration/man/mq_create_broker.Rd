@@ -108,6 +108,6 @@ API calls directly to brokers or via the RabbitMQ web console.}
 \description{
 Creates a broker. Note: This API is asynchronous.
 
-See \url{https://paws-r.github.io/docs/mq/create_broker.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_broker/} for full documentation.
 }
 \keyword{internal}

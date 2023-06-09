@@ -16,6 +16,6 @@ you are deleting the conditional forwarder.}
 \description{
 Deletes a conditional forwarder that has been set up for your Amazon Web Services directory.
 
-See \url{https://paws-r.github.io/docs/directoryservice/delete_conditional_forwarder.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_conditional_forwarder/} for full documentation.
 }
 \keyword{internal}

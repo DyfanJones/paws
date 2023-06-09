@@ -12,6 +12,6 @@ athena_delete_notebook(NotebookId)
 \description{
 Deletes the specified notebook.
 
-See \url{https://paws-r.github.io/docs/athena/delete_notebook.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_notebook/} for full documentation.
 }
 \keyword{internal}

@@ -26,6 +26,6 @@ Valid values: \code{LATEST_WORKING} | \code{LATEST_PUBLISHED}}
 \description{
 Lists all of the DataBrew recipes that are defined.
 
-See \url{https://paws-r.github.io/docs/gluedatabrew/list_recipes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_recipes/} for full documentation.
 }
 \keyword{internal}

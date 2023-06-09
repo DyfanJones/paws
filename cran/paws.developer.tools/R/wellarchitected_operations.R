@@ -8,7 +8,7 @@ NULL
 #' @description
 #' Associate a lens to a workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/associate_lenses.html](https://paws-r.github.io/docs/wellarchitected/associate_lenses.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/associate_lenses/](https://paws-r-sdk.com/docs/associate_lenses/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAliases &#91;required&#93; 
@@ -38,7 +38,7 @@ wellarchitected_associate_lenses <- function(WorkloadId, LensAliases) {
 #' @description
 #' Create a lens share.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/create_lens_share.html](https://paws-r.github.io/docs/wellarchitected/create_lens_share.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/create_lens_share/](https://paws-r-sdk.com/docs/create_lens_share/) for full documentation.
 #'
 #' @param LensAlias &#91;required&#93; 
 #' @param SharedWith &#91;required&#93; 
@@ -69,7 +69,7 @@ wellarchitected_create_lens_share <- function(LensAlias, SharedWith, ClientReque
 #' @description
 #' Create a new lens version.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/create_lens_version.html](https://paws-r.github.io/docs/wellarchitected/create_lens_version.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/create_lens_version/](https://paws-r-sdk.com/docs/create_lens_version/) for full documentation.
 #'
 #' @param LensAlias &#91;required&#93; 
 #' @param LensVersion &#91;required&#93; The version of the lens being created.
@@ -101,7 +101,7 @@ wellarchitected_create_lens_version <- function(LensAlias, LensVersion, IsMajorV
 #' @description
 #' Create a milestone for an existing workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/create_milestone.html](https://paws-r.github.io/docs/wellarchitected/create_milestone.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/create_milestone/](https://paws-r-sdk.com/docs/create_milestone/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param MilestoneName &#91;required&#93; 
@@ -132,7 +132,7 @@ wellarchitected_create_milestone <- function(WorkloadId, MilestoneName, ClientRe
 #' @description
 #' Create a new workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/create_workload.html](https://paws-r.github.io/docs/wellarchitected/create_workload.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/create_workload/](https://paws-r-sdk.com/docs/create_workload/) for full documentation.
 #'
 #' @param WorkloadName &#91;required&#93; 
 #' @param Description &#91;required&#93; 
@@ -178,7 +178,7 @@ wellarchitected_create_workload <- function(WorkloadName, Description, Environme
 #' @description
 #' Create a workload share.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/create_workload_share.html](https://paws-r.github.io/docs/wellarchitected/create_workload_share.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/create_workload_share/](https://paws-r-sdk.com/docs/create_workload_share/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param SharedWith &#91;required&#93; 
@@ -210,7 +210,7 @@ wellarchitected_create_workload_share <- function(WorkloadId, SharedWith, Permis
 #' @description
 #' Delete an existing lens.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/delete_lens.html](https://paws-r.github.io/docs/wellarchitected/delete_lens.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/delete_lens/](https://paws-r-sdk.com/docs/delete_lens/) for full documentation.
 #'
 #' @param LensAlias &#91;required&#93; 
 #' @param ClientRequestToken &#91;required&#93; 
@@ -241,7 +241,7 @@ wellarchitected_delete_lens <- function(LensAlias, ClientRequestToken, LensStatu
 #' @description
 #' Delete a lens share.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/delete_lens_share.html](https://paws-r.github.io/docs/wellarchitected/delete_lens_share.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/delete_lens_share/](https://paws-r-sdk.com/docs/delete_lens_share/) for full documentation.
 #'
 #' @param ShareId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -272,7 +272,7 @@ wellarchitected_delete_lens_share <- function(ShareId, LensAlias, ClientRequestT
 #' @description
 #' Delete an existing workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/delete_workload.html](https://paws-r.github.io/docs/wellarchitected/delete_workload.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/delete_workload/](https://paws-r-sdk.com/docs/delete_workload/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param ClientRequestToken &#91;required&#93; 
@@ -302,7 +302,7 @@ wellarchitected_delete_workload <- function(WorkloadId, ClientRequestToken) {
 #' @description
 #' Delete a workload share.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/delete_workload_share.html](https://paws-r.github.io/docs/wellarchitected/delete_workload_share.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/delete_workload_share/](https://paws-r-sdk.com/docs/delete_workload_share/) for full documentation.
 #'
 #' @param ShareId &#91;required&#93; 
 #' @param WorkloadId &#91;required&#93; 
@@ -333,7 +333,7 @@ wellarchitected_delete_workload_share <- function(ShareId, WorkloadId, ClientReq
 #' @description
 #' Disassociate a lens from a workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/disassociate_lenses.html](https://paws-r.github.io/docs/wellarchitected/disassociate_lenses.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/disassociate_lenses/](https://paws-r-sdk.com/docs/disassociate_lenses/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAliases &#91;required&#93; 
@@ -363,7 +363,7 @@ wellarchitected_disassociate_lenses <- function(WorkloadId, LensAliases) {
 #' @description
 #' Export an existing lens.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/export_lens.html](https://paws-r.github.io/docs/wellarchitected/export_lens.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/export_lens/](https://paws-r-sdk.com/docs/export_lens/) for full documentation.
 #'
 #' @param LensAlias &#91;required&#93; 
 #' @param LensVersion The lens version to be exported.
@@ -393,7 +393,7 @@ wellarchitected_export_lens <- function(LensAlias, LensVersion = NULL) {
 #' @description
 #' Get the answer to a specific question in a workload review.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_answer.html](https://paws-r.github.io/docs/wellarchitected/get_answer.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_answer/](https://paws-r-sdk.com/docs/get_answer/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -425,7 +425,7 @@ wellarchitected_get_answer <- function(WorkloadId, LensAlias, QuestionId, Milest
 #' @description
 #' Get a consolidated report of your workloads.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_consolidated_report.html](https://paws-r.github.io/docs/wellarchitected/get_consolidated_report.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_consolidated_report/](https://paws-r-sdk.com/docs/get_consolidated_report/) for full documentation.
 #'
 #' @param Format &#91;required&#93; The format of the consolidated report.
 #' 
@@ -460,7 +460,7 @@ wellarchitected_get_consolidated_report <- function(Format, IncludeSharedResourc
 #' @description
 #' Get an existing lens.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_lens.html](https://paws-r.github.io/docs/wellarchitected/get_lens.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_lens/](https://paws-r-sdk.com/docs/get_lens/) for full documentation.
 #'
 #' @param LensAlias &#91;required&#93; 
 #' @param LensVersion The lens version to be retrieved.
@@ -490,7 +490,7 @@ wellarchitected_get_lens <- function(LensAlias, LensVersion = NULL) {
 #' @description
 #' Get lens review.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_lens_review.html](https://paws-r.github.io/docs/wellarchitected/get_lens_review.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_lens_review/](https://paws-r-sdk.com/docs/get_lens_review/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -521,7 +521,7 @@ wellarchitected_get_lens_review <- function(WorkloadId, LensAlias, MilestoneNumb
 #' @description
 #' Get lens review report.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_lens_review_report.html](https://paws-r.github.io/docs/wellarchitected/get_lens_review_report.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_lens_review_report/](https://paws-r-sdk.com/docs/get_lens_review_report/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -552,7 +552,7 @@ wellarchitected_get_lens_review_report <- function(WorkloadId, LensAlias, Milest
 #' @description
 #' Get lens version differences.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_lens_version_difference.html](https://paws-r.github.io/docs/wellarchitected/get_lens_version_difference.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_lens_version_difference/](https://paws-r-sdk.com/docs/get_lens_version_difference/) for full documentation.
 #'
 #' @param LensAlias &#91;required&#93; 
 #' @param BaseLensVersion The base version of the lens.
@@ -583,7 +583,7 @@ wellarchitected_get_lens_version_difference <- function(LensAlias, BaseLensVersi
 #' @description
 #' Get a milestone for an existing workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_milestone.html](https://paws-r.github.io/docs/wellarchitected/get_milestone.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_milestone/](https://paws-r-sdk.com/docs/get_milestone/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param MilestoneNumber &#91;required&#93; 
@@ -613,7 +613,7 @@ wellarchitected_get_milestone <- function(WorkloadId, MilestoneNumber) {
 #' @description
 #' Get an existing workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/get_workload.html](https://paws-r.github.io/docs/wellarchitected/get_workload.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/get_workload/](https://paws-r-sdk.com/docs/get_workload/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #'
@@ -642,7 +642,7 @@ wellarchitected_get_workload <- function(WorkloadId) {
 #' @description
 #' Import a new custom lens or update an existing custom lens.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/import_lens.html](https://paws-r.github.io/docs/wellarchitected/import_lens.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/import_lens/](https://paws-r-sdk.com/docs/import_lens/) for full documentation.
 #'
 #' @param LensAlias 
 #' @param JSONString &#91;required&#93; The JSON representation of a lens.
@@ -674,7 +674,7 @@ wellarchitected_import_lens <- function(LensAlias = NULL, JSONString, ClientRequ
 #' @description
 #' List of answers for a particular workload and lens.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_answers.html](https://paws-r.github.io/docs/wellarchitected/list_answers.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_answers/](https://paws-r-sdk.com/docs/list_answers/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -708,7 +708,7 @@ wellarchitected_list_answers <- function(WorkloadId, LensAlias, PillarId = NULL,
 #' @description
 #' List of Trusted Advisor check details by account related to the workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_check_details.html](https://paws-r.github.io/docs/wellarchitected/list_check_details.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_check_details/](https://paws-r-sdk.com/docs/list_check_details/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param NextToken 
@@ -744,7 +744,7 @@ wellarchitected_list_check_details <- function(WorkloadId, NextToken = NULL, Max
 #' @description
 #' List of Trusted Advisor checks summarized for all accounts related to the workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_check_summaries.html](https://paws-r.github.io/docs/wellarchitected/list_check_summaries.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_check_summaries/](https://paws-r-sdk.com/docs/list_check_summaries/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param NextToken 
@@ -779,7 +779,7 @@ wellarchitected_list_check_summaries <- function(WorkloadId, NextToken = NULL, M
 #' @description
 #' List lens review improvements.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_lens_review_improvements.html](https://paws-r.github.io/docs/wellarchitected/list_lens_review_improvements.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_lens_review_improvements/](https://paws-r-sdk.com/docs/list_lens_review_improvements/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -813,7 +813,7 @@ wellarchitected_list_lens_review_improvements <- function(WorkloadId, LensAlias,
 #' @description
 #' List lens reviews for a particular workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_lens_reviews.html](https://paws-r.github.io/docs/wellarchitected/list_lens_reviews.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_lens_reviews/](https://paws-r-sdk.com/docs/list_lens_reviews/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param MilestoneNumber 
@@ -845,7 +845,7 @@ wellarchitected_list_lens_reviews <- function(WorkloadId, MilestoneNumber = NULL
 #' @description
 #' List the lens shares associated with the lens.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_lens_shares.html](https://paws-r.github.io/docs/wellarchitected/list_lens_shares.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_lens_shares/](https://paws-r-sdk.com/docs/list_lens_shares/) for full documentation.
 #'
 #' @param LensAlias &#91;required&#93; 
 #' @param SharedWithPrefix The Amazon Web Services account ID, IAM role, organization ID, or
@@ -879,7 +879,7 @@ wellarchitected_list_lens_shares <- function(LensAlias, SharedWithPrefix = NULL,
 #' @description
 #' List the available lenses.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_lenses.html](https://paws-r.github.io/docs/wellarchitected/list_lenses.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_lenses/](https://paws-r-sdk.com/docs/list_lenses/) for full documentation.
 #'
 #' @param NextToken 
 #' @param MaxResults 
@@ -912,7 +912,7 @@ wellarchitected_list_lenses <- function(NextToken = NULL, MaxResults = NULL, Len
 #' @description
 #' List all milestones for an existing workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_milestones.html](https://paws-r.github.io/docs/wellarchitected/list_milestones.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_milestones/](https://paws-r-sdk.com/docs/list_milestones/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param NextToken 
@@ -943,7 +943,7 @@ wellarchitected_list_milestones <- function(WorkloadId, NextToken = NULL, MaxRes
 #' @description
 #' List lens notifications.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_notifications.html](https://paws-r.github.io/docs/wellarchitected/list_notifications.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_notifications/](https://paws-r-sdk.com/docs/list_notifications/) for full documentation.
 #'
 #' @param WorkloadId 
 #' @param NextToken 
@@ -974,7 +974,7 @@ wellarchitected_list_notifications <- function(WorkloadId = NULL, NextToken = NU
 #' @description
 #' List the workload invitations.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_share_invitations.html](https://paws-r.github.io/docs/wellarchitected/list_share_invitations.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_share_invitations/](https://paws-r-sdk.com/docs/list_share_invitations/) for full documentation.
 #'
 #' @param WorkloadNamePrefix 
 #' @param LensNamePrefix An optional string added to the beginning of each lens name returned in
@@ -1008,7 +1008,7 @@ wellarchitected_list_share_invitations <- function(WorkloadNamePrefix = NULL, Le
 #' @description
 #' List the tags for a resource.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_tags_for_resource.html](https://paws-r.github.io/docs/wellarchitected/list_tags_for_resource.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_tags_for_resource/](https://paws-r-sdk.com/docs/list_tags_for_resource/) for full documentation.
 #'
 #' @param WorkloadArn &#91;required&#93; 
 #'
@@ -1037,7 +1037,7 @@ wellarchitected_list_tags_for_resource <- function(WorkloadArn) {
 #' @description
 #' List the workload shares associated with the workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_workload_shares.html](https://paws-r.github.io/docs/wellarchitected/list_workload_shares.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_workload_shares/](https://paws-r-sdk.com/docs/list_workload_shares/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param SharedWithPrefix The Amazon Web Services account ID, IAM role, organization ID, or
@@ -1071,7 +1071,7 @@ wellarchitected_list_workload_shares <- function(WorkloadId, SharedWithPrefix = 
 #' @description
 #' Paginated list of workloads.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/list_workloads.html](https://paws-r.github.io/docs/wellarchitected/list_workloads.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_workloads/](https://paws-r-sdk.com/docs/list_workloads/) for full documentation.
 #'
 #' @param WorkloadNamePrefix 
 #' @param NextToken 
@@ -1102,7 +1102,7 @@ wellarchitected_list_workloads <- function(WorkloadNamePrefix = NULL, NextToken 
 #' @description
 #' Adds one or more tags to the specified resource.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/tag_resource.html](https://paws-r.github.io/docs/wellarchitected/tag_resource.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/tag_resource/](https://paws-r-sdk.com/docs/tag_resource/) for full documentation.
 #'
 #' @param WorkloadArn &#91;required&#93; 
 #' @param Tags &#91;required&#93; The tags for the resource.
@@ -1132,7 +1132,7 @@ wellarchitected_tag_resource <- function(WorkloadArn, Tags) {
 #' @description
 #' Deletes specified tags from a resource.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/untag_resource.html](https://paws-r.github.io/docs/wellarchitected/untag_resource.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/untag_resource/](https://paws-r-sdk.com/docs/untag_resource/) for full documentation.
 #'
 #' @param WorkloadArn &#91;required&#93; 
 #' @param TagKeys &#91;required&#93; A list of tag keys. Existing tags of the resource whose keys are members
@@ -1163,7 +1163,7 @@ wellarchitected_untag_resource <- function(WorkloadArn, TagKeys) {
 #' @description
 #' Update the answer to a specific question in a workload review.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/update_answer.html](https://paws-r.github.io/docs/wellarchitected/update_answer.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/update_answer/](https://paws-r-sdk.com/docs/update_answer/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -1201,7 +1201,7 @@ wellarchitected_update_answer <- function(WorkloadId, LensAlias, QuestionId, Sel
 #' @description
 #' Updates whether the Amazon Web Services account is opted into organization sharing and discovery integration features.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/update_global_settings.html](https://paws-r.github.io/docs/wellarchitected/update_global_settings.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/update_global_settings/](https://paws-r-sdk.com/docs/update_global_settings/) for full documentation.
 #'
 #' @param OrganizationSharingStatus The status of organization sharing settings.
 #' @param DiscoveryIntegrationStatus The status of discovery support settings.
@@ -1231,7 +1231,7 @@ wellarchitected_update_global_settings <- function(OrganizationSharingStatus = N
 #' @description
 #' Update lens review for a particular workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/update_lens_review.html](https://paws-r.github.io/docs/wellarchitected/update_lens_review.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/update_lens_review/](https://paws-r-sdk.com/docs/update_lens_review/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 
@@ -1263,7 +1263,7 @@ wellarchitected_update_lens_review <- function(WorkloadId, LensAlias, LensNotes 
 #' @description
 #' Update a workload or custom lens share invitation.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/update_share_invitation.html](https://paws-r.github.io/docs/wellarchitected/update_share_invitation.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/update_share_invitation/](https://paws-r-sdk.com/docs/update_share_invitation/) for full documentation.
 #'
 #' @param ShareInvitationId &#91;required&#93; The ID assigned to the share invitation.
 #' @param ShareInvitationAction &#91;required&#93; 
@@ -1293,7 +1293,7 @@ wellarchitected_update_share_invitation <- function(ShareInvitationId, ShareInvi
 #' @description
 #' Update an existing workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/update_workload.html](https://paws-r.github.io/docs/wellarchitected/update_workload.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/update_workload/](https://paws-r-sdk.com/docs/update_workload/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param WorkloadName 
@@ -1344,7 +1344,7 @@ wellarchitected_update_workload <- function(WorkloadId, WorkloadName = NULL, Des
 #' @description
 #' Update a workload share.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/update_workload_share.html](https://paws-r.github.io/docs/wellarchitected/update_workload_share.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/update_workload_share/](https://paws-r-sdk.com/docs/update_workload_share/) for full documentation.
 #'
 #' @param ShareId &#91;required&#93; 
 #' @param WorkloadId &#91;required&#93; 
@@ -1375,7 +1375,7 @@ wellarchitected_update_workload_share <- function(ShareId, WorkloadId, Permissio
 #' @description
 #' Upgrade lens review for a particular workload.
 #'
-#' See [https://paws-r.github.io/docs/wellarchitected/upgrade_lens_review.html](https://paws-r.github.io/docs/wellarchitected/upgrade_lens_review.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/upgrade_lens_review/](https://paws-r-sdk.com/docs/upgrade_lens_review/) for full documentation.
 #'
 #' @param WorkloadId &#91;required&#93; 
 #' @param LensAlias &#91;required&#93; 

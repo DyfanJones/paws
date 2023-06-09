@@ -29,6 +29,6 @@ licensemanager_list_licenses(
 \description{
 Lists the licenses for your account.
 
-See \url{https://paws-r.github.io/docs/licensemanager/list_licenses.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_licenses/} for full documentation.
 }
 \keyword{internal}

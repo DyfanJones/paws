@@ -69,6 +69,6 @@ template message.}
 \description{
 Composes an email message to multiple destinations.
 
-See \url{https://paws-r.github.io/docs/sesv2/send_bulk_email.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/send_bulk_email/} for full documentation.
 }
 \keyword{internal}

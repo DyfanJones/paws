@@ -18,6 +18,6 @@ response.}
 \description{
 Gets a list of key groups.
 
-See \url{https://paws-r.github.io/docs/cloudfront/list_key_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_key_groups/} for full documentation.
 }
 \keyword{internal}

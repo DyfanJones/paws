@@ -46,6 +46,6 @@ next set of images.}
 \description{
 Lists the images in your account and their properties. The list can be filtered by creation time or modified time, and whether the image name contains a specified string.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_images.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_images/} for full documentation.
 }
 \keyword{internal}

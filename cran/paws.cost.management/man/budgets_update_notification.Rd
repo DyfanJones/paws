@@ -24,6 +24,6 @@ you want to update.}
 \description{
 Updates a notification.
 
-See \url{https://paws-r.github.io/docs/budgets/update_notification.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_notification/} for full documentation.
 }
 \keyword{internal}

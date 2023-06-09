@@ -27,6 +27,6 @@ with.}
 \description{
 Describes an existing gateway route.
 
-See \url{https://paws-r.github.io/docs/appmesh/describe_gateway_route.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_gateway_route/} for full documentation.
 }
 \keyword{internal}

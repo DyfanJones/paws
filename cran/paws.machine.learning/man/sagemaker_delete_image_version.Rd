@@ -16,6 +16,6 @@ sagemaker_delete_image_version(ImageName, Version = NULL, Alias = NULL)
 \description{
 Deletes a version of a SageMaker image. The container image the version represents isn't deleted.
 
-See \url{https://paws-r.github.io/docs/sagemaker/delete_image_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_image_version/} for full documentation.
 }
 \keyword{internal}

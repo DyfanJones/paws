@@ -35,6 +35,6 @@ results, use null.}
 \description{
 Gets information about the products to which the caller has access.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/search_products.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/search_products/} for full documentation.
 }
 \keyword{internal}

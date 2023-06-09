@@ -40,6 +40,6 @@ converter like \href{https://www.epochconverter.com/}{Epoch converter}.}
 \description{
 Retrieves information about the cost estimate for a specified resource. A cost estimate will not generate for a resource that has been deleted.
 
-See \url{https://paws-r.github.io/docs/lightsail/get_cost_estimate.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_cost_estimate/} for full documentation.
 }
 \keyword{internal}

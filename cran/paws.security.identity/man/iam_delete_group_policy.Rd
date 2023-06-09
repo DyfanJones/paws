@@ -24,6 +24,6 @@ spaces. You can also include any of the following characters: _+=,.@-}
 \description{
 Deletes the specified inline policy that is embedded in the specified IAM group.
 
-See \url{https://paws-r.github.io/docs/iam/delete_group_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_group_policy/} for full documentation.
 }
 \keyword{internal}

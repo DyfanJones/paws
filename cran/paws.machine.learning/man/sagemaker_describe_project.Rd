@@ -12,6 +12,6 @@ sagemaker_describe_project(ProjectName)
 \description{
 Describes the details of a project.
 
-See \url{https://paws-r.github.io/docs/sagemaker/describe_project.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_project/} for full documentation.
 }
 \keyword{internal}

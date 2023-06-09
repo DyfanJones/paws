@@ -15,6 +15,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 Gets the prompt file.
 
-See \url{https://paws-r.github.io/docs/connect/get_prompt_file.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_prompt_file/} for full documentation.
 }
 \keyword{internal}

@@ -20,6 +20,6 @@ that value as input here.}
 \description{
 Returns all ledgers that are associated with the current Amazon Web Services account and Region.
 
-See \url{https://paws-r.github.io/docs/qldb/list_ledgers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_ledgers/} for full documentation.
 }
 \keyword{internal}

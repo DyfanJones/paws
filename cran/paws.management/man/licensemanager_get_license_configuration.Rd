@@ -12,6 +12,6 @@ licensemanager_get_license_configuration(LicenseConfigurationArn)
 \description{
 Gets detailed information about the specified license configuration.
 
-See \url{https://paws-r.github.io/docs/licensemanager/get_license_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_license_configuration/} for full documentation.
 }
 \keyword{internal}

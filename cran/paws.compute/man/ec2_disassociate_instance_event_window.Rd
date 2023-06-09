@@ -23,6 +23,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Disassociates one or more targets from an event window.
 
-See \url{https://paws-r.github.io/docs/ec2/disassociate_instance_event_window.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_instance_event_window/} for full documentation.
 }
 \keyword{internal}

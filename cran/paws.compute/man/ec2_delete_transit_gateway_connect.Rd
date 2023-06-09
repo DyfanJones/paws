@@ -17,6 +17,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_transit_gateway_connect.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_transit_gateway_connect/} for full documentation.
 }
 \keyword{internal}

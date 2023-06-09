@@ -72,6 +72,6 @@ want to base query suggestions on.}
 \description{
 Updates the settings of query suggestions for an index.
 
-See \url{https://paws-r.github.io/docs/kendra/update_query_suggestions_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_query_suggestions_config/} for full documentation.
 }
 \keyword{internal}

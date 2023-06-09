@@ -42,6 +42,6 @@ property.
 \description{
 Changes the status of a classification job.
 
-See \url{https://paws-r.github.io/docs/macie2/update_classification_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_classification_job/} for full documentation.
 }
 \keyword{internal}

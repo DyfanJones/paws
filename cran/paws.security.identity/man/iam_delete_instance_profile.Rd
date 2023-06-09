@@ -16,6 +16,6 @@ spaces. You can also include any of the following characters: _+=,.@-}
 \description{
 Deletes the specified instance profile. The instance profile must not have an associated role.
 
-See \url{https://paws-r.github.io/docs/iam/delete_instance_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_instance_profile/} for full documentation.
 }
 \keyword{internal}

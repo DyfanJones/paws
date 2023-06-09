@@ -12,6 +12,6 @@ servicecatalog_delete_tag_option(Id)
 \description{
 Deletes the specified TagOption.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/delete_tag_option.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_tag_option/} for full documentation.
 }
 \keyword{internal}

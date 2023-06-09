@@ -23,6 +23,6 @@ configured to use it, set this value to false.}
 \description{
 Deletes an allow list.
 
-See \url{https://paws-r.github.io/docs/macie2/delete_allow_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_allow_list/} for full documentation.
 }
 \keyword{internal}

@@ -47,6 +47,6 @@ parameter, a token is returned in the response. Use that token in the
 \description{
 Gets a list of slots that match the specified criteria.
 
-See \url{https://paws-r.github.io/docs/lexmodelsv2/list_slots.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_slots/} for full documentation.
 }
 \keyword{internal}

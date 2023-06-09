@@ -15,6 +15,6 @@ idempotency of the request.}
 \description{
 Delete logging configuration.
 
-See \url{https://paws-r.github.io/docs/prometheusservice/delete_logging_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_logging_configuration/} for full documentation.
 }
 \keyword{internal}

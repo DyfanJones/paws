@@ -28,6 +28,6 @@ inference schedulers.}
 \description{
 Retrieves a list of all inference schedulers currently available for your account.
 
-See \url{https://paws-r.github.io/docs/lookoutequipment/list_inference_schedulers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_inference_schedulers/} for full documentation.
 }
 \keyword{internal}

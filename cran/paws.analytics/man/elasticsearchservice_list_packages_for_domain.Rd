@@ -22,6 +22,6 @@ page.}
 \description{
 Lists all packages associated with the Amazon ES domain.
 
-See \url{https://paws-r.github.io/docs/elasticsearchservice/list_packages_for_domain.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_packages_for_domain/} for full documentation.
 }
 \keyword{internal}

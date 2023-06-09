@@ -14,6 +14,6 @@ kafkaconnect_delete_connector(connectorArn, currentVersion = NULL)
 \description{
 Deletes the specified connector.
 
-See \url{https://paws-r.github.io/docs/kafkaconnect/delete_connector.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_connector/} for full documentation.
 }
 \keyword{internal}

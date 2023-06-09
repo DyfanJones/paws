@@ -16,6 +16,6 @@ panorama_create_job_for_devices(DeviceIds, DeviceJobConfig = NULL, JobType)
 \description{
 Creates a job to run on a device. A job can update a device's software or reboot it.
 
-See \url{https://paws-r.github.io/docs/panorama/create_job_for_devices.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_job_for_devices/} for full documentation.
 }
 \keyword{internal}

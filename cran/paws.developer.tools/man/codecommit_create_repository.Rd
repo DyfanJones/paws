@@ -34,6 +34,6 @@ on a webpage.}
 \description{
 Creates a new, empty repository.
 
-See \url{https://paws-r.github.io/docs/codecommit/create_repository.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_repository/} for full documentation.
 }
 \keyword{internal}

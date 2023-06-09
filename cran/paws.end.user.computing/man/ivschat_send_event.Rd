@@ -18,6 +18,6 @@ must be an ARN.}
 \description{
 Sends an event to a room. Use this within your application’s business logic to send events to clients of a room; e.g., to notify clients to change the way the chat UI is rendered.
 
-See \url{https://paws-r.github.io/docs/ivschat/send_event.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/send_event/} for full documentation.
 }
 \keyword{internal}

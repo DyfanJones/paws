@@ -60,6 +60,6 @@ different account, the request fails with the HTTP status code
 \description{
 Applies a legal hold configuration to the specified object. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html}{Locking Objects}.
 
-See \url{https://paws-r.github.io/docs/s3/put_object_legal_hold.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_object_legal_hold/} for full documentation.
 }
 \keyword{internal}

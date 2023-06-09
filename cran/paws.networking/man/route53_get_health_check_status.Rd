@@ -20,6 +20,6 @@ status of a calculated health check.}
 \description{
 Gets status of a specified health check.
 
-See \url{https://paws-r.github.io/docs/route53/get_health_check_status.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_health_check_status/} for full documentation.
 }
 \keyword{internal}

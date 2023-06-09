@@ -15,6 +15,6 @@ Services administrator credentials to access the API.}
 \description{
 Permanently deletes the specified document and its associated metadata.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_document.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_document/} for full documentation.
 }
 \keyword{internal}

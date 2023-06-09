@@ -17,6 +17,6 @@ or she automatically will be logged out.}
 \description{
 This action can be used only with Windows stacks.
 
-See \url{https://paws-r.github.io/docs/opsworks/grant_access.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/grant_access/} for full documentation.
 }
 \keyword{internal}

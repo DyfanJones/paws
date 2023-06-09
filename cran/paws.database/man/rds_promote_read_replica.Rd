@@ -52,6 +52,6 @@ Constraints:
 \description{
 Promotes a read replica DB instance to a standalone DB instance.
 
-See \url{https://paws-r.github.io/docs/rds/promote_read_replica.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/promote_read_replica/} for full documentation.
 }
 \keyword{internal}

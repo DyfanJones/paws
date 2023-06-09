@@ -17,6 +17,6 @@ in the \emph{IAM Identity Center OIDC API Reference Guide}.}
 \description{
 Removes the locally stored SSO tokens from the client-side cache and sends an API call to the IAM Identity Center service to invalidate the corresponding server-side IAM Identity Center sign in session.
 
-See \url{https://paws-r.github.io/docs/sso/logout.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/logout/} for full documentation.
 }
 \keyword{internal}

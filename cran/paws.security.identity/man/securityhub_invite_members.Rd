@@ -14,6 +14,6 @@ Security Hub as members.}
 \description{
 Invites other Amazon Web Services accounts to become member accounts for the Security Hub administrator account that the invitation is sent from.
 
-See \url{https://paws-r.github.io/docs/securityhub/invite_members.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/invite_members/} for full documentation.
 }
 \keyword{internal}

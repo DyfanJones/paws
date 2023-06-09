@@ -14,6 +14,6 @@ glue_update_trigger(Name, TriggerUpdate)
 \description{
 Updates a trigger definition.
 
-See \url{https://paws-r.github.io/docs/glue/update_trigger.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_trigger/} for full documentation.
 }
 \keyword{internal}

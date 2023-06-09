@@ -23,6 +23,6 @@ budgets_describe_budget_actions_for_budget(
 \description{
 Describes all of the budget actions for a budget.
 
-See \url{https://paws-r.github.io/docs/budgets/describe_budget_actions_for_budget.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_budget_actions_for_budget/} for full documentation.
 }
 \keyword{internal}

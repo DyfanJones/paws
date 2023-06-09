@@ -30,6 +30,6 @@ index during a request. For more information, see \href{https://docs.aws.amazon.
 \description{
 Lists objects attached to the specified index.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/list_index.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_index/} for full documentation.
 }
 \keyword{internal}

@@ -48,6 +48,6 @@ GENERAL_PURPOSE and GRAPHICS_G4.}
 \description{
 Creates an application.
 
-See \url{https://paws-r.github.io/docs/appstream/create_application.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_application/} for full documentation.
 }
 \keyword{internal}

@@ -15,7 +15,7 @@ NULL
 #' specified key and a value of null. You can tag a trail or event data
 #' store that applies to all Amazon Web Services Regions only from the
 #' Region in which the trail or event data store was created (also known as
-#' its home region).
+#' its home Region).
 #'
 #' @usage
 #' cloudtrail_add_tags(ResourceId, TagsList)
@@ -27,7 +27,7 @@ NULL
 #' `arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail`
 #' 
 #' The format of an event data store ARN is:
-#' `arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE`
+#' `arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE`
 #' 
 #' The format of a channel ARN is:
 #' `arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890`
@@ -227,7 +227,7 @@ cloudtrail_create_channel <- function(Name, Source, Destinations, Tags = NULL) {
 #' @usage
 #' cloudtrail_create_event_data_store(Name, AdvancedEventSelectors,
 #'   MultiRegionEnabled, OrganizationEnabled, RetentionPeriod,
-#'   TerminationProtectionEnabled, TagsList, KmsKeyId)
+#'   TerminationProtectionEnabled, TagsList, KmsKeyId, StartIngestion)
 #'
 #' @param Name &#91;required&#93; The name of the event data store.
 #' @param AdvancedEventSelectors The advanced event selectors to use to select the events for the data
@@ -250,8 +250,8 @@ cloudtrail_create_channel <- function(Name, Source, Destinations, Tags = NULL) {
 #' [Create an integration to log events from outside Amazon Web
 #' Services](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration)
 #' in the CloudTrail User Guide.
-#' @param MultiRegionEnabled Specifies whether the event data store includes events from all regions,
-#' or only from the region in which the event data store is created.
+#' @param MultiRegionEnabled Specifies whether the event data store includes events from all Regions,
+#' or only from the Region in which the event data store is created.
 #' @param OrganizationEnabled Specifies whether an event data store collects events logged for an
 #' organization in Organizations.
 #' @param RetentionPeriod The retention period of the event data store, in days. You can set a
@@ -287,6 +287,8 @@ cloudtrail_create_channel <- function(Name, Source, Destinations, Tags = NULL) {
 #' -   `arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012`
 #' 
 #' -   `12345678-1234-1234-1234-123456789012`
+#' @param StartIngestion Specifies whether the event data store should start ingesting live
+#' events. The default is true.
 #'
 #' @return
 #' A list with the following syntax:
@@ -294,7 +296,7 @@ cloudtrail_create_channel <- function(Name, Source, Destinations, Tags = NULL) {
 #' list(
 #'   EventDataStoreArn = "string",
 #'   Name = "string",
-#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION",
+#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION"|"STARTING_INGESTION"|"STOPPING_INGESTION"|"STOPPED_INGESTION",
 #'   AdvancedEventSelectors = list(
 #'     list(
 #'       Name = "string",
@@ -385,7 +387,8 @@ cloudtrail_create_channel <- function(Name, Source, Destinations, Tags = NULL) {
 #'       Value = "string"
 #'     )
 #'   ),
-#'   KmsKeyId = "string"
+#'   KmsKeyId = "string",
+#'   StartIngestion = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -394,14 +397,14 @@ cloudtrail_create_channel <- function(Name, Source, Destinations, Tags = NULL) {
 #' @rdname cloudtrail_create_event_data_store
 #'
 #' @aliases cloudtrail_create_event_data_store
-cloudtrail_create_event_data_store <- function(Name, AdvancedEventSelectors = NULL, MultiRegionEnabled = NULL, OrganizationEnabled = NULL, RetentionPeriod = NULL, TerminationProtectionEnabled = NULL, TagsList = NULL, KmsKeyId = NULL) {
+cloudtrail_create_event_data_store <- function(Name, AdvancedEventSelectors = NULL, MultiRegionEnabled = NULL, OrganizationEnabled = NULL, RetentionPeriod = NULL, TerminationProtectionEnabled = NULL, TagsList = NULL, KmsKeyId = NULL, StartIngestion = NULL) {
   op <- new_operation(
     name = "CreateEventDataStore",
     http_method = "POST",
     http_path = "/",
     paginator = list()
   )
-  input <- .cloudtrail$create_event_data_store_input(Name = Name, AdvancedEventSelectors = AdvancedEventSelectors, MultiRegionEnabled = MultiRegionEnabled, OrganizationEnabled = OrganizationEnabled, RetentionPeriod = RetentionPeriod, TerminationProtectionEnabled = TerminationProtectionEnabled, TagsList = TagsList, KmsKeyId = KmsKeyId)
+  input <- .cloudtrail$create_event_data_store_input(Name = Name, AdvancedEventSelectors = AdvancedEventSelectors, MultiRegionEnabled = MultiRegionEnabled, OrganizationEnabled = OrganizationEnabled, RetentionPeriod = RetentionPeriod, TerminationProtectionEnabled = TerminationProtectionEnabled, TagsList = TagsList, KmsKeyId = KmsKeyId, StartIngestion = StartIngestion)
   output <- .cloudtrail$create_event_data_store_output()
   config <- get_config()
   svc <- .cloudtrail$service(config)
@@ -450,10 +453,10 @@ cloudtrail_create_event_data_store <- function(Name, AdvancedEventSelectors = NU
 #' log file delivery. The maximum length is 256 characters.
 #' @param IncludeGlobalServiceEvents Specifies whether the trail is publishing events from global services
 #' such as IAM to the log files.
-#' @param IsMultiRegionTrail Specifies whether the trail is created in the current region or in all
-#' regions. The default is false, which creates a trail only in the region
+#' @param IsMultiRegionTrail Specifies whether the trail is created in the current Region or in all
+#' Regions. The default is false, which creates a trail only in the Region
 #' where you are signed in. As a best practice, consider creating trails
-#' that log events in all regions.
+#' that log events in all Regions.
 #' @param EnableLogFileValidation Specifies whether log file integrity validation is enabled. The default
 #' is false.
 #' 
@@ -714,10 +717,10 @@ cloudtrail_delete_resource_policy <- function(ResourceArn) {
 #' Deletes a trail
 #'
 #' @description
-#' Deletes a trail. This operation must be called from the region in which
+#' Deletes a trail. This operation must be called from the Region in which
 #' the trail was created. [`delete_trail`][cloudtrail_delete_trail] cannot
-#' be called on the shadow trails (replicated trails in other regions) of a
-#' trail that is enabled in all regions.
+#' be called on the shadow trails (replicated trails in other Regions) of a
+#' trail that is enabled in all Regions.
 #'
 #' @usage
 #' cloudtrail_delete_trail(Name)
@@ -872,11 +875,11 @@ cloudtrail_describe_query <- function(EventDataStore = NULL, QueryId) {
 .cloudtrail$operations$describe_query <- cloudtrail_describe_query
 
 #' Retrieves settings for one or more trails associated with the current
-#' region for your account
+#' Region for your account
 #'
 #' @description
 #' Retrieves settings for one or more trails associated with the current
-#' region for your account.
+#' Region for your account.
 #'
 #' @usage
 #' cloudtrail_describe_trails(trailNameList, includeShadowTrails)
@@ -887,25 +890,25 @@ cloudtrail_describe_query <- function(EventDataStore = NULL, QueryId) {
 #' `arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail`
 #' 
 #' If an empty list is specified, information for the trail in the current
-#' region is returned.
+#' Region is returned.
 #' 
 #' -   If an empty list is specified and `IncludeShadowTrails` is false,
-#'     then information for all trails in the current region is returned.
+#'     then information for all trails in the current Region is returned.
 #' 
 #' -   If an empty list is specified and IncludeShadowTrails is null or
-#'     true, then information for all trails in the current region and any
-#'     associated shadow trails in other regions is returned.
+#'     true, then information for all trails in the current Region and any
+#'     associated shadow trails in other Regions is returned.
 #' 
 #' If one or more trail names are specified, information is returned only
 #' if the names match the names of trails belonging only to the current
-#' region and current account. To return information about a trail in
-#' another region, you must specify its trail ARN.
+#' Region and current account. To return information about a trail in
+#' another Region, you must specify its trail ARN.
 #' @param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow
-#' trail is the replication in a region of a trail that was created in a
-#' different region, or in the case of an organization trail, the
+#' trail is the replication in a Region of a trail that was created in a
+#' different Region, or in the case of an organization trail, the
 #' replication of an organization trail in member accounts. If you do not
 #' include shadow trails, organization trails in a member account and
-#' region replication trails will not be returned. The default is true.
+#' Region replication trails will not be returned. The default is true.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1082,7 +1085,7 @@ cloudtrail_get_channel <- function(Channel) {
 #' list(
 #'   EventDataStoreArn = "string",
 #'   Name = "string",
-#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION",
+#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION"|"STARTING_INGESTION"|"STOPPING_INGESTION"|"STOPPED_INGESTION",
 #'   AdvancedEventSelectors = list(
 #'     list(
 #'       Name = "string",
@@ -1636,15 +1639,15 @@ cloudtrail_get_trail <- function(Name) {
 #' Returns a JSON-formatted list of information about the specified trail.
 #' Fields include information on delivery errors, Amazon SNS and Amazon S3
 #' errors, and start and stop logging times for each trail. This operation
-#' returns trail status from a single region. To return trail status from
-#' all regions, you must call the operation on each region.
+#' returns trail status from a single Region. To return trail status from
+#' all Regions, you must call the operation on each Region.
 #'
 #' @usage
 #' cloudtrail_get_trail_status(Name)
 #'
 #' @param Name &#91;required&#93; Specifies the name or the CloudTrail ARN of the trail for which you are
 #' requesting status. To get the status of a shadow trail (a replication of
-#' the trail in another region), you must specify its ARN. The following is
+#' the trail in another Region), you must specify its ARN. The following is
 #' the format of a trail ARN.
 #' 
 #' `arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail`
@@ -1774,11 +1777,11 @@ cloudtrail_list_channels <- function(MaxResults = NULL, NextToken = NULL) {
 .cloudtrail$operations$list_channels <- cloudtrail_list_channels
 
 #' Returns information about all event data stores in the account, in the
-#' current region
+#' current Region
 #'
 #' @description
 #' Returns information about all event data stores in the account, in the
-#' current region.
+#' current Region.
 #'
 #' @usage
 #' cloudtrail_list_event_data_stores(NextToken, MaxResults)
@@ -1795,7 +1798,7 @@ cloudtrail_list_channels <- function(MaxResults = NULL, NextToken = NULL) {
 #'       EventDataStoreArn = "string",
 #'       Name = "string",
 #'       TerminationProtectionEnabled = TRUE|FALSE,
-#'       Status = "CREATED"|"ENABLED"|"PENDING_DELETION",
+#'       Status = "CREATED"|"ENABLED"|"PENDING_DELETION"|"STARTING_INGESTION"|"STOPPING_INGESTION"|"STOPPED_INGESTION",
 #'       AdvancedEventSelectors = list(
 #'         list(
 #'           Name = "string",
@@ -2011,10 +2014,10 @@ cloudtrail_list_imports <- function(MaxResults = NULL, Destination = NULL, Impor
 #' validate digest files that were signed with its corresponding private
 #' key.
 #' 
-#' CloudTrail uses different private and public key pairs per region. Each
-#' digest file is signed with a private key unique to its region. When you
-#' validate a digest file from a specific region, you must look in the same
-#' region for its corresponding public key.
+#' CloudTrail uses different private and public key pairs per Region. Each
+#' digest file is signed with a private key unique to its Region. When you
+#' validate a digest file from a specific Region, you must look in the same
+#' Region for its corresponding public key.
 #'
 #' @usage
 #' cloudtrail_list_public_keys(StartTime, EndTime, NextToken)
@@ -2165,18 +2168,27 @@ cloudtrail_list_queries <- function(EventDataStore, NextToken = NULL, MaxResults
 }
 .cloudtrail$operations$list_queries <- cloudtrail_list_queries
 
-#' Lists the tags for the trail, event data store, or channel in the
-#' current region
+#' Lists the tags for the specified trails, event data stores, or channels
+#' in the current Region
 #'
 #' @description
-#' Lists the tags for the trail, event data store, or channel in the
-#' current region.
+#' Lists the tags for the specified trails, event data stores, or channels
+#' in the current Region.
 #'
 #' @usage
 #' cloudtrail_list_tags(ResourceIdList, NextToken)
 #'
 #' @param ResourceIdList &#91;required&#93; Specifies a list of trail, event data store, or channel ARNs whose tags
 #' will be listed. The list has a limit of 20 ARNs.
+#' 
+#' Example trail ARN format:
+#' `arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail`
+#' 
+#' Example event data store ARN format:
+#' `arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE`
+#' 
+#' Example channel ARN format:
+#' `arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890`
 #' @param NextToken Reserved for future use.
 #'
 #' @return
@@ -2297,7 +2309,7 @@ cloudtrail_list_trails <- function(NextToken = NULL) {
 #' or [CloudTrail Insights
 #' events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events)
 #' that are captured by CloudTrail. You can look up events that occurred in
-#' a region within the last 90 days. Lookup supports the following
+#' a Region within the last 90 days. Lookup supports the following
 #' attributes for management events:
 #' 
 #' -   Amazon Web Services access key
@@ -2329,7 +2341,7 @@ cloudtrail_list_trails <- function(NextToken = NULL) {
 #' you can use to get the next page of results.
 #' 
 #' The rate of lookup requests is limited to two per second, per account,
-#' per region. If this limit is exceeded, a throttling error occurs.
+#' per Region. If this limit is exceeded, a throttling error occurs.
 #'
 #' @usage
 #' cloudtrail_lookup_events(LookupAttributes, StartTime, EndTime,
@@ -2464,7 +2476,7 @@ cloudtrail_lookup_events <- function(LookupAttributes = NULL, StartTime = NULL, 
 #'     event selector. The trail doesn't log the event.
 #' 
 #' The [`put_event_selectors`][cloudtrail_put_event_selectors] operation
-#' must be called from the region in which the trail was created;
+#' must be called from the Region in which the trail was created;
 #' otherwise, an `InvalidHomeRegionException` exception is thrown.
 #' 
 #' You can configure up to five event selectors for each trail. For more
@@ -2861,7 +2873,7 @@ cloudtrail_register_organization_delegated_admin <- function(MemberAccountId) {
 #' `arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail`
 #' 
 #' Example event data store ARN format:
-#' `arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE`
+#' `arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE`
 #' 
 #' Example channel ARN format:
 #' `arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890`
@@ -2927,7 +2939,7 @@ cloudtrail_remove_tags <- function(ResourceId, TagsList) {
 #' list(
 #'   EventDataStoreArn = "string",
 #'   Name = "string",
-#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION",
+#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION"|"STARTING_INGESTION"|"STOPPING_INGESTION"|"STOPPED_INGESTION",
 #'   AdvancedEventSelectors = list(
 #'     list(
 #'       Name = "string",
@@ -2998,6 +3010,53 @@ cloudtrail_restore_event_data_store <- function(EventDataStore) {
   return(response)
 }
 .cloudtrail$operations$restore_event_data_store <- cloudtrail_restore_event_data_store
+
+#' Starts the ingestion of live events on an event data store specified as
+#' either an ARN or the ID portion of the ARN
+#'
+#' @description
+#' Starts the ingestion of live events on an event data store specified as
+#' either an ARN or the ID portion of the ARN. To start ingestion, the
+#' event data store `Status` must be `STOPPED_INGESTION` and the
+#' `eventCategory` must be `Management`, `Data`, or `ConfigurationItem`.
+#'
+#' @usage
+#' cloudtrail_start_event_data_store_ingestion(EventDataStore)
+#'
+#' @param EventDataStore &#91;required&#93; The ARN (or ID suffix of the ARN) of the event data store for which you
+#' want to start ingestion.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$start_event_data_store_ingestion(
+#'   EventDataStore = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname cloudtrail_start_event_data_store_ingestion
+#'
+#' @aliases cloudtrail_start_event_data_store_ingestion
+cloudtrail_start_event_data_store_ingestion <- function(EventDataStore) {
+  op <- new_operation(
+    name = "StartEventDataStoreIngestion",
+    http_method = "POST",
+    http_path = "/",
+    paginator = list()
+  )
+  input <- .cloudtrail$start_event_data_store_ingestion_input(EventDataStore = EventDataStore)
+  output <- .cloudtrail$start_event_data_store_ingestion_output()
+  config <- get_config()
+  svc <- .cloudtrail$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.cloudtrail$operations$start_event_data_store_ingestion <- cloudtrail_start_event_data_store_ingestion
 
 #' Starts an import of logged trail events from a source S3 bucket to a
 #' destination event data store
@@ -3129,10 +3188,10 @@ cloudtrail_start_import <- function(Destinations = NULL, ImportSource = NULL, St
 #'
 #' @description
 #' Starts the recording of Amazon Web Services API calls and log file
-#' delivery for a trail. For a trail that is enabled in all regions, this
-#' operation must be called from the region in which the trail was created.
+#' delivery for a trail. For a trail that is enabled in all Regions, this
+#' operation must be called from the Region in which the trail was created.
 #' This operation cannot be called on the shadow trails (replicated trails
-#' in other regions) of a trail that is enabled in all regions.
+#' in other Regions) of a trail that is enabled in all Regions.
 #'
 #' @usage
 #' cloudtrail_start_logging(Name)
@@ -3227,6 +3286,53 @@ cloudtrail_start_query <- function(QueryStatement, DeliveryS3Uri = NULL) {
 }
 .cloudtrail$operations$start_query <- cloudtrail_start_query
 
+#' Stops the ingestion of live events on an event data store specified as
+#' either an ARN or the ID portion of the ARN
+#'
+#' @description
+#' Stops the ingestion of live events on an event data store specified as
+#' either an ARN or the ID portion of the ARN. To stop ingestion, the event
+#' data store `Status` must be `ENABLED` and the `eventCategory` must be
+#' `Management`, `Data`, or `ConfigurationItem`.
+#'
+#' @usage
+#' cloudtrail_stop_event_data_store_ingestion(EventDataStore)
+#'
+#' @param EventDataStore &#91;required&#93; The ARN (or ID suffix of the ARN) of the event data store for which you
+#' want to stop ingestion.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$stop_event_data_store_ingestion(
+#'   EventDataStore = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname cloudtrail_stop_event_data_store_ingestion
+#'
+#' @aliases cloudtrail_stop_event_data_store_ingestion
+cloudtrail_stop_event_data_store_ingestion <- function(EventDataStore) {
+  op <- new_operation(
+    name = "StopEventDataStoreIngestion",
+    http_method = "POST",
+    http_path = "/",
+    paginator = list()
+  )
+  input <- .cloudtrail$stop_event_data_store_ingestion_input(EventDataStore = EventDataStore)
+  output <- .cloudtrail$stop_event_data_store_ingestion_output()
+  config <- get_config()
+  svc <- .cloudtrail$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.cloudtrail$operations$stop_event_data_store_ingestion <- cloudtrail_stop_event_data_store_ingestion
+
 #' Stops a specified import
 #'
 #' @description
@@ -3312,10 +3418,10 @@ cloudtrail_stop_import <- function(ImportId) {
 #' delivery for the specified trail. Under most circumstances, there is no
 #' need to use this action. You can update a trail without stopping it
 #' first. This action is the only way to stop recording. For a trail
-#' enabled in all regions, this operation must be called from the region in
+#' enabled in all Regions, this operation must be called from the Region in
 #' which the trail was created, or an `InvalidHomeRegionException` will
 #' occur. This operation cannot be called on the shadow trails (replicated
-#' trails in other regions) of a trail enabled in all regions.
+#' trails in other Regions) of a trail enabled in all Regions.
 #'
 #' @usage
 #' cloudtrail_stop_logging(Name)
@@ -3452,8 +3558,8 @@ cloudtrail_update_channel <- function(Channel, Destinations = NULL, Name = NULL)
 #' @param AdvancedEventSelectors The advanced event selectors used to select events for the event data
 #' store. You can configure up to five advanced event selectors for each
 #' event data store.
-#' @param MultiRegionEnabled Specifies whether an event data store collects events from all regions,
-#' or only from the region in which it was created.
+#' @param MultiRegionEnabled Specifies whether an event data store collects events from all Regions,
+#' or only from the Region in which it was created.
 #' @param OrganizationEnabled Specifies whether an event data store collects events logged for an
 #' organization in Organizations.
 #' @param RetentionPeriod The retention period, in days.
@@ -3493,7 +3599,7 @@ cloudtrail_update_channel <- function(Channel, Destinations = NULL, Name = NULL)
 #' list(
 #'   EventDataStoreArn = "string",
 #'   Name = "string",
-#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION",
+#'   Status = "CREATED"|"ENABLED"|"PENDING_DELETION"|"STARTING_INGESTION"|"STOPPING_INGESTION"|"STOPPED_INGESTION",
 #'   AdvancedEventSelectors = list(
 #'     list(
 #'       Name = "string",
@@ -3608,7 +3714,7 @@ cloudtrail_update_event_data_store <- function(EventDataStore, Name = NULL, Adva
 #' CloudTrail service. Use this action to designate an existing bucket for
 #' log delivery. If the existing bucket has previously been a target for
 #' CloudTrail log files, an IAM policy exists for the bucket.
-#' [`update_trail`][cloudtrail_update_trail] must be called from the region
+#' [`update_trail`][cloudtrail_update_trail] must be called from the Region
 #' in which the trail was created; otherwise, an
 #' `InvalidHomeRegionException` is thrown.
 #'
@@ -3648,14 +3754,14 @@ cloudtrail_update_event_data_store <- function(EventDataStore, Name = NULL, Adva
 #' log file delivery. The maximum length is 256 characters.
 #' @param IncludeGlobalServiceEvents Specifies whether the trail is publishing events from global services
 #' such as IAM to the log files.
-#' @param IsMultiRegionTrail Specifies whether the trail applies only to the current region or to all
-#' regions. The default is false. If the trail exists only in the current
-#' region and this value is set to true, shadow trails (replications of the
-#' trail) will be created in the other regions. If the trail exists in all
-#' regions and this value is set to false, the trail will remain in the
-#' region where it was created, and its shadow trails in other regions will
+#' @param IsMultiRegionTrail Specifies whether the trail applies only to the current Region or to all
+#' Regions. The default is false. If the trail exists only in the current
+#' Region and this value is set to true, shadow trails (replications of the
+#' trail) will be created in the other Regions. If the trail exists in all
+#' Regions and this value is set to false, the trail will remain in the
+#' Region where it was created, and its shadow trails in other Regions will
 #' be deleted. As a best practice, consider using trails that log events in
-#' all regions.
+#' all Regions.
 #' @param EnableLogFileValidation Specifies whether log file validation is enabled. The default is false.
 #' 
 #' When you disable log file integrity validation, the chain of digest

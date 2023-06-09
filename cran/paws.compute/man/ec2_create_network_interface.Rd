@@ -111,6 +111,6 @@ idempotency of the request. For more information, see \href{https://docs.aws.ama
 \description{
 Creates a network interface in the specified subnet.
 
-See \url{https://paws-r.github.io/docs/ec2/create_network_interface.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_network_interface/} for full documentation.
 }
 \keyword{internal}

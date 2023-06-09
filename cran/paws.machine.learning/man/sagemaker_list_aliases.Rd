@@ -29,6 +29,6 @@ the next set of aliases.}
 \description{
 Lists the aliases of a specified image or image version.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_aliases.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_aliases/} for full documentation.
 }
 \keyword{internal}

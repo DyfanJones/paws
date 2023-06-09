@@ -14,6 +14,6 @@ cloudwatchlogs_put_retention_policy(logGroupName, retentionInDays)
 \description{
 Sets the retention of the specified log group. With a retention policy, you can configure the number of days for which to retain log events in the specified log group.
 
-See \url{https://paws-r.github.io/docs/cloudwatchlogs/put_retention_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_retention_policy/} for full documentation.
 }
 \keyword{internal}

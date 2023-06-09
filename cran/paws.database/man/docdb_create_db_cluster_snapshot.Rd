@@ -38,6 +38,6 @@ Example: \code{my-cluster}}
 \description{
 Creates a snapshot of a cluster.
 
-See \url{https://paws-r.github.io/docs/docdb/create_db_cluster_snapshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_db_cluster_snapshot/} for full documentation.
 }
 \keyword{internal}

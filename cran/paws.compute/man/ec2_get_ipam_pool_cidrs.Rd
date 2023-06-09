@@ -30,6 +30,6 @@ filtering, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-
 \description{
 Get the CIDRs provisioned to an IPAM pool.
 
-See \url{https://paws-r.github.io/docs/ec2/get_ipam_pool_cidrs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_ipam_pool_cidrs/} for full documentation.
 }
 \keyword{internal}

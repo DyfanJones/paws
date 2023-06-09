@@ -16,6 +16,6 @@ the specified query was run.}
 \description{
 Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status. You must specify an ARN for \code{EventDataStore}, and a value for \code{QueryID}.
 
-See \url{https://paws-r.github.io/docs/cloudtrail/describe_query.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_query/} for full documentation.
 }
 \keyword{internal}

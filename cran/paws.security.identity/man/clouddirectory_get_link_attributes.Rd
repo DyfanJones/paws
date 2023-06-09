@@ -25,6 +25,6 @@ link.}
 \description{
 Retrieves attributes that are associated with a typed link.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/get_link_attributes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_link_attributes/} for full documentation.
 }
 \keyword{internal}

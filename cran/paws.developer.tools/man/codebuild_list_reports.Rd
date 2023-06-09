@@ -39,6 +39,6 @@ The default value is 100.}
 \description{
 Returns a list of ARNs for the reports in the current Amazon Web Services account.
 
-See \url{https://paws-r.github.io/docs/codebuild/list_reports.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_reports/} for full documentation.
 }
 \keyword{internal}

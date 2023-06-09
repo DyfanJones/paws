@@ -24,6 +24,6 @@ results.}
 \description{
 List all assets (\code{DASHBOARD}, \code{ANALYSIS}, and \code{DATASET}) in a folder.
 
-See \url{https://paws-r.github.io/docs/quicksight/list_folder_members.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_folder_members/} for full documentation.
 }
 \keyword{internal}

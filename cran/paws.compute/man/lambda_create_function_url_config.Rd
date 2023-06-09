@@ -53,6 +53,6 @@ you can \href{https://docs.aws.amazon.com/servicequotas/latest/userguide/request
 \description{
 Creates a Lambda function URL with the specified configuration parameters. A function URL is a dedicated HTTP(S) endpoint that you can use to invoke your function.
 
-See \url{https://paws-r.github.io/docs/lambda/create_function_url_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_function_url_config/} for full documentation.
 }
 \keyword{internal}

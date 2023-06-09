@@ -29,6 +29,6 @@ results, use null.}
 \description{
 Lists all \code{PrincipalARN}s and corresponding \code{PrincipalType}s associated with the specified portfolio.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/list_principals_for_portfolio.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_principals_for_portfolio/} for full documentation.
 }
 \keyword{internal}

@@ -21,6 +21,6 @@ apigateway_update_gateway_response(
 \description{
 Updates a GatewayResponse of a specified response type on the given RestApi.
 
-See \url{https://paws-r.github.io/docs/apigateway/update_gateway_response.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_gateway_response/} for full documentation.
 }
 \keyword{internal}

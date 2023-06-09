@@ -16,6 +16,6 @@ operation to get this value.}
 \description{
 Deletes the specified application. Kinesis Data Analytics halts application execution and deletes the application.
 
-See \url{https://paws-r.github.io/docs/kinesisanalyticsv2/delete_application.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_application/} for full documentation.
 }
 \keyword{internal}

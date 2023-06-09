@@ -15,6 +15,6 @@ is \code{1}.}
 \description{
 Deletes the specified scaling plan.
 
-See \url{https://paws-r.github.io/docs/autoscalingplans/delete_scaling_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_scaling_plan/} for full documentation.
 }
 \keyword{internal}

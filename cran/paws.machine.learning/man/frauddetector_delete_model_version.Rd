@@ -16,6 +16,6 @@ frauddetector_delete_model_version(modelId, modelType, modelVersionNumber)
 \description{
 Deletes a model version.
 
-See \url{https://paws-r.github.io/docs/frauddetector/delete_model_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_model_version/} for full documentation.
 }
 \keyword{internal}

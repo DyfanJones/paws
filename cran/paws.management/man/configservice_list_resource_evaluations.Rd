@@ -23,6 +23,6 @@ the next page of results in a paginated response.}
 \description{
 Returns a list of proactive resource evaluations.
 
-See \url{https://paws-r.github.io/docs/configservice/list_resource_evaluations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_resource_evaluations/} for full documentation.
 }
 \keyword{internal}

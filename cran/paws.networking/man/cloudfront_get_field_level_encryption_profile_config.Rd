@@ -13,6 +13,6 @@ information.}
 \description{
 Get the field-level encryption profile configuration information.
 
-See \url{https://paws-r.github.io/docs/cloudfront/get_field_level_encryption_profile_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_field_level_encryption_profile_config/} for full documentation.
 }
 \keyword{internal}

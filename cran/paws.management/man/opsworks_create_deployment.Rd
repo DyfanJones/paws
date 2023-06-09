@@ -41,6 +41,6 @@ and \href{https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-
 \description{
 Runs deployment or stack commands. For more information, see \href{https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html}{Deploying Apps} and \href{https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html}{Run Stack Commands}.
 
-See \url{https://paws-r.github.io/docs/opsworks/create_deployment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_deployment/} for full documentation.
 }
 \keyword{internal}

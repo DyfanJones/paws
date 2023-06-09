@@ -12,6 +12,6 @@ finspace_get_environment(environmentId)
 \description{
 Returns the FinSpace environment object.
 
-See \url{https://paws-r.github.io/docs/finspace/get_environment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_environment/} for full documentation.
 }
 \keyword{internal}

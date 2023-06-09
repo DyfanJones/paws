@@ -13,6 +13,6 @@ auto-termination policy will be removed.}
 \description{
 Removes an auto-termination policy from an Amazon EMR cluster.
 
-See \url{https://paws-r.github.io/docs/emr/remove_auto_termination_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/remove_auto_termination_policy/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ sfn_describe_activity(activityArn)
 \description{
 Describes an activity.
 
-See \url{https://paws-r.github.io/docs/sfn/describe_activity.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_activity/} for full documentation.
 }
 \keyword{internal}

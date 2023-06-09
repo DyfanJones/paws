@@ -15,6 +15,6 @@ clusters.}
 \description{
 Deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters. You cannot delete the default cache parameter groups in your account.
 
-See \url{https://paws-r.github.io/docs/elasticache/delete_cache_parameter_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_cache_parameter_group/} for full documentation.
 }
 \keyword{internal}

@@ -28,6 +28,6 @@ response.}
 \description{
 Lists and describes insights for the specified insight ARNs.
 
-See \url{https://paws-r.github.io/docs/securityhub/get_insights.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_insights/} for full documentation.
 }
 \keyword{internal}

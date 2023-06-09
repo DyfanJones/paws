@@ -17,6 +17,6 @@ days after the experiment starts.}
 \description{
 Starts an existing experiment. To create an experiment, use \code{\link[=cloudwatchevidently_create_experiment]{create_experiment}}.
 
-See \url{https://paws-r.github.io/docs/cloudwatchevidently/start_experiment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_experiment/} for full documentation.
 }
 \keyword{internal}

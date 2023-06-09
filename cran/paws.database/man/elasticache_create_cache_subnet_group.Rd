@@ -30,6 +30,6 @@ A tag key must be accompanied by a tag value, although null is accepted.}
 \description{
 Creates a new cache subnet group.
 
-See \url{https://paws-r.github.io/docs/elasticache/create_cache_subnet_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_cache_subnet_group/} for full documentation.
 }
 \keyword{internal}

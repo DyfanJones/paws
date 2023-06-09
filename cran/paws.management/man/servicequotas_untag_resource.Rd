@@ -20,6 +20,6 @@ operation.}
 \description{
 Removes tags from the specified applied quota. You can specify one or more tags to remove.
 
-See \url{https://paws-r.github.io/docs/servicequotas/untag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_resource/} for full documentation.
 }
 \keyword{internal}

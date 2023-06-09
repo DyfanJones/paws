@@ -27,6 +27,6 @@ release.}
 \description{
 Release an allocation within an IPAM pool. You can only use this action to release manual allocations. To remove an allocation for a resource without deleting the resource, set its monitored state to false using \code{\link[=ec2_modify_ipam_resource_cidr]{modify_ipam_resource_cidr}}. For more information, see \href{https://docs.aws.amazon.com/vpc/latest/ipam/}{Release an allocation} in the \emph{Amazon VPC IPAM User Guide}.
 
-See \url{https://paws-r.github.io/docs/ec2/release_ipam_pool_allocation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/release_ipam_pool_allocation/} for full documentation.
 }
 \keyword{internal}

@@ -53,6 +53,6 @@ either or both of these tag values associated with them.}
 \description{
 Returns a list of snapshot copy grants owned by the Amazon Web Services account in the destination region.
 
-See \url{https://paws-r.github.io/docs/redshift/describe_snapshot_copy_grants.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_snapshot_copy_grants/} for full documentation.
 }
 \keyword{internal}

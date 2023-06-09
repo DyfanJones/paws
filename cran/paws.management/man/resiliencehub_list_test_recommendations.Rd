@@ -26,6 +26,6 @@ in the response so that the remaining results can be retrieved.}
 \description{
 Lists the test recommendations for the Resilience Hub application.
 
-See \url{https://paws-r.github.io/docs/resiliencehub/list_test_recommendations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_test_recommendations/} for full documentation.
 }
 \keyword{internal}

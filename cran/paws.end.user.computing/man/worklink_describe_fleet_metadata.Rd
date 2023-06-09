@@ -13,6 +13,6 @@ worklink_describe_fleet_metadata(FleetArn)
 \description{
 Provides basic information for the specified fleet, excluding identity provider, networking, and device configuration details.
 
-See \url{https://paws-r.github.io/docs/worklink/describe_fleet_metadata.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_fleet_metadata/} for full documentation.
 }
 \keyword{internal}

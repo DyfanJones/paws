@@ -48,6 +48,6 @@ must be an IAM role within your FinSpace account.}
 \description{
 Modifies the details of the specified user account. You cannot update the \code{userId} for a user.
 
-See \url{https://paws-r.github.io/docs/finspacedata/update_user.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_user/} for full documentation.
 }
 \keyword{internal}

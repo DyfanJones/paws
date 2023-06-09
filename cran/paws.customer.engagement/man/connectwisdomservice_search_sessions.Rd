@@ -26,6 +26,6 @@ results.}
 \description{
 Searches for sessions.
 
-See \url{https://paws-r.github.io/docs/connectwisdomservice/search_sessions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/search_sessions/} for full documentation.
 }
 \keyword{internal}

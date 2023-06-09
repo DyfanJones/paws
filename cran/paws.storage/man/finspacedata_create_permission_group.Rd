@@ -46,6 +46,6 @@ credentials.
 \description{
 Creates a group of permissions for various actions that a user can perform in FinSpace.
 
-See \url{https://paws-r.github.io/docs/finspacedata/create_permission_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_permission_group/} for full documentation.
 }
 \keyword{internal}

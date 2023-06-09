@@ -30,6 +30,6 @@ or more checks to be validated on a DataBrew dataset.}
 \description{
 Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset.
 
-See \url{https://paws-r.github.io/docs/gluedatabrew/create_ruleset.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_ruleset/} for full documentation.
 }
 \keyword{internal}

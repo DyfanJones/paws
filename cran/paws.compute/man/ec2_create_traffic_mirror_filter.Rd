@@ -27,6 +27,6 @@ idempotency of the request. For more information, see \href{https://docs.aws.ama
 \description{
 Creates a Traffic Mirror filter.
 
-See \url{https://paws-r.github.io/docs/ec2/create_traffic_mirror_filter.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_traffic_mirror_filter/} for full documentation.
 }
 \keyword{internal}

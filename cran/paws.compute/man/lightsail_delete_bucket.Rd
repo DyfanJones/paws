@@ -32,6 +32,6 @@ issued access keys.}
 \description{
 Deletes a Amazon Lightsail bucket.
 
-See \url{https://paws-r.github.io/docs/lightsail/delete_bucket.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_bucket/} for full documentation.
 }
 \keyword{internal}

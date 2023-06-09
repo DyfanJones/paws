@@ -15,6 +15,6 @@ partial ARN. See \href{https://docs.aws.amazon.com/secretsmanager/latest/usergui
 \description{
 Retrieves the details of a secret. It does not include the encrypted secret value. Secrets Manager only returns fields that have a value in the response.
 
-See \url{https://paws-r.github.io/docs/secretsmanager/describe_secret.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_secret/} for full documentation.
 }
 \keyword{internal}

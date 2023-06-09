@@ -24,6 +24,6 @@ values are: EMAIL, PUSH, SMS, and VOICE.}
 \description{
 Changes the status of a specific version of a message template to \emph{active}.
 
-See \url{https://paws-r.github.io/docs/pinpoint/update_template_active_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_template_active_version/} for full documentation.
 }
 \keyword{internal}

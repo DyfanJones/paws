@@ -13,6 +13,6 @@ query.}
 \description{
 Gets the user attributes and metadata for a user.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/get_user.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_user/} for full documentation.
 }
 \keyword{internal}

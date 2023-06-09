@@ -13,6 +13,6 @@ docdb_describe_db_cluster_snapshot_attributes(DBClusterSnapshotIdentifier)
 \description{
 Returns a list of cluster snapshot attribute names and values for a manual DB cluster snapshot.
 
-See \url{https://paws-r.github.io/docs/docdb/describe_db_cluster_snapshot_attributes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_db_cluster_snapshot_attributes/} for full documentation.
 }
 \keyword{internal}

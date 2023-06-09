@@ -26,6 +26,6 @@ results.}
 \description{
 Searches the subfolders in a folder.
 
-See \url{https://paws-r.github.io/docs/quicksight/search_folders.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/search_folders/} for full documentation.
 }
 \keyword{internal}

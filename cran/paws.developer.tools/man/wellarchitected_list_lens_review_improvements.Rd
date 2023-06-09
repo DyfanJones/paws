@@ -29,6 +29,6 @@ wellarchitected_list_lens_review_improvements(
 \description{
 List lens review improvements.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/list_lens_review_improvements.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_lens_review_improvements/} for full documentation.
 }
 \keyword{internal}

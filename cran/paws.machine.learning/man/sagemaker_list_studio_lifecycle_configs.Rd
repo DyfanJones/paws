@@ -51,6 +51,6 @@ specified time.}
 \description{
 Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_studio_lifecycle_configs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_studio_lifecycle_configs/} for full documentation.
 }
 \keyword{internal}

@@ -23,6 +23,6 @@ faces.}
 \description{
 Gets face detection results for a Amazon Rekognition Video analysis started by \code{\link[=rekognition_start_face_detection]{start_face_detection}}.
 
-See \url{https://paws-r.github.io/docs/rekognition/get_face_detection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_face_detection/} for full documentation.
 }
 \keyword{internal}

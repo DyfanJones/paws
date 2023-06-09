@@ -45,6 +45,6 @@ time.}
 \description{
 Gets a list of past alerts in a model monitoring schedule.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_monitoring_alert_history.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_monitoring_alert_history/} for full documentation.
 }
 \keyword{internal}

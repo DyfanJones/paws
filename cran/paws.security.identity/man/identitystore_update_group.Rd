@@ -18,6 +18,6 @@ These operations might add, replace, or remove an attribute.}
 \description{
 For the specified group in the specified identity store, updates the group metadata and attributes.
 
-See \url{https://paws-r.github.io/docs/identitystore/update_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_group/} for full documentation.
 }
 \keyword{internal}

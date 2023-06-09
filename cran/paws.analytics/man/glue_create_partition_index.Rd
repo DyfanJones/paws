@@ -26,6 +26,6 @@ existing table.}
 \description{
 Creates a specified partition index in an existing table.
 
-See \url{https://paws-r.github.io/docs/glue/create_partition_index.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_partition_index/} for full documentation.
 }
 \keyword{internal}

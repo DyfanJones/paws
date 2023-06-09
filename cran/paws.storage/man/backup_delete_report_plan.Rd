@@ -12,6 +12,6 @@ backup_delete_report_plan(ReportPlanName)
 \description{
 Deletes the report plan specified by a report plan name.
 
-See \url{https://paws-r.github.io/docs/backup/delete_report_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_report_plan/} for full documentation.
 }
 \keyword{internal}

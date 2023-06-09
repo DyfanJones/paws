@@ -12,6 +12,6 @@ fms_get_policy(PolicyId)
 \description{
 Returns information about the specified Firewall Manager policy.
 
-See \url{https://paws-r.github.io/docs/fms/get_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_policy/} for full documentation.
 }
 \keyword{internal}

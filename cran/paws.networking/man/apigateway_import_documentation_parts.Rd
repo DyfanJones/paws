@@ -28,6 +28,6 @@ import from an OpenAPI file, this is a JSON object.}
 \description{
 Imports documentation parts
 
-See \url{https://paws-r.github.io/docs/apigateway/import_documentation_parts.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/import_documentation_parts/} for full documentation.
 }
 \keyword{internal}

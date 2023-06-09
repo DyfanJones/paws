@@ -12,6 +12,6 @@ sagemaker_describe_pipeline(PipelineName)
 \description{
 Describes the details of a pipeline.
 
-See \url{https://paws-r.github.io/docs/sagemaker/describe_pipeline.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_pipeline/} for full documentation.
 }
 \keyword{internal}

@@ -17,6 +17,6 @@ attributes you want to verify.}
 \description{
 Verifies the specified user attributes in the user pool.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/verify_user_attribute.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/verify_user_attribute/} for full documentation.
 }
 \keyword{internal}

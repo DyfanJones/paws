@@ -29,6 +29,6 @@ Default: \code{1}}
 \description{
 Purchases a reserved DB instance offering.
 
-See \url{https://paws-r.github.io/docs/rds/purchase_reserved_db_instances_offering.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/purchase_reserved_db_instances_offering/} for full documentation.
 }
 \keyword{internal}

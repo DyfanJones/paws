@@ -15,6 +15,6 @@ information about.}
 \description{
 Gets information about a specific traffic policy version.
 
-See \url{https://paws-r.github.io/docs/route53/get_traffic_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_traffic_policy/} for full documentation.
 }
 \keyword{internal}

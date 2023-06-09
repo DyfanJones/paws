@@ -19,6 +19,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway to one VPC at a time.
 
-See \url{https://paws-r.github.io/docs/ec2/attach_vpn_gateway.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/attach_vpn_gateway/} for full documentation.
 }
 \keyword{internal}

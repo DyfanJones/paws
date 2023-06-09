@@ -17,6 +17,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Deletes the specified Traffic Mirror filter.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_traffic_mirror_filter.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_traffic_mirror_filter/} for full documentation.
 }
 \keyword{internal}

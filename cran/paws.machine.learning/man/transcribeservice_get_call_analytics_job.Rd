@@ -13,6 +13,6 @@ are case sensitive.}
 \description{
 Provides information about the specified Call Analytics job.
 
-See \url{https://paws-r.github.io/docs/transcribeservice/get_call_analytics_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_call_analytics_job/} for full documentation.
 }
 \keyword{internal}

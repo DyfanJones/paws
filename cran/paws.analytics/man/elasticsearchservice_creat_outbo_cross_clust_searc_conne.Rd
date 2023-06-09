@@ -23,6 +23,6 @@ this connection.}
 \description{
 Creates a new cross-cluster search connection from a source domain to a destination domain.
 
-See \url{https://paws-r.github.io/docs/elasticsearchservice/create_outbound_cross_cluster_search_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_outbound_cross_cluster_search_connection/} for full documentation.
 }
 \keyword{internal}

@@ -23,6 +23,6 @@ licensemanager_list_license_manager_report_generators(
 \description{
 Lists the report generators for your account.
 
-See \url{https://paws-r.github.io/docs/licensemanager/list_license_manager_report_generators.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_license_manager_report_generators/} for full documentation.
 }
 \keyword{internal}

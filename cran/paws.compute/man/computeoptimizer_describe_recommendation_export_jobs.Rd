@@ -36,6 +36,6 @@ returned \code{nextToken} value.}
 \description{
 Describes recommendation export jobs created in the last seven days.
 
-See \url{https://paws-r.github.io/docs/computeoptimizer/describe_recommendation_export_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_recommendation_export_jobs/} for full documentation.
 }
 \keyword{internal}

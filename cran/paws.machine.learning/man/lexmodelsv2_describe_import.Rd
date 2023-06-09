@@ -12,6 +12,6 @@ lexmodelsv2_describe_import(importId)
 \description{
 Gets information about a specific import.
 
-See \url{https://paws-r.github.io/docs/lexmodelsv2/describe_import.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_import/} for full documentation.
 }
 \keyword{internal}

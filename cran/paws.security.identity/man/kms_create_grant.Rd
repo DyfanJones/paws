@@ -128,6 +128,6 @@ used interchangeably.}
 \description{
 Adds a grant to a KMS key.
 
-See \url{https://paws-r.github.io/docs/kms/create_grant.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_grant/} for full documentation.
 }
 \keyword{internal}

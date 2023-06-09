@@ -15,6 +15,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 Deletes the specified flow module.
 
-See \url{https://paws-r.github.io/docs/connect/delete_contact_flow_module.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_contact_flow_module/} for full documentation.
 }
 \keyword{internal}

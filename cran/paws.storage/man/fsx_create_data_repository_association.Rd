@@ -68,6 +68,6 @@ system to the data repository.}
 \description{
 Creates an Amazon FSx for Lustre data repository association (DRA). A data repository association is a link between a directory on the file system and an Amazon S3 bucket or prefix. You can have a maximum of 8 data repository associations on a file system. Data repository associations are supported for all file systems except for \code{Scratch_1} deployment type.
 
-See \url{https://paws-r.github.io/docs/fsx/create_data_repository_association.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_data_repository_association/} for full documentation.
 }
 \keyword{internal}

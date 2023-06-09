@@ -14,6 +14,6 @@ route53recoverycontrolconfig_untag_resource(ResourceArn, TagKeys)
 \description{
 Removes a tag from a resource.
 
-See \url{https://paws-r.github.io/docs/route53recoverycontrolconfig/untag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_resource/} for full documentation.
 }
 \keyword{internal}

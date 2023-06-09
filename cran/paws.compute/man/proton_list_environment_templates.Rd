@@ -16,6 +16,6 @@ templates that was previously requested.}
 \description{
 List environment templates.
 
-See \url{https://paws-r.github.io/docs/proton/list_environment_templates.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_environment_templates/} for full documentation.
 }
 \keyword{internal}

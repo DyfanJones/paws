@@ -16,6 +16,6 @@ policy from.}
 \description{
 Deletes the resource policy that Resource Access Manager uses to share your Incident Manager resource.
 
-See \url{https://paws-r.github.io/docs/ssmincidents/delete_resource_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_resource_policy/} for full documentation.
 }
 \keyword{internal}

@@ -21477,7 +21477,7 @@ ec2_deregister_image <- function(ImageId, DryRun = NULL) {
 #' actually making the request, and provides an error response. If you have
 #' the required permissions, the error response is `DryRunOperation`.
 #' Otherwise, it is `UnauthorizedOperation`.
-#' @param InstanceTagAttribute Information about the tag keys to deregister.
+#' @param InstanceTagAttribute &#91;required&#93; Information about the tag keys to deregister.
 #'
 #' @return
 #' A list with the following syntax:
@@ -21510,7 +21510,7 @@ ec2_deregister_image <- function(ImageId, DryRun = NULL) {
 #' @rdname ec2_deregister_instance_event_notification_attributes
 #'
 #' @aliases ec2_deregister_instance_event_notification_attributes
-ec2_deregister_instance_event_notification_attributes <- function(DryRun = NULL, InstanceTagAttribute = NULL) {
+ec2_deregister_instance_event_notification_attributes <- function(DryRun = NULL, InstanceTagAttribute) {
   op <- new_operation(
     name = "DeregisterInstanceEventNotificationAttributes",
     http_method = "POST",
@@ -59073,7 +59073,7 @@ ec2_register_image <- function(ImageLocation = NULL, Architecture = NULL, BlockD
 #' actually making the request, and provides an error response. If you have
 #' the required permissions, the error response is `DryRunOperation`.
 #' Otherwise, it is `UnauthorizedOperation`.
-#' @param InstanceTagAttribute Information about the tag keys to register.
+#' @param InstanceTagAttribute &#91;required&#93; Information about the tag keys to register.
 #'
 #' @return
 #' A list with the following syntax:
@@ -59106,7 +59106,7 @@ ec2_register_image <- function(ImageLocation = NULL, Architecture = NULL, BlockD
 #' @rdname ec2_register_instance_event_notification_attributes
 #'
 #' @aliases ec2_register_instance_event_notification_attributes
-ec2_register_instance_event_notification_attributes <- function(DryRun = NULL, InstanceTagAttribute = NULL) {
+ec2_register_instance_event_notification_attributes <- function(DryRun = NULL, InstanceTagAttribute) {
   op <- new_operation(
     name = "RegisterInstanceEventNotificationAttributes",
     http_method = "POST",

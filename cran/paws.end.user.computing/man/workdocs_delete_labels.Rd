@@ -24,6 +24,6 @@ Services administrator credentials to access the API.}
 \description{
 Deletes the specified list of labels from a resource.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_labels.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_labels/} for full documentation.
 }
 \keyword{internal}

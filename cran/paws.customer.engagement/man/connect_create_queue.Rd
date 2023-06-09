@@ -39,6 +39,6 @@ For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/create_queue.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_queue/} for full documentation.
 }
 \keyword{internal}

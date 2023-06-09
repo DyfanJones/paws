@@ -44,6 +44,6 @@ false.}
 \description{
 Terminates the specified provisioned product.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/terminate_provisioned_product.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/terminate_provisioned_product/} for full documentation.
 }
 \keyword{internal}

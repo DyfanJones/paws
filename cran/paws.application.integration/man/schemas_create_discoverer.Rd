@@ -24,6 +24,6 @@ account. (default: true).}
 \description{
 Creates a discoverer.
 
-See \url{https://paws-r.github.io/docs/schemas/create_discoverer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_discoverer/} for full documentation.
 }
 \keyword{internal}

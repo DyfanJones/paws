@@ -43,6 +43,6 @@ the completion notification.}
 \description{
 Starts the asynchronous search for faces in a collection that match the faces of persons detected in a stored video.
 
-See \url{https://paws-r.github.io/docs/rekognition/start_face_search.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_face_search/} for full documentation.
 }
 \keyword{internal}

@@ -34,6 +34,6 @@ between the instance and the service.}
 \description{
 Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.
 
-See \url{https://paws-r.github.io/docs/opsworks/register_instance.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/register_instance/} for full documentation.
 }
 \keyword{internal}

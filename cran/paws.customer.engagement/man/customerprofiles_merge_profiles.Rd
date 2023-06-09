@@ -26,6 +26,6 @@ identifier of the EmailAddress field in Profile1.}
 \description{
 Runs an AWS Lambda job that does the following:
 
-See \url{https://paws-r.github.io/docs/customerprofiles/merge_profiles.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/merge_profiles/} for full documentation.
 }
 \keyword{internal}

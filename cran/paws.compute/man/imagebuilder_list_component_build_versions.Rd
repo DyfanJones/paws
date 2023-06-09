@@ -23,6 +23,6 @@ a previously truncated response.}
 \description{
 Returns the list of component build versions for the specified semantic version.
 
-See \url{https://paws-r.github.io/docs/imagebuilder/list_component_build_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_component_build_versions/} for full documentation.
 }
 \keyword{internal}

@@ -61,6 +61,6 @@ marker, up to the value specified by \code{MaxRecords}.}
 \description{
 Lists available reserved DB instance offerings.
 
-See \url{https://paws-r.github.io/docs/rds/describe_reserved_db_instances_offerings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_reserved_db_instances_offerings/} for full documentation.
 }
 \keyword{internal}

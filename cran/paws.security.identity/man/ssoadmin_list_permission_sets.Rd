@@ -19,6 +19,6 @@ the output of previous API calls to make subsequent calls.}
 \description{
 Lists the PermissionSets in an IAM Identity Center instance.
 
-See \url{https://paws-r.github.io/docs/ssoadmin/list_permission_sets.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_permission_sets/} for full documentation.
 }
 \keyword{internal}

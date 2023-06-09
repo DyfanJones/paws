@@ -55,6 +55,6 @@ update tags. To update tags on the test alias, use the
 \description{
 Creates an Amazon Lex conversational bot.
 
-See \url{https://paws-r.github.io/docs/lexmodelsv2/create_bot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_bot/} for full documentation.
 }
 \keyword{internal}

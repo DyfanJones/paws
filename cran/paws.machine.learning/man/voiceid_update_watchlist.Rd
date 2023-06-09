@@ -23,6 +23,6 @@ voiceid_update_watchlist(
 \description{
 Updates the specified watchlist. Every domain has a default watchlist which cannot be updated.
 
-See \url{https://paws-r.github.io/docs/voiceid/update_watchlist.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_watchlist/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ sagemaker_describe_hub(HubName)
 \description{
 Describe a hub.
 
-See \url{https://paws-r.github.io/docs/sagemaker/describe_hub.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_hub/} for full documentation.
 }
 \keyword{internal}

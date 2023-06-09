@@ -14,6 +14,6 @@ as the Detective administrator account for the organization.}
 \description{
 Designates the Detective administrator account for the organization in the current Region.
 
-See \url{https://paws-r.github.io/docs/detective/enable_organization_admin_account.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/enable_organization_admin_account/} for full documentation.
 }
 \keyword{internal}

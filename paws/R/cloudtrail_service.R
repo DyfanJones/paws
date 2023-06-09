@@ -31,6 +31,126 @@ NULL
 #' Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
 #' for information about the data that is included with each Amazon Web
 #' Services API call listed in the log files.
+#' 
+#' **Actions available for CloudTrail trails**
+#' 
+#' The following actions are available for CloudTrail trails.
+#' 
+#' -   [`add_tags`][cloudtrail_add_tags]
+#' 
+#' -   [`create_trail`][cloudtrail_create_trail]
+#' 
+#' -   [`delete_trail`][cloudtrail_delete_trail]
+#' 
+#' -   [`describe_trails`][cloudtrail_describe_trails]
+#' 
+#' -   [`get_event_selectors`][cloudtrail_get_event_selectors]
+#' 
+#' -   [`get_insight_selectors`][cloudtrail_get_insight_selectors]
+#' 
+#' -   [`get_trail`][cloudtrail_get_trail]
+#' 
+#' -   [`get_trail_status`][cloudtrail_get_trail_status]
+#' 
+#' -   [`list_tags`][cloudtrail_list_tags]
+#' 
+#' -   [`list_trails`][cloudtrail_list_trails]
+#' 
+#' -   [`put_event_selectors`][cloudtrail_put_event_selectors]
+#' 
+#' -   [`put_insight_selectors`][cloudtrail_put_insight_selectors]
+#' 
+#' -   [`remove_tags`][cloudtrail_remove_tags]
+#' 
+#' -   [`start_logging`][cloudtrail_start_logging]
+#' 
+#' -   [`stop_logging`][cloudtrail_stop_logging]
+#' 
+#' -   [`update_trail`][cloudtrail_update_trail]
+#' 
+#' **Actions available for CloudTrail event data stores**
+#' 
+#' The following actions are available for CloudTrail event data stores.
+#' 
+#' -   [`add_tags`][cloudtrail_add_tags]
+#' 
+#' -   [`cancel_query`][cloudtrail_cancel_query]
+#' 
+#' -   [`create_event_data_store`][cloudtrail_create_event_data_store]
+#' 
+#' -   [`delete_event_data_store`][cloudtrail_delete_event_data_store]
+#' 
+#' -   [`describe_query`][cloudtrail_describe_query]
+#' 
+#' -   [`get_event_data_store`][cloudtrail_get_event_data_store]
+#' 
+#' -   [`get_query_results`][cloudtrail_get_query_results]
+#' 
+#' -   [`list_event_data_stores`][cloudtrail_list_event_data_stores]
+#' 
+#' -   [`list_tags`][cloudtrail_list_tags]
+#' 
+#' -   [`list_queries`][cloudtrail_list_queries]
+#' 
+#' -   [`remove_tags`][cloudtrail_remove_tags]
+#' 
+#' -   [`restore_event_data_store`][cloudtrail_restore_event_data_store]
+#' 
+#' -   [`start_event_data_store_ingestion`][cloudtrail_start_event_data_store_ingestion]
+#' 
+#' -   [`start_import`][cloudtrail_start_import]
+#' 
+#'     The following additional actions are available for imports.
+#' 
+#'     -   [`get_import`][cloudtrail_get_import]
+#' 
+#'     -   [`list_import_failures`][cloudtrail_list_import_failures]
+#' 
+#'     -   [`list_imports`][cloudtrail_list_imports]
+#' 
+#'     -   [`stop_import`][cloudtrail_stop_import]
+#' 
+#' -   [`start_query`][cloudtrail_start_query]
+#' 
+#' -   [`start_event_data_store_ingestion`][cloudtrail_start_event_data_store_ingestion]
+#' 
+#' -   [`update_event_data_store`][cloudtrail_update_event_data_store]
+#' 
+#' **Actions available for CloudTrail channels**
+#' 
+#' The following actions are available for CloudTrail channels.
+#' 
+#' -   [`add_tags`][cloudtrail_add_tags]
+#' 
+#' -   [`create_channel`][cloudtrail_create_channel]
+#' 
+#' -   [`delete_channel`][cloudtrail_delete_channel]
+#' 
+#' -   [`delete_resource_policy`][cloudtrail_delete_resource_policy]
+#' 
+#' -   [`get_channel`][cloudtrail_get_channel]
+#' 
+#' -   [`get_resource_policy`][cloudtrail_get_resource_policy]
+#' 
+#' -   [`list_channels`][cloudtrail_list_channels]
+#' 
+#' -   [`list_tags`][cloudtrail_list_tags]
+#' 
+#' -   [`put_resource_policy`][cloudtrail_put_resource_policy]
+#' 
+#' -   [`remove_tags`][cloudtrail_remove_tags]
+#' 
+#' -   [`update_channel`][cloudtrail_update_channel]
+#' 
+#' **Actions available for managing delegated administrators**
+#' 
+#' The following actions are available for adding or a removing a delegated
+#' administrator to manage an Organizations organization’s CloudTrail
+#' resources.
+#' 
+#' -   [`deregister_organization_delegated_admin`][cloudtrail_deregister_organization_delegated_admin]
+#' 
+#' -   [`register_organization_delegated_admin`][cloudtrail_register_organization_delegated_admin]
 #'
 #' @param
 #' config
@@ -91,7 +211,7 @@ NULL
 #'  \link[=cloudtrail_delete_trail]{delete_trail} \tab Deletes a trail\cr
 #'  \link[=cloudtrail_deregister_organization_delegated_admin]{deregister_organization_delegated_admin} \tab Removes CloudTrail delegated administrator permissions from a member account in an organization\cr
 #'  \link[=cloudtrail_describe_query]{describe_query} \tab Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status\cr
-#'  \link[=cloudtrail_describe_trails]{describe_trails} \tab Retrieves settings for one or more trails associated with the current region for your account\cr
+#'  \link[=cloudtrail_describe_trails]{describe_trails} \tab Retrieves settings for one or more trails associated with the current Region for your account\cr
 #'  \link[=cloudtrail_get_channel]{get_channel} \tab Returns information about a specific channel\cr
 #'  \link[=cloudtrail_get_event_data_store]{get_event_data_store} \tab Returns information about an event data store specified as either an ARN or the ID portion of the ARN\cr
 #'  \link[=cloudtrail_get_event_selectors]{get_event_selectors} \tab Describes the settings for the event selectors that you configured for your trail\cr
@@ -102,12 +222,12 @@ NULL
 #'  \link[=cloudtrail_get_trail]{get_trail} \tab Returns settings information for a specified trail\cr
 #'  \link[=cloudtrail_get_trail_status]{get_trail_status} \tab Returns a JSON-formatted list of information about the specified trail\cr
 #'  \link[=cloudtrail_list_channels]{list_channels} \tab Lists the channels in the current account, and their source names\cr
-#'  \link[=cloudtrail_list_event_data_stores]{list_event_data_stores} \tab Returns information about all event data stores in the account, in the current region\cr
+#'  \link[=cloudtrail_list_event_data_stores]{list_event_data_stores} \tab Returns information about all event data stores in the account, in the current Region\cr
 #'  \link[=cloudtrail_list_import_failures]{list_import_failures} \tab Returns a list of failures for the specified import\cr
 #'  \link[=cloudtrail_list_imports]{list_imports} \tab Returns information on all imports, or a select set of imports by ImportStatus or Destination\cr
 #'  \link[=cloudtrail_list_public_keys]{list_public_keys} \tab Returns all public keys whose private keys were used to sign the digest files within the specified time range\cr
 #'  \link[=cloudtrail_list_queries]{list_queries} \tab Returns a list of queries and query statuses for the past seven days\cr
-#'  \link[=cloudtrail_list_tags]{list_tags} \tab Lists the tags for the trail, event data store, or channel in the current region\cr
+#'  \link[=cloudtrail_list_tags]{list_tags} \tab Lists the tags for the specified trails, event data stores, or channels in the current Region\cr
 #'  \link[=cloudtrail_list_trails]{list_trails} \tab Lists trails that are in the current account\cr
 #'  \link[=cloudtrail_lookup_events]{lookup_events} \tab Looks up management events or CloudTrail Insights events that are captured by CloudTrail\cr
 #'  \link[=cloudtrail_put_event_selectors]{put_event_selectors} \tab Configures an event selector or advanced event selectors for your trail\cr
@@ -116,9 +236,11 @@ NULL
 #'  \link[=cloudtrail_register_organization_delegated_admin]{register_organization_delegated_admin} \tab Registers an organization’s member account as the CloudTrail delegated administrator\cr
 #'  \link[=cloudtrail_remove_tags]{remove_tags} \tab Removes the specified tags from a trail, event data store, or channel\cr
 #'  \link[=cloudtrail_restore_event_data_store]{restore_event_data_store} \tab Restores a deleted event data store specified by EventDataStore, which accepts an event data store ARN\cr
+#'  \link[=cloudtrail_start_event_data_store_ingestion]{start_event_data_store_ingestion} \tab Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the ARN\cr
 #'  \link[=cloudtrail_start_import]{start_import} \tab Starts an import of logged trail events from a source S3 bucket to a destination event data store\cr
 #'  \link[=cloudtrail_start_logging]{start_logging} \tab Starts the recording of Amazon Web Services API calls and log file delivery for a trail\cr
 #'  \link[=cloudtrail_start_query]{start_query} \tab Starts a CloudTrail Lake query\cr
+#'  \link[=cloudtrail_stop_event_data_store_ingestion]{stop_event_data_store_ingestion} \tab Stops the ingestion of live events on an event data store specified as either an ARN or the ID portion of the ARN\cr
 #'  \link[=cloudtrail_stop_import]{stop_import} \tab Stops a specified import\cr
 #'  \link[=cloudtrail_stop_logging]{stop_logging} \tab Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail\cr
 #'  \link[=cloudtrail_update_channel]{update_channel} \tab Updates a channel specified by a required channel ARN or UUID\cr

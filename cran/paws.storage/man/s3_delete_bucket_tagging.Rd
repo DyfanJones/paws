@@ -16,6 +16,6 @@ different account, the request fails with the HTTP status code
 \description{
 Deletes the tags from the bucket.
 
-See \url{https://paws-r.github.io/docs/s3/delete_bucket_tagging.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_bucket_tagging/} for full documentation.
 }
 \keyword{internal}

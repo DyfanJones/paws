@@ -14,6 +14,6 @@ panorama_create_package(PackageName, Tags = NULL)
 \description{
 Creates a package and storage location in an Amazon S3 access point.
 
-See \url{https://paws-r.github.io/docs/panorama/create_package.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_package/} for full documentation.
 }
 \keyword{internal}

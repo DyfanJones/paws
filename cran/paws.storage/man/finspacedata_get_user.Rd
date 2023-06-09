@@ -12,6 +12,6 @@ finspacedata_get_user(userId)
 \description{
 Retrieves details for a specific user.
 
-See \url{https://paws-r.github.io/docs/finspacedata/get_user.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_user/} for full documentation.
 }
 \keyword{internal}

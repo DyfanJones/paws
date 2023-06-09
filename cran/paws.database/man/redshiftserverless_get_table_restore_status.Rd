@@ -14,6 +14,6 @@ request to return status for.}
 \description{
 Returns information about a \code{TableRestoreStatus} object.
 
-See \url{https://paws-r.github.io/docs/redshiftserverless/get_table_restore_status.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_table_restore_status/} for full documentation.
 }
 \keyword{internal}

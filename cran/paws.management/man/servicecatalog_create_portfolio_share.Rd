@@ -47,6 +47,6 @@ recipient account before or after creating the share.}
 \description{
 Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. You can share portfolios to an organization, an organizational unit, or a specific account.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/create_portfolio_share.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_portfolio_share/} for full documentation.
 }
 \keyword{internal}

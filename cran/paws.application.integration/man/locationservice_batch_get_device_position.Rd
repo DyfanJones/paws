@@ -18,6 +18,6 @@ locationservice_batch_get_device_position(DeviceIds, TrackerName)
 \description{
 Lists the latest device positions for requested devices.
 
-See \url{https://paws-r.github.io/docs/locationservice/batch_get_device_position.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/batch_get_device_position/} for full documentation.
 }
 \keyword{internal}

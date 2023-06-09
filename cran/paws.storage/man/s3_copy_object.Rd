@@ -250,6 +250,6 @@ code \verb{403 Forbidden} (access denied).}
 \description{
 Creates a copy of an object that is already stored in Amazon S3.
 
-See \url{https://paws-r.github.io/docs/s3/copy_object.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/copy_object/} for full documentation.
 }
 \keyword{internal}

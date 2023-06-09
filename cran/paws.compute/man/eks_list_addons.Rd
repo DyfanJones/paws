@@ -30,6 +30,6 @@ purposes.}
 \description{
 Lists the available add-ons.
 
-See \url{https://paws-r.github.io/docs/eks/list_addons.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_addons/} for full documentation.
 }
 \keyword{internal}

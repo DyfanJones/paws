@@ -30,6 +30,6 @@ it in your next request to receive the next set of results.}
 \description{
 Lists user profiles.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_user_profiles.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_user_profiles/} for full documentation.
 }
 \keyword{internal}

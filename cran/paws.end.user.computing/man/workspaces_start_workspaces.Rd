@@ -12,6 +12,6 @@ workspaces_start_workspaces(StartWorkspaceRequests)
 \description{
 Starts the specified WorkSpaces.
 
-See \url{https://paws-r.github.io/docs/workspaces/start_workspaces.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_workspaces/} for full documentation.
 }
 \keyword{internal}

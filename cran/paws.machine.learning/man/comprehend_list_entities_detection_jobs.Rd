@@ -23,6 +23,6 @@ one filter at a time.}
 \description{
 Gets a list of the entity detection jobs that you have submitted.
 
-See \url{https://paws-r.github.io/docs/comprehend/list_entities_detection_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_entities_detection_jobs/} for full documentation.
 }
 \keyword{internal}

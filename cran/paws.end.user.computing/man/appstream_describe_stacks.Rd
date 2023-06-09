@@ -16,6 +16,6 @@ this operation. If this value is null, it retrieves the first page.}
 \description{
 Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described.
 
-See \url{https://paws-r.github.io/docs/appstream/describe_stacks.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_stacks/} for full documentation.
 }
 \keyword{internal}

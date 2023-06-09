@@ -16,6 +16,6 @@ a list of distribution names that you can specify.}
 \description{
 Deletes your Amazon Lightsail content delivery network (CDN) distribution.
 
-See \url{https://paws-r.github.io/docs/lightsail/delete_distribution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_distribution/} for full documentation.
 }
 \keyword{internal}

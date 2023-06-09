@@ -15,6 +15,6 @@ element of the collection.}
 \description{
 Gets the domain names for an AWS account.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/get_domain_names.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_domain_names/} for full documentation.
 }
 \keyword{internal}

@@ -28,6 +28,6 @@ workflow runs.}
 \description{
 Updates an existing workflow.
 
-See \url{https://paws-r.github.io/docs/glue/update_workflow.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_workflow/} for full documentation.
 }
 \keyword{internal}

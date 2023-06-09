@@ -14,6 +14,6 @@ xray_get_group(GroupName = NULL, GroupARN = NULL)
 \description{
 Retrieves group resource details.
 
-See \url{https://paws-r.github.io/docs/xray/get_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_group/} for full documentation.
 }
 \keyword{internal}

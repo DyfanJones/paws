@@ -40,6 +40,6 @@ the value specified by MaxRecords.}
 \description{
 Lists available reserved node offerings.
 
-See \url{https://paws-r.github.io/docs/memorydb/describe_reserved_nodes_offerings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_reserved_nodes_offerings/} for full documentation.
 }
 \keyword{internal}

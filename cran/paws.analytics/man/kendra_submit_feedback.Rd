@@ -28,6 +28,6 @@ whether a particular item was relevant to the search.}
 \description{
 Enables you to provide feedback to Amazon Kendra to improve the performance of your index.
 
-See \url{https://paws-r.github.io/docs/kendra/submit_feedback.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/submit_feedback/} for full documentation.
 }
 \keyword{internal}

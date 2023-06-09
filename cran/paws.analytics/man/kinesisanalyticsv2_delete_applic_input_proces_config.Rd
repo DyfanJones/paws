@@ -28,6 +28,6 @@ operation.}
 \description{
 Deletes an InputProcessingConfiguration from an input.
 
-See \url{https://paws-r.github.io/docs/kinesisanalyticsv2/delete_application_input_processing_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_application_input_processing_configuration/} for full documentation.
 }
 \keyword{internal}

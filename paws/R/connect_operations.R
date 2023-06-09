@@ -6566,9 +6566,6 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' [`get_metric_data`][connect_get_metric_data], see [Historical metrics
 #' definitions](https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html)
 #' in the *Amazon Connect Administrator's Guide*.
-#' 
-#' This API is not available in the Amazon Web Services GovCloud (US)
-#' Regions.
 #'
 #' @usage
 #' connect_get_metric_data_v2(ResourceArn, StartTime, EndTime, Filters,

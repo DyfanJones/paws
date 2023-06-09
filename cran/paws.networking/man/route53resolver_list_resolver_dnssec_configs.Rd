@@ -34,6 +34,6 @@ request.}
 \description{
 Lists the configurations for DNSSEC validation that are associated with the current Amazon Web Services account.
 
-See \url{https://paws-r.github.io/docs/route53resolver/list_resolver_dnssec_configs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_resolver_dnssec_configs/} for full documentation.
 }
 \keyword{internal}

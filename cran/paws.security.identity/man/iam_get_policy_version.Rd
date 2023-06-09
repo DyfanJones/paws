@@ -24,6 +24,6 @@ digits.}
 \description{
 Retrieves information about the specified version of the specified managed policy, including the policy document.
 
-See \url{https://paws-r.github.io/docs/iam/get_policy_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_policy_version/} for full documentation.
 }
 \keyword{internal}

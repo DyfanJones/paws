@@ -37,6 +37,6 @@ specified details.}
 \description{
 Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident.
 
-See \url{https://paws-r.github.io/docs/ssmcontacts/create_contact.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_contact/} for full documentation.
 }
 \keyword{internal}

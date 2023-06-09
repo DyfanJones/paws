@@ -20,6 +20,6 @@ frauddetector_describe_detector(
 \description{
 Gets all versions for a specified detector.
 
-See \url{https://paws-r.github.io/docs/frauddetector/describe_detector.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_detector/} for full documentation.
 }
 \keyword{internal}

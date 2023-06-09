@@ -53,6 +53,6 @@ engine or engine and major version combination is to be returned.}
 \description{
 Returns a list of the available cache engines and their versions.
 
-See \url{https://paws-r.github.io/docs/elasticache/describe_cache_engine_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_cache_engine_versions/} for full documentation.
 }
 \keyword{internal}

@@ -41,6 +41,6 @@ must be in the same account.}
 \description{
 Creates a budget action.
 
-See \url{https://paws-r.github.io/docs/budgets/create_budget_action.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_budget_action/} for full documentation.
 }
 \keyword{internal}

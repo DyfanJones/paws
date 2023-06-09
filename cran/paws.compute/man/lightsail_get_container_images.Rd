@@ -14,6 +14,6 @@ container images.}
 \description{
 Returns the container images that are registered to your Amazon Lightsail container service.
 
-See \url{https://paws-r.github.io/docs/lightsail/get_container_images.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_container_images/} for full documentation.
 }
 \keyword{internal}

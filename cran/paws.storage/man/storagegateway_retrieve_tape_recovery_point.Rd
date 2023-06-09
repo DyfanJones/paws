@@ -15,6 +15,6 @@ retrieve the recovery point.}
 \description{
 Retrieves the recovery point for the specified virtual tape. This operation is only supported in the tape gateway type.
 
-See \url{https://paws-r.github.io/docs/storagegateway/retrieve_tape_recovery_point.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/retrieve_tape_recovery_point/} for full documentation.
 }
 \keyword{internal}

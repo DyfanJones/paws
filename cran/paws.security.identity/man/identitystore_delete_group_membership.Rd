@@ -14,6 +14,6 @@ identitystore_delete_group_membership(IdentityStoreId, MembershipId)
 \description{
 Delete a membership within a group given \code{MembershipId}.
 
-See \url{https://paws-r.github.io/docs/identitystore/delete_group_membership.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_group_membership/} for full documentation.
 }
 \keyword{internal}

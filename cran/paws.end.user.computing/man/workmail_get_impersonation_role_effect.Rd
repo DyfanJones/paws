@@ -27,6 +27,6 @@ The following identity formats are available:
 \description{
 Tests whether the given impersonation role can impersonate a target user.
 
-See \url{https://paws-r.github.io/docs/workmail/get_impersonation_role_effect.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_impersonation_role_effect/} for full documentation.
 }
 \keyword{internal}

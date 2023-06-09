@@ -28,6 +28,6 @@ Linux.}
 \description{
 Get a launch profile initialization.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/get_launch_profile_initialization.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_launch_profile_initialization/} for full documentation.
 }
 \keyword{internal}

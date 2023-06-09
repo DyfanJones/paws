@@ -35,6 +35,6 @@ you pass into this parameter.}
 \description{
 Retrieves the opt-in status of a particular Region.
 
-See \url{https://paws-r.github.io/docs/account/get_region_opt_status.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_region_opt_status/} for full documentation.
 }
 \keyword{internal}

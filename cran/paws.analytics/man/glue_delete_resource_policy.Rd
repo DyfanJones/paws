@@ -14,6 +14,6 @@ glue_delete_resource_policy(PolicyHashCondition = NULL, ResourceArn = NULL)
 \description{
 Deletes a specified policy.
 
-See \url{https://paws-r.github.io/docs/glue/delete_resource_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_resource_policy/} for full documentation.
 }
 \keyword{internal}

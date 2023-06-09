@@ -35,6 +35,6 @@ then this value cannot be set.}
 \description{
 Lists apps.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_apps.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_apps/} for full documentation.
 }
 \keyword{internal}

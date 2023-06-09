@@ -26,6 +26,6 @@ the previous request to continue listing results after the first page.}
 \description{
 Lists findings for your environment.
 
-See \url{https://paws-r.github.io/docs/inspector2/list_findings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_findings/} for full documentation.
 }
 \keyword{internal}

@@ -21,6 +21,6 @@ is entirely lowercase.}
 \description{
 Removes a table definition from the Data Catalog.
 
-See \url{https://paws-r.github.io/docs/glue/delete_table.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_table/} for full documentation.
 }
 \keyword{internal}

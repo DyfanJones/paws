@@ -18,6 +18,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Restores an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic platform. You cannot move an Elastic IP address that was originally allocated for use in EC2-VPC. The Elastic IP address must not be associated with an instance or network interface.
 
-See \url{https://paws-r.github.io/docs/ec2/restore_address_to_classic.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/restore_address_to_classic/} for full documentation.
 }
 \keyword{internal}

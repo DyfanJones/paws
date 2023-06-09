@@ -33,6 +33,6 @@ such as first name, last name, and age.
 \description{
 Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an application.
 
-See \url{https://paws-r.github.io/docs/pinpoint/remove_attributes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/remove_attributes/} for full documentation.
 }
 \keyword{internal}

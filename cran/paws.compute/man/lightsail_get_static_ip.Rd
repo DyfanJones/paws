@@ -12,6 +12,6 @@ lightsail_get_static_ip(staticIpName)
 \description{
 Returns information about an Amazon Lightsail static IP.
 
-See \url{https://paws-r.github.io/docs/lightsail/get_static_ip.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_static_ip/} for full documentation.
 }
 \keyword{internal}

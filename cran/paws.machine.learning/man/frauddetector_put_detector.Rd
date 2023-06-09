@@ -23,6 +23,6 @@ frauddetector_put_detector(
 \description{
 Creates or updates a detector.
 
-See \url{https://paws-r.github.io/docs/frauddetector/put_detector.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_detector/} for full documentation.
 }
 \keyword{internal}

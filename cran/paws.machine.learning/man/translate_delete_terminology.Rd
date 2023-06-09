@@ -12,6 +12,6 @@ translate_delete_terminology(Name)
 \description{
 A synchronous action that deletes a custom terminology.
 
-See \url{https://paws-r.github.io/docs/translate/delete_terminology.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_terminology/} for full documentation.
 }
 \keyword{internal}

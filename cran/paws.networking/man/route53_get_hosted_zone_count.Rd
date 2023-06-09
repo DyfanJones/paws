@@ -10,6 +10,6 @@ route53_get_hosted_zone_count()
 \description{
 Retrieves the number of hosted zones that are associated with the current Amazon Web Services account.
 
-See \url{https://paws-r.github.io/docs/route53/get_hosted_zone_count.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_hosted_zone_count/} for full documentation.
 }
 \keyword{internal}

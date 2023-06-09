@@ -202,6 +202,9 @@ wafv2_associate_web_acl <- function(WebACLArn, ResourceArn) {
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -262,6 +265,9 @@ wafv2_associate_web_acl <- function(WebACLArn, ResourceArn) {
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -324,6 +330,9 @@ wafv2_associate_web_acl <- function(WebACLArn, ResourceArn) {
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -383,6 +392,9 @@ wafv2_associate_web_acl <- function(WebACLArn, ResourceArn) {
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -530,6 +542,9 @@ wafv2_associate_web_acl <- function(WebACLArn, ResourceArn) {
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -795,6 +810,9 @@ wafv2_associate_web_acl <- function(WebACLArn, ResourceArn) {
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -1360,6 +1378,9 @@ wafv2_create_regex_pattern_set <- function(Name, Scope, Description = NULL, Regu
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -1420,6 +1441,9 @@ wafv2_create_regex_pattern_set <- function(Name, Scope, Description = NULL, Regu
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -1482,6 +1506,9 @@ wafv2_create_regex_pattern_set <- function(Name, Scope, Description = NULL, Regu
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -1541,6 +1568,9 @@ wafv2_create_regex_pattern_set <- function(Name, Scope, Description = NULL, Regu
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -1688,6 +1718,9 @@ wafv2_create_regex_pattern_set <- function(Name, Scope, Description = NULL, Regu
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -1953,6 +1986,9 @@ wafv2_create_regex_pattern_set <- function(Name, Scope, Description = NULL, Regu
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -2288,6 +2324,9 @@ wafv2_create_rule_group <- function(Name, Scope, Capacity, Description = NULL, R
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -2348,6 +2387,9 @@ wafv2_create_rule_group <- function(Name, Scope, Capacity, Description = NULL, R
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -2410,6 +2452,9 @@ wafv2_create_rule_group <- function(Name, Scope, Capacity, Description = NULL, R
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -2469,6 +2514,9 @@ wafv2_create_rule_group <- function(Name, Scope, Capacity, Description = NULL, R
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -2616,6 +2664,9 @@ wafv2_create_rule_group <- function(Name, Scope, Capacity, Description = NULL, R
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -2881,6 +2932,9 @@ wafv2_create_rule_group <- function(Name, Scope, Capacity, Description = NULL, R
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -3501,6 +3555,157 @@ wafv2_delete_web_acl <- function(Name, Scope, Id, LockToken) {
 }
 .wafv2$operations$delete_web_acl <- wafv2_delete_web_acl
 
+#' Provides high-level information for the Amazon Web Services Managed
+#' Rules rule groups and Amazon Web Services Marketplace managed rule
+#' groups
+#'
+#' @description
+#' Provides high-level information for the Amazon Web Services Managed
+#' Rules rule groups and Amazon Web Services Marketplace managed rule
+#' groups.
+#'
+#' @usage
+#' wafv2_describe_all_managed_products(Scope)
+#'
+#' @param Scope &#91;required&#93; Specifies whether this is for an Amazon CloudFront distribution or for a
+#' regional application. A regional application can be an Application Load
+#' Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API,
+#' an Amazon Cognito user pool, an App Runner service, or an Amazon Web
+#' Services Verified Access instance.
+#' 
+#' To work with CloudFront, you must also specify the Region US East (N.
+#' Virginia) as follows:
+#' 
+#' -   CLI - Specify the Region when you use the CloudFront scope:
+#'     `--scope=CLOUDFRONT --region=us-east-1`.
+#' 
+#' -   API and SDKs - For all calls, use the Region endpoint us-east-1.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ManagedProducts = list(
+#'     list(
+#'       VendorName = "string",
+#'       ManagedRuleSetName = "string",
+#'       ProductId = "string",
+#'       ProductLink = "string",
+#'       ProductTitle = "string",
+#'       ProductDescription = "string",
+#'       SnsTopicArn = "string",
+#'       IsVersioningSupported = TRUE|FALSE,
+#'       IsAdvancedManagedRuleSet = TRUE|FALSE
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$describe_all_managed_products(
+#'   Scope = "CLOUDFRONT"|"REGIONAL"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname wafv2_describe_all_managed_products
+#'
+#' @aliases wafv2_describe_all_managed_products
+wafv2_describe_all_managed_products <- function(Scope) {
+  op <- new_operation(
+    name = "DescribeAllManagedProducts",
+    http_method = "POST",
+    http_path = "/",
+    paginator = list()
+  )
+  input <- .wafv2$describe_all_managed_products_input(Scope = Scope)
+  output <- .wafv2$describe_all_managed_products_output()
+  config <- get_config()
+  svc <- .wafv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.wafv2$operations$describe_all_managed_products <- wafv2_describe_all_managed_products
+
+#' Provides high-level information for the managed rule groups owned by a
+#' specific vendor
+#'
+#' @description
+#' Provides high-level information for the managed rule groups owned by a
+#' specific vendor.
+#'
+#' @usage
+#' wafv2_describe_managed_products_by_vendor(VendorName, Scope)
+#'
+#' @param VendorName &#91;required&#93; The name of the managed rule group vendor. You use this, along with the
+#' rule group name, to identify a rule group.
+#' @param Scope &#91;required&#93; Specifies whether this is for an Amazon CloudFront distribution or for a
+#' regional application. A regional application can be an Application Load
+#' Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API,
+#' an Amazon Cognito user pool, an App Runner service, or an Amazon Web
+#' Services Verified Access instance.
+#' 
+#' To work with CloudFront, you must also specify the Region US East (N.
+#' Virginia) as follows:
+#' 
+#' -   CLI - Specify the Region when you use the CloudFront scope:
+#'     `--scope=CLOUDFRONT --region=us-east-1`.
+#' 
+#' -   API and SDKs - For all calls, use the Region endpoint us-east-1.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ManagedProducts = list(
+#'     list(
+#'       VendorName = "string",
+#'       ManagedRuleSetName = "string",
+#'       ProductId = "string",
+#'       ProductLink = "string",
+#'       ProductTitle = "string",
+#'       ProductDescription = "string",
+#'       SnsTopicArn = "string",
+#'       IsVersioningSupported = TRUE|FALSE,
+#'       IsAdvancedManagedRuleSet = TRUE|FALSE
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$describe_managed_products_by_vendor(
+#'   VendorName = "string",
+#'   Scope = "CLOUDFRONT"|"REGIONAL"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname wafv2_describe_managed_products_by_vendor
+#'
+#' @aliases wafv2_describe_managed_products_by_vendor
+wafv2_describe_managed_products_by_vendor <- function(VendorName, Scope) {
+  op <- new_operation(
+    name = "DescribeManagedProductsByVendor",
+    http_method = "POST",
+    http_path = "/",
+    paginator = list()
+  )
+  input <- .wafv2$describe_managed_products_by_vendor_input(VendorName = VendorName, Scope = Scope)
+  output <- .wafv2$describe_managed_products_by_vendor_output()
+  config <- get_config()
+  svc <- .wafv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.wafv2$operations$describe_managed_products_by_vendor <- wafv2_describe_managed_products_by_vendor
+
 #' Provides high-level information for a managed rule group, including
 #' descriptions of the rules
 #'
@@ -3512,7 +3717,7 @@ wafv2_delete_web_acl <- function(Name, Scope, Id, LockToken) {
 #' wafv2_describe_managed_rule_group(VendorName, Name, Scope, VersionName)
 #'
 #' @param VendorName &#91;required&#93; The name of the managed rule group vendor. You use this, along with the
-#' rule group name, to identify the rule group.
+#' rule group name, to identify a rule group.
 #' @param Name &#91;required&#93; The name of the managed rule group. You use this, along with the vendor
 #' name, to identify the rule group.
 #' @param Scope &#91;required&#93; Specifies whether this is for an Amazon CloudFront distribution or for a
@@ -3999,6 +4204,9 @@ wafv2_get_ip_set <- function(Name, Scope, Id) {
 #'             )
 #'           ),
 #'           MatchScope = "ALL"|"KEY"|"VALUE",
+#'           OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'         ),
+#'         HeaderOrder = list(
 #'           OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'         )
 #'       )
@@ -4560,6 +4768,9 @@ wafv2_get_regex_pattern_set <- function(Name, Scope, Id) {
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -4620,6 +4831,9 @@ wafv2_get_regex_pattern_set <- function(Name, Scope, Id) {
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -4682,6 +4896,9 @@ wafv2_get_regex_pattern_set <- function(Name, Scope, Id) {
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -4741,6 +4958,9 @@ wafv2_get_regex_pattern_set <- function(Name, Scope, Id) {
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -4888,6 +5108,9 @@ wafv2_get_regex_pattern_set <- function(Name, Scope, Id) {
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -5153,6 +5376,9 @@ wafv2_get_regex_pattern_set <- function(Name, Scope, Id) {
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -5585,6 +5811,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -5645,6 +5874,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -5707,6 +5939,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -5766,6 +6001,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -5913,6 +6151,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -6179,6 +6420,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -6351,6 +6595,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -6411,6 +6658,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -6473,6 +6723,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -6532,6 +6785,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -6680,6 +6936,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -6812,6 +7071,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -7101,6 +7363,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -7161,6 +7426,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -7223,6 +7491,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -7282,6 +7553,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -7430,6 +7704,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -7562,6 +7839,9 @@ wafv2_get_sampled_requests <- function(WebAclArn, RuleMetricName, Scope, TimeWin
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -7970,6 +8250,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -8030,6 +8313,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -8092,6 +8378,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -8151,6 +8440,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -8298,6 +8590,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                   )
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
@@ -8564,6 +8859,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                 ),
 #'                 MatchScope = "ALL"|"KEY"|"VALUE",
 #'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'               ),
+#'               HeaderOrder = list(
+#'                 OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'               )
 #'             ),
 #'             TextTransformations = list(
@@ -8736,6 +9034,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -8796,6 +9097,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -8858,6 +9162,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -8917,6 +9224,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -9065,6 +9375,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -9197,6 +9510,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -9486,6 +9802,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -9546,6 +9865,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -9608,6 +9930,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -9667,6 +9992,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -9815,6 +10143,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
 #'                 TextTransformations = list(
@@ -9947,6 +10278,9 @@ wafv2_get_web_acl <- function(Name, Scope, Id) {
 #'                       )
 #'                     ),
 #'                     MatchScope = "ALL"|"KEY"|"VALUE",
+#'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'                   ),
+#'                   HeaderOrder = list(
 #'                     OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'                   )
 #'                 ),
@@ -10334,7 +10668,7 @@ wafv2_list_api_keys <- function(Scope, NextMarker = NULL, Limit = NULL) {
 #'   Scope, NextMarker, Limit)
 #'
 #' @param VendorName &#91;required&#93; The name of the managed rule group vendor. You use this, along with the
-#' rule group name, to identify the rule group.
+#' rule group name, to identify a rule group.
 #' @param Name &#91;required&#93; The name of the managed rule group. You use this, along with the vendor
 #' name, to identify the rule group.
 #' @param Scope &#91;required&#93; Specifies whether this is for an Amazon CloudFront distribution or for a
@@ -10660,6 +10994,9 @@ wafv2_list_ip_sets <- function(Scope, NextMarker = NULL, Limit = NULL) {
 #'               )
 #'             ),
 #'             MatchScope = "ALL"|"KEY"|"VALUE",
+#'             OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'           ),
+#'           HeaderOrder = list(
 #'             OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'           )
 #'         )
@@ -11386,6 +11723,9 @@ wafv2_list_web_ac_ls <- function(Scope, NextMarker = NULL, Limit = NULL) {
 #'           ),
 #'           MatchScope = "ALL"|"KEY"|"VALUE",
 #'           OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'         ),
+#'         HeaderOrder = list(
+#'           OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'         )
 #'       )
 #'     ),
@@ -11471,6 +11811,9 @@ wafv2_list_web_ac_ls <- function(Scope, NextMarker = NULL, Limit = NULL) {
 #'             )
 #'           ),
 #'           MatchScope = "ALL"|"KEY"|"VALUE",
+#'           OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'         ),
+#'         HeaderOrder = list(
 #'           OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'         )
 #'       )
@@ -12347,6 +12690,9 @@ wafv2_update_regex_pattern_set <- function(Name, Scope, Id, Description = NULL, 
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -12407,6 +12753,9 @@ wafv2_update_regex_pattern_set <- function(Name, Scope, Id, Description = NULL, 
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -12469,6 +12818,9 @@ wafv2_update_regex_pattern_set <- function(Name, Scope, Id, Description = NULL, 
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -12528,6 +12880,9 @@ wafv2_update_regex_pattern_set <- function(Name, Scope, Id, Description = NULL, 
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -12675,6 +13030,9 @@ wafv2_update_regex_pattern_set <- function(Name, Scope, Id, Description = NULL, 
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -12940,6 +13298,9 @@ wafv2_update_regex_pattern_set <- function(Name, Scope, Id, Description = NULL, 
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -13303,6 +13664,9 @@ wafv2_update_rule_group <- function(Name, Scope, Id, Description = NULL, Rules =
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -13363,6 +13727,9 @@ wafv2_update_rule_group <- function(Name, Scope, Id, Description = NULL, Rules =
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -13425,6 +13792,9 @@ wafv2_update_rule_group <- function(Name, Scope, Id, Description = NULL, Rules =
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
 #'           TextTransformations = list(
@@ -13484,6 +13854,9 @@ wafv2_update_rule_group <- function(Name, Scope, Id, Description = NULL, Rules =
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -13631,6 +14004,9 @@ wafv2_update_rule_group <- function(Name, Scope, Id, Description = NULL, Rules =
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),
@@ -13896,6 +14272,9 @@ wafv2_update_rule_group <- function(Name, Scope, Id, Description = NULL, Rules =
 #'                 )
 #'               ),
 #'               MatchScope = "ALL"|"KEY"|"VALUE",
+#'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
+#'             ),
+#'             HeaderOrder = list(
 #'               OversizeHandling = "CONTINUE"|"MATCH"|"NO_MATCH"
 #'             )
 #'           ),

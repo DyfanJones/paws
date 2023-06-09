@@ -29,6 +29,6 @@ wellarchitected_list_answers(
 \description{
 List of answers for a particular workload and lens.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/list_answers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_answers/} for full documentation.
 }
 \keyword{internal}

@@ -37,6 +37,6 @@ Kinesis Data Streams by specifying the alias \code{aws/kinesis}.
 \description{
 Disables server-side encryption for a specified stream.
 
-See \url{https://paws-r.github.io/docs/kinesis/stop_stream_encryption.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_stream_encryption/} for full documentation.
 }
 \keyword{internal}

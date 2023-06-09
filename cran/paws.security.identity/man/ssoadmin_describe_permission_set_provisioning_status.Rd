@@ -21,6 +21,6 @@ retrieve the current status of the provisioning workflow.}
 \description{
 Describes the status for the given permission set provisioning request.
 
-See \url{https://paws-r.github.io/docs/ssoadmin/describe_permission_set_provisioning_status.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_permission_set_provisioning_status/} for full documentation.
 }
 \keyword{internal}

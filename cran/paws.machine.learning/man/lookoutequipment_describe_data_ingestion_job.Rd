@@ -13,6 +13,6 @@ lookoutequipment_describe_data_ingestion_job(JobId)
 \description{
 Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
 
-See \url{https://paws-r.github.io/docs/lookoutequipment/describe_data_ingestion_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_data_ingestion_job/} for full documentation.
 }
 \keyword{internal}

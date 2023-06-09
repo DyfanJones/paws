@@ -25,6 +25,6 @@ containing NextToken. It is used for pagination.}
 \description{
 Returns information about reserved Elasticsearch instances for this account.
 
-See \url{https://paws-r.github.io/docs/elasticsearchservice/describe_reserved_elasticsearch_instances.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_reserved_elasticsearch_instances/} for full documentation.
 }
 \keyword{internal}

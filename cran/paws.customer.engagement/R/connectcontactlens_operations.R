@@ -8,7 +8,7 @@ NULL
 #' @description
 #' Provides a list of analysis segments for a real-time analysis session.
 #'
-#' See [https://paws-r.github.io/docs/connectcontactlens/list_realtime_contact_analysis_segments.html](https://paws-r.github.io/docs/connectcontactlens/list_realtime_contact_analysis_segments.html) for full documentation.
+#' See [https://paws-r-sdk.com/docs/list_realtime_contact_analysis_segments/](https://paws-r-sdk.com/docs/list_realtime_contact_analysis_segments/) for full documentation.
 #'
 #' @param InstanceId &#91;required&#93; The identifier of the Amazon Connect instance.
 #' @param ContactId &#91;required&#93; The identifier of the contact.

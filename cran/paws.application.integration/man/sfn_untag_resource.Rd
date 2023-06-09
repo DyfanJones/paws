@@ -15,6 +15,6 @@ activity.}
 \description{
 Remove a tag from a Step Functions resource
 
-See \url{https://paws-r.github.io/docs/sfn/untag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_resource/} for full documentation.
 }
 \keyword{internal}

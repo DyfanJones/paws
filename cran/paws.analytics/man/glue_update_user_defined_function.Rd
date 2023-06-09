@@ -27,6 +27,6 @@ Catalog.}
 \description{
 Updates an existing function definition in the Data Catalog.
 
-See \url{https://paws-r.github.io/docs/glue/update_user_defined_function.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_user_defined_function/} for full documentation.
 }
 \keyword{internal}

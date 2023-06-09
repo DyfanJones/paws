@@ -27,6 +27,6 @@ manager participant in non-streaming chats.}
 \description{
 Creates the participant's connection.
 
-See \url{https://paws-r.github.io/docs/connectparticipant/create_participant_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_participant_connection/} for full documentation.
 }
 \keyword{internal}

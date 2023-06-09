@@ -12,6 +12,6 @@ connectcampaignservice_resume_campaign(id)
 \description{
 Stops a campaign for the specified Amazon Connect account.
 
-See \url{https://paws-r.github.io/docs/connectcampaignservice/resume_campaign.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/resume_campaign/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ guardduty_delete_detector(DetectorId)
 \description{
 Deletes an Amazon GuardDuty detector that is specified by the detector ID.
 
-See \url{https://paws-r.github.io/docs/guardduty/delete_detector.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_detector/} for full documentation.
 }
 \keyword{internal}

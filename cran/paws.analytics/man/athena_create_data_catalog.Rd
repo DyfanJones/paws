@@ -71,6 +71,6 @@ created.}
 \description{
 Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.
 
-See \url{https://paws-r.github.io/docs/athena/create_data_catalog.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_data_catalog/} for full documentation.
 }
 \keyword{internal}

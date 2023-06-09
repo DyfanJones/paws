@@ -17,6 +17,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Deletes the specified snapshot.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_snapshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_snapshot/} for full documentation.
 }
 \keyword{internal}

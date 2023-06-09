@@ -19,6 +19,6 @@ ID string requires exactly 12 digits.}
 \description{
 Retrieves Organizations-related information about the specified account.
 
-See \url{https://paws-r.github.io/docs/organizations/describe_account.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_account/} for full documentation.
 }
 \keyword{internal}

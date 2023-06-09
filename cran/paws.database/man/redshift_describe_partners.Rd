@@ -27,6 +27,6 @@ specified, then all partner integrations are described.}
 \description{
 Returns information about the partner integrations defined for a cluster.
 
-See \url{https://paws-r.github.io/docs/redshift/describe_partners.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_partners/} for full documentation.
 }
 \keyword{internal}

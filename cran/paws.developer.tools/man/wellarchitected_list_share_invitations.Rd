@@ -27,6 +27,6 @@ the results.}
 \description{
 List the workload invitations.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/list_share_invitations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_share_invitations/} for full documentation.
 }
 \keyword{internal}

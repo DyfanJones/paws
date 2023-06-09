@@ -46,6 +46,6 @@ and a \code{nextToken} value, if applicable. If you specify images with
 \description{
 Returns metadata that's related to the images in a repository in a public registry.
 
-See \url{https://paws-r.github.io/docs/ecrpublic/describe_images.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_images/} for full documentation.
 }
 \keyword{internal}

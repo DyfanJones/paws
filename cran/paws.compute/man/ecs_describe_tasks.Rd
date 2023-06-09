@@ -22,6 +22,6 @@ field is omitted, tags aren't included in the response.}
 \description{
 Describes a specified task or tasks.
 
-See \url{https://paws-r.github.io/docs/ecs/describe_tasks.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_tasks/} for full documentation.
 }
 \keyword{internal}

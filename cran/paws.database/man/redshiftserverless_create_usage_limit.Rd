@@ -34,6 +34,6 @@ for.}
 \description{
 Creates a usage limit for a specified Amazon Redshift Serverless usage type. The usage limit is identified by the returned usage limit identifier.
 
-See \url{https://paws-r.github.io/docs/redshiftserverless/create_usage_limit.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_usage_limit/} for full documentation.
 }
 \keyword{internal}

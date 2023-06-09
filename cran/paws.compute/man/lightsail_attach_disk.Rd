@@ -23,6 +23,6 @@ This value only applies to Lightsail for Research resources.}
 \description{
 Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the instance with the specified disk name.
 
-See \url{https://paws-r.github.io/docs/lightsail/attach_disk.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/attach_disk/} for full documentation.
 }
 \keyword{internal}

@@ -42,6 +42,6 @@ no more next tokens are returned.}
 \description{
 Gets a list of projects that are shared with other Amazon Web Services accounts or users.
 
-See \url{https://paws-r.github.io/docs/codebuild/list_shared_projects.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_shared_projects/} for full documentation.
 }
 \keyword{internal}

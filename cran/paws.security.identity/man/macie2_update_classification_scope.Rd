@@ -16,6 +16,6 @@ classification scope.}
 \description{
 Updates the classification scope settings for an account.
 
-See \url{https://paws-r.github.io/docs/macie2/update_classification_scope.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_classification_scope/} for full documentation.
 }
 \keyword{internal}

@@ -60,6 +60,6 @@ marker, up to the value specified by \code{MaxRecords}.}
 \description{
 Returns information about provisioned RDS instances. This API supports pagination.
 
-See \url{https://paws-r.github.io/docs/rds/describe_db_instances.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_db_instances/} for full documentation.
 }
 \keyword{internal}

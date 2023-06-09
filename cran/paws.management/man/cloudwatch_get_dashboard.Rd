@@ -12,6 +12,6 @@ cloudwatch_get_dashboard(DashboardName)
 \description{
 Displays the details of the dashboard that you specify.
 
-See \url{https://paws-r.github.io/docs/cloudwatch/get_dashboard.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_dashboard/} for full documentation.
 }
 \keyword{internal}

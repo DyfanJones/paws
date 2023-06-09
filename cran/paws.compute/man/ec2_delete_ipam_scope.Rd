@@ -17,6 +17,6 @@ you have the required permissions, the error response is
 \description{
 Delete the scope for an IPAM. You cannot delete the default scopes.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_ipam_scope.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_ipam_scope/} for full documentation.
 }
 \keyword{internal}

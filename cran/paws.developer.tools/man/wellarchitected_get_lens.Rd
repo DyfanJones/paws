@@ -14,6 +14,6 @@ wellarchitected_get_lens(LensAlias, LensVersion = NULL)
 \description{
 Get an existing lens.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/get_lens.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_lens/} for full documentation.
 }
 \keyword{internal}

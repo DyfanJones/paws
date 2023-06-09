@@ -67,6 +67,6 @@ different account, the request fails with the HTTP status code
 \description{
 Sets the supplied tag-set to an object that already exists in a bucket.
 
-See \url{https://paws-r.github.io/docs/s3/put_object_tagging.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_object_tagging/} for full documentation.
 }
 \keyword{internal}

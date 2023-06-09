@@ -43,6 +43,6 @@ Lightsail Developer Guide}.}
 \description{
 Creates an Amazon Lightsail bucket.
 
-See \url{https://paws-r.github.io/docs/lightsail/create_bucket.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_bucket/} for full documentation.
 }
 \keyword{internal}

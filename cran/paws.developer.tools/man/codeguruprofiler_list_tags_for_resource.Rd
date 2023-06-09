@@ -13,6 +13,6 @@ return.}
 \description{
 Returns a list of the tags that are assigned to a specified resource.
 
-See \url{https://paws-r.github.io/docs/codeguruprofiler/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

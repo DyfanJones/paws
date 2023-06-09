@@ -24,6 +24,6 @@ the query was run.}
 \description{
 Gets event data results of a query. You must specify the \code{QueryID} value returned by the \code{\link[=cloudtrail_start_query]{start_query}} operation, and an ARN for \code{EventDataStore}.
 
-See \url{https://paws-r.github.io/docs/cloudtrail/get_query_results.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_query_results/} for full documentation.
 }
 \keyword{internal}

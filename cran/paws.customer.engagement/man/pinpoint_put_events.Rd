@@ -16,6 +16,6 @@ as the \strong{Project ID} on the Amazon Pinpoint console.}
 \description{
 Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are associated with.
 
-See \url{https://paws-r.github.io/docs/pinpoint/put_events.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_events/} for full documentation.
 }
 \keyword{internal}

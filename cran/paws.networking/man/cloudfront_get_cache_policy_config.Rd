@@ -17,6 +17,6 @@ using \code{\link[=cloudfront_list_cache_policies]{list_cache_policies}}.}
 \description{
 Gets a cache policy configuration.
 
-See \url{https://paws-r.github.io/docs/cloudfront/get_cache_policy_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_cache_policy_config/} for full documentation.
 }
 \keyword{internal}

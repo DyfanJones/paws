@@ -13,6 +13,6 @@ codestar_describe_user_profile(userArn)
 \description{
 Describes a user in AWS CodeStar and the user attributes across all projects.
 
-See \url{https://paws-r.github.io/docs/codestar/describe_user_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_user_profile/} for full documentation.
 }
 \keyword{internal}

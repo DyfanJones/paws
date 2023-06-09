@@ -334,6 +334,6 @@ There are currently no options supported for statistics.}
 \description{
 Retrieves a list of documents that match the specified search criteria. How you specify the search criteria depends on which query parser you use. Amazon CloudSearch supports four query parsers:
 
-See \url{https://paws-r.github.io/docs/cloudsearchdomain/search.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/search/} for full documentation.
 }
 \keyword{internal}

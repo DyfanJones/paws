@@ -12,6 +12,6 @@ personalize_delete_metric_attribution(metricAttributionArn)
 \description{
 Deletes a metric attribution.
 
-See \url{https://paws-r.github.io/docs/personalize/delete_metric_attribution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_metric_attribution/} for full documentation.
 }
 \keyword{internal}

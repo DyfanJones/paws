@@ -12,6 +12,6 @@ lightsail_delete_alarm(alarmName)
 \description{
 Deletes an alarm.
 
-See \url{https://paws-r.github.io/docs/lightsail/delete_alarm.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_alarm/} for full documentation.
 }
 \keyword{internal}

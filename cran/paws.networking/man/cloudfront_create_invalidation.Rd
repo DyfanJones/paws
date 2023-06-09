@@ -14,6 +14,6 @@ cloudfront_create_invalidation(DistributionId, InvalidationBatch)
 \description{
 Create a new invalidation.
 
-See \url{https://paws-r.github.io/docs/cloudfront/create_invalidation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_invalidation/} for full documentation.
 }
 \keyword{internal}

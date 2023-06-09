@@ -34,6 +34,6 @@ used to get the values for SenderId and SenderIdArn.}
 \description{
 Creates or updates a keyword configuration on an origination phone number or pool.
 
-See \url{https://paws-r.github.io/docs/pinpointsmsvoicev2/put_keyword.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_keyword/} for full documentation.
 }
 \keyword{internal}

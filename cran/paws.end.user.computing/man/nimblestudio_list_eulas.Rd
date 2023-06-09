@@ -15,6 +15,6 @@ results.}
 \description{
 List EULAs.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/list_eulas.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_eulas/} for full documentation.
 }
 \keyword{internal}

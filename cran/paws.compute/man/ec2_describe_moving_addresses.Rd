@@ -40,6 +40,6 @@ Default: If no value is provided, the default is 1000.}
 \description{
 Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your account.
 
-See \url{https://paws-r.github.io/docs/ec2/describe_moving_addresses.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_moving_addresses/} for full documentation.
 }
 \keyword{internal}

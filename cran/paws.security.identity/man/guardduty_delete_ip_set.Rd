@@ -14,6 +14,6 @@ guardduty_delete_ip_set(DetectorId, IpSetId)
 \description{
 Deletes the IPSet specified by the \code{ipSetId}. IPSets are called trusted IP lists in the console user interface.
 
-See \url{https://paws-r.github.io/docs/guardduty/delete_ip_set.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_ip_set/} for full documentation.
 }
 \keyword{internal}

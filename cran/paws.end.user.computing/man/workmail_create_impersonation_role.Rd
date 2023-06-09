@@ -30,6 +30,6 @@ are \code{READ_ONLY} or \code{FULL_ACCESS}.}
 \description{
 Creates an impersonation role for the given WorkMail organization.
 
-See \url{https://paws-r.github.io/docs/workmail/create_impersonation_role.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_impersonation_role/} for full documentation.
 }
 \keyword{internal}

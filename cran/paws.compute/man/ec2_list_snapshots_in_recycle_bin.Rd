@@ -31,6 +31,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Lists one or more snapshots that are currently in the Recycle Bin.
 
-See \url{https://paws-r.github.io/docs/ec2/list_snapshots_in_recycle_bin.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_snapshots_in_recycle_bin/} for full documentation.
 }
 \keyword{internal}

@@ -15,6 +15,6 @@ information on.}
 \description{
 Gets data source package information for the behavior graph.
 
-See \url{https://paws-r.github.io/docs/detective/batch_get_graph_member_datasources.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/batch_get_graph_member_datasources/} for full documentation.
 }
 \keyword{internal}

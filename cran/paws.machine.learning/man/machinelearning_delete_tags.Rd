@@ -16,6 +16,6 @@ machinelearning_delete_tags(TagKeys, ResourceId, ResourceType)
 \description{
 Deletes the specified tags associated with an ML object. After this operation is complete, you can't recover deleted tags.
 
-See \url{https://paws-r.github.io/docs/machinelearning/delete_tags.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_tags/} for full documentation.
 }
 \keyword{internal}

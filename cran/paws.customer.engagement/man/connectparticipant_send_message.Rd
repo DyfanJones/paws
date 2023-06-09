@@ -37,6 +37,6 @@ populates this field. For more information about idempotency, see
 \description{
 Sends a message.
 
-See \url{https://paws-r.github.io/docs/connectparticipant/send_message.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/send_message/} for full documentation.
 }
 \keyword{internal}

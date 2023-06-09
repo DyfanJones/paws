@@ -12,6 +12,6 @@ schemas_start_discoverer(DiscovererId)
 \description{
 Starts the discoverer
 
-See \url{https://paws-r.github.io/docs/schemas/start_discoverer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_discoverer/} for full documentation.
 }
 \keyword{internal}

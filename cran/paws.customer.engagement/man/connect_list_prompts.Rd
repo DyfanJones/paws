@@ -20,6 +20,6 @@ size is 100.}
 \description{
 Provides information about the prompts for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_prompts.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_prompts/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ globalaccelerator_delete_listener(ListenerArn)
 \description{
 Delete a listener from an accelerator.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/delete_listener.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_listener/} for full documentation.
 }
 \keyword{internal}

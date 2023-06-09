@@ -22,6 +22,6 @@ keys are removed from the specified instance profile.}
 \description{
 Removes the specified tags from the IAM virtual multi-factor authentication (MFA) device. For more information about tagging, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html}{Tagging IAM resources} in the \emph{IAM User Guide}.
 
-See \url{https://paws-r.github.io/docs/iam/untag_mfa_device.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_mfa_device/} for full documentation.
 }
 \keyword{internal}

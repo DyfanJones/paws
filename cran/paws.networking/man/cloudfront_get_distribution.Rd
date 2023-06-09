@@ -13,6 +13,6 @@ configuration is returned.}
 \description{
 Get the information about a distribution.
 
-See \url{https://paws-r.github.io/docs/cloudfront/get_distribution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_distribution/} for full documentation.
 }
 \keyword{internal}

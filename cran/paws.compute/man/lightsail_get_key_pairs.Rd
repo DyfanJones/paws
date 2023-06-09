@@ -20,6 +20,6 @@ in the response of your request.}
 \description{
 Returns information about all key pairs in the user's account.
 
-See \url{https://paws-r.github.io/docs/lightsail/get_key_pairs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_key_pairs/} for full documentation.
 }
 \keyword{internal}

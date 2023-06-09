@@ -34,6 +34,6 @@ idempotency of the request. For more information, see \href{https://docs.aws.ama
 \description{
 Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.
 
-See \url{https://paws-r.github.io/docs/ec2/start_network_insights_analysis.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_network_insights_analysis/} for full documentation.
 }
 \keyword{internal}

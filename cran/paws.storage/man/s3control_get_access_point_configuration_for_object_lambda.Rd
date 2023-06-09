@@ -16,6 +16,6 @@ configuration for.}
 \description{
 Returns configuration for an Object Lambda Access Point.
 
-See \url{https://paws-r.github.io/docs/s3control/get_access_point_configuration_for_object_lambda.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_access_point_configuration_for_object_lambda/} for full documentation.
 }
 \keyword{internal}

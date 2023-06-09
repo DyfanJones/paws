@@ -31,6 +31,6 @@ starts.}
 \description{
 Notifies the result of the update engine execution.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/notify_update_provisioned_product_engine_workflow_result.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/notify_update_provisioned_product_engine_workflow_result/} for full documentation.
 }
 \keyword{internal}

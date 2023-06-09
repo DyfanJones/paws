@@ -34,6 +34,6 @@ fail.}
 \description{
 Updates the contents of a Spark notebook.
 
-See \url{https://paws-r.github.io/docs/athena/update_notebook.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_notebook/} for full documentation.
 }
 \keyword{internal}

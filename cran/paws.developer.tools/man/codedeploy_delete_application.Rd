@@ -13,6 +13,6 @@ Amazon Web Services account.}
 \description{
 Deletes an application.
 
-See \url{https://paws-r.github.io/docs/codedeploy/delete_application.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_application/} for full documentation.
 }
 \keyword{internal}

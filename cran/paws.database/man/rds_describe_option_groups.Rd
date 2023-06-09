@@ -57,6 +57,6 @@ also be specified.}
 \description{
 Describes the available option groups.
 
-See \url{https://paws-r.github.io/docs/rds/describe_option_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_option_groups/} for full documentation.
 }
 \keyword{internal}

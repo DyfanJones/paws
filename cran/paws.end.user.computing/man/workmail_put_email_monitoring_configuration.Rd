@@ -24,6 +24,6 @@ with the email monitoring configuration.}
 \description{
 Creates or updates the email monitoring configuration for a specified organization.
 
-See \url{https://paws-r.github.io/docs/workmail/put_email_monitoring_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_email_monitoring_configuration/} for full documentation.
 }
 \keyword{internal}

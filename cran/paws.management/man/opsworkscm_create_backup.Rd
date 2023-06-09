@@ -30,6 +30,6 @@ OpsWorks-CM resources.
 \description{
 Creates an application-level backup of a server. While the server is in the \code{BACKING_UP} state, the server cannot be changed, and no additional backup can be created.
 
-See \url{https://paws-r.github.io/docs/opsworkscm/create_backup.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_backup/} for full documentation.
 }
 \keyword{internal}

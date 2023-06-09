@@ -12,6 +12,6 @@ panorama_describe_application_instance(ApplicationInstanceId)
 \description{
 Returns information about an application instance on a device.
 
-See \url{https://paws-r.github.io/docs/panorama/describe_application_instance.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_application_instance/} for full documentation.
 }
 \keyword{internal}

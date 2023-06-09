@@ -30,6 +30,6 @@ in the \emph{AWS Auto Scaling API Reference}.}
 \description{
 Creates a scaling plan.
 
-See \url{https://paws-r.github.io/docs/autoscalingplans/create_scaling_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_scaling_plan/} for full documentation.
 }
 \keyword{internal}

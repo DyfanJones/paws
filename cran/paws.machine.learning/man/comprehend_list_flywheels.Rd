@@ -18,6 +18,6 @@ only set one filter at a time.}
 \description{
 Gets a list of the flywheels that you have created.
 
-See \url{https://paws-r.github.io/docs/comprehend/list_flywheels.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_flywheels/} for full documentation.
 }
 \keyword{internal}

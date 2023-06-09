@@ -17,6 +17,6 @@ in the \emph{Amazon RDS User Guide}.}
 \description{
 Lists all tags on an Amazon RDS resource.
 
-See \url{https://paws-r.github.io/docs/rds/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

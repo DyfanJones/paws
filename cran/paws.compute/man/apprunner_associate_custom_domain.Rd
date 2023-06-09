@@ -28,6 +28,6 @@ Default: \code{true}}
 \description{
 Associate your own domain name with the App Runner subdomain URL of your App Runner service.
 
-See \url{https://paws-r.github.io/docs/apprunner/associate_custom_domain.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/associate_custom_domain/} for full documentation.
 }
 \keyword{internal}

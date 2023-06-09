@@ -62,6 +62,6 @@ choosing with the proxy.}
 \description{
 Creates a new DB proxy.
 
-See \url{https://paws-r.github.io/docs/rds/create_db_proxy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_db_proxy/} for full documentation.
 }
 \keyword{internal}

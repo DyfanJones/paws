@@ -16,6 +16,6 @@ value.}
 \description{
 Lists your experiments.
 
-See \url{https://paws-r.github.io/docs/fis/list_experiments.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_experiments/} for full documentation.
 }
 \keyword{internal}

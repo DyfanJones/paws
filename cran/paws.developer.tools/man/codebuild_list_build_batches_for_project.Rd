@@ -35,6 +35,6 @@ list, exclude this parameter.}
 \description{
 Retrieves the identifiers of the build batches for a specific project.
 
-See \url{https://paws-r.github.io/docs/codebuild/list_build_batches_for_project.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_build_batches_for_project/} for full documentation.
 }
 \keyword{internal}

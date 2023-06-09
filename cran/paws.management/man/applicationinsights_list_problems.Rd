@@ -34,6 +34,6 @@ value.}
 \description{
 Lists the problems with your application.
 
-See \url{https://paws-r.github.io/docs/applicationinsights/list_problems.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_problems/} for full documentation.
 }
 \keyword{internal}

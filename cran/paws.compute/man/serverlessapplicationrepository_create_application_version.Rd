@@ -33,6 +33,6 @@ for example the URL of a specific GitHub commit.}
 \description{
 Creates an application version.
 
-See \url{https://paws-r.github.io/docs/serverlessapplicationrepository/create_application_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_application_version/} for full documentation.
 }
 \keyword{internal}

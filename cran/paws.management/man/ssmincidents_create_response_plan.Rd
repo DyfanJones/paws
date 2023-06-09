@@ -43,6 +43,6 @@ plan.}
 \description{
 Creates a response plan that automates the initial response to incidents. A response plan engages contacts, starts chat channel collaboration, and initiates runbooks at the beginning of an incident.
 
-See \url{https://paws-r.github.io/docs/ssmincidents/create_response_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_response_plan/} for full documentation.
 }
 \keyword{internal}

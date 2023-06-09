@@ -18,6 +18,6 @@ servicecatalog_delete_portfolio(AcceptLanguage = NULL, Id)
 \description{
 Deletes the specified portfolio.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/delete_portfolio.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_portfolio/} for full documentation.
 }
 \keyword{internal}

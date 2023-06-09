@@ -17,6 +17,6 @@ plan.}
 \description{
 This updates an existing pricing plan.
 
-See \url{https://paws-r.github.io/docs/billingconductor/update_pricing_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_pricing_plan/} for full documentation.
 }
 \keyword{internal}

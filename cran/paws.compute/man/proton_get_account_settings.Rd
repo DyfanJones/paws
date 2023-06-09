@@ -9,6 +9,6 @@ proton_get_account_settings()
 \description{
 Get detail data for Proton account-wide settings.
 
-See \url{https://paws-r.github.io/docs/proton/get_account_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_account_settings/} for full documentation.
 }
 \keyword{internal}

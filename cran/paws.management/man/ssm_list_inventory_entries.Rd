@@ -30,6 +30,6 @@ next set of results.}
 \description{
 A list of inventory items returned by the request.
 
-See \url{https://paws-r.github.io/docs/ssm/list_inventory_entries.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_inventory_entries/} for full documentation.
 }
 \keyword{internal}

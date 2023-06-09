@@ -17,6 +17,6 @@ Elasticsearch domain.}
 \description{
 Removes the specified set of tags from the specified Elasticsearch domain.
 
-See \url{https://paws-r.github.io/docs/elasticsearchservice/remove_tags.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/remove_tags/} for full documentation.
 }
 \keyword{internal}

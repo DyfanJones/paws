@@ -12,6 +12,6 @@ directconnect_delete_virtual_interface(virtualInterfaceId)
 \description{
 Deletes a virtual interface.
 
-See \url{https://paws-r.github.io/docs/directconnect/delete_virtual_interface.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_virtual_interface/} for full documentation.
 }
 \keyword{internal}

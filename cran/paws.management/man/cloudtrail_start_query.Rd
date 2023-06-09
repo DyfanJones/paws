@@ -14,6 +14,6 @@ cloudtrail_start_query(QueryStatement, DeliveryS3Uri = NULL)
 \description{
 Starts a CloudTrail Lake query. The required \code{QueryStatement} parameter provides your SQL query, enclosed in single quotation marks. Use the optional \code{DeliveryS3Uri} parameter to deliver the query results to an S3 bucket.
 
-See \url{https://paws-r.github.io/docs/cloudtrail/start_query.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_query/} for full documentation.
 }
 \keyword{internal}

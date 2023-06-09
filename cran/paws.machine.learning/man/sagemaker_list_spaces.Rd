@@ -31,6 +31,6 @@ it in your next request to receive the next set of results.}
 \description{
 Lists spaces.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_spaces.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_spaces/} for full documentation.
 }
 \keyword{internal}

@@ -23,6 +23,6 @@ the function name, it is limited to 64 characters in length.}
 \description{
 Removes the code signing configuration from the function.
 
-See \url{https://paws-r.github.io/docs/lambda/delete_function_code_signing_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_function_code_signing_config/} for full documentation.
 }
 \keyword{internal}

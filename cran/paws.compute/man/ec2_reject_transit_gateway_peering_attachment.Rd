@@ -20,6 +20,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Rejects a transit gateway peering attachment request.
 
-See \url{https://paws-r.github.io/docs/ec2/reject_transit_gateway_peering_attachment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/reject_transit_gateway_peering_attachment/} for full documentation.
 }
 \keyword{internal}

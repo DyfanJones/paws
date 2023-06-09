@@ -12,6 +12,6 @@ workspaces_rebuild_workspaces(RebuildWorkspaceRequests)
 \description{
 Rebuilds the specified WorkSpace.
 
-See \url{https://paws-r.github.io/docs/workspaces/rebuild_workspaces.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/rebuild_workspaces/} for full documentation.
 }
 \keyword{internal}

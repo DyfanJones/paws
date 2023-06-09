@@ -40,6 +40,6 @@ and use the new token returned by that operation.}
 \description{
 Deletes the specified RegexPatternSet.
 
-See \url{https://paws-r.github.io/docs/wafv2/delete_regex_pattern_set.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_regex_pattern_set/} for full documentation.
 }
 \keyword{internal}

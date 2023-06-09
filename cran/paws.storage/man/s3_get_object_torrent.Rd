@@ -26,6 +26,6 @@ different account, the request fails with the HTTP status code
 \description{
 Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're distributing large files.
 
-See \url{https://paws-r.github.io/docs/s3/get_object_torrent.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_object_torrent/} for full documentation.
 }
 \keyword{internal}

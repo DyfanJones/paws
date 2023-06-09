@@ -25,6 +25,6 @@ associated with the first interaction with the contact center.}
 \description{
 Starts recording the contact:
 
-See \url{https://paws-r.github.io/docs/connect/start_contact_recording.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_contact_recording/} for full documentation.
 }
 \keyword{internal}

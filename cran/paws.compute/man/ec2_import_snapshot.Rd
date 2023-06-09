@@ -77,6 +77,6 @@ Amazon EBS does not support asymmetric KMS keys.}
 \description{
 Imports a disk into an EBS snapshot.
 
-See \url{https://paws-r.github.io/docs/ec2/import_snapshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/import_snapshot/} for full documentation.
 }
 \keyword{internal}

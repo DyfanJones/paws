@@ -40,6 +40,6 @@ are the following:
 \description{
 Stops an inference experiment.
 
-See \url{https://paws-r.github.io/docs/sagemaker/stop_inference_experiment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_inference_experiment/} for full documentation.
 }
 \keyword{internal}

@@ -15,6 +15,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 Deletes a prompt.
 
-See \url{https://paws-r.github.io/docs/connect/delete_prompt.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_prompt/} for full documentation.
 }
 \keyword{internal}

@@ -43,6 +43,6 @@ distribution.}
 \description{
 Updates an existing Amazon Lightsail content delivery network (CDN) distribution.
 
-See \url{https://paws-r.github.io/docs/lightsail/update_distribution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_distribution/} for full documentation.
 }
 \keyword{internal}

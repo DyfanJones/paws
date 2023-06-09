@@ -108,6 +108,6 @@ jobs. This must not be specified for Amazon ECS based job definitions.}
 \description{
 Registers an Batch job definition.
 
-See \url{https://paws-r.github.io/docs/batch/register_job_definition.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/register_job_definition/} for full documentation.
 }
 \keyword{internal}

@@ -24,6 +24,6 @@ your changes to the domain's resource policy.}
 \description{
 Deletes the resource policy set on a domain.
 
-See \url{https://paws-r.github.io/docs/codeartifact/delete_domain_permissions_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_domain_permissions_policy/} for full documentation.
 }
 \keyword{internal}

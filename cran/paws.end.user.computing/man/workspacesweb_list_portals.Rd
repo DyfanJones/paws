@@ -15,6 +15,6 @@ operation.}
 \description{
 Retrieves a list or web portals.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/list_portals.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_portals/} for full documentation.
 }
 \keyword{internal}

@@ -87,6 +87,6 @@ your instances have the latest security updates.}
 \description{
 Updates a specified layer.
 
-See \url{https://paws-r.github.io/docs/opsworks/update_layer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_layer/} for full documentation.
 }
 \keyword{internal}

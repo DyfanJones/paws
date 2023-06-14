@@ -26,6 +26,6 @@ removed.}
 \description{
 Removes an existing external connection from a repository.
 
-See \url{https://paws-r.github.io/docs/codeartifact/disassociate_external_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_external_connection/} for full documentation.
 }
 \keyword{internal}

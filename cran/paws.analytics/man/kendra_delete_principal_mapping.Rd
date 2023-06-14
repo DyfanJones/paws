@@ -48,6 +48,6 @@ the action was received by Amazon Kendra.}
 \description{
 Deletes a group so that all users and sub groups that belong to the group can no longer access documents only available to that group.
 
-See \url{https://paws-r.github.io/docs/kendra/delete_principal_mapping.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_principal_mapping/} for full documentation.
 }
 \keyword{internal}

@@ -9,6 +9,6 @@ sagemaker_disable_sagemaker_servicecatalog_portfolio()
 \description{
 Disables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.
 
-See \url{https://paws-r.github.io/docs/sagemaker/disable_sagemaker_servicecatalog_portfolio.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disable_sagemaker_servicecatalog_portfolio/} for full documentation.
 }
 \keyword{internal}

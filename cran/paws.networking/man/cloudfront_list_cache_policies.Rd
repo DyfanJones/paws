@@ -27,6 +27,6 @@ response.}
 \description{
 Gets a list of cache policies.
 
-See \url{https://paws-r.github.io/docs/cloudfront/list_cache_policies.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_cache_policies/} for full documentation.
 }
 \keyword{internal}

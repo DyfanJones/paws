@@ -27,6 +27,6 @@ servicecatalog_associate_product_with_portfolio(
 \description{
 Associates the specified product with the specified portfolio.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/associate_product_with_portfolio.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/associate_product_with_portfolio/} for full documentation.
 }
 \keyword{internal}

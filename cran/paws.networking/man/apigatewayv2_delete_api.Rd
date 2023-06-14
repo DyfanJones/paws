@@ -12,6 +12,6 @@ apigatewayv2_delete_api(ApiId)
 \description{
 Deletes an Api resource.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/delete_api.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_api/} for full documentation.
 }
 \keyword{internal}

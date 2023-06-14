@@ -28,6 +28,6 @@ function name, it is limited to 64 characters in length.}
 \description{
 Retrieves the configuration for asynchronous invocation for a function, version, or alias.
 
-See \url{https://paws-r.github.io/docs/lambda/get_function_event_invoke_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_function_event_invoke_config/} for full documentation.
 }
 \keyword{internal}

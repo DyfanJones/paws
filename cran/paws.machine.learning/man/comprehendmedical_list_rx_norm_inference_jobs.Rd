@@ -22,6 +22,6 @@ only set one filter at a time.}
 \description{
 Gets a list of InferRxNorm jobs that you have submitted.
 
-See \url{https://paws-r.github.io/docs/comprehendmedical/list_rx_norm_inference_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_rx_norm_inference_jobs/} for full documentation.
 }
 \keyword{internal}

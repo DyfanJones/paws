@@ -13,6 +13,6 @@ insight.}
 \description{
 Collects customer feedback about the specified insight.
 
-See \url{https://paws-r.github.io/docs/devopsguru/put_feedback.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_feedback/} for full documentation.
 }
 \keyword{internal}

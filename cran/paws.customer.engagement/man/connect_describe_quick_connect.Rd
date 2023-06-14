@@ -15,6 +15,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 Describes the quick connect.
 
-See \url{https://paws-r.github.io/docs/connect/describe_quick_connect.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_quick_connect/} for full documentation.
 }
 \keyword{internal}

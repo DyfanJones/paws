@@ -49,6 +49,6 @@ the value specified by \code{MaxRecords} .}
 \description{
 Returns a list of orderable DB instance options for the specified engine.
 
-See \url{https://paws-r.github.io/docs/neptune/describe_orderable_db_instance_options.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_orderable_db_instance_options/} for full documentation.
 }
 \keyword{internal}

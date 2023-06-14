@@ -52,6 +52,6 @@ marker, up to the value specified by \code{MaxRecords}.}
 \description{
 Describes all available options.
 
-See \url{https://paws-r.github.io/docs/rds/describe_option_group_options.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_option_group_options/} for full documentation.
 }
 \keyword{internal}

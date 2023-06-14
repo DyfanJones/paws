@@ -170,6 +170,6 @@ profiling system and framework metrics.}
 \description{
 Starts a model training job. After training completes, SageMaker saves the resulting model artifacts to an Amazon S3 location that you specify.
 
-See \url{https://paws-r.github.io/docs/sagemaker/create_training_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_training_job/} for full documentation.
 }
 \keyword{internal}

@@ -62,6 +62,6 @@ default value that is provided for the variable.}
 \description{
 Evaluates an event against a detector version. If a version ID is not provided, the detector’s (\code{ACTIVE}) version is used.
 
-See \url{https://paws-r.github.io/docs/frauddetector/get_event_prediction.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_event_prediction/} for full documentation.
 }
 \keyword{internal}

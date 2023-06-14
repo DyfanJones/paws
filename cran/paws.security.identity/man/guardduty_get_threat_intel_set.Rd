@@ -15,6 +15,6 @@ with.}
 \description{
 Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
 
-See \url{https://paws-r.github.io/docs/guardduty/get_threat_intel_set.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_threat_intel_set/} for full documentation.
 }
 \keyword{internal}

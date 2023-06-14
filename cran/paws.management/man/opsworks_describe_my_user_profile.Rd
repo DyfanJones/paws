@@ -9,6 +9,6 @@ opsworks_describe_my_user_profile()
 \description{
 Describes a user's SSH information.
 
-See \url{https://paws-r.github.io/docs/opsworks/describe_my_user_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_my_user_profile/} for full documentation.
 }
 \keyword{internal}

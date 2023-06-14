@@ -12,6 +12,6 @@ schemas_delete_discoverer(DiscovererId)
 \description{
 Deletes a discoverer.
 
-See \url{https://paws-r.github.io/docs/schemas/delete_discoverer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_discoverer/} for full documentation.
 }
 \keyword{internal}

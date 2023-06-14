@@ -24,6 +24,6 @@ The default value is false.}
 \description{
 Deletes a delivery stream and its data.
 
-See \url{https://paws-r.github.io/docs/firehose/delete_delivery_stream.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_delivery_stream/} for full documentation.
 }
 \keyword{internal}

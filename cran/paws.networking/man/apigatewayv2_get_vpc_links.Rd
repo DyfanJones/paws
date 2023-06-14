@@ -15,6 +15,6 @@ element of the collection.}
 \description{
 Gets a collection of VPC links.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/get_vpc_links.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_vpc_links/} for full documentation.
 }
 \keyword{internal}

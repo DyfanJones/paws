@@ -28,6 +28,6 @@ results.}
 \description{
 Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names. Filter parameters are exclusive.
 
-See \url{https://paws-r.github.io/docs/cloudwatchevents/list_replays.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_replays/} for full documentation.
 }
 \keyword{internal}

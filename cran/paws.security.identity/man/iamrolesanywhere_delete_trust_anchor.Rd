@@ -12,6 +12,6 @@ iamrolesanywhere_delete_trust_anchor(trustAnchorId)
 \description{
 Deletes a trust anchor.
 
-See \url{https://paws-r.github.io/docs/iamrolesanywhere/delete_trust_anchor.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_trust_anchor/} for full documentation.
 }
 \keyword{internal}

@@ -17,6 +17,6 @@ wellarchitected_update_share_invitation(
 \description{
 Update a workload or custom lens share invitation.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/update_share_invitation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_share_invitation/} for full documentation.
 }
 \keyword{internal}

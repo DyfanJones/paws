@@ -17,6 +17,6 @@ different account, the request fails with the HTTP status code
 \description{
 Returns the logging status of a bucket and the permissions users have to view and modify that status.
 
-See \url{https://paws-r.github.io/docs/s3/get_bucket_logging.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_bucket_logging/} for full documentation.
 }
 \keyword{internal}

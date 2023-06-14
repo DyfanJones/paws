@@ -13,6 +13,6 @@ describe.}
 \description{
 Returns summary information about the connector.
 
-See \url{https://paws-r.github.io/docs/kafkaconnect/describe_connector.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_connector/} for full documentation.
 }
 \keyword{internal}

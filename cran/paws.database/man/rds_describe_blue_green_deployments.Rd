@@ -58,6 +58,6 @@ Constraints: Minimum 20, maximum 100.}
 \description{
 Returns information about blue/green deployments.
 
-See \url{https://paws-r.github.io/docs/rds/describe_blue_green_deployments.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_blue_green_deployments/} for full documentation.
 }
 \keyword{internal}

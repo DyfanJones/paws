@@ -21,6 +21,6 @@ retrieve this value using or .}
 \description{
 Deletes a snapshot of application state.
 
-See \url{https://paws-r.github.io/docs/kinesisanalyticsv2/delete_application_snapshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_application_snapshot/} for full documentation.
 }
 \keyword{internal}

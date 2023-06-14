@@ -23,6 +23,6 @@ wellarchitected_import_lens(
 \description{
 Import a new custom lens or update an existing custom lens.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/import_lens.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/import_lens/} for full documentation.
 }
 \keyword{internal}

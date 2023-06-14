@@ -12,6 +12,6 @@ lightsail_delete_domain(domainName)
 \description{
 Deletes the specified domain recordset and all of its domain records.
 
-See \url{https://paws-r.github.io/docs/lightsail/delete_domain.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_domain/} for full documentation.
 }
 \keyword{internal}

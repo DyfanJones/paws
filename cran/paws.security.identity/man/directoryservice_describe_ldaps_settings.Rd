@@ -24,6 +24,6 @@ is supported.}
 \description{
 Describes the status of LDAP security for the specified directory.
 
-See \url{https://paws-r.github.io/docs/directoryservice/describe_ldaps_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_ldaps_settings/} for full documentation.
 }
 \keyword{internal}

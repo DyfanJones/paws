@@ -13,6 +13,6 @@ delete.}
 \description{
 Deletes a notification rule for a resource.
 
-See \url{https://paws-r.github.io/docs/codestarnotifications/delete_notification_rule.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_notification_rule/} for full documentation.
 }
 \keyword{internal}

@@ -29,6 +29,6 @@ appstream_create_app_block(
 \description{
 Creates an app block.
 
-See \url{https://paws-r.github.io/docs/appstream/create_app_block.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_app_block/} for full documentation.
 }
 \keyword{internal}

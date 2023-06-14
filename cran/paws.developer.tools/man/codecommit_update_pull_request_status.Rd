@@ -17,6 +17,6 @@ the status from \code{OPEN} to \code{OPEN}, \code{OPEN} to \code{CLOSED} or from
 \description{
 Updates the status of a pull request.
 
-See \url{https://paws-r.github.io/docs/codecommit/update_pull_request_status.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_pull_request_status/} for full documentation.
 }
 \keyword{internal}

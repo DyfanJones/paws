@@ -15,6 +15,6 @@ tags.}
 \description{
 Deletes the tags for a resource.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/untag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_resource/} for full documentation.
 }
 \keyword{internal}

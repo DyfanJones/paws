@@ -12,6 +12,6 @@ redshiftserverless_get_workgroup(workgroupName)
 \description{
 Returns information about a specific workgroup.
 
-See \url{https://paws-r.github.io/docs/redshiftserverless/get_workgroup.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_workgroup/} for full documentation.
 }
 \keyword{internal}

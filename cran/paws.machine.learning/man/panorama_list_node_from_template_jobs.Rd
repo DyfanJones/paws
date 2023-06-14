@@ -16,6 +16,6 @@ next page of results.}
 \description{
 Returns a list of camera stream node jobs.
 
-See \url{https://paws-r.github.io/docs/panorama/list_node_from_template_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_node_from_template_jobs/} for full documentation.
 }
 \keyword{internal}

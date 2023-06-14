@@ -12,6 +12,6 @@ apigatewayv2_get_tags(ResourceArn)
 \description{
 Gets a collection of Tag resources.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/get_tags.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_tags/} for full documentation.
 }
 \keyword{internal}

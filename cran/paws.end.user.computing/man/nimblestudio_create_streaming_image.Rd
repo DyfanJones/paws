@@ -34,6 +34,6 @@ this resource.}
 \description{
 Creates a streaming image resource in a studio.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/create_streaming_image.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_streaming_image/} for full documentation.
 }
 \keyword{internal}

@@ -61,6 +61,6 @@ includes a list of supported time zones for each engine version.}
 \description{
 Returns a list of the available DB engines.
 
-See \url{https://paws-r.github.io/docs/neptune/describe_db_engine_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_db_engine_versions/} for full documentation.
 }
 \keyword{internal}

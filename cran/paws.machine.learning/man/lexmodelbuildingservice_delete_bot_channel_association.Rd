@@ -18,6 +18,6 @@ which this association is being made.}
 \description{
 Deletes the association between an Amazon Lex bot and a messaging platform.
 
-See \url{https://paws-r.github.io/docs/lexmodelbuildingservice/delete_bot_channel_association.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_bot_channel_association/} for full documentation.
 }
 \keyword{internal}

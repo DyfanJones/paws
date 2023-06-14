@@ -14,6 +14,6 @@ configuration for.}
 \description{
 Get the current configuration for anomaly notifications for a profiling group.
 
-See \url{https://paws-r.github.io/docs/codeguruprofiler/get_notification_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_notification_configuration/} for full documentation.
 }
 \keyword{internal}

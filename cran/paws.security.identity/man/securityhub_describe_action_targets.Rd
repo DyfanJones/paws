@@ -28,6 +28,6 @@ response.}
 \description{
 Returns a list of the custom action targets in Security Hub in your account.
 
-See \url{https://paws-r.github.io/docs/securityhub/describe_action_targets.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_action_targets/} for full documentation.
 }
 \keyword{internal}

@@ -14,6 +14,6 @@ proton_delete_repository(name, provider)
 \description{
 De-register and unlink your repository.
 
-See \url{https://paws-r.github.io/docs/proton/delete_repository.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_repository/} for full documentation.
 }
 \keyword{internal}

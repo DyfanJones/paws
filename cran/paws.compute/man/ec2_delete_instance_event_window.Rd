@@ -24,6 +24,6 @@ parameter if the event window is currently associated with targets.}
 \description{
 Deletes the specified event window.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_instance_event_window.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_instance_event_window/} for full documentation.
 }
 \keyword{internal}

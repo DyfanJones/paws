@@ -13,6 +13,6 @@ you want to retrieve.}
 \description{
 Gets a distribution configuration.
 
-See \url{https://paws-r.github.io/docs/imagebuilder/get_distribution_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_distribution_configuration/} for full documentation.
 }
 \keyword{internal}

@@ -20,6 +20,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Deletes the specified transit gateway policy table.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_transit_gateway_policy_table.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_transit_gateway_policy_table/} for full documentation.
 }
 \keyword{internal}

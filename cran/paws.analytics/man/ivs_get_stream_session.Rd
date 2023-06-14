@@ -16,6 +16,6 @@ stream session for the channel, if it exists.}
 \description{
 Gets metadata on a specified stream.
 
-See \url{https://paws-r.github.io/docs/ivs/get_stream_session.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_stream_session/} for full documentation.
 }
 \keyword{internal}

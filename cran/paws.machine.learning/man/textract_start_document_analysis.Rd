@@ -57,6 +57,6 @@ server side,using SSE-S3.}
 \description{
 Starts the asynchronous analysis of an input document for relationships between detected items such as key-value pairs, tables, and selection elements.
 
-See \url{https://paws-r.github.io/docs/textract/start_document_analysis.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_document_analysis/} for full documentation.
 }
 \keyword{internal}

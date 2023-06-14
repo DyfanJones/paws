@@ -22,6 +22,6 @@ hard bounce.
 \description{
 Change the settings for the account-level suppression list.
 
-See \url{https://paws-r.github.io/docs/sesv2/put_account_suppression_attributes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_account_suppression_attributes/} for full documentation.
 }
 \keyword{internal}

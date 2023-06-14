@@ -21,6 +21,6 @@ size is 100.}
 \description{
 Provides summary information about the security profiles for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_security_profiles.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_security_profiles/} for full documentation.
 }
 \keyword{internal}

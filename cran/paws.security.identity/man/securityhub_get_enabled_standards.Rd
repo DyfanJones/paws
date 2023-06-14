@@ -27,6 +27,6 @@ response.}
 \description{
 Returns a list of the standards that are currently enabled.
 
-See \url{https://paws-r.github.io/docs/securityhub/get_enabled_standards.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_enabled_standards/} for full documentation.
 }
 \keyword{internal}

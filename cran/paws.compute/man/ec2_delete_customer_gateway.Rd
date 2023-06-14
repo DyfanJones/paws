@@ -17,6 +17,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer gateway.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_customer_gateway.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_customer_gateway/} for full documentation.
 }
 \keyword{internal}

@@ -28,6 +28,6 @@ Length Constraints: Maximum length of 256 characters.}
 \description{
 Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string.
 
-See \url{https://paws-r.github.io/docs/networkmanager/update_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_connection/} for full documentation.
 }
 \keyword{internal}

@@ -30,6 +30,6 @@ for WebSocket APIs.}
 \description{
 Creates a RouteResponse for a Route.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/create_route_response.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_route_response/} for full documentation.
 }
 \keyword{internal}

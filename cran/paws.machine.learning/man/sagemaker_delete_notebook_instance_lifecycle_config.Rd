@@ -14,6 +14,6 @@ sagemaker_delete_notebook_instance_lifecycle_config(
 \description{
 Deletes a notebook instance lifecycle configuration.
 
-See \url{https://paws-r.github.io/docs/sagemaker/delete_notebook_instance_lifecycle_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_notebook_instance_lifecycle_config/} for full documentation.
 }
 \keyword{internal}

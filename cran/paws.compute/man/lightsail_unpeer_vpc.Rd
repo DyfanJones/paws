@@ -9,6 +9,6 @@ lightsail_unpeer_vpc()
 \description{
 Unpeers the Lightsail VPC from the user's default VPC.
 
-See \url{https://paws-r.github.io/docs/lightsail/unpeer_vpc.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/unpeer_vpc/} for full documentation.
 }
 \keyword{internal}

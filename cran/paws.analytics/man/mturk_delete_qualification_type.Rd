@@ -13,6 +13,6 @@ mturk_delete_qualification_type(QualificationTypeId)
 \description{
 The \code{\link[=mturk_delete_qualification_type]{delete_qualification_type}} deletes a Qualification type and deletes any HIT types that are associated with the Qualification type.
 
-See \url{https://paws-r.github.io/docs/mturk/delete_qualification_type.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_qualification_type/} for full documentation.
 }
 \keyword{internal}

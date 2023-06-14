@@ -14,6 +14,6 @@ licensemanager_get_license_manager_report_generator(
 \description{
 Gets information about the specified report generator.
 
-See \url{https://paws-r.github.io/docs/licensemanager/get_license_manager_report_generator.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_license_manager_report_generator/} for full documentation.
 }
 \keyword{internal}

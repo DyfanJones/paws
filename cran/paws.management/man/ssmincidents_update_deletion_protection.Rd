@@ -22,6 +22,6 @@ specified details.}
 \description{
 Update deletion protection to either allow or deny deletion of the final Region in a replication set.
 
-See \url{https://paws-r.github.io/docs/ssmincidents/update_deletion_protection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_deletion_protection/} for full documentation.
 }
 \keyword{internal}

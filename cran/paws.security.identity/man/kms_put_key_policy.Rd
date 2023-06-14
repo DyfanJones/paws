@@ -79,6 +79,6 @@ making the request from making a subsequent
 \description{
 Attaches a key policy to the specified KMS key.
 
-See \url{https://paws-r.github.io/docs/kms/put_key_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_key_policy/} for full documentation.
 }
 \keyword{internal}

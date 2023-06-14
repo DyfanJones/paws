@@ -36,6 +36,6 @@ pair.}
 \description{
 Creates a browser settings resource that can be associated with a web portal. Once associated with a web portal, browser settings control how the browser will behave once a user starts a streaming session for the web portal.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/create_browser_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_browser_settings/} for full documentation.
 }
 \keyword{internal}

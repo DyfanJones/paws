@@ -23,6 +23,6 @@ cloudwatchevents_update_connection(
 \description{
 Updates settings for a connection.
 
-See \url{https://paws-r.github.io/docs/cloudwatchevents/update_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_connection/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ athena_get_calculation_execution_code(CalculationExecutionId)
 \description{
 Retrieves the unencrypted code that was executed for the calculation.
 
-See \url{https://paws-r.github.io/docs/athena/get_calculation_execution_code.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_calculation_execution_code/} for full documentation.
 }
 \keyword{internal}

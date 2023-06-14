@@ -30,6 +30,6 @@ additional results, make another call with the returned token value.}
 \description{
 Describes the specified Savings Plans.
 
-See \url{https://paws-r.github.io/docs/savingsplans/describe_savings_plans.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_savings_plans/} for full documentation.
 }
 \keyword{internal}

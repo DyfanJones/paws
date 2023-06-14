@@ -38,6 +38,6 @@ of the template.
 \description{
 Retrieves the content and settings of a message template for messages that are sent through the SMS channel.
 
-See \url{https://paws-r.github.io/docs/pinpoint/get_sms_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_sms_template/} for full documentation.
 }
 \keyword{internal}

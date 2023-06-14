@@ -20,6 +20,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Deletes the specified Network Access Scope analysis.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_network_insights_access_scope_analysis.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_network_insights_access_scope_analysis/} for full documentation.
 }
 \keyword{internal}

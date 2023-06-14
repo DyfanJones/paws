@@ -35,6 +35,6 @@ the completion notification.}
 \description{
 Starts asynchronous recognition of celebrities in a stored video.
 
-See \url{https://paws-r.github.io/docs/rekognition/start_celebrity_recognition.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_celebrity_recognition/} for full documentation.
 }
 \keyword{internal}

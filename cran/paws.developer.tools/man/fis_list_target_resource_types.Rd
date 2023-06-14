@@ -16,6 +16,6 @@ value.}
 \description{
 Lists the target resource types.
 
-See \url{https://paws-r.github.io/docs/fis/list_target_resource_types.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_target_resource_types/} for full documentation.
 }
 \keyword{internal}

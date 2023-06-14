@@ -14,6 +14,6 @@ workmail_delete_retention_policy(OrganizationId, Id)
 \description{
 Deletes the specified retention policy from the specified organization.
 
-See \url{https://paws-r.github.io/docs/workmail/delete_retention_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_retention_policy/} for full documentation.
 }
 \keyword{internal}

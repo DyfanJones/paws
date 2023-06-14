@@ -27,6 +27,6 @@ the maximum length for a tag's value is 256.}
 \description{
 Initiates a snapshot of a volume.
 
-See \url{https://paws-r.github.io/docs/storagegateway/create_snapshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_snapshot/} for full documentation.
 }
 \keyword{internal}

@@ -40,6 +40,6 @@ in.}
 \description{
 Creates a quantum task.
 
-See \url{https://paws-r.github.io/docs/braket/create_quantum_task.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_quantum_task/} for full documentation.
 }
 \keyword{internal}

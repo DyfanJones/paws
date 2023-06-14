@@ -179,6 +179,6 @@ resource after it's created.}
 \description{
 Creates a new database in Amazon Lightsail.
 
-See \url{https://paws-r.github.io/docs/lightsail/create_relational_database.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_relational_database/} for full documentation.
 }
 \keyword{internal}

@@ -16,6 +16,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not have any use cases associated with it.
 
-See \url{https://paws-r.github.io/docs/connect/delete_integration_association.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_integration_association/} for full documentation.
 }
 \keyword{internal}

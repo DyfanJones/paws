@@ -84,6 +84,6 @@ established.}
 \description{
 Modifies the specified Client VPN endpoint. Modifying the DNS server resets existing client connections.
 
-See \url{https://paws-r.github.io/docs/ec2/modify_client_vpn_endpoint.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/modify_client_vpn_endpoint/} for full documentation.
 }
 \keyword{internal}

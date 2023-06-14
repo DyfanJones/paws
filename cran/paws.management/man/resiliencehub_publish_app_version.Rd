@@ -16,6 +16,6 @@ in the \emph{AWS General Reference} guide.}
 \description{
 Publishes a new version of a specific Resilience Hub application.
 
-See \url{https://paws-r.github.io/docs/resiliencehub/publish_app_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/publish_app_version/} for full documentation.
 }
 \keyword{internal}

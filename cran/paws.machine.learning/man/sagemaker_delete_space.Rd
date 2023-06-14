@@ -14,6 +14,6 @@ sagemaker_delete_space(DomainId, SpaceName)
 \description{
 Used to delete a space.
 
-See \url{https://paws-r.github.io/docs/sagemaker/delete_space.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_space/} for full documentation.
 }
 \keyword{internal}

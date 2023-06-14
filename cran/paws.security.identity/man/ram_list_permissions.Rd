@@ -51,6 +51,6 @@ If you don't specify this parameter, the default is \code{All}.}
 \description{
 Retrieves a list of available RAM permissions that you can use for the supported resource types.
 
-See \url{https://paws-r.github.io/docs/ram/list_permissions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_permissions/} for full documentation.
 }
 \keyword{internal}

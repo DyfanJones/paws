@@ -12,6 +12,6 @@ networkmanager_accept_attachment(AttachmentId)
 \description{
 Accepts a core network attachment request.
 
-See \url{https://paws-r.github.io/docs/networkmanager/accept_attachment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/accept_attachment/} for full documentation.
 }
 \keyword{internal}

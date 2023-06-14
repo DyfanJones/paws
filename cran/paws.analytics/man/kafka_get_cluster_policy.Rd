@@ -13,6 +13,6 @@ kafka_get_cluster_policy(ClusterArn)
 \description{
 Get the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.
 
-See \url{https://paws-r.github.io/docs/kafka/get_cluster_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_cluster_policy/} for full documentation.
 }
 \keyword{internal}

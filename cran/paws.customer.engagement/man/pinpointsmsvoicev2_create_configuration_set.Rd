@@ -23,6 +23,6 @@ randomly generated token is used for the request to ensure idempotency.}
 \description{
 Creates a new configuration set. After you create the configuration set, you can add one or more event destinations to it.
 
-See \url{https://paws-r.github.io/docs/pinpointsmsvoicev2/create_configuration_set.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_configuration_set/} for full documentation.
 }
 \keyword{internal}

@@ -36,6 +36,6 @@ is empty.}
 \description{
 Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
 
-See \url{https://paws-r.github.io/docs/rds/create_db_cluster_endpoint.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_db_cluster_endpoint/} for full documentation.
 }
 \keyword{internal}

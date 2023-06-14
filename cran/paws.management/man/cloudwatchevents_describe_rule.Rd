@@ -15,6 +15,6 @@ this, the default event bus is used.}
 \description{
 Describes the specified rule.
 
-See \url{https://paws-r.github.io/docs/cloudwatchevents/describe_rule.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_rule/} for full documentation.
 }
 \keyword{internal}

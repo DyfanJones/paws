@@ -16,6 +16,6 @@ apigatewayv2_get_route_response(ApiId, RouteId, RouteResponseId)
 \description{
 Gets a RouteResponse.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/get_route_response.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_route_response/} for full documentation.
 }
 \keyword{internal}

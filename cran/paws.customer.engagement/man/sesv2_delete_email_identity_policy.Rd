@@ -18,6 +18,6 @@ alphanumeric characters, dashes, and underscores.}
 \description{
 Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.
 
-See \url{https://paws-r.github.io/docs/sesv2/delete_email_identity_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_email_identity_policy/} for full documentation.
 }
 \keyword{internal}

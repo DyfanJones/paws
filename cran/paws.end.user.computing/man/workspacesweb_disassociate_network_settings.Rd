@@ -12,6 +12,6 @@ workspacesweb_disassociate_network_settings(portalArn)
 \description{
 Disassociates network settings from a web portal.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/disassociate_network_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_network_settings/} for full documentation.
 }
 \keyword{internal}

@@ -15,6 +15,6 @@ cannot be edited.}
 \description{
 Returns the details associated with creating a report as specified by its \code{ReportJobId}.
 
-See \url{https://paws-r.github.io/docs/backup/describe_report_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_report_job/} for full documentation.
 }
 \keyword{internal}

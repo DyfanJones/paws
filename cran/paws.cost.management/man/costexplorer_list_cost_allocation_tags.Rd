@@ -34,6 +34,6 @@ default, the request returns 100 results.}
 \description{
 Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost allocation tags are returned.
 
-See \url{https://paws-r.github.io/docs/costexplorer/list_cost_allocation_tags.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_cost_allocation_tags/} for full documentation.
 }
 \keyword{internal}

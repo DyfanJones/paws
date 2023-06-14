@@ -20,6 +20,6 @@ paginated response.}
 \description{
 Retrieves a subset of information about the sensitivity inspection template for an account.
 
-See \url{https://paws-r.github.io/docs/macie2/list_sensitivity_inspection_templates.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_sensitivity_inspection_templates/} for full documentation.
 }
 \keyword{internal}

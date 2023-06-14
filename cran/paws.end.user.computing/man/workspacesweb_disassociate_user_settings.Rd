@@ -12,6 +12,6 @@ workspacesweb_disassociate_user_settings(portalArn)
 \description{
 Disassociates user settings from a web portal.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/disassociate_user_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_user_settings/} for full documentation.
 }
 \keyword{internal}

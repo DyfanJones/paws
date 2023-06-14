@@ -14,6 +14,6 @@ customerprofiles_get_integration(DomainName, Uri)
 \description{
 Returns an integration for a domain.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/get_integration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_integration/} for full documentation.
 }
 \keyword{internal}

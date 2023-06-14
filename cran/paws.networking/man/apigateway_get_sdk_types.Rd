@@ -15,6 +15,6 @@ and the maximum value is 500.}
 \description{
 Gets SDK types
 
-See \url{https://paws-r.github.io/docs/apigateway/get_sdk_types.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_sdk_types/} for full documentation.
 }
 \keyword{internal}

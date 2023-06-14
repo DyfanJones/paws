@@ -15,6 +15,6 @@ consist of lowercase letters, numbers, and hyphens.}
 \description{
 Returns event notifications for the specified backup vault.
 
-See \url{https://paws-r.github.io/docs/backup/get_backup_vault_notifications.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_backup_vault_notifications/} for full documentation.
 }
 \keyword{internal}

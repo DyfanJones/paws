@@ -33,6 +33,6 @@ included in your response.}
 \description{
 Starts asynchronous detection of text in a stored video.
 
-See \url{https://paws-r.github.io/docs/rekognition/start_text_detection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_text_detection/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ information on.}
 \description{
 Gets information on the settings of query suggestions for an index.
 
-See \url{https://paws-r.github.io/docs/kendra/describe_query_suggestions_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_query_suggestions_config/} for full documentation.
 }
 \keyword{internal}

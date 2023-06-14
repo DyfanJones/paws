@@ -21,6 +21,6 @@ profile identity to update. For example: \code{E2QWRUHAPOMQZL}.}
 \description{
 Update a field-level encryption profile.
 
-See \url{https://paws-r.github.io/docs/cloudfront/update_field_level_encryption_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_field_level_encryption_profile/} for full documentation.
 }
 \keyword{internal}

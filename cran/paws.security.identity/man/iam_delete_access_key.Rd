@@ -22,6 +22,6 @@ that can consist of any upper or lowercased letter or digit.}
 \description{
 Deletes the access key pair associated with the specified IAM user.
 
-See \url{https://paws-r.github.io/docs/iam/delete_access_key.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_access_key/} for full documentation.
 }
 \keyword{internal}

@@ -54,6 +54,6 @@ parameter for the destination IP address.}
 \description{
 Creates a path to analyze for reachability.
 
-See \url{https://paws-r.github.io/docs/ec2/create_network_insights_path.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_network_insights_path/} for full documentation.
 }
 \keyword{internal}

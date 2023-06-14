@@ -22,6 +22,6 @@ the returning call left off.}
 \description{
 Lists tags for Amazon FSx resources.
 
-See \url{https://paws-r.github.io/docs/fsx/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

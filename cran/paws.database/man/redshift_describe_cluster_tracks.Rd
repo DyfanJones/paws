@@ -26,6 +26,6 @@ set of response records by providing the returned marker value in the
 \description{
 Returns a list of all the available maintenance tracks.
 
-See \url{https://paws-r.github.io/docs/redshift/describe_cluster_tracks.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_cluster_tracks/} for full documentation.
 }
 \keyword{internal}

@@ -49,6 +49,6 @@ principal for the grant.}
 \description{
 Gets a list of all grants for the specified KMS key.
 
-See \url{https://paws-r.github.io/docs/kms/list_grants.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_grants/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ sagemaker_delete_workforce(WorkforceName)
 \description{
 Use this operation to delete a workforce.
 
-See \url{https://paws-r.github.io/docs/sagemaker/delete_workforce.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_workforce/} for full documentation.
 }
 \keyword{internal}

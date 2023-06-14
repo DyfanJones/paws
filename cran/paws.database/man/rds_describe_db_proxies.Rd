@@ -34,6 +34,6 @@ Constraints: Minimum 20, maximum 100.}
 \description{
 Returns information about DB proxies.
 
-See \url{https://paws-r.github.io/docs/rds/describe_db_proxies.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_db_proxies/} for full documentation.
 }
 \keyword{internal}

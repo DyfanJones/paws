@@ -14,6 +14,6 @@ kendra_describe_thesaurus(Id, IndexId)
 \description{
 Gets information about an existing Amazon Kendra thesaurus.
 
-See \url{https://paws-r.github.io/docs/kendra/describe_thesaurus.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_thesaurus/} for full documentation.
 }
 \keyword{internal}

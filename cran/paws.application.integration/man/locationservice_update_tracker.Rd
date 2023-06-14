@@ -51,6 +51,6 @@ evaluations.
 \description{
 Updates the specified properties of a given tracker resource.
 
-See \url{https://paws-r.github.io/docs/locationservice/update_tracker.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_tracker/} for full documentation.
 }
 \keyword{internal}

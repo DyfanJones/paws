@@ -18,6 +18,6 @@ delete each protocol.}
 \description{
 Deletes a contact method.
 
-See \url{https://paws-r.github.io/docs/lightsail/delete_contact_method.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_contact_method/} for full documentation.
 }
 \keyword{internal}

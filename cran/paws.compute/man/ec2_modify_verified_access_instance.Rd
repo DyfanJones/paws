@@ -28,6 +28,6 @@ your modification request. For more information, see \href{https://docs.aws.amaz
 \description{
 Modifies the configuration of the specified Amazon Web Services Verified Access instance.
 
-See \url{https://paws-r.github.io/docs/ec2/modify_verified_access_instance.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/modify_verified_access_instance/} for full documentation.
 }
 \keyword{internal}

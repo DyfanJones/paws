@@ -22,6 +22,6 @@ results.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/list_bots.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_bots/} for full documentation.
 }
 \keyword{internal}

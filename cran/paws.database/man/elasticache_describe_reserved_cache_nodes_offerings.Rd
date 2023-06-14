@@ -151,6 +151,6 @@ the value specified by \code{MaxRecords}.}
 \description{
 Lists available reserved cache node offerings.
 
-See \url{https://paws-r.github.io/docs/elasticache/describe_reserved_cache_nodes_offerings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_reserved_cache_nodes_offerings/} for full documentation.
 }
 \keyword{internal}

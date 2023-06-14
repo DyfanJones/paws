@@ -12,6 +12,6 @@ applicationinsights_describe_observation(ObservationId)
 \description{
 Describes an anomaly or error with the application.
 
-See \url{https://paws-r.github.io/docs/applicationinsights/describe_observation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_observation/} for full documentation.
 }
 \keyword{internal}

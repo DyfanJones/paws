@@ -29,6 +29,6 @@ You must specify either the \code{LaunchTemplateName} or the
 \description{
 Deletes a launch template. Deleting a launch template deletes all of its versions.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_launch_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_launch_template/} for full documentation.
 }
 \keyword{internal}

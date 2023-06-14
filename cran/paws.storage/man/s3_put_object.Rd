@@ -97,7 +97,7 @@ information about REST request authentication, see \href{https://docs.aws.amazon
 
 \item{ContentType}{A standard MIME type describing the format of the contents. For more
 information, see
-\url{https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type}.}
+https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type.}
 
 \item{ChecksumAlgorithm}{Indicates the algorithm used to create the checksum for the object when
 using the SDK. This header will not provide any additional functionality
@@ -244,6 +244,6 @@ different account, the request fails with the HTTP status code
 \description{
 Adds an object to a bucket. You must have WRITE permissions on a bucket to add an object to it.
 
-See \url{https://paws-r.github.io/docs/s3/put_object.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_object/} for full documentation.
 }
 \keyword{internal}

@@ -49,6 +49,6 @@ specified timestamp.}
 \description{
 Lists endpoints.
 
-See \url{https://paws-r.github.io/docs/sagemaker/list_endpoints.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_endpoints/} for full documentation.
 }
 \keyword{internal}

@@ -26,6 +26,6 @@ auditmanager_update_assessment_control(
 \description{
 Updates a control within an assessment in Audit Manager.
 
-See \url{https://paws-r.github.io/docs/auditmanager/update_assessment_control.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_assessment_control/} for full documentation.
 }
 \keyword{internal}

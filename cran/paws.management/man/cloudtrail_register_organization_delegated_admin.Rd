@@ -14,6 +14,6 @@ delegated administrator.}
 \description{
 Registers an organization’s member account as the CloudTrail delegated administrator.
 
-See \url{https://paws-r.github.io/docs/cloudtrail/register_organization_delegated_admin.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/register_organization_delegated_admin/} for full documentation.
 }
 \keyword{internal}

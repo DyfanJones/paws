@@ -13,6 +13,6 @@ being requested.}
 \description{
 Retrieves the policy for a container recipe.
 
-See \url{https://paws-r.github.io/docs/imagebuilder/get_container_recipe_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_container_recipe_policy/} for full documentation.
 }
 \keyword{internal}

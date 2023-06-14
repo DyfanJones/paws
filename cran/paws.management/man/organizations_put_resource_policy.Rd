@@ -26,6 +26,6 @@ the entire request fails and the resource policy is not created.}
 \description{
 Creates or updates a resource policy.
 
-See \url{https://paws-r.github.io/docs/organizations/put_resource_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_resource_policy/} for full documentation.
 }
 \keyword{internal}

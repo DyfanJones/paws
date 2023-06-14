@@ -26,6 +26,6 @@ results.}
 \description{
 Lists all the versions of the themes in the current Amazon Web Services account.
 
-See \url{https://paws-r.github.io/docs/quicksight/list_theme_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_theme_versions/} for full documentation.
 }
 \keyword{internal}

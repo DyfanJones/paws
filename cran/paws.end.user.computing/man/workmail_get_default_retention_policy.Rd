@@ -12,6 +12,6 @@ workmail_get_default_retention_policy(OrganizationId)
 \description{
 Gets the default retention policy details for the specified organization.
 
-See \url{https://paws-r.github.io/docs/workmail/get_default_retention_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_default_retention_policy/} for full documentation.
 }
 \keyword{internal}

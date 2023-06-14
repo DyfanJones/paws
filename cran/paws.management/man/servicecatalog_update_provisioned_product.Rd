@@ -65,6 +65,6 @@ request.}
 \description{
 Requests updates to the configuration of the specified provisioned product.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/update_provisioned_product.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_provisioned_product/} for full documentation.
 }
 \keyword{internal}

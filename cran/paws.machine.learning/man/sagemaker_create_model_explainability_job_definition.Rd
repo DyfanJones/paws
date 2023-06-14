@@ -46,6 +46,6 @@ in the \emph{Amazon Web Services Billing and Cost Management User Guide}.}
 \description{
 Creates the definition for a model explainability job.
 
-See \url{https://paws-r.github.io/docs/sagemaker/create_model_explainability_job_definition.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_model_explainability_job_definition/} for full documentation.
 }
 \keyword{internal}

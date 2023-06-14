@@ -15,6 +15,6 @@ this resource.}
 \description{
 Creates tags for a resource, given its ARN.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/tag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/tag_resource/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ metrics.}
 \description{
 Gets the metrics for the specified solution version.
 
-See \url{https://paws-r.github.io/docs/personalize/get_solution_metrics.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_solution_metrics/} for full documentation.
 }
 \keyword{internal}

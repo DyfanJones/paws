@@ -15,6 +15,6 @@ from.}
 \description{
 Removes one or more tags from the specified resource.
 
-See \url{https://paws-r.github.io/docs/cloudwatchevidently/untag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/untag_resource/} for full documentation.
 }
 \keyword{internal}

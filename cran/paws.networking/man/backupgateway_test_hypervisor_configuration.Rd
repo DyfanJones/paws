@@ -25,6 +25,6 @@ fully-qualified domain name (FQDN).}
 \description{
 Tests your hypervisor configuration to validate that backup gateway can connect with the hypervisor and its resources.
 
-See \url{https://paws-r.github.io/docs/backupgateway/test_hypervisor_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/test_hypervisor_configuration/} for full documentation.
 }
 \keyword{internal}

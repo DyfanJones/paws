@@ -13,6 +13,6 @@ sesv2_batch_get_metric_data(Queries)
 \description{
 Retrieves batches of metric data collected based on your sending activity.
 
-See \url{https://paws-r.github.io/docs/sesv2/batch_get_metric_data.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/batch_get_metric_data/} for full documentation.
 }
 \keyword{internal}

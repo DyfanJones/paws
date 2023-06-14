@@ -13,6 +13,6 @@ sagemaker_delete_edge_deployment_plan(EdgeDeploymentPlanName)
 \description{
 Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive or there are no stages in the plan.
 
-See \url{https://paws-r.github.io/docs/sagemaker/delete_edge_deployment_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_edge_deployment_plan/} for full documentation.
 }
 \keyword{internal}

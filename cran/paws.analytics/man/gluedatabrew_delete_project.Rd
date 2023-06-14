@@ -12,6 +12,6 @@ gluedatabrew_delete_project(Name)
 \description{
 Deletes an existing DataBrew project.
 
-See \url{https://paws-r.github.io/docs/gluedatabrew/delete_project.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_project/} for full documentation.
 }
 \keyword{internal}

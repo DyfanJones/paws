@@ -14,6 +14,6 @@ emrcontainers_delete_managed_endpoint(id, virtualClusterId)
 \description{
 Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 
-See \url{https://paws-r.github.io/docs/emrcontainers/delete_managed_endpoint.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_managed_endpoint/} for full documentation.
 }
 \keyword{internal}

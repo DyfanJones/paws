@@ -17,6 +17,6 @@ elasticbeanstalk_update_application_resource_lifecycle(
 \description{
 Modifies lifecycle settings for an application.
 
-See \url{https://paws-r.github.io/docs/elasticbeanstalk/update_application_resource_lifecycle.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_application_resource_lifecycle/} for full documentation.
 }
 \keyword{internal}

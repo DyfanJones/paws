@@ -14,6 +14,6 @@ networkmanager_delete_site(GlobalNetworkId, SiteId)
 \description{
 Deletes an existing site. The site cannot be associated with any device or link.
 
-See \url{https://paws-r.github.io/docs/networkmanager/delete_site.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_site/} for full documentation.
 }
 \keyword{internal}

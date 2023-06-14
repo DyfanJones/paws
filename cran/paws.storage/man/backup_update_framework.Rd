@@ -31,6 +31,6 @@ message with no action taken.}
 \description{
 Updates an existing framework identified by its \code{FrameworkName} with the input document in JSON format.
 
-See \url{https://paws-r.github.io/docs/backup/update_framework.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_framework/} for full documentation.
 }
 \keyword{internal}

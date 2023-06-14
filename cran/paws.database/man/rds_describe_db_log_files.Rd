@@ -46,6 +46,6 @@ MaxRecords.}
 \description{
 Returns a list of DB log files for the DB instance.
 
-See \url{https://paws-r.github.io/docs/rds/describe_db_log_files.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_db_log_files/} for full documentation.
 }
 \keyword{internal}

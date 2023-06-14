@@ -17,6 +17,6 @@ identitystore_is_member_in_groups(IdentityStoreId, MemberId, GroupIds)
 \description{
 Checks the user's membership in all requested groups and returns if the member exists in all queried groups.
 
-See \url{https://paws-r.github.io/docs/identitystore/is_member_in_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/is_member_in_groups/} for full documentation.
 }
 \keyword{internal}

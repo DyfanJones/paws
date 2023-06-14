@@ -28,6 +28,6 @@ The value must be URL encoded.}
 \description{
 Returns the access point policy associated with the specified access point.
 
-See \url{https://paws-r.github.io/docs/s3control/get_access_point_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_access_point_policy/} for full documentation.
 }
 \keyword{internal}

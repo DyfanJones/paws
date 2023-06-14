@@ -27,6 +27,6 @@ The value you specify has to be at least 1, and can be no more than 100.}
 \description{
 Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region.
 
-See \url{https://paws-r.github.io/docs/sesv2/list_recommendations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_recommendations/} for full documentation.
 }
 \keyword{internal}

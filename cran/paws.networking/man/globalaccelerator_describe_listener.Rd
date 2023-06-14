@@ -12,6 +12,6 @@ globalaccelerator_describe_listener(ListenerArn)
 \description{
 Describe a listener.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/describe_listener.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_listener/} for full documentation.
 }
 \keyword{internal}

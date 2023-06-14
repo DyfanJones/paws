@@ -13,6 +13,6 @@ swf_describe_domain(name)
 \description{
 Returns information about the specified domain, including description and status.
 
-See \url{https://paws-r.github.io/docs/swf/describe_domain.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_domain/} for full documentation.
 }
 \keyword{internal}

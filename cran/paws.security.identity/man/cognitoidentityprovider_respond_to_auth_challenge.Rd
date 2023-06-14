@@ -115,6 +115,6 @@ provide sensitive information.
 \description{
 Responds to the authentication challenge.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/respond_to_auth_challenge.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/respond_to_auth_challenge/} for full documentation.
 }
 \keyword{internal}

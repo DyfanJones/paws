@@ -14,6 +14,6 @@ cognitoidentityprovider_delete_identity_provider(UserPoolId, ProviderName)
 \description{
 Deletes an IdP for a user pool.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/delete_identity_provider.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_identity_provider/} for full documentation.
 }
 \keyword{internal}

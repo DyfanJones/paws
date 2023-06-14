@@ -21,6 +21,6 @@ developer interface.}
 \description{
 Update an environment template.
 
-See \url{https://paws-r.github.io/docs/proton/update_environment_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_environment_template/} for full documentation.
 }
 \keyword{internal}

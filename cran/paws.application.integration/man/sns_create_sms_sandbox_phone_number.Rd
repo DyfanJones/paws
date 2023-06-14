@@ -17,6 +17,6 @@ send SMS messages to.}
 \description{
 Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a one-time password (OTP) to that phone number.
 
-See \url{https://paws-r.github.io/docs/sns/create_sms_sandbox_phone_number.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_sms_sandbox_phone_number/} for full documentation.
 }
 \keyword{internal}

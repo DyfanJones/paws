@@ -12,6 +12,6 @@ cloudwatchevents_activate_event_source(Name)
 \description{
 Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.
 
-See \url{https://paws-r.github.io/docs/cloudwatchevents/activate_event_source.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/activate_event_source/} for full documentation.
 }
 \keyword{internal}

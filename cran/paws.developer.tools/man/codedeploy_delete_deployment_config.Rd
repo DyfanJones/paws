@@ -13,6 +13,6 @@ Amazon Web Services account.}
 \description{
 Deletes a deployment configuration.
 
-See \url{https://paws-r.github.io/docs/codedeploy/delete_deployment_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_deployment_config/} for full documentation.
 }
 \keyword{internal}

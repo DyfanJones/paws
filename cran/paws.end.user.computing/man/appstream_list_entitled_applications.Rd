@@ -24,6 +24,6 @@ operation.}
 \description{
 Retrieves a list of entitled applications.
 
-See \url{https://paws-r.github.io/docs/appstream/list_entitled_applications.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_entitled_applications/} for full documentation.
 }
 \keyword{internal}

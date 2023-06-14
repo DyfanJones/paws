@@ -27,6 +27,6 @@ deleted \code{instant} fleet with running instances is not supported.}
 \description{
 Deletes the specified EC2 Fleets.
 
-See \url{https://paws-r.github.io/docs/ec2/delete_fleets.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_fleets/} for full documentation.
 }
 \keyword{internal}

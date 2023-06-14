@@ -26,6 +26,6 @@ previous call.)}
 \description{
 Describes the specified listeners or the listeners for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either a load balancer or one or more listeners.
 
-See \url{https://paws-r.github.io/docs/elbv2/describe_listeners.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_listeners/} for full documentation.
 }
 \keyword{internal}

@@ -25,6 +25,6 @@ configuration.}
 \description{
 Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.
 
-See \url{https://paws-r.github.io/docs/directconnect/delete_bgp_peer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_bgp_peer/} for full documentation.
 }
 \keyword{internal}

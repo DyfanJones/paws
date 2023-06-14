@@ -69,6 +69,6 @@ model to use.}
 \description{
 Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status of a job.
 
-See \url{https://paws-r.github.io/docs/comprehend/start_entities_detection_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_entities_detection_job/} for full documentation.
 }
 \keyword{internal}

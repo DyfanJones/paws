@@ -17,6 +17,6 @@ it for the request to ensure idempotency.}
 \description{
 Delete a studio resource.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/delete_studio.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_studio/} for full documentation.
 }
 \keyword{internal}

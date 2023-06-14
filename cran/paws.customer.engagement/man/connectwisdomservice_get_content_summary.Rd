@@ -16,6 +16,6 @@ URLs cannot contain the ARN.}
 \description{
 Retrieves summary information about the content.
 
-See \url{https://paws-r.github.io/docs/connectwisdomservice/get_content_summary.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_content_summary/} for full documentation.
 }
 \keyword{internal}

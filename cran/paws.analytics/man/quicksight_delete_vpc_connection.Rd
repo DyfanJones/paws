@@ -17,6 +17,6 @@ account.}
 \description{
 Deletes a VPC connection.
 
-See \url{https://paws-r.github.io/docs/quicksight/delete_vpc_connection.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_vpc_connection/} for full documentation.
 }
 \keyword{internal}

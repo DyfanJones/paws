@@ -12,6 +12,6 @@ directconnect_stop_bgp_failover_test(virtualInterfaceId)
 \description{
 Stops the virtual interface failover test.
 
-See \url{https://paws-r.github.io/docs/directconnect/stop_bgp_failover_test.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_bgp_failover_test/} for full documentation.
 }
 \keyword{internal}

@@ -77,6 +77,6 @@ receive all of the results.}
 \description{
 Lists the principals that you are sharing resources with or that are sharing resources with you.
 
-See \url{https://paws-r.github.io/docs/ram/list_principals.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_principals/} for full documentation.
 }
 \keyword{internal}

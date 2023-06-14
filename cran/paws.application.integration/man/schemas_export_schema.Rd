@@ -18,6 +18,6 @@ schemas_export_schema(RegistryName, SchemaName, SchemaVersion = NULL, Type)
 \description{
 Export schema
 
-See \url{https://paws-r.github.io/docs/schemas/export_schema.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/export_schema/} for full documentation.
 }
 \keyword{internal}

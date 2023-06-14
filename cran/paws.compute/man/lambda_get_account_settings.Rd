@@ -10,6 +10,6 @@ lambda_get_account_settings()
 \description{
 Retrieves details about your account's \href{https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html}{limits} and usage in an Amazon Web Services Region.
 
-See \url{https://paws-r.github.io/docs/lambda/get_account_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_account_settings/} for full documentation.
 }
 \keyword{internal}

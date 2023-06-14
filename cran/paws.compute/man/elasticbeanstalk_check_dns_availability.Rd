@@ -12,6 +12,6 @@ elasticbeanstalk_check_dns_availability(CNAMEPrefix)
 \description{
 Checks if the specified CNAME is available.
 
-See \url{https://paws-r.github.io/docs/elasticbeanstalk/check_dns_availability.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/check_dns_availability/} for full documentation.
 }
 \keyword{internal}

@@ -17,6 +17,6 @@ serverlessapplicationrepository_get_application(
 \description{
 Gets the specified application.
 
-See \url{https://paws-r.github.io/docs/serverlessapplicationrepository/get_application.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_application/} for full documentation.
 }
 \keyword{internal}

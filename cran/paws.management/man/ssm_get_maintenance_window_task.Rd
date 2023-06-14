@@ -14,6 +14,6 @@ ssm_get_maintenance_window_task(WindowId, WindowTaskId)
 \description{
 Retrieves the details of a maintenance window task.
 
-See \url{https://paws-r.github.io/docs/ssm/get_maintenance_window_task.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_maintenance_window_task/} for full documentation.
 }
 \keyword{internal}

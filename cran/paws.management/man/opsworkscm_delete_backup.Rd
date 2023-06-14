@@ -14,6 +14,6 @@ list of backup IDs. Backup IDs are in the format
 \description{
 Deletes a backup. You can delete both manual and automated backups. This operation is asynchronous.
 
-See \url{https://paws-r.github.io/docs/opsworkscm/delete_backup.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_backup/} for full documentation.
 }
 \keyword{internal}

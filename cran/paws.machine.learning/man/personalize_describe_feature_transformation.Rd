@@ -13,6 +13,6 @@ describe.}
 \description{
 Describes the given feature transformation.
 
-See \url{https://paws-r.github.io/docs/personalize/describe_feature_transformation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_feature_transformation/} for full documentation.
 }
 \keyword{internal}

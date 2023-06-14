@@ -25,6 +25,6 @@ request.}
 \description{
 Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.
 
-See \url{https://paws-r.github.io/docs/route53recoverycontrolconfig/create_safety_rule.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_safety_rule/} for full documentation.
 }
 \keyword{internal}

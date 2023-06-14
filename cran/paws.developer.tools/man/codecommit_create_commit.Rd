@@ -48,6 +48,6 @@ commits.}
 \description{
 Creates a commit for a repository on the tip of a specified branch.
 
-See \url{https://paws-r.github.io/docs/codecommit/create_commit.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_commit/} for full documentation.
 }
 \keyword{internal}

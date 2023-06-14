@@ -29,6 +29,6 @@ Services Region.}
 \description{
 From a datashare consumer account, remove association for the specified datashare.
 
-See \url{https://paws-r.github.io/docs/redshift/disassociate_data_share_consumer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_data_share_consumer/} for full documentation.
 }
 \keyword{internal}

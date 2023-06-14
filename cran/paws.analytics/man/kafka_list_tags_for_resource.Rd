@@ -13,6 +13,6 @@ that's associated with the tags.}
 \description{
 Returns a list of the tags associated with the specified resource.
 
-See \url{https://paws-r.github.io/docs/kafka/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

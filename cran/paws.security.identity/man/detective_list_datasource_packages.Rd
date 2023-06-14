@@ -22,6 +22,6 @@ not include a pagination token.}
 \description{
 Lists data source packages in the behavior graph.
 
-See \url{https://paws-r.github.io/docs/detective/list_datasource_packages.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_datasource_packages/} for full documentation.
 }
 \keyword{internal}

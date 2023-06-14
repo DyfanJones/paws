@@ -13,6 +13,6 @@ then all authentication profiles owned by the account are listed.}
 \description{
 Describes an authentication profile.
 
-See \url{https://paws-r.github.io/docs/redshift/describe_authentication_profiles.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_authentication_profiles/} for full documentation.
 }
 \keyword{internal}

@@ -94,6 +94,6 @@ in the \emph{Amazon S3 User Guide}.}
 \description{
 Completes a multipart upload by assembling previously uploaded parts.
 
-See \url{https://paws-r.github.io/docs/s3/complete_multipart_upload.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/complete_multipart_upload/} for full documentation.
 }
 \keyword{internal}

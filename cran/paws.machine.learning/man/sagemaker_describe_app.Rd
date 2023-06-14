@@ -27,6 +27,6 @@ be set.}
 \description{
 Describes the app.
 
-See \url{https://paws-r.github.io/docs/sagemaker/describe_app.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_app/} for full documentation.
 }
 \keyword{internal}

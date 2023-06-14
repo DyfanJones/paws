@@ -18,6 +18,6 @@ provided, only the specified version of the dashboard is deleted.}
 \description{
 Deletes a dashboard.
 
-See \url{https://paws-r.github.io/docs/quicksight/delete_dashboard.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_dashboard/} for full documentation.
 }
 \keyword{internal}

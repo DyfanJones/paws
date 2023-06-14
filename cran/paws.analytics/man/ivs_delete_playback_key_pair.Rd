@@ -12,6 +12,6 @@ ivs_delete_playback_key_pair(arn)
 \description{
 Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s \code{privateKey}. For more information, see \href{https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html}{Setting Up Private Channels} in the \emph{Amazon IVS User Guide}.
 
-See \url{https://paws-r.github.io/docs/ivs/delete_playback_key_pair.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_playback_key_pair/} for full documentation.
 }
 \keyword{internal}

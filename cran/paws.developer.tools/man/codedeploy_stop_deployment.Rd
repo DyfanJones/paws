@@ -16,6 +16,6 @@ application revision.}
 \description{
 Attempts to stop an ongoing deployment.
 
-See \url{https://paws-r.github.io/docs/codedeploy/stop_deployment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_deployment/} for full documentation.
 }
 \keyword{internal}

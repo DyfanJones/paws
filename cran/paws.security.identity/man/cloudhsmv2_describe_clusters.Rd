@@ -33,6 +33,6 @@ more clusters than the number you specify, the response contains a
 \description{
 Gets information about AWS CloudHSM clusters.
 
-See \url{https://paws-r.github.io/docs/cloudhsmv2/describe_clusters.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_clusters/} for full documentation.
 }
 \keyword{internal}

@@ -15,6 +15,6 @@ as the \strong{Project ID} on the Amazon Pinpoint console.}
 \description{
 Deletes all the endpoints that are associated with a specific user ID.
 
-See \url{https://paws-r.github.io/docs/pinpoint/delete_user_endpoints.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_user_endpoints/} for full documentation.
 }
 \keyword{internal}

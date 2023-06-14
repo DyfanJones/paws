@@ -13,6 +13,6 @@ information about.}
 \description{
 Retrieves information about an on-call rotation.
 
-See \url{https://paws-r.github.io/docs/ssmcontacts/get_rotation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_rotation/} for full documentation.
 }
 \keyword{internal}

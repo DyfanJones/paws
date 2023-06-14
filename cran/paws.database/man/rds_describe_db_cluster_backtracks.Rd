@@ -72,6 +72,6 @@ records beyond the marker, up to the value specified by \code{MaxRecords}.}
 \description{
 Returns information about backtracks for a DB cluster.
 
-See \url{https://paws-r.github.io/docs/rds/describe_db_cluster_backtracks.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_db_cluster_backtracks/} for full documentation.
 }
 \keyword{internal}

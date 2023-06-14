@@ -35,6 +35,6 @@ in the \emph{Amazon AppStream 2.0 Administration Guide}.}
 \description{
 Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup.
 
-See \url{https://paws-r.github.io/docs/appstream/create_streaming_url.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_streaming_url/} for full documentation.
 }
 \keyword{internal}

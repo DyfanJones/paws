@@ -15,6 +15,6 @@ consist of lowercase letters, numbers, and hyphens.}
 \description{
 Deletes the backup vault identified by its name. A vault can be deleted only if it is empty.
 
-See \url{https://paws-r.github.io/docs/backup/delete_backup_vault.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_backup_vault/} for full documentation.
 }
 \keyword{internal}

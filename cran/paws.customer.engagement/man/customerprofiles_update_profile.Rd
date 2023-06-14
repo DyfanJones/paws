@@ -89,6 +89,6 @@ shipping, or billing.}
 \description{
 Updates the properties of a profile. The ProfileId is required for updating a customer profile.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/update_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_profile/} for full documentation.
 }
 \keyword{internal}

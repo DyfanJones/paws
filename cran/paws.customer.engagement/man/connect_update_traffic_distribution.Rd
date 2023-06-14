@@ -17,6 +17,6 @@ from the replicated Region.}
 \description{
 Updates the traffic distribution for a given traffic distribution group.
 
-See \url{https://paws-r.github.io/docs/connect/update_traffic_distribution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_traffic_distribution/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ frauddetector_delete_outcome(name)
 \description{
 Deletes an outcome.
 
-See \url{https://paws-r.github.io/docs/frauddetector/delete_outcome.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_outcome/} for full documentation.
 }
 \keyword{internal}

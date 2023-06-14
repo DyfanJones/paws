@@ -27,6 +27,6 @@ parameter.}
 \description{
 Lists all global tables that have a replica in the specified Region.
 
-See \url{https://paws-r.github.io/docs/dynamodb/list_global_tables.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_global_tables/} for full documentation.
 }
 \keyword{internal}

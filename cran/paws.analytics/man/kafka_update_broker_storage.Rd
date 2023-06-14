@@ -22,6 +22,6 @@ update to.}
 \description{
 Updates the EBS storage associated with MSK brokers.
 
-See \url{https://paws-r.github.io/docs/kafka/update_broker_storage.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_broker_storage/} for full documentation.
 }
 \keyword{internal}

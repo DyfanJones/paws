@@ -18,6 +18,6 @@ previous page call.}
 \description{
 Returns a list of engine versions that are available to choose from, including the Auto option.
 
-See \url{https://paws-r.github.io/docs/athena/list_engine_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_engine_versions/} for full documentation.
 }
 \keyword{internal}

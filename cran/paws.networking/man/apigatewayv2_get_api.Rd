@@ -12,6 +12,6 @@ apigatewayv2_get_api(ApiId)
 \description{
 Gets an Api resource.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/get_api.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_api/} for full documentation.
 }
 \keyword{internal}

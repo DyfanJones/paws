@@ -18,6 +18,6 @@ in the \emph{AWS General Reference} guide.}
 \description{
 Resolves the resources for an application version.
 
-See \url{https://paws-r.github.io/docs/resiliencehub/resolve_app_version_resources.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/resolve_app_version_resources/} for full documentation.
 }
 \keyword{internal}

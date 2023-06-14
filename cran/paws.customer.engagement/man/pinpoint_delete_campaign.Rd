@@ -15,6 +15,6 @@ as the \strong{Project ID} on the Amazon Pinpoint console.}
 \description{
 Deletes a campaign from an application.
 
-See \url{https://paws-r.github.io/docs/pinpoint/delete_campaign.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_campaign/} for full documentation.
 }
 \keyword{internal}

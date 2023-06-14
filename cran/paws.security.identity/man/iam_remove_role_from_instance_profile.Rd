@@ -22,6 +22,6 @@ spaces. You can also include any of the following characters: _+=,.@-}
 \description{
 Removes the specified IAM role from the specified EC2 instance profile.
 
-See \url{https://paws-r.github.io/docs/iam/remove_role_from_instance_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/remove_role_from_instance_profile/} for full documentation.
 }
 \keyword{internal}

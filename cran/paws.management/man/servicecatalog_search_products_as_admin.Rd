@@ -42,6 +42,6 @@ results, use null.}
 \description{
 Gets information about the products for the specified portfolio or all products.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/search_products_as_admin.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/search_products_as_admin/} for full documentation.
 }
 \keyword{internal}

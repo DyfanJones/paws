@@ -16,6 +16,6 @@ servicediscovery_deregister_instance(ServiceId, InstanceId)
 \description{
 Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified instance.
 
-See \url{https://paws-r.github.io/docs/servicediscovery/deregister_instance.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/deregister_instance/} for full documentation.
 }
 \keyword{internal}

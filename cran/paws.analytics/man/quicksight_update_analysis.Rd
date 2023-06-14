@@ -44,6 +44,6 @@ or Analysis.}
 \description{
 Updates an analysis in Amazon QuickSight
 
-See \url{https://paws-r.github.io/docs/quicksight/update_analysis.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_analysis/} for full documentation.
 }
 \keyword{internal}

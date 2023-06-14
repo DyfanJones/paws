@@ -59,6 +59,6 @@ different parameters, the retry fails with an
 \description{
 Removes the specified principals or resources from participating in the specified resource share.
 
-See \url{https://paws-r.github.io/docs/ram/disassociate_resource_share.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_resource_share/} for full documentation.
 }
 \keyword{internal}

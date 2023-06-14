@@ -17,6 +17,6 @@ Feature Store to update the feature group.}
 \description{
 Updates the feature group.
 
-See \url{https://paws-r.github.io/docs/sagemaker/update_feature_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_feature_group/} for full documentation.
 }
 \keyword{internal}

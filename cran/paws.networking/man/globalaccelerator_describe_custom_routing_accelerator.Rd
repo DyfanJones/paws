@@ -12,6 +12,6 @@ globalaccelerator_describe_custom_routing_accelerator(AcceleratorArn)
 \description{
 Describe a custom routing accelerator.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/describe_custom_routing_accelerator.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_custom_routing_accelerator/} for full documentation.
 }
 \keyword{internal}

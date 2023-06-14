@@ -13,6 +13,6 @@ applies to.}
 \description{
 Deletes a findings filter.
 
-See \url{https://paws-r.github.io/docs/macie2/delete_findings_filter.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_findings_filter/} for full documentation.
 }
 \keyword{internal}

@@ -59,6 +59,6 @@ higher than the major version in use and a minor version.}
 \description{
 Update a service instance.
 
-See \url{https://paws-r.github.io/docs/proton/update_service_instance.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_service_instance/} for full documentation.
 }
 \keyword{internal}

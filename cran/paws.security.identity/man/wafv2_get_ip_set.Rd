@@ -31,6 +31,6 @@ delete.}
 \description{
 Retrieves the specified IPSet.
 
-See \url{https://paws-r.github.io/docs/wafv2/get_ip_set.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_ip_set/} for full documentation.
 }
 \keyword{internal}

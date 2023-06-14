@@ -12,6 +12,6 @@ codebuild_invalidate_project_cache(projectName)
 \description{
 Resets the cache for a project.
 
-See \url{https://paws-r.github.io/docs/codebuild/invalidate_project_cache.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/invalidate_project_cache/} for full documentation.
 }
 \keyword{internal}

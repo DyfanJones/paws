@@ -17,6 +17,6 @@ same language.}
 \description{
 Detects the key noun phrases found in the text.
 
-See \url{https://paws-r.github.io/docs/comprehend/detect_key_phrases.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/detect_key_phrases/} for full documentation.
 }
 \keyword{internal}

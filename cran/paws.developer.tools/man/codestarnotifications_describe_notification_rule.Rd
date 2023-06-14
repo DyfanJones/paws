@@ -12,6 +12,6 @@ codestarnotifications_describe_notification_rule(Arn)
 \description{
 Returns information about a specified notification rule.
 
-See \url{https://paws-r.github.io/docs/codestarnotifications/describe_notification_rule.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_notification_rule/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ voiceid_describe_domain(DomainId)
 \description{
 Describes the specified domain.
 
-See \url{https://paws-r.github.io/docs/voiceid/describe_domain.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_domain/} for full documentation.
 }
 \keyword{internal}

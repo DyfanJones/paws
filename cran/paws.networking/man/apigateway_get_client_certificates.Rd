@@ -15,6 +15,6 @@ and the maximum value is 500.}
 \description{
 Gets a collection of ClientCertificate resources.
 
-See \url{https://paws-r.github.io/docs/apigateway/get_client_certificates.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_client_certificates/} for full documentation.
 }
 \keyword{internal}

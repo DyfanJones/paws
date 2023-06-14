@@ -18,6 +18,6 @@ default.}
 \description{
 Deletes an existing function definition from the Data Catalog.
 
-See \url{https://paws-r.github.io/docs/glue/delete_user_defined_function.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_user_defined_function/} for full documentation.
 }
 \keyword{internal}

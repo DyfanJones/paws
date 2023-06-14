@@ -147,6 +147,6 @@ Valid Values: \code{true} | \code{false}}
 \description{
 Updates a Server Message Block (SMB) file share. This operation is only supported for S3 File Gateways.
 
-See \url{https://paws-r.github.io/docs/storagegateway/update_smb_file_share.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_smb_file_share/} for full documentation.
 }
 \keyword{internal}

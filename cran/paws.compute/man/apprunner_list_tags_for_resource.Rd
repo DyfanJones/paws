@@ -15,6 +15,6 @@ It must be the ARN of an App Runner resource.}
 \description{
 List tags that are associated with for an App Runner resource. The response contains a list of tag key-value pairs.
 
-See \url{https://paws-r.github.io/docs/apprunner/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

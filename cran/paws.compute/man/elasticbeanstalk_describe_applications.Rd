@@ -13,6 +13,6 @@ to only include those with the specified names.}
 \description{
 Returns the descriptions of existing applications.
 
-See \url{https://paws-r.github.io/docs/elasticbeanstalk/describe_applications.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_applications/} for full documentation.
 }
 \keyword{internal}

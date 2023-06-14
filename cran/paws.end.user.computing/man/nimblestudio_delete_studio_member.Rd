@@ -19,6 +19,6 @@ it for the request to ensure idempotency.}
 \description{
 Delete a user from studio membership.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/delete_studio_member.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_studio_member/} for full documentation.
 }
 \keyword{internal}

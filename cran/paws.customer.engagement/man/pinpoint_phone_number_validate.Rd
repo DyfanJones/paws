@@ -12,6 +12,6 @@ pinpoint_phone_number_validate(NumberValidateRequest)
 \description{
 Retrieves information about a phone number.
 
-See \url{https://paws-r.github.io/docs/pinpoint/phone_number_validate.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/phone_number_validate/} for full documentation.
 }
 \keyword{internal}

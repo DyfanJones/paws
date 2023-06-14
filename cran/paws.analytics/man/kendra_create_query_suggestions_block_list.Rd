@@ -49,6 +49,6 @@ and any of the following symbols: _ . : / = + - @.}
 \description{
 Creates a block list to exlcude certain queries from suggestions.
 
-See \url{https://paws-r.github.io/docs/kendra/create_query_suggestions_block_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_query_suggestions_block_list/} for full documentation.
 }
 \keyword{internal}

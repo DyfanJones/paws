@@ -23,6 +23,6 @@ schemas_put_code_binding(
 \description{
 Put code binding URI
 
-See \url{https://paws-r.github.io/docs/schemas/put_code_binding.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_code_binding/} for full documentation.
 }
 \keyword{internal}

@@ -23,6 +23,6 @@ you can specify as the page token in a subsequent request.}
 \description{
 Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.
 
-See \url{https://paws-r.github.io/docs/lightsail/get_distributions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_distributions/} for full documentation.
 }
 \keyword{internal}

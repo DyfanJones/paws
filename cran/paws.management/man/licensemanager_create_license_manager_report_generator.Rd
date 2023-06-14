@@ -40,6 +40,6 @@ idempotency of the request.}
 \description{
 Creates a report generator.
 
-See \url{https://paws-r.github.io/docs/licensemanager/create_license_manager_report_generator.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_license_manager_report_generator/} for full documentation.
 }
 \keyword{internal}

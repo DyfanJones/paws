@@ -15,6 +15,6 @@ Complete. The default type is Cancel.}
 \description{
 Stop an Automation that is currently running.
 
-See \url{https://paws-r.github.io/docs/ssm/stop_automation_execution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_automation_execution/} for full documentation.
 }
 \keyword{internal}

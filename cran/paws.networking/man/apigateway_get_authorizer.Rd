@@ -14,6 +14,6 @@ apigateway_get_authorizer(restApiId, authorizerId)
 \description{
 Describe an existing Authorizer resource.
 
-See \url{https://paws-r.github.io/docs/apigateway/get_authorizer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_authorizer/} for full documentation.
 }
 \keyword{internal}

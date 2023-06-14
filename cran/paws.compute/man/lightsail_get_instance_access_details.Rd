@@ -15,6 +15,6 @@ lightsail_get_instance_access_details(instanceName, protocol = NULL)
 \description{
 Returns temporary SSH keys you can use to connect to a specific virtual private server, or \emph{instance}.
 
-See \url{https://paws-r.github.io/docs/lightsail/get_instance_access_details.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_instance_access_details/} for full documentation.
 }
 \keyword{internal}

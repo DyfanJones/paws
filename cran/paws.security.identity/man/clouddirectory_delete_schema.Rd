@@ -13,6 +13,6 @@ information, see arns.}
 \description{
 Deletes a given schema. Schemas in a development and published state can only be deleted.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/delete_schema.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_schema/} for full documentation.
 }
 \keyword{internal}

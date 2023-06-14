@@ -16,6 +16,6 @@ Users' email addresses are case-sensitive.}
 \description{
 Deletes a user from the user pool.
 
-See \url{https://paws-r.github.io/docs/appstream/delete_user.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_user/} for full documentation.
 }
 \keyword{internal}

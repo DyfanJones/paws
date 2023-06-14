@@ -10,6 +10,6 @@ organizations_describe_organization()
 \description{
 Retrieves information about the organization that the user's account belongs to.
 
-See \url{https://paws-r.github.io/docs/organizations/describe_organization.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_organization/} for full documentation.
 }
 \keyword{internal}

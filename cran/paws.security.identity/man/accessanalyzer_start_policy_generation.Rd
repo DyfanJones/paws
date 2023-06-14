@@ -30,6 +30,6 @@ the Amazon Web Services SDK.}
 \description{
 Starts the policy generation request.
 
-See \url{https://paws-r.github.io/docs/accessanalyzer/start_policy_generation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_policy_generation/} for full documentation.
 }
 \keyword{internal}

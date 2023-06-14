@@ -44,6 +44,6 @@ policy resources.}
 \description{
 Creates the firewall policy for the firewall according to the specifications.
 
-See \url{https://paws-r.github.io/docs/networkfirewall/create_firewall_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_firewall_policy/} for full documentation.
 }
 \keyword{internal}

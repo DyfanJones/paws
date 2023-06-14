@@ -12,6 +12,6 @@ ivschat_delete_logging_configuration(identifier)
 \description{
 Deletes the specified logging configuration.
 
-See \url{https://paws-r.github.io/docs/ivschat/delete_logging_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_logging_configuration/} for full documentation.
 }
 \keyword{internal}

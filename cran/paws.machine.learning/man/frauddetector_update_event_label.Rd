@@ -24,6 +24,6 @@ using ISO 8601 standard in UTC.}
 \description{
 Updates the specified event with a new label.
 
-See \url{https://paws-r.github.io/docs/frauddetector/update_event_label.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_event_label/} for full documentation.
 }
 \keyword{internal}

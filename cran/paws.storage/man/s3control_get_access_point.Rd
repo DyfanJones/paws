@@ -29,6 +29,6 @@ The value must be URL encoded.}
 \description{
 Returns configuration information about the specified access point.
 
-See \url{https://paws-r.github.io/docs/s3control/get_access_point.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_access_point/} for full documentation.
 }
 \keyword{internal}

@@ -29,6 +29,6 @@ results.}
 \description{
 List all rules for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_rules.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_rules/} for full documentation.
 }
 \keyword{internal}

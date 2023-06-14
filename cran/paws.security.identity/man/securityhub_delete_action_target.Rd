@@ -12,6 +12,6 @@ securityhub_delete_action_target(ActionTargetArn)
 \description{
 Deletes a custom action target from Security Hub.
 
-See \url{https://paws-r.github.io/docs/securityhub/delete_action_target.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_action_target/} for full documentation.
 }
 \keyword{internal}

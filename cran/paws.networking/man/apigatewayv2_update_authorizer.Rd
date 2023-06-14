@@ -93,6 +93,6 @@ authorizer type. Supported only for HTTP APIs.}
 \description{
 Updates an Authorizer.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/update_authorizer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_authorizer/} for full documentation.
 }
 \keyword{internal}

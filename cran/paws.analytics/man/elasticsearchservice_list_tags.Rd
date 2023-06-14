@@ -13,6 +13,6 @@ attached that you want to view.}
 \description{
 Returns all tags for the given Elasticsearch domain.
 
-See \url{https://paws-r.github.io/docs/elasticsearchservice/list_tags.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags/} for full documentation.
 }
 \keyword{internal}

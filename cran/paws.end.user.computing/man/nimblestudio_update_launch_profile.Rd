@@ -41,6 +41,6 @@ used with this launch profile.}
 \description{
 Update a launch profile.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/update_launch_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_launch_profile/} for full documentation.
 }
 \keyword{internal}

@@ -69,6 +69,6 @@ in the FinSpace User Guide.}
 \description{
 Creates a new Changeset in a FinSpace Dataset.
 
-See \url{https://paws-r.github.io/docs/finspacedata/create_changeset.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_changeset/} for full documentation.
 }
 \keyword{internal}

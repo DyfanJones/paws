@@ -17,6 +17,6 @@ information about.}
 \description{
 Changes information about a Deployment resource.
 
-See \url{https://paws-r.github.io/docs/apigateway/update_deployment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_deployment/} for full documentation.
 }
 \keyword{internal}

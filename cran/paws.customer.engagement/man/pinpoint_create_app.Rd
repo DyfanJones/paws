@@ -12,6 +12,6 @@ pinpoint_create_app(CreateApplicationRequest)
 \description{
 Creates an application.
 
-See \url{https://paws-r.github.io/docs/pinpoint/create_app.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_app/} for full documentation.
 }
 \keyword{internal}

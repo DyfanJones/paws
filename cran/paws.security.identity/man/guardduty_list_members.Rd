@@ -33,6 +33,6 @@ with the GuardDuty administrator account using
 \description{
 Lists details about all member accounts for the current GuardDuty administrator account.
 
-See \url{https://paws-r.github.io/docs/guardduty/list_members.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_members/} for full documentation.
 }
 \keyword{internal}

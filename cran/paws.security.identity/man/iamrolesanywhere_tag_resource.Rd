@@ -14,6 +14,6 @@ iamrolesanywhere_tag_resource(resourceArn, tags)
 \description{
 Attaches tags to a resource.
 
-See \url{https://paws-r.github.io/docs/iamrolesanywhere/tag_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/tag_resource/} for full documentation.
 }
 \keyword{internal}

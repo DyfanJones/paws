@@ -13,6 +13,6 @@ policy you want to get.}
 \description{
 Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.
 
-See \url{https://paws-r.github.io/docs/cloudformation/get_stack_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_stack_policy/} for full documentation.
 }
 \keyword{internal}

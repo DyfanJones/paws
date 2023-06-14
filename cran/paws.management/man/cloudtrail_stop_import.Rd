@@ -12,6 +12,6 @@ cloudtrail_stop_import(ImportId)
 \description{
 Stops a specified import.
 
-See \url{https://paws-r.github.io/docs/cloudtrail/stop_import.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_import/} for full documentation.
 }
 \keyword{internal}

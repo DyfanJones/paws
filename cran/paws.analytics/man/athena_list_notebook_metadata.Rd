@@ -26,6 +26,6 @@ for.}
 \description{
 Displays the notebook files for the specified workgroup in paginated format.
 
-See \url{https://paws-r.github.io/docs/athena/list_notebook_metadata.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_notebook_metadata/} for full documentation.
 }
 \keyword{internal}

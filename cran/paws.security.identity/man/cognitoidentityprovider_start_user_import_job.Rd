@@ -15,6 +15,6 @@ into.}
 \description{
 Starts the user import.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/start_user_import_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_user_import_job/} for full documentation.
 }
 \keyword{internal}

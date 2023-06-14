@@ -58,6 +58,6 @@ Supported only for WebSocket APIs.}
 \description{
 Creates an IntegrationResponses.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/create_integration_response.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_integration_response/} for full documentation.
 }
 \keyword{internal}

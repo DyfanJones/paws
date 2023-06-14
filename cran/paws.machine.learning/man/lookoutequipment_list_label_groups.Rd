@@ -21,6 +21,6 @@ label groups.}
 \description{
 Returns a list of the label groups.
 
-See \url{https://paws-r.github.io/docs/lookoutequipment/list_label_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_label_groups/} for full documentation.
 }
 \keyword{internal}

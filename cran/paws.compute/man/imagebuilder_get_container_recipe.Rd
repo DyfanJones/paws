@@ -12,6 +12,6 @@ imagebuilder_get_container_recipe(containerRecipeArn)
 \description{
 Retrieves a container recipe.
 
-See \url{https://paws-r.github.io/docs/imagebuilder/get_container_recipe.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_container_recipe/} for full documentation.
 }
 \keyword{internal}

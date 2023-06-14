@@ -12,6 +12,6 @@ route53resolver_get_firewall_rule_group(FirewallRuleGroupId)
 \description{
 Retrieves the specified firewall rule group.
 
-See \url{https://paws-r.github.io/docs/route53resolver/get_firewall_rule_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_firewall_rule_group/} for full documentation.
 }
 \keyword{internal}

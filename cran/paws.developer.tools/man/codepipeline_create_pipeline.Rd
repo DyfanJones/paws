@@ -15,6 +15,6 @@ pipeline.}
 \description{
 Creates a pipeline.
 
-See \url{https://paws-r.github.io/docs/codepipeline/create_pipeline.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_pipeline/} for full documentation.
 }
 \keyword{internal}

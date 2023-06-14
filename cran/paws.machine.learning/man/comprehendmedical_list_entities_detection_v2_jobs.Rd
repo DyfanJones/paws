@@ -23,6 +23,6 @@ only set one filter at a time.}
 \description{
 Gets a list of medical entity detection jobs that you have submitted.
 
-See \url{https://paws-r.github.io/docs/comprehendmedical/list_entities_detection_v2_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_entities_detection_v2_jobs/} for full documentation.
 }
 \keyword{internal}

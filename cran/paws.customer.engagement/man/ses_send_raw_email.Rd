@@ -124,6 +124,6 @@ can publish email sending events.}
 \description{
 Composes an email message and immediately queues it for sending.
 
-See \url{https://paws-r.github.io/docs/ses/send_raw_email.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/send_raw_email/} for full documentation.
 }
 \keyword{internal}

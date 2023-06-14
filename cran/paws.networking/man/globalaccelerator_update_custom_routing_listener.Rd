@@ -19,6 +19,6 @@ Separately, you set port ranges for endpoints. For more information, see
 \description{
 Update a listener for a custom routing accelerator.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/update_custom_routing_listener.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_custom_routing_listener/} for full documentation.
 }
 \keyword{internal}

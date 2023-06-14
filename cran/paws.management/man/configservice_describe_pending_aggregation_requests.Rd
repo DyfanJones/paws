@@ -19,6 +19,6 @@ the next page of results in a paginated response.}
 \description{
 Returns a list of all pending aggregation requests.
 
-See \url{https://paws-r.github.io/docs/configservice/describe_pending_aggregation_requests.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_pending_aggregation_requests/} for full documentation.
 }
 \keyword{internal}

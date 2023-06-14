@@ -17,6 +17,6 @@ exist in.}
 \description{
 Detaches the specified object from the specified index.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/detach_from_index.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/detach_from_index/} for full documentation.
 }
 \keyword{internal}

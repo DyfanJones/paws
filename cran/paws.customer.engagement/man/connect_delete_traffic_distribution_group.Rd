@@ -15,6 +15,6 @@ from the replicated Region.}
 \description{
 Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created.
 
-See \url{https://paws-r.github.io/docs/connect/delete_traffic_distribution_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_traffic_distribution_group/} for full documentation.
 }
 \keyword{internal}

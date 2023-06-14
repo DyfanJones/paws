@@ -79,6 +79,6 @@ image.}
 \description{
 Creates a new container recipe. Container recipes define how images are configured, tested, and assessed.
 
-See \url{https://paws-r.github.io/docs/imagebuilder/create_container_recipe.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_container_recipe/} for full documentation.
 }
 \keyword{internal}

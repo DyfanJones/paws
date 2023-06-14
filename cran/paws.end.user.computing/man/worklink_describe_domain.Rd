@@ -14,6 +14,6 @@ worklink_describe_domain(FleetArn, DomainName)
 \description{
 Provides information about the domain.
 
-See \url{https://paws-r.github.io/docs/worklink/describe_domain.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_domain/} for full documentation.
 }
 \keyword{internal}

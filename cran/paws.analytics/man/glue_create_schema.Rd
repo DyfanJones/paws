@@ -77,6 +77,6 @@ Amazon Web Services tags-on-create pattern.}
 \description{
 Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version.
 
-See \url{https://paws-r.github.io/docs/glue/create_schema.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_schema/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ Web Services account ID.}
 \description{
 Imports an existing Amazon Athena Data Catalog to Glue.
 
-See \url{https://paws-r.github.io/docs/glue/import_catalog_to_glue.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/import_catalog_to_glue/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ Resilience Hub application.}
 \description{
 Lists the tags for your resources in your Resilience Hub applications.
 
-See \url{https://paws-r.github.io/docs/resiliencehub/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

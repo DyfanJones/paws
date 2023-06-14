@@ -14,6 +14,6 @@ get the tags for.}
 \description{
 Gets a list of the tags associated with an Cloud9 development environment.
 
-See \url{https://paws-r.github.io/docs/cloud9/list_tags_for_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

@@ -16,6 +16,6 @@ results.}
 \description{
 Lists the knowledge bases.
 
-See \url{https://paws-r.github.io/docs/connectwisdomservice/list_knowledge_bases.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_knowledge_bases/} for full documentation.
 }
 \keyword{internal}

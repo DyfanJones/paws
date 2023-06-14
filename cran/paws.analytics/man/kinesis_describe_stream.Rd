@@ -33,6 +33,6 @@ starting with the first shard in the stream.}
 \description{
 Describes the specified Kinesis data stream.
 
-See \url{https://paws-r.github.io/docs/kinesis/describe_stream.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_stream/} for full documentation.
 }
 \keyword{internal}

@@ -33,6 +33,6 @@ update and delete.}
 \description{
 Retrieves the specified RuleGroup.
 
-See \url{https://paws-r.github.io/docs/wafv2/get_rule_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_rule_group/} for full documentation.
 }
 \keyword{internal}

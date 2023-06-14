@@ -12,6 +12,6 @@ sagemaker_describe_code_repository(CodeRepositoryName)
 \description{
 Gets details about the specified Git repository.
 
-See \url{https://paws-r.github.io/docs/sagemaker/describe_code_repository.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_code_repository/} for full documentation.
 }
 \keyword{internal}

@@ -23,6 +23,6 @@ that CloudFormation assumes to rollback the stack.}
 \description{
 When specifying \code{\link[=cloudformation_rollback_stack]{rollback_stack}}, you preserve the state of previously provisioned resources when an operation fails. You can check the status of the stack through the \code{\link[=cloudformation_describe_stacks]{describe_stacks}} operation.
 
-See \url{https://paws-r.github.io/docs/cloudformation/rollback_stack.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/rollback_stack/} for full documentation.
 }
 \keyword{internal}

@@ -31,6 +31,6 @@ ARN used to encrypt the associated metadata.}
 \description{
 Updates an existing bot recommendation request.
 
-See \url{https://paws-r.github.io/docs/lexmodelsv2/update_bot_recommendation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_bot_recommendation/} for full documentation.
 }
 \keyword{internal}

@@ -27,6 +27,6 @@ session.}
 \description{
 Delete a user from launch profile membership.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/delete_launch_profile_member.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_launch_profile_member/} for full documentation.
 }
 \keyword{internal}

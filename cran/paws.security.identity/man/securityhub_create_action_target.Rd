@@ -17,6 +17,6 @@ characters.}
 \description{
 Creates a custom action target in Security Hub.
 
-See \url{https://paws-r.github.io/docs/securityhub/create_action_target.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_action_target/} for full documentation.
 }
 \keyword{internal}

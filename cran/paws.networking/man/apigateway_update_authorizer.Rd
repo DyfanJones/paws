@@ -16,6 +16,6 @@ apigateway_update_authorizer(restApiId, authorizerId, patchOperations = NULL)
 \description{
 Updates an existing Authorizer resource.
 
-See \url{https://paws-r.github.io/docs/apigateway/update_authorizer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_authorizer/} for full documentation.
 }
 \keyword{internal}

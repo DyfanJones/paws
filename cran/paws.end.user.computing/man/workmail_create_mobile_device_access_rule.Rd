@@ -56,6 +56,6 @@ user agents will match.}
 \description{
 Creates a new mobile device access rule for the specified WorkMail organization.
 
-See \url{https://paws-r.github.io/docs/workmail/create_mobile_device_access_rule.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_mobile_device_access_rule/} for full documentation.
 }
 \keyword{internal}

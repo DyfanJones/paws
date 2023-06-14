@@ -13,6 +13,6 @@ backup_describe_report_plan(ReportPlanName)
 \description{
 Returns a list of all report plans for an Amazon Web Services account and Amazon Web Services Region.
 
-See \url{https://paws-r.github.io/docs/backup/describe_report_plan.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_report_plan/} for full documentation.
 }
 \keyword{internal}

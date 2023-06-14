@@ -25,6 +25,6 @@ results, use null.}
 \description{
 Lists all portfolios in the catalog.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/list_portfolios.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_portfolios/} for full documentation.
 }
 \keyword{internal}

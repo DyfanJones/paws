@@ -38,6 +38,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Gets information about the associations for the specified transit gateway route table.
 
-See \url{https://paws-r.github.io/docs/ec2/get_transit_gateway_route_table_associations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_transit_gateway_route_table_associations/} for full documentation.
 }
 \keyword{internal}

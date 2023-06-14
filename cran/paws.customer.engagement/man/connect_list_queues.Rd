@@ -28,6 +28,6 @@ size is 100.}
 \description{
 Provides information about the queues for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_queues.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_queues/} for full documentation.
 }
 \keyword{internal}

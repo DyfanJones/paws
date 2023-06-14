@@ -19,6 +19,6 @@ the same client token for other API requests.}
 \description{
 Deletes a recommendation template. This is a destructive action that can't be undone.
 
-See \url{https://paws-r.github.io/docs/resiliencehub/delete_recommendation_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_recommendation_template/} for full documentation.
 }
 \keyword{internal}

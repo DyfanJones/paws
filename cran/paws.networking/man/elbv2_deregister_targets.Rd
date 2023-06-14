@@ -16,6 +16,6 @@ deregister it.}
 \description{
 Deregisters the specified targets from the specified target group. After the targets are deregistered, they no longer receive traffic from the load balancer.
 
-See \url{https://paws-r.github.io/docs/elbv2/deregister_targets.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/deregister_targets/} for full documentation.
 }
 \keyword{internal}

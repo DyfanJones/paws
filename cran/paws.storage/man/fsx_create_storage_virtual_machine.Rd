@@ -49,6 +49,6 @@ administrators and users consist of both NFS and SMB clients.
 \description{
 Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file system.
 
-See \url{https://paws-r.github.io/docs/fsx/create_storage_virtual_machine.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_storage_virtual_machine/} for full documentation.
 }
 \keyword{internal}

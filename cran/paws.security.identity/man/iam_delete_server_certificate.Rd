@@ -16,6 +16,6 @@ spaces. You can also include any of the following characters: _+=,.@-}
 \description{
 Deletes the specified server certificate.
 
-See \url{https://paws-r.github.io/docs/iam/delete_server_certificate.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_server_certificate/} for full documentation.
 }
 \keyword{internal}

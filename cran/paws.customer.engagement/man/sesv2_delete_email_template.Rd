@@ -12,6 +12,6 @@ sesv2_delete_email_template(TemplateName)
 \description{
 Deletes an email template.
 
-See \url{https://paws-r.github.io/docs/sesv2/delete_email_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_email_template/} for full documentation.
 }
 \keyword{internal}

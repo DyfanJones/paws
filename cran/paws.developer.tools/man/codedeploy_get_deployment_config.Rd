@@ -13,6 +13,6 @@ Amazon Web Services account.}
 \description{
 Gets information about a deployment configuration.
 
-See \url{https://paws-r.github.io/docs/codedeploy/get_deployment_config.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_deployment_config/} for full documentation.
 }
 \keyword{internal}

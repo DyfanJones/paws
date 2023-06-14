@@ -25,6 +25,6 @@ that used that token.}
 \description{
 Posts a comment in reply to an existing comment on a comparison between commits or a pull request.
 
-See \url{https://paws-r.github.io/docs/codecommit/post_comment_reply.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/post_comment_reply/} for full documentation.
 }
 \keyword{internal}

@@ -16,6 +16,6 @@ previously requested.}
 \description{
 List service templates with detail data.
 
-See \url{https://paws-r.github.io/docs/proton/list_service_templates.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_service_templates/} for full documentation.
 }
 \keyword{internal}

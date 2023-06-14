@@ -16,6 +16,6 @@ machinelearning_predict(MLModelId, Record, PredictEndpoint)
 \description{
 Generates a prediction for the observation using the specified \verb{ML Model}.
 
-See \url{https://paws-r.github.io/docs/machinelearning/predict.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/predict/} for full documentation.
 }
 \keyword{internal}

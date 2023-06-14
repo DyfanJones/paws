@@ -15,6 +15,6 @@ information, see arns.}
 \description{
 Updates the schema name with a new name. Only development schema names can be updated.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/update_schema.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_schema/} for full documentation.
 }
 \keyword{internal}

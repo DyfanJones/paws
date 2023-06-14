@@ -26,6 +26,6 @@ replica in the cluster. For example, \code{mydbcluster-replica1}.}
 \description{
 Forces a failover for a cluster.
 
-See \url{https://paws-r.github.io/docs/docdb/failover_db_cluster.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/failover_db_cluster/} for full documentation.
 }
 \keyword{internal}

@@ -29,6 +29,6 @@ schemas_update_schema(
 \description{
 Updates the schema definition
 
-See \url{https://paws-r.github.io/docs/schemas/update_schema.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_schema/} for full documentation.
 }
 \keyword{internal}

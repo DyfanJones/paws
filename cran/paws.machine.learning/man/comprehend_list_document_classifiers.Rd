@@ -23,6 +23,6 @@ one filter at a time.}
 \description{
 Gets a list of the document classifiers that you have created.
 
-See \url{https://paws-r.github.io/docs/comprehend/list_document_classifiers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_document_classifiers/} for full documentation.
 }
 \keyword{internal}

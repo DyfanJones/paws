@@ -26,6 +26,6 @@ panorama_register_package_version(
 \description{
 Registers a package version.
 
-See \url{https://paws-r.github.io/docs/panorama/register_package_version.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/register_package_version/} for full documentation.
 }
 \keyword{internal}

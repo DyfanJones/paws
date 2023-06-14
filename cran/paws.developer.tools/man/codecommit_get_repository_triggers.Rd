@@ -12,6 +12,6 @@ codecommit_get_repository_triggers(repositoryName)
 \description{
 Gets information about triggers configured for a repository.
 
-See \url{https://paws-r.github.io/docs/codecommit/get_repository_triggers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_repository_triggers/} for full documentation.
 }
 \keyword{internal}

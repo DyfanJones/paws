@@ -15,6 +15,6 @@ string-to-string map of key-value pairs.}
 \description{
 Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.
 
-See \url{https://paws-r.github.io/docs/resourcegroups/tag.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/tag/} for full documentation.
 }
 \keyword{internal}

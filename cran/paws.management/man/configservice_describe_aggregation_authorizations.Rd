@@ -20,6 +20,6 @@ the next page of results in a paginated response.}
 \description{
 Returns a list of authorizations granted to various aggregator accounts and regions.
 
-See \url{https://paws-r.github.io/docs/configservice/describe_aggregation_authorizations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_aggregation_authorizations/} for full documentation.
 }
 \keyword{internal}

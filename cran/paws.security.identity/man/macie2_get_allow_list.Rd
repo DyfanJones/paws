@@ -13,6 +13,6 @@ applies to.}
 \description{
 Retrieves the settings and status of an allow list.
 
-See \url{https://paws-r.github.io/docs/macie2/get_allow_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_allow_list/} for full documentation.
 }
 \keyword{internal}

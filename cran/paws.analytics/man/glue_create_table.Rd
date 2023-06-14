@@ -30,6 +30,6 @@ the table.}
 \description{
 Creates a new table definition in the Data Catalog.
 
-See \url{https://paws-r.github.io/docs/glue/create_table.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_table/} for full documentation.
 }
 \keyword{internal}

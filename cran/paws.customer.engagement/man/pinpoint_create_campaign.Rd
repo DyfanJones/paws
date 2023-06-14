@@ -16,6 +16,6 @@ as the \strong{Project ID} on the Amazon Pinpoint console.}
 \description{
 Creates a new campaign for an application or updates the settings of an existing campaign for an application.
 
-See \url{https://paws-r.github.io/docs/pinpoint/create_campaign.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_campaign/} for full documentation.
 }
 \keyword{internal}

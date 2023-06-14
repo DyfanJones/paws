@@ -101,6 +101,6 @@ returned.}
 \description{
 Lists the shards in a stream and provides information about each shard. This operation has a limit of 1000 transactions per second per data stream.
 
-See \url{https://paws-r.github.io/docs/kinesis/list_shards.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_shards/} for full documentation.
 }
 \keyword{internal}

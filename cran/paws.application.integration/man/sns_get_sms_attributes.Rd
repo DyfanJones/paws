@@ -19,6 +19,6 @@ If you don't use this parameter, Amazon SNS returns all SMS attributes.}
 \description{
 Returns the settings for sending SMS messages from your Amazon Web Services account.
 
-See \url{https://paws-r.github.io/docs/sns/get_sms_attributes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_sms_attributes/} for full documentation.
 }
 \keyword{internal}

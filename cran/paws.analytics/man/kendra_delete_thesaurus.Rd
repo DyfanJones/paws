@@ -14,6 +14,6 @@ kendra_delete_thesaurus(Id, IndexId)
 \description{
 Deletes an existing Amazon Kendra thesaurus.
 
-See \url{https://paws-r.github.io/docs/kendra/delete_thesaurus.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_thesaurus/} for full documentation.
 }
 \keyword{internal}

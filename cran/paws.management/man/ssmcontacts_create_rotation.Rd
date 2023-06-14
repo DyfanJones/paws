@@ -47,6 +47,6 @@ specified details.}
 \description{
 Creates a rotation in an on-call schedule.
 
-See \url{https://paws-r.github.io/docs/ssmcontacts/create_rotation.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_rotation/} for full documentation.
 }
 \keyword{internal}

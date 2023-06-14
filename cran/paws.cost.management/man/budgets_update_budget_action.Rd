@@ -39,6 +39,6 @@ must be in the same account.}
 \description{
 Updates a budget action.
 
-See \url{https://paws-r.github.io/docs/budgets/update_budget_action.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_budget_action/} for full documentation.
 }
 \keyword{internal}

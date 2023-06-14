@@ -16,6 +16,6 @@ Firewall Manager.}
 \description{
 Returns information about the specified Firewall Manager protocols list.
 
-See \url{https://paws-r.github.io/docs/fms/get_protocols_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_protocols_list/} for full documentation.
 }
 \keyword{internal}

@@ -89,6 +89,6 @@ otherwise \code{false}. The default is \code{false}.}
 \description{
 Returns information about cluster snapshots. This API operation supports pagination.
 
-See \url{https://paws-r.github.io/docs/docdb/describe_db_cluster_snapshots.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_db_cluster_snapshots/} for full documentation.
 }
 \keyword{internal}

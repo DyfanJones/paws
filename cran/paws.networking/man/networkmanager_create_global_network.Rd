@@ -16,6 +16,6 @@ Constraints: Maximum length of 256 characters.}
 \description{
 Creates a new, empty global network.
 
-See \url{https://paws-r.github.io/docs/networkmanager/create_global_network.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_global_network/} for full documentation.
 }
 \keyword{internal}

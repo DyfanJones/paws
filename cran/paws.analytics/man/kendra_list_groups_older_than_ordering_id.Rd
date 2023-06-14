@@ -34,6 +34,6 @@ given ordering or timestamp identifier.}
 \description{
 Provides a list of groups that are mapped to users before a given ordering or timestamp identifier.
 
-See \url{https://paws-r.github.io/docs/kendra/list_groups_older_than_ordering_id.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_groups_older_than_ordering_id/} for full documentation.
 }
 \keyword{internal}

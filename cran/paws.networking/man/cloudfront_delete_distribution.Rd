@@ -15,6 +15,6 @@ distribution. For example: \code{E2QWRUHAPOMQZL}.}
 \description{
 Delete a distribution.
 
-See \url{https://paws-r.github.io/docs/cloudfront/delete_distribution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_distribution/} for full documentation.
 }
 \keyword{internal}

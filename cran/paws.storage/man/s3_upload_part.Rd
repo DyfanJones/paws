@@ -123,6 +123,6 @@ different account, the request fails with the HTTP status code
 \description{
 Uploads a part in a multipart upload.
 
-See \url{https://paws-r.github.io/docs/s3/upload_part.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/upload_part/} for full documentation.
 }
 \keyword{internal}

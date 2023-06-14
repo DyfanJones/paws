@@ -14,6 +14,6 @@ cloudfront_create_field_level_encryption_profile(
 \description{
 Create a field-level encryption profile.
 
-See \url{https://paws-r.github.io/docs/cloudfront/create_field_level_encryption_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_field_level_encryption_profile/} for full documentation.
 }
 \keyword{internal}

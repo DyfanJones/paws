@@ -26,6 +26,6 @@ is omitted, the setting is changed only for the authenticated user.}
 \description{
 Disables an account setting for a specified user, role, or the root user for an account.
 
-See \url{https://paws-r.github.io/docs/ecs/delete_account_setting.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_account_setting/} for full documentation.
 }
 \keyword{internal}

@@ -35,6 +35,6 @@ batch of objects.}
 \description{
 Retrieves an array of RuleGroupSummary objects for the rule groups that you manage.
 
-See \url{https://paws-r.github.io/docs/wafv2/list_rule_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_rule_groups/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ appstream_stop_image_builder(Name)
 \description{
 Stops the specified image builder.
 
-See \url{https://paws-r.github.io/docs/appstream/stop_image_builder.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_image_builder/} for full documentation.
 }
 \keyword{internal}

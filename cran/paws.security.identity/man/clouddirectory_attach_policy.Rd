@@ -18,6 +18,6 @@ attached.}
 \description{
 Attaches a policy object to a regular object. An object can have a limited number of attached policies.
 
-See \url{https://paws-r.github.io/docs/clouddirectory/attach_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/attach_policy/} for full documentation.
 }
 \keyword{internal}

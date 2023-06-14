@@ -12,6 +12,6 @@ appstream_expire_session(SessionId)
 \description{
 Immediately stops the specified streaming session.
 
-See \url{https://paws-r.github.io/docs/appstream/expire_session.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/expire_session/} for full documentation.
 }
 \keyword{internal}

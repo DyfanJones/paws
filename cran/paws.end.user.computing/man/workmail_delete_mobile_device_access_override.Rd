@@ -25,6 +25,6 @@ insensitive.}
 \description{
 Deletes the mobile device access override for the given WorkMail organization, user, and device.
 
-See \url{https://paws-r.github.io/docs/workmail/delete_mobile_device_access_override.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_mobile_device_access_override/} for full documentation.
 }
 \keyword{internal}

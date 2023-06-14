@@ -25,6 +25,6 @@ field of the response.}
 \description{
 Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.
 
-See \url{https://paws-r.github.io/docs/cloudwatchevents/remove_targets.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/remove_targets/} for full documentation.
 }
 \keyword{internal}

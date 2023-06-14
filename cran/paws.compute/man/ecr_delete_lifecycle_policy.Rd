@@ -16,6 +16,6 @@ registry is assumed.}
 \description{
 Deletes the lifecycle policy associated with the specified repository.
 
-See \url{https://paws-r.github.io/docs/ecr/delete_lifecycle_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_lifecycle_policy/} for full documentation.
 }
 \keyword{internal}

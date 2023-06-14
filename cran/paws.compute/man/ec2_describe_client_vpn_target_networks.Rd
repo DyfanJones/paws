@@ -41,6 +41,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Describes the target networks associated with the specified Client VPN endpoint.
 
-See \url{https://paws-r.github.io/docs/ec2/describe_client_vpn_target_networks.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_client_vpn_target_networks/} for full documentation.
 }
 \keyword{internal}

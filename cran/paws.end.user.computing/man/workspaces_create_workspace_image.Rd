@@ -20,6 +20,6 @@ grants your IAM user permission to use \code{workspaces:CreateTags}.}
 \description{
 Creates a new WorkSpace image from an existing WorkSpace.
 
-See \url{https://paws-r.github.io/docs/workspaces/create_workspace_image.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_workspace_image/} for full documentation.
 }
 \keyword{internal}

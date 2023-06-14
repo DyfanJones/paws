@@ -28,6 +28,6 @@ ACL.}
 \description{
 Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to check the capacity requirements for the rules you want to use in a RuleGroup or WebACL.
 
-See \url{https://paws-r.github.io/docs/wafv2/check_capacity.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/check_capacity/} for full documentation.
 }
 \keyword{internal}

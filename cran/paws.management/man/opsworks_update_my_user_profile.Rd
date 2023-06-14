@@ -12,6 +12,6 @@ opsworks_update_my_user_profile(SshPublicKey = NULL)
 \description{
 Updates a user's SSH public key.
 
-See \url{https://paws-r.github.io/docs/opsworks/update_my_user_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_my_user_profile/} for full documentation.
 }
 \keyword{internal}

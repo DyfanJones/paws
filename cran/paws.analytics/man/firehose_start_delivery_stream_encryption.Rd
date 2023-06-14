@@ -19,6 +19,6 @@ needed for Server-Side Encryption (SSE).}
 \description{
 Enables server-side encryption (SSE) for the delivery stream.
 
-See \url{https://paws-r.github.io/docs/firehose/start_delivery_stream_encryption.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_delivery_stream_encryption/} for full documentation.
 }
 \keyword{internal}

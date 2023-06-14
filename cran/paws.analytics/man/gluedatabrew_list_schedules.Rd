@@ -21,6 +21,6 @@ results.}
 \description{
 Lists the DataBrew schedules that are defined.
 
-See \url{https://paws-r.github.io/docs/gluedatabrew/list_schedules.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_schedules/} for full documentation.
 }
 \keyword{internal}

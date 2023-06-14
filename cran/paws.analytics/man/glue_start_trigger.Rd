@@ -12,6 +12,6 @@ glue_start_trigger(Name)
 \description{
 Starts an existing trigger. See \href{https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html}{Triggering Jobs} for information about how different types of trigger are started.
 
-See \url{https://paws-r.github.io/docs/glue/start_trigger.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_trigger/} for full documentation.
 }
 \keyword{internal}

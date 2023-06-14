@@ -210,6 +210,6 @@ Batch session debugging is not supported for matrix batch builds.}
 \description{
 Starts a batch build for a project.
 
-See \url{https://paws-r.github.io/docs/codebuild/start_build_batch.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_build_batch/} for full documentation.
 }
 \keyword{internal}

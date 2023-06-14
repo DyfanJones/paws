@@ -13,6 +13,6 @@ devopsguru_describe_feedback(InsightId = NULL)
 \description{
 Returns the most recent feedback submitted in the current Amazon Web Services account and Region.
 
-See \url{https://paws-r.github.io/docs/devopsguru/describe_feedback.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_feedback/} for full documentation.
 }
 \keyword{internal}

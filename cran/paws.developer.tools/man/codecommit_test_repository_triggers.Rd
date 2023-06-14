@@ -15,6 +15,6 @@ codecommit_test_repository_triggers(repositoryName, triggers)
 \description{
 Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test sends data from the last commit. If no data is available, sample data is generated.
 
-See \url{https://paws-r.github.io/docs/codecommit/test_repository_triggers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/test_repository_triggers/} for full documentation.
 }
 \keyword{internal}

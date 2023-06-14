@@ -21,6 +21,6 @@ provide this token to receive the next set of results.}
 \description{
 Describes one or more of your IP access control groups.
 
-See \url{https://paws-r.github.io/docs/workspaces/describe_ip_groups.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_ip_groups/} for full documentation.
 }
 \keyword{internal}

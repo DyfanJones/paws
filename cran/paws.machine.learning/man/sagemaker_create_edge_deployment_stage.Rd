@@ -14,6 +14,6 @@ sagemaker_create_edge_deployment_stage(EdgeDeploymentPlanName, Stages)
 \description{
 Creates a new stage in an existing edge deployment plan.
 
-See \url{https://paws-r.github.io/docs/sagemaker/create_edge_deployment_stage.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_edge_deployment_stage/} for full documentation.
 }
 \keyword{internal}

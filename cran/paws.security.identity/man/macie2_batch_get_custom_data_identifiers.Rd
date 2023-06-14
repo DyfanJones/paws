@@ -13,6 +13,6 @@ identifier to retrieve information about.}
 \description{
 Retrieves information about one or more custom data identifiers.
 
-See \url{https://paws-r.github.io/docs/macie2/batch_get_custom_data_identifiers.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/batch_get_custom_data_identifiers/} for full documentation.
 }
 \keyword{internal}

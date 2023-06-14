@@ -37,6 +37,6 @@ that used that token.}
 \description{
 Posts a comment on the comparison between two commits.
 
-See \url{https://paws-r.github.io/docs/codecommit/post_comment_for_compared_commit.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/post_comment_for_compared_commit/} for full documentation.
 }
 \keyword{internal}

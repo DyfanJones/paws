@@ -21,6 +21,6 @@ that's in standby or "sleep" mode.}
 \description{
 Retrieve a JPG-format screenshot of a running instance to help with troubleshooting.
 
-See \url{https://paws-r.github.io/docs/ec2/get_console_screenshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_console_screenshot/} for full documentation.
 }
 \keyword{internal}

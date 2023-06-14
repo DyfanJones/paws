@@ -21,6 +21,6 @@ Services administrator credentials to access the API.}
 \description{
 Retrieves the metadata of the specified folder.
 
-See \url{https://paws-r.github.io/docs/workdocs/get_folder.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_folder/} for full documentation.
 }
 \keyword{internal}

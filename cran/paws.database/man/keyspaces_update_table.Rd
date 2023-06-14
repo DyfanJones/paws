@@ -101,6 +101,6 @@ be disabled.}
 \description{
 Adds new columns to the table or updates one of the table's settings, for example capacity mode, encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update operation.
 
-See \url{https://paws-r.github.io/docs/keyspaces/update_table.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_table/} for full documentation.
 }
 \keyword{internal}

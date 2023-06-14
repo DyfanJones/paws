@@ -24,6 +24,6 @@ licensemanagerusersubscriptions_start_product_subscription(
 \description{
 Starts a product subscription for a user with the specified identity provider.
 
-See \url{https://paws-r.github.io/docs/licensemanagerusersubscriptions/start_product_subscription.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_product_subscription/} for full documentation.
 }
 \keyword{internal}

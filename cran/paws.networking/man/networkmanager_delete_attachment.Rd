@@ -12,6 +12,6 @@ networkmanager_delete_attachment(AttachmentId)
 \description{
 Deletes an attachment. Supports all attachment types.
 
-See \url{https://paws-r.github.io/docs/networkmanager/delete_attachment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_attachment/} for full documentation.
 }
 \keyword{internal}

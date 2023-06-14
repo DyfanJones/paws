@@ -59,6 +59,6 @@ modify the stack's Chef version.}
 \description{
 Updates a specified app.
 
-See \url{https://paws-r.github.io/docs/opsworks/update_app.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_app/} for full documentation.
 }
 \keyword{internal}

@@ -14,6 +14,6 @@ retrieve.}
 \description{
 Returns the custom email verification template for the template name you specify.
 
-See \url{https://paws-r.github.io/docs/sesv2/get_custom_verification_email_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_custom_verification_email_template/} for full documentation.
 }
 \keyword{internal}

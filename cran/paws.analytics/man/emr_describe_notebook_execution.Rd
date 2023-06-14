@@ -12,6 +12,6 @@ emr_describe_notebook_execution(NotebookExecutionId)
 \description{
 Provides details of a notebook execution.
 
-See \url{https://paws-r.github.io/docs/emr/describe_notebook_execution.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_notebook_execution/} for full documentation.
 }
 \keyword{internal}

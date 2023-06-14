@@ -14,6 +14,6 @@ be retrieved in batch.}
 \description{
 Retrieves a batch of \code{Records} from a \code{FeatureGroup}.
 
-See \url{https://paws-r.github.io/docs/sagemakerfeaturestoreruntime/batch_get_record.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/batch_get_record/} for full documentation.
 }
 \keyword{internal}

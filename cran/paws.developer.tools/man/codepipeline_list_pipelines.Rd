@@ -18,6 +18,6 @@ value is 1000.}
 \description{
 Gets a summary of all of the pipelines associated with your account.
 
-See \url{https://paws-r.github.io/docs/codepipeline/list_pipelines.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_pipelines/} for full documentation.
 }
 \keyword{internal}

@@ -13,6 +13,6 @@ description for.}
 \description{
 Return a full description of an App Runner service.
 
-See \url{https://paws-r.github.io/docs/apprunner/describe_service.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_service/} for full documentation.
 }
 \keyword{internal}

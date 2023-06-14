@@ -33,6 +33,6 @@ for Equipment stopped the inference execution.}
 \description{
 Lists all inference executions that have been performed by the specified inference scheduler.
 
-See \url{https://paws-r.github.io/docs/lookoutequipment/list_inference_executions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_inference_executions/} for full documentation.
 }
 \keyword{internal}

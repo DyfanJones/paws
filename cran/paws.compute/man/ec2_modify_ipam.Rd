@@ -35,6 +35,6 @@ the \emph{Amazon VPC IPAM User Guide}.}
 \description{
 Modify the configurations of an IPAM.
 
-See \url{https://paws-r.github.io/docs/ec2/modify_ipam.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/modify_ipam/} for full documentation.
 }
 \keyword{internal}

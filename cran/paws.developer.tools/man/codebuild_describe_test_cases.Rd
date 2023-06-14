@@ -31,6 +31,6 @@ The default value is 100.}
 \description{
 Returns a list of details about test cases for a report.
 
-See \url{https://paws-r.github.io/docs/codebuild/describe_test_cases.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_test_cases/} for full documentation.
 }
 \keyword{internal}

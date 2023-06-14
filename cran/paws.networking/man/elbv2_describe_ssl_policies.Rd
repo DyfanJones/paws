@@ -26,6 +26,6 @@ load balancers.}
 \description{
 Describes the specified policies or all policies used for SSL negotiation.
 
-See \url{https://paws-r.github.io/docs/elbv2/describe_ssl_policies.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_ssl_policies/} for full documentation.
 }
 \keyword{internal}

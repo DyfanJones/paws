@@ -41,6 +41,6 @@ list.}
 \description{
 Returns details about your report jobs.
 
-See \url{https://paws-r.github.io/docs/backup/list_report_jobs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_report_jobs/} for full documentation.
 }
 \keyword{internal}

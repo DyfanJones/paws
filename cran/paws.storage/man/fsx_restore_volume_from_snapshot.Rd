@@ -37,6 +37,6 @@ fails.
 \description{
 Returns an Amazon FSx for OpenZFS volume to the state saved by the specified snapshot.
 
-See \url{https://paws-r.github.io/docs/fsx/restore_volume_from_snapshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/restore_volume_from_snapshot/} for full documentation.
 }
 \keyword{internal}

@@ -18,6 +18,6 @@ channel.}
 \description{
 Lists all of the engagements to contact channels that have been acknowledged.
 
-See \url{https://paws-r.github.io/docs/ssmcontacts/list_page_receipts.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_page_receipts/} for full documentation.
 }
 \keyword{internal}

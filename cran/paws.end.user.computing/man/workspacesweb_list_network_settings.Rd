@@ -15,6 +15,6 @@ operation.}
 \description{
 Retrieves a list of network settings.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/list_network_settings.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_network_settings/} for full documentation.
 }
 \keyword{internal}

@@ -28,6 +28,6 @@ See a list of available Human Ui Amazon Resource Names (ARNs) in
 \description{
 Renders the UI template so that you can preview the worker's experience.
 
-See \url{https://paws-r.github.io/docs/sagemaker/render_ui_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/render_ui_template/} for full documentation.
 }
 \keyword{internal}

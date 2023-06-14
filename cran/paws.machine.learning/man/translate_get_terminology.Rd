@@ -23,6 +23,6 @@ error.}
 \description{
 Retrieves a custom terminology.
 
-See \url{https://paws-r.github.io/docs/translate/get_terminology.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_terminology/} for full documentation.
 }
 \keyword{internal}

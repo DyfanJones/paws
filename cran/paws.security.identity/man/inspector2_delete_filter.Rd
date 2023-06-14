@@ -12,6 +12,6 @@ inspector2_delete_filter(arn)
 \description{
 Deletes a filter resource.
 
-See \url{https://paws-r.github.io/docs/inspector2/delete_filter.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_filter/} for full documentation.
 }
 \keyword{internal}

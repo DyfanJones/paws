@@ -17,6 +17,6 @@ lakeformation_update_resource(RoleArn, ResourceArn, WithFederation = NULL)
 \description{
 Updates the data access role used for vending access to the given (registered) resource in Lake Formation.
 
-See \url{https://paws-r.github.io/docs/lakeformation/update_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_resource/} for full documentation.
 }
 \keyword{internal}

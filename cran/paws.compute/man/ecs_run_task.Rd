@@ -189,6 +189,6 @@ in the Amazon Elastic Container Service developer Guide.}
 \description{
 Starts a new task using the specified task definition.
 
-See \url{https://paws-r.github.io/docs/ecs/run_task.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/run_task/} for full documentation.
 }
 \keyword{internal}

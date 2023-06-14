@@ -12,6 +12,6 @@ codedeploy_delete_git_hub_account_token(tokenName = NULL)
 \description{
 Deletes a GitHub account connection.
 
-See \url{https://paws-r.github.io/docs/codedeploy/delete_git_hub_account_token.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_git_hub_account_token/} for full documentation.
 }
 \keyword{internal}

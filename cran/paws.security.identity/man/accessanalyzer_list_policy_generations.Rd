@@ -22,6 +22,6 @@ only include results for a specific principal.}
 \description{
 Lists all of the policy generations requested in the last seven days.
 
-See \url{https://paws-r.github.io/docs/accessanalyzer/list_policy_generations.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_policy_generations/} for full documentation.
 }
 \keyword{internal}

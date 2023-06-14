@@ -13,6 +13,6 @@ null disables all email receiving.}
 \description{
 Sets the specified receipt rule set as the active receipt rule set.
 
-See \url{https://paws-r.github.io/docs/ses/set_active_receipt_rule_set.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/set_active_receipt_rule_set/} for full documentation.
 }
 \keyword{internal}

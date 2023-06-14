@@ -10,6 +10,6 @@ macie2_get_reveal_configuration()
 \description{
 Retrieves the status and configuration settings for retrieving occurrences of sensitive data reported by findings.
 
-See \url{https://paws-r.github.io/docs/macie2/get_reveal_configuration.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_reveal_configuration/} for full documentation.
 }
 \keyword{internal}

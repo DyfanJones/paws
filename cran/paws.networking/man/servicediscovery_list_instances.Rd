@@ -26,6 +26,6 @@ returns up to 100 instances.}
 \description{
 Lists summary information about the instances that you registered by using a specified service.
 
-See \url{https://paws-r.github.io/docs/servicediscovery/list_instances.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_instances/} for full documentation.
 }
 \keyword{internal}

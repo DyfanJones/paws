@@ -26,6 +26,6 @@ response.}
 \description{
 Returns information about product integrations in Security Hub.
 
-See \url{https://paws-r.github.io/docs/securityhub/describe_products.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_products/} for full documentation.
 }
 \keyword{internal}

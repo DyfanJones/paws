@@ -9,6 +9,6 @@ auditmanager_deregister_account()
 \description{
 Deregisters an account in Audit Manager.
 
-See \url{https://paws-r.github.io/docs/auditmanager/deregister_account.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/deregister_account/} for full documentation.
 }
 \keyword{internal}

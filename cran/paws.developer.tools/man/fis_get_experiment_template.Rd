@@ -12,6 +12,6 @@ fis_get_experiment_template(id)
 \description{
 Gets information about the specified experiment template.
 
-See \url{https://paws-r.github.io/docs/fis/get_experiment_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_experiment_template/} for full documentation.
 }
 \keyword{internal}

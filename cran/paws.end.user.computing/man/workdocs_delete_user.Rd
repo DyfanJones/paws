@@ -16,6 +16,6 @@ Services credentials.}
 \description{
 Deletes the specified user from a Simple AD or Microsoft AD directory.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_user.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_user/} for full documentation.
 }
 \keyword{internal}

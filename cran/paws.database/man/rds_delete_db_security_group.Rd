@@ -22,6 +22,6 @@ Constraints:
 \description{
 Deletes a DB security group.
 
-See \url{https://paws-r.github.io/docs/rds/delete_db_security_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_db_security_group/} for full documentation.
 }
 \keyword{internal}

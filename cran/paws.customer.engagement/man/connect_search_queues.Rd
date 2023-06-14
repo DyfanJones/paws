@@ -34,6 +34,6 @@ character lengths outside of this range will throw invalid results.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/search_queues.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/search_queues/} for full documentation.
 }
 \keyword{internal}

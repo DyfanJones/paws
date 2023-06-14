@@ -194,6 +194,6 @@ concurrently and queues conflicting operations.}
 \description{
 Creates a stack set.
 
-See \url{https://paws-r.github.io/docs/cloudformation/create_stack_set.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_stack_set/} for full documentation.
 }
 \keyword{internal}

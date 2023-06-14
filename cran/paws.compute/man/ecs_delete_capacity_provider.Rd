@@ -13,6 +13,6 @@ provider to delete.}
 \description{
 Deletes the specified capacity provider.
 
-See \url{https://paws-r.github.io/docs/ecs/delete_capacity_provider.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_capacity_provider/} for full documentation.
 }
 \keyword{internal}

@@ -23,6 +23,6 @@ value.}
 \description{
 Lists the auto-grouped, standalone, and custom components of the application.
 
-See \url{https://paws-r.github.io/docs/applicationinsights/list_components.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_components/} for full documentation.
 }
 \keyword{internal}

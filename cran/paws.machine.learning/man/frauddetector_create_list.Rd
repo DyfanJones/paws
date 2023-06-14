@@ -29,6 +29,6 @@ with String data type. For more information, see \href{https://docs.aws.amazon.c
 \description{
 Creates a list.
 
-See \url{https://paws-r.github.io/docs/frauddetector/create_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_list/} for full documentation.
 }
 \keyword{internal}

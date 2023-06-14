@@ -16,6 +16,6 @@ wellarchitected_create_lens_share(LensAlias, SharedWith, ClientRequestToken)
 \description{
 Create a lens share.
 
-See \url{https://paws-r.github.io/docs/wellarchitected/create_lens_share.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_lens_share/} for full documentation.
 }
 \keyword{internal}

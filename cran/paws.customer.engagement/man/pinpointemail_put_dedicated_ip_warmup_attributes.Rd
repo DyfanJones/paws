@@ -16,6 +16,6 @@ address.}
 \description{
 Put dedicated ip warmup attributes
 
-See \url{https://paws-r.github.io/docs/pinpointemail/put_dedicated_ip_warmup_attributes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/put_dedicated_ip_warmup_attributes/} for full documentation.
 }
 \keyword{internal}

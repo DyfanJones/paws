@@ -12,6 +12,6 @@ mq_list_tags(ResourceArn)
 \description{
 Lists tags for a resource.
 
-See \url{https://paws-r.github.io/docs/mq/list_tags.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_tags/} for full documentation.
 }
 \keyword{internal}

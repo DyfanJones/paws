@@ -16,6 +16,6 @@ which you want to create an extended source server.}
 \description{
 Create an extended source server in the target Account based on the source server in staging account.
 
-See \url{https://paws-r.github.io/docs/drs/create_extended_source_server.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_extended_source_server/} for full documentation.
 }
 \keyword{internal}

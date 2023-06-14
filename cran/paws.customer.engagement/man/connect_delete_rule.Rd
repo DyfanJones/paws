@@ -15,6 +15,6 @@ in the Amazon Resource Name (ARN) of the instance.}
 \description{
 Deletes a rule for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/delete_rule.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_rule/} for full documentation.
 }
 \keyword{internal}

@@ -30,6 +30,6 @@ purposes.}
 \description{
 Returns a list of existing service meshes.
 
-See \url{https://paws-r.github.io/docs/appmesh/list_meshes.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_meshes/} for full documentation.
 }
 \keyword{internal}

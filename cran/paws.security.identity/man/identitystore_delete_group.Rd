@@ -14,6 +14,6 @@ identitystore_delete_group(IdentityStoreId, GroupId)
 \description{
 Delete a group within an identity store given \code{GroupId}.
 
-See \url{https://paws-r.github.io/docs/identitystore/delete_group.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_group/} for full documentation.
 }
 \keyword{internal}

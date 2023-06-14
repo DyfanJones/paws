@@ -33,6 +33,6 @@ are included.}
 \description{
 Describes one or more of your clusters.
 
-See \url{https://paws-r.github.io/docs/ecs/describe_clusters.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_clusters/} for full documentation.
 }
 \keyword{internal}

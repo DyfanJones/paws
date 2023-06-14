@@ -12,6 +12,6 @@ networkmanager_delete_connect_peer(ConnectPeerId)
 \description{
 Deletes a Connect peer.
 
-See \url{https://paws-r.github.io/docs/networkmanager/delete_connect_peer.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_connect_peer/} for full documentation.
 }
 \keyword{internal}

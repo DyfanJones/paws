@@ -13,6 +13,6 @@ configurations that specify the HTTP headers.}
 \description{
 Creates a response headers policy.
 
-See \url{https://paws-r.github.io/docs/cloudfront/create_response_headers_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_response_headers_policy/} for full documentation.
 }
 \keyword{internal}

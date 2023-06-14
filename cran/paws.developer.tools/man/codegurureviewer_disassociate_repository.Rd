@@ -16,6 +16,6 @@ object. You can retrieve this ARN by calling
 \description{
 Removes the association between Amazon CodeGuru Reviewer and a repository.
 
-See \url{https://paws-r.github.io/docs/codegurureviewer/disassociate_repository.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disassociate_repository/} for full documentation.
 }
 \keyword{internal}

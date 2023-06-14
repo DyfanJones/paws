@@ -46,6 +46,6 @@ value. This value can be between 1 and 200.}
 \description{
 Describes one or more launch templates.
 
-See \url{https://paws-r.github.io/docs/ec2/describe_launch_templates.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_launch_templates/} for full documentation.
 }
 \keyword{internal}

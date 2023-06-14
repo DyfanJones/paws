@@ -78,6 +78,6 @@ AWS_PROXY, respectively. Supported only for HTTP APIs.}
 \description{
 Creates an Api resource.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/create_api.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_api/} for full documentation.
 }
 \keyword{internal}

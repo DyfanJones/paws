@@ -29,6 +29,6 @@ resource after it's created.}
 \description{
 Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a database, and to save data before deleting a database.
 
-See \url{https://paws-r.github.io/docs/lightsail/create_relational_database_snapshot.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_relational_database_snapshot/} for full documentation.
 }
 \keyword{internal}

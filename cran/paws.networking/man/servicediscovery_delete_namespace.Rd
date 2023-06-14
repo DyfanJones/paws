@@ -12,6 +12,6 @@ servicediscovery_delete_namespace(Id)
 \description{
 Deletes a namespace from the current account. If the namespace still contains one or more services, the request fails.
 
-See \url{https://paws-r.github.io/docs/servicediscovery/delete_namespace.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_namespace/} for full documentation.
 }
 \keyword{internal}

@@ -104,6 +104,6 @@ definition to start. If a \code{revision} isn't specified, the latest
 \description{
 Starts a new task from the specified task definition on the specified container instance or instances.
 
-See \url{https://paws-r.github.io/docs/ecs/start_task.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/start_task/} for full documentation.
 }
 \keyword{internal}

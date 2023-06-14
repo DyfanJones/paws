@@ -14,6 +14,6 @@ guardduty_delete_filter(DetectorId, FilterName)
 \description{
 Deletes the filter specified by the filter name.
 
-See \url{https://paws-r.github.io/docs/guardduty/delete_filter.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_filter/} for full documentation.
 }
 \keyword{internal}

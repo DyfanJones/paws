@@ -10,6 +10,6 @@ workspaces_describe_account()
 \description{
 Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for the specified account.
 
-See \url{https://paws-r.github.io/docs/workspaces/describe_account.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_account/} for full documentation.
 }
 \keyword{internal}

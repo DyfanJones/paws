@@ -13,6 +13,6 @@ delete.}
 \description{
 Deletes a cost anomaly subscription.
 
-See \url{https://paws-r.github.io/docs/costexplorer/delete_anomaly_subscription.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_anomaly_subscription/} for full documentation.
 }
 \keyword{internal}

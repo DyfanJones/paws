@@ -26,6 +26,6 @@ can use this pagination token to retrieve the next set of block lists
 \description{
 Lists the block lists used for query suggestions for an index.
 
-See \url{https://paws-r.github.io/docs/kendra/list_query_suggestions_block_lists.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_query_suggestions_block_lists/} for full documentation.
 }
 \keyword{internal}

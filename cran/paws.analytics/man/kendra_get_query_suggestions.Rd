@@ -45,6 +45,6 @@ want to base query suggestions on.}
 \description{
 Fetches the queries that are suggested to your users.
 
-See \url{https://paws-r.github.io/docs/kendra/get_query_suggestions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_query_suggestions/} for full documentation.
 }
 \keyword{internal}

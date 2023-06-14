@@ -23,6 +23,6 @@ fail.}
 \description{
 Updates the metadata for a notebook.
 
-See \url{https://paws-r.github.io/docs/athena/update_notebook_metadata.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_notebook_metadata/} for full documentation.
 }
 \keyword{internal}

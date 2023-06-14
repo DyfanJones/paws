@@ -21,6 +21,6 @@ using
 \description{
 Deletes an origin request policy.
 
-See \url{https://paws-r.github.io/docs/cloudfront/delete_origin_request_policy.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_origin_request_policy/} for full documentation.
 }
 \keyword{internal}

@@ -17,6 +17,6 @@ Firewall Manager.}
 \description{
 Returns information about the specified Firewall Manager applications list.
 
-See \url{https://paws-r.github.io/docs/fms/get_apps_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_apps_list/} for full documentation.
 }
 \keyword{internal}

@@ -14,6 +14,6 @@ networkmanager_delete_device(GlobalNetworkId, DeviceId)
 \description{
 Deletes an existing device. You must first disassociate the device from any links and customer gateways.
 
-See \url{https://paws-r.github.io/docs/networkmanager/delete_device.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_device/} for full documentation.
 }
 \keyword{internal}

@@ -12,6 +12,6 @@ iamrolesanywhere_disable_profile(profileId)
 \description{
 Disables a profile. When disabled, temporary credential requests with this profile fail.
 
-See \url{https://paws-r.github.io/docs/iamrolesanywhere/disable_profile.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/disable_profile/} for full documentation.
 }
 \keyword{internal}

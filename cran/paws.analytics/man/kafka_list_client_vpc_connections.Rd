@@ -23,6 +23,6 @@ batch, provide this token in your next request.}
 \description{
 Returns a list of all the VPC connections in this Region.
 
-See \url{https://paws-r.github.io/docs/kafka/list_client_vpc_connections.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_client_vpc_connections/} for full documentation.
 }
 \keyword{internal}

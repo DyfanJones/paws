@@ -33,6 +33,6 @@ retrieve the next page of results.}
 \description{
 Retrieves a list of provisioned concurrency configurations for a function.
 
-See \url{https://paws-r.github.io/docs/lambda/list_provisioned_concurrency_configs.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_provisioned_concurrency_configs/} for full documentation.
 }
 \keyword{internal}

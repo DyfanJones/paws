@@ -17,6 +17,6 @@ developer interface.}
 \description{
 Update a service template.
 
-See \url{https://paws-r.github.io/docs/proton/update_service_template.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_service_template/} for full documentation.
 }
 \keyword{internal}

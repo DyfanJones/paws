@@ -29,6 +29,6 @@ if this is the first call.}
 \description{
 Obtains information about the directory snapshots that belong to this account.
 
-See \url{https://paws-r.github.io/docs/directoryservice/describe_snapshots.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_snapshots/} for full documentation.
 }
 \keyword{internal}

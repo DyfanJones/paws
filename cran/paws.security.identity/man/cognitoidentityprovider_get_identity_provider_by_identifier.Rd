@@ -17,6 +17,6 @@ cognitoidentityprovider_get_identity_provider_by_identifier(
 \description{
 Gets the specified IdP.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/get_identity_provider_by_identifier.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_identity_provider_by_identifier/} for full documentation.
 }
 \keyword{internal}

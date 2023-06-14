@@ -17,6 +17,6 @@ results.}
 \description{
 Get all users in a given studio membership.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/list_studio_members.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_studio_members/} for full documentation.
 }
 \keyword{internal}

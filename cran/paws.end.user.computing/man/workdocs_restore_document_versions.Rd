@@ -15,6 +15,6 @@ Services administrator credentials to access the API.}
 \description{
 Recovers a deleted version of an Amazon WorkDocs document.
 
-See \url{https://paws-r.github.io/docs/workdocs/restore_document_versions.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/restore_document_versions/} for full documentation.
 }
 \keyword{internal}

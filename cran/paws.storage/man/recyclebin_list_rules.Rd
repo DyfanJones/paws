@@ -34,6 +34,6 @@ the specified lock state are returned.}
 \description{
 Lists the Recycle Bin retention rules in the Region.
 
-See \url{https://paws-r.github.io/docs/recyclebin/list_rules.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_rules/} for full documentation.
 }
 \keyword{internal}

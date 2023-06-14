@@ -29,6 +29,6 @@ the parent folders.}
 \description{
 Retrieves the path information (the hierarchy from the root folder) for the specified folder.
 
-See \url{https://paws-r.github.io/docs/workdocs/get_folder_path.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_folder_path/} for full documentation.
 }
 \keyword{internal}

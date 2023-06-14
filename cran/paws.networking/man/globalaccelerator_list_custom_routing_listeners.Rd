@@ -22,6 +22,6 @@ previous call.}
 \description{
 List the listeners for a custom routing accelerator.
 
-See \url{https://paws-r.github.io/docs/globalaccelerator/list_custom_routing_listeners.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/list_custom_routing_listeners/} for full documentation.
 }
 \keyword{internal}

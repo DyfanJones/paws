@@ -27,6 +27,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Advertises a new transit gateway route table.
 
-See \url{https://paws-r.github.io/docs/ec2/create_transit_gateway_route_table_announcement.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_transit_gateway_route_table_announcement/} for full documentation.
 }
 \keyword{internal}

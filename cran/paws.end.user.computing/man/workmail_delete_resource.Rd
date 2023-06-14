@@ -15,6 +15,6 @@ is deleted.}
 \description{
 Deletes the specified resource.
 
-See \url{https://paws-r.github.io/docs/workmail/delete_resource.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_resource/} for full documentation.
 }
 \keyword{internal}

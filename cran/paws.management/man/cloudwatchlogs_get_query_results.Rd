@@ -12,6 +12,6 @@ cloudwatchlogs_get_query_results(queryId)
 \description{
 Returns the results from the specified query.
 
-See \url{https://paws-r.github.io/docs/cloudwatchlogs/get_query_results.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/get_query_results/} for full documentation.
 }
 \keyword{internal}

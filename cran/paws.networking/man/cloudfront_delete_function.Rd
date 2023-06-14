@@ -16,6 +16,6 @@ deleting, which you can get using
 \description{
 Deletes a CloudFront function.
 
-See \url{https://paws-r.github.io/docs/cloudfront/delete_function.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_function/} for full documentation.
 }
 \keyword{internal}

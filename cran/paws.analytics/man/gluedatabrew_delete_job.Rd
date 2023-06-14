@@ -12,6 +12,6 @@ gluedatabrew_delete_job(Name)
 \description{
 Deletes the specified DataBrew job.
 
-See \url{https://paws-r.github.io/docs/gluedatabrew/delete_job.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/delete_job/} for full documentation.
 }
 \keyword{internal}

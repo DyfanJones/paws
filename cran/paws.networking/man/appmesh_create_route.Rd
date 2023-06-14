@@ -43,6 +43,6 @@ virtual router resource.}
 \description{
 Creates a route that is associated with a virtual router.
 
-See \url{https://paws-r.github.io/docs/appmesh/create_route.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_route/} for full documentation.
 }
 \keyword{internal}

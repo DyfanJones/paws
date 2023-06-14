@@ -21,6 +21,6 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \description{
 Downloads the client certificate revocation list for the specified Client VPN endpoint.
 
-See \url{https://paws-r.github.io/docs/ec2/export_client_vpn_client_certificate_revocation_list.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/export_client_vpn_client_certificate_revocation_list/} for full documentation.
 }
 \keyword{internal}

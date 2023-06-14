@@ -35,6 +35,6 @@ the web portal.}
 \description{
 Updates a web portal.
 
-See \url{https://paws-r.github.io/docs/workspacesweb/update_portal.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_portal/} for full documentation.
 }
 \keyword{internal}

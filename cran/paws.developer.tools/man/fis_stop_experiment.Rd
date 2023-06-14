@@ -12,6 +12,6 @@ fis_stop_experiment(id)
 \description{
 Stops the specified experiment.
 
-See \url{https://paws-r.github.io/docs/fis/stop_experiment.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/stop_experiment/} for full documentation.
 }
 \keyword{internal}

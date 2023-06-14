@@ -65,6 +65,6 @@ the product's artifacts based on changes to the source. The
 \description{
 Creates a product.
 
-See \url{https://paws-r.github.io/docs/servicecatalog/create_product.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_product/} for full documentation.
 }
 \keyword{internal}

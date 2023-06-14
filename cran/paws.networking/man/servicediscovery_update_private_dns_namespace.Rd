@@ -24,6 +24,6 @@ date/timestamp).}
 \description{
 Updates a private DNS namespace.
 
-See \url{https://paws-r.github.io/docs/servicediscovery/update_private_dns_namespace.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_private_dns_namespace/} for full documentation.
 }
 \keyword{internal}

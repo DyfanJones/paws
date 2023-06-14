@@ -32,6 +32,6 @@ of the dataset.}
 \description{
 Creates a new DataBrew dataset.
 
-See \url{https://paws-r.github.io/docs/gluedatabrew/create_dataset.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/create_dataset/} for full documentation.
 }
 \keyword{internal}

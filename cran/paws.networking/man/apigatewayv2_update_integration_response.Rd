@@ -61,6 +61,6 @@ Supported only for WebSocket APIs.}
 \description{
 Updates an IntegrationResponses.
 
-See \url{https://paws-r.github.io/docs/apigatewayv2/update_integration_response.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/update_integration_response/} for full documentation.
 }
 \keyword{internal}

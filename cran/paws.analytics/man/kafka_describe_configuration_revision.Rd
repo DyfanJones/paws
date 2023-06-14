@@ -15,6 +15,6 @@ configuration and all of its revisions.}
 \description{
 Returns a description of this revision of the configuration.
 
-See \url{https://paws-r.github.io/docs/kafka/describe_configuration_revision.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/describe_configuration_revision/} for full documentation.
 }
 \keyword{internal}

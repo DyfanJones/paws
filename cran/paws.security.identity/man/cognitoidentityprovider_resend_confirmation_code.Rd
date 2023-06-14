@@ -65,6 +65,6 @@ provide sensitive information.
 \description{
 Resends the confirmation (for confirmation of registration) to a specific user in the user pool.
 
-See \url{https://paws-r.github.io/docs/cognitoidentityprovider/resend_confirmation_code.html} for full documentation.
+See \url{https://paws-r-sdk.com/docs/resend_confirmation_code/} for full documentation.
 }
 \keyword{internal}

@@ -1059,7 +1059,7 @@ elasticache_copy_snapshot <- function(SourceSnapshotName, TargetSnapshotName, Ta
 #'     the AUTH token.
 #' 
 #' For more information, see [AUTH
-#' password](https://redis.io/commands/auth/) at
+#' password](https://redis.io/docs/latest/commands/auth/) at
 #' http://redis.io/commands/AUTH.
 #' @param OutpostMode Specifies whether the nodes in the cluster are created in a single
 #' outpost or across multiple outposts.
@@ -1667,9 +1667,9 @@ elasticache_create_global_replication_group <- function(GlobalReplicationGroupId
 #' or a secondary replication group associated with a Global datastore.
 #' 
 #' A Redis (cluster mode disabled) replication group is a collection of
-#' clusters, where one of the clusters is a read/write primary and the
-#' others are read-only replicas. Writes to the primary are asynchronously
-#' propagated to the replicas.
+#' nodes, where one of the nodes is a read/write primary and the others are
+#' read-only replicas. Writes to the primary are asynchronously propagated
+#' to the replicas.
 #' 
 #' A Redis cluster-mode enabled cluster is comprised of from 1 to 90 shards
 #' (API/CLI: node groups). Each shard has a primary node and up to 5
@@ -1965,11 +1965,6 @@ elasticache_create_global_replication_group <- function(GlobalReplicationGroupId
 #' @param PreferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cluster
 #' is performed. It is specified as a range in the format
 #' ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-#' is a 60 minute period. Valid values for `ddd` are:
-#' 
-#' Specifies the weekly time range during which maintenance on the cluster
-#' is performed. It is specified as a range in the format
-#' ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
 #' is a 60 minute period.
 #' 
 #' Valid values for `ddd` are:
@@ -2032,7 +2027,7 @@ elasticache_create_global_replication_group <- function(GlobalReplicationGroupId
 #'     the AUTH token.
 #' 
 #' For more information, see [AUTH
-#' password](https://redis.io/commands/auth/) at
+#' password](https://redis.io/docs/latest/commands/auth/) at
 #' http://redis.io/commands/AUTH.
 #' @param TransitEncryptionEnabled A flag that enables in-transit encryption when set to `true`.
 #' 
@@ -2407,10 +2402,12 @@ elasticache_create_replication_group <- function(ReplicationGroupId, Replication
 #'     CacheUsageLimits = list(
 #'       DataStorage = list(
 #'         Maximum = 123,
+#'         Minimum = 123,
 #'         Unit = "GB"
 #'       ),
 #'       ECPUPerSecond = list(
-#'         Maximum = 123
+#'         Maximum = 123,
+#'         Minimum = 123
 #'       )
 #'     ),
 #'     KmsKeyId = "string",
@@ -2446,10 +2443,12 @@ elasticache_create_replication_group <- function(ReplicationGroupId, Replication
 #'   CacheUsageLimits = list(
 #'     DataStorage = list(
 #'       Maximum = 123,
+#'       Minimum = 123,
 #'       Unit = "GB"
 #'     ),
 #'     ECPUPerSecond = list(
-#'       Maximum = 123
+#'       Maximum = 123,
+#'       Minimum = 123
 #'     )
 #'   ),
 #'   KmsKeyId = "string",
@@ -3856,10 +3855,12 @@ elasticache_delete_replication_group <- function(ReplicationGroupId, RetainPrima
 #'     CacheUsageLimits = list(
 #'       DataStorage = list(
 #'         Maximum = 123,
+#'         Minimum = 123,
 #'         Unit = "GB"
 #'       ),
 #'       ECPUPerSecond = list(
-#'         Maximum = 123
+#'         Maximum = 123,
+#'         Minimum = 123
 #'       )
 #'     ),
 #'     KmsKeyId = "string",
@@ -5913,10 +5914,12 @@ elasticache_describe_serverless_cache_snapshots <- function(ServerlessCacheName 
 #'       CacheUsageLimits = list(
 #'         DataStorage = list(
 #'           Maximum = 123,
+#'           Minimum = 123,
 #'           Unit = "GB"
 #'         ),
 #'         ECPUPerSecond = list(
-#'           Maximum = 123
+#'           Maximum = 123,
+#'           Minimum = 123
 #'         )
 #'       ),
 #'       KmsKeyId = "string",
@@ -7468,7 +7471,7 @@ elasticache_list_tags_for_resource <- function(ResourceName) {
 #'     '%'
 #' 
 #' For more information, see AUTH password at
-#' [AUTH](https://redis.io/commands/auth/).
+#' [AUTH](https://redis.io/docs/latest/commands/auth/).
 #' @param AuthTokenUpdateStrategy Specifies the strategy to use to update the AUTH token. This parameter
 #' must be specified with the `auth-token` parameter. Possible values:
 #' 
@@ -8063,7 +8066,7 @@ elasticache_modify_global_replication_group <- function(GlobalReplicationGroupId
 #'     '%'
 #' 
 #' For more information, see AUTH password at
-#' [AUTH](https://redis.io/commands/auth/).
+#' [AUTH](https://redis.io/docs/latest/commands/auth/).
 #' @param AuthTokenUpdateStrategy Specifies the strategy to use to update the AUTH token. This parameter
 #' must be specified with the `auth-token` parameter. Possible values:
 #' 
@@ -8595,10 +8598,12 @@ elasticache_modify_replication_group_shard_configuration <- function(Replication
 #'     CacheUsageLimits = list(
 #'       DataStorage = list(
 #'         Maximum = 123,
+#'         Minimum = 123,
 #'         Unit = "GB"
 #'       ),
 #'       ECPUPerSecond = list(
-#'         Maximum = 123
+#'         Maximum = 123,
+#'         Minimum = 123
 #'       )
 #'     ),
 #'     KmsKeyId = "string",
@@ -8632,10 +8637,12 @@ elasticache_modify_replication_group_shard_configuration <- function(Replication
 #'   CacheUsageLimits = list(
 #'     DataStorage = list(
 #'       Maximum = 123,
+#'       Minimum = 123,
 #'       Unit = "GB"
 #'     ),
 #'     ECPUPerSecond = list(
-#'       Maximum = 123
+#'       Maximum = 123,
+#'       Minimum = 123
 #'     )
 #'   ),
 #'   RemoveUserGroup = TRUE|FALSE,

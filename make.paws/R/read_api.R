@@ -98,9 +98,7 @@ merge_examples <- function(api, examples) {
 # Returns an API object with paginators merged into the corresponding operations.
 merge_paginators <- function(api, paginators) {
   for (name in names(paginators)) {
-    operation <- api$operations[[name]]
-    operation[["paginators"]] <- paginators[[name]]
-    api$operations[[name]] <- operation
+    api$operations[[name]][["paginators"]] <- paginators[[name]]
   }
   return(api)
 }

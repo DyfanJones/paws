@@ -108,21 +108,43 @@ valid_method <- function(method) {
 
 # Issue an HTTP request.
 issue <- function(http_request) {
+  method <- http_request$method
   url <- build_url(http_request$url)
+  headers <- unlist(http_request$header)
   if (http_request$close) {
-    http_request$header$Connection <- "close"
+    headers["Connection"] <- "close"
   }
+  body <- http_request$body
+
+  timeout_config <- Filter(
+    Negate(is.null),
+    list(connecttimeout = http_request$connect_timeout, timeout = http_request$timeout)
+  )
+  timeout <- do.call(httr::config, timeout_config)
 
   if (url == "") {
     stop("no url provided")
   }
-  resp <- request_aws(url, http_request)
+
+  # utilize httr to write to disk
+  dest <- NULL
+  if (!is.null(http_request$dest)) {
+    dest <- httr::write_disk(http_request$dest, TRUE)
+  }
+  r <- with_paws_verbose(httr::VERB(
+    method,
+    url = url,
+    config = c(httr::add_headers(.headers = headers), dest),
+    body = body,
+    timeout
+  ))
+
   response <- HttpResponse(
-    status_code = resp$status_code,
-    header = resp$headers,
-    content_length = as.integer(resp$headers$`content-length`),
+    status_code = r$status_code,
+    header = r$headers,
+    content_length = as.integer(r$headers$`content-length`),
     # Prevent reading in data when output is set
-    body = resp_body(resp, http_request$dest, http_request$stream_api)
+    body = resp_body(r, http_request$dest, F)
   )
 
   # Decode gzipped response bodies that are not automatically decompressed
@@ -133,6 +155,65 @@ issue <- function(http_request) {
 
   return(response)
 }
+
+
+# resp_body <- function(resp, path) {
+#   if (is.null(path)) {
+#     body <- resp$content
+#     # return error message if call has failed or needs redirecting
+#   } else if (resp$status_code %in% c(301, 400)) {
+#     body <- readBin(path, "raw", file.info(path)$size)
+#     unlink(path)
+#   } else {
+#     body <- raw()
+#   }
+#   return(body)
+# }
+
+resp_body <- function(resp, path, stream_api) {
+  if (stream_api) {
+    body <- resp
+  } else if (is.null(path)) {
+    # body <- resp$body
+    body <- resp$content
+    # return error message if call has failed or needs redirecting
+  } else if (resp$status_code %in% c(301, 400)) {
+    body <- readBin(path, "raw", file.info(path)$size)
+    unlink(path)
+  } else {
+    body <- raw()
+  }
+  return(body)
+}
+
+
+# Issue an HTTP request.
+# issue <- function(http_request) {
+#   url <- build_url(http_request$url)
+#   if (http_request$close) {
+#     http_request$header$Connection <- "close"
+#   }
+#
+#   if (url == "") {
+#     stop("no url provided")
+#   }
+#   resp <- request_aws(url, http_request)
+#   response <- HttpResponse(
+#     status_code = resp$status_code,
+#     header = resp$headers,
+#     content_length = as.integer(resp$headers$`content-length`),
+#     # Prevent reading in data when output is set
+#     body = resp_body(resp, http_request$dest, http_request$stream_api)
+#   )
+#
+#   # Decode gzipped response bodies that are not automatically decompressed
+#   # by httr/curl.
+#   if (is_compressed(response)) {
+#     response <- decompress(response)
+#   }
+#
+#   return(response)
+# }
 
 request_aws <- function(url, http_request) {
   req <- request(url)
@@ -161,20 +242,20 @@ request_aws <- function(url, http_request) {
   }
 }
 
-resp_body <- function(resp, path, stream_api) {
-  if (stream_api) {
-    body <- resp
-  } else if (is.null(path)) {
-    body <- resp$body
-    # return error message if call has failed or needs redirecting
-  } else if (resp$status_code %in% c(301, 400)) {
-    body <- readBin(path, "raw", file.info(path)$size)
-    unlink(path)
-  } else {
-    body <- raw()
-  }
-  return(body)
-}
+# resp_body <- function(resp, path, stream_api) {
+#   if (stream_api) {
+#     body <- resp
+#   } else if (is.null(path)) {
+#     body <- resp$body
+#     # return error message if call has failed or needs redirecting
+#   } else if (resp$status_code %in% c(301, 400)) {
+#     body <- readBin(path, "raw", file.info(path)$size)
+#     unlink(path)
+#   } else {
+#     body <- raw()
+#   }
+#   return(body)
+# }
 
 # Return whether an HTTP response body is (still) compressed by checking
 # whether the body has a valid ZLIB header.

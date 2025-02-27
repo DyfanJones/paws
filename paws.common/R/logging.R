@@ -193,3 +193,47 @@ init_log_styles <- function() {
   assign("style_debug", style_debug, envir = parent.env(environment()))
   assign("style_trace", style_trace, envir = parent.env(environment()))
 }
+
+
+# paws https verbose wrapper
+with_paws_verbose <- function(expr, ...) {
+  # skip if log level <= 2L
+  if (isTRUE(getOption("paws.log_level") >= 3L)) {
+    httr::with_config(paws_verbose(...), expr)
+  } else {
+    expr
+  }
+}
+
+# modified httr::verbose to align with paws logging system
+# https://github.com/r-lib/httr/blob/21ff69f219ad11298854a63b8f753389088cf382/R/verbose.r
+paws_verbose <- function(data_out = TRUE, data_in = FALSE, ssl = FALSE) {
+  Debug <- function(type, msg) {
+    switch(
+      type + 1,
+      text = prefix_debug("*  ", msg),
+      headerIn = prefix_info("<- ", msg),
+      headerOut = prefix_info("-> ", msg),
+      dataIn = if (data_in) prefix_info("<<  ", msg, TRUE),
+      dataOut = if (data_out) prefix_info(">> ", msg, TRUE),
+      sslDataIn = if (ssl && data_in) prefix_info("*< ", msg, TRUE),
+      sslDataOut = if (ssl && data_out) prefix_info("*> ", msg, TRUE)
+    )
+  }
+  httr::config(debugfunction = Debug, verbose = TRUE)
+}
+
+prefix_info <- function(prefix, x, blank_line = FALSE) {
+  x <- readBin(x, character())
+  lines <- unlist(strsplit(x, "\n", fixed = TRUE, useBytes = TRUE))
+  out <- paste0(prefix, lines, collapse = "\n")
+  log_info(out)
+  if (blank_line) cat("\n")
+}
+
+prefix_debug <- function(prefix, x) {
+  x <- readBin(x, character())
+  lines <- unlist(strsplit(x, "\n", fixed = TRUE, useBytes = TRUE))
+  out <- paste0(prefix, lines, collapse = "\n")
+  log_debug(out)
+}

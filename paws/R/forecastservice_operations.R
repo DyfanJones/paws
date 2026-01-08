@@ -274,8 +274,8 @@ forecastservice_create_auto_predictor <- function(PredictorName, ForecastHorizon
 #' To get a list of all your datasets, use the
 #' [`list_datasets`][forecastservice_list_datasets] operation.
 #' 
-#' For example Forecast datasets, see the [Amazon Forecast Sample GitHub
-#' repository](https://github.com/aws-samples/amazon-forecast-samples).
+#' For example Forecast datasets, see the Amazon Forecast Sample GitHub
+#' repository.
 #' 
 #' The `Status` of a dataset must be `ACTIVE` before you can import
 #' training data. Use the

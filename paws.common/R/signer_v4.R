@@ -114,7 +114,11 @@ v4_sign_request_handler <- function(request) {
   return(sign_sdk_request_with_curr_time(request))
 }
 
-sign_sdk_request_with_curr_time <- function(request, curr_time_fn = now, opts = NULL) {
+sign_sdk_request_with_curr_time <- function(
+  request,
+  curr_time_fn = now,
+  opts = NULL
+) {
   region <- request$client_info$signing_region
   if (region == "") {
     region <- request$config$region
@@ -308,7 +312,11 @@ build_context <- function(ctx, disable_header_hoisting) {
   # log_debug("Signature:\n%s", ctx$signature)
   if (ctx$is_presigned) {
     query <- ctx$request$url$raw_query
-    ctx$request$url$raw_query <- sprintf("%s&X-Amz-Signature=%s", query, ctx$signature)
+    ctx$request$url$raw_query <- sprintf(
+      "%s&X-Amz-Signature=%s",
+      query,
+      ctx$signature
+    )
   } else {
     authorization <- paste(
       paste0(
@@ -330,7 +338,11 @@ build_context <- function(ctx, disable_header_hoisting) {
 
 build_time <- function(ctx) {
   ctx$formatted_time <- format(ctx$time, tz = "UTC", format = TIME_FORMAT)
-  ctx$formatted_short_time <- format(ctx$time, tz = "UTC", format = SHORT_TIME_FORMAT)
+  ctx$formatted_short_time <- format(
+    ctx$time,
+    tz = "UTC",
+    format = SHORT_TIME_FORMAT
+  )
   if (ctx$is_presigned) {
     ctx$query[["X-Amz-Date"]] <- ctx$formatted_time
     ctx$query[["X-Amz-Expires"]] <- as.character(as.integer(ctx$expire_time))
@@ -370,7 +382,8 @@ build_body_digest <- function(ctx) {
   if (hash == "") {
     include_sha256_header <- (ctx$unsigned_payload ||
       ctx$service_name %in% c("s3", "s3-object-lambda", "glacier"))
-    s3_presign <- (ctx$is_presigned && ctx$service_name %in% c("s3", "s3-object-lambda"))
+    s3_presign <- (ctx$is_presigned &&
+      ctx$service_name %in% c("s3", "s3-object-lambda"))
     if (ctx$unsigned_payload || s3_presign) {
       hash <- "UNSIGNED-PAYLOAD"
       include_sha256_header <- !s3_presign
@@ -389,19 +402,18 @@ build_body_digest <- function(ctx) {
 
 build_canonical_headers <- function(ctx, header, ignored_headers) {
   headers <- c("host")
+
+  # Do not sign content-length for empty-body requests (GET, HEAD, DELETE, etc.)
+  cl <- header[["Content-Length"]] %||% header[["content-length"]]
+  if (!is.null(cl) && as.numeric(cl) == 0) {
+    header[["Content-Length"]] <- NULL
+    header[["content-length"]] <- NULL
+  }
+
+  # Capture header_names after any mutations above so the for-loop below
+  # reflects the final set of headers that will actually be signed.
   header_names <- names(header)
 
-  method <- toupper(ctx$request$method %||% "GET")
-
-# Do not sign content-length for empty-body GET/HEAD
-  if (method %in% c("GET", "HEAD")) {
-    cl <- header[["Content-Length"]] %||% header[["content-length"]]
-  if (!is.null(cl) && as.numeric(cl) == 0) {
-      header[["Content-Length"]] <- NULL
-      header[["content-length"]] <- NULL
-    }
-  }
-  
   for (key in header_names[!(header_names %in% ignored_headers)]) {
     lower_case_key <- tolower(key)
     ctx$signed_header_vals[[lower_case_key]] <- header[[key]]

@@ -1,4 +1,5 @@
 args <- commandArgs(trailingOnly = TRUE)
+options(paws.log_level = 3)
 
 library(make.paws)
 
@@ -37,11 +38,13 @@ after <- c(
   "https://docs.pythonboto.org"
 )
 
-paws_gsub(root = root, before = before, after = after)
+# Format R + Rb files in cran + paws directory
+paws_post_build_format(
+  root = root,
+  patterns_before = before,
+  patterns_after = after
+)
 
-paws_unescape_latex_post_build(root = root)
-paws_fix_html_span(root = root)
-
-paws_unescape_latex_post_build(root = root)
+# Rebuild documentation (this will re-read source files to generate docs)
 paws_pkg_doc_build(in_dir = in_dir)
 paws_rd_links(in_dir = in_dir)

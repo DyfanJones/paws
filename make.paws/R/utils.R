@@ -94,16 +94,10 @@ get_url <- function(url, tries = 3) {
     return(NULL)
   }
 
-  # Preserve fragments
-  parsed <- httr2::url_parse(url)
-  fragment <- parsed$fragment
-  parsed$fragment <- NULL
-  clean_url <- httr2::url_build(parsed)
-
-  # Ensure url is live, if not get re-direct
   cached_expr(list("get_url", url = url), function() {
+    # Ensure url is live, if not get re-direct
     resp <- tryCatch(
-      httr2::request(clean_url) |>
+      httr2::request(url) |>
         httr2::req_method("HEAD") |>
         httr2::req_timeout(5) |>
         httr2::req_options(followlocation = TRUE) |>
@@ -116,10 +110,10 @@ get_url <- function(url, tries = 3) {
     if (is.null(resp) || httr2::resp_status(resp) >= 400) {
       return(NULL)
     }
-
-    # Re-attach fragments
+    
+    # Preserve fragments
     final_parsed <- httr2::url_parse(resp$url)
-    final_parsed$fragment <- fragment
+    final_parsed$fragment <- httr2::url_parse(url)$fragment
     return(httr2::url_build(final_parsed))
   })
 }

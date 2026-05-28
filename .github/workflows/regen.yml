@@ -34,19 +34,6 @@ jobs:
           sudo apt-get install -y libharfbuzz-dev libfribidi-dev
           sudo apt-get install -y libfontconfig1-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
-      - name: Install Paws Dependencies
-        run: |
-          install.packages('remotes')
-          remotes::install_deps('paws.common', dependencies = TRUE)
-          remotes::install_deps('make.paws', dependencies = TRUE)
-        shell: Rscript {0}
-
-      - name: Install Paws Packages
-        run: |
-          remotes::install_local('paws.common', force = TRUE)
-          remotes::install_local('make.paws', force = TRUE)
-        shell: Rscript {0}
-
       - name: Create Branch
         run: |
           git config user.name github-actions

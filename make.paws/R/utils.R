@@ -94,43 +94,33 @@ get_url <- function(url, tries = 3) {
     return(NULL)
   }
 
-  update_url <- function(old, new) {
-    old_parsed <- httr2::url_parse(old)
-    new_parsed <- httr2::url_parse(new)
-    for (name in names(old_parsed)) {
-      if (!is.null(new_parsed[[name]])) {
-        old_parsed[[name]] <- new_parsed[[name]]
-      }
-    }
-    return(httr2::url_build(old_parsed))
-  }
+  # Preserve fragments
+  parsed <- httr2::url_parse(url)
+  fragment <- parsed$fragment
+  parsed$fragment <- NULL
+  clean_url <- httr2::url_build(parsed)
 
+  # Ensure url is live, if not get re-direct
   cached_expr(list("get_url", url = url), function() {
-    try <- 0
-    while (try < tries) {
-      resp <- tryCatch(
-        httr2::request(url) |>
-          httr2::req_method("HEAD") |>
-          httr2::req_timeout(1) |>
-          httr2::req_error(is_error = \(resp) FALSE) |>  # don't throw on 4xx/5xx
-          httr2::req_perform(),
-        error = function(e) NULL
-      )
-      if (!is.null(resp)) {
-        status <- resp_status(resp)
-        if (status >= 400) {
-          return(NULL)
-        } else if (status >= 300) {
-          # Check whether the redirect is valid.
-          final_url <- resp$url
-          return(get_url(update_url(url, final_url), tries = tries - 1))
-        } else {
-          return(update_url(url, resp$url))
-        }
-      }
-      try <- try + 1
+    resp <- tryCatch(
+      httr2::request(clean_url) |>
+        httr2::req_method("HEAD") |>
+        httr2::req_timeout(5) |>
+        httr2::req_options(followlocation = TRUE) |>
+        httr2::req_error(is_error = \(resp) FALSE) |>
+        httr2::req_retry(max_tries = tries) |>
+        httr2::req_perform(),
+      error = function(e) NULL
+    )
+
+    if (is.null(resp) || httr2::resp_status(resp) >= 400) {
+      return(NULL)
     }
-    return(NULL)
+
+    # Re-attach fragments
+    final_parsed <- httr2::url_parse(resp$url)
+    final_parsed$fragment <- fragment
+    return(httr2::url_build(final_parsed))
   })
 }
 

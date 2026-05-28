@@ -612,6 +612,159 @@ remove_html_span_rd <- function(files) {
   }
 }
 
+#' @title Optimized single-pass post-build formatting
+#' @description Process files through transformation pipeline with single read/write
+#' @param root Directory containing paws sdk R scripts
+#' @param patterns_before Patterns for gsub
+#' @param patterns_after Replacements for gsub
+#' @export
+paws_post_build_format <- function(
+  root = "..",
+  patterns_before,
+  patterns_after
+) {
+  log_info <- utils::getFromNamespace("log_info", "paws.common")
+
+  # Collect all files
+  paws_r <- fs::dir_ls(file.path(root, "paws", "R"))
+  cran_pkg <- fs::dir_ls(file.path(root, "cran"))
+  cran_r <- unlist(lapply(cran_pkg, \(x) fs::dir_ls(file.path(x, "R"))))
+  cran_rd <- unlist(lapply(cran_pkg, \(x) fs::dir_ls(file.path(x, "man"))))
+
+  all_r_files <- c(paws_r, cran_r)
+  all_rd_files <- cran_rd
+
+  log_info("Processing %d R files...", length(all_r_files))
+  r_modified <- lapply(
+    all_r_files,
+    process_file_single_pass,
+    patterns_before = patterns_before,
+    patterns_after = patterns_after,
+    is_rd = FALSE
+  )
+  log_info("Modified %d R files", sum(unlist(r_modified)))
+
+  log_info("Processing %d Rd files...", length(all_rd_files))
+  rd_modified <- lapply(
+    all_rd_files,
+    process_file_single_pass,
+    patterns_before = patterns_before,
+    patterns_after = patterns_after,
+    is_rd = TRUE
+  )
+  log_info("Modified %d Rd files", sum(unlist(rd_modified)))
+
+  invisible(NULL)
+}
+
+# Helper functions for single-pass processing
+
+#' Apply multiple gsub patterns to content
+#' @param content Character vector (lines of file)
+#' @param patterns_before Character vector of patterns to match
+#' @param patterns_after Character vector of replacements
+#' @return Modified character vector
+apply_gsub_patterns <- function(content, patterns_before, patterns_after) {
+  for (i in seq_along(patterns_before)) {
+    matches <- grep(patterns_before[i], content)
+    if (length(matches) > 0) {
+      content[matches] <- gsub(
+        patterns_before[i],
+        patterns_after[i],
+        content[matches]
+      )
+    }
+  }
+  content
+}
+
+#' Unescape LaTeX special characters
+#' @param content Character vector (lines of file)
+#' @param special_characters Characters to unescape (default: #, $, _)
+#' @return Modified character vector
+unescape_latex <- function(content, special_characters = c("#", "$", "_")) {
+  for (char in special_characters) {
+    pattern <- sprintf(r"(\\[%s])", char)
+    content <- gsub(pattern, char, content, perl = TRUE)
+  }
+  content
+}
+
+#' Fix HTML span tags
+#' @param content Character vector (lines of file)
+#' @param is_rd Logical, TRUE for .Rd files, FALSE for .R files
+#' @return Modified character vector
+fix_html_span <- function(content, is_rd = FALSE) {
+  if (!any(grepl("<span", content, fixed = TRUE))) {
+    return(content)
+  }
+
+  start_idx <- grep("<span", content, perl = TRUE)
+  end_idx <- grep("</span>", content, perl = TRUE)
+
+  if (length(start_idx) == 0) {
+    return(content)
+  }
+
+  idx_ranges <- lapply(seq_along(start_idx), \(x) start_idx[x]:end_idx[x])
+  for (idx_range in idx_ranges) {
+    line <- paste(content[idx_range], collapse = "\n")
+
+    if (is_rd) {
+      line <- gsub("\\\\if\\{html\\}\\\\out\\{", "", line, fixed = TRUE)
+      line <- gsub("}}", "}", line, fixed = TRUE)
+      line <- gsub(">}", ">", line, fixed = TRUE)
+    }
+
+    line <- gsub("<span.*href=\"|href=\"", "\\\\href{", line)
+    line <- gsub("<span", "", line)
+    line <- gsub("\">", "}{", line)
+    line <- gsub("</span>", "}", line)
+
+    href_link <- regmatches(line, regexpr("\\{.*\\}", line))
+    if (length(href_link) > 0) {
+      tidy_link <- if (is_rd) {
+        gsub("\n", "", href_link)
+      } else {
+        gsub("\n#'[ ]+", " ", href_link)
+      }
+      line <- gsub(href_link, tidy_link, line, fixed = TRUE)
+    }
+
+    split_line <- strsplit(line, "\n")[[1]]
+    padding <- rep("NA", length(content[idx_range]) - length(split_line))
+    content[idx_range] <- c(split_line, padding)
+  }
+
+  Filter(function(x) x != "NA", content)
+}
+
+#' Process single file through transformation pipeline
+#' @param file Path to file
+#' @param patterns_before Patterns for gsub
+#' @param patterns_after Replacements for gsub
+#' @param is_rd Is this an .Rd file?
+#' @return TRUE if file was modified, FALSE otherwise
+process_file_single_pass <- function(
+  file,
+  patterns_before,
+  patterns_after,
+  is_rd = FALSE
+) {
+  original <- readLines(file, warn = FALSE)
+
+  content <- original |>
+    apply_gsub_patterns(patterns_before, patterns_after) |>
+    unescape_latex() |>
+    fix_html_span(is_rd = is_rd)
+
+  if (!identical(original, content)) {
+    writeLines(content, file)
+    return(TRUE)
+  }
+  FALSE
+}
+
 #' @title Update paws version
 #' @param dir Directory containing paws sdk packages.
 #' @param version Version to set paws sdk.

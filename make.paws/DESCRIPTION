@@ -20,7 +20,6 @@ Imports:
     data.table,
     glue,
     gitcreds,
-    httr,
     httr2,
     jsonlite,
     methods,

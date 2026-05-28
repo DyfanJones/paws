@@ -1,20 +1,14 @@
 ## Test environments
 
-* local macOS install, R 4.2.1
+* local Ubuntu 26.04 LTS install, R version 4.6.0 (2026-04-24)
 * R-hub (devel and release)
 * win-builder
 
 ## R CMD check results
 
-There were no ERRORs, or WARNINGs.
-Notes:
-checking installed package size ... NOTE
-  installed size is  8.4Mb
-  sub-directories of 1Mb or more:
-    R      4.1Mb
-    help   4.0Mb
+There were no ERRORs, WARNINGs, or Notes.
 
-Maintainer Notes: tarball package size:   1.05M
+Maintainer Notes: tarball package size:   1.18M
 
 ## Downstream dependencies
 

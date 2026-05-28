@@ -12,11 +12,9 @@ glue_create_partition(
 )
 }
 \arguments{
-\item{CatalogId}{The Amazon Web Services account ID of the catalog in which the partition
-is to be created.}
+\item{CatalogId}{The Amazon Web Services account ID of the catalog in which the partition is to be created.}
 
-\item{DatabaseName}{[required] The name of the metadata database in which the partition is to be
-created.}
+\item{DatabaseName}{[required] The name of the metadata database in which the partition is to be created.}
 
 \item{TableName}{[required] The name of the metadata table in which the partition is to be created.}
 

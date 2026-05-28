@@ -14,14 +14,9 @@ bedrock_update_marketplace_model_endpoint(
 \arguments{
 \item{endpointArn}{[required] The Amazon Resource Name (ARN) of the endpoint you want to update.}
 
-\item{endpointConfig}{[required] The new configuration for the endpoint, including the number and type of
-instances to use.}
+\item{endpointConfig}{[required] The new configuration for the endpoint, including the number and type of instances to use.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. This token is listed as not required because
-Amazon Web Services SDKs automatically generate it for you and set this
-parameter. If you're not using the Amazon Web Services SDK or the CLI,
-you must provide this token or the action will fail.}
+\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This token is listed as not required because Amazon Web Services SDKs automatically generate it for you and set this parameter. If you're not using the Amazon Web Services SDK or the CLI, you must provide this token or the action will fail.}
 }
 \description{
 Updates the configuration of an existing endpoint for a model from Amazon Bedrock Marketplace.

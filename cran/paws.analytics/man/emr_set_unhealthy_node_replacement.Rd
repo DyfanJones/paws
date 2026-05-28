@@ -9,13 +9,9 @@ unhealthy}
 emr_set_unhealthy_node_replacement(JobFlowIds, UnhealthyNodeReplacement)
 }
 \arguments{
-\item{JobFlowIds}{[required] The list of strings that uniquely identify the clusters for which to
-turn on unhealthy node replacement. You can get these identifiers by
-running the \code{\link[=emr_run_job_flow]{run_job_flow}} or the
-\code{\link[=emr_describe_job_flows]{describe_job_flows}} operations.}
+\item{JobFlowIds}{[required] The list of strings that uniquely identify the clusters for which to turn on unhealthy node replacement. You can get these identifiers by running the \code{\link[=emr_run_job_flow]{run_job_flow}} or the \code{\link[=emr_describe_job_flows]{describe_job_flows}} operations.}
 
-\item{UnhealthyNodeReplacement}{[required] Indicates whether to turn on or turn off graceful unhealthy node
-replacement.}
+\item{UnhealthyNodeReplacement}{[required] Indicates whether to turn on or turn off graceful unhealthy node replacement.}
 }
 \description{
 Specify whether to enable unhealthy node replacement, which lets Amazon EMR gracefully replace core nodes on a cluster if any nodes become unhealthy. For example, a node becomes unhealthy if disk usage is above 90\%. If unhealthy node replacement is on and \code{TerminationProtected} are off, Amazon EMR immediately terminates the unhealthy core nodes. To use unhealthy node replacement and retain unhealthy core nodes, use to turn on termination protection. In such cases, Amazon EMR adds the unhealthy nodes to a denylist, reducing job interruptions and failures.

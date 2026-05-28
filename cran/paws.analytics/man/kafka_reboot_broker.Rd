@@ -7,8 +7,7 @@
 kafka_reboot_broker(BrokerIds, ClusterArn)
 }
 \arguments{
-\item{BrokerIds}{[required] The list of broker IDs to be rebooted. The reboot-broker operation
-supports rebooting one broker at a time.}
+\item{BrokerIds}{[required] The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.}
 
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster to be updated.}
 }

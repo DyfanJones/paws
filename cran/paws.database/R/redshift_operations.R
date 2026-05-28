@@ -12,11 +12,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_accept_reserved_node_exchange/](https://www.paws-r-sdk.com/docs/redshift_accept_reserved_node_exchange/) for full documentation.
 #'
-#' @param ReservedNodeId &#91;required&#93; A string representing the node identifier of the DC1 Reserved Node to be
-#' exchanged.
-#' @param TargetReservedNodeOfferingId &#91;required&#93; The unique identifier of the DC2 Reserved Node offering to be used for
-#' the exchange. You can obtain the value for the parameter by calling
-#' [`get_reserved_node_exchange_offerings`][redshift_get_reserved_node_exchange_offerings]
+#' @param ReservedNodeId &#91;required&#93; A string representing the node identifier of the DC1 Reserved Node to be exchanged.
+#' @param TargetReservedNodeOfferingId &#91;required&#93; The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling [`get_reserved_node_exchange_offerings`][redshift_get_reserved_node_exchange_offerings]
 #'
 #' @keywords internal
 #'
@@ -48,8 +45,7 @@ redshift_accept_reserved_node_exchange <- function(ReservedNodeId, TargetReserve
 #' See [https://www.paws-r-sdk.com/docs/redshift_add_partner/](https://www.paws-r-sdk.com/docs/redshift_add_partner/) for full documentation.
 #'
 #' @param AccountId &#91;required&#93; The Amazon Web Services account ID that owns the cluster.
-#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster that receives data from the
-#' partner.
+#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster that receives data from the partner.
 #' @param DatabaseName &#91;required&#93; The name of the database that receives data from the partner.
 #' @param PartnerName &#91;required&#93; The name of the partner that is authorized to send data.
 #'
@@ -84,15 +80,10 @@ redshift_add_partner <- function(AccountId, ClusterIdentifier, DatabaseName, Par
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_associate_data_share_consumer/](https://www.paws-r-sdk.com/docs/redshift_associate_data_share_consumer/) for full documentation.
 #'
-#' @param DataShareArn &#91;required&#93; The Amazon Resource Name (ARN) of the datashare that the consumer is to
-#' use.
-#' @param AssociateEntireAccount A value that specifies whether the datashare is associated with the
-#' entire account.
-#' @param ConsumerArn The Amazon Resource Name (ARN) of the consumer namespace associated with
-#' the datashare.
-#' @param ConsumerRegion From a datashare consumer account, associates a datashare with all
-#' existing and future namespaces in the specified Amazon Web Services
-#' Region.
+#' @param DataShareArn &#91;required&#93; The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
+#' @param AssociateEntireAccount A value that specifies whether the datashare is associated with the entire account.
+#' @param ConsumerArn The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.
+#' @param ConsumerRegion From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.
 #' @param AllowWrites If set to true, allows write operations for a datashare.
 #'
 #' @keywords internal
@@ -127,9 +118,7 @@ redshift_associate_data_share_consumer <- function(DataShareArn, AssociateEntire
 #' @param ClusterSecurityGroupName &#91;required&#93; The name of the security group to which the ingress rule is added.
 #' @param CIDRIP The IP range to be added the Amazon Redshift security group.
 #' @param EC2SecurityGroupName The EC2 security group to be added the Amazon Redshift security group.
-#' @param EC2SecurityGroupOwnerId The Amazon Web Services account number of the owner of the security
-#' group specified by the *EC2SecurityGroupName* parameter. The Amazon Web
-#' Services Access Key ID is not an acceptable value.
+#' @param EC2SecurityGroupOwnerId The Amazon Web Services account number of the owner of the security group specified by the *EC2SecurityGroupName* parameter. The Amazon Web Services Access Key ID is not an acceptable value.
 #' 
 #' Example: `111122223333`
 #'
@@ -163,11 +152,8 @@ redshift_authorize_cluster_security_group_ingress <- function(ClusterSecurityGro
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_authorize_data_share/](https://www.paws-r-sdk.com/docs/redshift_authorize_data_share/) for full documentation.
 #'
-#' @param DataShareArn &#91;required&#93; The Amazon Resource Name (ARN) of the datashare namespace that producers
-#' are to authorize sharing for.
-#' @param ConsumerIdentifier &#91;required&#93; The identifier of the data consumer that is authorized to access the
-#' datashare. This identifier is an Amazon Web Services account ID or a
-#' keyword, such as ADX.
+#' @param DataShareArn &#91;required&#93; The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
+#' @param ConsumerIdentifier &#91;required&#93; The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.
 #' @param AllowWrites If set to true, allows write operations for a datashare.
 #'
 #' @keywords internal
@@ -237,19 +223,12 @@ redshift_authorize_endpoint_access <- function(ClusterIdentifier = NULL, Account
 #' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot to authorize access to.
 #' @param SnapshotClusterIdentifier The identifier of the cluster the snapshot was created from.
 #' 
-#' -   *If the snapshot to access doesn't exist and the associated IAM
-#'     policy doesn't allow access to all (*) snapshots* - This parameter
-#'     is required. Otherwise, permissions aren't available to check if the
-#'     snapshot exists.
+#' -   *If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*) snapshots* - This parameter is required. Otherwise, permissions aren't available to check if the snapshot exists.
 #' 
-#' -   *If the snapshot to access exists* - This parameter isn't required.
-#'     Redshift can retrieve the cluster identifier and use it to validate
-#'     snapshot authorization.
-#' @param AccountWithRestoreAccess &#91;required&#93; The identifier of the Amazon Web Services account authorized to restore
-#' the specified snapshot.
+#' -   *If the snapshot to access exists* - This parameter isn't required. Redshift can retrieve the cluster identifier and use it to validate snapshot authorization.
+#' @param AccountWithRestoreAccess &#91;required&#93; The identifier of the Amazon Web Services account authorized to restore the specified snapshot.
 #' 
-#' To share a snapshot with Amazon Web Services Support, specify
-#' amazon-redshift-support.
+#' To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.
 #'
 #' @keywords internal
 #'
@@ -312,17 +291,12 @@ redshift_batch_delete_cluster_snapshots <- function(Identifiers) {
 #' See [https://www.paws-r-sdk.com/docs/redshift_batch_modify_cluster_snapshots/](https://www.paws-r-sdk.com/docs/redshift_batch_modify_cluster_snapshots/) for full documentation.
 #'
 #' @param SnapshotIdentifierList &#91;required&#93; A list of snapshot identifiers you want to modify.
-#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If you specify
-#' the value -1, the manual snapshot is retained indefinitely.
+#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.
 #' 
 #' The number must be either -1 or an integer between 1 and 3,653.
 #' 
-#' If you decrease the manual snapshot retention period from its current
-#' value, existing manual snapshots that fall outside of the new retention
-#' period will return an error. If you want to suppress the errors and
-#' delete the snapshots, use the force option.
-#' @param Force A boolean value indicating whether to override an exception if the
-#' retention period has passed.
+#' If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option.
+#' @param Force A boolean value indicating whether to override an exception if the retention period has passed.
 #'
 #' @keywords internal
 #'
@@ -353,8 +327,7 @@ redshift_batch_modify_cluster_snapshots <- function(SnapshotIdentifierList, Manu
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_cancel_resize/](https://www.paws-r-sdk.com/docs/redshift_cancel_resize/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier for the cluster that you want to cancel a resize
-#' operation for.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier for the cluster that you want to cancel a resize operation for.
 #'
 #' @keywords internal
 #'
@@ -390,12 +363,8 @@ redshift_cancel_resize <- function(ClusterIdentifier) {
 #' 
 #' Constraints:
 #' 
-#' -   Must be the identifier for a valid automated snapshot whose state is
-#'     `available`.
-#' @param SourceSnapshotClusterIdentifier The identifier of the cluster the source snapshot was created from. This
-#' parameter is required if your IAM user has a policy containing a
-#' snapshot resource element that specifies anything other than * for the
-#' cluster name.
+#' -   Must be the identifier for a valid automated snapshot whose state is `available`.
+#' @param SourceSnapshotClusterIdentifier The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
 #' 
 #' Constraints:
 #' 
@@ -412,10 +381,8 @@ redshift_cancel_resize <- function(ClusterIdentifier) {
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
-#' -   Must be unique for the Amazon Web Services account that is making
-#'     the request.
-#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is
-#' -1, the manual snapshot is retained indefinitely.
+#' -   Must be unique for the Amazon Web Services account that is making the request.
+#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
 #' 
@@ -451,8 +418,7 @@ redshift_copy_cluster_snapshot <- function(SourceSnapshotIdentifier, SourceSnaps
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_authentication_profile/](https://www.paws-r-sdk.com/docs/redshift_create_authentication_profile/) for full documentation.
 #'
 #' @param AuthenticationProfileName &#91;required&#93; The name of the authentication profile to be created.
-#' @param AuthenticationProfileContent &#91;required&#93; The content of the authentication profile in JSON format. The maximum
-#' length of the JSON string is determined by a quota for your account.
+#' @param AuthenticationProfileContent &#91;required&#93; The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.
 #'
 #' @keywords internal
 #'
@@ -483,14 +449,9 @@ redshift_create_authentication_profile <- function(AuthenticationProfileName, Au
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_cluster/](https://www.paws-r-sdk.com/docs/redshift_create_cluster/) for full documentation.
 #'
-#' @param DBName The name of the first database to be created when the cluster is
-#' created.
+#' @param DBName The name of the first database to be created when the cluster is created.
 #' 
-#' To create additional databases after the cluster is created, connect to
-#' the cluster with a SQL client and use SQL commands to create a database.
-#' For more information, go to [Create a
-#' Database](https://docs.aws.amazon.com/redshift/latest/gsg/t_creating_database.html)
-#' in the Amazon Redshift Database Developer Guide.
+#' To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to [Create a Database](https://docs.aws.amazon.com/redshift/latest/gsg/t_creating_database.html) in the Amazon Redshift Database Developer Guide.
 #' 
 #' Default: `dev`
 #' 
@@ -500,13 +461,8 @@ redshift_create_authentication_profile <- function(AuthenticationProfileName, Au
 #' 
 #' -   Must contain only lowercase letters.
 #' 
-#' -   Cannot be a word that is reserved by the service. A list of reserved
-#'     words can be found in [Reserved
-#'     Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html)
-#'     in the Amazon Redshift Database Developer Guide.
-#' @param ClusterIdentifier &#91;required&#93; A unique identifier for the cluster. You use this identifier to refer to
-#' the cluster for any subsequent cluster operations such as deleting or
-#' modifying. The identifier also appears in the Amazon Redshift console.
+#' -   Cannot be a word that is reserved by the service. A list of reserved words can be found in [Reserved Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in the Amazon Redshift Database Developer Guide.
+#' @param ClusterIdentifier &#91;required&#93; A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.
 #' 
 #' Constraints:
 #' 
@@ -518,8 +474,7 @@ redshift_create_authentication_profile <- function(AuthenticationProfileName, Au
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
-#' -   Must be unique for all clusters within an Amazon Web Services
-#'     account.
+#' -   Must be unique for all clusters within an Amazon Web Services account.
 #' 
 #' Example: `myexamplecluster`
 #' @param ClusterType The type of the cluster. When cluster type is specified as
@@ -531,34 +486,23 @@ redshift_create_authentication_profile <- function(AuthenticationProfileName, Au
 #' Valid Values: `multi-node` | `single-node`
 #' 
 #' Default: `multi-node`
-#' @param NodeType &#91;required&#93; The node type to be provisioned for the cluster. For information about
-#' node types, go to [Working with
-#' Clusters](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes)
-#' in the *Amazon Redshift Cluster Management Guide*.
+#' @param NodeType &#91;required&#93; The node type to be provisioned for the cluster. For information about node types, go to [Working with Clusters](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes) in the *Amazon Redshift Cluster Management Guide*.
 #' 
-#' Valid Values: `dc2.large` | `dc2.8xlarge` | `ra3.large` | `ra3.xlplus` |
-#' `ra3.4xlarge` | `ra3.16xlarge`
-#' @param MasterUsername &#91;required&#93; The user name associated with the admin user account for the cluster
-#' that is being created.
+#' Valid Values: `dc2.large` | `dc2.8xlarge`| `rg.xlarge` | `rg.4xlarge` | `ra3.large` | `ra3.xlplus` | `ra3.4xlarge` | `ra3.16xlarge`
+#' @param MasterUsername &#91;required&#93; The user name associated with the admin user account for the cluster that is being created.
 #' 
 #' Constraints:
 #' 
-#' -   Must be 1 - 128 alphanumeric characters or hyphens. The user name
-#'     can't be `PUBLIC`.
+#' -   Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be `PUBLIC`.
 #' 
-#' -   Must contain only lowercase letters, numbers, underscore, plus sign,
-#'     period (dot), at symbol (@@), or hyphen.
+#' -   Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@@), or hyphen.
 #' 
 #' -   The first character must be a letter.
 #' 
 #' -   Must not contain a colon (:) or a slash (/).
 #' 
-#' -   Cannot be a reserved word. A list of reserved words can be found in
-#'     [Reserved
-#'     Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html)
-#'     in the Amazon Redshift Database Developer Guide.
-#' @param MasterUserPassword The password associated with the admin user account for the cluster that
-#' is being created.
+#' -   Cannot be a reserved word. A list of reserved words can be found in [Reserved Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in the Amazon Redshift Database Developer Guide.
+#' @param MasterUserPassword The password associated with the admin user account for the cluster that is being created.
 #' 
 #' You can't use `MasterUserPassword` if `ManageMasterPassword` is `true`.
 #' 
@@ -572,51 +516,35 @@ redshift_create_authentication_profile <- function(AuthenticationProfileName, Au
 #' 
 #' -   Must contain one number.
 #' 
-#' -   Can be any printable ASCII character (ASCII code 33-126) except `\'`
-#'     (single quote), `\"` (double quote), `\`, `/`, or `@@`.
+#' -   Can be any printable ASCII character (ASCII code 33-126) except `\'` (single quote), `\"` (double quote), `\`, `/`, or `@@`.
 #' @param ClusterSecurityGroups A list of security groups to be associated with this cluster.
 #' 
 #' Default: The default cluster security group for Amazon Redshift.
-#' @param VpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
-#' with the cluster.
+#' @param VpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
 #' 
 #' Default: The default VPC security group is associated with the cluster.
 #' @param ClusterSubnetGroupName The name of a cluster subnet group to be associated with this cluster.
 #' 
-#' If this parameter is not provided the resulting cluster will be deployed
-#' outside virtual private cloud (VPC).
-#' @param AvailabilityZone The EC2 Availability Zone (AZ) in which you want Amazon Redshift to
-#' provision the cluster. For example, if you have several EC2 instances
-#' running in a specific Availability Zone, then you might want the cluster
-#' to be provisioned in the same zone in order to decrease network latency.
+#' If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).
+#' @param AvailabilityZone The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.
 #' 
-#' Default: A random, system-chosen Availability Zone in the region that is
-#' specified by the endpoint.
+#' Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
 #' 
 #' Example: `us-east-2d`
 #' 
-#' Constraint: The specified Availability Zone must be in the same region
-#' as the current endpoint.
-#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
-#' maintenance can occur.
+#' Constraint: The specified Availability Zone must be in the same region as the current endpoint.
+#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster maintenance can occur.
 #' 
 #' Format: `ddd:hh24:mi-ddd:hh24:mi`
 #' 
-#' Default: A 30-minute window selected at random from an 8-hour block of
-#' time per region, occurring on a random day of the week. For more
-#' information about the time blocks for each region, see [Maintenance
-#' Windows](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows)
-#' in Amazon Redshift Cluster Management Guide.
+#' Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. For more information about the time blocks for each region, see [Maintenance Windows](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows) in Amazon Redshift Cluster Management Guide.
 #' 
 #' Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
 #' 
 #' Constraints: Minimum 30-minute window.
 #' @param ClusterParameterGroupName The name of the parameter group to be associated with this cluster.
 #' 
-#' Default: The default Amazon Redshift cluster parameter group. For
-#' information about the default parameter group, go to [Working with
-#' Amazon Redshift Parameter
-#' Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html)
+#' Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to [Working with Amazon Redshift Parameter Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html)
 #' 
 #' Constraints:
 #' 
@@ -625,67 +553,44 @@ redshift_create_authentication_profile <- function(AuthenticationProfileName, Au
 #' -   First character must be a letter.
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
-#' @param AutomatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value
-#' is 0, automated snapshots are disabled. Even if automated snapshots are
-#' disabled, you can still create manual snapshots when you want with
-#' [`create_cluster_snapshot`][redshift_create_cluster_snapshot].
+#' @param AutomatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with [`create_cluster_snapshot`][redshift_create_cluster_snapshot].
 #' 
-#' You can't disable automated snapshots for RA3 node types. Set the
-#' automated retention period from 1-35 days.
+#' You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.
 #' 
 #' Default: `1`
 #' 
 #' Constraints: Must be a value from 0 to 35.
-#' @param ManualSnapshotRetentionPeriod The default number of days to retain a manual snapshot. If the value is
-#' -1, the snapshot is retained indefinitely. This setting doesn't change
-#' the retention period of existing snapshots.
+#' @param ManualSnapshotRetentionPeriod The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
 #' @param Port The port number on which the cluster accepts incoming connections.
 #' 
-#' The cluster is accessible only via the JDBC and ODBC connection strings.
-#' Part of the connection string requires the port on which the cluster
-#' will listen for incoming connections.
+#' The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.
 #' 
 #' Default: `5439`
 #' 
 #' Valid Values:
 #' 
-#' -   For clusters with ra3 nodes - Select a port within the ranges
-#'     `5431-5455` or `8191-8215`. (If you have an existing cluster with
-#'     ra3 nodes, it isn't required that you change the port to these
-#'     ranges.)
+#' -   For clusters with RG or RA3 nodes - Select a port within the ranges `5431-5455` or `8191-8215`. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)
 #' 
-#' -   For clusters with dc2 nodes - Select a port within the range
-#'     `1150-65535`.
-#' @param ClusterVersion The version of the Amazon Redshift engine software that you want to
-#' deploy on the cluster.
+#' -   For clusters with dc2 nodes - Select a port within the range `1150-65535`.
+#' @param ClusterVersion The version of the Amazon Redshift engine software that you want to deploy on the cluster.
 #' 
 #' The version selected runs on all the nodes in the cluster.
 #' 
 #' Constraints: Only version 1.0 is currently available.
 #' 
 #' Example: `1.0`
-#' @param AllowVersionUpgrade If `true`, major version upgrades can be applied during the maintenance
-#' window to the Amazon Redshift engine that is running on the cluster.
+#' @param AllowVersionUpgrade If `true`, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.
 #' 
-#' When a new major version of the Amazon Redshift engine is released, you
-#' can request that the service automatically apply upgrades during the
-#' maintenance window to the Amazon Redshift engine that is running on your
-#' cluster.
+#' When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.
 #' 
 #' Default: `true`
-#' @param NumberOfNodes The number of compute nodes in the cluster. This parameter is required
-#' when the **ClusterType** parameter is specified as `multi-node`.
+#' @param NumberOfNodes The number of compute nodes in the cluster. This parameter is required when the **ClusterType** parameter is specified as `multi-node`.
 #' 
-#' For information about determining how many nodes you need, go to
-#' [Working with
-#' Clusters](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes)
-#' in the *Amazon Redshift Cluster Management Guide*.
+#' For information about determining how many nodes you need, go to [Working with Clusters](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes) in the *Amazon Redshift Cluster Management Guide*.
 #' 
-#' If you don't specify this parameter, you get a single-node cluster. When
-#' requesting a multi-node cluster, you must specify the number of nodes
-#' that you want in the cluster.
+#' If you don't specify this parameter, you get a single-node cluster. When requesting a multi-node cluster, you must specify the number of nodes that you want in the cluster.
 #' 
 #' Default: `1`
 #' 
@@ -693,87 +598,48 @@ redshift_create_authentication_profile <- function(AuthenticationProfileName, Au
 #' @param PubliclyAccessible If `true`, the cluster can be accessed from a public network.
 #' 
 #' Default: false
-#' @param Encrypted If `true`, the data in the cluster is encrypted at rest. If you set the
-#' value on this parameter to `false`, the request will fail.
+#' @param Encrypted If `true`, the data in the cluster is encrypted at rest. If you set the value on this parameter to `false`, the request will fail.
 #' 
 #' Default: true
-#' @param HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
-#' cluster uses to retrieve the data encryption keys stored in an HSM.
-#' @param HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
-#' information the Amazon Redshift cluster can use to retrieve and store
-#' keys in an HSM.
+#' @param HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+#' @param HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
 #' @param ElasticIp The Elastic IP (EIP) address for the cluster.
 #' 
-#' Constraints: The cluster must be provisioned in EC2-VPC and
-#' publicly-accessible through an Internet gateway. Don't specify the
-#' Elastic IP address for a publicly accessible cluster with availability
-#' zone relocation turned on. For more information about provisioning
-#' clusters in EC2-VPC, go to [Supported Platforms to Launch Your
-#' Cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms)
-#' in the Amazon Redshift Cluster Management Guide.
+#' Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to [Supported Platforms to Launch Your Cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms) in the Amazon Redshift Cluster Management Guide.
 #' @param Tags A list of tag instances.
-#' @param KmsKeyId The Key Management Service (KMS) key ID of the encryption key that you
-#' want to use to encrypt data in the cluster.
-#' @param EnhancedVpcRouting An option that specifies whether to create the cluster with enhanced VPC
-#' routing enabled. To create a cluster that uses enhanced VPC routing, the
-#' cluster must be in a VPC. For more information, see [Enhanced VPC
-#' Routing](https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html)
-#' in the Amazon Redshift Cluster Management Guide.
+#' @param KmsKeyId The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
+#' @param EnhancedVpcRouting An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see [Enhanced VPC Routing](https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html) in the Amazon Redshift Cluster Management Guide.
 #' 
 #' If this option is `true`, enhanced VPC routing is enabled.
 #' 
 #' Default: false
 #' @param AdditionalInfo Reserved.
-#' @param IamRoles A list of Identity and Access Management (IAM) roles that can be used by
-#' the cluster to access other Amazon Web Services services. You must
-#' supply the IAM roles in their Amazon Resource Name (ARN) format.
+#' @param IamRoles A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
 #' 
-#' The maximum number of IAM roles that you can associate is subject to a
-#' quota. For more information, go to [Quotas and
-#' limits](https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html)
-#' in the *Amazon Redshift Cluster Management Guide*.
-#' @param MaintenanceTrackName An optional parameter for the name of the maintenance track for the
-#' cluster. If you don't provide a maintenance track name, the cluster is
-#' assigned to the `current` track.
+#' The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to [Quotas and limits](https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html) in the *Amazon Redshift Cluster Management Guide*.
+#' @param MaintenanceTrackName An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the `current` track.
 #' @param SnapshotScheduleIdentifier A unique identifier for the snapshot schedule.
-#' @param AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between
-#' Availability Zones after the cluster is created.
-#' @param AquaConfigurationStatus This parameter is retired. It does not set the AQUA configuration
-#' status. Amazon Redshift automatically determines whether to use AQUA
-#' (Advanced Query Accelerator).
-#' @param DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default
-#' for the cluster when the cluster was created.
-#' @param LoadSampleData A flag that specifies whether to load sample data once the cluster is
-#' created.
-#' @param ManageMasterPassword If `true`, Amazon Redshift uses Secrets Manager to manage this cluster's
-#' admin credentials. You can't use `MasterUserPassword` if
-#' `ManageMasterPassword` is true. If `ManageMasterPassword` is false or
-#' not set, Amazon Redshift uses `MasterUserPassword` for the admin user
-#' account's password.
-#' @param MasterPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store
-#' the cluster's admin credentials secret. You can only use this parameter
-#' if `ManageMasterPassword` is true.
-#' @param IpAddressType The IP address types that the cluster supports. Possible values are
-#' `ipv4` and `dualstack`.
-#' @param MultiAZ If true, Amazon Redshift will deploy the cluster in two Availability
-#' Zones (AZ).
-#' @param RedshiftIdcApplicationArn The Amazon resource name (ARN) of the Amazon Redshift IAM Identity
-#' Center application.
-#' @param CatalogName The name of the Glue data catalog that will be associated with the
-#' cluster enabled with Amazon Redshift federated permissions.
+#' @param AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.
+#' @param AquaConfigurationStatus This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+#' @param DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.
+#' @param LoadSampleData A flag that specifies whether to load sample data once the cluster is created.
+#' @param ManageMasterPassword If `true`, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use `MasterUserPassword` if `ManageMasterPassword` is true. If `ManageMasterPassword` is false or not set, Amazon Redshift uses `MasterUserPassword` for the admin user account's password.
+#' @param MasterPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if `ManageMasterPassword` is true.
+#' @param IpAddressType The IP address types that the cluster supports. Possible values are `ipv4` and `dualstack`.
+#' @param MultiAZ If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).
+#' @param RedshiftIdcApplicationArn The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.
+#' @param CatalogName The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.
 #' 
 #' Constraints:
 #' 
 #' -   Must contain at least one lowercase letter.
 #' 
-#' -   Can only contain lowercase letters (a-z), numbers (0-9), underscores
-#'     (_), and hyphens (-).
+#' -   Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).
 #' 
 #' Pattern: `^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$`
 #' 
 #' Example: `my-catalog_01`
-#' @param ExtraComputeForAutomaticOptimization If `true`, allocates additional compute resources for running automatic
-#' optimization operations.
+#' @param ExtraComputeForAutomaticOptimization If `true`, allocates additional compute resources for running automatic optimization operations.
 #' 
 #' Default: false
 #'
@@ -819,17 +685,9 @@ redshift_create_cluster <- function(DBName = NULL, ClusterIdentifier, ClusterTyp
 #' -   Must be unique withing your Amazon Web Services account.
 #' 
 #' This value is stored as a lower-case string.
-#' @param ParameterGroupFamily &#91;required&#93; The Amazon Redshift engine version to which the cluster parameter group
-#' applies. The cluster engine version determines the set of parameters.
+#' @param ParameterGroupFamily &#91;required&#93; The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.
 #' 
-#' To get a list of valid parameter group family names, you can call
-#' [`describe_cluster_parameter_groups`][redshift_describe_cluster_parameter_groups].
-#' By default, Amazon Redshift returns a list of all the parameter groups
-#' that are owned by your Amazon Web Services account, including the
-#' default parameter groups for each Amazon Redshift engine version. The
-#' parameter group family names associated with the default parameter
-#' groups provide you the valid values. For example, a valid family name is
-#' "redshift-1.0".
+#' To get a list of valid parameter group family names, you can call [`describe_cluster_parameter_groups`][redshift_describe_cluster_parameter_groups]. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0".
 #' @param Description &#91;required&#93; A description of the parameter group.
 #' @param Tags A list of tag instances.
 #'
@@ -862,8 +720,7 @@ redshift_create_cluster_parameter_group <- function(ParameterGroupName, Paramete
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_cluster_security_group/](https://www.paws-r-sdk.com/docs/redshift_create_cluster_security_group/) for full documentation.
 #'
-#' @param ClusterSecurityGroupName &#91;required&#93; The name for the security group. Amazon Redshift stores the value as a
-#' lowercase string.
+#' @param ClusterSecurityGroupName &#91;required&#93; The name for the security group. Amazon Redshift stores the value as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -871,8 +728,7 @@ redshift_create_cluster_parameter_group <- function(ParameterGroupName, Paramete
 #' 
 #' -   Must not be "Default".
 #' 
-#' -   Must be unique for all security groups that are created by your
-#'     Amazon Web Services account.
+#' -   Must be unique for all security groups that are created by your Amazon Web Services account.
 #' 
 #' Example: `examplesecuritygroup`
 #' @param Description &#91;required&#93; A description for the security group.
@@ -907,9 +763,7 @@ redshift_create_cluster_security_group <- function(ClusterSecurityGroupName, Des
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_cluster_snapshot/](https://www.paws-r-sdk.com/docs/redshift_create_cluster_snapshot/) for full documentation.
 #'
-#' @param SnapshotIdentifier &#91;required&#93; A unique identifier for the snapshot that you are requesting. This
-#' identifier must be unique for all snapshots within the Amazon Web
-#' Services account.
+#' @param SnapshotIdentifier &#91;required&#93; A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.
 #' 
 #' Constraints:
 #' 
@@ -923,8 +777,7 @@ redshift_create_cluster_security_group <- function(ClusterSecurityGroupName, Des
 #' 
 #' Example: `my-snapshot-id`
 #' @param ClusterIdentifier &#91;required&#93; The cluster identifier for which you want a snapshot.
-#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is
-#' -1, the manual snapshot is retained indefinitely.
+#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
 #' 
@@ -960,8 +813,7 @@ redshift_create_cluster_snapshot <- function(SnapshotIdentifier, ClusterIdentifi
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_cluster_subnet_group/](https://www.paws-r-sdk.com/docs/redshift_create_cluster_subnet_group/) for full documentation.
 #'
-#' @param ClusterSubnetGroupName &#91;required&#93; The name for the subnet group. Amazon Redshift stores the value as a
-#' lowercase string.
+#' @param ClusterSubnetGroupName &#91;required&#93; The name for the subnet group. Amazon Redshift stores the value as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -969,13 +821,11 @@ redshift_create_cluster_snapshot <- function(SnapshotIdentifier, ClusterIdentifi
 #' 
 #' -   Must not be "Default".
 #' 
-#' -   Must be unique for all subnet groups that are created by your Amazon
-#'     Web Services account.
+#' -   Must be unique for all subnet groups that are created by your Amazon Web Services account.
 #' 
 #' Example: `examplesubnetgroup`
 #' @param Description &#91;required&#93; A description for the subnet group.
-#' @param SubnetIds &#91;required&#93; An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-#' single request.
+#' @param SubnetIds &#91;required&#93; An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
 #' @param Tags A list of tag instances.
 #'
 #' @keywords internal
@@ -1008,8 +858,7 @@ redshift_create_cluster_subnet_group <- function(ClusterSubnetGroupName, Descrip
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_custom_domain_association/](https://www.paws-r-sdk.com/docs/redshift_create_custom_domain_association/) for full documentation.
 #'
 #' @param CustomDomainName &#91;required&#93; The custom domain name for a custom domain association.
-#' @param CustomDomainCertificateArn &#91;required&#93; The certificate Amazon Resource Name (ARN) for the custom domain name
-#' association.
+#' @param CustomDomainCertificateArn &#91;required&#93; The certificate Amazon Resource Name (ARN) for the custom domain name association.
 #' @param ClusterIdentifier &#91;required&#93; The cluster identifier that the custom domain is associated with.
 #'
 #' @keywords internal
@@ -1042,17 +891,12 @@ redshift_create_custom_domain_association <- function(CustomDomainName, CustomDo
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_endpoint_access/](https://www.paws-r-sdk.com/docs/redshift_create_endpoint_access/) for full documentation.
 #'
 #' @param ClusterIdentifier The cluster identifier of the cluster to access.
-#' @param ResourceOwner The Amazon Web Services account ID of the owner of the cluster. This is
-#' only required if the cluster is in another Amazon Web Services account.
+#' @param ResourceOwner The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.
 #' @param EndpointName &#91;required&#93; The Redshift-managed VPC endpoint name.
 #' 
-#' An endpoint name must contain 1-30 characters. Valid characters are A-Z,
-#' a-z, 0-9, and hyphen(-). The first character must be a letter. The name
-#' can't contain two consecutive hyphens or end with a hyphen.
-#' @param SubnetGroupName &#91;required&#93; The subnet group from which Amazon Redshift chooses the subnet to deploy
-#' the endpoint.
-#' @param VpcSecurityGroupIds The security group that defines the ports, protocols, and sources for
-#' inbound traffic that you are authorizing into your endpoint.
+#' An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.
+#' @param SubnetGroupName &#91;required&#93; The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.
+#' @param VpcSecurityGroupIds The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
 #'
 #' @keywords internal
 #'
@@ -1094,36 +938,22 @@ redshift_create_endpoint_access <- function(ClusterIdentifier = NULL, ResourceOw
 #' -   First character must be a letter.
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
-#' @param SnsTopicArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit
-#' the event notifications. The ARN is created by Amazon SNS when you
-#' create a topic and subscribe to it.
-#' @param SourceType The type of source that will be generating the events. For example, if
-#' you want to be notified of events generated by a cluster, you would set
-#' this parameter to cluster. If this value is not specified, events are
-#' returned for all Amazon Redshift objects in your Amazon Web Services
-#' account. You must specify a source type in order to specify source IDs.
+#' @param SnsTopicArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.
+#' @param SourceType The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.
 #' 
-#' Valid values: cluster, cluster-parameter-group, cluster-security-group,
-#' cluster-snapshot, and scheduled-action.
-#' @param SourceIds A list of one or more identifiers of Amazon Redshift source objects. All
-#' of the objects must be of the same type as was specified in the source
-#' type parameter. The event subscription will return only events generated
-#' by the specified objects. If not specified, then events are returned for
-#' all objects within the source type specified.
+#' Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.
+#' @param SourceIds A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.
 #' 
 #' Example: my-cluster-1, my-cluster-2
 #' 
 #' Example: my-snapshot-20131010
-#' @param EventCategories Specifies the Amazon Redshift event categories to be published by the
-#' event notification subscription.
+#' @param EventCategories Specifies the Amazon Redshift event categories to be published by the event notification subscription.
 #' 
 #' Values: configuration, management, monitoring, security, pending
-#' @param Severity Specifies the Amazon Redshift event severity to be published by the
-#' event notification subscription.
+#' @param Severity Specifies the Amazon Redshift event severity to be published by the event notification subscription.
 #' 
 #' Values: ERROR, INFO
-#' @param Enabled A boolean value; set to `true` to activate the subscription, and set to
-#' `false` to create the subscription but not activate it.
+#' @param Enabled A boolean value; set to `true` to activate the subscription, and set to `false` to create the subscription but not activate it.
 #' @param Tags A list of tag instances.
 #'
 #' @keywords internal
@@ -1157,9 +987,7 @@ redshift_create_event_subscription <- function(SubscriptionName, SnsTopicArn, So
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_hsm_client_certificate/](https://www.paws-r-sdk.com/docs/redshift_create_hsm_client_certificate/) for full documentation.
 #'
-#' @param HsmClientCertificateIdentifier &#91;required&#93; The identifier to be assigned to the new HSM client certificate that the
-#' cluster will use to connect to the HSM to use the database encryption
-#' keys.
+#' @param HsmClientCertificateIdentifier &#91;required&#93; The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.
 #' @param Tags A list of tag instances.
 #'
 #' @keywords internal
@@ -1193,16 +1021,12 @@ redshift_create_hsm_client_certificate <- function(HsmClientCertificateIdentifie
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_hsm_configuration/](https://www.paws-r-sdk.com/docs/redshift_create_hsm_configuration/) for full documentation.
 #'
-#' @param HsmConfigurationIdentifier &#91;required&#93; The identifier to be assigned to the new Amazon Redshift HSM
-#' configuration.
+#' @param HsmConfigurationIdentifier &#91;required&#93; The identifier to be assigned to the new Amazon Redshift HSM configuration.
 #' @param Description &#91;required&#93; A text description of the HSM configuration to be created.
-#' @param HsmIpAddress &#91;required&#93; The IP address that the Amazon Redshift cluster must use to access the
-#' HSM.
-#' @param HsmPartitionName &#91;required&#93; The name of the partition in the HSM where the Amazon Redshift clusters
-#' will store their database encryption keys.
+#' @param HsmIpAddress &#91;required&#93; The IP address that the Amazon Redshift cluster must use to access the HSM.
+#' @param HsmPartitionName &#91;required&#93; The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.
 #' @param HsmPartitionPassword &#91;required&#93; The password required to access the HSM partition.
-#' @param HsmServerPublicCertificate &#91;required&#93; The HSMs public certificate file. When using Cloud HSM, the file name is
-#' server.pem.
+#' @param HsmServerPublicCertificate &#91;required&#93; The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
 #' @param Tags A list of tag instances.
 #'
 #' @keywords internal
@@ -1235,23 +1059,14 @@ redshift_create_hsm_configuration <- function(HsmConfigurationIdentifier, Descri
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_integration/](https://www.paws-r-sdk.com/docs/redshift_create_integration/) for full documentation.
 #'
-#' @param SourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the database to use as the source for
-#' replication.
-#' @param TargetArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Redshift data warehouse to
-#' use as the target for replication.
+#' @param SourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the database to use as the source for replication.
+#' @param TargetArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Redshift data warehouse to use as the target for replication.
 #' @param IntegrationName &#91;required&#93; The name of the integration.
-#' @param KMSKeyId An Key Management Service (KMS) key identifier for the key to use to
-#' encrypt the integration. If you don't specify an encryption key, the
-#' default Amazon Web Services owned key is used.
+#' @param KMSKeyId An Key Management Service (KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, the default Amazon Web Services owned key is used.
 #' @param TagList A list of tags.
-#' @param AdditionalEncryptionContext An optional set of non-secret key–value pairs that contains additional
-#' contextual information about the data. For more information, see
-#' [Encryption
-#' context](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context)
-#' in the *Amazon Web Services Key Management Service Developer Guide*.
+#' @param AdditionalEncryptionContext An optional set of non-secret key–value pairs that contains additional contextual information about the data. For more information, see [Encryption context](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context) in the *Amazon Web Services Key Management Service Developer Guide*.
 #' 
-#' You can only include this parameter if you specify the `KMSKeyId`
-#' parameter.
+#' You can only include this parameter if you specify the `KMSKeyId` parameter.
 #' @param Description A description of the integration.
 #'
 #' @keywords internal
@@ -1283,28 +1098,16 @@ redshift_create_integration <- function(SourceArn, TargetArn, IntegrationName, K
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_redshift_idc_application/](https://www.paws-r-sdk.com/docs/redshift_create_redshift_idc_application/) for full documentation.
 #'
-#' @param IdcInstanceArn &#91;required&#93; The Amazon resource name (ARN) of the IAM Identity Center instance where
-#' Amazon Redshift creates a new managed application.
+#' @param IdcInstanceArn &#91;required&#93; The Amazon resource name (ARN) of the IAM Identity Center instance where Amazon Redshift creates a new managed application.
 #' @param RedshiftIdcApplicationName &#91;required&#93; The name of the Redshift application in IAM Identity Center.
-#' @param IdentityNamespace The namespace for the Amazon Redshift IAM Identity Center application
-#' instance. It determines which managed application verifies the
-#' connection token.
-#' @param IdcDisplayName &#91;required&#93; The display name for the Amazon Redshift IAM Identity Center application
-#' instance. It appears in the console.
-#' @param IamRoleArn &#91;required&#93; The IAM role ARN for the Amazon Redshift IAM Identity Center application
-#' instance. It has the required permissions to be assumed and invoke the
-#' IDC Identity Center API.
-#' @param AuthorizedTokenIssuerList The token issuer list for the Amazon Redshift IAM Identity Center
-#' application instance.
-#' @param ServiceIntegrations A collection of service integrations for the Redshift IAM Identity
-#' Center application.
-#' @param ApplicationType The type of application being created. Valid values are `None` or
-#' `Lakehouse`. Use `Lakehouse` to enable Amazon Redshift federated
-#' permissions on cluster.
+#' @param IdentityNamespace The namespace for the Amazon Redshift IAM Identity Center application instance. It determines which managed application verifies the connection token.
+#' @param IdcDisplayName &#91;required&#93; The display name for the Amazon Redshift IAM Identity Center application instance. It appears in the console.
+#' @param IamRoleArn &#91;required&#93; The IAM role ARN for the Amazon Redshift IAM Identity Center application instance. It has the required permissions to be assumed and invoke the IDC Identity Center API.
+#' @param AuthorizedTokenIssuerList The token issuer list for the Amazon Redshift IAM Identity Center application instance.
+#' @param ServiceIntegrations A collection of service integrations for the Redshift IAM Identity Center application.
+#' @param ApplicationType The type of application being created. Valid values are `None` or `Lakehouse`. Use `Lakehouse` to enable Amazon Redshift federated permissions on cluster.
 #' @param Tags A list of tags.
-#' @param SsoTagKeys A list of tags keys that Redshift Identity Center applications copy to
-#' IAM Identity Center. For each input key, the tag corresponding to the
-#' key-value pair is propagated.
+#' @param SsoTagKeys A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.
 #'
 #' @keywords internal
 #'
@@ -1335,25 +1138,14 @@ redshift_create_redshift_idc_application <- function(IdcInstanceArn, RedshiftIdc
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_scheduled_action/](https://www.paws-r-sdk.com/docs/redshift_create_scheduled_action/) for full documentation.
 #'
-#' @param ScheduledActionName &#91;required&#93; The name of the scheduled action. The name must be unique within an
-#' account. For more information about this parameter, see ScheduledAction.
-#' @param TargetAction &#91;required&#93; A JSON format string of the Amazon Redshift API operation with input
-#' parameters. For more information about this parameter, see
-#' ScheduledAction.
-#' @param Schedule &#91;required&#93; The schedule in `at( )` or `cron( )` format. For more information about
-#' this parameter, see ScheduledAction.
-#' @param IamRole &#91;required&#93; The IAM role to assume to run the target action. For more information
-#' about this parameter, see ScheduledAction.
+#' @param ScheduledActionName &#91;required&#93; The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see ScheduledAction.
+#' @param TargetAction &#91;required&#93; A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see ScheduledAction.
+#' @param Schedule &#91;required&#93; The schedule in `at( )` or `cron( )` format. For more information about this parameter, see ScheduledAction.
+#' @param IamRole &#91;required&#93; The IAM role to assume to run the target action. For more information about this parameter, see ScheduledAction.
 #' @param ScheduledActionDescription The description of the scheduled action.
-#' @param StartTime The start time in UTC of the scheduled action. Before this time, the
-#' scheduled action does not trigger. For more information about this
-#' parameter, see ScheduledAction.
-#' @param EndTime The end time in UTC of the scheduled action. After this time, the
-#' scheduled action does not trigger. For more information about this
-#' parameter, see ScheduledAction.
-#' @param Enable If true, the schedule is enabled. If false, the scheduled action does
-#' not trigger. For more information about `state` of the scheduled action,
-#' see ScheduledAction.
+#' @param StartTime The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see ScheduledAction.
+#' @param EndTime The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see ScheduledAction.
+#' @param Enable If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about `state` of the scheduled action, see ScheduledAction.
 #'
 #' @keywords internal
 #'
@@ -1386,8 +1178,7 @@ redshift_create_scheduled_action <- function(ScheduledActionName, TargetAction, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_snapshot_copy_grant/](https://www.paws-r-sdk.com/docs/redshift_create_snapshot_copy_grant/) for full documentation.
 #'
-#' @param SnapshotCopyGrantName &#91;required&#93; The name of the snapshot copy grant. This name must be unique in the
-#' region for the Amazon Web Services account.
+#' @param SnapshotCopyGrantName &#91;required&#93; The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.
 #' 
 #' Constraints:
 #' 
@@ -1399,11 +1190,8 @@ redshift_create_scheduled_action <- function(ScheduledActionName, TargetAction, 
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
-#' -   Must be unique for all clusters within an Amazon Web Services
-#'     account.
-#' @param KmsKeyId The unique identifier of the encrypted symmetric key to which to grant
-#' Amazon Redshift permission. If no key is specified, the default key is
-#' used.
+#' -   Must be unique for all clusters within an Amazon Web Services account.
+#' @param KmsKeyId The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.
 #' @param Tags A list of tag instances.
 #'
 #' @keywords internal
@@ -1436,10 +1224,8 @@ redshift_create_snapshot_copy_grant <- function(SnapshotCopyGrantName, KmsKeyId 
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_snapshot_schedule/](https://www.paws-r-sdk.com/docs/redshift_create_snapshot_schedule/) for full documentation.
 #'
-#' @param ScheduleDefinitions The definition of the snapshot schedule. The definition is made up of
-#' schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".
-#' @param ScheduleIdentifier A unique identifier for a snapshot schedule. Only alphanumeric
-#' characters are allowed for the identifier.
+#' @param ScheduleDefinitions The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".
+#' @param ScheduleIdentifier A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.
 #' @param ScheduleDescription The description of the snapshot schedule.
 #' @param Tags An optional set of tags you can use to search for the schedule.
 #' @param DryRun 
@@ -1474,14 +1260,8 @@ redshift_create_snapshot_schedule <- function(ScheduleDefinitions = NULL, Schedu
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_create_tags/](https://www.paws-r-sdk.com/docs/redshift_create_tags/) for full documentation.
 #'
-#' @param ResourceName &#91;required&#93; The Amazon Resource Name (ARN) to which you want to add the tag or tags.
-#' For example, `arn:aws:redshift:us-east-2:123456789:cluster:t1`.
-#' @param Tags &#91;required&#93; One or more name/value pairs to add as tags to the specified resource.
-#' Each tag name is passed in with the parameter `Key` and the
-#' corresponding value is passed in with the parameter `Value`. The `Key`
-#' and `Value` parameters are separated by a comma (,). Separate multiple
-#' tags with a space. For example,
-#' `--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test" "Key"="version","Value"="1.0"`.
+#' @param ResourceName &#91;required&#93; The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, `arn:aws:redshift:us-east-2:123456789:cluster:t1`.
+#' @param Tags &#91;required&#93; One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter `Key` and the corresponding value is passed in with the parameter `Value`. The `Key` and `Value` parameters are separated by a comma (,). Separate multiple tags with a space. For example, `--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test" "Key"="version","Value"="1.0"`.
 #'
 #' @keywords internal
 #'
@@ -1515,21 +1295,10 @@ redshift_create_tags <- function(ResourceName, Tags) {
 #'
 #' @param ClusterIdentifier &#91;required&#93; The identifier of the cluster that you want to limit usage.
 #' @param FeatureType &#91;required&#93; The Amazon Redshift feature that you want to limit.
-#' @param LimitType &#91;required&#93; The type of limit. Depending on the feature type, this can be based on a
-#' time duration or data size. If `FeatureType` is `spectrum`, then
-#' `LimitType` must be `data-scanned`. If `FeatureType` is
-#' `concurrency-scaling`, then `LimitType` must be `time`. If `FeatureType`
-#' is `cross-region-datasharing`, then `LimitType` must be `data-scanned`.
-#' If `FeatureType` is `extra-compute-for-automatic-optimization`, then
-#' `LimitType` must be `time`.
-#' @param Amount &#91;required&#93; The limit amount. If time-based, this amount is in minutes. If
-#' data-based, this amount is in terabytes (TB). The value must be a
-#' positive number.
-#' @param Period The time period that the amount applies to. A `weekly` period begins on
-#' Sunday. The default is `monthly`.
-#' @param BreachAction The action that Amazon Redshift takes when the limit is reached. The
-#' default is log. For more information about this parameter, see
-#' UsageLimit.
+#' @param LimitType &#91;required&#93; The type of limit. Depending on the feature type, this can be based on a time duration or data size. If `FeatureType` is `spectrum`, then `LimitType` must be `data-scanned`. If `FeatureType` is `concurrency-scaling`, then `LimitType` must be `time`. If `FeatureType` is `cross-region-datasharing`, then `LimitType` must be `data-scanned`. If `FeatureType` is `extra-compute-for-automatic-optimization`, then `LimitType` must be `time`.
+#' @param Amount &#91;required&#93; The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.
+#' @param Period The time period that the amount applies to. A `weekly` period begins on Sunday. The default is `monthly`.
+#' @param BreachAction The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see UsageLimit.
 #' @param Tags A list of tag instances.
 #'
 #' @keywords internal
@@ -1562,11 +1331,8 @@ redshift_create_usage_limit <- function(ClusterIdentifier, FeatureType, LimitTyp
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_deauthorize_data_share/](https://www.paws-r-sdk.com/docs/redshift_deauthorize_data_share/) for full documentation.
 #'
-#' @param DataShareArn &#91;required&#93; The namespace Amazon Resource Name (ARN) of the datashare to remove
-#' authorization from.
-#' @param ConsumerIdentifier &#91;required&#93; The identifier of the data consumer that is to have authorization
-#' removed from the datashare. This identifier is an Amazon Web Services
-#' account ID or a keyword, such as ADX.
+#' @param DataShareArn &#91;required&#93; The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.
+#' @param ConsumerIdentifier &#91;required&#93; The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.
 #'
 #' @keywords internal
 #'
@@ -1640,18 +1406,12 @@ redshift_delete_authentication_profile <- function(AuthenticationProfileName) {
 #' -   First character must be a letter.
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
-#' @param SkipFinalClusterSnapshot Determines whether a final snapshot of the cluster is created before
-#' Amazon Redshift deletes the cluster. If `true`, a final cluster snapshot
-#' is not created. If `false`, a final cluster snapshot is created before
-#' the cluster is deleted.
+#' @param SkipFinalClusterSnapshot Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If `true`, a final cluster snapshot is not created. If `false`, a final cluster snapshot is created before the cluster is deleted.
 #' 
-#' The *FinalClusterSnapshotIdentifier* parameter must be specified if
-#' *SkipFinalClusterSnapshot* is `false`.
+#' The *FinalClusterSnapshotIdentifier* parameter must be specified if *SkipFinalClusterSnapshot* is `false`.
 #' 
 #' Default: `false`
-#' @param FinalClusterSnapshotIdentifier The identifier of the final snapshot that is to be created immediately
-#' before deleting the cluster. If this parameter is provided,
-#' *SkipFinalClusterSnapshot* must be `false`.
+#' @param FinalClusterSnapshotIdentifier The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, *SkipFinalClusterSnapshot* must be `false`.
 #' 
 #' Constraints:
 #' 
@@ -1660,8 +1420,7 @@ redshift_delete_authentication_profile <- function(AuthenticationProfileName) {
 #' -   First character must be a letter.
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
-#' @param FinalClusterSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is
-#' -1, the manual snapshot is retained indefinitely.
+#' @param FinalClusterSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
 #' 
@@ -1766,12 +1525,8 @@ redshift_delete_cluster_security_group <- function(ClusterSecurityGroupName) {
 #'
 #' @param SnapshotIdentifier &#91;required&#93; The unique identifier of the manual snapshot to be deleted.
 #' 
-#' Constraints: Must be the name of an existing snapshot that is in the
-#' `available`, `failed`, or `cancelled` state.
-#' @param SnapshotClusterIdentifier The unique identifier of the cluster the snapshot was created from. This
-#' parameter is required if your IAM user has a policy containing a
-#' snapshot resource element that specifies anything other than * for the
-#' cluster name.
+#' Constraints: Must be the name of an existing snapshot that is in the `available`, `failed`, or `cancelled` state.
+#' @param SnapshotClusterIdentifier The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
 #' 
 #' Constraints: Must be the name of valid cluster.
 #'
@@ -1899,8 +1654,7 @@ redshift_delete_endpoint_access <- function(EndpointName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_delete_event_subscription/](https://www.paws-r-sdk.com/docs/redshift_delete_event_subscription/) for full documentation.
 #'
-#' @param SubscriptionName &#91;required&#93; The name of the Amazon Redshift event notification subscription to be
-#' deleted.
+#' @param SubscriptionName &#91;required&#93; The name of the Amazon Redshift event notification subscription to be deleted.
 #'
 #' @keywords internal
 #'
@@ -2026,8 +1780,7 @@ redshift_delete_integration <- function(IntegrationArn) {
 #' See [https://www.paws-r-sdk.com/docs/redshift_delete_partner/](https://www.paws-r-sdk.com/docs/redshift_delete_partner/) for full documentation.
 #'
 #' @param AccountId &#91;required&#93; The Amazon Web Services account ID that owns the cluster.
-#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster that receives data from the
-#' partner.
+#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster that receives data from the partner.
 #' @param DatabaseName &#91;required&#93; The name of the database that receives data from the partner.
 #' @param PartnerName &#91;required&#93; The name of the partner that is authorized to send data.
 #'
@@ -2091,8 +1844,7 @@ redshift_delete_redshift_idc_application <- function(RedshiftIdcApplicationArn) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_delete_resource_policy/](https://www.paws-r-sdk.com/docs/redshift_delete_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource of which its resource
-#' policy is deleted.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource of which its resource policy is deleted.
 #'
 #' @keywords internal
 #'
@@ -2216,8 +1968,7 @@ redshift_delete_snapshot_schedule <- function(ScheduleIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_delete_tags/](https://www.paws-r-sdk.com/docs/redshift_delete_tags/) for full documentation.
 #'
-#' @param ResourceName &#91;required&#93; The Amazon Resource Name (ARN) from which you want to remove the tag or
-#' tags. For example, `arn:aws:redshift:us-east-2:123456789:cluster:t1`.
+#' @param ResourceName &#91;required&#93; The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, `arn:aws:redshift:us-east-2:123456789:cluster:t1`.
 #' @param TagKeys &#91;required&#93; The tag key that you want to delete.
 #'
 #' @keywords internal
@@ -2281,10 +2032,8 @@ redshift_delete_usage_limit <- function(UsageLimitId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_deregister_namespace/](https://www.paws-r-sdk.com/docs/redshift_deregister_namespace/) for full documentation.
 #'
-#' @param NamespaceIdentifier &#91;required&#93; The unique identifier of the cluster or serverless namespace that you
-#' want to deregister.
-#' @param ConsumerIdentifiers &#91;required&#93; An array containing the ID of the consumer account that you want to
-#' deregister the cluster or serverless namespace from.
+#' @param NamespaceIdentifier &#91;required&#93; The unique identifier of the cluster or serverless namespace that you want to deregister.
+#' @param ConsumerIdentifiers &#91;required&#93; An array containing the ID of the consumer account that you want to deregister the cluster or serverless namespace from.
 #'
 #' @keywords internal
 #'
@@ -2346,8 +2095,7 @@ redshift_describe_account_attributes <- function(AttributeNames = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_authentication_profiles/](https://www.paws-r-sdk.com/docs/redshift_describe_authentication_profiles/) for full documentation.
 #'
-#' @param AuthenticationProfileName The name of the authentication profile to describe. If not specified
-#' then all authentication profiles owned by the account are listed.
+#' @param AuthenticationProfileName The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.
 #'
 #' @keywords internal
 #'
@@ -2378,28 +2126,15 @@ redshift_describe_authentication_profiles <- function(AuthenticationProfileName 
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_cluster_db_revisions/](https://www.paws-r-sdk.com/docs/redshift_describe_cluster_db_revisions/) for full documentation.
 #'
-#' @param ClusterIdentifier A unique identifier for a cluster whose `ClusterDbRevisions` you are
-#' requesting. This parameter is case sensitive. All clusters defined for
-#' an account are returned by default.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified MaxRecords
-#' value, a value is returned in the `marker` field of the response. You
-#' can retrieve the next set of response records by providing the returned
-#' `marker` value in the `marker` parameter and retrying the request.
+#' @param ClusterIdentifier A unique identifier for a cluster whose `ClusterDbRevisions` you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the `marker` field of the response. You can retrieve the next set of response records by providing the returned `marker` value in the `marker` parameter and retrying the request.
 #' 
 #' Default: 100
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point for returning a
-#' set of response records. When the results of a
-#' [`describe_cluster_db_revisions`][redshift_describe_cluster_db_revisions]
-#' request exceed the value specified in `MaxRecords`, Amazon Redshift
-#' returns a value in the `marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned `marker`
-#' value in the `marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point for returning a set of response records. When the results of a [`describe_cluster_db_revisions`][redshift_describe_cluster_db_revisions] request exceed the value specified in `MaxRecords`, Amazon Redshift returns a value in the `marker` field of the response. You can retrieve the next set of response records by providing the returned `marker` value in the `marker` parameter and retrying the request.
 #' 
-#' Constraints: You can specify either the `ClusterIdentifier` parameter,
-#' or the `marker` parameter, but not both.
+#' Constraints: You can specify either the `ClusterIdentifier` parameter, or the `marker` parameter, but not both.
 #'
 #' @keywords internal
 #'
@@ -2431,39 +2166,15 @@ redshift_describe_cluster_db_revisions <- function(ClusterIdentifier = NULL, Max
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_cluster_parameter_groups/](https://www.paws-r-sdk.com/docs/redshift_describe_cluster_parameter_groups/) for full documentation.
 #'
-#' @param ParameterGroupName The name of a specific parameter group for which to return details. By
-#' default, details about all parameter groups and the default parameter
-#' group are returned.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param ParameterGroupName The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_cluster_parameter_groups`][redshift_describe_cluster_parameter_groups]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param TagKeys A tag key or keys for which you want to return all matching cluster
-#' parameter groups that are associated with the specified key or keys. For
-#' example, suppose that you have parameter groups that are tagged with
-#' keys called `owner` and `environment`. If you specify both of these tag
-#' keys in the request, Amazon Redshift returns a response with the
-#' parameter groups that have either or both of these tag keys associated
-#' with them.
-#' @param TagValues A tag value or values for which you want to return all matching cluster
-#' parameter groups that are associated with the specified tag value or
-#' values. For example, suppose that you have parameter groups that are
-#' tagged with values called `admin` and `test`. If you specify both of
-#' these tag values in the request, Amazon Redshift returns a response with
-#' the parameter groups that have either or both of these tag values
-#' associated with them.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_cluster_parameter_groups`][redshift_describe_cluster_parameter_groups] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param TagKeys A tag key or keys for which you want to return all matching cluster parameter groups that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching cluster parameter groups that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -2496,29 +2207,17 @@ redshift_describe_cluster_parameter_groups <- function(ParameterGroupName = NULL
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_cluster_parameters/](https://www.paws-r-sdk.com/docs/redshift_describe_cluster_parameters/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of a cluster parameter group for which to return details.
-#' @param Source The parameter types to return. Specify `user` to show parameters that
-#' are different form the default. Similarly, specify `engine-default` to
-#' show parameters that are the same as the default parameter group.
+#' @param Source The parameter types to return. Specify `user` to show parameters that are different form the default. Similarly, specify `engine-default` to show parameters that are the same as the default parameter group.
 #' 
 #' Default: All parameter types returned.
 #' 
 #' Valid Values: `user` | `engine-default`
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_cluster_parameters`][redshift_describe_cluster_parameters]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_cluster_parameters`][redshift_describe_cluster_parameters] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -2549,43 +2248,19 @@ redshift_describe_cluster_parameters <- function(ParameterGroupName, Source = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_cluster_security_groups/](https://www.paws-r-sdk.com/docs/redshift_describe_cluster_security_groups/) for full documentation.
 #'
-#' @param ClusterSecurityGroupName The name of a cluster security group for which you are requesting
-#' details. You must specify either the **Marker** parameter or a
-#' **ClusterSecurityGroupName** parameter, but not both.
+#' @param ClusterSecurityGroupName The name of a cluster security group for which you are requesting details. You must specify either the **Marker** parameter or a **ClusterSecurityGroupName** parameter, but not both.
 #' 
 #' Example: `securitygroup1`
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_cluster_security_groups`][redshift_describe_cluster_security_groups]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_cluster_security_groups`][redshift_describe_cluster_security_groups] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #' 
-#' Constraints: You must specify either the **ClusterSecurityGroupName**
-#' parameter or the **Marker** parameter, but not both.
-#' @param TagKeys A tag key or keys for which you want to return all matching cluster
-#' security groups that are associated with the specified key or keys. For
-#' example, suppose that you have security groups that are tagged with keys
-#' called `owner` and `environment`. If you specify both of these tag keys
-#' in the request, Amazon Redshift returns a response with the security
-#' groups that have either or both of these tag keys associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching cluster
-#' security groups that are associated with the specified tag value or
-#' values. For example, suppose that you have security groups that are
-#' tagged with values called `admin` and `test`. If you specify both of
-#' these tag values in the request, Amazon Redshift returns a response with
-#' the security groups that have either or both of these tag values
-#' associated with them.
+#' Constraints: You must specify either the **ClusterSecurityGroupName** parameter or the **Marker** parameter, but not both.
+#' @param TagKeys A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -2618,76 +2293,35 @@ redshift_describe_cluster_security_groups <- function(ClusterSecurityGroupName =
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_cluster_snapshots/](https://www.paws-r-sdk.com/docs/redshift_describe_cluster_snapshots/) for full documentation.
 #'
 #' @param ClusterIdentifier The identifier of the cluster which generated the requested snapshots.
-#' @param SnapshotIdentifier The snapshot identifier of the snapshot about which to return
-#' information.
-#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the
-#' message to describe cluster snapshots.
-#' @param SnapshotType The type of snapshots for which you are requesting information. By
-#' default, snapshots of all types are returned.
+#' @param SnapshotIdentifier The snapshot identifier of the snapshot about which to return information.
+#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+#' @param SnapshotType The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.
 #' 
 #' Valid Values: `automated` | `manual`
-#' @param StartTime A value that requests only snapshots created at or after the specified
-#' time. The time value is specified in ISO 8601 format. For more
-#' information about ISO 8601, go to the [ISO8601 Wikipedia
-#' page.](https://en.wikipedia.org/wiki/ISO_8601)
+#' @param StartTime A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the [ISO8601 Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
 #' 
 #' Example: `2012-07-16T18:00:00Z`
-#' @param EndTime A time value that requests only snapshots created at or before the
-#' specified time. The time value is specified in ISO 8601 format. For more
-#' information about ISO 8601, go to the [ISO8601 Wikipedia
-#' page.](https://en.wikipedia.org/wiki/ISO_8601)
+#' @param EndTime A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the [ISO8601 Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
 #' 
 #' Example: `2012-07-16T18:00:00Z`
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_cluster_snapshots`][redshift_describe_cluster_snapshots]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param OwnerAccount The Amazon Web Services account used to create or copy the snapshot. Use
-#' this field to filter the results to snapshots owned by a particular
-#' account. To describe snapshots you own, either specify your Amazon Web
-#' Services account, or do not specify the parameter.
-#' @param TagKeys A tag key or keys for which you want to return all matching cluster
-#' snapshots that are associated with the specified key or keys. For
-#' example, suppose that you have snapshots that are tagged with keys
-#' called `owner` and `environment`. If you specify both of these tag keys
-#' in the request, Amazon Redshift returns a response with the snapshots
-#' that have either or both of these tag keys associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching cluster
-#' snapshots that are associated with the specified tag value or values.
-#' For example, suppose that you have snapshots that are tagged with values
-#' called `admin` and `test`. If you specify both of these tag values in
-#' the request, Amazon Redshift returns a response with the snapshots that
-#' have either or both of these tag values associated with them.
-#' @param ClusterExists A value that indicates whether to return snapshots only for an existing
-#' cluster. You can perform table-level restore only by using a snapshot of
-#' an existing cluster, that is, a cluster that has not been deleted.
-#' Values for this parameter work as follows:
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_cluster_snapshots`][redshift_describe_cluster_snapshots] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param OwnerAccount The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.
+#' @param TagKeys A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.
+#' @param ClusterExists A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows:
 #' 
-#' -   If `ClusterExists` is set to `true`, `ClusterIdentifier` is
-#'     required.
+#' -   If `ClusterExists` is set to `true`, `ClusterIdentifier` is required.
 #' 
-#' -   If `ClusterExists` is set to `false` and `ClusterIdentifier` isn't
-#'     specified, all snapshots associated with deleted clusters (orphaned
-#'     snapshots) are returned.
+#' -   If `ClusterExists` is set to `false` and `ClusterIdentifier` isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned.
 #' 
-#' -   If `ClusterExists` is set to `false` and `ClusterIdentifier` is
-#'     specified for a deleted cluster, snapshots associated with that
-#'     cluster are returned.
+#' -   If `ClusterExists` is set to `false` and `ClusterIdentifier` is specified for a deleted cluster, snapshots associated with that cluster are returned.
 #' 
-#' -   If `ClusterExists` is set to `false` and `ClusterIdentifier` is
-#'     specified for an existing cluster, no snapshots are returned.
+#' -   If `ClusterExists` is set to `false` and `ClusterIdentifier` is specified for an existing cluster, no snapshots are returned.
 #' @param SortingEntities 
 #'
 #' @keywords internal
@@ -2721,35 +2355,14 @@ redshift_describe_cluster_snapshots <- function(ClusterIdentifier = NULL, Snapsh
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_cluster_subnet_groups/](https://www.paws-r-sdk.com/docs/redshift_describe_cluster_subnet_groups/) for full documentation.
 #'
 #' @param ClusterSubnetGroupName The name of the cluster subnet group for which information is requested.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_cluster_subnet_groups`][redshift_describe_cluster_subnet_groups]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param TagKeys A tag key or keys for which you want to return all matching cluster
-#' subnet groups that are associated with the specified key or keys. For
-#' example, suppose that you have subnet groups that are tagged with keys
-#' called `owner` and `environment`. If you specify both of these tag keys
-#' in the request, Amazon Redshift returns a response with the subnet
-#' groups that have either or both of these tag keys associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching cluster
-#' subnet groups that are associated with the specified tag value or
-#' values. For example, suppose that you have subnet groups that are tagged
-#' with values called `admin` and `test`. If you specify both of these tag
-#' values in the request, Amazon Redshift returns a response with the
-#' subnet groups that have either or both of these tag values associated
-#' with them.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_cluster_subnet_groups`][redshift_describe_cluster_subnet_groups] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param TagKeys A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -2782,13 +2395,7 @@ redshift_describe_cluster_subnet_groups <- function(ClusterSubnetGroupName = NUL
 #'
 #' @param MaintenanceTrackName The name of the maintenance track.
 #' @param MaxRecords An integer value for the maximum number of maintenance tracks to return.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_cluster_tracks`][redshift_describe_cluster_tracks] request
-#' exceed the value specified in `MaxRecords`, Amazon Redshift returns a
-#' value in the `Marker` field of the response. You can retrieve the next
-#' set of response records by providing the returned marker value in the
-#' `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_cluster_tracks`][redshift_describe_cluster_tracks] request exceed the value specified in `MaxRecords`, Amazon Redshift returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -2822,8 +2429,7 @@ redshift_describe_cluster_tracks <- function(MaintenanceTrackName = NULL, MaxRec
 #' @param ClusterVersion The specific cluster version to return.
 #' 
 #' Example: `1.0`
-#' @param ClusterParameterGroupFamily The name of a specific cluster parameter group family to return details
-#' for.
+#' @param ClusterParameterGroupFamily The name of a specific cluster parameter group family to return details for.
 #' 
 #' Constraints:
 #' 
@@ -2832,22 +2438,12 @@ redshift_describe_cluster_tracks <- function(MaintenanceTrackName = NULL, MaxRec
 #' -   First character must be a letter
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_cluster_versions`][redshift_describe_cluster_versions]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_cluster_versions`][redshift_describe_cluster_versions] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -2880,41 +2476,19 @@ redshift_describe_cluster_versions <- function(ClusterVersion = NULL, ClusterPar
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_clusters/](https://www.paws-r-sdk.com/docs/redshift_describe_clusters/) for full documentation.
 #'
-#' @param ClusterIdentifier The unique identifier of a cluster whose properties you are requesting.
-#' This parameter is case sensitive.
+#' @param ClusterIdentifier The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.
 #' 
 #' The default is that all clusters defined for an account are returned.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_clusters`][redshift_describe_clusters] request exceed the
-#' value specified in `MaxRecords`, Amazon Web Services returns a value in
-#' the `Marker` field of the response. You can retrieve the next set of
-#' response records by providing the returned marker value in the `Marker`
-#' parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_clusters`][redshift_describe_clusters] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #' 
-#' Constraints: You can specify either the **ClusterIdentifier** parameter
-#' or the **Marker** parameter, but not both.
-#' @param TagKeys A tag key or keys for which you want to return all matching clusters
-#' that are associated with the specified key or keys. For example, suppose
-#' that you have clusters that are tagged with keys called `owner` and
-#' `environment`. If you specify both of these tag keys in the request,
-#' Amazon Redshift returns a response with the clusters that have either or
-#' both of these tag keys associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching clusters
-#' that are associated with the specified tag value or values. For example,
-#' suppose that you have clusters that are tagged with values called
-#' `admin` and `test`. If you specify both of these tag values in the
-#' request, Amazon Redshift returns a response with the clusters that have
-#' either or both of these tag values associated with them.
+#' Constraints: You can specify either the **ClusterIdentifier** parameter or the **Marker** parameter, but not both.
+#' @param TagKeys A tag key or keys for which you want to return all matching clusters that are associated with the specified key or keys. For example, suppose that you have clusters that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching clusters that are associated with the specified tag value or values. For example, suppose that you have clusters that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -2946,8 +2520,7 @@ redshift_describe_clusters <- function(ClusterIdentifier = NULL, MaxRecords = NU
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_custom_domain_associations/](https://www.paws-r-sdk.com/docs/redshift_describe_custom_domain_associations/) for full documentation.
 #'
 #' @param CustomDomainName The custom domain name for the custom domain association.
-#' @param CustomDomainCertificateArn The certificate Amazon Resource Name (ARN) for the custom domain
-#' association.
+#' @param CustomDomainCertificateArn The certificate Amazon Resource Name (ARN) for the custom domain association.
 #' @param MaxRecords The maximum records setting for the associated custom domain.
 #' @param Marker The marker for the custom domain association.
 #'
@@ -2982,18 +2555,8 @@ redshift_describe_custom_domain_associations <- function(CustomDomainName = NULL
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_data_shares/](https://www.paws-r-sdk.com/docs/redshift_describe_data_shares/) for full documentation.
 #'
 #' @param DataShareArn The Amazon resource name (ARN) of the datashare to describe details of.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_data_shares`][redshift_describe_data_shares] request exceed
-#' the value specified in `MaxRecords`, Amazon Web Services returns a value
-#' in the `Marker` field of the response. You can retrieve the next set of
-#' response records by providing the returned marker value in the `Marker`
-#' parameter and retrying the request.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_data_shares`][redshift_describe_data_shares] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3025,23 +2588,10 @@ redshift_describe_data_shares <- function(DataShareArn = NULL, MaxRecords = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_data_shares_for_consumer/](https://www.paws-r-sdk.com/docs/redshift_describe_data_shares_for_consumer/) for full documentation.
 #'
-#' @param ConsumerArn The Amazon Resource Name (ARN) of the consumer namespace that returns in
-#' the list of datashares.
-#' @param Status An identifier giving the status of a datashare in the consumer cluster.
-#' If this field is specified, Amazon Redshift returns the list of
-#' datashares that have the specified status.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_data_shares_for_consumer`][redshift_describe_data_shares_for_consumer]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param ConsumerArn The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.
+#' @param Status An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_data_shares_for_consumer`][redshift_describe_data_shares_for_consumer] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3073,23 +2623,10 @@ redshift_describe_data_shares_for_consumer <- function(ConsumerArn = NULL, Statu
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_data_shares_for_producer/](https://www.paws-r-sdk.com/docs/redshift_describe_data_shares_for_producer/) for full documentation.
 #'
-#' @param ProducerArn The Amazon Resource Name (ARN) of the producer namespace that returns in
-#' the list of datashares.
-#' @param Status An identifier giving the status of a datashare in the producer. If this
-#' field is specified, Amazon Redshift returns the list of datashares that
-#' have the specified status.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_data_shares_for_producer`][redshift_describe_data_shares_for_producer]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param ProducerArn The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
+#' @param Status An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_data_shares_for_producer`][redshift_describe_data_shares_for_producer] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3122,22 +2659,12 @@ redshift_describe_data_shares_for_producer <- function(ProducerArn = NULL, Statu
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_default_cluster_parameters/](https://www.paws-r-sdk.com/docs/redshift_describe_default_cluster_parameters/) for full documentation.
 #'
 #' @param ParameterGroupFamily &#91;required&#93; The name of the cluster parameter group family.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_default_cluster_parameters`][redshift_describe_default_cluster_parameters]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_default_cluster_parameters`][redshift_describe_default_cluster_parameters] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3172,15 +2699,8 @@ redshift_describe_default_cluster_parameters <- function(ParameterGroupFamily, M
 #' @param ResourceOwner The Amazon Web Services account ID of the owner of the cluster.
 #' @param EndpointName The name of the endpoint to be described.
 #' @param VpcId The virtual private cloud (VPC) identifier with access to the cluster.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a `Marker` is included in the response so that the remaining
-#' results can be retrieved.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_endpoint_access`][redshift_describe_endpoint_access] request.
-#' If this parameter is specified, the response includes only records
-#' beyond the marker, up to the value specified by the `MaxRecords`
-#' parameter.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a `Marker` is included in the response so that the remaining results can be retrieved.
+#' @param Marker An optional pagination token provided by a previous [`describe_endpoint_access`][redshift_describe_endpoint_access] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the `MaxRecords` parameter.
 #'
 #' @keywords internal
 #'
@@ -3212,22 +2732,10 @@ redshift_describe_endpoint_access <- function(ClusterIdentifier = NULL, Resource
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_endpoint_authorization/](https://www.paws-r-sdk.com/docs/redshift_describe_endpoint_authorization/) for full documentation.
 #'
 #' @param ClusterIdentifier The cluster identifier of the cluster to access.
-#' @param Account The Amazon Web Services account ID of either the cluster owner (grantor)
-#' or grantee. If `Grantee` parameter is true, then the `Account` value is
-#' of the grantor.
-#' @param Grantee Indicates whether to check authorization from a grantor or grantee point
-#' of view. If true, Amazon Redshift returns endpoint authorizations that
-#' you've been granted. If false (default), checks authorization from a
-#' grantor point of view.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a `Marker` is included in the response so that the remaining
-#' results can be retrieved.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_endpoint_authorization`][redshift_describe_endpoint_authorization]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by the `MaxRecords`
-#' parameter.
+#' @param Account The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If `Grantee` parameter is true, then the `Account` value is of the grantor.
+#' @param Grantee Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a `Marker` is included in the response so that the remaining results can be retrieved.
+#' @param Marker An optional pagination token provided by a previous [`describe_endpoint_authorization`][redshift_describe_endpoint_authorization] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the `MaxRecords` parameter.
 #'
 #' @keywords internal
 #'
@@ -3259,11 +2767,9 @@ redshift_describe_endpoint_authorization <- function(ClusterIdentifier = NULL, A
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_event_categories/](https://www.paws-r-sdk.com/docs/redshift_describe_event_categories/) for full documentation.
 #'
-#' @param SourceType The source type, such as cluster or parameter group, to which the
-#' described event categories apply.
+#' @param SourceType The source type, such as cluster or parameter group, to which the described event categories apply.
 #' 
-#' Valid values: cluster, cluster-snapshot, cluster-parameter-group,
-#' cluster-security-group, and scheduled-action.
+#' Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.
 #'
 #' @keywords internal
 #'
@@ -3295,37 +2801,15 @@ redshift_describe_event_categories <- function(SourceType = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_event_subscriptions/](https://www.paws-r-sdk.com/docs/redshift_describe_event_subscriptions/) for full documentation.
 #'
-#' @param SubscriptionName The name of the Amazon Redshift event notification subscription to be
-#' described.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param SubscriptionName The name of the Amazon Redshift event notification subscription to be described.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a DescribeEventSubscriptions
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param TagKeys A tag key or keys for which you want to return all matching event
-#' notification subscriptions that are associated with the specified key or
-#' keys. For example, suppose that you have subscriptions that are tagged
-#' with keys called `owner` and `environment`. If you specify both of these
-#' tag keys in the request, Amazon Redshift returns a response with the
-#' subscriptions that have either or both of these tag keys associated with
-#' them.
-#' @param TagValues A tag value or values for which you want to return all matching event
-#' notification subscriptions that are associated with the specified tag
-#' value or values. For example, suppose that you have subscriptions that
-#' are tagged with values called `admin` and `test`. If you specify both of
-#' these tag values in the request, Amazon Redshift returns a response with
-#' the subscriptions that have either or both of these tag values
-#' associated with them.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a DescribeEventSubscriptions request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param TagKeys A tag key or keys for which you want to return all matching event notification subscriptions that are associated with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching event notification subscriptions that are associated with the specified tag value or values. For example, suppose that you have subscriptions that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -3357,9 +2841,7 @@ redshift_describe_event_subscriptions <- function(SubscriptionName = NULL, MaxRe
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_events/](https://www.paws-r-sdk.com/docs/redshift_describe_events/) for full documentation.
 #'
-#' @param SourceIdentifier The identifier of the event source for which events will be returned. If
-#' this parameter is not specified, then all sources are included in the
-#' response.
+#' @param SourceIdentifier The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in the response.
 #' 
 #' Constraints:
 #' 
@@ -3367,16 +2849,12 @@ redshift_describe_event_subscriptions <- function(SubscriptionName = NULL, MaxRe
 #' 
 #' -   Specify a cluster identifier when *SourceType* is `cluster`.
 #' 
-#' -   Specify a cluster security group name when *SourceType* is
-#'     `cluster-security-group`.
+#' -   Specify a cluster security group name when *SourceType* is `cluster-security-group`.
 #' 
-#' -   Specify a cluster parameter group name when *SourceType* is
-#'     `cluster-parameter-group`.
+#' -   Specify a cluster parameter group name when *SourceType* is `cluster-parameter-group`.
 #' 
-#' -   Specify a cluster snapshot identifier when *SourceType* is
-#'     `cluster-snapshot`.
-#' @param SourceType The event source to retrieve events for. If no value is specified, all
-#' events are returned.
+#' -   Specify a cluster snapshot identifier when *SourceType* is `cluster-snapshot`.
+#' @param SourceType The event source to retrieve events for. If no value is specified, all events are returned.
 #' 
 #' Constraints:
 #' 
@@ -3384,46 +2862,26 @@ redshift_describe_event_subscriptions <- function(SubscriptionName = NULL, MaxRe
 #' 
 #' -   Specify `cluster` when *SourceIdentifier* is a cluster identifier.
 #' 
-#' -   Specify `cluster-security-group` when *SourceIdentifier* is a
-#'     cluster security group name.
+#' -   Specify `cluster-security-group` when *SourceIdentifier* is a cluster security group name.
 #' 
-#' -   Specify `cluster-parameter-group` when *SourceIdentifier* is a
-#'     cluster parameter group name.
+#' -   Specify `cluster-parameter-group` when *SourceIdentifier* is a cluster parameter group name.
 #' 
-#' -   Specify `cluster-snapshot` when *SourceIdentifier* is a cluster
-#'     snapshot identifier.
-#' @param StartTime The beginning of the time interval to retrieve events for, specified in
-#' ISO 8601 format. For more information about ISO 8601, go to the [ISO8601
-#' Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
+#' -   Specify `cluster-snapshot` when *SourceIdentifier* is a cluster snapshot identifier.
+#' @param StartTime The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the [ISO8601 Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
 #' 
 #' Example: `2009-07-08T18:00Z`
-#' @param EndTime The end of the time interval for which to retrieve events, specified in
-#' ISO 8601 format. For more information about ISO 8601, go to the [ISO8601
-#' Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
+#' @param EndTime The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the [ISO8601 Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
 #' 
 #' Example: `2009-07-08T18:00Z`
-#' @param Duration The number of minutes prior to the time of the request for which to
-#' retrieve events. For example, if the request is sent at 18:00 and you
-#' specify a duration of 60, then only events which have occurred after
-#' 17:00 will be returned.
+#' @param Duration The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you specify a duration of 60, then only events which have occurred after 17:00 will be returned.
 #' 
 #' Default: `60`
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_events`][redshift_describe_events] request exceed the value
-#' specified in `MaxRecords`, Amazon Web Services returns a value in the
-#' `Marker` field of the response. You can retrieve the next set of
-#' response records by providing the returned marker value in the `Marker`
-#' parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_events`][redshift_describe_events] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3454,39 +2912,15 @@ redshift_describe_events <- function(SourceIdentifier = NULL, SourceType = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_hsm_client_certificates/](https://www.paws-r-sdk.com/docs/redshift_describe_hsm_client_certificates/) for full documentation.
 #'
-#' @param HsmClientCertificateIdentifier The identifier of a specific HSM client certificate for which you want
-#' information. If no identifier is specified, information is returned for
-#' all HSM client certificates owned by your Amazon Web Services account.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param HsmClientCertificateIdentifier The identifier of a specific HSM client certificate for which you want information. If no identifier is specified, information is returned for all HSM client certificates owned by your Amazon Web Services account.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_hsm_client_certificates`][redshift_describe_hsm_client_certificates]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param TagKeys A tag key or keys for which you want to return all matching HSM client
-#' certificates that are associated with the specified key or keys. For
-#' example, suppose that you have HSM client certificates that are tagged
-#' with keys called `owner` and `environment`. If you specify both of these
-#' tag keys in the request, Amazon Redshift returns a response with the HSM
-#' client certificates that have either or both of these tag keys
-#' associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching HSM
-#' client certificates that are associated with the specified tag value or
-#' values. For example, suppose that you have HSM client certificates that
-#' are tagged with values called `admin` and `test`. If you specify both of
-#' these tag values in the request, Amazon Redshift returns a response with
-#' the HSM client certificates that have either or both of these tag values
-#' associated with them.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_hsm_client_certificates`][redshift_describe_hsm_client_certificates] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param TagKeys A tag key or keys for which you want to return all matching HSM client certificates that are associated with the specified key or keys. For example, suppose that you have HSM client certificates that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching HSM client certificates that are associated with the specified tag value or values. For example, suppose that you have HSM client certificates that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -3518,39 +2952,15 @@ redshift_describe_hsm_client_certificates <- function(HsmClientCertificateIdenti
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_hsm_configurations/](https://www.paws-r-sdk.com/docs/redshift_describe_hsm_configurations/) for full documentation.
 #'
-#' @param HsmConfigurationIdentifier The identifier of a specific Amazon Redshift HSM configuration to be
-#' described. If no identifier is specified, information is returned for
-#' all HSM configurations owned by your Amazon Web Services account.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param HsmConfigurationIdentifier The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_hsm_configurations`][redshift_describe_hsm_configurations]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param TagKeys A tag key or keys for which you want to return all matching HSM
-#' configurations that are associated with the specified key or keys. For
-#' example, suppose that you have HSM configurations that are tagged with
-#' keys called `owner` and `environment`. If you specify both of these tag
-#' keys in the request, Amazon Redshift returns a response with the HSM
-#' configurations that have either or both of these tag keys associated
-#' with them.
-#' @param TagValues A tag value or values for which you want to return all matching HSM
-#' configurations that are associated with the specified tag value or
-#' values. For example, suppose that you have HSM configurations that are
-#' tagged with values called `admin` and `test`. If you specify both of
-#' these tag values in the request, Amazon Redshift returns a response with
-#' the HSM configurations that have either or both of these tag values
-#' associated with them.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_hsm_configurations`][redshift_describe_hsm_configurations] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param TagKeys A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -3583,22 +2993,12 @@ redshift_describe_hsm_configurations <- function(HsmConfigurationIdentifier = NU
 #'
 #' @param IntegrationArn The Amazon Resource Name (ARN) of the inbound integration.
 #' @param TargetArn The Amazon Resource Name (ARN) of the target of an inbound integration.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_inbound_integrations`][redshift_describe_inbound_integrations]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_inbound_integrations`][redshift_describe_inbound_integrations] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3631,19 +3031,12 @@ redshift_describe_inbound_integrations <- function(IntegrationArn = NULL, Target
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_integrations/](https://www.paws-r-sdk.com/docs/redshift_describe_integrations/) for full documentation.
 #'
 #' @param IntegrationArn The unique identifier of the integration.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_integrations`][redshift_describe_integrations] request. If
-#' this parameter is specified, the response includes only records beyond
-#' the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_integrations`][redshift_describe_integrations] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #' @param Filters A filter that specifies one or more resources to return.
 #'
 #' @keywords internal
@@ -3710,34 +3103,14 @@ redshift_describe_logging_status <- function(ClusterIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_node_configuration_options/](https://www.paws-r-sdk.com/docs/redshift_describe_node_configuration_options/) for full documentation.
 #'
-#' @param ActionType &#91;required&#93; The action type to evaluate for possible node configurations. Specify
-#' "restore-cluster" to get configuration combinations based on an existing
-#' snapshot. Specify "recommend-node-config" to get configuration
-#' recommendations based on an existing cluster or snapshot. Specify
-#' "resize-cluster" to get configuration combinations for elastic resize
-#' based on an existing cluster.
-#' @param ClusterIdentifier The identifier of the cluster to evaluate for possible node
-#' configurations.
-#' @param SnapshotIdentifier The identifier of the snapshot to evaluate for possible node
-#' configurations.
-#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the
-#' message to describe node configuration.
-#' @param OwnerAccount The Amazon Web Services account used to create or copy the snapshot.
-#' Required if you are restoring a snapshot you do not own, optional if you
-#' own the snapshot.
+#' @param ActionType &#91;required&#93; The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.
+#' @param ClusterIdentifier The identifier of the cluster to evaluate for possible node configurations.
+#' @param SnapshotIdentifier The identifier of the snapshot to evaluate for possible node configurations.
+#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+#' @param OwnerAccount The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
 #' @param Filters A set of name, operator, and value items to filter the results.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_node_configuration_options`][redshift_describe_node_configuration_options]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_node_configuration_options`][redshift_describe_node_configuration_options] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `500`
 #' 
@@ -3772,31 +3145,18 @@ redshift_describe_node_configuration_options <- function(ActionType, ClusterIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_orderable_cluster_options/](https://www.paws-r-sdk.com/docs/redshift_describe_orderable_cluster_options/) for full documentation.
 #'
-#' @param ClusterVersion The version filter value. Specify this parameter to show only the
-#' available offerings matching the specified version.
+#' @param ClusterVersion The version filter value. Specify this parameter to show only the available offerings matching the specified version.
 #' 
 #' Default: All versions.
 #' 
-#' Constraints: Must be one of the version returned from
-#' [`describe_cluster_versions`][redshift_describe_cluster_versions].
-#' @param NodeType The node type filter value. Specify this parameter to show only the
-#' available offerings matching the specified node type.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' Constraints: Must be one of the version returned from [`describe_cluster_versions`][redshift_describe_cluster_versions].
+#' @param NodeType The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_orderable_cluster_options`][redshift_describe_orderable_cluster_options]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_orderable_cluster_options`][redshift_describe_orderable_cluster_options] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3828,13 +3188,9 @@ redshift_describe_orderable_cluster_options <- function(ClusterVersion = NULL, N
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_partners/](https://www.paws-r-sdk.com/docs/redshift_describe_partners/) for full documentation.
 #'
 #' @param AccountId &#91;required&#93; The Amazon Web Services account ID that owns the cluster.
-#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster whose partner integration is being
-#' described.
-#' @param DatabaseName The name of the database whose partner integration is being described.
-#' If database name is not specified, then all databases in the cluster are
-#' described.
-#' @param PartnerName The name of the partner that is being described. If partner name is not
-#' specified, then all partner integrations are described.
+#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster whose partner integration is being described.
+#' @param DatabaseName The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.
+#' @param PartnerName The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.
 #'
 #' @keywords internal
 #'
@@ -3865,19 +3221,9 @@ redshift_describe_partners <- function(AccountId, ClusterIdentifier, DatabaseNam
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_redshift_idc_applications/](https://www.paws-r-sdk.com/docs/redshift_describe_redshift_idc_applications/) for full documentation.
 #'
-#' @param RedshiftIdcApplicationArn The ARN for the Redshift application that integrates with IAM Identity
-#' Center.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified MaxRecords
-#' value, a value is returned in a marker field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param Marker A value that indicates the starting point for the next set of response
-#' records in a subsequent request. If a value is returned in a response,
-#' you can retrieve the next set of records by providing this returned
-#' marker value in the Marker parameter and retrying the command. If the
-#' Marker field is empty, all response records have been retrieved for the
-#' request.
+#' @param RedshiftIdcApplicationArn The ARN for the Redshift application that integrates with IAM Identity Center.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param Marker A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.
 #'
 #' @keywords internal
 #'
@@ -3909,21 +3255,10 @@ redshift_describe_redshift_idc_applications <- function(RedshiftIdcApplicationAr
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_reserved_node_exchange_status/](https://www.paws-r-sdk.com/docs/redshift_describe_reserved_node_exchange_status/) for full documentation.
 #'
-#' @param ReservedNodeId The identifier of the source reserved node in a reserved-node exchange
-#' request.
+#' @param ReservedNodeId The identifier of the source reserved node in a reserved-node exchange request.
 #' @param ReservedNodeExchangeRequestId The identifier of the reserved-node exchange request.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `Marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_reserved_node_exchange_status`][redshift_describe_reserved_node_exchange_status]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by the `MaxRecords`
-#' parameter. You can retrieve the next set of response records by
-#' providing the returned marker value in the `Marker` parameter and
-#' retrying the request.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `Marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param Marker An optional pagination token provided by a previous [`describe_reserved_node_exchange_status`][redshift_describe_reserved_node_exchange_status] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the `MaxRecords` parameter. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -3958,22 +3293,12 @@ redshift_describe_reserved_node_exchange_status <- function(ReservedNodeId = NUL
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_reserved_node_offerings/](https://www.paws-r-sdk.com/docs/redshift_describe_reserved_node_offerings/) for full documentation.
 #'
 #' @param ReservedNodeOfferingId The unique identifier for the offering.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_reserved_node_offerings`][redshift_describe_reserved_node_offerings]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_reserved_node_offerings`][redshift_describe_reserved_node_offerings] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -4005,22 +3330,12 @@ redshift_describe_reserved_node_offerings <- function(ReservedNodeOfferingId = N
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_reserved_nodes/](https://www.paws-r-sdk.com/docs/redshift_describe_reserved_nodes/) for full documentation.
 #'
 #' @param ReservedNodeId Identifier for the node reservation.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_reserved_nodes`][redshift_describe_reserved_nodes] request
-#' exceed the value specified in `MaxRecords`, Amazon Web Services returns
-#' a value in the `Marker` field of the response. You can retrieve the next
-#' set of response records by providing the returned marker value in the
-#' `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_reserved_nodes`][redshift_describe_reserved_nodes] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -4052,11 +3367,9 @@ redshift_describe_reserved_nodes <- function(ReservedNodeId = NULL, MaxRecords =
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_resize/](https://www.paws-r-sdk.com/docs/redshift_describe_resize/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of a cluster whose resize progress you are
-#' requesting. This parameter is case-sensitive.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.
 #' 
-#' By default, resize operations for all clusters defined for an Amazon Web
-#' Services account are returned.
+#' By default, resize operations for all clusters defined for an Amazon Web Services account are returned.
 #'
 #' @keywords internal
 #'
@@ -4089,25 +3402,12 @@ redshift_describe_resize <- function(ClusterIdentifier) {
 #'
 #' @param ScheduledActionName The name of the scheduled action to retrieve.
 #' @param TargetActionType The type of the scheduled actions to retrieve.
-#' @param StartTime The start time in UTC of the scheduled actions to retrieve. Only active
-#' scheduled actions that have invocations after this time are retrieved.
-#' @param EndTime The end time in UTC of the scheduled action to retrieve. Only active
-#' scheduled actions that have invocations before this time are retrieved.
-#' @param Active If true, retrieve only active scheduled actions. If false, retrieve only
-#' disabled scheduled actions.
+#' @param StartTime The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.
+#' @param EndTime The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.
+#' @param Active If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions.
 #' @param Filters List of scheduled action filters.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_scheduled_actions`][redshift_describe_scheduled_actions]
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_scheduled_actions`][redshift_describe_scheduled_actions] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
@@ -4144,36 +3444,16 @@ redshift_describe_scheduled_actions <- function(ScheduledActionName = NULL, Targ
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_snapshot_copy_grants/](https://www.paws-r-sdk.com/docs/redshift_describe_snapshot_copy_grants/) for full documentation.
 #'
 #' @param SnapshotCopyGrantName The name of the snapshot copy grant.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a `DescribeSnapshotCopyGrant`
-#' request exceed the value specified in `MaxRecords`, Amazon Web Services
-#' returns a value in the `Marker` field of the response. You can retrieve
-#' the next set of response records by providing the returned marker value
-#' in the `Marker` parameter and retrying the request.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a `DescribeSnapshotCopyGrant` request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #' 
-#' Constraints: You can specify either the **SnapshotCopyGrantName**
-#' parameter or the **Marker** parameter, but not both.
-#' @param TagKeys A tag key or keys for which you want to return all matching resources
-#' that are associated with the specified key or keys. For example, suppose
-#' that you have resources tagged with keys called `owner` and
-#' `environment`. If you specify both of these tag keys in the request,
-#' Amazon Redshift returns a response with all resources that have either
-#' or both of these tag keys associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching
-#' resources that are associated with the specified value or values. For
-#' example, suppose that you have resources tagged with values called
-#' `admin` and `test`. If you specify both of these tag values in the
-#' request, Amazon Redshift returns a response with all resources that have
-#' either or both of these tag values associated with them.
+#' Constraints: You can specify either the **SnapshotCopyGrantName** parameter or the **Marker** parameter, but not both.
+#' @param TagKeys A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -4204,22 +3484,12 @@ redshift_describe_snapshot_copy_grants <- function(SnapshotCopyGrantName = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_snapshot_schedules/](https://www.paws-r-sdk.com/docs/redshift_describe_snapshot_schedules/) for full documentation.
 #'
-#' @param ClusterIdentifier The unique identifier for the cluster whose snapshot schedules you want
-#' to view.
+#' @param ClusterIdentifier The unique identifier for the cluster whose snapshot schedules you want to view.
 #' @param ScheduleIdentifier A unique identifier for a snapshot schedule.
 #' @param TagKeys The key value for a snapshot schedule tag.
 #' @param TagValues The value corresponding to the key of the snapshot schedule tag.
-#' @param Marker A value that indicates the starting point for the next set of response
-#' records in a subsequent request. If a value is returned in a response,
-#' you can retrieve the next set of records by providing this returned
-#' marker value in the `marker` parameter and retrying the command. If the
-#' `marker` field is empty, all response records have been retrieved for
-#' the request.
-#' @param MaxRecords The maximum number or response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned `marker` value.
+#' @param Marker A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the `marker` parameter and retrying the command. If the `marker` field is empty, all response records have been retrieved for the request.
+#' @param MaxRecords The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned `marker` value.
 #'
 #' @keywords internal
 #'
@@ -4283,19 +3553,9 @@ redshift_describe_storage <- function() {
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_table_restore_status/](https://www.paws-r-sdk.com/docs/redshift_describe_table_restore_status/) for full documentation.
 #'
 #' @param ClusterIdentifier The Amazon Redshift cluster that the table is being restored to.
-#' @param TableRestoreRequestId The identifier of the table restore request to return status for. If you
-#' don't specify a `TableRestoreRequestId` value, then
-#' [`describe_table_restore_status`][redshift_describe_table_restore_status]
-#' returns the status of all in-progress table restore requests.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_table_restore_status`][redshift_describe_table_restore_status]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by the `MaxRecords`
-#' parameter.
+#' @param TableRestoreRequestId The identifier of the table restore request to return status for. If you don't specify a `TableRestoreRequestId` value, then [`describe_table_restore_status`][redshift_describe_table_restore_status] returns the status of all in-progress table restore requests.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
+#' @param Marker An optional pagination token provided by a previous [`describe_table_restore_status`][redshift_describe_table_restore_status] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the `MaxRecords` parameter.
 #'
 #' @keywords internal
 #'
@@ -4326,10 +3586,8 @@ redshift_describe_table_restore_status <- function(ClusterIdentifier = NULL, Tab
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_tags/](https://www.paws-r-sdk.com/docs/redshift_describe_tags/) for full documentation.
 #'
-#' @param ResourceName The Amazon Resource Name (ARN) for which you want to describe the tag or
-#' tags. For example, `arn:aws:redshift:us-east-2:123456789:cluster:t1`.
-#' @param ResourceType The type of resource with which you want to view tags. Valid resource
-#' types are:
+#' @param ResourceName The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, `arn:aws:redshift:us-east-2:123456789:cluster:t1`.
+#' @param ResourceType The type of resource with which you want to view tags. Valid resource types are:
 #' 
 #' -   Cluster
 #' 
@@ -4353,38 +3611,13 @@ redshift_describe_table_restore_status <- function(ClusterIdentifier = NULL, Tab
 #' 
 #' -   Integration (zero-ETL integration or S3 event integration)
 #' 
-#'     To describe the tags associated with an `integration`, don't specify
-#'     `ResourceType`, instead specify the `ResourceName` of the
-#'     integration.
+#'     To describe the tags associated with an `integration`, don't specify `ResourceType`, instead specify the `ResourceName` of the integration.
 #' 
-#' For more information about Amazon Redshift resource types and
-#' constructing ARNs, go to [Specifying Policy Elements: Actions, Effects,
-#' Resources, and
-#' Principals](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions)
-#' in the Amazon Redshift Cluster Management Guide.
-#' @param MaxRecords The maximum number or response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned `marker` value.
-#' @param Marker A value that indicates the starting point for the next set of response
-#' records in a subsequent request. If a value is returned in a response,
-#' you can retrieve the next set of records by providing this returned
-#' marker value in the `marker` parameter and retrying the command. If the
-#' `marker` field is empty, all response records have been retrieved for
-#' the request.
-#' @param TagKeys A tag key or keys for which you want to return all matching resources
-#' that are associated with the specified key or keys. For example, suppose
-#' that you have resources tagged with keys called `owner` and
-#' `environment`. If you specify both of these tag keys in the request,
-#' Amazon Redshift returns a response with all resources that have either
-#' or both of these tag keys associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching
-#' resources that are associated with the specified value or values. For
-#' example, suppose that you have resources tagged with values called
-#' `admin` and `test`. If you specify both of these tag values in the
-#' request, Amazon Redshift returns a response with all resources that have
-#' either or both of these tag values associated with them.
+#' For more information about Amazon Redshift resource types and constructing ARNs, go to [Specifying Policy Elements: Actions, Effects, Resources, and Principals](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions) in the Amazon Redshift Cluster Management Guide.
+#' @param MaxRecords The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned `marker` value.
+#' @param Marker A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the `marker` parameter and retrying the command. If the `marker` field is empty, all response records have been retrieved for the request.
+#' @param TagKeys A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -4416,38 +3649,16 @@ redshift_describe_tags <- function(ResourceName = NULL, ResourceType = NULL, Max
 #' See [https://www.paws-r-sdk.com/docs/redshift_describe_usage_limits/](https://www.paws-r-sdk.com/docs/redshift_describe_usage_limits/) for full documentation.
 #'
 #' @param UsageLimitId The identifier of the usage limit to describe.
-#' @param ClusterIdentifier The identifier of the cluster for which you want to describe usage
-#' limits.
+#' @param ClusterIdentifier The identifier of the cluster for which you want to describe usage limits.
 #' @param FeatureType The feature type for which you want to describe usage limits.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: minimum 20, maximum 100.
-#' @param Marker An optional parameter that specifies the starting point to return a set
-#' of response records. When the results of a
-#' [`describe_usage_limits`][redshift_describe_usage_limits] request exceed
-#' the value specified in `MaxRecords`, Amazon Web Services returns a value
-#' in the `Marker` field of the response. You can retrieve the next set of
-#' response records by providing the returned marker value in the `Marker`
-#' parameter and retrying the request.
-#' @param TagKeys A tag key or keys for which you want to return all matching usage limit
-#' objects that are associated with the specified key or keys. For example,
-#' suppose that you have parameter groups that are tagged with keys called
-#' `owner` and `environment`. If you specify both of these tag keys in the
-#' request, Amazon Redshift returns a response with the usage limit objects
-#' have either or both of these tag keys associated with them.
-#' @param TagValues A tag value or values for which you want to return all matching usage
-#' limit objects that are associated with the specified tag value or
-#' values. For example, suppose that you have parameter groups that are
-#' tagged with values called `admin` and `test`. If you specify both of
-#' these tag values in the request, Amazon Redshift returns a response with
-#' the usage limit objects that have either or both of these tag values
-#' associated with them.
+#' @param Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a [`describe_usage_limits`][redshift_describe_usage_limits] request exceed the value specified in `MaxRecords`, Amazon Web Services returns a value in the `Marker` field of the response. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
+#' @param TagKeys A tag key or keys for which you want to return all matching usage limit objects that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called `owner` and `environment`. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the usage limit objects have either or both of these tag keys associated with them.
+#' @param TagValues A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called `admin` and `test`. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.
 #'
 #' @keywords internal
 #'
@@ -4513,11 +3724,9 @@ redshift_disable_logging <- function(ClusterIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_disable_snapshot_copy/](https://www.paws-r-sdk.com/docs/redshift_disable_snapshot_copy/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the source cluster that you want to disable
-#' copying of snapshots to a destination region.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.
 #' 
-#' Constraints: Must be the valid name of an existing cluster that has
-#' cross-region snapshot copy enabled.
+#' Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
 #'
 #' @keywords internal
 #'
@@ -4549,15 +3758,10 @@ redshift_disable_snapshot_copy <- function(ClusterIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_disassociate_data_share_consumer/](https://www.paws-r-sdk.com/docs/redshift_disassociate_data_share_consumer/) for full documentation.
 #'
-#' @param DataShareArn &#91;required&#93; The Amazon Resource Name (ARN) of the datashare to remove association
-#' for.
-#' @param DisassociateEntireAccount A value that specifies whether association for the datashare is removed
-#' from the entire account.
-#' @param ConsumerArn The Amazon Resource Name (ARN) of the consumer namespace that
-#' association for the datashare is removed from.
-#' @param ConsumerRegion From a datashare consumer account, removes association of a datashare
-#' from all the existing and future namespaces in the specified Amazon Web
-#' Services Region.
+#' @param DataShareArn &#91;required&#93; The Amazon Resource Name (ARN) of the datashare to remove association for.
+#' @param DisassociateEntireAccount A value that specifies whether association for the datashare is removed from the entire account.
+#' @param ConsumerArn The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.
+#' @param ConsumerRegion From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.
 #'
 #' @keywords internal
 #'
@@ -4601,14 +3805,9 @@ redshift_disassociate_data_share_consumer <- function(DataShareArn, Disassociate
 #' -   The cluster must have read bucket and put object permissions
 #' @param S3KeyPrefix The prefix applied to the log file names.
 #' 
-#' Valid characters are any letter from any language, any whitespace
-#' character, any numeric character, and the following characters:
-#' underscore (`_`), period (`.`), colon (`:`), slash (`/`), equal (`=`),
-#' plus (`+`), backslash (`\`), hyphen (`-`), at symbol (`@@`).
-#' @param LogDestinationType The log destination type. An enum with possible values of `s3` and
-#' `cloudwatch`.
-#' @param LogExports The collection of exported log types. Possible values are
-#' `connectionlog`, `useractivitylog`, and `userlog`.
+#' Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (`_`), period (`.`), colon (`:`), slash (`/`), equal (`=`), plus (`+`), backslash (`\`), hyphen (`-`), at symbol (`@@`).
+#' @param LogDestinationType The log destination type. An enum with possible values of `s3` and `cloudwatch`.
+#' @param LogExports The collection of exported log types. Possible values are `connectionlog`, `useractivitylog`, and `userlog`.
 #'
 #' @keywords internal
 #'
@@ -4642,27 +3841,17 @@ redshift_enable_logging <- function(ClusterIdentifier, BucketName = NULL, S3KeyP
 #'
 #' @param ClusterIdentifier &#91;required&#93; The unique identifier of the source cluster to copy snapshots from.
 #' 
-#' Constraints: Must be the valid name of an existing cluster that does not
-#' already have cross-region snapshot copy enabled.
-#' @param DestinationRegion &#91;required&#93; The destination Amazon Web Services Region that you want to copy
-#' snapshots to.
+#' Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.
+#' @param DestinationRegion &#91;required&#93; The destination Amazon Web Services Region that you want to copy snapshots to.
 #' 
-#' Constraints: Must be the name of a valid Amazon Web Services Region. For
-#' more information, see [Regions and
-#' Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region)
-#' in the Amazon Web Services General Reference.
-#' @param RetentionPeriod The number of days to retain automated snapshots in the destination
-#' region after they are copied from the source region.
+#' Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region) in the Amazon Web Services General Reference.
+#' @param RetentionPeriod The number of days to retain automated snapshots in the destination region after they are copied from the source region.
 #' 
 #' Default: 7.
 #' 
 #' Constraints: Must be at least 1 and no more than 35.
-#' @param SnapshotCopyGrantName The name of the snapshot copy grant to use when snapshots of an Amazon
-#' Web Services KMS-encrypted cluster are copied to the destination region.
-#' @param ManualSnapshotRetentionPeriod The number of days to retain newly copied snapshots in the destination
-#' Amazon Web Services Region after they are copied from the source Amazon
-#' Web Services Region. If the value is -1, the manual snapshot is retained
-#' indefinitely.
+#' @param SnapshotCopyGrantName The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.
+#' @param ManualSnapshotRetentionPeriod The number of days to retain newly copied snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. If the value is -1, the manual snapshot is retained indefinitely.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
 #'
@@ -4696,8 +3885,7 @@ redshift_enable_snapshot_copy <- function(ClusterIdentifier, DestinationRegion, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_failover_primary_compute/](https://www.paws-r-sdk.com/docs/redshift_failover_primary_compute/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster for which the primary compute unit
-#' will be failed over to another Availability Zone.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone.
 #'
 #' @keywords internal
 #'
@@ -4729,82 +3917,54 @@ redshift_failover_primary_compute <- function(ClusterIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_get_cluster_credentials/](https://www.paws-r-sdk.com/docs/redshift_get_cluster_credentials/) for full documentation.
 #'
-#' @param DbUser &#91;required&#93; The name of a database user. If a user name matching `DbUser` exists in
-#' the database, the temporary user credentials have the same permissions
-#' as the existing user. If `DbUser` doesn't exist in the database and
-#' `Autocreate` is `True`, a new user is created using the value for
-#' `DbUser` with PUBLIC permissions. If a database user matching the value
-#' for `DbUser` doesn't exist and `Autocreate` is `False`, then the command
-#' succeeds but the connection attempt will fail because the user doesn't
-#' exist in the database.
+#' @param DbUser &#91;required&#93; The name of a database user. If a user name matching `DbUser` exists in the database, the temporary user credentials have the same permissions as the existing user. If `DbUser` doesn't exist in the database and `Autocreate` is `True`, a new user is created using the value for `DbUser` with PUBLIC permissions. If a database user matching the value for `DbUser` doesn't exist and `Autocreate` is `False`, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.
 #' 
-#' For more information, see [CREATE
-#' USER](https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html)
-#' in the Amazon Redshift Database Developer Guide.
+#' For more information, see [CREATE USER](https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html) in the Amazon Redshift Database Developer Guide.
 #' 
 #' Constraints:
 #' 
-#' -   Must be 1 to 64 alphanumeric characters or hyphens. The user name
-#'     can't be `PUBLIC`.
+#' -   Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be `PUBLIC`.
 #' 
-#' -   Must contain uppercase or lowercase letters, numbers, underscore,
-#'     plus sign, period (dot), at symbol (@@), or hyphen.
+#' -   Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@@), or hyphen.
 #' 
 #' -   First character must be a letter.
 #' 
 #' -   Must not contain a colon ( : ) or slash ( / ).
 #' 
-#' -   Cannot be a reserved word. A list of reserved words can be found in
-#'     [Reserved
-#'     Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html)
-#'     in the Amazon Redshift Database Developer Guide.
-#' @param DbName The name of a database that `DbUser` is authorized to log on to. If
-#' `DbName` is not specified, `DbUser` can log on to any existing database.
+#' -   Cannot be a reserved word. A list of reserved words can be found in [Reserved Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in the Amazon Redshift Database Developer Guide.
+#' @param DbName The name of a database that `DbUser` is authorized to log on to. If `DbName` is not specified, `DbUser` can log on to any existing database.
 #' 
 #' Constraints:
 #' 
 #' -   Must be 1 to 64 alphanumeric characters or hyphens
 #' 
-#' -   Must contain uppercase or lowercase letters, numbers, underscore,
-#'     plus sign, period (dot), at symbol (@@), or hyphen.
+#' -   Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@@), or hyphen.
 #' 
 #' -   First character must be a letter.
 #' 
 #' -   Must not contain a colon ( : ) or slash ( / ).
 #' 
-#' -   Cannot be a reserved word. A list of reserved words can be found in
-#'     [Reserved
-#'     Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html)
-#'     in the Amazon Redshift Database Developer Guide.
-#' @param ClusterIdentifier The unique identifier of the cluster that contains the database for
-#' which you are requesting credentials. This parameter is case sensitive.
+#' -   Cannot be a reserved word. A list of reserved words can be found in [Reserved Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in the Amazon Redshift Database Developer Guide.
+#' @param ClusterIdentifier The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.
 #' @param DurationSeconds The number of seconds until the returned temporary password expires.
 #' 
 #' Constraint: minimum 900, maximum 3600.
 #' 
 #' Default: 900
-#' @param AutoCreate Create a database user with the name specified for the user named in
-#' `DbUser` if one does not exist.
-#' @param DbGroups A list of the names of existing database groups that the user named in
-#' `DbUser` will join for the current session, in addition to any group
-#' memberships for an existing user. If not specified, a new user is added
-#' only to PUBLIC.
+#' @param AutoCreate Create a database user with the name specified for the user named in `DbUser` if one does not exist.
+#' @param DbGroups A list of the names of existing database groups that the user named in `DbUser` will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.
 #' 
 #' Database group name constraints
 #' 
 #' -   Must be 1 to 64 alphanumeric characters or hyphens
 #' 
-#' -   Must contain only lowercase letters, numbers, underscore, plus sign,
-#'     period (dot), at symbol (@@), or hyphen.
+#' -   Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@@), or hyphen.
 #' 
 #' -   First character must be a letter.
 #' 
 #' -   Must not contain a colon ( : ) or slash ( / ).
 #' 
-#' -   Cannot be a reserved word. A list of reserved words can be found in
-#'     [Reserved
-#'     Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html)
-#'     in the Amazon Redshift Database Developer Guide.
+#' -   Cannot be a reserved word. A list of reserved words can be found in [Reserved Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in the Amazon Redshift Database Developer Guide.
 #' @param CustomDomainName The custom domain name for the cluster credentials.
 #'
 #' @keywords internal
@@ -4837,12 +3997,8 @@ redshift_get_cluster_credentials <- function(DbUser, DbName = NULL, ClusterIdent
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_get_cluster_credentials_with_iam/](https://www.paws-r-sdk.com/docs/redshift_get_cluster_credentials_with_iam/) for full documentation.
 #'
-#' @param DbName The name of the database for which you are requesting credentials. If
-#' the database name is specified, the IAM policy must allow access to the
-#' resource `dbname` for the specified database name. If the database name
-#' is not specified, access to all databases is allowed.
-#' @param ClusterIdentifier The unique identifier of the cluster that contains the database for
-#' which you are requesting credentials.
+#' @param DbName The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource `dbname` for the specified database name. If the database name is not specified, access to all databases is allowed.
+#' @param ClusterIdentifier The unique identifier of the cluster that contains the database for which you are requesting credentials.
 #' @param DurationSeconds The number of seconds until the returned temporary password expires.
 #' 
 #' Range: 900-3600. Default: 900.
@@ -4879,9 +4035,7 @@ redshift_get_cluster_credentials_with_iam <- function(DbName = NULL, ClusterIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_get_identity_center_auth_token/](https://www.paws-r-sdk.com/docs/redshift_get_identity_center_auth_token/) for full documentation.
 #'
-#' @param ClusterIds &#91;required&#93; A list of cluster identifiers that the generated token can be used with.
-#' The token will be scoped to only allow authentication to the specified
-#' clusters.
+#' @param ClusterIds &#91;required&#93; A list of cluster identifiers that the generated token can be used with. The token will be scoped to only allow authentication to the specified clusters.
 #' 
 #' Constraints:
 #' 
@@ -4899,8 +4053,7 @@ redshift_get_cluster_credentials_with_iam <- function(DbName = NULL, ClusterIden
 #' 
 #' -   Cluster identifiers must start with a letter.
 #' 
-#' -   Cluster identifiers can't end with a hyphen or contain two
-#'     consecutive hyphens.
+#' -   Cluster identifiers can't end with a hyphen or contain two consecutive hyphens.
 #'
 #' @keywords internal
 #'
@@ -4931,24 +4084,11 @@ redshift_get_identity_center_auth_token <- function(ClusterIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_get_reserved_node_exchange_configuration_options/](https://www.paws-r-sdk.com/docs/redshift_get_reserved_node_exchange_configuration_options/) for full documentation.
 #'
-#' @param ActionType &#91;required&#93; The action type of the reserved-node configuration. The action type can
-#' be an exchange initiated from either a snapshot or a resize.
-#' @param ClusterIdentifier The identifier for the cluster that is the source for a reserved-node
-#' exchange.
-#' @param SnapshotIdentifier The identifier for the snapshot that is the source for the reserved-node
-#' exchange.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified `MaxRecords`
-#' value, a value is returned in a `Marker` field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param Marker An optional pagination token provided by a previous
-#' [`get_reserved_node_exchange_configuration_options`][redshift_get_reserved_node_exchange_configuration_options]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by the `MaxRecords`
-#' parameter. You can retrieve the next set of response records by
-#' providing the returned marker value in the `Marker` parameter and
-#' retrying the request.
+#' @param ActionType &#91;required&#93; The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.
+#' @param ClusterIdentifier The identifier for the cluster that is the source for a reserved-node exchange.
+#' @param SnapshotIdentifier The identifier for the snapshot that is the source for the reserved-node exchange.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified `MaxRecords` value, a value is returned in a `Marker` field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param Marker An optional pagination token provided by a previous [`get_reserved_node_exchange_configuration_options`][redshift_get_reserved_node_exchange_configuration_options] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the `MaxRecords` parameter. You can retrieve the next set of response records by providing the returned marker value in the `Marker` parameter and retrying the request.
 #'
 #' @keywords internal
 #'
@@ -4980,12 +4120,9 @@ redshift_get_reserved_node_exchange_configuration_options <- function(ActionType
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_get_reserved_node_exchange_offerings/](https://www.paws-r-sdk.com/docs/redshift_get_reserved_node_exchange_offerings/) for full documentation.
 #'
-#' @param ReservedNodeId &#91;required&#93; A string representing the node identifier for the DC1 Reserved Node to
-#' be exchanged.
-#' @param MaxRecords An integer setting the maximum number of ReservedNodeOfferings to
-#' retrieve.
-#' @param Marker A value that indicates the starting point for the next set of
-#' ReservedNodeOfferings.
+#' @param ReservedNodeId &#91;required&#93; A string representing the node identifier for the DC1 Reserved Node to be exchanged.
+#' @param MaxRecords An integer setting the maximum number of ReservedNodeOfferings to retrieve.
+#' @param Marker A value that indicates the starting point for the next set of ReservedNodeOfferings.
 #'
 #' @keywords internal
 #'
@@ -5016,8 +4153,7 @@ redshift_get_reserved_node_exchange_offerings <- function(ReservedNodeId, MaxRec
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_get_resource_policy/](https://www.paws-r-sdk.com/docs/redshift_get_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource of which its resource
-#' policy is fetched.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource of which its resource policy is fetched.
 #'
 #' @keywords internal
 #'
@@ -5049,26 +4185,10 @@ redshift_get_resource_policy <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_list_recommendations/](https://www.paws-r-sdk.com/docs/redshift_list_recommendations/) for full documentation.
 #'
-#' @param ClusterIdentifier The unique identifier of the Amazon Redshift cluster for which the list
-#' of Advisor recommendations is returned. If the neither the cluster
-#' identifier and the cluster namespace ARN parameters are specified, then
-#' recommendations for all clusters in the account are returned.
-#' @param NamespaceArn The Amazon Redshift cluster namespace Amazon Resource Name (ARN) for
-#' which the list of Advisor recommendations is returned. If the neither
-#' the cluster identifier and the cluster namespace ARN parameters are
-#' specified, then recommendations for all clusters in the account are
-#' returned.
-#' @param MaxRecords The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified MaxRecords
-#' value, a value is returned in a marker field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param Marker A value that indicates the starting point for the next set of response
-#' records in a subsequent request. If a value is returned in a response,
-#' you can retrieve the next set of records by providing this returned
-#' marker value in the Marker parameter and retrying the command. If the
-#' Marker field is empty, all response records have been retrieved for the
-#' request.
+#' @param ClusterIdentifier The unique identifier of the Amazon Redshift cluster for which the list of Advisor recommendations is returned. If the neither the cluster identifier and the cluster namespace ARN parameters are specified, then recommendations for all clusters in the account are returned.
+#' @param NamespaceArn The Amazon Redshift cluster namespace Amazon Resource Name (ARN) for which the list of Advisor recommendations is returned. If the neither the cluster identifier and the cluster namespace ARN parameters are specified, then recommendations for all clusters in the account are returned.
+#' @param MaxRecords The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param Marker A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.
 #'
 #' @keywords internal
 #'
@@ -5100,8 +4220,7 @@ redshift_list_recommendations <- function(ClusterIdentifier = NULL, NamespaceArn
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_aqua_configuration/](https://www.paws-r-sdk.com/docs/redshift_modify_aqua_configuration/) for full documentation.
 #'
 #' @param ClusterIdentifier &#91;required&#93; The identifier of the cluster to be modified.
-#' @param AquaConfigurationStatus This parameter is retired. Amazon Redshift automatically determines
-#' whether to use AQUA (Advanced Query Accelerator).
+#' @param AquaConfigurationStatus This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
 #'
 #' @keywords internal
 #'
@@ -5133,9 +4252,7 @@ redshift_modify_aqua_configuration <- function(ClusterIdentifier, AquaConfigurat
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_authentication_profile/](https://www.paws-r-sdk.com/docs/redshift_modify_authentication_profile/) for full documentation.
 #'
 #' @param AuthenticationProfileName &#91;required&#93; The name of the authentication profile to replace.
-#' @param AuthenticationProfileContent &#91;required&#93; The new content of the authentication profile in JSON format. The
-#' maximum length of the JSON string is determined by a quota for your
-#' account.
+#' @param AuthenticationProfileContent &#91;required&#93; The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.
 #'
 #' @keywords internal
 #'
@@ -5171,36 +4288,22 @@ redshift_modify_authentication_profile <- function(AuthenticationProfileName, Au
 #' Example: `examplecluster`
 #' @param ClusterType The new cluster type.
 #' 
-#' When you submit your cluster resize request, your existing cluster goes
-#' into a read-only mode. After Amazon Redshift provisions a new cluster
-#' based on your resize requirements, there will be outage for a period
-#' while the old cluster is deleted and your connection is switched to the
-#' new cluster. You can use [`describe_resize`][redshift_describe_resize]
-#' to track the progress of the resize request.
+#' When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use [`describe_resize`][redshift_describe_resize] to track the progress of the resize request.
 #' 
 #' Valid Values: ` multi-node | single-node `
-#' @param NodeType The new node type of the cluster. If you specify a new node type, you
-#' must also specify the number of nodes parameter.
+#' @param NodeType The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.
 #' 
-#' For more information about resizing clusters, go to [Resizing Clusters
-#' in Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/)
-#' in the *Amazon Redshift Cluster Management Guide*.
+#' For more information about resizing clusters, go to [Resizing Clusters in Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/) in the *Amazon Redshift Cluster Management Guide*.
 #' 
-#' Valid Values: `dc2.large` | `dc2.8xlarge` | `ra3.large` | `ra3.xlplus` |
-#' `ra3.4xlarge` | `ra3.16xlarge`
-#' @param NumberOfNodes The new number of nodes of the cluster. If you specify a new number of
-#' nodes, you must also specify the node type parameter.
+#' Valid Values: `dc2.large` | `dc2.8xlarge`| `rg.xlarge` | `rg.4xlarge` | `ra3.large` | `ra3.xlplus` | `ra3.4xlarge` | `ra3.16xlarge`
+#' @param NumberOfNodes The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.
 #' 
-#' For more information about resizing clusters, go to [Resizing Clusters
-#' in Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/)
-#' in the *Amazon Redshift Cluster Management Guide*.
+#' For more information about resizing clusters, go to [Resizing Clusters in Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/) in the *Amazon Redshift Cluster Management Guide*.
 #' 
 #' Valid Values: Integer greater than `0`.
-#' @param ClusterSecurityGroups A list of cluster security groups to be authorized on this cluster. This
-#' change is asynchronously applied as soon as possible.
+#' @param ClusterSecurityGroups A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.
 #' 
-#' Security groups currently associated with the cluster, and not in the
-#' list of groups to apply, will be revoked from the cluster.
+#' Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.
 #' 
 #' Constraints:
 #' 
@@ -5209,20 +4312,12 @@ redshift_modify_authentication_profile <- function(AuthenticationProfileName, Au
 #' -   First character must be a letter
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens
-#' @param VpcSecurityGroupIds A list of virtual private cloud (VPC) security groups to be associated
-#' with the cluster. This change is asynchronously applied as soon as
-#' possible.
-#' @param MasterUserPassword The new password for the cluster admin user. This change is
-#' asynchronously applied as soon as possible. Between the time of the
-#' request and the completion of the request, the `MasterUserPassword`
-#' element exists in the `PendingModifiedValues` element of the operation
-#' response.
+#' @param VpcSecurityGroupIds A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.
+#' @param MasterUserPassword The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the `MasterUserPassword` element exists in the `PendingModifiedValues` element of the operation response.
 #' 
 #' You can't use `MasterUserPassword` if `ManageMasterPassword` is `true`.
 #' 
-#' Operations never return the password, so this operation provides a way
-#' to regain access to the admin user account for a cluster if the password
-#' is lost.
+#' Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.
 #' 
 #' Default: Uses existing setting.
 #' 
@@ -5236,47 +4331,29 @@ redshift_modify_authentication_profile <- function(AuthenticationProfileName, Au
 #' 
 #' -   Must contain one number.
 #' 
-#' -   Can be any printable ASCII character (ASCII code 33-126) except `\'`
-#'     (single quote), `\"` (double quote), `\`, `/`, or `@@`.
-#' @param ClusterParameterGroupName The name of the cluster parameter group to apply to this cluster. This
-#' change is applied only after the cluster is rebooted. To reboot a
-#' cluster use [`reboot_cluster`][redshift_reboot_cluster].
+#' -   Can be any printable ASCII character (ASCII code 33-126) except `\'` (single quote), `\"` (double quote), `\`, `/`, or `@@`.
+#' @param ClusterParameterGroupName The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use [`reboot_cluster`][redshift_reboot_cluster].
 #' 
 #' Default: Uses existing setting.
 #' 
-#' Constraints: The cluster parameter group must be in the same parameter
-#' group family that matches the cluster version.
-#' @param AutomatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value
-#' is 0, automated snapshots are disabled. Even if automated snapshots are
-#' disabled, you can still create manual snapshots when you want with
-#' [`create_cluster_snapshot`][redshift_create_cluster_snapshot].
+#' Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.
+#' @param AutomatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with [`create_cluster_snapshot`][redshift_create_cluster_snapshot].
 #' 
-#' If you decrease the automated snapshot retention period from its current
-#' value, existing automated snapshots that fall outside of the new
-#' retention period will be immediately deleted.
+#' If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.
 #' 
-#' You can't disable automated snapshots for RA3 node types. Set the
-#' automated retention period from 1-35 days.
+#' You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.
 #' 
 #' Default: Uses existing setting.
 #' 
 #' Constraints: Must be a value from 0 to 35.
-#' @param ManualSnapshotRetentionPeriod The default for number of days that a newly created manual snapshot is
-#' retained. If the value is -1, the manual snapshot is retained
-#' indefinitely. This value doesn't retroactively change the retention
-#' periods of existing manual snapshots.
+#' @param ManualSnapshotRetentionPeriod The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
 #' 
 #' The default value is -1.
-#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-#' occur, if necessary. If system maintenance is necessary during the
-#' window, it may result in an outage.
+#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is necessary during the window, it may result in an outage.
 #' 
-#' This maintenance window change is made immediately. If the new
-#' maintenance window indicates the current time, there must be at least
-#' 120 minutes between the current time and end of the window in order to
-#' ensure that pending changes are applied.
+#' This maintenance window change is made immediately. If the new maintenance window indicates the current time, there must be at least 120 minutes between the current time and end of the window in order to ensure that pending changes are applied.
 #' 
 #' Default: Uses existing setting.
 #' 
@@ -5287,25 +4364,14 @@ redshift_modify_authentication_profile <- function(AuthenticationProfileName, Au
 #' Constraints: Must be at least 30 minutes.
 #' @param ClusterVersion The new version number of the Amazon Redshift engine to upgrade to.
 #' 
-#' For major version upgrades, if a non-default cluster parameter group is
-#' currently in use, a new cluster parameter group in the cluster parameter
-#' group family for the new version must be specified. The new cluster
-#' parameter group can be the default for that cluster parameter group
-#' family. For more information about parameters and parameter groups, go
-#' to [Amazon Redshift Parameter
-#' Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html)
-#' in the *Amazon Redshift Cluster Management Guide*.
+#' For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to [Amazon Redshift Parameter Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html) in the *Amazon Redshift Cluster Management Guide*.
 #' 
 #' Example: `1.0`
-#' @param AllowVersionUpgrade If `true`, major version upgrades will be applied automatically to the
-#' cluster during the maintenance window.
+#' @param AllowVersionUpgrade If `true`, major version upgrades will be applied automatically to the cluster during the maintenance window.
 #' 
 #' Default: `false`
-#' @param HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
-#' cluster uses to retrieve the data encryption keys stored in an HSM.
-#' @param HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
-#' information the Amazon Redshift cluster can use to retrieve and store
-#' keys in an HSM.
+#' @param HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+#' @param HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
 #' @param NewClusterIdentifier The new identifier for the cluster.
 #' 
 #' Constraints:
@@ -5318,75 +4384,39 @@ redshift_modify_authentication_profile <- function(AuthenticationProfileName, Au
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
-#' -   Must be unique for all clusters within an Amazon Web Services
-#'     account.
+#' -   Must be unique for all clusters within an Amazon Web Services account.
 #' 
 #' Example: `examplecluster`
-#' @param PubliclyAccessible If `true`, the cluster can be accessed from a public network. Only
-#' clusters in VPCs can be set to be publicly available.
+#' @param PubliclyAccessible If `true`, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.
 #' 
 #' Default: false
 #' @param ElasticIp The Elastic IP (EIP) address for the cluster.
 #' 
-#' Constraints: The cluster must be provisioned in EC2-VPC and
-#' publicly-accessible through an Internet gateway. For more information
-#' about provisioning clusters in EC2-VPC, go to [Supported Platforms to
-#' Launch Your
-#' Cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms)
-#' in the Amazon Redshift Cluster Management Guide.
-#' @param EnhancedVpcRouting An option that specifies whether to create the cluster with enhanced VPC
-#' routing enabled. To create a cluster that uses enhanced VPC routing, the
-#' cluster must be in a VPC. For more information, see [Enhanced VPC
-#' Routing](https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html)
-#' in the Amazon Redshift Cluster Management Guide.
+#' Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to [Supported Platforms to Launch Your Cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms) in the Amazon Redshift Cluster Management Guide.
+#' @param EnhancedVpcRouting An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see [Enhanced VPC Routing](https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html) in the Amazon Redshift Cluster Management Guide.
 #' 
 #' If this option is `true`, enhanced VPC routing is enabled.
 #' 
 #' Default: false
-#' @param MaintenanceTrackName The name for the maintenance track that you want to assign for the
-#' cluster. This name change is asynchronous. The new track name stays in
-#' the `PendingModifiedValues` for the cluster until the next maintenance
-#' window. When the maintenance track changes, the cluster is switched to
-#' the latest cluster release available for the maintenance track. At this
-#' point, the maintenance track name is applied.
-#' @param Encrypted Indicates whether the cluster is encrypted. If the value is encrypted
-#' (true) and you provide a value for the `KmsKeyId` parameter, we encrypt
-#' the cluster with the provided `KmsKeyId`. If you don't provide a
-#' `KmsKeyId`, we encrypt with the default key.
+#' @param MaintenanceTrackName The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the `PendingModifiedValues` for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
+#' @param Encrypted Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the `KmsKeyId` parameter, we encrypt the cluster with the provided `KmsKeyId`. If you don't provide a `KmsKeyId`, we encrypt with the default key.
 #' 
 #' If the value is not encrypted (false), then the cluster is decrypted.
-#' @param KmsKeyId The Key Management Service (KMS) key ID of the encryption key that you
-#' want to use to encrypt data in the cluster.
-#' @param AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between
-#' Availability Zones after the cluster modification is complete.
-#' @param AvailabilityZone The option to initiate relocation for an Amazon Redshift cluster to the
-#' target Availability Zone.
+#' @param KmsKeyId The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
+#' @param AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.
+#' @param AvailabilityZone The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
 #' @param Port The option to change the port of an Amazon Redshift cluster.
 #' 
 #' Valid Values:
 #' 
-#' -   For clusters with ra3 nodes - Select a port within the ranges
-#'     `5431-5455` or `8191-8215`. (If you have an existing cluster with
-#'     ra3 nodes, it isn't required that you change the port to these
-#'     ranges.)
+#' -   For clusters with RG or RA3 nodes - Select a port within the ranges `5431-5455` or `8191-8215`. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)
 #' 
-#' -   For clusters with dc2 nodes - Select a port within the range
-#'     `1150-65535`.
-#' @param ManageMasterPassword If `true`, Amazon Redshift uses Secrets Manager to manage this cluster's
-#' admin credentials. You can't use `MasterUserPassword` if
-#' `ManageMasterPassword` is true. If `ManageMasterPassword` is false or
-#' not set, Amazon Redshift uses `MasterUserPassword` for the admin user
-#' account's password.
-#' @param MasterPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store
-#' the cluster's admin credentials secret. You can only use this parameter
-#' if `ManageMasterPassword` is true.
-#' @param IpAddressType The IP address types that the cluster supports. Possible values are
-#' `ipv4` and `dualstack`.
-#' @param MultiAZ If true and the cluster is currently only deployed in a single
-#' Availability Zone, the cluster will be modified to be deployed in two
-#' Availability Zones.
-#' @param ExtraComputeForAutomaticOptimization If `true`, allocates additional compute resources for running automatic
-#' optimization operations.
+#' -   For clusters with dc2 nodes - Select a port within the range `1150-65535`.
+#' @param ManageMasterPassword If `true`, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use `MasterUserPassword` if `ManageMasterPassword` is true. If `ManageMasterPassword` is false or not set, Amazon Redshift uses `MasterUserPassword` for the admin user account's password.
+#' @param MasterPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if `ManageMasterPassword` is true.
+#' @param IpAddressType The IP address types that the cluster supports. Possible values are `ipv4` and `dualstack`.
+#' @param MultiAZ If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.
+#' @param ExtraComputeForAutomaticOptimization If `true`, allocates additional compute resources for running automatic optimization operations.
 #' 
 #' Default: false
 #'
@@ -5419,14 +4449,10 @@ redshift_modify_cluster <- function(ClusterIdentifier, ClusterType = NULL, NodeT
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_cluster_db_revision/](https://www.paws-r-sdk.com/docs/redshift_modify_cluster_db_revision/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of a cluster whose database revision you want to
-#' modify.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of a cluster whose database revision you want to modify.
 #' 
 #' Example: `examplecluster`
-#' @param RevisionTarget &#91;required&#93; The identifier of the database revision. You can retrieve this value
-#' from the response to the
-#' [`describe_cluster_db_revisions`][redshift_describe_cluster_db_revisions]
-#' request.
+#' @param RevisionTarget &#91;required&#93; The identifier of the database revision. You can retrieve this value from the response to the [`describe_cluster_db_revisions`][redshift_describe_cluster_db_revisions] request.
 #'
 #' @keywords internal
 #'
@@ -5458,13 +4484,10 @@ redshift_modify_cluster_db_revision <- function(ClusterIdentifier, RevisionTarge
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_cluster_iam_roles/](https://www.paws-r-sdk.com/docs/redshift_modify_cluster_iam_roles/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster for which you want to associate or
-#' disassociate IAM roles.
-#' @param AddIamRoles Zero or more IAM roles to associate with the cluster. The roles must be
-#' in their Amazon Resource Name (ARN) format.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster for which you want to associate or disassociate IAM roles.
+#' @param AddIamRoles Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format.
 #' @param RemoveIamRoles Zero or more IAM roles in ARN format to disassociate from the cluster.
-#' @param DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default
-#' for the cluster when the cluster was last modified.
+#' @param DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.
 #'
 #' @keywords internal
 #'
@@ -5498,13 +4521,9 @@ redshift_modify_cluster_iam_roles <- function(ClusterIdentifier, AddIamRoles = N
 #' @param ClusterIdentifier &#91;required&#93; A unique identifier for the cluster.
 #' @param DeferMaintenance A boolean indicating whether to enable the deferred maintenance window.
 #' @param DeferMaintenanceIdentifier A unique identifier for the deferred maintenance window.
-#' @param DeferMaintenanceStartTime A timestamp indicating the start time for the deferred maintenance
-#' window.
-#' @param DeferMaintenanceEndTime A timestamp indicating end time for the deferred maintenance window. If
-#' you specify an end time, you can't specify a duration.
-#' @param DeferMaintenanceDuration An integer indicating the duration of the maintenance window in days. If
-#' you specify a duration, you can't specify an end time. The duration must
-#' be 60 days or less.
+#' @param DeferMaintenanceStartTime A timestamp indicating the start time for the deferred maintenance window.
+#' @param DeferMaintenanceEndTime A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.
+#' @param DeferMaintenanceDuration An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.
 #'
 #' @keywords internal
 #'
@@ -5536,15 +4555,11 @@ redshift_modify_cluster_maintenance <- function(ClusterIdentifier, DeferMaintena
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_cluster_parameter_group/](https://www.paws-r-sdk.com/docs/redshift_modify_cluster_parameter_group/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group to be modified.
-#' @param Parameters &#91;required&#93; An array of parameters to be modified. A maximum of 20 parameters can be
-#' modified in a single request.
+#' @param Parameters &#91;required&#93; An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.
 #' 
-#' For each parameter to be modified, you must supply at least the
-#' parameter name and parameter value; other name-value pairs of the
-#' parameter are optional.
+#' For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.
 #' 
-#' For the workload management (WLM) configuration, you must supply all the
-#' name-value pairs in the wlm_json_configuration parameter.
+#' For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.
 #'
 #' @keywords internal
 #'
@@ -5576,15 +4591,12 @@ redshift_modify_cluster_parameter_group <- function(ParameterGroupName, Paramete
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_cluster_snapshot/](https://www.paws-r-sdk.com/docs/redshift_modify_cluster_snapshot/) for full documentation.
 #'
 #' @param SnapshotIdentifier &#91;required&#93; The identifier of the snapshot whose setting you want to modify.
-#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is
-#' -1, the manual snapshot is retained indefinitely.
+#' @param ManualSnapshotRetentionPeriod The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.
 #' 
-#' If the manual snapshot falls outside of the new retention period, you
-#' can specify the force option to immediately delete the snapshot.
+#' If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
-#' @param Force A Boolean option to override an exception if the retention period has
-#' already passed.
+#' @param Force A Boolean option to override an exception if the retention period has already passed.
 #'
 #' @keywords internal
 #'
@@ -5615,12 +4627,9 @@ redshift_modify_cluster_snapshot <- function(SnapshotIdentifier, ManualSnapshotR
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_cluster_snapshot_schedule/](https://www.paws-r-sdk.com/docs/redshift_modify_cluster_snapshot_schedule/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; A unique identifier for the cluster whose snapshot schedule you want to
-#' modify.
-#' @param ScheduleIdentifier A unique alphanumeric identifier for the schedule that you want to
-#' associate with the cluster.
-#' @param DisassociateSchedule A boolean to indicate whether to remove the assoiciation between the
-#' cluster and the schedule.
+#' @param ClusterIdentifier &#91;required&#93; A unique identifier for the cluster whose snapshot schedule you want to modify.
+#' @param ScheduleIdentifier A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
+#' @param DisassociateSchedule A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.
 #'
 #' @keywords internal
 #'
@@ -5654,8 +4663,7 @@ redshift_modify_cluster_snapshot_schedule <- function(ClusterIdentifier, Schedul
 #'
 #' @param ClusterSubnetGroupName &#91;required&#93; The name of the subnet group to be modified.
 #' @param Description A text description of the subnet group to be modified.
-#' @param SubnetIds &#91;required&#93; An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-#' single request.
+#' @param SubnetIds &#91;required&#93; An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
 #'
 #' @keywords internal
 #'
@@ -5687,8 +4695,7 @@ redshift_modify_cluster_subnet_group <- function(ClusterSubnetGroupName, Descrip
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_custom_domain_association/](https://www.paws-r-sdk.com/docs/redshift_modify_custom_domain_association/) for full documentation.
 #'
 #' @param CustomDomainName &#91;required&#93; The custom domain name for a changed custom domain association.
-#' @param CustomDomainCertificateArn &#91;required&#93; The certificate Amazon Resource Name (ARN) for the changed custom domain
-#' association.
+#' @param CustomDomainCertificateArn &#91;required&#93; The certificate Amazon Resource Name (ARN) for the changed custom domain association.
 #' @param ClusterIdentifier &#91;required&#93; The identifier of the cluster to change a custom domain association for.
 #'
 #' @keywords internal
@@ -5721,8 +4728,7 @@ redshift_modify_custom_domain_association <- function(CustomDomainName, CustomDo
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_endpoint_access/](https://www.paws-r-sdk.com/docs/redshift_modify_endpoint_access/) for full documentation.
 #'
 #' @param EndpointName &#91;required&#93; The endpoint to be modified.
-#' @param VpcSecurityGroupIds The complete list of VPC security groups associated with the endpoint
-#' after the endpoint is modified.
+#' @param VpcSecurityGroupIds The complete list of VPC security groups associated with the endpoint after the endpoint is modified.
 #'
 #' @keywords internal
 #'
@@ -5753,37 +4759,23 @@ redshift_modify_endpoint_access <- function(EndpointName, VpcSecurityGroupIds = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_event_subscription/](https://www.paws-r-sdk.com/docs/redshift_modify_event_subscription/) for full documentation.
 #'
-#' @param SubscriptionName &#91;required&#93; The name of the modified Amazon Redshift event notification
-#' subscription.
-#' @param SnsTopicArn The Amazon Resource Name (ARN) of the SNS topic to be used by the event
-#' notification subscription.
-#' @param SourceType The type of source that will be generating the events. For example, if
-#' you want to be notified of events generated by a cluster, you would set
-#' this parameter to cluster. If this value is not specified, events are
-#' returned for all Amazon Redshift objects in your Amazon Web Services
-#' account. You must specify a source type in order to specify source IDs.
+#' @param SubscriptionName &#91;required&#93; The name of the modified Amazon Redshift event notification subscription.
+#' @param SnsTopicArn The Amazon Resource Name (ARN) of the SNS topic to be used by the event notification subscription.
+#' @param SourceType The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.
 #' 
-#' Valid values: cluster, cluster-parameter-group, cluster-security-group,
-#' cluster-snapshot, and scheduled-action.
-#' @param SourceIds A list of one or more identifiers of Amazon Redshift source objects. All
-#' of the objects must be of the same type as was specified in the source
-#' type parameter. The event subscription will return only events generated
-#' by the specified objects. If not specified, then events are returned for
-#' all objects within the source type specified.
+#' Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.
+#' @param SourceIds A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.
 #' 
 #' Example: my-cluster-1, my-cluster-2
 #' 
 #' Example: my-snapshot-20131010
-#' @param EventCategories Specifies the Amazon Redshift event categories to be published by the
-#' event notification subscription.
+#' @param EventCategories Specifies the Amazon Redshift event categories to be published by the event notification subscription.
 #' 
 #' Values: configuration, management, monitoring, security, pending
-#' @param Severity Specifies the Amazon Redshift event severity to be published by the
-#' event notification subscription.
+#' @param Severity Specifies the Amazon Redshift event severity to be published by the event notification subscription.
 #' 
 #' Values: ERROR, INFO
-#' @param Enabled A Boolean value indicating if the subscription is enabled. `true`
-#' indicates the subscription is enabled
+#' @param Enabled A Boolean value indicating if the subscription is enabled. `true` indicates the subscription is enabled
 #'
 #' @keywords internal
 #'
@@ -5848,34 +4840,22 @@ redshift_modify_integration <- function(IntegrationArn, Description = NULL, Inte
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_lakehouse_configuration/](https://www.paws-r-sdk.com/docs/redshift_modify_lakehouse_configuration/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster whose lakehouse configuration you
-#' want to modify.
-#' @param LakehouseRegistration Specifies whether to register or deregister the cluster with Amazon
-#' Redshift federated permissions. Valid values are `Register` or
-#' `Deregister`.
-#' @param CatalogName The name of the Glue data catalog that will be associated with the
-#' cluster enabled with Amazon Redshift federated permissions.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster whose lakehouse configuration you want to modify.
+#' @param LakehouseRegistration Specifies whether to register or deregister the cluster with Amazon Redshift federated permissions. Valid values are `Register` or `Deregister`.
+#' @param CatalogName The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.
 #' 
 #' Constraints:
 #' 
 #' -   Must contain at least one lowercase letter.
 #' 
-#' -   Can only contain lowercase letters (a-z), numbers (0-9), underscores
-#'     (_), and hyphens (-).
+#' -   Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).
 #' 
 #' Pattern: `^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$`
 #' 
 #' Example: `my-catalog_01`
-#' @param LakehouseIdcRegistration Modifies the Amazon Web Services IAM Identity Center trusted identity
-#' propagation on a cluster enabled with Amazon Redshift federated
-#' permissions. Valid values are `Associate` or `Disassociate`.
-#' @param LakehouseIdcApplicationArn The Amazon Resource Name (ARN) of the IAM Identity Center application
-#' used for enabling Amazon Web Services IAM Identity Center trusted
-#' identity propagation on a cluster enabled with Amazon Redshift federated
-#' permissions.
-#' @param DryRun A boolean value that, if `true`, validates the request without actually
-#' modifying the lakehouse configuration. Use this to check for errors
-#' before making changes.
+#' @param LakehouseIdcRegistration Modifies the Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions. Valid values are `Associate` or `Disassociate`.
+#' @param LakehouseIdcApplicationArn The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.
+#' @param DryRun A boolean value that, if `true`, validates the request without actually modifying the lakehouse configuration. Use this to check for errors before making changes.
 #'
 #' @keywords internal
 #'
@@ -5906,18 +4886,11 @@ redshift_modify_lakehouse_configuration <- function(ClusterIdentifier, Lakehouse
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_redshift_idc_application/](https://www.paws-r-sdk.com/docs/redshift_modify_redshift_idc_application/) for full documentation.
 #'
-#' @param RedshiftIdcApplicationArn &#91;required&#93; The ARN for the Redshift application that integrates with IAM Identity
-#' Center.
-#' @param IdentityNamespace The namespace for the Amazon Redshift IAM Identity Center application to
-#' change. It determines which managed application verifies the connection
-#' token.
-#' @param IamRoleArn The IAM role ARN associated with the Amazon Redshift IAM Identity Center
-#' application to change. It has the required permissions to be assumed and
-#' invoke the IDC Identity Center API.
-#' @param IdcDisplayName The display name for the Amazon Redshift IAM Identity Center application
-#' to change. It appears on the console.
-#' @param AuthorizedTokenIssuerList The authorized token issuer list for the Amazon Redshift IAM Identity
-#' Center application to change.
+#' @param RedshiftIdcApplicationArn &#91;required&#93; The ARN for the Redshift application that integrates with IAM Identity Center.
+#' @param IdentityNamespace The namespace for the Amazon Redshift IAM Identity Center application to change. It determines which managed application verifies the connection token.
+#' @param IamRoleArn The IAM role ARN associated with the Amazon Redshift IAM Identity Center application to change. It has the required permissions to be assumed and invoke the IDC Identity Center API.
+#' @param IdcDisplayName The display name for the Amazon Redshift IAM Identity Center application to change. It appears on the console.
+#' @param AuthorizedTokenIssuerList The authorized token issuer list for the Amazon Redshift IAM Identity Center application to change.
 #' @param ServiceIntegrations A collection of service integrations associated with the application.
 #'
 #' @keywords internal
@@ -5950,19 +4923,13 @@ redshift_modify_redshift_idc_application <- function(RedshiftIdcApplicationArn, 
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_scheduled_action/](https://www.paws-r-sdk.com/docs/redshift_modify_scheduled_action/) for full documentation.
 #'
 #' @param ScheduledActionName &#91;required&#93; The name of the scheduled action to modify.
-#' @param TargetAction A modified JSON format of the scheduled action. For more information
-#' about this parameter, see ScheduledAction.
-#' @param Schedule A modified schedule in either `at( )` or `cron( )` format. For more
-#' information about this parameter, see ScheduledAction.
-#' @param IamRole A different IAM role to assume to run the target action. For more
-#' information about this parameter, see ScheduledAction.
+#' @param TargetAction A modified JSON format of the scheduled action. For more information about this parameter, see ScheduledAction.
+#' @param Schedule A modified schedule in either `at( )` or `cron( )` format. For more information about this parameter, see ScheduledAction.
+#' @param IamRole A different IAM role to assume to run the target action. For more information about this parameter, see ScheduledAction.
 #' @param ScheduledActionDescription A modified description of the scheduled action.
-#' @param StartTime A modified start time of the scheduled action. For more information
-#' about this parameter, see ScheduledAction.
-#' @param EndTime A modified end time of the scheduled action. For more information about
-#' this parameter, see ScheduledAction.
-#' @param Enable A modified enable flag of the scheduled action. If true, the scheduled
-#' action is active. If false, the scheduled action is disabled.
+#' @param StartTime A modified start time of the scheduled action. For more information about this parameter, see ScheduledAction.
+#' @param EndTime A modified end time of the scheduled action. For more information about this parameter, see ScheduledAction.
+#' @param Enable A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled.
 #'
 #' @keywords internal
 #'
@@ -5995,38 +4962,23 @@ redshift_modify_scheduled_action <- function(ScheduledActionName, TargetAction =
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_snapshot_copy_retention_period/](https://www.paws-r-sdk.com/docs/redshift_modify_snapshot_copy_retention_period/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster for which you want to change the
-#' retention period for either automated or manual snapshots that are
-#' copied to a destination Amazon Web Services Region.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.
 #' 
-#' Constraints: Must be the valid name of an existing cluster that has
-#' cross-region snapshot copy enabled.
-#' @param RetentionPeriod &#91;required&#93; The number of days to retain automated snapshots in the destination
-#' Amazon Web Services Region after they are copied from the source Amazon
-#' Web Services Region.
+#' Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
+#' @param RetentionPeriod &#91;required&#93; The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.
 #' 
-#' By default, this only changes the retention period of copied automated
-#' snapshots.
+#' By default, this only changes the retention period of copied automated snapshots.
 #' 
-#' If you decrease the retention period for automated snapshots that are
-#' copied to a destination Amazon Web Services Region, Amazon Redshift
-#' deletes any existing automated snapshots that were copied to the
-#' destination Amazon Web Services Region and that fall outside of the new
-#' retention period.
+#' If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.
 #' 
-#' Constraints: Must be at least 1 and no more than 35 for automated
-#' snapshots.
+#' Constraints: Must be at least 1 and no more than 35 for automated snapshots.
 #' 
-#' If you specify the `manual` option, only newly copied manual snapshots
-#' will have the new retention period.
+#' If you specify the `manual` option, only newly copied manual snapshots will have the new retention period.
 #' 
-#' If you specify the value of -1 newly copied manual snapshots are
-#' retained indefinitely.
+#' If you specify the value of -1 newly copied manual snapshots are retained indefinitely.
 #' 
-#' Constraints: The number of days must be either -1 or an integer between
-#' 1 and 3,653 for manual snapshots.
-#' @param Manual Indicates whether to apply the snapshot retention period to newly copied
-#' manual snapshots instead of automated snapshots.
+#' Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.
+#' @param Manual Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.
 #'
 #' @keywords internal
 #'
@@ -6058,9 +5010,7 @@ redshift_modify_snapshot_copy_retention_period <- function(ClusterIdentifier, Re
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_snapshot_schedule/](https://www.paws-r-sdk.com/docs/redshift_modify_snapshot_schedule/) for full documentation.
 #'
 #' @param ScheduleIdentifier &#91;required&#93; A unique alphanumeric identifier of the schedule to modify.
-#' @param ScheduleDefinitions &#91;required&#93; An updated list of schedule definitions. A schedule definition is made
-#' up of schedule expressions, for example, "cron(30 12 *)" or "rate(12
-#' hours)".
+#' @param ScheduleDefinitions &#91;required&#93; An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".
 #'
 #' @keywords internal
 #'
@@ -6092,10 +5042,8 @@ redshift_modify_snapshot_schedule <- function(ScheduleIdentifier, ScheduleDefini
 #' See [https://www.paws-r-sdk.com/docs/redshift_modify_usage_limit/](https://www.paws-r-sdk.com/docs/redshift_modify_usage_limit/) for full documentation.
 #'
 #' @param UsageLimitId &#91;required&#93; The identifier of the usage limit to modify.
-#' @param Amount The new limit amount. For more information about this parameter, see
-#' UsageLimit.
-#' @param BreachAction The new action that Amazon Redshift takes when the limit is reached. For
-#' more information about this parameter, see UsageLimit.
+#' @param Amount The new limit amount. For more information about this parameter, see UsageLimit.
+#' @param BreachAction The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see UsageLimit.
 #'
 #' @keywords internal
 #'
@@ -6157,8 +5105,7 @@ redshift_pause_cluster <- function(ClusterIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_purchase_reserved_node_offering/](https://www.paws-r-sdk.com/docs/redshift_purchase_reserved_node_offering/) for full documentation.
 #'
-#' @param ReservedNodeOfferingId &#91;required&#93; The unique identifier of the reserved node offering you want to
-#' purchase.
+#' @param ReservedNodeOfferingId &#91;required&#93; The unique identifier of the reserved node offering you want to purchase.
 #' @param NodeCount The number of reserved nodes that you want to purchase.
 #' 
 #' Default: `1`
@@ -6192,8 +5139,7 @@ redshift_purchase_reserved_node_offering <- function(ReservedNodeOfferingId, Nod
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_put_resource_policy/](https://www.paws-r-sdk.com/docs/redshift_put_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource of which its resource
-#' policy is updated.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource of which its resource policy is updated.
 #' @param Policy &#91;required&#93; The content of the resource policy being updated.
 #'
 #' @keywords internal
@@ -6257,10 +5203,8 @@ redshift_reboot_cluster <- function(ClusterIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_register_namespace/](https://www.paws-r-sdk.com/docs/redshift_register_namespace/) for full documentation.
 #'
-#' @param NamespaceIdentifier &#91;required&#93; The unique identifier of the cluster or serverless namespace that you
-#' want to register.
-#' @param ConsumerIdentifiers &#91;required&#93; An array containing the ID of the consumer account that you want to
-#' register the namespace to.
+#' @param NamespaceIdentifier &#91;required&#93; The unique identifier of the cluster or serverless namespace that you want to register.
+#' @param ConsumerIdentifiers &#91;required&#93; An array containing the ID of the consumer account that you want to register the namespace to.
 #'
 #' @keywords internal
 #'
@@ -6325,15 +5269,12 @@ redshift_reject_data_share <- function(DataShareArn) {
 #' See [https://www.paws-r-sdk.com/docs/redshift_reset_cluster_parameter_group/](https://www.paws-r-sdk.com/docs/redshift_reset_cluster_parameter_group/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the cluster parameter group to be reset.
-#' @param ResetAllParameters If `true`, all parameters in the specified parameter group will be reset
-#' to their default values.
+#' @param ResetAllParameters If `true`, all parameters in the specified parameter group will be reset to their default values.
 #' 
 #' Default: `true`
-#' @param Parameters An array of names of parameters to be reset. If *ResetAllParameters*
-#' option is not used, then at least one parameter name must be supplied.
+#' @param Parameters An array of names of parameters to be reset. If *ResetAllParameters* option is not used, then at least one parameter name must be supplied.
 #' 
-#' Constraints: A maximum of 20 parameters can be reset in a single
-#' request.
+#' Constraints: A maximum of 20 parameters can be reset in a single request.
 #'
 #' @keywords internal
 #'
@@ -6366,13 +5307,9 @@ redshift_reset_cluster_parameter_group <- function(ParameterGroupName, ResetAllP
 #'
 #' @param ClusterIdentifier &#91;required&#93; The unique identifier for the cluster to resize.
 #' @param ClusterType The new cluster type for the specified cluster.
-#' @param NodeType The new node type for the nodes you are adding. If not specified, the
-#' cluster's current node type is used.
-#' @param NumberOfNodes The new number of nodes for the cluster. If not specified, the cluster's
-#' current number of nodes is used.
-#' @param Classic A boolean value indicating whether the resize operation is using the
-#' classic resize process. If you don't provide this parameter or set the
-#' value to `false`, the resize type is elastic.
+#' @param NodeType The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.
+#' @param NumberOfNodes The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
+#' @param Classic A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to `false`, the resize type is elastic.
 #' @param ReservedNodeId The identifier of the reserved node.
 #' @param TargetReservedNodeOfferingId The identifier of the target reserved node offering.
 #'
@@ -6405,8 +5342,7 @@ redshift_resize_cluster <- function(ClusterIdentifier, ClusterType = NULL, NodeT
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_restore_from_cluster_snapshot/](https://www.paws-r-sdk.com/docs/redshift_restore_from_cluster_snapshot/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The identifier of the cluster that will be created from restoring the
-#' snapshot.
+#' @param ClusterIdentifier &#91;required&#93; The identifier of the cluster that will be created from restoring the snapshot.
 #' 
 #' Constraints:
 #' 
@@ -6418,60 +5354,38 @@ redshift_resize_cluster <- function(ClusterIdentifier, ClusterType = NULL, NodeT
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
-#' -   Must be unique for all clusters within an Amazon Web Services
-#'     account.
-#' @param SnapshotIdentifier The name of the snapshot from which to create the new cluster. This
-#' parameter isn't case sensitive. You must specify this parameter or
-#' `snapshotArn`, but not both.
+#' -   Must be unique for all clusters within an Amazon Web Services account.
+#' @param SnapshotIdentifier The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or `snapshotArn`, but not both.
 #' 
 #' Example: `my-snapshot-id`
-#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the
-#' message to restore from a cluster. You must specify this parameter or
-#' `snapshotIdentifier`, but not both.
-#' @param SnapshotClusterIdentifier The name of the cluster the source snapshot was created from. This
-#' parameter is required if your IAM user has a policy containing a
-#' snapshot resource element that specifies anything other than * for the
-#' cluster name.
+#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or `snapshotIdentifier`, but not both.
+#' @param SnapshotClusterIdentifier The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
 #' @param Port The port number on which the cluster accepts connections.
 #' 
 #' Default: The same port as the original cluster.
 #' 
-#' Valid values: For clusters with DC2 nodes, must be within the range
-#' `1150`-`65535`. For clusters with ra3 nodes, must be within the ranges
-#' `5431`-`5455` or `8191`-`8215`.
+#' Valid values: For clusters with DC2 nodes, must be within the range `1150`-`65535`. For clusters with RG or RA3 nodes, must be within the ranges `5431`-`5455` or `8191`-`8215`.
 #' @param AvailabilityZone The Amazon EC2 Availability Zone in which to restore the cluster.
 #' 
 #' Default: A random, system-chosen Availability Zone.
 #' 
 #' Example: `us-east-2a`
-#' @param AllowVersionUpgrade If `true`, major version upgrades can be applied during the maintenance
-#' window to the Amazon Redshift engine that is running on the cluster.
+#' @param AllowVersionUpgrade If `true`, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.
 #' 
 #' Default: `true`
 #' @param ClusterSubnetGroupName The name of the subnet group where you want to cluster restored.
 #' 
-#' A snapshot of cluster in VPC can be restored only in VPC. Therefore, you
-#' must provide subnet group name where you want the cluster restored.
+#' A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.
 #' @param PubliclyAccessible If `true`, the cluster can be accessed from a public network.
 #' 
 #' Default: false
-#' @param OwnerAccount The Amazon Web Services account used to create or copy the snapshot.
-#' Required if you are restoring a snapshot you do not own, optional if you
-#' own the snapshot.
-#' @param HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
-#' cluster uses to retrieve the data encryption keys stored in an HSM.
-#' @param HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
-#' information the Amazon Redshift cluster can use to retrieve and store
-#' keys in an HSM.
-#' @param ElasticIp The Elastic IP (EIP) address for the cluster. Don't specify the Elastic
-#' IP address for a publicly accessible cluster with availability zone
-#' relocation turned on.
+#' @param OwnerAccount The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
+#' @param HsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+#' @param HsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
+#' @param ElasticIp The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.
 #' @param ClusterParameterGroupName The name of the parameter group to be associated with this cluster.
 #' 
-#' Default: The default Amazon Redshift cluster parameter group. For
-#' information about the default parameter group, go to [Working with
-#' Amazon Redshift Parameter
-#' Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html).
+#' Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to [Working with Amazon Redshift Parameter Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html).
 #' 
 #' Constraints:
 #' 
@@ -6485,125 +5399,68 @@ redshift_resize_cluster <- function(ClusterIdentifier, ClusterType = NULL, NodeT
 #' Default: The default cluster security group for Amazon Redshift.
 #' 
 #' Cluster security groups only apply to clusters outside of VPCs.
-#' @param VpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
-#' with the cluster.
+#' @param VpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
 #' 
 #' Default: The default VPC security group is associated with the cluster.
 #' 
 #' VPC security groups only apply to clusters in VPCs.
-#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
-#' maintenance can occur.
+#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster maintenance can occur.
 #' 
 #' Format: `ddd:hh24:mi-ddd:hh24:mi`
 #' 
-#' Default: The value selected for the cluster from which the snapshot was
-#' taken. For more information about the time blocks for each region, see
-#' [Maintenance
-#' Windows](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows)
-#' in Amazon Redshift Cluster Management Guide.
+#' Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see [Maintenance Windows](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows) in Amazon Redshift Cluster Management Guide.
 #' 
 #' Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
 #' 
 #' Constraints: Minimum 30-minute window.
-#' @param AutomatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value
-#' is 0, automated snapshots are disabled. Even if automated snapshots are
-#' disabled, you can still create manual snapshots when you want with
-#' [`create_cluster_snapshot`][redshift_create_cluster_snapshot].
+#' @param AutomatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with [`create_cluster_snapshot`][redshift_create_cluster_snapshot].
 #' 
-#' You can't disable automated snapshots for RA3 node types. Set the
-#' automated retention period from 1-35 days.
+#' You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.
 #' 
-#' Default: The value selected for the cluster from which the snapshot was
-#' taken.
+#' Default: The value selected for the cluster from which the snapshot was taken.
 #' 
 #' Constraints: Must be a value from 0 to 35.
-#' @param ManualSnapshotRetentionPeriod The default number of days to retain a manual snapshot. If the value is
-#' -1, the snapshot is retained indefinitely. This setting doesn't change
-#' the retention period of existing snapshots.
+#' @param ManualSnapshotRetentionPeriod The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.
 #' 
 #' The value must be either -1 or an integer between 1 and 3,653.
-#' @param KmsKeyId The Key Management Service (KMS) key ID of the encryption key that
-#' encrypts data in the cluster restored from a shared snapshot. You can
-#' also provide the key ID when you restore from an unencrypted snapshot to
-#' an encrypted cluster in the same account. Additionally, you can specify
-#' a new KMS key ID when you restore from an encrypted snapshot in the same
-#' account in order to change it. In that case, the restored cluster is
-#' encrypted with the new KMS key ID.
+#' @param KmsKeyId The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.
 #' @param NodeType The node type that the restored cluster will be provisioned with.
 #' 
-#' If you have a DC instance type, you must restore into that same instance
-#' type and size. In other words, you can only restore a dc2.large node
-#' type into another dc2 type. For more information about node types, see
-#' [About Clusters and
-#' Nodes](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes)
-#' in the *Amazon Redshift Cluster Management Guide*.
-#' @param EnhancedVpcRouting An option that specifies whether to create the cluster with enhanced VPC
-#' routing enabled. To create a cluster that uses enhanced VPC routing, the
-#' cluster must be in a VPC. For more information, see [Enhanced VPC
-#' Routing](https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html)
-#' in the Amazon Redshift Cluster Management Guide.
+#' If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc2.large node type into another dc2 type. For more information about node types, see [About Clusters and Nodes](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes) in the *Amazon Redshift Cluster Management Guide*.
+#' @param EnhancedVpcRouting An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see [Enhanced VPC Routing](https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html) in the Amazon Redshift Cluster Management Guide.
 #' 
 #' If this option is `true`, enhanced VPC routing is enabled.
 #' 
 #' Default: false
 #' @param AdditionalInfo Reserved.
-#' @param IamRoles A list of Identity and Access Management (IAM) roles that can be used by
-#' the cluster to access other Amazon Web Services services. You must
-#' supply the IAM roles in their Amazon Resource Name (ARN) format.
+#' @param IamRoles A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
 #' 
-#' The maximum number of IAM roles that you can associate is subject to a
-#' quota. For more information, go to [Quotas and
-#' limits](https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html)
-#' in the *Amazon Redshift Cluster Management Guide*.
-#' @param MaintenanceTrackName The name of the maintenance track for the restored cluster. When you
-#' take a snapshot, the snapshot inherits the `MaintenanceTrack` value from
-#' the cluster. The snapshot might be on a different track than the cluster
-#' that was the source for the snapshot. For example, suppose that you take
-#' a snapshot of a cluster that is on the current track and then change the
-#' cluster to be on the trailing track. In this case, the snapshot and the
-#' source cluster are on different tracks.
+#' The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to [Quotas and limits](https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html) in the *Amazon Redshift Cluster Management Guide*.
+#' @param MaintenanceTrackName The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the `MaintenanceTrack` value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.
 #' @param SnapshotScheduleIdentifier A unique identifier for the snapshot schedule.
 #' @param NumberOfNodes The number of nodes specified when provisioning the restored cluster.
-#' @param AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between
-#' Availability Zones after the cluster is restored.
-#' @param AquaConfigurationStatus This parameter is retired. It does not set the AQUA configuration
-#' status. Amazon Redshift automatically determines whether to use AQUA
-#' (Advanced Query Accelerator).
-#' @param DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default
-#' for the cluster when the cluster was last modified while it was restored
-#' from a snapshot.
+#' @param AvailabilityZoneRelocation The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.
+#' @param AquaConfigurationStatus This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+#' @param DefaultIamRoleArn The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.
 #' @param ReservedNodeId The identifier of the target reserved node offering.
 #' @param TargetReservedNodeOfferingId The identifier of the target reserved node offering.
-#' @param Encrypted Enables support for restoring an unencrypted snapshot to a cluster
-#' encrypted with Key Management Service (KMS) and a customer managed key.
-#' @param ManageMasterPassword If `true`, Amazon Redshift uses Secrets Manager to manage the restored
-#' cluster's admin credentials. If `ManageMasterPassword` is false or not
-#' set, Amazon Redshift uses the admin credentials the cluster had at the
-#' time the snapshot was taken.
-#' @param MasterPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store
-#' the cluster's admin credentials secret. You can only use this parameter
-#' if `ManageMasterPassword` is true.
-#' @param IpAddressType The IP address type for the cluster. Possible values are `ipv4` and
-#' `dualstack`.
-#' @param MultiAZ If true, the snapshot will be restored to a cluster deployed in two
-#' Availability Zones.
-#' @param CatalogName The name of the Glue Data Catalog that will be associated with the
-#' cluster enabled with Amazon Redshift federated permissions.
+#' @param Encrypted Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.
+#' @param ManageMasterPassword If `true`, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If `ManageMasterPassword` is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.
+#' @param MasterPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if `ManageMasterPassword` is true.
+#' @param IpAddressType The IP address type for the cluster. Possible values are `ipv4` and `dualstack`.
+#' @param MultiAZ If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+#' @param CatalogName The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.
 #' 
 #' Constraints:
 #' 
 #' -   Must contain at least one lowercase letter.
 #' 
-#' -   Can only contain lowercase letters (a-z), numbers (0-9), underscores
-#'     (_), and hyphens (-).
+#' -   Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).
 #' 
 #' Pattern: `^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$`
 #' 
 #' Example: `my-catalog_01`
-#' @param RedshiftIdcApplicationArn The Amazon Resource Name (ARN) of the IAM Identity Center application
-#' used for enabling Amazon Web Services IAM Identity Center trusted
-#' identity propagation on a cluster enabled with Amazon Redshift federated
-#' permissions.
+#' @param RedshiftIdcApplicationArn The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.
 #'
 #' @keywords internal
 #'
@@ -6635,20 +5492,14 @@ redshift_restore_from_cluster_snapshot <- function(ClusterIdentifier, SnapshotId
 #' See [https://www.paws-r-sdk.com/docs/redshift_restore_table_from_cluster_snapshot/](https://www.paws-r-sdk.com/docs/redshift_restore_table_from_cluster_snapshot/) for full documentation.
 #'
 #' @param ClusterIdentifier &#91;required&#93; The identifier of the Amazon Redshift cluster to restore the table to.
-#' @param SnapshotIdentifier &#91;required&#93; The identifier of the snapshot to restore the table from. This snapshot
-#' must have been created from the Amazon Redshift cluster specified by the
-#' `ClusterIdentifier` parameter.
+#' @param SnapshotIdentifier &#91;required&#93; The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the `ClusterIdentifier` parameter.
 #' @param SourceDatabaseName &#91;required&#93; The name of the source database that contains the table to restore from.
-#' @param SourceSchemaName The name of the source schema that contains the table to restore from.
-#' If you do not specify a `SourceSchemaName` value, the default is
-#' `public`.
+#' @param SourceSchemaName The name of the source schema that contains the table to restore from. If you do not specify a `SourceSchemaName` value, the default is `public`.
 #' @param SourceTableName &#91;required&#93; The name of the source table to restore from.
 #' @param TargetDatabaseName The name of the database to restore the table to.
 #' @param TargetSchemaName The name of the schema to restore the table to.
 #' @param NewTableName &#91;required&#93; The name of the table to create as a result of the current request.
-#' @param EnableCaseSensitiveIdentifier Indicates whether name identifiers for database, schema, and table are
-#' case sensitive. If `true`, the names are case sensitive. If `false`
-#' (default), the names are not case sensitive.
+#' @param EnableCaseSensitiveIdentifier Indicates whether name identifiers for database, schema, and table are case sensitive. If `true`, the names are case sensitive. If `false` (default), the names are not case sensitive.
 #'
 #' @keywords internal
 #'
@@ -6712,18 +5563,9 @@ redshift_resume_cluster <- function(ClusterIdentifier) {
 #' See [https://www.paws-r-sdk.com/docs/redshift_revoke_cluster_security_group_ingress/](https://www.paws-r-sdk.com/docs/redshift_revoke_cluster_security_group_ingress/) for full documentation.
 #'
 #' @param ClusterSecurityGroupName &#91;required&#93; The name of the security Group from which to revoke the ingress rule.
-#' @param CIDRIP The IP range for which to revoke access. This range must be a valid
-#' Classless Inter-Domain Routing (CIDR) block of IP addresses. If `CIDRIP`
-#' is specified, `EC2SecurityGroupName` and `EC2SecurityGroupOwnerId`
-#' cannot be provided.
-#' @param EC2SecurityGroupName The name of the EC2 Security Group whose access is to be revoked. If
-#' `EC2SecurityGroupName` is specified, `EC2SecurityGroupOwnerId` must also
-#' be provided and `CIDRIP` cannot be provided.
-#' @param EC2SecurityGroupOwnerId The Amazon Web Services account number of the owner of the security
-#' group specified in the `EC2SecurityGroupName` parameter. The Amazon Web
-#' Services access key ID is not an acceptable value. If
-#' `EC2SecurityGroupOwnerId` is specified, `EC2SecurityGroupName` must also
-#' be provided. and `CIDRIP` cannot be provided.
+#' @param CIDRIP The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If `CIDRIP` is specified, `EC2SecurityGroupName` and `EC2SecurityGroupOwnerId` cannot be provided.
+#' @param EC2SecurityGroupName The name of the EC2 Security Group whose access is to be revoked. If `EC2SecurityGroupName` is specified, `EC2SecurityGroupOwnerId` must also be provided and `CIDRIP` cannot be provided.
+#' @param EC2SecurityGroupOwnerId The Amazon Web Services account number of the owner of the security group specified in the `EC2SecurityGroupName` parameter. The Amazon Web Services access key ID is not an acceptable value. If `EC2SecurityGroupOwnerId` is specified, `EC2SecurityGroupName` must also be provided. and `CIDRIP` cannot be provided.
 #' 
 #' Example: `111122223333`
 #'
@@ -6758,11 +5600,8 @@ redshift_revoke_cluster_security_group_ingress <- function(ClusterSecurityGroupN
 #'
 #' @param ClusterIdentifier The cluster to revoke access from.
 #' @param Account The Amazon Web Services account ID whose access is to be revoked.
-#' @param VpcIds The virtual private cloud (VPC) identifiers for which access is to be
-#' revoked.
-#' @param Force Indicates whether to force the revoke action. If true, the
-#' Redshift-managed VPC endpoints associated with the endpoint
-#' authorization are also deleted.
+#' @param VpcIds The virtual private cloud (VPC) identifiers for which access is to be revoked.
+#' @param Force Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
 #'
 #' @keywords internal
 #'
@@ -6795,14 +5634,9 @@ redshift_revoke_endpoint_access <- function(ClusterIdentifier = NULL, Account = 
 #' See [https://www.paws-r-sdk.com/docs/redshift_revoke_snapshot_access/](https://www.paws-r-sdk.com/docs/redshift_revoke_snapshot_access/) for full documentation.
 #'
 #' @param SnapshotIdentifier The identifier of the snapshot that the account can no longer access.
-#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the
-#' message to revoke access.
-#' @param SnapshotClusterIdentifier The identifier of the cluster the snapshot was created from. This
-#' parameter is required if your IAM user has a policy containing a
-#' snapshot resource element that specifies anything other than * for the
-#' cluster name.
-#' @param AccountWithRestoreAccess &#91;required&#93; The identifier of the Amazon Web Services account that can no longer
-#' restore the specified snapshot.
+#' @param SnapshotArn The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+#' @param SnapshotClusterIdentifier The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+#' @param AccountWithRestoreAccess &#91;required&#93; The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.
 #'
 #' @keywords internal
 #'
@@ -6833,11 +5667,9 @@ redshift_revoke_snapshot_access <- function(SnapshotIdentifier = NULL, SnapshotA
 #'
 #' See [https://www.paws-r-sdk.com/docs/redshift_rotate_encryption_key/](https://www.paws-r-sdk.com/docs/redshift_rotate_encryption_key/) for full documentation.
 #'
-#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster that you want to rotate the
-#' encryption keys for.
+#' @param ClusterIdentifier &#91;required&#93; The unique identifier of the cluster that you want to rotate the encryption keys for.
 #' 
-#' Constraints: Must be the name of valid cluster that has encryption
-#' enabled.
+#' Constraints: Must be the name of valid cluster that has encryption enabled.
 #'
 #' @keywords internal
 #'
@@ -6869,10 +5701,8 @@ redshift_rotate_encryption_key <- function(ClusterIdentifier) {
 #' See [https://www.paws-r-sdk.com/docs/redshift_update_partner_status/](https://www.paws-r-sdk.com/docs/redshift_update_partner_status/) for full documentation.
 #'
 #' @param AccountId &#91;required&#93; The Amazon Web Services account ID that owns the cluster.
-#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster whose partner integration status
-#' is being updated.
-#' @param DatabaseName &#91;required&#93; The name of the database whose partner integration status is being
-#' updated.
+#' @param ClusterIdentifier &#91;required&#93; The cluster identifier of the cluster whose partner integration status is being updated.
+#' @param DatabaseName &#91;required&#93; The name of the database whose partner integration status is being updated.
 #' @param PartnerName &#91;required&#93; The name of the partner whose integration status is being updated.
 #' @param Status &#91;required&#93; The value of the updated status.
 #' @param StatusMessage The status message provided by the partner.

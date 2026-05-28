@@ -14,12 +14,9 @@ kinesisanalyticsv2_list_application_versions(
 \arguments{
 \item{ApplicationName}{[required] The name of the application for which you want to list all versions.}
 
-\item{Limit}{The maximum number of versions to list in this invocation of the
-operation.}
+\item{Limit}{The maximum number of versions to list in this invocation of the operation.}
 
-\item{NextToken}{If a previous invocation of this operation returned a pagination token,
-pass it into this value to retrieve the next set of results. For more
-information about pagination, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html}{Using the Amazon Command Line Interface's Pagination Options}.}
+\item{NextToken}{If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html}{Using the Amazon Command Line Interface's Pagination Options}.}
 }
 \description{
 Lists all the versions for the specified application, including versions that were rolled back. The response also includes a summary of the configuration associated with each version.

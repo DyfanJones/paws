@@ -12,17 +12,13 @@ sagemaker_create_studio_lifecycle_config(
 )
 }
 \arguments{
-\item{StudioLifecycleConfigName}{[required] The name of the Amazon SageMaker AI Studio Lifecycle Configuration to
-create.}
+\item{StudioLifecycleConfigName}{[required] The name of the Amazon SageMaker AI Studio Lifecycle Configuration to create.}
 
-\item{StudioLifecycleConfigContent}{[required] The content of your Amazon SageMaker AI Studio Lifecycle Configuration
-script. This content must be base64 encoded.}
+\item{StudioLifecycleConfigContent}{[required] The content of your Amazon SageMaker AI Studio Lifecycle Configuration script. This content must be base64 encoded.}
 
 \item{StudioLifecycleConfigAppType}{[required] The App type that the Lifecycle Configuration is attached to.}
 
-\item{Tags}{Tags to be associated with the Lifecycle Configuration. Each tag
-consists of a key and an optional value. Tag keys must be unique per
-resource. Tags are searchable using the Search API.}
+\item{Tags}{Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API.}
 }
 \description{
 Creates a new Amazon SageMaker AI Studio Lifecycle Configuration.

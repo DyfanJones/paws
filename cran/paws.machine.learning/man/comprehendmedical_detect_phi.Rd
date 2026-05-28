@@ -9,8 +9,7 @@ for each entity}
 comprehendmedical_detect_phi(Text)
 }
 \arguments{
-\item{Text}{[required] A UTF-8 text string containing the clinical content being examined for
-PHI entities.}
+\item{Text}{[required] A UTF-8 text string containing the clinical content being examined for PHI entities.}
 }
 \description{
 Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.

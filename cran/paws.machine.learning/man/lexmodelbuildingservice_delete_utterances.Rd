@@ -9,9 +9,7 @@ lexmodelbuildingservice_delete_utterances(botName, userId)
 \arguments{
 \item{botName}{[required] The name of the bot that stored the utterances.}
 
-\item{userId}{[required] The unique identifier for the user that made the utterances. This is the
-user ID that was sent in the PostContent or PostText operation request
-that contained the utterance.}
+\item{userId}{[required] The unique identifier for the user that made the utterances. This is the user ID that was sent in the PostContent or PostText operation request that contained the utterance.}
 }
 \description{
 Deletes stored utterances.

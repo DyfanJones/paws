@@ -21,8 +21,7 @@ glue_create_table_optimizer(
 
 \item{Type}{[required] The type of table optimizer.}
 
-\item{TableOptimizerConfiguration}{[required] A \code{TableOptimizerConfiguration} object representing the configuration of
-a table optimizer.}
+\item{TableOptimizerConfiguration}{[required] A \code{TableOptimizerConfiguration} object representing the configuration of a table optimizer.}
 }
 \description{
 Creates a new table optimizer for a specific function.

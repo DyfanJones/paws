@@ -11,6 +11,8 @@ cloudfront_list_distribution_tenants(
 )
 }
 \arguments{
+\item{AssociationFilter}{Filter by the associated distribution ID or connection group ID.}
+
 \item{Marker}{The marker for the next set of results.}
 
 \item{MaxItems}{The maximum number of distribution tenants to return.}

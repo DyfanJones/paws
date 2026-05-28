@@ -15,30 +15,19 @@ elasticache_describe_cache_clusters(
 )
 }
 \arguments{
-\item{CacheClusterId}{The user-supplied cluster identifier. If this parameter is specified,
-only information about that specific cluster is returned. This parameter
-isn't case sensitive.}
+\item{CacheClusterId}{The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a marker is
-included in the response so that the remaining results can be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a marker is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: minimum 20; maximum 100.}
 
-\item{Marker}{An optional marker returned from a prior request. Use this marker for
-pagination of results from this operation. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 
-\item{ShowCacheNodeInfo}{An optional flag that can be included in the \code{DescribeCacheCluster}
-request to retrieve information about the individual cache nodes.}
+\item{ShowCacheNodeInfo}{An optional flag that can be included in the \code{DescribeCacheCluster} request to retrieve information about the individual cache nodes.}
 
-\item{ShowCacheClustersNotInReplicationGroups}{An optional flag that can be included in the \code{DescribeCacheCluster}
-request to show only nodes (API/CLI: clusters) that are not members of a
-replication group. In practice, this means Memcached and single node
-Valkey or Redis OSS clusters.}
+\item{ShowCacheClustersNotInReplicationGroups}{An optional flag that can be included in the \code{DescribeCacheCluster} request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this means Memcached and single node Valkey or Redis OSS clusters.}
 }
 \description{
 Returns information about all provisioned clusters if no cluster identifier is specified, or about a specific cache cluster if a cluster identifier is supplied.

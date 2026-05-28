@@ -10,9 +10,7 @@ cognitoidentityprovider_get_device(DeviceKey, AccessToken = NULL)
 \arguments{
 \item{DeviceKey}{[required] The key of the device that you want to get information about.}
 
-\item{AccessToken}{A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 }
 \description{
 Given a device key, returns information about a remembered device for the current user. For more information about device authentication, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html}{Working with user devices in your user pool}.

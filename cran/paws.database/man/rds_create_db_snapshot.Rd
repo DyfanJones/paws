@@ -19,13 +19,16 @@ Constraints:
 
 Example: \code{my-snapshot-id}}
 
-\item{DBInstanceIdentifier}{[required] The identifier of the DB instance that you want to create the snapshot
-of.
+\item{DBInstanceIdentifier}{[required] The identifier of the DB instance that you want to create the snapshot of.
 
 Constraints:
 \itemize{
 \item Must match the identifier of an existing DBInstance.
 }}
+
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Creates a snapshot of a DB instance. The source DB instance must be in the \code{available} or \code{storage-optimization} state.

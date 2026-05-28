@@ -18,18 +18,13 @@ cloud9_update_environment(
 
 \item{description}{Any new or replacement description for the environment.}
 
-\item{managedCredentialsAction}{Allows the environment owner to turn on or turn off the Amazon Web
-Services managed temporary credentials for an Cloud9 environment by
-using one of the following values:
+\item{managedCredentialsAction}{Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:
 \itemize{
 \item \code{ENABLE}
 \item \code{DISABLE}
 }
 
-Only the environment owner can change the status of managed temporary
-credentials. An \code{AccessDeniedException} is thrown if an attempt to turn
-on or turn off managed temporary credentials is made by an account
-that's not the environment owner.}
+Only the environment owner can change the status of managed temporary credentials. An \code{AccessDeniedException} is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.}
 }
 \description{
 Changes the settings of an existing Cloud9 development environment.

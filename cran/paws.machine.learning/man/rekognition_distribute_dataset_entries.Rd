@@ -7,9 +7,7 @@
 rekognition_distribute_dataset_entries(Datasets)
 }
 \arguments{
-\item{Datasets}{[required] The ARNS for the training dataset and test dataset that you want to use.
-The datasets must belong to the same project. The test dataset must be
-empty.}
+\item{Datasets}{[required] The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

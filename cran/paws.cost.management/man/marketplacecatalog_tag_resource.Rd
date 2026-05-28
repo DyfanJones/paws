@@ -7,11 +7,9 @@
 marketplacecatalog_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] Required. The Amazon Resource Name (ARN) associated with the resource
-you want to tag.}
+\item{ResourceArn}{[required] Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.}
 
-\item{Tags}{[required] Required. A list of objects specifying each key name and value. Number
-of objects allowed: 1-50.}
+\item{Tags}{[required] Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.}
 }
 \description{
 Tags a resource (either an \href{https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities}{entity} or \href{https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets}{change set}).

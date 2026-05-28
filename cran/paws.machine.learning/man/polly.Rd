@@ -48,13 +48,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Polly is a web service that makes it easy to synthesize speech
-from text.
+Amazon Polly is a web service that makes it easy to synthesize speech from text.
 
-The Amazon Polly service provides API operations for synthesizing
-high-quality speech from plain text and Speech Synthesis Markup Language
-(SSML), along with managing pronunciations lexicons that enable you to
-get the best results for your application domain.
+The Amazon Polly service provides API operations for synthesizing high-quality speech from plain text and Speech Synthesis Markup Language (SSML), along with managing pronunciations lexicons that enable you to get the best results for your application domain.
 }
 \section{Service syntax}{
 

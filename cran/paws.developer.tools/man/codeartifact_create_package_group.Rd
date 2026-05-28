@@ -16,11 +16,9 @@ codeartifact_create_package_group(
 \arguments{
 \item{domain}{[required] The name of the domain in which you want to create a package group.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{packageGroup}{[required] The pattern of the package group to create. The pattern is also the
-identifier of the package group.}
+\item{packageGroup}{[required] The pattern of the package group to create. The pattern is also the identifier of the package group.}
 
 \item{contactInfo}{The contact information for the created package group.}
 

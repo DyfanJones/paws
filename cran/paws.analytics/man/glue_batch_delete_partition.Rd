@@ -12,15 +12,13 @@ glue_batch_delete_partition(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the partition to be deleted resides. If
-none is provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database in which the table in question resides.}
 
 \item{TableName}{[required] The name of the table that contains the partitions to be deleted.}
 
-\item{PartitionsToDelete}{[required] A list of \code{PartitionInput} structures that define the partitions to be
-deleted.}
+\item{PartitionsToDelete}{[required] A list of \code{PartitionInput} structures that define the partitions to be deleted.}
 }
 \description{
 Deletes one or more partitions in a batch operation.

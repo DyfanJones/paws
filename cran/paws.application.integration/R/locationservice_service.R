@@ -5,8 +5,7 @@ NULL
 #' Amazon Location Service
 #'
 #' @description
-#' "Suite of geospatial services including Maps, Places, Routes, Tracking,
-#' and Geofencing"
+#' "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
 #'
 #' @param
 #' config

@@ -5,9 +5,7 @@ NULL
 #' Amazon Textract
 #'
 #' @description
-#' Amazon Textract detects and analyzes text in documents and converts it
-#' into machine-readable text. This is the API reference documentation for
-#' Amazon Textract.
+#' Amazon Textract detects and analyzes text in documents and converts it into machine-readable text. This is the API reference documentation for Amazon Textract.
 #'
 #' @param
 #' config

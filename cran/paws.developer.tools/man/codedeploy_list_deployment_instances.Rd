@@ -15,25 +15,19 @@ codedeploy_list_deployment_instances(
 \arguments{
 \item{deploymentId}{[required] The unique ID of a deployment.}
 
-\item{nextToken}{An identifier returned from the previous list deployment instances call.
-It can be used to return the next set of deployment instances in the
-list.}
+\item{nextToken}{An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.}
 
 \item{instanceStatusFilter}{A subset of instances to list by status:
 \itemize{
 \item \code{Pending}: Include those instances with pending deployments.
-\item \code{InProgress}: Include those instances where deployments are still in
-progress.
+\item \code{InProgress}: Include those instances where deployments are still in progress.
 \item \code{Succeeded}: Include those instances with successful deployments.
 \item \code{Failed}: Include those instances with failed deployments.
 \item \code{Skipped}: Include those instances with skipped deployments.
-\item \code{Unknown}: Include those instances with deployments in an unknown
-state.
+\item \code{Unknown}: Include those instances with deployments in an unknown state.
 }}
 
-\item{instanceTypeFilter}{The set of instances in a blue/green deployment, either those in the
-original environment ("BLUE") or those in the replacement environment
-("GREEN"), for which you want to view instance information.}
+\item{instanceTypeFilter}{The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.}
 }
 \description{
 The newer \code{\link[=codedeploy_batch_get_deployment_targets]{batch_get_deployment_targets}} should be used instead because it works with all compute types. \code{\link[=codedeploy_list_deployment_instances]{list_deployment_instances}} throws an exception if it is used with a compute platform other than EC2/On-premises or Lambda.

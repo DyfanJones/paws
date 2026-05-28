@@ -21,8 +21,7 @@ opensearchserviceserverless_create_lifecycle_policy(
 
 \item{policy}{[required] The JSON policy document to use as the content for the lifecycle policy.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle policies define the number of days or hours to retain the data on an OpenSearch Serverless index. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create}{Creating data lifecycle policies}.

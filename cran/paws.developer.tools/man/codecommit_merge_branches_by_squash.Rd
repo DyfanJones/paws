@@ -21,40 +21,25 @@ codecommit_merge_branches_by_squash(
 \arguments{
 \item{repositoryName}{[required] The name of the repository where you want to merge two branches.}
 
-\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
-\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
 \item{targetBranch}{The branch where the merge is applied.}
 
-\item{conflictDetailLevel}{The level of conflict detail to use. If unspecified, the default
-FILE_LEVEL is used, which returns a not-mergeable result if the same
-file has differences in both branches. If LINE_LEVEL is specified, a
-conflict is considered not mergeable if the same file in both branches
-has differences on the same line.}
+\item{conflictDetailLevel}{The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.}
 
-\item{conflictResolutionStrategy}{Specifies which branch to use when resolving conflicts, or whether to
-attempt automatically merging two versions of a file. The default is
-NONE, which requires any conflicts to be resolved manually before the
-merge operation is successful.}
+\item{conflictResolutionStrategy}{Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.}
 
-\item{authorName}{The name of the author who created the commit. This information is used
-as both the author and committer for the commit.}
+\item{authorName}{The name of the author who created the commit. This information is used as both the author and committer for the commit.}
 
-\item{email}{The email address of the person merging the branches. This information
-is used in the commit information for the merge.}
+\item{email}{The email address of the person merging the branches. This information is used in the commit information for the merge.}
 
 \item{commitMessage}{The commit message for the merge.}
 
-\item{keepEmptyFolders}{If the commit contains deletions, whether to keep a folder or folder
-structure if the changes leave the folders empty. If this is specified
-as true, a .gitkeep file is created for empty folders. The default is
-false.}
+\item{keepEmptyFolders}{If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.}
 
-\item{conflictResolution}{If AUTOMERGE is the conflict resolution strategy, a list of inputs to
-use when resolving conflicts during a merge.}
+\item{conflictResolution}{If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.}
 }
 \description{
 Merges two branches using the squash merge strategy.

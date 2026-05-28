@@ -10,12 +10,9 @@ rds_remove_role_from_db_instance(DBInstanceIdentifier, RoleArn, FeatureName)
 \arguments{
 \item{DBInstanceIdentifier}{[required] The name of the DB instance to disassociate the IAM role from.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to disassociate from the
-DB instance, for example, \verb{arn:aws:iam::123456789012:role/AccessRole}.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example, \verb{arn:aws:iam::123456789012:role/AccessRole}.}
 
-\item{FeatureName}{[required] The name of the feature for the DB instance that the IAM role is to be
-disassociated from. For information about supported feature names, see
-\code{DBEngineVersion}.}
+\item{FeatureName}{[required] The name of the feature for the DB instance that the IAM role is to be disassociated from. For information about supported feature names, see \code{DBEngineVersion}.}
 }
 \description{
 Disassociates an Amazon Web Services Identity and Access Management (IAM) role from a DB instance.

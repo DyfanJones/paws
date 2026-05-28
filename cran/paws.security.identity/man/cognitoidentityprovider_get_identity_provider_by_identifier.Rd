@@ -14,10 +14,7 @@ cognitoidentityprovider_get_identity_provider_by_identifier(
 \arguments{
 \item{UserPoolId}{[required] The ID of the user pool where you want to get information about the IdP.}
 
-\item{IdpIdentifier}{[required] The identifier that you assigned to your user pool. The identifier is an
-alternative name for an IdP that is distinct from the IdP name. For
-example, an IdP with a name of \code{MyIdP} might have an identifier of the
-email domain \code{example.com}.}
+\item{IdpIdentifier}{[required] The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of \code{MyIdP} might have an identifier of the email domain \code{example.com}.}
 }
 \description{
 Given the identifier of an identity provider (IdP), for example \code{examplecorp}, returns information about the user pool configuration for that IdP. For more information about IdPs, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html}{Third-party IdP sign-in}.

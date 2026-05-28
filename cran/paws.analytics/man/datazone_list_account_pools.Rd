@@ -18,23 +18,13 @@ datazone_list_account_pools(
 
 \item{name}{The name of the account pool to be listed.}
 
-\item{sortBy}{The sort by mechanism in which the existing account pools are to be
-listed.}
+\item{sortBy}{The sort by mechanism in which the existing account pools are to be listed.}
 
 \item{sortOrder}{The sort order in which the existing account pools are to be listed.}
 
-\item{nextToken}{When the number of account pools is greater than the default value for
-the MaxResults parameter, or if you explicitly specify a value for
-MaxResults that is less than the number of account pools, the response
-includes a pagination token named NextToken. You can specify this
-NextToken value in a subsequent call to ListAccountPools to list the
-next set of account pools.}
+\item{nextToken}{When the number of account pools is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of account pools, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListAccountPools to list the next set of account pools.}
 
-\item{maxResults}{The maximum number of account pools to return in a single call to
-ListAccountPools. When the number of account pools to be listed is
-greater than the value of MaxResults, the response contains a NextToken
-value that you can use in a subsequent call to ListAccountPools to list
-the next set of account pools.}
+\item{maxResults}{The maximum number of account pools to return in a single call to ListAccountPools. When the number of account pools to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListAccountPools to list the next set of account pools.}
 }
 \description{
 Lists existing account pools.

@@ -30,8 +30,7 @@ datazone_create_data_product_revision(
 
 \item{formsInput}{The metadata forms of the data product revision.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a data product revision.

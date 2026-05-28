@@ -8,14 +8,11 @@ their groups}
 kendra_describe_principal_mapping(IndexId, DataSourceId = NULL, GroupId)
 }
 \arguments{
-\item{IndexId}{[required] The identifier of the index required to check the processing of \code{PUT}
-and \code{DELETE} actions for mapping users to their groups.}
+\item{IndexId}{[required] The identifier of the index required to check the processing of \code{PUT} and \code{DELETE} actions for mapping users to their groups.}
 
-\item{DataSourceId}{The identifier of the data source to check the processing of \code{PUT} and
-\code{DELETE} actions for mapping users to their groups.}
+\item{DataSourceId}{The identifier of the data source to check the processing of \code{PUT} and \code{DELETE} actions for mapping users to their groups.}
 
-\item{GroupId}{[required] The identifier of the group required to check the processing of \code{PUT}
-and \code{DELETE} actions for mapping users to their groups.}
+\item{GroupId}{[required] The identifier of the group required to check the processing of \code{PUT} and \code{DELETE} actions for mapping users to their groups.}
 }
 \description{
 Describes the processing of \code{PUT} and \code{DELETE} actions for mapping users to their groups. This includes information on the status of actions currently processing or yet to be processed, when actions were last updated, when actions were received by Amazon Kendra, the latest action that should process and apply after other actions, and useful error messages if an action could not be processed.

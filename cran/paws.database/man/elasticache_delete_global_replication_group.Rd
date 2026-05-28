@@ -12,8 +12,7 @@ elasticache_delete_global_replication_group(
 \arguments{
 \item{GlobalReplicationGroupId}{[required] The name of the Global datastore}
 
-\item{RetainPrimaryReplicationGroup}{[required] The primary replication group is retained as a standalone replication
-group.}
+\item{RetainPrimaryReplicationGroup}{[required] The primary replication group is retained as a standalone replication group.}
 }
 \description{
 Deleting a Global datastore is a two-step process:

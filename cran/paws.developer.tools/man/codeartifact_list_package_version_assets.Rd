@@ -17,24 +17,17 @@ codeartifact_list_package_version_assets(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the repository associated with the
-package version assets.}
+\item{domain}{[required] The name of the domain that contains the repository associated with the package version assets.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{repository}{[required] The name of the repository that contains the package that contains the
-requested package version assets.}
+\item{repository}{[required] The name of the repository that contains the package that contains the requested package version assets.}
 
-\item{format}{[required] The format of the package that contains the requested package version
-assets.}
+\item{format}{[required] The format of the package that contains the requested package version assets.}
 
-\item{namespace}{The namespace of the package version that contains the requested package
-version assets. The package component that specifies its namespace
-depends on its type. For example:
+\item{namespace}{The namespace of the package version that contains the requested package version assets. The package component that specifies its namespace depends on its type. For example:
 
-The namespace is required requesting assets from package versions of the
-following formats:
+The namespace is required requesting assets from package versions of the following formats:
 \itemize{
 \item Maven
 \item Swift
@@ -42,21 +35,16 @@ following formats:
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm or Swift package version is its \code{scope}.
 \item The namespace of a generic package is its \code{namespace}.
-\item Python, NuGet, Ruby, and Cargo package versions do not contain a
-corresponding component, package versions of those formats do not
-have a namespace.
+\item Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
-\item{package}{[required] The name of the package that contains the requested package version
-assets.}
+\item{package}{[required] The name of the package that contains the requested package version assets.}
 
 \item{packageVersion}{[required] A string that contains the package version (for example, \verb{3.5.2}).}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns a list of \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html}{AssetSummary} objects for assets in a package version.

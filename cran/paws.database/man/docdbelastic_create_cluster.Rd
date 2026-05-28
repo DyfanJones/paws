@@ -33,26 +33,21 @@ docdbelastic_create_cluster(
 \item Cannot be a reserved word.
 }}
 
-\item{adminUserPassword}{[required] The password for the Amazon DocumentDB elastic clusters administrator.
-The password can contain any printable ASCII characters.
+\item{adminUserPassword}{[required] The password for the Amazon DocumentDB elastic clusters administrator. The password can contain any printable ASCII characters.
 
 \emph{Constraints}:
 \itemize{
 \item Must contain from 8 to 100 characters.
-\item Cannot contain a forward slash (/), double quote ("), or the "at"
-symbol (@).
+\item Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).
 }}
 
-\item{authType}{[required] The authentication type used to determine where to fetch the password
-used for accessing the elastic cluster. Valid types are \code{PLAIN_TEXT} or
-\code{SECRET_ARN}.}
+\item{authType}{[required] The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are \code{PLAIN_TEXT} or \code{SECRET_ARN}.}
 
 \item{backupRetentionPeriod}{The number of days for which automatic snapshots are retained.}
 
 \item{clientToken}{The client token for the elastic cluster.}
 
-\item{clusterName}{[required] The name of the new elastic cluster. This parameter is stored as a
-lowercase string.
+\item{clusterName}{[required] The name of the new elastic cluster. This parameter is stored as a lowercase string.
 
 \emph{Constraints}:
 \itemize{
@@ -65,48 +60,33 @@ lowercase string.
 
 \item{kmsKeyId}{The KMS key identifier to use to encrypt the new elastic cluster.
 
-The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-encryption key. If you are creating a cluster using the same Amazon
-account that owns this KMS encryption key, you can use the KMS key alias
-instead of the ARN as the KMS encryption key.
+The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.
 
-If an encryption key is not specified, Amazon DocumentDB uses the
-default encryption key that KMS creates for your account. Your account
-has a different default encryption key for each Amazon Region.}
+If an encryption key is not specified, Amazon DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.}
 
-\item{preferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled, as determined by the
-\code{backupRetentionPeriod}.}
+\item{preferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled, as determined by the \code{backupRetentionPeriod}.}
 
-\item{preferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{preferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 \emph{Format}: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-\emph{Default}: a 30-minute window selected at random from an 8-hour block of
-time for each Amazon Web Services Region, occurring on a random day of
-the week.
+\emph{Default}: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.
 
 \emph{Valid days}: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 
 \emph{Constraints}: Minimum 30-minute window.}
 
-\item{shardCapacity}{[required] The number of vCPUs assigned to each elastic cluster shard. Maximum is
-64. Allowed values are 2, 4, 8, 16, 32, 64.}
+\item{shardCapacity}{[required] The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.}
 
 \item{shardCount}{[required] The number of shards assigned to the elastic cluster. Maximum is 32.}
 
-\item{shardInstanceCount}{The number of replica instances applying to all shards in the elastic
-cluster. A \code{shardInstanceCount} value of 1 means there is one writer
-instance, and any additional instances are replicas that can be used for
-reads and to improve availability.}
+\item{shardInstanceCount}{The number of replica instances applying to all shards in the elastic cluster. A \code{shardInstanceCount} value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.}
 
 \item{subnetIds}{The Amazon EC2 subnet IDs for the new elastic cluster.}
 
 \item{tags}{The tags to be assigned to the new elastic cluster.}
 
-\item{vpcSecurityGroupIds}{A list of EC2 VPC security groups to associate with the new elastic
-cluster.}
+\item{vpcSecurityGroupIds}{A list of EC2 VPC security groups to associate with the new elastic cluster.}
 }
 \description{
 Creates a new Amazon DocumentDB elastic cluster and returns its cluster structure.

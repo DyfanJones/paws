@@ -17,29 +17,15 @@ docdb_modify_db_cluster_snapshot_attribute(
 
 \item{AttributeName}{[required] The name of the cluster snapshot attribute to modify.
 
-To manage authorization for other Amazon Web Services accounts to copy
-or restore a manual cluster snapshot, set this value to \code{restore}.}
+To manage authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this value to \code{restore}.}
 
-\item{ValuesToAdd}{A list of cluster snapshot attributes to add to the attribute specified
-by \code{AttributeName}.
+\item{ValuesToAdd}{A list of cluster snapshot attributes to add to the attribute specified by \code{AttributeName}.
 
-To authorize other Amazon Web Services accounts to copy or restore a
-manual cluster snapshot, set this list to include one or more Amazon Web
-Services account IDs. To make the manual cluster snapshot restorable by
-any Amazon Web Services account, set it to \code{all}. Do not add the \code{all}
-value for any manual cluster snapshots that contain private information
-that you don't want to be available to all Amazon Web Services accounts.}
+To authorize other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account IDs. To make the manual cluster snapshot restorable by any Amazon Web Services account, set it to \code{all}. Do not add the \code{all} value for any manual cluster snapshots that contain private information that you don't want to be available to all Amazon Web Services accounts.}
 
-\item{ValuesToRemove}{A list of cluster snapshot attributes to remove from the attribute
-specified by \code{AttributeName}.
+\item{ValuesToRemove}{A list of cluster snapshot attributes to remove from the attribute specified by \code{AttributeName}.
 
-To remove authorization for other Amazon Web Services accounts to copy
-or restore a manual cluster snapshot, set this list to include one or
-more Amazon Web Services account identifiers. To remove authorization
-for any Amazon Web Services account to copy or restore the cluster
-snapshot, set it to \code{all} . If you specify \code{all}, an Amazon Web Services
-account whose account ID is explicitly added to the \code{restore} attribute
-can still copy or restore a manual cluster snapshot.}
+To remove authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account identifiers. To remove authorization for any Amazon Web Services account to copy or restore the cluster snapshot, set it to \code{all} . If you specify \code{all}, an Amazon Web Services account whose account ID is explicitly added to the \code{restore} attribute can still copy or restore a manual cluster snapshot.}
 }
 \description{
 Adds an attribute and values to, or removes an attribute and values from, a manual cluster snapshot.

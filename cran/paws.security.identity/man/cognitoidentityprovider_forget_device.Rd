@@ -8,12 +8,9 @@ signed-in user}
 cognitoidentityprovider_forget_device(AccessToken = NULL, DeviceKey)
 }
 \arguments{
-\item{AccessToken}{A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 
-\item{DeviceKey}{[required] The unique identifier, or device key, of the device that the user wants
-to forget.}
+\item{DeviceKey}{[required] The unique identifier, or device key, of the device that the user wants to forget.}
 }
 \description{
 Given a device key, deletes a remembered device as the currently signed-in user. For more information about device authentication, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html}{Working with user devices in your user pool}.

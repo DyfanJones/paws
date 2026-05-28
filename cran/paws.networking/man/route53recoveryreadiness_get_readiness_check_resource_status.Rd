@@ -18,9 +18,7 @@ route53recoveryreadiness_get_readiness_check_resource_status(
 
 \item{ReadinessCheckName}{[required] Name of a readiness check.}
 
-\item{ResourceIdentifier}{[required] The resource identifier, which is the Amazon Resource Name (ARN) or the
-identifier generated for the resource by Application Recovery Controller
-(for example, for a DNS target resource).}
+\item{ResourceIdentifier}{[required] The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).}
 }
 \description{
 Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.

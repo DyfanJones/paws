@@ -15,28 +15,17 @@ ec2_modify_instance_maintenance_options(
 \arguments{
 \item{InstanceId}{[required] The ID of the instance.}
 
-\item{AutoRecovery}{Disables the automatic recovery behavior of your instance or sets it to
-default.}
+\item{AutoRecovery}{Disables the automatic recovery behavior of your instance or sets it to default.}
 
-\item{RebootMigration}{Specifies whether to attempt reboot migration during a user-initiated
-reboot of an instance that has a scheduled \code{system-reboot} event:
+\item{RebootMigration}{Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled \code{system-reboot} event:
 \itemize{
-\item \code{default} - Amazon EC2 attempts to migrate the instance to new
-hardware (reboot migration). If successful, the \code{system-reboot}
-event is cleared. If unsuccessful, an in-place reboot occurs and the
-event remains scheduled.
-\item \code{disabled} - Amazon EC2 keeps the instance on the same hardware
-(in-place reboot). The \code{system-reboot} event remains scheduled.
+\item \code{default} - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the \code{system-reboot} event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.
+\item \code{disabled} - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The \code{system-reboot} event remains scheduled.
 }
 
-This setting only applies to supported instances that have a scheduled
-reboot event. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration}{Enable or disable reboot migration}
-in the \emph{Amazon EC2 User Guide}.}
+This setting only applies to supported instances that have a scheduled reboot event. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration}{Enable or disable reboot migration} in the \emph{Amazon EC2 User Guide}.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Modifies the recovery behavior of your instance to disable simplified automatic recovery or set the recovery behavior to default. The default configuration will not enable simplified automatic recovery for an unsupported instance type. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery}{Simplified automatic recovery}.

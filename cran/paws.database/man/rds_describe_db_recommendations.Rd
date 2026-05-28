@@ -15,11 +15,9 @@ rds_describe_db_recommendations(
 )
 }
 \arguments{
-\item{LastUpdatedAfter}{A filter to include only the recommendations that were updated after
-this specified time.}
+\item{LastUpdatedAfter}{A filter to include only the recommendations that were updated after this specified time.}
 
-\item{LastUpdatedBefore}{A filter to include only the recommendations that were updated before
-this specified time.}
+\item{LastUpdatedBefore}{A filter to include only the recommendations that were updated before this specified time.}
 
 \item{Locale}{The language that you choose to return the list of recommendations.
 
@@ -43,25 +41,19 @@ Valid values:
 
 Supported Filters:
 \itemize{
-\item \code{recommendation-id} - Accepts a list of recommendation identifiers.
-The results list only includes the recommendations whose identifier
-is one of the specified filter values.
+\item \code{recommendation-id} - Accepts a list of recommendation identifiers. The results list only includes the recommendations whose identifier is one of the specified filter values.
 \item \code{status} - Accepts a list of recommendation statuses.
 
 Valid values:
 \itemize{
 \item \code{active} - The recommendations which are ready for you to apply.
-\item \code{pending} - The applied or scheduled recommendations which are
-in progress.
+\item \code{pending} - The applied or scheduled recommendations which are in progress.
 \item \code{resolved} - The recommendations which are completed.
 \item \code{dismissed} - The recommendations that you dismissed.
 }
 
-The results list only includes the recommendations whose status is
-one of the specified filter values.
-\item \code{severity} - Accepts a list of recommendation severities. The
-results list only includes the recommendations whose severity is one
-of the specified filter values.
+The results list only includes the recommendations whose status is one of the specified filter values.
+\item \code{severity} - Accepts a list of recommendation severities. The results list only includes the recommendations whose severity is one of the specified filter values.
 
 Valid values:
 \itemize{
@@ -70,32 +62,16 @@ Valid values:
 \item \code{low}
 \item \code{informational}
 }
-\item \code{type-id} - Accepts a list of recommendation type identifiers. The
-results list only includes the recommendations whose type is one of
-the specified filter values.
-\item \code{dbi-resource-id} - Accepts a list of database resource identifiers.
-The results list only includes the recommendations that generated
-for the specified databases.
-\item \code{cluster-resource-id} - Accepts a list of cluster resource
-identifiers. The results list only includes the recommendations that
-generated for the specified clusters.
-\item \code{pg-arn} - Accepts a list of parameter group ARNs. The results list
-only includes the recommendations that generated for the specified
-parameter groups.
-\item \code{cluster-pg-arn} - Accepts a list of cluster parameter group ARNs.
-The results list only includes the recommendations that generated
-for the specified cluster parameter groups.
+\item \code{type-id} - Accepts a list of recommendation type identifiers. The results list only includes the recommendations whose type is one of the specified filter values.
+\item \code{dbi-resource-id} - Accepts a list of database resource identifiers. The results list only includes the recommendations that generated for the specified databases.
+\item \code{cluster-resource-id} - Accepts a list of cluster resource identifiers. The results list only includes the recommendations that generated for the specified clusters.
+\item \code{pg-arn} - Accepts a list of parameter group ARNs. The results list only includes the recommendations that generated for the specified parameter groups.
+\item \code{cluster-pg-arn} - Accepts a list of cluster parameter group ARNs. The results list only includes the recommendations that generated for the specified cluster parameter groups.
 }}
 
-\item{MaxRecords}{The maximum number of recommendations to include in the response. If
-more records exist than the specified \code{MaxRecords} value, a pagination
-token called a marker is included in the response so that you can
-retrieve the remaining results.}
+\item{MaxRecords}{The maximum number of recommendations to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_db_recommendations]{describe_db_recommendations}}
-request. If this parameter is specified, the response includes only
-records beyond the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_db_recommendations]{describe_db_recommendations}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Describes the recommendations to resolve the issues for your DB instances, DB clusters, and DB parameter groups.

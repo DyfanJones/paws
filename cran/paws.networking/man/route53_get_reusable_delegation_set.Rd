@@ -8,8 +8,7 @@ including the four name servers that are assigned to the delegation set}
 route53_get_reusable_delegation_set(Id)
 }
 \arguments{
-\item{Id}{[required] The ID of the reusable delegation set that you want to get a list of
-name servers for.}
+\item{Id}{[required] The ID of the reusable delegation set that you want to get a list of name servers for.}
 }
 \description{
 Retrieves information about a specified reusable delegation set, including the four name servers that are assigned to the delegation set.

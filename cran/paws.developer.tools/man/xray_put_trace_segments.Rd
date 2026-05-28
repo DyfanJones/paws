@@ -7,8 +7,7 @@
 xray_put_trace_segments(TraceSegmentDocuments)
 }
 \arguments{
-\item{TraceSegmentDocuments}{[required] A string containing a JSON document defining one or more segments or
-subsegments.}
+\item{TraceSegmentDocuments}{[required] A string containing a JSON document defining one or more segments or subsegments.}
 }
 \description{
 Uploads segment documents to Amazon Web Services X-Ray. A segment document can be a completed segment, an in-progress segment, or an array of subsegments.

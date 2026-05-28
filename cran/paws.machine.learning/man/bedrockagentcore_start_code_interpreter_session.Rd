@@ -20,25 +20,15 @@ bedrockagentcore_start_code_interpreter_session(
 
 \item{traceParent}{The parent trace information for distributed tracing.}
 
-\item{codeInterpreterIdentifier}{[required] The unique identifier of the code interpreter to use for this session.
-This identifier specifies which code interpreter environment to
-initialize for the session.}
+\item{codeInterpreterIdentifier}{[required] The unique identifier of the code interpreter to use for this session. This identifier specifies which code interpreter environment to initialize for the session.}
 
-\item{name}{The name of the code interpreter session. This name helps you identify
-and manage the session. The name does not need to be unique.}
+\item{name}{The name of the code interpreter session. This name helps you identify and manage the session. The name does not need to be unique.}
 
-\item{sessionTimeoutSeconds}{The duration in seconds (time-to-live) after which the session
-automatically terminates, regardless of ongoing activity. Defaults to
-900 seconds (15 minutes). Recommended minimum: 60 seconds. Maximum
-allowed: 28,800 seconds (8 hours).}
+\item{sessionTimeoutSeconds}{The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 900 seconds (15 minutes). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).}
 
 \item{certificates}{A list of certificates to install in the code interpreter session.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock AgentCore ignores the request, but does not
-return an error. This parameter helps prevent the creation of duplicate
-sessions if there are temporary network issues.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.}
 }
 \description{
 Creates and initializes a code interpreter session in Amazon Bedrock AgentCore. The session enables agents to execute code as part of their response generation, supporting programming languages such as Python for data analysis, visualization, and computation tasks.

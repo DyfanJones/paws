@@ -17,8 +17,7 @@ bedrockagentcore_start_memory_extraction_job(
 
 \item{extractionJob}{[required] Extraction job to start in this operation.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotent processing of
-the request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotent processing of the request.}
 }
 \description{
 Starts a memory extraction job that processes events that failed extraction previously in an AgentCore Memory resource and produces structured memory records. When earlier extraction attempts have left events unprocessed, this job will pick up and extract those as well.

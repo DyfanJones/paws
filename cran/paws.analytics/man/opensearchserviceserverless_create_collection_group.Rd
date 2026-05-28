@@ -16,17 +16,13 @@ opensearchserviceserverless_create_collection_group(
 \arguments{
 \item{name}{[required] The name of the collection group.}
 
-\item{standbyReplicas}{[required] Indicates whether standby replicas should be used for a collection
-group.}
+\item{standbyReplicas}{[required] Indicates whether standby replicas should be used for a collection group.}
 
 \item{description}{A description of the collection group.}
 
-\item{tags}{An arbitrary set of tags (key–value pairs) to associate with the
-OpenSearch Serverless collection group.}
+\item{tags}{An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection group.}
 
-\item{capacityLimits}{The capacity limits for the collection group, in OpenSearch Compute
-Units (OCUs). These limits control the maximum and minimum capacity for
-collections within the group.}
+\item{capacityLimits}{The capacity limits for the collection group, in OpenSearch Compute Units (OCUs). These limits control the maximum and minimum capacity for collections within the group.}
 
 \item{clientToken}{Unique, case-sensitive identifier to ensure idempotency of the request.}
 }

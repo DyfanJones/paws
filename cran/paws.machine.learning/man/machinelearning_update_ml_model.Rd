@@ -15,13 +15,9 @@ machinelearning_update_ml_model(
 
 \item{MLModelName}{A user-supplied name or description of the \code{MLModel}.}
 
-\item{ScoreThreshold}{The \code{ScoreThreshold} used in binary classification \code{MLModel} that marks
-the boundary between a positive prediction and a negative prediction.
+\item{ScoreThreshold}{The \code{ScoreThreshold} used in binary classification \code{MLModel} that marks the boundary between a positive prediction and a negative prediction.
 
-Output values greater than or equal to the \code{ScoreThreshold} receive a
-positive result from the \code{MLModel}, such as \code{true}. Output values less
-than the \code{ScoreThreshold} receive a negative response from the
-\code{MLModel}, such as \code{false}.}
+Output values greater than or equal to the \code{ScoreThreshold} receive a positive result from the \code{MLModel}, such as \code{true}. Output values less than the \code{ScoreThreshold} receive a negative response from the \code{MLModel}, such as \code{false}.}
 }
 \description{
 Updates the \code{MLModelName} and the \code{ScoreThreshold} of an \code{MLModel}.

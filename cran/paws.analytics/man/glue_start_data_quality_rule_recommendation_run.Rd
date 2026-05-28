@@ -22,18 +22,13 @@ glue_start_data_quality_rule_recommendation_run(
 
 \item{NumberOfWorkers}{The number of \code{G.1X} workers to be used in the run. The default is 5.}
 
-\item{Timeout}{The timeout for a run in minutes. This is the maximum time that a run
-can consume resources before it is terminated and enters \code{TIMEOUT}
-status. The default is 2,880 minutes (48 hours).}
+\item{Timeout}{The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters \code{TIMEOUT} status. The default is 2,880 minutes (48 hours).}
 
 \item{CreatedRulesetName}{A name for the ruleset.}
 
-\item{DataQualitySecurityConfiguration}{The name of the security configuration created with the data quality
-encryption option.}
+\item{DataQualitySecurityConfiguration}{The name of the security configuration created with the data quality encryption option.}
 
-\item{ClientToken}{Used for idempotency and is recommended to be set to a random ID (such
-as a UUID) to avoid creating or starting multiple instances of the same
-resource.}
+\item{ClientToken}{Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.}
 }
 \description{
 Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking.

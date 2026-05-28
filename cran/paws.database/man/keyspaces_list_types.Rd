@@ -7,13 +7,9 @@
 keyspaces_list_types(nextToken = NULL, maxResults = NULL, keyspaceName)
 }
 \arguments{
-\item{nextToken}{The pagination token. To resume pagination, provide the \code{NextToken}
-value as an argument of a subsequent API invocation.}
+\item{nextToken}{The pagination token. To resume pagination, provide the \code{NextToken} value as an argument of a subsequent API invocation.}
 
-\item{maxResults}{The total number of types to return in the output. If the total number
-of types available is more than the value specified, a \code{NextToken} is
-provided in the output. To resume pagination, provide the \code{NextToken}
-value as an argument of a subsequent API invocation.}
+\item{maxResults}{The total number of types to return in the output. If the total number of types available is more than the value specified, a \code{NextToken} is provided in the output. To resume pagination, provide the \code{NextToken} value as an argument of a subsequent API invocation.}
 
 \item{keyspaceName}{[required] The name of the keyspace that contains the listed types.}
 }

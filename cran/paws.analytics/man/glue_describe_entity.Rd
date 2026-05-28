@@ -15,14 +15,11 @@ glue_describe_entity(
 )
 }
 \arguments{
-\item{ConnectionName}{[required] The name of the connection that contains the connection type
-credentials.}
+\item{ConnectionName}{[required] The name of the connection that contains the connection type credentials.}
 
-\item{CatalogId}{The catalog ID of the catalog that contains the connection. This can be
-null, By default, the Amazon Web Services Account ID is the catalog ID.}
+\item{CatalogId}{The catalog ID of the catalog that contains the connection. This can be null, By default, the Amazon Web Services Account ID is the catalog ID.}
 
-\item{EntityName}{[required] The name of the entity that you want to describe from the connection
-type.}
+\item{EntityName}{[required] The name of the entity that you want to describe from the connection type.}
 
 \item{NextToken}{A continuation token, included if this is a continuation call.}
 

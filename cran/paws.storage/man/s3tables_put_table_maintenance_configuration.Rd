@@ -14,8 +14,7 @@ s3tables_put_table_maintenance_configuration(
 )
 }
 \arguments{
-\item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the table associated with the
-maintenance configuration.}
+\item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the table associated with the maintenance configuration.}
 
 \item{namespace}{[required] The namespace of the table.}
 

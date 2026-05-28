@@ -14,11 +14,9 @@ prometheusservice_create_logging_configuration(
 \arguments{
 \item{workspaceId}{[required] The ID of the workspace to create the logging configuration for.}
 
-\item{logGroupArn}{[required] The ARN of the CloudWatch log group to which the vended log data will be
-published. This log group must exist prior to calling this operation.}
+\item{logGroupArn}{[required] The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.}
 
-\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of
-the request. Case-sensitive.}
+\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.}
 }
 \description{
 The \code{\link[=prometheusservice_create_logging_configuration]{create_logging_configuration}} operation creates rules and alerting logging configuration for the workspace. Use this operation to set the CloudWatch log group to which the logs will be published to.

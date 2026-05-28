@@ -20,17 +20,13 @@ datazone_update_environment(
 
 \item{identifier}{[required] The identifier of the environment that is to be updated.}
 
-\item{name}{The name to be updated as part of the
-\code{\link[=datazone_update_environment]{update_environment}} action.}
+\item{name}{The name to be updated as part of the \code{\link[=datazone_update_environment]{update_environment}} action.}
 
-\item{description}{The description to be updated as part of the
-\code{\link[=datazone_update_environment]{update_environment}} action.}
+\item{description}{The description to be updated as part of the \code{\link[=datazone_update_environment]{update_environment}} action.}
 
-\item{glossaryTerms}{The glossary terms to be updated as part of the
-\code{\link[=datazone_update_environment]{update_environment}} action.}
+\item{glossaryTerms}{The glossary terms to be updated as part of the \code{\link[=datazone_update_environment]{update_environment}} action.}
 
-\item{blueprintVersion}{The blueprint version to which the environment should be updated. You
-can only specify the following string for this parameter: \code{latest}.}
+\item{blueprintVersion}{The blueprint version to which the environment should be updated. You can only specify the following string for this parameter: \code{latest}.}
 
 \item{userParameters}{The user parameters of the environment.}
 

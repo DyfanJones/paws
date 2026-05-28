@@ -8,9 +8,7 @@ recipe, job, or schedule}
 gluedatabrew_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] The DataBrew resource to which tags should be added. The value for this
-parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a
-dataset, a job, a project, or a recipe.}
+\item{ResourceArn}{[required] The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.}
 
 \item{Tags}{[required] One or more tags to be assigned to the resource.}
 }

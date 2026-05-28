@@ -13,12 +13,17 @@ budgets_describe_budget_performance_history(
 )
 }
 \arguments{
-\item{AccountId}{[required]}
+\item{AccountId}{[required] The account ID of the user. It's a 12-digit number.}
 
-\item{BudgetName}{[required]}
+\item{BudgetName}{[required] A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
 
-\item{TimePeriod}{Retrieves how often the budget went into an \code{ALARM} state for the
-specified time period.}
+Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.}
+
+\item{TimePeriod}{Retrieves how often the budget went into an \code{ALARM} state for the specified time period.}
+
+\item{MaxResults}{An integer that represents how many entries a paginated response contains. The maximum is 100.}
+
+\item{NextToken}{A generic string.}
 }
 \description{
 Describes the history for \code{DAILY}, \code{MONTHLY}, and \code{QUARTERLY} budgets. Budget history isn't available for \code{ANNUAL} budgets.

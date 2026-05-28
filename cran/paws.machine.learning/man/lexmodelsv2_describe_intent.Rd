@@ -13,9 +13,7 @@ lexmodelsv2_describe_intent(intentId, botId, botVersion, localeId)
 
 \item{botVersion}{[required] The version of the bot associated with the intent.}
 
-\item{localeId}{[required] The identifier of the language and locale of the intent to describe. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 }
 \description{
 Returns metadata about an intent.

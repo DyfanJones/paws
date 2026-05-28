@@ -9,18 +9,13 @@ ec2_deregister_image(ImageId, DeleteAssociatedSnapshots = NULL, DryRun = NULL)
 \arguments{
 \item{ImageId}{[required] The ID of the AMI.}
 
-\item{DeleteAssociatedSnapshots}{Specifies whether to delete the snapshots associated with the AMI during
-deregistration.
+\item{DeleteAssociatedSnapshots}{Specifies whether to delete the snapshots associated with the AMI during deregistration.
 
-If a snapshot is associated with multiple AMIs, it is not deleted,
-regardless of this setting.
+If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.
 
 Default: The snapshots are not deleted.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Deregisters the specified AMI. A deregistered AMI can't be used to launch new instances.

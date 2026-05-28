@@ -21,11 +21,11 @@ cloudwatchlogs_get_scheduled_query_history(
 
 \item{endTime}{[required] The end time for the history query in Unix epoch format.}
 
-\item{executionStatuses}{An array of execution statuses to filter the history results. Only
-executions with the specified statuses are returned.}
+\item{executionStatuses}{An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.}
 
-\item{maxResults}{The maximum number of history records to return. Valid range is 1 to
-1000.}
+\item{maxResults}{The maximum number of history records to return. Valid range is 1 to 1000.}
+
+\item{nextToken}{The token for the next set of items to return. The token expires after 24 hours.}
 }
 \description{
 Retrieves the execution history of a scheduled query within a specified time range, including query results and destination processing status.

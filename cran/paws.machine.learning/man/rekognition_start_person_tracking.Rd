@@ -13,24 +13,13 @@ rekognition_start_person_tracking(
 )
 }
 \arguments{
-\item{Video}{[required] The video in which you want to detect people. The video must be stored
-in an Amazon S3 bucket.}
+\item{Video}{[required] The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.}
 
-\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same
-token with multiple
-\code{\link[=rekognition_start_person_tracking]{start_person_tracking}} requests,
-the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the
-same job from being accidently started more than once.}
+\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same token with multiple \code{\link[=rekognition_start_person_tracking]{start_person_tracking}} requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the same job from being accidently started more than once.}
 
-\item{NotificationChannel}{The Amazon SNS topic ARN you want Amazon Rekognition Video to publish
-the completion status of the people detection operation to. The Amazon
-SNS topic must have a topic name that begins with \emph{AmazonRekognition} if
-you are using the AmazonRekognitionServiceRole permissions policy.}
+\item{NotificationChannel}{The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with \emph{AmazonRekognition} if you are using the AmazonRekognitionServiceRole permissions policy.}
 
-\item{JobTag}{An identifier you specify that's returned in the completion notification
-that's published to your Amazon Simple Notification Service topic. For
-example, you can use \code{JobTag} to group related jobs and identify them in
-the completion notification.}
+\item{JobTag}{An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use \code{JobTag} to group related jobs and identify them in the completion notification.}
 }
 \description{
 \emph{End of support notice:} On October 31, 2025, AWS will discontinue support for Amazon Rekognition People Pathing. After October 31, 2025, you will no longer be able to use the Rekognition People Pathing capability. For more information, visit this \href{https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/}{blog post}.

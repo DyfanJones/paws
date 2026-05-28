@@ -8,11 +8,9 @@ cluster}
 rds_remove_from_global_cluster(GlobalClusterIdentifier, DbClusterIdentifier)
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The cluster identifier to detach from the Aurora global database
-cluster.}
+\item{GlobalClusterIdentifier}{[required] The cluster identifier to detach from the Aurora global database cluster.}
 
-\item{DbClusterIdentifier}{[required] The Amazon Resource Name (ARN) identifying the cluster that was detached
-from the Aurora global database cluster.}
+\item{DbClusterIdentifier}{[required] The Amazon Resource Name (ARN) identifying the cluster that was detached from the Aurora global database cluster.}
 }
 \description{
 Detaches an Aurora secondary cluster from an Aurora global database cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary cluster in a different Region.

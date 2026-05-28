@@ -32,15 +32,13 @@ drs_update_replication_configuration(
 
 \item{stagingAreaSubnetId}{The subnet to be used by the replication staging area.}
 
-\item{associateDefaultSecurityGroup}{Whether to associate the default Elastic Disaster Recovery Security
-group with the Replication Configuration.}
+\item{associateDefaultSecurityGroup}{Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.}
 
 \item{replicationServersSecurityGroupsIDs}{The security group IDs that will be used by the replication server.}
 
 \item{replicationServerInstanceType}{The instance type to be used for the replication server.}
 
-\item{useDedicatedReplicationServer}{Whether to use a dedicated Replication Server in the replication staging
-area.}
+\item{useDedicatedReplicationServer}{Whether to use a dedicated Replication Server in the replication staging area.}
 
 \item{defaultLargeStagingDiskType}{The Staging Disk EBS volume type to be used during replication.}
 
@@ -50,25 +48,19 @@ area.}
 
 \item{ebsEncryptionKeyArn}{The ARN of the EBS encryption key to be used during replication.}
 
-\item{bandwidthThrottling}{Configure bandwidth throttling for the outbound data transfer rate of
-the Source Server in Mbps.}
+\item{bandwidthThrottling}{Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.}
 
 \item{dataPlaneRouting}{The data plane routing mechanism that will be used for replication.}
 
 \item{createPublicIP}{Whether to create a Public IP for the Recovery Instance by default.}
 
-\item{stagingAreaTags}{A set of tags to be associated with all resources created in the
-replication staging area: EC2 replication server, EBS volumes, EBS
-snapshots, etc.}
+\item{stagingAreaTags}{A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.}
 
-\item{pitPolicy}{The Point in time (PIT) policy to manage snapshots taken during
-replication.}
+\item{pitPolicy}{The Point in time (PIT) policy to manage snapshots taken during replication.}
 
-\item{autoReplicateNewDisks}{Whether to allow the AWS replication agent to automatically replicate
-newly added disks.}
+\item{autoReplicateNewDisks}{Whether to allow the AWS replication agent to automatically replicate newly added disks.}
 
-\item{internetProtocol}{Which version of the Internet Protocol to use for replication of data.
-(IPv4 or IPv6)}
+\item{internetProtocol}{Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)}
 }
 \description{
 Allows you to update a ReplicationConfiguration by Source Server ID.

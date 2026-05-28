@@ -11,8 +11,7 @@ apigatewayv2_get_integrations(ApiId, MaxResults = NULL, NextToken = NULL)
 
 \item{MaxResults}{The maximum number of elements to be returned for this resource.}
 
-\item{NextToken}{The next page of elements from this collection. Not valid for the last
-element of the collection.}
+\item{NextToken}{The next page of elements from this collection. Not valid for the last element of the collection.}
 }
 \description{
 Gets the Integrations for an API.

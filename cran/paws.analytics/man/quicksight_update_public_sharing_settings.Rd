@@ -11,11 +11,9 @@ quicksight_update_public_sharing_settings(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID associated with your Amazon Quick
-Sight subscription.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID associated with your Amazon Quick Sight subscription.}
 
-\item{PublicSharingEnabled}{A Boolean value that indicates whether public sharing is turned on for
-an Quick account.}
+\item{PublicSharingEnabled}{A Boolean value that indicates whether public sharing is turned on for an Quick account.}
 }
 \description{
 This API controls public sharing settings for your entire Quick Sight account, affecting data security and access. When you enable public sharing:

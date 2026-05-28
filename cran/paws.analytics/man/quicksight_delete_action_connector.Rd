@@ -7,8 +7,7 @@
 quicksight_delete_action_connector(AwsAccountId, ActionConnectorId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID that contains the action connector to
-delete.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID that contains the action connector to delete.}
 
 \item{ActionConnectorId}{[required] The unique identifier of the action connector to delete.}
 }

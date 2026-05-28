@@ -17,34 +17,17 @@ rekognition_list_dataset_entries(
 \arguments{
 \item{DatasetArn}{[required] The Amazon Resource Name (ARN) for the dataset that you want to use.}
 
-\item{ContainsLabels}{Specifies a label filter for the response. The response includes an
-entry only if one or more of the labels in \code{ContainsLabels} exist in the
-entry.}
+\item{ContainsLabels}{Specifies a label filter for the response. The response includes an entry only if one or more of the labels in \code{ContainsLabels} exist in the entry.}
 
-\item{Labeled}{Specify \code{true} to get only the JSON Lines where the image is labeled.
-Specify \code{false} to get only the JSON Lines where the image isn't
-labeled. If you don't specify \code{Labeled},
-\code{\link[=rekognition_list_dataset_entries]{list_dataset_entries}} returns JSON
-Lines for labeled and unlabeled images.}
+\item{Labeled}{Specify \code{true} to get only the JSON Lines where the image is labeled. Specify \code{false} to get only the JSON Lines where the image isn't labeled. If you don't specify \code{Labeled}, \code{\link[=rekognition_list_dataset_entries]{list_dataset_entries}} returns JSON Lines for labeled and unlabeled images.}
 
-\item{SourceRefContains}{If specified, \code{\link[=rekognition_list_dataset_entries]{list_dataset_entries}}
-only returns JSON Lines where the value of \code{SourceRefContains} is part
-of the \code{source-ref} field. The \code{source-ref} field contains the Amazon S3
-location of the image. You can use \code{SouceRefContains} for tasks such as
-getting the JSON Line for a single image, or gettting JSON Lines for all
-images within a specific folder.}
+\item{SourceRefContains}{If specified, \code{\link[=rekognition_list_dataset_entries]{list_dataset_entries}} only returns JSON Lines where the value of \code{SourceRefContains} is part of the \code{source-ref} field. The \code{source-ref} field contains the Amazon S3 location of the image. You can use \code{SouceRefContains} for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.}
 
-\item{HasErrors}{Specifies an error filter for the response. Specify \code{True} to only
-include entries that have errors.}
+\item{HasErrors}{Specifies an error filter for the response. Specify \code{True} to only include entries that have errors.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more results
-to retrieve), Amazon Rekognition Custom Labels returns a pagination
-token in the response. You can use this pagination token to retrieve the
-next set of results.}
+\item{NextToken}{If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per paginated call. The largest
-value you can specify is 100. If you specify a value greater than 100, a
-ValidationException error occurs. The default value is 100.}
+\item{MaxResults}{The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

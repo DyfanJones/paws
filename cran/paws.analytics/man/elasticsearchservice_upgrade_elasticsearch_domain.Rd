@@ -12,12 +12,11 @@ elasticsearchservice_upgrade_elasticsearch_domain(
 )
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 
 \item{TargetVersion}{[required] The version of Elasticsearch that you intend to upgrade the domain to.}
 
-\item{PerformCheckOnly}{This flag, when set to True, indicates that an Upgrade Eligibility Check
-needs to be performed. This will not actually perform the Upgrade.}
+\item{PerformCheckOnly}{This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.}
 }
 \description{
 Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch version.

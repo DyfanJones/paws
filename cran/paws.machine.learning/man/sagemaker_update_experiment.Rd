@@ -13,8 +13,7 @@ sagemaker_update_experiment(
 \arguments{
 \item{ExperimentName}{[required] The name of the experiment to update.}
 
-\item{DisplayName}{The name of the experiment as displayed. The name doesn't need to be
-unique. If \code{DisplayName} isn't specified, \code{ExperimentName} is displayed.}
+\item{DisplayName}{The name of the experiment as displayed. The name doesn't need to be unique. If \code{DisplayName} isn't specified, \code{ExperimentName} is displayed.}
 
 \item{Description}{The description of the experiment.}
 }

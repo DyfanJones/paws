@@ -28,11 +28,9 @@ inspector2_get_cis_scan_result_details(
 
 \item{sortOrder}{The sort order.}
 
-\item{nextToken}{The pagination token from a previous request that's used to retrieve the
-next page of results.}
+\item{nextToken}{The pagination token from a previous request that's used to retrieve the next page of results.}
 
-\item{maxResults}{The maximum number of CIS scan result details to be returned in a single
-page of results.}
+\item{maxResults}{The maximum number of CIS scan result details to be returned in a single page of results.}
 }
 \description{
 Retrieves CIS scan result details.

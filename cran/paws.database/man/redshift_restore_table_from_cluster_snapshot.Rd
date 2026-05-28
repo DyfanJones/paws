@@ -19,15 +19,11 @@ redshift_restore_table_from_cluster_snapshot(
 \arguments{
 \item{ClusterIdentifier}{[required] The identifier of the Amazon Redshift cluster to restore the table to.}
 
-\item{SnapshotIdentifier}{[required] The identifier of the snapshot to restore the table from. This snapshot
-must have been created from the Amazon Redshift cluster specified by the
-\code{ClusterIdentifier} parameter.}
+\item{SnapshotIdentifier}{[required] The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the \code{ClusterIdentifier} parameter.}
 
 \item{SourceDatabaseName}{[required] The name of the source database that contains the table to restore from.}
 
-\item{SourceSchemaName}{The name of the source schema that contains the table to restore from.
-If you do not specify a \code{SourceSchemaName} value, the default is
-\code{public}.}
+\item{SourceSchemaName}{The name of the source schema that contains the table to restore from. If you do not specify a \code{SourceSchemaName} value, the default is \code{public}.}
 
 \item{SourceTableName}{[required] The name of the source table to restore from.}
 
@@ -37,9 +33,7 @@ If you do not specify a \code{SourceSchemaName} value, the default is
 
 \item{NewTableName}{[required] The name of the table to create as a result of the current request.}
 
-\item{EnableCaseSensitiveIdentifier}{Indicates whether name identifiers for database, schema, and table are
-case sensitive. If \code{true}, the names are case sensitive. If \code{false}
-(default), the names are not case sensitive.}
+\item{EnableCaseSensitiveIdentifier}{Indicates whether name identifiers for database, schema, and table are case sensitive. If \code{true}, the names are case sensitive. If \code{false} (default), the names are not case sensitive.}
 }
 \description{
 Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.

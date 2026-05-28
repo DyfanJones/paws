@@ -110,16 +110,10 @@ connectcases_batch_put_field_options <- function(domainId, fieldId, options) {
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param templateId &#91;required&#93; A unique identifier of a template.
-#' @param fields &#91;required&#93; An array of objects with field ID (matching ListFields/DescribeField)
-#' and value union data.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
-#' @param performedBy 
-#' @param tags A map of of key-value pairs that represent tags on a resource. Tags are
-#' used to organize, track, or control access for this resource.
+#' @param fields &#91;required&#93; An array of objects with field ID (matching ListFields/DescribeField) and value union data.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param performedBy Represents the entity that performed the action.
+#' @param tags A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
 #'
@@ -185,8 +179,7 @@ connectcases_create_case_rule <- function(domainId, name, description = NULL, ru
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_domain/](https://www.paws-r-sdk.com/docs/connectcases_create_domain/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name for your Cases domain. It must be unique for your Amazon Web
-#' Services account.
+#' @param name &#91;required&#93; The name for your Cases domain. It must be unique for your Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -219,8 +212,7 @@ connectcases_create_domain <- function(name) {
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param name &#91;required&#93; The name of the field.
-#' @param type &#91;required&#93; Defines the data type, some system constraints, and default display of
-#' the field.
+#' @param type &#91;required&#93; Defines the data type, some system constraints, and default display of the field.
 #' @param description The description of the field.
 #' @param attributes Union of field attributes.
 #'
@@ -255,8 +247,7 @@ connectcases_create_field <- function(domainId, name, type, description = NULL, 
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param name &#91;required&#93; The name of the layout. It must be unique for the Cases domain.
-#' @param content &#91;required&#93; Information about which fields will be present in the layout, and
-#' information about the order of the fields.
+#' @param content &#91;required&#93; Information about which fields will be present in the layout, and information about the order of the fields.
 #'
 #' @keywords internal
 #'
@@ -327,15 +318,10 @@ connectcases_create_related_item <- function(domainId, caseId, type, content, pe
 #' @param name &#91;required&#93; A name for the template. It must be unique per domain.
 #' @param description A brief description of the template.
 #' @param layoutConfiguration Configuration of layouts associated to the template.
-#' @param requiredFields A list of fields that must contain a value for a case to be successfully
-#' created with this template.
+#' @param requiredFields A list of fields that must contain a value for a case to be successfully created with this template.
 #' @param status The status of the template.
-#' @param rules A list of case rules (also known as [case field
-#' conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html))
-#' on a template.
-#' @param tagPropagationConfigurations Defines tag propagation configuration for resources created within a
-#' domain. Tags specified here will be automatically applied to resources
-#' being created for the specified resource type.
+#' @param rules A list of case rules (also known as [case field conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html)) on a template.
+#' @param tagPropagationConfigurations Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.
 #'
 #' @keywords internal
 #'
@@ -594,9 +580,7 @@ connectcases_delete_template <- function(domainId, templateId) {
 #' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param fields &#91;required&#93; A list of unique field identifiers.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -629,11 +613,8 @@ connectcases_get_case <- function(caseId, domainId, fields, nextToken = NULL) {
 #'
 #' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param maxResults The maximum number of audit events to return. When no value is provided,
-#' 25 is the default.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param maxResults The maximum number of audit events to return. When no value is provided, 25 is the default.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -792,9 +773,7 @@ connectcases_get_template <- function(domainId, templateId) {
 #'
 #' @param domainId &#91;required&#93; Unique identifier of a Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -828,9 +807,7 @@ connectcases_list_case_rules <- function(domainId, maxResults = NULL, nextToken 
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param contactArn &#91;required&#93; A unique identifier of a contact in Amazon Connect.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -862,9 +839,7 @@ connectcases_list_cases_for_contact <- function(domainId, contactArn, maxResults
 #' See [https://www.paws-r-sdk.com/docs/connectcases_list_domains/](https://www.paws-r-sdk.com/docs/connectcases_list_domains/) for full documentation.
 #'
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -898,11 +873,8 @@ connectcases_list_domains <- function(maxResults = NULL, nextToken = NULL) {
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param fieldId &#91;required&#93; The unique identifier of a field.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param values A list of `FieldOption` values to filter on for
-#' [`list_field_options`][connectcases_list_field_options].
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param values A list of `FieldOption` values to filter on for [`list_field_options`][connectcases_list_field_options].
 #'
 #' @keywords internal
 #'
@@ -935,9 +907,7 @@ connectcases_list_field_options <- function(domainId, fieldId, maxResults = NULL
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -970,9 +940,7 @@ connectcases_list_fields <- function(domainId, maxResults = NULL, nextToken = NU
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1036,9 +1004,7 @@ connectcases_list_tags_for_resource <- function(arn) {
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param status A list of status values to filter on.
 #'
 #' @keywords internal
@@ -1071,8 +1037,7 @@ connectcases_list_templates <- function(domainId, maxResults = NULL, nextToken =
 #' See [https://www.paws-r-sdk.com/docs/connectcases_put_case_event_configuration/](https://www.paws-r-sdk.com/docs/connectcases_put_case_event_configuration/) for full documentation.
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param eventBridge &#91;required&#93; Configuration to enable EventBridge case event delivery and determine
-#' what data is delivered.
+#' @param eventBridge &#91;required&#93; Configuration to enable EventBridge case event delivery and determine what data is delivered.
 #'
 #' @keywords internal
 #'
@@ -1105,16 +1070,9 @@ connectcases_put_case_event_configuration <- function(domainId, eventBridge) {
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param filters The list of types of related items and their parameters to use for
-#' filtering. The filters work as an OR condition: caller gets back related
-#' items that match any of the specified filter types.
-#' @param sorts A structured set of sort terms to specify the order in which related
-#' items should be returned. Supports sorting by association time or case
-#' ID. The sorts work in the order specified: first sort term takes
-#' precedence over subsequent terms.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param filters The list of types of related items and their parameters to use for filtering. The filters work as an OR condition: caller gets back related items that match any of the specified filter types.
+#' @param sorts A structured set of sort terms to specify the order in which related items should be returned. Supports sorting by association time or case ID. The sorts work in the order specified: first sort term takes precedence over subsequent terms.
 #'
 #' @keywords internal
 #'
@@ -1146,15 +1104,11 @@ connectcases_search_all_related_items <- function(domainId, maxResults = NULL, n
 #' See [https://www.paws-r-sdk.com/docs/connectcases_search_cases/](https://www.paws-r-sdk.com/docs/connectcases_search_cases/) for full documentation.
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param maxResults The maximum number of cases to return. When no value is provided, 25 is
-#' the default.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param maxResults The maximum number of cases to return. When no value is provided, 25 is the default.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param searchTerm A word or phrase used to perform a quick search.
 #' @param filter A list of filter objects.
-#' @param sorts A list of sorts where each sort specifies a field and their sort order
-#' to be applied to the results.
+#' @param sorts A list of sorts where each sort specifies a field and their sort order to be applied to the results.
 #' @param fields The list of field identifiers to be returned as part of the response.
 #'
 #' @keywords internal
@@ -1189,11 +1143,8 @@ connectcases_search_cases <- function(domainId, maxResults = NULL, nextToken = N
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param filters The list of types of related items and their parameters to use for
-#' filtering.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param filters The list of types of related items and their parameters to use for filtering.
 #'
 #' @keywords internal
 #'
@@ -1225,8 +1176,7 @@ connectcases_search_related_items <- function(domainId, caseId, maxResults = NUL
 #' See [https://www.paws-r-sdk.com/docs/connectcases_tag_resource/](https://www.paws-r-sdk.com/docs/connectcases_tag_resource/) for full documentation.
 #'
 #' @param arn &#91;required&#93; The Amazon Resource Name (ARN)
-#' @param tags &#91;required&#93; A map of of key-value pairs that represent tags on a resource. Tags are
-#' used to organize, track, or control access for this resource.
+#' @param tags &#91;required&#93; A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
 #'
@@ -1291,10 +1241,8 @@ connectcases_untag_resource <- function(arn, tagKeys) {
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param caseId &#91;required&#93; A unique identifier of the case.
-#' @param fields &#91;required&#93; An array of objects with `fieldId` (matching ListFields/DescribeField)
-#' and value union data, structured identical to
-#' [`create_case`][connectcases_create_case].
-#' @param performedBy 
+#' @param fields &#91;required&#93; An array of objects with `fieldId` (matching ListFields/DescribeField) and value union data, structured identical to [`create_case`][connectcases_create_case].
+#' @param performedBy Represents the entity that performed the action.
 #'
 #' @keywords internal
 #'
@@ -1398,8 +1346,7 @@ connectcases_update_field <- function(domainId, fieldId, name = NULL, descriptio
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param layoutId &#91;required&#93; The unique identifier of the layout.
 #' @param name The name of the layout. It must be unique per domain.
-#' @param content Information about which fields will be present in the layout, the order
-#' of the fields.
+#' @param content Information about which fields will be present in the layout, the order of the fields.
 #'
 #' @keywords internal
 #'
@@ -1470,15 +1417,10 @@ connectcases_update_related_item <- function(domainId, caseId, relatedItemId, co
 #' @param name The name of the template. It must be unique per domain.
 #' @param description A brief description of the template.
 #' @param layoutConfiguration Configuration of layouts associated to the template.
-#' @param requiredFields A list of fields that must contain a value for a case to be successfully
-#' created with this template.
+#' @param requiredFields A list of fields that must contain a value for a case to be successfully created with this template.
 #' @param status The status of the template.
-#' @param rules A list of case rules (also known as [case field
-#' conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html))
-#' on a template.
-#' @param tagPropagationConfigurations Defines tag propagation configuration for resources created within a
-#' domain. Tags specified here will be automatically applied to resources
-#' being created for the specified resource type.
+#' @param rules A list of case rules (also known as [case field conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html)) on a template.
+#' @param tagPropagationConfigurations Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.
 #'
 #' @keywords internal
 #'

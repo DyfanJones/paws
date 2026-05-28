@@ -6,11 +6,7 @@ NULL
 #' Associates a Route 53 Profiles profile with a VPC
 #'
 #' @description
-#' Associates a Route 53 Profiles profile with a VPC. A VPC can have only
-#' one Profile associated with it, but a Profile can be associated with
-#' 1000 of VPCs (and you can request a higher quota). For more information,
-#' see
-#' <https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities>.
+#' Associates a Route 53 Profiles profile with a VPC. A VPC can have only one Profile associated with it, but a Profile can be associated with 1000 of VPCs (and you can request a higher quota). For more information, see <https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities>.
 #'
 #' @usage
 #' route53profiles_associate_profile(Name, ProfileId, ResourceId, Tags)
@@ -18,8 +14,7 @@ NULL
 #' @param Name &#91;required&#93; A name for the association.
 #' @param ProfileId &#91;required&#93; ID of the Profile.
 #' @param ResourceId &#91;required&#93; The ID of the VPC.
-#' @param Tags A list of the tag keys and values that you want to identify the Profile
-#' association.
+#' @param Tags A list of the tag keys and values that you want to identify the Profile association.
 #'
 #' @return
 #' A list with the following syntax:
@@ -94,9 +89,7 @@ route53profiles_associate_profile <- function(Name, ProfileId, ResourceId, Tags 
 #' @param Name &#91;required&#93; Name for the resource association.
 #' @param ProfileId &#91;required&#93; ID of the Profile.
 #' @param ResourceArn &#91;required&#93; Amazon resource number, ARN, of the DNS resource.
-#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority.
-#' The priority indicates the processing order for the rule groups,
-#' starting with the priority assinged the lowest value.
+#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.
 #' 
 #' The allowed values for priority are between 100 and 9900.
 #'
@@ -166,17 +159,9 @@ route53profiles_associate_resource_to_profile <- function(Name, ProfileId, Resou
 #' @usage
 #' route53profiles_create_profile(ClientToken, Name, Tags)
 #'
-#' @param ClientToken &#91;required&#93; `ClientToken` is an idempotency token that ensures a call to
-#' [`create_profile`][route53profiles_create_profile] completes only once.
-#' You choose the value to pass. For example, an issue might prevent you
-#' from getting a response from
-#' [`create_profile`][route53profiles_create_profile]. In this case, safely
-#' retry your call to [`create_profile`][route53profiles_create_profile] by
-#' using the same [`create_profile`][route53profiles_create_profile]
-#' parameter value.
+#' @param ClientToken &#91;required&#93; `ClientToken` is an idempotency token that ensures a call to [`create_profile`][route53profiles_create_profile] completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from [`create_profile`][route53profiles_create_profile]. In this case, safely retry your call to [`create_profile`][route53profiles_create_profile] by using the same [`create_profile`][route53profiles_create_profile] parameter value.
 #' @param Name &#91;required&#93; A name for the Profile.
-#' @param Tags A list of the tag keys and values that you want to associate with the
-#' Route 53 Profile.
+#' @param Tags A list of the tag keys and values that you want to associate with the Route 53 Profile.
 #'
 #' @return
 #' A list with the following syntax:
@@ -242,8 +227,7 @@ route53profiles_create_profile <- function(ClientToken, Name, Tags = NULL) {
 #' Deletes the specified Route 53 Profile
 #'
 #' @description
-#' Deletes the specified Route 53 Profile. Before you can delete a profile,
-#' you must first disassociate it from all VPCs.
+#' Deletes the specified Route 53 Profile. Before you can delete a profile, you must first disassociate it from all VPCs.
 #'
 #' @usage
 #' route53profiles_delete_profile(ProfileId)
@@ -441,8 +425,7 @@ route53profiles_disassociate_resource_from_profile <- function(ProfileId, Resour
 #' whether the Profile is shared, and the current status of the Profile
 #'
 #' @description
-#' Returns information about a specified Route 53 Profile, such as whether
-#' whether the Profile is shared, and the current status of the Profile.
+#' Returns information about a specified Route 53 Profile, such as whether whether the Profile is shared, and the current status of the Profile.
 #'
 #' @usage
 #' route53profiles_get_profile(ProfileId)
@@ -506,9 +489,7 @@ route53profiles_get_profile <- function(ProfileId) {
 #' Retrieves a Route 53 Profile association for a VPC
 #'
 #' @description
-#' Retrieves a Route 53 Profile association for a VPC. A VPC can have only
-#' one Profile association, but a Profile can be associated with up to 5000
-#' VPCs.
+#' Retrieves a Route 53 Profile association for a VPC. A VPC can have only one Profile association, but a Profile can be associated with up to 5000 VPCs.
 #'
 #' @usage
 #' route53profiles_get_profile_association(ProfileAssociationId)
@@ -572,15 +553,13 @@ route53profiles_get_profile_association <- function(ProfileAssociationId) {
 #' association
 #'
 #' @description
-#' Returns information about a specified Route 53 Profile resource
-#' association.
+#' Returns information about a specified Route 53 Profile resource association.
 #'
 #' @usage
 #' route53profiles_get_profile_resource_association(
 #'   ProfileResourceAssociationId)
 #'
-#' @param ProfileResourceAssociationId &#91;required&#93; The ID of the profile resource association that you want to get
-#' information about.
+#' @param ProfileResourceAssociationId &#91;required&#93; The ID of the profile resource association that you want to get information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -641,27 +620,18 @@ route53profiles_get_profile_resource_association <- function(ProfileResourceAsso
 #' with
 #'
 #' @description
-#' Lists all the VPCs that the specified Route 53 Profile is associated
-#' with.
+#' Lists all the VPCs that the specified Route 53 Profile is associated with.
 #'
 #' @usage
 #' route53profiles_list_profile_associations(MaxResults, NextToken,
 #'   ProfileId, ResourceId)
 #'
-#' @param MaxResults The maximum number of objects that you want to return for this request.
-#' If more objects are available, in the response, a `NextToken` value,
-#' which you can use in a subsequent call to get the next batch of objects,
-#' is provided.
+#' @param MaxResults The maximum number of objects that you want to return for this request. If more objects are available, in the response, a `NextToken` value, which you can use in a subsequent call to get the next batch of objects, is provided.
 #' 
-#' If you don't specify a value for `MaxResults`, up to 100 objects are
-#' returned.
+#' If you don't specify a value for `MaxResults`, up to 100 objects are returned.
 #' @param NextToken For the first call to this list request, omit this value.
 #' 
-#' When you request a list of objects, at most the number of objects
-#' specified by `MaxResults` is returned. If more objects are available for
-#' retrieval, a `NextToken` value is returned in the response. To retrieve
-#' the next batch of objects, use the token that was returned for the prior
-#' request in your next request.
+#' When you request a list of objects, at most the number of objects specified by `MaxResults` is returned. If more objects are available for retrieval, a `NextToken` value is returned in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.
 #' @param ProfileId ID of the Profile.
 #' @param ResourceId ID of the VPC.
 #'
@@ -733,20 +703,12 @@ route53profiles_list_profile_associations <- function(MaxResults = NULL, NextTok
 #' route53profiles_list_profile_resource_associations(MaxResults,
 #'   NextToken, ProfileId, ResourceType)
 #'
-#' @param MaxResults The maximum number of objects that you want to return for this request.
-#' If more objects are available, in the response, a `NextToken` value,
-#' which you can use in a subsequent call to get the next batch of objects,
-#' is provided.
+#' @param MaxResults The maximum number of objects that you want to return for this request. If more objects are available, in the response, a `NextToken` value, which you can use in a subsequent call to get the next batch of objects, is provided.
 #' 
-#' If you don't specify a value for `MaxResults`, up to 100 objects are
-#' returned.
+#' If you don't specify a value for `MaxResults`, up to 100 objects are returned.
 #' @param NextToken For the first call to this list request, omit this value.
 #' 
-#' When you request a list of objects, at most the number of objects
-#' specified by `MaxResults` is returned. If more objects are available for
-#' retrieval, a `NextToken` value is returned in the response. To retrieve
-#' the next batch of objects, use the token that was returned for the prior
-#' request in your next request.
+#' When you request a list of objects, at most the number of objects specified by `MaxResults` is returned. If more objects are available for retrieval, a `NextToken` value is returned in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.
 #' @param ProfileId &#91;required&#93; The ID of the Profile.
 #' @param ResourceType ID of a resource if you want information on only one type.
 #'
@@ -815,26 +777,17 @@ route53profiles_list_profile_resource_associations <- function(MaxResults = NULL
 #' account
 #'
 #' @description
-#' Lists all the Route 53 Profiles associated with your Amazon Web Services
-#' account.
+#' Lists all the Route 53 Profiles associated with your Amazon Web Services account.
 #'
 #' @usage
 #' route53profiles_list_profiles(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of objects that you want to return for this request.
-#' If more objects are available, in the response, a `NextToken` value,
-#' which you can use in a subsequent call to get the next batch of objects,
-#' is provided.
+#' @param MaxResults The maximum number of objects that you want to return for this request. If more objects are available, in the response, a `NextToken` value, which you can use in a subsequent call to get the next batch of objects, is provided.
 #' 
-#' If you don't specify a value for `MaxResults`, up to 100 objects are
-#' returned.
+#' If you don't specify a value for `MaxResults`, up to 100 objects are returned.
 #' @param NextToken For the first call to this list request, omit this value.
 #' 
-#' When you request a list of objects, at most the number of objects
-#' specified by `MaxResults` is returned. If more objects are available for
-#' retrieval, a `NextToken` value is returned in the response. To retrieve
-#' the next batch of objects, use the token that was returned for the prior
-#' request in your next request.
+#' When you request a list of objects, at most the number of objects specified by `MaxResults` is returned. If more objects are available for retrieval, a `NextToken` value is returned in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -892,8 +845,7 @@ route53profiles_list_profiles <- function(MaxResults = NULL, NextToken = NULL) {
 #' @usage
 #' route53profiles_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to list
-#' the tags for.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to list the tags for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -944,8 +896,7 @@ route53profiles_list_tags_for_resource <- function(ResourceArn) {
 #' @usage
 #' route53profiles_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to add
-#' tags to.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to add tags to.
 #' @param Tags &#91;required&#93; The tags that you want to add to the specified resource.
 #'
 #' @return
@@ -993,8 +944,7 @@ route53profiles_tag_resource <- function(ResourceArn, Tags) {
 #' @usage
 #' route53profiles_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to remove
-#' tags from.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to remove tags from.
 #' @param TagKeys &#91;required&#93; The tags that you want to remove to the specified resource.
 #'
 #' @return
@@ -1045,9 +995,7 @@ route53profiles_untag_resource <- function(ResourceArn, TagKeys) {
 #'
 #' @param Name Name of the resource association.
 #' @param ProfileResourceAssociationId &#91;required&#93; ID of the resource association.
-#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority.
-#' The priority indicates the processing order for the rule groups,
-#' starting with the priority assinged the lowest value.
+#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.
 #' 
 #' The allowed values for priority are between 100 and 9900.
 #'

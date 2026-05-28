@@ -12,10 +12,7 @@ lakeformation_update_lf_tag(
 )
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
 \item{TagKey}{[required] The key-name for the LF-tag for which to add or delete values.}
 

@@ -24,9 +24,7 @@ workmail_create_organization(
 
 \item{KmsKeyArn}{The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.}
 
-\item{EnableInteroperability}{When \code{true}, allows organization interoperability between WorkMail and
-Microsoft Exchange. If \code{true}, you must include a AD Connector directory
-ID in the request.}
+\item{EnableInteroperability}{When \code{true}, allows organization interoperability between WorkMail and Microsoft Exchange. If \code{true}, you must include a AD Connector directory ID in the request.}
 }
 \description{
 Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new WorkMail directory for you. For more information, see \href{https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html}{Adding an organization} in the \emph{WorkMail Administrator Guide}.

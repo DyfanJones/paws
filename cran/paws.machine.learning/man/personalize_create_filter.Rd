@@ -11,14 +11,9 @@ personalize_create_filter(name, datasetGroupArn, filterExpression, tags = NULL)
 
 \item{datasetGroupArn}{[required] The ARN of the dataset group that the filter will belong to.}
 
-\item{filterExpression}{[required] The filter expression defines which items are included or excluded from
-recommendations. Filter expression must follow specific format rules.
-For information about filter expression structure and syntax, see
-\href{https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html}{Filter expressions}.}
+\item{filterExpression}{[required] The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see \href{https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html}{Filter expressions}.}
 
-\item{tags}{A list of
-\href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags}
-to apply to the filter.}
+\item{tags}{A list of \href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags} to apply to the filter.}
 }
 \description{
 Creates a recommendation filter. For more information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/filter.html}{Filtering recommendations and user segments}.

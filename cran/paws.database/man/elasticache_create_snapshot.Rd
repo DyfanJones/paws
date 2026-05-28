@@ -14,19 +14,15 @@ elasticache_create_snapshot(
 )
 }
 \arguments{
-\item{ReplicationGroupId}{The identifier of an existing replication group. The snapshot is created
-from this replication group.}
+\item{ReplicationGroupId}{The identifier of an existing replication group. The snapshot is created from this replication group.}
 
-\item{CacheClusterId}{The identifier of an existing cluster. The snapshot is created from this
-cluster.}
+\item{CacheClusterId}{The identifier of an existing cluster. The snapshot is created from this cluster.}
 
-\item{SnapshotName}{[required] A name for the snapshot being created. This value is stored as a
-lowercase string.}
+\item{SnapshotName}{[required] A name for the snapshot being created. This value is stored as a lowercase string.}
 
 \item{KmsKeyId}{The ID of the KMS key used to encrypt the snapshot.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates a copy of an entire cluster or replication group at a specific moment in time.

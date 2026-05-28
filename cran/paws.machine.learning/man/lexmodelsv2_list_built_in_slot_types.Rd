@@ -12,24 +12,13 @@ lexmodelsv2_list_built_in_slot_types(
 )
 }
 \arguments{
-\item{localeId}{[required] The identifier of the language and locale of the slot types to list. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
-\item{sortBy}{Determines the sort order for the response from the
-\code{\link[=lexmodelsv2_list_built_in_slot_types]{list_built_in_slot_types}}
-operation. You can choose to sort by the slot type signature in either
-ascending or descending order.}
+\item{sortBy}{Determines the sort order for the response from the \code{\link[=lexmodelsv2_list_built_in_slot_types]{list_built_in_slot_types}} operation. You can choose to sort by the slot type signature in either ascending or descending order.}
 
-\item{maxResults}{The maximum number of built-in slot types to return in each page of
-results. If there are fewer results than the max page size, only the
-actual number of results are returned.}
+\item{maxResults}{The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the
-\code{\link[=lexmodelsv2_list_built_in_slot_types]{list_built_in_slot_types}}
-operation contains more results than specified in the \code{maxResults}
-parameter, a token is returned in the response. Use that token in the
-\code{nextToken} parameter to return the next page of results.}
+\item{nextToken}{If the response from the \code{\link[=lexmodelsv2_list_built_in_slot_types]{list_built_in_slot_types}} operation contains more results than specified in the \code{maxResults} parameter, a token is returned in the response. Use that token in the \code{nextToken} parameter to return the next page of results.}
 }
 \description{
 Gets a list of built-in slot types that meet the specified criteria.

@@ -6,22 +6,16 @@ NULL
 #' Creates a namespace
 #'
 #' @description
-#' Creates a namespace. A namespace is a logical grouping of tables within
-#' your table bucket, which you can use to organize tables. For more
-#' information, see [Create a
-#' namespace](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-create.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Creates a namespace. A namespace is a logical grouping of tables within your table bucket, which you can use to organize tables. For more information, see [Create a namespace](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-create.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:CreateNamespace` permission to use this
-#' operation.
+#' You must have the `s3tables:CreateNamespace` permission to use this operation.
 #'
 #' @usage
 #' s3tables_create_namespace(tableBucketARN, namespace)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the
-#' namespace in.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the namespace in.
 #' @param namespace &#91;required&#93; A name for the namespace.
 #'
 #' @return
@@ -73,67 +67,38 @@ s3tables_create_namespace <- function(tableBucketARN, namespace) {
 #' bucket
 #'
 #' @description
-#' Creates a new table associated with the given namespace in a table
-#' bucket. For more information, see [Creating an Amazon S3
-#' table](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Creates a new table associated with the given namespace in a table bucket. For more information, see [Creating an Amazon S3 table](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' -   You must have the `s3tables:CreateTable` permission to use this
-#'     operation.
+#' -   You must have the `s3tables:CreateTable` permission to use this operation.
 #' 
-#' -   If you use this operation with the optional `metadata` request
-#'     parameter you must have the `s3tables:PutTableData` permission.
+#' -   If you use this operation with the optional `metadata` request parameter you must have the `s3tables:PutTableData` permission.
 #' 
-#' -   If you use this operation with the optional
-#'     `encryptionConfiguration` request parameter you must have the
-#'     `s3tables:PutTableEncryption` permission.
+#' -   If you use this operation with the optional `encryptionConfiguration` request parameter you must have the `s3tables:PutTableEncryption` permission.
 #' 
-#' -   If you use this operation with the `storageClassConfiguration`
-#'     request parameter, you must have the `s3tables:PutTableStorageClass`
-#'     permission.
+#' -   If you use this operation with the `storageClassConfiguration` request parameter, you must have the `s3tables:PutTableStorageClass` permission.
 #' 
-#' -   To create a table with tags, you must have the
-#'     `s3tables:TagResource` permission in addition to
-#'     `s3tables:CreateTable` permission.
+#' -   To create a table with tags, you must have the `s3tables:TagResource` permission in addition to `s3tables:CreateTable` permission.
 #' 
-#' Additionally, If you choose SSE-KMS encryption you must grant the S3
-#' Tables maintenance principal access to your KMS key. For more
-#' information, see [Permissions requirements for S3 Tables SSE-KMS
-#' encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html).
+#' Additionally, If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see [Permissions requirements for S3 Tables SSE-KMS encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html).
 #'
 #' @usage
 #' s3tables_create_table(tableBucketARN, namespace, name, format, metadata,
 #'   encryptionConfiguration, storageClassConfiguration, tags)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the table
-#' in.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the table in.
 #' @param namespace &#91;required&#93; The namespace to associated with the table.
 #' @param name &#91;required&#93; The name for the table.
 #' @param format &#91;required&#93; The format for the table.
 #' @param metadata The metadata for the table.
-#' @param encryptionConfiguration The encryption configuration to use for the table. This configuration
-#' specifies the encryption algorithm and, if using SSE-KMS, the KMS key to
-#' use for encrypting the table.
+#' @param encryptionConfiguration The encryption configuration to use for the table. This configuration specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the table.
 #' 
-#' If you choose SSE-KMS encryption you must grant the S3 Tables
-#' maintenance principal access to your KMS key. For more information, see
-#' [Permissions requirements for S3 Tables SSE-KMS
-#' encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html).
-#' @param storageClassConfiguration The storage class configuration for the table. If not specified, the
-#' table inherits the storage class configuration from its table bucket.
-#' Specify this parameter to override the bucket's default storage class
-#' for this table.
-#' @param tags A map of user-defined tags that you would like to apply to the table
-#' that you are creating. A tag is a key-value pair that you apply to your
-#' resources. Tags can help you organize, track costs for, and control
-#' access to resources. For more information, see [Tagging for cost
-#' allocation or attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see [Permissions requirements for S3 Tables SSE-KMS encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html).
+#' @param storageClassConfiguration The storage class configuration for the table. If not specified, the table inherits the storage class configuration from its table bucket. Specify this parameter to override the bucket's default storage class for this table.
+#' @param tags A map of user-defined tags that you would like to apply to the table that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize, track costs for, and control access to resources. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #' 
-#' You must have the `s3tables:TagResource` permission in addition to
-#' `s3tables:CreateTable` permission to create a table with tags.
+#' You must have the `s3tables:TagResource` permission in addition to `s3tables:CreateTable` permission to create a table with tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -246,51 +211,28 @@ s3tables_create_table <- function(tableBucketARN, namespace, name, format, metad
 #' Creates a table bucket
 #'
 #' @description
-#' Creates a table bucket. For more information, see [Creating a table
-#' bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Creates a table bucket. For more information, see [Creating a table bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' -   You must have the `s3tables:CreateTableBucket` permission to use
-#'     this operation.
+#' -   You must have the `s3tables:CreateTableBucket` permission to use this operation.
 #' 
-#' -   If you use this operation with the optional
-#'     `encryptionConfiguration` parameter you must have the
-#'     `s3tables:PutTableBucketEncryption` permission.
+#' -   If you use this operation with the optional `encryptionConfiguration` parameter you must have the `s3tables:PutTableBucketEncryption` permission.
 #' 
-#' -   If you use this operation with the `storageClassConfiguration`
-#'     request parameter, you must have the
-#'     `s3tables:PutTableBucketStorageClass` permission.
+#' -   If you use this operation with the `storageClassConfiguration` request parameter, you must have the `s3tables:PutTableBucketStorageClass` permission.
 #' 
-#' -   To create a table bucket with tags, you must have the
-#'     `s3tables:TagResource` permission in addition to
-#'     `s3tables:CreateTableBucket` permission.
+#' -   To create a table bucket with tags, you must have the `s3tables:TagResource` permission in addition to `s3tables:CreateTableBucket` permission.
 #'
 #' @usage
 #' s3tables_create_table_bucket(name, encryptionConfiguration,
 #'   storageClassConfiguration, tags)
 #'
 #' @param name &#91;required&#93; The name for the table bucket.
-#' @param encryptionConfiguration The encryption configuration to use for the table bucket. This
-#' configuration specifies the default encryption settings that will be
-#' applied to all tables created in this bucket unless overridden at the
-#' table level. The configuration includes the encryption algorithm and, if
-#' using SSE-KMS, the KMS key to use.
-#' @param storageClassConfiguration The default storage class configuration for the table bucket. This
-#' configuration will be applied to all new tables created in this bucket
-#' unless overridden at the table level. If not specified, the service
-#' default storage class will be used.
-#' @param tags A map of user-defined tags that you would like to apply to the table
-#' bucket that you are creating. A tag is a key-value pair that you apply
-#' to your resources. Tags can help you organize and control access to
-#' resources. For more information, see [Tagging for cost allocation or
-#' attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' @param encryptionConfiguration The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.
+#' @param storageClassConfiguration The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.
+#' @param tags A map of user-defined tags that you would like to apply to the table bucket that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize and control access to resources. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #' 
-#' You must have the `s3tables:TagResource` permission in addition to
-#' `s3tables:CreateTableBucket` permisson to create a table bucket with
-#' tags.
+#' You must have the `s3tables:TagResource` permission in addition to `s3tables:CreateTableBucket` permisson to create a table bucket with tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -344,20 +286,16 @@ s3tables_create_table_bucket <- function(name, encryptionConfiguration = NULL, s
 #' Deletes a namespace
 #'
 #' @description
-#' Deletes a namespace. For more information, see [Delete a
-#' namespace](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-delete.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Deletes a namespace. For more information, see [Delete a namespace](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-delete.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteNamespace` permission to use this
-#' operation.
+#' You must have the `s3tables:DeleteNamespace` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_namespace(tableBucketARN, namespace)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the
-#' namespace.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the namespace.
 #' @param namespace &#91;required&#93; The name of the namespace.
 #'
 #' @return
@@ -398,20 +336,16 @@ s3tables_delete_namespace <- function(tableBucketARN, namespace) {
 #' Deletes a table
 #'
 #' @description
-#' Deletes a table. For more information, see [Deleting an Amazon S3
-#' table](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-delete.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Deletes a table. For more information, see [Deleting an Amazon S3 table](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-delete.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTable` permission to use this
-#' operation.
+#' You must have the `s3tables:DeleteTable` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table(tableBucketARN, namespace, name, versionToken)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #' @param versionToken The version token of the table.
@@ -456,14 +390,11 @@ s3tables_delete_table <- function(tableBucketARN, namespace, name, versionToken 
 #' Deletes a table bucket
 #'
 #' @description
-#' Deletes a table bucket. For more information, see [Deleting a table
-#' bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-delete.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Deletes a table bucket. For more information, see [Deleting a table bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-delete.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTableBucket` permission to use this
-#' operation.
+#' You must have the `s3tables:DeleteTableBucket` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table_bucket(tableBucketARN)
@@ -511,8 +442,7 @@ s3tables_delete_table_bucket <- function(tableBucketARN) {
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTableBucketEncryption` permission to
-#' use this operation.
+#' You must have the `s3tables:DeleteTableBucketEncryption` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table_bucket_encryption(tableBucketARN)
@@ -560,8 +490,7 @@ s3tables_delete_table_bucket_encryption <- function(tableBucketARN) {
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTableBucketMetricsConfiguration`
-#' permission to use this operation.
+#' You must have the `s3tables:DeleteTableBucketMetricsConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table_bucket_metrics_configuration(tableBucketARN)
@@ -605,15 +534,11 @@ s3tables_delete_table_bucket_metrics_configuration <- function(tableBucketARN) {
 #' Deletes a table bucket policy
 #'
 #' @description
-#' Deletes a table bucket policy. For more information, see [Deleting a
-#' table bucket
-#' policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-delete)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Deletes a table bucket policy. For more information, see [Deleting a table bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-delete) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTableBucketPolicy` permission to use
-#' this operation.
+#' You must have the `s3tables:DeleteTableBucketPolicy` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table_bucket_policy(tableBucketARN)
@@ -657,23 +582,17 @@ s3tables_delete_table_bucket_policy <- function(tableBucketARN) {
 #' Deletes the replication configuration for a table bucket
 #'
 #' @description
-#' Deletes the replication configuration for a table bucket. After
-#' deletion, new table updates will no longer be replicated to destination
-#' buckets, though existing replicated tables will remain in destination
-#' buckets.
+#' Deletes the replication configuration for a table bucket. After deletion, new table updates will no longer be replicated to destination buckets, though existing replicated tables will remain in destination buckets.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTableBucketReplication` permission to
-#' use this operation.
+#' You must have the `s3tables:DeleteTableBucketReplication` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table_bucket_replication(tableBucketARN, versionToken)
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
-#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this
-#' token to ensure you're deleting the expected version of the
-#' configuration.
+#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this token to ensure you're deleting the expected version of the configuration.
 #'
 #' @return
 #' An empty list.
@@ -713,20 +632,16 @@ s3tables_delete_table_bucket_replication <- function(tableBucketARN, versionToke
 #' Deletes a table policy
 #'
 #' @description
-#' Deletes a table policy. For more information, see [Deleting a table
-#' policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-delete)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Deletes a table policy. For more information, see [Deleting a table policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-delete) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTablePolicy` permission to use this
-#' operation.
+#' You must have the `s3tables:DeleteTablePolicy` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table_policy(tableBucketARN, namespace, name)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The table name.
 #'
@@ -769,22 +684,17 @@ s3tables_delete_table_policy <- function(tableBucketARN, namespace, name) {
 #' Deletes the replication configuration for a specific table
 #'
 #' @description
-#' Deletes the replication configuration for a specific table. After
-#' deletion, new updates to this table will no longer be replicated to
-#' destination tables, though existing replicated copies will remain in
-#' destination buckets.
+#' Deletes the replication configuration for a specific table. After deletion, new updates to this table will no longer be replicated to destination tables, though existing replicated copies will remain in destination buckets.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:DeleteTableReplication` permission to use
-#' this operation.
+#' You must have the `s3tables:DeleteTableReplication` permission to use this operation.
 #'
 #' @usage
 #' s3tables_delete_table_replication(tableArn, versionToken)
 #'
 #' @param tableArn &#91;required&#93; The Amazon Resource Name (ARN) of the table.
-#' @param versionToken &#91;required&#93; A version token from a previous GetTableReplication call. Use this token
-#' to ensure you're deleting the expected version of the configuration.
+#' @param versionToken &#91;required&#93; A version token from a previous GetTableReplication call. Use this token to ensure you're deleting the expected version of the configuration.
 #'
 #' @return
 #' An empty list.
@@ -824,14 +734,11 @@ s3tables_delete_table_replication <- function(tableArn, versionToken) {
 #' Gets details about a namespace
 #'
 #' @description
-#' Gets details about a namespace. For more information, see [Table
-#' namespaces](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets details about a namespace. For more information, see [Table namespaces](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetNamespace` permission to use this
-#' operation.
+#' You must have the `s3tables:GetNamespace` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_namespace(tableBucketARN, namespace)
@@ -891,9 +798,7 @@ s3tables_get_namespace <- function(tableBucketARN, namespace) {
 #' Gets details about a table
 #'
 #' @description
-#' Gets details about a table. For more information, see [S3
-#' Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets details about a table. For more information, see [S3 Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
@@ -902,8 +807,7 @@ s3tables_get_namespace <- function(tableBucketARN, namespace) {
 #' @usage
 #' s3tables_get_table(tableBucketARN, namespace, name, tableArn)
 #'
-#' @param tableBucketARN The Amazon Resource Name (ARN) of the table bucket associated with the
-#' table.
+#' @param tableBucketARN The Amazon Resource Name (ARN) of the table bucket associated with the table.
 #' @param namespace The name of the namespace the table is associated with.
 #' @param name The name of the table.
 #' @param tableArn The Amazon Resource Name (ARN) of the table.
@@ -979,15 +883,11 @@ s3tables_get_table <- function(tableBucketARN = NULL, namespace = NULL, name = N
 #' Gets details on a table bucket
 #'
 #' @description
-#' Gets details on a table bucket. For more information, see [Viewing
-#' details about an Amazon S3 table
-#' bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-details.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets details on a table bucket. For more information, see [Viewing details about an Amazon S3 table bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-details.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableBucket` permission to use this
-#' operation.
+#' You must have the `s3tables:GetTableBucket` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_bucket(tableBucketARN)
@@ -1047,8 +947,7 @@ s3tables_get_table_bucket <- function(tableBucketARN) {
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableBucketEncryption` permission to use
-#' this operation.
+#' You must have the `s3tables:GetTableBucketEncryption` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_bucket_encryption(tableBucketARN)
@@ -1100,21 +999,16 @@ s3tables_get_table_bucket_encryption <- function(tableBucketARN) {
 #' Gets details about a maintenance configuration for a given table bucket
 #'
 #' @description
-#' Gets details about a maintenance configuration for a given table bucket.
-#' For more information, see [Amazon S3 table bucket
-#' maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets details about a maintenance configuration for a given table bucket. For more information, see [Amazon S3 table bucket maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableBucketMaintenanceConfiguration`
-#' permission to use this operation.
+#' You must have the `s3tables:GetTableBucketMaintenanceConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_bucket_maintenance_configuration(tableBucketARN)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the
-#' maintenance configuration.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the maintenance configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1173,8 +1067,7 @@ s3tables_get_table_bucket_maintenance_configuration <- function(tableBucketARN) 
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableBucketMetricsConfiguration`
-#' permission to use this operation.
+#' You must have the `s3tables:GetTableBucketMetricsConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_bucket_metrics_configuration(tableBucketARN)
@@ -1224,15 +1117,11 @@ s3tables_get_table_bucket_metrics_configuration <- function(tableBucketARN) {
 #' Gets details about a table bucket policy
 #'
 #' @description
-#' Gets details about a table bucket policy. For more information, see
-#' [Viewing a table bucket
-#' policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-get)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets details about a table bucket policy. For more information, see [Viewing a table bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-get) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableBucketPolicy` permission to use this
-#' operation.
+#' You must have the `s3tables:GetTableBucketPolicy` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_bucket_policy(tableBucketARN)
@@ -1281,14 +1170,11 @@ s3tables_get_table_bucket_policy <- function(tableBucketARN) {
 #' Retrieves the replication configuration for a table bucket
 #'
 #' @description
-#' Retrieves the replication configuration for a table bucket.This
-#' operation returns the IAM role, `versionToken`, and replication rules
-#' that define how tables in this bucket are replicated to other buckets.
+#' Retrieves the replication configuration for a table bucket.This operation returns the IAM role, `versionToken`, and replication rules that define how tables in this bucket are replicated to other buckets.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableBucketReplication` permission to use
-#' this operation.
+#' You must have the `s3tables:GetTableBucketReplication` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_bucket_replication(tableBucketARN)
@@ -1349,15 +1235,11 @@ s3tables_get_table_bucket_replication <- function(tableBucketARN) {
 #' Retrieves the storage class configuration for a specific table
 #'
 #' @description
-#' Retrieves the storage class configuration for a specific table. This
-#' allows you to view the storage class settings that apply to an
-#' individual table, which may differ from the table bucket's default
-#' configuration.
+#' Retrieves the storage class configuration for a specific table. This allows you to view the storage class settings that apply to an individual table, which may differ from the table bucket's default configuration.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableBucketStorageClass` permission to
-#' use this operation.
+#' You must have the `s3tables:GetTableBucketStorageClass` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_bucket_storage_class(tableBucketARN)
@@ -1412,8 +1294,7 @@ s3tables_get_table_bucket_storage_class <- function(tableBucketARN) {
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableEncryption` permission to use this
-#' operation.
+#' You must have the `s3tables:GetTableEncryption` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_encryption(tableBucketARN, namespace, name)
@@ -1469,18 +1350,13 @@ s3tables_get_table_encryption <- function(tableBucketARN, namespace, name) {
 #' Gets details about the maintenance configuration of a table
 #'
 #' @description
-#' Gets details about the maintenance configuration of a table. For more
-#' information, see [S3 Tables
-#' maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets details about the maintenance configuration of a table. For more information, see [S3 Tables maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' -   You must have the `s3tables:GetTableMaintenanceConfiguration`
-#'     permission to use this operation.
+#' -   You must have the `s3tables:GetTableMaintenanceConfiguration` permission to use this operation.
 #' 
-#' -   You must have the `s3tables:GetTableData` permission to use set the
-#'     compaction strategy to `sort` or `zorder`.
+#' -   You must have the `s3tables:GetTableData` permission to use set the compaction strategy to `sort` or `zorder`.
 #'
 #' @usage
 #' s3tables_get_table_maintenance_configuration(tableBucketARN, namespace,
@@ -1549,15 +1425,11 @@ s3tables_get_table_maintenance_configuration <- function(tableBucketARN, namespa
 #' Gets the status of a maintenance job for a table
 #'
 #' @description
-#' Gets the status of a maintenance job for a table. For more information,
-#' see [S3 Tables
-#' maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets the status of a maintenance job for a table. For more information, see [S3 Tables maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableMaintenanceJobStatus` permission to
-#' use this operation.
+#' You must have the `s3tables:GetTableMaintenanceJobStatus` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_maintenance_job_status(tableBucketARN, namespace,
@@ -1565,8 +1437,7 @@ s3tables_get_table_maintenance_configuration <- function(tableBucketARN, namespa
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
 #' @param namespace &#91;required&#93; The name of the namespace the table is associated with.
-#' @param name &#91;required&#93; The name of the table containing the maintenance job status you want to
-#' check.
+#' @param name &#91;required&#93; The name of the table containing the maintenance job status you want to check.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1625,8 +1496,7 @@ s3tables_get_table_maintenance_job_status <- function(tableBucketARN, namespace,
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableMetadataLocation` permission to use
-#' this operation.
+#' You must have the `s3tables:GetTableMetadataLocation` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_metadata_location(tableBucketARN, namespace, name)
@@ -1681,21 +1551,16 @@ s3tables_get_table_metadata_location <- function(tableBucketARN, namespace, name
 #' Gets details about a table policy
 #'
 #' @description
-#' Gets details about a table policy. For more information, see [Viewing a
-#' table
-#' policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-get)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Gets details about a table policy. For more information, see [Viewing a table policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-get) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTablePolicy` permission to use this
-#' operation.
+#' You must have the `s3tables:GetTablePolicy` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_policy(tableBucketARN, namespace, name)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #'
@@ -1744,15 +1609,11 @@ s3tables_get_table_policy <- function(tableBucketARN, namespace, name) {
 #' and the status of the configuration
 #'
 #' @description
-#' Retrieves the expiration configuration settings for records in a table,
-#' and the status of the configuration. If the status of the configuration
-#' is `enabled`, records expire and are automatically removed from the
-#' table after the specified number of days.
+#' Retrieves the expiration configuration settings for records in a table, and the status of the configuration. If the status of the configuration is `enabled`, records expire and are automatically removed from the table after the specified number of days.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableRecordExpirationConfiguration`
-#' permission to use this operation.
+#' You must have the `s3tables:GetTableRecordExpirationConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_record_expiration_configuration(tableArn)
@@ -1807,15 +1668,11 @@ s3tables_get_table_record_expiration_configuration <- function(tableArn) {
 #' expiration job for a table
 #'
 #' @description
-#' Retrieves the status, metrics, and details of the latest record
-#' expiration job for a table. This includes when the job ran, and whether
-#' it succeeded or failed. If the job ran successfully, this also includes
-#' statistics about the records that were removed.
+#' Retrieves the status, metrics, and details of the latest record expiration job for a table. This includes when the job ran, and whether it succeeded or failed. If the job ran successfully, this also includes statistics about the records that were removed.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableRecordExpirationJobStatus`
-#' permission to use this operation.
+#' You must have the `s3tables:GetTableRecordExpirationJobStatus` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_record_expiration_job_status(tableArn)
@@ -1877,8 +1734,7 @@ s3tables_get_table_record_expiration_job_status <- function(tableArn) {
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableReplication` permission to use this
-#' operation.
+#' You must have the `s3tables:GetTableReplication` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_replication(tableArn)
@@ -1940,14 +1796,11 @@ s3tables_get_table_replication <- function(tableArn) {
 #' replication to each destination
 #'
 #' @description
-#' Retrieves the replication status for a table, including the status of
-#' replication to each destination. This operation provides visibility into
-#' replication health and progress.
+#' Retrieves the replication status for a table, including the status of replication to each destination. This operation provides visibility into replication health and progress.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableReplicationStatus` permission to use
-#' this operation.
+#' You must have the `s3tables:GetTableReplicationStatus` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_replication_status(tableArn)
@@ -2010,21 +1863,16 @@ s3tables_get_table_replication_status <- function(tableArn) {
 #' Retrieves the storage class configuration for a specific table
 #'
 #' @description
-#' Retrieves the storage class configuration for a specific table. This
-#' allows you to view the storage class settings that apply to an
-#' individual table, which may differ from the table bucket's default
-#' configuration.
+#' Retrieves the storage class configuration for a specific table. This allows you to view the storage class settings that apply to an individual table, which may differ from the table bucket's default configuration.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:GetTableStorageClass` permission to use this
-#' operation.
+#' You must have the `s3tables:GetTableStorageClass` permission to use this operation.
 #'
 #' @usage
 #' s3tables_get_table_storage_class(tableBucketARN, namespace, name)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #'
@@ -2074,15 +1922,11 @@ s3tables_get_table_storage_class <- function(tableBucketARN, namespace, name) {
 #' Lists the namespaces within a table bucket
 #'
 #' @description
-#' Lists the namespaces within a table bucket. For more information, see
-#' [Table
-#' namespaces](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Lists the namespaces within a table bucket. For more information, see [Table namespaces](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:ListNamespaces` permission to use this
-#' operation.
+#' You must have the `s3tables:ListNamespaces` permission to use this operation.
 #'
 #' @usage
 #' s3tables_list_namespaces(tableBucketARN, prefix, continuationToken,
@@ -2090,10 +1934,7 @@ s3tables_get_table_storage_class <- function(tableBucketARN, namespace, name) {
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
 #' @param prefix The prefix of the namespaces.
-#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being
-#' continued on this bucket with a token. `ContinuationToken` is obfuscated
-#' and is not a real key. You can use this `ContinuationToken` for
-#' pagination of the list results.
+#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being continued on this bucket with a token. `ContinuationToken` is obfuscated and is not a real key. You can use this `ContinuationToken` for pagination of the list results.
 #' @param maxNamespaces The maximum number of namespaces to return in the list.
 #'
 #' @return
@@ -2155,24 +1996,17 @@ s3tables_list_namespaces <- function(tableBucketARN, prefix = NULL, continuation
 #' Lists table buckets for your account
 #'
 #' @description
-#' Lists table buckets for your account. For more information, see [S3
-#' Table
-#' buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Lists table buckets for your account. For more information, see [S3 Table buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:ListTableBuckets` permission to use this
-#' operation.
+#' You must have the `s3tables:ListTableBuckets` permission to use this operation.
 #'
 #' @usage
 #' s3tables_list_table_buckets(prefix, continuationToken, maxBuckets, type)
 #'
 #' @param prefix The prefix of the table buckets.
-#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being
-#' continued on this bucket with a token. `ContinuationToken` is obfuscated
-#' and is not a real key. You can use this `ContinuationToken` for
-#' pagination of the list results.
+#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being continued on this bucket with a token. `ContinuationToken` is obfuscated and is not a real key. You can use this `ContinuationToken` for pagination of the list results.
 #' @param maxBuckets The maximum number of table buckets to return in the list.
 #' @param type The type of table buckets to filter by in the list.
 #'
@@ -2233,14 +2067,11 @@ s3tables_list_table_buckets <- function(prefix = NULL, continuationToken = NULL,
 #' List tables in the given table bucket
 #'
 #' @description
-#' List tables in the given table bucket. For more information, see [S3
-#' Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' List tables in the given table bucket. For more information, see [S3 Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:ListTables` permission to use this
-#' operation.
+#' You must have the `s3tables:ListTables` permission to use this operation.
 #'
 #' @usage
 #' s3tables_list_tables(tableBucketARN, namespace, prefix,
@@ -2249,10 +2080,7 @@ s3tables_list_table_buckets <- function(prefix = NULL, continuationToken = NULL,
 #' @param tableBucketARN &#91;required&#93; The Amazon resource Name (ARN) of the table bucket.
 #' @param namespace The namespace of the tables.
 #' @param prefix The prefix of the tables.
-#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being
-#' continued on this bucket with a token. `ContinuationToken` is obfuscated
-#' and is not a real key. You can use this `ContinuationToken` for
-#' pagination of the list results.
+#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being continued on this bucket with a token. `ContinuationToken` is obfuscated and is not a real key. You can use this `ContinuationToken` for pagination of the list results.
 #' @param maxTables The maximum number of tables to return.
 #'
 #' @return
@@ -2320,27 +2148,18 @@ s3tables_list_tables <- function(tableBucketARN, namespace = NULL, prefix = NULL
 #' Lists all of the tags applied to a specified Amazon S3 Tables resource
 #'
 #' @description
-#' Lists all of the tags applied to a specified Amazon S3 Tables resource.
-#' Each tag is a label consisting of a key and value pair. Tags can help
-#' you organize, track costs for, and control access to resources.
+#' Lists all of the tags applied to a specified Amazon S3 Tables resource. Each tag is a label consisting of a key and value pair. Tags can help you organize, track costs for, and control access to resources.
 #' 
-#' For a list of S3 resources that support tagging, see [Managing tags for
-#' Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' For a list of S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
 #' 
 #' ### Permissions
 #' 
-#' For tables and table buckets, you must have the
-#' `s3tables:ListTagsForResource` permission to use this operation.
+#' For tables and table buckets, you must have the `s3tables:ListTagsForResource` permission to use this operation.
 #'
 #' @usage
 #' s3tables_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you
-#' want to list tags for. The tagged resource can be a table bucket or a
-#' table. For a list of all S3 resources that support tagging, see
-#' [Managing tags for Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you want to list tags for. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
 #'
 #' @return
 #' A list with the following syntax:
@@ -2390,14 +2209,9 @@ s3tables_list_tags_for_resource <- function(resourceArn) {
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTableBucketEncryption` permission to use
-#' this operation.
+#' You must have the `s3tables:PutTableBucketEncryption` permission to use this operation.
 #' 
-#' If you choose SSE-KMS encryption you must grant the S3 Tables
-#' maintenance principal access to your KMS key. For more information, see
-#' [Permissions requirements for S3 Tables SSE-KMS
-#' encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see [Permissions requirements for S3 Tables SSE-KMS encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html) in the *Amazon Simple Storage Service User Guide*.
 #'
 #' @usage
 #' s3tables_put_table_bucket_encryption(tableBucketARN,
@@ -2448,26 +2262,19 @@ s3tables_put_table_bucket_encryption <- function(tableBucketARN, encryptionConfi
 #' maintenance configuration for a table bucket
 #'
 #' @description
-#' Creates a new maintenance configuration or replaces an existing
-#' maintenance configuration for a table bucket. For more information, see
-#' [Amazon S3 table bucket
-#' maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Creates a new maintenance configuration or replaces an existing maintenance configuration for a table bucket. For more information, see [Amazon S3 table bucket maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTableBucketMaintenanceConfiguration`
-#' permission to use this operation.
+#' You must have the `s3tables:PutTableBucketMaintenanceConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_put_table_bucket_maintenance_configuration(tableBucketARN,
 #'   type, value)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the
-#' maintenance configuration.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the maintenance configuration.
 #' @param type &#91;required&#93; The type of the maintenance configuration.
-#' @param value &#91;required&#93; Defines the values of the maintenance configuration for the table
-#' bucket.
+#' @param value &#91;required&#93; Defines the values of the maintenance configuration for the table bucket.
 #'
 #' @return
 #' An empty list.
@@ -2520,8 +2327,7 @@ s3tables_put_table_bucket_maintenance_configuration <- function(tableBucketARN, 
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTableBucketMetricsConfiguration`
-#' permission to use this operation.
+#' You must have the `s3tables:PutTableBucketMetricsConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_put_table_bucket_metrics_configuration(tableBucketARN)
@@ -2566,16 +2372,11 @@ s3tables_put_table_bucket_metrics_configuration <- function(tableBucketARN) {
 #' policy for a table bucket
 #'
 #' @description
-#' Creates a new table bucket policy or replaces an existing table bucket
-#' policy for a table bucket. For more information, see [Adding a table
-#' bucket
-#' policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Creates a new table bucket policy or replaces an existing table bucket policy for a table bucket. For more information, see [Adding a table bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTableBucketPolicy` permission to use this
-#' operation.
+#' You must have the `s3tables:PutTableBucketPolicy` permission to use this operation.
 #'
 #' @usage
 #' s3tables_put_table_bucket_policy(tableBucketARN, resourcePolicy)
@@ -2621,48 +2422,35 @@ s3tables_put_table_bucket_policy <- function(tableBucketARN, resourcePolicy) {
 #' Creates or updates the replication configuration for a table bucket
 #'
 #' @description
-#' Creates or updates the replication configuration for a table bucket.
-#' This operation defines how tables in the source bucket are replicated to
-#' destination buckets. Replication helps ensure data availability and
-#' disaster recovery across regions or accounts.
+#' Creates or updates the replication configuration for a table bucket. This operation defines how tables in the source bucket are replicated to destination buckets. Replication helps ensure data availability and disaster recovery across regions or accounts.
 #' 
 #' ### Permissions
 #' 
-#' -   You must have the `s3tables:PutTableBucketReplication` permission to
-#'     use this operation. The IAM role specified in the configuration must
-#'     have permissions to read from the source bucket and write
-#'     permissions to all destination buckets.
+#' -   You must have the `s3tables:PutTableBucketReplication` permission to use this operation. The IAM role specified in the configuration must have permissions to read from the source bucket and write permissions to all destination buckets.
 #' 
 #' -   You must also have the following permissions:
 #' 
 #'     -   `s3tables:GetTable` permission on the source table.
 #' 
-#'     -   `s3tables:ListTables` permission on the bucket containing the
-#'         table.
+#'     -   `s3tables:ListTables` permission on the bucket containing the table.
 #' 
 #'     -   `s3tables:CreateTable` permission for the destination.
 #' 
 #'     -   `s3tables:CreateNamespace` permission for the destination.
 #' 
-#'     -   `s3tables:GetTableMaintenanceConfig` permission for the source
-#'         bucket.
+#'     -   `s3tables:GetTableMaintenanceConfig` permission for the source bucket.
 #' 
-#'     -   `s3tables:PutTableMaintenanceConfig` permission for the
-#'         destination bucket.
+#'     -   `s3tables:PutTableMaintenanceConfig` permission for the destination bucket.
 #' 
-#' -   You must have `iam:PassRole` permission with condition allowing
-#'     roles to be passed to `replication.s3tables.amazonaws.com`.
+#' -   You must have `iam:PassRole` permission with condition allowing roles to be passed to `replication.s3tables.amazonaws.com`.
 #'
 #' @usage
 #' s3tables_put_table_bucket_replication(tableBucketARN, versionToken,
 #'   configuration)
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the source table bucket.
-#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this
-#' token to ensure you're updating the expected version of the
-#' configuration.
-#' @param configuration &#91;required&#93; The replication configuration to apply, including the IAM role and
-#' replication rules.
+#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this token to ensure you're updating the expected version of the configuration.
+#' @param configuration &#91;required&#93; The replication configuration to apply, including the IAM role and replication rules.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2720,24 +2508,18 @@ s3tables_put_table_bucket_replication <- function(tableBucketARN, versionToken =
 #' Sets or updates the storage class configuration for a table bucket
 #'
 #' @description
-#' Sets or updates the storage class configuration for a table bucket. This
-#' configuration serves as the default storage class for all new tables
-#' created in the bucket, allowing you to optimize storage costs at the
-#' bucket level.
+#' Sets or updates the storage class configuration for a table bucket. This configuration serves as the default storage class for all new tables created in the bucket, allowing you to optimize storage costs at the bucket level.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTableBucketStorageClass` permission to
-#' use this operation.
+#' You must have the `s3tables:PutTableBucketStorageClass` permission to use this operation.
 #'
 #' @usage
 #' s3tables_put_table_bucket_storage_class(tableBucketARN,
 #'   storageClassConfiguration)
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
-#' @param storageClassConfiguration &#91;required&#93; The storage class configuration to apply to the table bucket. This
-#' configuration will serve as the default for new tables created in this
-#' bucket.
+#' @param storageClassConfiguration &#91;required&#93; The storage class configuration to apply to the table bucket. This configuration will serve as the default for new tables created in this bucket.
 #'
 #' @return
 #' An empty list.
@@ -2780,23 +2562,17 @@ s3tables_put_table_bucket_storage_class <- function(tableBucketARN, storageClass
 #' maintenance configuration for a table
 #'
 #' @description
-#' Creates a new maintenance configuration or replaces an existing
-#' maintenance configuration for a table. For more information, see [S3
-#' Tables
-#' maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Creates a new maintenance configuration or replaces an existing maintenance configuration for a table. For more information, see [S3 Tables maintenance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTableMaintenanceConfiguration` permission
-#' to use this operation.
+#' You must have the `s3tables:PutTableMaintenanceConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_put_table_maintenance_configuration(tableBucketARN, namespace,
 #'   name, type, value)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table associated with the
-#' maintenance configuration.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table associated with the maintenance configuration.
 #' @param namespace &#91;required&#93; The namespace of the table.
 #' @param name &#91;required&#93; The name of the table.
 #' @param type &#91;required&#93; The type of the maintenance configuration.
@@ -2856,22 +2632,17 @@ s3tables_put_table_maintenance_configuration <- function(tableBucketARN, namespa
 #' table
 #'
 #' @description
-#' Creates a new table policy or replaces an existing table policy for a
-#' table. For more information, see [Adding a table
-#' policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-add)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Creates a new table policy or replaces an existing table policy for a table. For more information, see [Adding a table policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-add) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTablePolicy` permission to use this
-#' operation.
+#' You must have the `s3tables:PutTablePolicy` permission to use this operation.
 #'
 #' @usage
 #' s3tables_put_table_policy(tableBucketARN, namespace, name,
 #'   resourcePolicy)
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #' @param resourcePolicy &#91;required&#93; The `JSON` that defines the policy.
@@ -2917,22 +2688,17 @@ s3tables_put_table_policy <- function(tableBucketARN, namespace, name, resourceP
 #' a table, including the status of the configuration
 #'
 #' @description
-#' Creates or updates the expiration configuration settings for records in
-#' a table, including the status of the configuration. If you enable record
-#' expiration for a table, records expire and are automatically removed
-#' from the table after the number of days that you specify.
+#' Creates or updates the expiration configuration settings for records in a table, including the status of the configuration. If you enable record expiration for a table, records expire and are automatically removed from the table after the number of days that you specify.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:PutTableRecordExpirationConfiguration`
-#' permission to use this operation.
+#' You must have the `s3tables:PutTableRecordExpirationConfiguration` permission to use this operation.
 #'
 #' @usage
 #' s3tables_put_table_record_expiration_configuration(tableArn, value)
 #'
 #' @param tableArn &#91;required&#93; The Amazon Resource Name (ARN) of the table.
-#' @param value &#91;required&#93; The record expiration configuration to apply to the table, including the
-#' status (`enabled` or `disabled`) and retention period in days.
+#' @param value &#91;required&#93; The record expiration configuration to apply to the table, including the status (`enabled` or `disabled`) and retention period in days.
 #'
 #' @return
 #' An empty list.
@@ -2977,44 +2743,32 @@ s3tables_put_table_record_expiration_configuration <- function(tableArn, value) 
 #' Creates or updates the replication configuration for a specific table
 #'
 #' @description
-#' Creates or updates the replication configuration for a specific table.
-#' This operation allows you to define table-level replication
-#' independently of bucket-level replication, providing granular control
-#' over which tables are replicated and where.
+#' Creates or updates the replication configuration for a specific table. This operation allows you to define table-level replication independently of bucket-level replication, providing granular control over which tables are replicated and where.
 #' 
 #' ### Permissions
 #' 
-#' -   You must have the `s3tables:PutTableReplication` permission to use
-#'     this operation. The IAM role specified in the configuration must
-#'     have permissions to read from the source table and write to all
-#'     destination tables.
+#' -   You must have the `s3tables:PutTableReplication` permission to use this operation. The IAM role specified in the configuration must have permissions to read from the source table and write to all destination tables.
 #' 
 #' -   You must also have the following permissions:
 #' 
-#'     -   `s3tables:GetTable` permission on the source table being
-#'         replicated.
+#'     -   `s3tables:GetTable` permission on the source table being replicated.
 #' 
 #'     -   `s3tables:CreateTable` permission for the destination.
 #' 
 #'     -   `s3tables:CreateNamespace` permission for the destination.
 #' 
-#'     -   `s3tables:GetTableMaintenanceConfig` permission for the source
-#'         table.
+#'     -   `s3tables:GetTableMaintenanceConfig` permission for the source table.
 #' 
-#'     -   `s3tables:PutTableMaintenanceConfig` permission for the
-#'         destination table.
+#'     -   `s3tables:PutTableMaintenanceConfig` permission for the destination table.
 #' 
-#' -   You must have `iam:PassRole` permission with condition allowing
-#'     roles to be passed to `replication.s3tables.amazonaws.com`.
+#' -   You must have `iam:PassRole` permission with condition allowing roles to be passed to `replication.s3tables.amazonaws.com`.
 #'
 #' @usage
 #' s3tables_put_table_replication(tableArn, versionToken, configuration)
 #'
 #' @param tableArn &#91;required&#93; The Amazon Resource Name (ARN) of the source table.
-#' @param versionToken A version token from a previous GetTableReplication call. Use this token
-#' to ensure you're updating the expected version of the configuration.
-#' @param configuration &#91;required&#93; The replication configuration to apply to the table, including the IAM
-#' role and replication rules.
+#' @param versionToken A version token from a previous GetTableReplication call. Use this token to ensure you're updating the expected version of the configuration.
+#' @param configuration &#91;required&#93; The replication configuration to apply to the table, including the IAM role and replication rules.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3072,14 +2826,11 @@ s3tables_put_table_replication <- function(tableArn, versionToken = NULL, config
 #' Renames a table or a namespace
 #'
 #' @description
-#' Renames a table or a namespace. For more information, see [S3
-#' Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html)
-#' in the *Amazon Simple Storage Service User Guide*.
+#' Renames a table or a namespace. For more information, see [S3 Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html) in the *Amazon Simple Storage Service User Guide*.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:RenameTable` permission to use this
-#' operation.
+#' You must have the `s3tables:RenameTable` permission to use this operation.
 #'
 #' @usage
 #' s3tables_rename_table(tableBucketARN, namespace, name, newNamespaceName,
@@ -3135,32 +2886,19 @@ s3tables_rename_table <- function(tableBucketARN, namespace, name, newNamespaceN
 #' updates existing tags
 #'
 #' @description
-#' Applies one or more user-defined tags to an Amazon S3 Tables resource or
-#' updates existing tags. Each tag is a label consisting of a key and value
-#' pair. Tags can help you organize, track costs for, and control access to
-#' your resources. You can add up to 50 tags for each S3 resource.
+#' Applies one or more user-defined tags to an Amazon S3 Tables resource or updates existing tags. Each tag is a label consisting of a key and value pair. Tags can help you organize, track costs for, and control access to your resources. You can add up to 50 tags for each S3 resource.
 #' 
-#' For a list of S3 resources that support tagging, see [Managing tags for
-#' Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' For a list of S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
 #' 
 #' ### Permissions
 #' 
-#' For tables and table buckets, you must have the `s3tables:TagResource`
-#' permission to use this operation.
+#' For tables and table buckets, you must have the `s3tables:TagResource` permission to use this operation.
 #'
 #' @usage
 #' s3tables_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that
-#' you're applying tags to. The tagged resource can be a table bucket or a
-#' table. For a list of all S3 resources that support tagging, see
-#' [Managing tags for Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
-#' @param tags &#91;required&#93; The user-defined tag that you want to add to the specified S3 Tables
-#' resource. For more information, see [Tagging for cost allocation or
-#' attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you're applying tags to. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' @param tags &#91;required&#93; The user-defined tag that you want to add to the specified S3 Tables resource. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #'
 #' @return
 #' An empty list.
@@ -3203,30 +2941,19 @@ s3tables_tag_resource <- function(resourceArn, tags) {
 #' resource
 #'
 #' @description
-#' Removes the specified user-defined tags from an Amazon S3 Tables
-#' resource. You can pass one or more tag keys.
+#' Removes the specified user-defined tags from an Amazon S3 Tables resource. You can pass one or more tag keys.
 #' 
-#' For a list of S3 resources that support tagging, see [Managing tags for
-#' Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' For a list of S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
 #' 
 #' ### Permissions
 #' 
-#' For tables and table buckets, you must have the `s3tables:UntagResource`
-#' permission to use this operation.
+#' For tables and table buckets, you must have the `s3tables:UntagResource` permission to use this operation.
 #'
 #' @usage
 #' s3tables_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that
-#' you're removing tags from. The tagged resource can be a table bucket or
-#' a table. For a list of all S3 resources that support tagging, see
-#' [Managing tags for Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
-#' @param tagKeys &#91;required&#93; The array of tag keys that you're removing from the S3 Tables resource.
-#' For more information, see [Tagging for cost allocation or
-#' attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you're removing tags from. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' @param tagKeys &#91;required&#93; The array of tag keys that you're removing from the S3 Tables resource. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #'
 #' @return
 #' An empty list.
@@ -3268,16 +2995,11 @@ s3tables_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates the metadata location for a table
 #'
 #' @description
-#' Updates the metadata location for a table. The metadata location of a
-#' table must be an S3 URI that begins with the table's warehouse location.
-#' The metadata location for an Apache Iceberg table must end with
-#' `.metadata.json`, or if the metadata file is Gzip-compressed,
-#' `.metadata.json.gz`.
+#' Updates the metadata location for a table. The metadata location of a table must be an S3 URI that begins with the table's warehouse location. The metadata location for an Apache Iceberg table must end with `.metadata.json`, or if the metadata file is Gzip-compressed, `.metadata.json.gz`.
 #' 
 #' ### Permissions
 #' 
-#' You must have the `s3tables:UpdateTableMetadataLocation` permission to
-#' use this operation.
+#' You must have the `s3tables:UpdateTableMetadataLocation` permission to use this operation.
 #'
 #' @usage
 #' s3tables_update_table_metadata_location(tableBucketARN, namespace, name,

@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Web Services S3 Control provides access to Amazon S3 control
-plane actions.
+Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
 }
 \section{Service syntax}{
 

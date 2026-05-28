@@ -21,33 +21,19 @@ cloudfront_update_distribution_tenant(
 
 \item{DistributionId}{The ID for the multi-tenant distribution.}
 
-\item{Domains}{The domains to update for the distribution tenant. A domain object can
-contain only a domain property. You must specify at least one domain.
-Each distribution tenant can have up to 5 domains.}
+\item{Domains}{The domains to update for the distribution tenant. A domain object can contain only a domain property. You must specify at least one domain. Each distribution tenant can have up to 5 domains.}
 
-\item{Customizations}{Customizations for the distribution tenant. For each distribution
-tenant, you can specify the geographic restrictions, and the Amazon
-Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are
-specific values that you can override or disable from the multi-tenant
-distribution that was used to create the distribution tenant.}
+\item{Customizations}{Customizations for the distribution tenant. For each distribution tenant, you can specify the geographic restrictions, and the Amazon Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are specific values that you can override or disable from the multi-tenant distribution that was used to create the distribution tenant.}
 
-\item{Parameters}{A list of parameter values to add to the resource. A parameter is
-specified as a key-value pair. A valid parameter value must exist for
-any parameter that is marked as required in the multi-tenant
-distribution.}
+\item{Parameters}{A list of parameter values to add to the resource. A parameter is specified as a key-value pair. A valid parameter value must exist for any parameter that is marked as required in the multi-tenant distribution.}
 
 \item{ConnectionGroupId}{The ID of the target connection group.}
 
-\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the
-distribution tenant to update. This value is returned in the response of
-the \code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API
-operation.}
+\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the distribution tenant to update. This value is returned in the response of the \code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API operation.}
 
 \item{ManagedCertificateRequest}{An object that contains the CloudFront managed ACM certificate request.}
 
-\item{Enabled}{Indicates whether the distribution tenant should be updated to an
-enabled state. If you update the distribution tenant and it's not
-enabled, the distribution tenant won't serve traffic.}
+\item{Enabled}{Indicates whether the distribution tenant should be updated to an enabled state. If you update the distribution tenant and it's not enabled, the distribution tenant won't serve traffic.}
 }
 \description{
 Updates a distribution tenant.

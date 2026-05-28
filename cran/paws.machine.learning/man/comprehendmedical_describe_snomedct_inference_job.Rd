@@ -7,9 +7,7 @@
 comprehendmedical_describe_snomedct_inference_job(JobId)
 }
 \arguments{
-\item{JobId}{[required] The identifier that Amazon Comprehend Medical generated for the job. The
-StartSNOMEDCTInferenceJob operation returns this identifier in its
-response.}
+\item{JobId}{[required] The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response.}
 }
 \description{
 Gets the properties associated with an InferSNOMEDCT job. Use this operation to get the status of an inference job.

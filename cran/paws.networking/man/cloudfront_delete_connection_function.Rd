@@ -9,8 +9,7 @@ cloudfront_delete_connection_function(Id, IfMatch)
 \arguments{
 \item{Id}{[required] The connection function's ID.}
 
-\item{IfMatch}{[required] The current version (\code{ETag} value) of the connection function you are
-deleting.}
+\item{IfMatch}{[required] The current version (\code{ETag} value) of the connection function you are deleting.}
 }
 \description{
 Deletes a connection function.

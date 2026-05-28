@@ -22,37 +22,27 @@ bedrockagentcore_invoke_harness(
 \arguments{
 \item{harnessArn}{[required] The ARN of the harness to invoke.}
 
-\item{runtimeSessionId}{[required] The session ID for the invocation. Use the same session ID across
-requests to continue a conversation.}
+\item{runtimeSessionId}{[required] The session ID for the invocation. Use the same session ID across requests to continue a conversation.}
 
 \item{messages}{[required] The messages to send to the agent.}
 
-\item{model}{The model configuration to use for this invocation. If specified,
-overrides the harness default.}
+\item{model}{The model configuration to use for this invocation. If specified, overrides the harness default.}
 
-\item{systemPrompt}{The system prompt to use for this invocation. If specified, overrides
-the harness default.}
+\item{systemPrompt}{The system prompt to use for this invocation. If specified, overrides the harness default.}
 
-\item{tools}{The tools available to the agent for this invocation. If specified,
-overrides the harness default.}
+\item{tools}{The tools available to the agent for this invocation. If specified, overrides the harness default.}
 
-\item{skills}{The skills available to the agent for this invocation. If specified,
-overrides the harness default.}
+\item{skills}{The skills available to the agent for this invocation. If specified, overrides the harness default.}
 
-\item{allowedTools}{The tools that the agent is allowed to use for this invocation. If
-specified, overrides the harness default.}
+\item{allowedTools}{The tools that the agent is allowed to use for this invocation. If specified, overrides the harness default.}
 
-\item{maxIterations}{The maximum number of iterations the agent loop can execute. If
-specified, overrides the harness default.}
+\item{maxIterations}{The maximum number of iterations the agent loop can execute. If specified, overrides the harness default.}
 
-\item{maxTokens}{The maximum number of tokens the agent can generate per iteration. If
-specified, overrides the harness default.}
+\item{maxTokens}{The maximum number of tokens the agent can generate per iteration. If specified, overrides the harness default.}
 
-\item{timeoutSeconds}{The maximum duration in seconds for the agent loop execution. If
-specified, overrides the harness default.}
+\item{timeoutSeconds}{The maximum duration in seconds for the agent loop execution. If specified, overrides the harness default.}
 
-\item{actorId}{The actor ID for memory operations. Overrides the actor ID configured on
-the harness.}
+\item{actorId}{The actor ID for memory operations. Overrides the actor ID configured on the harness.}
 }
 \description{
 Operation to invoke a Harness.

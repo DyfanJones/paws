@@ -12,18 +12,13 @@ bedrockagentcorecontrol_create_oauth_2_credential_provider(
 )
 }
 \arguments{
-\item{name}{[required] The name of the OAuth2 credential provider. The name must be unique
-within your account.}
+\item{name}{[required] The name of the OAuth2 credential provider. The name must be unique within your account.}
 
-\item{credentialProviderVendor}{[required] The vendor of the OAuth2 credential provider. This specifies which
-OAuth2 implementation to use.}
+\item{credentialProviderVendor}{[required] The vendor of the OAuth2 credential provider. This specifies which OAuth2 implementation to use.}
 
-\item{oauth2ProviderConfigInput}{[required] The configuration settings for the OAuth2 provider, including client ID,
-client secret, and other vendor-specific settings.}
+\item{oauth2ProviderConfigInput}{[required] The configuration settings for the OAuth2 provider, including client ID, client secret, and other vendor-specific settings.}
 
-\item{tags}{A map of tag keys and values to assign to the OAuth2 credential
-provider. Tags enable you to categorize your resources in different
-ways, for example, by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a new OAuth2 credential provider.

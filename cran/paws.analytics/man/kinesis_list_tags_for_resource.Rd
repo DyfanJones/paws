@@ -7,8 +7,7 @@
 kinesis_list_tags_for_resource(ResourceARN, StreamId = NULL)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Kinesis resource for which to list
-tags.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Kinesis resource for which to list tags.}
 
 \item{StreamId}{Not Implemented. Reserved for future use.}
 }

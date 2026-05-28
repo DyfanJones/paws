@@ -12,13 +12,11 @@ billing_list_source_views_for_billing_view(
 )
 }
 \arguments{
-\item{arn}{[required] The Amazon Resource Name (ARN) that can be used to uniquely identify the
-billing view.}
+\item{arn}{[required] The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.}
 
 \item{maxResults}{The number of entries a paginated response contains.}
 
-\item{nextToken}{The pagination token that is used on subsequent calls to list billing
-views.}
+\item{nextToken}{The pagination token that is used on subsequent calls to list billing views.}
 }
 \description{
 Lists the source views (managed Amazon Web Services billing views) associated with the billing view.

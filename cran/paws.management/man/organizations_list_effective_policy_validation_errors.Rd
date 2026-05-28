@@ -13,12 +13,9 @@ organizations_list_effective_policy_validation_errors(
 )
 }
 \arguments{
-\item{AccountId}{[required] The ID of the account that you want details about. Specifying an
-organization root or organizational unit (OU) as the target is not
-supported.}
+\item{AccountId}{[required] The ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.}
 
-\item{PolicyType}{[required] The type of policy that you want information about. You can specify one
-of the following values:
+\item{PolicyType}{[required] The type of policy that you want information about. You can specify one of the following values:
 \itemize{
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_policies.html}{DECLARATIVE_POLICY_EC2}
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html}{BACKUP_POLICY}
@@ -33,15 +30,9 @@ of the following values:
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html}{NETWORK_SECURITY_DIRECTOR_POLICY}
 }}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 Lists all the validation errors on an \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_effective.html}{effective policy} for a specified account and policy type.

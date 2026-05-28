@@ -15,12 +15,9 @@ devopsguru_list_events(
 \arguments{
 \item{Filters}{[required] A \code{ListEventsFilters} object used to specify which events to return.}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 
 \item{AccountId}{The ID of the Amazon Web Services account.}
 }

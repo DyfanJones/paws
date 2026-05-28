@@ -2,7 +2,7 @@
 % Please edit documentation in R/bedrockagentcore_operations.R
 \name{bedrockagentcore_process_payment}
 \alias{bedrockagentcore_process_payment}
-\title{Process a payment transaction}
+\title{Processes a payment using a payment instrument within a payment session}
 \usage{
 bedrockagentcore_process_payment(
   userId = NULL,
@@ -20,20 +20,20 @@ bedrockagentcore_process_payment(
 
 \item{agentName}{The agent name associated with this request, used for observability.}
 
-\item{paymentManagerArn}{[required] The ARN of the payment manager handling this payment.}
+\item{paymentManagerArn}{[required] The ARN of the payment manager.}
 
-\item{paymentSessionId}{[required] The ID of the payment session for this transaction.}
+\item{paymentSessionId}{[required] The ID of the payment session.}
 
-\item{paymentInstrumentId}{[required] The ID of the payment instrument to use for this transaction.}
+\item{paymentInstrumentId}{[required] The ID of the payment instrument to use.}
 
-\item{paymentType}{[required] The type of payment being processed.}
+\item{paymentType}{[required] The type of payment to process.}
 
 \item{paymentInput}{[required] The payment input details specific to the payment type.}
 
-\item{clientToken}{Idempotency token to ensure request uniqueness.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
-Process a payment transaction
+Processes a payment using a payment instrument within a payment session.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_process_payment/} for full documentation.
 }

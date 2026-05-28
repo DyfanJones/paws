@@ -7,8 +7,7 @@
 bedrockagentruntime_end_session(sessionIdentifier)
 }
 \arguments{
-\item{sessionIdentifier}{[required] The unique identifier for the session to end. You can specify either the
-session's \code{sessionId} or its Amazon Resource Name (ARN).}
+\item{sessionIdentifier}{[required] The unique identifier for the session to end. You can specify either the session's \code{sessionId} or its Amazon Resource Name (ARN).}
 }
 \description{
 Ends the session. After you end a session, you can still access its content but you can’t add to it. To delete the session and it's content, you use the DeleteSession API operation. For more information about sessions, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html}{Store and retrieve conversation history and context with Amazon Bedrock sessions}.

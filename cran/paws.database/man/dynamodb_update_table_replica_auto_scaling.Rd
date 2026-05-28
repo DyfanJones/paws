@@ -12,14 +12,13 @@ dynamodb_update_table_replica_auto_scaling(
 )
 }
 \arguments{
-\item{GlobalSecondaryIndexUpdates}{Represents the auto scaling settings of the global secondary indexes of
-the replica to be updated.}
+\item{GlobalSecondaryIndexUpdates}{Represents the auto scaling settings of the global secondary indexes of the replica to be updated.}
 
-\item{TableName}{[required] The name of the global table to be updated. You can also provide the
-Amazon Resource Name (ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the global table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 
-\item{ReplicaUpdates}{Represents the auto scaling settings of replicas of the table that will
-be modified.}
+\item{ProvisionedWriteCapacityAutoScalingUpdate}{Represents the auto scaling settings to be modified for a global table or global secondary index.}
+
+\item{ReplicaUpdates}{Represents the auto scaling settings of replicas of the table that will be modified.}
 }
 \description{
 Updates auto scaling settings on your global tables at once.

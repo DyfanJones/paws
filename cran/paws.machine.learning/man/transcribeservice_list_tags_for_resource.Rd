@@ -8,16 +8,11 @@ vocabulary, model, or resource}
 transcribeservice_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] Returns a list of all tags associated with the specified Amazon Resource
-Name (ARN). ARNs have the format
-\code{arn:partition:service:region:account-id:resource-type/resource-id}.
+\item{ResourceArn}{[required] Returns a list of all tags associated with the specified Amazon Resource Name (ARN). ARNs have the format \code{arn:partition:service:region:account-id:resource-type/resource-id}.
 
-For example,
-\code{arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name}.
+For example, \code{arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name}.
 
-Valid values for \code{resource-type} are: \code{transcription-job},
-\code{medical-transcription-job}, \code{vocabulary}, \code{medical-vocabulary},
-\code{vocabulary-filter}, and \code{language-model}.}
+Valid values for \code{resource-type} are: \code{transcription-job}, \code{medical-transcription-job}, \code{vocabulary}, \code{medical-vocabulary}, \code{vocabulary-filter}, and \code{language-model}.}
 }
 \description{
 Lists all tags associated with the specified transcription job, vocabulary, model, or resource.

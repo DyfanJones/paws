@@ -10,8 +10,7 @@ lambda_send_durable_execution_callback_success(CallbackId, Result = NULL)
 \arguments{
 \item{CallbackId}{[required] The unique identifier for the callback operation.}
 
-\item{Result}{The result data from the successful callback operation. Maximum size is
-256 KB.}
+\item{Result}{The result data from the successful callback operation. Maximum size is 256 KB.}
 }
 \description{
 Sends a successful completion response for a callback operation in a durable execution. Use this API when an external system has successfully completed a callback operation.

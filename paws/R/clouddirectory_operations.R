@@ -6,17 +6,14 @@ NULL
 #' Adds a new Facet to an object
 #'
 #' @description
-#' Adds a new Facet to an object. An object can have more than one facet
-#' applied on it.
+#' Adds a new Facet to an object. An object can have more than one facet applied on it.
 #'
 #' @usage
 #' clouddirectory_add_facet_to_object(DirectoryArn, SchemaFacet,
 #'   ObjectAttributeList, ObjectReference)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the object resides. For more information, see arns.
-#' @param SchemaFacet &#91;required&#93; Identifiers for the facet that you are adding to the object. See
-#' SchemaFacet for details.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns.
+#' @param SchemaFacet &#91;required&#93; Identifiers for the facet that you are adding to the object. See SchemaFacet for details.
 #' @param ObjectAttributeList Attributes on the facet that you are adding to the object.
 #' @param ObjectReference &#91;required&#93; A reference to the object you are adding the specified facet to.
 #'
@@ -83,17 +80,13 @@ clouddirectory_add_facet_to_object <- function(DirectoryArn, SchemaFacet, Object
 #' Directory with the same name and version as that of the published schema
 #'
 #' @description
-#' Copies the input published schema, at the specified version, into the
-#' Directory with the same name and version as that of the published
-#' schema.
+#' Copies the input published schema, at the specified version, into the Directory with the same name and version as that of the published schema.
 #'
 #' @usage
 #' clouddirectory_apply_schema(PublishedSchemaArn, DirectoryArn)
 #'
-#' @param PublishedSchemaArn &#91;required&#93; Published schema Amazon Resource Name (ARN) that needs to be copied. For
-#' more information, see arns.
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' into which the schema is copied. For more information, see arns.
+#' @param PublishedSchemaArn &#91;required&#93; Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory into which the schema is copied. For more information, see arns.
 #'
 #' @return
 #' A list with the following syntax:
@@ -139,8 +132,7 @@ clouddirectory_apply_schema <- function(PublishedSchemaArn, DirectoryArn) {
 #' Attaches an existing object to another object
 #'
 #' @description
-#' Attaches an existing object to another object. An object can be accessed
-#' in two ways:
+#' Attaches an existing object to another object. An object can be accessed in two ways:
 #' 
 #' 1.  Using the path
 #' 
@@ -150,8 +142,7 @@ clouddirectory_apply_schema <- function(PublishedSchemaArn, DirectoryArn) {
 #' clouddirectory_attach_object(DirectoryArn, ParentReference,
 #'   ChildReference, LinkName)
 #'
-#' @param DirectoryArn &#91;required&#93; Amazon Resource Name (ARN) that is associated with the Directory where
-#' both objects reside. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; Amazon Resource Name (ARN) that is associated with the Directory where both objects reside. For more information, see arns.
 #' @param ParentReference &#91;required&#93; The parent object reference.
 #' @param ChildReference &#91;required&#93; The child object reference to be attached to the object.
 #' @param LinkName &#91;required&#93; The link name with which the child object is attached to the parent.
@@ -205,18 +196,15 @@ clouddirectory_attach_object <- function(DirectoryArn, ParentReference, ChildRef
 #' Attaches a policy object to a regular object
 #'
 #' @description
-#' Attaches a policy object to a regular object. An object can have a
-#' limited number of attached policies.
+#' Attaches a policy object to a regular object. An object can have a limited number of attached policies.
 #'
 #' @usage
 #' clouddirectory_attach_policy(DirectoryArn, PolicyReference,
 #'   ObjectReference)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where both objects reside. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where both objects reside. For more information, see arns.
 #' @param PolicyReference &#91;required&#93; The reference that is associated with the policy object.
-#' @param ObjectReference &#91;required&#93; The reference that identifies the object to which the policy will be
-#' attached.
+#' @param ObjectReference &#91;required&#93; The reference that identifies the object to which the policy will be attached.
 #'
 #' @return
 #' An empty list.
@@ -267,8 +255,7 @@ clouddirectory_attach_policy <- function(DirectoryArn, PolicyReference, ObjectRe
 #' clouddirectory_attach_to_index(DirectoryArn, IndexReference,
 #'   TargetReference)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where the object and
-#' index exist.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where the object and index exist.
 #' @param IndexReference &#91;required&#93; A reference to the index that you are attaching the object to.
 #' @param TargetReference &#91;required&#93; A reference to the object that you are attaching to the index.
 #'
@@ -320,16 +307,13 @@ clouddirectory_attach_to_index <- function(DirectoryArn, IndexReference, TargetR
 #' Attaches a typed link to a specified source and target object
 #'
 #' @description
-#' Attaches a typed link to a specified source and target object. For more
-#' information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Attaches a typed link to a specified source and target object. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_attach_typed_link(DirectoryArn, SourceObjectReference,
 #'   TargetObjectReference, TypedLinkFacet, Attributes)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to attach
-#' the typed link.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.
 #' @param SourceObjectReference &#91;required&#93; Identifies the source object that the typed link will attach to.
 #' @param TargetObjectReference &#91;required&#93; Identifies the target object that the typed link will attach to.
 #' @param TypedLinkFacet &#91;required&#93; Identifies the typed link facet that is associated with the typed link.
@@ -431,12 +415,9 @@ clouddirectory_attach_typed_link <- function(DirectoryArn, SourceObjectReference
 #' @usage
 #' clouddirectory_batch_read(DirectoryArn, Operations, ConsistencyLevel)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory.
-#' For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory. For more information, see arns.
 #' @param Operations &#91;required&#93; A list of operations that are part of the batch.
-#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update
-#' of an object is reflected in a subsequent read operation of that same
-#' object.
+#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -953,14 +934,12 @@ clouddirectory_batch_read <- function(DirectoryArn, Operations, ConsistencyLevel
 #' Performs all the write operations in a batch
 #'
 #' @description
-#' Performs all the write operations in a batch. Either all the operations
-#' succeed or none.
+#' Performs all the write operations in a batch. Either all the operations succeed or none.
 #'
 #' @usage
 #' clouddirectory_batch_write(DirectoryArn, Operations)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory.
-#' For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory. For more information, see arns.
 #' @param Operations &#91;required&#93; A list of operations that are part of the batch.
 #'
 #' @return
@@ -1332,20 +1311,15 @@ clouddirectory_batch_write <- function(DirectoryArn, Operations) {
 #' Creates a Directory by copying the published schema into the directory
 #'
 #' @description
-#' Creates a Directory by copying the published schema into the directory.
-#' A directory cannot be created without a schema.
+#' Creates a Directory by copying the published schema into the directory. A directory cannot be created without a schema.
 #' 
-#' You can also quickly create a directory using a managed schema, called
-#' the `QuickStartSchema`. For more information, see [Managed
-#' Schema](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html)
-#' in the *Amazon Cloud Directory Developer Guide*.
+#' You can also quickly create a directory using a managed schema, called the `QuickStartSchema`. For more information, see [Managed Schema](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html) in the *Amazon Cloud Directory Developer Guide*.
 #'
 #' @usage
 #' clouddirectory_create_directory(Name, SchemaArn)
 #'
 #' @param Name &#91;required&#93; The name of the Directory. Should be unique per account, per region.
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) of the published schema that will be
-#' copied into the data Directory. For more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) of the published schema that will be copied into the data Directory. For more information, see arns.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1393,19 +1367,16 @@ clouddirectory_create_directory <- function(Name, SchemaArn) {
 #' Creates a new Facet in a schema
 #'
 #' @description
-#' Creates a new Facet in a schema. Facet creation is allowed only in
-#' development or applied schemas.
+#' Creates a new Facet in a schema. Facet creation is allowed only in development or applied schemas.
 #'
 #' @usage
 #' clouddirectory_create_facet(SchemaArn, Name, Attributes, ObjectType,
 #'   FacetStyle)
 #'
-#' @param SchemaArn &#91;required&#93; The schema ARN in which the new Facet will be created. For more
-#' information, see arns.
+#' @param SchemaArn &#91;required&#93; The schema ARN in which the new Facet will be created. For more information, see arns.
 #' @param Name &#91;required&#93; The name of the Facet, which is unique for a given schema.
 #' @param Attributes The attributes that are associated with the Facet.
-#' @param ObjectType Specifies whether a given object created from this facet is of type
-#' node, leaf node, policy or index.
+#' @param ObjectType Specifies whether a given object created from this facet is of type node, leaf node, policy or index.
 #' 
 #' -   Node: Can have multiple children but one parent.
 #' 
@@ -1413,16 +1384,11 @@ clouddirectory_create_directory <- function(Name, SchemaArn) {
 #' -   Leaf node: Cannot have children but can have multiple parents.
 #' 
 #' 
-#' -   Policy: Allows you to store a policy document and policy type. For
-#'     more information, see
-#'     [Policies](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies).
+#' -   Policy: Allows you to store a policy document and policy type. For more information, see [Policies](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies).
 #' 
 #' 
 #' -   Index: Can be created with the Index API.
-#' @param FacetStyle There are two different styles that you can define on any given facet,
-#' `Static` and `Dynamic`. For static facets, all attributes must be
-#' defined in the schema. For dynamic facets, attributes can be defined
-#' during data plane operations.
+#' @param FacetStyle There are two different styles that you can define on any given facet, `Static` and `Dynamic`. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.
 #'
 #' @return
 #' An empty list.
@@ -1495,19 +1461,15 @@ clouddirectory_create_facet <- function(SchemaArn, Name, Attributes = NULL, Obje
 #' Creates an index object
 #'
 #' @description
-#' Creates an index object. See [Indexing and
-#' search](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html)
-#' for more information.
+#' Creates an index object. See [Indexing and search](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html) for more information.
 #'
 #' @usage
 #' clouddirectory_create_index(DirectoryArn, OrderedIndexedAttributeList,
 #'   IsUnique, ParentReference, LinkName)
 #'
 #' @param DirectoryArn &#91;required&#93; The ARN of the directory where the index should be created.
-#' @param OrderedIndexedAttributeList &#91;required&#93; Specifies the attributes that should be indexed on. Currently only a
-#' single attribute is supported.
-#' @param IsUnique &#91;required&#93; Indicates whether the attribute that is being indexed has unique values
-#' or not.
+#' @param OrderedIndexedAttributeList &#91;required&#93; Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
+#' @param IsUnique &#91;required&#93; Indicates whether the attribute that is being indexed has unique values or not.
 #' @param ParentReference A reference to the parent object that contains the index object.
 #' @param LinkName The name of the link between the parent object and the index object.
 #'
@@ -1565,24 +1527,16 @@ clouddirectory_create_index <- function(DirectoryArn, OrderedIndexedAttributeLis
 #' Creates an object in a Directory
 #'
 #' @description
-#' Creates an object in a Directory. Additionally attaches the object to a
-#' parent, if a parent reference and `LinkName` is specified. An object is
-#' simply a collection of Facet attributes. You can also use this API call
-#' to create a policy object, if the facet from which you create the object
-#' is a policy facet.
+#' Creates an object in a Directory. Additionally attaches the object to a parent, if a parent reference and `LinkName` is specified. An object is simply a collection of Facet attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet.
 #'
 #' @usage
 #' clouddirectory_create_object(DirectoryArn, SchemaFacets,
 #'   ObjectAttributeList, ParentReference, LinkName)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory in
-#' which the object will be created. For more information, see arns.
-#' @param SchemaFacets &#91;required&#93; A list of schema facets to be associated with the object. Do not provide
-#' minor version components. See SchemaFacet for details.
-#' @param ObjectAttributeList The attribute map whose attribute ARN contains the key and attribute
-#' value as the map value.
-#' @param ParentReference If specified, the parent reference to which this object will be
-#' attached.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory in which the object will be created. For more information, see arns.
+#' @param SchemaFacets &#91;required&#93; A list of schema facets to be associated with the object. Do not provide minor version components. See SchemaFacet for details.
+#' @param ObjectAttributeList The attribute map whose attribute ARN contains the key and attribute value as the map value.
+#' @param ParentReference If specified, the parent reference to which this object will be attached.
 #' @param LinkName The name of link that is used to attach this object to a parent.
 #'
 #' @return
@@ -1655,26 +1609,18 @@ clouddirectory_create_object <- function(DirectoryArn, SchemaFacets, ObjectAttri
 #' Creates a new schema in a development state
 #'
 #' @description
-#' Creates a new schema in a development state. A schema can exist in three
-#' phases:
+#' Creates a new schema in a development state. A schema can exist in three phases:
 #' 
-#' -   *Development:* This is a mutable phase of the schema. All new
-#'     schemas are in the development phase. Once the schema is finalized,
-#'     it can be published.
+#' -   *Development:* This is a mutable phase of the schema. All new schemas are in the development phase. Once the schema is finalized, it can be published.
 #' 
-#' -   *Published:* Published schemas are immutable and have a version
-#'     associated with them.
+#' -   *Published:* Published schemas are immutable and have a version associated with them.
 #' 
-#' -   *Applied:* Applied schemas are mutable in a way that allows you to
-#'     add new schema facets. You can also add new, nonrequired attributes
-#'     to existing schema facets. You can apply only published schemas to
-#'     directories.
+#' -   *Applied:* Applied schemas are mutable in a way that allows you to add new schema facets. You can also add new, nonrequired attributes to existing schema facets. You can apply only published schemas to directories.
 #'
 #' @usage
 #' clouddirectory_create_schema(Name)
 #'
-#' @param Name &#91;required&#93; The name that is associated with the schema. This is unique to each
-#' account and in each region.
+#' @param Name &#91;required&#93; The name that is associated with the schema. This is unique to each account and in each region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1718,14 +1664,12 @@ clouddirectory_create_schema <- function(Name) {
 #' Creates a TypedLinkFacet
 #'
 #' @description
-#' Creates a TypedLinkFacet. For more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Creates a TypedLinkFacet. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_create_typed_link_facet(SchemaArn, Facet)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns.
 #' @param Facet &#91;required&#93; Facet structure that is associated with the typed link facet.
 #'
 #' @return
@@ -1796,9 +1740,7 @@ clouddirectory_create_typed_link_facet <- function(SchemaArn, Facet) {
 #' Deletes a directory
 #'
 #' @description
-#' Deletes a directory. Only disabled directories can be deleted. A deleted
-#' directory cannot be undone. Exercise extreme caution when deleting
-#' directories.
+#' Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme caution when deleting directories.
 #'
 #' @usage
 #' clouddirectory_delete_directory(DirectoryArn)
@@ -1847,15 +1789,12 @@ clouddirectory_delete_directory <- function(DirectoryArn) {
 #' Deletes a given Facet
 #'
 #' @description
-#' Deletes a given Facet. All attributes and Rules that are associated with
-#' the facet will be deleted. Only development schema facets are allowed
-#' deletion.
+#' Deletes a given Facet. All attributes and Rules that are associated with the facet will be deleted. Only development schema facets are allowed deletion.
 #'
 #' @usage
 #' clouddirectory_delete_facet(SchemaArn, Name)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Facet. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Facet. For more information, see arns.
 #' @param Name &#91;required&#93; The name of the facet to delete.
 #'
 #' @return
@@ -1896,17 +1835,12 @@ clouddirectory_delete_facet <- function(SchemaArn, Name) {
 #' Deletes an object and its associated attributes
 #'
 #' @description
-#' Deletes an object and its associated attributes. Only objects with no
-#' children and no parents can be deleted. The maximum number of attributes
-#' that can be deleted during an object deletion is 30. For more
-#' information, see [Amazon Cloud Directory
-#' Limits](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html).
+#' Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see [Amazon Cloud Directory Limits](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html).
 #'
 #' @usage
 #' clouddirectory_delete_object(DirectoryArn, ObjectReference)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the object resides. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns.
 #' @param ObjectReference &#91;required&#93; A reference that identifies the object.
 #'
 #' @return
@@ -1949,14 +1883,12 @@ clouddirectory_delete_object <- function(DirectoryArn, ObjectReference) {
 #' Deletes a given schema
 #'
 #' @description
-#' Deletes a given schema. Schemas in a development and published state can
-#' only be deleted.
+#' Deletes a given schema. Schemas in a development and published state can only be deleted.
 #'
 #' @usage
 #' clouddirectory_delete_schema(SchemaArn)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) of the development schema. For more
-#' information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) of the development schema. For more information, see arns.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2000,14 +1932,12 @@ clouddirectory_delete_schema <- function(SchemaArn) {
 #' Deletes a TypedLinkFacet
 #'
 #' @description
-#' Deletes a TypedLinkFacet. For more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Deletes a TypedLinkFacet. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_delete_typed_link_facet(SchemaArn, Name)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns.
 #' @param Name &#91;required&#93; The unique name of the typed link facet.
 #'
 #' @return
@@ -2054,8 +1984,7 @@ clouddirectory_delete_typed_link_facet <- function(SchemaArn, Name) {
 #' clouddirectory_detach_from_index(DirectoryArn, IndexReference,
 #'   TargetReference)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory the index and object
-#' exist in.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory the index and object exist in.
 #' @param IndexReference &#91;required&#93; A reference to the index object.
 #' @param TargetReference &#91;required&#93; A reference to the object being detached from the index.
 #'
@@ -2107,16 +2036,13 @@ clouddirectory_detach_from_index <- function(DirectoryArn, IndexReference, Targe
 #' Detaches a given object from the parent object
 #'
 #' @description
-#' Detaches a given object from the parent object. The object that is to be
-#' detached from the parent is specified by the link name.
+#' Detaches a given object from the parent object. The object that is to be detached from the parent is specified by the link name.
 #'
 #' @usage
 #' clouddirectory_detach_object(DirectoryArn, ParentReference, LinkName)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where objects reside. For more information, see arns.
-#' @param ParentReference &#91;required&#93; The parent reference from which the object with the specified link name
-#' is detached.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where objects reside. For more information, see arns.
+#' @param ParentReference &#91;required&#93; The parent reference from which the object with the specified link name is detached.
 #' @param LinkName &#91;required&#93; The link name associated with the object that needs to be detached.
 #'
 #' @return
@@ -2171,11 +2097,9 @@ clouddirectory_detach_object <- function(DirectoryArn, ParentReference, LinkName
 #' clouddirectory_detach_policy(DirectoryArn, PolicyReference,
 #'   ObjectReference)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where both objects reside. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where both objects reside. For more information, see arns.
 #' @param PolicyReference &#91;required&#93; Reference that identifies the policy object.
-#' @param ObjectReference &#91;required&#93; Reference that identifies the object whose policy object will be
-#' detached.
+#' @param ObjectReference &#91;required&#93; Reference that identifies the object whose policy object will be detached.
 #'
 #' @return
 #' An empty list.
@@ -2220,15 +2144,12 @@ clouddirectory_detach_policy <- function(DirectoryArn, PolicyReference, ObjectRe
 #' Detaches a typed link from a specified source and target object
 #'
 #' @description
-#' Detaches a typed link from a specified source and target object. For
-#' more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Detaches a typed link from a specified source and target object. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_detach_typed_link(DirectoryArn, TypedLinkSpecifier)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to detach
-#' the typed link.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.
 #' @param TypedLinkSpecifier &#91;required&#93; Used to accept a typed link specifier as input.
 #'
 #' @return
@@ -2294,9 +2215,7 @@ clouddirectory_detach_typed_link <- function(DirectoryArn, TypedLinkSpecifier) {
 #' Disables the specified directory
 #'
 #' @description
-#' Disables the specified directory. Disabled directories cannot be read or
-#' written to. Only enabled directories can be disabled. Disabled
-#' directories may be reenabled.
+#' Disables the specified directory. Disabled directories cannot be read or written to. Only enabled directories can be disabled. Disabled directories may be reenabled.
 #'
 #' @usage
 #' clouddirectory_disable_directory(DirectoryArn)
@@ -2345,8 +2264,7 @@ clouddirectory_disable_directory <- function(DirectoryArn) {
 #' Enables the specified directory
 #'
 #' @description
-#' Enables the specified directory. Only disabled directories can be
-#' enabled. Once enabled, the directory can then be read and written to.
+#' Enables the specified directory. Only disabled directories can be enabled. Once enabled, the directory can then be read and written to.
 #'
 #' @usage
 #' clouddirectory_enable_directory(DirectoryArn)
@@ -2396,8 +2314,7 @@ clouddirectory_enable_directory <- function(DirectoryArn) {
 #' in use
 #'
 #' @description
-#' Returns current applied schema version ARN, including the minor version
-#' in use.
+#' Returns current applied schema version ARN, including the minor version in use.
 #'
 #' @usage
 #' clouddirectory_get_applied_schema_version(SchemaArn)
@@ -2503,15 +2420,12 @@ clouddirectory_get_directory <- function(DirectoryArn) {
 #' ObjectType
 #'
 #' @description
-#' Gets details of the Facet, such as facet name, attributes, Rules, or
-#' `ObjectType`. You can call this on all kinds of schema facets --
-#' published, development, or applied.
+#' Gets details of the Facet, such as facet name, attributes, Rules, or `ObjectType`. You can call this on all kinds of schema facets -- published, development, or applied.
 #'
 #' @usage
 #' clouddirectory_get_facet(SchemaArn, Name)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Facet. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Facet. For more information, see arns.
 #' @param Name &#91;required&#93; The name of the facet to retrieve.
 #'
 #' @return
@@ -2567,13 +2481,10 @@ clouddirectory_get_facet <- function(SchemaArn, Name) {
 #' clouddirectory_get_link_attributes(DirectoryArn, TypedLinkSpecifier,
 #'   AttributeNames, ConsistencyLevel)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the typed link resides. For more information, see arns or [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see arns or [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #' @param TypedLinkSpecifier &#91;required&#93; Allows a typed link specifier to be accepted as input.
 #' @param AttributeNames &#91;required&#93; A list of attribute names whose values will be retrieved.
-#' @param ConsistencyLevel The consistency level at which to retrieve the attributes on a typed
-#' link.
+#' @param ConsistencyLevel The consistency level at which to retrieve the attributes on a typed link.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2670,12 +2581,10 @@ clouddirectory_get_link_attributes <- function(DirectoryArn, TypedLinkSpecifier,
 #' clouddirectory_get_object_attributes(DirectoryArn, ObjectReference,
 #'   ConsistencyLevel, SchemaFacet, AttributeNames)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the object resides.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the object resides.
 #' @param ObjectReference &#91;required&#93; Reference that identifies the object whose attributes will be retrieved.
 #' @param ConsistencyLevel The consistency level at which to retrieve the attributes on an object.
-#' @param SchemaFacet &#91;required&#93; Identifier for the facet whose attributes will be retrieved. See
-#' SchemaFacet for details.
+#' @param SchemaFacet &#91;required&#93; Identifier for the facet whose attributes will be retrieved. See SchemaFacet for details.
 #' @param AttributeNames &#91;required&#93; List of attribute names whose values will be retrieved.
 #'
 #' @return
@@ -2810,9 +2719,7 @@ clouddirectory_get_object_information <- function(DirectoryArn, ObjectReference,
 #' Retrieves a JSON representation of the schema
 #'
 #' @description
-#' Retrieves a JSON representation of the schema. See [JSON Schema
-#' Format](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json)
-#' for more information.
+#' Retrieves a JSON representation of the schema. See [JSON Schema Format](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json) for more information.
 #'
 #' @usage
 #' clouddirectory_get_schema_as_json(SchemaArn)
@@ -2862,15 +2769,12 @@ clouddirectory_get_schema_as_json <- function(SchemaArn) {
 #' Returns the identity attribute order for a specific TypedLinkFacet
 #'
 #' @description
-#' Returns the identity attribute order for a specific TypedLinkFacet. For
-#' more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Returns the identity attribute order for a specific TypedLinkFacet. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_get_typed_link_facet_information(SchemaArn, Name)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns.
 #' @param Name &#91;required&#93; The unique name of the typed link facet.
 #'
 #' @return
@@ -2918,18 +2822,14 @@ clouddirectory_get_typed_link_facet_information <- function(SchemaArn, Name) {
 #' Lists schema major versions applied to a directory
 #'
 #' @description
-#' Lists schema major versions applied to a directory. If `SchemaArn` is
-#' provided, lists the minor version.
+#' Lists schema major versions applied to a directory. If `SchemaArn` is provided, lists the minor version.
 #'
 #' @usage
 #' clouddirectory_list_applied_schema_arns(DirectoryArn, SchemaArn,
 #'   NextToken, MaxResults)
 #'
 #' @param DirectoryArn &#91;required&#93; The ARN of the directory you are listing.
-#' @param SchemaArn The response for
-#' [`list_applied_schema_arns`][clouddirectory_list_applied_schema_arns]
-#' when this parameter is used will list all minor version ARNs for a major
-#' version.
+#' @param SchemaArn The response for [`list_applied_schema_arns`][clouddirectory_list_applied_schema_arns] when this parameter is used will list all minor version ARNs for a major version.
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
 #'
@@ -3065,8 +2965,7 @@ clouddirectory_list_attached_indices <- function(DirectoryArn, TargetReference, 
 #' state
 #'
 #' @description
-#' Retrieves each Amazon Resource Name (ARN) of schemas in the development
-#' state.
+#' Retrieves each Amazon Resource Name (ARN) of schemas in the development state.
 #'
 #' @usage
 #' clouddirectory_list_development_schema_arns(NextToken, MaxResults)
@@ -3127,8 +3026,7 @@ clouddirectory_list_development_schema_arns <- function(NextToken = NULL, MaxRes
 #'
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
-#' @param state The state of the directories in the list. Can be either Enabled,
-#' Disabled, or Deleted.
+#' @param state The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3328,25 +3226,17 @@ clouddirectory_list_facet_names <- function(SchemaArn, NextToken = NULL, MaxResu
 #' information for an object
 #'
 #' @description
-#' Returns a paginated list of all the incoming TypedLinkSpecifier
-#' information for an object. It also supports filtering by typed link
-#' facet and identity attributes. For more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Returns a paginated list of all the incoming TypedLinkSpecifier information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_list_incoming_typed_links(DirectoryArn, ObjectReference,
 #'   FilterAttributeRanges, FilterTypedLink, NextToken, MaxResults,
 #'   ConsistencyLevel)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to list
-#' the typed links.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to list the typed links.
 #' @param ObjectReference &#91;required&#93; Reference that identifies the object whose attributes will be listed.
-#' @param FilterAttributeRanges Provides range filters for multiple attributes. When providing ranges to
-#' typed link selection, any inexact ranges must be specified at the end.
-#' Any attributes that do not have a range specified are presumed to match
-#' the entire range.
-#' @param FilterTypedLink Filters are interpreted in the order of the attributes on the typed link
-#' facet, not the order in which they are supplied to any API calls.
+#' @param FilterAttributeRanges Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.
+#' @param FilterTypedLink Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
 #' @param ConsistencyLevel The consistency level to execute the request at.
@@ -3467,10 +3357,7 @@ clouddirectory_list_incoming_typed_links <- function(DirectoryArn, ObjectReferen
 #' @param DirectoryArn &#91;required&#93; The ARN of the directory that the index exists in.
 #' @param RangesOnIndexedValues Specifies the ranges of indexed values that you want to query.
 #' @param IndexReference &#91;required&#93; The reference to the index to list.
-#' @param MaxResults The maximum number of objects in a single page to retrieve from the
-#' index during a request. For more information, see [Amazon Cloud
-#' Directory
-#' Limits](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html).
+#' @param MaxResults The maximum number of objects in a single page to retrieve from the index during a request. For more information, see [Amazon Cloud Directory Limits](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html).
 #' @param NextToken The pagination token.
 #' @param ConsistencyLevel The consistency level to execute the request at.
 #'
@@ -3576,16 +3463,13 @@ clouddirectory_list_index <- function(DirectoryArn, RangesOnIndexedValues = NULL
 #' Lists the major version families of each managed schema
 #'
 #' @description
-#' Lists the major version families of each managed schema. If a major
-#' version ARN is provided as SchemaArn, the minor version revisions in
-#' that family are listed instead.
+#' Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead.
 #'
 #' @usage
 #' clouddirectory_list_managed_schema_arns(SchemaArn, NextToken,
 #'   MaxResults)
 #'
-#' @param SchemaArn The response for ListManagedSchemaArns. When this parameter is used, all
-#' minor version ARNs for a major version are listed.
+#' @param SchemaArn The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
 #'
@@ -3642,18 +3526,12 @@ clouddirectory_list_managed_schema_arns <- function(SchemaArn = NULL, NextToken 
 #' clouddirectory_list_object_attributes(DirectoryArn, ObjectReference,
 #'   NextToken, MaxResults, ConsistencyLevel, FacetFilter)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the object resides. For more information, see arns.
-#' @param ObjectReference &#91;required&#93; The reference that identifies the object whose attributes will be
-#' listed.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns.
+#' @param ObjectReference &#91;required&#93; The reference that identifies the object whose attributes will be listed.
 #' @param NextToken The pagination token.
-#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an
-#' approximate number.
-#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update
-#' of an object is reflected in a subsequent read operation of that same
-#' object.
-#' @param FacetFilter Used to filter the list of object attributes that are associated with a
-#' certain facet.
+#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an approximate number.
+#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.
+#' @param FacetFilter Used to filter the list of object attributes that are associated with a certain facet.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3726,23 +3604,17 @@ clouddirectory_list_object_attributes <- function(DirectoryArn, ObjectReference,
 #' given object
 #'
 #' @description
-#' Returns a paginated list of child objects that are associated with a
-#' given object.
+#' Returns a paginated list of child objects that are associated with a given object.
 #'
 #' @usage
 #' clouddirectory_list_object_children(DirectoryArn, ObjectReference,
 #'   NextToken, MaxResults, ConsistencyLevel)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the object resides. For more information, see arns.
-#' @param ObjectReference &#91;required&#93; The reference that identifies the object for which child objects are
-#' being listed.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns.
+#' @param ObjectReference &#91;required&#93; The reference that identifies the object for which child objects are being listed.
 #' @param NextToken The pagination token.
-#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an
-#' approximate number.
-#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update
-#' of an object is reflected in a subsequent read operation of that same
-#' object.
+#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an approximate number.
+#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3796,18 +3668,9 @@ clouddirectory_list_object_children <- function(DirectoryArn, ObjectReference, N
 #' leaf node, policy node, and index node objects
 #'
 #' @description
-#' Retrieves all available parent paths for any object type such as node,
-#' leaf node, policy node, and index node objects. For more information
-#' about objects, see [Directory
-#' Structure](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html).
+#' Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see [Directory Structure](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html).
 #' 
-#' Use this API to evaluate all parents for an object. The call returns all
-#' objects from the root of the directory up to the requested object. The
-#' API returns the number of paths based on user-defined `MaxResults`, in
-#' case there are multiple paths to the parent. The order of the paths and
-#' nodes returned is consistent among multiple API calls unless the objects
-#' are deleted or moved. Paths not leading to the directory root are
-#' ignored from the target object.
+#' Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined `MaxResults`, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored from the target object.
 #'
 #' @usage
 #' clouddirectory_list_object_parent_paths(DirectoryArn, ObjectReference,
@@ -3816,8 +3679,7 @@ clouddirectory_list_object_children <- function(DirectoryArn, ObjectReference, N
 #' @param DirectoryArn &#91;required&#93; The ARN of the directory to which the parent path applies.
 #' @param ObjectReference &#91;required&#93; The reference that identifies the object whose parent paths are listed.
 #' @param NextToken The pagination token.
-#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an
-#' approximate number.
+#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an approximate number.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3875,25 +3737,18 @@ clouddirectory_list_object_parent_paths <- function(DirectoryArn, ObjectReferenc
 #' pagination fashion
 #'
 #' @description
-#' Lists parent objects that are associated with a given object in
-#' pagination fashion.
+#' Lists parent objects that are associated with a given object in pagination fashion.
 #'
 #' @usage
 #' clouddirectory_list_object_parents(DirectoryArn, ObjectReference,
 #'   NextToken, MaxResults, ConsistencyLevel, IncludeAllLinksToEachParent)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the object resides. For more information, see arns.
-#' @param ObjectReference &#91;required&#93; The reference that identifies the object for which parent objects are
-#' being listed.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns.
+#' @param ObjectReference &#91;required&#93; The reference that identifies the object for which parent objects are being listed.
 #' @param NextToken The pagination token.
-#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an
-#' approximate number.
-#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update
-#' of an object is reflected in a subsequent read operation of that same
-#' object.
-#' @param IncludeAllLinksToEachParent When set to True, returns all ListObjectParentsResponse$ParentLinks.
-#' There could be multiple links between a parent-child pair.
+#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an approximate number.
+#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.
+#' @param IncludeAllLinksToEachParent When set to True, returns all ListObjectParentsResponse$ParentLinks. There could be multiple links between a parent-child pair.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3959,15 +3814,11 @@ clouddirectory_list_object_parents <- function(DirectoryArn, ObjectReference, Ne
 #' clouddirectory_list_object_policies(DirectoryArn, ObjectReference,
 #'   NextToken, MaxResults, ConsistencyLevel)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where objects reside. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where objects reside. For more information, see arns.
 #' @param ObjectReference &#91;required&#93; Reference that identifies the object for which policies will be listed.
 #' @param NextToken The pagination token.
-#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an
-#' approximate number.
-#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update
-#' of an object is reflected in a subsequent read operation of that same
-#' object.
+#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an approximate number.
+#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4021,25 +3872,17 @@ clouddirectory_list_object_policies <- function(DirectoryArn, ObjectReference, N
 #' information for an object
 #'
 #' @description
-#' Returns a paginated list of all the outgoing TypedLinkSpecifier
-#' information for an object. It also supports filtering by typed link
-#' facet and identity attributes. For more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Returns a paginated list of all the outgoing TypedLinkSpecifier information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_list_outgoing_typed_links(DirectoryArn, ObjectReference,
 #'   FilterAttributeRanges, FilterTypedLink, NextToken, MaxResults,
 #'   ConsistencyLevel)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to list
-#' the typed links.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) of the directory where you want to list the typed links.
 #' @param ObjectReference &#91;required&#93; A reference that identifies the object whose attributes will be listed.
-#' @param FilterAttributeRanges Provides range filters for multiple attributes. When providing ranges to
-#' typed link selection, any inexact ranges must be specified at the end.
-#' Any attributes that do not have a range specified are presumed to match
-#' the entire range.
-#' @param FilterTypedLink Filters are interpreted in the order of the attributes defined on the
-#' typed link facet, not the order they are supplied to any API calls.
+#' @param FilterAttributeRanges Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.
+#' @param FilterTypedLink Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
 #' @param ConsistencyLevel The consistency level to execute the request at.
@@ -4151,22 +3994,17 @@ clouddirectory_list_outgoing_typed_links <- function(DirectoryArn, ObjectReferen
 #' Returns all of the ObjectIdentifiers to which a given policy is attached
 #'
 #' @description
-#' Returns all of the `ObjectIdentifiers` to which a given policy is
-#' attached.
+#' Returns all of the `ObjectIdentifiers` to which a given policy is attached.
 #'
 #' @usage
 #' clouddirectory_list_policy_attachments(DirectoryArn, PolicyReference,
 #'   NextToken, MaxResults, ConsistencyLevel)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where objects reside. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where objects reside. For more information, see arns.
 #' @param PolicyReference &#91;required&#93; The reference that identifies the policy object.
 #' @param NextToken The pagination token.
-#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an
-#' approximate number.
-#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update
-#' of an object is reflected in a subsequent read operation of that same
-#' object.
+#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an approximate number.
+#' @param ConsistencyLevel Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4219,18 +4057,13 @@ clouddirectory_list_policy_attachments <- function(DirectoryArn, PolicyReference
 #' Lists the major version families of each published schema
 #'
 #' @description
-#' Lists the major version families of each published schema. If a major
-#' version ARN is provided as `SchemaArn`, the minor version revisions in
-#' that family are listed instead.
+#' Lists the major version families of each published schema. If a major version ARN is provided as `SchemaArn`, the minor version revisions in that family are listed instead.
 #'
 #' @usage
 #' clouddirectory_list_published_schema_arns(SchemaArn, NextToken,
 #'   MaxResults)
 #'
-#' @param SchemaArn The response for
-#' [`list_published_schema_arns`][clouddirectory_list_published_schema_arns]
-#' when this parameter is used will list all minor version ARNs for a major
-#' version.
+#' @param SchemaArn The response for [`list_published_schema_arns`][clouddirectory_list_published_schema_arns] when this parameter is used will list all minor version ARNs for a major version.
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
 #'
@@ -4281,20 +4114,15 @@ clouddirectory_list_published_schema_arns <- function(SchemaArn = NULL, NextToke
 #' Returns tags for a resource
 #'
 #' @description
-#' Returns tags for a resource. Tagging is currently supported only for
-#' directories with a limit of 50 tags per directory. All 50 tags are
-#' returned for a given directory with this API call.
+#' Returns tags for a resource. Tagging is currently supported only for directories with a limit of 50 tags per directory. All 50 tags are returned for a given directory with this API call.
 #'
 #' @usage
 #' clouddirectory_list_tags_for_resource(ResourceArn, NextToken,
 #'   MaxResults)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. Tagging is only
-#' supported for directories.
-#' @param NextToken The pagination token. This is for future use. Currently pagination is
-#' not supported for tagging.
-#' @param MaxResults The `MaxResults` parameter sets the maximum number of results returned
-#' in a single page. This is for future use and is not supported currently.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
+#' @param NextToken The pagination token. This is for future use. Currently pagination is not supported for tagging.
+#' @param MaxResults The `MaxResults` parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4347,16 +4175,13 @@ clouddirectory_list_tags_for_resource <- function(ResourceArn, NextToken = NULL,
 #' TypedLinkFacet
 #'
 #' @description
-#' Returns a paginated list of all attribute definitions for a particular
-#' TypedLinkFacet. For more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Returns a paginated list of all attribute definitions for a particular TypedLinkFacet. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_list_typed_link_facet_attributes(SchemaArn, Name,
 #'   NextToken, MaxResults)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns.
 #' @param Name &#91;required&#93; The unique name of the typed link facet.
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
@@ -4432,16 +4257,13 @@ clouddirectory_list_typed_link_facet_attributes <- function(SchemaArn, Name, Nex
 #' schema
 #'
 #' @description
-#' Returns a paginated list of `TypedLink` facet names for a particular
-#' schema. For more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Returns a paginated list of `TypedLink` facet names for a particular schema. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_list_typed_link_facet_names(SchemaArn, NextToken,
 #'   MaxResults)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns.
 #' @param NextToken The pagination token.
 #' @param MaxResults The maximum number of results to retrieve.
 #'
@@ -4493,25 +4315,16 @@ clouddirectory_list_typed_link_facet_names <- function(SchemaArn, NextToken = NU
 #' specified
 #'
 #' @description
-#' Lists all policies from the root of the Directory to the object
-#' specified. If there are no policies present, an empty list is returned.
-#' If policies are present, and if some objects don't have the policies
-#' attached, it returns the `ObjectIdentifier` for such objects. If
-#' policies are present, it returns `ObjectIdentifier`, `policyId`, and
-#' `policyType`. Paths that don't lead to the root from the target object
-#' are ignored. For more information, see
-#' [Policies](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies).
+#' Lists all policies from the root of the Directory to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the `ObjectIdentifier` for such objects. If policies are present, it returns `ObjectIdentifier`, `policyId`, and `policyType`. Paths that don't lead to the root from the target object are ignored. For more information, see [Policies](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies).
 #'
 #' @usage
 #' clouddirectory_lookup_policy(DirectoryArn, ObjectReference, NextToken,
 #'   MaxResults)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory.
-#' For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory. For more information, see arns.
 #' @param ObjectReference &#91;required&#93; Reference that identifies the object whose policies will be looked up.
 #' @param NextToken The token to request the next page of results.
-#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an
-#' approximate number.
+#' @param MaxResults The maximum number of items to be retrieved in a single call. This is an approximate number.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4573,22 +4386,16 @@ clouddirectory_lookup_policy <- function(DirectoryArn, ObjectReference, NextToke
 #' minor version
 #'
 #' @description
-#' Publishes a development schema with a major version and a recommended
-#' minor version.
+#' Publishes a development schema with a major version and a recommended minor version.
 #'
 #' @usage
 #' clouddirectory_publish_schema(DevelopmentSchemaArn, Version,
 #'   MinorVersion, Name)
 #'
-#' @param DevelopmentSchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the development
-#' schema. For more information, see arns.
-#' @param Version &#91;required&#93; The major version under which the schema will be published. Schemas have
-#' both a major and minor version associated with them.
-#' @param MinorVersion The minor version under which the schema will be published. This
-#' parameter is recommended. Schemas have both a major and minor version
-#' associated with them.
-#' @param Name The new name under which the schema will be published. If this is not
-#' provided, the development schema is considered.
+#' @param DevelopmentSchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see arns.
+#' @param Version &#91;required&#93; The major version under which the schema will be published. Schemas have both a major and minor version associated with them.
+#' @param MinorVersion The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.
+#' @param Name The new name under which the schema will be published. If this is not provided, the development schema is considered.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4635,10 +4442,7 @@ clouddirectory_publish_schema <- function(DevelopmentSchemaArn, Version, MinorVe
 #' Allows a schema to be updated using JSON upload
 #'
 #' @description
-#' Allows a schema to be updated using JSON upload. Only available for
-#' development schemas. See [JSON Schema
-#' Format](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json)
-#' for more information.
+#' Allows a schema to be updated using JSON upload. Only available for development schemas. See [JSON Schema Format](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json) for more information.
 #'
 #' @usage
 #' clouddirectory_put_schema_from_json(SchemaArn, Document)
@@ -4748,8 +4552,7 @@ clouddirectory_remove_facet_from_object <- function(DirectoryArn, SchemaFacet, O
 #' @usage
 #' clouddirectory_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. Tagging is only
-#' supported for directories.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
 #' @param Tags &#91;required&#93; A list of tag key-value pairs.
 #'
 #' @return
@@ -4800,8 +4603,7 @@ clouddirectory_tag_resource <- function(ResourceArn, Tags) {
 #' @usage
 #' clouddirectory_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. Tagging is only
-#' supported for directories.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
 #' @param TagKeys &#91;required&#93; Keys of the tag that need to be removed from the resource.
 #'
 #' @return
@@ -4856,14 +4658,10 @@ clouddirectory_untag_resource <- function(ResourceArn, TagKeys) {
 #' clouddirectory_update_facet(SchemaArn, Name, AttributeUpdates,
 #'   ObjectType)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Facet. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Facet. For more information, see arns.
 #' @param Name &#91;required&#93; The name of the facet.
-#' @param AttributeUpdates List of attributes that need to be updated in a given schema Facet. Each
-#' attribute is followed by `AttributeAction`, which specifies the type of
-#' update operation to perform.
-#' @param ObjectType The object type that is associated with the facet. See
-#' CreateFacetRequest$ObjectType for more details.
+#' @param AttributeUpdates List of attributes that need to be updated in a given schema Facet. Each attribute is followed by `AttributeAction`, which specifies the type of update operation to perform.
+#' @param ObjectType The object type that is associated with the facet. See CreateFacetRequest$ObjectType for more details.
 #'
 #' @return
 #' An empty list.
@@ -4938,18 +4736,13 @@ clouddirectory_update_facet <- function(SchemaArn, Name, AttributeUpdates = NULL
 #' Updates a given typed link’s attributes
 #'
 #' @description
-#' Updates a given typed link’s attributes. Attributes to be updated must
-#' not contribute to the typed link’s identity, as defined by its
-#' `IdentityAttributeOrder`.
+#' Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its `IdentityAttributeOrder`.
 #'
 #' @usage
 #' clouddirectory_update_link_attributes(DirectoryArn, TypedLinkSpecifier,
 #'   AttributeUpdates)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the updated typed link resides. For more information, see arns or
-#' [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see arns or [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #' @param TypedLinkSpecifier &#91;required&#93; Allows a typed link specifier to be accepted as input.
 #' @param AttributeUpdates &#91;required&#93; The attributes update structure.
 #'
@@ -5043,8 +4836,7 @@ clouddirectory_update_link_attributes <- function(DirectoryArn, TypedLinkSpecifi
 #' clouddirectory_update_object_attributes(DirectoryArn, ObjectReference,
 #'   AttributeUpdates)
 #'
-#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory
-#' where the object resides. For more information, see arns.
+#' @param DirectoryArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the Directory where the object resides. For more information, see arns.
 #' @param ObjectReference &#91;required&#93; The reference that identifies the object.
 #' @param AttributeUpdates &#91;required&#93; The attributes update structure.
 #'
@@ -5114,14 +4906,12 @@ clouddirectory_update_object_attributes <- function(DirectoryArn, ObjectReferenc
 #' Updates the schema name with a new name
 #'
 #' @description
-#' Updates the schema name with a new name. Only development schema names
-#' can be updated.
+#' Updates the schema name with a new name. Only development schema names can be updated.
 #'
 #' @usage
 #' clouddirectory_update_schema(SchemaArn, Name)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) of the development schema. For more
-#' information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) of the development schema. For more information, see arns.
 #' @param Name &#91;required&#93; The name of the schema.
 #'
 #' @return
@@ -5167,27 +4957,16 @@ clouddirectory_update_schema <- function(SchemaArn, Name) {
 #' Updates a TypedLinkFacet
 #'
 #' @description
-#' Updates a TypedLinkFacet. For more information, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' Updates a TypedLinkFacet. For more information, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @usage
 #' clouddirectory_update_typed_link_facet(SchemaArn, Name,
 #'   AttributeUpdates, IdentityAttributeOrder)
 #'
-#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For
-#' more information, see arns.
+#' @param SchemaArn &#91;required&#93; The Amazon Resource Name (ARN) that is associated with the schema. For more information, see arns.
 #' @param Name &#91;required&#93; The unique name of the typed link facet.
 #' @param AttributeUpdates &#91;required&#93; Attributes update structure.
-#' @param IdentityAttributeOrder &#91;required&#93; The order of identity attributes for the facet, from most significant to
-#' least significant. The ability to filter typed links considers the order
-#' that the attributes are defined on the typed link facet. When providing
-#' ranges to a typed link selection, any inexact ranges must be specified
-#' at the end. Any attributes that do not have a range specified are
-#' presumed to match the entire range. Filters are interpreted in the order
-#' of the attributes on the typed link facet, not the order in which they
-#' are supplied to any API calls. For more information about identity
-#' attributes, see [Typed
-#' Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
+#' @param IdentityAttributeOrder &#91;required&#93; The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see [Typed Links](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink).
 #'
 #' @return
 #' An empty list.
@@ -5259,13 +5038,7 @@ clouddirectory_update_typed_link_facet <- function(SchemaArn, Name, AttributeUpd
 #' schema updates found in MinorVersion
 #'
 #' @description
-#' Upgrades a single directory in-place using the `PublishedSchemaArn` with
-#' schema updates found in `MinorVersion`. Backwards-compatible minor
-#' version upgrades are instantaneously available for readers on all
-#' objects in the directory. Note: This is a synchronous API call and
-#' upgrades only one schema on a given directory per call. To upgrade
-#' multiple directories from one schema, you would need to call this API on
-#' each directory.
+#' Upgrades a single directory in-place using the `PublishedSchemaArn` with schema updates found in `MinorVersion`. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given directory per call. To upgrade multiple directories from one schema, you would need to call this API on each directory.
 #'
 #' @usage
 #' clouddirectory_upgrade_applied_schema(PublishedSchemaArn, DirectoryArn,
@@ -5273,10 +5046,7 @@ clouddirectory_update_typed_link_facet <- function(SchemaArn, Name, AttributeUpd
 #'
 #' @param PublishedSchemaArn &#91;required&#93; The revision of the published schema to upgrade the directory to.
 #' @param DirectoryArn &#91;required&#93; The ARN for the directory to which the upgraded schema will be applied.
-#' @param DryRun Used for testing whether the major version schemas are backward
-#' compatible or not. If schema compatibility fails, an exception would be
-#' thrown else the call would succeed but no changes will be saved. This
-#' parameter is optional.
+#' @param DryRun Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5324,8 +5094,7 @@ clouddirectory_upgrade_applied_schema <- function(PublishedSchemaArn, DirectoryA
 #' current contents of DevelopmentSchemaArn
 #'
 #' @description
-#' Upgrades a published schema under a new minor version revision using the
-#' current contents of `DevelopmentSchemaArn`.
+#' Upgrades a published schema under a new minor version revision using the current contents of `DevelopmentSchemaArn`.
 #'
 #' @usage
 #' clouddirectory_upgrade_published_schema(DevelopmentSchemaArn,
@@ -5333,13 +5102,8 @@ clouddirectory_upgrade_applied_schema <- function(PublishedSchemaArn, DirectoryA
 #'
 #' @param DevelopmentSchemaArn &#91;required&#93; The ARN of the development schema with the changes used for the upgrade.
 #' @param PublishedSchemaArn &#91;required&#93; The ARN of the published schema to be upgraded.
-#' @param MinorVersion &#91;required&#93; Identifies the minor version of the published schema that will be
-#' created. This parameter is NOT optional.
-#' @param DryRun Used for testing whether the Development schema provided is backwards
-#' compatible, or not, with the publish schema provided by the user to be
-#' upgraded. If schema compatibility fails, an exception would be thrown
-#' else the call would succeed. This parameter is optional and defaults to
-#' false.
+#' @param MinorVersion &#91;required&#93; Identifies the minor version of the published schema that will be created. This parameter is NOT optional.
+#' @param DryRun Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.
 #'
 #' @return
 #' A list with the following syntax:

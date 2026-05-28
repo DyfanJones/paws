@@ -12,9 +12,7 @@ bedrockagentcorecontrol_delete_agent_runtime(
 \arguments{
 \item{agentRuntimeId}{[required] The unique identifier of the AgentCore Runtime to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, the service ignores the request but does not return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.}
 }
 \description{
 Deletes an Amazon Bedrock AgentCore Runtime.

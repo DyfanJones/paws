@@ -7,12 +7,9 @@
 neptunedata_list_loader_jobs(limit = NULL, includeQueuedLoads = NULL)
 }
 \arguments{
-\item{limit}{The number of load IDs to list. Must be a positive integer greater than
-zero and not more than \code{100} (which is the default).}
+\item{limit}{The number of load IDs to list. Must be a positive integer greater than zero and not more than \code{100} (which is the default).}
 
-\item{includeQueuedLoads}{An optional parameter that can be used to exclude the load IDs of queued
-load requests when requesting a list of load IDs by setting the
-parameter to \code{FALSE}. The default value is \code{TRUE}.}
+\item{includeQueuedLoads}{An optional parameter that can be used to exclude the load IDs of queued load requests when requesting a list of load IDs by setting the parameter to \code{FALSE}. The default value is \code{TRUE}.}
 }
 \description{
 Retrieves a list of the \code{loadIds} for all active loader jobs.

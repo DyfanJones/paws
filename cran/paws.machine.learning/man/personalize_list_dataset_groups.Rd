@@ -7,9 +7,7 @@
 personalize_list_dataset_groups(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_dataset_groups]{list_dataset_groups}} for getting the
-next set of dataset groups (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_dataset_groups]{list_dataset_groups}} for getting the next set of dataset groups (if they exist).}
 
 \item{maxResults}{The maximum number of dataset groups to return.}
 }

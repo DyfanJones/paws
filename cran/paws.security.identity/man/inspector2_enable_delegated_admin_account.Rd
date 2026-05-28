@@ -11,8 +11,7 @@ inspector2_enable_delegated_admin_account(
 )
 }
 \arguments{
-\item{delegatedAdminAccountId}{[required] The Amazon Web Services account ID of the Amazon Inspector delegated
-administrator.}
+\item{delegatedAdminAccountId}{[required] The Amazon Web Services account ID of the Amazon Inspector delegated administrator.}
 
 \item{clientToken}{The idempotency token for the request.}
 }

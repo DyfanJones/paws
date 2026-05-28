@@ -12,19 +12,13 @@ quicksight_create_account_customization(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to customize
-Quick Sight for.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to customize Quick Sight for.}
 
 \item{Namespace}{The Quick Sight namespace that you want to add customizations to.}
 
-\item{AccountCustomization}{[required] The Quick Sight customizations you're adding. You can add these to an
-Amazon Web Services account and a QuickSight namespace.
+\item{AccountCustomization}{[required] The Quick Sight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.
 
-For example, you can add a default theme by setting
-\code{AccountCustomization} to the midnight theme:
-\code{"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }}.
-Or, you can add a custom theme by specifying
-\code{"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }}.}
+For example, you can add a default theme by setting \code{AccountCustomization} to the midnight theme: \code{"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }}. Or, you can add a custom theme by specifying \code{"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }}.}
 
 \item{Tags}{A list of the tags that you want to attach to this resource.}
 }

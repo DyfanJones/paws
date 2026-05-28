@@ -15,33 +15,20 @@ NULL
 #'   kafkaConnectVersion, logDelivery, networkType, plugins,
 #'   serviceExecutionRoleArn, workerConfiguration, tags)
 #'
-#' @param capacity &#91;required&#93; Information about the capacity allocated to the connector. Exactly one
-#' of the two properties must be specified.
-#' @param connectorConfiguration &#91;required&#93; A map of keys to values that represent the configuration for the
-#' connector.
+#' @param capacity &#91;required&#93; Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.
+#' @param connectorConfiguration &#91;required&#93; A map of keys to values that represent the configuration for the connector.
 #' @param connectorDescription A summary description of the connector.
 #' @param connectorName &#91;required&#93; The name of the connector.
 #' @param kafkaCluster &#91;required&#93; Specifies which Apache Kafka cluster to connect to.
 #' @param kafkaClusterClientAuthentication &#91;required&#93; Details of the client authentication used by the Apache Kafka cluster.
 #' @param kafkaClusterEncryptionInTransit &#91;required&#93; Details of encryption in transit to the Apache Kafka cluster.
-#' @param kafkaConnectVersion &#91;required&#93; The version of Kafka Connect. It has to be compatible with both the
-#' Apache Kafka cluster's version and the plugins.
+#' @param kafkaConnectVersion &#91;required&#93; The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.
 #' @param logDelivery Details about log delivery.
-#' @param networkType The network type of the connector. It gives connectors connectivity to
-#' either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to
-#' IPV4.
-#' @param plugins &#91;required&#93; Amazon MSK Connect does not currently support specifying multiple
-#' plugins as a list. To use more than one plugin for your connector, you
-#' can create a single custom plugin using a ZIP file that bundles multiple
-#' plugins together.
+#' @param networkType The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.
+#' @param plugins &#91;required&#93; Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.
 #' 
-#' Specifies which plugin to use for the connector. You must specify a
-#' single-element list containing one `customPlugin` object.
-#' @param serviceExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role used by the connector to
-#' access the Amazon Web Services resources that it needs. The types of
-#' resources depends on the logic of the connector. For example, a
-#' connector that has Amazon S3 as a destination must have permissions that
-#' allow it to write to the S3 destination bucket.
+#' Specifies which plugin to use for the connector. You must specify a single-element list containing one `customPlugin` object.
+#' @param serviceExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.
 #' @param workerConfiguration Specifies which worker configuration to use with the connector.
 #' @param tags The tags you want to attach to the connector.
 #'
@@ -361,8 +348,7 @@ kafkaconnect_delete_connector <- function(connectorArn, currentVersion = NULL) {
 #' @usage
 #' kafkaconnect_delete_custom_plugin(customPluginArn)
 #'
-#' @param customPluginArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom plugin that you want to
-#' delete.
+#' @param customPluginArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom plugin that you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -412,8 +398,7 @@ kafkaconnect_delete_custom_plugin <- function(customPluginArn) {
 #' @usage
 #' kafkaconnect_delete_worker_configuration(workerConfigurationArn)
 #'
-#' @param workerConfigurationArn &#91;required&#93; The Amazon Resource Name (ARN) of the worker configuration that you want
-#' to delete.
+#' @param workerConfigurationArn &#91;required&#93; The Amazon Resource Name (ARN) of the worker configuration that you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -463,8 +448,7 @@ kafkaconnect_delete_worker_configuration <- function(workerConfigurationArn) {
 #' @usage
 #' kafkaconnect_describe_connector(connectorArn)
 #'
-#' @param connectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the connector that you want to
-#' describe.
+#' @param connectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the connector that you want to describe.
 #'
 #' @return
 #' A list with the following syntax:
@@ -788,8 +772,7 @@ kafkaconnect_describe_custom_plugin <- function(customPluginArn) {
 #' @usage
 #' kafkaconnect_describe_worker_configuration(workerConfigurationArn)
 #'
-#' @param workerConfigurationArn &#91;required&#93; The Amazon Resource Name (ARN) of the worker configuration that you want
-#' to get information about.
+#' @param workerConfigurationArn &#91;required&#93; The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -853,12 +836,9 @@ kafkaconnect_describe_worker_configuration <- function(workerConfigurationArn) {
 #' kafkaconnect_list_connector_operations(connectorArn, maxResults,
 #'   nextToken)
 #'
-#' @param connectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the connector for which to list
-#' operations.
+#' @param connectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the connector for which to list operations.
 #' @param maxResults Maximum number of connector operations to fetch in one get request.
-#' @param nextToken If the response is truncated, it includes a NextToken. Send this
-#' NextToken in a subsequent request to continue listing from where it left
-#' off.
+#' @param nextToken If the response is truncated, it includes a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.
 #'
 #' @return
 #' A list with the following syntax:
@@ -917,19 +897,14 @@ kafkaconnect_list_connector_operations <- function(connectorArn, maxResults = NU
 #' Returns a list of all the connectors in this account and Region
 #'
 #' @description
-#' Returns a list of all the connectors in this account and Region. The
-#' list is limited to connectors whose name starts with the specified
-#' prefix. The response also includes a description of each of the listed
-#' connectors.
+#' Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.
 #'
 #' @usage
 #' kafkaconnect_list_connectors(connectorNamePrefix, maxResults, nextToken)
 #'
 #' @param connectorNamePrefix The name prefix that you want to use to search for and list connectors.
 #' @param maxResults The maximum number of connectors to list in one response.
-#' @param nextToken If the response of a ListConnectors operation is truncated, it will
-#' include a NextToken. Send this NextToken in a subsequent request to
-#' continue listing from where the previous operation left off.
+#' @param nextToken If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1062,9 +1037,7 @@ kafkaconnect_list_connectors <- function(connectorNamePrefix = NULL, maxResults 
 #' kafkaconnect_list_custom_plugins(maxResults, nextToken, namePrefix)
 #'
 #' @param maxResults The maximum number of custom plugins to list in one response.
-#' @param nextToken If the response of a ListCustomPlugins operation is truncated, it will
-#' include a NextToken. Send this NextToken in a subsequent request to
-#' continue listing from where the previous operation left off.
+#' @param nextToken If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.
 #' @param namePrefix Lists custom plugin names that start with the specified text string.
 #'
 #' @return
@@ -1146,8 +1119,7 @@ kafkaconnect_list_custom_plugins <- function(maxResults = NULL, nextToken = NULL
 #' @usage
 #' kafkaconnect_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to
-#' list all attached tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to list all attached tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1194,19 +1166,15 @@ kafkaconnect_list_tags_for_resource <- function(resourceArn) {
 #' Region
 #'
 #' @description
-#' Returns a list of all of the worker configurations in this account and
-#' Region.
+#' Returns a list of all of the worker configurations in this account and Region.
 #'
 #' @usage
 #' kafkaconnect_list_worker_configurations(maxResults, nextToken,
 #'   namePrefix)
 #'
 #' @param maxResults The maximum number of worker configurations to list in one response.
-#' @param nextToken If the response of a ListWorkerConfigurations operation is truncated, it
-#' will include a NextToken. Send this NextToken in a subsequent request to
-#' continue listing from where the previous operation left off.
-#' @param namePrefix Lists worker configuration names that start with the specified text
-#' string.
+#' @param nextToken If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.
+#' @param namePrefix Lists worker configuration names that start with the specified text string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1275,8 +1243,7 @@ kafkaconnect_list_worker_configurations <- function(maxResults = NULL, nextToken
 #' @usage
 #' kafkaconnect_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to
-#' attach tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to attach tags.
 #' @param tags &#91;required&#93; The tags that you want to attach to the resource.
 #'
 #' @return
@@ -1324,8 +1291,7 @@ kafkaconnect_tag_resource <- function(resourceArn, tags) {
 #' @usage
 #' kafkaconnect_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which you want to
-#' remove tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which you want to remove tags.
 #' @param tagKeys &#91;required&#93; The keys of the tags that you want to remove from the resource.
 #'
 #' @return
@@ -1368,16 +1334,14 @@ kafkaconnect_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates the specified connector
 #'
 #' @description
-#' Updates the specified connector. For request body, specify only one
-#' parameter: either `capacity` or `connectorConfiguration`.
+#' Updates the specified connector. For request body, specify only one parameter: either `capacity` or `connectorConfiguration`.
 #'
 #' @usage
 #' kafkaconnect_update_connector(capacity, connectorConfiguration,
 #'   connectorArn, currentVersion)
 #'
 #' @param capacity The target capacity.
-#' @param connectorConfiguration A map of keys to values that represent the configuration for the
-#' connector.
+#' @param connectorConfiguration A map of keys to values that represent the configuration for the connector.
 #' @param connectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the connector that you want to update.
 #' @param currentVersion &#91;required&#93; The current version of the connector that you want to update.
 #'

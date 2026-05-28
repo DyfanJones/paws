@@ -7,12 +7,9 @@
 sesv2_create_tenant(TenantName, Tags = NULL)
 }
 \arguments{
-\item{TenantName}{[required] The name of the tenant to create. The name can contain up to 64
-alphanumeric characters, including letters, numbers, hyphens (-) and
-underscores (_) only.}
+\item{TenantName}{[required] The name of the tenant to create. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.}
 
-\item{Tags}{An array of objects that define the tags (keys and values) to associate
-with the tenant}
+\item{Tags}{An array of objects that define the tags (keys and values) to associate with the tenant}
 }
 \description{
 Create a tenant.

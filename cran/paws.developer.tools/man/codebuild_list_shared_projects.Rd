@@ -13,12 +13,10 @@ codebuild_list_shared_projects(
 )
 }
 \arguments{
-\item{sortBy}{The criterion to be used to list build projects shared with the current
-Amazon Web Services account or user. Valid values include:
+\item{sortBy}{The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:
 \itemize{
 \item \code{ARN}: List based on the ARN.
-\item \code{MODIFIED_TIME}: List based on when information about the shared
-project was last changed.
+\item \code{MODIFIED_TIME}: List based on when information about the shared project was last changed.
 }}
 
 \item{sortOrder}{The order in which to list shared build projects. Valid values include:
@@ -27,17 +25,9 @@ project was last changed.
 \item \code{DESCENDING}: List in descending order.
 }}
 
-\item{maxResults}{The maximum number of paginated shared build projects returned per
-response. Use \code{nextToken} to iterate pages in the list of returned
-\code{Project} objects. The default value is 100.}
+\item{maxResults}{The maximum number of paginated shared build projects returned per response. Use \code{nextToken} to iterate pages in the list of returned \code{Project} objects. The default value is 100.}
 
-\item{nextToken}{During a previous call, the maximum number of items that can be returned
-is the value specified in \code{maxResults}. If there more items in the list,
-then a unique string called a \emph{nextToken} is returned. To get the next
-batch of items in the list, call this operation again, adding the next
-token to the call. To get all of the items in the list, keep calling
-this operation with each subsequent next token that is returned, until
-no more next tokens are returned.}
+\item{nextToken}{During a previous call, the maximum number of items that can be returned is the value specified in \code{maxResults}. If there more items in the list, then a unique string called a \emph{nextToken} is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.}
 }
 \description{
 Gets a list of projects that are shared with other Amazon Web Services accounts or users.

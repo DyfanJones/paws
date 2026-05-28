@@ -28,8 +28,7 @@ workspaces_describe_applications(
 
 \item{MaxResults}{The maximum number of applications to return.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 }
 \description{
 Describes the specified applications by filtering based on their compute types, license availability, operating systems, and owners.

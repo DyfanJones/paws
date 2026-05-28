@@ -11,13 +11,11 @@ ivsrealtime_update_ingest_configuration(
 )
 }
 \arguments{
-\item{arn}{[required] ARN of the IngestConfiguration, for which the related stage ARN needs to
-be updated.}
+\item{arn}{[required] ARN of the IngestConfiguration, for which the related stage ARN needs to be updated.}
 
 \item{stageArn}{Stage ARN that needs to be updated.}
 
-\item{redundantIngest}{Indicates whether redundant ingest is enabled for the ingest
-configuration. Default: \code{false}.}
+\item{redundantIngest}{Indicates whether redundant ingest is enabled for the ingest configuration. Default: \code{false}.}
 }
 \description{
 Updates a specified IngestConfiguration. Only the stage ARN attached to the IngestConfiguration can be updated. An IngestConfiguration that is active cannot be updated.

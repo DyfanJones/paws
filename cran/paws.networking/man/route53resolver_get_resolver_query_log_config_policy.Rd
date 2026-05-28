@@ -7,8 +7,7 @@
 route53resolver_get_resolver_query_log_config_policy(Arn)
 }
 \arguments{
-\item{Arn}{[required] The ARN of the query logging configuration that you want to get the
-query logging policy for.}
+\item{Arn}{[required] The ARN of the query logging configuration that you want to get the query logging policy for.}
 }
 \description{
 Gets information about a query logging policy. A query logging policy specifies the Resolver query logging operations and resources that you want to allow another Amazon Web Services account to be able to use.

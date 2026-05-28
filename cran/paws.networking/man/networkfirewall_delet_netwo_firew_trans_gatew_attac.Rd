@@ -9,8 +9,7 @@ networkfirewall_delete_network_firewall_transit_gateway_attachment(
 )
 }
 \arguments{
-\item{TransitGatewayAttachmentId}{[required] Required. The unique identifier of the transit gateway attachment to
-delete.}
+\item{TransitGatewayAttachmentId}{[required] Required. The unique identifier of the transit gateway attachment to delete.}
 }
 \description{
 Deletes a transit gateway attachment from a Network Firewall. Either the firewall owner or the transit gateway owner can delete the attachment.

@@ -12,8 +12,7 @@ elasticsearchservice_describe_inbound_cross_cluster_search_connections(
 )
 }
 \arguments{
-\item{Filters}{A list of filters used to match properties for inbound cross-cluster
-search connection. Available \code{Filter} names for this operation are:
+\item{Filters}{A list of filters used to match properties for inbound cross-cluster search connection. Available \code{Filter} names for this operation are:
 \itemize{
 \item cross-cluster-search-connection-id
 \item source-domain-info.domain-name
@@ -22,11 +21,9 @@ search connection. Available \code{Filter} names for this operation are:
 \item destination-domain-info.domain-name
 }}
 
-\item{MaxResults}{Set this value to limit the number of results returned. If not
-specified, defaults to 100.}
+\item{MaxResults}{Set this value to limit the number of results returned. If not specified, defaults to 100.}
 
-\item{NextToken}{NextToken is sent in case the earlier API call results contain the
-NextToken. It is used for pagination.}
+\item{NextToken}{NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.}
 }
 \description{
 Lists all the inbound cross-cluster search connections for a destination domain.

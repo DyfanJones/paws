@@ -13,15 +13,9 @@ cloudfront_update_origin_request_policy(
 \arguments{
 \item{OriginRequestPolicyConfig}{[required] An origin request policy configuration.}
 
-\item{Id}{[required] The unique identifier for the origin request policy that you are
-updating. The identifier is returned in a cache behavior's
-\code{OriginRequestPolicyId} field in the response to
-\code{\link[=cloudfront_get_distribution_config]{get_distribution_config}}.}
+\item{Id}{[required] The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's \code{OriginRequestPolicyId} field in the response to \code{\link[=cloudfront_get_distribution_config]{get_distribution_config}}.}
 
-\item{IfMatch}{The version of the origin request policy that you are updating. The
-version is returned in the origin request policy's \code{ETag} field in the
-response to
-\code{\link[=cloudfront_get_origin_request_policy_config]{get_origin_request_policy_config}}.}
+\item{IfMatch}{The version of the origin request policy that you are updating. The version is returned in the origin request policy's \code{ETag} field in the response to \code{\link[=cloudfront_get_origin_request_policy_config]{get_origin_request_policy_config}}.}
 }
 \description{
 Updates an origin request policy configuration.

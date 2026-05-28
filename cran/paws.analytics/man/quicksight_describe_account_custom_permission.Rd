@@ -7,8 +7,7 @@
 quicksight_describe_account_custom_permission(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account for which you want to describe
-the applied custom permissions profile.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account for which you want to describe the applied custom permissions profile.}
 }
 \description{
 Describes the custom permissions profile that is applied to an account.

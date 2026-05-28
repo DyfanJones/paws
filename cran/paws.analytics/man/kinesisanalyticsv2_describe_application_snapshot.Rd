@@ -9,8 +9,7 @@ kinesisanalyticsv2_describe_application_snapshot(ApplicationName, SnapshotName)
 \arguments{
 \item{ApplicationName}{[required] The name of an existing application.}
 
-\item{SnapshotName}{[required] The identifier of an application snapshot. You can retrieve this value
-using .}
+\item{SnapshotName}{[required] The identifier of an application snapshot. You can retrieve this value using .}
 }
 \description{
 Returns information about a snapshot of application state data.

@@ -16,8 +16,7 @@ elbv2_describe_rules(
 
 \item{RuleArns}{The Amazon Resource Names (ARN) of the rules.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{PageSize}{The maximum number of results to return with this call.}
 }

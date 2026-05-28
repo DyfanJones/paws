@@ -8,8 +8,7 @@ new customers}
 ssm_update_document_metadata(Name, DocumentVersion = NULL, DocumentReviews)
 }
 \arguments{
-\item{Name}{[required] The name of the change template for which a version's metadata is to be
-updated.}
+\item{Name}{[required] The name of the change template for which a version's metadata is to be updated.}
 
 \item{DocumentVersion}{The version of a change template in which to update approval metadata.}
 

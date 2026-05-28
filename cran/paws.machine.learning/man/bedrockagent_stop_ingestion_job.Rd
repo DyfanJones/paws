@@ -7,11 +7,9 @@
 bedrockagent_stop_ingestion_job(knowledgeBaseId, dataSourceId, ingestionJobId)
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base for the data ingestion job
-you want to stop.}
+\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base for the data ingestion job you want to stop.}
 
-\item{dataSourceId}{[required] The unique identifier of the data source for the data ingestion job you
-want to stop.}
+\item{dataSourceId}{[required] The unique identifier of the data source for the data ingestion job you want to stop.}
 
 \item{ingestionJobId}{[required] The unique identifier of the data ingestion job you want to stop.}
 }

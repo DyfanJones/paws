@@ -15,10 +15,7 @@ dax_increase_replication_factor(
 
 \item{NewReplicationFactor}{[required] The new number of nodes for the DAX cluster.}
 
-\item{AvailabilityZones}{The Availability Zones (AZs) in which the cluster nodes will be created.
-All nodes belonging to the cluster are placed in these Availability
-Zones. Use this parameter if you want to distribute the nodes across
-multiple AZs.}
+\item{AvailabilityZones}{The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.}
 }
 \description{
 Adds one or more nodes to a DAX cluster.

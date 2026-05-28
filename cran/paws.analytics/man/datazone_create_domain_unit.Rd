@@ -21,8 +21,7 @@ datazone_create_domain_unit(
 
 \item{description}{The description of the domain unit.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a domain unit in Amazon DataZone.

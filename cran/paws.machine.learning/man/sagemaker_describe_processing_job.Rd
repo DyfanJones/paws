@@ -7,8 +7,7 @@
 sagemaker_describe_processing_job(ProcessingJobName)
 }
 \arguments{
-\item{ProcessingJobName}{[required] The name of the processing job. The name must be unique within an Amazon
-Web Services Region in the Amazon Web Services account.}
+\item{ProcessingJobName}{[required] The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.}
 }
 \description{
 Returns a description of a processing job.

@@ -15,24 +15,15 @@ securityhub_get_resources_v2(
 \arguments{
 \item{Filters}{Filters resources based on a set of criteria.}
 
-\item{Scopes}{Limits the results to resources from specific organizational units or
-from the delegated administrator's organization. Only the delegated
-administrator account can use this parameter. Other accounts receive an
-\code{AccessDeniedException}.
+\item{Scopes}{Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an \code{AccessDeniedException}.
 
-This parameter is optional. If you omit it, the delegated administrator
-sees resources from all accounts across the entire organization. Other
-accounts see only their own resources.
+This parameter is optional. If you omit it, the delegated administrator sees resources from all accounts across the entire organization. Other accounts see only their own resources.
 
-You can specify up to 10 entries in \code{Scopes.AwsOrganizations}. If
-multiple entries are specified, the entries are combined using OR logic.}
+You can specify up to 10 entries in \code{Scopes.AwsOrganizations}. If multiple entries are specified, the entries are combined using OR logic.}
 
 \item{SortCriteria}{The resource attributes used to sort the list of returned resources.}
 
-\item{NextToken}{The token required for pagination. On your first call, set the value of
-this parameter to \code{NULL}. For subsequent calls, to continue listing
-data, set the value of this parameter to the value returned in the
-previous response.}
+\item{NextToken}{The token required for pagination. On your first call, set the value of this parameter to \code{NULL}. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.}
 
 \item{MaxResults}{The maximum number of results to return.}
 }

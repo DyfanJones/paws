@@ -14,13 +14,11 @@ codebuild_get_report_group_trend(
 \arguments{
 \item{reportGroupArn}{[required] The ARN of the report group that contains the reports to analyze.}
 
-\item{numOfReports}{The number of reports to analyze. This operation always retrieves the
-most recent reports.
+\item{numOfReports}{The number of reports to analyze. This operation always retrieves the most recent reports.
 
 If this parameter is omitted, the most recent 100 reports are analyzed.}
 
-\item{trendField}{[required] The test report value to accumulate. This must be one of the following
-values:
+\item{trendField}{[required] The test report value to accumulate. This must be one of the following values:
 
 \strong{Test reports:}
 
@@ -30,8 +28,7 @@ Accumulate the test run times for the specified reports.
 
 \strong{PASS_RATE}
 
-Accumulate the percentage of tests that passed for the specified test
-reports.
+Accumulate the percentage of tests that passed for the specified test reports.
 
 \strong{TOTAL}
 
@@ -41,8 +38,7 @@ Accumulate the total number of tests for the specified test reports.
 
 \strong{BRANCH_COVERAGE}
 
-Accumulate the branch coverage percentages for the specified test
-reports.
+Accumulate the branch coverage percentages for the specified test reports.
 
 \strong{BRANCHES_COVERED}
 

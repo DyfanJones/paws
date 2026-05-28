@@ -13,18 +13,11 @@ codeguruprofiler_create_profiling_group(
 )
 }
 \arguments{
-\item{agentOrchestrationConfig}{Specifies whether profiling is enabled or disabled for the created
-profiling group.}
+\item{agentOrchestrationConfig}{Specifies whether profiling is enabled or disabled for the created profiling group.}
 
-\item{clientToken}{[required] Amazon CodeGuru Profiler uses this universally unique identifier (UUID)
-to prevent the accidental creation of duplicate profiling groups if
-there are failures and retries.}
+\item{clientToken}{[required] Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries.}
 
-\item{computePlatform}{The compute platform of the profiling group. Use \code{AWSLambda} if your
-application runs on AWS Lambda. Use \code{Default} if your application runs
-on a compute platform that is not AWS Lambda, such an Amazon EC2
-instance, an on-premises server, or a different platform. If not
-specified, \code{Default} is used.}
+\item{computePlatform}{The compute platform of the profiling group. Use \code{AWSLambda} if your application runs on AWS Lambda. Use \code{Default} if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, \code{Default} is used.}
 
 \item{profilingGroupName}{[required] The name of the profiling group to create.}
 

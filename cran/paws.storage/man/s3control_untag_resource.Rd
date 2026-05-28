@@ -8,15 +8,11 @@ resource}
 s3control_untag_resource(AccountId, ResourceArn, TagKeys)
 }
 \arguments{
-\item{AccountId}{[required] The Amazon Web Services account ID that owns the resource that you're
-trying to remove the tags from.}
+\item{AccountId}{[required] The Amazon Web Services account ID that owns the resource that you're trying to remove the tags from.}
 
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the S3 resource that you're removing
-tags from. The tagged resource can be a directory bucket, S3 Storage
-Lens group or S3 Access Grants instance, registered location, or grant.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the S3 resource that you're removing tags from. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.}
 
-\item{TagKeys}{[required] The array of tag key-value pairs that you're trying to remove from of
-the S3 resource.}
+\item{TagKeys}{[required] The array of tag key-value pairs that you're trying to remove from of the S3 resource.}
 }
 \description{
 This operation removes the specified user-defined tags from an S3 resource. You can pass one or more tag keys.

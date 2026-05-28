@@ -13,14 +13,11 @@ route53recoverycluster_list_routing_controls(
 )
 }
 \arguments{
-\item{ControlPanelArn}{The Amazon Resource Name (ARN) of the control panel of the routing
-controls to list.}
+\item{ControlPanelArn}{The Amazon Resource Name (ARN) of the control panel of the routing controls to list.}
 
-\item{NextToken}{The token for the next set of results. You receive this token from a
-previous call.}
+\item{NextToken}{The token for the next set of results. You receive this token from a previous call.}
 
-\item{MaxResults}{The number of routing controls objects that you want to return with this
-call. The default value is 500.}
+\item{MaxResults}{The number of routing controls objects that you want to return with this call. The default value is 500.}
 }
 \description{
 List routing control names and Amazon Resource Names (ARNs), as well as the routing control state for each routing control, along with the control panel name and control panel ARN for the routing controls. If you specify a control panel ARN, this call lists the routing controls in the control panel. Otherwise, it lists all the routing controls in the cluster.

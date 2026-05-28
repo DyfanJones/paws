@@ -13,26 +13,15 @@ ec2_modify_ipam_scope(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{IpamScopeId}{[required] The ID of the scope you want to modify.}
 
 \item{Description}{The description of the scope you want to modify.}
 
-\item{ExternalAuthorityConfiguration}{The configuration that links an Amazon VPC IPAM scope to an external
-authority system. It specifies the type of external system and the
-external resource identifier that identifies your account or instance in
-that system.
+\item{ExternalAuthorityConfiguration}{The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.
 
-In IPAM, an external authority is a third-party IP address management
-system that provides CIDR blocks when you provision address space for
-top-level IPAM pools. This allows you to use your existing IP management
-system to control which address ranges are allocated to Amazon Web
-Services while using Amazon VPC IPAM to manage subnets within those
-ranges.}
+In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.}
 
 \item{RemoveExternalAuthorityConfiguration}{Remove the external authority configuration. \code{true} to remove.}
 }

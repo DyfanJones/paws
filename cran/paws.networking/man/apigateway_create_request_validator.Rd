@@ -16,11 +16,9 @@ apigateway_create_request_validator(
 
 \item{name}{The name of the to-be-created RequestValidator.}
 
-\item{validateRequestBody}{A Boolean flag to indicate whether to validate request body according to
-the configured model schema for the method (\code{true}) or not (\code{false}).}
+\item{validateRequestBody}{A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (\code{true}) or not (\code{false}).}
 
-\item{validateRequestParameters}{A Boolean flag to indicate whether to validate request parameters,
-\code{true}, or not \code{false}.}
+\item{validateRequestParameters}{A Boolean flag to indicate whether to validate request parameters, \code{true}, or not \code{false}.}
 }
 \description{
 Creates a RequestValidator of a given RestApi.

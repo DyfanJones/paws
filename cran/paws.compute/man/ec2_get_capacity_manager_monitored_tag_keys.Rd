@@ -12,17 +12,11 @@ ec2_get_capacity_manager_monitored_tag_keys(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned \code{NextToken}
-value. If not specified, up to 1000 results are returned.}
+\item{MaxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned \code{NextToken} value. If not specified, up to 1000 results are returned.}
 
-\item{NextToken}{The token for the next page of results. Use the value returned from a
-previous call to retrieve additional results.}
+\item{NextToken}{The token for the next page of results. Use the value returned from a previous call to retrieve additional results.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Retrieves the tag keys that are currently being monitored by EC2 Capacity Manager. Monitored tag keys are included as dimensions in capacity metric data, enabling you to group and filter metrics by tag values.

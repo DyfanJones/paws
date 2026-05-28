@@ -13,8 +13,7 @@ licensemanagerusersubscriptions_list_instances(
 \arguments{
 \item{MaxResults}{The maximum number of results to return from a single request.}
 
-\item{NextToken}{A token to specify where to start paginating. This is the nextToken from
-a previously truncated response.}
+\item{NextToken}{A token to specify where to start paginating. This is the nextToken from a previously truncated response.}
 
 \item{Filters}{You can use the following filters to streamline results:
 \itemize{

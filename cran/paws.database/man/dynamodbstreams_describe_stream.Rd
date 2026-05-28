@@ -18,12 +18,9 @@ dynamodbstreams_describe_stream(
 
 \item{Limit}{The maximum number of shard objects to return. The upper limit is 100.}
 
-\item{ExclusiveStartShardId}{The shard ID of the first item that this operation will evaluate. Use
-the value that was returned for \code{LastEvaluatedShardId} in the previous
-operation.}
+\item{ExclusiveStartShardId}{The shard ID of the first item that this operation will evaluate. Use the value that was returned for \code{LastEvaluatedShardId} in the previous operation.}
 
-\item{ShardFilter}{This optional field contains the filter definition for the
-\code{\link[=dynamodbstreams_describe_stream]{describe_stream}} API.}
+\item{ShardFilter}{This optional field contains the filter definition for the \code{\link[=dynamodbstreams_describe_stream]{describe_stream}} API.}
 }
 \description{
 Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.

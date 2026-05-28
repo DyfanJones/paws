@@ -7,10 +7,9 @@
 cloudsearch_delete_index_field(DomainName, IndexFieldName)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 
-\item{IndexFieldName}{[required] The name of the index field your want to remove from the domain's
-indexing options.}
+\item{IndexFieldName}{[required] The name of the index field your want to remove from the domain's indexing options.}
 }
 \description{
 Removes an \code{IndexField} from the search domain. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">}}Configuring Index Fields\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

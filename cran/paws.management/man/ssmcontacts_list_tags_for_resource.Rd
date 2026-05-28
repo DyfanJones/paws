@@ -8,8 +8,7 @@ schedule}
 ssmcontacts_list_tags_for_resource(ResourceARN)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the contact, escalation plan,
-rotation, or on-call schedule.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the contact, escalation plan, rotation, or on-call schedule.}
 }
 \description{
 Lists the tags of a contact, escalation plan, rotation, or on-call schedule.

@@ -16,38 +16,29 @@ codeartifact_list_package_version_dependencies(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the repository that contains the
-requested package version dependencies.}
+\item{domain}{[required] The name of the domain that contains the repository that contains the requested package version dependencies.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository that contains the requested package version.}
 
 \item{format}{[required] The format of the package with the requested dependencies.}
 
-\item{namespace}{The namespace of the package version with the requested dependencies.
-The package component that specifies its namespace depends on its type.
-For example:
+\item{namespace}{The namespace of the package version with the requested dependencies. The package component that specifies its namespace depends on its type. For example:
 
-The namespace is required when listing dependencies from package
-versions of the following formats:
+The namespace is required when listing dependencies from package versions of the following formats:
 \itemize{
 \item Maven
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm package version is its \code{scope}.
-\item Python and NuGet package versions do not contain a corresponding
-component, package versions of those formats do not have a
-namespace.
+\item Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
 \item{package}{[required] The name of the package versions' package.}
 
 \item{packageVersion}{[required] A string that contains the package version (for example, \verb{3.5.2}).}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns the direct dependencies for a package version. The dependencies are returned as \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html}{PackageDependency} objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the \code{package.json} file for npm packages and the \code{pom.xml} file for Maven). Any package version dependencies that are not listed in the configuration file are not returned.

@@ -14,23 +14,18 @@ docdb_copy_db_cluster_snapshot(
 )
 }
 \arguments{
-\item{SourceDBClusterSnapshotIdentifier}{[required] The identifier of the cluster snapshot to copy. This parameter is not
-case sensitive.
+\item{SourceDBClusterSnapshotIdentifier}{[required] The identifier of the cluster snapshot to copy. This parameter is not case sensitive.
 
 Constraints:
 \itemize{
 \item Must specify a valid cluster snapshot in the \emph{available} state.
-\item If the source cluster snapshot is in the same Amazon Web Services
-Region as the copy, specify a valid snapshot identifier.
-\item If the source cluster snapshot is in a different Amazon Web Services
-Region or owned by another Amazon Web Services account, specify the
-snapshot ARN.
+\item If the source cluster snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.
+\item If the source cluster snapshot is in a different Amazon Web Services Region or owned by another Amazon Web Services account, specify the snapshot ARN.
 }
 
 Example: \code{my-cluster-snapshot1}}
 
-\item{TargetDBClusterSnapshotIdentifier}{[required] The identifier of the new cluster snapshot to create from the source
-cluster snapshot. This parameter is not case sensitive.
+\item{TargetDBClusterSnapshotIdentifier}{[required] The identifier of the new cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.
 
 Constraints:
 \itemize{
@@ -41,64 +36,28 @@ Constraints:
 
 Example: \code{my-cluster-snapshot2}}
 
-\item{KmsKeyId}{The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the
-Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-the KMS encryption key.
+\item{KmsKeyId}{The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
 
-If you copy an encrypted cluster snapshot from your Amazon Web Services
-account, you can specify a value for \code{KmsKeyId} to encrypt the copy with
-a new KMS encryption key. If you don't specify a value for \code{KmsKeyId},
-then the copy of the cluster snapshot is encrypted with the same KMS key
-as the source cluster snapshot.
+If you copy an encrypted cluster snapshot from your Amazon Web Services account, you can specify a value for \code{KmsKeyId} to encrypt the copy with a new KMS encryption key. If you don't specify a value for \code{KmsKeyId}, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.
 
-If you copy an encrypted cluster snapshot that is shared from another
-Amazon Web Services account, then you must specify a value for
-\code{KmsKeyId}.
+If you copy an encrypted cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for \code{KmsKeyId}.
 
-To copy an encrypted cluster snapshot to another Amazon Web Services
-Region, set \code{KmsKeyId} to the KMS key ID that you want to use to encrypt
-the copy of the cluster snapshot in the destination Region. KMS
-encryption keys are specific to the Amazon Web Services Region that they
-are created in, and you can't use encryption keys from one Amazon Web
-Services Region in another Amazon Web Services Region.
+To copy an encrypted cluster snapshot to another Amazon Web Services Region, set \code{KmsKeyId} to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Amazon Web Services Region that they are created in, and you can't use encryption keys from one Amazon Web Services Region in another Amazon Web Services Region.
 
-If you copy an unencrypted cluster snapshot and specify a value for the
-\code{KmsKeyId} parameter, an error is returned.}
+If you copy an unencrypted cluster snapshot and specify a value for the \code{KmsKeyId} parameter, an error is returned.}
 
-\item{PreSignedUrl}{The URL that contains a Signature Version 4 signed request for
-the\code{\link[=docdb_copy_db_cluster_snapshot]{copy_db_cluster_snapshot}} API
-action in the Amazon Web Services Region that contains the source
-cluster snapshot to copy. You must use the \code{PreSignedUrl} parameter when
-copying a cluster snapshot from another Amazon Web Services Region.
+\item{PreSignedUrl}{The URL that contains a Signature Version 4 signed request for the\code{\link[=docdb_copy_db_cluster_snapshot]{copy_db_cluster_snapshot}} API action in the Amazon Web Services Region that contains the source cluster snapshot to copy. You must use the \code{PreSignedUrl} parameter when copying a cluster snapshot from another Amazon Web Services Region.
 
-If you are using an Amazon Web Services SDK tool or the CLI, you can
-specify \code{SourceRegion} (or \code{--source-region} for the CLI) instead of
-specifying \code{PreSignedUrl} manually. Specifying \code{SourceRegion}
-autogenerates a pre-signed URL that is a valid request for the operation
-that can be executed in the source Amazon Web Services Region.
+If you are using an Amazon Web Services SDK tool or the CLI, you can specify \code{SourceRegion} (or \code{--source-region} for the CLI) instead of specifying \code{PreSignedUrl} manually. Specifying \code{SourceRegion} autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.
 
-The presigned URL must be a valid request for the
-\code{\link[=docdb_copy_db_cluster_snapshot]{copy_db_cluster_snapshot}} API action
-that can be executed in the source Amazon Web Services Region that
-contains the cluster snapshot to be copied. The presigned URL request
-must contain the following parameter values:
+The presigned URL must be a valid request for the \code{\link[=docdb_copy_db_cluster_snapshot]{copy_db_cluster_snapshot}} API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:
 \itemize{
-\item \code{SourceRegion} - The ID of the region that contains the snapshot to
-be copied.
-\item \code{SourceDBClusterSnapshotIdentifier} - The identifier for the the
-encrypted cluster snapshot to be copied. This identifier must be in
-the Amazon Resource Name (ARN) format for the source Amazon Web
-Services Region. For example, if you are copying an encrypted
-cluster snapshot from the us-east-1 Amazon Web Services Region, then
-your \code{SourceDBClusterSnapshotIdentifier} looks something like the
-following:
-\code{arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot}.
-\item \code{TargetDBClusterSnapshotIdentifier} - The identifier for the new
-cluster snapshot to be created. This parameter isn't case sensitive.
+\item \code{SourceRegion} - The ID of the region that contains the snapshot to be copied.
+\item \code{SourceDBClusterSnapshotIdentifier} - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your \code{SourceDBClusterSnapshotIdentifier} looks something like the following: \code{arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot}.
+\item \code{TargetDBClusterSnapshotIdentifier} - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.
 }}
 
-\item{CopyTags}{Set to \code{true} to copy all tags from the source cluster snapshot to the
-target cluster snapshot, and otherwise \code{false}. The default is \code{false}.}
+\item{CopyTags}{Set to \code{true} to copy all tags from the source cluster snapshot to the target cluster snapshot, and otherwise \code{false}. The default is \code{false}.}
 
 \item{Tags}{The tags to be assigned to the cluster snapshot.}
 }

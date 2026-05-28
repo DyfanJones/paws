@@ -8,8 +8,7 @@ data source in Amazon OpenSearch Service}
 opensearchservice_get_direct_query_data_source(DataSourceName)
 }
 \arguments{
-\item{DataSourceName}{[required] A unique, user-defined label that identifies the data source within your
-OpenSearch Service environment.}
+\item{DataSourceName}{[required] A unique, user-defined label that identifies the data source within your OpenSearch Service environment.}
 }
 \description{
 Returns detailed configuration information for a specific direct query data source in Amazon OpenSearch Service.

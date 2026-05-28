@@ -7,8 +7,7 @@
 budgets_delete_subscriber(AccountId, BudgetName, Notification, Subscriber)
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose subscriber you
-want to delete.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose subscriber you want to delete.}
 
 \item{BudgetName}{[required] The name of the budget whose subscriber you want to delete.}
 

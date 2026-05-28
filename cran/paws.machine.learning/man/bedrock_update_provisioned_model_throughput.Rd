@@ -11,21 +11,16 @@ bedrock_update_provisioned_model_throughput(
 )
 }
 \arguments{
-\item{provisionedModelId}{[required] The Amazon Resource Name (ARN) or name of the Provisioned Throughput to
-update.}
+\item{provisionedModelId}{[required] The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.}
 
 \item{desiredProvisionedModelName}{The new name for this Provisioned Throughput.}
 
-\item{desiredModelId}{The Amazon Resource Name (ARN) of the new model to associate with this
-Provisioned Throughput. You can't specify this field if this Provisioned
-Throughput is associated with a base model.
+\item{desiredModelId}{The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify this field if this Provisioned Throughput is associated with a base model.
 
-If this Provisioned Throughput is associated with a custom model, you
-can specify one of the following options:
+If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:
 \itemize{
 \item The base model from which the custom model was customized.
-\item Another custom model that was customized from the same base model as
-the custom model.
+\item Another custom model that was customized from the same base model as the custom model.
 }}
 }
 \description{

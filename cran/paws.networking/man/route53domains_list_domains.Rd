@@ -14,23 +14,13 @@ route53domains_list_domains(
 )
 }
 \arguments{
-\item{FilterConditions}{A complex type that contains information about the filters applied
-during the \code{\link[=route53domains_list_domains]{list_domains}} request. The
-filter conditions can include domain name and domain expiration.}
+\item{FilterConditions}{A complex type that contains information about the filters applied during the \code{\link[=route53domains_list_domains]{list_domains}} request. The filter conditions can include domain name and domain expiration.}
 
-\item{SortCondition}{A complex type that contains information about the requested ordering of
-domains in the returned list.}
+\item{SortCondition}{A complex type that contains information about the requested ordering of domains in the returned list.}
 
-\item{Marker}{For an initial request for a list of domains, omit this element. If the
-number of domains that are associated with the current Amazon Web
-Services account is greater than the value that you specified for
-\code{MaxItems}, you can use \code{Marker} to return additional domains. Get the
-value of \code{NextPageMarker} from the previous response, and submit another
-request that includes the value of \code{NextPageMarker} in the \code{Marker}
-element.
+\item{Marker}{For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for \code{MaxItems}, you can use \code{Marker} to return additional domains. Get the value of \code{NextPageMarker} from the previous response, and submit another request that includes the value of \code{NextPageMarker} in the \code{Marker} element.
 
-Constraints: The marker must match the value specified in the previous
-request.}
+Constraints: The marker must match the value specified in the previous request.}
 
 \item{MaxItems}{Number of domains to be returned.
 

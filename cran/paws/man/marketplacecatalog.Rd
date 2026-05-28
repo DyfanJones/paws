@@ -53,14 +53,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Catalog API actions allow you to manage your entities through list,
-describe, and update capabilities. An \emph{entity} can be a product or an
-offer on AWS Marketplace.
+Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An \emph{entity} can be a product or an offer on AWS Marketplace.
 
-You can automate your entity update process by integrating the AWS
-Marketplace Catalog API with your AWS Marketplace product build or
-deployment pipelines. You can also create your own applications on top
-of the Catalog API to manage your products on AWS Marketplace.
+You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.
 }
 \section{Service syntax}{
 

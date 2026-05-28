@@ -8,8 +8,7 @@ status, configuration, and metadata}
 bedrock_get_custom_model_deployment(customModelDeploymentIdentifier)
 }
 \arguments{
-\item{customModelDeploymentIdentifier}{[required] The Amazon Resource Name (ARN) or name of the custom model deployment to
-retrieve information about.}
+\item{customModelDeploymentIdentifier}{[required] The Amazon Resource Name (ARN) or name of the custom model deployment to retrieve information about.}
 }
 \description{
 Retrieves information about a custom model deployment, including its status, configuration, and metadata. Use this operation to monitor the deployment status and retrieve details needed for inference requests.

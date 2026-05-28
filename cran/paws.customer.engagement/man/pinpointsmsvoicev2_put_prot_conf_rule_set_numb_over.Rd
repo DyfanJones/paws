@@ -14,19 +14,15 @@ pinpointsmsvoicev2_put_protect_configuration_rule_set_number_override(
 )
 }
 \arguments{
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 
 \item{ProtectConfigurationId}{[required] The unique identifier for the protect configuration.}
 
 \item{DestinationPhoneNumber}{[required] The destination phone number in E.164 format.}
 
-\item{Action}{[required] The action for the rule to either block or allow messages to the
-destination phone number.}
+\item{Action}{[required] The action for the rule to either block or allow messages to the destination phone number.}
 
-\item{ExpirationTimestamp}{The time the rule will expire at. If \code{ExpirationTimestamp} is not set
-then the rule does not expire.}
+\item{ExpirationTimestamp}{The time the rule will expire at. If \code{ExpirationTimestamp} is not set then the rule does not expire.}
 }
 \description{
 Create or update a phone number rule override and associate it with a protect configuration.

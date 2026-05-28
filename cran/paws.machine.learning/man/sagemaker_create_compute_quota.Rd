@@ -21,13 +21,11 @@ sagemaker_create_compute_quota(
 
 \item{ClusterArn}{[required] ARN of the cluster.}
 
-\item{ComputeQuotaConfig}{[required] Configuration of the compute allocation definition. This includes the
-resource sharing option, and the setting to preempt low priority tasks.}
+\item{ComputeQuotaConfig}{[required] Configuration of the compute allocation definition. This includes the resource sharing option, and the setting to preempt low priority tasks.}
 
 \item{ComputeQuotaTarget}{[required] The target entity to allocate compute resources to.}
 
-\item{ActivationState}{The state of the compute allocation being described. Use to enable or
-disable compute allocation.
+\item{ActivationState}{The state of the compute allocation being described. Use to enable or disable compute allocation.
 
 Default is \code{Enabled}.}
 

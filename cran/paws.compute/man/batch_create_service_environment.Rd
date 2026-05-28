@@ -13,23 +13,15 @@ batch_create_service_environment(
 )
 }
 \arguments{
-\item{serviceEnvironmentName}{[required] The name for the service environment. It can be up to 128 characters
-long and can contain letters, numbers, hyphens (-), and underscores
-(_).}
+\item{serviceEnvironmentName}{[required] The name for the service environment. It can be up to 128 characters long and can contain letters, numbers, hyphens (-), and underscores (_).}
 
-\item{serviceEnvironmentType}{[required] The type of service environment. For SageMaker Training jobs, specify
-\code{SAGEMAKER_TRAINING}.}
+\item{serviceEnvironmentType}{[required] The type of service environment. For SageMaker Training jobs, specify \code{SAGEMAKER_TRAINING}.}
 
-\item{state}{The state of the service environment. Valid values are \code{ENABLED} and
-\code{DISABLED}. The default value is \code{ENABLED}.}
+\item{state}{The state of the service environment. Valid values are \code{ENABLED} and \code{DISABLED}. The default value is \code{ENABLED}.}
 
-\item{capacityLimits}{[required] The capacity limits for the service environment. The number of instances
-a job consumes is the total number of instances requested in the submit
-training job request resource configuration.}
+\item{capacityLimits}{[required] The capacity limits for the service environment. The number of instances a job consumes is the total number of instances requested in the submit training job request resource configuration.}
 
-\item{tags}{The tags that you apply to the service environment to help you
-categorize and organize your resources. Each tag consists of a key and
-an optional value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources}.}
+\item{tags}{The tags that you apply to the service environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources}.}
 }
 \description{
 Creates a service environment for running service jobs. Service environments define capacity limits for specific service types such as SageMaker Training jobs.

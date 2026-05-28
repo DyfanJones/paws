@@ -8,8 +8,7 @@ Organization}
 networkmanager_start_organization_service_access_update(Action)
 }
 \arguments{
-\item{Action}{[required] The action to take for the update request. This can be either \code{ENABLE}
-or \code{DISABLE}.}
+\item{Action}{[required] The action to take for the update request. This can be either \code{ENABLE} or \code{DISABLE}.}
 }
 \description{
 Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization.

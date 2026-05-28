@@ -11,10 +11,7 @@ cloudfront_associate_distribution_tenant_web_acl(Id, WebACLArn, IfMatch = NULL)
 
 \item{WebACLArn}{[required] The Amazon Resource Name (ARN) of the WAF web ACL to associate.}
 
-\item{IfMatch}{The current \code{ETag} of the distribution tenant. This value is returned in
-the response of the
-\code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API
-operation.}
+\item{IfMatch}{The current \code{ETag} of the distribution tenant. This value is returned in the response of the \code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API operation.}
 }
 \description{
 Associates the WAF web ACL with a distribution tenant.

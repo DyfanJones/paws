@@ -15,20 +15,15 @@ quicksight_describe_automation_job(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the automation
-job.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the automation job.}
 
 \item{AutomationGroupId}{[required] The ID of the automation group that contains the automation.}
 
 \item{AutomationId}{[required] The ID of the automation that the job belongs to.}
 
-\item{IncludeInputPayload}{A Boolean value that indicates whether to include the input payload in
-the response. If set to \code{true}, the input payload will be included. If
-set to \code{false}, the input payload will be returned as \code{null}.}
+\item{IncludeInputPayload}{A Boolean value that indicates whether to include the input payload in the response. If set to \code{true}, the input payload will be included. If set to \code{false}, the input payload will be returned as \code{null}.}
 
-\item{IncludeOutputPayload}{A Boolean value that indicates whether to include the output payload in
-the response. If set to \code{true}, the output payload will be included. If
-set to \code{false}, the output payload will be returned as \code{null}.}
+\item{IncludeOutputPayload}{A Boolean value that indicates whether to include the output payload in the response. If set to \code{true}, the output payload will be included. If set to \code{false}, the output payload will be returned as \code{null}.}
 
 \item{JobId}{[required] The ID of the automation job to describe.}
 }

@@ -8,8 +8,7 @@ account to another Amazon Web Services account}
 route53domains_cancel_domain_transfer_to_another_aws_account(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] The name of the domain for which you want to cancel the transfer to
-another Amazon Web Services account.}
+\item{DomainName}{[required] The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.}
 }
 \description{
 Cancels the transfer of a domain from the current Amazon Web Services account to another Amazon Web Services account. You initiate a transfer betweenAmazon Web Services accounts using \code{\link[=route53domains_transfer_domain_to_another_aws_account]{transfer_domain_to_another_aws_account}}.

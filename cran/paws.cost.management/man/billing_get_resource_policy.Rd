@@ -8,8 +8,7 @@ JSON format}
 billing_get_resource_policy(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the billing view resource to which the
-policy is attached to.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the billing view resource to which the policy is attached to.}
 }
 \description{
 Returns the resource-based policy document attached to the resource in \code{JSON} format.

@@ -14,13 +14,9 @@ dynamodb_execute_transaction(
 \arguments{
 \item{TransactStatements}{[required] The list of PartiQL statements representing the transaction to run.}
 
-\item{ClientRequestToken}{Set this value to get remaining results, if \code{NextToken} was returned in
-the statement response.}
+\item{ClientRequestToken}{Set this value to get remaining results, if \code{NextToken} was returned in the statement response.}
 
-\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand
-throughput consumption that is returned in the response. For more
-information, see \code{\link[=dynamodb_transact_get_items]{transact_get_items}} and
-\code{\link[=dynamodb_transact_write_items]{transact_write_items}}.}
+\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see \code{\link[=dynamodb_transact_get_items]{transact_get_items}} and \code{\link[=dynamodb_transact_write_items]{transact_write_items}}.}
 }
 \description{
 This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.

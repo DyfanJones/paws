@@ -14,11 +14,9 @@ emr_get_persistent_app_ui_presigned_url(
 )
 }
 \arguments{
-\item{PersistentAppUIId}{[required] The persistent application user interface ID associated with the
-presigned URL.}
+\item{PersistentAppUIId}{[required] The persistent application user interface ID associated with the presigned URL.}
 
-\item{PersistentAppUIType}{The persistent application user interface type associated with the
-presigned URL.}
+\item{PersistentAppUIType}{The persistent application user interface type associated with the presigned URL.}
 
 \item{ApplicationId}{The application ID associated with the presigned URL.}
 

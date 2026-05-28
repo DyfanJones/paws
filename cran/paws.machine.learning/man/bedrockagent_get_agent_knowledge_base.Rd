@@ -7,8 +7,7 @@
 bedrockagent_get_agent_knowledge_base(agentId, agentVersion, knowledgeBaseId)
 }
 \arguments{
-\item{agentId}{[required] The unique identifier of the agent with which the knowledge base is
-associated.}
+\item{agentId}{[required] The unique identifier of the agent with which the knowledge base is associated.}
 
 \item{agentVersion}{[required] The version of the agent with which the knowledge base is associated.}
 

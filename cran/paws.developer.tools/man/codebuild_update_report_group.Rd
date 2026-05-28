@@ -15,11 +15,9 @@ codebuild_update_report_group(arn, exportConfig = NULL, tags = NULL)
 \item \code{NO_EXPORT}: The report results are not exported.
 }}
 
-\item{tags}{An updated list of tag key and value pairs associated with this report
-group.
+\item{tags}{An updated list of tag key and value pairs associated with this report group.
 
-These tags are available for use by Amazon Web Services services that
-support CodeBuild report group tags.}
+These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.}
 }
 \description{
 Updates a report group.

@@ -18,35 +18,25 @@ bedrockagentcorecontrol_create_memory(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request but does not return an
-error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.}
 
 \item{name}{[required] The name of the memory. The name must be unique within your account.}
 
 \item{description}{The description of the memory.}
 
-\item{encryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the memory
-data.}
+\item{encryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the memory data.}
 
-\item{memoryExecutionRoleArn}{The Amazon Resource Name (ARN) of the IAM role that provides permissions
-for the memory to access Amazon Web Services services.}
+\item{memoryExecutionRoleArn}{The Amazon Resource Name (ARN) of the IAM role that provides permissions for the memory to access Amazon Web Services services.}
 
-\item{eventExpiryDuration}{[required] The duration after which memory events expire. Specified as an ISO 8601
-duration.}
+\item{eventExpiryDuration}{[required] The duration after which memory events expire. Specified as an ISO 8601 duration.}
 
-\item{memoryStrategies}{The memory strategies to use for this memory. Strategies define how
-information is extracted, processed, and consolidated.}
+\item{memoryStrategies}{The memory strategies to use for this memory. Strategies define how information is extracted, processed, and consolidated.}
 
-\item{indexedKeys}{Metadata keys to index for filtering. Once declared, indexed keys cannot
-be removed.}
+\item{indexedKeys}{Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.}
 
 \item{streamDeliveryResources}{Configuration for streaming memory record data to external resources.}
 
-\item{tags}{A map of tag keys and values to assign to an AgentCore Memory. Tags
-enable you to categorize your resources in different ways, for example,
-by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a new Amazon Bedrock AgentCore Memory resource.

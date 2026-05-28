@@ -13,23 +13,13 @@ directoryservice_update_hybrid_ad(
 \arguments{
 \item{DirectoryId}{[required] The identifier of the hybrid directory to update.}
 
-\item{HybridAdministratorAccountUpdate}{We create a hybrid directory administrator account when we create a
-hybrid directory. Use \code{HybridAdministratorAccountUpdate} to recover the
-hybrid directory administrator account if you have deleted it.
+\item{HybridAdministratorAccountUpdate}{We create a hybrid directory administrator account when we create a hybrid directory. Use \code{HybridAdministratorAccountUpdate} to recover the hybrid directory administrator account if you have deleted it.
 
-To recover your hybrid directory administrator account, we need
-temporary access to a user in your self-managed AD with administrator
-permissions in the form of a secret from Amazon Web Services Secrets
-Manager. We use these credentials once during recovery and don't store
-them.
+To recover your hybrid directory administrator account, we need temporary access to a user in your self-managed AD with administrator permissions in the form of a secret from Amazon Web Services Secrets Manager. We use these credentials once during recovery and don't store them.
 
-If your hybrid directory administrator account exists, then you don’t
-need to use \code{HybridAdministratorAccountUpdate}, even if you have updated
-your self-managed AD administrator user.}
+If your hybrid directory administrator account exists, then you don’t need to use \code{HybridAdministratorAccountUpdate}, even if you have updated your self-managed AD administrator user.}
 
-\item{SelfManagedInstancesSettings}{Updates to the self-managed AD configuration, including DNS server IP
-addresses and Amazon Web Services System Manager managed node
-identifiers.}
+\item{SelfManagedInstancesSettings}{Updates to the self-managed AD configuration, including DNS server IP addresses and Amazon Web Services System Manager managed node identifiers.}
 }
 \description{
 Updates the configuration of an existing hybrid directory. You can recover hybrid directory administrator account or modify self-managed instance settings.

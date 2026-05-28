@@ -14,12 +14,9 @@ bedrockagentruntime_get_invocation_step(
 \arguments{
 \item{invocationIdentifier}{[required] The unique identifier for the invocation in UUID format.}
 
-\item{invocationStepId}{[required] The unique identifier (in UUID format) for the specific invocation step
-to retrieve.}
+\item{invocationStepId}{[required] The unique identifier (in UUID format) for the specific invocation step to retrieve.}
 
-\item{sessionIdentifier}{[required] The unique identifier for the invocation step's associated session. You
-can specify either the session's \code{sessionId} or its Amazon Resource Name
-(ARN).}
+\item{sessionIdentifier}{[required] The unique identifier for the invocation step's associated session. You can specify either the session's \code{sessionId} or its Amazon Resource Name (ARN).}
 }
 \description{
 Retrieves the details of a specific invocation step within an invocation in a session. For more information about sessions, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html}{Store and retrieve conversation history and context with Amazon Bedrock sessions}.

@@ -9,7 +9,7 @@ machinelearning_predict(MLModelId, Record, PredictEndpoint)
 \arguments{
 \item{MLModelId}{[required] A unique identifier of the \code{MLModel}.}
 
-\item{Record}{[required]}
+\item{Record}{[required] A map of variable name-value pairs that represent an observation.}
 
 \item{PredictEndpoint}{[required]}
 }

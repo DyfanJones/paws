@@ -7,8 +7,7 @@
 athena_get_named_query(NamedQueryId)
 }
 \arguments{
-\item{NamedQueryId}{[required] The unique ID of the query. Use
-\code{\link[=athena_list_named_queries]{list_named_queries}} to get query IDs.}
+\item{NamedQueryId}{[required] The unique ID of the query. Use \code{\link[=athena_list_named_queries]{list_named_queries}} to get query IDs.}
 }
 \description{
 Returns information about a single query. Requires that you have access to the workgroup in which the query was saved.

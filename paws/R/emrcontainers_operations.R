@@ -6,8 +6,7 @@ NULL
 #' Cancels a job run
 #'
 #' @description
-#' Cancels a job run. A job run is a unit of work, such as a Spark jar,
-#' PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
+#' Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 #'
 #' @usage
 #' emrcontainers_cancel_job_run(id, virtualClusterId)
@@ -59,10 +58,7 @@ emrcontainers_cancel_job_run <- function(id, virtualClusterId) {
 #' Creates a job template
 #'
 #' @description
-#' Creates a job template. Job template stores values of StartJobRun API
-#' request in a template and can be used to start a job run. Job template
-#' allows two use cases: avoid repeating recurring StartJobRun API request
-#' values, enforcing certain values in StartJobRun API request.
+#' Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 #'
 #' @usage
 #' emrcontainers_create_job_template(name, clientToken, jobTemplateData,
@@ -173,9 +169,7 @@ emrcontainers_create_job_template <- function(name, clientToken, jobTemplateData
 #' Creates a managed endpoint
 #'
 #' @description
-#' Creates a managed endpoint. A managed endpoint is a gateway that
-#' connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR
-#' Studio can communicate with your virtual cluster.
+#' Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 #'
 #' @usage
 #' emrcontainers_create_managed_endpoint(name, virtualClusterId, type,
@@ -187,10 +181,8 @@ emrcontainers_create_job_template <- function(name, clientToken, jobTemplateData
 #' @param type &#91;required&#93; The type of the managed endpoint.
 #' @param releaseLabel &#91;required&#93; The Amazon EMR release version.
 #' @param executionRoleArn &#91;required&#93; The ARN of the execution role.
-#' @param certificateArn The certificate ARN provided by users for the managed endpoint. This
-#' field is under deprecation and will be removed in future releases.
-#' @param configurationOverrides The configuration settings that will be used to override existing
-#' configurations.
+#' @param certificateArn The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.
+#' @param configurationOverrides The configuration settings that will be used to override existing configurations.
 #' @param clientToken &#91;required&#93; The client idempotency token for this create call.
 #' @param tags The tags of the managed endpoint.
 #'
@@ -277,18 +269,13 @@ emrcontainers_create_managed_endpoint <- function(name, virtualClusterId, type, 
 #' Creates a security configuration
 #'
 #' @description
-#' Creates a security configuration. Security configurations in Amazon EMR
-#' on EKS are templates for different security setups. You can use security
-#' configurations to configure the Lake Formation integration setup. You
-#' can also create a security configuration to re-use a security setup each
-#' time you create a virtual cluster.
+#' Creates a security configuration. Security configurations in Amazon EMR on EKS are templates for different security setups. You can use security configurations to configure the Lake Formation integration setup. You can also create a security configuration to re-use a security setup each time you create a virtual cluster.
 #'
 #' @usage
 #' emrcontainers_create_security_configuration(clientToken, name,
 #'   containerProvider, securityConfigurationData, tags)
 #'
-#' @param clientToken &#91;required&#93; The client idempotency token to use when creating the security
-#' configuration.
+#' @param clientToken &#91;required&#93; The client idempotency token to use when creating the security configuration.
 #' @param name &#91;required&#93; The name of the security configuration.
 #' @param containerProvider The container provider associated with the security configuration.
 #' @param securityConfigurationData &#91;required&#93; Security configuration input for the request.
@@ -373,12 +360,7 @@ emrcontainers_create_security_configuration <- function(clientToken, name, conta
 #' Creates a virtual cluster
 #'
 #' @description
-#' Creates a virtual cluster. Virtual cluster is a managed entity on Amazon
-#' EMR on EKS. You can create, describe, list and delete virtual clusters.
-#' They do not consume any additional resource in your system. A single
-#' virtual cluster maps to a single Kubernetes namespace. Given this
-#' relationship, you can model virtual clusters the same way you model
-#' Kubernetes namespaces to meet your requirements.
+#' Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 #'
 #' @usage
 #' emrcontainers_create_virtual_cluster(name, containerProvider,
@@ -449,10 +431,7 @@ emrcontainers_create_virtual_cluster <- function(name, containerProvider, client
 #' Deletes a job template
 #'
 #' @description
-#' Deletes a job template. Job template stores values of StartJobRun API
-#' request in a template and can be used to start a job run. Job template
-#' allows two use cases: avoid repeating recurring StartJobRun API request
-#' values, enforcing certain values in StartJobRun API request.
+#' Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 #'
 #' @usage
 #' emrcontainers_delete_job_template(id)
@@ -501,9 +480,7 @@ emrcontainers_delete_job_template <- function(id) {
 #' Deletes a managed endpoint
 #'
 #' @description
-#' Deletes a managed endpoint. A managed endpoint is a gateway that
-#' connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR
-#' Studio can communicate with your virtual cluster.
+#' Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 #'
 #' @usage
 #' emrcontainers_delete_managed_endpoint(id, virtualClusterId)
@@ -555,12 +532,7 @@ emrcontainers_delete_managed_endpoint <- function(id, virtualClusterId) {
 #' Deletes a virtual cluster
 #'
 #' @description
-#' Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon
-#' EMR on EKS. You can create, describe, list and delete virtual clusters.
-#' They do not consume any additional resource in your system. A single
-#' virtual cluster maps to a single Kubernetes namespace. Given this
-#' relationship, you can model virtual clusters the same way you model
-#' Kubernetes namespaces to meet your requirements.
+#' Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 #'
 #' @usage
 #' emrcontainers_delete_virtual_cluster(id)
@@ -609,9 +581,7 @@ emrcontainers_delete_virtual_cluster <- function(id) {
 #' Displays detailed information about a job run
 #'
 #' @description
-#' Displays detailed information about a job run. A job run is a unit of
-#' work, such as a Spark jar, PySpark script, or SparkSQL query, that you
-#' submit to Amazon EMR on EKS.
+#' Displays detailed information about a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 #'
 #' @usage
 #' emrcontainers_describe_job_run(id, virtualClusterId)
@@ -731,11 +701,7 @@ emrcontainers_describe_job_run <- function(id, virtualClusterId) {
 #' Displays detailed information about a specified job template
 #'
 #' @description
-#' Displays detailed information about a specified job template. Job
-#' template stores values of StartJobRun API request in a template and can
-#' be used to start a job run. Job template allows two use cases: avoid
-#' repeating recurring StartJobRun API request values, enforcing certain
-#' values in StartJobRun API request.
+#' Displays detailed information about a specified job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 #'
 #' @usage
 #' emrcontainers_describe_job_template(id)
@@ -844,9 +810,7 @@ emrcontainers_describe_job_template <- function(id) {
 #' Displays detailed information about a managed endpoint
 #'
 #' @description
-#' Displays detailed information about a managed endpoint. A managed
-#' endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on
-#' EKS so that Amazon EMR Studio can communicate with your virtual cluster.
+#' Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 #'
 #' @usage
 #' emrcontainers_describe_managed_endpoint(id, virtualClusterId)
@@ -953,12 +917,7 @@ emrcontainers_describe_managed_endpoint <- function(id, virtualClusterId) {
 #' Displays detailed information about a specified security configuration
 #'
 #' @description
-#' Displays detailed information about a specified security configuration.
-#' Security configurations in Amazon EMR on EKS are templates for different
-#' security setups. You can use security configurations to configure the
-#' Lake Formation integration setup. You can also create a security
-#' configuration to re-use a security setup each time you create a virtual
-#' cluster.
+#' Displays detailed information about a specified security configuration. Security configurations in Amazon EMR on EKS are templates for different security setups. You can use security configurations to configure the Lake Formation integration setup. You can also create a security configuration to re-use a security setup each time you create a virtual cluster.
 #'
 #' @usage
 #' emrcontainers_describe_security_configuration(id)
@@ -1039,13 +998,7 @@ emrcontainers_describe_security_configuration <- function(id) {
 #' Displays detailed information about a specified virtual cluster
 #'
 #' @description
-#' Displays detailed information about a specified virtual cluster. Virtual
-#' cluster is a managed entity on Amazon EMR on EKS. You can create,
-#' describe, list and delete virtual clusters. They do not consume any
-#' additional resource in your system. A single virtual cluster maps to a
-#' single Kubernetes namespace. Given this relationship, you can model
-#' virtual clusters the same way you model Kubernetes namespaces to meet
-#' your requirements.
+#' Displays detailed information about a specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 #'
 #' @usage
 #' emrcontainers_describe_virtual_cluster(id)
@@ -1126,12 +1079,9 @@ emrcontainers_describe_virtual_cluster <- function(id) {
 #' @param endpointIdentifier &#91;required&#93; The ARN of the managed endpoint for which the request is submitted.
 #' @param virtualClusterIdentifier &#91;required&#93; The ARN of the Virtual Cluster which the Managed Endpoint belongs to.
 #' @param executionRoleArn &#91;required&#93; The IAM Execution Role ARN that will be used by the job run.
-#' @param credentialType &#91;required&#93; Type of the token requested. Currently supported and default value of
-#' this field is “TOKEN.”
-#' @param durationInSeconds Duration in seconds for which the session token is valid. The default
-#' duration is 15 minutes and the maximum is 12 hours.
-#' @param logContext String identifier used to separate sections of the execution logs
-#' uploaded to S3.
+#' @param credentialType &#91;required&#93; Type of the token requested. Currently supported and default value of this field is “TOKEN.”
+#' @param durationInSeconds Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.
+#' @param logContext String identifier used to separate sections of the execution logs uploaded to S3.
 #' @param clientToken The client idempotency token of the job run request.
 #'
 #' @return
@@ -1188,9 +1138,7 @@ emrcontainers_get_managed_endpoint_session_credentials <- function(endpointIdent
 #' Lists job runs based on a set of parameters
 #'
 #' @description
-#' Lists job runs based on a set of parameters. A job run is a unit of
-#' work, such as a Spark jar, PySpark script, or SparkSQL query, that you
-#' submit to Amazon EMR on EKS.
+#' Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 #'
 #' @usage
 #' emrcontainers_list_job_runs(virtualClusterId, createdBefore,
@@ -1330,11 +1278,7 @@ emrcontainers_list_job_runs <- function(virtualClusterId, createdBefore = NULL, 
 #' Lists job templates based on a set of parameters
 #'
 #' @description
-#' Lists job templates based on a set of parameters. Job template stores
-#' values of StartJobRun API request in a template and can be used to start
-#' a job run. Job template allows two use cases: avoid repeating recurring
-#' StartJobRun API request values, enforcing certain values in StartJobRun
-#' API request.
+#' Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 #'
 #' @usage
 #' emrcontainers_list_job_templates(createdAfter, createdBefore,
@@ -1457,9 +1401,7 @@ emrcontainers_list_job_templates <- function(createdAfter = NULL, createdBefore 
 #' Lists managed endpoints based on a set of parameters
 #'
 #' @description
-#' Lists managed endpoints based on a set of parameters. A managed endpoint
-#' is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so
-#' that Amazon EMR Studio can communicate with your virtual cluster.
+#' Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 #'
 #' @usage
 #' emrcontainers_list_managed_endpoints(virtualClusterId, createdBefore,
@@ -1588,12 +1530,7 @@ emrcontainers_list_managed_endpoints <- function(virtualClusterId, createdBefore
 #' Lists security configurations based on a set of parameters
 #'
 #' @description
-#' Lists security configurations based on a set of parameters. Security
-#' configurations in Amazon EMR on EKS are templates for different security
-#' setups. You can use security configurations to configure the Lake
-#' Formation integration setup. You can also create a security
-#' configuration to re-use a security setup each time you create a virtual
-#' cluster.
+#' Lists security configurations based on a set of parameters. Security configurations in Amazon EMR on EKS are templates for different security setups. You can use security configurations to configure the Lake Formation integration setup. You can also create a security configuration to re-use a security setup each time you create a virtual cluster.
 #'
 #' @usage
 #' emrcontainers_list_security_configurations(createdAfter, createdBefore,
@@ -1739,12 +1676,7 @@ emrcontainers_list_tags_for_resource <- function(resourceArn) {
 #' Lists information about the specified virtual cluster
 #'
 #' @description
-#' Lists information about the specified virtual cluster. Virtual cluster
-#' is a managed entity on Amazon EMR on EKS. You can create, describe, list
-#' and delete virtual clusters. They do not consume any additional resource
-#' in your system. A single virtual cluster maps to a single Kubernetes
-#' namespace. Given this relationship, you can model virtual clusters the
-#' same way you model Kubernetes namespaces to meet your requirements.
+#' Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 #'
 #' @usage
 #' emrcontainers_list_virtual_clusters(containerProviderId,
@@ -1752,17 +1684,13 @@ emrcontainers_list_tags_for_resource <- function(resourceArn) {
 #'   nextToken, eksAccessEntryIntegrated)
 #'
 #' @param containerProviderId The container provider ID of the virtual cluster.
-#' @param containerProviderType The container provider type of the virtual cluster. Amazon EKS is the
-#' only supported type as of now.
+#' @param containerProviderType The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
 #' @param createdAfter The date and time after which the virtual clusters are created.
 #' @param createdBefore The date and time before which the virtual clusters are created.
 #' @param states The states of the requested virtual clusters.
 #' @param maxResults The maximum number of virtual clusters that can be listed.
 #' @param nextToken The token for the next set of virtual clusters to return.
-#' @param eksAccessEntryIntegrated Optional Boolean that specifies whether the operation should return the
-#' virtual clusters that have the access entry integration enabled or
-#' disabled. If not specified, the operation returns all applicable virtual
-#' clusters.
+#' @param eksAccessEntryIntegrated Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1844,8 +1772,7 @@ emrcontainers_list_virtual_clusters <- function(containerProviderId = NULL, cont
 #' Starts a job run
 #'
 #' @description
-#' Starts a job run. A job run is a unit of work, such as a Spark jar,
-#' PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
+#' Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 #'
 #' @usage
 #' emrcontainers_start_job_run(name, virtualClusterId, clientToken,
@@ -1965,17 +1892,7 @@ emrcontainers_start_job_run <- function(name = NULL, virtualClusterId, clientTok
 #' Assigns tags to resources
 #'
 #' @description
-#' Assigns tags to resources. A tag is a label that you assign to an Amazon
-#' Web Services resource. Each tag consists of a key and an optional value,
-#' both of which you define. Tags enable you to categorize your Amazon Web
-#' Services resources by attributes such as purpose, owner, or environment.
-#' When you have many resources of the same type, you can quickly identify
-#' a specific resource based on the tags you've assigned to it. For
-#' example, you can define a set of tags for your Amazon EMR on EKS
-#' clusters to help you track each cluster's owner and stack level. We
-#' recommend that you devise a consistent set of tag keys for each resource
-#' type. You can then search and filter the resources based on the tags
-#' that you add.
+#' Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags that you add.
 #'
 #' @usage
 #' emrcontainers_tag_resource(resourceArn, tags)

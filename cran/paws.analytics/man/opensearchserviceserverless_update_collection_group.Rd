@@ -16,8 +16,7 @@ opensearchserviceserverless_update_collection_group(
 
 \item{description}{A new description for the collection group.}
 
-\item{capacityLimits}{Updated capacity limits for the collection group, in OpenSearch Compute
-Units (OCUs).}
+\item{capacityLimits}{Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).}
 
 \item{clientToken}{Unique, case-sensitive identifier to ensure idempotency of the request.}
 }

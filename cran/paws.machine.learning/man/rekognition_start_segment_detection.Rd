@@ -14,29 +14,17 @@ rekognition_start_segment_detection(
 )
 }
 \arguments{
-\item{Video}{[required]}
+\item{Video}{[required] Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as \code{\link[=rekognition_start_label_detection]{start_label_detection}} use \code{Video} to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.}
 
-\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same
-token with multiple
-\code{\link[=rekognition_start_segment_detection]{start_segment_detection}}
-requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to
-prevent the same job from being accidently started more than once.}
+\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same token with multiple \code{\link[=rekognition_start_segment_detection]{start_segment_detection}} requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the same job from being accidently started more than once.}
 
-\item{NotificationChannel}{The ARN of the Amazon SNS topic to which you want Amazon Rekognition
-Video to publish the completion status of the segment detection
-operation. Note that the Amazon SNS topic must have a topic name that
-begins with \emph{AmazonRekognition} if you are using the
-AmazonRekognitionServiceRole permissions policy to access the topic.}
+\item{NotificationChannel}{The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with \emph{AmazonRekognition} if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.}
 
-\item{JobTag}{An identifier you specify that's returned in the completion notification
-that's published to your Amazon Simple Notification Service topic. For
-example, you can use \code{JobTag} to group related jobs and identify them in
-the completion notification.}
+\item{JobTag}{An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use \code{JobTag} to group related jobs and identify them in the completion notification.}
 
 \item{Filters}{Filters for technical cue or shot detection.}
 
-\item{SegmentTypes}{[required] An array of segment types to detect in the video. Valid values are
-TECHNICAL_CUE and SHOT.}
+\item{SegmentTypes}{[required] An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.}
 }
 \description{
 Starts asynchronous detection of segment detection in a stored video.

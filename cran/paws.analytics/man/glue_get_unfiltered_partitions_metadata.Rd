@@ -20,11 +20,9 @@ glue_get_unfiltered_partitions_metadata(
 )
 }
 \arguments{
-\item{Region}{Specified only if the base tables belong to a different Amazon Web
-Services Region.}
+\item{Region}{Specified only if the base tables belong to a different Amazon Web Services Region.}
 
-\item{CatalogId}{[required] The ID of the Data Catalog where the partitions in question reside. If
-none is provided, the AWS account ID is used by default.}
+\item{CatalogId}{[required] The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database where the partitions reside.}
 
@@ -32,18 +30,13 @@ none is provided, the AWS account ID is used by default.}
 
 \item{Expression}{An expression that filters the partitions to be returned.
 
-The expression uses SQL syntax similar to the SQL \code{WHERE} filter clause.
-The SQL statement parser
-\href{https://jsqlparser.sourceforge.net/home.php}{JSQLParser} parses the
-expression.
+The expression uses SQL syntax similar to the SQL \code{WHERE} filter clause. The SQL statement parser \href{https://jsqlparser.sourceforge.net/home.php}{JSQLParser} parses the expression.
 
-\emph{Operators}: The following are the operators that you can use in the
-\code{Expression} API call:
+\emph{Operators}: The following are the operators that you can use in the \code{Expression} API call:
 
 \strong{=}
 
-Checks whether the values of the two operands are equal; if yes, then
-the condition becomes true.
+Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
 
 Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
 
@@ -51,36 +44,31 @@ Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
 
 \strong{\< \>}
 
-Checks whether the values of two operands are equal; if the values are
-not equal, then the condition becomes true.
+Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.
 
 Example: (a \< \> b) is true.
 
 \strong{\>}
 
-Checks whether the value of the left operand is greater than the value
-of the right operand; if yes, then the condition becomes true.
+Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.
 
 Example: (a \> b) is not true.
 
 \strong{\<}
 
-Checks whether the value of the left operand is less than the value of
-the right operand; if yes, then the condition becomes true.
+Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.
 
 Example: (a \< b) is true.
 
 \strong{\>=}
 
-Checks whether the value of the left operand is greater than or equal to
-the value of the right operand; if yes, then the condition becomes true.
+Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.
 
 Example: (a \>= b) is not true.
 
 \strong{\<=}
 
-Checks whether the value of the left operand is less than or equal to
-the value of the right operand; if yes, then the condition becomes true.
+Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.
 
 Example: (a \<= b) is true.
 
@@ -88,8 +76,7 @@ Example: (a \<= b) is true.
 
 Logical operators.
 
-\emph{Supported Partition Key Types}: The following are the supported
-partition keys.
+\emph{Supported Partition Key Types}: The following are the supported partition keys.
 \itemize{
 \item \code{string}
 \item \code{date}
@@ -108,16 +95,13 @@ If an type is encountered that is not valid, an exception is thrown.}
 
 \item{SupportedPermissionTypes}{[required] A list of supported permission types.}
 
-\item{NextToken}{A continuation token, if this is not the first call to retrieve these
-partitions.}
+\item{NextToken}{A continuation token, if this is not the first call to retrieve these partitions.}
 
 \item{Segment}{The segment of the table's partitions to scan in this request.}
 
 \item{MaxResults}{The maximum number of partitions to return in a single response.}
 
-\item{QuerySessionContext}{A structure used as a protocol between query engines and Lake Formation
-or Glue. Contains both a Lake Formation generated authorization
-identifier and information from the request's authorization context.}
+\item{QuerySessionContext}{A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.}
 }
 \description{
 Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.

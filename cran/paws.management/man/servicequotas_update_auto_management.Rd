@@ -12,18 +12,11 @@ servicequotas_update_auto_management(
 )
 }
 \arguments{
-\item{OptInType}{Information on the opt-in type for your Automatic Management
-configuration. There are two modes: Notify only and Notify and
-Auto-Adjust. Currently, only NotifyOnly is available.}
+\item{OptInType}{Information on the opt-in type for your Automatic Management configuration. There are two modes: Notify only and Notify and Auto-Adjust. Currently, only NotifyOnly is available.}
 
-\item{NotificationArn}{The \href{https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html#rlp-table}{User Notifications}
-Amazon Resource Name (ARN) for Automatic Management notifications you
-want to update.}
+\item{NotificationArn}{The \href{https://docs.aws.amazon.com/notifications/latest/userguide/resource-level-permissions.html#rlp-table}{User Notifications} Amazon Resource Name (ARN) for Automatic Management notifications you want to update.}
 
-\item{ExclusionList}{List of Amazon Web Services services you want to exclude from Automatic
-Management. You won't be notified of Service Quotas utilization for
-Amazon Web Services services added to the Automatic Management exclusion
-list.}
+\item{ExclusionList}{List of Amazon Web Services services you want to exclude from Automatic Management. You won't be notified of Service Quotas utilization for Amazon Web Services services added to the Automatic Management exclusion list.}
 }
 \description{
 Updates your \href{https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html}{Service Quotas Automatic Management} configuration, including notification preferences and excluded quotas. Automatic Management monitors your Service Quotas utilization and notifies you before you run out of your allocated quotas.

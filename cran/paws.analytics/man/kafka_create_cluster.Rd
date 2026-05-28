@@ -23,22 +23,17 @@ kafka_create_cluster(
 \arguments{
 \item{BrokerNodeGroupInfo}{[required] Information about the broker nodes in the cluster.}
 
-\item{Rebalancing}{Specifies if intelligent rebalancing should be turned on for the new MSK
-Provisioned cluster with Express brokers. By default, intelligent
-rebalancing status is ACTIVE for all new clusters.}
+\item{Rebalancing}{Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.}
 
 \item{ClientAuthentication}{Includes all client authentication related information.}
 
 \item{ClusterName}{[required] The name of the cluster.}
 
-\item{ConfigurationInfo}{Represents the configuration that you want MSK to use for the brokers in
-a cluster.}
+\item{ConfigurationInfo}{Represents the configuration that you want MSK to use for the brokers in a cluster.}
 
 \item{EncryptionInfo}{Includes all encryption-related information.}
 
-\item{EnhancedMonitoring}{Specifies the level of monitoring for the MSK cluster. The possible
-values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
-PER_TOPIC_PER_PARTITION.}
+\item{EnhancedMonitoring}{Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.}
 
 \item{OpenMonitoring}{The settings for open monitoring.}
 

@@ -7,8 +7,7 @@
 glue_get_catalog(CatalogId)
 }
 \arguments{
-\item{CatalogId}{[required] The ID of the parent catalog in which the catalog resides. If none is
-provided, the Amazon Web Services Account Number is used by default.}
+\item{CatalogId}{[required] The ID of the parent catalog in which the catalog resides. If none is provided, the Amazon Web Services Account Number is used by default.}
 }
 \description{
 The name of the Catalog to retrieve. This should be all lowercase.

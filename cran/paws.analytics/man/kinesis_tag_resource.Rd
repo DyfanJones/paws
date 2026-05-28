@@ -7,15 +7,11 @@
 kinesis_tag_resource(Tags, ResourceARN, StreamId = NULL)
 }
 \arguments{
-\item{Tags}{[required] An array of tags to be added to the Kinesis resource. A tag consists of
-a required key and an optional value. You can add up to 50 tags per
-resource.
+\item{Tags}{[required] An array of tags to be added to the Kinesis resource. A tag consists of a required key and an optional value. You can add up to 50 tags per resource.
 
-Tags may only contain Unicode letters, digits, white space, or these
-symbols: _ . : / = + - @.}
+Tags may only contain Unicode letters, digits, white space, or these symbols: _ . : / = + - @.}
 
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Kinesis resource to which to add
-tags.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Kinesis resource to which to add tags.}
 
 \item{StreamId}{Not Implemented. Reserved for future use.}
 }

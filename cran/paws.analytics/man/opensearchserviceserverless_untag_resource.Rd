@@ -7,12 +7,9 @@
 opensearchserviceserverless_untag_resource(resourceArn, tagKeys)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to remove tags from. The
-resource must be active (not in the \code{DELETING} state), and must be owned
-by the account ID included in the request.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to remove tags from. The resource must be active (not in the \code{DELETING} state), and must be owned by the account ID included in the request.}
 
-\item{tagKeys}{[required] The tag or set of tags to remove from the resource. All tag keys in the
-request must be unique.}
+\item{tagKeys}{[required] The tag or set of tags to remove from the resource. All tag keys in the request must be unique.}
 }
 \description{
 Removes a tag or set of tags from an OpenSearch Serverless resource. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html}{Tagging Amazon OpenSearch Serverless collections}.

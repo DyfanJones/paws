@@ -14,8 +14,7 @@ networkfirewall_describe_tls_inspection_configuration(
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{TLSInspectionConfigurationName}{The descriptive name of the TLS inspection configuration. You can't
-change the name of a TLS inspection configuration after you create it.
+\item{TLSInspectionConfigurationName}{The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 }

@@ -16,10 +16,7 @@ elbv2_set_security_groups(
 
 \item{SecurityGroups}{[required] The IDs of the security groups.}
 
-\item{EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic}{Indicates whether to evaluate inbound security group rules for traffic
-sent to a Network Load Balancer through Amazon Web Services PrivateLink.
-Applies only if the load balancer has an associated security group. The
-default is \code{on}.}
+\item{EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic}{Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. Applies only if the load balancer has an associated security group. The default is \code{on}.}
 }
 \description{
 Associates the specified security groups with the specified Application Load Balancer or Network Load Balancer. The specified security groups override the previously associated security groups.

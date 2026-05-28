@@ -53,33 +53,18 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Welcome to the Audit Manager API reference. This guide is for developers
-who need detailed information about the Audit Manager API operations,
-data types, and errors.
+Welcome to the Audit Manager API reference. This guide is for developers who need detailed information about the Audit Manager API operations, data types, and errors.
 
-Audit Manager is a service that provides automated evidence collection
-so that you can continually audit your Amazon Web Services usage. You
-can use it to assess the effectiveness of your controls, manage risk,
-and simplify compliance.
+Audit Manager is a service that provides automated evidence collection so that you can continually audit your Amazon Web Services usage. You can use it to assess the effectiveness of your controls, manage risk, and simplify compliance.
 
-Audit Manager provides prebuilt frameworks that structure and automate
-assessments for a given compliance standard. Frameworks include a
-prebuilt collection of controls with descriptions and testing
-procedures. These controls are grouped according to the requirements of
-the specified compliance standard or regulation. You can also customize
-frameworks and controls to support internal audits with specific
-requirements.
+Audit Manager provides prebuilt frameworks that structure and automate assessments for a given compliance standard. Frameworks include a prebuilt collection of controls with descriptions and testing procedures. These controls are grouped according to the requirements of the specified compliance standard or regulation. You can also customize frameworks and controls to support internal audits with specific requirements.
 
 Use the following links to get started with the Audit Manager API:
 \itemize{
-\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Operations.html}{Actions}:
-An alphabetical list of all Audit Manager API operations.
-\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Types.html}{Data types}:
-An alphabetical list of all Audit Manager data types.
-\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html}{Common parameters}:
-Parameters that all operations can use.
-\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonErrors.html}{Common errors}:
-Client and server errors that all operations can return.
+\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Operations.html}{Actions}: An alphabetical list of all Audit Manager API operations.
+\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Types.html}{Data types}: An alphabetical list of all Audit Manager data types.
+\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html}{Common parameters}: Parameters that all operations can use.
+\item \href{https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonErrors.html}{Common errors}: Client and server errors that all operations can return.
 }
 
 If you're new to Audit Manager, we recommend that you review the \href{https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html}{Audit Manager User Guide}.

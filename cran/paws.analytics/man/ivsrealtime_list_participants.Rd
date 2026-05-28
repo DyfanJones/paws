@@ -20,31 +20,17 @@ ivsrealtime_list_participants(
 
 \item{sessionId}{[required] ID of the session within the stage.}
 
-\item{filterByUserId}{Filters the response list to match the specified user ID. Only one of
-\code{filterByUserId}, \code{filterByPublished}, \code{filterByState}, or
-\code{filterByRecordingState} can be provided per request. A \code{userId} is a
-customer-assigned name to help identify the token; this can be used to
-link a participant to a user in the customer’s own systems.}
+\item{filterByUserId}{Filters the response list to match the specified user ID. Only one of \code{filterByUserId}, \code{filterByPublished}, \code{filterByState}, or \code{filterByRecordingState} can be provided per request. A \code{userId} is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.}
 
-\item{filterByPublished}{Filters the response list to only show participants who published during
-the stage session. Only one of \code{filterByUserId}, \code{filterByPublished},
-\code{filterByState}, or \code{filterByRecordingState} can be provided per
-request.}
+\item{filterByPublished}{Filters the response list to only show participants who published during the stage session. Only one of \code{filterByUserId}, \code{filterByPublished}, \code{filterByState}, or \code{filterByRecordingState} can be provided per request.}
 
-\item{filterByState}{Filters the response list to only show participants in the specified
-state. Only one of \code{filterByUserId}, \code{filterByPublished},
-\code{filterByState}, or \code{filterByRecordingState} can be provided per
-request.}
+\item{filterByState}{Filters the response list to only show participants in the specified state. Only one of \code{filterByUserId}, \code{filterByPublished}, \code{filterByState}, or \code{filterByRecordingState} can be provided per request.}
 
-\item{nextToken}{The first participant to retrieve. This is used for pagination; see the
-\code{nextToken} response field.}
+\item{nextToken}{The first participant to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of results to return. Default: 50.}
 
-\item{filterByRecordingState}{Filters the response list to only show participants with the specified
-recording state. Only one of \code{filterByUserId}, \code{filterByPublished},
-\code{filterByState}, or \code{filterByRecordingState} can be provided per
-request.}
+\item{filterByRecordingState}{Filters the response list to only show participants with the specified recording state. Only one of \code{filterByUserId}, \code{filterByPublished}, \code{filterByState}, or \code{filterByRecordingState} can be provided per request.}
 }
 \description{
 Lists all participants in a specified stage session.

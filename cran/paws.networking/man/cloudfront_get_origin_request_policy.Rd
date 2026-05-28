@@ -7,14 +7,7 @@
 cloudfront_get_origin_request_policy(Id)
 }
 \arguments{
-\item{Id}{[required] The unique identifier for the origin request policy. If the origin
-request policy is attached to a distribution's cache behavior, you can
-get the policy's identifier using
-\code{\link[=cloudfront_list_distributions]{list_distributions}} or
-\code{\link[=cloudfront_get_distribution]{get_distribution}}. If the origin request
-policy is not attached to a cache behavior, you can get the identifier
-using
-\code{\link[=cloudfront_list_origin_request_policies]{list_origin_request_policies}}.}
+\item{Id}{[required] The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using \code{\link[=cloudfront_list_distributions]{list_distributions}} or \code{\link[=cloudfront_get_distribution]{get_distribution}}. If the origin request policy is not attached to a cache behavior, you can get the identifier using \code{\link[=cloudfront_list_origin_request_policies]{list_origin_request_policies}}.}
 }
 \description{
 Gets an origin request policy, including the following metadata:

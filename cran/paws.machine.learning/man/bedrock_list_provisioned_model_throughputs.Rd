@@ -17,29 +17,19 @@ bedrock_list_provisioned_model_throughputs(
 )
 }
 \arguments{
-\item{creationTimeAfter}{A filter that returns Provisioned Throughputs created after the
-specified time.}
+\item{creationTimeAfter}{A filter that returns Provisioned Throughputs created after the specified time.}
 
-\item{creationTimeBefore}{A filter that returns Provisioned Throughputs created before the
-specified time.}
+\item{creationTimeBefore}{A filter that returns Provisioned Throughputs created before the specified time.}
 
-\item{statusEquals}{A filter that returns Provisioned Throughputs if their statuses matches
-the value that you specify.}
+\item{statusEquals}{A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.}
 
-\item{modelArnEquals}{A filter that returns Provisioned Throughputs whose model Amazon
-Resource Name (ARN) is equal to the value that you specify.}
+\item{modelArnEquals}{A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that you specify.}
 
-\item{nameContains}{A filter that returns Provisioned Throughputs if their name contains the
-expression that you specify.}
+\item{nameContains}{A filter that returns Provisioned Throughputs if their name contains the expression that you specify.}
 
-\item{maxResults}{THe maximum number of results to return in the response. If there are
-more results than the number you specified, the response returns a
-\code{nextToken} value. To see the next batch of results, send the
-\code{nextToken} value in another list request.}
+\item{maxResults}{THe maximum number of results to return in the response. If there are more results than the number you specified, the response returns a \code{nextToken} value. To see the next batch of results, send the \code{nextToken} value in another list request.}
 
-\item{nextToken}{If there are more results than the number you specified in the
-\code{maxResults} field, the response returns a \code{nextToken} value. To see the
-next batch of results, specify the \code{nextToken} value in this field.}
+\item{nextToken}{If there are more results than the number you specified in the \code{maxResults} field, the response returns a \code{nextToken} value. To see the next batch of results, specify the \code{nextToken} value in this field.}
 
 \item{sortBy}{The field by which to sort the returned list of Provisioned Throughputs.}
 

@@ -10,9 +10,7 @@ machinelearning_get_data_source(DataSourceId, Verbose = NULL)
 \arguments{
 \item{DataSourceId}{[required] The ID assigned to the \code{DataSource} at creation.}
 
-\item{Verbose}{Specifies whether the
-\code{\link[=machinelearning_get_data_source]{get_data_source}} operation should
-return \code{DataSourceSchema}.
+\item{Verbose}{Specifies whether the \code{\link[=machinelearning_get_data_source]{get_data_source}} operation should return \code{DataSourceSchema}.
 
 If true, \code{DataSourceSchema} is returned.
 

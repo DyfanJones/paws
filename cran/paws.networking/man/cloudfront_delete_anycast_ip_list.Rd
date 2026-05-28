@@ -9,8 +9,7 @@ cloudfront_delete_anycast_ip_list(Id, IfMatch)
 \arguments{
 \item{Id}{[required] The ID of the Anycast static IP list.}
 
-\item{IfMatch}{[required] The current version (\code{ETag} value) of the Anycast static IP list that
-you are deleting.}
+\item{IfMatch}{[required] The current version (\code{ETag} value) of the Anycast static IP list that you are deleting.}
 }
 \description{
 Deletes an Anycast static IP list.

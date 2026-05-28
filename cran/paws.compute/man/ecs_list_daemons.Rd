@@ -12,31 +12,15 @@ ecs_list_daemons(
 )
 }
 \arguments{
-\item{clusterArn}{The Amazon Resource Name (ARN) of the cluster to filter daemons by. If
-not specified, daemons from all clusters are returned.}
+\item{clusterArn}{The Amazon Resource Name (ARN) of the cluster to filter daemons by. If not specified, daemons from all clusters are returned.}
 
-\item{capacityProviderArns}{The Amazon Resource Names (ARNs) of the capacity providers to filter
-daemons by. Only daemons associated with the specified capacity
-providers are returned.}
+\item{capacityProviderArns}{The Amazon Resource Names (ARNs) of the capacity providers to filter daemons by. Only daemons associated with the specified capacity providers are returned.}
 
-\item{maxResults}{The maximum number of daemon results that
-\code{\link[=ecs_list_daemons]{list_daemons}} returned in paginated output. When
-this parameter is used, \code{\link[=ecs_list_daemons]{list_daemons}} only returns
-\code{maxResults} results in a single page along with a \code{nextToken} response
-element. The remaining results of the initial request can be seen by
-sending another \code{\link[=ecs_list_daemons]{list_daemons}} request with the
-returned \code{nextToken} value. This value can be between 1 and 100. If this
-parameter isn't used, then \code{\link[=ecs_list_daemons]{list_daemons}} returns up
-to 100 results and a \code{nextToken} value if applicable.}
+\item{maxResults}{The maximum number of daemon results that \code{\link[=ecs_list_daemons]{list_daemons}} returned in paginated output. When this parameter is used, \code{\link[=ecs_list_daemons]{list_daemons}} only returns \code{maxResults} results in a single page along with a \code{nextToken} response element. The remaining results of the initial request can be seen by sending another \code{\link[=ecs_list_daemons]{list_daemons}} request with the returned \code{nextToken} value. This value can be between 1 and 100. If this parameter isn't used, then \code{\link[=ecs_list_daemons]{list_daemons}} returns up to 100 results and a \code{nextToken} value if applicable.}
 
-\item{nextToken}{The \code{nextToken} value returned from a \code{\link[=ecs_list_daemons]{list_daemons}}
-request indicating that more results are available to fulfill the
-request and further calls will be needed. If \code{maxResults} was provided,
-it's possible for the number of results to be fewer than \code{maxResults}.
+\item{nextToken}{The \code{nextToken} value returned from a \code{\link[=ecs_list_daemons]{list_daemons}} request indicating that more results are available to fulfill the request and further calls will be needed. If \code{maxResults} was provided, it's possible for the number of results to be fewer than \code{maxResults}.
 
-This token should be treated as an opaque identifier that is only used
-to retrieve the next items in a list and not for other programmatic
-purposes.}
+This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.}
 }
 \description{
 Returns a list of daemons. You can filter the results by cluster or capacity provider.

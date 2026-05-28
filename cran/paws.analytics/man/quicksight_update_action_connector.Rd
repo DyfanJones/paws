@@ -15,15 +15,13 @@ quicksight_update_action_connector(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID that contains the action connector to
-update.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID that contains the action connector to update.}
 
 \item{ActionConnectorId}{[required] The unique identifier of the action connector to update.}
 
 \item{Name}{[required] The new name for the action connector.}
 
-\item{AuthenticationConfig}{[required] The updated authentication configuration for connecting to the external
-service.}
+\item{AuthenticationConfig}{[required] The updated authentication configuration for connecting to the external service.}
 
 \item{Description}{The updated description of the action connector.}
 

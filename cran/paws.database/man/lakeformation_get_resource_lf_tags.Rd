@@ -11,13 +11,9 @@ lakeformation_get_resource_lf_tags(
 )
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
-\item{Resource}{[required] The database, table, or column resource for which you want to return
-LF-tags.}
+\item{Resource}{[required] The database, table, or column resource for which you want to return LF-tags.}
 
 \item{ShowAssignedLFTags}{Indicates whether to show the assigned LF-tags.}
 }

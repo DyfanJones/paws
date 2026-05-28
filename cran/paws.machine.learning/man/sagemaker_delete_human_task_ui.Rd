@@ -8,8 +8,7 @@ template)}
 sagemaker_delete_human_task_ui(HumanTaskUiName)
 }
 \arguments{
-\item{HumanTaskUiName}{[required] The name of the human task user interface (work task template) you want
-to delete.}
+\item{HumanTaskUiName}{[required] The name of the human task user interface (work task template) you want to delete.}
 }
 \description{
 Use this operation to delete a human task user interface (worker task template).

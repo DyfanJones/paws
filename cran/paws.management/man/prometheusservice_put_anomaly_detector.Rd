@@ -16,23 +16,19 @@ prometheusservice_put_anomaly_detector(
 )
 }
 \arguments{
-\item{workspaceId}{[required] The identifier of the workspace containing the anomaly detector to
-update.}
+\item{workspaceId}{[required] The identifier of the workspace containing the anomaly detector to update.}
 
 \item{anomalyDetectorId}{[required] The identifier of the anomaly detector to update.}
 
-\item{evaluationIntervalInSeconds}{The frequency, in seconds, at which the anomaly detector evaluates
-metrics.}
+\item{evaluationIntervalInSeconds}{The frequency, in seconds, at which the anomaly detector evaluates metrics.}
 
 \item{missingDataAction}{Specifies the action to take when data is missing during evaluation.}
 
 \item{configuration}{[required] The algorithm configuration for the anomaly detector.}
 
-\item{labels}{The Amazon Managed Service for Prometheus metric labels to associate
-with the anomaly detector.}
+\item{labels}{The Amazon Managed Service for Prometheus metric labels to associate with the anomaly detector.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 When you call \code{\link[=prometheusservice_put_anomaly_detector]{put_anomaly_detector}}, the operation creates a new anomaly detector if one doesn't exist, or updates an existing one. Each call to this operation triggers a complete retraining of the detector, which includes querying the minimum required samples and backfilling the detector with historical data. This process occurs regardless of whether you're making a minor change like updating the evaluation interval or making more substantial modifications. The operation serves as the single method for creating, updating, and retraining anomaly detectors.

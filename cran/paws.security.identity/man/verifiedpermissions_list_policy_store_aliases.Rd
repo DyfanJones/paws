@@ -12,28 +12,13 @@ verifiedpermissions_list_policy_store_aliases(
 )
 }
 \arguments{
-\item{nextToken}{Specifies that you want to receive the next page of results. Valid only
-if you received a \code{NextToken} response in the previous request. If you
-did, it indicates that more output is available. Set this parameter to
-the value provided by the previous call's \code{NextToken} response to
-request the next page of results.}
+\item{nextToken}{Specifies that you want to receive the next page of results. Valid only if you received a \code{NextToken} response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's \code{NextToken} response to request the next page of results.}
 
-\item{maxResults}{Specifies the total number of results that you want included in each
-response. If additional items exist beyond the number you specify, the
-\code{NextToken} response element is returned with a value (not null).
-Include the specified value as the \code{NextToken} request parameter in the
-next call to the operation to get the next set of results. Note that the
-service might return fewer results than the maximum even when there are
-more results available. You should check \code{NextToken} after every
-operation to ensure that you receive all of the results.
+\item{maxResults}{Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the \code{NextToken} response element is returned with a value (not null). Include the specified value as the \code{NextToken} request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check \code{NextToken} after every operation to ensure that you receive all of the results.
 
-If you do not specify this parameter, the operation defaults to 5 policy
-store aliases per response. You can specify a maximum of 50 policy store
-aliases per response.}
+If you do not specify this parameter, the operation defaults to 5 policy store aliases per response. You can specify a maximum of 50 policy store aliases per response.}
 
-\item{filter}{Specifies a filter to narrow the results. You can filter by
-\code{policyStoreId} to list only the policy store aliases associated with a
-specific policy store.}
+\item{filter}{Specifies a filter to narrow the results. You can filter by \code{policyStoreId} to list only the policy store aliases associated with a specific policy store.}
 }
 \description{
 Returns a paginated list of all policy store aliases in the calling Amazon Web Services account.

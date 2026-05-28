@@ -9,8 +9,7 @@ bedrockagentcorecontrol_delete_browser(browserId, clientToken = NULL)
 \arguments{
 \item{browserId}{[required] The unique identifier of the browser to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Deletes a custom browser.

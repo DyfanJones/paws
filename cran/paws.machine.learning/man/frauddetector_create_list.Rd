@@ -15,12 +15,9 @@ frauddetector_create_list(
 \arguments{
 \item{name}{[required] The name of the list.}
 
-\item{elements}{The names of the elements, if providing. You can also create an empty
-list and add elements later using the
-\code{\link[=frauddetector_update_list]{update_list}} API.}
+\item{elements}{The names of the elements, if providing. You can also create an empty list and add elements later using the \code{\link[=frauddetector_update_list]{update_list}} API.}
 
-\item{variableType}{The variable type of the list. You can only assign the variable type
-with String data type. For more information, see \href{https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types}{Variable types}.}
+\item{variableType}{The variable type of the list. You can only assign the variable type with String data type. For more information, see \href{https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types}{Variable types}.}
 
 \item{description}{The description of the list.}
 

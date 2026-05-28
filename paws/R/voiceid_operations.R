@@ -7,16 +7,14 @@ NULL
 #' domain
 #'
 #' @description
-#' Associates the fraudsters with the watchlist specified in the same
-#' domain.
+#' Associates the fraudsters with the watchlist specified in the same domain.
 #'
 #' @usage
 #' voiceid_associate_fraudster(DomainId, FraudsterId, WatchlistId)
 #'
 #' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster.
 #' @param FraudsterId &#91;required&#93; The identifier of the fraudster to be associated with the watchlist.
-#' @param WatchlistId &#91;required&#93; The identifier of the watchlist you want to associate with the
-#' fraudster.
+#' @param WatchlistId &#91;required&#93; The identifier of the watchlist you want to associate with the fraudster.
 #'
 #' @return
 #' A list with the following syntax:
@@ -72,26 +70,16 @@ voiceid_associate_fraudster <- function(DomainId, FraudsterId, WatchlistId) {
 #' speakers, fraudsters, customer audio, and voiceprints
 #'
 #' @description
-#' Creates a domain that contains all Amazon Connect Voice ID data, such as
-#' speakers, fraudsters, customer audio, and voiceprints. Every domain is
-#' created with a default watchlist that fraudsters can be a part of.
+#' Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio, and voiceprints. Every domain is created with a default watchlist that fraudsters can be a part of.
 #'
 #' @usage
 #' voiceid_create_domain(ClientToken, Description, Name,
 #'   ServerSideEncryptionConfiguration, Tags)
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param Description A brief description of this domain.
 #' @param Name &#91;required&#93; The name of the domain.
-#' @param ServerSideEncryptionConfiguration &#91;required&#93; The configuration, containing the KMS key identifier, to be used by
-#' Voice ID for the server-side encryption of your data. Refer to [Amazon
-#' Connect Voice ID encryption at
-#' rest](https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid)
-#' for more details on how the KMS key is used.
+#' @param ServerSideEncryptionConfiguration &#91;required&#93; The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to [Amazon Connect Voice ID encryption at rest](https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid) for more details on how the KMS key is used.
 #' @param Tags A list of tags you want added to the domain.
 #'
 #' @return
@@ -175,11 +163,7 @@ voiceid_create_domain <- function(ClientToken = NULL, Description = NULL, Name, 
 #' @usage
 #' voiceid_create_watchlist(ClientToken, Description, DomainId, Name)
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param Description A brief description of this watchlist.
 #' @param DomainId &#91;required&#93; The identifier of the domain that contains the watchlist.
 #' @param Name &#91;required&#93; The name of the watchlist.
@@ -285,8 +269,7 @@ voiceid_delete_domain <- function(DomainId) {
 #' Deletes the specified fraudster from Voice ID
 #'
 #' @description
-#' Deletes the specified fraudster from Voice ID. This action disassociates
-#' the fraudster from any watchlists it is a part of.
+#' Deletes the specified fraudster from Voice ID. This action disassociates the fraudster from any watchlists it is a part of.
 #'
 #' @usage
 #' voiceid_delete_fraudster(DomainId, FraudsterId)
@@ -378,10 +361,7 @@ voiceid_delete_speaker <- function(DomainId, SpeakerId) {
 #' Deletes the specified watchlist from Voice ID
 #'
 #' @description
-#' Deletes the specified watchlist from Voice ID. This API throws an
-#' exception when there are fraudsters in the watchlist that you are trying
-#' to delete. You must delete the fraudsters, and then delete the
-#' watchlist. Every domain has a default watchlist which cannot be deleted.
+#' Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every domain has a default watchlist which cannot be deleted.
 #'
 #' @usage
 #' voiceid_delete_watchlist(DomainId, WatchlistId)
@@ -564,8 +544,7 @@ voiceid_describe_fraudster <- function(DomainId, FraudsterId) {
 #' @usage
 #' voiceid_describe_fraudster_registration_job(DomainId, JobId)
 #'
-#' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster registration
-#' job.
+#' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster registration job.
 #' @param JobId &#91;required&#93; The identifier of the fraudster registration job you are describing.
 #'
 #' @return
@@ -859,18 +838,14 @@ voiceid_describe_watchlist <- function(DomainId, WatchlistId) {
 #' Disassociates the fraudsters from the watchlist specified
 #'
 #' @description
-#' Disassociates the fraudsters from the watchlist specified. Voice ID
-#' always expects a fraudster to be a part of at least one watchlist. If
-#' you try to disassociate a fraudster from its only watchlist, a
-#' `ValidationException` is thrown.
+#' Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a `ValidationException` is thrown.
 #'
 #' @usage
 #' voiceid_disassociate_fraudster(DomainId, FraudsterId, WatchlistId)
 #'
 #' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster.
 #' @param FraudsterId &#91;required&#93; The identifier of the fraudster to be disassociated from the watchlist.
-#' @param WatchlistId &#91;required&#93; The identifier of the watchlist that you want to disassociate from the
-#' fraudster.
+#' @param WatchlistId &#91;required&#93; The identifier of the watchlist that you want to disassociate from the fraudster.
 #'
 #' @return
 #' A list with the following syntax:
@@ -926,15 +901,13 @@ voiceid_disassociate_fraudster <- function(DomainId, FraudsterId, WatchlistId) {
 #' streaming Amazon Connect Voice ID call
 #'
 #' @description
-#' Evaluates a specified session based on audio data accumulated during a
-#' streaming Amazon Connect Voice ID call.
+#' Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice ID call.
 #'
 #' @usage
 #' voiceid_evaluate_session(DomainId, SessionNameOrId)
 #'
 #' @param DomainId &#91;required&#93; The identifier of the domain where the session started.
-#' @param SessionNameOrId &#91;required&#93; The session identifier, or name of the session, that you want to
-#' evaluate. In Voice ID integration, this is the Contact-Id.
+#' @param SessionNameOrId &#91;required&#93; The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1029,13 +1002,8 @@ voiceid_evaluate_session <- function(DomainId, SessionNameOrId) {
 #' @usage
 #' voiceid_list_domains(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of results that are returned per call. You can use
-#' `NextToken` to obtain more pages of results. The default is 100; the
-#' maximum allowed page size is also 100.
-#' @param NextToken If `NextToken` is returned, there are more results available. The value
-#' of `NextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours.
+#' @param MaxResults The maximum number of results that are returned per call. You can use `NextToken` to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.
+#' @param NextToken If `NextToken` is returned, there are more results available. The value of `NextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1107,24 +1075,16 @@ voiceid_list_domains <- function(MaxResults = NULL, NextToken = NULL) {
 #' JobStatus
 #'
 #' @description
-#' Lists all the fraudster registration jobs in the domain with the given
-#' `JobStatus`. If `JobStatus` is not provided, this lists all fraudster
-#' registration jobs in the given domain.
+#' Lists all the fraudster registration jobs in the domain with the given `JobStatus`. If `JobStatus` is not provided, this lists all fraudster registration jobs in the given domain.
 #'
 #' @usage
 #' voiceid_list_fraudster_registration_jobs(DomainId, JobStatus,
 #'   MaxResults, NextToken)
 #'
-#' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster registration
-#' Jobs.
+#' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster registration Jobs.
 #' @param JobStatus Provides the status of your fraudster registration job.
-#' @param MaxResults The maximum number of results that are returned per call. You can use
-#' `NextToken` to obtain more pages of results. The default is 100; the
-#' maximum allowed page size is also 100.
-#' @param NextToken If `NextToken` is returned, there are more results available. The value
-#' of `NextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours.
+#' @param MaxResults The maximum number of results that are returned per call. You can use `NextToken` to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.
+#' @param NextToken If `NextToken` is returned, there are more results available. The value of `NextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1198,16 +1158,9 @@ voiceid_list_fraudster_registration_jobs <- function(DomainId, JobStatus = NULL,
 #' voiceid_list_fraudsters(DomainId, MaxResults, NextToken, WatchlistId)
 #'
 #' @param DomainId &#91;required&#93; The identifier of the domain.
-#' @param MaxResults The maximum number of results that are returned per call. You can use
-#' `NextToken` to obtain more pages of results. The default is 100; the
-#' maximum allowed page size is also 100.
-#' @param NextToken If `NextToken` is returned, there are more results available. The value
-#' of `NextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours.
-#' @param WatchlistId The identifier of the watchlist. If provided, all fraudsters in the
-#' watchlist are listed. If not provided, all fraudsters in the domain are
-#' listed.
+#' @param MaxResults The maximum number of results that are returned per call. You can use `NextToken` to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.
+#' @param NextToken If `NextToken` is returned, there are more results available. The value of `NextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+#' @param WatchlistId The identifier of the watchlist. If provided, all fraudsters in the watchlist are listed. If not provided, all fraudsters in the domain are listed.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1267,9 +1220,7 @@ voiceid_list_fraudsters <- function(DomainId, MaxResults = NULL, NextToken = NUL
 #' JobStatus
 #'
 #' @description
-#' Lists all the speaker enrollment jobs in the domain with the specified
-#' `JobStatus`. If `JobStatus` is not provided, this lists all jobs with
-#' all possible speaker enrollment job statuses.
+#' Lists all the speaker enrollment jobs in the domain with the specified `JobStatus`. If `JobStatus` is not provided, this lists all jobs with all possible speaker enrollment job statuses.
 #'
 #' @usage
 #' voiceid_list_speaker_enrollment_jobs(DomainId, JobStatus, MaxResults,
@@ -1277,13 +1228,8 @@ voiceid_list_fraudsters <- function(DomainId, MaxResults = NULL, NextToken = NUL
 #'
 #' @param DomainId &#91;required&#93; The identifier of the domain that contains the speaker enrollment jobs.
 #' @param JobStatus Provides the status of your speaker enrollment Job.
-#' @param MaxResults The maximum number of results that are returned per call. You can use
-#' `NextToken` to obtain more pages of results. The default is 100; the
-#' maximum allowed page size is also 100.
-#' @param NextToken If `NextToken` is returned, there are more results available. The value
-#' of `NextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours.
+#' @param MaxResults The maximum number of results that are returned per call. You can use `NextToken` to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.
+#' @param NextToken If `NextToken` is returned, there are more results available. The value of `NextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1357,13 +1303,8 @@ voiceid_list_speaker_enrollment_jobs <- function(DomainId, JobStatus = NULL, Max
 #' voiceid_list_speakers(DomainId, MaxResults, NextToken)
 #'
 #' @param DomainId &#91;required&#93; The identifier of the domain.
-#' @param MaxResults The maximum number of results that are returned per call. You can use
-#' `NextToken` to obtain more pages of results. The default is 100; the
-#' maximum allowed page size is also 100.
-#' @param NextToken If `NextToken` is returned, there are more results available. The value
-#' of `NextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours.
+#' @param MaxResults The maximum number of results that are returned per call. You can use `NextToken` to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.
+#' @param NextToken If `NextToken` is returned, there are more results available. The value of `NextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1431,8 +1372,7 @@ voiceid_list_speakers <- function(DomainId, MaxResults = NULL, NextToken = NULL)
 #' @usage
 #' voiceid_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Voice ID resource for which you
-#' want to list the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1487,13 +1427,8 @@ voiceid_list_tags_for_resource <- function(ResourceArn) {
 #' voiceid_list_watchlists(DomainId, MaxResults, NextToken)
 #'
 #' @param DomainId &#91;required&#93; The identifier of the domain.
-#' @param MaxResults The maximum number of results that are returned per call. You can use
-#' `NextToken` to obtain more pages of results. The default is 100; the
-#' maximum allowed page size is also 100.
-#' @param NextToken If `NextToken` is returned, there are more results available. The value
-#' of `NextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours.
+#' @param MaxResults The maximum number of results that are returned per call. You can use `NextToken` to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.
+#' @param NextToken If `NextToken` is returned, there are more results available. The value of `NextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1554,13 +1489,7 @@ voiceid_list_watchlists <- function(DomainId, MaxResults = NULL, NextToken = NUL
 #' Opts out a speaker from Voice ID
 #'
 #' @description
-#' Opts out a speaker from Voice ID. A speaker can be opted out regardless
-#' of whether or not they already exist in Voice ID. If they don't yet
-#' exist, a new speaker is created in an opted out state. If they already
-#' exist, their existing status is overridden and they are opted out.
-#' Enrollment and evaluation authentication requests are rejected for opted
-#' out speakers, and opted out speakers have no voice embeddings stored in
-#' Voice ID.
+#' Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.
 #'
 #' @usage
 #' voiceid_opt_out_speaker(DomainId, SpeakerId)
@@ -1632,27 +1561,13 @@ voiceid_opt_out_speaker <- function(DomainId, SpeakerId) {
 #'   DomainId, InputDataConfig, JobName, OutputDataConfig,
 #'   RegistrationConfig)
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
-#' @param DataAccessRoleArn &#91;required&#93; The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions
-#' to access customer's buckets to read the input manifest file and write
-#' the Job output file. Refer to the [Create and edit a fraudster
-#' watchlist](https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html)
-#' documentation for the permissions needed in this role.
-#' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster registration
-#' job and in which the fraudsters are registered.
-#' @param InputDataConfig &#91;required&#93; The input data config containing an S3 URI for the input manifest file
-#' that contains the list of fraudster registration requests.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param DataAccessRoleArn &#91;required&#93; The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the [Create and edit a fraudster watchlist](https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html) documentation for the permissions needed in this role.
+#' @param DomainId &#91;required&#93; The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.
+#' @param InputDataConfig &#91;required&#93; The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.
 #' @param JobName The name of the new fraudster registration job.
-#' @param OutputDataConfig &#91;required&#93; The output data config containing the S3 location where Voice ID writes
-#' the job output file; you must also include a KMS key ID to encrypt the
-#' file.
-#' @param RegistrationConfig The registration config containing details such as the action to take
-#' when a duplicate fraudster is detected, and the similarity threshold to
-#' use for detecting a duplicate fraudster.
+#' @param OutputDataConfig &#91;required&#93; The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.
+#' @param RegistrationConfig The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1752,28 +1667,13 @@ voiceid_start_fraudster_registration_job <- function(ClientToken = NULL, DataAcc
 #' voiceid_start_speaker_enrollment_job(ClientToken, DataAccessRoleArn,
 #'   DomainId, EnrollmentConfig, InputDataConfig, JobName, OutputDataConfig)
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
-#' @param DataAccessRoleArn &#91;required&#93; The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions
-#' to access customer's buckets to read the input manifest file and write
-#' the job output file. Refer to [Batch enrollment using audio data from
-#' prior
-#' calls](https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html)
-#' for the permissions needed in this role.
-#' @param DomainId &#91;required&#93; The identifier of the domain that contains the speaker enrollment job
-#' and in which the speakers are enrolled.
-#' @param EnrollmentConfig The enrollment config that contains details such as the action to take
-#' when a speaker is already enrolled in Voice ID or when a speaker is
-#' identified as a fraudster.
-#' @param InputDataConfig &#91;required&#93; The input data config containing the S3 location for the input manifest
-#' file that contains the list of speaker enrollment requests.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param DataAccessRoleArn &#91;required&#93; The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to [Batch enrollment using audio data from prior calls](https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html) for the permissions needed in this role.
+#' @param DomainId &#91;required&#93; The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.
+#' @param EnrollmentConfig The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.
+#' @param InputDataConfig &#91;required&#93; The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.
 #' @param JobName A name for your speaker enrollment job.
-#' @param OutputDataConfig &#91;required&#93; The output data config containing the S3 location where Voice ID writes
-#' the job output file; you must also include a KMS key ID to encrypt the
-#' file.
+#' @param OutputDataConfig &#91;required&#93; The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1924,14 +1824,12 @@ voiceid_tag_resource <- function(ResourceArn, Tags) {
 #' Removes specified tags from a specified Amazon Connect Voice ID resource
 #'
 #' @description
-#' Removes specified tags from a specified Amazon Connect Voice ID
-#' resource.
+#' Removes specified tags from a specified Amazon Connect Voice ID resource.
 #'
 #' @usage
 #' voiceid_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Voice ID resource you want to
-#' remove tags from.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.
 #' @param TagKeys &#91;required&#93; The list of tag keys you want to remove from the specified resource.
 #'
 #' @return
@@ -1974,9 +1872,7 @@ voiceid_untag_resource <- function(ResourceArn, TagKeys) {
 #' Updates the specified domain
 #'
 #' @description
-#' Updates the specified domain. This API has clobber behavior, and clears
-#' and replaces all attributes. If an optional field, such as 'Description'
-#' is not provided, it is removed from the domain.
+#' Updates the specified domain. This API has clobber behavior, and clears and replaces all attributes. If an optional field, such as 'Description' is not provided, it is removed from the domain.
 #'
 #' @usage
 #' voiceid_update_domain(Description, DomainId, Name,
@@ -1985,13 +1881,7 @@ voiceid_untag_resource <- function(ResourceArn, TagKeys) {
 #' @param Description A brief description about this domain.
 #' @param DomainId &#91;required&#93; The identifier of the domain to be updated.
 #' @param Name &#91;required&#93; The name of the domain.
-#' @param ServerSideEncryptionConfiguration &#91;required&#93; The configuration, containing the KMS key identifier, to be used by
-#' Voice ID for the server-side encryption of your data. Changing the
-#' domain's associated KMS key immediately triggers an asynchronous process
-#' to remove dependency on the old KMS key, such that the domain's data can
-#' only be accessed using the new KMS key. The domain's
-#' `ServerSideEncryptionUpdateDetails` contains the details for this
-#' process.
+#' @param ServerSideEncryptionConfiguration &#91;required&#93; The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's `ServerSideEncryptionUpdateDetails` contains the details for this process.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2063,8 +1953,7 @@ voiceid_update_domain <- function(Description = NULL, DomainId, Name, ServerSide
 #' Updates the specified watchlist
 #'
 #' @description
-#' Updates the specified watchlist. Every domain has a default watchlist
-#' which cannot be updated.
+#' Updates the specified watchlist. Every domain has a default watchlist which cannot be updated.
 #'
 #' @usage
 #' voiceid_update_watchlist(Description, DomainId, Name, WatchlistId)

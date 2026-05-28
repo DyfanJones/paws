@@ -13,11 +13,11 @@ cloudwatchlogs_list_sources_for_s3_table_integration(
 )
 }
 \arguments{
-\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the S3 Table Integration to list
-associations for.}
+\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the S3 Table Integration to list associations for.}
 
-\item{maxResults}{The maximum number of associations to return in a single call. Valid
-range is 1 to 100.}
+\item{maxResults}{The maximum number of associations to return in a single call. Valid range is 1 to 100.}
+
+\item{nextToken}{The token for the next set of items to return. The token expires after 24 hours.}
 }
 \description{
 Returns a list of data source associations for a specified S3 Table Integration, showing which data sources are currently associated for query access.

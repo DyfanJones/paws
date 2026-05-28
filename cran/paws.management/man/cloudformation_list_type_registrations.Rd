@@ -30,13 +30,9 @@ Conditional: You must specify either \code{TypeName} and \code{Type}, or \code{A
 
 The default is \code{IN_PROGRESS}.}
 
-\item{MaxResults}{The maximum number of results to be returned with a single call. If the
-number of available results exceeds this maximum, the response includes
-a \code{NextToken} value that you can assign to the \code{NextToken} request
-parameter to get the next set of results.}
+\item{MaxResults}{The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a \code{NextToken} value that you can assign to the \code{NextToken} request parameter to get the next set of results.}
 
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 }
 \description{
 Returns a list of registration tokens for the specified extension(s).

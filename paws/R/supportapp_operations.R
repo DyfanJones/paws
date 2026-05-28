@@ -7,47 +7,28 @@ NULL
 #' account
 #'
 #' @description
-#' Creates a Slack channel configuration for your Amazon Web Services
-#' account.
+#' Creates a Slack channel configuration for your Amazon Web Services account.
 #' 
 #' -   You can add up to 5 Slack workspaces for your account.
 #' 
 #' -   You can add up to 20 Slack channels for your account.
 #' 
-#' A Slack channel can have up to 100 Amazon Web Services accounts. This
-#' means that only 100 accounts can add the same Slack channel to the
-#' Amazon Web Services Support App. We recommend that you only add the
-#' accounts that you need to manage support cases for your organization.
-#' This can reduce the notifications about case updates that you receive in
-#' the Slack channel.
+#' A Slack channel can have up to 100 Amazon Web Services accounts. This means that only 100 accounts can add the same Slack channel to the Amazon Web Services Support App. We recommend that you only add the accounts that you need to manage support cases for your organization. This can reduce the notifications about case updates that you receive in the Slack channel.
 #' 
-#' We recommend that you choose a private Slack channel so that only
-#' members in that channel have read and write access to your support
-#' cases. Anyone in your Slack channel can create, update, or resolve
-#' support cases for your account. Users require an invitation to join
-#' private channels.
+#' We recommend that you choose a private Slack channel so that only members in that channel have read and write access to your support cases. Anyone in your Slack channel can create, update, or resolve support cases for your account. Users require an invitation to join private channels.
 #'
 #' @usage
 #' supportapp_create_slack_channel_configuration(channelId, channelName,
 #'   channelRoleArn, notifyOnAddCorrespondenceToCase, notifyOnCaseSeverity,
 #'   notifyOnCreateOrReopenCase, notifyOnResolveCase, teamId)
 #'
-#' @param channelId &#91;required&#93; The channel ID in Slack. This ID identifies a channel within a Slack
-#' workspace.
-#' @param channelName The name of the Slack channel that you configure for the Amazon Web
-#' Services Support App.
-#' @param channelRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that you want to use to
-#' perform operations on Amazon Web Services. For more information, see
-#' [Managing access to the Amazon Web Services Support
-#' App](https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html)
-#' in the *Amazon Web Services Support User Guide*.
-#' @param notifyOnAddCorrespondenceToCase Whether you want to get notified when a support case has a new
-#' correspondence.
-#' @param notifyOnCaseSeverity &#91;required&#93; The case severity for a support case that you want to receive
-#' notifications.
+#' @param channelId &#91;required&#93; The channel ID in Slack. This ID identifies a channel within a Slack workspace.
+#' @param channelName The name of the Slack channel that you configure for the Amazon Web Services Support App.
+#' @param channelRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see [Managing access to the Amazon Web Services Support App](https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html) in the *Amazon Web Services Support User Guide*.
+#' @param notifyOnAddCorrespondenceToCase Whether you want to get notified when a support case has a new correspondence.
+#' @param notifyOnCaseSeverity &#91;required&#93; The case severity for a support case that you want to receive notifications.
 #' 
-#' If you specify `high` or `all`, you must specify `true` for at least one
-#' of the following parameters:
+#' If you specify `high` or `all`, you must specify `true` for at least one of the following parameters:
 #' 
 #' -   `notifyOnAddCorrespondenceToCase`
 #' 
@@ -63,13 +44,10 @@ NULL
 #' 
 #' -   `notifyOnResolveCase`
 #' 
-#' If you don't specify these parameters in your request, they default to
-#' `false`.
-#' @param notifyOnCreateOrReopenCase Whether you want to get notified when a support case is created or
-#' reopened.
+#' If you don't specify these parameters in your request, they default to `false`.
+#' @param notifyOnCreateOrReopenCase Whether you want to get notified when a support case is created or reopened.
 #' @param notifyOnResolveCase Whether you want to get notified when a support case is resolved.
-#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace,
-#' such as `T012ABCDEFG`.
+#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace, such as `T012ABCDEFG`.
 #'
 #' @return
 #' An empty list.
@@ -115,10 +93,7 @@ supportapp_create_slack_channel_configuration <- function(channelId, channelName
 #' Deletes an alias for an Amazon Web Services account ID
 #'
 #' @description
-#' Deletes an alias for an Amazon Web Services account ID. The alias
-#' appears in the Amazon Web Services Support App page of the Amazon Web
-#' Services Support Center. The alias also appears in Slack messages from
-#' the Amazon Web Services Support App.
+#' Deletes an alias for an Amazon Web Services account ID. The alias appears in the Amazon Web Services Support App page of the Amazon Web Services Support Center. The alias also appears in Slack messages from the Amazon Web Services Support App.
 #'
 #' @usage
 #' supportapp_delete_account_alias()
@@ -161,16 +136,13 @@ supportapp_delete_account_alias <- function() {
 #' account
 #'
 #' @description
-#' Deletes a Slack channel configuration from your Amazon Web Services
-#' account. This operation doesn't delete your Slack channel.
+#' Deletes a Slack channel configuration from your Amazon Web Services account. This operation doesn't delete your Slack channel.
 #'
 #' @usage
 #' supportapp_delete_slack_channel_configuration(channelId, teamId)
 #'
-#' @param channelId &#91;required&#93; The channel ID in Slack. This ID identifies a channel within a Slack
-#' workspace.
-#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace,
-#' such as `T012ABCDEFG`.
+#' @param channelId &#91;required&#93; The channel ID in Slack. This ID identifies a channel within a Slack workspace.
+#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace, such as `T012ABCDEFG`.
 #'
 #' @return
 #' An empty list.
@@ -211,14 +183,12 @@ supportapp_delete_slack_channel_configuration <- function(channelId, teamId) {
 #' account
 #'
 #' @description
-#' Deletes a Slack workspace configuration from your Amazon Web Services
-#' account. This operation doesn't delete your Slack workspace.
+#' Deletes a Slack workspace configuration from your Amazon Web Services account. This operation doesn't delete your Slack workspace.
 #'
 #' @usage
 #' supportapp_delete_slack_workspace_configuration(teamId)
 #'
-#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace,
-#' such as `T012ABCDEFG`.
+#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace, such as `T012ABCDEFG`.
 #'
 #' @return
 #' An empty list.
@@ -257,10 +227,7 @@ supportapp_delete_slack_workspace_configuration <- function(teamId) {
 #' Retrieves the alias from an Amazon Web Services account ID
 #'
 #' @description
-#' Retrieves the alias from an Amazon Web Services account ID. The alias
-#' appears in the Amazon Web Services Support App page of the Amazon Web
-#' Services Support Center. The alias also appears in Slack messages from
-#' the Amazon Web Services Support App.
+#' Retrieves the alias from an Amazon Web Services account ID. The alias appears in the Amazon Web Services Support App page of the Amazon Web Services Support Center. The alias also appears in Slack messages from the Amazon Web Services Support App.
 #'
 #' @usage
 #' supportapp_get_account_alias()
@@ -308,17 +275,12 @@ supportapp_get_account_alias <- function() {
 #' account
 #'
 #' @description
-#' Lists the Slack channel configurations for an Amazon Web Services
-#' account.
+#' Lists the Slack channel configurations for an Amazon Web Services account.
 #'
 #' @usage
 #' supportapp_list_slack_channel_configurations(nextToken)
 #'
-#' @param nextToken If the results of a search are large, the API only returns a portion of
-#' the results and includes a `nextToken` pagination token in the response.
-#' To retrieve the next batch of results, reissue the search request and
-#' include the returned token. When the API returns the last set of
-#' results, the response doesn't include a pagination token value.
+#' @param nextToken If the results of a search are large, the API only returns a portion of the results and includes a `nextToken` pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -375,17 +337,12 @@ supportapp_list_slack_channel_configurations <- function(nextToken = NULL) {
 #' account
 #'
 #' @description
-#' Lists the Slack workspace configurations for an Amazon Web Services
-#' account.
+#' Lists the Slack workspace configurations for an Amazon Web Services account.
 #'
 #' @usage
 #' supportapp_list_slack_workspace_configurations(nextToken)
 #'
-#' @param nextToken If the results of a search are large, the API only returns a portion of
-#' the results and includes a `nextToken` pagination token in the response.
-#' To retrieve the next batch of results, reissue the search request and
-#' include the returned token. When the API returns the last set of
-#' results, the response doesn't include a pagination token value.
+#' @param nextToken If the results of a search are large, the API only returns a portion of the results and includes a `nextToken` pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -437,10 +394,7 @@ supportapp_list_slack_workspace_configurations <- function(nextToken = NULL) {
 #' account ID
 #'
 #' @description
-#' Creates or updates an individual alias for each Amazon Web Services
-#' account ID. The alias appears in the Amazon Web Services Support App
-#' page of the Amazon Web Services Support Center. The alias also appears
-#' in Slack messages from the Amazon Web Services Support App.
+#' Creates or updates an individual alias for each Amazon Web Services account ID. The alias appears in the Amazon Web Services Support App page of the Amazon Web Services Support Center. The alias also appears in Slack messages from the Amazon Web Services Support App.
 #'
 #' @usage
 #' supportapp_put_account_alias(accountAlias)
@@ -484,47 +438,26 @@ supportapp_put_account_alias <- function(accountAlias) {
 #' Registers a Slack workspace for your Amazon Web Services account
 #'
 #' @description
-#' Registers a Slack workspace for your Amazon Web Services account. To
-#' call this API, your account must be part of an organization in
-#' Organizations.
+#' Registers a Slack workspace for your Amazon Web Services account. To call this API, your account must be part of an organization in Organizations.
 #' 
-#' If you're the *management account* and you want to register Slack
-#' workspaces for your organization, you must complete the following tasks:
+#' If you're the *management account* and you want to register Slack workspaces for your organization, you must complete the following tasks:
 #' 
-#' 1.  Sign in to the Amazon Web Services Support Center and authorize the
-#'     Slack workspaces where you want your organization to have access to.
-#'     See [Authorize a Slack
-#'     workspace](https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html)
-#'     in the *Amazon Web Services Support User Guide*.
+#' 1.  Sign in to the Amazon Web Services Support Center and authorize the Slack workspaces where you want your organization to have access to. See [Authorize a Slack workspace](https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html) in the *Amazon Web Services Support User Guide*.
 #' 
-#' 2.  Call the
-#'     [`register_slack_workspace_for_organization`][supportapp_register_slack_workspace_for_organization]
-#'     API to authorize each Slack workspace for the organization.
+#' 2.  Call the [`register_slack_workspace_for_organization`][supportapp_register_slack_workspace_for_organization] API to authorize each Slack workspace for the organization.
 #' 
-#' After the management account authorizes the Slack workspace, member
-#' accounts can call this API to authorize the same Slack workspace for
-#' their individual accounts. Member accounts don't need to authorize the
-#' Slack workspace manually through the Amazon Web Services Support Center.
+#' After the management account authorizes the Slack workspace, member accounts can call this API to authorize the same Slack workspace for their individual accounts. Member accounts don't need to authorize the Slack workspace manually through the Amazon Web Services Support Center.
 #' 
-#' To use the Amazon Web Services Support App, each account must then
-#' complete the following tasks:
+#' To use the Amazon Web Services Support App, each account must then complete the following tasks:
 #' 
-#' -   Create an Identity and Access Management (IAM) role with the
-#'     required permission. For more information, see [Managing access to
-#'     the Amazon Web Services Support
-#'     App](https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html).
+#' -   Create an Identity and Access Management (IAM) role with the required permission. For more information, see [Managing access to the Amazon Web Services Support App](https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html).
 #' 
-#' -   Configure a Slack channel to use the Amazon Web Services Support App
-#'     for support cases for that account. For more information, see
-#'     [Configuring a Slack
-#'     channel](https://docs.aws.amazon.com/awssupport/latest/user/add-your-slack-channel.html).
+#' -   Configure a Slack channel to use the Amazon Web Services Support App for support cases for that account. For more information, see [Configuring a Slack channel](https://docs.aws.amazon.com/awssupport/latest/user/add-your-slack-channel.html).
 #'
 #' @usage
 #' supportapp_register_slack_workspace_for_organization(teamId)
 #'
-#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace,
-#' such as `T012ABCDEFG`. Specify the Slack workspace that you want to use
-#' for your organization.
+#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace, such as `T012ABCDEFG`. Specify the Slack workspace that you want to use for your organization.
 #'
 #' @return
 #' A list with the following syntax:
@@ -571,29 +504,20 @@ supportapp_register_slack_workspace_for_organization <- function(teamId) {
 #' notifications
 #'
 #' @description
-#' Updates the configuration for a Slack channel, such as case update
-#' notifications.
+#' Updates the configuration for a Slack channel, such as case update notifications.
 #'
 #' @usage
 #' supportapp_update_slack_channel_configuration(channelId, channelName,
 #'   channelRoleArn, notifyOnAddCorrespondenceToCase, notifyOnCaseSeverity,
 #'   notifyOnCreateOrReopenCase, notifyOnResolveCase, teamId)
 #'
-#' @param channelId &#91;required&#93; The channel ID in Slack. This ID identifies a channel within a Slack
-#' workspace.
+#' @param channelId &#91;required&#93; The channel ID in Slack. This ID identifies a channel within a Slack workspace.
 #' @param channelName The Slack channel name that you want to update.
-#' @param channelRoleArn The Amazon Resource Name (ARN) of an IAM role that you want to use to
-#' perform operations on Amazon Web Services. For more information, see
-#' [Managing access to the Amazon Web Services Support
-#' App](https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html)
-#' in the *Amazon Web Services Support User Guide*.
-#' @param notifyOnAddCorrespondenceToCase Whether you want to get notified when a support case has a new
-#' correspondence.
-#' @param notifyOnCaseSeverity The case severity for a support case that you want to receive
-#' notifications.
+#' @param channelRoleArn The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see [Managing access to the Amazon Web Services Support App](https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html) in the *Amazon Web Services Support User Guide*.
+#' @param notifyOnAddCorrespondenceToCase Whether you want to get notified when a support case has a new correspondence.
+#' @param notifyOnCaseSeverity The case severity for a support case that you want to receive notifications.
 #' 
-#' If you specify `high` or `all`, at least one of the following parameters
-#' must be `true`:
+#' If you specify `high` or `all`, at least one of the following parameters must be `true`:
 #' 
 #' -   `notifyOnAddCorrespondenceToCase`
 #' 
@@ -601,8 +525,7 @@ supportapp_register_slack_workspace_for_organization <- function(teamId) {
 #' 
 #' -   `notifyOnResolveCase`
 #' 
-#' If you specify `none`, any of the following parameters that you specify
-#' in your request must be `false`:
+#' If you specify `none`, any of the following parameters that you specify in your request must be `false`:
 #' 
 #' -   `notifyOnAddCorrespondenceToCase`
 #' 
@@ -610,13 +533,10 @@ supportapp_register_slack_workspace_for_organization <- function(teamId) {
 #' 
 #' -   `notifyOnResolveCase`
 #' 
-#' If you don't specify these parameters in your request, the Amazon Web
-#' Services Support App uses the current values by default.
-#' @param notifyOnCreateOrReopenCase Whether you want to get notified when a support case is created or
-#' reopened.
+#' If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.
+#' @param notifyOnCreateOrReopenCase Whether you want to get notified when a support case is created or reopened.
 #' @param notifyOnResolveCase Whether you want to get notified when a support case is resolved.
-#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace,
-#' such as `T012ABCDEFG`.
+#' @param teamId &#91;required&#93; The team ID in Slack. This ID uniquely identifies a Slack workspace, such as `T012ABCDEFG`.
 #'
 #' @return
 #' A list with the following syntax:

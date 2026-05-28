@@ -7,11 +7,9 @@
 docdb_remove_from_global_cluster(GlobalClusterIdentifier, DbClusterIdentifier)
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The cluster identifier to detach from the Amazon DocumentDB global
-cluster.}
+\item{GlobalClusterIdentifier}{[required] The cluster identifier to detach from the Amazon DocumentDB global cluster.}
 
-\item{DbClusterIdentifier}{[required] The Amazon Resource Name (ARN) identifying the cluster that was detached
-from the Amazon DocumentDB global cluster.}
+\item{DbClusterIdentifier}{[required] The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster.}
 }
 \description{
 Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary in a different region.

@@ -7,8 +7,7 @@
 transcribeservice_get_medical_transcription_job(MedicalTranscriptionJobName)
 }
 \arguments{
-\item{MedicalTranscriptionJobName}{[required] The name of the medical transcription job you want information about.
-Job names are case sensitive.}
+\item{MedicalTranscriptionJobName}{[required] The name of the medical transcription job you want information about. Job names are case sensitive.}
 }
 \description{
 Provides information about the specified medical transcription job.

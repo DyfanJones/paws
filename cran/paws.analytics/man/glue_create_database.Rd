@@ -7,8 +7,7 @@
 glue_create_database(CatalogId = NULL, DatabaseInput, Tags = NULL)
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which to create the database. If none is
-provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseInput}{[required] The metadata for the database.}
 

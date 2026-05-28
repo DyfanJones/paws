@@ -11,13 +11,11 @@ quicksight_list_custom_permissions(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the custom
-permissions profiles that you want to list.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the custom permissions profiles that you want to list.}
 
 \item{MaxResults}{The maximum number of results to return.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 }
 \description{
 Returns a list of all the custom permissions profiles.

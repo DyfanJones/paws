@@ -7,8 +7,7 @@
 glue_delete_registry(RegistryId)
 }
 \arguments{
-\item{RegistryId}{[required] This is a wrapper structure that may contain the registry name and
-Amazon Resource Name (ARN).}
+\item{RegistryId}{[required] This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).}
 }
 \description{
 Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the \code{\link[=glue_get_registry]{get_registry}} API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the \code{\link[=glue_update_registry]{update_registry}}, \code{\link[=glue_create_schema]{create_schema}}, \code{\link[=glue_update_schema]{update_schema}}, and \code{\link[=glue_register_schema_version]{register_schema_version}} APIs.

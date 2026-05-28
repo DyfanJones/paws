@@ -53,9 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Contains all data plane API operations and data types for Amazon
-SageMaker Metrics. Use these APIs to put and retrieve (get) features
-related to your training run.
+Contains all data plane API operations and data types for Amazon SageMaker Metrics. Use these APIs to put and retrieve (get) features related to your training run.
 \itemize{
 \item \code{batch_put_metrics}
 }

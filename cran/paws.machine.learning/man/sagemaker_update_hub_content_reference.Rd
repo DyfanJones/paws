@@ -12,20 +12,13 @@ sagemaker_update_hub_content_reference(
 )
 }
 \arguments{
-\item{HubName}{[required] The name of the SageMaker hub that contains the hub content you want to
-update. You can optionally use the hub ARN instead.}
+\item{HubName}{[required] The name of the SageMaker hub that contains the hub content you want to update. You can optionally use the hub ARN instead.}
 
 \item{HubContentName}{[required] The name of the hub content resource that you want to update.}
 
-\item{HubContentType}{[required] The content type of the resource that you want to update. Only specify a
-\code{ModelReference} resource for this API. To update a \code{Model} or
-\code{Notebook} resource, use the
-\code{\link[=sagemaker_update_hub_content]{update_hub_content}} API instead.}
+\item{HubContentType}{[required] The content type of the resource that you want to update. Only specify a \code{ModelReference} resource for this API. To update a \code{Model} or \code{Notebook} resource, use the \code{\link[=sagemaker_update_hub_content]{update_hub_content}} API instead.}
 
-\item{MinVersion}{The minimum hub content version of the referenced model that you want to
-use. The minimum version must be older than the latest available version
-of the referenced model. To support all versions of a model, set the
-value to \verb{1.0.0}.}
+\item{MinVersion}{The minimum hub content version of the referenced model that you want to use. The minimum version must be older than the latest available version of the referenced model. To support all versions of a model, set the value to \verb{1.0.0}.}
 }
 \description{
 Updates the contents of a SageMaker hub for a \code{ModelReference} resource. A \code{ModelReference} allows you to access public SageMaker JumpStart models from within your private hub.

@@ -14,32 +14,19 @@ pricing_list_price_lists(
 )
 }
 \arguments{
-\item{ServiceCode}{[required] The service code or the Savings Plans service code for the attributes
-that you want to retrieve. For example, to get the list of applicable
-Amazon EC2 price lists, use \code{AmazonEC2}. For a full list of service
-codes containing On-Demand and Reserved Instance (RI) pricing, use the
-\code{\link[=pricing_describe_services]{describe_services}} API.
+\item{ServiceCode}{[required] The service code or the Savings Plans service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use \code{AmazonEC2}. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the \code{\link[=pricing_describe_services]{describe_services}} API.
 
-To retrieve the Reserved Instance and Compute Savings Plans price lists,
-use \code{ComputeSavingsPlans}.
+To retrieve the Reserved Instance and Compute Savings Plans price lists, use \code{ComputeSavingsPlans}.
 
-To retrieve Machine Learning Savings Plans price lists, use
-\code{MachineLearningSavingsPlans}.}
+To retrieve Machine Learning Savings Plans price lists, use \code{MachineLearningSavingsPlans}.}
 
 \item{EffectiveDate}{[required] The date that the Price List file prices are effective from.}
 
-\item{RegionCode}{This is used to filter the Price List by Amazon Web Services Region. For
-example, to get the price list only for the \verb{US East (N. Virginia)}
-Region, use \code{us-east-1}. If nothing is specified, you retrieve price
-lists for all applicable Regions. The available \code{RegionCode} list can be
-retrieved from \code{\link[=pricing_get_attribute_values]{get_attribute_values}}
-API.}
+\item{RegionCode}{This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the \verb{US East (N. Virginia)} Region, use \code{us-east-1}. If nothing is specified, you retrieve price lists for all applicable Regions. The available \code{RegionCode} list can be retrieved from \code{\link[=pricing_get_attribute_values]{get_attribute_values}} API.}
 
-\item{CurrencyCode}{[required] The three alphabetical character ISO-4217 currency code that the Price
-List files are denominated in.}
+\item{CurrencyCode}{[required] The three alphabetical character ISO-4217 currency code that the Price List files are denominated in.}
 
-\item{NextToken}{The pagination token that indicates the next set of results that you
-want to retrieve.}
+\item{NextToken}{The pagination token that indicates the next set of results that you want to retrieve.}
 
 \item{MaxResults}{The maximum number of results to return in the response.}
 }

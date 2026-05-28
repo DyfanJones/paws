@@ -2,7 +2,7 @@
 % Please edit documentation in R/bedrockagentcore_operations.R
 \name{bedrockagentcore_delete_payment_instrument}
 \alias{bedrockagentcore_delete_payment_instrument}
-\title{Delete a payment instrument}
+\title{Deletes a payment instrument}
 \usage{
 bedrockagentcore_delete_payment_instrument(
   userId = NULL,
@@ -12,18 +12,16 @@ bedrockagentcore_delete_payment_instrument(
 )
 }
 \arguments{
-\item{userId}{The user ID making the delete request. Must match the instrument's
-userId.}
+\item{userId}{The user ID making the delete request. Must match the instrument's userId.}
 
 \item{paymentManagerArn}{[required] The payment manager ARN. Must match the instrument's paymentManagerArn.}
 
-\item{paymentConnectorId}{[required] The payment connector ID. Must match the instrument's
-paymentConnectorId.}
+\item{paymentConnectorId}{[required] The payment connector ID. Must match the instrument's paymentConnectorId.}
 
 \item{paymentInstrumentId}{[required] The payment instrument ID to delete.}
 }
 \description{
-Delete a payment instrument
+Deletes a payment instrument. This is a soft delete operation that preserves the record for audit and compliance purposes.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_delete_payment_instrument/} for full documentation.
 }

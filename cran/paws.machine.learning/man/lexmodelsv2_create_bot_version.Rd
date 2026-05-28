@@ -13,13 +13,9 @@ lexmodelsv2_create_bot_version(
 \arguments{
 \item{botId}{[required] The identifier of the bot to create the version for.}
 
-\item{description}{A description of the version. Use the description to help identify the
-version in lists.}
+\item{description}{A description of the version. Use the description to help identify the version in lists.}
 
-\item{botVersionLocaleSpecification}{[required] Specifies the locales that Amazon Lex adds to this version. You can
-choose the \code{Draft} version or any other previously published version for
-each locale. When you specify a source version, the locale data is
-copied from the source version to the new version.}
+\item{botVersionLocaleSpecification}{[required] Specifies the locales that Amazon Lex adds to this version. You can choose the \code{Draft} version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.}
 }
 \description{
 Creates an immutable version of the bot. When you create the first version of a bot, Amazon Lex sets the version number to 1. Subsequent bot versions increase in an increment of 1. The version number will always represent the total number of versions created of the bot, not the current number of versions. If a bot version is deleted, that bot version number will not be reused.

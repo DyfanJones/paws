@@ -50,13 +50,9 @@ Operations section.
 \description{
 Amazon SES API v2
 
-\href{https://aws.amazon.com/ses/}{Amazon SES} is an Amazon Web Services
-service that you can use to send email messages to your customers.
+\href{https://aws.amazon.com/ses/}{Amazon SES} is an Amazon Web Services service that you can use to send email messages to your customers.
 
-If you're new to Amazon SES API v2, you might find it helpful to review
-the \href{https://docs.aws.amazon.com/ses/latest/dg/Welcome.html}{Amazon Simple Email Service Developer Guide}. The
-\emph{Amazon SES Developer Guide} provides information and code samples that
-demonstrate how to use Amazon SES API v2 features programmatically.
+If you're new to Amazon SES API v2, you might find it helpful to review the \href{https://docs.aws.amazon.com/ses/latest/dg/Welcome.html}{Amazon Simple Email Service Developer Guide}. The \emph{Amazon SES Developer Guide} provides information and code samples that demonstrate how to use Amazon SES API v2 features programmatically.
 }
 \section{Service syntax}{
 

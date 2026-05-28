@@ -17,30 +17,19 @@ kendra_get_query_suggestions(
 
 \item{QueryText}{[required] The text of a user's query to generate query suggestions.
 
-A query is suggested if the query prefix matches what a user starts to
-type as their query.
+A query is suggested if the query prefix matches what a user starts to type as their query.
 
-Amazon Kendra does not show any suggestions if a user types fewer than
-two characters or more than 60 characters. A query must also have at
-least one search result and contain at least one word of more than four
-characters.}
+Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.}
 
 \item{MaxSuggestionsCount}{The maximum number of query suggestions you want to show to your users.}
 
-\item{SuggestionTypes}{The suggestions type to base query suggestions on. The suggestion types
-are query history or document fields/attributes. You can set one type or
-the other.
+\item{SuggestionTypes}{The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.
 
-If you set query history as your suggestions type, Amazon Kendra
-suggests queries relevant to your users based on popular queries in the
-query history.
+If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.
 
-If you set document fields/attributes as your suggestions type, Amazon
-Kendra suggests queries relevant to your users based on the contents of
-document fields.}
+If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.}
 
-\item{AttributeSuggestionsConfig}{Configuration information for the document fields/attributes that you
-want to base query suggestions on.}
+\item{AttributeSuggestionsConfig}{Configuration information for the document fields/attributes that you want to base query suggestions on.}
 }
 \description{
 Fetches the queries that are suggested to your users.

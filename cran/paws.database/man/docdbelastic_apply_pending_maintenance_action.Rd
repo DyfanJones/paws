@@ -23,14 +23,11 @@ Valid actions are:
 \item \code{MASTER_USER_PASSWORD_UPDATE}
 }}
 
-\item{applyOn}{A specific date to apply the pending maintenance action. Required if
-opt-in-type is \code{APPLY_ON}. Format: \verb{yyyy/MM/dd HH:mm-yyyy/MM/dd HH:mm}}
+\item{applyOn}{A specific date to apply the pending maintenance action. Required if opt-in-type is \code{APPLY_ON}. Format: \verb{yyyy/MM/dd HH:mm-yyyy/MM/dd HH:mm}}
 
-\item{optInType}{[required] A value that specifies the type of opt-in request, or undoes an opt-in
-request. An opt-in request of type \code{IMMEDIATE} can't be undone.}
+\item{optInType}{[required] A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type \code{IMMEDIATE} can't be undone.}
 
-\item{resourceArn}{[required] The Amazon DocumentDB Amazon Resource Name (ARN) of the resource to
-which the pending maintenance action applies.}
+\item{resourceArn}{[required] The Amazon DocumentDB Amazon Resource Name (ARN) of the resource to which the pending maintenance action applies.}
 }
 \description{
 The type of pending maintenance action to be applied to the resource.

@@ -12,11 +12,9 @@ translate_list_languages(
 )
 }
 \arguments{
-\item{DisplayLanguageCode}{The language code for the language to use to display the language names
-in the response. The language code is \code{en} by default.}
+\item{DisplayLanguageCode}{The language code for the language to use to display the language names in the response. The language code is \code{en} by default.}
 
-\item{NextToken}{Include the NextToken value to fetch the next group of supported
-languages.}
+\item{NextToken}{Include the NextToken value to fetch the next group of supported languages.}
 
 \item{MaxResults}{The maximum number of results to return in each response.}
 }

@@ -16,12 +16,9 @@ redshiftserverless_list_custom_domain_associations(
 
 \item{customDomainName}{The custom domain name associated with the workgroup.}
 
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to display the next page of results.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to display the next page of results.}
 
-\item{nextToken}{When \code{nextToken} is returned, there are more results available. The
-value of \code{nextToken} is a unique pagination token for each page. Make
-the call again using the returned token to retrieve the next page.}
+\item{nextToken}{When \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.}
 }
 \description{
 Lists custom domain associations for Amazon Redshift Serverless.

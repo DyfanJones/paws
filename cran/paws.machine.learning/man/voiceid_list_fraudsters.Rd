@@ -14,18 +14,11 @@ voiceid_list_fraudsters(
 \arguments{
 \item{DomainId}{[required] The identifier of the domain.}
 
-\item{MaxResults}{The maximum number of results that are returned per call. You can use
-\code{NextToken} to obtain more pages of results. The default is 100; the
-maximum allowed page size is also 100.}
+\item{MaxResults}{The maximum number of results that are returned per call. You can use \code{NextToken} to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.}
 
-\item{NextToken}{If \code{NextToken} is returned, there are more results available. The value
-of \code{NextToken} is a unique pagination token for each page. Make the call
-again using the returned token to retrieve the next page. Keep all other
-arguments unchanged. Each pagination token expires after 24 hours.}
+\item{NextToken}{If \code{NextToken} is returned, there are more results available. The value of \code{NextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.}
 
-\item{WatchlistId}{The identifier of the watchlist. If provided, all fraudsters in the
-watchlist are listed. If not provided, all fraudsters in the domain are
-listed.}
+\item{WatchlistId}{The identifier of the watchlist. If provided, all fraudsters in the watchlist are listed. If not provided, all fraudsters in the domain are listed.}
 }
 \description{
 Lists all fraudsters in a specified watchlist or domain.

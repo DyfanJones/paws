@@ -18,52 +18,23 @@ athena_start_query_execution(
 \arguments{
 \item{QueryString}{[required] The SQL query statements to be executed.}
 
-\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the
-query is idempotent (executes only once). If another
-\code{\link[=athena_start_query_execution]{start_query_execution}} request is
-received, the same response is returned and another query is not
-created. An error is returned if a parameter, such as \code{QueryString}, has
-changed. A call to
-\code{\link[=athena_start_query_execution]{start_query_execution}} that uses a
-previous client request token returns the same \code{QueryExecutionId} even
-if the requester doesn't have permission on the tables specified in
-\code{QueryString}.
+\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another \code{\link[=athena_start_query_execution]{start_query_execution}} request is received, the same response is returned and another query is not created. An error is returned if a parameter, such as \code{QueryString}, has changed. A call to \code{\link[=athena_start_query_execution]{start_query_execution}} that uses a previous client request token returns the same \code{QueryExecutionId} even if the requester doesn't have permission on the tables specified in \code{QueryString}.
 
-This token is listed as not required because Amazon Web Services SDKs
-(for example the Amazon Web Services SDK for Java) auto-generate the
-token for users. If you are not using the Amazon Web Services SDK or the
-Amazon Web Services CLI, you must provide this token or the action will
-fail.}
+This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.}
 
 \item{QueryExecutionContext}{The database within which the query executes.}
 
-\item{ResultConfiguration}{Specifies information about where and how to save the results of the
-query execution. If the query runs in a workgroup, then workgroup's
-settings may override query settings. This affects the query results
-location. The workgroup settings override is specified in
-EnforceWorkGroupConfiguration (true/false) in the
-WorkGroupConfiguration. See
-WorkGroupConfiguration$EnforceWorkGroupConfiguration.}
+\item{ResultConfiguration}{Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See WorkGroupConfiguration$EnforceWorkGroupConfiguration.}
 
 \item{WorkGroup}{The name of the workgroup in which the query is being started.}
 
-\item{ExecutionParameters}{A list of values for the parameters in a query. The values are applied
-sequentially to the parameters in the query in the order in which the
-parameters occur.}
+\item{ExecutionParameters}{A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.}
 
 \item{ResultReuseConfiguration}{Specifies the query result reuse behavior for the query.}
 
-\item{EngineConfiguration}{The engine configuration for the workgroup, which includes the
-minimum/maximum number of Data Processing Units (DPU) that queries
-should use when running in provisioned capacity. If not specified,
-Athena uses default values (Default value for min is 4 and for max is
-Minimum of 124 and allocated DPUs).
+\item{EngineConfiguration}{The engine configuration for the workgroup, which includes the minimum/maximum number of Data Processing Units (DPU) that queries should use when running in provisioned capacity. If not specified, Athena uses default values (Default value for min is 4 and for max is Minimum of 124 and allocated DPUs).
 
-To specify minimum and maximum DPU values for Capacity Reservations
-queries, the workgroup containing \code{EngineConfiguration} should have the
-following values: The name of the \code{Classifications} should be
-\code{athena-query-engine-properties}, with the only allowed properties as
-\code{max-dpu-count} and \code{min-dpu-count}.}
+To specify minimum and maximum DPU values for Capacity Reservations queries, the workgroup containing \code{EngineConfiguration} should have the following values: The name of the \code{Classifications} should be \code{athena-query-engine-properties}, with the only allowed properties as \code{max-dpu-count} and \code{min-dpu-count}.}
 }
 \description{
 Runs the SQL query statements contained in the \code{Query}. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires \code{\link[=athena_get_data_catalog]{get_data_catalog}} permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see \href{https://docs.aws.amazon.com/athena/latest/ug/code-samples.html}{Examples and Code Samples} in the \emph{Amazon Athena User Guide}.

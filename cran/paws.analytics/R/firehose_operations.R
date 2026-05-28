@@ -10,69 +10,35 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/firehose_create_delivery_stream/](https://www.paws-r-sdk.com/docs/firehose_create_delivery_stream/) for full documentation.
 #'
-#' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream. This name must be unique per Amazon Web
-#' Services account in the same Amazon Web Services Region. If the Firehose
-#' streams are in different accounts or different Regions, you can have
-#' multiple Firehose streams with the same name.
-#' @param DeliveryStreamType The Firehose stream type. This parameter can be one of the following
-#' values:
+#' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the Firehose streams are in different accounts or different Regions, you can have multiple Firehose streams with the same name.
+#' @param DeliveryStreamType The Firehose stream type. This parameter can be one of the following values:
 #' 
-#' -   `DirectPut`: Provider applications access the Firehose stream
-#'     directly.
+#' -   `DirectPut`: Provider applications access the Firehose stream directly.
 #' 
-#' -   `KinesisStreamAsSource`: The Firehose stream uses a Kinesis data
-#'     stream as a source.
-#' @param DirectPutSourceConfiguration The structure that configures parameters such as `ThroughputHintInMBs`
-#' for a stream configured with Direct PUT as a source.
-#' @param KinesisStreamSourceConfiguration When a Kinesis data stream is used as the source for the Firehose
-#' stream, a KinesisStreamSourceConfiguration containing the Kinesis data
-#' stream Amazon Resource Name (ARN) and the role ARN for the source
-#' stream.
-#' @param DeliveryStreamEncryptionConfigurationInput Used to specify the type and Amazon Resource Name (ARN) of the KMS key
-#' needed for Server-Side Encryption (SSE).
-#' @param S3DestinationConfiguration \[Deprecated\] The destination in Amazon S3. You can specify only one
-#' destination.
+#' -   `KinesisStreamAsSource`: The Firehose stream uses a Kinesis data stream as a source.
+#' @param DirectPutSourceConfiguration The structure that configures parameters such as `ThroughputHintInMBs` for a stream configured with Direct PUT as a source.
+#' @param KinesisStreamSourceConfiguration When a Kinesis data stream is used as the source for the Firehose stream, a KinesisStreamSourceConfiguration containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.
+#' @param DeliveryStreamEncryptionConfigurationInput Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+#' @param S3DestinationConfiguration \[Deprecated\] The destination in Amazon S3. You can specify only one destination.
 #' @param ExtendedS3DestinationConfiguration The destination in Amazon S3. You can specify only one destination.
-#' @param RedshiftDestinationConfiguration The destination in Amazon Redshift. You can specify only one
-#' destination.
-#' @param ElasticsearchDestinationConfiguration The destination in Amazon OpenSearch Service. You can specify only one
-#' destination.
-#' @param AmazonopensearchserviceDestinationConfiguration The destination in Amazon OpenSearch Service. You can specify only one
-#' destination.
+#' @param RedshiftDestinationConfiguration The destination in Amazon Redshift. You can specify only one destination.
+#' @param ElasticsearchDestinationConfiguration The destination in Amazon OpenSearch Service. You can specify only one destination.
+#' @param AmazonopensearchserviceDestinationConfiguration The destination in Amazon OpenSearch Service. You can specify only one destination.
 #' @param SplunkDestinationConfiguration The destination in Splunk. You can specify only one destination.
-#' @param HttpEndpointDestinationConfiguration Enables configuring Kinesis Firehose to deliver data to any HTTP
-#' endpoint destination. You can specify only one destination.
-#' @param Tags A set of tags to assign to the Firehose stream. A tag is a key-value
-#' pair that you can define and assign to Amazon Web Services resources.
-#' Tags are metadata. For example, you can add friendly names and
-#' descriptions or other types of information that can help you distinguish
-#' the Firehose stream. For more information about tags, see [Using Cost
-#' Allocation
-#' Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html)
-#' in the Amazon Web Services Billing and Cost Management User Guide.
+#' @param HttpEndpointDestinationConfiguration Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.
+#' @param Tags A set of tags to assign to the Firehose stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the Firehose stream. For more information about tags, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the Amazon Web Services Billing and Cost Management User Guide.
 #' 
 #' You can specify up to 50 tags when creating a Firehose stream.
 #' 
-#' If you specify tags in the
-#' [`create_delivery_stream`][firehose_create_delivery_stream] action,
-#' Amazon Data Firehose performs an additional authorization on the
-#' `firehose:TagDeliveryStream` action to verify if users have permissions
-#' to create tags. If you do not provide this permission, requests to
-#' create new Firehose streams with IAM resource tags will fail with an
-#' `AccessDeniedException` such as following.
+#' If you specify tags in the [`create_delivery_stream`][firehose_create_delivery_stream] action, Amazon Data Firehose performs an additional authorization on the `firehose:TagDeliveryStream` action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose streams with IAM resource tags will fail with an `AccessDeniedException` such as following.
 #' 
 #' **AccessDeniedException**
 #' 
-#' User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform:
-#' firehose:TagDeliveryStream on resource:
-#' arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in
-#' an identity-based policy.
+#' User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform: firehose:TagDeliveryStream on resource: arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an identity-based policy.
 #' 
-#' For an example IAM policy, see [Tag
-#' example.](https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples)
-#' @param AmazonOpenSearchServerlessDestinationConfiguration The destination in the Serverless offering for Amazon OpenSearch
-#' Service. You can specify only one destination.
-#' @param MSKSourceConfiguration 
+#' For an example IAM policy, see [Tag example.](https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples)
+#' @param AmazonOpenSearchServerlessDestinationConfiguration The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.
+#' @param MSKSourceConfiguration The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.
 #' @param SnowflakeDestinationConfiguration Configure Snowflake destination
 #' @param IcebergDestinationConfiguration Configure Apache Iceberg Tables destination.
 #' @param DatabaseSourceConfiguration The top level object for configuring streams with database as a source.
@@ -109,15 +75,7 @@ firehose_create_delivery_stream <- function(DeliveryStreamName, DeliveryStreamTy
 #' See [https://www.paws-r-sdk.com/docs/firehose_delete_delivery_stream/](https://www.paws-r-sdk.com/docs/firehose_delete_delivery_stream/) for full documentation.
 #'
 #' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream.
-#' @param AllowForceDelete Set this to true if you want to delete the Firehose stream even if
-#' Firehose is unable to retire the grant for the CMK. Firehose might be
-#' unable to retire the grant due to a customer error, such as when the CMK
-#' or the grant are in an invalid state. If you force deletion, you can
-#' then use the
-#' [RevokeGrant](https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html)
-#' operation to revoke the grant you gave to Firehose. If a failure to
-#' retire the grant happens due to an Amazon Web Services KMS issue,
-#' Firehose keeps retrying the delete operation.
+#' @param AllowForceDelete Set this to true if you want to delete the Firehose stream even if Firehose is unable to retire the grant for the CMK. Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the [RevokeGrant](https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html) operation to revoke the grant you gave to Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Firehose keeps retrying the delete operation.
 #' 
 #' The default value is false.
 #'
@@ -151,10 +109,8 @@ firehose_delete_delivery_stream <- function(DeliveryStreamName, AllowForceDelete
 #' See [https://www.paws-r-sdk.com/docs/firehose_describe_delivery_stream/](https://www.paws-r-sdk.com/docs/firehose_describe_delivery_stream/) for full documentation.
 #'
 #' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream.
-#' @param Limit The limit on the number of destinations to return. You can have one
-#' destination per Firehose stream.
-#' @param ExclusiveStartDestinationId The ID of the destination to start returning the destination
-#' information. Firehose supports one destination per Firehose stream.
+#' @param Limit The limit on the number of destinations to return. You can have one destination per Firehose stream.
+#' @param ExclusiveStartDestinationId The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.
 #'
 #' @keywords internal
 #'
@@ -188,18 +144,12 @@ firehose_describe_delivery_stream <- function(DeliveryStreamName, Limit = NULL, 
 #' @param Limit The maximum number of Firehose streams to list. The default value is 10.
 #' @param DeliveryStreamType The Firehose stream type. This can be one of the following values:
 #' 
-#' -   `DirectPut`: Provider applications access the Firehose stream
-#'     directly.
+#' -   `DirectPut`: Provider applications access the Firehose stream directly.
 #' 
-#' -   `KinesisStreamAsSource`: The Firehose stream uses a Kinesis data
-#'     stream as a source.
+#' -   `KinesisStreamAsSource`: The Firehose stream uses a Kinesis data stream as a source.
 #' 
-#' This parameter is optional. If this parameter is omitted, Firehose
-#' streams of all types are returned.
-#' @param ExclusiveStartDeliveryStreamName The list of Firehose streams returned by this call to
-#' [`list_delivery_streams`][firehose_list_delivery_streams] will start
-#' with the Firehose stream whose name comes alphabetically immediately
-#' after the name you specify in `ExclusiveStartDeliveryStreamName`.
+#' This parameter is optional. If this parameter is omitted, Firehose streams of all types are returned.
+#' @param ExclusiveStartDeliveryStreamName The list of Firehose streams returned by this call to [`list_delivery_streams`][firehose_list_delivery_streams] will start with the Firehose stream whose name comes alphabetically immediately after the name you specify in `ExclusiveStartDeliveryStreamName`.
 #'
 #' @keywords internal
 #'
@@ -231,14 +181,8 @@ firehose_list_delivery_streams <- function(Limit = NULL, DeliveryStreamType = NU
 #' See [https://www.paws-r-sdk.com/docs/firehose_list_tags_for_delivery_stream/](https://www.paws-r-sdk.com/docs/firehose_list_tags_for_delivery_stream/) for full documentation.
 #'
 #' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream whose tags you want to list.
-#' @param ExclusiveStartTagKey The key to use as the starting point for the list of tags. If you set
-#' this parameter,
-#' [`list_tags_for_delivery_stream`][firehose_list_tags_for_delivery_stream]
-#' gets all tags that occur after `ExclusiveStartTagKey`.
-#' @param Limit The number of tags to return. If this number is less than the total
-#' number of tags associated with the Firehose stream, `HasMoreTags` is set
-#' to `true` in the response. To list additional tags, set
-#' `ExclusiveStartTagKey` to the last key in the response.
+#' @param ExclusiveStartTagKey The key to use as the starting point for the list of tags. If you set this parameter, [`list_tags_for_delivery_stream`][firehose_list_tags_for_delivery_stream] gets all tags that occur after `ExclusiveStartTagKey`.
+#' @param Limit The number of tags to return. If this number is less than the total number of tags associated with the Firehose stream, `HasMoreTags` is set to `true` in the response. To list additional tags, set `ExclusiveStartTagKey` to the last key in the response.
 #'
 #' @keywords internal
 #'
@@ -335,10 +279,8 @@ firehose_put_record_batch <- function(DeliveryStreamName, Records) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/firehose_start_delivery_stream_encryption/](https://www.paws-r-sdk.com/docs/firehose_start_delivery_stream_encryption/) for full documentation.
 #'
-#' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream for which you want to enable server-side
-#' encryption (SSE).
-#' @param DeliveryStreamEncryptionConfigurationInput Used to specify the type and Amazon Resource Name (ARN) of the KMS key
-#' needed for Server-Side Encryption (SSE).
+#' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream for which you want to enable server-side encryption (SSE).
+#' @param DeliveryStreamEncryptionConfigurationInput Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
 #'
 #' @keywords internal
 #'
@@ -369,8 +311,7 @@ firehose_start_delivery_stream_encryption <- function(DeliveryStreamName, Delive
 #'
 #' See [https://www.paws-r-sdk.com/docs/firehose_stop_delivery_stream_encryption/](https://www.paws-r-sdk.com/docs/firehose_stop_delivery_stream_encryption/) for full documentation.
 #'
-#' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream for which you want to disable
-#' server-side encryption (SSE).
+#' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream for which you want to disable server-side encryption (SSE).
 #'
 #' @keywords internal
 #'
@@ -434,8 +375,7 @@ firehose_tag_delivery_stream <- function(DeliveryStreamName, Tags) {
 #' See [https://www.paws-r-sdk.com/docs/firehose_untag_delivery_stream/](https://www.paws-r-sdk.com/docs/firehose_untag_delivery_stream/) for full documentation.
 #'
 #' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream.
-#' @param TagKeys &#91;required&#93; A list of tag keys. Each corresponding tag is removed from the delivery
-#' stream.
+#' @param TagKeys &#91;required&#93; A list of tag keys. Each corresponding tag is removed from the delivery stream.
 #'
 #' @keywords internal
 #'
@@ -467,13 +407,7 @@ firehose_untag_delivery_stream <- function(DeliveryStreamName, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/firehose_update_destination/](https://www.paws-r-sdk.com/docs/firehose_update_destination/) for full documentation.
 #'
 #' @param DeliveryStreamName &#91;required&#93; The name of the Firehose stream.
-#' @param CurrentDeliveryStreamVersionId &#91;required&#93; Obtain this value from the `VersionId` result of
-#' DeliveryStreamDescription. This value is required, and helps the service
-#' perform conditional operations. For example, if there is an interleaving
-#' update and this value is null, then the update destination fails. After
-#' the update is successful, the `VersionId` value is updated. The service
-#' then performs a merge of the old configuration with the new
-#' configuration.
+#' @param CurrentDeliveryStreamVersionId &#91;required&#93; Obtain this value from the `VersionId` result of DeliveryStreamDescription. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the `VersionId` value is updated. The service then performs a merge of the old configuration with the new configuration.
 #' @param DestinationId &#91;required&#93; The ID of the destination.
 #' @param S3DestinationUpdate \[Deprecated\] Describes an update for a destination in Amazon S3.
 #' @param ExtendedS3DestinationUpdate Describes an update for a destination in Amazon S3.
@@ -482,8 +416,7 @@ firehose_untag_delivery_stream <- function(DeliveryStreamName, TagKeys) {
 #' @param AmazonopensearchserviceDestinationUpdate Describes an update for a destination in Amazon OpenSearch Service.
 #' @param SplunkDestinationUpdate Describes an update for a destination in Splunk.
 #' @param HttpEndpointDestinationUpdate Describes an update to the specified HTTP endpoint destination.
-#' @param AmazonOpenSearchServerlessDestinationUpdate Describes an update for a destination in the Serverless offering for
-#' Amazon OpenSearch Service.
+#' @param AmazonOpenSearchServerlessDestinationUpdate Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.
 #' @param SnowflakeDestinationUpdate Update to the Snowflake destination configuration settings.
 #' @param IcebergDestinationUpdate Describes an update for a destination in Apache Iceberg Tables.
 #'

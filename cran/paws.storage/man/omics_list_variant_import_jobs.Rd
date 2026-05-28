@@ -17,8 +17,7 @@ omics_list_variant_import_jobs(
 
 \item{ids}{A list of job IDs.}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{filter}{A filter to apply to the list.}
 }

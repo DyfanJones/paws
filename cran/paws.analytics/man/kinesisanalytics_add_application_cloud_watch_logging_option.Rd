@@ -16,9 +16,7 @@ kinesisanalytics_add_application_cloud_watch_logging_option(
 
 \item{CurrentApplicationVersionId}{[required] The version ID of the Kinesis Analytics application.}
 
-\item{CloudWatchLoggingOption}{[required] Provides the CloudWatch log stream Amazon Resource Name (ARN) and the
-IAM role ARN. Note: To write application messages to CloudWatch, the IAM
-role that is used must have the \code{PutLogEvents} policy action enabled.}
+\item{CloudWatchLoggingOption}{[required] Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the \code{PutLogEvents} policy action enabled.}
 }
 \description{
 This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see Amazon Kinesis Data Analytics API V2 Documentation.

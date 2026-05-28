@@ -53,68 +53,38 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-The Amazon Interactive Video Service (IVS) real-time API is REST
-compatible, using a standard HTTP API and an AWS EventBridge event
-stream for responses. JSON is used for both requests and responses,
-including errors.
+The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
 
 \strong{Key Concepts}
 \itemize{
-\item \strong{Stage} — A virtual space where participants can exchange video in
-real time.
-\item \strong{Participant token} — A token that authenticates a participant
-when they join a stage.
-\item \strong{Participant object} — Represents participants (people) in the
-stage and contains information about them. When a token is created,
-it includes a participant ID; when a participant uses that token to
-join a stage, the participant is associated with that participant
-ID. There is a 1:1 mapping between participant tokens and
-participants.
+\item \strong{Stage} — A virtual space where participants can exchange video in real time.
+\item \strong{Participant token} — A token that authenticates a participant when they join a stage.
+\item \strong{Participant object} — Represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
 }
 
 For server-side composition:
 \itemize{
-\item \strong{Composition process} — Composites participants of a stage into a
-single video and forwards it to a set of outputs (e.g., IVS
-channels). Composition operations support this process.
-\item \strong{Composition} — Controls the look of the outputs, including how
-participants are positioned in the video.
+\item \strong{Composition process} — Composites participants of a stage into a single video and forwards it to a set of outputs (e.g., IVS channels). Composition operations support this process.
+\item \strong{Composition} — Controls the look of the outputs, including how participants are positioned in the video.
 }
 
 For participant replication:
 \itemize{
-\item \strong{Source stage} — The stage where the participant originally
-joined, which is used as the source for replication.
-\item \strong{Destination stage} — The stage to which the participant is
-replicated.
-\item \strong{Replicated participant} — A participant in a stage that is
-replicated to one or more destination stages.
-\item \strong{Replica participant} — A participant in a destination stage that
-is replicated from another stage (the source stage).
+\item \strong{Source stage} — The stage where the participant originally joined, which is used as the source for replication.
+\item \strong{Destination stage} — The stage to which the participant is replicated.
+\item \strong{Replicated participant} — A participant in a stage that is replicated to one or more destination stages.
+\item \strong{Replica participant} — A participant in a destination stage that is replicated from another stage (the source stage).
 }
 
 For more information about your IVS live stream, also see \href{https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html}{Getting Started with Amazon IVS Real-Time Streaming}.
 
 \strong{Tagging}
 
-A \emph{tag} is a metadata label that you assign to an AWS resource. A tag
-comprises a \emph{key} and a \emph{value}, both set by you. For example, you might
-set a tag as \code{topic:nature} to label a particular video category. See
-\href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging AWS Resources and Tag Editor} for details, including
-restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS stages has no service-specific constraints
-beyond what is documented there.
+A \emph{tag} is a metadata label that you assign to an AWS resource. A tag comprises a \emph{key} and a \emph{value}, both set by you. For example, you might set a tag as \code{topic:nature} to label a particular video category. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging AWS Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS stages has no service-specific constraints beyond what is documented there.
 
-Tags can help you identify and organize your AWS resources. For example,
-you can use the same tag for different resources to indicate that they
-are related. You can also use tags to manage access (see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html}{Access Tags}).
+Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html}{Access Tags}).
 
-The Amazon IVS real-time API has these tag-related operations:
-\code{tag_resource},
-\code{untag_resource}, and
-\code{list_tags_for_resource}. The
-following resource supports tagging: Stage.
+The Amazon IVS real-time API has these tag-related operations: \code{tag_resource}, \code{untag_resource}, and \code{list_tags_for_resource}. The following resource supports tagging: Stage.
 
 At most 50 tags can be applied to a resource.
 }

@@ -23,32 +23,23 @@ datazone_update_data_source(
 
 \item{identifier}{[required] The identifier of the data source to be updated.}
 
-\item{name}{The name to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{name}{The name to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{description}{The description to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{description}{The description to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{enableSetting}{The enable setting to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{enableSetting}{The enable setting to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{publishOnImport}{The publish on import setting to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{publishOnImport}{The publish on import setting to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{assetFormsInput}{The asset forms to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{assetFormsInput}{The asset forms to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{schedule}{The schedule to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{schedule}{The schedule to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{configuration}{The configuration to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{configuration}{The configuration to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{recommendation}{The recommendation to be updated as part of the
-\code{\link[=datazone_update_data_source]{update_data_source}} action.}
+\item{recommendation}{The recommendation to be updated as part of the \code{\link[=datazone_update_data_source]{update_data_source}} action.}
 
-\item{retainPermissionsOnRevokeFailure}{Specifies that the granted permissions are retained in case of a
-self-subscribe functionality failure for a data source.}
+\item{retainPermissionsOnRevokeFailure}{Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.}
 }
 \description{
 Updates the specified data source in Amazon DataZone.

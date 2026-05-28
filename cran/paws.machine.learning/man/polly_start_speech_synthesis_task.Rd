@@ -21,29 +21,15 @@ polly_start_speech_synthesis_task(
 )
 }
 \arguments{
-\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form} or \code{generative})
-for Amazon Polly to use when processing input text for speech synthesis.
-Using a voice that is not supported for the engine selected will result
-in an error.}
+\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form} or \code{generative}) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.}
 
-\item{LanguageCode}{Optional language code for the Speech Synthesis request. This is only
-necessary if using a bilingual voice, such as Aditi, which can be used
-for either Indian English (en-IN) or Hindi (hi-IN).
+\item{LanguageCode}{Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
 
-If a bilingual voice is used and no language code is specified, Amazon
-Polly uses the default language of the bilingual voice. The default
-language for any voice is the one returned by the
-\code{\link[=polly_describe_voices]{describe_voices}} operation for the
-\code{LanguageCode} parameter. For example, if no language code is specified,
-Aditi will use Indian English rather than Hindi.}
+If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the \code{\link[=polly_describe_voices]{describe_voices}} operation for the \code{LanguageCode} parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.}
 
-\item{LexiconNames}{List of one or more pronunciation lexicon names you want the service to
-apply during synthesis. Lexicons are applied only if the language of the
-lexicon is the same as the language of the voice.}
+\item{LexiconNames}{List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.}
 
-\item{OutputFormat}{[required] The format in which the returned output will be encoded. For audio
-stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law, or pcm.
-For speech marks, this will be json.}
+\item{OutputFormat}{[required] The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law, or pcm. For speech marks, this will be json.}
 
 \item{OutputS3BucketName}{[required] Amazon S3 bucket name to which the output file will be saved.}
 
@@ -51,29 +37,21 @@ For speech marks, this will be json.}
 
 \item{SampleRate}{The audio frequency specified in Hz.
 
-The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-and "24000". The default value for standard voices is "22050". The
-default value for neural voices is "24000". The default value for
-long-form voices is "24000". The default value for generative voices is
-"24000".
+The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".
 
-Valid values for pcm are "8000" and "16000" The default value is
-"16000".
+Valid values for pcm are "8000" and "16000" The default value is "16000".
 
 Valid value for ogg_opus is "48000".
 
 Valid value for mu-law and a-law is "8000".}
 
-\item{SnsTopicArn}{ARN for the SNS topic optionally used for providing status notification
-for a speech synthesis task.}
+\item{SnsTopicArn}{ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.}
 
 \item{SpeechMarkTypes}{The type of speech marks returned for the input text.}
 
-\item{Text}{[required] The input text to synthesize. If you specify ssml as the TextType,
-follow the SSML format for the input text.}
+\item{Text}{[required] The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.}
 
-\item{TextType}{Specifies whether the input text is plain text or SSML. The default
-value is plain text.}
+\item{TextType}{Specifies whether the input text is plain text or SSML. The default value is plain text.}
 
 \item{VoiceId}{[required] Voice ID to use for the synthesis.}
 }

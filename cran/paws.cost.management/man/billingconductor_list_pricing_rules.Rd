@@ -15,13 +15,11 @@ billingconductor_list_pricing_rules(
 \arguments{
 \item{BillingPeriod}{The preferred billing period to get the pricing plan.}
 
-\item{Filters}{A \code{DescribePricingRuleFilter} that specifies the Amazon Resource Name
-(ARNs) of pricing rules to retrieve pricing rules information.}
+\item{Filters}{A \code{DescribePricingRuleFilter} that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information.}
 
 \item{MaxResults}{The maximum number of pricing rules to retrieve.}
 
-\item{NextToken}{The pagination token that's used on subsequent call to get pricing
-rules.}
+\item{NextToken}{The pagination token that's used on subsequent call to get pricing rules.}
 }
 \description{
 Describes a pricing rule that can be associated to a pricing plan, or set of pricing plans.

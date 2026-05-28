@@ -7,12 +7,9 @@
 quicksight_batch_create_topic_reviewed_answer(AwsAccountId, TopicId, Answers)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that you want to create a
-reviewed answer in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that you want to create a reviewed answer in.}
 
-\item{TopicId}{[required] The ID for the topic reviewed answer that you want to create. This ID is
-unique per Amazon Web Services Region for each Amazon Web Services
-account.}
+\item{TopicId}{[required] The ID for the topic reviewed answer that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
 \item{Answers}{[required] The definition of the Answers to be created.}
 }

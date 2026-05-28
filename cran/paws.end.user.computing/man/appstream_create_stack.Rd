@@ -32,44 +32,31 @@ appstream_create_stack(
 
 \item{RedirectURL}{The URL that users are redirected to after their streaming session ends.}
 
-\item{FeedbackURL}{The URL that users are redirected to after they click the Send Feedback
-link. If no URL is specified, no Send Feedback link is displayed.}
+\item{FeedbackURL}{The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.}
 
-\item{UserSettings}{The actions that are enabled or disabled for users during their
-streaming sessions. By default, these actions are enabled.}
+\item{UserSettings}{The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.}
 
-\item{ApplicationSettings}{The persistent application settings for users of a stack. When these
-settings are enabled, changes that users make to applications and
-Windows settings are automatically saved after each session and applied
-to the next session.}
+\item{ApplicationSettings}{The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.}
 
-\item{Tags}{The tags to associate with the stack. A tag is a key-value pair, and the
-value is optional. For example, Environment=Test. If you do not specify
-a value, Environment=.
+\item{Tags}{The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 
 If you do not specify a value, the value is set to an empty string.
 
-Generally allowed characters are: letters, numbers, and spaces
-representable in UTF-8, and the following special characters:
+Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 
 _ . : / = + \\ - @
 
-For more information about tags, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html}{Tagging Your Resources}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
+For more information about tags, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html}{Tagging Your Resources} in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
 
-\item{AccessEndpoints}{The list of interface VPC endpoint (interface endpoint) objects. Users
-of the stack can connect to WorkSpaces Applications only through the
-specified endpoints.}
+\item{AccessEndpoints}{The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to WorkSpaces Applications only through the specified endpoints.}
 
-\item{EmbedHostDomains}{The domains where WorkSpaces Applications streaming sessions can be
-embedded in an iframe. You must approve the domains that you want to
-host embedded WorkSpaces Applications streaming sessions.}
+\item{EmbedHostDomains}{The domains where WorkSpaces Applications streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded WorkSpaces Applications streaming sessions.}
 
-\item{StreamingExperienceSettings}{The streaming protocol you want your stack to prefer. This can be UDP or
-TCP. Currently, UDP is only supported in the Windows native client.}
+\item{StreamingExperienceSettings}{The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.}
 
-\item{AgentAccessConfig}{The configuration for agent access on the stack. If specified, agent
-access is enabled for the stack.}
+\item{ContentRedirection}{Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.}
+
+\item{AgentAccessConfig}{The configuration for agent access on the stack. If specified, agent access is enabled for the stack.}
 }
 \description{
 Creates a stack to start streaming applications to users. A stack consists of an associated fleet, user access policies, and storage configurations.

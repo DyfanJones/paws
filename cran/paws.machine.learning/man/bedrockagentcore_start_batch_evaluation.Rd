@@ -17,19 +17,13 @@ bedrockagentcore_start_batch_evaluation(
 \arguments{
 \item{batchEvaluationName}{[required] The name of the batch evaluation. Must be unique within your account.}
 
-\item{evaluators}{The list of evaluators to apply during the batch evaluation. Can include
-both built-in evaluators and custom evaluators. Maximum of 10
-evaluators.}
+\item{evaluators}{The list of evaluators to apply during the batch evaluation. Can include both built-in evaluators and custom evaluators. Maximum of 10 evaluators.}
 
-\item{dataSourceConfig}{[required] The data source configuration that specifies where to pull agent session
-traces from for evaluation.}
+\item{dataSourceConfig}{[required] The data source configuration that specifies where to pull agent session traces from for evaluation.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, the service ignores the request, but does not return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.}
 
-\item{evaluationMetadata}{Optional metadata for the evaluation, including session-specific ground
-truth data and test scenario identifiers.}
+\item{evaluationMetadata}{Optional metadata for the evaluation, including session-specific ground truth data and test scenario identifiers.}
 
 \item{description}{The description of the batch evaluation.}
 }

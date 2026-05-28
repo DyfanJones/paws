@@ -13,13 +13,13 @@ connect_search_hours_of_operation_overrides(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
+
+\item{SearchFilter}{Filters to be applied to search results.}
 
 \item{SearchCriteria}{The search criteria to be used to return hours of operations overrides.}
 }

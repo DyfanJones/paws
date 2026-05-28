@@ -9,11 +9,9 @@ inspector2_get_clusters_for_image(filter, maxResults = NULL, nextToken = NULL)
 \arguments{
 \item{filter}{[required] The resource Id for the Amazon ECR image.}
 
-\item{maxResults}{The maximum number of results to be returned in a single page of
-results.}
+\item{maxResults}{The maximum number of results to be returned in a single page of results.}
 
-\item{nextToken}{The pagination token from a previous request used to retrieve the next
-page of results.}
+\item{nextToken}{The pagination token from a previous request used to retrieve the next page of results.}
 }
 \description{
 Returns a list of clusters and metadata associated with an image.

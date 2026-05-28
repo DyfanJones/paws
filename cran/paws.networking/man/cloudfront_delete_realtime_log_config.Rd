@@ -9,8 +9,7 @@ cloudfront_delete_realtime_log_config(Name = NULL, ARN = NULL)
 \arguments{
 \item{Name}{The name of the real-time log configuration to delete.}
 
-\item{ARN}{The Amazon Resource Name (ARN) of the real-time log configuration to
-delete.}
+\item{ARN}{The Amazon Resource Name (ARN) of the real-time log configuration to delete.}
 }
 \description{
 Deletes a real-time log configuration.

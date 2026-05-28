@@ -9,10 +9,7 @@ appmesh_describe_virtual_router(meshName, meshOwner = NULL, virtualRouterName)
 \arguments{
 \item{meshName}{[required] The name of the service mesh that the virtual router resides in.}
 
-\item{meshOwner}{The Amazon Web Services IAM account ID of the service mesh owner. If the
-account ID is not your own, then it's the ID of the account that shared
-the mesh with your account. For more information about mesh sharing, see
-\href{https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html}{Working with shared meshes}.}
+\item{meshOwner}{The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see \href{https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html}{Working with shared meshes}.}
 
 \item{virtualRouterName}{[required] The name of the virtual router to describe.}
 }

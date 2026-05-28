@@ -21,8 +21,7 @@ licensemanager_update_license_asset_ruleset(
 
 \item{LicenseAssetRulesetArn}{[required] Amazon Resource Name (ARN) of the license asset ruleset.}
 
-\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Updates a license asset ruleset.

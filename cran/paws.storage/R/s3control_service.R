@@ -5,8 +5,7 @@ NULL
 #' AWS S3 Control
 #'
 #' @description
-#' Amazon Web Services S3 Control provides access to Amazon S3 control
-#' plane actions.
+#' Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
 #'
 #' @param
 #' config

@@ -15,75 +15,32 @@ sagemaker_create_hyper_parameter_tuning_job(
 )
 }
 \arguments{
-\item{HyperParameterTuningJobName}{[required] The name of the tuning job. This name is the prefix for the names of all
-training jobs that this tuning job launches. The name must be unique
-within the same Amazon Web Services account and Amazon Web Services
-Region. The name must have 1 to 32 characters. Valid characters are a-z,
-A-Z, 0-9, and : + = @ _ \% - (hyphen). The name is not case sensitive.}
+\item{HyperParameterTuningJobName}{[required] The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job launches. The name must be unique within the same Amazon Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ \% - (hyphen). The name is not case sensitive.}
 
-\item{HyperParameterTuningJobConfig}{[required] The
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html}{HyperParameterTuningJobConfig}
-object that describes the tuning job, including the search strategy, the
-objective metric used to evaluate training jobs, ranges of parameters to
-search, and resource limits for the tuning job. For more information,
-see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html}{How Hyperparameter Tuning Works}.}
+\item{HyperParameterTuningJobConfig}{[required] The \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html}{HyperParameterTuningJobConfig} object that describes the tuning job, including the search strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html}{How Hyperparameter Tuning Works}.}
 
-\item{TrainingJobDefinition}{The
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html}{HyperParameterTrainingJobDefinition}
-object that describes the training jobs that this tuning job launches,
-including static hyperparameters, input data configuration, output data
-configuration, resource configuration, and stopping condition.}
+\item{TrainingJobDefinition}{The \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html}{HyperParameterTrainingJobDefinition} object that describes the training jobs that this tuning job launches, including static hyperparameters, input data configuration, output data configuration, resource configuration, and stopping condition.}
 
-\item{TrainingJobDefinitions}{A list of the
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html}{HyperParameterTrainingJobDefinition}
-objects launched for this tuning job.}
+\item{TrainingJobDefinitions}{A list of the \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html}{HyperParameterTrainingJobDefinition} objects launched for this tuning job.}
 
-\item{WarmStartConfig}{Specifies the configuration for starting the hyperparameter tuning job
-using one or more previous tuning jobs as a starting point. The results
-of previous tuning jobs are used to inform which combinations of
-hyperparameters to search over in the new tuning job.
+\item{WarmStartConfig}{Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.
 
-All training jobs launched by the new hyperparameter tuning job are
-evaluated by using the objective metric. If you specify
-\code{IDENTICAL_DATA_AND_ALGORITHM} as the \code{WarmStartType} value for the warm
-start configuration, the training job that performs the best in the new
-tuning job is compared to the best training jobs from the parent tuning
-jobs. From these, the training job that performs the best as measured by
-the objective metric is returned as the overall best training job.
+All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If you specify \code{IDENTICAL_DATA_AND_ALGORITHM} as the \code{WarmStartType} value for the warm start configuration, the training job that performs the best in the new tuning job is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
 
-All training jobs launched by parent hyperparameter tuning jobs and the
-new hyperparameter tuning jobs count against the limit of training jobs
-for the tuning job.}
+All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.}
 
-\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
-Web Services resources in different ways, for example, by purpose,
-owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.
+\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.
 
-Tags that you specify for the tuning job are also added to all training
-jobs that the tuning job launches.}
+Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.}
 
-\item{Autotune}{Configures SageMaker Automatic model tuning (AMT) to automatically find
-optimal parameters for the following fields:
+\item{Autotune}{Configures SageMaker Automatic model tuning (AMT) to automatically find optimal parameters for the following fields:
 \itemize{
-\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges}{ParameterRanges}:
-The names and ranges of parameters that a hyperparameter tuning job
-can optimize.
-\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html}{ResourceLimits}:
-The maximum resources that can be used for a training job. These
-resources include the maximum number of training jobs, the maximum
-runtime of a tuning job, and the maximum number of training jobs to
-run at the same time.
-\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType}{TrainingJobEarlyStoppingType}:
-A flag that specifies whether or not to use early stopping for
-training jobs launched by a hyperparameter tuning job.
-\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy}{RetryStrategy}:
-The number of times to retry a training job.
-\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html}{Strategy}:
-Specifies how hyperparameter tuning chooses the combinations of
-hyperparameter values to use for the training jobs that it launches.
-\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html}{ConvergenceDetected}:
-A flag to indicate that Automatic model tuning (AMT) has detected
-model convergence.
+\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges}{ParameterRanges}: The names and ranges of parameters that a hyperparameter tuning job can optimize.
+\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html}{ResourceLimits}: The maximum resources that can be used for a training job. These resources include the maximum number of training jobs, the maximum runtime of a tuning job, and the maximum number of training jobs to run at the same time.
+\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType}{TrainingJobEarlyStoppingType}: A flag that specifies whether or not to use early stopping for training jobs launched by a hyperparameter tuning job.
+\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy}{RetryStrategy}: The number of times to retry a training job.
+\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html}{Strategy}: Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training jobs that it launches.
+\item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html}{ConvergenceDetected}: A flag to indicate that Automatic model tuning (AMT) has detected model convergence.
 }}
 }
 \description{

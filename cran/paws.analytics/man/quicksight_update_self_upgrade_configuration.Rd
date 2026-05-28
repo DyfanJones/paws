@@ -11,11 +11,9 @@ quicksight_update_self_upgrade_configuration(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick
-self-upgrade configuration that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.}
 
-\item{Namespace}{[required] The Quick namespace that you want to update the Quick self-upgrade
-configuration for.}
+\item{Namespace}{[required] The Quick namespace that you want to update the Quick self-upgrade configuration for.}
 
 \item{SelfUpgradeStatus}{[required] The self-upgrade status that you want to set for the Quick account.}
 }

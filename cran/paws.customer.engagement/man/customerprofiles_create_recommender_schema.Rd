@@ -14,12 +14,9 @@ customerprofiles_create_recommender_schema(
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{RecommenderSchemaName}{[required] The name of the recommender schema. The name must be unique within the
-domain.}
+\item{RecommenderSchemaName}{[required] The name of the recommender schema. The name must be unique within the domain.}
 
-\item{Fields}{[required] A map of dataset type to column definitions that specifies which data
-columns to include in the schema. Currently only the \verb{_webAnalytics} key
-is supported.}
+\item{Fields}{[required] A map of dataset type to column definitions that specifies which data columns to include in the schema. The \verb{_webAnalytics} and \verb{_catalogItem} keys are supported.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }

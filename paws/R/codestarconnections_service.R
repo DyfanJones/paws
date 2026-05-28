@@ -7,79 +7,43 @@ NULL
 #' @description
 #' AWS CodeStar Connections
 #' 
-#' This Amazon Web Services CodeStar Connections API Reference provides
-#' descriptions and usage examples of the operations and data types for the
-#' Amazon Web Services CodeStar Connections API. You can use the
-#' connections API to work with connections and installations.
+#' This Amazon Web Services CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types for the Amazon Web Services CodeStar Connections API. You can use the connections API to work with connections and installations.
 #' 
-#' *Connections* are configurations that you use to connect Amazon Web
-#' Services resources to external code repositories. Each connection is a
-#' resource that can be given to services such as CodePipeline to connect
-#' to a third-party repository such as Bitbucket. For example, you can add
-#' the connection in CodePipeline so that it triggers your pipeline when a
-#' code change is made to your third-party code repository. Each connection
-#' is named and associated with a unique ARN that is used to reference the
-#' connection.
+#' *Connections* are configurations that you use to connect Amazon Web Services resources to external code repositories. Each connection is a resource that can be given to services such as CodePipeline to connect to a third-party repository such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers your pipeline when a code change is made to your third-party code repository. Each connection is named and associated with a unique ARN that is used to reference the connection.
 #' 
-#' When you create a connection, the console initiates a third-party
-#' connection handshake. *Installations* are the apps that are used to
-#' conduct this handshake. For example, the installation for the Bitbucket
-#' provider type is the Bitbucket app. When you create a connection, you
-#' can choose an existing installation or create one.
+#' When you create a connection, the console initiates a third-party connection handshake. *Installations* are the apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the Bitbucket app. When you create a connection, you can choose an existing installation or create one.
 #' 
-#' When you want to create a connection to an installed provider type such
-#' as GitHub Enterprise Server, you create a *host* for your connections.
+#' When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a *host* for your connections.
 #' 
 #' You can work with connections by calling:
 #' 
-#' -   [`create_connection`][codestarconnections_create_connection], which
-#'     creates a uniquely named connection that can be referenced by
-#'     services such as CodePipeline.
+#' -   [`create_connection`][codestarconnections_create_connection], which creates a uniquely named connection that can be referenced by services such as CodePipeline.
 #' 
-#' -   [`delete_connection`][codestarconnections_delete_connection], which
-#'     deletes the specified connection.
+#' -   [`delete_connection`][codestarconnections_delete_connection], which deletes the specified connection.
 #' 
-#' -   [`get_connection`][codestarconnections_get_connection], which
-#'     returns information about the connection, including the connection
-#'     status.
+#' -   [`get_connection`][codestarconnections_get_connection], which returns information about the connection, including the connection status.
 #' 
-#' -   [`list_connections`][codestarconnections_list_connections], which
-#'     lists the connections associated with your account.
+#' -   [`list_connections`][codestarconnections_list_connections], which lists the connections associated with your account.
 #' 
 #' You can work with hosts by calling:
 #' 
-#' -   [`create_host`][codestarconnections_create_host], which creates a
-#'     host that represents the infrastructure where your provider is
-#'     installed.
+#' -   [`create_host`][codestarconnections_create_host], which creates a host that represents the infrastructure where your provider is installed.
 #' 
-#' -   [`delete_host`][codestarconnections_delete_host], which deletes the
-#'     specified host.
+#' -   [`delete_host`][codestarconnections_delete_host], which deletes the specified host.
 #' 
-#' -   [`get_host`][codestarconnections_get_host], which returns
-#'     information about the host, including the setup status.
+#' -   [`get_host`][codestarconnections_get_host], which returns information about the host, including the setup status.
 #' 
-#' -   [`list_hosts`][codestarconnections_list_hosts], which lists the
-#'     hosts associated with your account.
+#' -   [`list_hosts`][codestarconnections_list_hosts], which lists the hosts associated with your account.
 #' 
-#' You can work with tags in Amazon Web Services CodeStar Connections by
-#' calling the following:
+#' You can work with tags in Amazon Web Services CodeStar Connections by calling the following:
 #' 
-#' -   [`list_tags_for_resource`][codestarconnections_list_tags_for_resource],
-#'     which gets information about Amazon Web Services tags for a
-#'     specified Amazon Resource Name (ARN) in Amazon Web Services CodeStar
-#'     Connections.
+#' -   [`list_tags_for_resource`][codestarconnections_list_tags_for_resource], which gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in Amazon Web Services CodeStar Connections.
 #' 
-#' -   [`tag_resource`][codestarconnections_tag_resource], which adds or
-#'     updates tags for a resource in Amazon Web Services CodeStar
-#'     Connections.
+#' -   [`tag_resource`][codestarconnections_tag_resource], which adds or updates tags for a resource in Amazon Web Services CodeStar Connections.
 #' 
-#' -   [`untag_resource`][codestarconnections_untag_resource], which
-#'     removes tags for a resource in Amazon Web Services CodeStar
-#'     Connections.
+#' -   [`untag_resource`][codestarconnections_untag_resource], which removes tags for a resource in Amazon Web Services CodeStar Connections.
 #' 
-#' For information about how to use Amazon Web Services CodeStar
-#' Connections, see the [Developer Tools User
-#' Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html).
+#' For information about how to use Amazon Web Services CodeStar Connections, see the [Developer Tools User Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html).
 #'
 #' @param
 #' config

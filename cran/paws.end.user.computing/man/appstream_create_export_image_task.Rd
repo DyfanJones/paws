@@ -13,22 +13,15 @@ appstream_create_export_image_task(
 )
 }
 \arguments{
-\item{ImageName}{[required] The name of the WorkSpaces Applications image to export. The image must
-be in an available state and owned by your account.}
+\item{ImageName}{[required] The name of the WorkSpaces Applications image to export. The image must be in an available state and owned by your account.}
 
-\item{AmiName}{[required] The name for the exported EC2 AMI. This is a required field that must be
-unique within your account and region.}
+\item{AmiName}{[required] The name for the exported EC2 AMI. This is a required field that must be unique within your account and region.}
 
-\item{IamRoleArn}{[required] The ARN of the IAM role that allows WorkSpaces Applications to create
-the AMI. The role must have permissions to copy images, describe images,
-and create tags, with a trust relationship allowing
-appstream.amazonaws.com to assume the role.}
+\item{IamRoleArn}{[required] The ARN of the IAM role that allows WorkSpaces Applications to create the AMI. The role must have permissions to copy images, describe images, and create tags, with a trust relationship allowing appstream.amazonaws.com to assume the role.}
 
-\item{TagSpecifications}{The tags to apply to the exported AMI. These tags help you organize and
-manage your EC2 AMIs.}
+\item{TagSpecifications}{The tags to apply to the exported AMI. These tags help you organize and manage your EC2 AMIs.}
 
-\item{AmiDescription}{An optional description for the exported AMI. This description will be
-applied to the resulting EC2 AMI.}
+\item{AmiDescription}{An optional description for the exported AMI. This description will be applied to the resulting EC2 AMI.}
 }
 \description{
 Creates a task to export a WorkSpaces Applications image to an EC2 AMI. This allows you to use your customized WorkSpaces Applications images with other AWS services or for backup purposes.

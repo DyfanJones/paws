@@ -15,8 +15,7 @@ datapipeline_validate_pipeline_definition(
 \arguments{
 \item{pipelineId}{[required] The ID of the pipeline.}
 
-\item{pipelineObjects}{[required] The objects that define the pipeline changes to validate against the
-pipeline.}
+\item{pipelineObjects}{[required] The objects that define the pipeline changes to validate against the pipeline.}
 
 \item{parameterObjects}{The parameter objects used with the pipeline.}
 

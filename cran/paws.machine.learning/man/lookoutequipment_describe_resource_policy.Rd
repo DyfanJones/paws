@@ -7,8 +7,7 @@
 lookoutequipment_describe_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that is associated with
-the resource policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that is associated with the resource policy.}
 }
 \description{
 Provides the details of a resource policy attached to a resource.

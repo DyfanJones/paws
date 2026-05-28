@@ -13,24 +13,15 @@ directconnect_associate_mac_sec_key(
 )
 }
 \arguments{
-\item{connectionId}{[required] The ID of the dedicated connection (dxcon-xxxx), interconnect
-(dxcon-xxxx), or LAG (dxlag-xxxx).
+\item{connectionId}{[required] The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).
 
-You can use
-\code{\link[=directconnect_describe_connections]{describe_connections}},
-\code{\link[=directconnect_describe_interconnects]{describe_interconnects}}, or
-\code{\link[=directconnect_describe_lags]{describe_lags}} to retrieve connection
-ID.}
+You can use \code{\link[=directconnect_describe_connections]{describe_connections}}, \code{\link[=directconnect_describe_interconnects]{describe_interconnects}}, or \code{\link[=directconnect_describe_lags]{describe_lags}} to retrieve connection ID.}
 
-\item{secretARN}{The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key
-to associate with the connection.
+\item{secretARN}{The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the connection.
 
-You can use \code{\link[=directconnect_describe_connections]{describe_connections}}
-or \code{\link[=directconnect_describe_lags]{describe_lags}} to retrieve the MAC
-Security (MACsec) secret key.
+You can use \code{\link[=directconnect_describe_connections]{describe_connections}} or \code{\link[=directconnect_describe_lags]{describe_lags}} to retrieve the MAC Security (MACsec) secret key.
 
-If you use this request parameter, you do not use the \code{ckn} and \code{cak}
-request parameters.}
+If you use this request parameter, you do not use the \code{ckn} and \code{cak} request parameters.}
 
 \item{ckn}{The MAC Security (MACsec) CKN to associate with the connection.
 
@@ -38,8 +29,7 @@ You can create the CKN/CAK pair using an industry standard tool.
 
 The valid values are 64 hexadecimal characters (0-9, A-E).
 
-If you use this request parameter, you must use the \code{cak} request
-parameter and not use the \code{secretARN} request parameter.}
+If you use this request parameter, you must use the \code{cak} request parameter and not use the \code{secretARN} request parameter.}
 
 \item{cak}{The MAC Security (MACsec) CAK to associate with the connection.
 
@@ -47,8 +37,7 @@ You can create the CKN/CAK pair using an industry standard tool.
 
 The valid values are 64 hexadecimal characters (0-9, A-E).
 
-If you use this request parameter, you must use the \code{ckn} request
-parameter and not use the \code{secretARN} request parameter.}
+If you use this request parameter, you must use the \code{ckn} request parameter and not use the \code{secretARN} request parameter.}
 }
 \description{
 Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with a Direct Connect connection.

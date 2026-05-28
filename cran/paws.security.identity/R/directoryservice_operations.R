@@ -11,8 +11,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_accept_shared_directory/](https://www.paws-r-sdk.com/docs/directoryservice_accept_shared_directory/) for full documentation.
 #'
-#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account.
-#' This identifier is different for each directory owner account.
+#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.
 #'
 #' @keywords internal
 #'
@@ -46,73 +45,50 @@ directoryservice_accept_shared_directory <- function(SharedDirectoryId) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_add_ip_routes/](https://www.paws-r-sdk.com/docs/directoryservice_add_ip_routes/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory to which to add the address block.
-#' @param IpRoutes &#91;required&#93; IP address blocks, using CIDR format, of the traffic to route. This is
-#' often the IP address block of the DNS server used for your self-managed
-#' domain.
-#' @param UpdateSecurityGroupForDirectoryControllers If set to true, updates the inbound and outbound rules of the security
-#' group that has the description: "Amazon Web Services created security
-#' group for *directory ID* directory controllers." Following are the new
-#' rules:
+#' @param IpRoutes &#91;required&#93; IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.
+#' @param UpdateSecurityGroupForDirectoryControllers If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for *directory ID* directory controllers." Following are the new rules:
 #' 
 #' Inbound:
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
-#'     Managed Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
-#'     Managed Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: DNS (UDP), Protocol: UDP, Range: 53, Source: Managed Microsoft
-#'     AD VPC IPv4 CIDR
+#' -   Type: DNS (UDP), Protocol: UDP, Range: 53, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: DNS (TCP), Protocol: TCP, Range: 53, Source: Managed Microsoft
-#'     AD VPC IPv4 CIDR
+#' -   Type: DNS (TCP), Protocol: TCP, Range: 53, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: LDAP, Protocol: TCP, Range: 389, Source: Managed Microsoft AD
-#'     VPC IPv4 CIDR
+#' -   Type: LDAP, Protocol: TCP, Range: 389, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: All ICMP, Protocol: All, Range: N/A, Source: Managed Microsoft
-#'     AD VPC IPv4 CIDR
+#' -   Type: All ICMP, Protocol: All, Range: N/A, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
 #' Outbound:
 #' 
 #' -   Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0
 #' 
-#' These security rules impact an internal network interface that is not
-#' exposed publicly.
+#' These security rules impact an internal network interface that is not exposed publicly.
 #'
 #' @keywords internal
 #'
@@ -144,11 +120,9 @@ directoryservice_add_ip_routes <- function(DirectoryId, IpRoutes, UpdateSecurity
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_add_region/](https://www.paws-r-sdk.com/docs/directoryservice_add_region/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory to which you want to add Region
-#' replication.
-#' @param RegionName &#91;required&#93; The name of the Region where you want to add domain controllers for
-#' replication. For example, `us-east-1`.
-#' @param VPCSettings &#91;required&#93; 
+#' @param DirectoryId &#91;required&#93; The identifier of the directory to which you want to add Region replication.
+#' @param RegionName &#91;required&#93; The name of the Region where you want to add domain controllers for replication. For example, `us-east-1`.
+#' @param VPCSettings &#91;required&#93; Contains VPC information for the [`create_directory`][directoryservice_create_directory], [`create_microsoft_ad`][directoryservice_create_microsoft_ad], or [`create_hybrid_ad`][directoryservice_create_hybrid_ad] operation.
 #'
 #' @keywords internal
 #'
@@ -243,17 +217,14 @@ directoryservice_cancel_schema_extension <- function(DirectoryId, SchemaExtensio
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_connect_directory/](https://www.paws-r-sdk.com/docs/directoryservice_connect_directory/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The fully qualified name of your self-managed directory, such as
-#' `corp.example.com`.
+#' @param Name &#91;required&#93; The fully qualified name of your self-managed directory, such as `corp.example.com`.
 #' @param ShortName The NetBIOS name of your self-managed directory, such as `CORP`.
 #' @param Password &#91;required&#93; The password for your self-managed user account.
 #' @param Description A description for the directory.
 #' @param Size &#91;required&#93; The size of the directory.
-#' @param ConnectSettings &#91;required&#93; A DirectoryConnectSettings object that contains additional information
-#' for the operation.
+#' @param ConnectSettings &#91;required&#93; A DirectoryConnectSettings object that contains additional information for the operation.
 #' @param Tags The tags to be assigned to AD Connector.
-#' @param NetworkType The network type for your directory. The default value is `IPv4` or
-#' `IPv6` based on the provided subnet capabilities.
+#' @param NetworkType The network type for your directory. The default value is `IPv4` or `IPv6` based on the provided subnet capabilities.
 #'
 #' @keywords internal
 #'
@@ -287,9 +258,7 @@ directoryservice_connect_directory <- function(Name, ShortName = NULL, Password,
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to create the alias.
 #' @param Alias &#91;required&#93; The requested alias.
 #' 
-#' The alias must be unique amongst all aliases in Amazon Web Services.
-#' This operation throws an `EntityAlreadyExistsException` error if the
-#' alias already exists.
+#' The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an `EntityAlreadyExistsException` error if the alias already exists.
 #'
 #' @keywords internal
 #'
@@ -322,12 +291,9 @@ directoryservice_create_alias <- function(DirectoryId, Alias) {
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory in which to create the computer account.
 #' @param ComputerName &#91;required&#93; The name of the computer account.
-#' @param Password &#91;required&#93; A one-time password that is used to join the computer to the directory.
-#' You should generate a random, strong password to use for this parameter.
-#' @param OrganizationalUnitDistinguishedName The fully-qualified distinguished name of the organizational unit to
-#' place the computer account in.
-#' @param ComputerAttributes An array of Attribute objects that contain any LDAP attributes to apply
-#' to the computer account.
+#' @param Password &#91;required&#93; A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.
+#' @param OrganizationalUnitDistinguishedName The fully-qualified distinguished name of the organizational unit to place the computer account in.
+#' @param ComputerAttributes An array of Attribute objects that contain any LDAP attributes to apply to the computer account.
 #'
 #' @keywords internal
 #'
@@ -359,14 +325,10 @@ directoryservice_create_computer <- function(DirectoryId, ComputerName, Password
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_create_conditional_forwarder/](https://www.paws-r-sdk.com/docs/directoryservice_create_conditional_forwarder/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which you are
-#' creating the conditional forwarder.
-#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which
-#' you will set up a trust relationship.
-#' @param DnsIpAddrs The IP addresses of the remote DNS server associated with
-#' RemoteDomainName.
-#' @param DnsIpv6Addrs The IPv6 addresses of the remote DNS server associated with
-#' RemoteDomainName.
+#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.
+#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
+#' @param DnsIpAddrs The IP addresses of the remote DNS server associated with RemoteDomainName.
+#' @param DnsIpv6Addrs The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
 #'
 #' @keywords internal
 #'
@@ -399,45 +361,30 @@ directoryservice_create_conditional_forwarder <- function(DirectoryId, RemoteDom
 #'
 #' @param Name &#91;required&#93; The fully qualified name for the directory, such as `corp.example.com`.
 #' @param ShortName The NetBIOS name of the directory, such as `CORP`.
-#' @param Password &#91;required&#93; The password for the directory administrator. The directory creation
-#' process creates a directory administrator account with the user name
-#' `Administrator` and this password.
+#' @param Password &#91;required&#93; The password for the directory administrator. The directory creation process creates a directory administrator account with the user name `Administrator` and this password.
 #' 
-#' If you need to change the password for the administrator account, you
-#' can use the
-#' [`reset_user_password`][directoryservice_reset_user_password] API call.
+#' If you need to change the password for the administrator account, you can use the [`reset_user_password`][directoryservice_reset_user_password] API call.
 #' 
-#' The regex pattern for this string is made up of the following
-#' conditions:
+#' The regex pattern for this string is made up of the following conditions:
 #' 
 #' -   Length (?=^.\{8,64\}$) – Must be between 8 and 64 characters
 #' 
-#' AND any 3 of the following password complexity rules required by Active
-#' Directory:
+#' AND any 3 of the following password complexity rules required by Active Directory:
 #' 
-#' -   Numbers and upper case and lowercase
-#'     (?=.*\\d)(?=.*\[A-Z\])(?=.*\[a-z\])
+#' -   Numbers and upper case and lowercase (?=.*\\d)(?=.*\[A-Z\])(?=.*\[a-z\])
 #' 
-#' -   Numbers and special characters and lower case
-#'     (?=.*\\d)(?=.*\[^A-Za-z0-9\\s\])(?=.*\[a-z\])
+#' -   Numbers and special characters and lower case (?=.*\\d)(?=.*\[^A-Za-z0-9\\s\])(?=.*\[a-z\])
 #' 
-#' -   Special characters and upper case and lower case
-#'     (?=.*\[^A-Za-z0-9\\s\])(?=.*\[A-Z\])(?=.*\[a-z\])
+#' -   Special characters and upper case and lower case (?=.*\[^A-Za-z0-9\\s\])(?=.*\[A-Z\])(?=.*\[a-z\])
 #' 
-#' -   Numbers and upper case and special characters
-#'     (?=.*\\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\\s\])
+#' -   Numbers and upper case and special characters (?=.*\\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\\s\])
 #' 
-#' For additional information about how Active Directory passwords are
-#' enforced, see [Password must meet complexity
-#' requirements](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)
-#' on the Microsoft website.
+#' For additional information about how Active Directory passwords are enforced, see [Password must meet complexity requirements](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements) on the Microsoft website.
 #' @param Description A description for the directory.
 #' @param Size &#91;required&#93; The size of the directory.
-#' @param VpcSettings A DirectoryVpcSettings object that contains additional information for
-#' the operation.
+#' @param VpcSettings A DirectoryVpcSettings object that contains additional information for the operation.
 #' @param Tags The tags to be assigned to the Simple AD directory.
-#' @param NetworkType The network type for your directory. Simple AD supports IPv4 and
-#' Dual-stack only.
+#' @param NetworkType The network type for your directory. Simple AD supports IPv4 and Dual-stack only.
 #'
 #' @keywords internal
 #'
@@ -469,20 +416,11 @@ directoryservice_create_directory <- function(Name, ShortName = NULL, Password, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_create_hybrid_ad/](https://www.paws-r-sdk.com/docs/directoryservice_create_hybrid_ad/) for full documentation.
 #'
-#' @param SecretArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services Secrets
-#' Manager secret that contains the credentials for the service account
-#' used to join hybrid domain controllers to your self-managed AD domain.
-#' This secret is used once and not stored.
+#' @param SecretArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials for the service account used to join hybrid domain controllers to your self-managed AD domain. This secret is used once and not stored.
 #' 
-#' The secret must contain key-value pairs with keys matching
-#' `customerAdAdminDomainUsername` and `customerAdAdminDomainPassword`. For
-#' example:
-#' `{"customerAdAdminDomainUsername":"carlos_salazar","customerAdAdminDomainPassword":"ExamplePassword123!"}`.
-#' @param AssessmentId &#91;required&#93; The unique identifier of the successful directory assessment that
-#' validates your self-managed AD environment. You must have a successful
-#' directory assessment before you create a hybrid directory.
-#' @param Tags The tags to be assigned to the directory. Each tag consists of a key and
-#' value pair. You can specify multiple tags as a list.
+#' The secret must contain key-value pairs with keys matching `customerAdAdminDomainUsername` and `customerAdAdminDomainPassword`. For example: `{"customerAdAdminDomainUsername":"carlos_salazar","customerAdAdminDomainPassword":"ExamplePassword123!"}`.
+#' @param AssessmentId &#91;required&#93; The unique identifier of the successful directory assessment that validates your self-managed AD environment. You must have a successful directory assessment before you create a hybrid directory.
+#' @param Tags The tags to be assigned to the directory. Each tag consists of a key and value pair. You can specify multiple tags as a list.
 #'
 #' @keywords internal
 #'
@@ -515,10 +453,8 @@ directoryservice_create_hybrid_ad <- function(SecretArn, AssessmentId, Tags = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_create_log_subscription/](https://www.paws-r-sdk.com/docs/directoryservice_create_log_subscription/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the directory to which you want to subscribe and receive
-#' real-time logs to your specified CloudWatch log group.
-#' @param LogGroupName &#91;required&#93; The name of the CloudWatch log group where the real-time domain
-#' controller logs are forwarded.
+#' @param DirectoryId &#91;required&#93; Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.
+#' @param LogGroupName &#91;required&#93; The name of the CloudWatch log group where the real-time domain controller logs are forwarded.
 #'
 #' @keywords internal
 #'
@@ -549,28 +485,16 @@ directoryservice_create_log_subscription <- function(DirectoryId, LogGroupName) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_create_microsoft_ad/](https://www.paws-r-sdk.com/docs/directoryservice_create_microsoft_ad/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The fully qualified domain name for the Managed Microsoft AD directory,
-#' such as `corp.example.com`. This name will resolve inside your VPC only.
-#' It does not need to be publicly resolvable.
-#' @param ShortName The NetBIOS name for your domain, such as `CORP`. If you don't specify a
-#' NetBIOS name, it will default to the first part of your directory DNS.
-#' For example, `CORP` for the directory DNS `corp.example.com`.
+#' @param Name &#91;required&#93; The fully qualified domain name for the Managed Microsoft AD directory, such as `corp.example.com`. This name will resolve inside your VPC only. It does not need to be publicly resolvable.
+#' @param ShortName The NetBIOS name for your domain, such as `CORP`. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, `CORP` for the directory DNS `corp.example.com`.
 #' @param Password &#91;required&#93; The password for the default administrative user named `Admin`.
 #' 
-#' If you need to change the password for the administrator account, you
-#' can use the
-#' [`reset_user_password`][directoryservice_reset_user_password] API call.
-#' @param Description A description for the directory. This label will appear on the Amazon
-#' Web Services console `Directory Details` page after the directory is
-#' created.
-#' @param VpcSettings &#91;required&#93; Contains VPC information for the
-#' [`create_directory`][directoryservice_create_directory] or
-#' [`create_microsoft_ad`][directoryservice_create_microsoft_ad] operation.
-#' @param Edition Managed Microsoft AD is available in two editions: `Standard` and
-#' `Enterprise`. `Enterprise` is the default.
+#' If you need to change the password for the administrator account, you can use the [`reset_user_password`][directoryservice_reset_user_password] API call.
+#' @param Description A description for the directory. This label will appear on the Amazon Web Services console `Directory Details` page after the directory is created.
+#' @param VpcSettings &#91;required&#93; Contains VPC information for the [`create_directory`][directoryservice_create_directory] or [`create_microsoft_ad`][directoryservice_create_microsoft_ad] operation.
+#' @param Edition Managed Microsoft AD is available in two editions: `Standard` and `Enterprise`. `Enterprise` is the default.
 #' @param Tags The tags to be assigned to the Managed Microsoft AD directory.
-#' @param NetworkType The network type for your domain. The default value is `IPv4` or `IPv6`
-#' based on the provided subnet capabilities.
+#' @param NetworkType The network type for your domain. The default value is `IPv4` or `IPv6` based on the provided subnet capabilities.
 #'
 #' @keywords internal
 #'
@@ -635,18 +559,13 @@ directoryservice_create_snapshot <- function(DirectoryId, Name = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_create_trust/](https://www.paws-r-sdk.com/docs/directoryservice_create_trust/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The Directory ID of the Managed Microsoft AD directory for which to
-#' establish the trust relationship.
-#' @param RemoteDomainName &#91;required&#93; The Fully Qualified Domain Name (FQDN) of the external domain for which
-#' to create the trust relationship.
-#' @param TrustPassword &#91;required&#93; The trust password. The trust password must be the same password that
-#' was used when creating the trust relationship on the external domain.
+#' @param DirectoryId &#91;required&#93; The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.
+#' @param RemoteDomainName &#91;required&#93; The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.
+#' @param TrustPassword &#91;required&#93; The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.
 #' @param TrustDirection &#91;required&#93; The direction of the trust relationship.
 #' @param TrustType The trust relationship type. `Forest` is the default.
-#' @param ConditionalForwarderIpAddrs The IP addresses of the remote DNS server associated with
-#' RemoteDomainName.
-#' @param ConditionalForwarderIpv6Addrs The IPv6 addresses of the remote DNS server associated with
-#' RemoteDomainName.
+#' @param ConditionalForwarderIpAddrs The IP addresses of the remote DNS server associated with RemoteDomainName.
+#' @param ConditionalForwarderIpv6Addrs The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
 #' @param SelectiveAuth Optional parameter to enable selective authentication for the trust.
 #'
 #' @keywords internal
@@ -711,8 +630,7 @@ directoryservice_delete_ad_assessment <- function(AssessmentId) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_delete_conditional_forwarder/](https://www.paws-r-sdk.com/docs/directoryservice_delete_conditional_forwarder/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The directory ID for which you are deleting the conditional forwarder.
-#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which
-#' you are deleting the conditional forwarder.
+#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.
 #'
 #' @keywords internal
 #'
@@ -903,10 +821,8 @@ directoryservice_deregister_certificate <- function(DirectoryId, CertificateId) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_deregister_event_topic/](https://www.paws-r-sdk.com/docs/directoryservice_deregister_event_topic/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The Directory ID to remove as a publisher. This directory will no longer
-#' send messages to the specified Amazon SNS topic.
-#' @param TopicName &#91;required&#93; The name of the Amazon SNS topic from which to remove the directory as a
-#' publisher.
+#' @param DirectoryId &#91;required&#93; The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.
+#' @param TopicName &#91;required&#93; The name of the Amazon SNS topic from which to remove the directory as a publisher.
 #'
 #' @keywords internal
 #'
@@ -970,8 +886,7 @@ directoryservice_describe_ad_assessment <- function(AssessmentId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_ca_enrollment_policy/](https://www.paws-r-sdk.com/docs/directoryservice_describe_ca_enrollment_policy/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve the CA enrollment
-#' policy information.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve the CA enrollment policy information.
 #'
 #' @keywords internal
 #'
@@ -1037,16 +952,9 @@ directoryservice_describe_certificate <- function(DirectoryId, CertificateId) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_client_authentication_settings/](https://www.paws-r-sdk.com/docs/directoryservice_describe_client_authentication_settings/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve information.
-#' @param Type The type of client authentication for which to retrieve information. If
-#' no type is specified, a list of all client authentication types that are
-#' supported for the specified directory is retrieved.
-#' @param NextToken The *DescribeClientAuthenticationSettingsResult.NextToken* value from a
-#' previous call to
-#' [`describe_client_authentication_settings`][directoryservice_describe_client_authentication_settings].
-#' Pass null if this is the first call.
-#' @param Limit The maximum number of items to return. If this value is zero, the
-#' maximum number of items is specified by the limitations of the
-#' operation.
+#' @param Type The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.
+#' @param NextToken The *DescribeClientAuthenticationSettingsResult.NextToken* value from a previous call to [`describe_client_authentication_settings`][directoryservice_describe_client_authentication_settings]. Pass null if this is the first call.
+#' @param Limit The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.
 #'
 #' @keywords internal
 #'
@@ -1077,11 +985,8 @@ directoryservice_describe_client_authentication_settings <- function(DirectoryId
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_conditional_forwarders/](https://www.paws-r-sdk.com/docs/directoryservice_describe_conditional_forwarders/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The directory ID for which to get the list of associated conditional
-#' forwarders.
-#' @param RemoteDomainNames The fully qualified domain names (FQDN) of the remote domains for which
-#' to get the list of associated conditional forwarders. If this member is
-#' null, all conditional forwarders are returned.
+#' @param DirectoryId &#91;required&#93; The directory ID for which to get the list of associated conditional forwarders.
+#' @param RemoteDomainNames The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.
 #'
 #' @keywords internal
 #'
@@ -1112,17 +1017,11 @@ directoryservice_describe_conditional_forwarders <- function(DirectoryId, Remote
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_directories/](https://www.paws-r-sdk.com/docs/directoryservice_describe_directories/) for full documentation.
 #'
-#' @param DirectoryIds A list of identifiers of the directories for which to obtain the
-#' information. If this member is null, all directories that belong to the
-#' current account are returned.
+#' @param DirectoryIds A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.
 #' 
 #' An empty list results in an `InvalidParameterException` being thrown.
-#' @param NextToken The `DescribeDirectoriesResult.NextToken` value from a previous call to
-#' [`describe_directories`][directoryservice_describe_directories]. Pass
-#' null if this is the first call.
-#' @param Limit The maximum number of items to return. If this value is zero, the
-#' maximum number of items is specified by the limitations of the
-#' operation.
+#' @param NextToken The `DescribeDirectoriesResult.NextToken` value from a previous call to [`describe_directories`][directoryservice_describe_directories]. Pass null if this is the first call.
+#' @param Limit The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.
 #'
 #' @keywords internal
 #'
@@ -1185,13 +1084,9 @@ directoryservice_describe_directory_data_access <- function(DirectoryId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_domain_controllers/](https://www.paws-r-sdk.com/docs/directoryservice_describe_domain_controllers/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the directory for which to retrieve the domain controller
-#' information.
-#' @param DomainControllerIds A list of identifiers for the domain controllers whose information will
-#' be provided.
-#' @param NextToken The *DescribeDomainControllers.NextToken* value from a previous call to
-#' [`describe_domain_controllers`][directoryservice_describe_domain_controllers].
-#' Pass null if this is the first call.
+#' @param DirectoryId &#91;required&#93; Identifier of the directory for which to retrieve the domain controller information.
+#' @param DomainControllerIds A list of identifiers for the domain controllers whose information will be provided.
+#' @param NextToken The *DescribeDomainControllers.NextToken* value from a previous call to [`describe_domain_controllers`][directoryservice_describe_domain_controllers]. Pass null if this is the first call.
 #' @param Limit The maximum number of items to return.
 #'
 #' @keywords internal
@@ -1224,12 +1119,8 @@ directoryservice_describe_domain_controllers <- function(DirectoryId, DomainCont
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_event_topics/](https://www.paws-r-sdk.com/docs/directoryservice_describe_event_topics/) for full documentation.
 #'
-#' @param DirectoryId The Directory ID for which to get the list of associated Amazon SNS
-#' topics. If this member is null, associations for all Directory IDs are
-#' returned.
-#' @param TopicNames A list of Amazon SNS topic names for which to obtain the information. If
-#' this member is null, all associations for the specified Directory ID are
-#' returned.
+#' @param DirectoryId The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.
+#' @param TopicNames A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.
 #' 
 #' An empty list results in an `InvalidParameterException` being thrown.
 #'
@@ -1262,13 +1153,9 @@ directoryservice_describe_event_topics <- function(DirectoryId = NULL, TopicName
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_hybrid_ad_update/](https://www.paws-r-sdk.com/docs/directoryservice_describe_hybrid_ad_update/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the hybrid directory for which to retrieve update
-#' information.
-#' @param UpdateType The type of update activities to retrieve. Valid values include
-#' `SelfManagedInstances` and `HybridAdministratorAccount`.
-#' @param NextToken The pagination token from a previous request to
-#' [`describe_hybrid_ad_update`][directoryservice_describe_hybrid_ad_update].
-#' Pass null if this is the first request.
+#' @param DirectoryId &#91;required&#93; The identifier of the hybrid directory for which to retrieve update information.
+#' @param UpdateType The type of update activities to retrieve. Valid values include `SelfManagedInstances` and `HybridAdministratorAccount`.
+#' @param NextToken The pagination token from a previous request to [`describe_hybrid_ad_update`][directoryservice_describe_hybrid_ad_update]. Pass null if this is the first request.
 #'
 #' @keywords internal
 #'
@@ -1300,8 +1187,7 @@ directoryservice_describe_hybrid_ad_update <- function(DirectoryId, UpdateType =
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_ldaps_settings/](https://www.paws-r-sdk.com/docs/directoryservice_describe_ldaps_settings/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param Type The type of LDAP security to enable. Currently only the value `Client`
-#' is supported.
+#' @param Type The type of LDAP security to enable. Currently only the value `Client` is supported.
 #' @param NextToken The type of next token used for pagination.
 #' @param Limit Specifies the number of items that should be displayed on one page.
 #'
@@ -1337,9 +1223,7 @@ directoryservice_describe_ldaps_settings <- function(DirectoryId, Type = NULL, N
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
 #' @param RegionName The name of the Region. For example, `us-east-1`.
-#' @param NextToken The `DescribeRegionsResult.NextToken` value from a previous call to
-#' [`describe_regions`][directoryservice_describe_regions]. Pass null if
-#' this is the first call.
+#' @param NextToken The `DescribeRegionsResult.NextToken` value from a previous call to [`describe_regions`][directoryservice_describe_regions]. Pass null if this is the first call.
 #'
 #' @keywords internal
 #'
@@ -1373,9 +1257,7 @@ directoryservice_describe_regions <- function(DirectoryId, RegionName = NULL, Ne
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve information.
 #' @param Status The status of the directory settings for which to retrieve information.
-#' @param NextToken The `DescribeSettingsResult.NextToken` value from a previous call to
-#' [`describe_settings`][directoryservice_describe_settings]. Pass null if
-#' this is the first call.
+#' @param NextToken The `DescribeSettingsResult.NextToken` value from a previous call to [`describe_settings`][directoryservice_describe_settings]. Pass null if this is the first call.
 #'
 #' @keywords internal
 #'
@@ -1408,10 +1290,7 @@ directoryservice_describe_settings <- function(DirectoryId, Status = NULL, NextT
 #'
 #' @param OwnerDirectoryId &#91;required&#93; Returns the identifier of the directory in the directory owner account.
 #' @param SharedDirectoryIds A list of identifiers of all shared directories in your account.
-#' @param NextToken The `DescribeSharedDirectoriesResult.NextToken` value from a previous
-#' call to
-#' [`describe_shared_directories`][directoryservice_describe_shared_directories].
-#' Pass null if this is the first call.
+#' @param NextToken The `DescribeSharedDirectoriesResult.NextToken` value from a previous call to [`describe_shared_directories`][directoryservice_describe_shared_directories]. Pass null if this is the first call.
 #' @param Limit The number of shared directories to return in the response object.
 #'
 #' @keywords internal
@@ -1444,14 +1323,9 @@ directoryservice_describe_shared_directories <- function(OwnerDirectoryId, Share
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_snapshots/](https://www.paws-r-sdk.com/docs/directoryservice_describe_snapshots/) for full documentation.
 #'
-#' @param DirectoryId The identifier of the directory for which to retrieve snapshot
-#' information.
-#' @param SnapshotIds A list of identifiers of the snapshots to obtain the information for. If
-#' this member is null or empty, all snapshots are returned using the
-#' *Limit* and *NextToken* members.
-#' @param NextToken The *DescribeSnapshotsResult.NextToken* value from a previous call to
-#' [`describe_snapshots`][directoryservice_describe_snapshots]. Pass null
-#' if this is the first call.
+#' @param DirectoryId The identifier of the directory for which to retrieve snapshot information.
+#' @param SnapshotIds A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the *Limit* and *NextToken* members.
+#' @param NextToken The *DescribeSnapshotsResult.NextToken* value from a previous call to [`describe_snapshots`][directoryservice_describe_snapshots]. Pass null if this is the first call.
 #' @param Limit The maximum number of objects to return.
 #'
 #' @keywords internal
@@ -1483,16 +1357,11 @@ directoryservice_describe_snapshots <- function(DirectoryId = NULL, SnapshotIds 
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_describe_trusts/](https://www.paws-r-sdk.com/docs/directoryservice_describe_trusts/) for full documentation.
 #'
-#' @param DirectoryId The Directory ID of the Amazon Web Services directory that is a part of
-#' the requested trust relationship.
-#' @param TrustIds A list of identifiers of the trust relationships for which to obtain the
-#' information. If this member is null, all trust relationships that belong
-#' to the current account are returned.
+#' @param DirectoryId The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.
+#' @param TrustIds A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.
 #' 
 #' An empty list results in an `InvalidParameterException` being thrown.
-#' @param NextToken The *DescribeTrustsResult.NextToken* value from a previous call to
-#' [`describe_trusts`][directoryservice_describe_trusts]. Pass null if this
-#' is the first call.
+#' @param NextToken The *DescribeTrustsResult.NextToken* value from a previous call to [`describe_trusts`][directoryservice_describe_trusts]. Pass null if this is the first call.
 #' @param Limit The maximum number of objects to return.
 #'
 #' @keywords internal
@@ -1527,10 +1396,7 @@ directoryservice_describe_trusts <- function(DirectoryId = NULL, TrustIds = NULL
 #' @param DirectoryId &#91;required&#93; The unique identifier of the directory.
 #' @param UpdateType &#91;required&#93; The type of updates you want to describe for the directory.
 #' @param RegionName The name of the Region.
-#' @param NextToken The `DescribeUpdateDirectoryResult`. NextToken value from a previous
-#' call to
-#' [`describe_update_directory`][directoryservice_describe_update_directory].
-#' Pass null if this is the first call.
+#' @param NextToken The `DescribeUpdateDirectoryResult`. NextToken value from a previous call to [`describe_update_directory`][directoryservice_describe_update_directory]. Pass null if this is the first call.
 #'
 #' @keywords internal
 #'
@@ -1562,8 +1428,7 @@ directoryservice_describe_update_directory <- function(DirectoryId, UpdateType, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_disable_ca_enrollment_policy/](https://www.paws-r-sdk.com/docs/directoryservice_disable_ca_enrollment_policy/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to disable the CA enrollment
-#' policy.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to disable the CA enrollment policy.
 #'
 #' @keywords internal
 #'
@@ -1596,8 +1461,7 @@ directoryservice_disable_ca_enrollment_policy <- function(DirectoryId) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_disable_client_authentication/](https://www.paws-r-sdk.com/docs/directoryservice_disable_client_authentication/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory
-#' @param Type &#91;required&#93; The type of client authentication to disable. Currently the only
-#' parameter `"SmartCard"` is supported.
+#' @param Type &#91;required&#93; The type of client authentication to disable. Currently the only parameter `"SmartCard"` is supported.
 #'
 #' @keywords internal
 #'
@@ -1661,8 +1525,7 @@ directoryservice_disable_directory_data_access <- function(DirectoryId) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_disable_ldaps/](https://www.paws-r-sdk.com/docs/directoryservice_disable_ldaps/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client`
-#' is supported.
+#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client` is supported.
 #'
 #' @keywords internal
 #'
@@ -1727,18 +1590,10 @@ directoryservice_disable_radius <- function(DirectoryId) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_disable_sso/](https://www.paws-r-sdk.com/docs/directoryservice_disable_sso/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to disable single-sign on.
-#' @param UserName The username of an alternate account to use to disable single-sign on.
-#' This is only used for AD Connector directories. This account must have
-#' privileges to remove a service principal name.
+#' @param UserName The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.
 #' 
-#' If the AD Connector service account does not have privileges to remove a
-#' service principal name, you can specify an alternate account with the
-#' *UserName* and *Password* parameters. These credentials are only used to
-#' disable single sign-on and are not stored by the service. The AD
-#' Connector service account is not changed.
-#' @param Password The password of an alternate account to use to disable single-sign on.
-#' This is only used for AD Connector directories. For more information,
-#' see the *UserName* parameter.
+#' If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the *UserName* and *Password* parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.
+#' @param Password The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the *UserName* parameter.
 #'
 #' @keywords internal
 #'
@@ -1770,14 +1625,10 @@ directoryservice_disable_sso <- function(DirectoryId, UserName = NULL, Password 
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_enable_ca_enrollment_policy/](https://www.paws-r-sdk.com/docs/directoryservice_enable_ca_enrollment_policy/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable the CA enrollment
-#' policy.
-#' @param PcaConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the Private Certificate Authority
-#' (PCA) connector to use for automatic certificate enrollment. This
-#' connector must be properly configured and accessible from the directory.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable the CA enrollment policy.
+#' @param PcaConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the Private Certificate Authority (PCA) connector to use for automatic certificate enrollment. This connector must be properly configured and accessible from the directory.
 #' 
-#' The ARN format is:
-#' `arn:aws:pca-connector-ad:region:account-id:connector/connector-id `
+#' The ARN format is: `arn:aws:pca-connector-ad:region:account-id:connector/connector-id `
 #'
 #' @keywords internal
 #'
@@ -1810,10 +1661,7 @@ directoryservice_enable_ca_enrollment_policy <- function(DirectoryId, PcaConnect
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_enable_client_authentication/](https://www.paws-r-sdk.com/docs/directoryservice_enable_client_authentication/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the specified directory.
-#' @param Type &#91;required&#93; The type of client authentication to enable. Currently only the value
-#' `SmartCard` is supported. Smart card authentication in AD Connector
-#' requires that you enable Kerberos Constrained Delegation for the Service
-#' User to the LDAP service in your self-managed AD.
+#' @param Type &#91;required&#93; The type of client authentication to enable. Currently only the value `SmartCard` is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
 #'
 #' @keywords internal
 #'
@@ -1878,8 +1726,7 @@ directoryservice_enable_directory_data_access <- function(DirectoryId) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_enable_ldaps/](https://www.paws-r-sdk.com/docs/directoryservice_enable_ldaps/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client`
-#' is supported.
+#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client` is supported.
 #'
 #' @keywords internal
 #'
@@ -1913,8 +1760,7 @@ directoryservice_enable_ldaps <- function(DirectoryId, Type) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_enable_radius/](https://www.paws-r-sdk.com/docs/directoryservice_enable_radius/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable MFA.
-#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS
-#' server.
+#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS server.
 #'
 #' @keywords internal
 #'
@@ -1946,18 +1792,10 @@ directoryservice_enable_radius <- function(DirectoryId, RadiusSettings) {
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_enable_sso/](https://www.paws-r-sdk.com/docs/directoryservice_enable_sso/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable single-sign on.
-#' @param UserName The username of an alternate account to use to enable single-sign on.
-#' This is only used for AD Connector directories. This account must have
-#' privileges to add a service principal name.
+#' @param UserName The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.
 #' 
-#' If the AD Connector service account does not have privileges to add a
-#' service principal name, you can specify an alternate account with the
-#' *UserName* and *Password* parameters. These credentials are only used to
-#' enable single sign-on and are not stored by the service. The AD
-#' Connector service account is not changed.
-#' @param Password The password of an alternate account to use to enable single-sign on.
-#' This is only used for AD Connector directories. For more information,
-#' see the *UserName* parameter.
+#' If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the *UserName* and *Password* parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.
+#' @param Password The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the *UserName* parameter.
 #'
 #' @keywords internal
 #'
@@ -2051,11 +1889,8 @@ directoryservice_get_snapshot_limits <- function(DirectoryId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_list_ad_assessments/](https://www.paws-r-sdk.com/docs/directoryservice_list_ad_assessments/) for full documentation.
 #'
-#' @param DirectoryId The identifier of the directory for which to list assessments. If not
-#' specified, all assessments in your account are returned.
-#' @param NextToken The pagination token from a previous request to
-#' [`list_ad_assessments`][directoryservice_list_ad_assessments]. Pass null
-#' if this is the first request.
+#' @param DirectoryId The identifier of the directory for which to list assessments. If not specified, all assessments in your account are returned.
+#' @param NextToken The pagination token from a previous request to [`list_ad_assessments`][directoryservice_list_ad_assessments]. Pass null if this is the first request.
 #' @param Limit The maximum number of assessment summaries to return.
 #'
 #' @keywords internal
@@ -2089,10 +1924,7 @@ directoryservice_list_ad_assessments <- function(DirectoryId = NULL, NextToken =
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_list_certificates/](https://www.paws-r-sdk.com/docs/directoryservice_list_certificates/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param NextToken A token for requesting another page of certificates if the `NextToken`
-#' response element indicates that more certificates are available. Use the
-#' value of the returned `NextToken` element in your request until the
-#' token comes back as `null`. Pass `null` if this is the first call.
+#' @param NextToken A token for requesting another page of certificates if the `NextToken` response element indicates that more certificates are available. Use the value of the returned `NextToken` element in your request until the token comes back as `null`. Pass `null` if this is the first call.
 #' @param Limit The number of items that should show up on one page
 #'
 #' @keywords internal
@@ -2124,13 +1956,9 @@ directoryservice_list_certificates <- function(DirectoryId, NextToken = NULL, Li
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_list_ip_routes/](https://www.paws-r-sdk.com/docs/directoryservice_list_ip_routes/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory for which you want to retrieve the IP
-#' addresses.
-#' @param NextToken The *ListIpRoutes.NextToken* value from a previous call to
-#' [`list_ip_routes`][directoryservice_list_ip_routes]. Pass null if this
-#' is the first call.
-#' @param Limit Maximum number of items to return. If this value is zero, the maximum
-#' number of items is specified by the limitations of the operation.
+#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory for which you want to retrieve the IP addresses.
+#' @param NextToken The *ListIpRoutes.NextToken* value from a previous call to [`list_ip_routes`][directoryservice_list_ip_routes]. Pass null if this is the first call.
+#' @param Limit Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.
 #'
 #' @keywords internal
 #'
@@ -2161,11 +1989,7 @@ directoryservice_list_ip_routes <- function(DirectoryId, NextToken = NULL, Limit
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_list_log_subscriptions/](https://www.paws-r-sdk.com/docs/directoryservice_list_log_subscriptions/) for full documentation.
 #'
-#' @param DirectoryId If a *DirectoryID* is provided, lists only the log subscription
-#' associated with that directory. If no *DirectoryId* is provided, lists
-#' all log subscriptions associated with your Amazon Web Services account.
-#' If there are no log subscriptions for the Amazon Web Services account or
-#' the directory, an empty list will be returned.
+#' @param DirectoryId If a *DirectoryID* is provided, lists only the log subscription associated with that directory. If no *DirectoryId* is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.
 #' @param NextToken The token for the next set of items to return.
 #' @param Limit The maximum number of items returned.
 #'
@@ -2198,11 +2022,8 @@ directoryservice_list_log_subscriptions <- function(DirectoryId = NULL, NextToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_list_schema_extensions/](https://www.paws-r-sdk.com/docs/directoryservice_list_schema_extensions/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory from which to retrieve the schema
-#' extension information.
-#' @param NextToken The `ListSchemaExtensions.NextToken` value from a previous call to
-#' [`list_schema_extensions`][directoryservice_list_schema_extensions].
-#' Pass null if this is the first call.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory from which to retrieve the schema extension information.
+#' @param NextToken The `ListSchemaExtensions.NextToken` value from a previous call to [`list_schema_extensions`][directoryservice_list_schema_extensions]. Pass null if this is the first call.
 #' @param Limit The maximum number of items to return.
 #'
 #' @keywords internal
@@ -2270,11 +2091,8 @@ directoryservice_list_tags_for_resource <- function(ResourceId, NextToken = NULL
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
 #' @param CertificateData &#91;required&#93; The certificate PEM string that needs to be registered.
-#' @param Type The function that the registered certificate performs. Valid values
-#' include `ClientLDAPS` or `ClientCertAuth`. The default value is
-#' `ClientLDAPS`.
-#' @param ClientCertAuthSettings A `ClientCertAuthSettings` object that contains client certificate
-#' authentication settings.
+#' @param Type The function that the registered certificate performs. Valid values include `ClientLDAPS` or `ClientCertAuth`. The default value is `ClientLDAPS`.
+#' @param ClientCertAuthSettings A `ClientCertAuthSettings` object that contains client certificate authentication settings.
 #'
 #' @keywords internal
 #'
@@ -2305,11 +2123,8 @@ directoryservice_register_certificate <- function(DirectoryId, CertificateData, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_register_event_topic/](https://www.paws-r-sdk.com/docs/directoryservice_register_event_topic/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The Directory ID that will publish status messages to the Amazon SNS
-#' topic.
-#' @param TopicName &#91;required&#93; The Amazon SNS topic name to which the directory will publish status
-#' messages. This Amazon SNS topic must be in the same region as the
-#' specified Directory ID.
+#' @param DirectoryId &#91;required&#93; The Directory ID that will publish status messages to the Amazon SNS topic.
+#' @param TopicName &#91;required&#93; The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.
 #'
 #' @keywords internal
 #'
@@ -2341,8 +2156,7 @@ directoryservice_register_event_topic <- function(DirectoryId, TopicName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_reject_shared_directory/](https://www.paws-r-sdk.com/docs/directoryservice_reject_shared_directory/) for full documentation.
 #'
-#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account.
-#' This identifier is different for each directory owner account.
+#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.
 #'
 #' @keywords internal
 #'
@@ -2373,8 +2187,7 @@ directoryservice_reject_shared_directory <- function(SharedDirectoryId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_remove_ip_routes/](https://www.paws-r-sdk.com/docs/directoryservice_remove_ip_routes/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory from which you want to remove the IP
-#' addresses.
+#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory from which you want to remove the IP addresses.
 #' @param CidrIps IP address blocks that you want to remove.
 #' @param CidrIpv6s IPv6 address blocks that you want to remove.
 #'
@@ -2408,8 +2221,7 @@ directoryservice_remove_ip_routes <- function(DirectoryId, CidrIps = NULL, CidrI
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_remove_region/](https://www.paws-r-sdk.com/docs/directoryservice_remove_region/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which you want to remove Region
-#' replication.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which you want to remove Region replication.
 #'
 #' @keywords internal
 #'
@@ -2473,8 +2285,7 @@ directoryservice_remove_tags_from_resource <- function(ResourceId, TagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_reset_user_password/](https://www.paws-r-sdk.com/docs/directoryservice_reset_user_password/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD or Simple AD directory in which
-#' the user resides.
+#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.
 #' @param UserName &#91;required&#93; The user name of the user whose password will be reset.
 #' @param NewPassword &#91;required&#93; The new password that will be reset.
 #'
@@ -2540,18 +2351,10 @@ directoryservice_restore_from_snapshot <- function(SnapshotId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_share_directory/](https://www.paws-r-sdk.com/docs/directoryservice_share_directory/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD directory that you want to share
-#' with other Amazon Web Services accounts.
-#' @param ShareNotes A directory share request that is sent by the directory owner to the
-#' directory consumer. The request includes a typed message to help the
-#' directory consumer administrator determine whether to approve or reject
-#' the share invitation.
-#' @param ShareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory is
-#' to be shared.
-#' @param ShareMethod &#91;required&#93; The method used when sharing a directory to determine whether the
-#' directory should be shared within your Amazon Web Services organization
-#' (`ORGANIZATIONS`) or with any Amazon Web Services account by sending a
-#' directory sharing request (`HANDSHAKE`).
+#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.
+#' @param ShareNotes A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.
+#' @param ShareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory is to be shared.
+#' @param ShareMethod &#91;required&#93; The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (`ORGANIZATIONS`) or with any Amazon Web Services account by sending a directory sharing request (`HANDSHAKE`).
 #'
 #' @keywords internal
 #'
@@ -2583,12 +2386,8 @@ directoryservice_share_directory <- function(DirectoryId, ShareNotes = NULL, Sha
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_start_ad_assessment/](https://www.paws-r-sdk.com/docs/directoryservice_start_ad_assessment/) for full documentation.
 #'
-#' @param AssessmentConfiguration Configuration parameters for the directory assessment, including DNS
-#' server information, domain name, Amazon VPC subnet, and Amazon Web
-#' Services System Manager managed node details.
-#' @param DirectoryId The identifier of the directory for which to perform the assessment.
-#' This should be an existing directory. If the assessment is not for an
-#' existing directory, this parameter should be omitted.
+#' @param AssessmentConfiguration Configuration parameters for the directory assessment, including DNS server information, domain name, Amazon VPC subnet, and Amazon Web Services System Manager managed node details.
+#' @param DirectoryId The identifier of the directory for which to perform the assessment. This should be an existing directory. If the assessment is not for an existing directory, this parameter should be omitted.
 #'
 #' @keywords internal
 #'
@@ -2619,14 +2418,9 @@ directoryservice_start_ad_assessment <- function(AssessmentConfiguration = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_start_schema_extension/](https://www.paws-r-sdk.com/docs/directoryservice_start_schema_extension/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which the schema extension will be
-#' applied to.
-#' @param CreateSnapshotBeforeSchemaExtension &#91;required&#93; If true, creates a snapshot of the directory before applying the schema
-#' extension.
-#' @param LdifContent &#91;required&#93; The LDIF file represented as a string. To construct the LdifContent
-#' string, precede each line as it would be formatted in an ldif file with
-#' \\n. See the example request below for more details. The file size can
-#' be no larger than 1MB.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which the schema extension will be applied to.
+#' @param CreateSnapshotBeforeSchemaExtension &#91;required&#93; If true, creates a snapshot of the directory before applying the schema extension.
+#' @param LdifContent &#91;required&#93; The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.
 #' @param Description &#91;required&#93; A description of the schema extension.
 #'
 #' @keywords internal
@@ -2659,10 +2453,8 @@ directoryservice_start_schema_extension <- function(DirectoryId, CreateSnapshotB
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_unshare_directory/](https://www.paws-r-sdk.com/docs/directoryservice_unshare_directory/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the Managed Microsoft AD directory that you want to
-#' stop sharing.
-#' @param UnshareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory
-#' has to be unshared.
+#' @param DirectoryId &#91;required&#93; The identifier of the Managed Microsoft AD directory that you want to stop sharing.
+#' @param UnshareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory has to be unshared.
 #'
 #' @keywords internal
 #'
@@ -2694,14 +2486,10 @@ directoryservice_unshare_directory <- function(DirectoryId, UnshareTarget) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_update_conditional_forwarder/](https://www.paws-r-sdk.com/docs/directoryservice_update_conditional_forwarder/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which to
-#' update the conditional forwarder.
-#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which
-#' you will set up a trust relationship.
-#' @param DnsIpAddrs The updated IP addresses of the remote DNS server associated with the
-#' conditional forwarder.
-#' @param DnsIpv6Addrs The updated IPv6 addresses of the remote DNS server associated with the
-#' conditional forwarder.
+#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.
+#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
+#' @param DnsIpAddrs The updated IP addresses of the remote DNS server associated with the conditional forwarder.
+#' @param DnsIpv6Addrs The updated IPv6 addresses of the remote DNS server associated with the conditional forwarder.
 #'
 #' @keywords internal
 #'
@@ -2734,12 +2522,10 @@ directoryservice_update_conditional_forwarder <- function(DirectoryId, RemoteDom
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory to update.
 #' @param UpdateType &#91;required&#93; The type of update to perform on the directory.
-#' @param OSUpdateSettings Operating system configuration to apply during the directory update
-#' operation.
+#' @param OSUpdateSettings Operating system configuration to apply during the directory update operation.
 #' @param DirectorySizeUpdateSettings Directory size configuration to apply during the update operation.
 #' @param NetworkUpdateSettings Network configuration to apply during the directory update operation.
-#' @param CreateSnapshotBeforeUpdate Specifies whether to create a directory snapshot before performing the
-#' update.
+#' @param CreateSnapshotBeforeUpdate Specifies whether to create a directory snapshot before performing the update.
 #'
 #' @keywords internal
 #'
@@ -2771,22 +2557,12 @@ directoryservice_update_directory_setup <- function(DirectoryId, UpdateType, OSU
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_update_hybrid_ad/](https://www.paws-r-sdk.com/docs/directoryservice_update_hybrid_ad/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the hybrid directory to update.
-#' @param HybridAdministratorAccountUpdate We create a hybrid directory administrator account when we create a
-#' hybrid directory. Use `HybridAdministratorAccountUpdate` to recover the
-#' hybrid directory administrator account if you have deleted it.
+#' @param HybridAdministratorAccountUpdate We create a hybrid directory administrator account when we create a hybrid directory. Use `HybridAdministratorAccountUpdate` to recover the hybrid directory administrator account if you have deleted it.
 #' 
-#' To recover your hybrid directory administrator account, we need
-#' temporary access to a user in your self-managed AD with administrator
-#' permissions in the form of a secret from Amazon Web Services Secrets
-#' Manager. We use these credentials once during recovery and don't store
-#' them.
+#' To recover your hybrid directory administrator account, we need temporary access to a user in your self-managed AD with administrator permissions in the form of a secret from Amazon Web Services Secrets Manager. We use these credentials once during recovery and don't store them.
 #' 
-#' If your hybrid directory administrator account exists, then you don’t
-#' need to use `HybridAdministratorAccountUpdate`, even if you have updated
-#' your self-managed AD administrator user.
-#' @param SelfManagedInstancesSettings Updates to the self-managed AD configuration, including DNS server IP
-#' addresses and Amazon Web Services System Manager managed node
-#' identifiers.
+#' If your hybrid directory administrator account exists, then you don’t need to use `HybridAdministratorAccountUpdate`, even if you have updated your self-managed AD administrator user.
+#' @param SelfManagedInstancesSettings Updates to the self-managed AD configuration, including DNS server IP addresses and Amazon Web Services System Manager managed node identifiers.
 #'
 #' @keywords internal
 #'
@@ -2817,8 +2593,7 @@ directoryservice_update_hybrid_ad <- function(DirectoryId, HybridAdministratorAc
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_update_number_of_domain_controllers/](https://www.paws-r-sdk.com/docs/directoryservice_update_number_of_domain_controllers/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the directory to which the domain controllers will be
-#' added or removed.
+#' @param DirectoryId &#91;required&#93; Identifier of the directory to which the domain controllers will be added or removed.
 #' @param DesiredNumber &#91;required&#93; The number of domain controllers desired in the directory.
 #'
 #' @keywords internal
@@ -2851,10 +2626,8 @@ directoryservice_update_number_of_domain_controllers <- function(DirectoryId, De
 #'
 #' See [https://www.paws-r-sdk.com/docs/directoryservice_update_radius/](https://www.paws-r-sdk.com/docs/directoryservice_update_radius/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to update the RADIUS server
-#' information.
-#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS
-#' server.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to update the RADIUS server information.
+#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS server.
 #'
 #' @keywords internal
 #'

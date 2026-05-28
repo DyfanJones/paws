@@ -16,9 +16,7 @@ kafka_update_security(
 
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the cluster.}
 
-\item{CurrentVersion}{[required] The version of the MSK cluster to update. Cluster versions aren't simple
-numbers. You can describe an MSK cluster to find its version. When this
-update operation is successful, it generates a new cluster version.}
+\item{CurrentVersion}{[required] The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.}
 
 \item{EncryptionInfo}{Includes all encryption-related information.}
 }

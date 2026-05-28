@@ -13,10 +13,7 @@ docdb_failover_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The identifier of the Amazon DocumentDB global cluster to apply this
-operation. The identifier is the unique key assigned by the user when
-the cluster is created. In other words, it's the name of the global
-cluster.
+\item{GlobalClusterIdentifier}{[required] The identifier of the Amazon DocumentDB global cluster to apply this operation. The identifier is the unique key assigned by the user when the cluster is created. In other words, it's the name of the global cluster.
 
 Constraints:
 \itemize{
@@ -26,10 +23,7 @@ Constraints:
 
 Pattern: \verb{[A-Za-z][0-9A-Za-z-:._]*}}
 
-\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Amazon DocumentDB cluster that you want
-to promote to the primary for the global cluster. Use the Amazon
-Resource Name (ARN) for the identifier so that Amazon DocumentDB can
-locate the cluster in its Amazon Web Services region.
+\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Amazon DocumentDB cluster that you want to promote to the primary for the global cluster. Use the Amazon Resource Name (ARN) for the identifier so that Amazon DocumentDB can locate the cluster in its Amazon Web Services region.
 
 Constraints:
 \itemize{
@@ -39,11 +33,9 @@ Constraints:
 
 Pattern: \verb{[A-Za-z][0-9A-Za-z-:._]*}}
 
-\item{AllowDataLoss}{Specifies whether to allow data loss for this global cluster operation.
-Allowing data loss triggers a global failover operation.
+\item{AllowDataLoss}{Specifies whether to allow data loss for this global cluster operation. Allowing data loss triggers a global failover operation.
 
-If you don't specify \code{AllowDataLoss}, the global cluster operation
-defaults to a switchover.
+If you don't specify \code{AllowDataLoss}, the global cluster operation defaults to a switchover.
 
 Constraints:
 \itemize{

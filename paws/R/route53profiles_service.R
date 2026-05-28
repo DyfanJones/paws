@@ -5,8 +5,7 @@ NULL
 #' Route 53 Profiles
 #'
 #' @description
-#' With Amazon Route 53 Profiles you can share Route 53 configurations with
-#' VPCs and AWS accounts
+#' With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and AWS accounts
 #'
 #' @param
 #' config

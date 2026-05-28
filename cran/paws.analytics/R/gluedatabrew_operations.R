@@ -11,9 +11,7 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_batch_delete_recipe_version/](https://www.paws-r-sdk.com/docs/gluedatabrew_batch_delete_recipe_version/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the recipe whose versions are to be deleted.
-#' @param RecipeVersions &#91;required&#93; An array of version identifiers, for the recipe versions to be deleted.
-#' You can specify numeric versions (`X.Y`) or `LATEST_WORKING`.
-#' `LATEST_PUBLISHED` is not supported.
+#' @param RecipeVersions &#91;required&#93; An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (`X.Y`) or `LATEST_WORKING`. `LATEST_PUBLISHED` is not supported.
 #'
 #' @keywords internal
 #'
@@ -44,14 +42,11 @@ gluedatabrew_batch_delete_recipe_version <- function(Name, RecipeVersions) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_create_dataset/](https://www.paws-r-sdk.com/docs/gluedatabrew_create_dataset/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the dataset to be created. Valid characters are alphanumeric
-#' (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
-#' @param Format The file format of a dataset that is created from an Amazon S3 file or
-#' folder.
-#' @param FormatOptions 
-#' @param Input &#91;required&#93; 
-#' @param PathOptions A set of options that defines how DataBrew interprets an Amazon S3 path
-#' of the dataset.
+#' @param Name &#91;required&#93; The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+#' @param Format The file format of a dataset that is created from an Amazon S3 file or folder.
+#' @param FormatOptions Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.
+#' @param Input &#91;required&#93; Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.
+#' @param PathOptions A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
 #' @param Tags Metadata tags to apply to this dataset.
 #'
 #' @keywords internal
@@ -84,35 +79,23 @@ gluedatabrew_create_dataset <- function(Name, Format = NULL, FormatOptions = NUL
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_create_profile_job/](https://www.paws-r-sdk.com/docs/gluedatabrew_create_profile_job/) for full documentation.
 #'
 #' @param DatasetName &#91;required&#93; The name of the dataset that this job is to act upon.
-#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to
-#' protect the job.
+#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.
 #' @param EncryptionMode The encryption mode for the job, which can be one of the following:
 #' 
-#' -   `SSE-KMS` - `SSE-KMS` - Server-side encryption with KMS-managed
-#'     keys.
+#' -   `SSE-KMS` - `SSE-KMS` - Server-side encryption with KMS-managed keys.
 #' 
 #' -   `SSE-S3` - Server-side encryption with keys managed by Amazon S3.
-#' @param Name &#91;required&#93; The name of the job to be created. Valid characters are alphanumeric
-#' (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
-#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is
-#' enabled, CloudWatch writes one log stream for each job run.
-#' @param MaxCapacity The maximum number of nodes that DataBrew can use when the job processes
-#' data.
+#' @param Name &#91;required&#93; The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.
+#' @param MaxCapacity The maximum number of nodes that DataBrew can use when the job processes data.
 #' @param MaxRetries The maximum number of times to retry the job after a job run fails.
-#' @param OutputLocation &#91;required&#93; 
-#' @param Configuration Configuration for profile jobs. Used to select columns, do evaluations,
-#' and override default parameters of evaluations. When configuration is
-#' null, the profile job will run with default settings.
+#' @param OutputLocation &#91;required&#93; Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.
+#' @param Configuration Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.
 #' @param ValidationConfigurations List of validation configurations that are applied to the profile job.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role to be assumed when DataBrew runs the job.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
 #' @param Tags Metadata tags to apply to this job.
-#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than
-#' this timeout period ends with a status of `TIMEOUT`.
-#' @param JobSample Sample configuration for profile jobs only. Determines the number of
-#' rows on which the profile job will be executed. If a JobSample value is
-#' not provided, the default value will be used. The default value is
-#' CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of `TIMEOUT`.
+#' @param JobSample Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
 #'
 #' @keywords internal
 #'
@@ -144,12 +127,10 @@ gluedatabrew_create_profile_job <- function(DatasetName, EncryptionKeyArn = NULL
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_create_project/](https://www.paws-r-sdk.com/docs/gluedatabrew_create_project/) for full documentation.
 #'
 #' @param DatasetName &#91;required&#93; The name of an existing dataset to associate this project with.
-#' @param Name &#91;required&#93; A unique name for the new project. Valid characters are alphanumeric
-#' (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+#' @param Name &#91;required&#93; A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
 #' @param RecipeName &#91;required&#93; The name of an existing recipe to associate with the project.
-#' @param Sample 
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role to be assumed for this request.
+#' @param Sample Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.
 #' @param Tags Metadata tags to apply to this project.
 #'
 #' @keywords internal
@@ -182,11 +163,8 @@ gluedatabrew_create_project <- function(DatasetName, Name, RecipeName, Sample = 
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_create_recipe/](https://www.paws-r-sdk.com/docs/gluedatabrew_create_recipe/) for full documentation.
 #'
 #' @param Description A description for the recipe.
-#' @param Name &#91;required&#93; A unique name for the recipe. Valid characters are alphanumeric (A-Z,
-#' a-z, 0-9), hyphen (-), period (.), and space.
-#' @param Steps &#91;required&#93; An array containing the steps to be performed by the recipe. Each recipe
-#' step consists of one recipe action and (optionally) an array of
-#' condition expressions.
+#' @param Name &#91;required&#93; A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+#' @param Steps &#91;required&#93; An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.
 #' @param Tags Metadata tags to apply to this recipe.
 #'
 #' @keywords internal
@@ -220,33 +198,24 @@ gluedatabrew_create_recipe <- function(Description = NULL, Name, Steps, Tags = N
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_create_recipe_job/](https://www.paws-r-sdk.com/docs/gluedatabrew_create_recipe_job/) for full documentation.
 #'
 #' @param DatasetName The name of the dataset that this job processes.
-#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to
-#' protect the job.
+#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.
 #' @param EncryptionMode The encryption mode for the job, which can be one of the following:
 #' 
 #' -   `SSE-KMS` - Server-side encryption with keys managed by KMS.
 #' 
 #' -   `SSE-S3` - Server-side encryption with keys managed by Amazon S3.
-#' @param Name &#91;required&#93; A unique name for the job. Valid characters are alphanumeric (A-Z, a-z,
-#' 0-9), hyphen (-), period (.), and space.
-#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is
-#' enabled, CloudWatch writes one log stream for each job run.
-#' @param MaxCapacity The maximum number of nodes that DataBrew can consume when the job
-#' processes data.
+#' @param Name &#91;required&#93; A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.
+#' @param MaxCapacity The maximum number of nodes that DataBrew can consume when the job processes data.
 #' @param MaxRetries The maximum number of times to retry the job after a job run fails.
 #' @param Outputs One or more artifacts that represent the output from running the job.
-#' @param DataCatalogOutputs One or more artifacts that represent the Glue Data Catalog output from
-#' running the job.
-#' @param DatabaseOutputs Represents a list of JDBC database output objects which defines the
-#' output destination for a DataBrew recipe job to write to.
-#' @param ProjectName Either the name of an existing project, or a combination of a recipe and
-#' a dataset to associate with the recipe.
-#' @param RecipeReference 
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role to be assumed when DataBrew runs the job.
+#' @param DataCatalogOutputs One or more artifacts that represent the Glue Data Catalog output from running the job.
+#' @param DatabaseOutputs Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.
+#' @param ProjectName Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.
+#' @param RecipeReference Represents the name and version of a DataBrew recipe.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
 #' @param Tags Metadata tags to apply to this job.
-#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than
-#' this timeout period ends with a status of `TIMEOUT`.
+#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of `TIMEOUT`.
 #'
 #' @keywords internal
 #'
@@ -278,13 +247,10 @@ gluedatabrew_create_recipe_job <- function(DatasetName = NULL, EncryptionKeyArn 
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_create_ruleset/](https://www.paws-r-sdk.com/docs/gluedatabrew_create_ruleset/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the ruleset to be created. Valid characters are alphanumeric
-#' (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+#' @param Name &#91;required&#93; The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
 #' @param Description The description of the ruleset.
-#' @param TargetArn &#91;required&#93; The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset
-#' is associated with.
-#' @param Rules &#91;required&#93; A list of rules that are defined with the ruleset. A rule includes one
-#' or more checks to be validated on a DataBrew dataset.
+#' @param TargetArn &#91;required&#93; The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.
+#' @param Rules &#91;required&#93; A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.
 #' @param Tags Metadata tags to apply to the ruleset.
 #'
 #' @keywords internal
@@ -317,13 +283,9 @@ gluedatabrew_create_ruleset <- function(Name, Description = NULL, TargetArn, Rul
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_create_schedule/](https://www.paws-r-sdk.com/docs/gluedatabrew_create_schedule/) for full documentation.
 #'
 #' @param JobNames The name or names of one or more jobs to be run.
-#' @param CronExpression &#91;required&#93; The date or dates and time or times when the jobs are to be run. For
-#' more information, see [Cron
-#' expressions](https://docs.aws.amazon.com/databrew/latest/dg/) in the
-#' *Glue DataBrew Developer Guide*.
+#' @param CronExpression &#91;required&#93; The date or dates and time or times when the jobs are to be run. For more information, see [Cron expressions](https://docs.aws.amazon.com/databrew/latest/dg/) in the *Glue DataBrew Developer Guide*.
 #' @param Tags Metadata tags to apply to this schedule.
-#' @param Name &#91;required&#93; A unique name for the schedule. Valid characters are alphanumeric (A-Z,
-#' a-z, 0-9), hyphen (-), period (.), and space.
+#' @param Name &#91;required&#93; A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
 #'
 #' @keywords internal
 #'
@@ -448,9 +410,7 @@ gluedatabrew_delete_project <- function(Name) {
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_delete_recipe_version/](https://www.paws-r-sdk.com/docs/gluedatabrew_delete_recipe_version/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the recipe.
-#' @param RecipeVersion &#91;required&#93; The version of the recipe to be deleted. You can specify a numeric
-#' versions (`X.Y`) or `LATEST_WORKING`. `LATEST_PUBLISHED` is not
-#' supported.
+#' @param RecipeVersion &#91;required&#93; The version of the recipe to be deleted. You can specify a numeric versions (`X.Y`) or `LATEST_WORKING`. `LATEST_PUBLISHED` is not supported.
 #'
 #' @keywords internal
 #'
@@ -670,8 +630,7 @@ gluedatabrew_describe_project <- function(Name) {
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_describe_recipe/](https://www.paws-r-sdk.com/docs/gluedatabrew_describe_recipe/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the recipe to be described.
-#' @param RecipeVersion The recipe version identifier. If this parameter isn't specified, then
-#' the latest published version is returned.
+#' @param RecipeVersion The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.
 #'
 #' @keywords internal
 #'
@@ -765,8 +724,7 @@ gluedatabrew_describe_schedule <- function(Name) {
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_list_datasets/](https://www.paws-r-sdk.com/docs/gluedatabrew_list_datasets/) for full documentation.
 #'
 #' @param MaxResults The maximum number of results to return in this request.
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -799,8 +757,7 @@ gluedatabrew_list_datasets <- function(MaxResults = NULL, NextToken = NULL) {
 #'
 #' @param Name &#91;required&#93; The name of the job.
 #' @param MaxResults The maximum number of results to return in this request.
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -831,15 +788,10 @@ gluedatabrew_list_job_runs <- function(Name, MaxResults = NULL, NextToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_list_jobs/](https://www.paws-r-sdk.com/docs/gluedatabrew_list_jobs/) for full documentation.
 #'
-#' @param DatasetName The name of a dataset. Using this parameter indicates to return only
-#' those jobs that act on the specified dataset.
+#' @param DatasetName The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.
 #' @param MaxResults The maximum number of results to return in this request.
-#' @param NextToken A token generated by DataBrew that specifies where to continue
-#' pagination if a previous request was truncated. To get the next set of
-#' pages, pass in the NextToken value from the response object of the
-#' previous page call.
-#' @param ProjectName The name of a project. Using this parameter indicates to return only
-#' those jobs that are associated with the specified project.
+#' @param NextToken A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.
+#' @param ProjectName The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.
 #'
 #' @keywords internal
 #'
@@ -870,8 +822,7 @@ gluedatabrew_list_jobs <- function(DatasetName = NULL, MaxResults = NULL, NextTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_list_projects/](https://www.paws-r-sdk.com/docs/gluedatabrew_list_projects/) for full documentation.
 #'
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return in this request.
 #'
 #' @keywords internal
@@ -905,8 +856,7 @@ gluedatabrew_list_projects <- function(NextToken = NULL, MaxResults = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_list_recipe_versions/](https://www.paws-r-sdk.com/docs/gluedatabrew_list_recipe_versions/) for full documentation.
 #'
 #' @param MaxResults The maximum number of results to return in this request.
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
 #' @param Name &#91;required&#93; The name of the recipe for which to return version information.
 #'
 #' @keywords internal
@@ -939,12 +889,8 @@ gluedatabrew_list_recipe_versions <- function(MaxResults = NULL, NextToken = NUL
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_list_recipes/](https://www.paws-r-sdk.com/docs/gluedatabrew_list_recipes/) for full documentation.
 #'
 #' @param MaxResults The maximum number of results to return in this request.
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
-#' @param RecipeVersion Return only those recipes with a version identifier of `LATEST_WORKING`
-#' or `LATEST_PUBLISHED`. If `RecipeVersion` is omitted,
-#' [`list_recipes`][gluedatabrew_list_recipes] returns all of the
-#' `LATEST_PUBLISHED` recipe versions.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
+#' @param RecipeVersion Return only those recipes with a version identifier of `LATEST_WORKING` or `LATEST_PUBLISHED`. If `RecipeVersion` is omitted, [`list_recipes`][gluedatabrew_list_recipes] returns all of the `LATEST_PUBLISHED` recipe versions.
 #' 
 #' Valid values: `LATEST_WORKING` | `LATEST_PUBLISHED`
 #'
@@ -978,14 +924,9 @@ gluedatabrew_list_recipes <- function(MaxResults = NULL, NextToken = NULL, Recip
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_list_rulesets/](https://www.paws-r-sdk.com/docs/gluedatabrew_list_rulesets/) for full documentation.
 #'
-#' @param TargetArn The Amazon Resource Name (ARN) of a resource (dataset). Using this
-#' parameter indicates to return only those rulesets that are associated
-#' with the specified resource.
+#' @param TargetArn The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.
 #' @param MaxResults The maximum number of results to return in this request.
-#' @param NextToken A token generated by DataBrew that specifies where to continue
-#' pagination if a previous request was truncated. To get the next set of
-#' pages, pass in the NextToken value from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.
 #'
 #' @keywords internal
 #'
@@ -1018,8 +959,7 @@ gluedatabrew_list_rulesets <- function(TargetArn = NULL, MaxResults = NULL, Next
 #'
 #' @param JobName The name of the job that these schedules apply to.
 #' @param MaxResults The maximum number of results to return in this request.
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1050,8 +990,7 @@ gluedatabrew_list_schedules <- function(JobName = NULL, MaxResults = NULL, NextT
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/gluedatabrew_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) string that uniquely identifies the
-#' DataBrew resource.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
 #'
 #' @keywords internal
 #'
@@ -1082,8 +1021,7 @@ gluedatabrew_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_publish_recipe/](https://www.paws-r-sdk.com/docs/gluedatabrew_publish_recipe/) for full documentation.
 #'
-#' @param Description A description of the recipe to be published, for this version of the
-#' recipe.
+#' @param Description A description of the recipe to be published, for this version of the recipe.
 #' @param Name &#91;required&#93; The name of the recipe to be published.
 #'
 #' @keywords internal
@@ -1116,16 +1054,12 @@ gluedatabrew_publish_recipe <- function(Description = NULL, Name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_send_project_session_action/](https://www.paws-r-sdk.com/docs/gluedatabrew_send_project_session_action/) for full documentation.
 #'
-#' @param Preview If true, the result of the recipe step will be returned, but not
-#' applied.
+#' @param Preview If true, the result of the recipe step will be returned, but not applied.
 #' @param Name &#91;required&#93; The name of the project to apply the action to.
-#' @param RecipeStep 
-#' @param StepIndex The index from which to preview a step. This index is used to preview
-#' the result of steps that have already been applied, so that the
-#' resulting view frame is from earlier in the view frame stack.
-#' @param ClientSessionId A unique identifier for an interactive session that's currently open and
-#' ready for work. The action will be performed on this session.
-#' @param ViewFrame 
+#' @param RecipeStep Represents a single step from a DataBrew recipe to be performed.
+#' @param StepIndex The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.
+#' @param ClientSessionId A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.
+#' @param ViewFrame Represents the data being transformed during an action.
 #'
 #' @keywords internal
 #'
@@ -1189,8 +1123,7 @@ gluedatabrew_start_job_run <- function(Name) {
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_start_project_session/](https://www.paws-r-sdk.com/docs/gluedatabrew_start_project_session/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the project to act upon.
-#' @param AssumeControl A value that, if true, enables you to take control of a session, even if
-#' a different client is currently accessing the project.
+#' @param AssumeControl A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.
 #'
 #' @keywords internal
 #'
@@ -1254,9 +1187,7 @@ gluedatabrew_stop_job_run <- function(Name, RunId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_tag_resource/](https://www.paws-r-sdk.com/docs/gluedatabrew_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The DataBrew resource to which tags should be added. The value for this
-#' parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a
-#' dataset, a job, a project, or a recipe.
+#' @param ResourceArn &#91;required&#93; The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.
 #' @param Tags &#91;required&#93; One or more tags to be assigned to the resource.
 #'
 #' @keywords internal
@@ -1288,8 +1219,7 @@ gluedatabrew_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_untag_resource/](https://www.paws-r-sdk.com/docs/gluedatabrew_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; A DataBrew resource from which you want to remove a tag or tags. The
-#' value for this parameter is an Amazon Resource Name (ARN).
+#' @param ResourceArn &#91;required&#93; A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).
 #' @param TagKeys &#91;required&#93; The tag keys (names) of one or more tags to be removed.
 #'
 #' @keywords internal
@@ -1322,12 +1252,10 @@ gluedatabrew_untag_resource <- function(ResourceArn, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_update_dataset/](https://www.paws-r-sdk.com/docs/gluedatabrew_update_dataset/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the dataset to be updated.
-#' @param Format The file format of a dataset that is created from an Amazon S3 file or
-#' folder.
-#' @param FormatOptions 
-#' @param Input &#91;required&#93; 
-#' @param PathOptions A set of options that defines how DataBrew interprets an Amazon S3 path
-#' of the dataset.
+#' @param Format The file format of a dataset that is created from an Amazon S3 file or folder.
+#' @param FormatOptions Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.
+#' @param Input &#91;required&#93; Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.
+#' @param PathOptions A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
 #'
 #' @keywords internal
 #'
@@ -1358,33 +1286,22 @@ gluedatabrew_update_dataset <- function(Name, Format = NULL, FormatOptions = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_update_profile_job/](https://www.paws-r-sdk.com/docs/gluedatabrew_update_profile_job/) for full documentation.
 #'
-#' @param Configuration Configuration for profile jobs. Used to select columns, do evaluations,
-#' and override default parameters of evaluations. When configuration is
-#' null, the profile job will run with default settings.
-#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to
-#' protect the job.
+#' @param Configuration Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.
+#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.
 #' @param EncryptionMode The encryption mode for the job, which can be one of the following:
 #' 
 #' -   `SSE-KMS` - Server-side encryption with keys managed by KMS.
 #' 
 #' -   `SSE-S3` - Server-side encryption with keys managed by Amazon S3.
 #' @param Name &#91;required&#93; The name of the job to be updated.
-#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is
-#' enabled, CloudWatch writes one log stream for each job run.
-#' @param MaxCapacity The maximum number of compute nodes that DataBrew can use when the job
-#' processes data.
+#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.
+#' @param MaxCapacity The maximum number of compute nodes that DataBrew can use when the job processes data.
 #' @param MaxRetries The maximum number of times to retry the job after a job run fails.
-#' @param OutputLocation &#91;required&#93; 
+#' @param OutputLocation &#91;required&#93; Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.
 #' @param ValidationConfigurations List of validation configurations that are applied to the profile job.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role to be assumed when DataBrew runs the job.
-#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than
-#' this timeout period ends with a status of `TIMEOUT`.
-#' @param JobSample Sample configuration for Profile Jobs only. Determines the number of
-#' rows on which the Profile job will be executed. If a JobSample value is
-#' not provided for profile jobs, the default value will be used. The
-#' default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-#' size parameter.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of `TIMEOUT`.
+#' @param JobSample Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
 #'
 #' @keywords internal
 #'
@@ -1415,9 +1332,8 @@ gluedatabrew_update_profile_job <- function(Configuration = NULL, EncryptionKeyA
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_update_project/](https://www.paws-r-sdk.com/docs/gluedatabrew_update_project/) for full documentation.
 #'
-#' @param Sample 
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to be assumed for this
-#' request.
+#' @param Sample Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.
 #' @param Name &#91;required&#93; The name of the project to be updated.
 #'
 #' @keywords internal
@@ -1452,8 +1368,7 @@ gluedatabrew_update_project <- function(Sample = NULL, RoleArn, Name) {
 #'
 #' @param Description A description of the recipe.
 #' @param Name &#91;required&#93; The name of the recipe to be updated.
-#' @param Steps One or more steps to be performed by the recipe. Each step consists of
-#' an action, and the conditions under which the action should succeed.
+#' @param Steps One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.
 #'
 #' @keywords internal
 #'
@@ -1484,28 +1399,21 @@ gluedatabrew_update_recipe <- function(Description = NULL, Name, Steps = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_update_recipe_job/](https://www.paws-r-sdk.com/docs/gluedatabrew_update_recipe_job/) for full documentation.
 #'
-#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to
-#' protect the job.
+#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.
 #' @param EncryptionMode The encryption mode for the job, which can be one of the following:
 #' 
 #' -   `SSE-KMS` - Server-side encryption with keys managed by KMS.
 #' 
 #' -   `SSE-S3` - Server-side encryption with keys managed by Amazon S3.
 #' @param Name &#91;required&#93; The name of the job to update.
-#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is
-#' enabled, CloudWatch writes one log stream for each job run.
-#' @param MaxCapacity The maximum number of nodes that DataBrew can consume when the job
-#' processes data.
+#' @param LogSubscription Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.
+#' @param MaxCapacity The maximum number of nodes that DataBrew can consume when the job processes data.
 #' @param MaxRetries The maximum number of times to retry the job after a job run fails.
 #' @param Outputs One or more artifacts that represent the output from running the job.
-#' @param DataCatalogOutputs One or more artifacts that represent the Glue Data Catalog output from
-#' running the job.
-#' @param DatabaseOutputs Represents a list of JDBC database output objects which defines the
-#' output destination for a DataBrew recipe job to write into.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role to be assumed when DataBrew runs the job.
-#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than
-#' this timeout period ends with a status of `TIMEOUT`.
+#' @param DataCatalogOutputs One or more artifacts that represent the Glue Data Catalog output from running the job.
+#' @param DatabaseOutputs Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+#' @param Timeout The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of `TIMEOUT`.
 #'
 #' @keywords internal
 #'
@@ -1538,8 +1446,7 @@ gluedatabrew_update_recipe_job <- function(EncryptionKeyArn = NULL, EncryptionMo
 #'
 #' @param Name &#91;required&#93; The name of the ruleset to be updated.
 #' @param Description The description of the ruleset.
-#' @param Rules &#91;required&#93; A list of rules that are defined with the ruleset. A rule includes one
-#' or more checks to be validated on a DataBrew dataset.
+#' @param Rules &#91;required&#93; A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.
 #'
 #' @keywords internal
 #'
@@ -1571,10 +1478,7 @@ gluedatabrew_update_ruleset <- function(Name, Description = NULL, Rules) {
 #' See [https://www.paws-r-sdk.com/docs/gluedatabrew_update_schedule/](https://www.paws-r-sdk.com/docs/gluedatabrew_update_schedule/) for full documentation.
 #'
 #' @param JobNames The name or names of one or more jobs to be run for this schedule.
-#' @param CronExpression &#91;required&#93; The date or dates and time or times when the jobs are to be run. For
-#' more information, see [Cron
-#' expressions](https://docs.aws.amazon.com/databrew/latest/dg/) in the
-#' *Glue DataBrew Developer Guide*.
+#' @param CronExpression &#91;required&#93; The date or dates and time or times when the jobs are to be run. For more information, see [Cron expressions](https://docs.aws.amazon.com/databrew/latest/dg/) in the *Glue DataBrew Developer Guide*.
 #' @param Name &#91;required&#93; The name of the schedule to update.
 #'
 #' @keywords internal

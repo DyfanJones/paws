@@ -13,11 +13,9 @@ firehose_describe_delivery_stream(
 \arguments{
 \item{DeliveryStreamName}{[required] The name of the Firehose stream.}
 
-\item{Limit}{The limit on the number of destinations to return. You can have one
-destination per Firehose stream.}
+\item{Limit}{The limit on the number of destinations to return. You can have one destination per Firehose stream.}
 
-\item{ExclusiveStartDestinationId}{The ID of the destination to start returning the destination
-information. Firehose supports one destination per Firehose stream.}
+\item{ExclusiveStartDestinationId}{The ID of the destination to start returning the destination information. Firehose supports one destination per Firehose stream.}
 }
 \description{
 Describes the specified Firehose stream and its status. For example, after your Firehose stream is created, call \code{\link[=firehose_describe_delivery_stream]{describe_delivery_stream}} to see whether the Firehose stream is \code{ACTIVE} and therefore ready for data to be sent to it.

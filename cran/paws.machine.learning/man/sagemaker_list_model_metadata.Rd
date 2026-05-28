@@ -12,15 +12,9 @@ sagemaker_list_model_metadata(
 )
 }
 \arguments{
-\item{SearchExpression}{One or more filters that searches for the specified resource or
-resources in a search. All resource objects that satisfy the
-expression's condition are included in the search results. Specify the
-Framework, FrameworkVersion, Domain or Task to filter supported. Filter
-names and values are case-sensitive.}
+\item{SearchExpression}{One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.}
 
-\item{NextToken}{If the response to a previous \code{ListModelMetadataResponse} request was
-truncated, the response includes a NextToken. To retrieve the next set
-of model metadata, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{ListModelMetadataResponse} request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of models to return in the response.}
 }

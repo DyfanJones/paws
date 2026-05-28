@@ -15,8 +15,7 @@ gluedatabrew_list_schedules(
 
 \item{MaxResults}{The maximum number of results to return in this request.}
 
-\item{NextToken}{The token returned by a previous call to retrieve the next set of
-results.}
+\item{NextToken}{The token returned by a previous call to retrieve the next set of results.}
 }
 \description{
 Lists the DataBrew schedules that are defined.

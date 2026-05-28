@@ -9,8 +9,7 @@ datazone_tag_resource(resourceArn, tags)
 \arguments{
 \item{resourceArn}{[required] The ARN of the resource to be tagged in Amazon DataZone.}
 
-\item{tags}{[required] Specifies the tags for the \code{\link[=datazone_tag_resource]{tag_resource}}
-action.}
+\item{tags}{[required] Specifies the tags for the \code{\link[=datazone_tag_resource]{tag_resource}} action.}
 }
 \description{
 Tags a resource in Amazon DataZone.

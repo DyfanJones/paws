@@ -11,8 +11,7 @@ rekognition_delete_project_policy(
 )
 }
 \arguments{
-\item{ProjectArn}{[required] The Amazon Resource Name (ARN) of the project that the project policy
-you want to delete is attached to.}
+\item{ProjectArn}{[required] The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.}
 
 \item{PolicyName}{[required] The name of the policy that you want to delete.}
 

@@ -11,8 +11,7 @@ bedrockagentcore_get_code_interpreter_session(
 )
 }
 \arguments{
-\item{codeInterpreterIdentifier}{[required] The unique identifier of the code interpreter associated with the
-session.}
+\item{codeInterpreterIdentifier}{[required] The unique identifier of the code interpreter associated with the session.}
 
 \item{sessionId}{[required] The unique identifier of the code interpreter session to retrieve.}
 }

@@ -10,12 +10,9 @@ bedrock_cancel_automated_reasoning_policy_build_workflow(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-build workflow you want to cancel.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow you want to cancel.}
 
-\item{buildWorkflowId}{[required] The unique identifier of the build workflow to cancel. You can get this
-ID from the StartAutomatedReasoningPolicyBuildWorkflow response or by
-listing build workflows.}
+\item{buildWorkflowId}{[required] The unique identifier of the build workflow to cancel. You can get this ID from the StartAutomatedReasoningPolicyBuildWorkflow response or by listing build workflows.}
 }
 \description{
 Cancels a running Automated Reasoning policy build workflow. This stops the policy generation process and prevents further processing of the source documents.

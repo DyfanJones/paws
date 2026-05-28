@@ -7,11 +7,9 @@
 codecommit_update_pull_request_description(pullRequestId, description)
 }
 \arguments{
-\item{pullRequestId}{[required] The system-generated ID of the pull request. To get this ID, use
-\code{\link[=codecommit_list_pull_requests]{list_pull_requests}}.}
+\item{pullRequestId}{[required] The system-generated ID of the pull request. To get this ID, use \code{\link[=codecommit_list_pull_requests]{list_pull_requests}}.}
 
-\item{description}{[required] The updated content of the description for the pull request. This
-content replaces the existing description.}
+\item{description}{[required] The updated content of the description for the pull request. This content replaces the existing description.}
 }
 \description{
 Replaces the contents of the description of a pull request.

@@ -10,10 +10,7 @@ codecommit_put_comment_reaction(commentId, reactionValue)
 \arguments{
 \item{commentId}{[required] The ID of the comment to which you want to add or update a reaction.}
 
-\item{reactionValue}{[required] The emoji reaction you want to add or update. To remove a reaction,
-provide a value of blank or null. You can also provide the value of
-none. For information about emoji reaction values supported in
-CodeCommit, see the \href{https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table}{CodeCommit User Guide}.}
+\item{reactionValue}{[required] The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the \href{https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table}{CodeCommit User Guide}.}
 }
 \description{
 Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.

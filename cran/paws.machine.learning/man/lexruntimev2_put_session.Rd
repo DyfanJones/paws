@@ -25,25 +25,17 @@ lexruntimev2_put_session(
 
 \item{sessionId}{[required] The identifier of the session that receives the session data.}
 
-\item{messages}{A list of messages to send to the user. Messages are sent in the order
-that they are defined in the list.}
+\item{messages}{A list of messages to send to the user. Messages are sent in the order that they are defined in the list.}
 
-\item{sessionState}{[required] Sets the state of the session with the user. You can use this to set the
-current intent, attributes, context, and dialog action. Use the dialog
-action to determine the next step that Amazon Lex V2 should use in the
-conversation with the user.}
+\item{sessionState}{[required] Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.}
 
-\item{requestAttributes}{Request-specific information passed between Amazon Lex V2 and the client
-application.
+\item{requestAttributes}{Request-specific information passed between Amazon Lex V2 and the client application.
 
-The namespace \verb{x-amz-lex:} is reserved for special attributes. Don't
-create any request attributes with the prefix \verb{x-amz-lex:}.}
+The namespace \verb{x-amz-lex:} is reserved for special attributes. Don't create any request attributes with the prefix \verb{x-amz-lex:}.}
 
-\item{responseContentType}{The message that Amazon Lex V2 returns in the response can be either
-text or speech depending on the value of this parameter.
+\item{responseContentType}{The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.
 \itemize{
-\item If the value is \verb{text/plain; charset=utf-8}, Amazon Lex V2 returns
-text in the response.
+\item If the value is \verb{text/plain; charset=utf-8}, Amazon Lex V2 returns text in the response.
 }}
 }
 \description{

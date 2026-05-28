@@ -8,11 +8,9 @@ account (metadata only)}
 route53_list_cidr_collections(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{An opaque pagination token to indicate where the service is to begin
-enumerating results.
+\item{NextToken}{An opaque pagination token to indicate where the service is to begin enumerating results.
 
-If no value is provided, the listing of results starts from the
-beginning.}
+If no value is provided, the listing of results starts from the beginning.}
 
 \item{MaxResults}{The maximum number of CIDR collections to return in the response.}
 }

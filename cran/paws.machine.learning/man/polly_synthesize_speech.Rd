@@ -17,47 +17,23 @@ polly_synthesize_speech(
 )
 }
 \arguments{
-\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form}, or
-\code{generative}) for Amazon Polly to use when processing input text for
-speech synthesis. Provide an engine that is supported by the voice you
-select. If you don't provide an engine, the standard engine is selected
-by default. If a chosen voice isn't supported by the standard engine,
-this will result in an error. For information on Amazon Polly voices and
-which voices are available for each engine, see \href{https://docs.aws.amazon.com/polly/latest/dg/available-voices.html}{Available Voices}.}
+\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form}, or \code{generative}) for Amazon Polly to use when processing input text for speech synthesis. Provide an engine that is supported by the voice you select. If you don't provide an engine, the standard engine is selected by default. If a chosen voice isn't supported by the standard engine, this will result in an error. For information on Amazon Polly voices and which voices are available for each engine, see \href{https://docs.aws.amazon.com/polly/latest/dg/available-voices.html}{Available Voices}.}
 
-\item{LanguageCode}{Optional language code for the Synthesize Speech request. This is only
-necessary if using a bilingual voice, such as Aditi, which can be used
-for either Indian English (en-IN) or Hindi (hi-IN).
+\item{LanguageCode}{Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
 
-If a bilingual voice is used and no language code is specified, Amazon
-Polly uses the default language of the bilingual voice. The default
-language for any voice is the one returned by the
-\code{\link[=polly_describe_voices]{describe_voices}} operation for the
-\code{LanguageCode} parameter. For example, if no language code is specified,
-Aditi will use Indian English rather than Hindi.}
+If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the \code{\link[=polly_describe_voices]{describe_voices}} operation for the \code{LanguageCode} parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.}
 
-\item{LexiconNames}{List of one or more pronunciation lexicon names you want the service to
-apply during synthesis. Lexicons are applied only if the language of the
-lexicon is the same as the language of the voice. For information about
-storing lexicons, see \code{\link[=polly_put_lexicon]{put_lexicon}}.}
+\item{LexiconNames}{List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see \code{\link[=polly_put_lexicon]{put_lexicon}}.}
 
-\item{OutputFormat}{[required] The format in which the returned output will be encoded. For audio
-stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm.
-For speech marks, this will be json.
+\item{OutputFormat}{[required] The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm. For speech marks, this will be json.
 
-When pcm is used, the content returned is audio/pcm in a signed 16-bit,
-1 channel (mono), little-endian format.}
+When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.}
 
 \item{SampleRate}{The audio frequency specified in Hz.
 
-The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-"24000", "44100" and "48000". The default value for standard voices is
-"22050". The default value for neural voices is "24000". The default
-value for long-form voices is "24000". The default value for generative
-voices is "24000".
+The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".
 
-Valid values for pcm are "8000" and "16000" The default value is
-"16000".
+Valid values for pcm are "8000" and "16000" The default value is "16000".
 
 Valid value for ogg_opus is "48000".
 
@@ -65,14 +41,11 @@ Valid value for mu-law and a-law is "8000".}
 
 \item{SpeechMarkTypes}{The type of speech marks returned for the input text.}
 
-\item{Text}{[required] Input text to synthesize. If you specify \code{ssml} as the \code{TextType},
-follow the SSML format for the input text.}
+\item{Text}{[required] Input text to synthesize. If you specify \code{ssml} as the \code{TextType}, follow the SSML format for the input text.}
 
-\item{TextType}{Specifies whether the input text is plain text or SSML. The default
-value is plain text. For more information, see \href{https://docs.aws.amazon.com/polly/latest/dg/ssml.html}{Using SSML}.}
+\item{TextType}{Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see \href{https://docs.aws.amazon.com/polly/latest/dg/ssml.html}{Using SSML}.}
 
-\item{VoiceId}{[required] Voice ID to use for the synthesis. You can get a list of available voice
-IDs by calling the \code{\link[=polly_describe_voices]{describe_voices}} operation.}
+\item{VoiceId}{[required] Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the \code{\link[=polly_describe_voices]{describe_voices}} operation.}
 }
 \description{
 Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used. For more information, see \href{https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html}{How it Works}.

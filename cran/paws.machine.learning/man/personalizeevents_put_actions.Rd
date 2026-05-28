@@ -7,8 +7,7 @@
 personalizeevents_put_actions(datasetArn, actions)
 }
 \arguments{
-\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the Actions dataset you are adding the
-action or actions to.}
+\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the Actions dataset you are adding the action or actions to.}
 
 \item{actions}{[required] A list of action data.}
 }

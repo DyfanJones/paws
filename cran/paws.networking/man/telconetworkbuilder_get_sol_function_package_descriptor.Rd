@@ -7,8 +7,7 @@
 telconetworkbuilder_get_sol_function_package_descriptor(accept, vnfPkgId)
 }
 \arguments{
-\item{accept}{[required] Indicates which content types, expressed as MIME types, the client is
-able to understand.}
+\item{accept}{[required] Indicates which content types, expressed as MIME types, the client is able to understand.}
 
 \item{vnfPkgId}{[required] ID of the function package.}
 }

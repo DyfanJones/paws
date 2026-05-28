@@ -8,8 +8,7 @@ enrollment policy for the specified directory}
 directoryservice_describe_ca_enrollment_policy(DirectoryId)
 }
 \arguments{
-\item{DirectoryId}{[required] The identifier of the directory for which to retrieve the CA enrollment
-policy information.}
+\item{DirectoryId}{[required] The identifier of the directory for which to retrieve the CA enrollment policy information.}
 }
 \description{
 Retrieves detailed information about the certificate authority (CA) enrollment policy for the specified directory. This policy determines how client certificates are automatically enrolled and managed through Amazon Web Services Private Certificate Authority.

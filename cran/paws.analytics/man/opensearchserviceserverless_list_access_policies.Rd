@@ -15,19 +15,11 @@ opensearchserviceserverless_list_access_policies(
 \arguments{
 \item{type}{[required] The type of access policy.}
 
-\item{resource}{Resource filters (can be collections or indexes) that policies can apply
-to.}
+\item{resource}{Resource filters (can be collections or indexes) that policies can apply to.}
 
-\item{nextToken}{If your initial
-\code{\link[=opensearchserviceserverless_list_access_policies]{list_access_policies}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchserviceserverless_list_access_policies]{list_access_policies}}
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial \code{\link[=opensearchserviceserverless_list_access_policies]{list_access_policies}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchserviceserverless_list_access_policies]{list_access_policies}} operations, which returns results in the next page.}
 
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results. The
-default is 20.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results. The default is 20.}
 }
 \description{
 Returns information about a list of OpenSearch Serverless access policies.

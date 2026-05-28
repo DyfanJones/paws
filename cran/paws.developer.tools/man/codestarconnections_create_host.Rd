@@ -16,17 +16,11 @@ codestarconnections_create_host(
 \arguments{
 \item{Name}{[required] The name of the host to be created.}
 
-\item{ProviderType}{[required] The name of the installed provider to be associated with your
-connection. The host resource represents the infrastructure where your
-provider type is installed. The valid provider type is GitHub Enterprise
-Server.}
+\item{ProviderType}{[required] The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.}
 
-\item{ProviderEndpoint}{[required] The endpoint of the infrastructure to be represented by the host after
-it is created.}
+\item{ProviderEndpoint}{[required] The endpoint of the infrastructure to be represented by the host after it is created.}
 
-\item{VpcConfiguration}{The VPC configuration to be provisioned for the host. A VPC must be
-configured and the infrastructure to be represented by the host must
-already be connected to the VPC.}
+\item{VpcConfiguration}{The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.}
 
 \item{Tags}{Tags for the host to be created.}
 }

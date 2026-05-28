@@ -7,8 +7,7 @@
 datazone_cancel_metadata_generation_run(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the metadata generation
-run is to be cancelled.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the metadata generation run is to be cancelled.}
 
 \item{identifier}{[required] The ID of the metadata generation run.}
 }

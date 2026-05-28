@@ -7,8 +7,7 @@
 elasticache_delete_serverless_cache_snapshot(ServerlessCacheSnapshotName)
 }
 \arguments{
-\item{ServerlessCacheSnapshotName}{[required] Idenfitier of the snapshot to be deleted. Available for Valkey, Redis
-OSS and Serverless Memcached only.}
+\item{ServerlessCacheSnapshotName}{[required] Idenfitier of the snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached only.}
 }
 \description{
 Deletes an existing serverless cache snapshot. Available for Valkey, Redis OSS and Serverless Memcached only.

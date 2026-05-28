@@ -17,18 +17,11 @@ kinesis_stop_stream_encryption(
 
 \item{EncryptionType}{[required] The encryption type. The only valid value is \code{KMS}.}
 
-\item{KeyId}{[required] The GUID for the customer-managed Amazon Web Services KMS key to use for
-encryption. This value can be a globally unique identifier, a fully
-specified Amazon Resource Name (ARN) to either an alias or a key, or an
-alias name prefixed by "alias/".You can also use a master key owned by
-Kinesis Data Streams by specifying the alias \code{aws/kinesis}.
+\item{KeyId}{[required] The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias \code{aws/kinesis}.
 \itemize{
-\item Key ARN example:
-\code{arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012}
-\item Alias ARN example:
-\code{arn:aws:kms:us-east-1:123456789012:alias/MyAliasName}
-\item Globally unique key ID example:
-\code{12345678-1234-1234-1234-123456789012}
+\item Key ARN example: \code{arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012}
+\item Alias ARN example: \code{arn:aws:kms:us-east-1:123456789012:alias/MyAliasName}
+\item Globally unique key ID example: \code{12345678-1234-1234-1234-123456789012}
 \item Alias name example: \code{alias/MyAliasName}
 \item Master key owned by Kinesis Data Streams: \code{alias/aws/kinesis}
 }}

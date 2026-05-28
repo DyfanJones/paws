@@ -50,44 +50,27 @@ Operations section.
 \description{
 Cloud9
 
-Cloud9 is a collection of tools that you can use to code, build, run,
-test, debug, and release software in the cloud.
+Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.
 
 For more information about Cloud9, see the \href{https://docs.aws.amazon.com/cloud9/latest/user-guide/}{Cloud9 User Guide}.
 
-Cloud9 is no longer available to new customers. Existing customers of
-Cloud9 can continue to use the service as normal. \href{https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/}{Learn more"}
+Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. \href{https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/}{Learn more"}
 
 Cloud9 supports these operations:
 \itemize{
-\item \code{\link[=cloud9_create_environment_ec2]{create_environment_ec2}}: Creates
-an Cloud9 development environment, launches an Amazon EC2 instance,
-and then connects from the instance to the environment.
-\item \code{\link[=cloud9_create_environment_membership]{create_environment_membership}}:
-Adds an environment member to an environment.
-\item \code{\link[=cloud9_delete_environment]{delete_environment}}: Deletes an
-environment. If an Amazon EC2 instance is connected to the
-environment, also terminates the instance.
-\item \code{\link[=cloud9_delete_environment_membership]{delete_environment_membership}}:
-Deletes an environment member from an environment.
-\item \code{\link[=cloud9_describe_environment_memberships]{describe_environment_memberships}}:
-Gets information about environment members for an environment.
-\item \code{\link[=cloud9_describe_environments]{describe_environments}}: Gets
-information about environments.
-\item \code{\link[=cloud9_describe_environment_status]{describe_environment_status}}:
-Gets status information for an environment.
-\item \code{\link[=cloud9_list_environments]{list_environments}}: Gets a list of
-environment identifiers.
-\item \code{\link[=cloud9_list_tags_for_resource]{list_tags_for_resource}}: Gets the
-tags for an environment.
+\item \code{\link[=cloud9_create_environment_ec2]{create_environment_ec2}}: Creates an Cloud9 development environment, launches an Amazon EC2 instance, and then connects from the instance to the environment.
+\item \code{\link[=cloud9_create_environment_membership]{create_environment_membership}}: Adds an environment member to an environment.
+\item \code{\link[=cloud9_delete_environment]{delete_environment}}: Deletes an environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.
+\item \code{\link[=cloud9_delete_environment_membership]{delete_environment_membership}}: Deletes an environment member from an environment.
+\item \code{\link[=cloud9_describe_environment_memberships]{describe_environment_memberships}}: Gets information about environment members for an environment.
+\item \code{\link[=cloud9_describe_environments]{describe_environments}}: Gets information about environments.
+\item \code{\link[=cloud9_describe_environment_status]{describe_environment_status}}: Gets status information for an environment.
+\item \code{\link[=cloud9_list_environments]{list_environments}}: Gets a list of environment identifiers.
+\item \code{\link[=cloud9_list_tags_for_resource]{list_tags_for_resource}}: Gets the tags for an environment.
 \item \code{\link[=cloud9_tag_resource]{tag_resource}}: Adds tags to an environment.
-\item \code{\link[=cloud9_untag_resource]{untag_resource}}: Removes tags from an
-environment.
-\item \code{\link[=cloud9_update_environment]{update_environment}}: Changes the
-settings of an existing environment.
-\item \code{\link[=cloud9_update_environment_membership]{update_environment_membership}}:
-Changes the settings of an existing environment member for an
-environment.
+\item \code{\link[=cloud9_untag_resource]{untag_resource}}: Removes tags from an environment.
+\item \code{\link[=cloud9_update_environment]{update_environment}}: Changes the settings of an existing environment.
+\item \code{\link[=cloud9_update_environment_membership]{update_environment_membership}}: Changes the settings of an existing environment member for an environment.
 }
 }
 \section{Service syntax}{

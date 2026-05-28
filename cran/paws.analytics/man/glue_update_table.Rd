@@ -18,22 +18,15 @@ glue_update_table(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the table resides. If none is provided,
-the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{[required] The name of the catalog database in which the table resides. For Hive
-compatibility, this name is entirely lowercase.}
+\item{DatabaseName}{[required] The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.}
 
-\item{Name}{The unique identifier for the table within the specified database that
-will be created in the Glue Data Catalog.}
+\item{Name}{The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.}
 
-\item{TableInput}{An updated \code{TableInput} object to define the metadata table in the
-catalog.}
+\item{TableInput}{An updated \code{TableInput} object to define the metadata table in the catalog.}
 
-\item{SkipArchive}{By default, \code{\link[=glue_update_table]{update_table}} always creates an
-archived version of the table before updating it. However, if
-\code{skipArchive} is set to true, \code{\link[=glue_update_table]{update_table}} does
-not create the archived version.}
+\item{SkipArchive}{By default, \code{\link[=glue_update_table]{update_table}} always creates an archived version of the table before updating it. However, if \code{skipArchive} is set to true, \code{\link[=glue_update_table]{update_table}} does not create the archived version.}
 
 \item{TransactionId}{The transaction ID at which to update the table contents.}
 
@@ -41,12 +34,9 @@ not create the archived version.}
 
 \item{ViewUpdateAction}{The operation to be performed when updating the view.}
 
-\item{Force}{A flag that can be set to true to ignore matching storage descriptor and
-subobject matching requirements.}
+\item{Force}{A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.}
 
-\item{UpdateOpenTableFormatInput}{Input parameters for updating open table format tables in GlueData
-Catalog, serving as a wrapper for format-specific update operations such
-as Apache Iceberg.}
+\item{UpdateOpenTableFormatInput}{Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.}
 }
 \description{
 Updates a metadata table in the Data Catalog.

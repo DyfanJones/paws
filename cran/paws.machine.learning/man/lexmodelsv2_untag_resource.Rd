@@ -9,8 +9,7 @@ lexmodelsv2_untag_resource(resourceARN, tagKeys)
 \arguments{
 \item{resourceARN}{[required] The Amazon Resource Name (ARN) of the resource to remove the tags from.}
 
-\item{tagKeys}{[required] A list of tag keys to remove from the resource. If a tag key does not
-exist on the resource, it is ignored.}
+\item{tagKeys}{[required] A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.}
 }
 \description{
 Removes tags from a bot, bot alias, or bot channel.

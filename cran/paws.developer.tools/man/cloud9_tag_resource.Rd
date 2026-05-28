@@ -7,8 +7,7 @@
 cloud9_tag_resource(ResourceARN, Tags)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Cloud9 development environment to
-add tags to.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.}
 
 \item{Tags}{[required] The list of tags to add to the given Cloud9 development environment.}
 }

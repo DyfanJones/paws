@@ -14,28 +14,17 @@ memorydb_describe_reserved_nodes_offerings(
 )
 }
 \arguments{
-\item{ReservedNodesOfferingId}{The offering identifier filter value. Use this parameter to show only
-the available offering that matches the specified reservation
-identifier.}
+\item{ReservedNodesOfferingId}{The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.}
 
-\item{NodeType}{The node type for the reserved nodes. For more information, see
-\href{https://docs.aws.amazon.com/memorydb/latest/devguide/#reserved-nodes-supported}{Supported node types}.}
+\item{NodeType}{The node type for the reserved nodes. For more information, see \href{https://docs.aws.amazon.com/memorydb/latest/devguide/#reserved-nodes-supported}{Supported node types}.}
 
-\item{Duration}{Duration filter value, specified in years or seconds. Use this parameter
-to show only reservations for a given duration.}
+\item{Duration}{Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.}
 
-\item{OfferingType}{The offering type filter value. Use this parameter to show only the
-available offerings matching the specified offering type. Valid values:
-"All Upfront"|"Partial Upfront"| "No Upfront"}
+\item{OfferingType}{The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"}
 
-\item{MaxResults}{The maximum number of records to include in the response. If more
-records exist than the specified MaxRecords value, a marker is included
-in the response so that the remaining results can be retrieved.}
+\item{MaxResults}{The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.}
 
-\item{NextToken}{An optional marker returned from a prior request. Use this marker for
-pagination of results from this operation. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by MaxRecords.}
+\item{NextToken}{An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.}
 }
 \description{
 Lists available reserved node offerings.

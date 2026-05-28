@@ -14,17 +14,13 @@ bedrockagentcore_list_sessions(
 )
 }
 \arguments{
-\item{memoryId}{[required] The identifier of the AgentCore Memory resource for which to list
-sessions.}
+\item{memoryId}{[required] The identifier of the AgentCore Memory resource for which to list sessions.}
 
 \item{actorId}{[required] The identifier of the actor for which to list sessions.}
 
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 20.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 20.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{filter}{Filter criteria to apply when listing sessions.}
 }

@@ -13,11 +13,9 @@ globalaccelerator_list_custom_routing_listeners(
 \arguments{
 \item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator to list listeners for.}
 
-\item{MaxResults}{The number of listener objects that you want to return with this call.
-The default value is 10.}
+\item{MaxResults}{The number of listener objects that you want to return with this call. The default value is 10.}
 
-\item{NextToken}{The token for the next set of results. You receive this token from a
-previous call.}
+\item{NextToken}{The token for the next set of results. You receive this token from a previous call.}
 }
 \description{
 List the listeners for a custom routing accelerator.

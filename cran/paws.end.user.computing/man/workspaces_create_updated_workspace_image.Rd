@@ -21,9 +21,7 @@ workspaces_create_updated_workspace_image(
 
 \item{Tags}{The tags that you want to add to the new updated WorkSpace image.
 
-To add tags at the same time when you're creating the updated image, you
-must create an IAM policy that grants your IAM user permissions to use
-\code{workspaces:CreateTags}.}
+To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use \code{workspaces:CreateTags}.}
 }
 \description{
 Creates a new updated WorkSpace image based on the specified source image. The new updated WorkSpace image has the latest drivers and other updates required by the Amazon WorkSpaces components.

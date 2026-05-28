@@ -22,14 +22,9 @@ lexmodelsv2_start_test_set_generation(
 
 \item{generationDataSource}{[required] The data source for the test set generation.}
 
-\item{roleArn}{[required] The roleARN used for any operation in the test set to access resources
-in the Amazon Web Services account.}
+\item{roleArn}{[required] The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.}
 
-\item{testSetTags}{A list of tags to add to the test set. You can only add tags when you
-import/generate a new test set. You can't use the
-\code{\link[=lexmodelsv2_update_test_set]{update_test_set}} operation to update
-tags. To update tags, use the \code{\link[=lexmodelsv2_tag_resource]{tag_resource}}
-operation.}
+\item{testSetTags}{A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the \code{\link[=lexmodelsv2_update_test_set]{update_test_set}} operation to update tags. To update tags, use the \code{\link[=lexmodelsv2_tag_resource]{tag_resource}} operation.}
 }
 \description{
 The action to start the generation of test set.

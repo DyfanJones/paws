@@ -12,8 +12,7 @@ glue_delete_partition(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the partition to be deleted resides. If
-none is provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database in which the table in question resides.}
 

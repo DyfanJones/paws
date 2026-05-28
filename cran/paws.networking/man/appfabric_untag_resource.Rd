@@ -9,8 +9,7 @@ appfabric_untag_resource(resourceArn, tagKeys)
 \arguments{
 \item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to untag.}
 
-\item{tagKeys}{[required] The keys of the key-value pairs for the tag or tags you want to remove
-from the specified resource.}
+\item{tagKeys}{[required] The keys of the key-value pairs for the tag or tags you want to remove from the specified resource.}
 }
 \description{
 Removes a tag or tags from a resource.

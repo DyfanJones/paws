@@ -12,12 +12,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/marketplacemetering_batch_meter_usage/](https://www.paws-r-sdk.com/docs/marketplacemetering_batch_meter_usage/) for full documentation.
 #'
-#' @param UsageRecords &#91;required&#93; The set of `UsageRecords` to submit.
-#' [`batch_meter_usage`][marketplacemetering_batch_meter_usage] accepts up
-#' to 25 `UsageRecords` at a time.
-#' @param ProductCode Product code is used to uniquely identify a product in Amazon Web
-#' Services Marketplace. The product code should be the same as the one
-#' used during the publishing of a new product.
+#' @param UsageRecords &#91;required&#93; The set of `UsageRecords` to submit. [`batch_meter_usage`][marketplacemetering_batch_meter_usage] accepts up to 25 `UsageRecords` at a time.
+#' @param ProductCode Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.
 #'
 #' @keywords internal
 #'
@@ -50,39 +46,19 @@ marketplacemetering_batch_meter_usage <- function(UsageRecords, ProductCode = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/marketplacemetering_meter_usage/](https://www.paws-r-sdk.com/docs/marketplacemetering_meter_usage/) for full documentation.
 #'
-#' @param ProductCode &#91;required&#93; Product code is used to uniquely identify a product in Amazon Web
-#' Services Marketplace. The product code should be the same as the one
-#' used during the publishing of a new product.
-#' @param Timestamp &#91;required&#93; Timestamp, in UTC, for which the usage is being reported. Your
-#' application can meter usage for up to six hours in the past. Make sure
-#' the `timestamp` value is not before the start of the software usage.
-#' @param UsageDimension &#91;required&#93; It will be one of the fcp dimension name provided during the publishing
-#' of the product.
+#' @param ProductCode &#91;required&#93; Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.
+#' @param Timestamp &#91;required&#93; Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to six hours in the past. Make sure the `timestamp` value is not before the start of the software usage.
+#' @param UsageDimension &#91;required&#93; It will be one of the fcp dimension name provided during the publishing of the product.
 #' @param UsageQuantity Consumption value for the hour. Defaults to `0` if not specified.
-#' @param DryRun Checks whether you have the permissions required for the action, but
-#' does not make the request. If you have the permissions, the request
-#' returns `DryRunOperation`; otherwise, it returns
-#' `UnauthorizedException`. Defaults to `false` if not specified.
+#' @param DryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns `DryRunOperation`; otherwise, it returns `UnauthorizedException`. Defaults to `false` if not specified.
 #' @param UsageAllocations The set of `UsageAllocations` to submit.
 #' 
-#' The sum of all `UsageAllocation` quantities must equal the
-#' `UsageQuantity` of the [`meter_usage`][marketplacemetering_meter_usage]
-#' request, and each `UsageAllocation` must have a unique set of tags
-#' (include no tags).
-#' @param ClientToken Specifies a unique, case-sensitive identifier that you provide to ensure
-#' the idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' The sum of all `UsageAllocation` quantities must equal the `UsageQuantity` of the [`meter_usage`][marketplacemetering_meter_usage] request, and each `UsageAllocation` must have a unique set of tags (include no tags).
+#' @param ClientToken Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an
-#' `IdempotencyConflictException` error.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `IdempotencyConflictException` error.
 #'
 #' @keywords internal
 #'
@@ -116,12 +92,9 @@ marketplacemetering_meter_usage <- function(ProductCode, Timestamp, UsageDimensi
 #'
 #' See [https://www.paws-r-sdk.com/docs/marketplacemetering_register_usage/](https://www.paws-r-sdk.com/docs/marketplacemetering_register_usage/) for full documentation.
 #'
-#' @param ProductCode &#91;required&#93; Product code is used to uniquely identify a product in Amazon Web
-#' Services Marketplace. The product code should be the same as the one
-#' used during the publishing of a new product.
+#' @param ProductCode &#91;required&#93; Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.
 #' @param PublicKeyVersion &#91;required&#93; Public Key Version provided by Amazon Web Services Marketplace
-#' @param Nonce (Optional) To scope down the registration to a specific running software
-#' instance and guard against replay attacks.
+#' @param Nonce (Optional) To scope down the registration to a specific running software instance and guard against replay attacks.
 #'
 #' @keywords internal
 #'
@@ -153,10 +126,7 @@ marketplacemetering_register_usage <- function(ProductCode, PublicKeyVersion, No
 #'
 #' See [https://www.paws-r-sdk.com/docs/marketplacemetering_resolve_customer/](https://www.paws-r-sdk.com/docs/marketplacemetering_resolve_customer/) for full documentation.
 #'
-#' @param RegistrationToken &#91;required&#93; When a buyer visits your website during the registration process, the
-#' buyer submits a registration token through the browser. The registration
-#' token is resolved to obtain a `CustomerIdentifier` along with the
-#' `CustomerAWSAccountId`, `ProductCode`, and `LicenseArn`.
+#' @param RegistrationToken &#91;required&#93; When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a `CustomerIdentifier` along with the `CustomerAWSAccountId`, `ProductCode`, and `LicenseArn`.
 #'
 #' @keywords internal
 #'

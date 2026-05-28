@@ -22,16 +22,9 @@ sagemaker_list_notebook_instances(
 )
 }
 \arguments{
-\item{NextToken}{If the previous call to the
-\code{\link[=sagemaker_list_notebook_instances]{list_notebook_instances}} is
-truncated, the response includes a \code{NextToken}. You can use this token
-in your subsequent
-\code{\link[=sagemaker_list_notebook_instances]{list_notebook_instances}} request
-to fetch the next set of notebook instances.
+\item{NextToken}{If the previous call to the \code{\link[=sagemaker_list_notebook_instances]{list_notebook_instances}} is truncated, the response includes a \code{NextToken}. You can use this token in your subsequent \code{\link[=sagemaker_list_notebook_instances]{list_notebook_instances}} request to fetch the next set of notebook instances.
 
-You might specify a filter or a sort order in your request. When
-response is truncated, you must use the same values for the filer and
-sort order in the next request.}
+You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request.}
 
 \item{MaxResults}{The maximum number of notebook instances to return.}
 
@@ -39,35 +32,23 @@ sort order in the next request.}
 
 \item{SortOrder}{The sort order for results.}
 
-\item{NameContains}{A string in the notebook instances' name. This filter returns only
-notebook instances whose name contains the specified string.}
+\item{NameContains}{A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only notebook instances that were created before
-the specified time (timestamp).}
+\item{CreationTimeBefore}{A filter that returns only notebook instances that were created before the specified time (timestamp).}
 
-\item{CreationTimeAfter}{A filter that returns only notebook instances that were created after
-the specified time (timestamp).}
+\item{CreationTimeAfter}{A filter that returns only notebook instances that were created after the specified time (timestamp).}
 
-\item{LastModifiedTimeBefore}{A filter that returns only notebook instances that were modified before
-the specified time (timestamp).}
+\item{LastModifiedTimeBefore}{A filter that returns only notebook instances that were modified before the specified time (timestamp).}
 
-\item{LastModifiedTimeAfter}{A filter that returns only notebook instances that were modified after
-the specified time (timestamp).}
+\item{LastModifiedTimeAfter}{A filter that returns only notebook instances that were modified after the specified time (timestamp).}
 
 \item{StatusEquals}{A filter that returns only notebook instances with the specified status.}
 
-\item{NotebookInstanceLifecycleConfigNameContains}{A string in the name of a notebook instances lifecycle configuration
-associated with this notebook instance. This filter returns only
-notebook instances associated with a lifecycle configuration with a name
-that contains the specified string.}
+\item{NotebookInstanceLifecycleConfigNameContains}{A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.}
 
-\item{DefaultCodeRepositoryContains}{A string in the name or URL of a Git repository associated with this
-notebook instance. This filter returns only notebook instances
-associated with a git repository with a name that contains the specified
-string.}
+\item{DefaultCodeRepositoryContains}{A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.}
 
-\item{AdditionalCodeRepositoryEquals}{A filter that returns only notebook instances with associated with the
-specified git repository.}
+\item{AdditionalCodeRepositoryEquals}{A filter that returns only notebook instances with associated with the specified git repository.}
 }
 \description{
 Returns a list of the SageMaker AI notebook instances in the requester's account in an Amazon Web Services Region.

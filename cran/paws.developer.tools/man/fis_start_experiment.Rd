@@ -12,8 +12,7 @@ fis_start_experiment(
 )
 }
 \arguments{
-\item{clientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
 \item{experimentTemplateId}{[required] The ID of the experiment template.}
 

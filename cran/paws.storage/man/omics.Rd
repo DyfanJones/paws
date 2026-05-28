@@ -48,14 +48,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Web Services HealthOmics is a service that helps users such as
-bioinformaticians, researchers, and scientists to store, query, analyze,
-and generate insights from genomics and other biological data. It
-simplifies and accelerates the process of storing and analyzing genomic
-information for Amazon Web Services.
+Amazon Web Services HealthOmics is a service that helps users such as bioinformaticians, researchers, and scientists to store, query, analyze, and generate insights from genomics and other biological data. It simplifies and accelerates the process of storing and analyzing genomic information for Amazon Web Services.
 
-For an introduction to the service, see \href{https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html}{What is Amazon Web Services HealthOmics?}
-in the \emph{Amazon Web Services HealthOmics User Guide}.
+For an introduction to the service, see \href{https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html}{What is Amazon Web Services HealthOmics?} in the \emph{Amazon Web Services HealthOmics User Guide}.
 }
 \section{Service syntax}{
 

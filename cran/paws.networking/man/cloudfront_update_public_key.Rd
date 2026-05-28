@@ -11,8 +11,7 @@ cloudfront_update_public_key(PublicKeyConfig, Id, IfMatch = NULL)
 
 \item{Id}{[required] The identifier of the public key that you are updating.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-public key to update. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the public key to update. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Update public key information. Note that the only value you can change is the comment.

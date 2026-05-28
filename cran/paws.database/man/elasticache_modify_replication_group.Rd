@@ -40,20 +40,13 @@ elasticache_modify_replication_group(
 \arguments{
 \item{ReplicationGroupId}{[required] The identifier of the replication group to modify.}
 
-\item{ReplicationGroupDescription}{A description for the replication group. Maximum length is 255
-characters.}
+\item{ReplicationGroupDescription}{A description for the replication group. Maximum length is 255 characters.}
 
-\item{PrimaryClusterId}{For replication groups with a single primary, if this parameter is
-specified, ElastiCache promotes the specified cluster in the specified
-replication group to the primary role. The nodes of all other clusters
-in the replication group are read replicas.}
+\item{PrimaryClusterId}{For replication groups with a single primary, if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role. The nodes of all other clusters in the replication group are read replicas.}
 
-\item{SnapshottingClusterId}{The cluster ID that is used as the daily snapshot source for the
-replication group. This parameter cannot be set for Valkey or Redis OSS
-(cluster mode enabled) replication groups.}
+\item{SnapshottingClusterId}{The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set for Valkey or Redis OSS (cluster mode enabled) replication groups.}
 
-\item{AutomaticFailoverEnabled}{Determines whether a read replica is automatically promoted to
-read/write primary if the existing primary encounters a failure.
+\item{AutomaticFailoverEnabled}{Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.
 
 Valid values: \code{true} | \code{false}}
 
@@ -61,27 +54,17 @@ Valid values: \code{true} | \code{false}}
 
 \item{NodeGroupId}{Deprecated. This parameter is not used.}
 
-\item{CacheSecurityGroupNames}{A list of cache security group names to authorize for the clusters in
-this replication group. This change is asynchronously applied as soon as
-possible.
+\item{CacheSecurityGroupNames}{A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.
 
-This parameter can be used only with replication group containing
-clusters running outside of an Amazon Virtual Private Cloud (Amazon
-VPC).
+This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).
 
-Constraints: Must contain no more than 255 alphanumeric characters. Must
-not be \code{Default}.}
+Constraints: Must contain no more than 255 alphanumeric characters. Must not be \code{Default}.}
 
-\item{SecurityGroupIds}{Specifies the VPC Security Groups associated with the clusters in the
-replication group.
+\item{SecurityGroupIds}{Specifies the VPC Security Groups associated with the clusters in the replication group.
 
-This parameter can be used only with replication group containing
-clusters running in an Amazon Virtual Private Cloud (Amazon VPC).}
+This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).}
 
-\item{PreferredMaintenanceWindow}{Specifies the weekly time range during which maintenance on the cluster
-is performed. It is specified as a range in the format
-ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-is a 60 minute period.
+\item{PreferredMaintenanceWindow}{Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
 
 Valid values for \code{ddd} are:
 \itemize{
@@ -96,85 +79,54 @@ Valid values for \code{ddd} are:
 
 Example: \code{sun:23:00-mon:01:30}}
 
-\item{NotificationTopicArn}{The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-notifications are sent.
+\item{NotificationTopicArn}{The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.
 
 The Amazon SNS topic owner must be same as the replication group owner.}
 
-\item{CacheParameterGroupName}{The name of the cache parameter group to apply to all of the clusters in
-this replication group. This change is asynchronously applied as soon as
-possible for parameters when the \code{ApplyImmediately} parameter is
-specified as \code{true} for this request.}
+\item{CacheParameterGroupName}{The name of the cache parameter group to apply to all of the clusters in this replication group. This change is asynchronously applied as soon as possible for parameters when the \code{ApplyImmediately} parameter is specified as \code{true} for this request.}
 
-\item{NotificationTopicStatus}{The status of the Amazon SNS notification topic for the replication
-group. Notifications are sent only if the status is \code{active}.
+\item{NotificationTopicStatus}{The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is \code{active}.
 
 Valid values: \code{active} | \code{inactive}}
 
-\item{ApplyImmediately}{If \code{true}, this parameter causes the modifications in this request and
-any pending modifications to be applied, asynchronously and as soon as
-possible, regardless of the \code{PreferredMaintenanceWindow} setting for the
-replication group.
+\item{ApplyImmediately}{If \code{true}, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the \code{PreferredMaintenanceWindow} setting for the replication group.
 
-If \code{false}, changes to the nodes in the replication group are applied on
-the next maintenance reboot, or the next failure reboot, whichever
-occurs first.
+If \code{false}, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.
 
 Valid values: \code{true} | \code{false}
 
 Default: \code{false}}
 
-\item{Engine}{Modifies the engine listed in a replication group message. The options
-are valkey, memcached or redis.}
+\item{Engine}{Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.}
 
-\item{EngineVersion}{The upgraded version of the cache engine to be run on the clusters in
-the replication group.
+\item{EngineVersion}{The upgraded version of the cache engine to be run on the clusters in the replication group.
 
-\strong{Important:} You can upgrade to a newer engine version (see \href{https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement}{Selecting a Cache Engine and Version}),
-but you cannot downgrade to an earlier engine version. If you want to
-use an earlier engine version, you must delete the existing replication
-group and create it anew with the earlier engine version.}
+\strong{Important:} You can upgrade to a newer engine version (see \href{https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement}{Selecting a Cache Engine and Version}), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version.}
 
-\item{AutoMinorVersionUpgrade}{ If you are running Valkey or Redis OSS engine version 6.0 or later, set
-this parameter to yes if you want to opt-in to the next auto minor
-version upgrade campaign. This parameter is disabled for previous
-versions. }
+\item{AutoMinorVersionUpgrade}{ If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. }
 
-\item{SnapshotRetentionLimit}{The number of days for which ElastiCache retains automatic node group
-(shard) snapshots before deleting them. For example, if you set
-\code{SnapshotRetentionLimit} to 5, a snapshot that was taken today is
-retained for 5 days before being deleted.
+\item{SnapshotRetentionLimit}{The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set \code{SnapshotRetentionLimit} to 5, a snapshot that was taken today is retained for 5 days before being deleted.
 
-\strong{Important} If the value of SnapshotRetentionLimit is set to zero (0),
-backups are turned off.}
+\strong{Important} If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.}
 
-\item{SnapshotWindow}{The daily time range (in UTC) during which ElastiCache begins taking a
-daily snapshot of the node group (shard) specified by
-\code{SnapshottingClusterId}.
+\item{SnapshotWindow}{The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by \code{SnapshottingClusterId}.
 
 Example: \code{05:00-09:00}
 
-If you do not specify this parameter, ElastiCache automatically chooses
-an appropriate time range.}
+If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.}
 
-\item{CacheNodeType}{A valid cache node type that you want to scale this replication group
-to.}
+\item{CacheNodeType}{A valid cache node type that you want to scale this replication group to.}
 
-\item{AuthToken}{Reserved parameter. The password used to access a password protected
-server. This parameter must be specified with the
-\code{auth-token-update-strategy } parameter. Password constraints:
+\item{AuthToken}{Reserved parameter. The password used to access a password protected server. This parameter must be specified with the \code{auth-token-update-strategy } parameter. Password constraints:
 \itemize{
 \item Must be only printable ASCII characters
-\item Must be at least 16 characters and no more than 128 characters in
-length
-\item Cannot contain any of the following characters: '/', '"', or '@',
-'\%'
+\item Must be at least 16 characters and no more than 128 characters in length
+\item Cannot contain any of the following characters: '/', '"', or '@', '\%'
 }
 
 For more information, see AUTH password at AUTH.}
 
-\item{AuthTokenUpdateStrategy}{Specifies the strategy to use to update the AUTH token. This parameter
-must be specified with the \code{auth-token} parameter. Possible values:
+\item{AuthTokenUpdateStrategy}{Specifies the strategy to use to update the AUTH token. This parameter must be specified with the \code{auth-token} parameter. Possible values:
 \itemize{
 \item ROTATE - default, if no update strategy is provided
 \item SET - allowed only after ROTATE
@@ -185,43 +137,23 @@ For more information, see \href{https://docs.aws.amazon.com/AmazonElastiCache/la
 
 \item{UserGroupIdsToAdd}{The ID of the user group you are associating with the replication group.}
 
-\item{UserGroupIdsToRemove}{The ID of the user group to disassociate from the replication group,
-meaning the users in the group no longer can access the replication
-group.}
+\item{UserGroupIdsToRemove}{The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.}
 
 \item{RemoveUserGroups}{Removes the user group associated with this replication group.}
 
 \item{LogDeliveryConfigurations}{Specifies the destination, format and type of the logs.}
 
-\item{IpDiscovery}{The network type you choose when modifying a cluster, either \code{ipv4} |
-\code{ipv6}. IPv6 is supported for workloads using Valkey 7.2 and above,
-Redis OSS engine version 6.2 to 7.1 and Memcached engine version 1.6.6
-and above on all instances built on the \href{https://aws.amazon.com/ec2/nitro/}{Nitro system}.}
+\item{IpDiscovery}{The network type you choose when modifying a cluster, either \code{ipv4} | \code{ipv6}. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 and Memcached engine version 1.6.6 and above on all instances built on the \href{https://aws.amazon.com/ec2/nitro/}{Nitro system}.}
 
-\item{TransitEncryptionEnabled}{A flag that enables in-transit encryption when set to true. If you are
-enabling in-transit encryption for an existing cluster, you must also
-set \code{TransitEncryptionMode} to \code{preferred}.}
+\item{TransitEncryptionEnabled}{A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an existing cluster, you must also set \code{TransitEncryptionMode} to \code{preferred}.}
 
-\item{TransitEncryptionMode}{A setting that allows you to migrate your clients to use in-transit
-encryption, with no downtime.
+\item{TransitEncryptionMode}{A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
 
-You must set \code{TransitEncryptionEnabled} to \code{true}, for your existing
-cluster, and set \code{TransitEncryptionMode} to \code{preferred} in the same
-request to allow both encrypted and unencrypted connections at the same
-time. Once you migrate all your Valkey or Redis OSS clients to use
-encrypted connections you can set the value to \code{required} to allow
-encrypted connections only.
+You must set \code{TransitEncryptionEnabled} to \code{true}, for your existing cluster, and set \code{TransitEncryptionMode} to \code{preferred} in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Valkey or Redis OSS clients to use encrypted connections you can set the value to \code{required} to allow encrypted connections only.
 
-Setting \code{TransitEncryptionMode} to \code{required} is a two-step process that
-requires you to first set the \code{TransitEncryptionMode} to \code{preferred},
-after that you can set \code{TransitEncryptionMode} to \code{required}.}
+Setting \code{TransitEncryptionMode} to \code{required} is a two-step process that requires you to first set the \code{TransitEncryptionMode} to \code{preferred}, after that you can set \code{TransitEncryptionMode} to \code{required}.}
 
-\item{ClusterMode}{Enabled or Disabled. To modify cluster mode from Disabled to Enabled,
-you must first set the cluster mode to Compatible. Compatible mode
-allows your Valkey or Redis OSS clients to connect using both cluster
-mode enabled and cluster mode disabled. After you migrate all Valkey or
-Redis OSS clients to use cluster mode enabled, you can then complete
-cluster mode configuration and set the cluster mode to Enabled.}
+\item{ClusterMode}{Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Valkey or Redis OSS clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Valkey or Redis OSS clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.}
 }
 \description{
 Modifies the settings for a replication group. This is limited to Valkey and Redis OSS 7 and above.

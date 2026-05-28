@@ -7,15 +7,9 @@
 redshift_create_tags(ResourceName, Tags)
 }
 \arguments{
-\item{ResourceName}{[required] The Amazon Resource Name (ARN) to which you want to add the tag or tags.
-For example, \code{arn:aws:redshift:us-east-2:123456789:cluster:t1}.}
+\item{ResourceName}{[required] The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, \code{arn:aws:redshift:us-east-2:123456789:cluster:t1}.}
 
-\item{Tags}{[required] One or more name/value pairs to add as tags to the specified resource.
-Each tag name is passed in with the parameter \code{Key} and the
-corresponding value is passed in with the parameter \code{Value}. The \code{Key}
-and \code{Value} parameters are separated by a comma (,). Separate multiple
-tags with a space. For example,
-\verb{--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test" "Key"="version","Value"="1.0"}.}
+\item{Tags}{[required] One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter \code{Key} and the corresponding value is passed in with the parameter \code{Value}. The \code{Key} and \code{Value} parameters are separated by a comma (,). Separate multiple tags with a space. For example, \verb{--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test" "Key"="version","Value"="1.0"}.}
 }
 \description{
 Adds tags to a cluster.

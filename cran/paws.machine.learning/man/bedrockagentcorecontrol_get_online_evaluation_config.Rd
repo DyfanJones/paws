@@ -8,8 +8,7 @@ including its rules, data sources, evaluators, and execution status}
 bedrockagentcorecontrol_get_online_evaluation_config(onlineEvaluationConfigId)
 }
 \arguments{
-\item{onlineEvaluationConfigId}{[required] The unique identifier of the online evaluation configuration to
-retrieve.}
+\item{onlineEvaluationConfigId}{[required] The unique identifier of the online evaluation configuration to retrieve.}
 }
 \description{
 Retrieves detailed information about an online evaluation configuration, including its rules, data sources, evaluators, and execution status.

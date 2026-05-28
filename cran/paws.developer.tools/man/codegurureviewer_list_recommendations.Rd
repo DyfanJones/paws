@@ -13,12 +13,9 @@ codegurureviewer_list_recommendations(
 \arguments{
 \item{NextToken}{Pagination token.}
 
-\item{MaxResults}{The maximum number of results that are returned per call. The default is
-100.}
+\item{MaxResults}{The maximum number of results that are returned per call. The default is 100.}
 
-\item{CodeReviewArn}{[required] The Amazon Resource Name (ARN) of the
-\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html}{CodeReview}
-object.}
+\item{CodeReviewArn}{[required] The Amazon Resource Name (ARN) of the \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html}{CodeReview} object.}
 }
 \description{
 Returns the list of all recommendations for a completed code review.

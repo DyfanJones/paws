@@ -18,8 +18,7 @@ workspaces_describe_workspaces_pools(
 
 \item{Limit}{The maximum number of items to return.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 }
 \description{
 Describes the specified WorkSpaces Pools.

@@ -13,13 +13,11 @@ glue_start_materialized_view_refresh_task_run(
 )
 }
 \arguments{
-\item{CatalogId}{[required] The ID of the Data Catalog where the table reside. If none is supplied,
-the account ID is used by default.}
+\item{CatalogId}{[required] The ID of the Data Catalog where the table reside. If none is supplied, the account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the database where the table resides.}
 
-\item{TableName}{[required] The name of the table to generate run the materialized view refresh
-task.}
+\item{TableName}{[required] The name of the table to generate run the materialized view refresh task.}
 
 \item{FullRefresh}{Specifies whether this is a full refresh of the task run.}
 }

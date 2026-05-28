@@ -7,8 +7,7 @@
 personalizeevents_put_users(datasetArn, users)
 }
 \arguments{
-\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the Users dataset you are adding the
-user or users to.}
+\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.}
 
 \item{users}{[required] A list of user data.}
 }

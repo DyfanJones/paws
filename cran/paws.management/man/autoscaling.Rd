@@ -55,20 +55,11 @@ Operations section.
 \description{
 Amazon EC2 Auto Scaling
 
-The
-\code{\link[=autoscaling_describe_auto_scaling_groups]{describe_auto_scaling_groups}}
-API operation might be throttled when retrieving details for an Auto
-Scaling group that contains many instances. By default, this operation
-returns details for all instances in the group. To help prevent
-throttling, you can set the \code{IncludeInstances} parameter to \code{false} to
-exclude instance details from the response.
+The \code{\link[=autoscaling_describe_auto_scaling_groups]{describe_auto_scaling_groups}} API operation might be throttled when retrieving details for an Auto Scaling group that contains many instances. By default, this operation returns details for all instances in the group. To help prevent throttling, you can set the \code{IncludeInstances} parameter to \code{false} to exclude instance details from the response.
 
-Amazon EC2 Auto Scaling is designed to automatically launch and
-terminate EC2 instances based on user-defined scaling policies,
-scheduled actions, and health checks.
+Amazon EC2 Auto Scaling is designed to automatically launch and terminate EC2 instances based on user-defined scaling policies, scheduled actions, and health checks.
 
-For more information, see the \href{https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html}{Amazon EC2 Auto Scaling User Guide}
-and the \href{https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html}{Amazon EC2 Auto Scaling API Reference}.
+For more information, see the \href{https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html}{Amazon EC2 Auto Scaling User Guide} and the \href{https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html}{Amazon EC2 Auto Scaling API Reference}.
 }
 \section{Service syntax}{
 

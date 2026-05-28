@@ -7,11 +7,7 @@
 servicediscovery_get_instance(ServiceId, InstanceId)
 }
 \arguments{
-\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that the instance is
-associated with. For services created in a shared namespace, specify the
-service ARN. For more information about shared namespaces, see
-\href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing}
-in the \emph{Cloud Map Developer Guide}.}
+\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that the instance is associated with. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing} in the \emph{Cloud Map Developer Guide}.}
 
 \item{InstanceId}{[required] The ID of the instance that you want to get information about.}
 }

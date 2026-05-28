@@ -9,9 +9,7 @@ gluedatabrew_batch_delete_recipe_version(Name, RecipeVersions)
 \arguments{
 \item{Name}{[required] The name of the recipe whose versions are to be deleted.}
 
-\item{RecipeVersions}{[required] An array of version identifiers, for the recipe versions to be deleted.
-You can specify numeric versions (\code{X.Y}) or \code{LATEST_WORKING}.
-\code{LATEST_PUBLISHED} is not supported.}
+\item{RecipeVersions}{[required] An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (\code{X.Y}) or \code{LATEST_WORKING}. \code{LATEST_PUBLISHED} is not supported.}
 }
 \description{
 Deletes one or more versions of a recipe at a time.

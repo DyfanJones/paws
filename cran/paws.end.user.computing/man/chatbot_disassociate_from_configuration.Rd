@@ -8,8 +8,7 @@ configuration}
 chatbot_disassociate_from_configuration(Resource, ChatConfiguration)
 }
 \arguments{
-\item{Resource}{[required] The resource (for example, a custom action) Amazon Resource Name (ARN)
-to unlink.}
+\item{Resource}{[required] The resource (for example, a custom action) Amazon Resource Name (ARN) to unlink.}
 
 \item{ChatConfiguration}{[required] The channel configuration the resource is being disassociated from.}
 }

@@ -7,8 +7,7 @@
 codedeploy_delete_resources_by_external_id(externalId = NULL)
 }
 \arguments{
-\item{externalId}{The unique ID of an external resource (for example, a CloudFormation
-stack ID) that is linked to one or more CodeDeploy resources.}
+\item{externalId}{The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.}
 }
 \description{
 Deletes resources linked to an external ID. This action only applies if you have configured blue/green deployments through CloudFormation.

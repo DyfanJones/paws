@@ -9,9 +9,7 @@ connect_describe_data_table(InstanceId, DataTableId)
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias. If no alias is provided, the default
-behavior is identical to providing the $LATEST alias.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias. If no alias is provided, the default behavior is identical to providing the $LATEST alias.}
 }
 \description{
 Returns all properties for a data table except for attributes and values. All properties from CreateDataTable are returned as well as properties for region replication, versioning, and system tables. "Describe" is a deprecated term but is allowed to maintain consistency with existing operations.

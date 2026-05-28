@@ -22,15 +22,13 @@ elasticache_create_user(
 
 \item{Engine}{[required] The options are valkey or redis.}
 
-\item{Passwords}{Passwords used for this user. You can create up to two passwords for
-each user.}
+\item{Passwords}{Passwords used for this user. You can create up to two passwords for each user.}
 
 \item{AccessString}{[required] Access permissions string used for this user.}
 
 \item{NoPasswordRequired}{Indicates a password is not required for this user.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 
 \item{AuthenticationMode}{Specifies how to authenticate the user.}
 }

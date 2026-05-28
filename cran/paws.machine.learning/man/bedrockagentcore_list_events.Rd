@@ -15,24 +15,19 @@ bedrockagentcore_list_events(
 )
 }
 \arguments{
-\item{memoryId}{[required] The identifier of the AgentCore Memory resource for which to list
-events.}
+\item{memoryId}{[required] The identifier of the AgentCore Memory resource for which to list events.}
 
 \item{sessionId}{[required] The identifier of the session for which to list events.}
 
 \item{actorId}{[required] The identifier of the actor for which to list events.}
 
-\item{includePayloads}{Specifies whether to include event payloads in the response. Set to true
-to include payloads, or false to exclude them.}
+\item{includePayloads}{Specifies whether to include event payloads in the response. Set to true to include payloads, or false to exclude them.}
 
 \item{filter}{Filter criteria to apply when listing events.}
 
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 20.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 20.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists events in an AgentCore Memory resource based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.

@@ -24,55 +24,34 @@ rds_create_blue_green_deployment(
 
 Constraints:
 \itemize{
-\item Can't be the same as an existing blue/green deployment name in the
-same account and Amazon Web Services Region.
+\item Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.
 }}
 
 \item{Source}{[required] The Amazon Resource Name (ARN) of the source production database.
 
-Specify the database that you want to clone. The blue/green deployment
-creates this database in the green environment. You can make updates to
-the database in the green environment, such as an engine version
-upgrade. When you are ready, you can switch the database in the green
-environment to be the production database.}
+Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.}
 
 \item{TargetEngineVersion}{The engine version of the database in the green environment.
 
 Specify the engine version to upgrade to in the green environment.}
 
-\item{TargetDBParameterGroupName}{The DB parameter group associated with the DB instance in the green
-environment.
+\item{TargetDBParameterGroupName}{The DB parameter group associated with the DB instance in the green environment.
 
-To test parameter changes, specify a DB parameter group that is
-different from the one associated with the source DB instance.}
+To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.}
 
-\item{TargetDBClusterParameterGroupName}{The DB cluster parameter group associated with the Aurora DB cluster in
-the green environment.
+\item{TargetDBClusterParameterGroupName}{The DB cluster parameter group associated with the Aurora DB cluster in the green environment.
 
-To test parameter changes, specify a DB cluster parameter group that is
-different from the one associated with the source DB cluster.}
+To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.}
 
 \item{Tags}{Tags to assign to the blue/green deployment.}
 
-\item{TargetDBInstanceClass}{Specify the DB instance class for the databases in the green
-environment.
+\item{TargetDBInstanceClass}{Specify the DB instance class for the databases in the green environment.
 
-This parameter only applies to RDS DB instances, because DB instances
-within an Aurora DB cluster can have multiple different instance
-classes. If you're creating a blue/green deployment from an Aurora DB
-cluster, don't specify this parameter. After the green environment is
-created, you can individually modify the instance classes of the DB
-instances within the green DB cluster.}
+This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.}
 
-\item{UpgradeTargetStorageConfig}{Whether to upgrade the storage file system configuration on the green
-database. This option migrates the green DB instance from the older
-32-bit file system to the preferred configuration. For more information,
-see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem}{Upgrading the storage file system for a DB instance}.}
+\item{UpgradeTargetStorageConfig}{Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem}{Upgrading the storage file system for a DB instance}.}
 
-\item{TargetIops}{The amount of Provisioned IOPS (input/output operations per second) to
-allocate for the green DB instance. For information about valid IOPS
-values, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html}{Amazon RDS DB instance storage}
-in the \emph{Amazon RDS User Guide}.
+\item{TargetIops}{The amount of Provisioned IOPS (input/output operations per second) to allocate for the green DB instance. For information about valid IOPS values, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html}{Amazon RDS DB instance storage} in the \emph{Amazon RDS User Guide}.
 
 This setting doesn't apply to Amazon Aurora blue/green deployments.}
 
@@ -82,9 +61,7 @@ Valid Values: \code{gp2 | gp3 | io1 | io2}
 
 This setting doesn't apply to Amazon Aurora blue/green deployments.}
 
-\item{TargetAllocatedStorage}{The amount of storage in gibibytes (GiB) to allocate for the green DB
-instance. You can choose to increase or decrease the allocated storage
-on the green DB instance.
+\item{TargetAllocatedStorage}{The amount of storage in gibibytes (GiB) to allocate for the green DB instance. You can choose to increase or decrease the allocated storage on the green DB instance.
 
 This setting doesn't apply to Amazon Aurora blue/green deployments.}
 

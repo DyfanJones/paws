@@ -7,11 +7,9 @@
 lexmodelsv2_create_bot_replica(botId, replicaRegion)
 }
 \arguments{
-\item{botId}{[required] The request for the unique bot ID of the source bot to be replicated in
-the secondary region.}
+\item{botId}{[required] The request for the unique bot ID of the source bot to be replicated in the secondary region.}
 
-\item{replicaRegion}{[required] The request for the secondary region that will be used in the
-replication of the source bot.}
+\item{replicaRegion}{[required] The request for the secondary region that will be used in the replication of the source bot.}
 }
 \description{
 Action to create a replication of the source bot in the secondary region.

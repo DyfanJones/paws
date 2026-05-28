@@ -7,8 +7,7 @@
 transcribeservice_delete_vocabulary(VocabularyName)
 }
 \arguments{
-\item{VocabularyName}{[required] The name of the custom vocabulary you want to delete. Custom vocabulary
-names are case sensitive.}
+\item{VocabularyName}{[required] The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.}
 }
 \description{
 Deletes a custom vocabulary. To use this operation, specify the name of the custom vocabulary you want to delete using \code{VocabularyName}. Custom vocabulary names are case sensitive.

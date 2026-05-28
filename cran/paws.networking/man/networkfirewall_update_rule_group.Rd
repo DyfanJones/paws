@@ -20,84 +20,49 @@ networkfirewall_update_rule_group(
 )
 }
 \arguments{
-\item{UpdateToken}{[required] A token used for optimistic locking. Network Firewall returns a token to
-your requests that access the rule group. The token marks the state of
-the rule group resource at the time of the request.
+\item{UpdateToken}{[required] A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.
 
-To make changes to the rule group, you provide the token in your
-request. Network Firewall uses the token to ensure that the rule group
-hasn't changed since you last retrieved it. If it has changed, the
-operation fails with an \code{InvalidTokenException}. If this happens,
-retrieve the rule group again to get a current copy of it with a current
-token. Reapply your changes as needed, then try the operation again
-using the new token.}
+To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an \code{InvalidTokenException}. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.}
 
 \item{RuleGroupArn}{The Amazon Resource Name (ARN) of the rule group.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a
-rule group after you create it.
+\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
 \item{RuleGroup}{An object that defines the rule group rules.
 
-You must provide either this rule group setting or a \code{Rules} setting,
-but not both.}
+You must provide either this rule group setting or a \code{Rules} setting, but not both.}
 
-\item{Rules}{A string containing stateful rule group rules specifications in Suricata
-flat format, with one rule per line. Use this to import your existing
-Suricata compatible rule groups.
+\item{Rules}{A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.
 
-You must provide either this rules setting or a populated \code{RuleGroup}
-setting, but not both.
+You must provide either this rules setting or a populated \code{RuleGroup} setting, but not both.
 
-You can provide your rule group specification in Suricata flat format
-through this setting when you create or update your rule group. The call
-response returns a RuleGroup object that Network Firewall has populated
-from your string.}
+You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a RuleGroup object that Network Firewall has populated from your string.}
 
-\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule
-group is stateless, it contains stateless rules. If it is stateful, it
-contains stateful rules.
+\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 
-This setting is required for requests that do not include the
-\code{RuleGroupARN}.}
+This setting is required for requests that do not include the \code{RuleGroupARN}.}
 
 \item{Description}{A description of the rule group.}
 
-\item{DryRun}{Indicates whether you want Network Firewall to just check the validity
-of the request, rather than run the request.
+\item{DryRun}{Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.
 
-If set to \code{TRUE}, Network Firewall checks whether the request can run
-successfully, but doesn't actually make the requested changes. The call
-returns the value that the request would return if you ran it with dry
-run set to \code{FALSE}, but doesn't make additions or changes to your
-resources. This option allows you to make sure that you have the
-required permissions to run the request and that your request parameters
-are valid.
+If set to \code{TRUE}, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to \code{FALSE}, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.
 
-If set to \code{FALSE}, Network Firewall makes the requested changes to your
-resources.}
+If set to \code{FALSE}, Network Firewall makes the requested changes to your resources.}
 
-\item{EncryptionConfiguration}{A complex type that contains settings for encryption of your rule group
-resources.}
+\item{EncryptionConfiguration}{A complex type that contains settings for encryption of your rule group resources.}
 
-\item{SourceMetadata}{A complex type that contains metadata about the rule group that your own
-rule group is copied from. You can use the metadata to keep track of
-updates made to the originating rule group.}
+\item{SourceMetadata}{A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.}
 
-\item{AnalyzeRuleGroup}{Indicates whether you want Network Firewall to analyze the stateless
-rules in the rule group for rule behavior such as asymmetric routing. If
-set to \code{TRUE}, Network Firewall runs the analysis and then updates the
-rule group for you. To run the stateless rule group analyzer without
-updating the rule group, set \code{DryRun} to \code{TRUE}.}
+\item{AnalyzeRuleGroup}{Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to \code{TRUE}, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set \code{DryRun} to \code{TRUE}.}
 
 \item{SummaryConfiguration}{Updates the selected summary configuration for a rule group.
 
-Changes affect subsequent responses from
-\code{\link[=networkfirewall_describe_rule_group_summary]{describe_rule_group_summary}}.}
+Changes affect subsequent responses from \code{\link[=networkfirewall_describe_rule_group_summary]{describe_rule_group_summary}}.}
 }
 \description{
 Updates the rule settings for the specified rule group. You use a rule group by reference in one or more firewall policies. When you modify a rule group, you modify all firewall policies that use the rule group.

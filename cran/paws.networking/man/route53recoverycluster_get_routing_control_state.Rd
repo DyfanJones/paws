@@ -7,8 +7,7 @@
 route53recoverycluster_get_routing_control_state(RoutingControlArn)
 }
 \arguments{
-\item{RoutingControlArn}{[required] The Amazon Resource Name (ARN) for the routing control that you want to
-get the state for.}
+\item{RoutingControlArn}{[required] The Amazon Resource Name (ARN) for the routing control that you want to get the state for.}
 }
 \description{
 Get the state for a routing control. A routing control is a simple on/off switch that you can use to route traffic to cells. When a routing control state is set to ON, traffic flows to a cell. When the state is set to OFF, traffic does not flow.

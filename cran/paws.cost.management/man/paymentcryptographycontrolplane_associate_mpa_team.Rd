@@ -11,17 +11,13 @@ paymentcryptographycontrolplane_associate_mpa_team(
 )
 }
 \arguments{
-\item{Action}{[required] The protected operation to associate with the MPA team. Currently, the
-only supported value is \code{IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE}.}
+\item{Action}{[required] The protected operation to associate with the MPA team. Currently, the only supported value is \code{IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE}.}
 
 \item{MpaTeamArn}{[required] The ARN of the MPA team to associate with the protected operation.}
 
-\item{RequesterComment}{The comment from the requester explaining the reason for the
-association.
+\item{RequesterComment}{The comment from the requester explaining the reason for the association.
 
-Don't include personal, confidential or sensitive information in this
-field. This field may be displayed in plaintext in CloudTrail logs and
-other output.}
+Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.}
 }
 \description{
 Associates a Multi-Party Approval (MPA) team with a protected operation. For more information, see \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/mpa.html}{Multi-Party Approval} in the \emph{Amazon Web Services Payment Cryptography User Guide.}

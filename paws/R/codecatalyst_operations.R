@@ -6,23 +6,13 @@ NULL
 #' Creates a personal access token (PAT) for the current user
 #'
 #' @description
-#' Creates a personal access token (PAT) for the current user. A personal
-#' access token (PAT) is similar to a password. It is associated with your
-#' user identity for use across all spaces and projects in Amazon
-#' CodeCatalyst. You use PATs to access CodeCatalyst from resources that
-#' include integrated development environments (IDEs) and Git-based source
-#' repositories. PATs represent you in Amazon CodeCatalyst and you can
-#' manage them in your user settings.For more information, see [Managing
-#' personal access tokens in Amazon
-#' CodeCatalyst](https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-tokens-keys.html).
+#' Creates a personal access token (PAT) for the current user. A personal access token (PAT) is similar to a password. It is associated with your user identity for use across all spaces and projects in Amazon CodeCatalyst. You use PATs to access CodeCatalyst from resources that include integrated development environments (IDEs) and Git-based source repositories. PATs represent you in Amazon CodeCatalyst and you can manage them in your user settings.For more information, see [Managing personal access tokens in Amazon CodeCatalyst](https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-tokens-keys.html).
 #'
 #' @usage
 #' codecatalyst_create_access_token(name, expiresTime)
 #'
 #' @param name &#91;required&#93; The friendly name of the personal access token.
-#' @param expiresTime The date and time the personal access token expires, in coordinated
-#' universal time (UTC) timestamp format as specified in [RFC
-#' 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
+#' @param expiresTime The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.
 #'
 #' @return
 #' A list with the following syntax:
@@ -76,14 +66,9 @@ codecatalyst_create_access_token <- function(name, expiresTime = NULL) {
 #' stored in the source repositories of your project
 #'
 #' @description
-#' Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based
-#' development environment that you can use to quickly work on the code
-#' stored in the source repositories of your project.
+#' Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project.
 #' 
-#' When created in the Amazon CodeCatalyst console, by default a Dev
-#' Environment is configured to have a 2 core processor, 4GB of RAM, and
-#' 16GB of persistent storage. None of these defaults apply to a Dev
-#' Environment created programmatically.
+#' When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these defaults apply to a Dev Environment created programmatically.
 #'
 #' @usage
 #' codecatalyst_create_dev_environment(spaceName, projectName,
@@ -92,33 +77,18 @@ codecatalyst_create_access_token <- function(name, expiresTime = NULL) {
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param repositories The source repository that contains the branch to clone into the Dev
-#' Environment.
-#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API
-#' request completes only once. With an idempotent request, if the original
-#' request completes successfully, the subsequent retries return the result
-#' from the original successful request and have no additional effect.
+#' @param repositories The source repository that contains the branch to clone into the Dev Environment.
+#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
 #' @param alias The user-defined alias for a Dev Environment.
-#' @param ides Information about the integrated development environment (IDE)
-#' configured for a Dev Environment.
+#' @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
 #' 
-#' An IDE is required to create a Dev Environment. For Dev Environment
-#' creation, this field contains configuration information and must be
-#' provided.
+#' An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.
 #' @param instanceType &#91;required&#93; The Amazon EC2 instace type to use for the Dev Environment.
-#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity
-#' detected before stopping, in minutes. Only whole integers are allowed.
-#' Dev Environments consume compute minutes when running.
-#' @param persistentStorage &#91;required&#93; Information about the amount of storage allocated to the Dev
-#' Environment.
+#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
+#' @param persistentStorage &#91;required&#93; Information about the amount of storage allocated to the Dev Environment.
 #' 
-#' By default, a Dev Environment is configured to have 16GB of persistent
-#' storage when created from the Amazon CodeCatalyst console, but there is
-#' no default when programmatically creating a Dev Environment. Valid
-#' values for persistent storage are based on memory sizes in 16GB
-#' increments. Valid values are 16, 32, and 64.
-#' @param vpcConnectionName The name of the connection that will be used to connect to Amazon VPC,
-#' if any.
+#' By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.
+#' @param vpcConnectionName The name of the connection that will be used to connect to Amazon VPC, if any.
 #'
 #' @return
 #' A list with the following syntax:
@@ -193,9 +163,7 @@ codecatalyst_create_dev_environment <- function(spaceName, projectName, reposito
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param displayName &#91;required&#93; The friendly name of the project that will be displayed to users.
-#' @param description The description of the project. This description will be displayed to
-#' all users of the project. We recommend providing a brief description of
-#' the project and its intended purpose.
+#' @param description The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.
 #'
 #' @return
 #' A list with the following syntax:
@@ -244,9 +212,7 @@ codecatalyst_create_project <- function(spaceName, displayName, description = NU
 #' Creates an empty Git-based source repository in a specified project
 #'
 #' @description
-#' Creates an empty Git-based source repository in a specified project. The
-#' repository is created with an initial empty commit with a default branch
-#' named `main`.
+#' Creates an empty Git-based source repository in a specified project. The repository is created with an initial empty commit with a default branch named `main`.
 #'
 #' @usage
 #' codecatalyst_create_source_repository(spaceName, projectName, name,
@@ -254,9 +220,7 @@ codecatalyst_create_project <- function(spaceName, displayName, description = NU
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param name &#91;required&#93; The name of the source repository. For more information about name
-#' requirements, see [Quotas for source
-#' repositories](https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html).
+#' @param name &#91;required&#93; The name of the source repository. For more information about name requirements, see [Quotas for source repositories](https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html).
 #' @param description The description of the source repository.
 #'
 #' @return
@@ -307,12 +271,9 @@ codecatalyst_create_source_repository <- function(spaceName, projectName, name, 
 #' Creates a branch in a specified source repository in Amazon CodeCatalyst
 #'
 #' @description
-#' Creates a branch in a specified source repository in Amazon
-#' CodeCatalyst.
+#' Creates a branch in a specified source repository in Amazon CodeCatalyst.
 #' 
-#' This API only creates a branch in a source repository hosted in Amazon
-#' CodeCatalyst. You cannot use this API to create a branch in a linked
-#' repository.
+#' This API only creates a branch in a source repository hosted in Amazon CodeCatalyst. You cannot use this API to create a branch in a linked repository.
 #'
 #' @usage
 #' codecatalyst_create_source_repository_branch(spaceName, projectName,
@@ -322,8 +283,7 @@ codecatalyst_create_source_repository <- function(spaceName, projectName, name, 
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param sourceRepositoryName &#91;required&#93; The name of the repository where you want to create a branch.
 #' @param name &#91;required&#93; The name for the branch you're creating.
-#' @param headCommitId The commit ID in an existing branch from which you want to create the
-#' new branch.
+#' @param headCommitId The commit ID in an existing branch from which you want to create the new branch.
 #'
 #' @return
 #' A list with the following syntax:
@@ -376,15 +336,12 @@ codecatalyst_create_source_repository_branch <- function(spaceName, projectName,
 #' Deletes a specified personal access token (PAT)
 #'
 #' @description
-#' Deletes a specified personal access token (PAT). A personal access token
-#' can only be deleted by the user who created it.
+#' Deletes a specified personal access token (PAT). A personal access token can only be deleted by the user who created it.
 #'
 #' @usage
 #' codecatalyst_delete_access_token(id)
 #'
-#' @param id &#91;required&#93; The ID of the personal access token to delete. You can find the IDs of
-#' all PATs associated with your Amazon Web Services Builder ID in a space
-#' by calling [`list_access_tokens`][codecatalyst_list_access_tokens].
+#' @param id &#91;required&#93; The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling [`list_access_tokens`][codecatalyst_list_access_tokens].
 #'
 #' @return
 #' An empty list.
@@ -430,9 +387,7 @@ codecatalyst_delete_access_token <- function(id) {
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment you want to
-#' delete. To retrieve a list of Dev Environment IDs, use
-#' [`list_dev_environments`][codecatalyst_list_dev_environments].
+#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use [`list_dev_environments`][codecatalyst_list_dev_environments].
 #'
 #' @return
 #' A list with the following syntax:
@@ -486,8 +441,7 @@ codecatalyst_delete_dev_environment <- function(spaceName, projectName, id) {
 #' codecatalyst_delete_project(spaceName, name)
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param name &#91;required&#93; The name of the project in the space. To retrieve a list of project
-#' names, use [`list_projects`][codecatalyst_list_projects].
+#' @param name &#91;required&#93; The name of the project in the space. To retrieve a list of project names, use [`list_projects`][codecatalyst_list_projects].
 #'
 #' @return
 #' A list with the following syntax:
@@ -534,9 +488,7 @@ codecatalyst_delete_project <- function(spaceName, name) {
 #' Deletes a source repository in Amazon CodeCatalyst
 #'
 #' @description
-#' Deletes a source repository in Amazon CodeCatalyst. You cannot use this
-#' API to delete a linked repository. It can only be used to delete a
-#' Amazon CodeCatalyst source repository.
+#' Deletes a source repository in Amazon CodeCatalyst. You cannot use this API to delete a linked repository. It can only be used to delete a Amazon CodeCatalyst source repository.
 #'
 #' @usage
 #' codecatalyst_delete_source_repository(spaceName, projectName, name)
@@ -593,15 +545,12 @@ codecatalyst_delete_source_repository <- function(spaceName, projectName, name) 
 #' @description
 #' Deletes a space.
 #' 
-#' Deleting a space cannot be undone. Additionally, since space names must
-#' be unique across Amazon CodeCatalyst, you cannot reuse names of deleted
-#' spaces.
+#' Deleting a space cannot be undone. Additionally, since space names must be unique across Amazon CodeCatalyst, you cannot reuse names of deleted spaces.
 #'
 #' @usage
 #' codecatalyst_delete_space(name)
 #'
-#' @param name &#91;required&#93; The name of the space. To retrieve a list of space names, use
-#' [`list_spaces`][codecatalyst_list_spaces].
+#' @param name &#91;required&#93; The name of the space. To retrieve a list of space names, use [`list_spaces`][codecatalyst_list_spaces].
 #'
 #' @return
 #' A list with the following syntax:
@@ -647,17 +596,14 @@ codecatalyst_delete_space <- function(name) {
 #' project
 #'
 #' @description
-#' Returns information about a Dev Environment for a source repository in a
-#' project. Dev Environments are specific to the user who creates them.
+#' Returns information about a Dev Environment for a source repository in a project. Dev Environments are specific to the user who creates them.
 #'
 #' @usage
 #' codecatalyst_get_dev_environment(spaceName, projectName, id)
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment for which you want
-#' to view information. To retrieve a list of Dev Environment IDs, use
-#' [`list_dev_environments`][codecatalyst_list_dev_environments].
+#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use [`list_dev_environments`][codecatalyst_list_dev_environments].
 #'
 #' @return
 #' A list with the following syntax:
@@ -847,8 +793,7 @@ codecatalyst_get_source_repository <- function(spaceName, projectName, name) {
 #' clone a source repository
 #'
 #' @description
-#' Returns information about the URLs that can be used with a Git client to
-#' clone a source repository.
+#' Returns information about the URLs that can be used with a Git client to clone a source repository.
 #'
 #' @usage
 #' codecatalyst_get_source_repository_clone_urls(spaceName, projectName,
@@ -955,8 +900,7 @@ codecatalyst_get_space <- function(name) {
 #' billing purposes and the billing plan for the space
 #'
 #' @description
-#' Returns information about the Amazon Web Services account used for
-#' billing purposes and the billing plan for the space.
+#' Returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.
 #'
 #' @usage
 #' codecatalyst_get_subscription(spaceName)
@@ -1074,8 +1018,7 @@ codecatalyst_get_user_details <- function(id = NULL, userName = NULL) {
 #' codecatalyst_get_workflow(spaceName, id, projectName)
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param id &#91;required&#93; The ID of the workflow. To rerieve a list of workflow IDs, use
-#' [`list_workflows`][codecatalyst_list_workflows].
+#' @param id &#91;required&#93; The ID of the workflow. To rerieve a list of workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #'
 #' @return
@@ -1144,8 +1087,7 @@ codecatalyst_get_workflow <- function(spaceName, id, projectName) {
 #' codecatalyst_get_workflow_run(spaceName, id, projectName)
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param id &#91;required&#93; The ID of the workflow run. To retrieve a list of workflow run IDs, use
-#' [`list_workflow_runs`][codecatalyst_list_workflow_runs].
+#' @param id &#91;required&#93; The ID of the workflow run. To retrieve a list of workflow run IDs, use [`list_workflow_runs`][codecatalyst_list_workflow_runs].
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #'
 #' @return
@@ -1209,19 +1151,13 @@ codecatalyst_get_workflow_run <- function(spaceName, id, projectName) {
 #' calls the API
 #'
 #' @description
-#' Lists all personal access tokens (PATs) associated with the user who
-#' calls the API. You can only list PATs associated with your Amazon Web
-#' Services Builder ID.
+#' Lists all personal access tokens (PATs) associated with the user who calls the API. You can only list PATs associated with your Amazon Web Services Builder ID.
 #'
 #' @usage
 #' codecatalyst_list_access_tokens(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1284,12 +1220,8 @@ codecatalyst_list_access_tokens <- function(maxResults = NULL, nextToken = NULL)
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param devEnvironmentId &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1356,14 +1288,9 @@ codecatalyst_list_dev_environment_sessions <- function(spaceName, projectName, d
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName The name of the project in the space.
-#' @param filters Information about filters to apply to narrow the results returned in the
-#' list.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param filters Information about filters to apply to narrow the results returned in the list.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1452,40 +1379,20 @@ codecatalyst_list_dev_environments <- function(spaceName, projectName = NULL, fi
 #' space
 #'
 #' @description
-#' Retrieves a list of events that occurred during a specific time in a
-#' space. You can use these events to audit user and system activity in a
-#' space. For more information, see
-#' [Monitoring](https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-monitoring.html)
-#' in the *Amazon CodeCatalyst User Guide*.
+#' Retrieves a list of events that occurred during a specific time in a space. You can use these events to audit user and system activity in a space. For more information, see [Monitoring](https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-monitoring.html) in the *Amazon CodeCatalyst User Guide*.
 #' 
-#' ListEventLogs guarantees events for the last 30 days in a given space.
-#' You can also view and retrieve a list of management events over the last
-#' 90 days for Amazon CodeCatalyst in the CloudTrail console by viewing
-#' Event history, or by creating a trail to create and maintain a record of
-#' events that extends past 90 days. For more information, see [Working
-#' with CloudTrail Event
-#' History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)
-#' and [Working with CloudTrail
-#' trails](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-trails.html).
+#' ListEventLogs guarantees events for the last 30 days in a given space. You can also view and retrieve a list of management events over the last 90 days for Amazon CodeCatalyst in the CloudTrail console by viewing Event history, or by creating a trail to create and maintain a record of events that extends past 90 days. For more information, see [Working with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html) and [Working with CloudTrail trails](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-trails.html).
 #'
 #' @usage
 #' codecatalyst_list_event_logs(spaceName, startTime, endTime, eventName,
 #'   nextToken, maxResults)
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param startTime &#91;required&#93; The date and time when you want to start retrieving events, in
-#' coordinated universal time (UTC) timestamp format as specified in [RFC
-#' 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
-#' @param endTime &#91;required&#93; The time after which you do not want any events retrieved, in
-#' coordinated universal time (UTC) timestamp format as specified in [RFC
-#' 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
+#' @param startTime &#91;required&#93; The date and time when you want to start retrieving events, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.
+#' @param endTime &#91;required&#93; The time after which you do not want any events retrieved, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.
 #' @param eventName The name of the event.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1579,14 +1486,9 @@ codecatalyst_list_event_logs <- function(spaceName, startTime, endTime, eventNam
 #' codecatalyst_list_projects(spaceName, nextToken, maxResults, filters)
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
-#' @param filters Information about filters to apply to narrow the results returned in the
-#' list.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
+#' @param filters Information about filters to apply to narrow the results returned in the list.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1656,12 +1558,8 @@ codecatalyst_list_projects <- function(spaceName, nextToken = NULL, maxResults =
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1730,12 +1628,8 @@ codecatalyst_list_source_repositories <- function(spaceName, projectName, nextTo
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param sourceRepositoryName &#91;required&#93; The name of the source repository.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1798,8 +1692,7 @@ codecatalyst_list_source_repository_branches <- function(spaceName, projectName,
 #' @usage
 #' codecatalyst_list_spaces(nextToken)
 #'
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1858,15 +1751,10 @@ codecatalyst_list_spaces <- function(nextToken = NULL) {
 #'   nextToken, maxResults, sortBy)
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param workflowId The ID of the workflow. To retrieve a list of workflow IDs, use
-#' [`list_workflows`][codecatalyst_list_workflows].
+#' @param workflowId The ID of the workflow. To retrieve a list of workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #' @param sortBy Information used to sort the items in the returned list.
 #'
 #' @return
@@ -1946,12 +1834,8 @@ codecatalyst_list_workflow_runs <- function(spaceName, workflowId = NULL, projec
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #' @param sortBy Information used to sort the items in the returned list.
 #'
 #' @return
@@ -2030,12 +1914,9 @@ codecatalyst_list_workflows <- function(spaceName, projectName, nextToken = NULL
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param ides Information about the integrated development environment (IDE)
-#' configured for a Dev Environment.
+#' @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
 #' @param instanceType The Amazon EC2 instace type to use for the Dev Environment.
-#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity
-#' detected before stopping, in minutes. Only whole integers are allowed.
-#' Dev Environments consume compute minutes when running.
+#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2101,7 +1982,7 @@ codecatalyst_start_dev_environment <- function(spaceName, projectName, id, ides 
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param sessionConfiguration &#91;required&#93; 
+#' @param sessionConfiguration &#91;required&#93; Information about the configuration of a Dev Environment session.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2171,12 +2052,8 @@ codecatalyst_start_dev_environment_session <- function(spaceName, projectName, i
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param workflowId &#91;required&#93; The system-generated unique ID of the workflow. To retrieve a list of
-#' workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
-#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API
-#' request completes only once. With an idempotent request, if the original
-#' request completes successfully, the subsequent retries return the result
-#' from the original successful request and have no additional effect.
+#' @param workflowId &#91;required&#93; The system-generated unique ID of the workflow. To retrieve a list of workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
+#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2226,8 +2103,7 @@ codecatalyst_start_workflow_run <- function(spaceName, projectName, workflowId, 
 #' Pauses a specified Dev Environment and places it in a non-running state
 #'
 #' @description
-#' Pauses a specified Dev Environment and places it in a non-running state.
-#' Stopped Dev Environments do not consume compute minutes.
+#' Pauses a specified Dev Environment and places it in a non-running state. Stopped Dev Environments do not consume compute minutes.
 #'
 #' @usage
 #' codecatalyst_stop_dev_environment(spaceName, projectName, id)
@@ -2291,11 +2167,8 @@ codecatalyst_stop_dev_environment <- function(spaceName, projectName, id) {
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment. To obtain this
-#' ID, use [`list_dev_environments`][codecatalyst_list_dev_environments].
-#' @param sessionId &#91;required&#93; The system-generated unique ID of the Dev Environment session. This ID
-#' is returned by
-#' [`start_dev_environment_session`][codecatalyst_start_dev_environment_session].
+#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment. To obtain this ID, use [`list_dev_environments`][codecatalyst_list_dev_environments].
+#' @param sessionId &#91;required&#93; The system-generated unique ID of the Dev Environment session. This ID is returned by [`start_dev_environment_session`][codecatalyst_start_dev_environment_session].
 #'
 #' @return
 #' A list with the following syntax:
@@ -2345,8 +2218,7 @@ codecatalyst_stop_dev_environment_session <- function(spaceName, projectName, id
 #' Changes one or more values for a Dev Environment
 #'
 #' @description
-#' Changes one or more values for a Dev Environment. Updating certain
-#' values of the Dev Environment will cause a restart.
+#' Changes one or more values for a Dev Environment. Updating certain values of the Dev Environment will cause a restart.
 #'
 #' @usage
 #' codecatalyst_update_dev_environment(spaceName, projectName, id, alias,
@@ -2355,24 +2227,15 @@ codecatalyst_stop_dev_environment_session <- function(spaceName, projectName, id
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param alias The user-specified alias for the Dev Environment. Changing this value
-#' will not cause a restart.
-#' @param ides Information about the integrated development environment (IDE)
-#' configured for a Dev Environment.
+#' @param alias The user-specified alias for the Dev Environment. Changing this value will not cause a restart.
+#' @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
 #' @param instanceType The Amazon EC2 instace type to use for the Dev Environment.
 #' 
-#' Changing this value will cause a restart of the Dev Environment if it is
-#' running.
-#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity
-#' detected before stopping, in minutes. Only whole integers are allowed.
-#' Dev Environments consume compute minutes when running.
+#' Changing this value will cause a restart of the Dev Environment if it is running.
+#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
 #' 
-#' Changing this value will cause a restart of the Dev Environment if it is
-#' running.
-#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API
-#' request completes only once. With an idempotent request, if the original
-#' request completes successfully, the subsequent retries return the result
-#' from the original successful request and have no additional effect.
+#' Changing this value will cause a restart of the Dev Environment if it is running.
+#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2550,9 +2413,7 @@ codecatalyst_update_space <- function(name, description = NULL) {
 #' and session
 #'
 #' @description
-#' Verifies whether the calling user has a valid Amazon CodeCatalyst login
-#' and session. If successful, this returns the ID of the user in Amazon
-#' CodeCatalyst.
+#' Verifies whether the calling user has a valid Amazon CodeCatalyst login and session. If successful, this returns the ID of the user in Amazon CodeCatalyst.
 #'
 #' @usage
 #' codecatalyst_verify_session()

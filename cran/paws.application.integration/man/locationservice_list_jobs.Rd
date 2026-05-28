@@ -8,13 +8,11 @@ support}
 locationservice_list_jobs(Filter = NULL, MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{Filter}{An optional structure containing criteria by which to filter job
-results.}
+\item{Filter}{An optional structure containing criteria by which to filter job results.}
 
 \item{MaxResults}{Maximum number of jobs to return.}
 
-\item{NextToken}{The pagination token specifying which page of results to return in the
-response. If no token is provided, the default page is the first page.}
+\item{NextToken}{The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.}
 }
 \description{
 \code{\link[=locationservice_list_jobs]{list_jobs}} retrieves a list of jobs with optional filtering and pagination support.

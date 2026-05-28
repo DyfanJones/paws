@@ -10,8 +10,7 @@ sagemaker_describe_model_package(ModelPackageName)
 \arguments{
 \item{ModelPackageName}{[required] The name or Amazon Resource Name (ARN) of the model package to describe.
 
-When you specify a name, the name must have 1 to 63 characters. Valid
-characters are a-z, A-Z, 0-9, and - (hyphen).}
+When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).}
 }
 \description{
 Returns a description of the specified model package, which is used to create SageMaker models or list them on Amazon Web Services Marketplace.

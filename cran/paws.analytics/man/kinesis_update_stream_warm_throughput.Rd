@@ -19,9 +19,7 @@ kinesis_update_stream_warm_throughput(
 
 \item{StreamId}{Not Implemented. Reserved for future use.}
 
-\item{WarmThroughputMiBps}{[required] The target warm throughput in MB/s that the stream should be scaled to
-handle. This represents the throughput capacity that will be immediately
-available for write operations.}
+\item{WarmThroughputMiBps}{[required] The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.}
 }
 \description{
 Updates the warm throughput configuration for the specified Amazon Kinesis Data Streams on-demand data stream. This operation allows you to proactively scale your on-demand data stream to a specified throughput level, enabling better performance for sudden traffic spikes.

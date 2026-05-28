@@ -9,9 +9,7 @@ networkfirewall_accept_network_firewall_transit_gateway_attachment(
 )
 }
 \arguments{
-\item{TransitGatewayAttachmentId}{[required] Required. The unique identifier of the transit gateway attachment to
-accept. This ID is returned in the response when creating a transit
-gateway-attached firewall.}
+\item{TransitGatewayAttachmentId}{[required] Required. The unique identifier of the transit gateway attachment to accept. This ID is returned in the response when creating a transit gateway-attached firewall.}
 }
 \description{
 Accepts a transit gateway attachment request for Network Firewall. When you accept the attachment request, Network Firewall creates the necessary routing components to enable traffic flow between the transit gateway and firewall endpoints.

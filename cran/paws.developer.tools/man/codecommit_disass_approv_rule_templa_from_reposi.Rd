@@ -12,8 +12,7 @@ codecommit_disassociate_approval_rule_template_from_repository(
 )
 }
 \arguments{
-\item{approvalRuleTemplateName}{[required] The name of the approval rule template to disassociate from a specified
-repository.}
+\item{approvalRuleTemplateName}{[required] The name of the approval rule template to disassociate from a specified repository.}
 
 \item{repositoryName}{[required] The name of the repository you want to disassociate from the template.}
 }

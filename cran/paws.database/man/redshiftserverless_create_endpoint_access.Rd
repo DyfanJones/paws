@@ -13,20 +13,13 @@ redshiftserverless_create_endpoint_access(
 )
 }
 \arguments{
-\item{endpointName}{[required] The name of the VPC endpoint. An endpoint name must contain 1-30
-characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first
-character must be a letter. The name can't contain two consecutive
-hyphens or end with a hyphen.}
+\item{endpointName}{[required] The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.}
 
-\item{ownerAccount}{The owner Amazon Web Services account for the Amazon Redshift Serverless
-workgroup.}
+\item{ownerAccount}{The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.}
 
-\item{subnetIds}{[required] The unique identifers of subnets from which Amazon Redshift Serverless
-chooses one to deploy a VPC endpoint.}
+\item{subnetIds}{[required] The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.}
 
-\item{vpcSecurityGroupIds}{The unique identifiers of the security group that defines the ports,
-protocols, and sources for inbound traffic that you are authorizing into
-your endpoint.}
+\item{vpcSecurityGroupIds}{The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.}
 
 \item{workgroupName}{[required] The name of the workgroup to associate with the VPC endpoint.}
 }

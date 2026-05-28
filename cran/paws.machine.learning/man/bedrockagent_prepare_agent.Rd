@@ -8,8 +8,7 @@ testing}
 bedrockagent_prepare_agent(agentId)
 }
 \arguments{
-\item{agentId}{[required] The unique identifier of the agent for which to create a \code{DRAFT}
-version.}
+\item{agentId}{[required] The unique identifier of the agent for which to create a \code{DRAFT} version.}
 }
 \description{
 Creates a \code{DRAFT} version of the agent that can be used for internal testing.

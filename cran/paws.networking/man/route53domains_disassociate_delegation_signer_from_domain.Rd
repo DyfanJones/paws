@@ -10,9 +10,7 @@ route53domains_disassociate_delegation_signer_from_domain(DomainName, Id)
 \arguments{
 \item{DomainName}{[required] Name of the domain.}
 
-\item{Id}{[required] An internal identification number assigned to each DS record after it’s
-created. You can retrieve it as part of DNSSEC information returned by
-\code{\link[=route53domains_get_domain_detail]{get_domain_detail}}.}
+\item{Id}{[required] An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by \code{\link[=route53domains_get_domain_detail]{get_domain_detail}}.}
 }
 \description{
 Deletes a delegation signer (DS) record in the registry zone for this domain name.

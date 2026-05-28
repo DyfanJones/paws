@@ -44,13 +44,13 @@ bedrockdataautomation_copy_blueprint_stage <- function(blueprintArn, sourceStage
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_blueprint/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_blueprint/) for full documentation.
 #'
-#' @param blueprintName &#91;required&#93; 
-#' @param type &#91;required&#93; 
-#' @param blueprintStage 
-#' @param schema &#91;required&#93; 
-#' @param clientToken 
-#' @param encryptionConfiguration 
-#' @param tags 
+#' @param blueprintName &#91;required&#93; Name of the Blueprint
+#' @param type &#91;required&#93; Type
+#' @param blueprintStage Stage of the Blueprint
+#' @param schema &#91;required&#93; Schema of the blueprint
+#' @param clientToken Client specified token used for idempotency checks
+#' @param encryptionConfiguration KMS Encryption Configuration
+#' @param tags List of tags
 #'
 #' @keywords internal
 #'
@@ -83,7 +83,7 @@ bedrockdataautomation_create_blueprint <- function(blueprintName, type, blueprin
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_blueprint_version/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_blueprint_version/) for full documentation.
 #'
 #' @param blueprintArn &#91;required&#93; ARN generated at the server side when a Blueprint is created
-#' @param clientToken 
+#' @param clientToken Client specified token used for idempotency checks
 #'
 #' @keywords internal
 #'
@@ -114,11 +114,11 @@ bedrockdataautomation_create_blueprint_version <- function(blueprintArn, clientT
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_data_automation_library/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_data_automation_library/) for full documentation.
 #'
-#' @param libraryName &#91;required&#93; 
-#' @param libraryDescription 
-#' @param clientToken 
-#' @param encryptionConfiguration 
-#' @param tags 
+#' @param libraryName &#91;required&#93; Name of the DataAutomationLibrary
+#' @param libraryDescription Description of the DataAutomationLibrary
+#' @param clientToken Client specified token used for idempotency checks
+#' @param encryptionConfiguration KMS Encryption Configuration
+#' @param tags List of tags
 #'
 #' @keywords internal
 #'
@@ -149,17 +149,17 @@ bedrockdataautomation_create_data_automation_library <- function(libraryName, li
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_data_automation_project/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_create_data_automation_project/) for full documentation.
 #'
-#' @param projectName &#91;required&#93; 
-#' @param projectDescription 
-#' @param projectStage 
-#' @param projectType 
-#' @param standardOutputConfiguration &#91;required&#93; 
-#' @param customOutputConfiguration 
-#' @param overrideConfiguration 
-#' @param dataAutomationLibraryConfiguration 
-#' @param clientToken 
-#' @param encryptionConfiguration 
-#' @param tags 
+#' @param projectName &#91;required&#93; Name of the DataAutomationProject
+#' @param projectDescription Description of the DataAutomationProject
+#' @param projectStage Stage of the Project
+#' @param projectType Type of the DataAutomationProject
+#' @param standardOutputConfiguration &#91;required&#93; Standard output configuration
+#' @param customOutputConfiguration Custom output configuration
+#' @param overrideConfiguration Override configuration
+#' @param dataAutomationLibraryConfiguration DataAutomation Library configuration
+#' @param clientToken Client specified token used for idempotency checks
+#' @param encryptionConfiguration KMS Encryption Configuration
+#' @param tags List of tags
 #'
 #' @keywords internal
 #'
@@ -550,12 +550,12 @@ bedrockdataautomation_invoke_data_automation_library_ingestion_job <- function(l
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_blueprints/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_blueprints/) for full documentation.
 #'
-#' @param blueprintArn 
-#' @param resourceOwner 
-#' @param blueprintStageFilter 
-#' @param maxResults 
-#' @param nextToken 
-#' @param projectFilter 
+#' @param blueprintArn ARN of a Blueprint
+#' @param resourceOwner Resource Owner
+#' @param blueprintStageFilter Blueprint Stage filter
+#' @param maxResults Max Results
+#' @param nextToken Pagination token
+#' @param projectFilter Data Automation Project Filter
 #'
 #' @keywords internal
 #'
@@ -586,9 +586,9 @@ bedrockdataautomation_list_blueprints <- function(blueprintArn = NULL, resourceO
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_data_automation_libraries/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_data_automation_libraries/) for full documentation.
 #'
-#' @param maxResults 
-#' @param nextToken 
-#' @param projectFilter 
+#' @param maxResults Max Results
+#' @param nextToken Pagination token
+#' @param projectFilter Data Automation Project Filter
 #'
 #' @keywords internal
 #'
@@ -621,7 +621,7 @@ bedrockdataautomation_list_data_automation_libraries <- function(maxResults = NU
 #'
 #' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
 #' @param entityType &#91;required&#93; The entity type for which the entity list is requested
-#' @param maxResults 
+#' @param maxResults Max Results
 #' @param nextToken Pagination token for retrieving the next set of results
 #'
 #' @keywords internal
@@ -654,7 +654,7 @@ bedrockdataautomation_list_data_automation_library_entities <- function(libraryA
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_data_automation_library_ingestion_jobs/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_data_automation_library_ingestion_jobs/) for full documentation.
 #'
 #' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
-#' @param maxResults 
+#' @param maxResults Max Results
 #' @param nextToken Pagination token for retrieving the next set of results
 #'
 #' @keywords internal
@@ -686,12 +686,12 @@ bedrockdataautomation_list_data_automation_library_ingestion_jobs <- function(li
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_data_automation_projects/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_data_automation_projects/) for full documentation.
 #'
-#' @param maxResults 
-#' @param nextToken 
-#' @param projectStageFilter 
-#' @param blueprintFilter 
-#' @param resourceOwner 
-#' @param libraryFilter 
+#' @param maxResults Max Results
+#' @param nextToken Pagination token
+#' @param projectStageFilter Project Stage filter
+#' @param blueprintFilter Blueprint Filter
+#' @param resourceOwner Resource Owner
+#' @param libraryFilter Data Automation Library Filter
 #'
 #' @keywords internal
 #'
@@ -722,7 +722,7 @@ bedrockdataautomation_list_data_automation_projects <- function(maxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
 #'
 #' @keywords internal
 #'
@@ -753,8 +753,8 @@ bedrockdataautomation_list_tags_for_resource <- function(resourceARN) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_tag_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_tag_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tags &#91;required&#93; List of tags
 #'
 #' @keywords internal
 #'
@@ -785,8 +785,8 @@ bedrockdataautomation_tag_resource <- function(resourceARN, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_untag_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_untag_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tagKeys &#91;required&#93; List of tag keys
 #'
 #' @keywords internal
 #'
@@ -818,9 +818,9 @@ bedrockdataautomation_untag_resource <- function(resourceARN, tagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_update_blueprint/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_update_blueprint/) for full documentation.
 #'
 #' @param blueprintArn &#91;required&#93; ARN generated at the server side when a Blueprint is created
-#' @param schema &#91;required&#93; 
-#' @param blueprintStage 
-#' @param encryptionConfiguration 
+#' @param schema &#91;required&#93; Schema of the blueprint
+#' @param blueprintStage Stage of the Blueprint
+#' @param encryptionConfiguration KMS Encryption Configuration
 #'
 #' @keywords internal
 #'
@@ -852,8 +852,8 @@ bedrockdataautomation_update_blueprint <- function(blueprintArn, schema, bluepri
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_update_data_automation_library/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_update_data_automation_library/) for full documentation.
 #'
 #' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
-#' @param libraryDescription 
-#' @param clientToken 
+#' @param libraryDescription Description of the DataAutomationLibrary
+#' @param clientToken Client specified token used for idempotency checks
 #'
 #' @keywords internal
 #'
@@ -885,13 +885,13 @@ bedrockdataautomation_update_data_automation_library <- function(libraryArn, lib
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomation_update_data_automation_project/](https://www.paws-r-sdk.com/docs/bedrockdataautomation_update_data_automation_project/) for full documentation.
 #'
 #' @param projectArn &#91;required&#93; ARN generated at the server side when a DataAutomationProject is created
-#' @param projectStage 
-#' @param projectDescription 
-#' @param standardOutputConfiguration &#91;required&#93; 
-#' @param customOutputConfiguration 
-#' @param overrideConfiguration 
-#' @param dataAutomationLibraryConfiguration 
-#' @param encryptionConfiguration 
+#' @param projectStage Stage of the Project
+#' @param projectDescription Description of the DataAutomationProject
+#' @param standardOutputConfiguration &#91;required&#93; Standard output configuration
+#' @param customOutputConfiguration Custom output configuration
+#' @param overrideConfiguration Override configuration
+#' @param dataAutomationLibraryConfiguration DataAutomation Library configuration
+#' @param encryptionConfiguration KMS Encryption Configuration
 #'
 #' @keywords internal
 #'

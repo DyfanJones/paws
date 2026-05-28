@@ -12,14 +12,11 @@ lexmodelsv2_stop_bot_recommendation(
 )
 }
 \arguments{
-\item{botId}{[required] The unique identifier of the bot containing the bot recommendation to be
-stopped.}
+\item{botId}{[required] The unique identifier of the bot containing the bot recommendation to be stopped.}
 
 \item{botVersion}{[required] The version of the bot containing the bot recommendation.}
 
-\item{localeId}{[required] The identifier of the language and locale of the bot recommendation to
-stop. The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}}
+\item{localeId}{[required] The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}}
 
 \item{botRecommendationId}{[required] The unique identifier of the bot recommendation to be stopped.}
 }

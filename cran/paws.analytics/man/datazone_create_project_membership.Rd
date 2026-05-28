@@ -12,8 +12,7 @@ datazone_create_project_membership(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which project membership is
-created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which project membership is created.}
 
 \item{projectIdentifier}{[required] The ID of the project for which this project membership was created.}
 

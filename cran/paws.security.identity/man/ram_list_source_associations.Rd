@@ -14,12 +14,9 @@ ram_list_source_associations(
 )
 }
 \arguments{
-\item{resourceShareArns}{The Amazon Resource Names (ARNs) of the resource shares for which you
-want to retrieve source associations.}
+\item{resourceShareArns}{The Amazon Resource Names (ARNs) of the resource shares for which you want to retrieve source associations.}
 
-\item{sourceId}{The identifier of the source for which you want to retrieve
-associations. This can be an account ID, Amazon Resource Name (ARN),
-organization ID, or organization path.}
+\item{sourceId}{The identifier of the source for which you want to retrieve associations. This can be an account ID, Amazon Resource Name (ARN), organization ID, or organization path.}
 
 \item{sourceType}{The type of source for which you want to retrieve associations.}
 
@@ -27,9 +24,7 @@ organization ID, or organization path.}
 
 \item{nextToken}{The pagination token that indicates the next set of results to retrieve.}
 
-\item{maxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{maxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 }
 \description{
 Lists source associations for resource shares. Source associations control which sources can be used with service principals in resource shares. This operation provides visibility into source associations for resource share owners.

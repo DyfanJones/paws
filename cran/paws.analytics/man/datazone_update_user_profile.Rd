@@ -13,8 +13,7 @@ datazone_update_user_profile(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a user profile is
-updated.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a user profile is updated.}
 
 \item{userIdentifier}{[required] The identifier of the user whose user profile is to be updated.}
 

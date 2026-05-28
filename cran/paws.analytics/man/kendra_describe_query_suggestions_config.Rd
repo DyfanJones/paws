@@ -7,8 +7,7 @@
 kendra_describe_query_suggestions_config(IndexId)
 }
 \arguments{
-\item{IndexId}{[required] The identifier of the index with query suggestions that you want to get
-information on.}
+\item{IndexId}{[required] The identifier of the index with query suggestions that you want to get information on.}
 }
 \description{
 Gets information on the settings of query suggestions for an index.

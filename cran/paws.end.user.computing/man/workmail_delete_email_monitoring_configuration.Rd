@@ -7,8 +7,7 @@
 workmail_delete_email_monitoring_configuration(OrganizationId)
 }
 \arguments{
-\item{OrganizationId}{[required] The ID of the organization from which the email monitoring configuration
-is deleted.}
+\item{OrganizationId}{[required] The ID of the organization from which the email monitoring configuration is deleted.}
 }
 \description{
 Deletes the email monitoring configuration for a specified organization.

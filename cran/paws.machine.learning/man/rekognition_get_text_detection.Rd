@@ -8,17 +8,11 @@ started by StartTextDetection}
 rekognition_get_text_detection(JobId, MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{JobId}{[required] Job identifier for the text detection operation for which you want
-results returned. You get the job identifer from an initial call to
-\code{\link[=rekognition_start_text_detection]{start_text_detection}}.}
+\item{JobId}{[required] Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to \code{\link[=rekognition_start_text_detection]{start_text_detection}}.}
 
-\item{MaxResults}{Maximum number of results to return per paginated call. The largest
-value you can specify is 1000.}
+\item{MaxResults}{Maximum number of results to return per paginated call. The largest value you can specify is 1000.}
 
-\item{NextToken}{If the previous response was incomplete (because there are more labels
-to retrieve), Amazon Rekognition Video returns a pagination token in the
-response. You can use this pagination token to retrieve the next set of
-text.}
+\item{NextToken}{If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.}
 }
 \description{
 Gets the text detection results of a Amazon Rekognition Video analysis started by \code{\link[=rekognition_start_text_detection]{start_text_detection}}.

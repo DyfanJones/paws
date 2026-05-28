@@ -8,8 +8,7 @@ request}
 networkfirewall_describe_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the rule group or firewall policy
-whose resource policy you want to retrieve.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.}
 }
 \description{
 Retrieves a resource policy that you created in a \code{\link[=networkfirewall_put_resource_policy]{put_resource_policy}} request.

@@ -16,15 +16,9 @@ memorydb_describe_users(
 
 \item{Filters}{Filter to determine the list of users to return.}
 
-\item{MaxResults}{The maximum number of records to include in the response. If more
-records exist than the specified MaxResults value, a token is included
-in the response so that the remaining results can be retrieved.}
+\item{MaxResults}{The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.}
 
-\item{NextToken}{An optional argument to pass in case the total number of records exceeds
-the value of MaxResults. If nextToken is returned, there are more
-results available. The value of nextToken is a unique pagination token
-for each page. Make the call again using the returned token to retrieve
-the next page. Keep all other arguments unchanged.}
+\item{NextToken}{An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.}
 }
 \description{
 Returns a list of users.

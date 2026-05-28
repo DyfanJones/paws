@@ -21,9 +21,7 @@ omics_create_configuration(
 
 \item{tags}{Optional tags for the configuration.}
 
-\item{requestId}{[required] Optional request idempotency token. If not specified, a universally
-unique identifier (UUID) will be automatically generated for the
-request.}
+\item{requestId}{[required] Optional request idempotency token. If not specified, a universally unique identifier (UUID) will be automatically generated for the request.}
 }
 \description{
 Create a new configuration.

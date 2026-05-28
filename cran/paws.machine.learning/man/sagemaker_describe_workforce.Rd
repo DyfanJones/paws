@@ -9,9 +9,7 @@ Resource Name (ARN), and, if applicable, allowed IP address ranges
 sagemaker_describe_workforce(WorkforceName)
 }
 \arguments{
-\item{WorkforceName}{[required] The name of the private workforce whose access you want to restrict.
-\code{WorkforceName} is automatically set to \code{default} when a workforce is
-created and cannot be modified.}
+\item{WorkforceName}{[required] The name of the private workforce whose access you want to restrict. \code{WorkforceName} is automatically set to \code{default} when a workforce is created and cannot be modified.}
 }
 \description{
 Lists private workforce information, including workforce name, Amazon Resource Name (ARN), and, if applicable, allowed IP address ranges (\href{https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html}{CIDRs}). Allowable IP address ranges are the IP addresses that workers can use to access tasks.

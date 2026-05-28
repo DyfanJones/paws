@@ -7,12 +7,9 @@
 cognitoidentityprovider_set_user_settings(AccessToken, MFAOptions)
 }
 \arguments{
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 
-\item{MFAOptions}{[required] You can use this parameter only to set an SMS configuration that uses
-SMS for delivery.}
+\item{MFAOptions}{[required] You can use this parameter only to set an SMS configuration that uses SMS for delivery.}
 }
 \description{
 \emph{This action is no longer supported.} You can use it to configure only SMS MFA. You can't use it to configure time-based one-time password (TOTP) software token or email MFA.

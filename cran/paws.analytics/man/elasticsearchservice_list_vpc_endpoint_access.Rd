@@ -9,8 +9,7 @@ VPC endpoint}
 elasticsearchservice_list_vpc_endpoint_access(DomainName, NextToken = NULL)
 }
 \arguments{
-\item{DomainName}{[required] The name of the OpenSearch Service domain to retrieve access information
-for.}
+\item{DomainName}{[required] The name of the OpenSearch Service domain to retrieve access information for.}
 
 \item{NextToken}{Provides an identifier to allow retrieval of paginated results.}
 }

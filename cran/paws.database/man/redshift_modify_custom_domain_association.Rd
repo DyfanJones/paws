@@ -13,8 +13,7 @@ redshift_modify_custom_domain_association(
 \arguments{
 \item{CustomDomainName}{[required] The custom domain name for a changed custom domain association.}
 
-\item{CustomDomainCertificateArn}{[required] The certificate Amazon Resource Name (ARN) for the changed custom domain
-association.}
+\item{CustomDomainCertificateArn}{[required] The certificate Amazon Resource Name (ARN) for the changed custom domain association.}
 
 \item{ClusterIdentifier}{[required] The identifier of the cluster to change a custom domain association for.}
 }

@@ -15,28 +15,13 @@ personalize_update_solution(
 \arguments{
 \item{solutionArn}{[required] The Amazon Resource Name (ARN) of the solution to update.}
 
-\item{performAutoTraining}{Whether the solution uses automatic training to create new solution
-versions (trained models). You can change the training frequency by
-specifying a \code{schedulingExpression} in the \code{AutoTrainingConfig} as part
-of solution configuration.
+\item{performAutoTraining}{Whether the solution uses automatic training to create new solution versions (trained models). You can change the training frequency by specifying a \code{schedulingExpression} in the \code{AutoTrainingConfig} as part of solution configuration.
 
-If you turn on automatic training, the first automatic training starts
-within one hour after the solution update completes. If you manually
-create a solution version within the hour, the solution skips the first
-automatic training. For more information about automatic training, see
-\href{https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html}{Configuring automatic training}.
+If you turn on automatic training, the first automatic training starts within one hour after the solution update completes. If you manually create a solution version within the hour, the solution skips the first automatic training. For more information about automatic training, see \href{https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html}{Configuring automatic training}.
 
-After training starts, you can get the solution version's Amazon
-Resource Name (ARN) with the
-\code{\link[=personalize_list_solution_versions]{list_solution_versions}} API
-operation. To get its status, use the
-\code{\link[=personalize_describe_solution_version]{describe_solution_version}}.}
+After training starts, you can get the solution version's Amazon Resource Name (ARN) with the \code{\link[=personalize_list_solution_versions]{list_solution_versions}} API operation. To get its status, use the \code{\link[=personalize_describe_solution_version]{describe_solution_version}}.}
 
-\item{performIncrementalUpdate}{Whether to perform incremental training updates on your model. When
-enabled, this allows the model to learn from new data more frequently
-without requiring full retraining, which enables near real-time
-personalization. This parameter is supported only for solutions that use
-the semantic-similarity recipe.}
+\item{performIncrementalUpdate}{Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.}
 
 \item{solutionUpdateConfig}{The new configuration details of the solution.}
 }

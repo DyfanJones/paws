@@ -12,23 +12,13 @@ elasticache_create_global_replication_group(
 )
 }
 \arguments{
-\item{GlobalReplicationGroupIdSuffix}{[required] The suffix name of a Global datastore. Amazon ElastiCache automatically
-applies a prefix to the Global datastore ID when it is created. Each
-Amazon Region has its own prefix. For instance, a Global datastore ID
-created in the US-West-1 region will begin with "dsdfu" along with the
-suffix name you provide. The suffix, combined with the auto-generated
-prefix, guarantees uniqueness of the Global datastore name across
-multiple regions.
+\item{GlobalReplicationGroupIdSuffix}{[required] The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.
 
-For a full list of Amazon Regions and their respective Global datastore
-iD prefixes, see \href{https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Redis-Global-Datastores-CLI.html}{Using the Amazon CLI with Global datastores}
-.}
+For a full list of Amazon Regions and their respective Global datastore iD prefixes, see \href{https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Redis-Global-Datastores-CLI.html}{Using the Amazon CLI with Global datastores} .}
 
 \item{GlobalReplicationGroupDescription}{Provides details of the Global datastore}
 
-\item{PrimaryReplicationGroupId}{[required] The name of the primary cluster that accepts writes and will replicate
-updates to the secondary cluster. This value is stored as a lowercase
-string.}
+\item{PrimaryReplicationGroupId}{[required] The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.}
 }
 \description{
 Global Datastore offers fully managed, fast, reliable and secure cross-region replication. Using Global Datastore with Valkey or Redis OSS, you can create cross-region read replica clusters for ElastiCache to enable low-latency reads and disaster recovery across regions. For more information, see \href{https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Redis-Global-Datastore.html}{Replication Across Regions Using Global Datastore}.

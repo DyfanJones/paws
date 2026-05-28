@@ -43,21 +43,9 @@ datazone_list_subscription_grants(
 
 \item{sortOrder}{Specifies the sort order of this action.}
 
-\item{maxResults}{The maximum number of subscription grants to return in a single call to
-\code{\link[=datazone_list_subscription_grants]{list_subscription_grants}}. When
-the number of subscription grants to be listed is greater than the value
-of \code{MaxResults}, the response contains a \code{NextToken} value that you can
-use in a subsequent call to
-\code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list
-the next set of subscription grants.}
+\item{maxResults}{The maximum number of subscription grants to return in a single call to \code{\link[=datazone_list_subscription_grants]{list_subscription_grants}}. When the number of subscription grants to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list the next set of subscription grants.}
 
-\item{nextToken}{When the number of subscription grants is greater than the default value
-for the \code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of subscription grants, the
-response includes a pagination token named \code{NextToken}. You can specify
-this \code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list
-the next set of subscription grants.}
+\item{nextToken}{When the number of subscription grants is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of subscription grants, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list the next set of subscription grants.}
 }
 \description{
 Lists subscription grants.

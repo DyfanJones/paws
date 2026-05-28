@@ -8,8 +8,7 @@ Payment Cryptography key}
 paymentcryptographycontrolplane_get_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The \code{KeyARN} of the key whose resource-based policy you want to
-retrieve.}
+\item{ResourceArn}{[required] The \code{KeyARN} of the key whose resource-based policy you want to retrieve.}
 }
 \description{
 Returns the resource-based policy attached to an Amazon Web Services Payment Cryptography key.

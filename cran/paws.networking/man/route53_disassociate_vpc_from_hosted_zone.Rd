@@ -8,11 +8,9 @@ Amazon Route 53 private hosted zone}
 route53_disassociate_vpc_from_hosted_zone(HostedZoneId, VPC, Comment = NULL)
 }
 \arguments{
-\item{HostedZoneId}{[required] The ID of the private hosted zone that you want to disassociate a VPC
-from.}
+\item{HostedZoneId}{[required] The ID of the private hosted zone that you want to disassociate a VPC from.}
 
-\item{VPC}{[required] A complex type that contains information about the VPC that you're
-disassociating from the specified hosted zone.}
+\item{VPC}{[required] A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.}
 
 \item{Comment}{\emph{Optional:} A comment about the disassociation request.}
 }

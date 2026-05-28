@@ -14,9 +14,7 @@ quicksight_update_data_set_permissions(
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID.}
 
-\item{DataSetId}{[required] The ID for the dataset whose permissions you want to update. This ID is
-unique per Amazon Web Services Region for each Amazon Web Services
-account.}
+\item{DataSetId}{[required] The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
 \item{GrantPermissions}{The resource permissions that you want to grant to the dataset.}
 

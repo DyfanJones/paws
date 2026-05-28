@@ -7,18 +7,15 @@ NULL
 #' specified memory with custom content
 #'
 #' @description
-#' Creates multiple memory records in a single batch operation for the
-#' specified memory with custom content.
+#' Creates multiple memory records in a single batch operation for the specified memory with custom content.
 #'
 #' @usage
 #' bedrockagentcore_batch_create_memory_records(memoryId, records,
 #'   clientToken)
 #'
 #' @param memoryId &#91;required&#93; The unique ID of the memory resource where records will be created.
-#' @param records &#91;required&#93; A list of memory record creation inputs to be processed in the batch
-#' operation.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotent processing of
-#' the batch request.
+#' @param records &#91;required&#93; A list of memory record creation inputs to be processed in the batch operation.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotent processing of the batch request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -108,15 +105,13 @@ bedrockagentcore_batch_create_memory_records <- function(memoryId, records, clie
 #' specified memory
 #'
 #' @description
-#' Deletes multiple memory records in a single batch operation from the
-#' specified memory.
+#' Deletes multiple memory records in a single batch operation from the specified memory.
 #'
 #' @usage
 #' bedrockagentcore_batch_delete_memory_records(memoryId, records)
 #'
 #' @param memoryId &#91;required&#93; The unique ID of the memory resource where records will be deleted.
-#' @param records &#91;required&#93; A list of memory record deletion inputs to be processed in the batch
-#' operation.
+#' @param records &#91;required&#93; A list of memory record deletion inputs to be processed in the batch operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -183,15 +178,13 @@ bedrockagentcore_batch_delete_memory_records <- function(memoryId, records) {
 #' operation within the specified memory
 #'
 #' @description
-#' Updates multiple memory records with custom content in a single batch
-#' operation within the specified memory.
+#' Updates multiple memory records with custom content in a single batch operation within the specified memory.
 #'
 #' @usage
 #' bedrockagentcore_batch_update_memory_records(memoryId, records)
 #'
 #' @param memoryId &#91;required&#93; The unique ID of the memory resource where records will be updated.
-#' @param records &#91;required&#93; A list of memory record update inputs to be processed in the batch
-#' operation.
+#' @param records &#91;required&#93; A list of memory record update inputs to be processed in the batch operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -279,20 +272,14 @@ bedrockagentcore_batch_update_memory_records <- function(memoryId, records) {
 #' Confirms the user authentication session for obtaining OAuth2
 #'
 #' @description
-#' Confirms the user authentication session for obtaining OAuth2.0 tokens
-#' for a resource.
+#' Confirms the user authentication session for obtaining OAuth2.0 tokens for a resource.
 #'
 #' @usage
 #' bedrockagentcore_complete_resource_token_auth(userIdentifier,
 #'   sessionUri)
 #'
-#' @param userIdentifier &#91;required&#93; The OAuth2.0 token or user ID that was used to generate the workload
-#' access token used for initiating the user authorization flow to retrieve
-#' OAuth2.0 tokens.
-#' @param sessionUri &#91;required&#93; Unique identifier for the user's authentication session for retrieving
-#' OAuth2 tokens. This ID tracks the authorization flow state across
-#' multiple requests and responses during the OAuth2 authentication
-#' process.
+#' @param userIdentifier &#91;required&#93; The OAuth2.0 token or user ID that was used to generate the workload access token used for initiating the user authorization flow to retrieve OAuth2.0 tokens.
+#' @param sessionUri &#91;required&#93; Unique identifier for the user's authentication session for retrieving OAuth2 tokens. This ID tracks the authorization flow state across multiple requests and responses during the OAuth2 authentication process.
 #'
 #' @return
 #' An empty list.
@@ -335,10 +322,7 @@ bedrockagentcore_complete_resource_token_auth <- function(userIdentifier, sessio
 #' Creates an A/B test for comparing agent configurations
 #'
 #' @description
-#' Creates an A/B test for comparing agent configurations. A/B tests split
-#' traffic between a control variant and a treatment variant through a
-#' gateway, then evaluate performance using online evaluation
-#' configurations to determine which variant performs better.
+#' Creates an A/B test for comparing agent configurations. A/B tests split traffic between a control variant and a treatment variant through a gateway, then evaluate performance using online evaluation configurations to determine which variant performs better.
 #'
 #' @usage
 #' bedrockagentcore_create_ab_test(name, description, gatewayArn, variants,
@@ -346,22 +330,13 @@ bedrockagentcore_complete_resource_token_auth <- function(userIdentifier, sessio
 #'
 #' @param name &#91;required&#93; The name of the A/B test. Must be unique within your account.
 #' @param description The description of the A/B test.
-#' @param gatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway to use for traffic
-#' splitting.
-#' @param variants &#91;required&#93; The list of variants for the A/B test. Must contain exactly two
-#' variants: a control (C) and a treatment (T1), each with a configuration
-#' bundle or target reference and a traffic weight.
-#' @param gatewayFilter Optional filter to restrict which gateway target paths are included in
-#' the A/B test.
-#' @param evaluationConfig &#91;required&#93; The evaluation configuration specifying which online evaluation
-#' configurations to use for measuring variant performance.
-#' @param roleArn &#91;required&#93; The IAM role ARN that grants permissions for the A/B test to access
-#' gateway and evaluation resources.
-#' @param enableOnCreate Whether to enable the A/B test immediately upon creation. If true,
-#' traffic splitting begins automatically.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, the service ignores the request, but does not return an error.
+#' @param gatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway to use for traffic splitting.
+#' @param variants &#91;required&#93; The list of variants for the A/B test. Must contain exactly two variants: a control (C) and a treatment (T1), each with a configuration bundle or target reference and a traffic weight.
+#' @param gatewayFilter Optional filter to restrict which gateway target paths are included in the A/B test.
+#' @param evaluationConfig &#91;required&#93; The evaluation configuration specifying which online evaluation configurations to use for measuring variant performance.
+#' @param roleArn &#91;required&#93; The IAM role ARN that grants permissions for the A/B test to access gateway and evaluation resources.
+#' @param enableOnCreate Whether to enable the A/B test immediately upon creation. If true, traffic splitting begins automatically.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -446,12 +421,9 @@ bedrockagentcore_create_ab_test <- function(name, description = NULL, gatewayArn
 #' Creates an event in an AgentCore Memory resource
 #'
 #' @description
-#' Creates an event in an AgentCore Memory resource. Events represent
-#' interactions or activities that occur within a session and are
-#' associated with specific actors.
+#' Creates an event in an AgentCore Memory resource. Events represent interactions or activities that occur within a session and are associated with specific actors.
 #' 
-#' To use this operation, you must have the `bedrock-agentcore:CreateEvent`
-#' permission.
+#' To use this operation, you must have the `bedrock-agentcore:CreateEvent` permission.
 #' 
 #' This operation is subject to request rate limiting.
 #'
@@ -459,21 +431,13 @@ bedrockagentcore_create_ab_test <- function(name, description = NULL, gatewayArn
 #' bedrockagentcore_create_event(memoryId, actorId, sessionId,
 #'   eventTimestamp, payload, branch, clientToken, metadata)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource in which to create the
-#' event.
-#' @param actorId &#91;required&#93; The identifier of the actor associated with this event. An actor
-#' represents an entity that participates in sessions and generates events.
-#' @param sessionId The identifier of the session in which this event occurs. A session
-#' represents a sequence of related events.
-#' @param eventTimestamp &#91;required&#93; The timestamp when the event occurred. If not specified, the current
-#' time is used.
-#' @param payload &#91;required&#93; The content payload of the event. This can include conversational data
-#' or binary content.
-#' @param branch The branch information for this event. Branches allow for organizing
-#' events into different conversation threads or paths.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, AgentCore ignores the request, but does not return an error.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource in which to create the event.
+#' @param actorId &#91;required&#93; The identifier of the actor associated with this event. An actor represents an entity that participates in sessions and generates events.
+#' @param sessionId The identifier of the session in which this event occurs. A session represents a sequence of related events.
+#' @param eventTimestamp &#91;required&#93; The timestamp when the event occurred. If not specified, the current time is used.
+#' @param payload &#91;required&#93; The content payload of the event. This can include conversational data or binary content.
+#' @param branch The branch information for this event. Branches allow for organizing events into different conversation threads or paths.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, AgentCore ignores the request, but does not return an error.
 #' @param metadata The key-value metadata to attach to the event.
 #'
 #' @return
@@ -572,7 +536,7 @@ bedrockagentcore_create_event <- function(memoryId, actorId, sessionId = NULL, e
 #' Create a new payment instrument for a connector
 #'
 #' @description
-#' Create a new payment instrument for a connector
+#' Create a new payment instrument for a connector.
 #'
 #' @usage
 #' bedrockagentcore_create_payment_instrument(userId, agentName,
@@ -585,7 +549,7 @@ bedrockagentcore_create_event <- function(memoryId, actorId, sessionId = NULL, e
 #' @param paymentConnectorId &#91;required&#93; The ID of the payment connector to use for this instrument.
 #' @param paymentInstrumentType &#91;required&#93; The type of payment instrument being created.
 #' @param paymentInstrumentDetails &#91;required&#93; The details of the payment instrument.
-#' @param clientToken Idempotency token to ensure request uniqueness.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -750,10 +714,10 @@ bedrockagentcore_create_payment_instrument <- function(userId = NULL, agentName 
 }
 .bedrockagentcore$operations$create_payment_instrument <- bedrockagentcore_create_payment_instrument
 
-#' Create a new payment manager session
+#' Create a new payment session
 #'
 #' @description
-#' Create a new payment manager session
+#' Create a new payment session.
 #'
 #' @usage
 #' bedrockagentcore_create_payment_session(userId, agentName,
@@ -764,7 +728,7 @@ bedrockagentcore_create_payment_instrument <- function(userId = NULL, agentName 
 #' @param paymentManagerArn &#91;required&#93; The ARN of the payment manager that owns this session.
 #' @param limits The spending limits for this payment session.
 #' @param expiryTimeInMinutes &#91;required&#93; The session expiry time in minutes. Must be between 15 and 480 minutes.
-#' @param clientToken Idempotency token to ensure request uniqueness.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -946,17 +910,14 @@ bedrockagentcore_delete_batch_evaluation <- function(batchEvaluationId) {
 #' Deletes an event from an AgentCore Memory resource
 #'
 #' @description
-#' Deletes an event from an AgentCore Memory resource. When you delete an
-#' event, it is permanently removed.
+#' Deletes an event from an AgentCore Memory resource. When you delete an event, it is permanently removed.
 #' 
-#' To use this operation, you must have the `bedrock-agentcore:DeleteEvent`
-#' permission.
+#' To use this operation, you must have the `bedrock-agentcore:DeleteEvent` permission.
 #'
 #' @usage
 #' bedrockagentcore_delete_event(memoryId, sessionId, eventId, actorId)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource from which to delete the
-#' event.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource from which to delete the event.
 #' @param sessionId &#91;required&#93; The identifier of the session containing the event to delete.
 #' @param eventId &#91;required&#93; The identifier of the event to delete.
 #' @param actorId &#91;required&#93; The identifier of the actor associated with the event to delete.
@@ -1006,17 +967,14 @@ bedrockagentcore_delete_event <- function(memoryId, sessionId, eventId, actorId)
 #' Deletes a memory record from an AgentCore Memory resource
 #'
 #' @description
-#' Deletes a memory record from an AgentCore Memory resource. When you
-#' delete a memory record, it is permanently removed.
+#' Deletes a memory record from an AgentCore Memory resource. When you delete a memory record, it is permanently removed.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:DeleteMemoryRecord` permission.
+#' To use this operation, you must have the `bedrock-agentcore:DeleteMemoryRecord` permission.
 #'
 #' @usage
 #' bedrockagentcore_delete_memory_record(memoryId, memoryRecordId)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource from which to delete the
-#' memory record.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource from which to delete the memory record.
 #' @param memoryRecordId &#91;required&#93; The identifier of the memory record to delete.
 #'
 #' @return
@@ -1059,45 +1017,18 @@ bedrockagentcore_delete_memory_record <- function(memoryId, memoryRecordId) {
 }
 .bedrockagentcore$operations$delete_memory_record <- bedrockagentcore_delete_memory_record
 
-#' Delete a payment instrument
+#' Deletes a payment instrument
 #'
 #' @description
-#' Delete a payment instrument
-#' 
-#' Marks a payment instrument as deleted by updating its status to DELETED.
-#' This is a soft delete operation that preserves the record in the
-#' database for audit and compliance purposes. The record remains queryable
-#' for audit purposes but is excluded from normal list and get operations.
-#' 
-#' Deleting an already-deleted or non-existent instrument returns
-#' ResourceNotFoundException (404).
-#' 
-#' Authorization: The caller must own the instrument (accountId, userId,
-#' and paymentManagerId must match). If authorization fails, a 403
-#' Forbidden error is returned.
-#' 
-#' Timestamp Management: The updatedAt timestamp is set to the current
-#' time, while createdAt is preserved. The version field is incremented for
-#' optimistic locking.
-#' 
-#' Errors:
-#' 
-#' -   ResourceNotFoundException: The instrument does not exist or is
-#'     already deleted
-#' -   AccessDeniedException: The caller is not authorized to delete this
-#'     instrument
-#' -   ValidationException: Required fields are missing or invalid
-#' -   InternalServerException: An unexpected server error occurred
+#' Deletes a payment instrument. This is a soft delete operation that preserves the record for audit and compliance purposes.
 #'
 #' @usage
 #' bedrockagentcore_delete_payment_instrument(userId, paymentManagerArn,
 #'   paymentConnectorId, paymentInstrumentId)
 #'
-#' @param userId The user ID making the delete request. Must match the instrument's
-#' userId.
+#' @param userId The user ID making the delete request. Must match the instrument's userId.
 #' @param paymentManagerArn &#91;required&#93; The payment manager ARN. Must match the instrument's paymentManagerArn.
-#' @param paymentConnectorId &#91;required&#93; The payment connector ID. Must match the instrument's
-#' paymentConnectorId.
+#' @param paymentConnectorId &#91;required&#93; The payment connector ID. Must match the instrument's paymentConnectorId.
 #' @param paymentInstrumentId &#91;required&#93; The payment instrument ID to delete.
 #'
 #' @return
@@ -1142,29 +1073,10 @@ bedrockagentcore_delete_payment_instrument <- function(userId = NULL, paymentMan
 }
 .bedrockagentcore$operations$delete_payment_instrument <- bedrockagentcore_delete_payment_instrument
 
-#' Delete a payment manager session
+#' Deletes a payment session
 #'
 #' @description
-#' Delete a payment manager session
-#' 
-#' Permanently removes a payment session record from the database. This is
-#' a hard delete operation that removes the session completely.
-#' 
-#' Deleting a non-existent or already-deleted session returns
-#' ResourceNotFoundException (404).
-#' 
-#' Authorization: The caller must own the session (accountId, userId, and
-#' paymentManagerId must match). If authorization fails, a 403 Forbidden
-#' error is returned.
-#' 
-#' Errors:
-#' 
-#' -   ResourceNotFoundException: The session does not exist or has already
-#'     been deleted
-#' -   AccessDeniedException: The caller is not authorized to delete this
-#'     session
-#' -   ValidationException: Required fields are missing or invalid
-#' -   InternalServerException: An unexpected server error occurred
+#' Deletes a payment session. This permanently removes the payment session record.
 #'
 #' @usage
 #' bedrockagentcore_delete_payment_session(userId, paymentManagerArn,
@@ -1269,31 +1181,16 @@ bedrockagentcore_delete_recommendation <- function(recommendationId) {
 #' evaluator
 #'
 #' @description
-#' Performs on-demand evaluation of agent traces using a specified
-#' evaluator. This synchronous API accepts traces in OpenTelemetry format
-#' and returns immediate scoring results with detailed explanations.
+#' Performs on-demand evaluation of agent traces using a specified evaluator. This synchronous API accepts traces in OpenTelemetry format and returns immediate scoring results with detailed explanations.
 #'
 #' @usage
 #' bedrockagentcore_evaluate(evaluatorId, evaluationInput,
 #'   evaluationTarget, evaluationReferenceInputs)
 #'
-#' @param evaluatorId &#91;required&#93; The unique identifier of the evaluator to use for scoring. Can be a
-#' built-in evaluator (e.g., `Builtin.Helpfulness`, `Builtin.Correctness`)
-#' or a custom evaluator Id created through the control plane API.
-#' @param evaluationInput &#91;required&#93; The input data containing agent session spans to be evaluated. Includes
-#' a list of spans in OpenTelemetry format from supported frameworks like
-#' Strands (AgentCore Runtime) or LangGraph with OpenInference
-#' instrumentation.
-#' @param evaluationTarget The specific trace or span IDs to evaluate within the provided input.
-#' Allows targeting evaluation at different levels: individual tool calls,
-#' single request-response interactions (traces), or entire conversation
-#' sessions.
-#' @param evaluationReferenceInputs Ground truth data to compare against agent responses during evaluation.
-#' Allows to provide expected responses, assertions, and expected tool
-#' trajectories at different evaluation levels. Session-level reference
-#' inputs apply to the entire conversation, while trace-level reference
-#' inputs target specific request-response interactions identified by trace
-#' ID.
+#' @param evaluatorId &#91;required&#93; The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., `Builtin.Helpfulness`, `Builtin.Correctness`) or a custom evaluator Id created through the control plane API.
+#' @param evaluationInput &#91;required&#93; The input data containing agent session spans to be evaluated. Includes a list of spans in OpenTelemetry format from supported frameworks like Strands (AgentCore Runtime) or LangGraph with OpenInference instrumentation.
+#' @param evaluationTarget The specific trace or span IDs to evaluate within the provided input. Allows targeting evaluation at different levels: individual tool calls, single request-response interactions (traces), or entire conversation sessions.
+#' @param evaluationReferenceInputs Ground truth data to compare against agent responses during evaluation. Allows to provide expected responses, assertions, and expected tool trajectories at different evaluation levels. Session-level reference inputs apply to the entire conversation, while trace-level reference inputs target specific request-response interactions identified by trace ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1401,8 +1298,7 @@ bedrockagentcore_evaluate <- function(evaluatorId, evaluationInput, evaluationTa
 #' configuration, status, and statistical results
 #'
 #' @description
-#' Retrieves detailed information about an A/B test, including its
-#' configuration, status, and statistical results.
+#' Retrieves detailed information about an A/B test, including its configuration, status, and statistical results.
 #'
 #' @usage
 #' bedrockagentcore_get_ab_test(abTestId)
@@ -1543,10 +1439,8 @@ bedrockagentcore_get_ab_test <- function(abTestId) {
 #'   qualifier)
 #'
 #' @param runtimeSessionId The session ID that the AgentCore Runtime agent is using.
-#' @param agentRuntimeArn &#91;required&#93; The ARN of the AgentCore Runtime agent for which you want to get the A2A
-#' agent card.
-#' @param qualifier Optional qualifier to specify an agent alias, such as `prod`code\> or
-#' `dev`. If you don't provide a value, the DEFAULT alias is used.
+#' @param agentRuntimeArn &#91;required&#93; The ARN of the AgentCore Runtime agent for which you want to get the A2A agent card.
+#' @param qualifier Optional qualifier to specify an agent alias, such as `prod`code\> or `dev`. If you don't provide a value, the DEFAULT alias is used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1595,8 +1489,7 @@ bedrockagentcore_get_agent_card <- function(runtimeSessionId = NULL, agentRuntim
 #' status, configuration, results, and any error details
 #'
 #' @description
-#' Retrieves detailed information about a batch evaluation, including its
-#' status, configuration, results, and any error details.
+#' Retrieves detailed information about a batch evaluation, including its status, configuration, results, and any error details.
 #'
 #' @usage
 #' bedrockagentcore_get_batch_evaluation(batchEvaluationId)
@@ -1710,17 +1603,11 @@ bedrockagentcore_get_batch_evaluation <- function(batchEvaluationId) {
 #' Amazon Bedrock AgentCore
 #'
 #' @description
-#' Retrieves detailed information about a specific browser session in
-#' Amazon Bedrock AgentCore. This operation returns the session's
-#' configuration, current status, associated streams, and metadata.
+#' Retrieves detailed information about a specific browser session in Amazon Bedrock AgentCore. This operation returns the session's configuration, current status, associated streams, and metadata.
 #' 
-#' To get a browser session, you must specify both the browser identifier
-#' and the session ID. The response includes information about the
-#' session's viewport configuration, timeout settings, and stream
-#' endpoints.
+#' To get a browser session, you must specify both the browser identifier and the session ID. The response includes information about the session's viewport configuration, timeout settings, and stream endpoints.
 #' 
-#' The following operations are related to
-#' [`get_browser_session`][bedrockagentcore_get_browser_session]:
+#' The following operations are related to [`get_browser_session`][bedrockagentcore_get_browser_session]:
 #' 
 #' -   [`start_browser_session`][bedrockagentcore_start_browser_session]
 #' 
@@ -1860,16 +1747,11 @@ bedrockagentcore_get_browser_session <- function(browserIdentifier, sessionId) {
 #' in Amazon Bedrock AgentCore
 #'
 #' @description
-#' Retrieves detailed information about a specific code interpreter session
-#' in Amazon Bedrock AgentCore. This operation returns the session's
-#' configuration, current status, and metadata.
+#' Retrieves detailed information about a specific code interpreter session in Amazon Bedrock AgentCore. This operation returns the session's configuration, current status, and metadata.
 #' 
-#' To get a code interpreter session, you must specify both the code
-#' interpreter identifier and the session ID. The response includes
-#' information about the session's timeout settings and current status.
+#' To get a code interpreter session, you must specify both the code interpreter identifier and the session ID. The response includes information about the session's timeout settings and current status.
 #' 
-#' The following operations are related to
-#' [`get_code_interpreter_session`][bedrockagentcore_get_code_interpreter_session]:
+#' The following operations are related to [`get_code_interpreter_session`][bedrockagentcore_get_code_interpreter_session]:
 #' 
 #' -   [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session]
 #' 
@@ -1881,8 +1763,7 @@ bedrockagentcore_get_browser_session <- function(browserIdentifier, sessionId) {
 #' bedrockagentcore_get_code_interpreter_session(codeInterpreterIdentifier,
 #'   sessionId)
 #'
-#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter associated with the
-#' session.
+#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter associated with the session.
 #' @param sessionId &#91;required&#93; The unique identifier of the code interpreter session to retrieve.
 #'
 #' @return
@@ -1945,11 +1826,9 @@ bedrockagentcore_get_code_interpreter_session <- function(codeInterpreterIdentif
 #' resource
 #'
 #' @description
-#' Retrieves information about a specific event in an AgentCore Memory
-#' resource.
+#' Retrieves information about a specific event in an AgentCore Memory resource.
 #' 
-#' To use this operation, you must have the `bedrock-agentcore:GetEvent`
-#' permission.
+#' To use this operation, you must have the `bedrock-agentcore:GetEvent` permission.
 #'
 #' @usage
 #' bedrockagentcore_get_event(memoryId, sessionId, actorId, eventId)
@@ -2034,14 +1913,12 @@ bedrockagentcore_get_event <- function(memoryId, sessionId, actorId, eventId) {
 #' @description
 #' Retrieves a specific memory record from an AgentCore Memory resource.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:GetMemoryRecord` permission.
+#' To use this operation, you must have the `bedrock-agentcore:GetMemoryRecord` permission.
 #'
 #' @usage
 #' bedrockagentcore_get_memory_record(memoryId, memoryRecordId)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource containing the memory
-#' record.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource containing the memory record.
 #' @param memoryRecordId &#91;required&#93; The identifier of the memory record to retrieve.
 #'
 #' @return
@@ -2111,7 +1988,7 @@ bedrockagentcore_get_memory_record <- function(memoryId, memoryRecordId) {
 #' Get a payment instrument by ID
 #'
 #' @description
-#' Get a payment instrument by ID
+#' Get a payment instrument by ID.
 #'
 #' @usage
 #' bedrockagentcore_get_payment_instrument(userId, agentName,
@@ -2235,7 +2112,7 @@ bedrockagentcore_get_payment_instrument <- function(userId = NULL, agentName = N
 #' Get the balance of a payment instrument
 #'
 #' @description
-#' Get the balance of a payment instrument
+#' Get the balance of a payment instrument.
 #'
 #' @usage
 #' bedrockagentcore_get_payment_instrument_balance(userId, agentName,
@@ -2247,11 +2124,8 @@ bedrockagentcore_get_payment_instrument <- function(userId = NULL, agentName = N
 #' @param paymentManagerArn &#91;required&#93; The ARN of the payment manager that owns this payment instrument.
 #' @param paymentConnectorId &#91;required&#93; The ID of the payment connector associated with this instrument.
 #' @param paymentInstrumentId &#91;required&#93; The ID of the payment instrument to query balance for.
-#' @param chain &#91;required&#93; The specific blockchain chain to query balance on. Required because
-#' balances are chain-specific — the same wallet address may hold different
-#' token balances on different chains.
-#' @param token &#91;required&#93; The token to query balance for. Required to specify which supported
-#' token's balance to return.
+#' @param chain &#91;required&#93; The specific blockchain chain to query balance on. Required because balances are chain-specific.
+#' @param token &#91;required&#93; The token to query balance for. Only tokens supported for X402 payments are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2308,7 +2182,7 @@ bedrockagentcore_get_payment_instrument_balance <- function(userId = NULL, agent
 #' Get a payment session
 #'
 #' @description
-#' Get a payment session
+#' Get a payment session.
 #'
 #' @usage
 #' bedrockagentcore_get_payment_session(userId, agentName,
@@ -2391,8 +2265,7 @@ bedrockagentcore_get_payment_session <- function(userId = NULL, agentName = NULL
 #' configuration, status, and results
 #'
 #' @description
-#' Retrieves detailed information about a recommendation, including its
-#' configuration, status, and results.
+#' Retrieves detailed information about a recommendation, including its configuration, status, and results.
 #'
 #' @usage
 #' bedrockagentcore_get_recommendation(recommendationId)
@@ -2590,10 +2463,8 @@ bedrockagentcore_get_recommendation <- function(recommendationId) {
 #' bedrockagentcore_get_resource_api_key(workloadIdentityToken,
 #'   resourceCredentialProviderName)
 #'
-#' @param workloadIdentityToken &#91;required&#93; The identity token of the workload from which you want to retrieve the
-#' API key.
-#' @param resourceCredentialProviderName &#91;required&#93; The credential provider name for the resource from which you are
-#' retrieving the API key.
+#' @param workloadIdentityToken &#91;required&#93; The identity token of the workload from which you want to retrieve the API key.
+#' @param resourceCredentialProviderName &#91;required&#93; The credential provider name for the resource from which you are retrieving the API key.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2646,31 +2517,17 @@ bedrockagentcore_get_resource_api_key <- function(workloadIdentityToken, resourc
 #'   resourceOauth2ReturnUrl, forceAuthentication, customParameters,
 #'   customState, resources, audiences)
 #'
-#' @param workloadIdentityToken &#91;required&#93; The identity token of the workload from which you want to retrieve the
-#' OAuth2 token.
+#' @param workloadIdentityToken &#91;required&#93; The identity token of the workload from which you want to retrieve the OAuth2 token.
 #' @param resourceCredentialProviderName &#91;required&#93; The name of the resource's credential provider.
 #' @param scopes &#91;required&#93; The OAuth scopes being requested.
 #' @param oauth2Flow &#91;required&#93; The type of flow to be performed.
-#' @param sessionUri Unique identifier for the user's authentication session for retrieving
-#' OAuth2 tokens. This ID tracks the authorization flow state across
-#' multiple requests and responses during the OAuth2 authentication
-#' process.
-#' @param resourceOauth2ReturnUrl The callback URL to redirect to after the OAuth 2.0 token retrieval is
-#' complete. This URL must be one of the provided URLs configured for the
-#' workload identity.
-#' @param forceAuthentication Indicates whether to always initiate a new three-legged OAuth (3LO)
-#' flow, regardless of any existing session.
-#' @param customParameters A map of custom parameters to include in the authorization request to
-#' the resource credential provider. These parameters are in addition to
-#' the standard OAuth 2.0 flow parameters, and will not override them.
-#' @param customState An opaque string that will be sent back to the callback URL provided in
-#' resourceOauth2ReturnUrl. This state should be used to protect the
-#' callback URL of your application against CSRF attacks by ensuring the
-#' response corresponds to the original request.
-#' @param resources The resources to include in the token request. These are used to specify
-#' the target resources for which the OAuth2 token is being requested.
-#' @param audiences The audiences to include in the token request. These are used to specify
-#' the intended recipients of the OAuth2 token.
+#' @param sessionUri Unique identifier for the user's authentication session for retrieving OAuth2 tokens. This ID tracks the authorization flow state across multiple requests and responses during the OAuth2 authentication process.
+#' @param resourceOauth2ReturnUrl The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This URL must be one of the provided URLs configured for the workload identity.
+#' @param forceAuthentication Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless of any existing session.
+#' @param customParameters A map of custom parameters to include in the authorization request to the resource credential provider. These parameters are in addition to the standard OAuth 2.0 flow parameters, and will not override them.
+#' @param customState An opaque string that will be sent back to the callback URL provided in resourceOauth2ReturnUrl. This state should be used to protect the callback URL of your application against CSRF attacks by ensuring the response corresponds to the original request.
+#' @param resources The resources to include in the token request. These are used to specify the target resources for which the OAuth2 token is being requested.
+#' @param audiences The audiences to include in the token request. These are used to specify the intended recipients of the OAuth2 token.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2736,18 +2593,15 @@ bedrockagentcore_get_resource_oauth_2_token <- function(workloadIdentityToken, r
 #' vendor-specific authentication mechanisms
 #'
 #' @description
-#' Generates authentication tokens for payment providers that use
-#' vendor-specific authentication mechanisms.
+#' Generates authentication tokens for payment providers that use vendor-specific authentication mechanisms.
 #'
 #' @usage
 #' bedrockagentcore_get_resource_payment_token(workloadIdentityToken,
 #'   resourceCredentialProviderName, paymentTokenRequest)
 #'
-#' @param workloadIdentityToken &#91;required&#93; Workload access token for authorization. Named workloadIdentityToken for
-#' consistency with APIKey and OAuth2CredentialProvider.
-#' @param resourceCredentialProviderName &#91;required&#93; Name of the payment credential provider to use
-#' @param paymentTokenRequest &#91;required&#93; Vendor-specific token request input Contains all request parameters in a
-#' type-safe, vendor-specific structure
+#' @param workloadIdentityToken &#91;required&#93; Workload access token for authorization.
+#' @param resourceCredentialProviderName &#91;required&#93; Name of the payment credential provider to use.
+#' @param paymentTokenRequest &#91;required&#93; Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2819,8 +2673,7 @@ bedrockagentcore_get_resource_payment_token <- function(workloadIdentityToken, r
 #' behalf of a user
 #'
 #' @description
-#' Obtains a workload access token for agentic workloads not acting on
-#' behalf of a user.
+#' Obtains a workload access token for agentic workloads not acting on behalf of a user.
 #'
 #' @usage
 #' bedrockagentcore_get_workload_access_token(workloadName)
@@ -2870,8 +2723,7 @@ bedrockagentcore_get_workload_access_token <- function(workloadName) {
 #' of a user, using a JWT token
 #'
 #' @description
-#' Obtains a workload access token for agentic workloads acting on behalf
-#' of a user, using a JWT token.
+#' Obtains a workload access token for agentic workloads acting on behalf of a user, using a JWT token.
 #'
 #' @usage
 #' bedrockagentcore_get_workload_access_token_for_jwt(workloadName,
@@ -2924,15 +2776,13 @@ bedrockagentcore_get_workload_access_token_for_jwt <- function(workloadName, use
 #' of a user, using the user's ID
 #'
 #' @description
-#' Obtains a workload access token for agentic workloads acting on behalf
-#' of a user, using the user's ID.
+#' Obtains a workload access token for agentic workloads acting on behalf of a user, using the user's ID.
 #'
 #' @usage
 #' bedrockagentcore_get_workload_access_token_for_user_id(workloadName,
 #'   userId)
 #'
-#' @param workloadName &#91;required&#93; The name of the workload from which you want to retrieve the access
-#' token.
+#' @param workloadName &#91;required&#93; The name of the workload from which you want to retrieve the access token.
 #' @param userId &#91;required&#93; The ID of the user for whom you are retrieving the access token.
 #'
 #' @return
@@ -2979,38 +2829,17 @@ bedrockagentcore_get_workload_access_token_for_user_id <- function(workloadName,
 #' AgentCore Runtime and receives responses in real-time
 #'
 #' @description
-#' Sends a request to an agent or tool hosted in an Amazon Bedrock
-#' AgentCore Runtime and receives responses in real-time.
+#' Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore Runtime and receives responses in real-time.
 #' 
-#' To invoke an agent, you can specify either the AgentCore Runtime ARN or
-#' the agent ID with an account ID, and provide a payload containing your
-#' request. When you use the agent ID instead of the full ARN, you don't
-#' need to URL-encode the identifier. You can optionally specify a
-#' qualifier to target a specific endpoint of the agent.
+#' To invoke an agent, you can specify either the AgentCore Runtime ARN or the agent ID with an account ID, and provide a payload containing your request. When you use the agent ID instead of the full ARN, you don't need to URL-encode the identifier. You can optionally specify a qualifier to target a specific endpoint of the agent.
 #' 
-#' This operation supports streaming responses, allowing you to receive
-#' partial responses as they become available. We recommend using
-#' pagination to ensure that the operation returns quickly and successfully
-#' when processing large responses.
+#' This operation supports streaming responses, allowing you to receive partial responses as they become available. We recommend using pagination to ensure that the operation returns quickly and successfully when processing large responses.
 #' 
-#' For example code, see [Invoke an AgentCore Runtime
-#' agent](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html).
+#' For example code, see [Invoke an AgentCore Runtime agent](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html).
 #' 
-#' If you're integrating your agent with OAuth, you can't use the Amazon
-#' Web Services SDK to call
-#' [`invoke_agent_runtime`][bedrockagentcore_invoke_agent_runtime].
-#' Instead, make a HTTPS request to
-#' [`invoke_agent_runtime`][bedrockagentcore_invoke_agent_runtime]. For an
-#' example, see [Authenticate and authorize with Inbound Auth and Outbound
-#' Auth](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html).
+#' If you're integrating your agent with OAuth, you can't use the Amazon Web Services SDK to call [`invoke_agent_runtime`][bedrockagentcore_invoke_agent_runtime]. Instead, make a HTTPS request to [`invoke_agent_runtime`][bedrockagentcore_invoke_agent_runtime]. For an example, see [Authenticate and authorize with Inbound Auth and Outbound Auth](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html).
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:InvokeAgentRuntime` permission. If you are making a
-#' call to [`invoke_agent_runtime`][bedrockagentcore_invoke_agent_runtime]
-#' on behalf of a user ID with the
-#' `X-Amzn-Bedrock-AgentCore-Runtime-User-Id` header, You require
-#' permissions to both actions (`bedrock-agentcore:InvokeAgentRuntime` and
-#' `bedrock-agentcore:InvokeAgentRuntimeForUser`).
+#' To use this operation, you must have the `bedrock-agentcore:InvokeAgentRuntime` permission. If you are making a call to [`invoke_agent_runtime`][bedrockagentcore_invoke_agent_runtime] on behalf of a user ID with the `X-Amzn-Bedrock-AgentCore-Runtime-User-Id` header, You require permissions to both actions (`bedrock-agentcore:InvokeAgentRuntime` and `bedrock-agentcore:InvokeAgentRuntimeForUser`).
 #'
 #' @usage
 #' bedrockagentcore_invoke_agent_runtime(contentType, accept, mcpSessionId,
@@ -3018,12 +2847,8 @@ bedrockagentcore_get_workload_access_token_for_user_id <- function(workloadName,
 #'   traceParent, traceState, baggage, agentRuntimeArn, qualifier, accountId,
 #'   payload)
 #'
-#' @param contentType The MIME type of the input data in the payload. This tells the agent
-#' runtime how to interpret the payload data. Common values include
-#' application/json for JSON data.
-#' @param accept The desired MIME type for the response from the agent runtime. This
-#' tells the agent runtime what format to use for the response data. Common
-#' values include application/json for JSON data.
+#' @param contentType The MIME type of the input data in the payload. This tells the agent runtime how to interpret the payload data. Common values include application/json for JSON data.
+#' @param accept The desired MIME type for the response from the agent runtime. This tells the agent runtime what format to use for the response data. Common values include application/json for JSON data.
 #' @param mcpSessionId The identifier of the MCP session.
 #' @param runtimeSessionId The identifier of the runtime session.
 #' @param mcpProtocolVersion The version of the MCP protocol being used.
@@ -3032,19 +2857,10 @@ bedrockagentcore_get_workload_access_token_for_user_id <- function(workloadName,
 #' @param traceParent The parent trace information for distributed tracing.
 #' @param traceState The trace state information for distributed tracing.
 #' @param baggage Additional context information for distributed tracing.
-#' @param agentRuntimeArn &#91;required&#93; The identifier of the agent runtime to invoke. You can specify either
-#' the full Amazon Web Services Resource Name (ARN) or the agent ID. If you
-#' use the agent ID, you must also provide the `accountId` query parameter.
-#' @param qualifier The qualifier to use for the agent runtime. This is an endpoint name
-#' that points to a specific version. If not specified, Amazon Bedrock
-#' AgentCore uses the default endpoint of the agent runtime.
-#' @param accountId The identifier of the Amazon Web Services account for the agent runtime
-#' resource. This parameter is required when you specify an agent ID
-#' instead of the full ARN for `agentRuntimeArn`.
-#' @param payload &#91;required&#93; The input data to send to the agent runtime. The format of this data
-#' depends on the specific agent configuration and must match the specified
-#' content type. For most agents, this is a JSON object containing the
-#' user's request.
+#' @param agentRuntimeArn &#91;required&#93; The identifier of the agent runtime to invoke. You can specify either the full Amazon Web Services Resource Name (ARN) or the agent ID. If you use the agent ID, you must also provide the `accountId` query parameter.
+#' @param qualifier The qualifier to use for the agent runtime. This is an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint of the agent runtime.
+#' @param accountId The identifier of the Amazon Web Services account for the agent runtime resource. This parameter is required when you specify an agent ID instead of the full ARN for `agentRuntimeArn`.
+#' @param payload &#91;required&#93; The input data to send to the agent runtime. The format of this data depends on the specific agent configuration and must match the specified content type. For most agents, this is a JSON object containing the user's request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3111,48 +2927,28 @@ bedrockagentcore_invoke_agent_runtime <- function(contentType = NULL, accept = N
 #' back to the caller
 #'
 #' @description
-#' Executes a command in a runtime session container and streams the output
-#' back to the caller. This operation allows you to run shell commands
-#' within the agent runtime environment and receive real-time streaming
-#' responses including standard output and standard error.
+#' Executes a command in a runtime session container and streams the output back to the caller. This operation allows you to run shell commands within the agent runtime environment and receive real-time streaming responses including standard output and standard error.
 #' 
-#' To invoke a command, you must specify the agent runtime ARN and a
-#' runtime session ID. The command execution supports streaming responses,
-#' allowing you to receive output as it becomes available through
-#' `contentStart`, `contentDelta`, and `contentStop` events.
+#' To invoke a command, you must specify the agent runtime ARN and a runtime session ID. The command execution supports streaming responses, allowing you to receive output as it becomes available through `contentStart`, `contentDelta`, and `contentStop` events.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:InvokeAgentRuntimeCommand` permission.
+#' To use this operation, you must have the `bedrock-agentcore:InvokeAgentRuntimeCommand` permission.
 #'
 #' @usage
 #' bedrockagentcore_invoke_agent_runtime_command(contentType, accept,
 #'   runtimeSessionId, traceId, traceParent, traceState, baggage,
 #'   agentRuntimeArn, qualifier, accountId, body)
 #'
-#' @param contentType The MIME type of the input data in the request payload. This tells the
-#' agent runtime how to interpret the payload data. Common values include
-#' application/json for JSON data.
-#' @param accept The desired MIME type for the response from the agent runtime command.
-#' This tells the agent runtime what format to use for the response data.
-#' Common values include application/json for JSON data.
-#' @param runtimeSessionId The unique identifier of the runtime session in which to execute the
-#' command. This session ID is used to maintain state and context across
-#' multiple command invocations.
+#' @param contentType The MIME type of the input data in the request payload. This tells the agent runtime how to interpret the payload data. Common values include application/json for JSON data.
+#' @param accept The desired MIME type for the response from the agent runtime command. This tells the agent runtime what format to use for the response data. Common values include application/json for JSON data.
+#' @param runtimeSessionId The unique identifier of the runtime session in which to execute the command. This session ID is used to maintain state and context across multiple command invocations.
 #' @param traceId The trace identifier for request tracking.
 #' @param traceParent The parent trace information for distributed tracing.
 #' @param traceState The trace state information for distributed tracing.
 #' @param baggage Additional context information for distributed tracing.
-#' @param agentRuntimeArn &#91;required&#93; The Amazon Resource Name (ARN) of the agent runtime on which to execute
-#' the command. This identifies the specific agent runtime environment
-#' where the command will run.
-#' @param qualifier The qualifier to use for the agent runtime. This is an endpoint name
-#' that points to a specific version. If not specified, Amazon Bedrock
-#' AgentCore uses the default endpoint of the agent runtime.
-#' @param accountId The identifier of the Amazon Web Services account for the agent runtime
-#' resource. This parameter is required when you specify an agent ID
-#' instead of the full ARN for `agentRuntimeArn`.
-#' @param body &#91;required&#93; The request body containing the command to execute and optional
-#' configuration parameters such as timeout settings.
+#' @param agentRuntimeArn &#91;required&#93; The Amazon Resource Name (ARN) of the agent runtime on which to execute the command. This identifies the specific agent runtime environment where the command will run.
+#' @param qualifier The qualifier to use for the agent runtime. This is an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint of the agent runtime.
+#' @param accountId The identifier of the Amazon Web Services account for the agent runtime resource. This parameter is required when you specify an agent ID instead of the full ARN for `agentRuntimeArn`.
+#' @param body &#91;required&#93; The request body containing the command to execute and optional configuration parameters such as timeout settings.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3257,18 +3053,11 @@ bedrockagentcore_invoke_agent_runtime_command <- function(contentType = NULL, ac
 #' Bedrock AgentCore
 #'
 #' @description
-#' Invokes an operating system-level action on a browser session in Amazon
-#' Bedrock AgentCore. This operation provides direct OS-level control over
-#' browser sessions, enabling mouse actions, keyboard input, and
-#' screenshots that the WebSocket-based Chrome DevTools Protocol (CDP)
-#' cannot handle — such as interacting with print dialogs, context menus,
-#' and JavaScript alerts.
+#' Invokes an operating system-level action on a browser session in Amazon Bedrock AgentCore. This operation provides direct OS-level control over browser sessions, enabling mouse actions, keyboard input, and screenshots that the WebSocket-based Chrome DevTools Protocol (CDP) cannot handle — such as interacting with print dialogs, context menus, and JavaScript alerts.
 #' 
-#' You send a request with exactly one action in the `BrowserAction` union,
-#' and receive a corresponding result in the `BrowserActionResult` union.
+#' You send a request with exactly one action in the `BrowserAction` union, and receive a corresponding result in the `BrowserActionResult` union.
 #' 
-#' The following operations are related to
-#' [`invoke_browser`][bedrockagentcore_invoke_browser]:
+#' The following operations are related to [`invoke_browser`][bedrockagentcore_invoke_browser]:
 #' 
 #' -   [`start_browser_session`][bedrockagentcore_start_browser_session]
 #' 
@@ -3279,14 +3068,9 @@ bedrockagentcore_invoke_agent_runtime_command <- function(contentType = NULL, ac
 #' @usage
 #' bedrockagentcore_invoke_browser(browserIdentifier, sessionId, action)
 #'
-#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser associated with the session. This
-#' must match the identifier used when creating the session with
-#' [`start_browser_session`][bedrockagentcore_start_browser_session].
-#' @param sessionId &#91;required&#93; The unique identifier of the browser session on which to perform the
-#' action. This must be an active session created with
-#' [`start_browser_session`][bedrockagentcore_start_browser_session].
-#' @param action &#91;required&#93; The browser action to perform. Exactly one member of the `BrowserAction`
-#' union must be set per request.
+#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser associated with the session. This must match the identifier used when creating the session with [`start_browser_session`][bedrockagentcore_start_browser_session].
+#' @param sessionId &#91;required&#93; The unique identifier of the browser session on which to perform the action. This must be an active session created with [`start_browser_session`][bedrockagentcore_start_browser_session].
+#' @param action &#91;required&#93; The browser action to perform. Exactly one member of the `BrowserAction` union must be set per request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3407,21 +3191,13 @@ bedrockagentcore_invoke_browser <- function(browserIdentifier, sessionId, action
 #' Bedrock AgentCore
 #'
 #' @description
-#' Executes code within an active code interpreter session in Amazon
-#' Bedrock AgentCore. This operation processes the provided code, runs it
-#' in a secure environment, and returns the execution results including
-#' output, errors, and generated visualizations.
+#' Executes code within an active code interpreter session in Amazon Bedrock AgentCore. This operation processes the provided code, runs it in a secure environment, and returns the execution results including output, errors, and generated visualizations.
 #' 
-#' To execute code, you must specify the code interpreter identifier,
-#' session ID, and the code to run in the arguments parameter. The
-#' operation returns a stream containing the execution results, which can
-#' include text output, error messages, and data visualizations.
+#' To execute code, you must specify the code interpreter identifier, session ID, and the code to run in the arguments parameter. The operation returns a stream containing the execution results, which can include text output, error messages, and data visualizations.
 #' 
-#' This operation is subject to request rate limiting based on your
-#' account's service quotas.
+#' This operation is subject to request rate limiting based on your account's service quotas.
 #' 
-#' The following operations are related to
-#' [`invoke_code_interpreter`][bedrockagentcore_invoke_code_interpreter]:
+#' The following operations are related to [`invoke_code_interpreter`][bedrockagentcore_invoke_code_interpreter]:
 #' 
 #' -   [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session]
 #' 
@@ -3431,22 +3207,12 @@ bedrockagentcore_invoke_browser <- function(browserIdentifier, sessionId, action
 #' bedrockagentcore_invoke_code_interpreter(codeInterpreterIdentifier,
 #'   sessionId, traceId, traceParent, name, arguments)
 #'
-#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter associated with the
-#' session. This must match the identifier used when creating the session
-#' with
-#' [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session].
-#' @param sessionId The unique identifier of the code interpreter session to use. This must
-#' be an active session created with
-#' [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session].
-#' If the session has expired or been stopped, the request will fail.
+#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter associated with the session. This must match the identifier used when creating the session with [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session].
+#' @param sessionId The unique identifier of the code interpreter session to use. This must be an active session created with [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session]. If the session has expired or been stopped, the request will fail.
 #' @param traceId The trace identifier for request tracking.
 #' @param traceParent The parent trace information for distributed tracing.
 #' @param name &#91;required&#93; The name of the code interpreter to invoke.
-#' @param arguments The arguments for the code interpreter. This includes the code to
-#' execute and any additional parameters such as the programming language,
-#' whether to clear the execution context, and other execution options. The
-#' structure of this parameter depends on the specific code interpreter
-#' being used.
+#' @param arguments The arguments for the code interpreter. This includes the code to execute and any additional parameters such as the programming language, whether to clear the execution context, and other execution options. The structure of this parameter depends on the specific code interpreter being used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3582,27 +3348,17 @@ bedrockagentcore_invoke_code_interpreter <- function(codeInterpreterIdentifier, 
 #'   maxTokens, timeoutSeconds, actorId)
 #'
 #' @param harnessArn &#91;required&#93; The ARN of the harness to invoke.
-#' @param runtimeSessionId &#91;required&#93; The session ID for the invocation. Use the same session ID across
-#' requests to continue a conversation.
+#' @param runtimeSessionId &#91;required&#93; The session ID for the invocation. Use the same session ID across requests to continue a conversation.
 #' @param messages &#91;required&#93; The messages to send to the agent.
-#' @param model The model configuration to use for this invocation. If specified,
-#' overrides the harness default.
-#' @param systemPrompt The system prompt to use for this invocation. If specified, overrides
-#' the harness default.
-#' @param tools The tools available to the agent for this invocation. If specified,
-#' overrides the harness default.
-#' @param skills The skills available to the agent for this invocation. If specified,
-#' overrides the harness default.
-#' @param allowedTools The tools that the agent is allowed to use for this invocation. If
-#' specified, overrides the harness default.
-#' @param maxIterations The maximum number of iterations the agent loop can execute. If
-#' specified, overrides the harness default.
-#' @param maxTokens The maximum number of tokens the agent can generate per iteration. If
-#' specified, overrides the harness default.
-#' @param timeoutSeconds The maximum duration in seconds for the agent loop execution. If
-#' specified, overrides the harness default.
-#' @param actorId The actor ID for memory operations. Overrides the actor ID configured on
-#' the harness.
+#' @param model The model configuration to use for this invocation. If specified, overrides the harness default.
+#' @param systemPrompt The system prompt to use for this invocation. If specified, overrides the harness default.
+#' @param tools The tools available to the agent for this invocation. If specified, overrides the harness default.
+#' @param skills The skills available to the agent for this invocation. If specified, overrides the harness default.
+#' @param allowedTools The tools that the agent is allowed to use for this invocation. If specified, overrides the harness default.
+#' @param maxIterations The maximum number of iterations the agent loop can execute. If specified, overrides the harness default.
+#' @param maxTokens The maximum number of tokens the agent can generate per iteration. If specified, overrides the harness default.
+#' @param timeoutSeconds The maximum duration in seconds for the agent loop execution. If specified, overrides the harness default.
+#' @param actorId The actor ID for memory operations. Overrides the actor ID configured on the harness.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3842,13 +3598,8 @@ bedrockagentcore_invoke_harness <- function(harnessArn, runtimeSessionId, messag
 #' @usage
 #' bedrockagentcore_list_ab_tests(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3910,23 +3661,16 @@ bedrockagentcore_list_ab_tests <- function(maxResults = NULL, nextToken = NULL) 
 #' Lists all actors in an AgentCore Memory resource
 #'
 #' @description
-#' Lists all actors in an AgentCore Memory resource. We recommend using
-#' pagination to ensure that the operation returns quickly and
-#' successfully.
+#' Lists all actors in an AgentCore Memory resource. We recommend using pagination to ensure that the operation returns quickly and successfully.
 #' 
-#' To use this operation, you must have the `bedrock-agentcore:ListActors`
-#' permission.
+#' To use this operation, you must have the `bedrock-agentcore:ListActors` permission.
 #'
 #' @usage
 #' bedrockagentcore_list_actors(memoryId, maxResults, nextToken)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list
-#' actors.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 20.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list actors.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 20.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3978,19 +3722,13 @@ bedrockagentcore_list_actors <- function(memoryId, maxResults = NULL, nextToken 
 #' information about each evaluation's status and configuration
 #'
 #' @description
-#' Lists all batch evaluations in the account, providing summary
-#' information about each evaluation's status and configuration.
+#' Lists all batch evaluations in the account, providing summary information about each evaluation's status and configuration.
 #'
 #' @usage
 #' bedrockagentcore_list_batch_evaluations(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4076,18 +3814,13 @@ bedrockagentcore_list_batch_evaluations <- function(maxResults = NULL, nextToken
 #' match the specified criteria
 #'
 #' @description
-#' Retrieves a list of browser sessions in Amazon Bedrock AgentCore that
-#' match the specified criteria. This operation returns summary information
-#' about each session, including identifiers, status, and timestamps.
+#' Retrieves a list of browser sessions in Amazon Bedrock AgentCore that match the specified criteria. This operation returns summary information about each session, including identifiers, status, and timestamps.
 #' 
-#' You can filter the results by browser identifier and session status. The
-#' operation supports pagination to handle large result sets efficiently.
+#' You can filter the results by browser identifier and session status. The operation supports pagination to handle large result sets efficiently.
 #' 
-#' We recommend using pagination to ensure that the operation returns
-#' quickly and successfully when retrieving large numbers of sessions.
+#' We recommend using pagination to ensure that the operation returns quickly and successfully when retrieving large numbers of sessions.
 #' 
-#' The following operations are related to
-#' [`list_browser_sessions`][bedrockagentcore_list_browser_sessions]:
+#' The following operations are related to [`list_browser_sessions`][bedrockagentcore_list_browser_sessions]:
 #' 
 #' -   [`start_browser_session`][bedrockagentcore_start_browser_session]
 #' 
@@ -4097,19 +3830,10 @@ bedrockagentcore_list_batch_evaluations <- function(maxResults = NULL, nextToken
 #' bedrockagentcore_list_browser_sessions(browserIdentifier, maxResults,
 #'   nextToken, status)
 #'
-#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser to list sessions for. If specified,
-#' only sessions for this browser are returned. If not specified, sessions
-#' for all browsers are returned.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 10. Valid values range from 1 to 100. To retrieve the remaining
-#' results, make another call with the returned `nextToken` value.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results. If not specified, Amazon Bedrock AgentCore returns the first
-#' page of results.
-#' @param status The status of the browser sessions to list. Valid values include ACTIVE,
-#' STOPPING, and STOPPED. If not specified, sessions with any status are
-#' returned.
+#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser to list sessions for. If specified, only sessions for this browser are returned. If not specified, sessions for all browsers are returned.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 10. Valid values range from 1 to 100. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. If not specified, Amazon Bedrock AgentCore returns the first page of results.
+#' @param status The status of the browser sessions to list. Valid values include ACTIVE, STOPPING, and STOPPED. If not specified, sessions with any status are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4171,20 +3895,13 @@ bedrockagentcore_list_browser_sessions <- function(browserIdentifier, maxResults
 #' AgentCore that match the specified criteria
 #'
 #' @description
-#' Retrieves a list of code interpreter sessions in Amazon Bedrock
-#' AgentCore that match the specified criteria. This operation returns
-#' summary information about each session, including identifiers, status,
-#' and timestamps.
+#' Retrieves a list of code interpreter sessions in Amazon Bedrock AgentCore that match the specified criteria. This operation returns summary information about each session, including identifiers, status, and timestamps.
 #' 
-#' You can filter the results by code interpreter identifier and session
-#' status. The operation supports pagination to handle large result sets
-#' efficiently.
+#' You can filter the results by code interpreter identifier and session status. The operation supports pagination to handle large result sets efficiently.
 #' 
-#' We recommend using pagination to ensure that the operation returns
-#' quickly and successfully when retrieving large numbers of sessions.
+#' We recommend using pagination to ensure that the operation returns quickly and successfully when retrieving large numbers of sessions.
 #' 
-#' The following operations are related to
-#' [`list_code_interpreter_sessions`][bedrockagentcore_list_code_interpreter_sessions]:
+#' The following operations are related to [`list_code_interpreter_sessions`][bedrockagentcore_list_code_interpreter_sessions]:
 #' 
 #' -   [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session]
 #' 
@@ -4194,19 +3911,10 @@ bedrockagentcore_list_browser_sessions <- function(browserIdentifier, maxResults
 #' bedrockagentcore_list_code_interpreter_sessions(
 #'   codeInterpreterIdentifier, maxResults, nextToken, status)
 #'
-#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter to list sessions for. If
-#' specified, only sessions for this code interpreter are returned. If not
-#' specified, sessions for all code interpreters are returned.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 10. Valid values range from 1 to 100. To retrieve the remaining
-#' results, make another call with the returned `nextToken` value.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results. If not specified, Amazon Bedrock AgentCore returns the first
-#' page of results.
-#' @param status The status of the code interpreter sessions to list. Valid values
-#' include ACTIVE, STOPPING, and STOPPED. If not specified, sessions with
-#' any status are returned.
+#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter to list sessions for. If specified, only sessions for this code interpreter are returned. If not specified, sessions for all code interpreters are returned.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 10. Valid values range from 1 to 100. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. If not specified, Amazon Bedrock AgentCore returns the first page of results.
+#' @param status The status of the code interpreter sessions to list. Valid values include ACTIVE, STOPPING, and STOPPED. If not specified, sessions with any status are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4267,29 +3975,21 @@ bedrockagentcore_list_code_interpreter_sessions <- function(codeInterpreterIdent
 #' Lists events in an AgentCore Memory resource based on specified criteria
 #'
 #' @description
-#' Lists events in an AgentCore Memory resource based on specified
-#' criteria. We recommend using pagination to ensure that the operation
-#' returns quickly and successfully.
+#' Lists events in an AgentCore Memory resource based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.
 #' 
-#' To use this operation, you must have the `bedrock-agentcore:ListEvents`
-#' permission.
+#' To use this operation, you must have the `bedrock-agentcore:ListEvents` permission.
 #'
 #' @usage
 #' bedrockagentcore_list_events(memoryId, sessionId, actorId,
 #'   includePayloads, filter, maxResults, nextToken)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list
-#' events.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list events.
 #' @param sessionId &#91;required&#93; The identifier of the session for which to list events.
 #' @param actorId &#91;required&#93; The identifier of the actor for which to list events.
-#' @param includePayloads Specifies whether to include event payloads in the response. Set to true
-#' to include payloads, or false to exclude them.
+#' @param includePayloads Specifies whether to include event payloads in the response. Set to true to include payloads, or false to exclude them.
 #' @param filter Filter criteria to apply when listing events.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 20.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 20.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4389,23 +4089,18 @@ bedrockagentcore_list_events <- function(memoryId, sessionId, actorId, includePa
 #' started with optional filtering
 #'
 #' @description
-#' Lists all long-term memory extraction jobs that are eligible to be
-#' started with optional filtering.
+#' Lists all long-term memory extraction jobs that are eligible to be started with optional filtering.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:ListMemoryExtractionJobs` permission.
+#' To use this operation, you must have the `bedrock-agentcore:ListMemoryExtractionJobs` permission.
 #'
 #' @usage
 #' bedrockagentcore_list_memory_extraction_jobs(memoryId, maxResults,
 #'   filter, nextToken)
 #'
 #' @param memoryId &#91;required&#93; The unique identifier of the memory to list extraction jobs for.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 20.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 20.
 #' @param filter Filter criteria to apply when listing extraction jobs.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4476,32 +4171,21 @@ bedrockagentcore_list_memory_extraction_jobs <- function(memoryId, maxResults = 
 #' criteria
 #'
 #' @description
-#' Lists memory records in an AgentCore Memory resource based on specified
-#' criteria. We recommend using pagination to ensure that the operation
-#' returns quickly and successfully.
+#' Lists memory records in an AgentCore Memory resource based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:ListMemoryRecords` permission.
+#' To use this operation, you must have the `bedrock-agentcore:ListMemoryRecords` permission.
 #'
 #' @usage
 #' bedrockagentcore_list_memory_records(memoryId, namespace, namespacePath,
 #'   memoryStrategyId, maxResults, nextToken, metadataFilters)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list memory
-#' records.
-#' @param namespace The namespace prefix to filter memory records by. Returns all memory
-#' records in namespaces that start with the provided prefix.
-#' @param namespacePath Use namespacePath for hierarchical retrievals. Return all memory records
-#' where namespace falls under the same parent hierarchy.
-#' @param memoryStrategyId The memory strategy identifier to filter memory records by. If
-#' specified, only memory records with this strategy ID are returned.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 20.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param metadataFilters A list of metadata filter expressions to scope the returned memory
-#' records.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list memory records.
+#' @param namespace The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix. Either `namespace` or `namespacePath` is required.
+#' @param namespacePath Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy. Either `namespace` or `namespacePath` is required.
+#' @param memoryStrategyId The memory strategy identifier to filter memory records by. If specified, only memory records with this strategy ID are returned.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 20.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param metadataFilters A list of metadata filter expressions to scope the returned memory records.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4598,7 +4282,7 @@ bedrockagentcore_list_memory_records <- function(memoryId, namespace = NULL, nam
 #' List payment instruments for a manager
 #'
 #' @description
-#' List payment instruments for a manager
+#' List payment instruments for a manager.
 #'
 #' @usage
 #' bedrockagentcore_list_payment_instruments(userId, agentName,
@@ -4671,10 +4355,10 @@ bedrockagentcore_list_payment_instruments <- function(userId = NULL, agentName =
 }
 .bedrockagentcore$operations$list_payment_instruments <- bedrockagentcore_list_payment_instruments
 
-#' List payment manager sessions
+#' List payment sessions
 #'
 #' @description
-#' List payment manager sessions
+#' List payment sessions.
 #'
 #' @usage
 #' bedrockagentcore_list_payment_sessions(userId, agentName,
@@ -4747,22 +4431,15 @@ bedrockagentcore_list_payment_sessions <- function(userId = NULL, agentName = NU
 #' status
 #'
 #' @description
-#' Lists all recommendations in the account, with optional filtering by
-#' status.
+#' Lists all recommendations in the account, with optional filtering by status.
 #'
 #' @usage
 #' bedrockagentcore_list_recommendations(maxResults, nextToken,
 #'   statusFilter)
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
-#' @param statusFilter Optional filter to return only recommendations with the specified
-#' status.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
+#' @param statusFilter Optional filter to return only recommendations with the specified status.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4825,27 +4502,20 @@ bedrockagentcore_list_recommendations <- function(maxResults = NULL, nextToken =
 #' criteria
 #'
 #' @description
-#' Lists sessions in an AgentCore Memory resource based on specified
-#' criteria. We recommend using pagination to ensure that the operation
-#' returns quickly and successfully.
+#' Lists sessions in an AgentCore Memory resource based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.
 #' 
 #' Empty sessions are automatically deleted after one day.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:ListSessions` permission.
+#' To use this operation, you must have the `bedrock-agentcore:ListSessions` permission.
 #'
 #' @usage
 #' bedrockagentcore_list_sessions(memoryId, actorId, maxResults, nextToken,
 #'   filter)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list
-#' sessions.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource for which to list sessions.
 #' @param actorId &#91;required&#93; The identifier of the actor for which to list sessions.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 20.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 20.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param filter Filter criteria to apply when listing sessions.
 #'
 #' @return
@@ -4902,10 +4572,10 @@ bedrockagentcore_list_sessions <- function(memoryId, actorId, maxResults = NULL,
 }
 .bedrockagentcore$operations$list_sessions <- bedrockagentcore_list_sessions
 
-#' Process a payment transaction
+#' Processes a payment using a payment instrument within a payment session
 #'
 #' @description
-#' Process a payment transaction
+#' Processes a payment using a payment instrument within a payment session.
 #'
 #' @usage
 #' bedrockagentcore_process_payment(userId, agentName, paymentManagerArn,
@@ -4914,12 +4584,12 @@ bedrockagentcore_list_sessions <- function(memoryId, actorId, maxResults = NULL,
 #'
 #' @param userId The user ID associated with this payment.
 #' @param agentName The agent name associated with this request, used for observability.
-#' @param paymentManagerArn &#91;required&#93; The ARN of the payment manager handling this payment.
-#' @param paymentSessionId &#91;required&#93; The ID of the payment session for this transaction.
-#' @param paymentInstrumentId &#91;required&#93; The ID of the payment instrument to use for this transaction.
-#' @param paymentType &#91;required&#93; The type of payment being processed.
+#' @param paymentManagerArn &#91;required&#93; The ARN of the payment manager.
+#' @param paymentSessionId &#91;required&#93; The ID of the payment session.
+#' @param paymentInstrumentId &#91;required&#93; The ID of the payment instrument to use.
+#' @param paymentType &#91;required&#93; The type of payment to process.
 #' @param paymentInput &#91;required&#93; The payment input details specific to the payment type.
-#' @param clientToken Idempotency token to ensure request uniqueness.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4993,32 +4663,20 @@ bedrockagentcore_process_payment <- function(userId = NULL, agentName = NULL, pa
 #' resource based on specified search criteria
 #'
 #' @description
-#' Searches for and retrieves memory records from an AgentCore Memory
-#' resource based on specified search criteria. We recommend using
-#' pagination to ensure that the operation returns quickly and
-#' successfully.
+#' Searches for and retrieves memory records from an AgentCore Memory resource based on specified search criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:RetrieveMemoryRecords` permission.
+#' To use this operation, you must have the `bedrock-agentcore:RetrieveMemoryRecords` permission.
 #'
 #' @usage
 #' bedrockagentcore_retrieve_memory_records(memoryId, namespace,
 #'   namespacePath, searchCriteria, nextToken, maxResults)
 #'
-#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource from which to retrieve
-#' memory records.
-#' @param namespace The namespace prefix to filter memory records by. Searches for memory
-#' records in namespaces that start with the provided prefix.
-#' @param namespacePath Use namespacePath for hierarchical retrievals. Return all memory records
-#' where namespace falls under the same parent hierarchy.
-#' @param searchCriteria &#91;required&#93; The search criteria to use for finding relevant memory records. This
-#' includes the search query, memory strategy ID, and other search
-#' parameters.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 20.
+#' @param memoryId &#91;required&#93; The identifier of the AgentCore Memory resource from which to retrieve memory records.
+#' @param namespace The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix. Either `namespace` or `namespacePath` is required.
+#' @param namespacePath Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy. Either `namespace` or `namespacePath` is required.
+#' @param searchCriteria &#91;required&#93; The search criteria to use for finding relevant memory records. This includes the search query, memory strategy ID, and other search parameters.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 20.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5120,23 +4778,13 @@ bedrockagentcore_retrieve_memory_records <- function(memoryId, namespace = NULL,
 #' Amazon Bedrock AgentCore
 #'
 #' @description
-#' Saves the current state of a browser session as a reusable profile in
-#' Amazon Bedrock AgentCore. A browser profile captures persistent browser
-#' data such as cookies and local storage from an active session, enabling
-#' you to reuse this data in future browser sessions.
+#' Saves the current state of a browser session as a reusable profile in Amazon Bedrock AgentCore. A browser profile captures persistent browser data such as cookies and local storage from an active session, enabling you to reuse this data in future browser sessions.
 #' 
-#' To save a browser session profile, you must specify the profile
-#' identifier, browser identifier, and session ID. The session must be
-#' active when saving the profile. Once saved, the profile can be used with
-#' the [`start_browser_session`][bedrockagentcore_start_browser_session]
-#' operation to initialize new sessions with the stored browser state.
+#' To save a browser session profile, you must specify the profile identifier, browser identifier, and session ID. The session must be active when saving the profile. Once saved, the profile can be used with the [`start_browser_session`][bedrockagentcore_start_browser_session] operation to initialize new sessions with the stored browser state.
 #' 
-#' Browser profiles are useful for scenarios that require persistent
-#' authentication, maintaining user preferences across sessions, or
-#' continuing tasks that depend on previously stored browser data.
+#' Browser profiles are useful for scenarios that require persistent authentication, maintaining user preferences across sessions, or continuing tasks that depend on previously stored browser data.
 #' 
-#' The following operations are related to
-#' [`save_browser_session_profile`][bedrockagentcore_save_browser_session_profile]:
+#' The following operations are related to [`save_browser_session_profile`][bedrockagentcore_save_browser_session_profile]:
 #' 
 #' -   [`start_browser_session`][bedrockagentcore_start_browser_session]
 #' 
@@ -5148,18 +4796,10 @@ bedrockagentcore_retrieve_memory_records <- function(memoryId, namespace = NULL,
 #'
 #' @param traceId The trace identifier for request tracking.
 #' @param traceParent The parent trace information for distributed tracing.
-#' @param profileIdentifier &#91;required&#93; The unique identifier for the browser profile. This identifier is used
-#' to reference the profile when starting new browser sessions. The
-#' identifier must follow the pattern of an alphanumeric name (up to 48
-#' characters) followed by a hyphen and a 10-character alphanumeric suffix.
-#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser associated with the session from
-#' which to save the profile.
-#' @param sessionId &#91;required&#93; The unique identifier of the browser session from which to save the
-#' profile. The session must be active when saving the profile.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request, but does not
-#' return an error.
+#' @param profileIdentifier &#91;required&#93; The unique identifier for the browser profile. This identifier is used to reference the profile when starting new browser sessions. The identifier must follow the pattern of an alphanumeric name (up to 48 characters) followed by a hyphen and a 10-character alphanumeric suffix.
+#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser associated with the session from which to save the profile.
+#' @param sessionId &#91;required&#93; The unique identifier of the browser session from which to save the profile. The session must be active when saving the profile.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5213,27 +4853,16 @@ bedrockagentcore_save_browser_session_profile <- function(traceId = NULL, traceP
 #' Searches for registry records using semantic, lexical, or hybrid queries
 #'
 #' @description
-#' Searches for registry records using semantic, lexical, or hybrid
-#' queries. Returns metadata for matching records ordered by relevance
-#' within the specified registry.
+#' Searches for registry records using semantic, lexical, or hybrid queries. Returns metadata for matching records ordered by relevance within the specified registry.
 #'
 #' @usage
 #' bedrockagentcore_search_registry_records(searchQuery, registryIds,
 #'   maxResults, filters)
 #'
 #' @param searchQuery &#91;required&#93; The search query to find matching registry records.
-#' @param registryIds &#91;required&#93; The list of registry identifiers to search within. Currently, you can
-#' specify exactly one registry identifier. You can provide either the full
-#' Amazon Web Services Resource Name (ARN) or the 12-character alphanumeric
-#' registry ID.
-#' @param maxResults The maximum number of records to return in a single call. Valid values
-#' are 1 through 20. The default value is 10.
-#' @param filters A metadata filter expression to narrow search results. Uses structured
-#' JSON operators including field-level operators (`$eq`, `$ne`, `$in`) and
-#' logical operators (`$and`, `$or`) on filterable fields (`name`,
-#' `descriptorType`, `version`). For example, to filter by descriptor type:
-#' `{"descriptorType": {"$eq": "MCP"}}`. To combine filters:
-#' `{"$and": [{"descriptorType": {"$eq": "MCP"}}, {"name": {"$eq": "my-tool"}}]}`.
+#' @param registryIds &#91;required&#93; The list of registry identifiers to search within. Currently, you can specify exactly one registry identifier. You can provide either the full Amazon Web Services Resource Name (ARN) or the 12-character alphanumeric registry ID.
+#' @param maxResults The maximum number of records to return in a single call. Valid values are 1 through 20. The default value is 10.
+#' @param filters A metadata filter expression to narrow search results. Uses structured JSON operators including field-level operators (`$eq`, `$ne`, `$in`) and logical operators (`$and`, `$or`) on filterable fields (`name`, `descriptorType`, `version`). For example, to filter by descriptor type: `{"descriptorType": {"$eq": "MCP"}}`. To combine filters: `{"$and": [{"descriptorType": {"$eq": "MCP"}}, {"name": {"$eq": "my-tool"}}]}`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5330,26 +4959,17 @@ bedrockagentcore_search_registry_records <- function(searchQuery, registryIds, m
 #' multiple sessions
 #'
 #' @description
-#' Starts a batch evaluation job that evaluates agent performance across
-#' multiple sessions. Batch evaluations pull agent traces from CloudWatch
-#' Logs or an existing online evaluation configuration and run specified
-#' evaluators and insights against them.
+#' Starts a batch evaluation job that evaluates agent performance across multiple sessions. Batch evaluations pull agent traces from CloudWatch Logs or an existing online evaluation configuration and run specified evaluators and insights against them.
 #'
 #' @usage
 #' bedrockagentcore_start_batch_evaluation(batchEvaluationName, evaluators,
 #'   dataSourceConfig, clientToken, evaluationMetadata, description)
 #'
 #' @param batchEvaluationName &#91;required&#93; The name of the batch evaluation. Must be unique within your account.
-#' @param evaluators The list of evaluators to apply during the batch evaluation. Can include
-#' both built-in evaluators and custom evaluators. Maximum of 10
-#' evaluators.
-#' @param dataSourceConfig &#91;required&#93; The data source configuration that specifies where to pull agent session
-#' traces from for evaluation.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, the service ignores the request, but does not return an error.
-#' @param evaluationMetadata Optional metadata for the evaluation, including session-specific ground
-#' truth data and test scenario identifiers.
+#' @param evaluators The list of evaluators to apply during the batch evaluation. Can include both built-in evaluators and custom evaluators. Maximum of 10 evaluators.
+#' @param dataSourceConfig &#91;required&#93; The data source configuration that specifies where to pull agent session traces from for evaluation.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.
+#' @param evaluationMetadata Optional metadata for the evaluation, including session-specific ground truth data and test scenario identifiers.
 #' @param description The description of the batch evaluation.
 #'
 #' @return
@@ -5477,20 +5097,11 @@ bedrockagentcore_start_batch_evaluation <- function(batchEvaluationName, evaluat
 #' Creates and initializes a browser session in Amazon Bedrock AgentCore
 #'
 #' @description
-#' Creates and initializes a browser session in Amazon Bedrock AgentCore.
-#' The session enables agents to navigate and interact with web content,
-#' extract information from websites, and perform web-based tasks as part
-#' of their response generation.
+#' Creates and initializes a browser session in Amazon Bedrock AgentCore. The session enables agents to navigate and interact with web content, extract information from websites, and perform web-based tasks as part of their response generation.
 #' 
-#' To create a session, you must specify a browser identifier and a name.
-#' You can also configure the viewport dimensions to control the visible
-#' area of web content. The session remains active until it times out or
-#' you explicitly stop it using the
-#' [`stop_browser_session`][bedrockagentcore_stop_browser_session]
-#' operation.
+#' To create a session, you must specify a browser identifier and a name. You can also configure the viewport dimensions to control the visible area of web content. The session remains active until it times out or you explicitly stop it using the [`stop_browser_session`][bedrockagentcore_stop_browser_session] operation.
 #' 
-#' The following operations are related to
-#' [`start_browser_session`][bedrockagentcore_start_browser_session]:
+#' The following operations are related to [`start_browser_session`][bedrockagentcore_start_browser_session]:
 #' 
 #' -   [`get_browser_session`][bedrockagentcore_get_browser_session]
 #' 
@@ -5510,37 +5121,16 @@ bedrockagentcore_start_batch_evaluation <- function(batchEvaluationName, evaluat
 #'
 #' @param traceId The trace identifier for request tracking.
 #' @param traceParent The parent trace information for distributed tracing.
-#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser to use for this session. This
-#' identifier specifies which browser environment to initialize for the
-#' session.
-#' @param name The name of the browser session. This name helps you identify and manage
-#' the session. The name does not need to be unique.
-#' @param sessionTimeoutSeconds The duration in seconds (time-to-live) after which the session
-#' automatically terminates, regardless of ongoing activity. Defaults to
-#' 3600 seconds (1 hour). Recommended minimum: 60 seconds. Maximum allowed:
-#' 28,800 seconds (8 hours).
-#' @param viewPort The dimensions of the browser viewport for this session. This determines
-#' the visible area of the web content and affects how web pages are
-#' rendered. If not specified, Amazon Bedrock AgentCore uses a default
-#' viewport size.
+#' @param browserIdentifier &#91;required&#93; The unique identifier of the browser to use for this session. This identifier specifies which browser environment to initialize for the session.
+#' @param name The name of the browser session. This name helps you identify and manage the session. The name does not need to be unique.
+#' @param sessionTimeoutSeconds The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 3600 seconds (1 hour). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).
+#' @param viewPort The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.
 #' @param extensions A list of browser extensions to load into the browser session.
-#' @param profileConfiguration The browser profile configuration to use for this session. A browser
-#' profile contains persistent data such as cookies and local storage that
-#' can be reused across multiple browser sessions. If specified, the
-#' session initializes with the profile's stored data, enabling continuity
-#' for tasks that require authentication or personalized settings.
-#' @param proxyConfiguration Optional proxy configuration for routing browser traffic through
-#' customer-specified proxy servers. When provided, enables HTTP Basic
-#' authentication via Amazon Web Services Secrets Manager and domain-based
-#' routing rules. Requires `secretsmanager:GetSecretValue` IAM permission
-#' for the specified secret ARNs.
+#' @param profileConfiguration The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.
+#' @param proxyConfiguration Optional proxy configuration for routing browser traffic through customer-specified proxy servers. When provided, enables HTTP Basic authentication via Amazon Web Services Secrets Manager and domain-based routing rules. Requires `secretsmanager:GetSecretValue` IAM permission for the specified secret ARNs.
 #' @param enterprisePolicies A list of files containing enterprise policies for the browser.
 #' @param certificates A list of certificates to install in the browser session.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request, but does not
-#' return an error. This parameter helps prevent the creation of duplicate
-#' sessions if there are temporary network issues.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5665,19 +5255,11 @@ bedrockagentcore_start_browser_session <- function(traceId = NULL, traceParent =
 #' AgentCore
 #'
 #' @description
-#' Creates and initializes a code interpreter session in Amazon Bedrock
-#' AgentCore. The session enables agents to execute code as part of their
-#' response generation, supporting programming languages such as Python for
-#' data analysis, visualization, and computation tasks.
+#' Creates and initializes a code interpreter session in Amazon Bedrock AgentCore. The session enables agents to execute code as part of their response generation, supporting programming languages such as Python for data analysis, visualization, and computation tasks.
 #' 
-#' To create a session, you must specify a code interpreter identifier and
-#' a name. The session remains active until it times out or you explicitly
-#' stop it using the
-#' [`stop_code_interpreter_session`][bedrockagentcore_stop_code_interpreter_session]
-#' operation.
+#' To create a session, you must specify a code interpreter identifier and a name. The session remains active until it times out or you explicitly stop it using the [`stop_code_interpreter_session`][bedrockagentcore_stop_code_interpreter_session] operation.
 #' 
-#' The following operations are related to
-#' [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session]:
+#' The following operations are related to [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session]:
 #' 
 #' -   [`invoke_code_interpreter`][bedrockagentcore_invoke_code_interpreter]
 #' 
@@ -5692,21 +5274,11 @@ bedrockagentcore_start_browser_session <- function(traceId = NULL, traceParent =
 #'
 #' @param traceId The trace identifier for request tracking.
 #' @param traceParent The parent trace information for distributed tracing.
-#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter to use for this session.
-#' This identifier specifies which code interpreter environment to
-#' initialize for the session.
-#' @param name The name of the code interpreter session. This name helps you identify
-#' and manage the session. The name does not need to be unique.
-#' @param sessionTimeoutSeconds The duration in seconds (time-to-live) after which the session
-#' automatically terminates, regardless of ongoing activity. Defaults to
-#' 900 seconds (15 minutes). Recommended minimum: 60 seconds. Maximum
-#' allowed: 28,800 seconds (8 hours).
+#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter to use for this session. This identifier specifies which code interpreter environment to initialize for the session.
+#' @param name The name of the code interpreter session. This name helps you identify and manage the session. The name does not need to be unique.
+#' @param sessionTimeoutSeconds The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 900 seconds (15 minutes). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).
 #' @param certificates A list of certificates to install in the code interpreter session.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request, but does not
-#' return an error. This parameter helps prevent the creation of duplicate
-#' sessions if there are temporary network issues.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5770,13 +5342,9 @@ bedrockagentcore_start_code_interpreter_session <- function(traceId = NULL, trac
 #' structured memory records
 #'
 #' @description
-#' Starts a memory extraction job that processes events that failed
-#' extraction previously in an AgentCore Memory resource and produces
-#' structured memory records. When earlier extraction attempts have left
-#' events unprocessed, this job will pick up and extract those as well.
+#' Starts a memory extraction job that processes events that failed extraction previously in an AgentCore Memory resource and produces structured memory records. When earlier extraction attempts have left events unprocessed, this job will pick up and extract those as well.
 #' 
-#' To use this operation, you must have the
-#' `bedrock-agentcore:StartMemoryExtractionJob` permission.
+#' To use this operation, you must have the `bedrock-agentcore:StartMemoryExtractionJob` permission.
 #'
 #' @usage
 #' bedrockagentcore_start_memory_extraction_job(memoryId, extractionJob,
@@ -5784,8 +5352,7 @@ bedrockagentcore_start_code_interpreter_session <- function(traceId = NULL, trac
 #'
 #' @param memoryId &#91;required&#93; The unique identifier of the memory for which to start extraction jobs.
 #' @param extractionJob &#91;required&#93; Extraction job to start in this operation.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotent processing of
-#' the request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotent processing of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5835,9 +5402,7 @@ bedrockagentcore_start_memory_extraction_job <- function(memoryId, extractionJob
 #' improve agent performance
 #'
 #' @description
-#' Starts a recommendation job that analyzes agent traces and generates
-#' optimization suggestions for system prompts or tool descriptions to
-#' improve agent performance.
+#' Starts a recommendation job that analyzes agent traces and generates optimization suggestions for system prompts or tool descriptions to improve agent performance.
 #'
 #' @usage
 #' bedrockagentcore_start_recommendation(name, description, type,
@@ -5845,14 +5410,9 @@ bedrockagentcore_start_memory_extraction_job <- function(memoryId, extractionJob
 #'
 #' @param name &#91;required&#93; The name of the recommendation. Must be unique within your account.
 #' @param description The description of the recommendation.
-#' @param type &#91;required&#93; The type of recommendation to generate. Valid values are
-#' `SYSTEM_PROMPT_RECOMMENDATION` for system prompt optimization or
-#' `TOOL_DESCRIPTION_RECOMMENDATION` for tool description optimization.
-#' @param recommendationConfig &#91;required&#93; The configuration for the recommendation, including the input to
-#' optimize, agent traces to analyze, and evaluation settings.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, the service ignores the request, but does not return an error.
+#' @param type &#91;required&#93; The type of recommendation to generate. Valid values are `SYSTEM_PROMPT_RECOMMENDATION` for system prompt optimization or `TOOL_DESCRIPTION_RECOMMENDATION` for tool description optimization.
+#' @param recommendationConfig &#91;required&#93; The configuration for the recommendation, including the input to optimize, agent traces to analyze, and evaluation settings.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6124,8 +5684,7 @@ bedrockagentcore_start_recommendation <- function(name, description = NULL, type
 #' Stops a running batch evaluation
 #'
 #' @description
-#' Stops a running batch evaluation. Sessions that have already been
-#' evaluated retain their results.
+#' Stops a running batch evaluation. Sessions that have already been evaluated retain their results.
 #'
 #' @usage
 #' bedrockagentcore_stop_batch_evaluation(batchEvaluationId)
@@ -6177,17 +5736,11 @@ bedrockagentcore_stop_batch_evaluation <- function(batchEvaluationId) {
 #' Terminates an active browser session in Amazon Bedrock AgentCore
 #'
 #' @description
-#' Terminates an active browser session in Amazon Bedrock AgentCore. This
-#' operation stops the session, releases associated resources, and makes
-#' the session unavailable for further use.
+#' Terminates an active browser session in Amazon Bedrock AgentCore. This operation stops the session, releases associated resources, and makes the session unavailable for further use.
 #' 
-#' To stop a browser session, you must specify both the browser identifier
-#' and the session ID. Once stopped, a session cannot be restarted; you
-#' must create a new session using
-#' [`start_browser_session`][bedrockagentcore_start_browser_session].
+#' To stop a browser session, you must specify both the browser identifier and the session ID. Once stopped, a session cannot be restarted; you must create a new session using [`start_browser_session`][bedrockagentcore_start_browser_session].
 #' 
-#' The following operations are related to
-#' [`stop_browser_session`][bedrockagentcore_stop_browser_session]:
+#' The following operations are related to [`stop_browser_session`][bedrockagentcore_stop_browser_session]:
 #' 
 #' -   [`start_browser_session`][bedrockagentcore_start_browser_session]
 #' 
@@ -6201,10 +5754,7 @@ bedrockagentcore_stop_batch_evaluation <- function(batchEvaluationId) {
 #' @param traceParent The parent trace information for distributed tracing.
 #' @param browserIdentifier &#91;required&#93; The unique identifier of the browser associated with the session.
 #' @param sessionId &#91;required&#93; The unique identifier of the browser session to stop.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request, but does not
-#' return an error.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6257,17 +5807,11 @@ bedrockagentcore_stop_browser_session <- function(traceId = NULL, traceParent = 
 #' AgentCore
 #'
 #' @description
-#' Terminates an active code interpreter session in Amazon Bedrock
-#' AgentCore. This operation stops the session, releases associated
-#' resources, and makes the session unavailable for further use.
+#' Terminates an active code interpreter session in Amazon Bedrock AgentCore. This operation stops the session, releases associated resources, and makes the session unavailable for further use.
 #' 
-#' To stop a code interpreter session, you must specify both the code
-#' interpreter identifier and the session ID. Once stopped, a session
-#' cannot be restarted; you must create a new session using
-#' [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session].
+#' To stop a code interpreter session, you must specify both the code interpreter identifier and the session ID. Once stopped, a session cannot be restarted; you must create a new session using [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session].
 #' 
-#' The following operations are related to
-#' [`stop_code_interpreter_session`][bedrockagentcore_stop_code_interpreter_session]:
+#' The following operations are related to [`stop_code_interpreter_session`][bedrockagentcore_stop_code_interpreter_session]:
 #' 
 #' -   [`start_code_interpreter_session`][bedrockagentcore_start_code_interpreter_session]
 #' 
@@ -6279,13 +5823,9 @@ bedrockagentcore_stop_browser_session <- function(traceId = NULL, traceParent = 
 #'
 #' @param traceId The trace identifier for request tracking.
 #' @param traceParent The parent trace information for distributed tracing.
-#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter associated with the
-#' session.
+#' @param codeInterpreterIdentifier &#91;required&#93; The unique identifier of the code interpreter associated with the session.
 #' @param sessionId &#91;required&#93; The unique identifier of the code interpreter session to stop.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request, but does not
-#' return an error.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6345,11 +5885,8 @@ bedrockagentcore_stop_code_interpreter_session <- function(traceId = NULL, trace
 #'
 #' @param runtimeSessionId &#91;required&#93; The ID of the session that you want to stop.
 #' @param agentRuntimeArn &#91;required&#93; The ARN of the agent that contains the session that you want to stop.
-#' @param qualifier Optional qualifier to specify an agent alias, such as `prod`code\> or
-#' `dev`. If you don't provide a value, the DEFAULT alias is used.
-#' @param clientToken Idempotent token used to identify the request. If you use the same token
-#' with multiple requests, the same response is returned. Use ClientToken
-#' to prevent the same request from being processed more than once.
+#' @param qualifier Optional qualifier to specify an agent alias, such as `prod`code\> or `dev`. If you don't provide a value, the DEFAULT alias is used.
+#' @param clientToken Idempotent token used to identify the request. If you use the same token with multiple requests, the same response is returned. Use ClientToken to prevent the same request from being processed more than once.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6398,8 +5935,7 @@ bedrockagentcore_stop_runtime_session <- function(runtimeSessionId, agentRuntime
 #' allocation, evaluation settings, or execution status
 #'
 #' @description
-#' Updates an A/B test's configuration, including variants, traffic
-#' allocation, evaluation settings, or execution status.
+#' Updates an A/B test's configuration, including variants, traffic allocation, evaluation settings, or execution status.
 #'
 #' @usage
 #' bedrockagentcore_update_ab_test(abTestId, clientToken, name,
@@ -6407,9 +5943,7 @@ bedrockagentcore_stop_runtime_session <- function(runtimeSessionId, agentRuntime
 #'   executionStatus)
 #'
 #' @param abTestId &#91;required&#93; The unique identifier of the A/B test to update.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, the service ignores the request, but does not return an error.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.
 #' @param name The updated name of the A/B test.
 #' @param description The updated description of the A/B test.
 #' @param variants The updated list of variants.
@@ -6500,8 +6034,7 @@ bedrockagentcore_update_ab_test <- function(abTestId, clientToken = NULL, name =
 #' Updates a browser stream
 #'
 #' @description
-#' Updates a browser stream. To use this operation, you must have
-#' permissions to perform the bedrock:UpdateBrowserStream action.
+#' Updates a browser stream. To use this operation, you must have permissions to perform the bedrock:UpdateBrowserStream action.
 #'
 #' @usage
 #' bedrockagentcore_update_browser_stream(browserIdentifier, sessionId,
@@ -6510,10 +6043,7 @@ bedrockagentcore_update_ab_test <- function(abTestId, clientToken = NULL, name =
 #' @param browserIdentifier &#91;required&#93; The identifier of the browser.
 #' @param sessionId &#91;required&#93; The identifier of the browser session.
 #' @param streamUpdate &#91;required&#93; The update to apply to the browser stream.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.
 #'
 #' @return
 #' A list with the following syntax:

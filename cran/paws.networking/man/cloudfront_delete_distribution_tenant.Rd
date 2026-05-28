@@ -9,10 +9,7 @@ cloudfront_delete_distribution_tenant(Id, IfMatch)
 \arguments{
 \item{Id}{[required] The ID of the distribution tenant to delete.}
 
-\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the
-distribution tenant. This value is returned in the response of the
-\code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API
-operation.}
+\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the distribution tenant. This value is returned in the response of the \code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API operation.}
 }
 \description{
 Deletes a distribution tenant. If you use this API operation to delete a distribution tenant that is currently enabled, the request will fail.

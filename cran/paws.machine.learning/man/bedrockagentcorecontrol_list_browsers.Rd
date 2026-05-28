@@ -11,15 +11,11 @@ bedrockagentcorecontrol_list_browsers(
 )
 }
 \arguments{
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 10. The maximum value is 50.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{type}{The type of browsers to list. If not specified, all browser types are
-returned.}
+\item{type}{The type of browsers to list. If not specified, all browser types are returned.}
 }
 \description{
 Lists all custom browsers in your account.

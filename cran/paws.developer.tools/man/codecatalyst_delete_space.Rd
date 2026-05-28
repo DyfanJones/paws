@@ -7,8 +7,7 @@
 codecatalyst_delete_space(name)
 }
 \arguments{
-\item{name}{[required] The name of the space. To retrieve a list of space names, use
-\code{\link[=codecatalyst_list_spaces]{list_spaces}}.}
+\item{name}{[required] The name of the space. To retrieve a list of space names, use \code{\link[=codecatalyst_list_spaces]{list_spaces}}.}
 }
 \description{
 Deletes a space.

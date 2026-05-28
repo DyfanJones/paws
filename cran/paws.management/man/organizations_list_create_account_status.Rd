@@ -12,18 +12,11 @@ organizations_list_create_account_status(
 )
 }
 \arguments{
-\item{States}{A list of one or more states that you want included in the response. If
-this parameter isn't present, all requests are included in the response.}
+\item{States}{A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 Lists the account creation requests that match the specified status that is currently being tracked for the organization.

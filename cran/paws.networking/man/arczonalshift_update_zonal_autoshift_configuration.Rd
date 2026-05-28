@@ -12,15 +12,9 @@ arczonalshift_update_zonal_autoshift_configuration(
 )
 }
 \arguments{
-\item{resourceIdentifier}{[required] The identifier for the resource that you want to update the zonal
-autoshift configuration for. The identifier is the Amazon Resource Name
-(ARN) for the resource.}
+\item{resourceIdentifier}{[required] The identifier for the resource that you want to update the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.}
 
-\item{zonalAutoshiftStatus}{[required] The zonal autoshift status for the resource that you want to update the
-zonal autoshift configuration for. Choose \code{ENABLED} to authorize Amazon
-Web Services to shift away resource traffic for an application from an
-Availability Zone during events, on your behalf, to help reduce time to
-recovery.}
+\item{zonalAutoshiftStatus}{[required] The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for. Choose \code{ENABLED} to authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery.}
 }
 \description{
 The zonal autoshift configuration for a resource includes the practice run configuration and the status for running autoshifts, zonal autoshift status. When a resource has a practice run configuration, ARC starts weekly zonal shifts for the resource, to shift traffic away from an Availability Zone. Weekly practice runs help you to make sure that your application can continue to operate normally with the loss of one Availability Zone.

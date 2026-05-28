@@ -18,8 +18,7 @@ datazone_update_root_domain_unit_owner(
 
 \item{newOwner}{[required] The new owner of the root domain unit.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request. This field is automatically populated if not provided.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.}
 }
 \description{
 Updates the owner of the root domain unit.

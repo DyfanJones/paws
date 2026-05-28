@@ -14,8 +14,7 @@ healthlake_list_fhir_datastores(
 \arguments{
 \item{Filter}{List all filters associated with a FHIR data store request.}
 
-\item{NextToken}{The token used to retrieve the next page of data stores when results are
-paginated.}
+\item{NextToken}{The token used to retrieve the next page of data stores when results are paginated.}
 
 \item{MaxResults}{The maximum number of data stores returned on a page.}
 }

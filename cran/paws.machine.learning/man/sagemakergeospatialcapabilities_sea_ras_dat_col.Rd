@@ -14,16 +14,9 @@ sagemakergeospatialcapabilities_search_raster_data_collection(
 \arguments{
 \item{Arn}{[required] The Amazon Resource Name (ARN) of the raster data collection.}
 
-\item{NextToken}{If the previous response was truncated, you receive this token. Use it
-in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.}
 
-\item{RasterDataCollectionQuery}{[required] RasterDataCollectionQuery consisting of
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html}{AreaOfInterest(AOI)},
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html}{PropertyFilters}
-and
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html}{TimeRangeFilterInput}
-used in
-\code{\link[=sagemakergeospatialcapabilities_search_raster_data_collection]{search_raster_data_collection}}.}
+\item{RasterDataCollectionQuery}{[required] RasterDataCollectionQuery consisting of \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html}{AreaOfInterest(AOI)}, \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html}{PropertyFilters} and \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html}{TimeRangeFilterInput} used in \code{\link[=sagemakergeospatialcapabilities_search_raster_data_collection]{search_raster_data_collection}}.}
 }
 \description{
 Allows you run image query on a specific raster data collection to get a list of the satellite imagery matching the selected filters.

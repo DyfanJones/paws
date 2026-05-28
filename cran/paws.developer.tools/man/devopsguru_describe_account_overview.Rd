@@ -10,14 +10,9 @@ reactive insights}
 devopsguru_describe_account_overview(FromTime, ToTime = NULL)
 }
 \arguments{
-\item{FromTime}{[required] The start of the time range passed in. The start time granularity is at
-the day level. The floor of the start time is used. Returned information
-occurred after this day.}
+\item{FromTime}{[required] The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.}
 
-\item{ToTime}{The end of the time range passed in. The start time granularity is at
-the day level. The floor of the start time is used. Returned information
-occurred before this day. If this is not specified, then the current day
-is used.}
+\item{ToTime}{The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.}
 }
 \description{
 For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights.

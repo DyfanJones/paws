@@ -9,10 +9,7 @@ lakeformation_delete_lake_formation_identity_center_configuration(
 )
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, view definition, and other control
-information to manage your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definition, and other control information to manage your Lake Formation environment.}
 }
 \description{
 Deletes an IAM Identity Center connection with Lake Formation.

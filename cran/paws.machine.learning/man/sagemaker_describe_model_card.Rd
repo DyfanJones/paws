@@ -10,8 +10,7 @@ sagemaker_describe_model_card(ModelCardName, ModelCardVersion = NULL)
 \arguments{
 \item{ModelCardName}{[required] The name or Amazon Resource Name (ARN) of the model card to describe.}
 
-\item{ModelCardVersion}{The version of the model card to describe. If a version is not provided,
-then the latest version of the model card is described.}
+\item{ModelCardVersion}{The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.}
 }
 \description{
 Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.

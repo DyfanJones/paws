@@ -20,8 +20,7 @@ billingconductor_list_billing_group_cost_reports(
 
 \item{NextToken}{The pagination token that's used on subsequent calls to get reports.}
 
-\item{Filters}{A \code{ListBillingGroupCostReportsFilter} to specify billing groups to
-retrieve reports from.}
+\item{Filters}{A \code{ListBillingGroupCostReportsFilter} to specify billing groups to retrieve reports from.}
 }
 \description{
 A paginated call to retrieve a summary report of actual Amazon Web Services charges and the calculated Amazon Web Services charges based on the associated pricing plan of a billing group.

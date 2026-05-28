@@ -11,11 +11,9 @@ glue_update_glue_identity_center_configuration(
 )
 }
 \arguments{
-\item{Scopes}{A list of Identity Center scopes that define the updated permissions and
-access levels for the Glue configuration.}
+\item{Scopes}{A list of Identity Center scopes that define the updated permissions and access levels for the Glue configuration.}
 
-\item{UserBackgroundSessionsEnabled}{Specifies whether users can run background sessions when using Identity
-Center authentication with Glue services.}
+\item{UserBackgroundSessionsEnabled}{Specifies whether users can run background sessions when using Identity Center authentication with Glue services.}
 }
 \description{
 Updates the existing Glue Identity Center configuration, allowing modification of scopes and permissions for the integration.

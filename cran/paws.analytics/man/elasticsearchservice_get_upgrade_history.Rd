@@ -12,7 +12,11 @@ elasticsearchservice_get_upgrade_history(
 )
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
+
+\item{MaxResults}{Set this value to limit the number of results returned.}
+
+\item{NextToken}{Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.}
 }
 \description{
 Retrieves the complete history of the last 10 upgrades that were performed on the domain.

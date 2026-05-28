@@ -8,8 +8,7 @@ specified resourceArn}
 bedrockagentcorecontrol_put_resource_policy(resourceArn, policy)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which to create or
-update the resource policy.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which to create or update the resource policy.}
 
 \item{policy}{[required] The resource policy to create or update.}
 }

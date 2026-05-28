@@ -11,13 +11,9 @@ directoryservice_start_ad_assessment(
 )
 }
 \arguments{
-\item{AssessmentConfiguration}{Configuration parameters for the directory assessment, including DNS
-server information, domain name, Amazon VPC subnet, and Amazon Web
-Services System Manager managed node details.}
+\item{AssessmentConfiguration}{Configuration parameters for the directory assessment, including DNS server information, domain name, Amazon VPC subnet, and Amazon Web Services System Manager managed node details.}
 
-\item{DirectoryId}{The identifier of the directory for which to perform the assessment.
-This should be an existing directory. If the assessment is not for an
-existing directory, this parameter should be omitted.}
+\item{DirectoryId}{The identifier of the directory for which to perform the assessment. This should be an existing directory. If the assessment is not for an existing directory, this parameter should be omitted.}
 }
 \description{
 Initiates a directory assessment to validate your self-managed AD environment for hybrid domain join. The assessment checks compatibility and connectivity of the self-managed AD environment.

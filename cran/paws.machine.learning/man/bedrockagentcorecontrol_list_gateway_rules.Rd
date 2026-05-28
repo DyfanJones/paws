@@ -13,10 +13,7 @@ bedrockagentcorecontrol_list_gateway_rules(
 \arguments{
 \item{gatewayIdentifier}{[required] The identifier of the gateway to list rules for.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
 \item{nextToken}{The pagination token from a previous request.}
 }

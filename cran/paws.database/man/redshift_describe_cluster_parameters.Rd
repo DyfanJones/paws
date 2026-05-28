@@ -15,31 +15,19 @@ redshift_describe_cluster_parameters(
 \arguments{
 \item{ParameterGroupName}{[required] The name of a cluster parameter group for which to return details.}
 
-\item{Source}{The parameter types to return. Specify \code{user} to show parameters that
-are different form the default. Similarly, specify \code{engine-default} to
-show parameters that are the same as the default parameter group.
+\item{Source}{The parameter types to return. Specify \code{user} to show parameters that are different form the default. Similarly, specify \code{engine-default} to show parameters that are the same as the default parameter group.
 
 Default: All parameter types returned.
 
 Valid Values: \code{user} | \code{engine-default}}
 
-\item{MaxRecords}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.
+\item{MaxRecords}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 
 Default: \code{100}
 
 Constraints: minimum 20, maximum 100.}
 
-\item{Marker}{An optional parameter that specifies the starting point to return a set
-of response records. When the results of a
-\code{\link[=redshift_describe_cluster_parameters]{describe_cluster_parameters}}
-request exceed the value specified in \code{MaxRecords}, Amazon Web Services
-returns a value in the \code{Marker} field of the response. You can retrieve
-the next set of response records by providing the returned marker value
-in the \code{Marker} parameter and retrying the request.}
+\item{Marker}{An optional parameter that specifies the starting point to return a set of response records. When the results of a \code{\link[=redshift_describe_cluster_parameters]{describe_cluster_parameters}} request exceed the value specified in \code{MaxRecords}, Amazon Web Services returns a value in the \code{Marker} field of the response. You can retrieve the next set of response records by providing the returned marker value in the \code{Marker} parameter and retrying the request.}
 }
 \description{
 Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on.

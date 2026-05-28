@@ -137,7 +137,7 @@ NULL
 
 .verifiedpermissions$delete_policy_store_alias_input <- function(...) {
   args <- c(as.list(environment()), list(...))
-  shape <- structure(list(aliasName = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))
+  shape <- structure(list(aliasName = structure(logical(0), tags = list(type = "string")), deletionMode = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))
   return(populate(args, shape))
 }
 

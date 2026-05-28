@@ -12,24 +12,15 @@ connect_create_participant(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.
-Supports contacts in the CHAT channel and VOICE (WebRTC) channels. For
-WebRTC calls, this should be the initial contact ID that was generated
-when the contact was first created (from the StartWebRTCContact API) in
-the VOICE channel}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer. Supports contacts in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this should be the initial contact ID that was generated when the contact was first created (from the StartWebRTCContact API) in the VOICE channel}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{ParticipantDetails}{[required] Information identifying the participant.
 
-The only valid value for \code{ParticipantRole} is \code{CUSTOM_BOT} for chat
-contact and \code{CUSTOMER} for voice contact.}
+The only valid value for \code{ParticipantRole} is \code{CUSTOM_BOT} for chat contact and \code{CUSTOMER} for voice contact.}
 }
 \description{
 Adds a new participant into an on-going chat contact or webRTC call. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html}{Customize chat flow experiences by integrating custom participants} or \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html}{Enable multi-user web, in-app, and video calling}.

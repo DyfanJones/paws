@@ -7,8 +7,7 @@
 cognitoidentityprovider_get_log_delivery_configuration(UserPoolId)
 }
 \arguments{
-\item{UserPoolId}{[required] The ID of the user pool that has the logging configuration that you want
-to view.}
+\item{UserPoolId}{[required] The ID of the user pool that has the logging configuration that you want to view.}
 }
 \description{
 Given a user pool ID, returns the logging configuration. User pools can export message-delivery error and threat-protection activity logs to external Amazon Web Services services. For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html}{Exporting user pool logs}.

@@ -7,8 +7,7 @@
 ecs_describe_daemon_revisions(daemonRevisionArns)
 }
 \arguments{
-\item{daemonRevisionArns}{[required] The ARN of the daemon revisions to describe. You can specify up to 20
-ARNs.}
+\item{daemonRevisionArns}{[required] The ARN of the daemon revisions to describe. You can specify up to 20 ARNs.}
 }
 \description{
 Describes one or more of your daemon revisions.

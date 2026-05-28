@@ -9,8 +9,7 @@ machinelearning_update_data_source(DataSourceId, DataSourceName)
 \arguments{
 \item{DataSourceId}{[required] The ID assigned to the \code{DataSource} during creation.}
 
-\item{DataSourceName}{[required] A new user-supplied name or description of the \code{DataSource} that will
-replace the current description.}
+\item{DataSourceName}{[required] A new user-supplied name or description of the \code{DataSource} that will replace the current description.}
 }
 \description{
 Updates the \code{DataSourceName} of a \code{DataSource}.

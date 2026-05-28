@@ -14,49 +14,19 @@ NULL
 #'   DisableExecuteApiEndpoint, IpAddressType, Name, ProtocolType, RouteKey,
 #'   RouteSelectionExpression, Tags, Target, Version)
 #'
-#' @param ApiKeySelectionExpression An API key selection expression. Supported only for WebSocket APIs. See
-#' [API Key Selection
-#' Expressions](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
-#' @param CorsConfiguration A CORS configuration. Supported only for HTTP APIs. See [Configuring
-#' CORS](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html)
-#' for more information.
-#' @param CredentialsArn This property is part of quick create. It specifies the credentials
-#' required for the integration, if any. For a Lambda integration, three
-#' options are available. To specify an IAM Role for API Gateway to assume,
-#' use the role's Amazon Resource Name (ARN). To require that the caller's
-#' identity be passed through from the request, specify
-#' arn:aws:iam::*:user/*. To use resource-based permissions on supported
-#' AWS services, specify null. Currently, this property is not used for
-#' HTTP integrations. Supported only for HTTP APIs.
+#' @param ApiKeySelectionExpression An API key selection expression. Supported only for WebSocket APIs. See [API Key Selection Expressions](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
+#' @param CorsConfiguration A CORS configuration. Supported only for HTTP APIs. See [Configuring CORS](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html) for more information.
+#' @param CredentialsArn This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.
 #' @param Description The description of the API.
-#' @param DisableSchemaValidation Avoid validating models when creating a deployment. Supported only for
-#' WebSocket APIs.
-#' @param DisableExecuteApiEndpoint Specifies whether clients can invoke your API by using the default
-#' execute-api endpoint. By default, clients can invoke your API with the
-#' default https://\{api_id\}.execute-api.\{region\}.amazonaws.com
-#' endpoint. To require that clients use a custom domain name to invoke
-#' your API, disable the default endpoint.
+#' @param DisableSchemaValidation Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
+#' @param DisableExecuteApiEndpoint Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://\{api_id\}.execute-api.\{region\}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.
 #' @param IpAddressType The IP address types that can invoke the API.
 #' @param Name &#91;required&#93; The name of the API.
 #' @param ProtocolType &#91;required&#93; The API protocol.
-#' @param RouteKey This property is part of quick create. If you don't specify a routeKey,
-#' a default route of $default is created. The $default route acts as a
-#' catch-all for any request made to your API, for a particular stage. The
-#' $default route key can't be modified. You can add routes after creating
-#' the API, and you can update the route keys of additional routes.
-#' Supported only for HTTP APIs.
-#' @param RouteSelectionExpression The route selection expression for the API. For HTTP APIs, the
-#' routeSelectionExpression must be $\{request.method\}
-#' $\{request.path\}. If not provided, this will be the default for HTTP
-#' APIs. This property is required for WebSocket APIs.
-#' @param Tags The collection of tags. Each tag element is associated with a given
-#' resource.
-#' @param Target This property is part of quick create. Quick create produces an API with
-#' an integration, a default catch-all route, and a default stage which is
-#' configured to automatically deploy changes. For HTTP integrations,
-#' specify a fully qualified URL. For Lambda integrations, specify a
-#' function ARN. The type of the integration will be HTTP_PROXY or
-#' AWS_PROXY, respectively. Supported only for HTTP APIs.
+#' @param RouteKey This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.
+#' @param RouteSelectionExpression The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be $\{request.method\} $\{request.path\}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.
+#' @param Tags The collection of tags. Each tag element is associated with a given resource.
+#' @param Target This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.
 #' @param Version A version identifier for the API.
 #'
 #' @return
@@ -237,68 +207,20 @@ apigatewayv2_create_api_mapping <- function(ApiId, ApiMappingKey = NULL, DomainN
 #'   IdentityValidationExpression, JwtConfiguration, Name)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param AuthorizerCredentialsArn Specifies the required credentials as an IAM role for API Gateway to
-#' invoke the authorizer. To specify an IAM role for API Gateway to assume,
-#' use the role's Amazon Resource Name (ARN). To use resource-based
-#' permissions on the Lambda function, don't specify this parameter.
-#' Supported only for REQUEST authorizers.
-#' @param AuthorizerPayloadFormatVersion Specifies the format of the payload sent to an HTTP API Lambda
-#' authorizer. Required for HTTP API Lambda authorizers. Supported values
-#' are 1.0 and 2.0. To learn more, see [Working with AWS Lambda authorizers
-#' for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
-#' @param AuthorizerResultTtlInSeconds The time to live (TTL) for cached authorizer results, in seconds. If it
-#' equals 0, authorization caching is disabled. If it is greater than 0,
-#' API Gateway caches authorizer responses. The maximum value is 3600, or 1
-#' hour. Supported only for HTTP API Lambda authorizers.
-#' @param AuthorizerType &#91;required&#93; The authorizer type. Specify REQUEST for a Lambda function using
-#' incoming request parameters. Specify JWT to use JSON Web Tokens
-#' (supported only for HTTP APIs).
-#' @param AuthorizerUri The authorizer's Uniform Resource Identifier (URI). For REQUEST
-#' authorizers, this must be a well-formed Lambda function URI, for
-#' example,
-#' arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:\{account_id\}:function:\{lambda_function_name\}/invocations.
-#' In general, the URI has this form:
-#' arn:aws:apigateway:\{region\}:lambda:path/\{service_api\} , where
-#' \{region\} is the same as the region hosting the Lambda function, path
-#' indicates that the remaining substring in the URI should be treated as
-#' the path to the resource, including the initial /. For Lambda functions,
-#' this is usually of the form
-#' /2015-03-31/functions/\[FunctionARN\]/invocations. Supported only for
-#' REQUEST authorizers.
-#' @param EnableSimpleResponses Specifies whether a Lambda authorizer returns a response in a simple
-#' format. By default, a Lambda authorizer must return an IAM policy. If
-#' enabled, the Lambda authorizer can return a boolean value instead of an
-#' IAM policy. Supported only for HTTP APIs. To learn more, see [Working
-#' with AWS Lambda authorizers for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html)
+#' @param AuthorizerCredentialsArn Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.
+#' @param AuthorizerPayloadFormatVersion Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
+#' @param AuthorizerResultTtlInSeconds The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.
+#' @param AuthorizerType &#91;required&#93; The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).
+#' @param AuthorizerUri The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:\{account_id\}:function:\{lambda_function_name\}/invocations. In general, the URI has this form: arn:aws:apigateway:\{region\}:lambda:path/\{service_api\}
+#' , where \{region\} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/\[FunctionARN\]/invocations. Supported only for REQUEST authorizers.
+#' @param EnableSimpleResponses Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html)
 #' @param IdentitySource &#91;required&#93; The identity source for which authorization is requested.
 #' 
-#' For a REQUEST authorizer, this is optional. The value is a set of one or
-#' more mapping expressions of the specified request parameters. The
-#' identity source can be headers, query string parameters, stage
-#' variables, and context parameters. For example, if an Auth header and a
-#' Name query string parameter are defined as identity sources, this value
-#' is route.request.header.Auth, route.request.querystring.Name for
-#' WebSocket APIs. For HTTP APIs, use selection expressions prefixed with
-#' $, for example, $request.header.Auth, $request.querystring.Name. These
-#' parameters are used to perform runtime validation for Lambda-based
-#' authorizers by verifying all of the identity-related request parameters
-#' are present in the request, not null, and non-empty. Only when this is
-#' true does the authorizer invoke the authorizer Lambda function.
-#' Otherwise, it returns a 401 Unauthorized response without calling the
-#' Lambda function. For HTTP APIs, identity sources are also used as the
-#' cache key when caching is enabled. To learn more, see [Working with AWS
-#' Lambda authorizers for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
+#' For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
 #' 
-#' For JWT, a single entry that specifies where to extract the JSON Web
-#' Token (JWT) from inbound requests. Currently only header-based and query
-#' parameter-based selections are supported, for example
-#' $request.header.Authorization.
+#' For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.
 #' @param IdentityValidationExpression This parameter is not used.
-#' @param JwtConfiguration Represents the configuration of a JWT authorizer. Required for the JWT
-#' authorizer type. Supported only for HTTP APIs.
+#' @param JwtConfiguration Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.
 #' @param Name &#91;required&#93; The name of the authorizer.
 #'
 #' @return
@@ -557,141 +479,58 @@ apigatewayv2_create_domain_name <- function(DomainName, DomainNameConfigurations
 #'   TimeoutInMillis, TlsConfig)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ConnectionId The ID of the VPC link for a private integration. Supported only for
-#' HTTP APIs.
-#' @param ConnectionType The type of the network connection to the integration endpoint. Specify
-#' INTERNET for connections through the public routable internet or
-#' VPC_LINK for private connections between API Gateway and resources in a
-#' VPC. The default value is INTERNET.
-#' @param ContentHandlingStrategy Supported only for WebSocket APIs. Specifies how to handle response
-#' payload content type conversions. Supported values are CONVERT_TO_BINARY
-#' and CONVERT_TO_TEXT, with the following behaviors:
+#' @param ConnectionId The ID of the VPC link for a private integration. Supported only for HTTP APIs.
+#' @param ConnectionType The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.
+#' @param ContentHandlingStrategy Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
 #' 
-#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded
-#' string to the corresponding binary blob.
+#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
 #' 
-#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-#' Base64-encoded string.
+#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.
 #' 
-#' If this property is not defined, the response payload will be passed
-#' through from the integration response to the route response or method
-#' response without modification.
-#' @param CredentialsArn Specifies the credentials required for the integration, if any. For AWS
-#' integrations, three options are available. To specify an IAM Role for
-#' API Gateway to assume, use the role's Amazon Resource Name (ARN). To
-#' require that the caller's identity be passed through from the request,
-#' specify the string arn:aws:iam::*:user/*. To use resource-based
-#' permissions on supported AWS services, specify null.
+#' If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.
+#' @param CredentialsArn Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.
 #' @param Description The description of the integration.
 #' @param IntegrationMethod Specifies the integration's HTTP method type.
-#' @param IntegrationSubtype Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS
-#' service action to invoke. To learn more, see [Integration subtype
-#' reference](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html).
+#' @param IntegrationSubtype Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see [Integration subtype reference](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html).
 #' @param IntegrationType &#91;required&#93; The integration type of an integration. One of the following:
 #' 
-#' AWS: for integrating the route or method request with an AWS service
-#' action, including the Lambda function-invoking action. With the Lambda
-#' function-invoking action, this is referred to as the Lambda custom
-#' integration. With any other AWS service action, this is known as AWS
-#' integration. Supported only for WebSocket APIs.
+#' AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.
 #' 
-#' AWS_PROXY: for integrating the route or method request with a Lambda
-#' function or other AWS service action. This integration is also referred
-#' to as a Lambda proxy integration.
+#' AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.
 #' 
-#' HTTP: for integrating the route or method request with an HTTP endpoint.
-#' This integration is also referred to as the HTTP custom integration.
-#' Supported only for WebSocket APIs.
+#' HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.
 #' 
-#' HTTP_PROXY: for integrating the route or method request with an HTTP
-#' endpoint, with the client request passed through as-is. This is also
-#' referred to as HTTP proxy integration. For HTTP API private
-#' integrations, use an HTTP_PROXY integration.
+#' HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.
 #' 
-#' MOCK: for integrating the route or method request with API Gateway as a
-#' "loopback" endpoint without invoking any backend. Supported only for
-#' WebSocket APIs.
+#' MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.
 #' @param IntegrationUri For a Lambda integration, specify the URI of a Lambda function.
 #' 
 #' For an HTTP integration, specify a fully-qualified URL.
 #' 
-#' For an HTTP API private integration, specify the ARN of an Application
-#' Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map
-#' service. If you specify the ARN of an AWS Cloud Map service, API Gateway
-#' uses DiscoverInstances to identify resources. You can use query
-#' parameters to target specific resources. To learn more, see
-#' [DiscoverInstances](https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html).
-#' For private integrations, all resources must be owned by the same AWS
-#' account.
-#' @param PassthroughBehavior Specifies the pass-through behavior for incoming requests based on the
-#' Content-Type header in the request, and the available mapping templates
-#' specified as the requestTemplates property on the Integration resource.
-#' There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
-#' NEVER. Supported only for WebSocket APIs.
+#' For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see [DiscoverInstances](https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html). For private integrations, all resources must be owned by the same AWS account.
+#' @param PassthroughBehavior Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.
 #' 
-#' WHEN_NO_MATCH passes the request body for unmapped content types through
-#' to the integration backend without transformation.
+#' WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.
 #' 
-#' NEVER rejects unmapped content types with an HTTP 415 Unsupported Media
-#' Type response.
+#' NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.
 #' 
-#' WHEN_NO_TEMPLATES allows pass-through when the integration has no
-#' content types mapped to templates. However, if there is at least one
-#' content type defined, unmapped content types will be rejected with the
-#' same HTTP 415 Unsupported Media Type response.
-#' @param PayloadFormatVersion Specifies the format of the payload sent to an integration. Required for
-#' HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and
-#' 2.0. For all other integrations, 1.0 is the only supported value. To
-#' learn more, see [Working with AWS Lambda proxy integrations for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html).
-#' @param RequestParameters For WebSocket APIs, a key-value map specifying request parameters that
-#' are passed from the method request to the backend. The key is an
-#' integration request parameter name and the associated value is a method
-#' request parameter value or static value that must be enclosed within
-#' single quotes and pre-encoded as required by the backend. The method
-#' request parameter value must match the pattern of
-#' method.request.\{location\}.\{name\} , where \{location\} is
-#' querystring, path, or header; and \{name\} must be a valid and unique
-#' method request parameter name.
+#' WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.
+#' @param PayloadFormatVersion Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see [Working with AWS Lambda proxy integrations for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html).
+#' @param RequestParameters For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.\{location\}.\{name\}
+#' , where
+#' \{location\}
+#' is querystring, path, or header; and
+#' \{name\}
+#' must be a valid and unique method request parameter name.
 #' 
-#' For HTTP API integrations with a specified integrationSubtype, request
-#' parameters are a key-value map specifying parameters that are passed to
-#' AWS_PROXY integrations. You can provide static values, or map request
-#' data, stage variables, or context variables that are evaluated at
-#' runtime. To learn more, see [Working with AWS service integrations for
-#' HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html).
+#' For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see [Working with AWS service integrations for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html).
 #' 
-#' For HTTP API integrations without a specified integrationSubtype request
-#' parameters are a key-value map specifying how to transform HTTP requests
-#' before sending them to the backend. The key should follow the pattern
-#' \<action\>:\<header|querystring|path\>.\<location\> where action can be
-#' append, overwrite or remove. For values, you can provide static values,
-#' or map request data, stage variables, or context variables that are
-#' evaluated at runtime. To learn more, see [Transforming API requests and
-#' responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
-#' @param RequestTemplates Represents a map of Velocity templates that are applied on the request
-#' payload based on the value of the Content-Type header sent by the
-#' client. The content type value is the key in this map, and the template
-#' (as a String) is the value. Supported only for WebSocket APIs.
-#' @param ResponseParameters Supported only for HTTP APIs. You use response parameters to transform
-#' the HTTP response from a backend integration before returning the
-#' response to clients. Specify a key-value map from a selection key to
-#' response parameters. The selection key must be a valid HTTP status code
-#' within the range of 200-599. Response parameters are a key-value map.
-#' The key must match pattern \<action\>:\<header\>.\<location\> or
-#' overwrite.statuscode. The action can be append, overwrite or remove. The
-#' value can be a static value, or map to response data, stage variables,
-#' or context variables that are evaluated at runtime. To learn more, see
-#' [Transforming API requests and
-#' responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
+#' For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern \<action\>:\<header|querystring|path\>.\<location\> where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see [Transforming API requests and responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
+#' @param RequestTemplates Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.
+#' @param ResponseParameters Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern \<action\>:\<header\>.\<location\> or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see [Transforming API requests and responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
 #' @param TemplateSelectionExpression The template selection expression for the integration.
-#' @param TimeoutInMillis Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and
-#' between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is
-#' 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
-#' @param TlsConfig The TLS configuration for a private integration. If you specify a TLS
-#' configuration, private integration traffic uses the HTTPS protocol.
-#' Supported only for HTTP APIs.
+#' @param TimeoutInMillis Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
+#' @param TlsConfig The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -799,38 +638,18 @@ apigatewayv2_create_integration <- function(ApiId, ConnectionId = NULL, Connecti
 #'   ResponseTemplates, TemplateSelectionExpression)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ContentHandlingStrategy Specifies how to handle response payload content type conversions.
-#' Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
-#' following behaviors:
+#' @param ContentHandlingStrategy Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
 #' 
-#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded
-#' string to the corresponding binary blob.
+#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
 #' 
-#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-#' Base64-encoded string.
+#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.
 #' 
-#' If this property is not defined, the response payload will be passed
-#' through from the integration response to the route response or method
-#' response without modification.
+#' If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.
 #' @param IntegrationId &#91;required&#93; The integration ID.
 #' @param IntegrationResponseKey &#91;required&#93; The integration response key.
-#' @param ResponseParameters A key-value map specifying response parameters that are passed to the
-#' method response from the backend. The key is a method response header
-#' parameter name and the mapped value is an integration response header
-#' value, a static value enclosed within a pair of single quotes, or a JSON
-#' expression from the integration response body. The mapping key must
-#' match the pattern of method.response.header.\{name\}, where \{name\}
-#' is a valid and unique header name. The mapped non-static value must
-#' match the pattern of integration.response.header.\{name\} or
-#' integration.response.body.\{JSON-expression\}, where \{name\} is a
-#' valid and unique response header name and \{JSON-expression\} is a
-#' valid JSON expression without the $ prefix.
-#' @param ResponseTemplates The collection of response templates for the integration response as a
-#' string-to-string map of key-value pairs. Response templates are
-#' represented as a key/value map, with a content-type as the key and a
-#' template as the value.
-#' @param TemplateSelectionExpression The template selection expression for the integration response.
-#' Supported only for WebSocket APIs.
+#' @param ResponseParameters A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.\{name\}, where \{name\} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.\{name\} or integration.response.body.\{JSON-expression\}, where \{name\} is a valid and unique response header name and \{JSON-expression\} is a valid JSON expression without the $ prefix.
+#' @param ResponseTemplates The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.
+#' @param TemplateSelectionExpression The template selection expression for the integration response. Supported only for WebSocket APIs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -902,8 +721,7 @@ apigatewayv2_create_integration_response <- function(ApiId, ContentHandlingStrat
 #' @param ContentType The content-type for the model, for example, "application/json".
 #' @param Description The description of the model.
 #' @param Name &#91;required&#93; The name of the model. Must be alphanumeric.
-#' @param Schema &#91;required&#93; The schema for the model. For application/json models, this should be
-#' JSON schema draft 4 model.
+#' @param Schema &#91;required&#93; The schema for the model. For application/json models, this should be JSON schema draft 4 model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -963,15 +781,12 @@ apigatewayv2_create_model <- function(ApiId, ContentType = NULL, Description = N
 #'   Tags)
 #'
 #' @param Authorization &#91;required&#93; The authentication configuration for the portal.
-#' @param EndpointConfiguration &#91;required&#93; The domain configuration for the portal. Use a default domain provided
-#' by API Gateway or provide a fully-qualified domain name that you own.
+#' @param EndpointConfiguration &#91;required&#93; The domain configuration for the portal. Use a default domain provided by API Gateway or provide a fully-qualified domain name that you own.
 #' @param IncludedPortalProductArns The ARNs of the portal products included in the portal.
-#' @param LogoUri The URI for the portal logo image that is displayed in the portal
-#' header.
+#' @param LogoUri The URI for the portal logo image that is displayed in the portal header.
 #' @param PortalContent &#91;required&#93; The content of the portal.
 #' @param RumAppMonitorName The name of the Amazon CloudWatch RUM app monitor for the portal.
-#' @param Tags The collection of tags. Each tag element is associated with a given
-#' resource.
+#' @param Tags The collection of tags. Each tag element is associated with a given resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1112,8 +927,7 @@ apigatewayv2_create_portal <- function(Authorization, EndpointConfiguration, Inc
 #'
 #' @param Description A description of the portal product.
 #' @param DisplayName &#91;required&#93; The name of the portal product as it appears in a published portal.
-#' @param Tags The collection of tags. Each tag element is associated with a given
-#' resource.
+#' @param Tags The collection of tags. Each tag element is associated with a given resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1348,25 +1162,16 @@ apigatewayv2_create_product_rest_endpoint_page <- function(DisplayContent = NULL
 #'   RouteResponseSelectionExpression, Target)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ApiKeyRequired Specifies whether an API key is required for the route. Supported only
-#' for WebSocket APIs.
+#' @param ApiKeyRequired Specifies whether an API key is required for the route. Supported only for WebSocket APIs.
 #' @param AuthorizationScopes The authorization scopes supported by this route.
-#' @param AuthorizationType The authorization type for the route. For WebSocket APIs, valid values
-#' are NONE for open access, AWS_IAM for using AWS IAM permissions, and
-#' CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are
-#' NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using
-#' AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
-#' @param AuthorizerId The identifier of the Authorizer resource to be associated with this
-#' route. The authorizer identifier is generated by API Gateway when you
-#' created the authorizer.
-#' @param ModelSelectionExpression The model selection expression for the route. Supported only for
-#' WebSocket APIs.
+#' @param AuthorizationType The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
+#' @param AuthorizerId The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.
+#' @param ModelSelectionExpression The model selection expression for the route. Supported only for WebSocket APIs.
 #' @param OperationName The operation name for the route.
 #' @param RequestModels The request models for the route. Supported only for WebSocket APIs.
 #' @param RequestParameters The request parameters for the route. Supported only for WebSocket APIs.
 #' @param RouteKey &#91;required&#93; The route key for the route.
-#' @param RouteResponseSelectionExpression The route response selection expression for the route. Supported only
-#' for WebSocket APIs.
+#' @param RouteResponseSelectionExpression The route response selection expression for the route. Supported only for WebSocket APIs.
 #' @param Target The target for the route.
 #'
 #' @return
@@ -1457,8 +1262,7 @@ apigatewayv2_create_route <- function(ApiId, ApiKeyRequired = NULL, Authorizatio
 #'   ResponseModels, ResponseParameters, RouteId, RouteResponseKey)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ModelSelectionExpression The model selection expression for the route response. Supported only
-#' for WebSocket APIs.
+#' @param ModelSelectionExpression The model selection expression for the route response. Supported only for WebSocket APIs.
 #' @param ResponseModels The response models for the route response.
 #' @param ResponseParameters The route response parameters.
 #' @param RouteId &#91;required&#93; The route ID.
@@ -1533,12 +1337,8 @@ apigatewayv2_create_route_response <- function(ApiId, ModelSelectionExpression =
 #' apigatewayv2_create_routing_rule(Actions, Conditions, DomainName,
 #'   DomainNameId, Priority)
 #'
-#' @param Actions &#91;required&#93; Represents a routing rule action. The only supported action is
-#' invokeApi.
-#' @param Conditions &#91;required&#93; Represents a condition. Conditions can contain up to two matchHeaders
-#' conditions and one matchBasePaths conditions. API Gateway evaluates
-#' header conditions and base path conditions together. You can only use
-#' AND between header and base path conditions.
+#' @param Actions &#91;required&#93; Represents a routing rule action. The only supported action is invokeApi.
+#' @param Conditions &#91;required&#93; Represents a condition. Conditions can contain up to two matchHeaders conditions and one matchBasePaths conditions. API Gateway evaluates header conditions and base path conditions together. You can only use AND between header and base path conditions.
 #' @param DomainName &#91;required&#93; The domain name.
 #' @param DomainNameId The domain name ID.
 #' @param Priority &#91;required&#93; Represents the priority of the routing rule.
@@ -1650,20 +1450,15 @@ apigatewayv2_create_routing_rule <- function(Actions, Conditions, DomainName, Do
 #'
 #' @param AccessLogSettings Settings for logging access in this stage.
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param AutoDeploy Specifies whether updates to an API automatically trigger a new
-#' deployment. The default value is false.
-#' @param ClientCertificateId The identifier of a client certificate for a Stage. Supported only for
-#' WebSocket APIs.
+#' @param AutoDeploy Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+#' @param ClientCertificateId The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
 #' @param DefaultRouteSettings The default route settings for the stage.
 #' @param DeploymentId The deployment identifier of the API stage.
 #' @param Description The description for the API stage.
 #' @param RouteSettings Route settings for the stage, by routeKey.
 #' @param StageName &#91;required&#93; The name of the stage.
-#' @param StageVariables A map that defines the stage variables for a Stage. Variable names can
-#' have alphanumeric and underscore characters, and the values must match
-#' \[A-Za-z0-9-._~:/?#&=,\]+.
-#' @param Tags The collection of tags. Each tag element is associated with a given
-#' resource.
+#' @param StageVariables A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&=,\]+.
+#' @param Tags The collection of tags. Each tag element is associated with a given resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1853,15 +1648,13 @@ apigatewayv2_create_vpc_link <- function(Name, SecurityGroupIds = NULL, SubnetId
 #' Deletes the AccessLogSettings for a Stage
 #'
 #' @description
-#' Deletes the AccessLogSettings for a Stage. To disable access logging for
-#' a Stage, delete its AccessLogSettings.
+#' Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.
 #'
 #' @usage
 #' apigatewayv2_delete_access_log_settings(ApiId, StageName)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters,
-#' hyphens, and underscores. Maximum length is 128 characters.
+#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.
 #'
 #' @return
 #' An empty list.
@@ -2687,8 +2480,7 @@ apigatewayv2_delete_route_response <- function(ApiId, RouteId, RouteResponseId) 
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param RouteKey &#91;required&#93; The route key.
-#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters,
-#' hyphens, and underscores. Maximum length is 128 characters.
+#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.
 #'
 #' @return
 #' An empty list.
@@ -2784,8 +2576,7 @@ apigatewayv2_delete_routing_rule <- function(DomainName, DomainNameId = NULL, Ro
 #' apigatewayv2_delete_stage(ApiId, StageName)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters,
-#' hyphens, and underscores. Maximum length is 128 characters.
+#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.
 #'
 #' @return
 #' An empty list.
@@ -2876,18 +2667,11 @@ apigatewayv2_delete_vpc_link <- function(VpcLinkId) {
 #'   OutputType, Specification, StageName)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ExportVersion The version of the API Gateway export algorithm. API Gateway uses the
-#' latest version by default. Currently, the only supported version is 1.0.
-#' @param IncludeExtensions Specifies whether to include [API Gateway
-#' extensions](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html)
-#' in the exported API definition. API Gateway extensions are included by
-#' default.
-#' @param OutputType &#91;required&#93; The output type of the exported definition file. Valid values are JSON
-#' and YAML.
-#' @param Specification &#91;required&#93; The version of the API specification to use. OAS30, for OpenAPI 3.0, is
-#' the only supported value.
-#' @param StageName The name of the API stage to export. If you don't specify this property,
-#' a representation of the latest API configuration is exported.
+#' @param ExportVersion The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.
+#' @param IncludeExtensions Specifies whether to include [API Gateway extensions](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html) in the exported API definition. API Gateway extensions are included by default.
+#' @param OutputType &#91;required&#93; The output type of the exported definition file. Valid values are JSON and YAML.
+#' @param Specification &#91;required&#93; The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.
+#' @param StageName The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2980,16 +2764,13 @@ apigatewayv2_disable_portal <- function(PortalId) {
 #' Resets all authorizer cache entries on a stage
 #'
 #' @description
-#' Resets all authorizer cache entries on a stage. Supported only for HTTP
-#' APIs.
+#' Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
 #'
 #' @usage
 #' apigatewayv2_reset_authorizers_cache(ApiId, StageName)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param StageName &#91;required&#93; The stage name. Stage names can contain only alphanumeric characters,
-#' hyphens, and underscores, or be $default. Maximum length is 128
-#' characters.
+#' @param StageName &#91;required&#93; The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.
 #'
 #' @return
 #' An empty list.
@@ -3178,8 +2959,7 @@ apigatewayv2_get_api_mapping <- function(ApiMappingId, DomainName) {
 #'
 #' @param DomainName &#91;required&#93; The domain name.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3239,8 +3019,7 @@ apigatewayv2_get_api_mappings <- function(DomainName, MaxResults = NULL, NextTok
 #' apigatewayv2_get_apis(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3404,8 +3183,7 @@ apigatewayv2_get_authorizer <- function(ApiId, AuthorizerId) {
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3538,8 +3316,7 @@ apigatewayv2_get_deployment <- function(ApiId, DeploymentId) {
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3682,8 +3459,7 @@ apigatewayv2_get_domain_name <- function(DomainName) {
 #' apigatewayv2_get_domain_names(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3915,8 +3691,7 @@ apigatewayv2_get_integration_response <- function(ApiId, IntegrationId, Integrat
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param IntegrationId &#91;required&#93; The integration ID.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3984,8 +3759,7 @@ apigatewayv2_get_integration_responses <- function(ApiId, IntegrationId, MaxResu
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4178,8 +3952,7 @@ apigatewayv2_get_model_template <- function(ApiId, ModelId) {
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4749,8 +4522,7 @@ apigatewayv2_get_route_response <- function(ApiId, RouteId, RouteResponseId) {
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #' @param RouteId &#91;required&#93; The route ID.
 #'
 #' @return
@@ -4820,8 +4592,7 @@ apigatewayv2_get_route_responses <- function(ApiId, MaxResults = NULL, NextToken
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4982,8 +4753,7 @@ apigatewayv2_get_routing_rule <- function(DomainName, DomainNameId = NULL, Routi
 #' @param DomainName &#91;required&#93; The domain name.
 #' @param DomainNameId The domain name ID.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5069,8 +4839,7 @@ apigatewayv2_list_routing_rules <- function(DomainName, DomainNameId = NULL, Max
 #' apigatewayv2_get_stage(ApiId, StageName)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters,
-#' hyphens, and underscores. Maximum length is 128 characters.
+#' @param StageName &#91;required&#93; The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5160,8 +4929,7 @@ apigatewayv2_get_stage <- function(ApiId, StageName) {
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5372,8 +5140,7 @@ apigatewayv2_get_vpc_link <- function(VpcLinkId) {
 #' apigatewayv2_get_vpc_links(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5444,15 +5211,9 @@ apigatewayv2_get_vpc_links <- function(MaxResults = NULL, NextToken = NULL) {
 #' @usage
 #' apigatewayv2_import_api(Basepath, Body, FailOnWarnings)
 #'
-#' @param Basepath Specifies how to interpret the base path of the API during import. Valid
-#' values are ignore, prepend, and split. The default value is ignore. To
-#' learn more, see [Set the OpenAPI basePath
-#' Property](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html).
-#' Supported only for HTTP APIs.
+#' @param Basepath Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see [Set the OpenAPI basePath Property](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html). Supported only for HTTP APIs.
 #' @param Body &#91;required&#93; The OpenAPI definition. Supported only for HTTP APIs.
-#' @param FailOnWarnings Specifies whether to rollback the API creation when a warning is
-#' encountered. By default, API creation continues if a warning is
-#' encountered.
+#' @param FailOnWarnings Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5543,8 +5304,7 @@ apigatewayv2_import_api <- function(Basepath = NULL, Body, FailOnWarnings = NULL
 #' apigatewayv2_list_portal_products(MaxResults, NextToken, ResourceOwner)
 #'
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #' @param ResourceOwner The resource owner of the portal product.
 #'
 #' @return
@@ -5611,8 +5371,7 @@ apigatewayv2_list_portal_products <- function(MaxResults = NULL, NextToken = NUL
 #' apigatewayv2_list_portals(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5728,8 +5487,7 @@ apigatewayv2_list_portals <- function(MaxResults = NULL, NextToken = NULL) {
 #'   ResourceOwnerAccountId)
 #'
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #' @param PortalProductId &#91;required&#93; The portal product identifier.
 #' @param ResourceOwnerAccountId The account ID of the resource owner of the portal product.
 #'
@@ -5795,8 +5553,7 @@ apigatewayv2_list_product_pages <- function(MaxResults = NULL, NextToken = NULL,
 #'   PortalProductId, ResourceOwnerAccountId)
 #'
 #' @param MaxResults The maximum number of elements to be returned for this resource.
-#' @param NextToken The next page of elements from this collection. Not valid for the last
-#' element of the collection.
+#' @param NextToken The next page of elements from this collection. Not valid for the last element of the collection.
 #' @param PortalProductId &#91;required&#93; The portal product identifier.
 #' @param ResourceOwnerAccountId The account ID of the resource owner of the portal product.
 #'
@@ -5919,8 +5676,7 @@ apigatewayv2_preview_portal <- function(PortalId) {
 #' @usage
 #' apigatewayv2_publish_portal(Description, PortalId)
 #'
-#' @param Description The description of the portal. When the portal is published, this
-#' description becomes the last published description.
+#' @param Description The description of the portal. When the portal is published, this description becomes the last published description.
 #' @param PortalId &#91;required&#93; The portal identifier.
 #'
 #' @return
@@ -6126,15 +5882,9 @@ apigatewayv2_put_routing_rule <- function(Actions, Conditions, DomainName, Domai
 #' apigatewayv2_reimport_api(ApiId, Basepath, Body, FailOnWarnings)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param Basepath Specifies how to interpret the base path of the API during import. Valid
-#' values are ignore, prepend, and split. The default value is ignore. To
-#' learn more, see [Set the OpenAPI basePath
-#' Property](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html).
-#' Supported only for HTTP APIs.
+#' @param Basepath Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see [Set the OpenAPI basePath Property](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html). Supported only for HTTP APIs.
 #' @param Body &#91;required&#93; The OpenAPI definition. Supported only for HTTP APIs.
-#' @param FailOnWarnings Specifies whether to rollback the API creation when a warning is
-#' encountered. By default, API creation continues if a warning is
-#' encountered.
+#' @param FailOnWarnings Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6226,8 +5976,7 @@ apigatewayv2_reimport_api <- function(ApiId, Basepath = NULL, Body, FailOnWarnin
 #' apigatewayv2_tag_resource(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The resource ARN for the tag.
-#' @param Tags The collection of tags. Each tag element is associated with a given
-#' resource.
+#' @param Tags The collection of tags. Each tag element is associated with a given resource.
 #'
 #' @return
 #' An empty list.
@@ -6326,44 +6075,17 @@ apigatewayv2_untag_resource <- function(ResourceArn, TagKeys) {
 #'   RouteSelectionExpression, Target, Version)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ApiKeySelectionExpression An API key selection expression. Supported only for WebSocket APIs. See
-#' [API Key Selection
-#' Expressions](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
+#' @param ApiKeySelectionExpression An API key selection expression. Supported only for WebSocket APIs. See [API Key Selection Expressions](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
 #' @param CorsConfiguration A CORS configuration. Supported only for HTTP APIs.
-#' @param CredentialsArn This property is part of quick create. It specifies the credentials
-#' required for the integration, if any. For a Lambda integration, three
-#' options are available. To specify an IAM Role for API Gateway to assume,
-#' use the role's Amazon Resource Name (ARN). To require that the caller's
-#' identity be passed through from the request, specify
-#' arn:aws:iam::*:user/*. To use resource-based permissions on supported
-#' AWS services, don't specify this parameter. Currently, this property is
-#' not used for HTTP integrations. If provided, this value replaces the
-#' credentials associated with the quick create integration. Supported only
-#' for HTTP APIs.
+#' @param CredentialsArn This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.
 #' @param Description The description of the API.
-#' @param DisableSchemaValidation Avoid validating models when creating a deployment. Supported only for
-#' WebSocket APIs.
-#' @param DisableExecuteApiEndpoint Specifies whether clients can invoke your API by using the default
-#' execute-api endpoint. By default, clients can invoke your API with the
-#' default https://\{api_id\}.execute-api.\{region\}.amazonaws.com
-#' endpoint. To require that clients use a custom domain name to invoke
-#' your API, disable the default endpoint.
+#' @param DisableSchemaValidation Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
+#' @param DisableExecuteApiEndpoint Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://\{api_id\}.execute-api.\{region\}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.
 #' @param IpAddressType The IP address types that can invoke your API or domain name.
 #' @param Name The name of the API.
-#' @param RouteKey This property is part of quick create. If not specified, the route
-#' created using quick create is kept. Otherwise, this value replaces the
-#' route key of the quick create route. Additional routes may still be
-#' added after the API is updated. Supported only for HTTP APIs.
-#' @param RouteSelectionExpression The route selection expression for the API. For HTTP APIs, the
-#' routeSelectionExpression must be $\{request.method\}
-#' $\{request.path\}. If not provided, this will be the default for HTTP
-#' APIs. This property is required for WebSocket APIs.
-#' @param Target This property is part of quick create. For HTTP integrations, specify a
-#' fully qualified URL. For Lambda integrations, specify a function ARN.
-#' The type of the integration will be HTTP_PROXY or AWS_PROXY,
-#' respectively. The value provided updates the integration URI and
-#' integration type. You can update a quick-created target, but you can't
-#' remove it from an API. Supported only for HTTP APIs.
+#' @param RouteKey This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.
+#' @param RouteSelectionExpression The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be $\{request.method\} $\{request.path\}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.
+#' @param Target This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.
 #' @param Version A version identifier for the API.
 #'
 #' @return
@@ -6545,68 +6267,21 @@ apigatewayv2_update_api_mapping <- function(ApiId, ApiMappingId, ApiMappingKey =
 #'   JwtConfiguration, Name)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param AuthorizerCredentialsArn Specifies the required credentials as an IAM role for API Gateway to
-#' invoke the authorizer. To specify an IAM role for API Gateway to assume,
-#' use the role's Amazon Resource Name (ARN). To use resource-based
-#' permissions on the Lambda function, don't specify this parameter.
+#' @param AuthorizerCredentialsArn Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.
 #' @param AuthorizerId &#91;required&#93; The authorizer identifier.
-#' @param AuthorizerPayloadFormatVersion Specifies the format of the payload sent to an HTTP API Lambda
-#' authorizer. Required for HTTP API Lambda authorizers. Supported values
-#' are 1.0 and 2.0. To learn more, see [Working with AWS Lambda authorizers
-#' for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
-#' @param AuthorizerResultTtlInSeconds The time to live (TTL) for cached authorizer results, in seconds. If it
-#' equals 0, authorization caching is disabled. If it is greater than 0,
-#' API Gateway caches authorizer responses. The maximum value is 3600, or 1
-#' hour. Supported only for HTTP API Lambda authorizers.
-#' @param AuthorizerType The authorizer type. Specify REQUEST for a Lambda function using
-#' incoming request parameters. Specify JWT to use JSON Web Tokens
-#' (supported only for HTTP APIs).
-#' @param AuthorizerUri The authorizer's Uniform Resource Identifier (URI). For REQUEST
-#' authorizers, this must be a well-formed Lambda function URI, for
-#' example,
-#' arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:\{account_id\}:function:\{lambda_function_name\}/invocations.
-#' In general, the URI has this form:
-#' arn:aws:apigateway:\{region\}:lambda:path/\{service_api\} , where
-#' \{region\} is the same as the region hosting the Lambda function, path
-#' indicates that the remaining substring in the URI should be treated as
-#' the path to the resource, including the initial /. For Lambda functions,
-#' this is usually of the form
-#' /2015-03-31/functions/\[FunctionARN\]/invocations. Supported only for
-#' REQUEST authorizers.
-#' @param EnableSimpleResponses Specifies whether a Lambda authorizer returns a response in a simple
-#' format. By default, a Lambda authorizer must return an IAM policy. If
-#' enabled, the Lambda authorizer can return a boolean value instead of an
-#' IAM policy. Supported only for HTTP APIs. To learn more, see [Working
-#' with AWS Lambda authorizers for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html)
+#' @param AuthorizerPayloadFormatVersion Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
+#' @param AuthorizerResultTtlInSeconds The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.
+#' @param AuthorizerType The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).
+#' @param AuthorizerUri The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:\{account_id\}:function:\{lambda_function_name\}/invocations. In general, the URI has this form: arn:aws:apigateway:\{region\}:lambda:path/\{service_api\}
+#' , where \{region\} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/\[FunctionARN\]/invocations. Supported only for REQUEST authorizers.
+#' @param EnableSimpleResponses Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html)
 #' @param IdentitySource The identity source for which authorization is requested.
 #' 
-#' For a REQUEST authorizer, this is optional. The value is a set of one or
-#' more mapping expressions of the specified request parameters. The
-#' identity source can be headers, query string parameters, stage
-#' variables, and context parameters. For example, if an Auth header and a
-#' Name query string parameter are defined as identity sources, this value
-#' is route.request.header.Auth, route.request.querystring.Name for
-#' WebSocket APIs. For HTTP APIs, use selection expressions prefixed with
-#' $, for example, $request.header.Auth, $request.querystring.Name. These
-#' parameters are used to perform runtime validation for Lambda-based
-#' authorizers by verifying all of the identity-related request parameters
-#' are present in the request, not null, and non-empty. Only when this is
-#' true does the authorizer invoke the authorizer Lambda function.
-#' Otherwise, it returns a 401 Unauthorized response without calling the
-#' Lambda function. For HTTP APIs, identity sources are also used as the
-#' cache key when caching is enabled. To learn more, see [Working with AWS
-#' Lambda authorizers for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
+#' For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html).
 #' 
-#' For JWT, a single entry that specifies where to extract the JSON Web
-#' Token (JWT) from inbound requests. Currently only header-based and query
-#' parameter-based selections are supported, for example
-#' $request.header.Authorization.
+#' For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.
 #' @param IdentityValidationExpression This parameter is not used.
-#' @param JwtConfiguration Represents the configuration of a JWT authorizer. Required for the JWT
-#' authorizer type. Supported only for HTTP APIs.
+#' @param JwtConfiguration Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.
 #' @param Name The name of the authorizer.
 #'
 #' @return
@@ -6862,143 +6537,59 @@ apigatewayv2_update_domain_name <- function(DomainName, DomainNameConfigurations
 #'   TimeoutInMillis, TlsConfig)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ConnectionId The ID of the VPC link for a private integration. Supported only for
-#' HTTP APIs.
-#' @param ConnectionType The type of the network connection to the integration endpoint. Specify
-#' INTERNET for connections through the public routable internet or
-#' VPC_LINK for private connections between API Gateway and resources in a
-#' VPC. The default value is INTERNET.
-#' @param ContentHandlingStrategy Supported only for WebSocket APIs. Specifies how to handle response
-#' payload content type conversions. Supported values are CONVERT_TO_BINARY
-#' and CONVERT_TO_TEXT, with the following behaviors:
+#' @param ConnectionId The ID of the VPC link for a private integration. Supported only for HTTP APIs.
+#' @param ConnectionType The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.
+#' @param ContentHandlingStrategy Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
 #' 
-#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded
-#' string to the corresponding binary blob.
+#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
 #' 
-#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-#' Base64-encoded string.
+#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.
 #' 
-#' If this property is not defined, the response payload will be passed
-#' through from the integration response to the route response or method
-#' response without modification.
-#' @param CredentialsArn Specifies the credentials required for the integration, if any. For AWS
-#' integrations, three options are available. To specify an IAM Role for
-#' API Gateway to assume, use the role's Amazon Resource Name (ARN). To
-#' require that the caller's identity be passed through from the request,
-#' specify the string arn:aws:iam::*:user/*. To use resource-based
-#' permissions on supported AWS services, specify null.
+#' If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.
+#' @param CredentialsArn Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.
 #' @param Description The description of the integration
 #' @param IntegrationId &#91;required&#93; The integration ID.
 #' @param IntegrationMethod Specifies the integration's HTTP method type.
-#' @param IntegrationSubtype Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS
-#' service action to invoke. To learn more, see [Integration subtype
-#' reference](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html).
+#' @param IntegrationSubtype Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see [Integration subtype reference](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html).
 #' @param IntegrationType The integration type of an integration. One of the following:
 #' 
-#' AWS: for integrating the route or method request with an AWS service
-#' action, including the Lambda function-invoking action. With the Lambda
-#' function-invoking action, this is referred to as the Lambda custom
-#' integration. With any other AWS service action, this is known as AWS
-#' integration. Supported only for WebSocket APIs.
+#' AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.
 #' 
-#' AWS_PROXY: for integrating the route or method request with a Lambda
-#' function or other AWS service action. This integration is also referred
-#' to as a Lambda proxy integration.
+#' AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.
 #' 
-#' HTTP: for integrating the route or method request with an HTTP endpoint.
-#' This integration is also referred to as the HTTP custom integration.
-#' Supported only for WebSocket APIs.
+#' HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.
 #' 
-#' HTTP_PROXY: for integrating the route or method request with an HTTP
-#' endpoint, with the client request passed through as-is. This is also
-#' referred to as HTTP proxy integration. For HTTP API private
-#' integrations, use an HTTP_PROXY integration.
+#' HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.
 #' 
-#' MOCK: for integrating the route or method request with API Gateway as a
-#' "loopback" endpoint without invoking any backend. Supported only for
-#' WebSocket APIs.
+#' MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.
 #' @param IntegrationUri For a Lambda integration, specify the URI of a Lambda function.
 #' 
 #' For an HTTP integration, specify a fully-qualified URL.
 #' 
-#' For an HTTP API private integration, specify the ARN of an Application
-#' Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map
-#' service. If you specify the ARN of an AWS Cloud Map service, API Gateway
-#' uses DiscoverInstances to identify resources. You can use query
-#' parameters to target specific resources. To learn more, see
-#' [DiscoverInstances](https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html).
-#' For private integrations, all resources must be owned by the same AWS
-#' account.
-#' @param PassthroughBehavior Specifies the pass-through behavior for incoming requests based on the
-#' Content-Type header in the request, and the available mapping templates
-#' specified as the requestTemplates property on the Integration resource.
-#' There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
-#' NEVER. Supported only for WebSocket APIs.
+#' For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see [DiscoverInstances](https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html). For private integrations, all resources must be owned by the same AWS account.
+#' @param PassthroughBehavior Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.
 #' 
-#' WHEN_NO_MATCH passes the request body for unmapped content types through
-#' to the integration backend without transformation.
+#' WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.
 #' 
-#' NEVER rejects unmapped content types with an HTTP 415 Unsupported Media
-#' Type response.
+#' NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.
 #' 
-#' WHEN_NO_TEMPLATES allows pass-through when the integration has no
-#' content types mapped to templates. However, if there is at least one
-#' content type defined, unmapped content types will be rejected with the
-#' same HTTP 415 Unsupported Media Type response.
-#' @param PayloadFormatVersion Specifies the format of the payload sent to an integration. Required for
-#' HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and
-#' 2.0. For all other integrations, 1.0 is the only supported value. To
-#' learn more, see [Working with AWS Lambda proxy integrations for HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html).
-#' @param RequestParameters For WebSocket APIs, a key-value map specifying request parameters that
-#' are passed from the method request to the backend. The key is an
-#' integration request parameter name and the associated value is a method
-#' request parameter value or static value that must be enclosed within
-#' single quotes and pre-encoded as required by the backend. The method
-#' request parameter value must match the pattern of
-#' method.request.\{location\}.\{name\} , where \{location\} is
-#' querystring, path, or header; and \{name\} must be a valid and unique
-#' method request parameter name.
+#' WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.
+#' @param PayloadFormatVersion Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see [Working with AWS Lambda proxy integrations for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html).
+#' @param RequestParameters For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.\{location\}.\{name\}
+#' , where
+#' \{location\}
+#' is querystring, path, or header; and
+#' \{name\}
+#' must be a valid and unique method request parameter name.
 #' 
-#' For HTTP API integrations with a specified integrationSubtype, request
-#' parameters are a key-value map specifying parameters that are passed to
-#' AWS_PROXY integrations. You can provide static values, or map request
-#' data, stage variables, or context variables that are evaluated at
-#' runtime. To learn more, see [Working with AWS service integrations for
-#' HTTP
-#' APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html).
+#' For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see [Working with AWS service integrations for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html).
 #' 
-#' For HTTP API integrations, without a specified integrationSubtype
-#' request parameters are a key-value map specifying how to transform HTTP
-#' requests before sending them to the backend. The key should follow the
-#' pattern \<action\>:\<header|querystring|path\>.\<location\> where action
-#' can be append, overwrite or remove. For values, you can provide static
-#' values, or map request data, stage variables, or context variables that
-#' are evaluated at runtime. To learn more, see [Transforming API requests
-#' and
-#' responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
-#' @param RequestTemplates Represents a map of Velocity templates that are applied on the request
-#' payload based on the value of the Content-Type header sent by the
-#' client. The content type value is the key in this map, and the template
-#' (as a String) is the value. Supported only for WebSocket APIs.
-#' @param ResponseParameters Supported only for HTTP APIs. You use response parameters to transform
-#' the HTTP response from a backend integration before returning the
-#' response to clients. Specify a key-value map from a selection key to
-#' response parameters. The selection key must be a valid HTTP status code
-#' within the range of 200-599. Response parameters are a key-value map.
-#' The key must match pattern \<action\>:\<header\>.\<location\> or
-#' overwrite.statuscode. The action can be append, overwrite or remove. The
-#' value can be a static value, or map to response data, stage variables,
-#' or context variables that are evaluated at runtime. To learn more, see
-#' [Transforming API requests and
-#' responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
+#' For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern \<action\>:\<header|querystring|path\>.\<location\> where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see [Transforming API requests and responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
+#' @param RequestTemplates Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.
+#' @param ResponseParameters Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern \<action\>:\<header\>.\<location\> or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see [Transforming API requests and responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html).
 #' @param TemplateSelectionExpression The template selection expression for the integration.
-#' @param TimeoutInMillis Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and
-#' between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is
-#' 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
-#' @param TlsConfig The TLS configuration for a private integration. If you specify a TLS
-#' configuration, private integration traffic uses the HTTPS protocol.
-#' Supported only for HTTP APIs.
+#' @param TimeoutInMillis Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
+#' @param TlsConfig The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7107,39 +6698,26 @@ apigatewayv2_update_integration <- function(ApiId, ConnectionId = NULL, Connecti
 #'   ResponseParameters, ResponseTemplates, TemplateSelectionExpression)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ContentHandlingStrategy Supported only for WebSocket APIs. Specifies how to handle response
-#' payload content type conversions. Supported values are CONVERT_TO_BINARY
-#' and CONVERT_TO_TEXT, with the following behaviors:
+#' @param ContentHandlingStrategy Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
 #' 
-#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded
-#' string to the corresponding binary blob.
+#' CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
 #' 
-#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-#' Base64-encoded string.
+#' CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.
 #' 
-#' If this property is not defined, the response payload will be passed
-#' through from the integration response to the route response or method
-#' response without modification.
+#' If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.
 #' @param IntegrationId &#91;required&#93; The integration ID.
 #' @param IntegrationResponseId &#91;required&#93; The integration response ID.
 #' @param IntegrationResponseKey The integration response key.
-#' @param ResponseParameters A key-value map specifying response parameters that are passed to the
-#' method response from the backend. The key is a method response header
-#' parameter name and the mapped value is an integration response header
-#' value, a static value enclosed within a pair of single quotes, or a JSON
-#' expression from the integration response body. The mapping key must
-#' match the pattern of method.response.header.\{name\} , where name is a
-#' valid and unique header name. The mapped non-static value must match the
-#' pattern of integration.response.header.\{name\} or
-#' integration.response.body.\{JSON-expression\} , where \{name\} is a
-#' valid and unique response header name and \{JSON-expression\} is a
-#' valid JSON expression without the $ prefix.
-#' @param ResponseTemplates The collection of response templates for the integration response as a
-#' string-to-string map of key-value pairs. Response templates are
-#' represented as a key/value map, with a content-type as the key and a
-#' template as the value.
-#' @param TemplateSelectionExpression The template selection expression for the integration response.
-#' Supported only for WebSocket APIs.
+#' @param ResponseParameters A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.\{name\}
+#' , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.\{name\}
+#' or integration.response.body.\{JSON-expression\}
+#' , where
+#' \{name\}
+#' is a valid and unique response header name and
+#' \{JSON-expression\}
+#' is a valid JSON expression without the $ prefix.
+#' @param ResponseTemplates The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.
+#' @param TemplateSelectionExpression The template selection expression for the integration response. Supported only for WebSocket APIs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7214,8 +6792,7 @@ apigatewayv2_update_integration_response <- function(ApiId, ContentHandlingStrat
 #' @param Description The description of the model.
 #' @param ModelId &#91;required&#93; The model ID.
 #' @param Name The name of the model.
-#' @param Schema The schema for the model. For application/json models, this should be
-#' JSON schema draft 4 model.
+#' @param Schema The schema for the model. For application/json models, this should be JSON schema draft 4 model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7279,8 +6856,7 @@ apigatewayv2_update_model <- function(ApiId, ContentType = NULL, Description = N
 #' @param EndpointConfiguration Represents an endpoint configuration.
 #' @param IncludedPortalProductArns The ARNs of the portal products included in the portal.
 #' @param LogoUri The logo URI.
-#' @param PortalContent Contains the content that is visible to portal consumers including the
-#' themes, display names, and description.
+#' @param PortalContent Contains the content that is visible to portal consumers including the themes, display names, and description.
 #' @param PortalId &#91;required&#93; The portal identifier.
 #' @param RumAppMonitorName The CloudWatch RUM app monitor name.
 #'
@@ -7674,26 +7250,17 @@ apigatewayv2_update_product_rest_endpoint_page <- function(DisplayContent = NULL
 #'   RouteResponseSelectionExpression, Target)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ApiKeyRequired Specifies whether an API key is required for the route. Supported only
-#' for WebSocket APIs.
+#' @param ApiKeyRequired Specifies whether an API key is required for the route. Supported only for WebSocket APIs.
 #' @param AuthorizationScopes The authorization scopes supported by this route.
-#' @param AuthorizationType The authorization type for the route. For WebSocket APIs, valid values
-#' are NONE for open access, AWS_IAM for using AWS IAM permissions, and
-#' CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are
-#' NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using
-#' AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
-#' @param AuthorizerId The identifier of the Authorizer resource to be associated with this
-#' route. The authorizer identifier is generated by API Gateway when you
-#' created the authorizer.
-#' @param ModelSelectionExpression The model selection expression for the route. Supported only for
-#' WebSocket APIs.
+#' @param AuthorizationType The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
+#' @param AuthorizerId The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.
+#' @param ModelSelectionExpression The model selection expression for the route. Supported only for WebSocket APIs.
 #' @param OperationName The operation name for the route.
 #' @param RequestModels The request models for the route. Supported only for WebSocket APIs.
 #' @param RequestParameters The request parameters for the route. Supported only for WebSocket APIs.
 #' @param RouteId &#91;required&#93; The route ID.
 #' @param RouteKey The route key for the route.
-#' @param RouteResponseSelectionExpression The route response selection expression for the route. Supported only
-#' for WebSocket APIs.
+#' @param RouteResponseSelectionExpression The route response selection expression for the route. Supported only for WebSocket APIs.
 #' @param Target The target for the route.
 #'
 #' @return
@@ -7786,8 +7353,7 @@ apigatewayv2_update_route <- function(ApiId, ApiKeyRequired = NULL, Authorizatio
 #'   RouteResponseKey)
 #'
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param ModelSelectionExpression The model selection expression for the route response. Supported only
-#' for WebSocket APIs.
+#' @param ModelSelectionExpression The model selection expression for the route response. Supported only for WebSocket APIs.
 #' @param ResponseModels The response models for the route response.
 #' @param ResponseParameters The route response parameters.
 #' @param RouteId &#91;required&#93; The route ID.
@@ -7867,20 +7433,14 @@ apigatewayv2_update_route_response <- function(ApiId, ModelSelectionExpression =
 #'
 #' @param AccessLogSettings Settings for logging access in this stage.
 #' @param ApiId &#91;required&#93; The API identifier.
-#' @param AutoDeploy Specifies whether updates to an API automatically trigger a new
-#' deployment. The default value is false.
+#' @param AutoDeploy Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
 #' @param ClientCertificateId The identifier of a client certificate for a Stage.
 #' @param DefaultRouteSettings The default route settings for the stage.
-#' @param DeploymentId The deployment identifier for the API stage. Can't be updated if
-#' autoDeploy is enabled.
+#' @param DeploymentId The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.
 #' @param Description The description for the API stage.
 #' @param RouteSettings Route settings for the stage.
-#' @param StageName &#91;required&#93; The stage name. Stage names can contain only alphanumeric characters,
-#' hyphens, and underscores, or be $default. Maximum length is 128
-#' characters.
-#' @param StageVariables A map that defines the stage variables for a Stage. Variable names can
-#' have alphanumeric and underscore characters, and the values must match
-#' \[A-Za-z0-9-._~:/?#&=,\]+.
+#' @param StageName &#91;required&#93; The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.
+#' @param StageVariables A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&=,\]+.
 #'
 #' @return
 #' A list with the following syntax:

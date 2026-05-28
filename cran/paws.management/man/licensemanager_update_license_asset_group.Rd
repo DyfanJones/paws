@@ -28,11 +28,9 @@ licensemanager_update_license_asset_group(
 
 \item{LicenseAssetGroupArn}{[required] Amazon Resource Name (ARN) of the license asset group.}
 
-\item{Status}{License asset group status. The possible values are \code{ACTIVE} |
-\code{DISABLED}.}
+\item{Status}{License asset group status. The possible values are \code{ACTIVE} | \code{DISABLED}.}
 
-\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Updates a license asset group.

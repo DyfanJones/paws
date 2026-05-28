@@ -12,13 +12,7 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_add_profile_key/](https://www.paws-r-sdk.com/docs/customerprofiles_add_profile_key/) for full documentation.
 #'
 #' @param ProfileId &#91;required&#93; The unique identifier of a customer profile.
-#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you
-#' can use include: _account, _profileId, _assetId, _caseId, _orderId,
-#' _fullName, _phone, _email, _ctrContactId, _marketoLeadId,
-#' _salesforceAccountId, _salesforceContactId, _salesforceAssetId,
-#' _zendeskUserId, _zendeskExternalId, _zendeskTicketId,
-#' _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
-#' _shopifyCustomerId, _shopifyOrderId.
+#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 #' @param Values &#91;required&#93; A list of key values.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #'
@@ -54,8 +48,7 @@ customerprofiles_add_profile_key <- function(ProfileId, KeyName, Values, DomainN
 #' @param CalculatedAttributeName &#91;required&#93; The unique name of the calculated attribute.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ProfileIds &#91;required&#93; List of unique identifiers for customer profiles to retrieve.
-#' @param ConditionOverrides Overrides the condition block within the original calculated attribute
-#' definition.
+#' @param ConditionOverrides Overrides the condition block within the original calculated attribute definition.
 #'
 #' @keywords internal
 #'
@@ -122,15 +115,11 @@ customerprofiles_batch_get_profile <- function(DomainName, ProfileIds) {
 #' @param CalculatedAttributeName &#91;required&#93; The unique name of the calculated attribute.
 #' @param DisplayName The display name of the calculated attribute.
 #' @param Description The description of the calculated attribute.
-#' @param AttributeDetails &#91;required&#93; Mathematical expression and a list of attribute items specified in that
-#' expression.
-#' @param Conditions The conditions including range, object count, and threshold for the
-#' calculated attribute.
-#' @param Filter Defines how to filter incoming objects to include part of the Calculated
-#' Attribute.
+#' @param AttributeDetails &#91;required&#93; Mathematical expression and a list of attribute items specified in that expression.
+#' @param Conditions The conditions including range, object count, and threshold for the calculated attribute.
+#' @param Filter Defines how to filter incoming objects to include part of the Calculated Attribute.
 #' @param Statistic &#91;required&#93; The aggregation operation to perform for the calculated attribute.
-#' @param UseHistoricalData Whether historical data ingested before the Calculated Attribute was
-#' created should be included in calculations.
+#' @param UseHistoricalData Whether historical data ingested before the Calculated Attribute was created should be included in calculations.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -166,33 +155,12 @@ customerprofiles_create_calculated_attribute_definition <- function(DomainName, 
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param DefaultExpirationDays &#91;required&#93; The default number of days until the data within the domain expires.
-#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no
-#' specific type of encryption key is specified. It is used to encrypt all
-#' data before it is placed in permanent or semi-permanent storage.
-#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors
-#' associated with ingesting data from third party applications. You must
-#' set up a policy on the DeadLetterQueue for the SendMessage operation to
-#' enable Amazon Connect Customer Profiles to send messages to the
-#' DeadLetterQueue.
-#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`,
-#' Amazon Connect Customer Profiles starts a weekly batch process called
-#' Identity Resolution Job. If you do not specify a date and time for
-#' Identity Resolution Job to run, by default it runs every Saturday at
-#' 12AM UTC to detect duplicate profiles in your domains.
+#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.
+#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
+#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
 #' 
-#' After the Identity Resolution Job completes, use the
-#' [`get_matches`][customerprofiles_get_matches] API to return and review
-#' the results. Or, if you have configured `ExportingConfig` in the
-#' `MatchingRequest`, you can download the results from S3.
-#' @param RuleBasedMatching The process of matching duplicate profiles using the Rule-Based
-#' matching. If `RuleBasedMatching` = true, Amazon Connect Customer
-#' Profiles will start to match and merge your profiles according to your
-#' configuration in the `RuleBasedMatchingRequest`. You can use the
-#' [`list_rule_based_matches`][customerprofiles_list_rule_based_matches]
-#' and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API
-#' to return and review the results. Also, if you have configured
-#' `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download
-#' the results from S3.
+#' After the Identity Resolution Job completes, use the [`get_matches`][customerprofiles_get_matches] API to return and review the results. Or, if you have configured `ExportingConfig` in the `MatchingRequest`, you can download the results from S3.
+#' @param RuleBasedMatching The process of matching duplicate profiles using the Rule-Based matching. If `RuleBasedMatching` = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the `RuleBasedMatchingRequest`. You can use the [`list_rule_based_matches`][customerprofiles_list_rule_based_matches] and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API to return and review the results. Also, if you have configured `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download the results from S3.
 #' @param DataStore Set to true to enabled data store for this domain.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -229,13 +197,9 @@ customerprofiles_create_domain <- function(DomainName, DefaultExpirationDays, De
 #' @param LayoutDefinitionName &#91;required&#93; The unique name of the layout.
 #' @param Description &#91;required&#93; The description of the layout
 #' @param DisplayName &#91;required&#93; The display name of the layout
-#' @param IsDefault If set to true for a layout, this layout will be used by default to view
-#' data. If set to false, then the layout will not be used by default, but
-#' it can be used to view data by explicitly selecting it in the console.
-#' @param LayoutType &#91;required&#93; The type of layout that can be used to view data under a Customer
-#' Profiles domain.
-#' @param Layout &#91;required&#93; A customizable layout that can be used to view data under a Customer
-#' Profiles domain.
+#' @param IsDefault If set to true for a layout, this layout will be used by default to view data. If set to false, then the layout will not be used by default, but it can be used to view data by explicitly selecting it in the console.
+#' @param LayoutType &#91;required&#93; The type of layout that can be used to view data under a Customer Profiles domain.
+#' @param Layout &#91;required&#93; A customizable layout that can be used to view data under a Customer Profiles domain.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -261,17 +225,16 @@ customerprofiles_create_domain_layout <- function(DomainName, LayoutDefinitionNa
 .customerprofiles$operations$create_domain_layout <- customerprofiles_create_domain_layout
 
 #' Creates an event stream, which is a subscription to real-time events,
-#' such as when profiles are created and updated through Amazon Connect
+#' such as when profiles are created and updated through Connect Customer
 #' Customer Profiles
 #'
 #' @description
-#' Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles.
+#' Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Connect Customer Customer Profiles.
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_create_event_stream/](https://www.paws-r-sdk.com/docs/customerprofiles_create_event_stream/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param Uri &#91;required&#93; The StreamARN of the destination to deliver profile events to. For
-#' example, arn:aws:kinesis:region:account-id:stream/stream-name
+#' @param Uri &#91;required&#93; The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name
 #' @param EventStreamName &#91;required&#93; The name of the event stream.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -309,13 +272,9 @@ customerprofiles_create_event_stream <- function(DomainName, Uri, EventStreamNam
 #' @param EventTriggerName &#91;required&#93; The unique name of the event trigger.
 #' @param ObjectTypeName &#91;required&#93; The unique name of the object type.
 #' @param Description The description of the event trigger.
-#' @param EventTriggerConditions &#91;required&#93; A list of conditions that determine when an event should trigger the
-#' destination.
-#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of
-#' a segment definition.
-#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination,
-#' based on ingestion latency and the number of invocations per profile
-#' over specific time periods.
+#' @param EventTriggerConditions &#91;required&#93; A list of conditions that determine when an event should trigger the destination.
+#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of a segment definition.
+#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination, based on ingestion latency and the number of invocations per profile over specific time periods.
 #' @param Tags An array of key-value pairs to apply to this resource.
 #'
 #' @keywords internal
@@ -351,9 +310,7 @@ customerprofiles_create_event_trigger <- function(DomainName, EventTriggerName, 
 #' @param WorkflowType &#91;required&#93; The type of workflow. The only supported value is APPFLOW_INTEGRATION.
 #' @param IntegrationConfig &#91;required&#93; Configuration data for integration workflow.
 #' @param ObjectTypeName &#91;required&#93; The name of the profile object type.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Customer Profiles
-#' assumes this role to create resources on your behalf as part of workflow
-#' execution.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -395,17 +352,14 @@ customerprofiles_create_integration_workflow <- function(DomainName, WorkflowTyp
 #' @param LastName The customer’s last name.
 #' @param BirthDate The customer’s birth date.
 #' @param Gender The gender with which the customer identifies.
-#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile,
-#' home, or business number.
+#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile, home, or business number.
 #' @param MobilePhoneNumber The customer’s mobile phone number.
 #' @param HomePhoneNumber The customer’s home phone number.
 #' @param BusinessPhoneNumber The customer’s business phone number.
-#' @param EmailAddress The customer’s email address, which has not been specified as a personal
-#' or business address.
+#' @param EmailAddress The customer’s email address, which has not been specified as a personal or business address.
 #' @param PersonalEmailAddress The customer’s personal email address.
 #' @param BusinessEmailAddress The customer’s business email address.
-#' @param Address A generic address associated with the customer that is not mailing,
-#' shipping, or billing.
+#' @param Address A generic address associated with the customer that is not mailing, shipping, or billing.
 #' @param ShippingAddress The customer’s shipping address.
 #' @param MailingAddress The customer’s mailing address.
 #' @param BillingAddress The customer’s billing address.
@@ -449,8 +403,7 @@ customerprofiles_create_profile <- function(DomainName, AccountNumber = NULL, Ad
 #' @param RecommenderRecipeName &#91;required&#93; The name of the recommeder recipe.
 #' @param RecommenderConfig The recommender configuration.
 #' @param Description The description of the domain object type.
-#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender. If not
-#' specified, the default schema is used.
+#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender. If not specified, the default schema is used.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -483,12 +436,9 @@ customerprofiles_create_recommender <- function(DomainName, RecommenderName, Rec
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_create_recommender_filter/](https://www.paws-r-sdk.com/docs/customerprofiles_create_recommender_filter/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param RecommenderFilterName &#91;required&#93; The name of the recommender filter. The name must be unique within the
-#' domain.
-#' @param RecommenderFilterExpression &#91;required&#93; The filter expression that defines which items to include or exclude
-#' from recommendations.
-#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender filter.
-#' If not specified, the default schema is used.
+#' @param RecommenderFilterName &#91;required&#93; The name of the recommender filter. The name must be unique within the domain.
+#' @param RecommenderFilterExpression &#91;required&#93; The filter expression that defines which items to include or exclude from recommendations.
+#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.
 #' @param Description A description of the recommender filter.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -522,11 +472,8 @@ customerprofiles_create_recommender_filter <- function(DomainName, RecommenderFi
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_create_recommender_schema/](https://www.paws-r-sdk.com/docs/customerprofiles_create_recommender_schema/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param RecommenderSchemaName &#91;required&#93; The name of the recommender schema. The name must be unique within the
-#' domain.
-#' @param Fields &#91;required&#93; A map of dataset type to column definitions that specifies which data
-#' columns to include in the schema. Currently only the `_webAnalytics` key
-#' is supported.
+#' @param RecommenderSchemaName &#91;required&#93; The name of the recommender schema. The name must be unique within the domain.
+#' @param Fields &#91;required&#93; A map of dataset type to column definitions that specifies which data columns to include in the schema. The `_webAnalytics` and `_catalogItem` keys are supported.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -562,8 +509,7 @@ customerprofiles_create_recommender_schema <- function(DomainName, RecommenderSc
 #' @param SegmentDefinitionName &#91;required&#93; The unique name of the segment definition.
 #' @param DisplayName &#91;required&#93; The display name of the segment definition.
 #' @param Description The description of the segment definition.
-#' @param SegmentGroups Specifies the base segments and dimensions for a segment definition
-#' along with their respective relationship.
+#' @param SegmentGroups Specifies the base segments and dimensions for a segment definition along with their respective relationship.
 #' @param SegmentSqlQuery The segment SQL query.
 #' @param SegmentSort The segment sort.
 #' @param Tags The tags used to organize, track, or control access for this resource.
@@ -633,14 +579,9 @@ customerprofiles_create_segment_estimate <- function(DomainName, SegmentQuery = 
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param SegmentDefinitionName &#91;required&#93; The name of the segment definition used in this snapshot request.
 #' @param DataFormat &#91;required&#93; The format in which the segment will be exported.
-#' @param EncryptionKey The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-#' exported segment.
-#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role that allows Customer
-#' Profiles service principal to assume the role for conducting KMS and S3
-#' operations.
-#' @param DestinationUri The destination to which the segment will be exported. This field must
-#' be provided if the request is not submitted from the Amazon Connect
-#' Admin Website.
+#' @param EncryptionKey The Amazon Resource Name (ARN) of the KMS key used to encrypt the exported segment.
+#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role that allows Customer Profiles service principal to assume the role for conducting KMS and S3 operations.
+#' @param DestinationUri The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.
 #'
 #' @keywords internal
 #'
@@ -671,16 +612,11 @@ customerprofiles_create_segment_snapshot <- function(DomainName, SegmentDefiniti
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_create_upload_job/](https://www.paws-r-sdk.com/docs/customerprofiles_create_upload_job/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The unique name of the domain. Domain should be exists for the upload
-#' job to be created.
-#' @param DisplayName &#91;required&#93; The unique name of the upload job. Could be a file name to identify the
-#' upload job.
-#' @param Fields &#91;required&#93; The mapping between CSV Columns and Profile Object attributes. A map of
-#' the name and ObjectType field.
-#' @param UniqueKey &#91;required&#93; The unique key columns for de-duping the profiles used to map data to
-#' the profile.
-#' @param DataExpiry The expiry duration for the profiles ingested with the job. If not
-#' provided, the system default of 2 weeks is used.
+#' @param DomainName &#91;required&#93; The unique name of the domain. Domain should be exists for the upload job to be created.
+#' @param DisplayName &#91;required&#93; The unique name of the upload job. Could be a file name to identify the upload job.
+#' @param Fields &#91;required&#93; The mapping between CSV Columns and Profile Object attributes. A map of the name and ObjectType field.
+#' @param UniqueKey &#91;required&#93; The unique key columns for de-duping the profiles used to map data to the profile.
+#' @param DataExpiry The expiry duration for the profiles ingested with the job. If not provided, the system default of 2 weeks is used.
 #'
 #' @keywords internal
 #'
@@ -1265,10 +1201,8 @@ customerprofiles_detect_profile_object_type <- function(Objects, DomainName) {
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param Consolidation &#91;required&#93; A list of matching attributes that represent matching criteria.
-#' @param ConflictResolution &#91;required&#93; How the auto-merging process should resolve conflicts between different
-#' profiles.
-#' @param MinAllowedConfidenceScoreForMerging Minimum confidence score required for profiles within a matching group
-#' to be merged during the auto-merge process.
+#' @param ConflictResolution &#91;required&#93; How the auto-merging process should resolve conflicts between different profiles.
+#' @param MinAllowedConfidenceScoreForMerging Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.
 #'
 #' @keywords internal
 #'
@@ -1591,9 +1525,7 @@ customerprofiles_get_integration <- function(DomainName, Uri) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_get_matches/](https://www.paws-r-sdk.com/docs/customerprofiles_get_matches/) for full documentation.
 #'
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #'
@@ -1661,10 +1593,8 @@ customerprofiles_get_object_type_attribute_statistics <- function(DomainName, Ob
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_get_profile_history_record/](https://www.paws-r-sdk.com/docs/customerprofiles_get_profile_history_record/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The unique name of the domain for which to return a profile history
-#' record.
-#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to return a history
-#' record.
+#' @param DomainName &#91;required&#93; The unique name of the domain for which to return a profile history record.
+#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to return a history record.
 #' @param Id &#91;required&#93; The unique identifier of the profile history record to return.
 #'
 #' @keywords internal
@@ -1761,25 +1691,14 @@ customerprofiles_get_profile_object_type_template <- function(TemplateId) {
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_get_profile_recommendations/](https://www.paws-r-sdk.com/docs/customerprofiles_get_profile_recommendations/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to retrieve
-#' recommendations.
+#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to retrieve recommendations.
 #' @param RecommenderName &#91;required&#93; The unique name of the recommender.
-#' @param Context The contextual metadata used to provide dynamic runtime information to
-#' tailor recommendations.
-#' @param RecommenderFilters A list of filters to apply to the returned recommendations. Filters
-#' define criteria for including or excluding items from the recommendation
-#' results.
-#' @param RecommenderPromotionalFilters A list of promotional filters to apply to the recommendations.
-#' Promotional filters allow you to promote specific items within a
-#' configurable subset of recommendation results.
-#' @param CandidateIds A list of item IDs to rank for the user. Use this when you want to
-#' re-rank a specific set of items rather than getting recommendations from
-#' the full item catalog. Required for personalized-ranking use cases.
-#' @param MaxResults The maximum number of recommendations to return. The default value is
-#' 10.
-#' @param MetadataConfig Configuration for including item metadata in the recommendation
-#' response. Use this to specify which metadata columns to return alongside
-#' recommended items.
+#' @param Context The contextual metadata used to provide dynamic runtime information to tailor recommendations.
+#' @param RecommenderFilters A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.
+#' @param RecommenderPromotionalFilters A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.
+#' @param CandidateIds A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.
+#' @param MaxResults The maximum number of recommendations to return. The default value is 10.
+#' @param MetadataConfig Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.
 #'
 #' @keywords internal
 #'
@@ -1940,9 +1859,7 @@ customerprofiles_get_segment_definition <- function(DomainName, SegmentDefinitio
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_get_segment_estimate/](https://www.paws-r-sdk.com/docs/customerprofiles_get_segment_estimate/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param EstimateId &#91;required&#93; The query Id passed by a previous
-#' [`create_segment_estimate`][customerprofiles_create_segment_estimate]
-#' operation.
+#' @param EstimateId &#91;required&#93; The query Id passed by a previous [`create_segment_estimate`][customerprofiles_create_segment_estimate] operation.
 #'
 #' @keywords internal
 #'
@@ -1974,8 +1891,7 @@ customerprofiles_get_segment_estimate <- function(DomainName, EstimateId) {
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_get_segment_membership/](https://www.paws-r-sdk.com/docs/customerprofiles_get_segment_membership/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param SegmentDefinitionName &#91;required&#93; The Id of the wanted segment. Needs to be a valid, and existing segment
-#' Id.
+#' @param SegmentDefinitionName &#91;required&#93; The Id of the wanted segment. Needs to be a valid, and existing segment Id.
 #' @param ProfileIds &#91;required&#93; The list of profile IDs to query for.
 #'
 #' @keywords internal
@@ -2041,9 +1957,7 @@ customerprofiles_get_segment_snapshot <- function(DomainName, SegmentDefinitionN
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_get_similar_profiles/](https://www.paws-r-sdk.com/docs/customerprofiles_get_similar_profiles/) for full documentation.
 #'
-#' @param NextToken The pagination token from the previous
-#' [`get_similar_profiles`][customerprofiles_get_similar_profiles] API
-#' call.
+#' @param NextToken The pagination token from the previous [`get_similar_profiles`][customerprofiles_get_similar_profiles] API call.
 #' @param MaxResults The maximum number of objects returned per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param MatchType &#91;required&#93; Specify the type of matching to get similar profiles for.
@@ -2113,8 +2027,7 @@ customerprofiles_get_upload_job <- function(DomainName, JobId) {
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_get_upload_job_path/](https://www.paws-r-sdk.com/docs/customerprofiles_get_upload_job_path/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain containing the upload job.
-#' @param JobId &#91;required&#93; The unique identifier of the upload job to retrieve the upload path for.
-#' This is generated from the CreateUploadJob API.
+#' @param JobId &#91;required&#93; The unique identifier of the upload job to retrieve the upload path for. This is generated from the CreateUploadJob API.
 #'
 #' @keywords internal
 #'
@@ -2179,9 +2092,7 @@ customerprofiles_get_workflow <- function(DomainName, WorkflowId) {
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param WorkflowId &#91;required&#93; Unique identifier for the workflow.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #'
 #' @keywords internal
@@ -2217,8 +2128,7 @@ customerprofiles_get_workflow_steps <- function(DomainName, WorkflowId, NextToke
 #' @param Uri &#91;required&#93; The URI of the S3 bucket or any other type of data source.
 #' @param NextToken The pagination token from the previous ListAccountIntegrations API call.
 #' @param MaxResults The maximum number of objects returned per page.
-#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults
-#' to `False`.
+#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults to `False`.
 #'
 #' @keywords internal
 #'
@@ -2250,10 +2160,8 @@ customerprofiles_list_account_integrations <- function(Uri, NextToken = NULL, Ma
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_calculated_attribute_definitions/](https://www.paws-r-sdk.com/docs/customerprofiles_list_calculated_attribute_definitions/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param NextToken The pagination token from the previous call to
-#' ListCalculatedAttributeDefinitions.
-#' @param MaxResults The maximum number of calculated attribute definitions returned per
-#' page.
+#' @param NextToken The pagination token from the previous call to ListCalculatedAttributeDefinitions.
+#' @param MaxResults The maximum number of calculated attribute definitions returned per page.
 #'
 #' @keywords internal
 #'
@@ -2284,8 +2192,7 @@ customerprofiles_list_calculated_attribute_definitions <- function(DomainName, N
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_calculated_attributes_for_profile/](https://www.paws-r-sdk.com/docs/customerprofiles_list_calculated_attributes_for_profile/) for full documentation.
 #'
-#' @param NextToken The pagination token from the previous call to
-#' ListCalculatedAttributesForProfile.
+#' @param NextToken The pagination token from the previous call to ListCalculatedAttributesForProfile.
 #' @param MaxResults The maximum number of calculated attributes returned per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ProfileId &#91;required&#93; The unique identifier of a customer profile.
@@ -2486,9 +2393,7 @@ customerprofiles_list_event_triggers <- function(DomainName, NextToken = NULL, M
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_identity_resolution_jobs/](https://www.paws-r-sdk.com/docs/customerprofiles_list_identity_resolution_jobs/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #'
 #' @keywords internal
@@ -2523,8 +2428,7 @@ customerprofiles_list_identity_resolution_jobs <- function(DomainName, NextToken
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param NextToken The pagination token from the previous ListIntegrations API call.
 #' @param MaxResults The maximum number of objects returned per page.
-#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults
-#' to `False`.
+#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults to `False`.
 #'
 #' @keywords internal
 #'
@@ -2559,8 +2463,7 @@ customerprofiles_list_integrations <- function(DomainName, NextToken = NULL, Max
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_object_type_attribute_values/](https://www.paws-r-sdk.com/docs/customerprofiles_list_object_type_attribute_values/) for full documentation.
 #'
 #' @param NextToken The pagination token from the previous call.
-#' @param MaxResults The maximum number of objects returned per page. Valid Range: Minimum
-#' value of 1. Maximum value of 100. If not provided default as 100.
+#' @param MaxResults The maximum number of objects returned per page. Valid Range: Minimum value of 1. Maximum value of 100. If not provided default as 100.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The unique name of the domain object type.
 #' @param AttributeName &#91;required&#93; The attribute name.
@@ -2661,21 +2564,13 @@ customerprofiles_list_profile_attribute_values <- function(DomainName, Attribute
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_profile_history_records/](https://www.paws-r-sdk.com/docs/customerprofiles_list_profile_history_records/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The unique name of the domain for which to return profile history
-#' records.
+#' @param DomainName &#91;required&#93; The unique name of the domain for which to return profile history records.
 #' @param ProfileId &#91;required&#93; The identifier of the profile to be taken.
-#' @param ObjectTypeName Applies a filter to include profile history records only with the
-#' specified `ObjectTypeName` value in the response.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param ObjectTypeName Applies a filter to include profile history records only with the specified `ObjectTypeName` value in the response.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
-#' @param ActionType Applies a filter to include profile history records only with the
-#' specified `ActionType` value in the response.
-#' @param PerformedBy Applies a filter to include profile history records only with the
-#' specified `PerformedBy` value in the response. The `PerformedBy` value
-#' can be the Amazon Resource Name (ARN) of the person or service principal
-#' who performed the action.
+#' @param ActionType Applies a filter to include profile history records only with the specified `ActionType` value in the response.
+#' @param PerformedBy Applies a filter to include profile history records only with the specified `PerformedBy` value in the response. The `PerformedBy` value can be the Amazon Resource Name (ARN) of the person or service principal who performed the action.
 #'
 #' @keywords internal
 #'
@@ -2777,8 +2672,7 @@ customerprofiles_list_profile_object_types <- function(DomainName, NextToken = N
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The name of the profile object type.
 #' @param ProfileId &#91;required&#93; The unique identifier of a customer profile.
-#' @param ObjectFilter Applies a filter to the response to include profile objects with the
-#' specified index values.
+#' @param ObjectFilter Applies a filter to the response to include profile objects with the specified index values.
 #'
 #' @keywords internal
 #'
@@ -2810,10 +2704,8 @@ customerprofiles_list_profile_objects <- function(NextToken = NULL, MaxResults =
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_recommender_filters/](https://www.paws-r-sdk.com/docs/customerprofiles_list_recommender_filters/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param MaxResults The maximum number of recommender filters to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenderFilters call to retrieve
-#' the next page of results.
+#' @param MaxResults The maximum number of recommender filters to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenderFilters call to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2845,10 +2737,8 @@ customerprofiles_list_recommender_filters <- function(DomainName, MaxResults = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_recommender_recipes/](https://www.paws-r-sdk.com/docs/customerprofiles_list_recommender_recipes/) for full documentation.
 #'
-#' @param MaxResults The maximum number of recommender recipes to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenderRecipes call to retrieve
-#' the next page of results.
+#' @param MaxResults The maximum number of recommender recipes to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenderRecipes call to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2880,10 +2770,8 @@ customerprofiles_list_recommender_recipes <- function(MaxResults = NULL, NextTok
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_recommender_schemas/](https://www.paws-r-sdk.com/docs/customerprofiles_list_recommender_schemas/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param MaxResults The maximum number of recommender schemas to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenderSchemas call to retrieve
-#' the next page of results.
+#' @param MaxResults The maximum number of recommender schemas to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenderSchemas call to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2915,10 +2803,8 @@ customerprofiles_list_recommender_schemas <- function(DomainName, MaxResults = N
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_recommenders/](https://www.paws-r-sdk.com/docs/customerprofiles_list_recommenders/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param MaxResults The maximum number of recommenders to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenders call to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of recommenders to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenders call to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2949,9 +2835,7 @@ customerprofiles_list_recommenders <- function(DomainName, MaxResults = NULL, Ne
 #'
 #' See [https://www.paws-r-sdk.com/docs/customerprofiles_list_rule_based_matches/](https://www.paws-r-sdk.com/docs/customerprofiles_list_rule_based_matches/) for full documentation.
 #'
-#' @param NextToken The pagination token from the previous
-#' [`list_rule_based_matches`][customerprofiles_list_rule_based_matches]
-#' API call.
+#' @param NextToken The pagination token from the previous [`list_rule_based_matches`][customerprofiles_list_rule_based_matches] API call.
 #' @param MaxResults The maximum number of `MatchIds` returned per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #'
@@ -3051,8 +2935,7 @@ customerprofiles_list_tags_for_resource <- function(resourceArn) {
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain to list upload jobs for.
 #' @param MaxResults The maximum number of upload jobs to return per page.
-#' @param NextToken The pagination token from the previous call to retrieve the next page of
-#' results.
+#' @param NextToken The pagination token from the previous call to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3088,9 +2971,7 @@ customerprofiles_list_upload_jobs <- function(DomainName, MaxResults = NULL, Nex
 #' @param Status Status of workflow execution.
 #' @param QueryStartDate Retrieve workflows started after timestamp.
 #' @param QueryEndDate Retrieve workflows ended after timestamp.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #'
 #' @keywords internal
@@ -3125,10 +3006,7 @@ customerprofiles_list_workflows <- function(DomainName, WorkflowType = NULL, Sta
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param MainProfileId &#91;required&#93; The identifier of the profile to be taken.
 #' @param ProfileIdsToBeMerged &#91;required&#93; The identifier of the profile to be merged into MainProfileId.
-#' @param FieldSourceProfileIds The identifiers of the fields in the profile that has the information
-#' you want to apply to the merge. For example, say you want to merge
-#' EmailAddress from Profile1 into MainProfile. This would be the
-#' identifier of the EmailAddress field in Profile1.
+#' @param FieldSourceProfileIds The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.
 #'
 #' @keywords internal
 #'
@@ -3162,10 +3040,8 @@ customerprofiles_merge_profiles <- function(DomainName, MainProfileId, ProfileId
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The unique name of the domain object type.
 #' @param Description The description of the domain object type.
-#' @param EncryptionKey The customer provided KMS key used to encrypt this type of domain
-#' object.
-#' @param Fields &#91;required&#93; A map of field names to their corresponding domain object type field
-#' definitions.
+#' @param EncryptionKey The customer provided KMS key used to encrypt this type of domain object.
+#' @param Fields &#91;required&#93; A map of field names to their corresponding domain object type field definitions.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -3201,23 +3077,12 @@ customerprofiles_put_domain_object_type <- function(DomainName, ObjectTypeName, 
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param Uri The URI of the S3 bucket or any other type of data source.
 #' @param ObjectTypeName The name of the profile object type.
-#' @param ObjectTypeNames A map in which each key is an event type from an external application
-#' such as Segment or Shopify, and each value is an `ObjectTypeName`
-#' (template) used to ingest the event. It supports the following event
-#' types: `SegmentIdentify`, `ShopifyCreateCustomers`,
-#' `ShopifyUpdateCustomers`, `ShopifyCreateDraftOrders`,
-#' `ShopifyUpdateDraftOrders`, `ShopifyCreateOrders`, and
-#' `ShopifyUpdatedOrders`.
+#' @param ObjectTypeNames A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an `ObjectTypeName` (template) used to ingest the event. It supports the following event types: `SegmentIdentify`, `ShopifyCreateCustomers`, `ShopifyUpdateCustomers`, `ShopifyCreateDraftOrders`, `ShopifyUpdateDraftOrders`, `ShopifyCreateOrders`, and `ShopifyUpdatedOrders`.
 #' @param Tags The tags used to organize, track, or control access for this resource.
-#' @param FlowDefinition The configuration that controls how Customer Profiles retrieves data
-#' from the source.
-#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role. The Integration uses
-#' this role to make Customer Profiles requests on your behalf.
-#' @param EventTriggerNames A list of unique names for active event triggers associated with the
-#' integration.
-#' @param Scope Specifies whether the integration applies to profile level data
-#' (associated with profiles) or domain level data (not associated with any
-#' specific profile). The default value is PROFILE.
+#' @param FlowDefinition The configuration that controls how Customer Profiles retrieves data from the source.
+#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.
+#' @param EventTriggerNames A list of unique names for active event triggers associated with the integration.
+#' @param Scope Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.
 #'
 #' @keywords internal
 #'
@@ -3284,30 +3149,13 @@ customerprofiles_put_profile_object <- function(ObjectTypeName, Object, DomainNa
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The name of the profile object type.
 #' @param Description &#91;required&#93; Description of the profile object type.
-#' @param TemplateId A unique identifier for the object template. For some attributes in the
-#' request, the service will use the default value from the object template
-#' when TemplateId is present. If these attributes are present in the
-#' request, the service may return a `BadRequestException`. These
-#' attributes include: AllowProfileCreation,
-#' SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if
-#' AllowProfileCreation is set to true when TemplateId is set, the service
-#' may return a `BadRequestException`.
+#' @param TemplateId A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a `BadRequestException`. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a `BadRequestException`.
 #' @param ExpirationDays The number of days until the data in the object expires.
-#' @param EncryptionKey The customer-provided key to encrypt the profile object that will be
-#' created in this profile object type.
-#' @param AllowProfileCreation Indicates whether a profile should be created when data is received if
-#' one doesn’t exist for an object of this type. The default is `FALSE`. If
-#' the AllowProfileCreation flag is set to `FALSE`, then the service tries
-#' to fetch a standard profile and associate this object with the profile.
-#' If it is set to `TRUE`, and if no match is found, then the service
-#' creates a new standard profile.
-#' @param SourceLastUpdatedTimestampFormat The format of your `sourceLastUpdatedTimestamp` that was previously set
-#' up.
+#' @param EncryptionKey The customer-provided key to encrypt the profile object that will be created in this profile object type.
+#' @param AllowProfileCreation Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is `FALSE`. If the AllowProfileCreation flag is set to `FALSE`, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to `TRUE`, and if no match is found, then the service creates a new standard profile.
+#' @param SourceLastUpdatedTimestampFormat The format of your `sourceLastUpdatedTimestamp` that was previously set up.
 #' @param MaxProfileObjectCount The amount of profile object max count assigned to the object type
-#' @param SourcePriority An integer that determines the priority of this object type when data
-#' from multiple sources is ingested. Lower values take priority. Object
-#' types without a specified source priority default to the lowest
-#' priority.
+#' @param SourcePriority An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.
 #' @param Fields A map of the name and ObjectType field.
 #' @param Keys A list of unique keys that can be used to map data to the profile.
 #' @param Tags The tags used to organize, track, or control access for this resource.
@@ -3347,37 +3195,18 @@ customerprofiles_put_profile_object_type <- function(DomainName, ObjectTypeName,
 #' 
 #' The default is 20 if this parameter is not included in the request.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you
-#' can use to search include: _account, _profileId, _assetId, _caseId,
-#' _orderId, _fullName, _phone, _email, _ctrContactId,
-#' _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-#' _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
-#' _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId,
-#' _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
+#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 #' @param Values &#91;required&#93; A list of key values.
-#' @param AdditionalSearchKeys A list of `AdditionalSearchKey` objects that are each searchable
-#' identifiers of a profile. Each `AdditionalSearchKey` object contains a
-#' `KeyName` and a list of `Values` associated with that specific key
-#' (i.e., a key-value(s) pair). These additional search keys will be used
-#' in conjunction with the `LogicalOperator` and the required `KeyName` and
-#' `Values` parameters to search for profiles that satisfy the search
-#' criteria.
-#' @param LogicalOperator Relationship between all specified search keys that will be used to
-#' search for profiles. This includes the required `KeyName` and `Values`
-#' parameters as well as any key-value(s) pairs specified in the
-#' `AdditionalSearchKeys` list.
+#' @param AdditionalSearchKeys A list of `AdditionalSearchKey` objects that are each searchable identifiers of a profile. Each `AdditionalSearchKey` object contains a `KeyName` and a list of `Values` associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the `LogicalOperator` and the required `KeyName` and `Values` parameters to search for profiles that satisfy the search criteria.
+#' @param LogicalOperator Relationship between all specified search keys that will be used to search for profiles. This includes the required `KeyName` and `Values` parameters as well as any key-value(s) pairs specified in the `AdditionalSearchKeys` list.
 #' 
-#' This parameter influences which profiles will be returned in the
-#' response in the following manner:
+#' This parameter influences which profiles will be returned in the response in the following manner:
 #' 
-#' -   `AND` - The response only includes profiles that match all of the
-#'     search keys.
+#' -   `AND` - The response only includes profiles that match all of the search keys.
 #' 
-#' -   `OR` - The response includes profiles that match at least one of the
-#'     search keys.
+#' -   `OR` - The response includes profiles that match at least one of the search keys.
 #' 
-#' The `OR` relationship is the default behavior if this parameter is not
-#' included in the request.
+#' The `OR` relationship is the default behavior if this parameter is not included in the request.
 #'
 #' @keywords internal
 #'
@@ -3606,8 +3435,7 @@ customerprofiles_untag_resource <- function(resourceArn, tagKeys) {
 #' @param CalculatedAttributeName &#91;required&#93; The unique name of the calculated attribute.
 #' @param DisplayName The display name of the calculated attribute.
 #' @param Description The description of the calculated attribute.
-#' @param Conditions The conditions including range, object count, and threshold for the
-#' calculated attribute.
+#' @param Conditions The conditions including range, object count, and threshold for the calculated attribute.
 #'
 #' @keywords internal
 #'
@@ -3641,35 +3469,12 @@ customerprofiles_update_calculated_attribute_definition <- function(DomainName, 
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param DefaultExpirationDays The default number of days until the data within the domain expires.
-#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no
-#' specific type of encryption key is specified. It is used to encrypt all
-#' data before it is placed in permanent or semi-permanent storage. If
-#' specified as an empty string, it will clear any existing value.
-#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors
-#' associated with ingesting data from third party applications. If
-#' specified as an empty string, it will clear any existing value. You must
-#' set up a policy on the DeadLetterQueue for the SendMessage operation to
-#' enable Amazon Connect Customer Profiles to send messages to the
-#' DeadLetterQueue.
-#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`,
-#' Amazon Connect Customer Profiles starts a weekly batch process called
-#' Identity Resolution Job. If you do not specify a date and time for
-#' Identity Resolution Job to run, by default it runs every Saturday at
-#' 12AM UTC to detect duplicate profiles in your domains.
+#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.
+#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
+#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
 #' 
-#' After the Identity Resolution Job completes, use the
-#' [`get_matches`][customerprofiles_get_matches] API to return and review
-#' the results. Or, if you have configured `ExportingConfig` in the
-#' `MatchingRequest`, you can download the results from S3.
-#' @param RuleBasedMatching The process of matching duplicate profiles using the rule-Based
-#' matching. If `RuleBasedMatching` = true, Amazon Connect Customer
-#' Profiles will start to match and merge your profiles according to your
-#' configuration in the `RuleBasedMatchingRequest`. You can use the
-#' [`list_rule_based_matches`][customerprofiles_list_rule_based_matches]
-#' and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API
-#' to return and review the results. Also, if you have configured
-#' `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download
-#' the results from S3.
+#' After the Identity Resolution Job completes, use the [`get_matches`][customerprofiles_get_matches] API to return and review the results. Or, if you have configured `ExportingConfig` in the `MatchingRequest`, you can download the results from S3.
+#' @param RuleBasedMatching The process of matching duplicate profiles using the rule-Based matching. If `RuleBasedMatching` = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the `RuleBasedMatchingRequest`. You can use the [`list_rule_based_matches`][customerprofiles_list_rule_based_matches] and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API to return and review the results. Also, if you have configured `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download the results from S3.
 #' @param DataStore Set to true to enabled data store for this domain.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -3706,13 +3511,9 @@ customerprofiles_update_domain <- function(DomainName, DefaultExpirationDays = N
 #' @param LayoutDefinitionName &#91;required&#93; The unique name of the layout.
 #' @param Description The description of the layout
 #' @param DisplayName The display name of the layout
-#' @param IsDefault If set to true for a layout, this layout will be used by default to view
-#' data. If set to false, then the layout will not be used by default, but
-#' it can be used to view data by explicitly selecting it in the console.
-#' @param LayoutType The type of layout that can be used to view data under a Customer
-#' Profiles domain.
-#' @param Layout A customizable layout that can be used to view data under a Customer
-#' Profiles domain.
+#' @param IsDefault If set to true for a layout, this layout will be used by default to view data. If set to false, then the layout will not be used by default, but it can be used to view data by explicitly selecting it in the console.
+#' @param LayoutType The type of layout that can be used to view data under a Customer Profiles domain.
+#' @param Layout A customizable layout that can be used to view data under a Customer Profiles domain.
 #'
 #' @keywords internal
 #'
@@ -3747,13 +3548,9 @@ customerprofiles_update_domain_layout <- function(DomainName, LayoutDefinitionNa
 #' @param EventTriggerName &#91;required&#93; The unique name of the event trigger.
 #' @param ObjectTypeName The unique name of the object type.
 #' @param Description The description of the event trigger.
-#' @param EventTriggerConditions A list of conditions that determine when an event should trigger the
-#' destination.
-#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of
-#' a segment definition.
-#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination,
-#' based on ingestion latency and the number of invocations per profile
-#' over specific time periods.
+#' @param EventTriggerConditions A list of conditions that determine when an event should trigger the destination.
+#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of a segment definition.
+#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination, based on ingestion latency and the number of invocations per profile over specific time periods.
 #'
 #' @keywords internal
 #'
@@ -3795,17 +3592,14 @@ customerprofiles_update_event_trigger <- function(DomainName, EventTriggerName, 
 #' @param LastName The customer’s last name.
 #' @param BirthDate The customer’s birth date.
 #' @param Gender The gender with which the customer identifies.
-#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile,
-#' home, or business number.
+#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile, home, or business number.
 #' @param MobilePhoneNumber The customer’s mobile phone number.
 #' @param HomePhoneNumber The customer’s home phone number.
 #' @param BusinessPhoneNumber The customer’s business phone number.
-#' @param EmailAddress The customer’s email address, which has not been specified as a personal
-#' or business address.
+#' @param EmailAddress The customer’s email address, which has not been specified as a personal or business address.
 #' @param PersonalEmailAddress The customer’s personal email address.
 #' @param BusinessEmailAddress The customer’s business email address.
-#' @param Address A generic address associated with the customer that is not mailing,
-#' shipping, or billing.
+#' @param Address A generic address associated with the customer that is not mailing, shipping, or billing.
 #' @param ShippingAddress The customer’s shipping address.
 #' @param MailingAddress The customer’s mailing address.
 #' @param BillingAddress The customer’s billing address.
@@ -3848,8 +3642,7 @@ customerprofiles_update_profile <- function(DomainName, ProfileId, AdditionalInf
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param RecommenderName &#91;required&#93; The name of the recommender to update.
 #' @param Description The new description to assign to the recommender.
-#' @param RecommenderConfig The new configuration settings to apply to the recommender, including
-#' updated parameters and settings that define its behavior.
+#' @param RecommenderConfig The new configuration settings to apply to the recommender, including updated parameters and settings that define its behavior.
 #'
 #' @keywords internal
 #'

@@ -14,18 +14,11 @@ sesv2_list_tenant_resources(
 \arguments{
 \item{TenantName}{[required] The name of the tenant to list resources for.}
 
-\item{Filter}{A map of filter keys and values for filtering the list of tenant
-resources. Currently, the only supported filter key is \code{RESOURCE_TYPE}.}
+\item{Filter}{A map of filter keys and values for filtering the list of tenant resources. Currently, the only supported filter key is \code{RESOURCE_TYPE}.}
 
-\item{PageSize}{The number of results to show in a single call to
-\code{\link[=sesv2_list_tenant_resources]{list_tenant_resources}}. If the number of
-results is larger than the number you specified in this parameter, then
-the response includes a \code{NextToken} element, which you can use to obtain
-additional results.}
+\item{PageSize}{The number of results to show in a single call to \code{\link[=sesv2_list_tenant_resources]{list_tenant_resources}}. If the number of results is larger than the number you specified in this parameter, then the response includes a \code{NextToken} element, which you can use to obtain additional results.}
 
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=sesv2_list_tenant_resources]{list_tenant_resources}} to indicate the
-position in the list of tenant resources.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=sesv2_list_tenant_resources]{list_tenant_resources}} to indicate the position in the list of tenant resources.}
 }
 \description{
 List all resources associated with a specific tenant.

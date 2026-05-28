@@ -10,9 +10,7 @@ connect_delete_data_table(InstanceId, DataTableId)
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table to delete. Must also accept the
-table ARN. Fails with an error if the version is provided and is not
-$LATEST.}
+\item{DataTableId}{[required] The unique identifier for the data table to delete. Must also accept the table ARN. Fails with an error if the version is provided and is not $LATEST.}
 }
 \description{
 Deletes a data table and all associated attributes, versions, audits, and values. Does not update any references to the data table, even from other data tables. This includes dynamic values and conditional validations. System managed data tables are not deletable by customers. API users may delete the table at any time. When deletion is requested from the admin website, a warning is shown alerting the user of the most recent time the table and its values were accessed.

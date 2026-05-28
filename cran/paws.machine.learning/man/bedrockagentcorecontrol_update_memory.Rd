@@ -16,24 +16,19 @@ bedrockagentcorecontrol_update_memory(
 )
 }
 \arguments{
-\item{clientToken}{A client token is used for keeping track of idempotent requests. It can
-contain a session id which can be around 250 chars, combined with a
-unique AWS identifier.}
+\item{clientToken}{A client token is used for keeping track of idempotent requests. It can contain a session id which can be around 250 chars, combined with a unique AWS identifier.}
 
 \item{memoryId}{[required] The unique identifier of the memory to update.}
 
 \item{description}{The updated description of the AgentCore Memory resource.}
 
-\item{eventExpiryDuration}{The number of days after which memory events will expire, between 7 and
-365 days.}
+\item{eventExpiryDuration}{The number of days after which memory events will expire, between 7 and 365 days.}
 
-\item{memoryExecutionRoleArn}{The ARN of the IAM role that provides permissions for the AgentCore
-Memory resource.}
+\item{memoryExecutionRoleArn}{The ARN of the IAM role that provides permissions for the AgentCore Memory resource.}
 
 \item{memoryStrategies}{The memory strategies to add, modify, or delete.}
 
-\item{addIndexedKeys}{Additional metadata keys to index. Previously indexed keys cannot be
-removed.}
+\item{addIndexedKeys}{Additional metadata keys to index. Previously indexed keys cannot be removed.}
 
 \item{streamDeliveryResources}{Configuration for streaming memory record data to external resources.}
 }

@@ -9,8 +9,7 @@ quicksight_describe_data_source(AwsAccountId, DataSourceId)
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID.}
 
-\item{DataSourceId}{[required] The ID of the data source. This ID is unique per Amazon Web Services
-Region for each Amazon Web Services account.}
+\item{DataSourceId}{[required] The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 }
 \description{
 Describes a data source.

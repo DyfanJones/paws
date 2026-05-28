@@ -7,8 +7,7 @@
 datazone_delete_environment(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the environment is
-deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the environment is deleted.}
 
 \item{identifier}{[required] The identifier of the environment that is to be deleted.}
 }

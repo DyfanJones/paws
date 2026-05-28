@@ -13,11 +13,9 @@ customerprofiles_list_recommender_schemas(
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{MaxResults}{The maximum number of recommender schemas to return in the response. The
-default value is 100.}
+\item{MaxResults}{The maximum number of recommender schemas to return in the response. The default value is 100.}
 
-\item{NextToken}{A token received from a previous ListRecommenderSchemas call to retrieve
-the next page of results.}
+\item{NextToken}{A token received from a previous ListRecommenderSchemas call to retrieve the next page of results.}
 }
 \description{
 Returns a list of recommender schemas in the specified domain.

@@ -14,14 +14,11 @@ quicksight_update_data_source_permissions(
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID.}
 
-\item{DataSourceId}{[required] The ID of the data source. This ID is unique per Amazon Web Services
-Region for each Amazon Web Services account.}
+\item{DataSourceId}{[required] The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
-\item{GrantPermissions}{A list of resource permissions that you want to grant on the data
-source.}
+\item{GrantPermissions}{A list of resource permissions that you want to grant on the data source.}
 
-\item{RevokePermissions}{A list of resource permissions that you want to revoke on the data
-source.}
+\item{RevokePermissions}{A list of resource permissions that you want to revoke on the data source.}
 }
 \description{
 Updates the permissions to a data source.

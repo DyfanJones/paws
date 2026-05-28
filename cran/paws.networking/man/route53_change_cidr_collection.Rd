@@ -9,20 +9,12 @@ route53_change_cidr_collection(Id, CollectionVersion = NULL, Changes)
 \arguments{
 \item{Id}{[required] The UUID of the CIDR collection to update.}
 
-\item{CollectionVersion}{A sequential counter that Amazon Route 53 sets to 1 when you create a
-collection and increments it by 1 each time you update the collection.
+\item{CollectionVersion}{A sequential counter that Amazon Route 53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.
 
-We recommend that you use \code{ListCidrCollection} to get the current value
-of \code{CollectionVersion} for the collection that you want to update, and
-then include that value with the change request. This prevents Route 53
-from overwriting an intervening update:
+We recommend that you use \code{ListCidrCollection} to get the current value of \code{CollectionVersion} for the collection that you want to update, and then include that value with the change request. This prevents Route 53 from overwriting an intervening update:
 \itemize{
-\item If the value in the request matches the value of \code{CollectionVersion}
-in the collection, Route 53 updates the collection.
-\item If the value of \code{CollectionVersion} in the collection is greater
-than the value in the request, the collection was changed after you
-got the version number. Route 53 does not update the collection, and
-it returns a \code{CidrCollectionVersionMismatch} error.
+\item If the value in the request matches the value of \code{CollectionVersion} in the collection, Route 53 updates the collection.
+\item If the value of \code{CollectionVersion} in the collection is greater than the value in the request, the collection was changed after you got the version number. Route 53 does not update the collection, and it returns a \code{CidrCollectionVersionMismatch} error.
 }}
 
 \item{Changes}{[required] Information about changes to a CIDR collection.}

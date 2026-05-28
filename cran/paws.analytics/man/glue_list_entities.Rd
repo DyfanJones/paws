@@ -13,15 +13,11 @@ glue_list_entities(
 )
 }
 \arguments{
-\item{ConnectionName}{A name for the connection that has required credentials to query any
-connection type.}
+\item{ConnectionName}{A name for the connection that has required credentials to query any connection type.}
 
-\item{CatalogId}{The catalog ID of the catalog that contains the connection. This can be
-null, By default, the Amazon Web Services Account ID is the catalog ID.}
+\item{CatalogId}{The catalog ID of the catalog that contains the connection. This can be null, By default, the Amazon Web Services Account ID is the catalog ID.}
 
-\item{ParentEntityName}{Name of the parent entity for which you want to list the children. This
-parameter takes a fully-qualified path of the entity in order to list
-the child entities.}
+\item{ParentEntityName}{Name of the parent entity for which you want to list the children. This parameter takes a fully-qualified path of the entity in order to list the child entities.}
 
 \item{NextToken}{A continuation token, included if this is a continuation call.}
 

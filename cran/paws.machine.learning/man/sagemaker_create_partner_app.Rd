@@ -22,38 +22,27 @@ sagemaker_create_partner_app(
 \arguments{
 \item{Name}{[required] The name to give the SageMaker Partner AI App.}
 
-\item{Type}{[required] The type of SageMaker Partner AI App to create. Must be one of the
-following: \code{lakera-guard}, \code{comet}, \code{deepchecks-llm-evaluation}, or
-\code{fiddler}.}
+\item{Type}{[required] The type of SageMaker Partner AI App to create. Must be one of the following: \code{lakera-guard}, \code{comet}, \code{deepchecks-llm-evaluation}, or \code{fiddler}.}
 
 \item{ExecutionRoleArn}{[required] The ARN of the IAM role that the partner application uses.}
 
-\item{KmsKeyId}{SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data
-at rest using an Amazon Web Services managed key by default. For more
-control, specify a customer managed key.}
+\item{KmsKeyId}{SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at rest using an Amazon Web Services managed key by default. For more control, specify a customer managed key.}
 
 \item{MaintenanceConfig}{Maintenance configuration settings for the SageMaker Partner AI App.}
 
-\item{Tier}{[required] Indicates the instance type and size of the cluster attached to the
-SageMaker Partner AI App.}
+\item{Tier}{[required] Indicates the instance type and size of the cluster attached to the SageMaker Partner AI App.}
 
 \item{ApplicationConfig}{Configuration settings for the SageMaker Partner AI App.}
 
-\item{AuthType}{[required] The authorization type that users use to access the SageMaker Partner AI
-App.}
+\item{AuthType}{[required] The authorization type that users use to access the SageMaker Partner AI App.}
 
-\item{EnableIamSessionBasedIdentity}{When set to \code{TRUE}, the SageMaker Partner AI App sets the Amazon Web
-Services IAM session name or the authenticated IAM user as the identity
-of the SageMaker Partner AI App user.}
+\item{EnableIamSessionBasedIdentity}{When set to \code{TRUE}, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.}
 
-\item{EnableAutoMinorVersionUpgrade}{When set to \code{TRUE}, the SageMaker Partner AI App is automatically
-upgraded to the latest minor version during the next scheduled
-maintenance window, if one is available. Default is \code{FALSE}.}
+\item{EnableAutoMinorVersionUpgrade}{When set to \code{TRUE}, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available. Default is \code{FALSE}.}
 
 \item{ClientToken}{A unique token that guarantees that the call to this API is idempotent.}
 
-\item{Tags}{Each tag consists of a key and an optional value. Tag keys must be
-unique per resource.}
+\item{Tags}{Each tag consists of a key and an optional value. Tag keys must be unique per resource.}
 }
 \description{
 Creates an Amazon SageMaker Partner AI App.

@@ -13,17 +13,13 @@ directoryservice_create_conditional_forwarder(
 )
 }
 \arguments{
-\item{DirectoryId}{[required] The directory ID of the Amazon Web Services directory for which you are
-creating the conditional forwarder.}
+\item{DirectoryId}{[required] The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.}
 
-\item{RemoteDomainName}{[required] The fully qualified domain name (FQDN) of the remote domain with which
-you will set up a trust relationship.}
+\item{RemoteDomainName}{[required] The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.}
 
-\item{DnsIpAddrs}{The IP addresses of the remote DNS server associated with
-RemoteDomainName.}
+\item{DnsIpAddrs}{The IP addresses of the remote DNS server associated with RemoteDomainName.}
 
-\item{DnsIpv6Addrs}{The IPv6 addresses of the remote DNS server associated with
-RemoteDomainName.}
+\item{DnsIpv6Addrs}{The IPv6 addresses of the remote DNS server associated with RemoteDomainName.}
 }
 \description{
 Creates a conditional forwarder associated with your Amazon Web Services directory. Conditional forwarders are required in order to set up a trust relationship with another domain. The conditional forwarder points to the trusted domain.

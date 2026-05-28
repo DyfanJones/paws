@@ -8,11 +8,7 @@ current Amazon Web Services account and Region}
 opensearchservice_list_vpc_endpoints(NextToken = NULL)
 }
 \arguments{
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_list_vpc_endpoints]{list_vpc_endpoints}} operation
-returns a \code{nextToken}, you can include the returned \code{nextToken} in
-subsequent \code{\link[=opensearchservice_list_vpc_endpoints]{list_vpc_endpoints}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_list_vpc_endpoints]{list_vpc_endpoints}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_list_vpc_endpoints]{list_vpc_endpoints}} operations, which returns results in the next page.}
 }
 \description{
 Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current Amazon Web Services account and Region.

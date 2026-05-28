@@ -19,50 +19,33 @@ codeartifact_list_packages(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the repository that contains the
-requested packages.}
+\item{domain}{[required] The name of the domain that contains the repository that contains the requested packages.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository that contains the requested packages.}
 
-\item{format}{The format used to filter requested packages. Only packages from the
-provided format will be returned.}
+\item{format}{The format used to filter requested packages. Only packages from the provided format will be returned.}
 
-\item{namespace}{The namespace prefix used to filter requested packages. Only packages
-with a namespace that starts with the provided string value are
-returned. Note that although this option is called \code{--namespace} and not
-\code{--namespace-prefix}, it has prefix-matching behavior.
+\item{namespace}{The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called \code{--namespace} and not \code{--namespace-prefix}, it has prefix-matching behavior.
 
 Each package format uses namespace as follows:
 \itemize{
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm or Swift package version is its \code{scope}.
 \item The namespace of a generic package is its \code{namespace}.
-\item Python, NuGet, Ruby, and Cargo package versions do not contain a
-corresponding component, package versions of those formats do not
-have a namespace.
+\item Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
-\item{packagePrefix}{A prefix used to filter requested packages. Only packages with names
-that start with \code{packagePrefix} are returned.}
+\item{packagePrefix}{A prefix used to filter requested packages. Only packages with names that start with \code{packagePrefix} are returned.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{publish}{The value of the \code{Publish} package origin control restriction used to
-filter requested packages. Only packages with the provided restriction
-are returned. For more information, see
-\href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html}{PackageOriginRestrictions}.}
+\item{publish}{The value of the \code{Publish} package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html}{PackageOriginRestrictions}.}
 
-\item{upstream}{The value of the \code{Upstream} package origin control restriction used to
-filter requested packages. Only packages with the provided restriction
-are returned. For more information, see
-\href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html}{PackageOriginRestrictions}.}
+\item{upstream}{The value of the \code{Upstream} package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html}{PackageOriginRestrictions}.}
 }
 \description{
 Returns a list of \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html}{PackageSummary} objects for packages in a repository that match the request parameters.

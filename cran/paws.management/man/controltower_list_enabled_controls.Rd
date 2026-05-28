@@ -14,20 +14,15 @@ controltower_list_enabled_controls(
 )
 }
 \arguments{
-\item{targetIdentifier}{The ARN of the organizational unit. For information on how to find the
-\code{targetIdentifier}, see \href{https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html}{the overview page}.}
+\item{targetIdentifier}{The ARN of the organizational unit. For information on how to find the \code{targetIdentifier}, see \href{https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html}{the overview page}.}
 
-\item{nextToken}{The token to continue the list from a previous API call with the same
-parameters.}
+\item{nextToken}{The token to continue the list from a previous API call with the same parameters.}
 
 \item{maxResults}{How many results to return per API call.}
 
-\item{filter}{An input filter for the
-\code{\link[=controltower_list_enabled_controls]{list_enabled_controls}} API that
-lets you select the types of control operations to view.}
+\item{filter}{An input filter for the \code{\link[=controltower_list_enabled_controls]{list_enabled_controls}} API that lets you select the types of control operations to view.}
 
-\item{includeChildren}{A boolean value that determines whether to include enabled controls from
-child organizational units in the response.}
+\item{includeChildren}{A boolean value that determines whether to include enabled controls from child organizational units in the response.}
 }
 \description{
 Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains. For usage examples, see the \href{https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html}{\emph{Controls Reference Guide}} .

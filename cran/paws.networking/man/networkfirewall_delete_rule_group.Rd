@@ -11,8 +11,7 @@ networkfirewall_delete_rule_group(
 )
 }
 \arguments{
-\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a
-rule group after you create it.
+\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
@@ -20,12 +19,9 @@ You must specify the ARN or the name, and you can specify both.}
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule
-group is stateless, it contains stateless rules. If it is stateful, it
-contains stateful rules.
+\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 
-This setting is required for requests that do not include the
-\code{RuleGroupARN}.}
+This setting is required for requests that do not include the \code{RuleGroupARN}.}
 }
 \description{
 Deletes the specified RuleGroup.

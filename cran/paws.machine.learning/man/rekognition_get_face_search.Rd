@@ -13,22 +13,13 @@ rekognition_get_face_search(
 )
 }
 \arguments{
-\item{JobId}{[required] The job identifer for the search request. You get the job identifier
-from an initial call to
-\code{\link[=rekognition_start_face_search]{start_face_search}}.}
+\item{JobId}{[required] The job identifer for the search request. You get the job identifier from an initial call to \code{\link[=rekognition_start_face_search]{start_face_search}}.}
 
-\item{MaxResults}{Maximum number of results to return per paginated call. The largest
-value you can specify is 1000. If you specify a value greater than 1000,
-a maximum of 1000 results is returned. The default value is 1000.}
+\item{MaxResults}{Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more search
-results to retrieve), Amazon Rekognition Video returns a pagination
-token in the response. You can use this pagination token to retrieve the
-next set of search results.}
+\item{NextToken}{If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results.}
 
-\item{SortBy}{Sort to use for grouping faces in the response. Use \code{TIMESTAMP} to group
-faces by the time that they are recognized. Use \code{INDEX} to sort by
-recognized faces.}
+\item{SortBy}{Sort to use for grouping faces in the response. Use \code{TIMESTAMP} to group faces by the time that they are recognized. Use \code{INDEX} to sort by recognized faces.}
 }
 \description{
 Gets the face search results for Amazon Rekognition Video face search started by \code{\link[=rekognition_start_face_search]{start_face_search}}. The search returns faces in a collection that match the faces of persons detected in a video. It also includes the time(s) that faces are matched in the video.

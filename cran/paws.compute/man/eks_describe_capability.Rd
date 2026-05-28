@@ -9,8 +9,7 @@ information, and any issues that may be affecting its operation}
 eks_describe_capability(clusterName, capabilityName)
 }
 \arguments{
-\item{clusterName}{[required] The name of the Amazon EKS cluster that contains the capability you want
-to describe.}
+\item{clusterName}{[required] The name of the Amazon EKS cluster that contains the capability you want to describe.}
 
 \item{capabilityName}{[required] The name of the capability to describe.}
 }

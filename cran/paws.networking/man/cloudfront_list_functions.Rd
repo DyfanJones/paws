@@ -8,16 +8,11 @@ account}
 cloudfront_list_functions(Marker = NULL, MaxItems = NULL, Stage = NULL)
 }
 \arguments{
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list of functions. The response includes functions in the list that
-occur after the marker. To get the next page of the list, set this
-field's value to the value of \code{NextMarker} from the current page's
-response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
 \item{MaxItems}{The maximum number of functions that you want in the response.}
 
-\item{Stage}{An optional filter to return only the functions that are in the
-specified stage, either \code{DEVELOPMENT} or \code{LIVE}.}
+\item{Stage}{An optional filter to return only the functions that are in the specified stage, either \code{DEVELOPMENT} or \code{LIVE}.}
 }
 \description{
 Gets a list of all CloudFront functions in your Amazon Web Services account.

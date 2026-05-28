@@ -16,11 +16,9 @@ sagemaker_update_monitoring_alert(
 
 \item{MonitoringAlertName}{[required] The name of a monitoring alert.}
 
-\item{DatapointsToAlert}{[required] Within \code{EvaluationPeriod}, how many execution failures will raise an
-alert.}
+\item{DatapointsToAlert}{[required] Within \code{EvaluationPeriod}, how many execution failures will raise an alert.}
 
-\item{EvaluationPeriod}{[required] The number of most recent monitoring executions to consider when
-evaluating alert status.}
+\item{EvaluationPeriod}{[required] The number of most recent monitoring executions to consider when evaluating alert status.}
 }
 \description{
 Update the parameters of a model monitor alert.

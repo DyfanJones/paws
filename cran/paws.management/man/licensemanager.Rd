@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-License Manager makes it easier to manage licenses from software vendors
-across multiple Amazon Web Services accounts and on-premises servers.
+License Manager makes it easier to manage licenses from software vendors across multiple Amazon Web Services accounts and on-premises servers.
 }
 \section{Service syntax}{
 

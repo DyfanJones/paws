@@ -14,17 +14,11 @@ codepipeline_start_pipeline_execution(
 \arguments{
 \item{name}{[required] The name of the pipeline to start.}
 
-\item{variables}{A list that overrides pipeline variables for a pipeline execution that's
-being started. Variable names must match \verb{[A-Za-z0-9@\\-_]+}, and the
-values can be anything except an empty string.}
+\item{variables}{A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match \verb{[A-Za-z0-9@\\-_]+}, and the values can be anything except an empty string.}
 
-\item{clientRequestToken}{The system-generated unique ID used to identify a unique execution
-request.}
+\item{clientRequestToken}{The system-generated unique ID used to identify a unique execution request.}
 
-\item{sourceRevisions}{A list that allows you to specify, or override, the source revision for
-a pipeline execution that's being started. A source revision is the
-version with all the changes to your application code, or source
-artifact, for the pipeline execution.}
+\item{sourceRevisions}{A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.}
 }
 \description{
 Starts the specified pipeline. Specifically, it begins processing the latest commit to the source location specified as part of the pipeline.

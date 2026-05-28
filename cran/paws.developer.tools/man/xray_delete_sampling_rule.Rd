@@ -7,11 +7,9 @@
 xray_delete_sampling_rule(RuleName = NULL, RuleARN = NULL)
 }
 \arguments{
-\item{RuleName}{The name of the sampling rule. Specify a rule by either name or ARN, but
-not both.}
+\item{RuleName}{The name of the sampling rule. Specify a rule by either name or ARN, but not both.}
 
-\item{RuleARN}{The ARN of the sampling rule. Specify a rule by either name or ARN, but
-not both.}
+\item{RuleARN}{The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.}
 }
 \description{
 Deletes a sampling rule.

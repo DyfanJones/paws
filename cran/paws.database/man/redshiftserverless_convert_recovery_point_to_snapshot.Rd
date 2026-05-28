@@ -18,8 +18,7 @@ redshiftserverless_convert_recovery_point_to_snapshot(
 
 \item{snapshotName}{[required] The name of the snapshot.}
 
-\item{tags}{An array of \href{https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html}{Tag objects}
-to associate with the created snapshot.}
+\item{tags}{An array of \href{https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html}{Tag objects} to associate with the created snapshot.}
 }
 \description{
 Converts a recovery point to a snapshot. For more information about recovery points and snapshots, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html}{Working with snapshots and recovery points}.

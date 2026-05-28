@@ -12,9 +12,15 @@ budgets_describe_budget_actions_for_budget(
 )
 }
 \arguments{
-\item{AccountId}{[required]}
+\item{AccountId}{[required] The account ID of the user. It's a 12-digit number.}
 
-\item{BudgetName}{[required]}
+\item{BudgetName}{[required] A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+
+Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.}
+
+\item{MaxResults}{An integer that represents how many entries a paginated response contains. The maximum is 100.}
+
+\item{NextToken}{A generic string.}
 }
 \description{
 Describes all of the budget actions for a budget.

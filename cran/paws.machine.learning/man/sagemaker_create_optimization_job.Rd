@@ -21,8 +21,7 @@ sagemaker_create_optimization_job(
 \arguments{
 \item{OptimizationJobName}{[required] A custom name for the new optimization job.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that enables Amazon
-SageMaker AI to perform tasks on your behalf.
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.
 
 During model optimization, Amazon SageMaker AI needs your permission to:
 \itemize{
@@ -32,14 +31,11 @@ During model optimization, Amazon SageMaker AI needs your permission to:
 \item Publish metrics to Amazon CloudWatch
 }
 
-You grant permissions for all of these tasks to an IAM role. To pass
-this role to Amazon SageMaker AI, the caller of this API must have the
-\code{iam:PassRole} permission. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html}{Amazon SageMaker AI Roles.}}
+You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker AI, the caller of this API must have the \code{iam:PassRole} permission. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html}{Amazon SageMaker AI Roles.}}
 
 \item{ModelSource}{[required] The location of the source model to optimize with an optimization job.}
 
-\item{DeploymentInstanceType}{[required] The type of instance that hosts the optimized model that you create with
-the optimization job.}
+\item{DeploymentInstanceType}{[required] The type of instance that hosts the optimized model that you create with the optimization job.}
 
 \item{MaxInstanceCount}{The maximum number of instances to use for the optimization job.}
 
@@ -47,14 +43,17 @@ the optimization job.}
 
 \item{OptimizationConfigs}{[required] Settings for each of the optimization techniques that the job applies.}
 
-\item{OutputConfig}{[required] Details for where to store the optimized model that you create with the
-optimization job.}
+\item{OutputConfig}{[required] Details for where to store the optimized model that you create with the optimization job.}
 
-\item{StoppingCondition}{[required]}
+\item{StoppingCondition}{[required] Specifies a limit to how long a job can run. When the job reaches the time limit, SageMaker ends the job. Use this API to cap costs.
 
-\item{Tags}{A list of key-value pairs associated with the optimization job. For more
-information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources}
-in the \emph{Amazon Web Services General Reference Guide}.}
+To stop a training job, SageMaker sends the algorithm the \code{SIGTERM} signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.
+
+The training algorithms provided by SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with \code{\link[=sagemaker_create_model]{create_model}}.
+
+The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.}
+
+\item{Tags}{A list of key-value pairs associated with the optimization job. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources} in the \emph{Amazon Web Services General Reference Guide}.}
 
 \item{VpcConfig}{A VPC in Amazon VPC that your optimized model has access to.}
 }

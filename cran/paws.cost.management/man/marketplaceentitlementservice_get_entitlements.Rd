@@ -12,29 +12,17 @@ marketplaceentitlementservice_get_entitlements(
 )
 }
 \arguments{
-\item{ProductCode}{[required] Product code is used to uniquely identify a product in AWS Marketplace.
-The product code will be provided by AWS Marketplace when the product
-listing is created.}
+\item{ProductCode}{[required] Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.}
 
-\item{Filter}{Filter is used to return entitlements for a specific customer or for a
-specific dimension. Filters are described as keys mapped to a lists of
-values. Filtered requests are \emph{unioned} for each value in the value
-list, and then \emph{intersected} for each filter key.
+\item{Filter}{Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are \emph{unioned} for each value in the value list, and then \emph{intersected} for each filter key.
 
-\code{CustomerIdentifier} and \code{CustomerAWSAccountId} are mutually exclusive
-parameters. You must use one or the other, but not both in the same
-request.
+\code{CustomerIdentifier} and \code{CustomerAWSAccountId} are mutually exclusive parameters. You must use one or the other, but not both in the same request.
 
-If you're migrating an existing integration, use \href{https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html}{Account Feeds}
-to map \code{CustomerIdentifier} to \code{CustomerAWSAccountId}, and \href{https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html}{Agreements Feeds}
-to map \code{CustomerAWSAccountId} and \code{LicenseArn}.}
+If you're migrating an existing integration, use \href{https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html}{Account Feeds} to map \code{CustomerIdentifier} to \code{CustomerAWSAccountId}, and \href{https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html}{Agreements Feeds} to map \code{CustomerAWSAccountId} and \code{LicenseArn}.}
 
-\item{NextToken}{For paginated calls to GetEntitlements, pass the NextToken from the
-previous GetEntitlementsResult.}
+\item{NextToken}{For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.}
 
-\item{MaxResults}{The maximum number of items to retrieve from the GetEntitlements
-operation. For pagination, use the NextToken field in subsequent calls
-to GetEntitlements.}
+\item{MaxResults}{The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.}
 }
 \description{
 GetEntitlements retrieves entitlement values for a given product. The results can be filtered based on customer identifier, AWS account ID, license ARN, or product dimensions.

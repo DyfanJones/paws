@@ -8,8 +8,7 @@ the last commit ID}
 codecommit_get_branch(repositoryName = NULL, branchName = NULL)
 }
 \arguments{
-\item{repositoryName}{The name of the repository that contains the branch for which you want
-to retrieve information.}
+\item{repositoryName}{The name of the repository that contains the branch for which you want to retrieve information.}
 
 \item{branchName}{The name of the branch for which you want to retrieve information.}
 }

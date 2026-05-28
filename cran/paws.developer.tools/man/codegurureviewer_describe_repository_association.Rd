@@ -8,10 +8,7 @@ the requested repository association}
 codegurureviewer_describe_repository_association(AssociationArn)
 }
 \arguments{
-\item{AssociationArn}{[required] The Amazon Resource Name (ARN) of the
-\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html}{RepositoryAssociation}
-object. You can retrieve this ARN by calling
-\code{\link[=codegurureviewer_list_repository_associations]{list_repository_associations}}.}
+\item{AssociationArn}{[required] The Amazon Resource Name (ARN) of the \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html}{RepositoryAssociation} object. You can retrieve this ARN by calling \code{\link[=codegurureviewer_list_repository_associations]{list_repository_associations}}.}
 }
 \description{
 Returns a \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html}{RepositoryAssociation} object that contains information about the requested repository association.

@@ -10,9 +10,7 @@ cloudfront_publish_function(Name, IfMatch)
 \arguments{
 \item{Name}{[required] The name of the function that you are publishing.}
 
-\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are
-publishing, which you can get using
-\code{\link[=cloudfront_describe_function]{describe_function}}.}
+\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are publishing, which you can get using \code{\link[=cloudfront_describe_function]{describe_function}}.}
 }
 \description{
 Publishes a CloudFront function by copying the function code from the \code{DEVELOPMENT} stage to \code{LIVE}. This automatically updates all cache behaviors that are using this function to use the newly published copy in the \code{LIVE} stage.

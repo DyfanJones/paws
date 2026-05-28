@@ -7,8 +7,7 @@
 datazone_delete_subscription_grant(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain where the subscription grant is
-deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain where the subscription grant is deleted.}
 
 \item{identifier}{[required] The ID of the subscription grant that is deleted.}
 }

@@ -48,9 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Web Services X-Ray provides APIs for managing debug traces and
-retrieving service maps and other data created by processing those
-traces.
+Amazon Web Services X-Ray provides APIs for managing debug traces and retrieving service maps and other data created by processing those traces.
 }
 \section{Service syntax}{
 

@@ -12,11 +12,7 @@ identitystore_update_user(IdentityStoreId, UserId, Operations)
 
 \item{UserId}{[required] The identifier for a user in the identity store.}
 
-\item{Operations}{[required] A list of \code{AttributeOperation} objects to apply to the requested user.
-These operations might add, replace, or remove an attribute. For more
-information on the attributes that can be added, replaced, or removed,
-see
-\href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html}{User}.}
+\item{Operations}{[required] A list of \code{AttributeOperation} objects to apply to the requested user. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see \href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html}{User}.}
 }
 \description{
 Updates the specified user metadata and attributes in the specified identity store.

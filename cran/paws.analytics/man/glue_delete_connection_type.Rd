@@ -7,8 +7,7 @@
 glue_delete_connection_type(ConnectionType)
 }
 \arguments{
-\item{ConnectionType}{[required] The name of the connection type to delete. Must reference an existing
-registered connection type.}
+\item{ConnectionType}{[required] The name of the connection type to delete. Must reference an existing registered connection type.}
 }
 \description{
 Deletes a custom connection type in Glue.

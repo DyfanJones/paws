@@ -7,8 +7,7 @@
 quicksight_delete_account_custom_permission(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account from which you want to unapply
-the custom permissions profile.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account from which you want to unapply the custom permissions profile.}
 }
 \description{
 Unapplies a custom permissions profile from an account.

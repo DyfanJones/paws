@@ -17,19 +17,11 @@ workspaces_import_workspace_image(
 \arguments{
 \item{Ec2ImageId}{[required] The identifier of the EC2 image.}
 
-\item{IngestionProcess}{[required] The ingestion process to be used when importing the image, depending on
-which protocol you want to use for your BYOL Workspace image, either
-PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a
-value that ends in \verb{_WSP}. To use PCoIP, specify a value that does not
-end in \verb{_WSP}. To use BYOP, specify a value that ends in \verb{_BYOP}.
+\item{IngestionProcess}{[required] The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in \verb{_WSP}. To use PCoIP, specify a value that does not end in \verb{_WSP}. To use BYOP, specify a value that ends in \verb{_BYOP}.
 
-For non-GPU-enabled bundles (bundles other than Graphics or
-GraphicsPro), specify \code{BYOL_REGULAR}, \code{BYOL_REGULAR_WSP}, or
-\code{BYOL_REGULAR_BYOP}, depending on the protocol.
+For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify \code{BYOL_REGULAR}, \code{BYOL_REGULAR_WSP}, or \code{BYOL_REGULAR_BYOP}, depending on the protocol.
 
-The \code{BYOL_REGULAR_BYOP} and \code{BYOL_GRAPHICS_G4DN_BYOP} values are only
-supported by Amazon WorkSpaces Core. Contact your account team to be
-allow-listed to use these values. For more information, see \href{https://aws.amazon.com/workspaces/vdi-partners/}{Amazon WorkSpaces Core}.}
+The \code{BYOL_REGULAR_BYOP} and \code{BYOL_GRAPHICS_G4DN_BYOP} values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see \href{https://aws.amazon.com/workspaces/vdi-partners/}{Amazon WorkSpaces Core}.}
 
 \item{ImageName}{[required] The name of the WorkSpace image.}
 
@@ -37,16 +29,10 @@ allow-listed to use these values. For more information, see \href{https://aws.am
 
 \item{Tags}{The tags. Each WorkSpaces resource can have a maximum of 50 tags.}
 
-\item{Applications}{If specified, the version of Microsoft Office to subscribe to. Valid
-only for Windows 10 and 11 BYOL images. For more information about
-subscribing to Office for BYOL images, see \href{https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html}{Bring Your Own Windows Desktop Licenses}.
+\item{Applications}{If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see \href{https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html}{Bring Your Own Windows Desktop Licenses}.
 \itemize{
-\item Although this parameter is an array, only one item is allowed at
-this time.
-\item During the image import process, non-GPU DCV (formerly WSP)
-WorkSpaces with Windows 11 support only \code{Microsoft_Office_2019}. GPU
-DCV (formerly WSP) WorkSpaces with Windows 11 do not support Office
-installation.
+\item Although this parameter is an array, only one item is allowed at this time.
+\item During the image import process, non-GPU DCV (formerly WSP) WorkSpaces with Windows 11 support only \code{Microsoft_Office_2019}. GPU DCV (formerly WSP) WorkSpaces with Windows 11 do not support Office installation.
 }}
 }
 \description{

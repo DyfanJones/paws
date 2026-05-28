@@ -18,8 +18,7 @@ sagemaker_update_pipeline_execution(
 
 \item{PipelineExecutionDisplayName}{The display name of the pipeline execution.}
 
-\item{ParallelismConfiguration}{This configuration, if specified, overrides the parallelism
-configuration of the parent pipeline for this specific run.}
+\item{ParallelismConfiguration}{This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.}
 }
 \description{
 Updates a pipeline execution.

@@ -11,8 +11,7 @@ glue_update_usage_profile(Name, Description = NULL, Configuration)
 
 \item{Description}{A description of the usage profile.}
 
-\item{Configuration}{[required] A \code{ProfileConfiguration} object specifying the job and session values
-for the profile.}
+\item{Configuration}{[required] A \code{ProfileConfiguration} object specifying the job and session values for the profile.}
 }
 \description{
 Update an Glue usage profile.

@@ -14,8 +14,7 @@ datazone_create_form_type(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this metadata form type is
-created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this metadata form type is created.}
 
 \item{name}{[required] The name of this Amazon DataZone metadata form type.}
 

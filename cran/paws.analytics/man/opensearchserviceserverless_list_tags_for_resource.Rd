@@ -7,9 +7,7 @@
 opensearchserviceserverless_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource. The resource must be
-active (not in the \code{DELETING} state), and must be owned by the account
-ID included in the request.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource. The resource must be active (not in the \code{DELETING} state), and must be owned by the account ID included in the request.}
 }
 \description{
 Returns the tags for an OpenSearch Serverless resource. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html}{Tagging Amazon OpenSearch Serverless collections}.

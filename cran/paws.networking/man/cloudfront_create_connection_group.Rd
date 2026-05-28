@@ -13,13 +13,11 @@ cloudfront_create_connection_group(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the connection group. Enter a friendly identifier that is
-unique within your Amazon Web Services account. This name can't be
-updated after you create the connection group.}
+\item{Name}{[required] The name of the connection group. Enter a friendly identifier that is unique within your Amazon Web Services account. This name can't be updated after you create the connection group.}
 
-\item{Ipv6Enabled}{Enable IPv6 for the connection group. The default is \code{true}. For more
-information, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6}{Enable IPv6}
-in the \emph{Amazon CloudFront Developer Guide}.}
+\item{Ipv6Enabled}{Enable IPv6 for the connection group. The default is \code{true}. For more information, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6}{Enable IPv6} in the \emph{Amazon CloudFront Developer Guide}.}
+
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
 
 \item{AnycastIpListId}{The ID of the Anycast static IP list.}
 

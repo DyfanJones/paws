@@ -7,8 +7,7 @@
 lookoutequipment_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which the tag is
-currently associated.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.}
 
 \item{TagKeys}{[required] Specifies the key of the tag to be removed from a specified resource.}
 }

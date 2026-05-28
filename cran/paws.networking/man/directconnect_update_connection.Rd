@@ -13,8 +13,7 @@ directconnect_update_connection(
 \arguments{
 \item{connectionId}{[required] The ID of the connection.
 
-You can use \code{\link[=directconnect_describe_connections]{describe_connections}}
-to retrieve the connection ID.}
+You can use \code{\link[=directconnect_describe_connections]{describe_connections}} to retrieve the connection ID.}
 
 \item{connectionName}{The name of the connection.}
 

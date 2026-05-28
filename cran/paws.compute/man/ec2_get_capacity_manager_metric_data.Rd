@@ -19,32 +19,21 @@ ec2_get_capacity_manager_metric_data(
 \arguments{
 \item{MetricNames}{[required] The names of the metrics to retrieve. Maximum of 10 metrics per request.}
 
-\item{StartTime}{[required] The start time for the metric data query, in ISO 8601 format. The time
-range (end time - start time) must be a multiple of the specified
-period.}
+\item{StartTime}{[required] The start time for the metric data query, in ISO 8601 format. The time range (end time - start time) must be a multiple of the specified period.}
 
-\item{EndTime}{[required] The end time for the metric data query, in ISO 8601 format. If the end
-time is beyond the latest ingested data, it will be automatically
-adjusted to the latest available data point.}
+\item{EndTime}{[required] The end time for the metric data query, in ISO 8601 format. If the end time is beyond the latest ingested data, it will be automatically adjusted to the latest available data point.}
 
 \item{Period}{[required] The granularity, in seconds, of the returned data points.}
 
-\item{GroupBy}{The dimensions by which to group the metric data. This determines how
-the data is aggregated and returned.}
+\item{GroupBy}{The dimensions by which to group the metric data. This determines how the data is aggregated and returned.}
 
-\item{FilterBy}{Conditions to filter the metric data. Each filter specifies a dimension,
-comparison operator ('equals', 'in'), and values to match against.}
+\item{FilterBy}{Conditions to filter the metric data. Each filter specifies a dimension, comparison operator ('equals', 'in'), and values to match against.}
 
-\item{MaxResults}{The maximum number of data points to return. Valid range is 1 to
-100,000. Use with NextToken for pagination of large result sets.}
+\item{MaxResults}{The maximum number of data points to return. Valid range is 1 to 100,000. Use with NextToken for pagination of large result sets.}
 
-\item{NextToken}{The token for the next page of results. Use this value in a subsequent
-call to retrieve additional data points.}
+\item{NextToken}{The token for the next page of results. Use this value in a subsequent call to retrieve additional data points.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Retrieves capacity usage metrics for your EC2 resources. Returns time-series data for metrics like unused capacity, utilization rates, and costs across On-Demand, Spot, and Capacity Reservations. Data can be grouped and filtered by various dimensions such as region, account, and instance family.

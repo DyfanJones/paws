@@ -20,30 +20,24 @@ dynamodb_execute_statement(
 
 \item{Parameters}{The parameters for the PartiQL statement, if any.}
 
-\item{ConsistentRead}{The consistency of a read operation. If set to \code{true}, then a strongly
-consistent read is used; otherwise, an eventually consistent read is
-used.}
+\item{ConsistentRead}{The consistency of a read operation. If set to \code{true}, then a strongly consistent read is used; otherwise, an eventually consistent read is used.}
 
-\item{NextToken}{Set this value to get remaining results, if \code{NextToken} was returned in
-the statement response.}
+\item{NextToken}{Set this value to get remaining results, if \code{NextToken} was returned in the statement response.}
 
-\item{Limit}{The maximum number of items to evaluate (not necessarily the number of
-matching items). If DynamoDB processes the number of items up to the
-limit while processing the results, it stops the operation and returns
-the matching values up to that point, along with a key in
-\code{LastEvaluatedKey} to apply in a subsequent operation so you can pick up
-where you left off. Also, if the processed dataset size exceeds 1 MB
-before DynamoDB reaches this limit, it stops the operation and returns
-the matching values up to the limit, and a key in \code{LastEvaluatedKey} to
-apply in a subsequent operation to continue the operation.}
+\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:
+\itemize{
+\item \code{INDEXES} - The response includes the aggregate \code{ConsumedCapacity} for the operation, together with \code{ConsumedCapacity} for each table and secondary index that was accessed.
 
-\item{ReturnValuesOnConditionCheckFailure}{An optional parameter that returns the item attributes for an
-\code{\link[=dynamodb_execute_statement]{execute_statement}} operation that failed
-a condition check.
+Note that some operations, such as \code{\link[=dynamodb_get_item]{get_item}} and \code{\link[=dynamodb_batch_get_item]{batch_get_item}}, do not access any indexes at all. In these cases, specifying \code{INDEXES} will only return \code{ConsumedCapacity} information for table(s).
+\item \code{TOTAL} - The response includes only the aggregate \code{ConsumedCapacity} for the operation.
+\item \code{NONE} - No \code{ConsumedCapacity} details are included in the response.
+}}
 
-There is no additional cost associated with requesting a return value
-aside from the small network and processing overhead of receiving a
-larger response. No read capacity units are consumed.}
+\item{Limit}{The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in \code{LastEvaluatedKey} to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in \code{LastEvaluatedKey} to apply in a subsequent operation to continue the operation.}
+
+\item{ReturnValuesOnConditionCheckFailure}{An optional parameter that returns the item attributes for an \code{\link[=dynamodb_execute_statement]{execute_statement}} operation that failed a condition check.
+
+There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.}
 }
 \description{
 This operation allows you to perform reads and singleton writes on data stored in DynamoDB, using PartiQL.

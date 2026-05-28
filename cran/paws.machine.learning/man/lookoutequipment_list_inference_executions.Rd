@@ -15,18 +15,15 @@ lookoutequipment_list_inference_executions(
 )
 }
 \arguments{
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-inference executions.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of inference executions.}
 
 \item{MaxResults}{Specifies the maximum number of inference executions to list.}
 
 \item{InferenceSchedulerName}{[required] The name of the inference scheduler for the inference execution listed.}
 
-\item{DataStartTimeAfter}{The time reference in the inferenced dataset after which Amazon Lookout
-for Equipment started the inference execution.}
+\item{DataStartTimeAfter}{The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution.}
 
-\item{DataEndTimeBefore}{The time reference in the inferenced dataset before which Amazon Lookout
-for Equipment stopped the inference execution.}
+\item{DataEndTimeBefore}{The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution.}
 
 \item{Status}{The status of the inference execution.}
 }

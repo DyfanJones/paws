@@ -8,8 +8,7 @@ trustedEntitySetId}
 guardduty_get_trusted_entity_set(DetectorId, TrustedEntitySetId)
 }
 \arguments{
-\item{DetectorId}{[required] The unique ID of the GuardDuty detector associated with this trusted
-entity set.}
+\item{DetectorId}{[required] The unique ID of the GuardDuty detector associated with this trusted entity set.}
 
 \item{TrustedEntitySetId}{[required] The unique ID that helps GuardDuty identify the trusted entity set.}
 }

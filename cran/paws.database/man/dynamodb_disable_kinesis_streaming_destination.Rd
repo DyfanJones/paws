@@ -11,8 +11,7 @@ dynamodb_disable_kinesis_streaming_destination(
 )
 }
 \arguments{
-\item{TableName}{[required] The name of the DynamoDB table. You can also provide the Amazon Resource
-Name (ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 
 \item{StreamArn}{[required] The ARN for a Kinesis data stream.}
 

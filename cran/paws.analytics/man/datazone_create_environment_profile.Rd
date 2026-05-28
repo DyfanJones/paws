@@ -16,8 +16,7 @@ datazone_create_environment_profile(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this environment profile
-is created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this environment profile is created.}
 
 \item{name}{[required] The name of this Amazon DataZone environment profile.}
 
@@ -25,16 +24,13 @@ is created.}
 
 \item{environmentBlueprintIdentifier}{[required] The ID of the blueprint with which this environment profile is created.}
 
-\item{projectIdentifier}{[required] The identifier of the project in which to create the environment
-profile.}
+\item{projectIdentifier}{[required] The identifier of the project in which to create the environment profile.}
 
 \item{userParameters}{The user parameters of this Amazon DataZone environment profile.}
 
-\item{awsAccountId}{The Amazon Web Services account in which the Amazon DataZone environment
-is created.}
+\item{awsAccountId}{The Amazon Web Services account in which the Amazon DataZone environment is created.}
 
-\item{awsAccountRegion}{The Amazon Web Services region in which this environment profile is
-created.}
+\item{awsAccountRegion}{The Amazon Web Services region in which this environment profile is created.}
 }
 \description{
 Creates an Amazon DataZone environment profile.

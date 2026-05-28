@@ -16,11 +16,9 @@ sagemaker_list_trials(
 )
 }
 \arguments{
-\item{ExperimentName}{A filter that returns only trials that are part of the specified
-experiment.}
+\item{ExperimentName}{A filter that returns only trials that are part of the specified experiment.}
 
-\item{TrialComponentName}{A filter that returns only trials that are associated with the specified
-trial component.}
+\item{TrialComponentName}{A filter that returns only trials that are associated with the specified trial component.}
 
 \item{CreatedAfter}{A filter that returns only trials created after the specified time.}
 
@@ -30,12 +28,9 @@ trial component.}
 
 \item{SortOrder}{The sort order. The default value is \code{Descending}.}
 
-\item{MaxResults}{The maximum number of trials to return in the response. The default
-value is 10.}
+\item{MaxResults}{The maximum number of trials to return in the response. The default value is 10.}
 
-\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_trials]{list_trials}} didn't
-return the full set of trials, the call returns a token for getting the
-next set of trials.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_trials]{list_trials}} didn't return the full set of trials, the call returns a token for getting the next set of trials.}
 }
 \description{
 Lists the trials in your account. Specify an experiment name to limit the list to the trials that are part of that experiment. Specify a trial component name to limit the list to the trials that associated with that trial component. The list can be filtered to show only trials that were created in a specific time range. The list can be sorted by trial name or creation time.

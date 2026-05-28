@@ -8,8 +8,7 @@ account}
 codedeploy_list_applications(nextToken = NULL)
 }
 \arguments{
-\item{nextToken}{An identifier returned from the previous list applications call. It can
-be used to return the next set of applications in the list.}
+\item{nextToken}{An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.}
 }
 \description{
 Lists the applications registered with the user or Amazon Web Services account.

@@ -8,8 +8,7 @@ Messaging SMS resource}
 pinpointsmsvoicev2_delete_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the End User Messaging SMS resource
-you're deleting the resource-based policy from.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the End User Messaging SMS resource you're deleting the resource-based policy from.}
 }
 \description{
 Deletes the resource-based policy document attached to the End User Messaging SMS resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.

@@ -7,8 +7,7 @@
 apigateway_update_vpc_link(vpcLinkId, patchOperations = NULL)
 }
 \arguments{
-\item{vpcLinkId}{[required] The identifier of the VpcLink. It is used in an Integration to reference
-this VpcLink.}
+\item{vpcLinkId}{[required] The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.}
 
 \item{patchOperations}{For more information about supported patch operations, see \href{https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html}{Patch Operations}.}
 }

@@ -7,14 +7,9 @@
 organizations_decline_handshake(HandshakeId)
 }
 \arguments{
-\item{HandshakeId}{[required] ID for the handshake that you want to decline. You can get the ID from
-the
-\code{\link[=organizations_list_handshakes_for_account]{list_handshakes_for_account}}
-operation.
+\item{HandshakeId}{[required] ID for the handshake that you want to decline. You can get the ID from the \code{\link[=organizations_list_handshakes_for_account]{list_handshakes_for_account}} operation.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake
-ID string requires "h-" followed by from 8 to 32 lowercase letters or
-digits.}
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.}
 }
 \description{
 Declines a Handshake.

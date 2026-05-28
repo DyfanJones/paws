@@ -50,24 +50,11 @@ Operations section.
 \description{
 Amazon Elastic Container Service
 
-Amazon Elastic Container Service (Amazon ECS) is a highly scalable,
-fast, container management service. It makes it easy to run, stop, and
-manage Docker containers. You can host your cluster on a serverless
-infrastructure that's managed by Amazon ECS by launching your services
-or tasks on Fargate. For more control, you can host your tasks on a
-cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External
-(on-premises) instances that you manage.
+Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service. It makes it easy to run, stop, and manage Docker containers. You can host your cluster on a serverless infrastructure that's managed by Amazon ECS by launching your services or tasks on Fargate. For more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External (on-premises) instances that you manage.
 
-Amazon ECS makes it easy to launch and stop container-based applications
-with simple API calls. This makes it easy to get the state of your
-cluster from a centralized service, and gives you access to many
-familiar Amazon EC2 features.
+Amazon ECS makes it easy to launch and stop container-based applications with simple API calls. This makes it easy to get the state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
 
-You can use Amazon ECS to schedule the placement of containers across
-your cluster based on your resource needs, isolation policies, and
-availability requirements. With Amazon ECS, you don't need to operate
-your own cluster management and configuration management systems. You
-also don't need to worry about scaling your management infrastructure.
+You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs, isolation policies, and availability requirements. With Amazon ECS, you don't need to operate your own cluster management and configuration management systems. You also don't need to worry about scaling your management infrastructure.
 }
 \section{Service syntax}{
 
@@ -108,6 +95,7 @@ also don't need to worry about scaling your management infrastructure.
 \section{Operations}{
 
 \tabular{ll}{
+\link[=ecs_continue_service_deployment]{continue_service_deployment} \tab Continues or rolls back an Amazon ECS service deployment that is paused at a lifecycle hook\cr
 \link[=ecs_create_capacity_provider]{create_capacity_provider} \tab Creates a capacity provider\cr
 \link[=ecs_create_cluster]{create_cluster} \tab Creates a new Amazon ECS cluster\cr
 \link[=ecs_create_daemon]{create_daemon} \tab Creates a new daemon in the specified cluster and capacity providers\cr

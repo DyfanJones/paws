@@ -11,10 +11,7 @@ resourcegroupstaggingapi_list_required_tags(
 )
 }
 \arguments{
-\item{NextToken}{A token for requesting another page of required tags if the \code{NextToken}
-response element indicates that more required tags are available. Use
-the value of the returned \code{NextToken} element in your request until the
-token comes back as null. Pass null if this is the first call.}
+\item{NextToken}{A token for requesting another page of required tags if the \code{NextToken} response element indicates that more required tags are available. Use the value of the returned \code{NextToken} element in your request until the token comes back as null. Pass null if this is the first call.}
 
 \item{MaxResults}{The maximum number of required tags.}
 }

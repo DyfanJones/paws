@@ -29,259 +29,117 @@ transcribeservice_start_transcription_job(
 )
 }
 \arguments{
-\item{TranscriptionJobName}{[required] A unique name, chosen by you, for your transcription job. The name that
-you specify is also used as the default name of your transcription
-output file. If you want to specify a different name for your
-transcription output, use the \code{OutputKey} parameter.
+\item{TranscriptionJobName}{[required] A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the \code{OutputKey} parameter.
 
-This name is case sensitive, cannot contain spaces, and must be unique
-within an Amazon Web Services account. If you try to create a new job
-with the same name as an existing job, you get a \code{ConflictException}
-error.}
+This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a \code{ConflictException} error.}
 
-\item{LanguageCode}{The language code that represents the language spoken in the input media
-file.
+\item{LanguageCode}{The language code that represents the language spoken in the input media file.
 
-If you're unsure of the language spoken in your media file, consider
-using \code{IdentifyLanguage} or \code{IdentifyMultipleLanguages} to enable
-automatic language identification.
+If you're unsure of the language spoken in your media file, consider using \code{IdentifyLanguage} or \code{IdentifyMultipleLanguages} to enable automatic language identification.
 
-Note that you must include one of \code{LanguageCode}, \code{IdentifyLanguage}, or
-\code{IdentifyMultipleLanguages} in your request. If you include more than
-one of these parameters, your transcription job fails.
+Note that you must include one of \code{LanguageCode}, \code{IdentifyLanguage}, or \code{IdentifyMultipleLanguages} in your request. If you include more than one of these parameters, your transcription job fails.
 
-For a list of supported languages and their associated language codes,
-refer to the \href{https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html}{Supported languages}
-table.
+For a list of supported languages and their associated language codes, refer to the \href{https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html}{Supported languages} table.
 
-To transcribe speech in Modern Standard Arabic (\code{ar-SA}) in Amazon Web
-Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services
-GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary, ca-west-1) and
-Africa (Cape Town, af-south-1), your media file must be encoded at a
-sample rate of 16,000 Hz or higher.}
+To transcribe speech in Modern Standard Arabic (\code{ar-SA}) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary, ca-west-1) and Africa (Cape Town, af-south-1), your media file must be encoded at a sample rate of 16,000 Hz or higher.}
 
 \item{MediaSampleRateHertz}{The sample rate, in hertz, of the audio track in your input media file.
 
-If you do not specify the media sample rate, Amazon Transcribe
-determines it for you. If you specify the sample rate, it must match the
-rate detected by Amazon Transcribe. If there's a mismatch between the
-value that you specify and the value detected, your job fails. In most
-cases, you can omit \code{MediaSampleRateHertz} and let Amazon Transcribe
-determine the sample rate.}
+If you do not specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit \code{MediaSampleRateHertz} and let Amazon Transcribe determine the sample rate.}
 
 \item{MediaFormat}{Specify the format of your input media file.}
 
-\item{Media}{[required] Describes the Amazon S3 location of the media file you want to use in
-your request.}
+\item{Media}{[required] Describes the Amazon S3 location of the media file you want to use in your request.}
 
-\item{OutputBucketName}{The name of the Amazon S3 bucket where you want your transcription
-output stored. Do not include the \verb{S3://} prefix of the specified
-bucket.
+\item{OutputBucketName}{The name of the Amazon S3 bucket where you want your transcription output stored. Do not include the \verb{S3://} prefix of the specified bucket.
 
-If you want your output to go to a sub-folder of this bucket, specify it
-using the \code{OutputKey} parameter; \code{OutputBucketName} only accepts the
-name of a bucket.
+If you want your output to go to a sub-folder of this bucket, specify it using the \code{OutputKey} parameter; \code{OutputBucketName} only accepts the name of a bucket.
 
-For example, if you want your output stored in
-\verb{S3://DOC-EXAMPLE-BUCKET}, set \code{OutputBucketName} to
-\code{DOC-EXAMPLE-BUCKET}. However, if you want your output stored in
-\verb{S3://DOC-EXAMPLE-BUCKET/test-files/}, set \code{OutputBucketName} to
-\code{DOC-EXAMPLE-BUCKET} and \code{OutputKey} to \verb{test-files/}.
+For example, if you want your output stored in \verb{S3://DOC-EXAMPLE-BUCKET}, set \code{OutputBucketName} to \code{DOC-EXAMPLE-BUCKET}. However, if you want your output stored in \verb{S3://DOC-EXAMPLE-BUCKET/test-files/}, set \code{OutputBucketName} to \code{DOC-EXAMPLE-BUCKET} and \code{OutputKey} to \verb{test-files/}.
 
-Note that Amazon Transcribe must have permission to use the specified
-location. You can change Amazon S3 permissions using the Amazon Web
-Services Management Console. See also \href{https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user}{Permissions Required for IAM User Roles}.
+Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the Amazon Web Services Management Console. See also \href{https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user}{Permissions Required for IAM User Roles}.
 
-If you do not specify \code{OutputBucketName}, your transcript is placed in a
-service-managed Amazon S3 bucket and you are provided with a URI to
-access your transcript.}
+If you do not specify \code{OutputBucketName}, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.}
 
-\item{OutputKey}{Use in combination with \code{OutputBucketName} to specify the output
-location of your transcript and, optionally, a unique name for your
-output file. The default name for your transcription output is the same
-as the name you specified for your transcription job
-(\code{TranscriptionJobName}).
+\item{OutputKey}{Use in combination with \code{OutputBucketName} to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your transcription job (\code{TranscriptionJobName}).
 
 Here are some examples of how you can use \code{OutputKey}:
 \itemize{
-\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and
-'my-transcript.json' as the \code{OutputKey}, your transcription output
-path is \verb{s3://DOC-EXAMPLE-BUCKET/my-transcript.json}.
-\item If you specify 'my-first-transcription' as the
-\code{TranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the
-\code{OutputBucketName}, and 'my-transcript' as the \code{OutputKey}, your
-transcription output path is
-\verb{s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json}.
-\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and
-'test-files/my-transcript.json' as the \code{OutputKey}, your
-transcription output path is
-\verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json}.
-\item If you specify 'my-first-transcription' as the
-\code{TranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the
-\code{OutputBucketName}, and 'test-files/my-transcript' as the
-\code{OutputKey}, your transcription output path is
-\verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json}.
+\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and 'my-transcript.json' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/my-transcript.json}.
+\item If you specify 'my-first-transcription' as the \code{TranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName}, and 'my-transcript' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json}.
+\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and 'test-files/my-transcript.json' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json}.
+\item If you specify 'my-first-transcription' as the \code{TranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName}, and 'test-files/my-transcript' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json}.
 }
 
-If you specify the name of an Amazon S3 bucket sub-folder that doesn't
-exist, one is created for you.}
+If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.}
 
-\item{OutputEncryptionKMSKeyId}{The Amazon Resource Name (ARN) of a KMS key that you want to use to
-encrypt your transcription output.
+\item{OutputEncryptionKMSKeyId}{The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your transcription output.
 
-KMS key ARNs have the format
-\code{arn:partition:kms:region:account:key/key-id}. For example:
-\verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}.
-For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN}{KMS key ARNs}.
+KMS key ARNs have the format \code{arn:partition:kms:region:account:key/key-id}. For example: \verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN}{KMS key ARNs}.
 
-If you do not specify an encryption key, your output is encrypted with
-the default Amazon S3 key (SSE-S3).
+If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
 
-Note that the role making the request and the role specified in the
-\code{DataAccessRoleArn} request parameter (if present) must have permission
-to use the specified KMS key.}
+Note that the role making the request and the role specified in the \code{DataAccessRoleArn} request parameter (if present) must have permission to use the specified KMS key.}
 
-\item{KMSEncryptionContext}{A map of plain text, non-secret key:value pairs, known as encryption
-context pairs, that provide an added layer of security for your data.
-For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/#kms-context}{KMS encryption context}
-and \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Asymmetric keys in KMS}.}
+\item{KMSEncryptionContext}{A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/#kms-context}{KMS encryption context} and \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Asymmetric keys in KMS}.}
 
-\item{Settings}{Specify additional optional settings in your request, including channel
-identification, alternative transcriptions, speaker partitioning. You
-can use that to apply custom vocabularies and vocabulary filters.
+\item{Settings}{Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.
 
-If you want to include a custom vocabulary or a custom vocabulary filter
-(or both) with your request but \strong{do not} want to use automatic
-language identification, use \code{Settings} with the \code{VocabularyName} or
-\code{VocabularyFilterName} (or both) sub-parameter.
+If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but \strong{do not} want to use automatic language identification, use \code{Settings} with the \code{VocabularyName} or \code{VocabularyFilterName} (or both) sub-parameter.
 
-If you're using automatic language identification with your request and
-want to include a custom language model, a custom vocabulary, or a
-custom vocabulary filter, use instead the `` parameter with the
-\code{LanguageModelName}, `VocabularyName` or `VocabularyFilterName`
-sub-parameters.}
+If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, use instead the `` parameter with the \code{LanguageModelName}, `VocabularyName` or `VocabularyFilterName` sub-parameters.}
 
-\item{ModelSettings}{Specify the custom language model you want to include with your
-transcription job. If you include \code{ModelSettings} in your request, you
-must include the \code{LanguageModelName} sub-parameter.
+\item{ModelSettings}{Specify the custom language model you want to include with your transcription job. If you include \code{ModelSettings} in your request, you must include the \code{LanguageModelName} sub-parameter.
 
 For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html}{Custom language models}.}
 
-\item{JobExecutionSettings}{Makes it possible to control how your transcription job is processed.
-Currently, the only \code{JobExecutionSettings} modification you can choose
-is enabling job queueing using the \code{AllowDeferredExecution}
-sub-parameter.
+\item{JobExecutionSettings}{Makes it possible to control how your transcription job is processed. Currently, the only \code{JobExecutionSettings} modification you can choose is enabling job queueing using the \code{AllowDeferredExecution} sub-parameter.
 
-If you include \code{JobExecutionSettings} in your request, you must also
-include the sub-parameters: \code{AllowDeferredExecution} and
-\code{DataAccessRoleArn}.}
+If you include \code{JobExecutionSettings} in your request, you must also include the sub-parameters: \code{AllowDeferredExecution} and \code{DataAccessRoleArn}.}
 
-\item{ContentRedaction}{Makes it possible to redact or flag specified personally identifiable
-information (PII) in your transcript. If you use \code{ContentRedaction}, you
-must also include the sub-parameters: \code{RedactionOutput} and
-\code{RedactionType}. You can optionally include \code{PiiEntityTypes} to choose
-which types of PII you want to redact. If you do not include
-\code{PiiEntityTypes} in your request, all PII is redacted.}
+\item{ContentRedaction}{Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use \code{ContentRedaction}, you must also include the sub-parameters: \code{RedactionOutput} and \code{RedactionType}. You can optionally include \code{PiiEntityTypes} to choose which types of PII you want to redact. If you do not include \code{PiiEntityTypes} in your request, all PII is redacted.}
 
-\item{IdentifyLanguage}{Enables automatic language identification in your transcription job
-request. Use this parameter if your media file contains only one
-language. If your media contains multiple languages, use
-\code{IdentifyMultipleLanguages} instead.
+\item{IdentifyLanguage}{Enables automatic language identification in your transcription job request. Use this parameter if your media file contains only one language. If your media contains multiple languages, use \code{IdentifyMultipleLanguages} instead.
 
-If you include \code{IdentifyLanguage}, you can optionally include a list of
-language codes, using \code{LanguageOptions}, that you think may be present
-in your media file. Including \code{LanguageOptions} restricts
-\code{IdentifyLanguage} to only the language options that you specify, which
-can improve transcription accuracy.
+If you include \code{IdentifyLanguage}, you can optionally include a list of language codes, using \code{LanguageOptions}, that you think may be present in your media file. Including \code{LanguageOptions} restricts \code{IdentifyLanguage} to only the language options that you specify, which can improve transcription accuracy.
 
-If you want to apply a custom language model, a custom vocabulary, or a
-custom vocabulary filter to your automatic language identification
-request, include \code{LanguageIdSettings} with the relevant sub-parameters
-(\code{VocabularyName}, \code{LanguageModelName}, and \code{VocabularyFilterName}). If
-you include \code{LanguageIdSettings}, also include \code{LanguageOptions}.
+If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your automatic language identification request, include \code{LanguageIdSettings} with the relevant sub-parameters (\code{VocabularyName}, \code{LanguageModelName}, and \code{VocabularyFilterName}). If you include \code{LanguageIdSettings}, also include \code{LanguageOptions}.
 
-Note that you must include one of \code{LanguageCode}, \code{IdentifyLanguage}, or
-\code{IdentifyMultipleLanguages} in your request. If you include more than
-one of these parameters, your transcription job fails.}
+Note that you must include one of \code{LanguageCode}, \code{IdentifyLanguage}, or \code{IdentifyMultipleLanguages} in your request. If you include more than one of these parameters, your transcription job fails.}
 
-\item{IdentifyMultipleLanguages}{Enables automatic multi-language identification in your transcription
-job request. Use this parameter if your media file contains more than
-one language. If your media contains only one language, use
-\code{IdentifyLanguage} instead.
+\item{IdentifyMultipleLanguages}{Enables automatic multi-language identification in your transcription job request. Use this parameter if your media file contains more than one language. If your media contains only one language, use \code{IdentifyLanguage} instead.
 
-If you include \code{IdentifyMultipleLanguages}, you can optionally include a
-list of language codes, using \code{LanguageOptions}, that you think may be
-present in your media file. Including \code{LanguageOptions} restricts
-\code{IdentifyLanguage} to only the language options that you specify, which
-can improve transcription accuracy.
+If you include \code{IdentifyMultipleLanguages}, you can optionally include a list of language codes, using \code{LanguageOptions}, that you think may be present in your media file. Including \code{LanguageOptions} restricts \code{IdentifyLanguage} to only the language options that you specify, which can improve transcription accuracy.
 
-If you want to apply a custom vocabulary or a custom vocabulary filter
-to your automatic language identification request, include
-\code{LanguageIdSettings} with the relevant sub-parameters (\code{VocabularyName}
-and \code{VocabularyFilterName}). If you include \code{LanguageIdSettings}, also
-include \code{LanguageOptions}.
+If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification request, include \code{LanguageIdSettings} with the relevant sub-parameters (\code{VocabularyName} and \code{VocabularyFilterName}). If you include \code{LanguageIdSettings}, also include \code{LanguageOptions}.
 
-Note that you must include one of \code{LanguageCode}, \code{IdentifyLanguage}, or
-\code{IdentifyMultipleLanguages} in your request. If you include more than
-one of these parameters, your transcription job fails.}
+Note that you must include one of \code{LanguageCode}, \code{IdentifyLanguage}, or \code{IdentifyMultipleLanguages} in your request. If you include more than one of these parameters, your transcription job fails.}
 
-\item{LanguageOptions}{You can specify two or more language codes that represent the languages
-you think may be present in your media. Including more than five is not
-recommended. If you're unsure what languages are present, do not include
-this parameter.
+\item{LanguageOptions}{You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.
 
-If you include \code{LanguageOptions} in your request, you must also include
-\code{IdentifyLanguage}.
+If you include \code{LanguageOptions} in your request, you must also include \code{IdentifyLanguage}.
 
 For more information, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html}{Supported languages}.
 
-To transcribe speech in Modern Standard Arabic (\code{ar-SA})in Amazon Web
-Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services
-GovCloud (US) (US-East, us-gov-east-1), in Canada (Calgary) ca-west-1
-and Africa (Cape Town) af-south-1, your media file must be encoded at a
-sample rate of 16,000 Hz or higher.}
+To transcribe speech in Modern Standard Arabic (\code{ar-SA})in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), in Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.}
 
-\item{Subtitles}{Produces subtitle files for your input media. You can specify WebVTT
-(\emph{.vtt) and SubRip (}.srt) formats.}
+\item{Subtitles}{Produces subtitle files for your input media. You can specify WebVTT (\emph{.vtt) and SubRip (}.srt) formats.}
 
-\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a
-new transcription job at the time you start this new job.
+\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.
 
 To learn more about using tags with Amazon Transcribe, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html}{Tagging resources}.}
 
-\item{LanguageIdSettings}{If using automatic language identification in your request and you want
-to apply a custom language model, a custom vocabulary, or a custom
-vocabulary filter, include \code{LanguageIdSettings} with the relevant
-sub-parameters (\code{VocabularyName}, \code{LanguageModelName}, and
-\code{VocabularyFilterName}). Note that multi-language identification
-(\code{IdentifyMultipleLanguages}) doesn't support custom language models.
+\item{LanguageIdSettings}{If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include \code{LanguageIdSettings} with the relevant sub-parameters (\code{VocabularyName}, \code{LanguageModelName}, and \code{VocabularyFilterName}). Note that multi-language identification (\code{IdentifyMultipleLanguages}) doesn't support custom language models.
 
-\code{LanguageIdSettings} supports two to five language codes. Each language
-code you include can have an associated custom language model, custom
-vocabulary, and custom vocabulary filter. The language codes that you
-specify must match the languages of the associated custom language
-models, custom vocabularies, and custom vocabulary filters.
+\code{LanguageIdSettings} supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.
 
-It's recommended that you include \code{LanguageOptions} when using
-\code{LanguageIdSettings} to ensure that the correct language dialect is
-identified. For example, if you specify a custom vocabulary that is in
-\code{en-US} but Amazon Transcribe determines that the language spoken in
-your media is \code{en-AU}, your custom vocabulary \emph{is not} applied to your
-transcription. If you include \code{LanguageOptions} and include \code{en-US} as
-the only English language dialect, your custom vocabulary \emph{is} applied
-to your transcription.
+It's recommended that you include \code{LanguageOptions} when using \code{LanguageIdSettings} to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in \code{en-US} but Amazon Transcribe determines that the language spoken in your media is \code{en-AU}, your custom vocabulary \emph{is not} applied to your transcription. If you include \code{LanguageOptions} and include \code{en-US} as the only English language dialect, your custom vocabulary \emph{is} applied to your transcription.
 
-If you want to include a custom language model with your request but
-\strong{do not} want to use automatic language identification, use instead
-the \verb{parameter with the `LanguageModelName` sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but **do not** want to use automatic language identification, use instead the} parameter with the \code{VocabularyName}
-or \code{VocabularyFilterName} (or both) sub-parameter.}
+If you want to include a custom language model with your request but \strong{do not} want to use automatic language identification, use instead the \verb{parameter with the `LanguageModelName` sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but **do not** want to use automatic language identification, use instead the} parameter with the \code{VocabularyName} or \code{VocabularyFilterName} (or both) sub-parameter.}
 
-\item{ToxicityDetection}{Enables toxic speech detection in your transcript. If you include
-\code{ToxicityDetection} in your request, you must also include
-\code{ToxicityCategories}.
+\item{ToxicityDetection}{Enables toxic speech detection in your transcript. If you include \code{ToxicityDetection} in your request, you must also include \code{ToxicityCategories}.
 
-For information on the types of toxic speech Amazon Transcribe can
-detect, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Detecting toxic speech}.}
+For information on the types of toxic speech Amazon Transcribe can detect, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Detecting toxic speech}.}
 }
 \description{
 Transcribes the audio from a media file and applies any additional Request Parameters you choose to include in your request.

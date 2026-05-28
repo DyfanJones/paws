@@ -11,12 +11,7 @@ paymentcryptographycontrolplane_untag_resource(ResourceArn, TagKeys)
 
 \item{TagKeys}{[required] One or more tag keys. Don't include the tag values.
 
-If the Amazon Web Services Payment Cryptography key doesn't have the
-specified tag key, Amazon Web Services Payment Cryptography doesn't
-throw an exception or return a response. To confirm that the operation
-succeeded, use the
-\code{\link[=paymentcryptographycontrolplane_list_tags_for_resource]{list_tags_for_resource}}
-operation.}
+If the Amazon Web Services Payment Cryptography key doesn't have the specified tag key, Amazon Web Services Payment Cryptography doesn't throw an exception or return a response. To confirm that the operation succeeded, use the \code{\link[=paymentcryptographycontrolplane_list_tags_for_resource]{list_tags_for_resource}} operation.}
 }
 \description{
 Deletes a tag from an Amazon Web Services Payment Cryptography key.

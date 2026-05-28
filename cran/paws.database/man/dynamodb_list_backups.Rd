@@ -15,30 +15,21 @@ dynamodb_list_backups(
 )
 }
 \arguments{
-\item{TableName}{Lists the backups from the table specified in \code{TableName}. You can also
-provide the Amazon Resource Name (ARN) of the table in this parameter.}
+\item{TableName}{Lists the backups from the table specified in \code{TableName}. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 
 \item{Limit}{Maximum number of backups to return at once.}
 
-\item{TimeRangeLowerBound}{Only backups created after this time are listed. \code{TimeRangeLowerBound}
-is inclusive.}
+\item{TimeRangeLowerBound}{Only backups created after this time are listed. \code{TimeRangeLowerBound} is inclusive.}
 
-\item{TimeRangeUpperBound}{Only backups created before this time are listed. \code{TimeRangeUpperBound}
-is exclusive.}
+\item{TimeRangeUpperBound}{Only backups created before this time are listed. \code{TimeRangeUpperBound} is exclusive.}
 
-\item{ExclusiveStartBackupArn}{\code{LastEvaluatedBackupArn} is the Amazon Resource Name (ARN) of the backup
-last evaluated when the current page of results was returned, inclusive
-of the current page of results. This value may be specified as the
-\code{ExclusiveStartBackupArn} of a new
-\code{\link[=dynamodb_list_backups]{list_backups}} operation in order to fetch the
-next page of results.}
+\item{ExclusiveStartBackupArn}{\code{LastEvaluatedBackupArn} is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the \code{ExclusiveStartBackupArn} of a new \code{\link[=dynamodb_list_backups]{list_backups}} operation in order to fetch the next page of results.}
 
 \item{BackupType}{The backups from the table specified by \code{BackupType} are listed.
 
 Where \code{BackupType} can be:
 \itemize{
-\item \code{USER} - On-demand backup created by you. (The default setting if no
-other backup types are specified.)
+\item \code{USER} - On-demand backup created by you. (The default setting if no other backup types are specified.)
 \item \code{SYSTEM} - On-demand backup automatically created by DynamoDB.
 \item \code{ALL} - All types of on-demand backups (USER and SYSTEM).
 }}

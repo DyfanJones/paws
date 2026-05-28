@@ -9,8 +9,7 @@ codestarconnections_delete_sync_configuration(SyncType, ResourceName)
 \arguments{
 \item{SyncType}{[required] The type of sync configuration to be deleted.}
 
-\item{ResourceName}{[required] The name of the Amazon Web Services resource associated with the sync
-configuration to be deleted.}
+\item{ResourceName}{[required] The name of the Amazon Web Services resource associated with the sync configuration to be deleted.}
 }
 \description{
 Deletes the sync configuration for a specified repository and connection.

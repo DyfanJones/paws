@@ -7,8 +7,7 @@
 cloudfront_get_field_level_encryption_profile_config(Id)
 }
 \arguments{
-\item{Id}{[required] Get the ID for the field-level encryption profile configuration
-information.}
+\item{Id}{[required] Get the ID for the field-level encryption profile configuration information.}
 }
 \description{
 Get the field-level encryption profile configuration information.

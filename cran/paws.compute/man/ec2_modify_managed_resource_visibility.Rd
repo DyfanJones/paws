@@ -7,13 +7,9 @@
 ec2_modify_managed_resource_visibility(DryRun = NULL, DefaultVisibility)
 }
 \arguments{
-\item{DryRun}{Checks whether you have the required permissions for the operation,
-without actually making the request, and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{DefaultVisibility}{[required] The default visibility setting for managed resources. Valid values:
-\code{hidden} | \code{visible}.}
+\item{DefaultVisibility}{[required] The default visibility setting for managed resources. Valid values: \code{hidden} | \code{visible}.}
 }
 \description{
 Modifies the managed resource visibility configuration for the account. Use this operation to control whether managed resources are hidden or visible by default. Visibility settings are account-wide and affect all IAM principals uniformly. Hidden resources remain fully operational and billable.

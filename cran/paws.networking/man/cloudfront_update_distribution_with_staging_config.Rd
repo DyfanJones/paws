@@ -12,14 +12,11 @@ cloudfront_update_distribution_with_staging_config(
 )
 }
 \arguments{
-\item{Id}{[required] The identifier of the primary distribution to which you are copying a
-staging distribution's configuration.}
+\item{Id}{[required] The identifier of the primary distribution to which you are copying a staging distribution's configuration.}
 
-\item{StagingDistributionId}{The identifier of the staging distribution whose configuration you are
-copying to the primary distribution.}
+\item{StagingDistributionId}{The identifier of the staging distribution whose configuration you are copying to the primary distribution.}
 
-\item{IfMatch}{The current versions (\code{ETag} values) of both primary and staging
-distributions. Provide these in the following format:
+\item{IfMatch}{The current versions (\code{ETag} values) of both primary and staging distributions. Provide these in the following format:
 
 \verb{<primary ETag>, <staging ETag>}}
 }

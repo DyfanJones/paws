@@ -7,15 +7,9 @@
 bedrock_delete_automated_reasoning_policy(policyArn, force = NULL)
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-delete.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to delete.}
 
-\item{force}{Specifies whether to force delete the automated reasoning policy even if
-it has active resources. When \code{false}, Amazon Bedrock validates if all
-artifacts have been deleted (e.g. policy version, test case, test
-result) for a policy before deletion. When \code{true}, Amazon Bedrock will
-delete the policy and all its artifacts without validation. Default is
-\code{false}.}
+\item{force}{Specifies whether to force delete the automated reasoning policy even if it has active resources. When \code{false}, Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When \code{true}, Amazon Bedrock will delete the policy and all its artifacts without validation. Default is \code{false}.}
 }
 \description{
 Deletes an Automated Reasoning policy or policy version. This operation is idempotent. If you delete a policy more than once, each call succeeds. Deleting a policy removes it permanently and cannot be undone.

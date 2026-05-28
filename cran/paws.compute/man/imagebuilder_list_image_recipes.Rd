@@ -12,10 +12,7 @@ imagebuilder_list_image_recipes(
 )
 }
 \arguments{
-\item{owner}{You can specify the recipe owner to filter results by that owner. By
-default, this request will only show image recipes owned by your
-account. To filter by a different owner, specify one of the
-\verb{Valid Values} that are listed for this parameter.}
+\item{owner}{You can specify the recipe owner to filter results by that owner. By default, this request will only show image recipes owned by your account. To filter by a different owner, specify one of the \verb{Valid Values} that are listed for this parameter.}
 
 \item{filters}{Use the following filters to streamline results:
 \itemize{
@@ -26,8 +23,7 @@ account. To filter by a different owner, specify one of the
 
 \item{maxResults}{Specify the maximum number of items to return in a request.}
 
-\item{nextToken}{A token to specify where to start paginating. This is the nextToken from
-a previously truncated response.}
+\item{nextToken}{A token to specify where to start paginating. This is the nextToken from a previously truncated response.}
 }
 \description{
 Returns a list of image recipes.

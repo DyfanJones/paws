@@ -13,17 +13,13 @@ ec2_get_ipam_policy_organization_targets(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 
 \item{NextToken}{The token for the next page of results.}
 
-\item{IpamPolicyId}{[required] The ID of the IPAM policy for which to get Amazon Web Services
-Organizations targets.}
+\item{IpamPolicyId}{[required] The ID of the IPAM policy for which to get Amazon Web Services Organizations targets.}
 
 \item{Filters}{One or more filters for the Amazon Web Services Organizations targets.}
 }

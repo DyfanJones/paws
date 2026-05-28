@@ -10,11 +10,9 @@ firehose_start_delivery_stream_encryption(
 )
 }
 \arguments{
-\item{DeliveryStreamName}{[required] The name of the Firehose stream for which you want to enable server-side
-encryption (SSE).}
+\item{DeliveryStreamName}{[required] The name of the Firehose stream for which you want to enable server-side encryption (SSE).}
 
-\item{DeliveryStreamEncryptionConfigurationInput}{Used to specify the type and Amazon Resource Name (ARN) of the KMS key
-needed for Server-Side Encryption (SSE).}
+\item{DeliveryStreamEncryptionConfigurationInput}{Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).}
 }
 \description{
 Enables server-side encryption (SSE) for the Firehose stream.

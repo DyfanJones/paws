@@ -10,12 +10,9 @@ redshiftserverless_list_reservation_offerings(
 )
 }
 \arguments{
-\item{maxResults}{The maximum number of items to return for this call. The call also
-returns a token that you can specify in a subsequent call to get the
-next set of results.}
+\item{maxResults}{The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.}
 
-\item{nextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{nextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 }
 \description{
 Returns the current reservation offerings in your account.

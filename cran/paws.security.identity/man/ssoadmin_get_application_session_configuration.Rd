@@ -8,8 +8,7 @@ Center}
 ssoadmin_get_application_session_configuration(ApplicationArn)
 }
 \arguments{
-\item{ApplicationArn}{[required] The Amazon Resource Name (ARN) of the application for which to retrieve
-the session configuration.}
+\item{ApplicationArn}{[required] The Amazon Resource Name (ARN) of the application for which to retrieve the session configuration.}
 }
 \description{
 Retrieves the session configuration for an application in IAM Identity Center.

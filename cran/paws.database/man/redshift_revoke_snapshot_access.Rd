@@ -15,16 +15,11 @@ redshift_revoke_snapshot_access(
 \arguments{
 \item{SnapshotIdentifier}{The identifier of the snapshot that the account can no longer access.}
 
-\item{SnapshotArn}{The Amazon Resource Name (ARN) of the snapshot associated with the
-message to revoke access.}
+\item{SnapshotArn}{The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.}
 
-\item{SnapshotClusterIdentifier}{The identifier of the cluster the snapshot was created from. This
-parameter is required if your IAM user has a policy containing a
-snapshot resource element that specifies anything other than * for the
-cluster name.}
+\item{SnapshotClusterIdentifier}{The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.}
 
-\item{AccountWithRestoreAccess}{[required] The identifier of the Amazon Web Services account that can no longer
-restore the specified snapshot.}
+\item{AccountWithRestoreAccess}{[required] The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.}
 }
 \description{
 Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.

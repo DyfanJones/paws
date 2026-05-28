@@ -13,32 +13,17 @@ cognitoidentityprovider_set_risk_configuration(
 )
 }
 \arguments{
-\item{UserPoolId}{[required] The ID of the user pool where you want to set a risk configuration. If
-you include \code{UserPoolId} in your request, don't include \code{ClientId}. When
-the client ID is null, the same risk configuration is applied to all the
-clients in the userPool. When you include both \code{ClientId} and
-\code{UserPoolId}, Amazon Cognito maps the configuration to the app client
-only.}
+\item{UserPoolId}{[required] The ID of the user pool where you want to set a risk configuration. If you include \code{UserPoolId} in your request, don't include \code{ClientId}. When the client ID is null, the same risk configuration is applied to all the clients in the userPool. When you include both \code{ClientId} and \code{UserPoolId}, Amazon Cognito maps the configuration to the app client only.}
 
-\item{ClientId}{The ID of the app client where you want to set a risk configuration. If
-\code{ClientId} is null, then the risk configuration is mapped to
-\code{UserPoolId}. When the client ID is null, the same risk configuration is
-applied to all the clients in the userPool.
+\item{ClientId}{The ID of the app client where you want to set a risk configuration. If \code{ClientId} is null, then the risk configuration is mapped to \code{UserPoolId}. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.
 
-When you include a \code{ClientId} parameter, Amazon Cognito maps the
-configuration to the app client. When you include both \code{ClientId} and
-\code{UserPoolId}, Amazon Cognito maps the configuration to the app client
-only.}
+When you include a \code{ClientId} parameter, Amazon Cognito maps the configuration to the app client. When you include both \code{ClientId} and \code{UserPoolId}, Amazon Cognito maps the configuration to the app client only.}
 
-\item{CompromisedCredentialsRiskConfiguration}{The configuration of automated reactions to detected compromised
-credentials. Includes settings for blocking future sign-in requests and
-for the types of password-submission events you want to monitor.}
+\item{CompromisedCredentialsRiskConfiguration}{The configuration of automated reactions to detected compromised credentials. Includes settings for blocking future sign-in requests and for the types of password-submission events you want to monitor.}
 
-\item{AccountTakeoverRiskConfiguration}{The settings for automated responses and notification templates for
-adaptive authentication with threat protection.}
+\item{AccountTakeoverRiskConfiguration}{The settings for automated responses and notification templates for adaptive authentication with threat protection.}
 
-\item{RiskExceptionConfiguration}{A set of IP-address overrides to threat protection. You can set up
-IP-address always-block and always-allow lists.}
+\item{RiskExceptionConfiguration}{A set of IP-address overrides to threat protection. You can set up IP-address always-block and always-allow lists.}
 }
 \description{
 Configures threat protection for a user pool or app client. Sets configuration for the following.

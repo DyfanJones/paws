@@ -12,9 +12,7 @@ redshift_create_cluster_snapshot(
 )
 }
 \arguments{
-\item{SnapshotIdentifier}{[required] A unique identifier for the snapshot that you are requesting. This
-identifier must be unique for all snapshots within the Amazon Web
-Services account.
+\item{SnapshotIdentifier}{[required] A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.
 
 Constraints:
 \itemize{
@@ -28,8 +26,7 @@ Example: \code{my-snapshot-id}}
 
 \item{ClusterIdentifier}{[required] The cluster identifier for which you want a snapshot.}
 
-\item{ManualSnapshotRetentionPeriod}{The number of days that a manual snapshot is retained. If the value is
--1, the manual snapshot is retained indefinitely.
+\item{ManualSnapshotRetentionPeriod}{The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.
 
 The value must be either -1 or an integer between 1 and 3,653.
 

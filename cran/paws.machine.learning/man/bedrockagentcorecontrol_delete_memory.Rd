@@ -7,9 +7,7 @@
 bedrockagentcorecontrol_delete_memory(clientToken = NULL, memoryId)
 }
 \arguments{
-\item{clientToken}{A client token is used for keeping track of idempotent requests. It can
-contain a session id which can be around 250 chars, combined with a
-unique AWS identifier.}
+\item{clientToken}{A client token is used for keeping track of idempotent requests. It can contain a session id which can be around 250 chars, combined with a unique AWS identifier.}
 
 \item{memoryId}{[required] The unique identifier of the memory to delete.}
 }

@@ -14,9 +14,7 @@ quicksight_search_groups(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the group is in.
-Currently, you use the ID for the Amazon Web Services account that
-contains your Amazon Quick Sight account.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{NextToken}{A pagination token that can be used in a subsequent request.}
 
@@ -24,8 +22,7 @@ contains your Amazon Quick Sight account.}
 
 \item{Namespace}{[required] The namespace that you want to search.}
 
-\item{Filters}{[required] The structure for the search filters that you want to apply to your
-search.}
+\item{Filters}{[required] The structure for the search filters that you want to apply to your search.}
 }
 \description{
 Use the \code{\link[=quicksight_search_groups]{search_groups}} operation to search groups in a specified Quick Sight namespace using the supplied filters.

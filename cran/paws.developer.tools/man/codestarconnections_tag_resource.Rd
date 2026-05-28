@@ -7,8 +7,7 @@
 codestarconnections_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which you want to add
-or update tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.}
 
 \item{Tags}{[required] The tags you want to modify or add to the resource.}
 }

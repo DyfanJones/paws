@@ -11,8 +11,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_associate_accounts/](https://www.paws-r-sdk.com/docs/billingconductor_associate_accounts/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing group that associates the
-#' array of account IDs.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs.
 #' @param AccountIds &#91;required&#93; The associating array of account IDs.
 #'
 #' @keywords internal
@@ -78,7 +77,7 @@ billingconductor_associate_pricing_rules <- function(Arn, PricingRuleArns) {
 #'
 #' @param TargetArn &#91;required&#93; A percentage custom line item ARN to associate the resources to.
 #' @param ResourceArns &#91;required&#93; A list containing the ARNs of the resources to be associated.
-#' @param BillingPeriodRange 
+#' @param BillingPeriodRange A time range for which the margin summary is effective. The time range can be up to 12 months.
 #'
 #' @keywords internal
 #'
@@ -111,7 +110,7 @@ billingconductor_batch_associate_resources_to_custom_line_item <- function(Targe
 #'
 #' @param TargetArn &#91;required&#93; A percentage custom line item ARN to disassociate the resources from.
 #' @param ResourceArns &#91;required&#93; A list containing the ARNs of resources to be disassociated.
-#' @param BillingPeriodRange 
+#' @param BillingPeriodRange A time range for which the margin summary is effective. The time range can be up to 12 months.
 #'
 #' @keywords internal
 #'
@@ -144,20 +143,13 @@ billingconductor_batch_disassociate_resources_from_custom_line_item <- function(
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_create_billing_group/](https://www.paws-r-sdk.com/docs/billingconductor_create_billing_group/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure
-#' idempotency of the request. Idempotency ensures that an API request
-#' completes no more than one time. With an idempotent request, if the
-#' original request completes successfully, any subsequent retries complete
-#' successfully without performing any further actions.
+#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.
 #' @param Name &#91;required&#93; The billing group name. The names must be unique.
-#' @param AccountGrouping &#91;required&#93; The set of accounts that will be under the billing group. The set of
-#' accounts resemble the linked accounts in a consolidated billing family.
-#' @param ComputationPreference &#91;required&#93; The preferences and settings that will be used to compute the Amazon Web
-#' Services charges for a billing group.
+#' @param AccountGrouping &#91;required&#93; The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family.
+#' @param ComputationPreference &#91;required&#93; The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.
 #' @param PrimaryAccountId The account ID that serves as the main account in a billing group.
 #' @param Description The description of the billing group.
-#' @param Tags A map that contains tag keys and tag values that are attached to a
-#' billing group. This feature isn't available during the beta.
+#' @param Tags A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta.
 #'
 #' @keywords internal
 #'
@@ -190,27 +182,16 @@ billingconductor_create_billing_group <- function(ClientToken = NULL, Name, Acco
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_create_custom_line_item/](https://www.paws-r-sdk.com/docs/billingconductor_create_custom_line_item/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure
-#' idempotency of the request. Idempotency ensures that an API request
-#' completes no more than one time. With an idempotent request, if the
-#' original request completes successfully, any subsequent retries complete
-#' successfully without performing any further actions.
+#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.
 #' @param Name &#91;required&#93; The name of the custom line item.
-#' @param Description &#91;required&#93; The description of the custom line item. This is shown on the Bills page
-#' in association with the charge value.
-#' @param BillingGroupArn &#91;required&#93; The Amazon Resource Name (ARN) that references the billing group where
-#' the custom line item applies to.
+#' @param Description &#91;required&#93; The description of the custom line item. This is shown on the Bills page in association with the charge value.
+#' @param BillingGroupArn &#91;required&#93; The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to.
 #' @param BillingPeriodRange A time range for which the custom line item is effective.
-#' @param Tags A map that contains tag keys and tag values that are attached to a
-#' custom line item.
-#' @param ChargeDetails &#91;required&#93; A `CustomLineItemChargeDetails` that describes the charge details for a
-#' custom line item.
-#' @param AccountId The Amazon Web Services account in which this custom line item will be
-#' applied to.
+#' @param Tags A map that contains tag keys and tag values that are attached to a custom line item.
+#' @param ChargeDetails &#91;required&#93; A `CustomLineItemChargeDetails` that describes the charge details for a custom line item.
+#' @param AccountId The Amazon Web Services account in which this custom line item will be applied to.
 #' @param ComputationRule Specifies how the custom line item charges are computed.
-#' @param PresentationDetails Details controlling how the custom line item charges are presented in
-#' the bill. Contains specifications for which service the charges will be
-#' shown under.
+#' @param PresentationDetails Details controlling how the custom line item charges are presented in the bill. Contains specifications for which service the charges will be shown under.
 #'
 #' @keywords internal
 #'
@@ -242,18 +223,11 @@ billingconductor_create_custom_line_item <- function(ClientToken = NULL, Name, D
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_create_pricing_plan/](https://www.paws-r-sdk.com/docs/billingconductor_create_pricing_plan/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure
-#' idempotency of the request. Idempotency ensures that an API request
-#' completes no more than one time. With an idempotent request, if the
-#' original request completes successfully, any subsequent retries complete
-#' successfully without performing any further actions.
-#' @param Name &#91;required&#93; The name of the pricing plan. The names must be unique to each pricing
-#' plan.
+#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.
+#' @param Name &#91;required&#93; The name of the pricing plan. The names must be unique to each pricing plan.
 #' @param Description The description of the pricing plan.
-#' @param PricingRuleArns A list of Amazon Resource Names (ARNs) that define the pricing plan
-#' parameters.
-#' @param Tags A map that contains tag keys and tag values that are attached to a
-#' pricing plan.
+#' @param PricingRuleArns A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.
+#' @param Tags A map that contains tag keys and tag values that are attached to a pricing plan.
 #'
 #' @keywords internal
 #'
@@ -285,41 +259,22 @@ billingconductor_create_pricing_plan <- function(ClientToken = NULL, Name, Descr
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_create_pricing_rule/](https://www.paws-r-sdk.com/docs/billingconductor_create_pricing_rule/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure
-#' idempotency of the request. Idempotency ensures that an API request
-#' completes no more than one time. With an idempotent request, if the
-#' original request completes successfully, any subsequent retries complete
-#' successfully without performing any further actions.
+#' @param ClientToken A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.
 #' @param Name &#91;required&#93; The pricing rule name. The names must be unique to each pricing rule.
 #' @param Description The pricing rule description.
-#' @param Scope &#91;required&#93; The scope of pricing rule that indicates if it's globally applicable, or
-#' it's service-specific.
+#' @param Scope &#91;required&#93; The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
 #' @param Type &#91;required&#93; The type of pricing rule.
-#' @param ModifierPercentage A percentage modifier that's applied on the public pricing rates. Your
-#' entry will be rounded to the nearest 2 decimal places.
-#' @param Service If the `Scope` attribute is set to `SERVICE` or `SKU`, the attribute
-#' indicates which service the `PricingRule` is applicable for.
-#' @param Tags A map that contains tag keys and tag values that are attached to a
-#' pricing rule.
-#' @param BillingEntity The seller of services provided by Amazon Web Services, their
-#' affiliates, or third-party providers selling services via Amazon Web
-#' Services Marketplace.
+#' @param ModifierPercentage A percentage modifier that's applied on the public pricing rates. Your entry will be rounded to the nearest 2 decimal places.
+#' @param Service If the `Scope` attribute is set to `SERVICE` or `SKU`, the attribute indicates which service the `PricingRule` is applicable for.
+#' @param Tags A map that contains tag keys and tag values that are attached to a pricing rule.
+#' @param BillingEntity The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace.
 #' @param Tiering The set of tiering configurations for the pricing rule.
-#' @param UsageType Usage type is the unit that each service uses to measure the usage of a
-#' specific type of resource.
+#' @param UsageType Usage type is the unit that each service uses to measure the usage of a specific type of resource.
 #' 
-#' If the `Scope` attribute is set to `SKU`, this attribute indicates which
-#' usage type the `PricingRule` is modifying. For example,
-#' `USW2-BoxUsage:m2.2xlarge` describes
-#' an` M2 High Memory Double Extra Large` instance in the US West (Oregon)
-#' Region.
-#' @param Operation Operation is the specific Amazon Web Services action covered by this
-#' line item. This describes the specific usage of the line item.
+#' If the `Scope` attribute is set to `SKU`, this attribute indicates which usage type the `PricingRule` is modifying. For example, `USW2-BoxUsage:m2.2xlarge` describes an` M2 High Memory Double Extra Large` instance in the US West (Oregon) Region.
+#' @param Operation Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.
 #' 
-#' If the `Scope` attribute is set to `SKU`, this attribute indicates which
-#' operation the `PricingRule` is modifying. For example, a value of
-#' `RunInstances:0202` indicates the operation of running an Amazon EC2
-#' instance.
+#' If the `Scope` attribute is set to `SKU`, this attribute indicates which operation the `PricingRule` is modifying. For example, a value of `RunInstances:0202` indicates the operation of running an Amazon EC2 instance.
 #'
 #' @keywords internal
 #'
@@ -350,8 +305,7 @@ billingconductor_create_pricing_rule <- function(ClientToken = NULL, Name, Descr
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_delete_billing_group/](https://www.paws-r-sdk.com/docs/billingconductor_delete_billing_group/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing group that you're
-#' deleting.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing group that you're deleting.
 #'
 #' @keywords internal
 #'
@@ -384,7 +338,7 @@ billingconductor_delete_billing_group <- function(Arn) {
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_delete_custom_line_item/](https://www.paws-r-sdk.com/docs/billingconductor_delete_custom_line_item/) for full documentation.
 #'
 #' @param Arn &#91;required&#93; The ARN of the custom line item to be deleted.
-#' @param BillingPeriodRange 
+#' @param BillingPeriodRange A time range for which the margin summary is effective. The time range can be up to 12 months.
 #'
 #' @keywords internal
 #'
@@ -447,8 +401,7 @@ billingconductor_delete_pricing_plan <- function(Arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_delete_pricing_rule/](https://www.paws-r-sdk.com/docs/billingconductor_delete_pricing_rule/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the pricing rule that you are
-#' deleting.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
 #'
 #' @keywords internal
 #'
@@ -479,8 +432,7 @@ billingconductor_delete_pricing_rule <- function(Arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_disassociate_accounts/](https://www.paws-r-sdk.com/docs/billingconductor_disassociate_accounts/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing group that the array of
-#' account IDs will disassociate from.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.
 #' @param AccountIds &#91;required&#93; The array of account IDs to disassociate.
 #'
 #' @keywords internal
@@ -512,10 +464,8 @@ billingconductor_disassociate_accounts <- function(Arn, AccountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_disassociate_pricing_rules/](https://www.paws-r-sdk.com/docs/billingconductor_disassociate_pricing_rules/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The pricing plan Amazon Resource Name (ARN) to disassociate pricing
-#' rules from.
-#' @param PricingRuleArns &#91;required&#93; A list containing the Amazon Resource Name (ARN) of the pricing rules
-#' that will be disassociated.
+#' @param Arn &#91;required&#93; The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.
+#' @param PricingRuleArns &#91;required&#93; A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.
 #'
 #' @keywords internal
 #'
@@ -548,14 +498,9 @@ billingconductor_disassociate_pricing_rules <- function(Arn, PricingRuleArns) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_get_billing_group_cost_report/](https://www.paws-r-sdk.com/docs/billingconductor_get_billing_group_cost_report/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Number (ARN) that uniquely identifies the billing
-#' group.
-#' @param BillingPeriodRange A time range for which the margin summary is effective. You can specify
-#' up to 12 months.
-#' @param GroupBy A list of strings that specify the attributes that are used to break
-#' down costs in the margin summary reports for the billing group. For
-#' example, you can view your costs by the Amazon Web Services service name
-#' or the billing period.
+#' @param Arn &#91;required&#93; The Amazon Resource Number (ARN) that uniquely identifies the billing group.
+#' @param BillingPeriodRange A time range for which the margin summary is effective. You can specify up to 12 months.
+#' @param GroupBy A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.
 #' @param MaxResults The maximum number of margin summary reports to retrieve.
 #' @param NextToken The pagination token used on subsequent calls to get reports.
 #'
@@ -590,17 +535,14 @@ billingconductor_get_billing_group_cost_report <- function(Arn, BillingPeriodRan
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_list_account_associations/](https://www.paws-r-sdk.com/docs/billingconductor_list_account_associations/) for full documentation.
 #'
 #' @param BillingPeriod The preferred billing period to get account associations.
-#' @param Filters The filter on the account ID of the linked account, or any of the
-#' following:
+#' @param Filters The filter on the account ID of the linked account, or any of the following:
 #' 
 #' `MONITORED`: linked accounts that are associated to billing groups.
 #' 
 #' `UNMONITORED`: linked accounts that aren't associated to billing groups.
 #' 
-#' `Billing Group Arn`: linked accounts that are associated to the provided
-#' billing group Arn.
-#' @param NextToken The pagination token that's used on subsequent calls to retrieve
-#' accounts.
+#' `Billing Group Arn`: linked accounts that are associated to the provided billing group Arn.
+#' @param NextToken The pagination token that's used on subsequent calls to retrieve accounts.
 #'
 #' @keywords internal
 #'
@@ -636,8 +578,7 @@ billingconductor_list_account_associations <- function(BillingPeriod = NULL, Fil
 #' @param BillingPeriod The preferred billing period for your report.
 #' @param MaxResults The maximum number of reports to retrieve.
 #' @param NextToken The pagination token that's used on subsequent calls to get reports.
-#' @param Filters A `ListBillingGroupCostReportsFilter` to specify billing groups to
-#' retrieve reports from.
+#' @param Filters A `ListBillingGroupCostReportsFilter` to specify billing groups to retrieve reports from.
 #'
 #' @keywords internal
 #'
@@ -671,10 +612,8 @@ billingconductor_list_billing_group_cost_reports <- function(BillingPeriod = NUL
 #'
 #' @param BillingPeriod The preferred billing period to get billing groups.
 #' @param MaxResults The maximum number of billing groups to retrieve.
-#' @param NextToken The pagination token that's used on subsequent calls to get billing
-#' groups.
-#' @param Filters A `ListBillingGroupsFilter` that specifies the billing group and pricing
-#' plan to retrieve billing group information.
+#' @param NextToken The pagination token that's used on subsequent calls to get billing groups.
+#' @param Filters A `ListBillingGroupsFilter` that specifies the billing group and pricing plan to retrieve billing group information.
 #'
 #' @keywords internal
 #'
@@ -707,10 +646,8 @@ billingconductor_list_billing_groups <- function(BillingPeriod = NULL, MaxResult
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) for the custom line item.
 #' @param MaxResults The maximum number of custom line item versions to retrieve.
-#' @param NextToken The pagination token that's used on subsequent calls to retrieve custom
-#' line item versions.
-#' @param Filters A `ListCustomLineItemVersionsFilter` that specifies the billing period
-#' range in which the custom line item versions are applied.
+#' @param NextToken The pagination token that's used on subsequent calls to retrieve custom line item versions.
+#' @param Filters A `ListCustomLineItemVersionsFilter` that specifies the billing period range in which the custom line item versions are applied.
 #'
 #' @keywords internal
 #'
@@ -744,11 +681,8 @@ billingconductor_list_custom_line_item_versions <- function(Arn, MaxResults = NU
 #'
 #' @param BillingPeriod The preferred billing period to get custom line items (FFLIs).
 #' @param MaxResults The maximum number of billing groups to retrieve.
-#' @param NextToken The pagination token that's used on subsequent calls to get custom line
-#' items (FFLIs).
-#' @param Filters A `ListCustomLineItemsFilter` that specifies the custom line item names
-#' and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI
-#' information.
+#' @param NextToken The pagination token that's used on subsequent calls to get custom line items (FFLIs).
+#' @param Filters A `ListCustomLineItemsFilter` that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.
 #'
 #' @keywords internal
 #'
@@ -780,11 +714,9 @@ billingconductor_list_custom_line_items <- function(BillingPeriod = NULL, MaxRes
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_plans/](https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_plans/) for full documentation.
 #'
 #' @param BillingPeriod The preferred billing period to get pricing plan.
-#' @param Filters A `ListPricingPlansFilter` that specifies the Amazon Resource Name
-#' (ARNs) of pricing plans to retrieve pricing plans information.
+#' @param Filters A `ListPricingPlansFilter` that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.
 #' @param MaxResults The maximum number of pricing plans to retrieve.
-#' @param NextToken The pagination token that's used on subsequent call to get pricing
-#' plans.
+#' @param NextToken The pagination token that's used on subsequent call to get pricing plans.
 #'
 #' @keywords internal
 #'
@@ -816,8 +748,7 @@ billingconductor_list_pricing_plans <- function(BillingPeriod = NULL, Filters = 
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_plans_associated_with_pricing_rule/](https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_plans_associated_with_pricing_rule/) for full documentation.
 #'
 #' @param BillingPeriod The pricing plan billing period for which associations will be listed.
-#' @param PricingRuleArn &#91;required&#93; The pricing rule Amazon Resource Name (ARN) for which associations will
-#' be listed.
+#' @param PricingRuleArn &#91;required&#93; The pricing rule Amazon Resource Name (ARN) for which associations will be listed.
 #' @param MaxResults The optional maximum number of pricing rule associations to retrieve.
 #' @param NextToken The optional pagination token returned by a previous call.
 #'
@@ -852,11 +783,9 @@ billingconductor_list_pricing_plans_associated_with_pricing_rule <- function(Bil
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_rules/](https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_rules/) for full documentation.
 #'
 #' @param BillingPeriod The preferred billing period to get the pricing plan.
-#' @param Filters A `DescribePricingRuleFilter` that specifies the Amazon Resource Name
-#' (ARNs) of pricing rules to retrieve pricing rules information.
+#' @param Filters A `DescribePricingRuleFilter` that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information.
 #' @param MaxResults The maximum number of pricing rules to retrieve.
-#' @param NextToken The pagination token that's used on subsequent call to get pricing
-#' rules.
+#' @param NextToken The pagination token that's used on subsequent call to get pricing rules.
 #'
 #' @keywords internal
 #'
@@ -887,10 +816,8 @@ billingconductor_list_pricing_rules <- function(BillingPeriod = NULL, Filters = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_rules_associated_to_pricing_plan/](https://www.paws-r-sdk.com/docs/billingconductor_list_pricing_rules_associated_to_pricing_plan/) for full documentation.
 #'
-#' @param BillingPeriod The billing period for which the pricing rule associations are to be
-#' listed.
-#' @param PricingPlanArn &#91;required&#93; The Amazon Resource Name (ARN) of the pricing plan for which
-#' associations are to be listed.
+#' @param BillingPeriod The billing period for which the pricing rule associations are to be listed.
+#' @param PricingPlanArn &#91;required&#93; The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.
 #' @param MaxResults The optional maximum number of pricing rule associations to retrieve.
 #' @param NextToken The optional pagination token returned by a previous call.
 #'
@@ -924,12 +851,10 @@ billingconductor_list_pricing_rules_associated_to_pricing_plan <- function(Billi
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_list_resources_associated_to_custom_line_item/](https://www.paws-r-sdk.com/docs/billingconductor_list_resources_associated_to_custom_line_item/) for full documentation.
 #'
 #' @param BillingPeriod The billing period for which the resource associations will be listed.
-#' @param Arn &#91;required&#93; The ARN of the custom line item for which the resource associations will
-#' be listed.
+#' @param Arn &#91;required&#93; The ARN of the custom line item for which the resource associations will be listed.
 #' @param MaxResults (Optional) The maximum number of resource associations to be retrieved.
 #' @param NextToken (Optional) The pagination token that's returned by a previous request.
-#' @param Filters (Optional) A `ListResourcesAssociatedToCustomLineItemFilter` that can
-#' specify the types of resources that should be retrieved.
+#' @param Filters (Optional) A `ListResourcesAssociatedToCustomLineItemFilter` that can specify the types of resources that should be retrieved.
 #'
 #' @keywords internal
 #'
@@ -960,8 +885,7 @@ billingconductor_list_resources_associated_to_custom_line_item <- function(Billi
 #'
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/billingconductor_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the
-#' tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the tags.
 #'
 #' @keywords internal
 #'
@@ -1058,15 +982,11 @@ billingconductor_untag_resource <- function(ResourceArn, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_update_billing_group/](https://www.paws-r-sdk.com/docs/billingconductor_update_billing_group/) for full documentation.
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing group being updated.
-#' @param Name The name of the billing group. The names must be unique to each billing
-#' group.
-#' @param Status The status of the billing group. Only one of the valid values can be
-#' used.
-#' @param ComputationPreference The preferences and settings that will be used to compute the Amazon Web
-#' Services charges for a billing group.
+#' @param Name The name of the billing group. The names must be unique to each billing group.
+#' @param Status The status of the billing group. Only one of the valid values can be used.
+#' @param ComputationPreference The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.
 #' @param Description A description of the billing group.
-#' @param AccountGrouping Specifies if the billing group has automatic account association
-#' (`AutoAssociate`) enabled.
+#' @param AccountGrouping Specifies if the billing group has automatic account association (`AutoAssociate`) enabled.
 #'
 #' @keywords internal
 #'
@@ -1101,9 +1021,8 @@ billingconductor_update_billing_group <- function(Arn, Name = NULL, Status = NUL
 #' @param Arn &#91;required&#93; The ARN of the custom line item to be updated.
 #' @param Name The new name for the custom line item.
 #' @param Description The new line item description of the custom line item.
-#' @param ChargeDetails A `ListCustomLineItemChargeDetails` containing the new charge details
-#' for the custom line item.
-#' @param BillingPeriodRange 
+#' @param ChargeDetails A `ListCustomLineItemChargeDetails` containing the new charge details for the custom line item.
+#' @param BillingPeriodRange A time range for which the margin summary is effective. The time range can be up to 12 months.
 #'
 #' @keywords internal
 #'
@@ -1135,8 +1054,7 @@ billingconductor_update_custom_line_item <- function(Arn, Name = NULL, Descripti
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_update_pricing_plan/](https://www.paws-r-sdk.com/docs/billingconductor_update_pricing_plan/) for full documentation.
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the pricing plan that you're updating.
-#' @param Name The name of the pricing plan. The name must be unique to each pricing
-#' plan.
+#' @param Name The name of the pricing plan. The name must be unique to each pricing plan.
 #' @param Description The description of the pricing plan.
 #'
 #' @keywords internal
@@ -1169,12 +1087,10 @@ billingconductor_update_pricing_plan <- function(Arn, Name = NULL, Description =
 #' See [https://www.paws-r-sdk.com/docs/billingconductor_update_pricing_rule/](https://www.paws-r-sdk.com/docs/billingconductor_update_pricing_rule/) for full documentation.
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the pricing rule to update.
-#' @param Name The new name of the pricing rule. The name must be unique to each
-#' pricing rule.
+#' @param Name The new name of the pricing rule. The name must be unique to each pricing rule.
 #' @param Description The new description for the pricing rule.
 #' @param Type The new pricing rule type.
-#' @param ModifierPercentage The new modifier to show pricing plan rates as a percentage. Your entry
-#' will be rounded to the nearest 2 decimal places.
+#' @param ModifierPercentage The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.
 #' @param Tiering The set of tiering configurations for the pricing rule.
 #'
 #' @keywords internal

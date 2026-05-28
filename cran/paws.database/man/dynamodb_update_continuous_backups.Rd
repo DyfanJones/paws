@@ -8,8 +8,7 @@ the specified table}
 dynamodb_update_continuous_backups(TableName, PointInTimeRecoverySpecification)
 }
 \arguments{
-\item{TableName}{[required] The name of the table. You can also provide the Amazon Resource Name
-(ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 
 \item{PointInTimeRecoverySpecification}{[required] Represents the settings used to enable point in time recovery.}
 }

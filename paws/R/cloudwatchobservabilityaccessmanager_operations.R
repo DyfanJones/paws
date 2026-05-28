@@ -7,35 +7,21 @@ NULL
 #' in a monitoring account
 #'
 #' @description
-#' Creates a link between a source account and a sink that you have created
-#' in a monitoring account. After the link is created, data is sent from
-#' the source account to the monitoring account. When you create a link,
-#' you can optionally specify filters that specify which metric namespaces
-#' and which log groups are shared from the source account to the
-#' monitoring account.
+#' Creates a link between a source account and a sink that you have created in a monitoring account. After the link is created, data is sent from the source account to the monitoring account. When you create a link, you can optionally specify filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.
 #' 
-#' Before you create a link, you must create a sink in the monitoring
-#' account and create a sink policy in that account. The sink policy must
-#' permit the source account to link to it. You can grant permission to
-#' source accounts by granting permission to an entire organization or to
-#' individual accounts.
+#' Before you create a link, you must create a sink in the monitoring account and create a sink policy in that account. The sink policy must permit the source account to link to it. You can grant permission to source accounts by granting permission to an entire organization or to individual accounts.
 #' 
-#' For more information, see
-#' [`create_sink`][cloudwatchobservabilityaccessmanager_create_sink] and
-#' [`put_sink_policy`][cloudwatchobservabilityaccessmanager_put_sink_policy].
+#' For more information, see [`create_sink`][cloudwatchobservabilityaccessmanager_create_sink] and [`put_sink_policy`][cloudwatchobservabilityaccessmanager_put_sink_policy].
 #' 
-#' Each monitoring account can be linked to as many as 100,000 source
-#' accounts.
+#' Each monitoring account can be linked to as many as 100,000 source accounts.
 #' 
-#' Each source account can be linked to as many as five monitoring
-#' accounts.
+#' Each source account can be linked to as many as five monitoring accounts.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_create_link(LabelTemplate,
 #'   LinkConfiguration, ResourceTypes, SinkIdentifier, Tags)
 #'
-#' @param LabelTemplate &#91;required&#93; Specify a friendly human-readable name to use to identify this source
-#' account when you are viewing data from it in the monitoring account.
+#' @param LabelTemplate &#91;required&#93; Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.
 #' 
 #' You can use a custom label or use the following variables:
 #' 
@@ -43,34 +29,19 @@ NULL
 #' 
 #' -   `$AccountEmail` is the globally unique email address of the account
 #' 
-#' -   `$AccountEmailNoDomain` is the email address of the account without
-#'     the domain name
+#' -   `$AccountEmailNoDomain` is the email address of the account without the domain name
 #' 
-#' In the Amazon Web Services GovCloud (US-East) and Amazon Web Services
-#' GovCloud (US-West) Regions, the only supported option is to use custom
-#' labels, and the `$AccountName`, `$AccountEmail`, and
-#' `$AccountEmailNoDomain` variables all resolve as *account-id* instead of
-#' the specified variable.
-#' @param LinkConfiguration Use this structure to optionally create filters that specify that only
-#' some metric namespaces or log groups are to be shared from the source
-#' account to the monitoring account.
-#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source
-#' account shares with the monitoring account.
-#' @param SinkIdentifier &#91;required&#93; The ARN of the sink to use to create this link. You can use
-#' [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks] to find
-#' the ARNs of sinks.
+#' In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the `$AccountName`, `$AccountEmail`, and `$AccountEmailNoDomain` variables all resolve as *account-id* instead of the specified variable.
+#' @param LinkConfiguration Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.
+#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source account shares with the monitoring account.
+#' @param SinkIdentifier &#91;required&#93; The ARN of the sink to use to create this link. You can use [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks] to find the ARNs of sinks.
 #' 
-#' For more information about sinks, see
-#' [`create_sink`][cloudwatchobservabilityaccessmanager_create_sink].
+#' For more information about sinks, see [`create_sink`][cloudwatchobservabilityaccessmanager_create_sink].
 #' @param Tags Assigns one or more tags (key-value pairs) to the link.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' For more information about using tags to control access, see
-#' [Controlling access to Amazon Web Services resources using
-#' tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
+#' For more information about using tags to control access, see [Controlling access to Amazon Web Services resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -148,18 +119,11 @@ cloudwatchobservabilityaccessmanager_create_link <- function(LabelTemplate, Link
 #' as a monitoring account in CloudWatch cross-account observability
 #'
 #' @description
-#' Use this to create a *sink* in the current account, so that it can be
-#' used as a monitoring account in CloudWatch cross-account observability.
-#' A sink is a resource that represents an attachment point in a monitoring
-#' account. Source accounts can link to the sink to send observability
-#' data.
+#' Use this to create a *sink* in the current account, so that it can be used as a monitoring account in CloudWatch cross-account observability. A sink is a resource that represents an attachment point in a monitoring account. Source accounts can link to the sink to send observability data.
 #' 
-#' After you create a sink, you must create a sink policy that allows
-#' source accounts to attach to it. For more information, see
-#' [`put_sink_policy`][cloudwatchobservabilityaccessmanager_put_sink_policy].
+#' After you create a sink, you must create a sink policy that allows source accounts to attach to it. For more information, see [`put_sink_policy`][cloudwatchobservabilityaccessmanager_put_sink_policy].
 #' 
-#' Each account can contain one sink per Region. If you delete a sink, you
-#' can then create a new one in that Region.
+#' Each account can contain one sink per Region. If you delete a sink, you can then create a new one in that Region.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_create_sink(Name, Tags)
@@ -167,13 +131,9 @@ cloudwatchobservabilityaccessmanager_create_link <- function(LabelTemplate, Link
 #' @param Name &#91;required&#93; A name for the sink.
 #' @param Tags Assigns one or more tags (key-value pairs) to the link.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' For more information about using tags to control access, see
-#' [Controlling access to Amazon Web Services resources using
-#' tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
+#' For more information about using tags to control access, see [Controlling access to Amazon Web Services resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -225,8 +185,7 @@ cloudwatchobservabilityaccessmanager_create_sink <- function(Name, Tags = NULL) 
 #' Deletes a link between a monitoring account sink and a source account
 #'
 #' @description
-#' Deletes a link between a monitoring account sink and a source account.
-#' You must run this operation in the source account.
+#' Deletes a link between a monitoring account sink and a source account. You must run this operation in the source account.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_delete_link(Identifier)
@@ -270,8 +229,7 @@ cloudwatchobservabilityaccessmanager_delete_link <- function(Identifier) {
 #' Deletes a sink
 #'
 #' @description
-#' Deletes a sink. You must delete all links to a sink before you can
-#' delete that sink.
+#' Deletes a sink. You must delete all links to a sink before you can delete that sink.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_delete_sink(Identifier)
@@ -317,19 +275,13 @@ cloudwatchobservabilityaccessmanager_delete_sink <- function(Identifier) {
 #' @description
 #' Returns complete information about one link.
 #' 
-#' To use this operation, provide the link ARN. To retrieve a list of link
-#' ARNs, use
-#' [`list_links`][cloudwatchobservabilityaccessmanager_list_links].
+#' To use this operation, provide the link ARN. To retrieve a list of link ARNs, use [`list_links`][cloudwatchobservabilityaccessmanager_list_links].
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_get_link(Identifier, IncludeTags)
 #'
 #' @param Identifier &#91;required&#93; The ARN of the link to retrieve information for.
-#' @param IncludeTags Specifies whether to include the tags associated with the link in the
-#' response. When `IncludeTags` is set to `true` and the caller has the
-#' required permission, `oam:ListTagsForResource`, the API will return the
-#' tags for the specified resource. If the caller doesn't have the required
-#' permission, `oam:ListTagsForResource`, the API will raise an exception.
+#' @param IncludeTags Specifies whether to include the tags associated with the link in the response. When `IncludeTags` is set to `true` and the caller has the required permission, `oam:ListTagsForResource`, the API will return the tags for the specified resource. If the caller doesn't have the required permission, `oam:ListTagsForResource`, the API will raise an exception.
 #' 
 #' The default value is `false`.
 #'
@@ -396,19 +348,13 @@ cloudwatchobservabilityaccessmanager_get_link <- function(Identifier, IncludeTag
 #' @description
 #' Returns complete information about one monitoring account sink.
 #' 
-#' To use this operation, provide the sink ARN. To retrieve a list of sink
-#' ARNs, use
-#' [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks].
+#' To use this operation, provide the sink ARN. To retrieve a list of sink ARNs, use [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks].
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_get_sink(Identifier, IncludeTags)
 #'
 #' @param Identifier &#91;required&#93; The ARN of the sink to retrieve information for.
-#' @param IncludeTags Specifies whether to include the tags associated with the sink in the
-#' response. When `IncludeTags` is set to `true` and the caller has the
-#' required permission, `oam:ListTagsForResource`, the API will return the
-#' tags for the specified resource. If the caller doesn't have the required
-#' permission, `oam:ListTagsForResource`, the API will raise an exception.
+#' @param IncludeTags Specifies whether to include the tags associated with the sink in the response. When `IncludeTags` is set to `true` and the caller has the required permission, `oam:ListTagsForResource`, the API will return the tags for the specified resource. If the caller doesn't have the required permission, `oam:ListTagsForResource`, the API will raise an exception.
 #' 
 #' The default value is `false`.
 #'
@@ -460,9 +406,7 @@ cloudwatchobservabilityaccessmanager_get_sink <- function(Identifier, IncludeTag
 #' Returns the current sink policy attached to this sink
 #'
 #' @description
-#' Returns the current sink policy attached to this sink. The sink policy
-#' specifies what accounts can attach to this sink as source accounts, and
-#' what types of data they can share.
+#' Returns the current sink policy attached to this sink. The sink policy specifies what accounts can attach to this sink as source accounts, and what types of data they can share.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_get_sink_policy(SinkIdentifier)
@@ -514,23 +458,18 @@ cloudwatchobservabilityaccessmanager_get_sink_policy <- function(SinkIdentifier)
 #' monitoring account sink
 #'
 #' @description
-#' Returns a list of source account links that are linked to this
-#' monitoring account sink.
+#' Returns a list of source account links that are linked to this monitoring account sink.
 #' 
-#' To use this operation, provide the sink ARN. To retrieve a list of sink
-#' ARNs, use
-#' [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks].
+#' To use this operation, provide the sink ARN. To retrieve a list of sink ARNs, use [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks].
 #' 
-#' To find a list of links for one source account, use
-#' [`list_links`][cloudwatchobservabilityaccessmanager_list_links].
+#' To find a list of links for one source account, use [`list_links`][cloudwatchobservabilityaccessmanager_list_links].
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_list_attached_links(MaxResults,
 #'   NextToken, SinkIdentifier)
 #'
 #' @param MaxResults Limits the number of returned links to the specified number.
-#' @param NextToken The token for the next set of items to return. You received this token
-#' from a previous call.
+#' @param NextToken The token for the next set of items to return. You received this token from a previous call.
 #' @param SinkIdentifier &#91;required&#93; The ARN of the sink that you want to retrieve links for.
 #'
 #' @return
@@ -587,19 +526,15 @@ cloudwatchobservabilityaccessmanager_list_attached_links <- function(MaxResults 
 #' monitoring account sinks that this source account has
 #'
 #' @description
-#' Use this operation in a source account to return a list of links to
-#' monitoring account sinks that this source account has.
+#' Use this operation in a source account to return a list of links to monitoring account sinks that this source account has.
 #' 
-#' To find a list of links for one monitoring account sink, use
-#' [`list_attached_links`][cloudwatchobservabilityaccessmanager_list_attached_links]
-#' from within the monitoring account.
+#' To find a list of links for one monitoring account sink, use [`list_attached_links`][cloudwatchobservabilityaccessmanager_list_attached_links] from within the monitoring account.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_list_links(MaxResults, NextToken)
 #'
 #' @param MaxResults Limits the number of returned links to the specified number.
-#' @param NextToken The token for the next set of items to return. You received this token
-#' from a previous call.
+#' @param NextToken The token for the next set of items to return. You received this token from a previous call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -656,15 +591,13 @@ cloudwatchobservabilityaccessmanager_list_links <- function(MaxResults = NULL, N
 #' created in that account
 #'
 #' @description
-#' Use this operation in a monitoring account to return the list of sinks
-#' created in that account.
+#' Use this operation in a monitoring account to return the list of sinks created in that account.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_list_sinks(MaxResults, NextToken)
 #'
 #' @param MaxResults Limits the number of returned links to the specified number.
-#' @param NextToken The token for the next set of items to return. You received this token
-#' from a previous call.
+#' @param NextToken The token for the next set of items to return. You received this token from a previous call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -716,28 +649,20 @@ cloudwatchobservabilityaccessmanager_list_sinks <- function(MaxResults = NULL, N
 #' Displays the tags associated with a resource
 #'
 #' @description
-#' Displays the tags associated with a resource. Both sinks and links
-#' support tagging.
+#' Displays the tags associated with a resource. Both sinks and links support tagging.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_list_tags_for_resource(ResourceArn)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource that you want to view tags for.
 #' 
-#' The ARN format of a sink is
-#' `arn:aws:oam:Region:account-id:sink/sink-id `
+#' The ARN format of a sink is `arn:aws:oam:Region:account-id:sink/sink-id `
 #' 
-#' The ARN format of a link is
-#' `arn:aws:oam:Region:account-id:link/link-id `
+#' The ARN format of a link is `arn:aws:oam:Region:account-id:link/link-id `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' 
-#' Unlike tagging permissions in other Amazon Web Services services, to
-#' retrieve the list of tags for links or sinks you must have the
-#' `oam:RequestTag` permission. The `aws:ReguestTag` permission does not
-#' allow you to tag and untag links and sinks.
+#' Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links or sinks you must have the `oam:RequestTag` permission. The `aws:ReguestTag` permission does not allow you to tag and untag links and sinks.
 #'
 #' @return
 #' A list with the following syntax:
@@ -784,14 +709,9 @@ cloudwatchobservabilityaccessmanager_list_tags_for_resource <- function(Resource
 #' accounts to link to the monitoring account sink
 #'
 #' @description
-#' Creates or updates the resource policy that grants permissions to source
-#' accounts to link to the monitoring account sink. When you create a sink
-#' policy, you can grant permissions to all accounts in an organization or
-#' to individual accounts.
+#' Creates or updates the resource policy that grants permissions to source accounts to link to the monitoring account sink. When you create a sink policy, you can grant permissions to all accounts in an organization or to individual accounts.
 #' 
-#' You can also use a sink policy to limit the types of data that is
-#' shared. The six types of services with their respective resource types
-#' that you can allow or deny are:
+#' You can also use a sink policy to limit the types of data that is shared. The six types of services with their respective resource types that you can allow or deny are:
 #' 
 #' -   **Metrics** - Specify with `AWS::CloudWatch::Metric`
 #' 
@@ -799,30 +719,23 @@ cloudwatchobservabilityaccessmanager_list_tags_for_resource <- function(Resource
 #' 
 #' -   **Traces** - Specify with `AWS::XRay::Trace`
 #' 
-#' -   **Application Insights - Applications** - Specify with
-#'     `AWS::ApplicationInsights::Application`
+#' -   **Application Insights - Applications** - Specify with `AWS::ApplicationInsights::Application`
 #' 
 #' -   **Internet Monitor** - Specify with `AWS::InternetMonitor::Monitor`
 #' 
-#' -   **Application Signals** - Specify with
-#'     `AWS::ApplicationSignals::Service` and
-#'     `AWS::ApplicationSignals::ServiceLevelObjective`
+#' -   **Application Signals** - Specify with `AWS::ApplicationSignals::Service` and `AWS::ApplicationSignals::ServiceLevelObjective`
 #' 
-#' See the examples in this section to see how to specify permitted source
-#' accounts and data types.
+#' See the examples in this section to see how to specify permitted source accounts and data types.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_put_sink_policy(Policy,
 #'   SinkIdentifier)
 #'
-#' @param Policy &#91;required&#93; The JSON policy to use. If you are updating an existing policy, the
-#' entire existing policy is replaced by what you specify here.
+#' @param Policy &#91;required&#93; The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.
 #' 
-#' The policy must be in JSON string format with quotation marks escaped
-#' and no newlines.
+#' The policy must be in JSON string format with quotation marks escaped and no newlines.
 #' 
-#' For examples of different types of policies, see the **Examples**
-#' section on this page.
+#' For examples of different types of policies, see the **Examples** section on this page.
 #' @param SinkIdentifier &#91;required&#93; The ARN of the sink to attach this policy to.
 #'
 #' @return
@@ -870,45 +783,28 @@ cloudwatchobservabilityaccessmanager_put_sink_policy <- function(Policy, SinkIde
 #' Assigns one or more tags (key-value pairs) to the specified resource
 #'
 #' @description
-#' Assigns one or more tags (key-value pairs) to the specified resource.
-#' Both sinks and links can be tagged.
+#' Assigns one or more tags (key-value pairs) to the specified resource. Both sinks and links can be tagged.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' Tags don't have any semantic meaning to Amazon Web Services and are
-#' interpreted strictly as strings of characters.
+#' Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.
 #' 
-#' You can use the
-#' [`tag_resource`][cloudwatchobservabilityaccessmanager_tag_resource]
-#' action with a resource that already has tags. If you specify a new tag
-#' key for the alarm, this tag is appended to the list of tags associated
-#' with the alarm. If you specify a tag key that is already associated with
-#' the alarm, the new tag value that you specify replaces the previous
-#' value for that tag.
+#' You can use the [`tag_resource`][cloudwatchobservabilityaccessmanager_tag_resource] action with a resource that already has tags. If you specify a new tag key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces the previous value for that tag.
 #' 
 #' You can associate as many as 50 tags with a resource.
 #' 
-#' Unlike tagging permissions in other Amazon Web Services services, to tag
-#' or untag links and sinks you must have the `oam:ResourceTag` permission.
-#' The `iam:ResourceTag` permission does not allow you to tag and untag
-#' links and sinks.
+#' Unlike tagging permissions in other Amazon Web Services services, to tag or untag links and sinks you must have the `oam:ResourceTag` permission. The `iam:ResourceTag` permission does not allow you to tag and untag links and sinks.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_tag_resource(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource that you're adding tags to.
 #' 
-#' The ARN format of a sink is
-#' `arn:aws:oam:Region:account-id:sink/sink-id `
+#' The ARN format of a sink is `arn:aws:oam:Region:account-id:sink/sink-id `
 #' 
-#' The ARN format of a link is
-#' `arn:aws:oam:Region:account-id:link/link-id `
+#' The ARN format of a link is `arn:aws:oam:Region:account-id:link/link-id `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' @param Tags &#91;required&#93; The list of key-value pairs to associate with the resource.
 #'
 #' @return
@@ -953,10 +849,7 @@ cloudwatchobservabilityaccessmanager_tag_resource <- function(ResourceArn, Tags)
 #' @description
 #' Removes one or more tags from the specified resource.
 #' 
-#' Unlike tagging permissions in other Amazon Web Services services, to tag
-#' or untag links and sinks you must have the `oam:ResourceTag` permission.
-#' The `iam:TagResource` permission does not allow you to tag and untag
-#' links and sinks.
+#' Unlike tagging permissions in other Amazon Web Services services, to tag or untag links and sinks you must have the `oam:ResourceTag` permission. The `iam:TagResource` permission does not allow you to tag and untag links and sinks.
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_untag_resource(ResourceArn,
@@ -964,15 +857,11 @@ cloudwatchobservabilityaccessmanager_tag_resource <- function(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource that you're removing tags from.
 #' 
-#' The ARN format of a sink is
-#' `arn:aws:oam:Region:account-id:sink/sink-id `
+#' The ARN format of a sink is `arn:aws:oam:Region:account-id:sink/sink-id `
 #' 
-#' The ARN format of a link is
-#' `arn:aws:oam:Region:account-id:link/link-id `
+#' The ARN format of a link is `arn:aws:oam:Region:account-id:link/link-id `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' @param TagKeys &#91;required&#93; The list of tag keys to remove from the resource.
 #'
 #' @return
@@ -1016,35 +905,22 @@ cloudwatchobservabilityaccessmanager_untag_resource <- function(ResourceArn, Tag
 #' account to its linked monitoring account sink
 #'
 #' @description
-#' Use this operation to change what types of data are shared from a source
-#' account to its linked monitoring account sink. You can't change the sink
-#' or change the monitoring account with this operation.
+#' Use this operation to change what types of data are shared from a source account to its linked monitoring account sink. You can't change the sink or change the monitoring account with this operation.
 #' 
-#' When you update a link, you can optionally specify filters that specify
-#' which metric namespaces and which log groups are shared from the source
-#' account to the monitoring account.
+#' When you update a link, you can optionally specify filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.
 #' 
-#' To update the list of tags associated with the sink, use
-#' [`tag_resource`][cloudwatchobservabilityaccessmanager_tag_resource].
+#' To update the list of tags associated with the sink, use [`tag_resource`][cloudwatchobservabilityaccessmanager_tag_resource].
 #'
 #' @usage
 #' cloudwatchobservabilityaccessmanager_update_link(Identifier,
 #'   IncludeTags, LinkConfiguration, ResourceTypes)
 #'
 #' @param Identifier &#91;required&#93; The ARN of the link that you want to update.
-#' @param IncludeTags Specifies whether to include the tags associated with the link in the
-#' response after the update operation. When `IncludeTags` is set to `true`
-#' and the caller has the required permission, `oam:ListTagsForResource`,
-#' the API will return the tags for the specified resource. If the caller
-#' doesn't have the required permission, `oam:ListTagsForResource`, the API
-#' will raise an exception.
+#' @param IncludeTags Specifies whether to include the tags associated with the link in the response after the update operation. When `IncludeTags` is set to `true` and the caller has the required permission, `oam:ListTagsForResource`, the API will return the tags for the specified resource. If the caller doesn't have the required permission, `oam:ListTagsForResource`, the API will raise an exception.
 #' 
 #' The default value is `false`.
-#' @param LinkConfiguration Use this structure to filter which metric namespaces and which log
-#' groups are to be shared from the source account to the monitoring
-#' account.
-#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source
-#' account will send to the monitoring account.
+#' @param LinkConfiguration Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.
+#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source account will send to the monitoring account.
 #' 
 #' Your input here replaces the current set of data types that are shared.
 #'

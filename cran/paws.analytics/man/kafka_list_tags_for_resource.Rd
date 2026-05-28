@@ -7,8 +7,7 @@
 kafka_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the resource
-that's associated with the tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.}
 }
 \description{
 Returns a list of the tags associated with the specified resource.

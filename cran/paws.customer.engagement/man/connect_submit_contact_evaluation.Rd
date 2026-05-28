@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_submit_contact_evaluation}
 \alias{connect_submit_contact_evaluation}
-\title{Submits a contact evaluation in the specified Amazon Connect instance}
+\title{Submits a contact evaluation in the specified Connect Customer instance}
 \usage{
 connect_submit_contact_evaluation(
   InstanceId,
@@ -13,8 +13,7 @@ connect_submit_contact_evaluation(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationId}{[required] A unique identifier for the contact evaluation.}
 
@@ -25,7 +24,7 @@ in the Amazon Resource Name (ARN) of the instance.}
 \item{SubmittedBy}{The ID of the user who submitted the contact evaluation.}
 }
 \description{
-Submits a contact evaluation in the specified Amazon Connect instance. Answers included in the request are merged with existing answers for the given evaluation. If no answers or notes are passed, the evaluation is submitted with the existing answers and notes. You can delete an answer or note by passing an empty object (\code{{}}) to the question identifier.
+Submits a contact evaluation in the specified Connect Customer instance. Answers included in the request are merged with existing answers for the given evaluation. If no answers or notes are passed, the evaluation is submitted with the existing answers and notes. You can delete an answer or note by passing an empty object (\code{{}}) to the question identifier.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_submit_contact_evaluation/} for full documentation.
 }

@@ -14,15 +14,9 @@ opensearchservice_list_scheduled_actions(
 \arguments{
 \item{DomainName}{[required] The name of the domain.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_list_scheduled_actions]{list_scheduled_actions}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchservice_list_scheduled_actions]{list_scheduled_actions}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_list_scheduled_actions]{list_scheduled_actions}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_list_scheduled_actions]{list_scheduled_actions}} operations, which returns results in the next page.}
 }
 \description{
 Retrieves a list of configuration changes that are scheduled for a domain. These changes can be \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html}{service software updates} or \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types}{blue/green Auto-Tune enhancements}.

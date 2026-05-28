@@ -18,20 +18,15 @@ sagemaker_list_processing_jobs(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only processing jobs created after the specified
-time.}
+\item{CreationTimeAfter}{A filter that returns only processing jobs created after the specified time.}
 
-\item{CreationTimeBefore}{A filter that returns only processing jobs created after the specified
-time.}
+\item{CreationTimeBefore}{A filter that returns only processing jobs created after the specified time.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only processing jobs modified after the specified
-time.}
+\item{LastModifiedTimeAfter}{A filter that returns only processing jobs modified after the specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns only processing jobs modified before the specified
-time.}
+\item{LastModifiedTimeBefore}{A filter that returns only processing jobs modified before the specified time.}
 
-\item{NameContains}{A string in the processing job name. This filter returns only processing
-jobs whose name contains the specified string.}
+\item{NameContains}{A string in the processing job name. This filter returns only processing jobs whose name contains the specified string.}
 
 \item{StatusEquals}{A filter that retrieves only processing jobs with a specific status.}
 
@@ -39,10 +34,7 @@ jobs whose name contains the specified string.}
 
 \item{SortOrder}{The sort order for results. The default is \code{Ascending}.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_processing_jobs]{list_processing_jobs}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of processing jobs, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_processing_jobs]{list_processing_jobs}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of processing jobs, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of processing jobs to return in the response.}
 }

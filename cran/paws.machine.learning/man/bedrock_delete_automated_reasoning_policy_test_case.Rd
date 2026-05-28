@@ -11,13 +11,11 @@ bedrock_delete_automated_reasoning_policy_test_case(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy that
-contains the test.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy that contains the test.}
 
 \item{testCaseId}{[required] The unique identifier of the test to delete.}
 
-\item{lastUpdatedAt}{[required] The timestamp when the test was last updated. This is used as a
-concurrency token to prevent conflicting modifications.}
+\item{lastUpdatedAt}{[required] The timestamp when the test was last updated. This is used as a concurrency token to prevent conflicting modifications.}
 }
 \description{
 Deletes an Automated Reasoning policy test. This operation is idempotent; if you delete a test more than once, each call succeeds.

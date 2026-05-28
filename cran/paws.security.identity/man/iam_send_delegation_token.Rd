@@ -7,8 +7,7 @@
 iam_send_delegation_token(DelegationRequestId)
 }
 \arguments{
-\item{DelegationRequestId}{[required] The unique identifier of the delegation request for which to send the
-token.}
+\item{DelegationRequestId}{[required] The unique identifier of the delegation request for which to send the token.}
 }
 \description{
 Sends the exchange token for an accepted delegation request.

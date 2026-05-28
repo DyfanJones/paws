@@ -16,40 +16,23 @@ quicksight_update_template(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template
-that you're updating.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template that you're updating.}
 
 \item{TemplateId}{[required] The ID for the template.}
 
-\item{SourceEntity}{The entity that you are using as a source when you update the template.
-In \code{SourceEntity}, you specify the type of object you're using as
-source: \code{SourceTemplate} for a template or \code{SourceAnalysis} for an
-analysis. Both of these require an Amazon Resource Name (ARN). For
-\code{SourceTemplate}, specify the ARN of the source template. For
-\code{SourceAnalysis}, specify the ARN of the source analysis. The
-\code{SourceTemplate} ARN can contain any Amazon Web Services account and any
-Quick Sight-supported Amazon Web Services Region;.
+\item{SourceEntity}{The entity that you are using as a source when you update the template. In \code{SourceEntity}, you specify the type of object you're using as source: \code{SourceTemplate} for a template or \code{SourceAnalysis} for an analysis. Both of these require an Amazon Resource Name (ARN). For \code{SourceTemplate}, specify the ARN of the source template. For \code{SourceAnalysis}, specify the ARN of the source analysis. The \code{SourceTemplate} ARN can contain any Amazon Web Services account and any Quick Sight-supported Amazon Web Services Region;.
 
-Use the \code{DataSetReferences} entity within \code{SourceTemplate} or
-\code{SourceAnalysis} to list the replacement datasets for the placeholders
-listed in the original. The schema in each dataset must match its
-placeholder.}
+Use the \code{DataSetReferences} entity within \code{SourceTemplate} or \code{SourceAnalysis} to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder.}
 
-\item{VersionDescription}{A description of the current template version that is being updated.
-Every time you call \code{\link[=quicksight_update_template]{update_template}}, you
-create a new version of the template. Each version of the template
-maintains a description of the version in the \code{VersionDescription}
-field.}
+\item{VersionDescription}{A description of the current template version that is being updated. Every time you call \code{\link[=quicksight_update_template]{update_template}}, you create a new version of the template. Each version of the template maintains a description of the version in the \code{VersionDescription} field.}
 
 \item{Name}{The name for the template.}
 
 \item{Definition}{The definition of a template.
 
-A definition is the data model of all features in a Dashboard, Template,
-or Analysis.}
+A definition is the data model of all features in a Dashboard, Template, or Analysis.}
 
-\item{ValidationStrategy}{The option to relax the validation needed to update a template with
-definition objects. This skips the validation step for specific errors.}
+\item{ValidationStrategy}{The option to relax the validation needed to update a template with definition objects. This skips the validation step for specific errors.}
 }
 \description{
 Updates a template from an existing Amazon Quick Sight analysis or another template.

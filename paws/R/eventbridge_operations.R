@@ -6,9 +6,7 @@ NULL
 #' Activates a partner event source that has been deactivated
 #'
 #' @description
-#' Activates a partner event source that has been deactivated. Once
-#' activated, your matching event bus will start receiving events from the
-#' event source.
+#' Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.
 #'
 #' @usage
 #' eventbridge_activate_event_source(Name)
@@ -104,15 +102,11 @@ eventbridge_cancel_replay <- function(ReplayName) {
 #' configured as a target for events
 #'
 #' @description
-#' Creates an API destination, which is an HTTP invocation endpoint
-#' configured as a target for events.
+#' Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
 #' 
-#' API destinations do not support private destinations, such as interface
-#' VPC endpoints.
+#' API destinations do not support private destinations, such as interface VPC endpoints.
 #' 
-#' For more information, see [API
-#' destinations](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html)
-#' in the *EventBridge User Guide*.
+#' For more information, see [API destinations](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html) in the *EventBridge User Guide*.
 #'
 #' @usage
 #' eventbridge_create_api_destination(Name, Description, ConnectionArn,
@@ -120,13 +114,10 @@ eventbridge_cancel_replay <- function(ReplayName) {
 #'
 #' @param Name &#91;required&#93; The name for the API destination to create.
 #' @param Description A description for the API destination to create.
-#' @param ConnectionArn &#91;required&#93; The ARN of the connection to use for the API destination. The
-#' destination endpoint must support the authorization type specified for
-#' the connection.
+#' @param ConnectionArn &#91;required&#93; The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.
 #' @param InvocationEndpoint &#91;required&#93; The URL to the HTTP invocation endpoint for the API destination.
 #' @param HttpMethod &#91;required&#93; The method to use for the request to the HTTP invocation endpoint.
-#' @param InvocationRateLimitPerSecond The maximum number of requests per second to send to the HTTP invocation
-#' endpoint.
+#' @param InvocationRateLimitPerSecond The maximum number of requests per second to send to the HTTP invocation endpoint.
 #'
 #' @return
 #' A list with the following syntax:
@@ -182,20 +173,11 @@ eventbridge_create_api_destination <- function(Name, Description = NULL, Connect
 #' Creates an archive of events with the specified settings
 #'
 #' @description
-#' Creates an archive of events with the specified settings. When you
-#' create an archive, incoming events might not immediately start being
-#' sent to the archive. Allow a short period of time for changes to take
-#' effect. If you do not specify a pattern to filter events sent to the
-#' archive, all events are sent to the archive except replayed events.
-#' Replayed events are not sent to an archive.
+#' Creates an archive of events with the specified settings. When you create an archive, incoming events might not immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed events. Replayed events are not sent to an archive.
 #' 
-#' If you have specified that EventBridge use a customer managed key for
-#' encrypting the source event bus, we strongly recommend you also specify
-#' a customer managed key for any archives for the event bus as well.
+#' If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.
 #' 
-#' For more information, see [Encrypting
-#' archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html)
-#' in the *Amazon EventBridge User Guide*.
+#' For more information, see [Encrypting archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html) in the *Amazon EventBridge User Guide*.
 #'
 #' @usage
 #' eventbridge_create_archive(ArchiveName, EventSourceArn, Description,
@@ -205,27 +187,16 @@ eventbridge_create_api_destination <- function(Name, Description = NULL, Connect
 #' @param EventSourceArn &#91;required&#93; The ARN of the event bus that sends events to the archive.
 #' @param Description A description for the archive.
 #' @param EventPattern An event pattern to use to filter events sent to the archive.
-#' @param RetentionDays The number of days to retain events for. Default value is 0. If set to
-#' 0, events are retained indefinitely
-#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use,
-#' if you choose to use a customer managed key to encrypt this archive. The
-#' identifier can be the key Amazon Resource Name (ARN), KeyId, key alias,
-#' or key alias ARN.
+#' @param RetentionDays The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely
+#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this archive. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
 #' 
-#' If you do not specify a customer managed key identifier, EventBridge
-#' uses an Amazon Web Services owned key to encrypt the archive.
+#' If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the archive.
 #' 
-#' For more information, see [Identify and view
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html)
-#' in the *Key Management Service Developer Guide*.
+#' For more information, see [Identify and view keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html) in the *Key Management Service Developer Guide*.
 #' 
-#' If you have specified that EventBridge use a customer managed key for
-#' encrypting the source event bus, we strongly recommend you also specify
-#' a customer managed key for any archives for the event bus as well.
+#' If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.
 #' 
-#' For more information, see [Encrypting
-#' archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html)
-#' in the *Amazon EventBridge User Guide*.
+#' For more information, see [Encrypting archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html) in the *Amazon EventBridge User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -279,13 +250,9 @@ eventbridge_create_archive <- function(ArchiveName, EventSourceArn, Description 
 #' Creates a connection
 #'
 #' @description
-#' Creates a connection. A connection defines the authorization type and
-#' credentials to use for authorization with an API destination HTTP
-#' endpoint.
+#' Creates a connection. A connection defines the authorization type and credentials to use for authorization with an API destination HTTP endpoint.
 #' 
-#' For more information, see [Connections for endpoint
-#' targets](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection.html)
-#' in the *Amazon EventBridge User Guide*.
+#' For more information, see [Connections for endpoint targets](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection.html) in the *Amazon EventBridge User Guide*.
 #'
 #' @usage
 #' eventbridge_create_connection(Name, Description, AuthorizationType,
@@ -298,25 +265,15 @@ eventbridge_create_archive <- function(ArchiveName, EventSourceArn, Description 
 #' OAUTH tokens are refreshed when a 401 or 407 response is returned.
 #' @param AuthParameters &#91;required&#93; The authorization parameters to use to authorize with the endpoint.
 #' 
-#' You must include only authorization parameters for the
-#' `AuthorizationType` you specify.
-#' @param InvocationConnectivityParameters For connections to private APIs, the parameters to use for invoking the
-#' API.
+#' You must include only authorization parameters for the `AuthorizationType` you specify.
+#' @param InvocationConnectivityParameters For connections to private APIs, the parameters to use for invoking the API.
 #' 
-#' For more information, see [Connecting to private
-#' APIs](https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html)
-#' in the *Amazon EventBridge User Guide* .
-#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use,
-#' if you choose to use a customer managed key to encrypt this connection.
-#' The identifier can be the key Amazon Resource Name (ARN), KeyId, key
-#' alias, or key alias ARN.
+#' For more information, see [Connecting to private APIs](https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html) in the *Amazon EventBridge User Guide* .
+#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
 #' 
-#' If you do not specify a customer managed key identifier, EventBridge
-#' uses an Amazon Web Services owned key to encrypt the connection.
+#' If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.
 #' 
-#' For more information, see [Identify and view
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html)
-#' in the *Key Management Service Developer Guide*.
+#' For more information, see [Identify and view keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html) in the *Key Management Service Developer Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -444,27 +401,16 @@ eventbridge_create_connection <- function(Name, Description = NULL, Authorizatio
 #' Creates a global endpoint
 #'
 #' @description
-#' Creates a global endpoint. Global endpoints improve your application's
-#' availability by making it regional-fault tolerant. To do this, you
-#' define a primary and secondary Region with event buses in each Region.
-#' You also create a Amazon Route 53 health check that will tell
-#' EventBridge to route events to the secondary Region when an "unhealthy"
-#' state is encountered and events will be routed back to the primary
-#' Region when the health check reports a "healthy" state.
+#' Creates a global endpoint. Global endpoints improve your application's availability by making it regional-fault tolerant. To do this, you define a primary and secondary Region with event buses in each Region. You also create a Amazon Route 53 health check that will tell EventBridge to route events to the secondary Region when an "unhealthy" state is encountered and events will be routed back to the primary Region when the health check reports a "healthy" state.
 #'
 #' @usage
 #' eventbridge_create_endpoint(Name, Description, RoutingConfig,
 #'   ReplicationConfig, EventBuses, RoleArn)
 #'
-#' @param Name &#91;required&#93; The name of the global endpoint. For example,
-#' `"Name":"us-east-2-custom_bus_A-endpoint"`.
+#' @param Name &#91;required&#93; The name of the global endpoint. For example, `"Name":"us-east-2-custom_bus_A-endpoint"`.
 #' @param Description A description of the global endpoint.
-#' @param RoutingConfig &#91;required&#93; Configure the routing policy, including the health check and secondary
-#' Region..
-#' @param ReplicationConfig Enable or disable event replication. The default state is `ENABLED`
-#' which means you must supply a `RoleArn`. If you don't have a `RoleArn`
-#' or you don't want event replication enabled, set the state to
-#' `DISABLED`.
+#' @param RoutingConfig &#91;required&#93; Configure the routing policy, including the health check and secondary Region..
+#' @param ReplicationConfig Enable or disable event replication. The default state is `ENABLED` which means you must supply a `RoleArn`. If you don't have a `RoleArn` or you don't want event replication enabled, set the state to `DISABLED`.
 #' @param EventBuses &#91;required&#93; Define the event buses used.
 #' 
 #' The names of the event buses must be identical in each Region.
@@ -553,10 +499,7 @@ eventbridge_create_endpoint <- function(Name, Description = NULL, RoutingConfig,
 #' Creates a new event bus within your account
 #'
 #' @description
-#' Creates a new event bus within your account. This can be a custom event
-#' bus which you can use to receive events from your custom applications
-#' and services, or it can be a partner event bus which can be matched to a
-#' partner event source.
+#' Creates a new event bus within your account. This can be a custom event bus which you can use to receive events from your custom applications and services, or it can be a partner event bus which can be matched to a partner event source.
 #'
 #' @usage
 #' eventbridge_create_event_bus(Name, EventSourceName, Description,
@@ -564,55 +507,34 @@ eventbridge_create_endpoint <- function(Name, Description = NULL, RoutingConfig,
 #'
 #' @param Name &#91;required&#93; The name of the new event bus.
 #' 
-#' Custom event bus names can't contain the `/` character, but you can use
-#' the `/` character in partner event bus names. In addition, for partner
-#' event buses, the name must exactly match the name of the partner event
-#' source that this event bus is matched to.
+#' Custom event bus names can't contain the `/` character, but you can use the `/` character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.
 #' 
-#' You can't use the name `default` for a custom event bus, as this name is
-#' already used for your account's default event bus.
-#' @param EventSourceName If you are creating a partner event bus, this specifies the partner
-#' event source that the new event bus will be matched with.
+#' You can't use the name `default` for a custom event bus, as this name is already used for your account's default event bus.
+#' @param EventSourceName If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.
 #' @param Description The event bus description.
-#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use,
-#' if you choose to use a customer managed key to encrypt events on this
-#' event bus. The identifier can be the key Amazon Resource Name (ARN),
-#' KeyId, key alias, or key alias ARN.
+#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt events on this event bus. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
 #' 
-#' If you do not specify a customer managed key identifier, EventBridge
-#' uses an Amazon Web Services owned key to encrypt events on the event
-#' bus.
+#' If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt events on the event bus.
 #' 
-#' For more information, see [Identify and view
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html)
-#' in the *Key Management Service Developer Guide*.
+#' For more information, see [Identify and view keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html) in the *Key Management Service Developer Guide*.
 #' 
-#' Schema discovery is not supported for event buses encrypted using a
-#' customer managed key. EventBridge returns an error if:
+#' Schema discovery is not supported for event buses encrypted using a customer managed key. EventBridge returns an error if:
 #' 
-#' -   You call ` CreateDiscoverer ` on an event bus set to use a customer
-#'     managed key for encryption.
+#' -   You call ` CreateDiscoverer ` on an event bus set to use a customer managed key for encryption.
 #' 
-#' -   You call ` UpdatedEventBus ` to set a customer managed key on an
-#'     event bus with schema discovery enabled.
+#' -   You call ` UpdatedEventBus ` to set a customer managed key on an event bus with schema discovery enabled.
 #' 
-#' To enable schema discovery on an event bus, choose to use an Amazon Web
-#' Services owned key. For more information, see [Encrypting
-#' events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption-event-bus-cmkey.html)
-#' in the *Amazon EventBridge User Guide*.
+#' To enable schema discovery on an event bus, choose to use an Amazon Web Services owned key. For more information, see [Encrypting events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption-event-bus-cmkey.html) in the *Amazon EventBridge User Guide*.
 #' 
-#' If you have specified that EventBridge use a customer managed key for
-#' encrypting the source event bus, we strongly recommend you also specify
-#' a customer managed key for any archives for the event bus as well.
+#' If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.
 #' 
-#' For more information, see [Encrypting
-#' archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html)
-#' in the *Amazon EventBridge User Guide*.
-#' @param DeadLetterConfig 
+#' For more information, see [Encrypting archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html) in the *Amazon EventBridge User Guide*.
+#' @param DeadLetterConfig Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).
+#' 
+#' For more information, see [Using dead-letter queues to process undelivered events](https://docs.aws.amazon.com/eventbridge/latest/userguide/#eb-rule-dlq) in the *EventBridge User Guide*.
 #' @param LogConfig The logging configuration settings for the event bus.
 #' 
-#' For more information, see Configuring logs for event buses in the
-#' *EventBridge User Guide*.
+#' For more information, see Configuring logs for event buses in the *EventBridge User Guide*.
 #' @param Tags Tags to associate with the event bus.
 #'
 #' @return
@@ -682,54 +604,33 @@ eventbridge_create_event_bus <- function(Name, EventSourceName = NULL, Descripti
 #' Called by an SaaS partner to create a partner event source
 #'
 #' @description
-#' Called by an SaaS partner to create a partner event source. This
-#' operation is not used by Amazon Web Services customers.
+#' Called by an SaaS partner to create a partner event source. This operation is not used by Amazon Web Services customers.
 #' 
-#' Each partner event source can be used by one Amazon Web Services account
-#' to create a matching partner event bus in that Amazon Web Services
-#' account. A SaaS partner must create one partner event source for each
-#' Amazon Web Services account that wants to receive those event types.
+#' Each partner event source can be used by one Amazon Web Services account to create a matching partner event bus in that Amazon Web Services account. A SaaS partner must create one partner event source for each Amazon Web Services account that wants to receive those event types.
 #' 
-#' A partner event source creates events based on resources within the SaaS
-#' partner's service or application.
+#' A partner event source creates events based on resources within the SaaS partner's service or application.
 #' 
-#' An Amazon Web Services account that creates a partner event bus that
-#' matches the partner event source can use that event bus to receive
-#' events from the partner, and then process them using Amazon Web Services
-#' Events rules and targets.
+#' An Amazon Web Services account that creates a partner event bus that matches the partner event source can use that event bus to receive events from the partner, and then process them using Amazon Web Services Events rules and targets.
 #' 
 #' Partner event source names follow this format:
 #' 
 #' ` partner_name/event_namespace/event_name `
 #' 
-#' -   *partner_name* is determined during partner registration, and
-#'     identifies the partner to Amazon Web Services customers.
+#' -   *partner_name* is determined during partner registration, and identifies the partner to Amazon Web Services customers.
 #' 
-#' -   *event_namespace* is determined by the partner, and is a way for the
-#'     partner to categorize their events.
+#' -   *event_namespace* is determined by the partner, and is a way for the partner to categorize their events.
 #' 
-#' -   *event_name* is determined by the partner, and should uniquely
-#'     identify an event-generating resource within the partner system.
+#' -   *event_name* is determined by the partner, and should uniquely identify an event-generating resource within the partner system.
 #' 
-#'     The *event_name* must be unique across all Amazon Web Services
-#'     customers. This is because the event source is a shared resource
-#'     between the partner and customer accounts, and each partner event
-#'     source unique in the partner account.
+#'     The *event_name* must be unique across all Amazon Web Services customers. This is because the event source is a shared resource between the partner and customer accounts, and each partner event source unique in the partner account.
 #' 
-#' The combination of *event_namespace* and *event_name* should help Amazon
-#' Web Services customers decide whether to create an event bus to receive
-#' these events.
+#' The combination of *event_namespace* and *event_name* should help Amazon Web Services customers decide whether to create an event bus to receive these events.
 #'
 #' @usage
 #' eventbridge_create_partner_event_source(Name, Account)
 #'
-#' @param Name &#91;required&#93; The name of the partner event source. This name must be unique and must
-#' be in the format ` partner_name/event_namespace/event_name `. The Amazon
-#' Web Services account that wants to use this partner event source must
-#' create a partner event bus with a name that matches the name of the
-#' partner event source.
-#' @param Account &#91;required&#93; The Amazon Web Services account ID that is permitted to create a
-#' matching partner event bus for this partner event source.
+#' @param Name &#91;required&#93; The name of the partner event source. This name must be unique and must be in the format ` partner_name/event_namespace/event_name `. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.
+#' @param Account &#91;required&#93; The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.
 #'
 #' @return
 #' A list with the following syntax:
@@ -775,15 +676,11 @@ eventbridge_create_partner_event_source <- function(Name, Account) {
 #' specified partner event source
 #'
 #' @description
-#' You can use this operation to temporarily stop receiving events from the
-#' specified partner event source. The matching event bus is not deleted.
+#' You can use this operation to temporarily stop receiving events from the specified partner event source. The matching event bus is not deleted.
 #' 
-#' When you deactivate a partner event source, the source goes into PENDING
-#' state. If it remains in PENDING state for more than two weeks, it is
-#' deleted.
+#' When you deactivate a partner event source, the source goes into PENDING state. If it remains in PENDING state for more than two weeks, it is deleted.
 #' 
-#' To activate a deactivated partner event source, use
-#' [`activate_event_source`][eventbridge_activate_event_source].
+#' To activate a deactivated partner event source, use [`activate_event_source`][eventbridge_activate_event_source].
 #'
 #' @usage
 #' eventbridge_deactivate_event_source(Name)
@@ -827,9 +724,7 @@ eventbridge_deactivate_event_source <- function(Name) {
 #' Removes all authorization parameters from the connection
 #'
 #' @description
-#' Removes all authorization parameters from the connection. This lets you
-#' remove the secret from the connection so you can reuse it without having
-#' to create a new connection.
+#' Removes all authorization parameters from the connection. This lets you remove the secret from the connection so you can reuse it without having to create a new connection.
 #'
 #' @usage
 #' eventbridge_deauthorize_connection(Name)
@@ -1035,17 +930,12 @@ eventbridge_delete_connection <- function(Name) {
 #' Delete an existing global endpoint
 #'
 #' @description
-#' Delete an existing global endpoint. For more information about global
-#' endpoints, see [Making applications Regional-fault tolerant with global
-#' endpoints and event
-#' replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html)
-#' in the *Amazon EventBridge User Guide* .
+#' Delete an existing global endpoint. For more information about global endpoints, see [Making applications Regional-fault tolerant with global endpoints and event replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html) in the *Amazon EventBridge User Guide* .
 #'
 #' @usage
 #' eventbridge_delete_endpoint(Name)
 #'
-#' @param Name &#91;required&#93; The name of the endpoint you want to delete. For example,
-#' `"Name":"us-east-2-custom_bus_A-endpoint"`..
+#' @param Name &#91;required&#93; The name of the endpoint you want to delete. For example, `"Name":"us-east-2-custom_bus_A-endpoint"`..
 #'
 #' @return
 #' An empty list.
@@ -1084,9 +974,7 @@ eventbridge_delete_endpoint <- function(Name) {
 #' Deletes the specified custom event bus or partner event bus
 #'
 #' @description
-#' Deletes the specified custom event bus or partner event bus. All rules
-#' associated with this event bus need to be deleted. You can't delete your
-#' account's default event bus.
+#' Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be deleted. You can't delete your account's default event bus.
 #'
 #' @usage
 #' eventbridge_delete_event_bus(Name)
@@ -1130,18 +1018,15 @@ eventbridge_delete_event_bus <- function(Name) {
 #' This operation is used by SaaS partners to delete a partner event source
 #'
 #' @description
-#' This operation is used by SaaS partners to delete a partner event
-#' source. This operation is not used by Amazon Web Services customers.
+#' This operation is used by SaaS partners to delete a partner event source. This operation is not used by Amazon Web Services customers.
 #' 
-#' When you delete an event source, the status of the corresponding partner
-#' event bus in the Amazon Web Services customer account becomes DELETED.
+#' When you delete an event source, the status of the corresponding partner event bus in the Amazon Web Services customer account becomes DELETED.
 #'
 #' @usage
 #' eventbridge_delete_partner_event_source(Name, Account)
 #'
 #' @param Name &#91;required&#93; The name of the event source to delete.
-#' @param Account &#91;required&#93; The Amazon Web Services account ID of the Amazon Web Services customer
-#' that the event source was created for.
+#' @param Account &#91;required&#93; The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.
 #'
 #' @return
 #' An empty list.
@@ -1183,35 +1068,20 @@ eventbridge_delete_partner_event_source <- function(Name, Account) {
 #' @description
 #' Deletes the specified rule.
 #' 
-#' Before you can delete the rule, you must remove all targets, using
-#' [`remove_targets`][eventbridge_remove_targets].
+#' Before you can delete the rule, you must remove all targets, using [`remove_targets`][eventbridge_remove_targets].
 #' 
-#' When you delete a rule, incoming events might continue to match to the
-#' deleted rule. Allow a short period of time for changes to take effect.
+#' When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short period of time for changes to take effect.
 #' 
-#' If you call delete rule multiple times for the same rule, all calls will
-#' succeed. When you call delete rule for a non-existent custom eventbus,
-#' `ResourceNotFoundException` is returned.
+#' If you call delete rule multiple times for the same rule, all calls will succeed. When you call delete rule for a non-existent custom eventbus, `ResourceNotFoundException` is returned.
 #' 
-#' Managed rules are rules created and managed by another Amazon Web
-#' Services service on your behalf. These rules are created by those other
-#' Amazon Web Services services to support functionality in those services.
-#' You can delete these rules using the `Force` option, but you should do
-#' so only if you are sure the other service is not still using that rule.
+#' Managed rules are rules created and managed by another Amazon Web Services service on your behalf. These rules are created by those other Amazon Web Services services to support functionality in those services. You can delete these rules using the `Force` option, but you should do so only if you are sure the other service is not still using that rule.
 #'
 #' @usage
 #' eventbridge_delete_rule(Name, EventBusName, Force)
 #'
 #' @param Name &#91;required&#93; The name of the rule.
-#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit
-#' this, the default event bus is used.
-#' @param Force If this is a managed rule, created by an Amazon Web Services service on
-#' your behalf, you must specify `Force` as `True` to delete the rule. This
-#' parameter is ignored for rules that are not managed rules. You can check
-#' whether a rule is a managed rule by using
-#' [`describe_rule`][eventbridge_describe_rule] or
-#' [`list_rules`][eventbridge_list_rules] and checking the `ManagedBy`
-#' field of the response.
+#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
+#' @param Force If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify `Force` as `True` to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using [`describe_rule`][eventbridge_describe_rule] or [`list_rules`][eventbridge_list_rules] and checking the `ManagedBy` field of the response.
 #'
 #' @return
 #' An empty list.
@@ -1514,19 +1384,13 @@ eventbridge_describe_connection <- function(Name) {
 #' Get the information about an existing global endpoint
 #'
 #' @description
-#' Get the information about an existing global endpoint. For more
-#' information about global endpoints, see [Making applications
-#' Regional-fault tolerant with global endpoints and event
-#' replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html)
-#' in the *Amazon EventBridge User Guide* .
+#' Get the information about an existing global endpoint. For more information about global endpoints, see [Making applications Regional-fault tolerant with global endpoints and event replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html) in the *Amazon EventBridge User Guide* .
 #'
 #' @usage
 #' eventbridge_describe_endpoint(Name, HomeRegion)
 #'
-#' @param Name &#91;required&#93; The name of the endpoint you want to get information about. For example,
-#' `"Name":"us-east-2-custom_bus_A-endpoint"`.
-#' @param HomeRegion The primary Region of the endpoint you want to get information about.
-#' For example `"HomeRegion": "us-east-1"`.
+#' @param Name &#91;required&#93; The name of the endpoint you want to get information about. For example, `"Name":"us-east-2-custom_bus_A-endpoint"`.
+#' @param HomeRegion The primary Region of the endpoint you want to get information about. For example `"HomeRegion": "us-east-1"`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1602,23 +1466,16 @@ eventbridge_describe_endpoint <- function(Name, HomeRegion = NULL) {
 #' Displays details about an event bus in your account
 #'
 #' @description
-#' Displays details about an event bus in your account. This can include
-#' the external Amazon Web Services accounts that are permitted to write
-#' events to your default event bus, and the associated policy. For custom
-#' event buses and partner event buses, it displays the name, ARN, policy,
-#' state, and creation time.
+#' Displays details about an event bus in your account. This can include the external Amazon Web Services accounts that are permitted to write events to your default event bus, and the associated policy. For custom event buses and partner event buses, it displays the name, ARN, policy, state, and creation time.
 #' 
-#' To enable your account to receive events from other accounts on its
-#' default event bus, use [`put_permission`][eventbridge_put_permission].
+#' To enable your account to receive events from other accounts on its default event bus, use [`put_permission`][eventbridge_put_permission].
 #' 
-#' For more information about partner event buses, see
-#' [`create_event_bus`][eventbridge_create_event_bus].
+#' For more information about partner event buses, see [`create_event_bus`][eventbridge_create_event_bus].
 #'
 #' @usage
 #' eventbridge_describe_event_bus(Name)
 #'
-#' @param Name The name or ARN of the event bus to show details for. If you omit this,
-#' the default event bus is displayed.
+#' @param Name The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1680,8 +1537,7 @@ eventbridge_describe_event_bus <- function(Name = NULL) {
 #' with your account
 #'
 #' @description
-#' This operation lists details about a partner event source that is shared
-#' with your account.
+#' This operation lists details about a partner event source that is shared with your account.
 #'
 #' @usage
 #' eventbridge_describe_event_source(Name)
@@ -1740,11 +1596,7 @@ eventbridge_describe_event_source <- function(Name) {
 #' event source that they have created
 #'
 #' @description
-#' An SaaS partner can use this operation to list details about a partner
-#' event source that they have created. Amazon Web Services customers do
-#' not use this operation. Instead, Amazon Web Services customers can use
-#' [`describe_event_source`][eventbridge_describe_event_source] to see
-#' details about a partner event source that is shared with them.
+#' An SaaS partner can use this operation to list details about a partner event source that they have created. Amazon Web Services customers do not use this operation. Instead, Amazon Web Services customers can use [`describe_event_source`][eventbridge_describe_event_source] to see details about a partner event source that is shared with them.
 #'
 #' @usage
 #' eventbridge_describe_partner_event_source(Name)
@@ -1794,18 +1646,7 @@ eventbridge_describe_partner_event_source <- function(Name) {
 #' Retrieves details about a replay
 #'
 #' @description
-#' Retrieves details about a replay. Use
-#' [`describe_replay`][eventbridge_describe_replay] to determine the
-#' progress of a running replay. A replay processes events to replay based
-#' on the time in the event, and replays them using 1 minute intervals. If
-#' you use [`start_replay`][eventbridge_start_replay] and specify an
-#' `EventStartTime` and an `EventEndTime` that covers a 20 minute time
-#' range, the events are replayed from the first minute of that 20 minute
-#' range first. Then the events from the second minute are replayed. You
-#' can use [`describe_replay`][eventbridge_describe_replay] to determine
-#' the progress of a replay. The value returned for `EventLastReplayedTime`
-#' indicates the time within the specified time range associated with the
-#' last event replayed.
+#' Retrieves details about a replay. Use [`describe_replay`][eventbridge_describe_replay] to determine the progress of a running replay. A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If you use [`start_replay`][eventbridge_start_replay] and specify an `EventStartTime` and an `EventEndTime` that covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the second minute are replayed. You can use [`describe_replay`][eventbridge_describe_replay] to determine the progress of a replay. The value returned for `EventLastReplayedTime` indicates the time within the specified time range associated with the last event replayed.
 #'
 #' @usage
 #' eventbridge_describe_replay(ReplayName)
@@ -1882,16 +1723,13 @@ eventbridge_describe_replay <- function(ReplayName) {
 #' @description
 #' Describes the specified rule.
 #' 
-#' DescribeRule does not list the targets of a rule. To see the targets
-#' associated with a rule, use
-#' [`list_targets_by_rule`][eventbridge_list_targets_by_rule].
+#' DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use [`list_targets_by_rule`][eventbridge_list_targets_by_rule].
 #'
 #' @usage
 #' eventbridge_describe_rule(Name, EventBusName)
 #'
 #' @param Name &#91;required&#93; The name of the rule.
-#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit
-#' this, the default event bus is used.
+#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1945,18 +1783,15 @@ eventbridge_describe_rule <- function(Name, EventBusName = NULL) {
 #' Disables the specified rule
 #'
 #' @description
-#' Disables the specified rule. A disabled rule won't match any events, and
-#' won't self-trigger if it has a schedule expression.
+#' Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.
 #' 
-#' When you disable a rule, incoming events might continue to match to the
-#' disabled rule. Allow a short period of time for changes to take effect.
+#' When you disable a rule, incoming events might continue to match to the disabled rule. Allow a short period of time for changes to take effect.
 #'
 #' @usage
 #' eventbridge_disable_rule(Name, EventBusName)
 #'
 #' @param Name &#91;required&#93; The name of the rule.
-#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit
-#' this, the default event bus is used.
+#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
 #'
 #' @return
 #' An empty list.
@@ -1996,19 +1831,15 @@ eventbridge_disable_rule <- function(Name, EventBusName = NULL) {
 #' Enables the specified rule
 #'
 #' @description
-#' Enables the specified rule. If the rule does not exist, the operation
-#' fails.
+#' Enables the specified rule. If the rule does not exist, the operation fails.
 #' 
-#' When you enable a rule, incoming events might not immediately start
-#' matching to a newly enabled rule. Allow a short period of time for
-#' changes to take effect.
+#' When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Allow a short period of time for changes to take effect.
 #'
 #' @usage
 #' eventbridge_enable_rule(Name, EventBusName)
 #'
 #' @param Name &#91;required&#93; The name of the rule.
-#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit
-#' this, the default event bus is used.
+#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
 #'
 #' @return
 #' An empty list.
@@ -2048,25 +1879,19 @@ eventbridge_enable_rule <- function(Name, EventBusName = NULL) {
 #' Retrieves a list of API destination in the account in the current Region
 #'
 #' @description
-#' Retrieves a list of API destination in the account in the current
-#' Region.
+#' Retrieves a list of API destination in the account in the current Region.
 #'
 #' @usage
 #' eventbridge_list_api_destinations(NamePrefix, ConnectionArn, NextToken,
 #'   Limit)
 #'
-#' @param NamePrefix A name prefix to filter results returned. Only API destinations with a
-#' name that starts with the prefix are returned.
+#' @param NamePrefix A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.
 #' @param ConnectionArn The ARN of the connection specified for the API destination.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param Limit The maximum number of API destinations to include in the response.
 #'
 #' @return
@@ -2131,27 +1956,20 @@ eventbridge_list_api_destinations <- function(NamePrefix = NULL, ConnectionArn =
 #' Lists your archives
 #'
 #' @description
-#' Lists your archives. You can either list all the archives or you can
-#' provide a prefix to match to the archive names. Filter parameters are
-#' exclusive.
+#' Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive names. Filter parameters are exclusive.
 #'
 #' @usage
 #' eventbridge_list_archives(NamePrefix, EventSourceArn, State, NextToken,
 #'   Limit)
 #'
-#' @param NamePrefix A name prefix to filter the archives returned. Only archives with name
-#' that match the prefix are returned.
+#' @param NamePrefix A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.
 #' @param EventSourceArn The ARN of the event source associated with the archive.
 #' @param State The state of the archive.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param Limit The maximum number of results to return.
 #'
 #' @return
@@ -2220,18 +2038,13 @@ eventbridge_list_archives <- function(NamePrefix = NULL, EventSourceArn = NULL, 
 #' eventbridge_list_connections(NamePrefix, ConnectionState, NextToken,
 #'   Limit)
 #'
-#' @param NamePrefix A name prefix to filter results returned. Only connections with a name
-#' that starts with the prefix are returned.
+#' @param NamePrefix A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.
 #' @param ConnectionState The state of the connection.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param Limit The maximum number of connections to return.
 #'
 #' @return
@@ -2297,30 +2110,19 @@ eventbridge_list_connections <- function(NamePrefix = NULL, ConnectionState = NU
 #' List the global endpoints associated with this account
 #'
 #' @description
-#' List the global endpoints associated with this account. For more
-#' information about global endpoints, see [Making applications
-#' Regional-fault tolerant with global endpoints and event
-#' replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html)
-#' in the *Amazon EventBridge User Guide* .
+#' List the global endpoints associated with this account. For more information about global endpoints, see [Making applications Regional-fault tolerant with global endpoints and event replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html) in the *Amazon EventBridge User Guide* .
 #'
 #' @usage
 #' eventbridge_list_endpoints(NamePrefix, HomeRegion, NextToken,
 #'   MaxResults)
 #'
-#' @param NamePrefix A value that will return a subset of the endpoints associated with this
-#' account. For example, `"NamePrefix": "ABC"` will return all endpoints
-#' with "ABC" in the name.
-#' @param HomeRegion The primary Region of the endpoints associated with this account. For
-#' example `"HomeRegion": "us-east-1"`.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NamePrefix A value that will return a subset of the endpoints associated with this account. For example, `"NamePrefix": "ABC"` will return all endpoints with "ABC" in the name.
+#' @param HomeRegion The primary Region of the endpoints associated with this account. For example `"HomeRegion": "us-east-1"`.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param MaxResults The maximum number of results returned by the call.
 #'
 #' @return
@@ -2405,26 +2207,18 @@ eventbridge_list_endpoints <- function(NamePrefix = NULL, HomeRegion = NULL, Nex
 #' bus, custom event buses, and partner event buses
 #'
 #' @description
-#' Lists all the event buses in your account, including the default event
-#' bus, custom event buses, and partner event buses.
+#' Lists all the event buses in your account, including the default event bus, custom event buses, and partner event buses.
 #'
 #' @usage
 #' eventbridge_list_event_buses(NamePrefix, NextToken, Limit)
 #'
-#' @param NamePrefix Specifying this limits the results to only those event buses with names
-#' that start with the specified prefix.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NamePrefix Specifying this limits the results to only those event buses with names that start with the specified prefix.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
-#' @param Limit Specifying this limits the number of results returned by this operation.
-#' The operation also returns a NextToken which you can use in a subsequent
-#' operation to retrieve the next set of results.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
+#' @param Limit Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2485,28 +2279,18 @@ eventbridge_list_event_buses <- function(NamePrefix = NULL, NextToken = NULL, Li
 #' shared with your Amazon Web Services account
 #'
 #' @description
-#' You can use this to see all the partner event sources that have been
-#' shared with your Amazon Web Services account. For more information about
-#' partner event sources, see
-#' [`create_event_bus`][eventbridge_create_event_bus].
+#' You can use this to see all the partner event sources that have been shared with your Amazon Web Services account. For more information about partner event sources, see [`create_event_bus`][eventbridge_create_event_bus].
 #'
 #' @usage
 #' eventbridge_list_event_sources(NamePrefix, NextToken, Limit)
 #'
-#' @param NamePrefix Specifying this limits the results to only those partner event sources
-#' with names that start with the specified prefix.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NamePrefix Specifying this limits the results to only those partner event sources with names that start with the specified prefix.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
-#' @param Limit Specifying this limits the number of results returned by this operation.
-#' The operation also returns a NextToken which you can use in a subsequent
-#' operation to retrieve the next set of results.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
+#' @param Limit Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2568,29 +2352,19 @@ eventbridge_list_event_sources <- function(NamePrefix = NULL, NextToken = NULL, 
 #' associated with
 #'
 #' @description
-#' An SaaS partner can use this operation to display the Amazon Web
-#' Services account ID that a particular partner event source name is
-#' associated with. This operation is not used by Amazon Web Services
-#' customers.
+#' An SaaS partner can use this operation to display the Amazon Web Services account ID that a particular partner event source name is associated with. This operation is not used by Amazon Web Services customers.
 #'
 #' @usage
 #' eventbridge_list_partner_event_source_accounts(EventSourceName,
 #'   NextToken, Limit)
 #'
-#' @param EventSourceName &#91;required&#93; The name of the partner event source to display account information
-#' about.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param EventSourceName &#91;required&#93; The name of the partner event source to display account information about.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
-#' @param Limit Specifying this limits the number of results returned by this operation.
-#' The operation also returns a NextToken which you can use in a subsequent
-#' operation to retrieve the next set of results.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
+#' @param Limit Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2649,27 +2423,18 @@ eventbridge_list_partner_event_source_accounts <- function(EventSourceName, Next
 #' source names that they have created
 #'
 #' @description
-#' An SaaS partner can use this operation to list all the partner event
-#' source names that they have created. This operation is not used by
-#' Amazon Web Services customers.
+#' An SaaS partner can use this operation to list all the partner event source names that they have created. This operation is not used by Amazon Web Services customers.
 #'
 #' @usage
 #' eventbridge_list_partner_event_sources(NamePrefix, NextToken, Limit)
 #'
-#' @param NamePrefix &#91;required&#93; If you specify this, the results are limited to only those partner event
-#' sources that start with the string you specify.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NamePrefix &#91;required&#93; If you specify this, the results are limited to only those partner event sources that start with the string you specify.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
-#' @param Limit pecifying this limits the number of results returned by this operation.
-#' The operation also returns a NextToken which you can use in a subsequent
-#' operation to retrieve the next set of results.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
+#' @param Limit pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2721,27 +2486,20 @@ eventbridge_list_partner_event_sources <- function(NamePrefix, NextToken = NULL,
 #' Lists your replays
 #'
 #' @description
-#' Lists your replays. You can either list all the replays or you can
-#' provide a prefix to match to the replay names. Filter parameters are
-#' exclusive.
+#' Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names. Filter parameters are exclusive.
 #'
 #' @usage
 #' eventbridge_list_replays(NamePrefix, State, EventSourceArn, NextToken,
 #'   Limit)
 #'
-#' @param NamePrefix A name prefix to filter the replays returned. Only replays with name
-#' that match the prefix are returned.
+#' @param NamePrefix A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
 #' @param State The state of the replay.
 #' @param EventSourceArn The ARN of the archive from which the events are replayed.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param Limit The maximum number of replays to retrieve.
 #'
 #' @return
@@ -2813,8 +2571,7 @@ eventbridge_list_replays <- function(NamePrefix = NULL, State = NULL, EventSourc
 #' Lists the rules for the specified target
 #'
 #' @description
-#' Lists the rules for the specified target. You can see which of the rules
-#' in Amazon EventBridge can invoke a specific target in your account.
+#' Lists the rules for the specified target. You can see which of the rules in Amazon EventBridge can invoke a specific target in your account.
 #' 
 #' The maximum number of results per page for requests is 100.
 #'
@@ -2823,17 +2580,12 @@ eventbridge_list_replays <- function(NamePrefix = NULL, State = NULL, EventSourc
 #'   NextToken, Limit)
 #'
 #' @param TargetArn &#91;required&#93; The Amazon Resource Name (ARN) of the target resource.
-#' @param EventBusName The name or ARN of the event bus to list rules for. If you omit this,
-#' the default event bus is used.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param EventBusName The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param Limit The maximum number of results to return.
 #'
 #' @return
@@ -2884,30 +2636,22 @@ eventbridge_list_rule_names_by_target <- function(TargetArn, EventBusName = NULL
 #' Lists your Amazon EventBridge rules
 #'
 #' @description
-#' Lists your Amazon EventBridge rules. You can either list all the rules
-#' or you can provide a prefix to match to the rule names.
+#' Lists your Amazon EventBridge rules. You can either list all the rules or you can provide a prefix to match to the rule names.
 #' 
 #' The maximum number of results per page for requests is 100.
 #' 
-#' ListRules does not list the targets of a rule. To see the targets
-#' associated with a rule, use
-#' [`list_targets_by_rule`][eventbridge_list_targets_by_rule].
+#' ListRules does not list the targets of a rule. To see the targets associated with a rule, use [`list_targets_by_rule`][eventbridge_list_targets_by_rule].
 #'
 #' @usage
 #' eventbridge_list_rules(NamePrefix, EventBusName, NextToken, Limit)
 #'
 #' @param NamePrefix The prefix matching the rule name.
-#' @param EventBusName The name or ARN of the event bus to list the rules for. If you omit
-#' this, the default event bus is used.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param EventBusName The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param Limit The maximum number of results to return.
 #'
 #' @return
@@ -2968,8 +2712,7 @@ eventbridge_list_rules <- function(NamePrefix = NULL, EventBusName = NULL, NextT
 #' Displays the tags associated with an EventBridge resource
 #'
 #' @description
-#' Displays the tags associated with an EventBridge resource. In
-#' EventBridge, rules and event buses can be tagged.
+#' Displays the tags associated with an EventBridge resource. In EventBridge, rules and event buses can be tagged.
 #'
 #' @usage
 #' eventbridge_list_tags_for_resource(ResourceARN)
@@ -3031,17 +2774,12 @@ eventbridge_list_tags_for_resource <- function(ResourceARN) {
 #' eventbridge_list_targets_by_rule(Rule, EventBusName, NextToken, Limit)
 #'
 #' @param Rule &#91;required&#93; The name of the rule.
-#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit
-#' this, the default event bus is used.
-#' @param NextToken The token returned by a previous call, which you can use to retrieve the
-#' next set of results.
+#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
+#' @param NextToken The token returned by a previous call, which you can use to retrieve the next set of results.
 #' 
-#' The value of `nextToken` is a unique pagination token for each page. To
-#' retrieve the next page of results, make the call again using the
-#' returned token. Keep all other arguments unchanged.
+#' The value of `nextToken` is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.
 #' 
-#' Using an expired pagination token results in an `HTTP 400 InvalidToken`
-#' error.
+#' Using an expired pagination token results in an `HTTP 400 InvalidToken` error.
 #' @param Limit The maximum number of results to return.
 #'
 #' @return
@@ -3218,32 +2956,19 @@ eventbridge_list_targets_by_rule <- function(Rule, EventBusName = NULL, NextToke
 #' rules
 #'
 #' @description
-#' Sends custom events to Amazon EventBridge so that they can be matched to
-#' rules.
+#' Sends custom events to Amazon EventBridge so that they can be matched to rules.
 #' 
-#' You can batch multiple event entries into one request for efficiency.
-#' However, the total entry size must be less than 256KB. You can calculate
-#' the entry size before you send the events. For more information, see
-#' [Calculating PutEvents event entry
-#' size](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size)
-#' in the *Amazon EventBridge User Guide* .
+#' You can batch multiple event entries into one request for efficiency. However, the total entry size must be less than 256KB. You can calculate the entry size before you send the events. For more information, see [Calculating PutEvents event entry size](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size) in the *Amazon EventBridge User Guide* .
 #' 
-#' PutEvents accepts the data in JSON format. For the JSON number (integer)
-#' data type, the constraints are: a minimum value of
-#' -9,223,372,036,854,775,808 and a maximum value of
-#' 9,223,372,036,854,775,807.
+#' PutEvents accepts the data in JSON format. For the JSON number (integer) data type, the constraints are: a minimum value of -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807.
 #' 
 #' PutEvents will only process nested JSON up to 1000 levels deep.
 #'
 #' @usage
 #' eventbridge_put_events(Entries, EndpointId)
 #'
-#' @param Entries &#91;required&#93; The entry that defines an event in your system. You can specify several
-#' parameters for the entry such as the source and type of the event,
-#' resources associated with the event, and so on.
-#' @param EndpointId The URL subdomain of the endpoint. For example, if the URL for Endpoint
-#' is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId
-#' is `abcde.veo`.
+#' @param Entries &#91;required&#93; The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.
+#' @param EndpointId The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is `abcde.veo`.
 #' 
 #' When using Java, you must include `auth-crt` on the class path.
 #'
@@ -3312,13 +3037,9 @@ eventbridge_put_events <- function(Entries, EndpointId = NULL) {
 #' event bus
 #'
 #' @description
-#' This is used by SaaS partners to write events to a customer's partner
-#' event bus. Amazon Web Services customers do not use this operation.
+#' This is used by SaaS partners to write events to a customer's partner event bus. Amazon Web Services customers do not use this operation.
 #' 
-#' For information on calculating event batch size, see [Calculating
-#' EventBridge PutEvents event entry
-#' size](https://docs.aws.amazon.com/eventbridge/latest/userguide/) in the
-#' *EventBridge User Guide*.
+#' For information on calculating event batch size, see [Calculating EventBridge PutEvents event entry size](https://docs.aws.amazon.com/eventbridge/latest/userguide/) in the *EventBridge User Guide*.
 #'
 #' @usage
 #' eventbridge_put_partner_events(Entries)
@@ -3388,32 +3109,13 @@ eventbridge_put_partner_events <- function(Entries) {
 #' bus
 #'
 #' @description
-#' Running [`put_permission`][eventbridge_put_permission] permits the
-#' specified Amazon Web Services account or Amazon Web Services
-#' organization to put events to the specified *event bus*. Amazon
-#' EventBridge rules in your account are triggered by these events arriving
-#' to an event bus in your account.
+#' Running [`put_permission`][eventbridge_put_permission] permits the specified Amazon Web Services account or Amazon Web Services organization to put events to the specified *event bus*. Amazon EventBridge rules in your account are triggered by these events arriving to an event bus in your account.
 #' 
-#' For another account to send events to your account, that external
-#' account must have an EventBridge rule with your account's event bus as a
-#' target.
+#' For another account to send events to your account, that external account must have an EventBridge rule with your account's event bus as a target.
 #' 
-#' To enable multiple Amazon Web Services accounts to put events to your
-#' event bus, run [`put_permission`][eventbridge_put_permission] once for
-#' each of these accounts. Or, if all the accounts are members of the same
-#' Amazon Web Services organization, you can run
-#' [`put_permission`][eventbridge_put_permission] once specifying
-#' `Principal` as "*" and specifying the Amazon Web Services organization
-#' ID in `Condition`, to grant permissions to all accounts in that
-#' organization.
+#' To enable multiple Amazon Web Services accounts to put events to your event bus, run [`put_permission`][eventbridge_put_permission] once for each of these accounts. Or, if all the accounts are members of the same Amazon Web Services organization, you can run [`put_permission`][eventbridge_put_permission] once specifying `Principal` as "*" and specifying the Amazon Web Services organization ID in `Condition`, to grant permissions to all accounts in that organization.
 #' 
-#' If you grant permissions using an organization, then accounts in that
-#' organization must specify a `RoleArn` with proper permissions when they
-#' use `PutTarget` to add your account's event bus as a target. For more
-#' information, see [Sending and Receiving Events Between Amazon Web
-#' Services
-#' Accounts](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html)
-#' in the *Amazon EventBridge User Guide*.
+#' If you grant permissions using an organization, then accounts in that organization must specify a `RoleArn` with proper permissions when they use `PutTarget` to add your account's event bus as a target. For more information, see [Sending and Receiving Events Between Amazon Web Services Accounts](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html) in the *Amazon EventBridge User Guide*.
 #' 
 #' The permission policy on the event bus cannot exceed 10 KB in size.
 #'
@@ -3421,40 +3123,20 @@ eventbridge_put_partner_events <- function(Entries) {
 #' eventbridge_put_permission(EventBusName, Action, Principal, StatementId,
 #'   Condition, Policy)
 #'
-#' @param EventBusName The name of the event bus associated with the rule. If you omit this,
-#' the default event bus is used.
+#' @param EventBusName The name of the event bus associated with the rule. If you omit this, the default event bus is used.
 #' @param Action The action that you are enabling the other account to perform.
-#' @param Principal The 12-digit Amazon Web Services account ID that you are permitting to
-#' put events to your default event bus. Specify "*" to permit any account
-#' to put events to your default event bus.
+#' @param Principal The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.
 #' 
-#' If you specify "*" without specifying `Condition`, avoid creating rules
-#' that may match undesirable events. To create more secure rules, make
-#' sure that the event pattern for each rule contains an `account` field
-#' with a specific account ID from which to receive events. Rules with an
-#' account field do not match any events sent from other accounts.
-#' @param StatementId An identifier string for the external account that you are granting
-#' permissions to. If you later want to revoke the permission for this
-#' external account, specify this `StatementId` when you run
-#' [`remove_permission`][eventbridge_remove_permission].
+#' If you specify "*" without specifying `Condition`, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an `account` field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.
+#' @param StatementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this `StatementId` when you run [`remove_permission`][eventbridge_remove_permission].
 #' 
 #' Each `StatementId` must be unique.
-#' @param Condition This parameter enables you to limit the permission to accounts that
-#' fulfill a certain condition, such as being a member of a certain Amazon
-#' Web Services organization. For more information about Amazon Web
-#' Services Organizations, see [What Is Amazon Web Services
-#' Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
-#' in the *Amazon Web Services Organizations User Guide*.
+#' @param Condition This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see [What Is Amazon Web Services Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *Amazon Web Services Organizations User Guide*.
 #' 
-#' If you specify `Condition` with an Amazon Web Services organization ID,
-#' and specify "*" as the value for `Principal`, you grant permission to
-#' all the accounts in the named organization.
+#' If you specify `Condition` with an Amazon Web Services organization ID, and specify "*" as the value for `Principal`, you grant permission to all the accounts in the named organization.
 #' 
-#' The `Condition` is a JSON string which must contain `Type`, `Key`, and
-#' `Value` fields.
-#' @param Policy A JSON string that describes the permission policy statement. You can
-#' include a `Policy` parameter in the request instead of using the
-#' `StatementId`, `Action`, `Principal`, or `Condition` parameters.
+#' The `Condition` is a JSON string which must contain `Type`, `Key`, and `Value` fields.
+#' @param Policy A JSON string that describes the permission policy statement. You can include a `Policy` parameter in the request instead of using the `StatementId`, `Action`, `Principal`, or `Condition` parameters.
 #'
 #' @return
 #' An empty list.
@@ -3502,129 +3184,56 @@ eventbridge_put_permission <- function(EventBusName = NULL, Action = NULL, Princ
 #' Creates or updates the specified rule
 #'
 #' @description
-#' Creates or updates the specified rule. Rules are enabled by default, or
-#' based on value of the state. You can disable a rule using
-#' [`disable_rule`][eventbridge_disable_rule].
+#' Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can disable a rule using [`disable_rule`][eventbridge_disable_rule].
 #' 
-#' A single rule watches for events from a single event bus. Events
-#' generated by Amazon Web Services services go to your account's default
-#' event bus. Events generated by SaaS partner services or applications go
-#' to the matching partner event bus. If you have custom applications or
-#' services, you can specify whether their events go to your default event
-#' bus or a custom event bus that you have created. For more information,
-#' see [`create_event_bus`][eventbridge_create_event_bus].
+#' A single rule watches for events from a single event bus. Events generated by Amazon Web Services services go to your account's default event bus. Events generated by SaaS partner services or applications go to the matching partner event bus. If you have custom applications or services, you can specify whether their events go to your default event bus or a custom event bus that you have created. For more information, see [`create_event_bus`][eventbridge_create_event_bus].
 #' 
-#' If you are updating an existing rule, the rule is replaced with what you
-#' specify in this [`put_rule`][eventbridge_put_rule] command. If you omit
-#' arguments in [`put_rule`][eventbridge_put_rule], the old values for
-#' those arguments are not kept. Instead, they are replaced with null
-#' values.
+#' If you are updating an existing rule, the rule is replaced with what you specify in this [`put_rule`][eventbridge_put_rule] command. If you omit arguments in [`put_rule`][eventbridge_put_rule], the old values for those arguments are not kept. Instead, they are replaced with null values.
 #' 
-#' When you create or update a rule, incoming events might not immediately
-#' start matching to new or updated rules. Allow a short period of time for
-#' changes to take effect.
+#' When you create or update a rule, incoming events might not immediately start matching to new or updated rules. Allow a short period of time for changes to take effect.
 #' 
-#' A rule must contain at least an EventPattern or ScheduleExpression.
-#' Rules with EventPatterns are triggered when a matching event is
-#' observed. Rules with ScheduleExpressions self-trigger based on the given
-#' schedule. A rule can have both an EventPattern and a ScheduleExpression,
-#' in which case the rule triggers on matching events as well as on a
-#' schedule.
+#' A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.
 #' 
-#' When you initially create a rule, you can optionally assign one or more
-#' tags to the rule. Tags can help you organize and categorize your
-#' resources. You can also use them to scope user permissions, by granting
-#' a user permission to access or change only rules with certain tag
-#' values. To use the [`put_rule`][eventbridge_put_rule] operation and
-#' assign tags, you must have both the `events:PutRule` and
-#' `events:TagResource` permissions.
+#' When you initially create a rule, you can optionally assign one or more tags to the rule. Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only rules with certain tag values. To use the [`put_rule`][eventbridge_put_rule] operation and assign tags, you must have both the `events:PutRule` and `events:TagResource` permissions.
 #' 
-#' If you are updating an existing rule, any tags you specify in the
-#' [`put_rule`][eventbridge_put_rule] operation are ignored. To update the
-#' tags of an existing rule, use [`tag_resource`][eventbridge_tag_resource]
-#' and [`untag_resource`][eventbridge_untag_resource].
+#' If you are updating an existing rule, any tags you specify in the [`put_rule`][eventbridge_put_rule] operation are ignored. To update the tags of an existing rule, use [`tag_resource`][eventbridge_tag_resource] and [`untag_resource`][eventbridge_untag_resource].
 #' 
-#' Most services in Amazon Web Services treat : or / as the same character
-#' in Amazon Resource Names (ARNs). However, EventBridge uses an exact
-#' match in event patterns and rules. Be sure to use the correct ARN
-#' characters when creating event patterns so that they match the ARN
-#' syntax in the event you want to match.
+#' Most services in Amazon Web Services treat : or / as the same character in Amazon Resource Names (ARNs). However, EventBridge uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.
 #' 
-#' In EventBridge, it is possible to create rules that lead to infinite
-#' loops, where a rule is fired repeatedly. For example, a rule might
-#' detect that ACLs have changed on an S3 bucket, and trigger software to
-#' change them to the desired state. If the rule is not written carefully,
-#' the subsequent change to the ACLs fires the rule again, creating an
-#' infinite loop.
+#' In EventBridge, it is possible to create rules that lead to infinite loops, where a rule is fired repeatedly. For example, a rule might detect that ACLs have changed on an S3 bucket, and trigger software to change them to the desired state. If the rule is not written carefully, the subsequent change to the ACLs fires the rule again, creating an infinite loop.
 #' 
-#' To prevent this, write the rules so that the triggered actions do not
-#' re-fire the same rule. For example, your rule could fire only if ACLs
-#' are found to be in a bad state, instead of after any change.
+#' To prevent this, write the rules so that the triggered actions do not re-fire the same rule. For example, your rule could fire only if ACLs are found to be in a bad state, instead of after any change.
 #' 
-#' An infinite loop can quickly cause higher than expected charges. We
-#' recommend that you use budgeting, which alerts you when charges exceed
-#' your specified limit. For more information, see [Managing Your Costs
-#' with
-#' Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).
+#' An infinite loop can quickly cause higher than expected charges. We recommend that you use budgeting, which alerts you when charges exceed your specified limit. For more information, see [Managing Your Costs with Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).
 #' 
-#' To create a rule that filters for management events from Amazon Web
-#' Services services, see [Receiving read-only management events from
-#' Amazon Web Services
-#' services](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event-cloudtrail.html#eb-service-event-cloudtrail-management)
-#' in the *EventBridge User Guide*.
+#' To create a rule that filters for management events from Amazon Web Services services, see [Receiving read-only management events from Amazon Web Services services](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event-cloudtrail.html#eb-service-event-cloudtrail-management) in the *EventBridge User Guide*.
 #'
 #' @usage
 #' eventbridge_put_rule(Name, ScheduleExpression, EventPattern, State,
 #'   Description, RoleArn, Tags, EventBusName)
 #'
 #' @param Name &#91;required&#93; The name of the rule that you are creating or updating.
-#' @param ScheduleExpression The scheduling expression. For example, "cron(0 20 * * ? *)" or
-#' "rate(5 minutes)".
-#' @param EventPattern The event pattern. For more information, see [Amazon EventBridge event
-#' patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html)
-#' in the *Amazon EventBridge User Guide* .
+#' @param ScheduleExpression The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
+#' @param EventPattern The event pattern. For more information, see [Amazon EventBridge event patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html) in the *Amazon EventBridge User Guide* .
 #' @param State The state of the rule.
 #' 
 #' Valid values include:
 #' 
-#' -   `DISABLED`: The rule is disabled. EventBridge does not match any
-#'     events against the rule.
+#' -   `DISABLED`: The rule is disabled. EventBridge does not match any events against the rule.
 #' 
-#' -   `ENABLED`: The rule is enabled. EventBridge matches events against
-#'     the rule, *except* for Amazon Web Services management events
-#'     delivered through CloudTrail.
+#' -   `ENABLED`: The rule is enabled. EventBridge matches events against the rule, *except* for Amazon Web Services management events delivered through CloudTrail.
 #' 
-#' -   `ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS`: The rule is enabled
-#'     for all events, including Amazon Web Services management events
-#'     delivered through CloudTrail.
+#' -   `ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS`: The rule is enabled for all events, including Amazon Web Services management events delivered through CloudTrail.
 #' 
-#'     Management events provide visibility into management operations that
-#'     are performed on resources in your Amazon Web Services account.
-#'     These are also known as control plane operations. For more
-#'     information, see [Logging management
-#'     events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events)
-#'     in the *CloudTrail User Guide*, and [Filtering management events
-#'     from Amazon Web Services
-#'     services](https://docs.aws.amazon.com/eventbridge/latest/userguide/#eb-service-event-cloudtrail)
-#'     in the *Amazon EventBridge User Guide* .
+#'     Management events provide visibility into management operations that are performed on resources in your Amazon Web Services account. These are also known as control plane operations. For more information, see [Logging management events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events) in the *CloudTrail User Guide*, and [Filtering management events from Amazon Web Services services](https://docs.aws.amazon.com/eventbridge/latest/userguide/#eb-service-event-cloudtrail) in the *Amazon EventBridge User Guide* .
 #' 
-#'     This value is only valid for rules on the
-#'     [default](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses)
-#'     event bus or [custom event
-#'     buses](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html).
-#'     It does not apply to [partner event
-#'     buses](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html).
+#'     This value is only valid for rules on the [default](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses) event bus or [custom event buses](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html). It does not apply to [partner event buses](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html).
 #' @param Description A description of the rule.
 #' @param RoleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.
 #' 
-#' If you're setting an event bus in another account as the target and that
-#' account granted permission to your account through an organization
-#' instead of directly by the account ID, you must specify a `RoleArn` with
-#' proper permissions in the `Target` structure, instead of here in this
-#' parameter.
+#' If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a `RoleArn` with proper permissions in the `Target` structure, instead of here in this parameter.
 #' @param Tags The list of key-value pairs to associate with the rule.
-#' @param EventBusName The name or ARN of the event bus to associate with this rule. If you
-#' omit this, the default event bus is used.
+#' @param EventBusName The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3681,23 +3290,17 @@ eventbridge_put_rule <- function(Name, ScheduleExpression = NULL, EventPattern =
 #' if they are already associated with the rule
 #'
 #' @description
-#' Adds the specified targets to the specified rule, or updates the targets
-#' if they are already associated with the rule.
+#' Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.
 #' 
 #' Targets are the resources that are invoked when a rule is triggered.
 #' 
 #' The maximum number of entries per request is 10.
 #' 
-#' Each rule can have up to five (5) targets associated with it at one
-#' time.
+#' Each rule can have up to five (5) targets associated with it at one time.
 #' 
-#' For a list of services you can configure as targets for events, see
-#' [EventBridge
-#' targets](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html)
-#' in the *Amazon EventBridge User Guide* .
+#' For a list of services you can configure as targets for events, see [EventBridge targets](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html) in the *Amazon EventBridge User Guide* .
 #' 
-#' Creating rules with built-in targets is supported only in the Amazon Web
-#' Services Management Console. The built-in targets are:
+#' Creating rules with built-in targets is supported only in the Amazon Web Services Management Console. The built-in targets are:
 #' 
 #' -   `Amazon EBS CreateSnapshot API call`
 #' 
@@ -3707,97 +3310,47 @@ eventbridge_put_rule <- function(Name, ScheduleExpression = NULL, EventPattern =
 #' 
 #' -   `Amazon EC2 TerminateInstances API call`
 #' 
-#' For some target types, [`put_targets`][eventbridge_put_targets] provides
-#' target-specific parameters. If the target is a Kinesis data stream, you
-#' can optionally specify which shard the event goes to by using the
-#' `KinesisParameters` argument. To invoke a command on multiple EC2
-#' instances with one rule, you can use the `RunCommandParameters` field.
+#' For some target types, [`put_targets`][eventbridge_put_targets] provides target-specific parameters. If the target is a Kinesis data stream, you can optionally specify which shard the event goes to by using the `KinesisParameters` argument. To invoke a command on multiple EC2 instances with one rule, you can use the `RunCommandParameters` field.
 #' 
-#' To be able to make API calls against the resources that you own, Amazon
-#' EventBridge needs the appropriate permissions:
+#' To be able to make API calls against the resources that you own, Amazon EventBridge needs the appropriate permissions:
 #' 
-#' -   For Lambda and Amazon SNS resources, EventBridge relies on
-#'     resource-based policies.
+#' -   For Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
 #' 
-#' -   For EC2 instances, Kinesis Data Streams, Step Functions state
-#'     machines and API Gateway APIs, EventBridge relies on IAM roles that
-#'     you specify in the `RoleARN` argument in
-#'     [`put_targets`][eventbridge_put_targets].
+#' -   For EC2 instances, Kinesis Data Streams, Step Functions state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify in the `RoleARN` argument in [`put_targets`][eventbridge_put_targets].
 #' 
-#' For more information, see [Authentication and Access
-#' Control](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-iam.html)
-#' in the *Amazon EventBridge User Guide* .
+#' For more information, see [Authentication and Access Control](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-iam.html) in the *Amazon EventBridge User Guide* .
 #' 
-#' If another Amazon Web Services account is in the same region and has
-#' granted you permission (using
-#' [`put_permission`][eventbridge_put_permission]), you can send events to
-#' that account. Set that account's event bus as a target of the rules in
-#' your account. To send the matched events to the other account, specify
-#' that account's event bus as the `Arn` value when you run
-#' [`put_targets`][eventbridge_put_targets]. If your account sends events
-#' to another account, your account is charged for each sent event. Each
-#' event sent to another account is charged as a custom event. The account
-#' receiving the event is not charged. For more information, see [Amazon
-#' EventBridge Pricing](https://aws.amazon.com/eventbridge/pricing/).
+#' If another Amazon Web Services account is in the same region and has granted you permission (using [`put_permission`][eventbridge_put_permission]), you can send events to that account. Set that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the `Arn` value when you run [`put_targets`][eventbridge_put_targets]. If your account sends events to another account, your account is charged for each sent event. Each event sent to another account is charged as a custom event. The account receiving the event is not charged. For more information, see [Amazon EventBridge Pricing](https://aws.amazon.com/eventbridge/pricing/).
 #' 
-#' `Input`, `InputPath`, and `InputTransformer` are not available with
-#' `PutTarget` if the target is an event bus of a different Amazon Web
-#' Services account.
+#' `Input`, `InputPath`, and `InputTransformer` are not available with `PutTarget` if the target is an event bus of a different Amazon Web Services account.
 #' 
-#' If you are setting the event bus of another account as the target, and
-#' that account granted permission to your account through an organization
-#' instead of directly by the account ID, then you must specify a `RoleArn`
-#' with proper permissions in the `Target` structure. For more information,
-#' see [Sending and Receiving Events Between Amazon Web Services
-#' Accounts](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html)
-#' in the *Amazon EventBridge User Guide*.
+#' If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a `RoleArn` with proper permissions in the `Target` structure. For more information, see [Sending and Receiving Events Between Amazon Web Services Accounts](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html) in the *Amazon EventBridge User Guide*.
 #' 
-#' If you have an IAM role on a cross-account event bus target, a
-#' [`put_targets`][eventbridge_put_targets] call without a role on the same
-#' target (same `Id` and `Arn`) will not remove the role.
+#' If you have an IAM role on a cross-account event bus target, a [`put_targets`][eventbridge_put_targets] call without a role on the same target (same `Id` and `Arn`) will not remove the role.
 #' 
-#' For more information about enabling cross-account events, see
-#' [`put_permission`][eventbridge_put_permission].
+#' For more information about enabling cross-account events, see [`put_permission`][eventbridge_put_permission].
 #' 
-#' **Input**, **InputPath**, and **InputTransformer** are mutually
-#' exclusive and optional parameters of a target. When a rule is triggered
-#' due to a matched event:
+#' **Input**, **InputPath**, and **InputTransformer** are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:
 #' 
-#' -   If none of the following arguments are specified for a target, then
-#'     the entire event is passed to the target in JSON format (unless the
-#'     target is Amazon EC2 Run Command or Amazon ECS task, in which case
-#'     nothing from the event is passed to the target).
+#' -   If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).
 #' 
-#' -   If **Input** is specified in the form of valid JSON, then the
-#'     matched event is overridden with this constant.
+#' -   If **Input** is specified in the form of valid JSON, then the matched event is overridden with this constant.
 #' 
-#' -   If **InputPath** is specified in the form of JSONPath (for example,
-#'     `$.detail`), then only the part of the event specified in the path
-#'     is passed to the target (for example, only the detail part of the
-#'     event is passed).
+#' -   If **InputPath** is specified in the form of JSONPath (for example, `$.detail`), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).
 #' 
-#' -   If **InputTransformer** is specified, then one or more specified
-#'     JSONPaths are extracted from the event and used as values in a
-#'     template that you specify as the input to the target.
+#' -   If **InputTransformer** is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.
 #' 
-#' When you specify `InputPath` or `InputTransformer`, you must use JSON
-#' dot notation, not bracket notation.
+#' When you specify `InputPath` or `InputTransformer`, you must use JSON dot notation, not bracket notation.
 #' 
-#' When you add targets to a rule and the associated rule triggers soon
-#' after, new or updated targets might not be immediately invoked. Allow a
-#' short period of time for changes to take effect.
+#' When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Allow a short period of time for changes to take effect.
 #' 
-#' This action can partially fail if too many requests are made at the same
-#' time. If that happens, `FailedEntryCount` is non-zero in the response
-#' and each entry in `FailedEntries` provides the ID of the failed target
-#' and the error code.
+#' This action can partially fail if too many requests are made at the same time. If that happens, `FailedEntryCount` is non-zero in the response and each entry in `FailedEntries` provides the ID of the failed target and the error code.
 #'
 #' @usage
 #' eventbridge_put_targets(Rule, EventBusName, Targets)
 #'
 #' @param Rule &#91;required&#93; The name of the rule.
-#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit
-#' this, the default event bus is used.
+#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
 #' @param Targets &#91;required&#93; The targets to update or add to the rule.
 #'
 #' @return
@@ -3979,23 +3532,15 @@ eventbridge_put_targets <- function(Rule, EventBusName = NULL, Targets) {
 #' to put events to the specified event bus
 #'
 #' @description
-#' Revokes the permission of another Amazon Web Services account to be able
-#' to put events to the specified event bus. Specify the account to revoke
-#' by the `StatementId` value that you associated with the account when you
-#' granted it permission with
-#' [`put_permission`][eventbridge_put_permission]. You can find the
-#' `StatementId` by using
-#' [`describe_event_bus`][eventbridge_describe_event_bus].
+#' Revokes the permission of another Amazon Web Services account to be able to put events to the specified event bus. Specify the account to revoke by the `StatementId` value that you associated with the account when you granted it permission with [`put_permission`][eventbridge_put_permission]. You can find the `StatementId` by using [`describe_event_bus`][eventbridge_describe_event_bus].
 #'
 #' @usage
 #' eventbridge_remove_permission(StatementId, RemoveAllPermissions,
 #'   EventBusName)
 #'
-#' @param StatementId The statement ID corresponding to the account that is no longer allowed
-#' to put events to the default event bus.
+#' @param StatementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.
 #' @param RemoveAllPermissions Specifies whether to remove all permissions.
-#' @param EventBusName The name of the event bus to revoke permissions for. If you omit this,
-#' the default event bus is used.
+#' @param EventBusName The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.
 #'
 #' @return
 #' An empty list.
@@ -4036,21 +3581,13 @@ eventbridge_remove_permission <- function(StatementId = NULL, RemoveAllPermissio
 #' Removes the specified targets from the specified rule
 #'
 #' @description
-#' Removes the specified targets from the specified rule. When the rule is
-#' triggered, those targets are no longer be invoked.
+#' Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.
 #' 
-#' A successful execution of [`remove_targets`][eventbridge_remove_targets]
-#' doesn't guarantee all targets are removed from the rule, it means that
-#' the target(s) listed in the request are removed.
+#' A successful execution of [`remove_targets`][eventbridge_remove_targets] doesn't guarantee all targets are removed from the rule, it means that the target(s) listed in the request are removed.
 #' 
-#' When you remove a target, when the associated rule triggers, removed
-#' targets might continue to be invoked. Allow a short period of time for
-#' changes to take effect.
+#' When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow a short period of time for changes to take effect.
 #' 
-#' This action can partially fail if too many requests are made at the same
-#' time. If that happens, `FailedEntryCount` is non-zero in the response
-#' and each entry in `FailedEntries` provides the ID of the failed target
-#' and the error code.
+#' This action can partially fail if too many requests are made at the same time. If that happens, `FailedEntryCount` is non-zero in the response and each entry in `FailedEntries` provides the ID of the failed target and the error code.
 #' 
 #' The maximum number of entries per request is 10.
 #'
@@ -4058,16 +3595,9 @@ eventbridge_remove_permission <- function(StatementId = NULL, RemoveAllPermissio
 #' eventbridge_remove_targets(Rule, EventBusName, Ids, Force)
 #'
 #' @param Rule &#91;required&#93; The name of the rule.
-#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit
-#' this, the default event bus is used.
+#' @param EventBusName The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
 #' @param Ids &#91;required&#93; The IDs of the targets to remove from the rule.
-#' @param Force If this is a managed rule, created by an Amazon Web Services service on
-#' your behalf, you must specify `Force` as `True` to remove targets. This
-#' parameter is ignored for rules that are not managed rules. You can check
-#' whether a rule is a managed rule by using
-#' [`describe_rule`][eventbridge_describe_rule] or
-#' [`list_rules`][eventbridge_list_rules] and checking the `ManagedBy`
-#' field of the response.
+#' @param Force If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify `Force` as `True` to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using [`describe_rule`][eventbridge_describe_rule] or [`list_rules`][eventbridge_list_rules] and checking the `ManagedBy` field of the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4123,17 +3653,7 @@ eventbridge_remove_targets <- function(Rule, EventBusName = NULL, Ids, Force = N
 #' Starts the specified replay
 #'
 #' @description
-#' Starts the specified replay. Events are not necessarily replayed in the
-#' exact same order that they were added to the archive. A replay processes
-#' events to replay based on the time in the event, and replays them using
-#' 1 minute intervals. If you specify an `EventStartTime` and an
-#' `EventEndTime` that covers a 20 minute time range, the events are
-#' replayed from the first minute of that 20 minute range first. Then the
-#' events from the second minute are replayed. You can use
-#' [`describe_replay`][eventbridge_describe_replay] to determine the
-#' progress of a replay. The value returned for `EventLastReplayedTime`
-#' indicates the time within the specified time range associated with the
-#' last event replayed.
+#' Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If you specify an `EventStartTime` and an `EventEndTime` that covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the second minute are replayed. You can use [`describe_replay`][eventbridge_describe_replay] to determine the progress of a replay. The value returned for `EventLastReplayedTime` indicates the time within the specified time range associated with the last event replayed.
 #'
 #' @usage
 #' eventbridge_start_replay(ReplayName, Description, EventSourceArn,
@@ -4142,12 +3662,9 @@ eventbridge_remove_targets <- function(Rule, EventBusName = NULL, Ids, Force = N
 #' @param ReplayName &#91;required&#93; The name of the replay to start.
 #' @param Description A description for the replay to start.
 #' @param EventSourceArn &#91;required&#93; The ARN of the archive to replay events from.
-#' @param EventStartTime &#91;required&#93; A time stamp for the time to start replaying events. Only events that
-#' occurred between the `EventStartTime` and `EventEndTime` are replayed.
-#' @param EventEndTime &#91;required&#93; A time stamp for the time to stop replaying events. Only events that
-#' occurred between the `EventStartTime` and `EventEndTime` are replayed.
-#' @param Destination &#91;required&#93; A `ReplayDestination` object that includes details about the destination
-#' for the replay.
+#' @param EventStartTime &#91;required&#93; A time stamp for the time to start replaying events. Only events that occurred between the `EventStartTime` and `EventEndTime` are replayed.
+#' @param EventEndTime &#91;required&#93; A time stamp for the time to stop replaying events. Only events that occurred between the `EventStartTime` and `EventEndTime` are replayed.
+#' @param Destination &#91;required&#93; A `ReplayDestination` object that includes details about the destination for the replay.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4211,20 +3728,11 @@ eventbridge_start_replay <- function(ReplayName, Description = NULL, EventSource
 #' resource
 #'
 #' @description
-#' Assigns one or more tags (key-value pairs) to the specified EventBridge
-#' resource. Tags can help you organize and categorize your resources. You
-#' can also use them to scope user permissions by granting a user
-#' permission to access or change only resources with certain tag values.
-#' In EventBridge, rules and event buses can be tagged.
+#' Assigns one or more tags (key-value pairs) to the specified EventBridge resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In EventBridge, rules and event buses can be tagged.
 #' 
-#' Tags don't have any semantic meaning to Amazon Web Services and are
-#' interpreted strictly as strings of characters.
+#' Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.
 #' 
-#' You can use the [`tag_resource`][eventbridge_tag_resource] action with a
-#' resource that already has tags. If you specify a new tag key, this tag
-#' is appended to the list of tags associated with the resource. If you
-#' specify a tag key that is already associated with the resource, the new
-#' tag value that you specify replaces the previous value for that tag.
+#' You can use the [`tag_resource`][eventbridge_tag_resource] action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.
 #' 
 #' You can associate as many as 50 tags with a resource.
 #'
@@ -4279,22 +3787,13 @@ eventbridge_tag_resource <- function(ResourceARN, Tags) {
 #' @description
 #' Tests whether the specified event pattern matches the provided event.
 #' 
-#' Most services in Amazon Web Services treat : or / as the same character
-#' in Amazon Resource Names (ARNs). However, EventBridge uses an exact
-#' match in event patterns and rules. Be sure to use the correct ARN
-#' characters when creating event patterns so that they match the ARN
-#' syntax in the event you want to match.
+#' Most services in Amazon Web Services treat : or / as the same character in Amazon Resource Names (ARNs). However, EventBridge uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.
 #'
 #' @usage
 #' eventbridge_test_event_pattern(EventPattern, Event)
 #'
-#' @param EventPattern &#91;required&#93; The event pattern. For more information, see [Events and Event
-#' Patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-events.html)
-#' in the *Amazon EventBridge User Guide* .
-#' @param Event &#91;required&#93; The event, in JSON format, to test against the event pattern. The JSON
-#' must follow the format specified in [Amazon Web Services
-#' Events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-events.html),
-#' and the following fields are mandatory:
+#' @param EventPattern &#91;required&#93; The event pattern. For more information, see [Events and Event Patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-events.html) in the *Amazon EventBridge User Guide* .
+#' @param Event &#91;required&#93; The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in [Amazon Web Services Events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-events.html), and the following fields are mandatory:
 #' 
 #' -   `id`
 #' 
@@ -4353,8 +3852,7 @@ eventbridge_test_event_pattern <- function(EventPattern, Event) {
 #' Removes one or more tags from the specified EventBridge resource
 #'
 #' @description
-#' Removes one or more tags from the specified EventBridge resource. In
-#' Amazon EventBridge, rules and event buses can be tagged.
+#' Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge, rules and event buses can be tagged.
 #'
 #' @usage
 #' eventbridge_untag_resource(ResourceARN, TagKeys)
@@ -4413,8 +3911,7 @@ eventbridge_untag_resource <- function(ResourceARN, TagKeys) {
 #' @param ConnectionArn The ARN of the connection to use for the API destination.
 #' @param InvocationEndpoint The URL to the endpoint to use for the API destination.
 #' @param HttpMethod The method to use for the API destination.
-#' @param InvocationRateLimitPerSecond The maximum number of invocations per second to send to the API
-#' destination.
+#' @param InvocationRateLimitPerSecond The maximum number of invocations per second to send to the API destination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4480,25 +3977,15 @@ eventbridge_update_api_destination <- function(Name, Description = NULL, Connect
 #' @param Description The description for the archive.
 #' @param EventPattern The event pattern to use to filter events sent to the archive.
 #' @param RetentionDays The number of days to retain events in the archive.
-#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use,
-#' if you choose to use a customer managed key to encrypt this archive. The
-#' identifier can be the key Amazon Resource Name (ARN), KeyId, key alias,
-#' or key alias ARN.
+#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this archive. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
 #' 
-#' If you do not specify a customer managed key identifier, EventBridge
-#' uses an Amazon Web Services owned key to encrypt the archive.
+#' If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the archive.
 #' 
-#' For more information, see [Identify and view
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html)
-#' in the *Key Management Service Developer Guide*.
+#' For more information, see [Identify and view keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html) in the *Key Management Service Developer Guide*.
 #' 
-#' If you have specified that EventBridge use a customer managed key for
-#' encrypting the source event bus, we strongly recommend you also specify
-#' a customer managed key for any archives for the event bus as well.
+#' If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.
 #' 
-#' For more information, see [Encrypting
-#' archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html)
-#' in the *Amazon EventBridge User Guide*.
+#' For more information, see [Encrypting archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html) in the *Amazon EventBridge User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4561,23 +4048,14 @@ eventbridge_update_archive <- function(ArchiveName, Description = NULL, EventPat
 #' @param Description A description for the connection.
 #' @param AuthorizationType The type of authorization to use for the connection.
 #' @param AuthParameters The authorization parameters to use for the connection.
-#' @param InvocationConnectivityParameters For connections to private APIs, the parameters to use for invoking the
-#' API.
+#' @param InvocationConnectivityParameters For connections to private APIs, the parameters to use for invoking the API.
 #' 
-#' For more information, see [Connecting to private
-#' APIs](https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html)
-#' in the *Amazon EventBridge User Guide* .
-#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use,
-#' if you choose to use a customer managed key to encrypt this connection.
-#' The identifier can be the key Amazon Resource Name (ARN), KeyId, key
-#' alias, or key alias ARN.
+#' For more information, see [Connecting to private APIs](https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html) in the *Amazon EventBridge User Guide* .
+#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
 #' 
-#' If you do not specify a customer managed key identifier, EventBridge
-#' uses an Amazon Web Services owned key to encrypt the connection.
+#' If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.
 #' 
-#' For more information, see [Identify and view
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html)
-#' in the *Key Management Service Developer Guide*.
+#' For more information, see [Identify and view keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html) in the *Key Management Service Developer Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4708,11 +4186,7 @@ eventbridge_update_connection <- function(Name, Description = NULL, Authorizatio
 #' Update an existing endpoint
 #'
 #' @description
-#' Update an existing endpoint. For more information about global
-#' endpoints, see [Making applications Regional-fault tolerant with global
-#' endpoints and event
-#' replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html)
-#' in the *Amazon EventBridge User Guide* .
+#' Update an existing endpoint. For more information about global endpoints, see [Making applications Regional-fault tolerant with global endpoints and event replication](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html) in the *Amazon EventBridge User Guide* .
 #'
 #' @usage
 #' eventbridge_update_endpoint(Name, Description, RoutingConfig,
@@ -4720,8 +4194,7 @@ eventbridge_update_connection <- function(Name, Description = NULL, Authorizatio
 #'
 #' @param Name &#91;required&#93; The name of the endpoint you want to update.
 #' @param Description A description for the endpoint.
-#' @param RoutingConfig Configure the routing policy, including the health check and secondary
-#' Region.
+#' @param RoutingConfig Configure the routing policy, including the health check and secondary Region.
 #' @param ReplicationConfig Whether event replication was enabled or disabled by this request.
 #' @param EventBuses Define event buses used for replication.
 #' @param RoleArn The ARN of the role used by event replication for this request.
@@ -4818,46 +4291,30 @@ eventbridge_update_endpoint <- function(Name, Description = NULL, RoutingConfig 
 #'   DeadLetterConfig, LogConfig)
 #'
 #' @param Name The name of the event bus.
-#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use,
-#' if you choose to use a customer managed key to encrypt events on this
-#' event bus. The identifier can be the key Amazon Resource Name (ARN),
-#' KeyId, key alias, or key alias ARN.
+#' @param KmsKeyIdentifier The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt events on this event bus. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
 #' 
-#' If you do not specify a customer managed key identifier, EventBridge
-#' uses an Amazon Web Services owned key to encrypt events on the event
-#' bus.
+#' If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt events on the event bus.
 #' 
-#' For more information, see [Identify and view
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html)
-#' in the *Key Management Service Developer Guide*.
+#' For more information, see [Identify and view keys](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html) in the *Key Management Service Developer Guide*.
 #' 
-#' Schema discovery is not supported for event buses encrypted using a
-#' customer managed key. EventBridge returns an error if:
+#' Schema discovery is not supported for event buses encrypted using a customer managed key. EventBridge returns an error if:
 #' 
-#' -   You call ` CreateDiscoverer ` on an event bus set to use a customer
-#'     managed key for encryption.
+#' -   You call ` CreateDiscoverer ` on an event bus set to use a customer managed key for encryption.
 #' 
-#' -   You call ` UpdatedEventBus ` to set a customer managed key on an
-#'     event bus with schema discovery enabled.
+#' -   You call ` UpdatedEventBus ` to set a customer managed key on an event bus with schema discovery enabled.
 #' 
-#' To enable schema discovery on an event bus, choose to use an Amazon Web
-#' Services owned key. For more information, see [Encrypting
-#' events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption-event-bus-cmkey.html)
-#' in the *Amazon EventBridge User Guide*.
+#' To enable schema discovery on an event bus, choose to use an Amazon Web Services owned key. For more information, see [Encrypting events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption-event-bus-cmkey.html) in the *Amazon EventBridge User Guide*.
 #' 
-#' If you have specified that EventBridge use a customer managed key for
-#' encrypting the source event bus, we strongly recommend you also specify
-#' a customer managed key for any archives for the event bus as well.
+#' If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.
 #' 
-#' For more information, see [Encrypting
-#' archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html)
-#' in the *Amazon EventBridge User Guide*.
+#' For more information, see [Encrypting archives](https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html) in the *Amazon EventBridge User Guide*.
 #' @param Description The event bus description.
-#' @param DeadLetterConfig 
+#' @param DeadLetterConfig Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).
+#' 
+#' For more information, see [Using dead-letter queues to process undelivered events](https://docs.aws.amazon.com/eventbridge/latest/userguide/#eb-rule-dlq) in the *EventBridge User Guide*.
 #' @param LogConfig The logging configuration settings for the event bus.
 #' 
-#' For more information, see Configuring logs for event buses in the
-#' *EventBridge User Guide*.
+#' For more information, see Configuring logs for event buses in the *EventBridge User Guide*.
 #'
 #' @return
 #' A list with the following syntax:

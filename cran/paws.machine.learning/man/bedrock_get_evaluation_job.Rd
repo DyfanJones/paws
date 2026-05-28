@@ -7,8 +7,7 @@
 bedrock_get_evaluation_job(jobIdentifier)
 }
 \arguments{
-\item{jobIdentifier}{[required] The Amazon Resource Name (ARN) of the evaluation job you want get
-information on.}
+\item{jobIdentifier}{[required] The Amazon Resource Name (ARN) of the evaluation job you want get information on.}
 }
 \description{
 Gets information about an evaluation job, such as the status of the job.

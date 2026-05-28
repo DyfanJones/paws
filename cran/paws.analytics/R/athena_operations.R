@@ -175,89 +175,51 @@ athena_create_capacity_reservation <- function(TargetDpus, Name, Tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_create_data_catalog/](https://www.paws-r-sdk.com/docs/athena_create_data_catalog/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the data catalog to create. The catalog name must be unique
-#' for the Amazon Web Services account and can use a maximum of 127
-#' alphanumeric, underscore, at sign, or hyphen characters. The remainder
-#' of the length constraint of 256 is reserved for use by Athena.
+#' @param Name &#91;required&#93; The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.
 #' 
-#' For `FEDERATED` type the catalog name has following considerations and
-#' limits:
+#' For `FEDERATED` type the catalog name has following considerations and limits:
 #' 
-#' -   The catalog name allows special characters such as `_ , @@ , \ , - `.
-#'     These characters are replaced with a hyphen (-) when creating the
-#'     CFN Stack Name and with an underscore (_) when creating the Lambda
-#'     Function and Glue Connection Name.
+#' -   The catalog name allows special characters such as `_ , @@ , \ , - `. These characters are replaced with a hyphen (-) when creating the CFN Stack Name and with an underscore (_) when creating the Lambda Function and Glue Connection Name.
 #' 
-#' -   The catalog name has a theoretical limit of 128 characters. However,
-#'     since we use it to create other resources that allow less characters
-#'     and we prepend a prefix to it, the actual catalog name limit for
-#'     `FEDERATED` catalog is 64 - 23 = 41 characters.
-#' @param Type &#91;required&#93; The type of data catalog to create: `LAMBDA` for a federated catalog,
-#' `GLUE` for an Glue Data Catalog, and `HIVE` for an external Apache Hive
-#' metastore. `FEDERATED` is a federated catalog for which Athena creates
-#' the connection and the Lambda function for you based on the parameters
-#' that you pass.
+#' -   The catalog name has a theoretical limit of 128 characters. However, since we use it to create other resources that allow less characters and we prepend a prefix to it, the actual catalog name limit for `FEDERATED` catalog is 64 - 23 = 41 characters.
+#' @param Type &#91;required&#93; The type of data catalog to create: `LAMBDA` for a federated catalog, `GLUE` for an Glue Data Catalog, and `HIVE` for an external Apache Hive metastore. `FEDERATED` is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.
 #' 
 #' For `FEDERATED` type, we do not support IAM identity center.
 #' @param Description A description of the data catalog to be created.
-#' @param Parameters Specifies the Lambda function or functions to use for creating the data
-#' catalog. This is a mapping whose values depend on the catalog type.
+#' @param Parameters Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type.
 #' 
-#' -   For the `HIVE` data catalog type, use the following syntax. The
-#'     `metadata-function` parameter is required. `The sdk-version`
-#'     parameter is optional and defaults to the currently supported
-#'     version.
+#' -   For the `HIVE` data catalog type, use the following syntax. The `metadata-function` parameter is required. `The sdk-version` parameter is optional and defaults to the currently supported version.
 #' 
 #'     `metadata-function=lambda_arn, sdk-version=version_number `
 #' 
-#' -   For the `LAMBDA` data catalog type, use one of the following sets of
-#'     required parameters, but not both.
+#' -   For the `LAMBDA` data catalog type, use one of the following sets of required parameters, but not both.
 #' 
-#'     -   If you have one Lambda function that processes metadata and
-#'         another for reading the actual data, use the following syntax.
-#'         Both parameters are required.
+#'     -   If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.
 #' 
 #'         `metadata-function=lambda_arn, record-function=lambda_arn `
 #' 
-#'     -   If you have a composite Lambda function that processes both
-#'         metadata and data, use the following syntax to specify your
-#'         Lambda function.
+#'     -   If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.
 #' 
 #'         `function=lambda_arn `
 #' 
-#' -   The `GLUE` type takes a catalog ID parameter and is required. The
-#'     ` catalog_id ` is the account ID of the Amazon Web Services account
-#'     to which the Glue Data Catalog belongs.
+#' -   The `GLUE` type takes a catalog ID parameter and is required. The ` catalog_id ` is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.
 #' 
 #'     `catalog-id=catalog_id `
 #' 
-#'     -   The `GLUE` data catalog type also applies to the default
-#'         `AwsDataCatalog` that already exists in your account, of which
-#'         you can have only one and cannot modify.
+#'     -   The `GLUE` data catalog type also applies to the default `AwsDataCatalog` that already exists in your account, of which you can have only one and cannot modify.
 #' 
-#' -   The `FEDERATED` data catalog type uses one of the following
-#'     parameters, but not both. Use `connection-arn` for an existing Glue
-#'     connection. Use `connection-type` and `connection-properties` to
-#'     specify the configuration setting for a new connection.
+#' -   The `FEDERATED` data catalog type uses one of the following parameters, but not both. Use `connection-arn` for an existing Glue connection. Use `connection-type` and `connection-properties` to specify the configuration setting for a new connection.
 #' 
 #'     -   `connection-arn:<glue_connection_arn_to_reuse> `
 #' 
-#'     -   `lambda-role-arn` (optional): The execution role to use for the
-#'         Lambda function. If not provided, one is created.
+#'     -   `lambda-role-arn` (optional): The execution role to use for the Lambda function. If not provided, one is created.
 #' 
 #'     -   `connection-type:MYSQL|REDSHIFT|...., connection-properties:"<json_string>"`
 #' 
-#'         For *\<json_string\>* , use escaped JSON text, as in the
-#'         following example.
+#'         For *\<json_string\>* , use escaped JSON text, as in the following example.
 #' 
 #'         `"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"`
-#' @param Tags A list of comma separated tags to add to the data catalog that is
-#' created. All the resources that are created by the
-#' [`create_data_catalog`][athena_create_data_catalog] API operation with
-#' `FEDERATED` type will have the tag
-#' `federated_athena_datacatalog="true"`. This includes the CFN Stack, Glue
-#' Connection, Athena DataCatalog, and all the resources created as part of
-#' the CFN Stack (Lambda Function, IAM policies/roles).
+#' @param Tags A list of comma separated tags to add to the data catalog that is created. All the resources that are created by the [`create_data_catalog`][athena_create_data_catalog] API operation with `FEDERATED` type will have the tag `federated_athena_datacatalog="true"`. This includes the CFN Stack, Glue Connection, Athena DataCatalog, and all the resources created as part of the CFN Stack (Lambda Function, IAM policies/roles).
 #'
 #' @keywords internal
 #'
@@ -292,18 +254,9 @@ athena_create_data_catalog <- function(Name, Type, Description = NULL, Parameter
 #' @param Description The query description.
 #' @param Database &#91;required&#93; The database to which the query belongs.
 #' @param QueryString &#91;required&#93; The contents of the query with all query statements.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the
-#' query is idempotent (executes only once). If another
-#' [`create_named_query`][athena_create_named_query] request is received,
-#' the same response is returned and another query is not created. If a
-#' parameter has changed, for example, the `QueryString`, an error is
-#' returned.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another [`create_named_query`][athena_create_named_query] request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the `QueryString`, an error is returned.
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for users. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #' @param WorkGroup The name of the workgroup in which the named query is being created.
 #'
 #' @keywords internal
@@ -336,18 +289,11 @@ athena_create_named_query <- function(Name, Description = NULL, Database, QueryS
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_create_notebook/](https://www.paws-r-sdk.com/docs/athena_create_notebook/) for full documentation.
 #'
-#' @param WorkGroup &#91;required&#93; The name of the Spark enabled workgroup in which the notebook will be
-#' created.
-#' @param Name &#91;required&#93; The name of the `ipynb` file to be created in the Spark workgroup,
-#' without the `.ipynb` extension.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the
-#' notebook is idempotent (executes only once).
+#' @param WorkGroup &#91;required&#93; The name of the Spark enabled workgroup in which the notebook will be created.
+#' @param Name &#91;required&#93; The name of the `ipynb` file to be created in the Spark workgroup, without the `.ipynb` extension.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for you. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #'
 #' @keywords internal
 #'
@@ -445,16 +391,7 @@ athena_create_presigned_notebook_url <- function(SessionId) {
 #' See [https://www.paws-r-sdk.com/docs/athena_create_work_group/](https://www.paws-r-sdk.com/docs/athena_create_work_group/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The workgroup name.
-#' @param Configuration Contains configuration information for creating an Athena SQL workgroup
-#' or Spark enabled Athena workgroup. Athena SQL workgroup configuration
-#' includes the location in Amazon S3 where query and calculation results
-#' are stored, the encryption configuration, if any, used for encrypting
-#' query results, whether the Amazon CloudWatch Metrics are enabled for the
-#' workgroup, the limit for the amount of bytes scanned (cutoff) per query,
-#' if it is specified, and whether workgroup's settings (specified with
-#' `EnforceWorkGroupConfiguration`) in the `WorkGroupConfiguration`
-#' override client-side settings. See
-#' WorkGroupConfiguration$EnforceWorkGroupConfiguration.
+#' @param Configuration Contains configuration information for creating an Athena SQL workgroup or Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with `EnforceWorkGroupConfiguration`) in the `WorkGroupConfiguration` override client-side settings. See WorkGroupConfiguration$EnforceWorkGroupConfiguration.
 #' @param Description The workgroup description.
 #' @param Tags A list of comma separated tags to add to the workgroup that is created.
 #'
@@ -519,10 +456,7 @@ athena_delete_capacity_reservation <- function(Name) {
 #' See [https://www.paws-r-sdk.com/docs/athena_delete_data_catalog/](https://www.paws-r-sdk.com/docs/athena_delete_data_catalog/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the data catalog to delete.
-#' @param DeleteCatalogOnly Deletes the Athena Data Catalog. You can only use this with the
-#' `FEDERATED` catalogs. You usually perform this before registering the
-#' connector with Glue Data Catalog. After deletion, you will have to
-#' manage the Glue Connection and Lambda function.
+#' @param DeleteCatalogOnly Deletes the Athena Data Catalog. You can only use this with the `FEDERATED` catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.
 #'
 #' @keywords internal
 #'
@@ -650,8 +584,7 @@ athena_delete_prepared_statement <- function(StatementName, WorkGroup) {
 #' See [https://www.paws-r-sdk.com/docs/athena_delete_work_group/](https://www.paws-r-sdk.com/docs/athena_delete_work_group/) for full documentation.
 #'
 #' @param WorkGroup &#91;required&#93; The unique name of the workgroup to delete.
-#' @param RecursiveDeleteOption The option to delete the workgroup and its contents even if the
-#' workgroup contains any named queries, query executions, or notebooks.
+#' @param RecursiveDeleteOption The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.
 #'
 #' @keywords internal
 #'
@@ -807,8 +740,7 @@ athena_get_calculation_execution_status <- function(CalculationExecutionId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_get_capacity_assignment_configuration/](https://www.paws-r-sdk.com/docs/athena_get_capacity_assignment_configuration/) for full documentation.
 #'
-#' @param CapacityReservationName &#91;required&#93; The name of the capacity reservation to retrieve the capacity assignment
-#' configuration for.
+#' @param CapacityReservationName &#91;required&#93; The name of the capacity reservation to retrieve the capacity assignment configuration for.
 #'
 #' @keywords internal
 #'
@@ -872,8 +804,7 @@ athena_get_capacity_reservation <- function(Name) {
 #' See [https://www.paws-r-sdk.com/docs/athena_get_data_catalog/](https://www.paws-r-sdk.com/docs/athena_get_data_catalog/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the data catalog to return.
-#' @param WorkGroup The name of the workgroup. Required if making an IAM Identity Center
-#' request.
+#' @param WorkGroup The name of the workgroup. Required if making an IAM Identity Center request.
 #'
 #' @keywords internal
 #'
@@ -906,8 +837,7 @@ athena_get_data_catalog <- function(Name, WorkGroup = NULL) {
 #'
 #' @param CatalogName &#91;required&#93; The name of the data catalog that contains the database to return.
 #' @param DatabaseName &#91;required&#93; The name of the database to return.
-#' @param WorkGroup The name of the workgroup for which the metadata is being fetched.
-#' Required if requesting an IAM Identity Center enabled Glue Data Catalog.
+#' @param WorkGroup The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.
 #'
 #' @keywords internal
 #'
@@ -938,8 +868,7 @@ athena_get_database <- function(CatalogName, DatabaseName, WorkGroup = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_get_named_query/](https://www.paws-r-sdk.com/docs/athena_get_named_query/) for full documentation.
 #'
-#' @param NamedQueryId &#91;required&#93; The unique ID of the query. Use
-#' [`list_named_queries`][athena_list_named_queries] to get query IDs.
+#' @param NamedQueryId &#91;required&#93; The unique ID of the query. Use [`list_named_queries`][athena_list_named_queries] to get query IDs.
 #'
 #' @keywords internal
 #'
@@ -1068,17 +997,9 @@ athena_get_query_execution <- function(QueryExecutionId) {
 #' See [https://www.paws-r-sdk.com/docs/athena_get_query_results/](https://www.paws-r-sdk.com/docs/athena_get_query_results/) for full documentation.
 #'
 #' @param QueryExecutionId &#91;required&#93; The unique ID of the query execution.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #' @param MaxResults The maximum number of results (rows) to return in this request.
-#' @param QueryResultType When you set this to `DATA_ROWS` or empty,
-#' [`get_query_results`][athena_get_query_results] returns the query
-#' results in rows. If set to `DATA_MANIFEST`, it returns the manifest file
-#' in rows. Only the query types `CREATE TABLE AS SELECT`, `UNLOAD`, and
-#' `INSERT` can generate a manifest file. If you use `DATA_MANIFEST` for
-#' other query types, the query will fail.
+#' @param QueryResultType When you set this to `DATA_ROWS` or empty, [`get_query_results`][athena_get_query_results] returns the query results in rows. If set to `DATA_MANIFEST`, it returns the manifest file in rows. Only the query types `CREATE TABLE AS SELECT`, `UNLOAD`, and `INSERT` can generate a manifest file. If you use `DATA_MANIFEST` for other query types, the query will fail.
 #'
 #' @keywords internal
 #'
@@ -1267,12 +1188,10 @@ athena_get_session_status <- function(SessionId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_get_table_metadata/](https://www.paws-r-sdk.com/docs/athena_get_table_metadata/) for full documentation.
 #'
-#' @param CatalogName &#91;required&#93; The name of the data catalog that contains the database and table
-#' metadata to return.
+#' @param CatalogName &#91;required&#93; The name of the data catalog that contains the database and table metadata to return.
 #' @param DatabaseName &#91;required&#93; The name of the database that contains the table metadata to return.
 #' @param TableName &#91;required&#93; The name of the table for which metadata is returned.
-#' @param WorkGroup The name of the workgroup for which the metadata is being fetched.
-#' Required if requesting an IAM Identity Center enabled Glue Data Catalog.
+#' @param WorkGroup The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.
 #'
 #' @keywords internal
 #'
@@ -1336,19 +1255,12 @@ athena_get_work_group <- function(WorkGroup) {
 #'
 #' @param WorkGroup &#91;required&#93; The name of the Spark enabled workgroup to import the notebook to.
 #' @param Name &#91;required&#93; The name of the notebook to import.
-#' @param Payload The notebook content to be imported. The payload must be in `ipynb`
-#' format.
+#' @param Payload The notebook content to be imported. The payload must be in `ipynb` format.
 #' @param Type &#91;required&#93; The notebook content type. Currently, the only valid type is `IPYNB`.
-#' @param NotebookS3LocationUri A URI that specifies the Amazon S3 location of a notebook file in
-#' `ipynb` format.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to import the
-#' notebook is idempotent (executes only once).
+#' @param NotebookS3LocationUri A URI that specifies the Amazon S3 location of a notebook file in `ipynb` format.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for you. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #'
 #' @keywords internal
 #'
@@ -1381,8 +1293,7 @@ athena_import_notebook <- function(WorkGroup, Name, Payload = NULL, Type, Notebo
 #' See [https://www.paws-r-sdk.com/docs/athena_list_application_dpu_sizes/](https://www.paws-r-sdk.com/docs/athena_list_application_dpu_sizes/) for full documentation.
 #'
 #' @param MaxResults Specifies the maximum number of results to return.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.
 #'
 #' @keywords internal
 #'
@@ -1415,8 +1326,7 @@ athena_list_application_dpu_sizes <- function(MaxResults = NULL, NextToken = NUL
 #' See [https://www.paws-r-sdk.com/docs/athena_list_calculation_executions/](https://www.paws-r-sdk.com/docs/athena_list_calculation_executions/) for full documentation.
 #'
 #' @param SessionId &#91;required&#93; The session ID.
-#' @param StateFilter A filter for a specific calculation execution state. A description of
-#' each state follows.
+#' @param StateFilter A filter for a specific calculation execution state. A description of each state follows.
 #' 
 #' `CREATING` - The calculation is in the process of being created.
 #' 
@@ -1426,20 +1336,15 @@ athena_list_application_dpu_sizes <- function(MaxResults = NULL, NextToken = NUL
 #' 
 #' `RUNNING` - The calculation is running.
 #' 
-#' `CANCELING` - A request to cancel the calculation has been received and
-#' the system is working to stop it.
+#' `CANCELING` - A request to cancel the calculation has been received and the system is working to stop it.
 #' 
-#' `CANCELED` - The calculation is no longer running as the result of a
-#' cancel request.
+#' `CANCELED` - The calculation is no longer running as the result of a cancel request.
 #' 
 #' `COMPLETED` - The calculation has completed without error.
 #' 
 #' `FAILED` - The calculation failed and is no longer running.
 #' @param MaxResults The maximum number of calculation executions to return.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #'
 #' @keywords internal
 #'
@@ -1470,8 +1375,7 @@ athena_list_calculation_executions <- function(SessionId, StateFilter = NULL, Ma
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_list_capacity_reservations/](https://www.paws-r-sdk.com/docs/athena_list_capacity_reservations/) for full documentation.
 #'
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.
 #' @param MaxResults Specifies the maximum number of results to return.
 #'
 #' @keywords internal
@@ -1503,13 +1407,9 @@ athena_list_capacity_reservations <- function(NextToken = NULL, MaxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_list_data_catalogs/](https://www.paws-r-sdk.com/docs/athena_list_data_catalogs/) for full documentation.
 #'
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the NextToken from the response object of the previous
-#' page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.
 #' @param MaxResults Specifies the maximum number of data catalogs to return.
-#' @param WorkGroup The name of the workgroup. Required if making an IAM Identity Center
-#' request.
+#' @param WorkGroup The name of the workgroup. Required if making an IAM Identity Center request.
 #'
 #' @keywords internal
 #'
@@ -1541,13 +1441,9 @@ athena_list_data_catalogs <- function(NextToken = NULL, MaxResults = NULL, WorkG
 #' See [https://www.paws-r-sdk.com/docs/athena_list_databases/](https://www.paws-r-sdk.com/docs/athena_list_databases/) for full documentation.
 #'
 #' @param CatalogName &#91;required&#93; The name of the data catalog that contains the databases to return.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #' @param MaxResults Specifies the maximum number of results to return.
-#' @param WorkGroup The name of the workgroup for which the metadata is being fetched.
-#' Required if requesting an IAM Identity Center enabled Glue Data Catalog.
+#' @param WorkGroup The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.
 #'
 #' @keywords internal
 #'
@@ -1579,10 +1475,7 @@ athena_list_databases <- function(CatalogName, NextToken = NULL, MaxResults = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_list_engine_versions/](https://www.paws-r-sdk.com/docs/athena_list_engine_versions/) for full documentation.
 #'
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #' @param MaxResults The maximum number of engine versions to return in this request.
 #'
 #' @keywords internal
@@ -1615,11 +1508,9 @@ athena_list_engine_versions <- function(NextToken = NULL, MaxResults = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/athena_list_executors/](https://www.paws-r-sdk.com/docs/athena_list_executors/) for full documentation.
 #'
 #' @param SessionId &#91;required&#93; The session ID.
-#' @param ExecutorStateFilter A filter for a specific executor state. A description of each state
-#' follows.
+#' @param ExecutorStateFilter A filter for a specific executor state. A description of each state follows.
 #' 
-#' `CREATING` - The executor is being started, including acquiring
-#' resources.
+#' `CREATING` - The executor is being started, including acquiring resources.
 #' 
 #' `CREATED` - The executor has been started.
 #' 
@@ -1631,10 +1522,7 @@ athena_list_engine_versions <- function(NextToken = NULL, MaxResults = NULL) {
 #' 
 #' `FAILED` - Due to a failure, the executor is no longer running.
 #' @param MaxResults The maximum number of executors to return.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #'
 #' @keywords internal
 #'
@@ -1666,14 +1554,9 @@ athena_list_executors <- function(SessionId, ExecutorStateFilter = NULL, MaxResu
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_list_named_queries/](https://www.paws-r-sdk.com/docs/athena_list_named_queries/) for full documentation.
 #'
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #' @param MaxResults The maximum number of queries to return in this request.
-#' @param WorkGroup The name of the workgroup from which the named queries are being
-#' returned. If a workgroup is not specified, the saved queries for the
-#' primary workgroup are returned.
+#' @param WorkGroup The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.
 #'
 #' @keywords internal
 #'
@@ -1706,11 +1589,9 @@ athena_list_named_queries <- function(NextToken = NULL, MaxResults = NULL, WorkG
 #' See [https://www.paws-r-sdk.com/docs/athena_list_notebook_metadata/](https://www.paws-r-sdk.com/docs/athena_list_notebook_metadata/) for full documentation.
 #'
 #' @param Filters Search filter string.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.
 #' @param MaxResults Specifies the maximum number of results to return.
-#' @param WorkGroup &#91;required&#93; The name of the Spark enabled workgroup to retrieve notebook metadata
-#' for.
+#' @param WorkGroup &#91;required&#93; The name of the Spark enabled workgroup to retrieve notebook metadata for.
 #'
 #' @keywords internal
 #'
@@ -1745,10 +1626,7 @@ athena_list_notebook_metadata <- function(Filters = NULL, NextToken = NULL, MaxR
 #'
 #' @param NotebookId &#91;required&#93; The ID of the notebook to list sessions for.
 #' @param MaxResults The maximum number of notebook sessions to return.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #'
 #' @keywords internal
 #'
@@ -1780,10 +1658,7 @@ athena_list_notebook_sessions <- function(NotebookId, MaxResults = NULL, NextTok
 #' See [https://www.paws-r-sdk.com/docs/athena_list_prepared_statements/](https://www.paws-r-sdk.com/docs/athena_list_prepared_statements/) for full documentation.
 #'
 #' @param WorkGroup &#91;required&#93; The workgroup to list the prepared statements for.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #' @param MaxResults The maximum number of results to return in this request.
 #'
 #' @keywords internal
@@ -1816,14 +1691,9 @@ athena_list_prepared_statements <- function(WorkGroup, NextToken = NULL, MaxResu
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_list_query_executions/](https://www.paws-r-sdk.com/docs/athena_list_query_executions/) for full documentation.
 #'
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #' @param MaxResults The maximum number of query executions to return in this request.
-#' @param WorkGroup The name of the workgroup from which queries are being returned. If a
-#' workgroup is not specified, a list of available query execution IDs for
-#' the queries in the primary workgroup is returned.
+#' @param WorkGroup The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.
 #'
 #' @keywords internal
 #'
@@ -1856,18 +1726,15 @@ athena_list_query_executions <- function(NextToken = NULL, MaxResults = NULL, Wo
 #' See [https://www.paws-r-sdk.com/docs/athena_list_sessions/](https://www.paws-r-sdk.com/docs/athena_list_sessions/) for full documentation.
 #'
 #' @param WorkGroup &#91;required&#93; The workgroup to which the session belongs.
-#' @param StateFilter A filter for a specific session state. A description of each state
-#' follows.
+#' @param StateFilter A filter for a specific session state. A description of each state follows.
 #' 
-#' `CREATING` - The session is being started, including acquiring
-#' resources.
+#' `CREATING` - The session is being started, including acquiring resources.
 #' 
 #' `CREATED` - The session has been started.
 #' 
 #' `IDLE` - The session is able to accept a calculation.
 #' 
-#' `BUSY` - The session is processing another task and is unable to accept
-#' a calculation.
+#' `BUSY` - The session is processing another task and is unable to accept a calculation.
 #' 
 #' `TERMINATING` - The session is in the process of shutting down.
 #' 
@@ -1875,13 +1742,9 @@ athena_list_query_executions <- function(NextToken = NULL, MaxResults = NULL, Wo
 #' 
 #' `DEGRADED` - The session has no healthy coordinators.
 #' 
-#' `FAILED` - Due to a failure, the session and its resources are no longer
-#' running.
+#' `FAILED` - Due to a failure, the session and its resources are no longer running.
 #' @param MaxResults The maximum number of sessions to return.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #'
 #' @keywords internal
 #'
@@ -1912,18 +1775,12 @@ athena_list_sessions <- function(WorkGroup, StateFilter = NULL, MaxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_list_table_metadata/](https://www.paws-r-sdk.com/docs/athena_list_table_metadata/) for full documentation.
 #'
-#' @param CatalogName &#91;required&#93; The name of the data catalog for which table metadata should be
-#' returned.
+#' @param CatalogName &#91;required&#93; The name of the data catalog for which table metadata should be returned.
 #' @param DatabaseName &#91;required&#93; The name of the database for which table metadata should be returned.
-#' @param Expression A regex filter that pattern-matches table names. If no expression is
-#' supplied, metadata for all tables are listed.
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the NextToken from the response object of the previous
-#' page call.
+#' @param Expression A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.
 #' @param MaxResults Specifies the maximum number of results to return.
-#' @param WorkGroup The name of the workgroup for which the metadata is being fetched.
-#' Required if requesting an IAM Identity Center enabled Glue Data Catalog.
+#' @param WorkGroup The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.
 #'
 #' @keywords internal
 #'
@@ -1955,11 +1812,8 @@ athena_list_table_metadata <- function(CatalogName, DatabaseName, Expression = N
 #' See [https://www.paws-r-sdk.com/docs/athena_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/athena_list_tags_for_resource/) for full documentation.
 #'
 #' @param ResourceARN &#91;required&#93; Lists the tags for the resource with the specified ARN.
-#' @param NextToken The token for the next set of results, or null if there are no
-#' additional results for this request, where the request lists the tags
-#' for the resource with the specified ARN.
-#' @param MaxResults The maximum number of results to be returned per request that lists the
-#' tags for the resource.
+#' @param NextToken The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.
+#' @param MaxResults The maximum number of results to be returned per request that lists the tags for the resource.
 #'
 #' @keywords internal
 #'
@@ -1990,10 +1844,7 @@ athena_list_tags_for_resource <- function(ResourceARN, NextToken = NULL, MaxResu
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_list_work_groups/](https://www.paws-r-sdk.com/docs/athena_list_work_groups/) for full documentation.
 #'
-#' @param NextToken A token generated by the Athena service that specifies where to continue
-#' pagination if a previous request was truncated. To obtain the next set
-#' of pages, pass in the `NextToken` from the response object of the
-#' previous page call.
+#' @param NextToken A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the `NextToken` from the response object of the previous page call.
 #' @param MaxResults The maximum number of workgroups to return in this request.
 #'
 #' @keywords internal
@@ -2026,8 +1877,7 @@ athena_list_work_groups <- function(NextToken = NULL, MaxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_put_capacity_assignment_configuration/](https://www.paws-r-sdk.com/docs/athena_put_capacity_assignment_configuration/) for full documentation.
 #'
-#' @param CapacityReservationName &#91;required&#93; The name of the capacity reservation to put a capacity assignment
-#' configuration for.
+#' @param CapacityReservationName &#91;required&#93; The name of the capacity reservation to put a capacity assignment configuration for.
 #' @param CapacityAssignments &#91;required&#93; The list of assignments for the capacity assignment configuration.
 #'
 #' @keywords internal
@@ -2062,19 +1912,10 @@ athena_put_capacity_assignment_configuration <- function(CapacityReservationName
 #' @param SessionId &#91;required&#93; The session ID.
 #' @param Description A description of the calculation.
 #' @param CalculationConfiguration Contains configuration information for the calculation.
-#' @param CodeBlock A string that contains the code of the calculation. Use this parameter
-#' instead of CalculationConfiguration$CodeBlock, which is deprecated.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the
-#' calculation is idempotent (executes only once). If another
-#' `StartCalculationExecutionRequest` is received, the same response is
-#' returned and another calculation is not created. If a parameter has
-#' changed, an error is returned.
+#' @param CodeBlock A string that contains the code of the calculation. Use this parameter instead of CalculationConfiguration$CodeBlock, which is deprecated.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another `StartCalculationExecutionRequest` is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for users. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #'
 #' @keywords internal
 #'
@@ -2106,46 +1947,17 @@ athena_start_calculation_execution <- function(SessionId, Description = NULL, Ca
 #' See [https://www.paws-r-sdk.com/docs/athena_start_query_execution/](https://www.paws-r-sdk.com/docs/athena_start_query_execution/) for full documentation.
 #'
 #' @param QueryString &#91;required&#93; The SQL query statements to be executed.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the
-#' query is idempotent (executes only once). If another
-#' [`start_query_execution`][athena_start_query_execution] request is
-#' received, the same response is returned and another query is not
-#' created. An error is returned if a parameter, such as `QueryString`, has
-#' changed. A call to
-#' [`start_query_execution`][athena_start_query_execution] that uses a
-#' previous client request token returns the same `QueryExecutionId` even
-#' if the requester doesn't have permission on the tables specified in
-#' `QueryString`.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another [`start_query_execution`][athena_start_query_execution] request is received, the same response is returned and another query is not created. An error is returned if a parameter, such as `QueryString`, has changed. A call to [`start_query_execution`][athena_start_query_execution] that uses a previous client request token returns the same `QueryExecutionId` even if the requester doesn't have permission on the tables specified in `QueryString`.
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for users. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #' @param QueryExecutionContext The database within which the query executes.
-#' @param ResultConfiguration Specifies information about where and how to save the results of the
-#' query execution. If the query runs in a workgroup, then workgroup's
-#' settings may override query settings. This affects the query results
-#' location. The workgroup settings override is specified in
-#' EnforceWorkGroupConfiguration (true/false) in the
-#' WorkGroupConfiguration. See
-#' WorkGroupConfiguration$EnforceWorkGroupConfiguration.
+#' @param ResultConfiguration Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See WorkGroupConfiguration$EnforceWorkGroupConfiguration.
 #' @param WorkGroup The name of the workgroup in which the query is being started.
-#' @param ExecutionParameters A list of values for the parameters in a query. The values are applied
-#' sequentially to the parameters in the query in the order in which the
-#' parameters occur.
+#' @param ExecutionParameters A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.
 #' @param ResultReuseConfiguration Specifies the query result reuse behavior for the query.
-#' @param EngineConfiguration The engine configuration for the workgroup, which includes the
-#' minimum/maximum number of Data Processing Units (DPU) that queries
-#' should use when running in provisioned capacity. If not specified,
-#' Athena uses default values (Default value for min is 4 and for max is
-#' Minimum of 124 and allocated DPUs).
+#' @param EngineConfiguration The engine configuration for the workgroup, which includes the minimum/maximum number of Data Processing Units (DPU) that queries should use when running in provisioned capacity. If not specified, Athena uses default values (Default value for min is 4 and for max is Minimum of 124 and allocated DPUs).
 #' 
-#' To specify minimum and maximum DPU values for Capacity Reservations
-#' queries, the workgroup containing `EngineConfiguration` should have the
-#' following values: The name of the `Classifications` should be
-#' `athena-query-engine-properties`, with the only allowed properties as
-#' `max-dpu-count` and `min-dpu-count`.
+#' To specify minimum and maximum DPU values for Capacity Reservations queries, the workgroup containing `EngineConfiguration` should have the following values: The name of the `Classifications` should be `athena-query-engine-properties`, with the only allowed properties as `max-dpu-count` and `min-dpu-count`.
 #'
 #' @keywords internal
 #'
@@ -2178,31 +1990,14 @@ athena_start_query_execution <- function(QueryString, ClientRequestToken = NULL,
 #'
 #' @param Description The session description.
 #' @param WorkGroup &#91;required&#93; The workgroup to which the session belongs.
-#' @param EngineConfiguration &#91;required&#93; Contains engine data processing unit (DPU) configuration settings and
-#' parameter mappings.
-#' @param ExecutionRole The ARN of the execution role used to access user resources for Spark
-#' sessions and Identity Center enabled workgroups. This property applies
-#' only to Spark enabled workgroups and Identity Center enabled workgroups.
-#' @param MonitoringConfiguration Contains the configuration settings for managed log persistence,
-#' delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.
-#' @param NotebookVersion The notebook version. This value is supplied automatically for notebook
-#' sessions in the Athena console and is not required for programmatic
-#' session access. The only valid notebook version is
-#' `Athena notebook version 1`. If you specify a value for
-#' `NotebookVersion`, you must also specify a value for `NotebookId`. See
-#' EngineConfiguration$AdditionalConfigs.
+#' @param EngineConfiguration &#91;required&#93; Contains engine data processing unit (DPU) configuration settings and parameter mappings.
+#' @param ExecutionRole The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.
+#' @param MonitoringConfiguration Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.
+#' @param NotebookVersion The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is `Athena notebook version 1`. If you specify a value for `NotebookVersion`, you must also specify a value for `NotebookId`. See EngineConfiguration$AdditionalConfigs.
 #' @param SessionIdleTimeoutInMinutes The idle timeout in minutes for the session.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the
-#' session is idempotent (executes only once). If another
-#' `StartSessionRequest` is received, the same response is returned and
-#' another session is not created. If a parameter has changed, an error is
-#' returned.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another `StartSessionRequest` is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for users. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #' @param Tags A list of comma separated tags to add to the session that is created.
 #' @param CopyWorkGroupTags Copies the tags from the Workgroup to the Session when.
 #'
@@ -2298,8 +2093,7 @@ athena_stop_query_execution <- function(QueryExecutionId) {
 #' See [https://www.paws-r-sdk.com/docs/athena_tag_resource/](https://www.paws-r-sdk.com/docs/athena_tag_resource/) for full documentation.
 #'
 #' @param ResourceARN &#91;required&#93; Specifies the ARN of the Athena resource to which tags are to be added.
-#' @param Tags &#91;required&#93; A collection of one or more tags, separated by commas, to be added to an
-#' Athena resource.
+#' @param Tags &#91;required&#93; A collection of one or more tags, separated by commas, to be added to an Athena resource.
 #'
 #' @keywords internal
 #'
@@ -2362,8 +2156,7 @@ athena_terminate_session <- function(SessionId) {
 #' See [https://www.paws-r-sdk.com/docs/athena_untag_resource/](https://www.paws-r-sdk.com/docs/athena_untag_resource/) for full documentation.
 #'
 #' @param ResourceARN &#91;required&#93; Specifies the ARN of the resource from which tags are to be removed.
-#' @param TagKeys &#91;required&#93; A comma-separated list of one or more tag keys whose tags are to be
-#' removed from the specified resource.
+#' @param TagKeys &#91;required&#93; A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.
 #'
 #' @keywords internal
 #'
@@ -2427,36 +2220,22 @@ athena_update_capacity_reservation <- function(TargetDpus, Name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/athena_update_data_catalog/](https://www.paws-r-sdk.com/docs/athena_update_data_catalog/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the data catalog to update. The catalog name must be unique
-#' for the Amazon Web Services account and can use a maximum of 127
-#' alphanumeric, underscore, at sign, or hyphen characters. The remainder
-#' of the length constraint of 256 is reserved for use by Athena.
-#' @param Type &#91;required&#93; Specifies the type of data catalog to update. Specify `LAMBDA` for a
-#' federated catalog, `HIVE` for an external hive metastore, or `GLUE` for
-#' an Glue Data Catalog.
+#' @param Name &#91;required&#93; The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.
+#' @param Type &#91;required&#93; Specifies the type of data catalog to update. Specify `LAMBDA` for a federated catalog, `HIVE` for an external hive metastore, or `GLUE` for an Glue Data Catalog.
 #' @param Description New or modified text that describes the data catalog.
-#' @param Parameters Specifies the Lambda function or functions to use for updating the data
-#' catalog. This is a mapping whose values depend on the catalog type.
+#' @param Parameters Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.
 #' 
-#' -   For the `HIVE` data catalog type, use the following syntax. The
-#'     `metadata-function` parameter is required. `The sdk-version`
-#'     parameter is optional and defaults to the currently supported
-#'     version.
+#' -   For the `HIVE` data catalog type, use the following syntax. The `metadata-function` parameter is required. `The sdk-version` parameter is optional and defaults to the currently supported version.
 #' 
 #'     `metadata-function=lambda_arn, sdk-version=version_number `
 #' 
-#' -   For the `LAMBDA` data catalog type, use one of the following sets of
-#'     required parameters, but not both.
+#' -   For the `LAMBDA` data catalog type, use one of the following sets of required parameters, but not both.
 #' 
-#'     -   If you have one Lambda function that processes metadata and
-#'         another for reading the actual data, use the following syntax.
-#'         Both parameters are required.
+#'     -   If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.
 #' 
 #'         `metadata-function=lambda_arn, record-function=lambda_arn `
 #' 
-#'     -   If you have a composite Lambda function that processes both
-#'         metadata and data, use the following syntax to specify your
-#'         Lambda function.
+#'     -   If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.
 #' 
 #'         `function=lambda_arn `
 #'
@@ -2526,16 +2305,10 @@ athena_update_named_query <- function(NamedQueryId, Name, Description = NULL, Qu
 #' @param NotebookId &#91;required&#93; The ID of the notebook to update.
 #' @param Payload &#91;required&#93; The updated content for the notebook.
 #' @param Type &#91;required&#93; The notebook content type. Currently, the only valid type is `IPYNB`.
-#' @param SessionId The active notebook session ID. Required if the notebook has an active
-#' session.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the
-#' notebook is idempotent (executes only once).
+#' @param SessionId The active notebook session ID. Required if the notebook has an active session.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for you. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #'
 #' @keywords internal
 #'
@@ -2567,14 +2340,9 @@ athena_update_notebook <- function(NotebookId, Payload, Type, SessionId = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/athena_update_notebook_metadata/](https://www.paws-r-sdk.com/docs/athena_update_notebook_metadata/) for full documentation.
 #'
 #' @param NotebookId &#91;required&#93; The ID of the notebook to update the metadata for.
-#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the
-#' notebook is idempotent (executes only once).
+#' @param ClientRequestToken A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).
 #' 
-#' This token is listed as not required because Amazon Web Services SDKs
-#' (for example the Amazon Web Services SDK for Java) auto-generate the
-#' token for you. If you are not using the Amazon Web Services SDK or the
-#' Amazon Web Services CLI, you must provide this token or the action will
-#' fail.
+#' This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.
 #' @param Name &#91;required&#93; The name to update the notebook to.
 #'
 #' @keywords internal

@@ -3,6 +3,39 @@
 #' @include bedrockagentcorecontrol_service.R
 NULL
 
+#' Adds examples to the dataset's DRAFT
+#'
+#' @description
+#' Adds examples to the dataset's DRAFT.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_add_dataset_examples/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_add_dataset_examples/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset to add examples to.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param source &#91;required&#93; Source of examples to add. Provide either inline examples or an S3 URI pointing to a JSONL file.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_add_dataset_examples
+bedrockagentcorecontrol_add_dataset_examples <- function(datasetId, clientToken = NULL, source) {
+  op <- new_operation(
+    name = "AddDatasetExamples",
+    http_method = "POST",
+    http_path = "/datasets/{datasetId}/examples/add",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$add_dataset_examples_input(datasetId = datasetId, clientToken = clientToken, source = source)
+  output <- .bedrockagentcorecontrol$add_dataset_examples_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$add_dataset_examples <- bedrockagentcorecontrol_add_dataset_examples
+
 #' Creates an Amazon Bedrock AgentCore Runtime
 #'
 #' @description
@@ -14,21 +47,15 @@ NULL
 #' @param agentRuntimeArtifact &#91;required&#93; The artifact of the AgentCore Runtime.
 #' @param roleArn &#91;required&#93; The IAM role ARN that provides permissions for the AgentCore Runtime.
 #' @param networkConfiguration &#91;required&#93; The network configuration for the AgentCore Runtime.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #' @param description The description of the AgentCore Runtime.
 #' @param authorizerConfiguration The authorizer configuration for the AgentCore Runtime.
-#' @param requestHeaderConfiguration Configuration for HTTP request headers that will be passed through to
-#' the runtime.
-#' @param protocolConfiguration 
+#' @param requestHeaderConfiguration Configuration for HTTP request headers that will be passed through to the runtime.
+#' @param protocolConfiguration The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.
 #' @param lifecycleConfiguration The life cycle configuration for the AgentCore Runtime.
 #' @param environmentVariables Environment variables to set in the AgentCore Runtime environment.
-#' @param filesystemConfigurations The filesystem configurations to mount into the AgentCore Runtime. Use
-#' filesystem configurations to provide persistent storage to your
-#' AgentCore Runtime sessions.
-#' @param tags A map of tag keys and values to assign to the agent runtime. Tags enable
-#' you to categorize your resources in different ways, for example, by
-#' purpose, owner, or environment.
+#' @param filesystemConfigurations The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.
+#' @param tags A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -59,16 +86,12 @@ bedrockagentcorecontrol_create_agent_runtime <- function(agentRuntimeName, agent
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_agent_runtime_endpoint/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_agent_runtime_endpoint/) for full documentation.
 #'
-#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime to create an endpoint
-#' for.
+#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime to create an endpoint for.
 #' @param name &#91;required&#93; The name of the AgentCore Runtime endpoint.
 #' @param agentRuntimeVersion The version of the AgentCore Runtime to use for the endpoint.
 #' @param description The description of the AgentCore Runtime endpoint.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
-#' @param tags A map of tag keys and values to assign to the agent runtime endpoint.
-#' Tags enable you to categorize your resources in different ways, for
-#' example, by purpose, owner, or environment.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
+#' @param tags A map of tag keys and values to assign to the agent runtime endpoint. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -99,13 +122,9 @@ bedrockagentcorecontrol_create_agent_runtime_endpoint <- function(agentRuntimeId
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_api_key_credential_provider/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_api_key_credential_provider/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the API key credential provider. The name must be unique
-#' within your account.
-#' @param apiKey &#91;required&#93; The API key to use for authentication. This value is encrypted and
-#' stored securely.
-#' @param tags A map of tag keys and values to assign to the API key credential
-#' provider. Tags enable you to categorize your resources in different
-#' ways, for example, by purpose, owner, or environment.
+#' @param name &#91;required&#93; The name of the API key credential provider. The name must be unique within your account.
+#' @param apiKey &#91;required&#93; The API key to use for authentication. This value is encrypted and stored securely.
+#' @param tags A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -138,23 +157,14 @@ bedrockagentcorecontrol_create_api_key_credential_provider <- function(name, api
 #'
 #' @param name &#91;required&#93; The name of the browser. The name must be unique within your account.
 #' @param description The description of the browser.
-#' @param executionRoleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions
-#' for the browser to access Amazon Web Services services.
-#' @param networkConfiguration &#91;required&#93; The network configuration for the browser. This configuration specifies
-#' the network mode for the browser.
-#' @param recording The recording configuration for the browser. When enabled, browser
-#' sessions are recorded and stored in the specified Amazon S3 location.
-#' @param browserSigning The browser signing configuration that enables cryptographic agent
-#' identification using HTTP message signatures for web bot authentication.
+#' @param executionRoleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the browser to access Amazon Web Services services.
+#' @param networkConfiguration &#91;required&#93; The network configuration for the browser. This configuration specifies the network mode for the browser.
+#' @param recording The recording configuration for the browser. When enabled, browser sessions are recorded and stored in the specified Amazon S3 location.
+#' @param browserSigning The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.
 #' @param enterprisePolicies A list of enterprise policy files for the browser.
 #' @param certificates A list of certificates to install in the browser.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request but does not
-#' return an error.
-#' @param tags A map of tag keys and values to assign to the browser. Tags enable you
-#' to categorize your resources in different ways, for example, by purpose,
-#' owner, or environment.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.
+#' @param tags A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -185,17 +195,10 @@ bedrockagentcorecontrol_create_browser <- function(name, description = NULL, exe
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_browser_profile/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_browser_profile/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the browser profile. The name must be unique within your
-#' account and can contain alphanumeric characters and underscores.
-#' @param description A description of the browser profile. Use this field to describe the
-#' purpose or contents of the profile.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request but does not
-#' return an error.
-#' @param tags A map of tag keys and values to assign to the browser profile. Tags
-#' enable you to categorize your resources in different ways, for example,
-#' by purpose, owner, or environment.
+#' @param name &#91;required&#93; The name of the browser profile. The name must be unique within your account and can contain alphanumeric characters and underscores.
+#' @param description A description of the browser profile. Use this field to describe the purpose or contents of the profile.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.
+#' @param tags A map of tag keys and values to assign to the browser profile. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -226,21 +229,13 @@ bedrockagentcorecontrol_create_browser_profile <- function(name, description = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_code_interpreter/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_code_interpreter/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the code interpreter. The name must be unique within your
-#' account.
+#' @param name &#91;required&#93; The name of the code interpreter. The name must be unique within your account.
 #' @param description The description of the code interpreter.
-#' @param executionRoleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions
-#' for the code interpreter to access Amazon Web Services services.
-#' @param networkConfiguration &#91;required&#93; The network configuration for the code interpreter. This configuration
-#' specifies the network mode for the code interpreter.
+#' @param executionRoleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the code interpreter to access Amazon Web Services services.
+#' @param networkConfiguration &#91;required&#93; The network configuration for the code interpreter. This configuration specifies the network mode for the code interpreter.
 #' @param certificates A list of certificates to install in the code interpreter.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock AgentCore ignores the request but does not
-#' return an error.
-#' @param tags A map of tag keys and values to assign to the code interpreter. Tags
-#' enable you to categorize your resources in different ways, for example,
-#' by purpose, owner, or environment.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.
+#' @param tags A map of tag keys and values to assign to the code interpreter. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -271,26 +266,14 @@ bedrockagentcorecontrol_create_code_interpreter <- function(name, description = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_configuration_bundle/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_configuration_bundle/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param bundleName &#91;required&#93; The name for the configuration bundle. Names must be unique within your
-#' account.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param bundleName &#91;required&#93; The name for the configuration bundle. Names must be unique within your account.
 #' @param description The description for the configuration bundle.
-#' @param components &#91;required&#93; A map of component identifiers to their configurations. Each component
-#' represents a configurable element within the bundle.
-#' @param branchName The branch name for version tracking. Defaults to `mainline` if not
-#' specified.
-#' @param commitMessage A commit message describing the initial version of the configuration
-#' bundle.
-#' @param createdBy The source that created this version, including the source name and
-#' optional ARN.
-#' @param tags A map of tag keys and values to assign to the configuration bundle. Tags
-#' enable you to categorize your resources in different ways, for example,
-#' by purpose, owner, or environment.
+#' @param components &#91;required&#93; A map of component identifiers to their configurations. Each component represents a configurable element within the bundle.
+#' @param branchName The branch name for version tracking. Defaults to `mainline` if not specified.
+#' @param commitMessage A commit message describing the initial version of the configuration bundle.
+#' @param createdBy The source that created this version, including the source name and optional ARN.
+#' @param tags A map of tag keys and values to assign to the configuration bundle. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -314,6 +297,75 @@ bedrockagentcorecontrol_create_configuration_bundle <- function(clientToken = NU
 }
 .bedrockagentcorecontrol$operations$create_configuration_bundle <- bedrockagentcorecontrol_create_configuration_bundle
 
+#' Creates a new Dataset resource asynchronously
+#'
+#' @description
+#' Creates a new Dataset resource asynchronously.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_dataset/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_dataset/) for full documentation.
+#'
+#' @param clientToken Optional idempotency token.
+#' @param datasetName &#91;required&#93; Human-readable name for the dataset. Unique within the account (case-insensitive). Immutable after creation.
+#' @param description A description of the dataset.
+#' @param source &#91;required&#93; Source of initial examples. Provide either inline examples or an S3 URI pointing to a JSONL file.
+#' @param schemaType &#91;required&#93; Versioned schema type governing the structure of examples. Immutable after creation.
+#' @param kmsKeyArn Optional AWS KMS key ARN for SSE-KMS on service S3 writes.
+#' @param tags A map of tag keys and values to assign to the dataset.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_create_dataset
+bedrockagentcorecontrol_create_dataset <- function(clientToken = NULL, datasetName, description = NULL, source, schemaType, kmsKeyArn = NULL, tags = NULL) {
+  op <- new_operation(
+    name = "CreateDataset",
+    http_method = "POST",
+    http_path = "/datasets",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$create_dataset_input(clientToken = clientToken, datasetName = datasetName, description = description, source = source, schemaType = schemaType, kmsKeyArn = kmsKeyArn, tags = tags)
+  output <- .bedrockagentcorecontrol$create_dataset_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$create_dataset <- bedrockagentcorecontrol_create_dataset
+
+#' Publishes the current DRAFT as a new numbered version
+#'
+#' @description
+#' Publishes the current DRAFT as a new numbered version.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_dataset_version/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_dataset_version/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset to publish a version for.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_create_dataset_version
+bedrockagentcorecontrol_create_dataset_version <- function(datasetId, clientToken = NULL) {
+  op <- new_operation(
+    name = "CreateDatasetVersion",
+    http_method = "POST",
+    http_path = "/datasets/{datasetId}/versions",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$create_dataset_version_input(datasetId = datasetId, clientToken = clientToken)
+  output <- .bedrockagentcorecontrol$create_dataset_version_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$create_dataset_version <- bedrockagentcorecontrol_create_dataset_version
+
 #' Creates a custom evaluator for agent quality assessment
 #'
 #' @description
@@ -321,32 +373,13 @@ bedrockagentcorecontrol_create_configuration_bundle <- function(clientToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_evaluator/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_evaluator/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param evaluatorName &#91;required&#93; The name of the evaluator. Must be unique within your account.
-#' @param description The description of the evaluator that explains its purpose and
-#' evaluation criteria.
-#' @param evaluatorConfig &#91;required&#93; The configuration for the evaluator. Specify either LLM-as-a-Judge
-#' settings with instructions, rating scale, and model configuration, or
-#' code-based settings with a customer-managed Lambda function.
-#' @param level &#91;required&#93; The evaluation level that determines the scope of evaluation. Valid
-#' values are `TOOL_CALL` for individual tool invocations, `TRACE` for
-#' single request-response interactions, or `SESSION` for entire
-#' conversation sessions.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed KMS key to use for
-#' encrypting sensitive evaluator data, including instructions and rating
-#' scale. If you don't specify a KMS key, the evaluator data is encrypted
-#' with an Amazon Web Services owned key. Only symmetric encryption KMS
-#' keys are supported. For more information, see [Encryption at rest for
-#' AgentCore
-#' Evaluations](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html).
-#' @param tags A map of tag keys and values to assign to an AgentCore Evaluator. Tags
-#' enable you to categorize your resources in different ways, for example,
-#' by purpose, owner, or environment.
+#' @param description The description of the evaluator that explains its purpose and evaluation criteria.
+#' @param evaluatorConfig &#91;required&#93; The configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.
+#' @param level &#91;required&#93; The evaluation level that determines the scope of evaluation. Valid values are `TOOL_CALL` for individual tool invocations, `TRACE` for single request-response interactions, or `SESSION` for entire conversation sessions.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data, including instructions and rating scale. If you don't specify a KMS key, the evaluator data is encrypted with an Amazon Web Services owned key. Only symmetric encryption KMS keys are supported. For more information, see [Encryption at rest for AgentCore Evaluations](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html).
+#' @param tags A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -379,17 +412,10 @@ bedrockagentcorecontrol_create_evaluator <- function(clientToken = NULL, evaluat
 #'
 #' @param name &#91;required&#93; The name of the gateway. The name must be unique within your account.
 #' @param description The description of the gateway.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that provides permissions
-#' for the gateway to access Amazon Web Services services.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that provides permissions for the gateway to access Amazon Web Services services.
 #' @param protocolType The protocol type for the gateway.
-#' @param protocolConfiguration The configuration settings for the protocol specified in the
-#' `protocolType` parameter.
+#' @param protocolConfiguration The configuration settings for the protocol specified in the `protocolType` parameter.
 #' @param authorizerType &#91;required&#93; The type of authorizer to use for the gateway.
 #' 
 #' -   `CUSTOM_JWT` - Authorize with a bearer token.
@@ -397,25 +423,15 @@ bedrockagentcorecontrol_create_evaluator <- function(clientToken = NULL, evaluat
 #' -   `AWS_IAM` - Authorize with your Amazon Web Services IAM credentials.
 #' 
 #' -   `NONE` - No authorization
-#' @param authorizerConfiguration The authorizer configuration for the gateway. Required if
-#' `authorizerType` is `CUSTOM_JWT`.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key used to encrypt data
-#' associated with the gateway.
-#' @param interceptorConfigurations A list of configuration settings for a gateway interceptor. Gateway
-#' interceptors allow custom code to be invoked during gateway invocations.
-#' @param policyEngineConfiguration The policy engine configuration for the gateway. A policy engine is a
-#' collection of policies that evaluates and authorizes agent tool calls.
-#' When associated with a gateway, the policy engine intercepts all agent
-#' requests and determines whether to allow or deny each action based on
-#' the defined policies.
-#' @param exceptionLevel The level of detail in error messages returned when invoking the
-#' gateway.
+#' @param authorizerConfiguration The authorizer configuration for the gateway. Required if `authorizerType` is `CUSTOM_JWT`.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.
+#' @param interceptorConfigurations A list of configuration settings for a gateway interceptor. Gateway interceptors allow custom code to be invoked during gateway invocations.
+#' @param policyEngineConfiguration The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.
+#' @param exceptionLevel The level of detail in error messages returned when invoking the gateway.
 #' 
-#' -   If the value is `DEBUG`, granular exception messages are returned to
-#'     help a user debug the gateway.
+#' -   If the value is `DEBUG`, granular exception messages are returned to help a user debug the gateway.
 #' 
-#' -   If the value is omitted, a generic error message is returned to the
-#'     end user.
+#' -   If the value is omitted, a generic error message is returned to the end user.
 #' @param tags A map of key-value pairs to associate with the gateway as metadata tags.
 #'
 #' @keywords internal
@@ -448,18 +464,10 @@ bedrockagentcorecontrol_create_gateway <- function(name, description = NULL, cli
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_gateway_rule/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_gateway_rule/) for full documentation.
 #'
 #' @param gatewayIdentifier &#91;required&#93; The identifier of the gateway to create a rule for.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param priority &#91;required&#93; The priority of the rule. Rules are evaluated in order of priority, with
-#' lower numbers evaluated first. Must be between 1 and 1,000,000.
-#' @param conditions The conditions that must be met for the rule to apply. Conditions can
-#' match on principals (IAM ARNs) or request paths.
-#' @param actions &#91;required&#93; The actions to take when the rule conditions are met. Actions can route
-#' to a specific target or apply a configuration bundle override.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param priority &#91;required&#93; The priority of the rule. Rules are evaluated in order of priority, with lower numbers evaluated first. Must be between 1 and 1,000,000.
+#' @param conditions The conditions that must be met for the rule to apply. Conditions can match on principals (IAM ARNs) or request paths.
+#' @param actions &#91;required&#93; The actions to take when the rule conditions are met. Actions can route to a specific target or apply a configuration bundle override.
 #' @param description The description of the gateway rule.
 #'
 #' @keywords internal
@@ -492,24 +500,13 @@ bedrockagentcorecontrol_create_gateway_rule <- function(gatewayIdentifier, clien
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_gateway_target/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_gateway_target/) for full documentation.
 #'
 #' @param gatewayIdentifier &#91;required&#93; The identifier of the gateway to create a target for.
-#' @param name &#91;required&#93; The name of the gateway target. The name must be unique within the
-#' gateway.
+#' @param name &#91;required&#93; The name of the gateway target. The name must be unique within the gateway.
 #' @param description The description of the gateway target.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param targetConfiguration &#91;required&#93; The configuration settings for the target, including endpoint
-#' information and schema definitions.
-#' @param credentialProviderConfigurations The credential provider configurations for the target. These
-#' configurations specify how the gateway authenticates with the target
-#' endpoint.
-#' @param metadataConfiguration Optional configuration for HTTP header and query parameter propagation
-#' to and from the gateway target.
-#' @param privateEndpoint The private endpoint configuration for the gateway target. Use this to
-#' connect the gateway to private resources in your VPC.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param targetConfiguration &#91;required&#93; The configuration settings for the target, including endpoint information and schema definitions.
+#' @param credentialProviderConfigurations The credential provider configurations for the target. These configurations specify how the gateway authenticates with the target endpoint.
+#' @param metadataConfiguration Optional configuration for HTTP header and query parameter propagation to and from the gateway target.
+#' @param privateEndpoint The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.
 #'
 #' @keywords internal
 #'
@@ -540,39 +537,23 @@ bedrockagentcorecontrol_create_gateway_target <- function(gatewayIdentifier, nam
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_harness/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_harness/) for full documentation.
 #'
-#' @param harnessName &#91;required&#93; The name of the harness. Must start with a letter and contain only
-#' alphanumeric characters and underscores.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
-#' @param executionRoleArn &#91;required&#93; The ARN of the IAM role that the harness assumes when running. This role
-#' must have permissions for the services the agent needs to access, such
-#' as Amazon Bedrock for model invocation.
-#' @param environment The compute environment configuration for the harness, including network
-#' and lifecycle settings.
-#' @param environmentArtifact The environment artifact for the harness, such as a custom container
-#' image containing additional dependencies.
+#' @param harnessName &#91;required&#93; The name of the harness. Must start with a letter and contain only alphanumeric characters and underscores.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
+#' @param executionRoleArn &#91;required&#93; The ARN of the IAM role that the harness assumes when running. This role must have permissions for the services the agent needs to access, such as Amazon Bedrock for model invocation.
+#' @param environment The compute environment configuration for the harness, including network and lifecycle settings.
+#' @param environmentArtifact The environment artifact for the harness, such as a custom container image containing additional dependencies.
 #' @param environmentVariables Environment variables to set in the harness runtime environment.
-#' @param authorizerConfiguration 
-#' @param model The model configuration for the harness. Supports Amazon Bedrock,
-#' OpenAI, and Google Gemini model providers.
+#' @param authorizerConfiguration Represents inbound authorization configuration options used to authenticate incoming requests.
+#' @param model The model configuration for the harness. Supports Amazon Bedrock, OpenAI, and Google Gemini model providers.
 #' @param systemPrompt The system prompt that defines the agent's behavior and instructions.
-#' @param tools The tools available to the agent, such as remote MCP servers, AgentCore
-#' Gateway, AgentCore Browser, Code Interpreter, or inline functions.
-#' @param skills The skills available to the agent. Skills are bundles of files that the
-#' agent can pull into its context on demand.
-#' @param allowedTools The tools that the agent is allowed to use. Supports glob patterns such
-#' as * for all tools, @@builtin for all built-in tools, or
-#' @@serverName/toolName for specific MCP server tools.
-#' @param memory The AgentCore Memory configuration for persisting conversation context
-#' across sessions.
-#' @param truncation The truncation configuration for managing conversation context when it
-#' exceeds model limits.
-#' @param maxIterations The maximum number of iterations the agent loop can execute per
-#' invocation.
-#' @param maxTokens The maximum total number of output tokens the agent can generate across
-#' all model calls within a single invocation.
-#' @param timeoutSeconds The maximum duration in seconds for the agent loop execution per
-#' invocation.
+#' @param tools The tools available to the agent, such as remote MCP servers, AgentCore Gateway, AgentCore Browser, Code Interpreter, or inline functions.
+#' @param skills The skills available to the agent. Skills are bundles of files that the agent can pull into its context on demand.
+#' @param allowedTools The tools that the agent is allowed to use. Supports glob patterns such as * for all tools, @@builtin for all built-in tools, or @@serverName/toolName for specific MCP server tools.
+#' @param memory The AgentCore Memory configuration for persisting conversation context across sessions.
+#' @param truncation The truncation configuration for managing conversation context when it exceeds model limits.
+#' @param maxIterations The maximum number of iterations the agent loop can execute per invocation.
+#' @param maxTokens The maximum total number of output tokens the agent can generate across all model calls within a single invocation.
+#' @param timeoutSeconds The maximum duration in seconds for the agent loop execution per invocation.
 #' @param tags Tags to apply to the harness resource.
 #'
 #' @keywords internal
@@ -604,26 +585,16 @@ bedrockagentcorecontrol_create_harness <- function(harnessName, clientToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_memory/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_memory/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request but does not return an
-#' error.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.
 #' @param name &#91;required&#93; The name of the memory. The name must be unique within your account.
 #' @param description The description of the memory.
-#' @param encryptionKeyArn The Amazon Resource Name (ARN) of the KMS key used to encrypt the memory
-#' data.
-#' @param memoryExecutionRoleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions
-#' for the memory to access Amazon Web Services services.
-#' @param eventExpiryDuration &#91;required&#93; The duration after which memory events expire. Specified as an ISO 8601
-#' duration.
-#' @param memoryStrategies The memory strategies to use for this memory. Strategies define how
-#' information is extracted, processed, and consolidated.
-#' @param indexedKeys Metadata keys to index for filtering. Once declared, indexed keys cannot
-#' be removed.
+#' @param encryptionKeyArn The Amazon Resource Name (ARN) of the KMS key used to encrypt the memory data.
+#' @param memoryExecutionRoleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the memory to access Amazon Web Services services.
+#' @param eventExpiryDuration &#91;required&#93; The duration after which memory events expire. Specified as an ISO 8601 duration.
+#' @param memoryStrategies The memory strategies to use for this memory. Strategies define how information is extracted, processed, and consolidated.
+#' @param indexedKeys Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.
 #' @param streamDeliveryResources Configuration for streaming memory record data to external resources.
-#' @param tags A map of tag keys and values to assign to an AgentCore Memory. Tags
-#' enable you to categorize your resources in different ways, for example,
-#' by purpose, owner, or environment.
+#' @param tags A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -654,15 +625,10 @@ bedrockagentcorecontrol_create_memory <- function(clientToken = NULL, name, desc
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_oauth_2_credential_provider/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_oauth_2_credential_provider/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the OAuth2 credential provider. The name must be unique
-#' within your account.
-#' @param credentialProviderVendor &#91;required&#93; The vendor of the OAuth2 credential provider. This specifies which
-#' OAuth2 implementation to use.
-#' @param oauth2ProviderConfigInput &#91;required&#93; The configuration settings for the OAuth2 provider, including client ID,
-#' client secret, and other vendor-specific settings.
-#' @param tags A map of tag keys and values to assign to the OAuth2 credential
-#' provider. Tags enable you to categorize your resources in different
-#' ways, for example, by purpose, owner, or environment.
+#' @param name &#91;required&#93; The name of the OAuth2 credential provider. The name must be unique within your account.
+#' @param credentialProviderVendor &#91;required&#93; The vendor of the OAuth2 credential provider. This specifies which OAuth2 implementation to use.
+#' @param oauth2ProviderConfigInput &#91;required&#93; The configuration settings for the OAuth2 provider, including client ID, client secret, and other vendor-specific settings.
+#' @param tags A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -694,36 +660,15 @@ bedrockagentcorecontrol_create_oauth_2_credential_provider <- function(name, cre
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_online_evaluation_config/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_online_evaluation_config/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param onlineEvaluationConfigName &#91;required&#93; The name of the online evaluation configuration. Must be unique within
-#' your account.
-#' @param description The description of the online evaluation configuration that explains its
-#' monitoring purpose and scope.
-#' @param rule &#91;required&#93; The evaluation rule that defines sampling configuration, filters, and
-#' session detection settings for the online evaluation.
-#' @param dataSourceConfig &#91;required&#93; The data source configuration that specifies CloudWatch log groups and
-#' service names to monitor for agent traces.
-#' @param evaluators &#91;required&#93; The list of evaluators to apply during online evaluation. Can include
-#' both built-in evaluators and custom evaluators created with
-#' [`create_evaluator`][bedrockagentcorecontrol_create_evaluator].
-#' @param evaluationExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that grants permissions
-#' to read from CloudWatch logs, write evaluation results, and invoke
-#' Amazon Bedrock models for evaluation. If the configuration references
-#' evaluators encrypted with a customer managed KMS key, this role must
-#' also have `kms:Decrypt` permission on the KMS key. The service validates
-#' this permission at configuration creation time. For more information,
-#' see [Encryption at rest for AgentCore
-#' Evaluations](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html).
-#' @param enableOnCreate &#91;required&#93; Whether to enable the online evaluation configuration immediately upon
-#' creation. If true, evaluation begins automatically.
-#' @param tags A map of tag keys and values to assign to an AgentCore Online Evaluation
-#' Config. Tags enable you to categorize your resources in different ways,
-#' for example, by purpose, owner, or environment.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param onlineEvaluationConfigName &#91;required&#93; The name of the online evaluation configuration. Must be unique within your account.
+#' @param description The description of the online evaluation configuration that explains its monitoring purpose and scope.
+#' @param rule &#91;required&#93; The evaluation rule that defines sampling configuration, filters, and session detection settings for the online evaluation.
+#' @param dataSourceConfig &#91;required&#93; The data source configuration that specifies CloudWatch log groups and service names to monitor for agent traces.
+#' @param evaluators &#91;required&#93; The list of evaluators to apply during online evaluation. Can include both built-in evaluators and custom evaluators created with [`create_evaluator`][bedrockagentcorecontrol_create_evaluator].
+#' @param evaluationExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have `kms:Decrypt` permission on the KMS key. The service validates this permission at configuration creation time. For more information, see [Encryption at rest for AgentCore Evaluations](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html).
+#' @param enableOnCreate &#91;required&#93; Whether to enable the online evaluation configuration immediately upon creation. If true, evaluation begins automatically.
+#' @param tags A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -754,21 +699,12 @@ bedrockagentcorecontrol_create_online_evaluation_config <- function(clientToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_payment_connector/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_payment_connector/) for full documentation.
 #'
-#' @param paymentManagerId &#91;required&#93; The unique identifier of the payment manager to create the connector
-#' for.
+#' @param paymentManagerId &#91;required&#93; The unique identifier of the payment manager to create the connector for.
 #' @param name &#91;required&#93; The name of the payment connector.
 #' @param description A description of the payment connector.
-#' @param type &#91;required&#93; The type of payment connector, which determines the payment provider
-#' integration.
-#' @param credentialProviderConfigurations &#91;required&#93; The credential provider configurations for the payment connector. These
-#' configurations specify how the connector authenticates with the payment
-#' provider.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param type &#91;required&#93; The type of payment connector, which determines the payment provider integration.
+#' @param credentialProviderConfigurations &#91;required&#93; The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @keywords internal
 #'
@@ -801,10 +737,10 @@ bedrockagentcorecontrol_create_payment_connector <- function(paymentManagerId, n
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_payment_credential_provider/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_payment_credential_provider/) for full documentation.
 #'
-#' @param name &#91;required&#93; Unique name for the payment credential provider
-#' @param credentialProviderVendor &#91;required&#93; The vendor type (e.g., CoinbaseCDP)
-#' @param providerConfigurationInput &#91;required&#93; Configuration specific to the vendor, including API credentials
-#' @param tags Optional tags for resource organization
+#' @param name &#91;required&#93; Unique name for the payment credential provider.
+#' @param credentialProviderVendor &#91;required&#93; The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).
+#' @param providerConfigurationInput &#91;required&#93; Configuration specific to the vendor, including API credentials.
+#' @param tags Optional tags for resource organization.
 #'
 #' @keywords internal
 #'
@@ -843,14 +779,8 @@ bedrockagentcorecontrol_create_payment_credential_provider <- function(name, cre
 #' 
 #' -   `AWS_IAM` - Authorize with your Amazon Web Services IAM credentials.
 #' @param authorizerConfiguration The authorizer configuration for the payment manager.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that the payment manager
-#' assumes to access resources on your behalf.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that the payment manager assumes to access resources on your behalf.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param tags A map of tag keys and values to assign to the payment manager.
 #'
 #' @keywords internal
@@ -882,38 +812,12 @@ bedrockagentcorecontrol_create_payment_manager <- function(name, description = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_policy/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_policy/) for full documentation.
 #'
-#' @param name &#91;required&#93; The customer-assigned immutable name for the policy. Must be unique
-#' within the account. This name is used for policy identification and
-#' cannot be changed after creation.
-#' @param definition &#91;required&#93; The Cedar policy statement that defines the access control rules. This
-#' contains the actual policy logic written in Cedar policy language,
-#' specifying effect (permit or forbid), principals, actions, resources,
-#' and conditions for agent behavior control.
-#' @param description A human-readable description of the policy's purpose and functionality
-#' (1-4,096 characters). This helps policy administrators understand the
-#' policy's intent, business rules, and operational scope. Use this field
-#' to document why the policy exists, what business requirement it
-#' addresses, and any special considerations for maintenance. Clear
-#' descriptions are essential for policy governance, auditing, and
-#' troubleshooting.
-#' @param validationMode The validation mode for the policy creation. Determines how Cedar
-#' analyzer validation results are handled during policy creation.
-#' FAIL_ON_ANY_FINDINGS (default) runs the Cedar analyzer to validate the
-#' policy against the Cedar schema and tool context, failing creation if
-#' the analyzer detects any validation issues to ensure strict conformance.
-#' IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows policy creation
-#' even if validation issues are detected, useful for testing or when the
-#' policy schema is evolving. Use FAIL_ON_ANY_FINDINGS for production
-#' policies to ensure correctness, and IGNORE_ALL_FINDINGS only when you
-#' understand and accept the analyzer findings.
-#' @param policyEngineId &#91;required&#93; The identifier of the policy engine which contains this policy. Policy
-#' engines group related policies and provide the execution context for
-#' policy evaluation.
-#' @param clientToken A unique, case-sensitive identifier to ensure the idempotency of the
-#' request. The AWS SDK automatically generates this token, so you don't
-#' need to provide it in most cases. If you retry a request with the same
-#' client token, the service returns the same response without creating a
-#' duplicate policy.
+#' @param name &#91;required&#93; The customer-assigned immutable name for the policy. Must be unique within the account. This name is used for policy identification and cannot be changed after creation.
+#' @param definition &#91;required&#93; The Cedar policy statement that defines the access control rules. This contains the actual policy logic written in Cedar policy language, specifying effect (permit or forbid), principals, actions, resources, and conditions for agent behavior control.
+#' @param description A human-readable description of the policy's purpose and functionality (1-4,096 characters). This helps policy administrators understand the policy's intent, business rules, and operational scope. Use this field to document why the policy exists, what business requirement it addresses, and any special considerations for maintenance. Clear descriptions are essential for policy governance, auditing, and troubleshooting.
+#' @param validationMode The validation mode for the policy creation. Determines how Cedar analyzer validation results are handled during policy creation. FAIL_ON_ANY_FINDINGS (default) runs the Cedar analyzer to validate the policy against the Cedar schema and tool context, failing creation if the analyzer detects any validation issues to ensure strict conformance. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows policy creation even if validation issues are detected, useful for testing or when the policy schema is evolving. Use FAIL_ON_ANY_FINDINGS for production policies to ensure correctness, and IGNORE_ALL_FINDINGS only when you understand and accept the analyzer findings.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine which contains this policy. Policy engines group related policies and provide the execution context for policy evaluation.
+#' @param clientToken A unique, case-sensitive identifier to ensure the idempotency of the request. The AWS SDK automatically generates this token, so you don't need to provide it in most cases. If you retry a request with the same client token, the service returns the same response without creating a duplicate policy.
 #'
 #' @keywords internal
 #'
@@ -944,24 +848,11 @@ bedrockagentcorecontrol_create_policy <- function(name, definition, description 
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_policy_engine/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_policy_engine/) for full documentation.
 #'
-#' @param name &#91;required&#93; The customer-assigned immutable name for the policy engine. This name
-#' identifies the policy engine and cannot be changed after creation.
-#' @param description A human-readable description of the policy engine's purpose and scope
-#' (1-4,096 characters). This helps administrators understand the policy
-#' engine's role in the overall governance strategy. Document which Gateway
-#' this engine will be associated with, what types of tools or workflows it
-#' governs, and the team or service responsible for maintaining it. Clear
-#' descriptions are essential when managing multiple policy engines across
-#' different services or environments.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request with the same client
-#' token, the service returns the same response without creating a
-#' duplicate policy engine.
-#' @param encryptionKeyArn The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy
-#' engine data.
-#' @param tags A map of tag keys and values to assign to an AgentCore Policy. Tags
-#' enable you to categorize your resources in different ways, for example,
-#' by purpose, owner, or environment.
+#' @param name &#91;required&#93; The customer-assigned immutable name for the policy engine. This name identifies the policy engine and cannot be changed after creation.
+#' @param description A human-readable description of the policy engine's purpose and scope (1-4,096 characters). This helps administrators understand the policy engine's role in the overall governance strategy. Document which Gateway this engine will be associated with, what types of tools or workflows it governs, and the team or service responsible for maintaining it. Clear descriptions are essential when managing multiple policy engines across different services or environments.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request with the same client token, the service returns the same response without creating a duplicate policy engine.
+#' @param encryptionKeyArn The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.
+#' @param tags A map of tag keys and values to assign to an AgentCore Policy. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -992,29 +883,16 @@ bedrockagentcorecontrol_create_policy_engine <- function(name, description = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_registry/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_registry/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the registry. The name must be unique within your account
-#' and can contain alphanumeric characters and underscores.
+#' @param name &#91;required&#93; The name of the registry. The name must be unique within your account and can contain alphanumeric characters and underscores.
 #' @param description A description of the registry.
-#' @param authorizerType The type of authorizer to use for the registry. This controls the
-#' authorization method for the Search and Invoke APIs used by consumers,
-#' and does not affect the standard CRUDL APIs for registry and registry
-#' record management used by administrators.
+#' @param authorizerType The type of authorizer to use for the registry. This controls the authorization method for the Search and Invoke APIs used by consumers, and does not affect the standard CRUDL APIs for registry and registry record management used by administrators.
 #' 
 #' -   `CUSTOM_JWT` - Authorize with a bearer token.
 #' 
 #' -   `AWS_IAM` - Authorize with your Amazon Web Services IAM credentials.
-#' @param authorizerConfiguration The authorizer configuration for the registry. Required if
-#' `authorizerType` is `CUSTOM_JWT`. For details, see the
-#' `AuthorizerConfiguration` data type.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param approvalConfiguration The approval configuration for registry records. Controls whether
-#' records require explicit approval before becoming active. See the
-#' `ApprovalConfiguration` data type for supported configuration options.
+#' @param authorizerConfiguration The authorizer configuration for the registry. Required if `authorizerType` is `CUSTOM_JWT`. For details, see the `AuthorizerConfiguration` data type.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param approvalConfiguration The approval configuration for registry records. Controls whether records require explicit approval before becoming active. See the `ApprovalConfiguration` data type for supported configuration options.
 #'
 #' @keywords internal
 #'
@@ -1045,38 +923,23 @@ bedrockagentcorecontrol_create_registry <- function(name, description = NULL, au
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_registry_record/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_registry_record/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry where the record will be created. You can
-#' specify either the Amazon Resource Name (ARN) or the ID of the registry.
+#' @param registryId &#91;required&#93; The identifier of the registry where the record will be created. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
 #' @param name &#91;required&#93; The name of the registry record.
 #' @param description A description of the registry record.
 #' @param descriptorType &#91;required&#93; The descriptor type of the registry record.
 #' 
-#' -   `MCP` - Model Context Protocol descriptor for MCP-compatible servers
-#'     and tools.
+#' -   `MCP` - Model Context Protocol descriptor for MCP-compatible servers and tools.
 #' 
 #' -   `A2A` - Agent-to-Agent protocol descriptor.
 #' 
-#' -   `CUSTOM` - Custom descriptor type for resources such as APIs, Lambda
-#'     functions, or servers not conforming to a standard protocol.
+#' -   `CUSTOM` - Custom descriptor type for resources such as APIs, Lambda functions, or servers not conforming to a standard protocol.
 #' 
-#' -   `AGENT_SKILLS` - Agent skills descriptor for defining agent skill
-#'     definitions.
-#' @param descriptors The descriptor-type-specific configuration containing the resource
-#' schema and metadata. The structure of this field depends on the
-#' `descriptorType` you specify.
-#' @param recordVersion The version of the registry record. Use this to track different versions
-#' of the record's content.
-#' @param synchronizationType The type of synchronization to use for keeping the record metadata up to
-#' date from an external source. Possible values include `FROM_URL` and
-#' `NONE`.
-#' @param synchronizationConfiguration The configuration for synchronizing registry record metadata from an
-#' external source, such as a URL-based MCP server.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' -   `AGENT_SKILLS` - Agent skills descriptor for defining agent skill definitions.
+#' @param descriptors The descriptor-type-specific configuration containing the resource schema and metadata. The structure of this field depends on the `descriptorType` you specify.
+#' @param recordVersion The version of the registry record. Use this to track different versions of the record's content.
+#' @param synchronizationType The type of synchronization to use for keeping the record metadata up to date from an external source. Possible values include `FROM_URL` and `NONE`.
+#' @param synchronizationConfiguration The configuration for synchronizing registry record metadata from an external source, such as a URL-based MCP server.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @keywords internal
 #'
@@ -1107,13 +970,9 @@ bedrockagentcorecontrol_create_registry_record <- function(registryId, name, des
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_workload_identity/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_create_workload_identity/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the workload identity. The name must be unique within your
-#' account.
-#' @param allowedResourceOauth2ReturnUrls The list of allowed OAuth2 return URLs for resources associated with
-#' this workload identity.
-#' @param tags A map of tag keys and values to assign to the workload identity. Tags
-#' enable you to categorize your resources in different ways, for example,
-#' by purpose, owner, or environment.
+#' @param name &#91;required&#93; The name of the workload identity. The name must be unique within your account.
+#' @param allowedResourceOauth2ReturnUrls The list of allowed OAuth2 return URLs for resources associated with this workload identity.
+#' @param tags A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.
 #'
 #' @keywords internal
 #'
@@ -1145,9 +1004,7 @@ bedrockagentcorecontrol_create_workload_identity <- function(name, allowedResour
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_agent_runtime/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_agent_runtime/) for full documentation.
 #'
 #' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, the service ignores the request but does not return an error.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.
 #'
 #' @keywords internal
 #'
@@ -1178,11 +1035,9 @@ bedrockagentcorecontrol_delete_agent_runtime <- function(agentRuntimeId, clientT
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_agent_runtime_endpoint/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_agent_runtime_endpoint/) for full documentation.
 #'
-#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime associated with the
-#' endpoint.
+#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime associated with the endpoint.
 #' @param endpointName &#91;required&#93; The name of the AgentCore Runtime endpoint to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1245,8 +1100,7 @@ bedrockagentcorecontrol_delete_api_key_credential_provider <- function(name) {
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_browser/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_browser/) for full documentation.
 #'
 #' @param browserId &#91;required&#93; The unique identifier of the browser to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1278,8 +1132,7 @@ bedrockagentcorecontrol_delete_browser <- function(browserId, clientToken = NULL
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_browser_profile/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_browser_profile/) for full documentation.
 #'
 #' @param profileId &#91;required&#93; The unique identifier of the browser profile to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1311,8 +1164,7 @@ bedrockagentcorecontrol_delete_browser_profile <- function(profileId, clientToke
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_code_interpreter/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_code_interpreter/) for full documentation.
 #'
 #' @param codeInterpreterId &#91;required&#93; The unique identifier of the code interpreter to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1366,6 +1218,72 @@ bedrockagentcorecontrol_delete_configuration_bundle <- function(bundleId) {
   return(response)
 }
 .bedrockagentcorecontrol$operations$delete_configuration_bundle <- bedrockagentcorecontrol_delete_configuration_bundle
+
+#' Deletes a dataset version or an entire dataset (all versions + name
+#' claim)
+#'
+#' @description
+#' Deletes a dataset version or an entire dataset (all versions + name claim). Asynchronous 202.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_dataset/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_dataset/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset to delete.
+#' @param datasetVersion Optional version to delete. Use "DRAFT" or omit to delete the draft. Returns ResourceNotFoundException if the specified version does not exist.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_delete_dataset
+bedrockagentcorecontrol_delete_dataset <- function(datasetId, datasetVersion = NULL) {
+  op <- new_operation(
+    name = "DeleteDataset",
+    http_method = "DELETE",
+    http_path = "/datasets/{datasetId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$delete_dataset_input(datasetId = datasetId, datasetVersion = datasetVersion)
+  output <- .bedrockagentcorecontrol$delete_dataset_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$delete_dataset <- bedrockagentcorecontrol_delete_dataset
+
+#' Deletes specific examples by ID from DRAFT
+#'
+#' @description
+#' Deletes specific examples by ID from DRAFT.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_dataset_examples/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_dataset_examples/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param exampleIds &#91;required&#93; The IDs of the examples to delete.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_delete_dataset_examples
+bedrockagentcorecontrol_delete_dataset_examples <- function(datasetId, clientToken = NULL, exampleIds) {
+  op <- new_operation(
+    name = "DeleteDatasetExamples",
+    http_method = "POST",
+    http_path = "/datasets/{datasetId}/examples/delete",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$delete_dataset_examples_input(datasetId = datasetId, clientToken = clientToken, exampleIds = exampleIds)
+  output <- .bedrockagentcorecontrol$delete_dataset_examples_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$delete_dataset_examples <- bedrockagentcorecontrol_delete_dataset_examples
 
 #' Deletes a custom evaluator
 #'
@@ -1501,8 +1419,7 @@ bedrockagentcorecontrol_delete_gateway_target <- function(gatewayIdentifier, tar
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_harness/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_harness/) for full documentation.
 #'
 #' @param harnessId &#91;required&#93; The ID of the harness to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1533,9 +1450,7 @@ bedrockagentcorecontrol_delete_harness <- function(harnessId, clientToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_memory/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_memory/) for full documentation.
 #'
-#' @param clientToken A client token is used for keeping track of idempotent requests. It can
-#' contain a session id which can be around 250 chars, combined with a
-#' unique AWS identifier.
+#' @param clientToken A client token is used for keeping track of idempotent requests. It can contain a session id which can be around 250 chars, combined with a unique AWS identifier.
 #' @param memoryId &#91;required&#93; The unique identifier of the memory to delete.
 #'
 #' @keywords internal
@@ -1632,12 +1547,7 @@ bedrockagentcorecontrol_delete_online_evaluation_config <- function(onlineEvalua
 #'
 #' @param paymentManagerId &#91;required&#93; The unique identifier of the parent payment manager.
 #' @param paymentConnectorId &#91;required&#93; The unique identifier of the payment connector to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @keywords internal
 #'
@@ -1701,12 +1611,7 @@ bedrockagentcorecontrol_delete_payment_credential_provider <- function(name) {
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_payment_manager/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_payment_manager/) for full documentation.
 #'
 #' @param paymentManagerId &#91;required&#93; The unique identifier of the payment manager to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @keywords internal
 #'
@@ -1737,11 +1642,8 @@ bedrockagentcorecontrol_delete_payment_manager <- function(paymentManagerId, cli
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_policy/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_policy/) for full documentation.
 #'
-#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that manages the policy to be
-#' deleted. This ensures the policy is deleted from the correct policy
-#' engine context.
-#' @param policyId &#91;required&#93; The unique identifier of the policy to be deleted. This must be a valid
-#' policy ID that exists within the specified policy engine.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that manages the policy to be deleted. This ensures the policy is deleted from the correct policy engine context.
+#' @param policyId &#91;required&#93; The unique identifier of the policy to be deleted. This must be a valid policy ID that exists within the specified policy engine.
 #'
 #' @keywords internal
 #'
@@ -1772,8 +1674,7 @@ bedrockagentcorecontrol_delete_policy <- function(policyEngineId, policyId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_policy_engine/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_policy_engine/) for full documentation.
 #'
-#' @param policyEngineId &#91;required&#93; The unique identifier of the policy engine to be deleted. This must be a
-#' valid policy engine ID that exists within the account.
+#' @param policyEngineId &#91;required&#93; The unique identifier of the policy engine to be deleted. This must be a valid policy engine ID that exists within the account.
 #'
 #' @keywords internal
 #'
@@ -1804,8 +1705,7 @@ bedrockagentcorecontrol_delete_policy_engine <- function(policyEngineId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_registry/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_registry/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry to delete. You can specify either the
-#' Amazon Resource Name (ARN) or the ID of the registry.
+#' @param registryId &#91;required&#93; The identifier of the registry to delete. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
 #'
 #' @keywords internal
 #'
@@ -1836,10 +1736,8 @@ bedrockagentcorecontrol_delete_registry <- function(registryId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_registry_record/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_registry_record/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify
-#' either the Amazon Resource Name (ARN) or the ID of the registry.
-#' @param recordId &#91;required&#93; The identifier of the registry record to delete. You can specify either
-#' the Amazon Resource Name (ARN) or the ID of the record.
+#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
+#' @param recordId &#91;required&#93; The identifier of the registry record to delete. You can specify either the Amazon Resource Name (ARN) or the ID of the record.
 #'
 #' @keywords internal
 #'
@@ -1870,8 +1768,7 @@ bedrockagentcorecontrol_delete_registry_record <- function(registryId, recordId)
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_resource_policy/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_delete_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to delete the
-#' resource policy.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to delete the resource policy.
 #'
 #' @keywords internal
 #'
@@ -1965,8 +1862,7 @@ bedrockagentcorecontrol_get_agent_runtime <- function(agentRuntimeId, agentRunti
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_agent_runtime_endpoint/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_agent_runtime_endpoint/) for full documentation.
 #'
-#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime associated with the
-#' endpoint.
+#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime associated with the endpoint.
 #' @param endpointName &#91;required&#93; The name of the AgentCore Runtime endpoint to retrieve.
 #'
 #' @keywords internal
@@ -2123,8 +2019,7 @@ bedrockagentcorecontrol_get_code_interpreter <- function(codeInterpreterId) {
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_configuration_bundle/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_configuration_bundle/) for full documentation.
 #'
 #' @param bundleId &#91;required&#93; The unique identifier of the configuration bundle to retrieve.
-#' @param branchName The branch name to get the latest version from. If not specified,
-#' returns the latest version on the mainline branch.
+#' @param branchName The branch name to get the latest version from. If not specified, returns the latest version on the mainline branch.
 #'
 #' @keywords internal
 #'
@@ -2181,6 +2076,38 @@ bedrockagentcorecontrol_get_configuration_bundle_version <- function(bundleId, v
 }
 .bedrockagentcorecontrol$operations$get_configuration_bundle_version <- bedrockagentcorecontrol_get_configuration_bundle_version
 
+#' Retrieves dataset metadata only
+#'
+#' @description
+#' Retrieves dataset metadata only.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_dataset/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_dataset/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset to retrieve.
+#' @param datasetVersion Version to retrieve: "DRAFT" or a version number. Defaults to DRAFT if absent.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_get_dataset
+bedrockagentcorecontrol_get_dataset <- function(datasetId, datasetVersion = NULL) {
+  op <- new_operation(
+    name = "GetDataset",
+    http_method = "GET",
+    http_path = "/datasets/{datasetId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$get_dataset_input(datasetId = datasetId, datasetVersion = datasetVersion)
+  output <- .bedrockagentcorecontrol$get_dataset_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$get_dataset <- bedrockagentcorecontrol_get_dataset
+
 #' Retrieves detailed information about an evaluator, including its
 #' configuration, status, and metadata
 #'
@@ -2189,14 +2116,8 @@ bedrockagentcorecontrol_get_configuration_bundle_version <- function(bundleId, v
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_evaluator/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_evaluator/) for full documentation.
 #'
-#' @param evaluatorId &#91;required&#93; The unique identifier of the evaluator to retrieve. Can be a built-in
-#' evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.
-#' @param includedData Controls which data is returned in the response. `ALL_DATA` (default)
-#' returns the full evaluator including decrypted instructions and rating
-#' scale. For evaluators encrypted with a customer managed KMS key, this
-#' requires `kms:Decrypt` permission on the key. `METADATA_ONLY` returns
-#' evaluator metadata and model configuration without instructions or
-#' rating scale, and does not require any KMS permissions.
+#' @param evaluatorId &#91;required&#93; The unique identifier of the evaluator to retrieve. Can be a built-in evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.
+#' @param includedData Controls which data is returned in the response. `ALL_DATA` (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires `kms:Decrypt` permission on the key. `METADATA_ONLY` returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.
 #'
 #' @keywords internal
 #'
@@ -2417,8 +2338,7 @@ bedrockagentcorecontrol_get_oauth_2_credential_provider <- function(name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_online_evaluation_config/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_online_evaluation_config/) for full documentation.
 #'
-#' @param onlineEvaluationConfigId &#91;required&#93; The unique identifier of the online evaluation configuration to
-#' retrieve.
+#' @param onlineEvaluationConfigId &#91;required&#93; The unique identifier of the online evaluation configuration to retrieve.
 #'
 #' @keywords internal
 #'
@@ -2544,10 +2464,8 @@ bedrockagentcorecontrol_get_payment_manager <- function(paymentManagerId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy/) for full documentation.
 #'
-#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that manages the policy to be
-#' retrieved.
-#' @param policyId &#91;required&#93; The unique identifier of the policy to be retrieved. This must be a
-#' valid policy ID that exists within the specified policy engine.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that manages the policy to be retrieved.
+#' @param policyId &#91;required&#93; The unique identifier of the policy to be retrieved. This must be a valid policy ID that exists within the specified policy engine.
 #'
 #' @keywords internal
 #'
@@ -2579,8 +2497,7 @@ bedrockagentcorecontrol_get_policy <- function(policyEngineId, policyId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_engine/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_engine/) for full documentation.
 #'
-#' @param policyEngineId &#91;required&#93; The unique identifier of the policy engine to be retrieved. This must be
-#' a valid policy engine ID that exists within the account.
+#' @param policyEngineId &#91;required&#93; The unique identifier of the policy engine to be retrieved. This must be a valid policy engine ID that exists within the account.
 #'
 #' @keywords internal
 #'
@@ -2604,6 +2521,38 @@ bedrockagentcorecontrol_get_policy_engine <- function(policyEngineId) {
 }
 .bedrockagentcorecontrol$operations$get_policy_engine <- bedrockagentcorecontrol_get_policy_engine
 
+#' Retrieves a metadata-only summary of a specific policy engine without
+#' decrypting customer content
+#'
+#' @description
+#' Retrieves a metadata-only summary of a specific policy engine without decrypting customer content. This lightweight read operation returns resource identifiers, status, timestamps, and the encryption key ARN, but does not include the description or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_engine_summary/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_engine_summary/) for full documentation.
+#'
+#' @param policyEngineId &#91;required&#93; The unique identifier of the policy engine to retrieve the summary for. This must be a valid policy engine ID that exists within the account.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_get_policy_engine_summary
+bedrockagentcorecontrol_get_policy_engine_summary <- function(policyEngineId) {
+  op <- new_operation(
+    name = "GetPolicyEngineSummary",
+    http_method = "GET",
+    http_path = "/policy-engine-summaries/{policyEngineId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$get_policy_engine_summary_input(policyEngineId = policyEngineId)
+  output <- .bedrockagentcorecontrol$get_policy_engine_summary_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$get_policy_engine_summary <- bedrockagentcorecontrol_get_policy_engine_summary
+
 #' Retrieves information about a policy generation request within the
 #' AgentCore Policy system
 #'
@@ -2612,13 +2561,8 @@ bedrockagentcorecontrol_get_policy_engine <- function(policyEngineId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_generation/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_generation/) for full documentation.
 #'
-#' @param policyGenerationId &#91;required&#93; The unique identifier of the policy generation request to be retrieved.
-#' This must be a valid generation ID from a previous
-#' [`start_policy_generation`][bedrockagentcorecontrol_start_policy_generation]
-#' call.
-#' @param policyEngineId &#91;required&#93; The identifier of the policy engine associated with the policy
-#' generation request. This provides the context for the generation
-#' operation and schema validation.
+#' @param policyGenerationId &#91;required&#93; The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous [`start_policy_generation`][bedrockagentcorecontrol_start_policy_generation] call.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine associated with the policy generation request. This provides the context for the generation operation and schema validation.
 #'
 #' @keywords internal
 #'
@@ -2642,6 +2586,72 @@ bedrockagentcorecontrol_get_policy_generation <- function(policyGenerationId, po
 }
 .bedrockagentcorecontrol$operations$get_policy_generation <- bedrockagentcorecontrol_get_policy_generation
 
+#' Retrieves a metadata-only summary of a specific policy generation
+#' request without decrypting customer content
+#'
+#' @description
+#' Retrieves a metadata-only summary of a specific policy generation request without decrypting customer content. This lightweight read operation returns resource identifiers, status, timestamps, and findings, but does not include status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_generation_summary/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_generation_summary/) for full documentation.
+#'
+#' @param policyGenerationId &#91;required&#93; The unique identifier of the policy generation request to retrieve the summary for.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine associated with the policy generation request.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_get_policy_generation_summary
+bedrockagentcorecontrol_get_policy_generation_summary <- function(policyGenerationId, policyEngineId) {
+  op <- new_operation(
+    name = "GetPolicyGenerationSummary",
+    http_method = "GET",
+    http_path = "/policy-engines/{policyEngineId}/policy-generation-summaries/{policyGenerationId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$get_policy_generation_summary_input(policyGenerationId = policyGenerationId, policyEngineId = policyEngineId)
+  output <- .bedrockagentcorecontrol$get_policy_generation_summary_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$get_policy_generation_summary <- bedrockagentcorecontrol_get_policy_generation_summary
+
+#' Retrieves a metadata-only summary of a specific policy without
+#' decrypting customer content
+#'
+#' @description
+#' Retrieves a metadata-only summary of a specific policy without decrypting customer content. This lightweight read operation returns resource identifiers, status, and timestamps, but does not include the policy definition, description, or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_summary/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_policy_summary/) for full documentation.
+#'
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that manages the policy to retrieve the summary for.
+#' @param policyId &#91;required&#93; The unique identifier of the policy to retrieve the summary for. This must be a valid policy ID that exists within the specified policy engine.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_get_policy_summary
+bedrockagentcorecontrol_get_policy_summary <- function(policyEngineId, policyId) {
+  op <- new_operation(
+    name = "GetPolicySummary",
+    http_method = "GET",
+    http_path = "/policy-engines/{policyEngineId}/policy-summaries/{policyId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$get_policy_summary_input(policyEngineId = policyEngineId, policyId = policyId)
+  output <- .bedrockagentcorecontrol$get_policy_summary_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$get_policy_summary <- bedrockagentcorecontrol_get_policy_summary
+
 #' Retrieves information about a specific registry
 #'
 #' @description
@@ -2649,8 +2659,7 @@ bedrockagentcorecontrol_get_policy_generation <- function(policyGenerationId, po
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_registry/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_registry/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry to retrieve. You can specify either the
-#' Amazon Resource Name (ARN) or the ID of the registry.
+#' @param registryId &#91;required&#93; The identifier of the registry to retrieve. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
 #'
 #' @keywords internal
 #'
@@ -2681,10 +2690,8 @@ bedrockagentcorecontrol_get_registry <- function(registryId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_registry_record/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_registry_record/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify
-#' either the Amazon Resource Name (ARN) or the ID of the registry.
-#' @param recordId &#91;required&#93; The identifier of the registry record to retrieve. You can specify
-#' either the Amazon Resource Name (ARN) or the ID of the record.
+#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
+#' @param recordId &#91;required&#93; The identifier of the registry record to retrieve. You can specify either the Amazon Resource Name (ARN) or the ID of the record.
 #'
 #' @keywords internal
 #'
@@ -2715,8 +2722,7 @@ bedrockagentcorecontrol_get_registry_record <- function(registryId, recordId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_resource_policy/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_get_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve the
-#' resource policy.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve the resource policy.
 #'
 #' @keywords internal
 #'
@@ -2972,13 +2978,9 @@ bedrockagentcorecontrol_list_browser_profiles <- function(maxResults = NULL, nex
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_browsers/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_browsers/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 10. The maximum value is 50.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param type The type of browsers to list. If not specified, all browser types are
-#' returned.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param type The type of browsers to list. If not specified, all browser types are returned.
 #'
 #' @keywords internal
 #'
@@ -3044,15 +3046,9 @@ bedrockagentcorecontrol_list_code_interpreters <- function(maxResults = NULL, ne
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_configuration_bundle_versions/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_configuration_bundle_versions/) for full documentation.
 #'
 #' @param bundleId &#91;required&#93; The unique identifier of the configuration bundle to list versions for.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param filter An optional filter for listing versions, including branch name, creation
-#' source, and whether to return only the latest version per branch.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param filter An optional filter for listing versions, including branch name, creation source, and whether to return only the latest version per branch.
 #'
 #' @keywords internal
 #'
@@ -3083,13 +3079,8 @@ bedrockagentcorecontrol_list_configuration_bundle_versions <- function(bundleId,
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_configuration_bundles/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_configuration_bundles/) for full documentation.
 #'
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -3113,6 +3104,106 @@ bedrockagentcorecontrol_list_configuration_bundles <- function(nextToken = NULL,
 }
 .bedrockagentcorecontrol$operations$list_configuration_bundles <- bedrockagentcorecontrol_list_configuration_bundles
 
+#' Returns paginated examples from the dataset
+#'
+#' @description
+#' Returns paginated examples from the dataset.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_dataset_examples/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_dataset_examples/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset.
+#' @param datasetVersion Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent. Only used on the first request (when nextToken is absent). For subsequent pages, the version is extracted from the nextToken and this parameter is ignored.
+#' @param maxResults Maximum number of examples to return per page. Default: 1000. Min: 1, max: 1000. Response size is validated against 5 MB limit after reading. For bulk access to all examples, use the `downloadUrl` field from GetDataset.
+#' @param nextToken The token for the next page of results.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_list_dataset_examples
+bedrockagentcorecontrol_list_dataset_examples <- function(datasetId, datasetVersion = NULL, maxResults = NULL, nextToken = NULL) {
+  op <- new_operation(
+    name = "ListDatasetExamples",
+    http_method = "GET",
+    http_path = "/datasets/{datasetId}/examples",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "examples"),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$list_dataset_examples_input(datasetId = datasetId, datasetVersion = datasetVersion, maxResults = maxResults, nextToken = nextToken)
+  output <- .bedrockagentcorecontrol$list_dataset_examples_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$list_dataset_examples <- bedrockagentcorecontrol_list_dataset_examples
+
+#' Lists all published versions of a dataset, sorted by version number
+#' descending (newest first)
+#'
+#' @description
+#' Lists all published versions of a dataset, sorted by version number descending (newest first). Does not include the DRAFT working copy.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_dataset_versions/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_dataset_versions/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset.
+#' @param nextToken The token for the next page of results.
+#' @param maxResults The maximum number of versions to return per page.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_list_dataset_versions
+bedrockagentcorecontrol_list_dataset_versions <- function(datasetId, nextToken = NULL, maxResults = NULL) {
+  op <- new_operation(
+    name = "ListDatasetVersions",
+    http_method = "GET",
+    http_path = "/datasets/{datasetId}/versions",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "versions"),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$list_dataset_versions_input(datasetId = datasetId, nextToken = nextToken, maxResults = maxResults)
+  output <- .bedrockagentcorecontrol$list_dataset_versions_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$list_dataset_versions <- bedrockagentcorecontrol_list_dataset_versions
+
+#' Lists all datasets in the caller's account, paginated
+#'
+#' @description
+#' Lists all datasets in the caller's account, paginated. No presigned URLs in list results.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_datasets/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_datasets/) for full documentation.
+#'
+#' @param nextToken The token for the next page of results.
+#' @param maxResults The maximum number of datasets to return per page.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_list_datasets
+bedrockagentcorecontrol_list_datasets <- function(nextToken = NULL, maxResults = NULL) {
+  op <- new_operation(
+    name = "ListDatasets",
+    http_method = "GET",
+    http_path = "/datasets",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "datasets"),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$list_datasets_input(nextToken = nextToken, maxResults = maxResults)
+  output <- .bedrockagentcorecontrol$list_datasets_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$list_datasets <- bedrockagentcorecontrol_list_datasets
+
 #' Lists all available evaluators, including both builtin evaluators
 #' provided by the service and custom evaluators created by the user
 #'
@@ -3121,8 +3212,7 @@ bedrockagentcorecontrol_list_configuration_bundles <- function(nextToken = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_evaluators/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_evaluators/) for full documentation.
 #'
-#' @param nextToken The pagination token from a previous request to retrieve the next page
-#' of results.
+#' @param nextToken The pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of evaluators to return in a single response.
 #'
 #' @keywords internal
@@ -3155,10 +3245,7 @@ bedrockagentcorecontrol_list_evaluators <- function(nextToken = NULL, maxResults
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_gateway_rules/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_gateway_rules/) for full documentation.
 #'
 #' @param gatewayIdentifier &#91;required&#93; The identifier of the gateway to list rules for.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
 #' @param nextToken The pagination token from a previous request.
 #'
 #' @keywords internal
@@ -3191,13 +3278,8 @@ bedrockagentcorecontrol_list_gateway_rules <- function(gatewayIdentifier, maxRes
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_gateway_targets/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_gateway_targets/) for full documentation.
 #'
 #' @param gatewayIdentifier &#91;required&#93; The identifier of the gateway to list targets for.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -3228,13 +3310,8 @@ bedrockagentcorecontrol_list_gateway_targets <- function(gatewayIdentifier, maxR
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_gateways/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_gateways/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -3298,11 +3375,8 @@ bedrockagentcorecontrol_list_harnesses <- function(maxResults = NULL, nextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_memories/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_memories/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return in a single call. The default
-#' value is 10. The maximum value is 50.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param maxResults The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -3366,10 +3440,8 @@ bedrockagentcorecontrol_list_oauth_2_credential_providers <- function(nextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_online_evaluation_configs/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_online_evaluation_configs/) for full documentation.
 #'
-#' @param nextToken The pagination token from a previous request to retrieve the next page
-#' of results.
-#' @param maxResults The maximum number of online evaluation configurations to return in a
-#' single response.
+#' @param nextToken The pagination token from a previous request to retrieve the next page of results.
+#' @param maxResults The maximum number of online evaluation configurations to return in a single response.
 #'
 #' @keywords internal
 #'
@@ -3401,13 +3473,8 @@ bedrockagentcorecontrol_list_online_evaluation_configs <- function(nextToken = N
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_payment_connectors/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_payment_connectors/) for full documentation.
 #'
 #' @param paymentManagerId &#91;required&#93; The unique identifier of the payment manager whose connectors to list.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -3470,13 +3537,8 @@ bedrockagentcorecontrol_list_payment_credential_providers <- function(nextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_payment_managers/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_payment_managers/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -3507,18 +3569,10 @@ bedrockagentcorecontrol_list_payment_managers <- function(maxResults = NULL, nex
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policies/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policies/) for full documentation.
 #'
-#' @param nextToken A pagination token returned from a previous
-#' [`list_policies`][bedrockagentcorecontrol_list_policies] call. Use this
-#' token to retrieve the next page of results when the response is
-#' paginated.
-#' @param maxResults The maximum number of policies to return in a single response. If not
-#' specified, the default is 10 policies per page, with a maximum of 100
-#' per page.
+#' @param nextToken A pagination token returned from a previous [`list_policies`][bedrockagentcorecontrol_list_policies] call. Use this token to retrieve the next page of results when the response is paginated.
+#' @param maxResults The maximum number of policies to return in a single response. If not specified, the default is 10 policies per page, with a maximum of 100 per page.
 #' @param policyEngineId &#91;required&#93; The identifier of the policy engine whose policies to retrieve.
-#' @param targetResourceScope Optional filter to list policies that apply to a specific resource scope
-#' or resource type. This helps narrow down policy results to those
-#' relevant for particular Amazon Web Services resources, agent tools, or
-#' operational contexts within the policy engine ecosystem.
+#' @param targetResourceScope Optional filter to list policies that apply to a specific resource scope or resource type. This helps narrow down policy results to those relevant for particular Amazon Web Services resources, agent tools, or operational contexts within the policy engine ecosystem.
 #'
 #' @keywords internal
 #'
@@ -3542,6 +3596,39 @@ bedrockagentcorecontrol_list_policies <- function(nextToken = NULL, maxResults =
 }
 .bedrockagentcorecontrol$operations$list_policies <- bedrockagentcorecontrol_list_policies
 
+#' Retrieves a paginated list of metadata-only policy engine summaries
+#' without decrypting customer content
+#'
+#' @description
+#' Retrieves a paginated list of metadata-only policy engine summaries without decrypting customer content. This lightweight read operation returns resource identifiers, status, and timestamps for each policy engine, but does not include descriptions or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_engine_summaries/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_engine_summaries/) for full documentation.
+#'
+#' @param nextToken A pagination token returned from a previous [`list_policy_engine_summaries`][bedrockagentcorecontrol_list_policy_engine_summaries] call. Use this token to retrieve the next page of results when the response is paginated.
+#' @param maxResults The maximum number of policy engine summaries to return in a single response.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_list_policy_engine_summaries
+bedrockagentcorecontrol_list_policy_engine_summaries <- function(nextToken = NULL, maxResults = NULL) {
+  op <- new_operation(
+    name = "ListPolicyEngineSummaries",
+    http_method = "GET",
+    http_path = "/policy-engine-summaries",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "policyEngines"),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$list_policy_engine_summaries_input(nextToken = nextToken, maxResults = maxResults)
+  output <- .bedrockagentcorecontrol$list_policy_engine_summaries_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$list_policy_engine_summaries <- bedrockagentcorecontrol_list_policy_engine_summaries
+
 #' Retrieves a list of policy engines within the AgentCore Policy system
 #'
 #' @description
@@ -3549,13 +3636,8 @@ bedrockagentcorecontrol_list_policies <- function(nextToken = NULL, maxResults =
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_engines/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_engines/) for full documentation.
 #'
-#' @param nextToken A pagination token returned from a previous
-#' [`list_policy_engines`][bedrockagentcorecontrol_list_policy_engines]
-#' call. Use this token to retrieve the next page of results when the
-#' response is paginated.
-#' @param maxResults The maximum number of policy engines to return in a single response. If
-#' not specified, the default is 10 policy engines per page, with a maximum
-#' of 100 per page.
+#' @param nextToken A pagination token returned from a previous [`list_policy_engines`][bedrockagentcorecontrol_list_policy_engines] call. Use this token to retrieve the next page of results when the response is paginated.
+#' @param maxResults The maximum number of policy engines to return in a single response. If not specified, the default is 10 policy engines per page, with a maximum of 100 per page.
 #'
 #' @keywords internal
 #'
@@ -3587,22 +3669,10 @@ bedrockagentcorecontrol_list_policy_engines <- function(nextToken = NULL, maxRes
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_generation_assets/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_generation_assets/) for full documentation.
 #'
-#' @param policyGenerationId &#91;required&#93; The unique identifier of the policy generation request whose assets are
-#' to be retrieved. This must be a valid generation ID from a previous
-#' [`start_policy_generation`][bedrockagentcorecontrol_start_policy_generation]
-#' call that has completed processing.
-#' @param policyEngineId &#91;required&#93; The unique identifier of the policy engine associated with the policy
-#' generation request. This provides the context for the generation
-#' operation and ensures assets are retrieved from the correct policy
-#' engine.
-#' @param nextToken A pagination token returned from a previous
-#' [`list_policy_generation_assets`][bedrockagentcorecontrol_list_policy_generation_assets]
-#' call. Use this token to retrieve the next page of assets when the
-#' response is paginated due to large numbers of generated policy options.
-#' @param maxResults The maximum number of policy generation assets to return in a single
-#' response. If not specified, the default is 10 assets per page, with a
-#' maximum of 100 per page. This helps control response size when dealing
-#' with policy generations that produce many alternative policy options.
+#' @param policyGenerationId &#91;required&#93; The unique identifier of the policy generation request whose assets are to be retrieved. This must be a valid generation ID from a previous [`start_policy_generation`][bedrockagentcorecontrol_start_policy_generation] call that has completed processing.
+#' @param policyEngineId &#91;required&#93; The unique identifier of the policy engine associated with the policy generation request. This provides the context for the generation operation and ensures assets are retrieved from the correct policy engine.
+#' @param nextToken A pagination token returned from a previous [`list_policy_generation_assets`][bedrockagentcorecontrol_list_policy_generation_assets] call. Use this token to retrieve the next page of assets when the response is paginated due to large numbers of generated policy options.
+#' @param maxResults The maximum number of policy generation assets to return in a single response. If not specified, the default is 10 assets per page, with a maximum of 100 per page. This helps control response size when dealing with policy generations that produce many alternative policy options.
 #'
 #' @keywords internal
 #'
@@ -3626,6 +3696,40 @@ bedrockagentcorecontrol_list_policy_generation_assets <- function(policyGenerati
 }
 .bedrockagentcorecontrol$operations$list_policy_generation_assets <- bedrockagentcorecontrol_list_policy_generation_assets
 
+#' Retrieves a paginated list of metadata-only policy generation summaries
+#' within a policy engine without decrypting customer content
+#'
+#' @description
+#' Retrieves a paginated list of metadata-only policy generation summaries within a policy engine without decrypting customer content. This lightweight read operation returns resource identifiers, status, timestamps, and findings for each policy generation, but does not include status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_generation_summaries/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_generation_summaries/) for full documentation.
+#'
+#' @param nextToken A pagination token returned from a previous [`list_policy_generation_summaries`][bedrockagentcorecontrol_list_policy_generation_summaries] call. Use this token to retrieve the next page of results when the response is paginated.
+#' @param maxResults The maximum number of policy generation summaries to return in a single response.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine whose policy generation summaries to retrieve.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_list_policy_generation_summaries
+bedrockagentcorecontrol_list_policy_generation_summaries <- function(nextToken = NULL, maxResults = NULL, policyEngineId) {
+  op <- new_operation(
+    name = "ListPolicyGenerationSummaries",
+    http_method = "GET",
+    http_path = "/policy-engines/{policyEngineId}/policy-generation-summaries",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "policyGenerations"),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$list_policy_generation_summaries_input(nextToken = nextToken, maxResults = maxResults, policyEngineId = policyEngineId)
+  output <- .bedrockagentcorecontrol$list_policy_generation_summaries_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$list_policy_generation_summaries <- bedrockagentcorecontrol_list_policy_generation_summaries
+
 #' Retrieves a list of policy generation requests within the AgentCore
 #' Policy system
 #'
@@ -3634,11 +3738,9 @@ bedrockagentcorecontrol_list_policy_generation_assets <- function(policyGenerati
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_generations/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_generations/) for full documentation.
 #'
-#' @param nextToken A pagination token for retrieving additional policy generations when
-#' results are paginated.
+#' @param nextToken A pagination token for retrieving additional policy generations when results are paginated.
 #' @param maxResults The maximum number of policy generations to return in a single response.
-#' @param policyEngineId &#91;required&#93; The identifier of the policy engine whose policy generations to
-#' retrieve.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine whose policy generations to retrieve.
 #'
 #' @keywords internal
 #'
@@ -3662,28 +3764,57 @@ bedrockagentcorecontrol_list_policy_generations <- function(nextToken = NULL, ma
 }
 .bedrockagentcorecontrol$operations$list_policy_generations <- bedrockagentcorecontrol_list_policy_generations
 
+#' Retrieves a paginated list of metadata-only policy summaries within a
+#' policy engine without decrypting customer content
+#'
+#' @description
+#' Retrieves a paginated list of metadata-only policy summaries within a policy engine without decrypting customer content. This lightweight read operation returns resource identifiers, status, and timestamps for each policy, but does not include policy definitions, descriptions, or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_summaries/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_policy_summaries/) for full documentation.
+#'
+#' @param nextToken A pagination token returned from a previous [`list_policy_summaries`][bedrockagentcorecontrol_list_policy_summaries] call. Use this token to retrieve the next page of results when the response is paginated.
+#' @param maxResults The maximum number of policy summaries to return in a single response.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine whose policy summaries to retrieve.
+#' @param targetResourceScope Optional filter to list policy summaries that apply to a specific resource scope or resource type. This helps narrow down results to those relevant for particular Amazon Web Services resources, agent tools, or operational contexts within the policy engine ecosystem.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_list_policy_summaries
+bedrockagentcorecontrol_list_policy_summaries <- function(nextToken = NULL, maxResults = NULL, policyEngineId, targetResourceScope = NULL) {
+  op <- new_operation(
+    name = "ListPolicySummaries",
+    http_method = "GET",
+    http_path = "/policy-engines/{policyEngineId}/policy-summaries",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "policies"),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$list_policy_summaries_input(nextToken = nextToken, maxResults = maxResults, policyEngineId = policyEngineId, targetResourceScope = targetResourceScope)
+  output <- .bedrockagentcorecontrol$list_policy_summaries_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$list_policy_summaries <- bedrockagentcorecontrol_list_policy_summaries
+
 #' Lists all registries in the account
 #'
 #' @description
-#' Lists all registries in the account. You can optionally filter results by status using the `status` parameter.
+#' Lists all registries in the account. You can optionally filter results by status using the `status` parameter, or by authorizer type using the `authorizerType` parameter.
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_registries/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_registries/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
-#' @param status Filter registries by their current status. Possible values include
-#' `CREATING`, `READY`, `UPDATING`, `CREATE_FAILED`, `UPDATE_FAILED`,
-#' `DELETING`, and `DELETE_FAILED`.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
+#' @param status Filter registries by their current status. Possible values include `CREATING`, `READY`, `UPDATING`, `CREATE_FAILED`, `UPDATE_FAILED`, `DELETING`, and `DELETE_FAILED`.
+#' @param authorizerType Filter registries by their authorizer type. Possible values are `CUSTOM_JWT` and `AWS_IAM`. For more information about authorizer types, see the `RegistryAuthorizerType` enum.
 #'
 #' @keywords internal
 #'
 #' @rdname bedrockagentcorecontrol_list_registries
-bedrockagentcorecontrol_list_registries <- function(maxResults = NULL, nextToken = NULL, status = NULL) {
+bedrockagentcorecontrol_list_registries <- function(maxResults = NULL, nextToken = NULL, status = NULL, authorizerType = NULL) {
   op <- new_operation(
     name = "ListRegistries",
     http_method = "GET",
@@ -3692,7 +3823,7 @@ bedrockagentcorecontrol_list_registries <- function(maxResults = NULL, nextToken
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "registries"),
     stream_api = FALSE
   )
-  input <- .bedrockagentcorecontrol$list_registries_input(maxResults = maxResults, nextToken = nextToken, status = status)
+  input <- .bedrockagentcorecontrol$list_registries_input(maxResults = maxResults, nextToken = nextToken, status = status, authorizerType = authorizerType)
   output <- .bedrockagentcorecontrol$list_registries_output()
   config <- get_config()
   svc <- .bedrockagentcorecontrol$service(config, op)
@@ -3709,21 +3840,12 @@ bedrockagentcorecontrol_list_registries <- function(maxResults = NULL, nextToken
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_registry_records/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_registry_records/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry to list records from. You can specify
-#' either the Amazon Resource Name (ARN) or the ID of the registry.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param registryId &#91;required&#93; The identifier of the registry to list records from. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #' @param name Filter registry records by name.
-#' @param status Filter registry records by their current status. Possible values include
-#' `CREATING`, `DRAFT`, `APPROVED`, `PENDING_APPROVAL`, `REJECTED`,
-#' `DEPRECATED`, `UPDATING`, `CREATE_FAILED`, and `UPDATE_FAILED`.
-#' @param descriptorType Filter registry records by their descriptor type. Possible values are
-#' `MCP`, `A2A`, `CUSTOM`, and `AGENT_SKILLS`.
+#' @param status Filter registry records by their current status. Possible values include `CREATING`, `DRAFT`, `APPROVED`, `PENDING_APPROVAL`, `REJECTED`, `DEPRECATED`, `UPDATING`, `CREATE_FAILED`, and `UPDATE_FAILED`.
+#' @param descriptorType Filter registry records by their descriptor type. Possible values are `MCP`, `A2A`, `CUSTOM`, and `AGENT_SKILLS`.
 #'
 #' @keywords internal
 #'
@@ -3754,8 +3876,7 @@ bedrockagentcorecontrol_list_registry_records <- function(registryId, maxResults
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to
-#' list tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to list tags.
 #'
 #' @keywords internal
 #'
@@ -3819,8 +3940,7 @@ bedrockagentcorecontrol_list_workload_identities <- function(nextToken = NULL, m
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_put_resource_policy/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_put_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to create or
-#' update the resource policy.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to create or update the resource policy.
 #' @param policy &#91;required&#93; The resource policy to create or update.
 #'
 #' @keywords internal
@@ -3853,8 +3973,7 @@ bedrockagentcorecontrol_put_resource_policy <- function(resourceArn, policy) {
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_set_token_vault_cmk/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_set_token_vault_cmk/) for full documentation.
 #'
 #' @param tokenVaultId The unique identifier of the token vault to update.
-#' @param kmsConfiguration &#91;required&#93; The KMS configuration for the token vault, including the key type and
-#' KMS key ARN.
+#' @param kmsConfiguration &#91;required&#93; The KMS configuration for the token vault, including the key type and KMS key ARN.
 #'
 #' @keywords internal
 #'
@@ -3886,23 +4005,11 @@ bedrockagentcorecontrol_set_token_vault_cmk <- function(tokenVaultId = NULL, kms
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_start_policy_generation/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_start_policy_generation/) for full documentation.
 #'
-#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that provides the context for policy
-#' generation. This engine's schema and tool context are used to ensure
-#' generated policies are valid and applicable.
-#' @param resource &#91;required&#93; The resource information that provides context for policy generation.
-#' This helps the AI understand the target resources and generate
-#' appropriate access control rules.
-#' @param content &#91;required&#93; The natural language description of the desired policy behavior. This
-#' content is processed by AI to generate corresponding Cedar policy
-#' statements that match the described intent.
-#' @param name &#91;required&#93; A customer-assigned name for the policy generation request. This helps
-#' track and identify generation operations, especially when running
-#' multiple generations simultaneously.
-#' @param clientToken A unique, case-sensitive identifier to ensure the idempotency of the
-#' request. The AWS SDK automatically generates this token, so you don't
-#' need to provide it in most cases. If you retry a request with the same
-#' client token, the service returns the same response without starting a
-#' duplicate generation.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that provides the context for policy generation. This engine's schema and tool context are used to ensure generated policies are valid and applicable.
+#' @param resource &#91;required&#93; The resource information that provides context for policy generation. This helps the AI understand the target resources and generate appropriate access control rules.
+#' @param content &#91;required&#93; The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.
+#' @param name &#91;required&#93; A customer-assigned name for the policy generation request. This helps track and identify generation operations, especially when running multiple generations simultaneously.
+#' @param clientToken A unique, case-sensitive identifier to ensure the idempotency of the request. The AWS SDK automatically generates this token, so you don't need to provide it in most cases. If you retry a request with the same client token, the service returns the same response without starting a duplicate generation.
 #'
 #' @keywords internal
 #'
@@ -3933,10 +4040,8 @@ bedrockagentcorecontrol_start_policy_generation <- function(policyEngineId, reso
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_submit_registry_record_for_approval/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_submit_registry_record_for_approval/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify
-#' either the Amazon Resource Name (ARN) or the ID of the registry.
-#' @param recordId &#91;required&#93; The identifier of the registry record to submit for approval. You can
-#' specify either the Amazon Resource Name (ARN) or the ID of the record.
+#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
+#' @param recordId &#91;required&#93; The identifier of the registry record to submit for approval. You can specify either the Amazon Resource Name (ARN) or the ID of the record.
 #'
 #' @keywords internal
 #'
@@ -4067,23 +4172,17 @@ bedrockagentcorecontrol_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime to update.
 #' @param agentRuntimeArtifact &#91;required&#93; The updated artifact of the AgentCore Runtime.
-#' @param roleArn &#91;required&#93; The updated IAM role ARN that provides permissions for the AgentCore
-#' Runtime.
+#' @param roleArn &#91;required&#93; The updated IAM role ARN that provides permissions for the AgentCore Runtime.
 #' @param networkConfiguration &#91;required&#93; The updated network configuration for the AgentCore Runtime.
 #' @param description The updated description of the AgentCore Runtime.
 #' @param authorizerConfiguration The updated authorizer configuration for the AgentCore Runtime.
-#' @param requestHeaderConfiguration The updated configuration for HTTP request headers that will be passed
-#' through to the runtime.
-#' @param protocolConfiguration 
+#' @param requestHeaderConfiguration The updated configuration for HTTP request headers that will be passed through to the runtime.
+#' @param protocolConfiguration The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.
 #' @param lifecycleConfiguration The updated life cycle configuration for the AgentCore Runtime.
-#' @param metadataConfiguration The updated configuration for microVM Metadata Service (MMDS) settings
-#' for the AgentCore Runtime.
-#' @param environmentVariables Updated environment variables to set in the AgentCore Runtime
-#' environment.
-#' @param filesystemConfigurations The updated filesystem configurations to mount into the AgentCore
-#' Runtime.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param metadataConfiguration The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.
+#' @param environmentVariables Updated environment variables to set in the AgentCore Runtime environment.
+#' @param filesystemConfigurations The updated filesystem configurations to mount into the AgentCore Runtime.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -4114,13 +4213,11 @@ bedrockagentcorecontrol_update_agent_runtime <- function(agentRuntimeId, agentRu
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_agent_runtime_endpoint/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_agent_runtime_endpoint/) for full documentation.
 #'
-#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime associated with the
-#' endpoint.
+#' @param agentRuntimeId &#91;required&#93; The unique identifier of the AgentCore Runtime associated with the endpoint.
 #' @param endpointName &#91;required&#93; The name of the AgentCore Runtime endpoint to update.
 #' @param agentRuntimeVersion The updated version of the AgentCore Runtime for the endpoint.
 #' @param description The updated description of the AgentCore Runtime endpoint.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -4152,8 +4249,7 @@ bedrockagentcorecontrol_update_agent_runtime_endpoint <- function(agentRuntimeId
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_api_key_credential_provider/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_api_key_credential_provider/) for full documentation.
 #'
 #' @param name &#91;required&#93; The name of the API key credential provider to update.
-#' @param apiKey &#91;required&#93; The new API key to use for authentication. This value replaces the
-#' existing API key and is encrypted and stored securely.
+#' @param apiKey &#91;required&#93; The new API key to use for authentication. This value replaces the existing API key and is encrypted and stored securely.
 #'
 #' @keywords internal
 #'
@@ -4185,26 +4281,15 @@ bedrockagentcorecontrol_update_api_key_credential_provider <- function(name, api
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_configuration_bundle/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_configuration_bundle/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param bundleId &#91;required&#93; The unique identifier of the configuration bundle to update.
 #' @param bundleName The updated name for the configuration bundle.
 #' @param description The updated description for the configuration bundle.
-#' @param components The updated component configurations. Creates a new version of the
-#' bundle.
-#' @param parentVersionIds A list of parent version identifiers for lineage tracking. Regular
-#' commits have a single parent. Merge commits have two parents: the target
-#' branch parent and the source branch parent. If the branch already
-#' exists, the first parent must be the latest version on that branch.
-#' @param branchName The branch name for this version. If not specified, inherits the
-#' parent's branch or defaults to `mainline`.
+#' @param components The updated component configurations. Creates a new version of the bundle.
+#' @param parentVersionIds A list of parent version identifiers for lineage tracking. Regular commits have a single parent. Merge commits have two parents: the target branch parent and the source branch parent. If the branch already exists, the first parent must be the latest version on that branch.
+#' @param branchName The branch name for this version. If not specified, inherits the parent's branch or defaults to `mainline`.
 #' @param commitMessage A commit message describing the changes in this version.
-#' @param createdBy The source that created this version, including the source name and
-#' optional ARN.
+#' @param createdBy The source that created this version, including the source name and optional ARN.
 #'
 #' @keywords internal
 #'
@@ -4228,6 +4313,72 @@ bedrockagentcorecontrol_update_configuration_bundle <- function(clientToken = NU
 }
 .bedrockagentcorecontrol$operations$update_configuration_bundle <- bedrockagentcorecontrol_update_configuration_bundle
 
+#' Updates a dataset's metadata
+#'
+#' @description
+#' Updates a dataset's metadata. Synchronous operation. Only provided fields are updated; omitted fields remain unchanged.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_dataset/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_dataset/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset to update.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param description The updated description for the dataset.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_update_dataset
+bedrockagentcorecontrol_update_dataset <- function(datasetId, clientToken = NULL, description = NULL) {
+  op <- new_operation(
+    name = "UpdateDataset",
+    http_method = "PUT",
+    http_path = "/datasets/{datasetId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$update_dataset_input(datasetId = datasetId, clientToken = clientToken, description = description)
+  output <- .bedrockagentcorecontrol$update_dataset_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$update_dataset <- bedrockagentcorecontrol_update_dataset
+
+#' Updates multiple existing examples in-place on DRAFT
+#'
+#' @description
+#' Updates multiple existing examples in-place on DRAFT.
+#'
+#' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_dataset_examples/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_dataset_examples/) for full documentation.
+#'
+#' @param datasetId &#91;required&#93; The unique identifier of the dataset.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param examples &#91;required&#93; Examples to update. Each element is a JSON object containing a required `exampleId` string field identifying the existing example, plus the replacement fields. The `exampleId` is extracted and removed before persistence; the remaining document is validated against the dataset's schemaType. Max 1000 examples per call. Total request body must not exceed 5 MB.
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockagentcorecontrol_update_dataset_examples
+bedrockagentcorecontrol_update_dataset_examples <- function(datasetId, clientToken = NULL, examples) {
+  op <- new_operation(
+    name = "UpdateDatasetExamples",
+    http_method = "POST",
+    http_path = "/datasets/{datasetId}/examples/update",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockagentcorecontrol$update_dataset_examples_input(datasetId = datasetId, clientToken = clientToken, examples = examples)
+  output <- .bedrockagentcorecontrol$update_dataset_examples_output()
+  config <- get_config()
+  svc <- .bedrockagentcorecontrol$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockagentcorecontrol$operations$update_dataset_examples <- bedrockagentcorecontrol_update_dataset_examples
+
 #' Updates a custom evaluator's configuration, description, or evaluation
 #' level
 #'
@@ -4236,28 +4387,12 @@ bedrockagentcorecontrol_update_configuration_bundle <- function(clientToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_evaluator/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_evaluator/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param evaluatorId &#91;required&#93; The unique identifier of the evaluator to update.
 #' @param description The updated description of the evaluator.
-#' @param evaluatorConfig The updated configuration for the evaluator. Specify either
-#' LLM-as-a-Judge settings with instructions, rating scale, and model
-#' configuration, or code-based settings with a customer-managed Lambda
-#' function.
-#' @param level The updated evaluation level (`TOOL_CALL`, `TRACE`, or `SESSION`) that
-#' determines the scope of evaluation.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed KMS key to use for
-#' encrypting sensitive evaluator data. Specify a new key ARN to rotate the
-#' encryption key, or specify a key ARN to add encryption to an evaluator
-#' that was previously created without one. When you rotate to a new key,
-#' the service decrypts the existing data with the old key and re-encrypts
-#' it with the new key. Only symmetric encryption KMS keys are supported.
-#' For more information, see [Encryption at rest for AgentCore
-#' Evaluations](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html).
+#' @param evaluatorConfig The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.
+#' @param level The updated evaluation level (`TOOL_CALL`, `TRACE`, or `SESSION`) that determines the scope of evaluation.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify a key ARN to add encryption to an evaluator that was previously created without one. When you rotate to a new key, the service decrypts the existing data with the old key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported. For more information, see [Encryption at rest for AgentCore Evaluations](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html).
 #'
 #' @keywords internal
 #'
@@ -4289,29 +4424,21 @@ bedrockagentcorecontrol_update_evaluator <- function(clientToken = NULL, evaluat
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_gateway/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_gateway/) for full documentation.
 #'
 #' @param gatewayIdentifier &#91;required&#93; The identifier of the gateway to update.
-#' @param name &#91;required&#93; The name of the gateway. This name must be the same as the one when the
-#' gateway was created.
+#' @param name &#91;required&#93; The name of the gateway. This name must be the same as the one when the gateway was created.
 #' @param description The updated description for the gateway.
 #' @param roleArn &#91;required&#93; The updated IAM role ARN that provides permissions for the gateway.
 #' @param protocolType The updated protocol type for the gateway.
-#' @param protocolConfiguration 
+#' @param protocolConfiguration The configuration for a gateway protocol. This structure defines how the gateway communicates with external services.
 #' @param authorizerType &#91;required&#93; The updated authorizer type for the gateway.
 #' @param authorizerConfiguration The updated authorizer configuration for the gateway.
 #' @param kmsKeyArn The updated ARN of the KMS key used to encrypt the gateway.
 #' @param interceptorConfigurations The updated interceptor configurations for the gateway.
-#' @param policyEngineConfiguration The updated policy engine configuration for the gateway. A policy engine
-#' is a collection of policies that evaluates and authorizes agent tool
-#' calls. When associated with a gateway, the policy engine intercepts all
-#' agent requests and determines whether to allow or deny each action based
-#' on the defined policies.
-#' @param exceptionLevel The level of detail in error messages returned when invoking the
-#' gateway.
+#' @param policyEngineConfiguration The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.
+#' @param exceptionLevel The level of detail in error messages returned when invoking the gateway.
 #' 
-#' -   If the value is `DEBUG`, granular exception messages are returned to
-#'     help a user debug the gateway.
+#' -   If the value is `DEBUG`, granular exception messages are returned to help a user debug the gateway.
 #' 
-#' -   If the value is omitted, a generic error message is returned to the
-#'     end user.
+#' -   If the value is omitted, a generic error message is returned to the end user.
 #'
 #' @keywords internal
 #'
@@ -4382,12 +4509,10 @@ bedrockagentcorecontrol_update_gateway_rule <- function(gatewayIdentifier, ruleI
 #' @param targetId &#91;required&#93; The unique identifier of the gateway target to update.
 #' @param name &#91;required&#93; The updated name for the gateway target.
 #' @param description The updated description for the gateway target.
-#' @param targetConfiguration &#91;required&#93; 
+#' @param targetConfiguration &#91;required&#93; The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint.
 #' @param credentialProviderConfigurations The updated credential provider configurations for the gateway target.
-#' @param metadataConfiguration Configuration for HTTP header and query parameter propagation to the
-#' gateway target.
-#' @param privateEndpoint The private endpoint configuration for the gateway target. Use this to
-#' connect the gateway to private resources in your VPC.
+#' @param metadataConfiguration Configuration for HTTP header and query parameter propagation to the gateway target.
+#' @param privateEndpoint The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.
 #'
 #' @keywords internal
 #'
@@ -4419,41 +4544,22 @@ bedrockagentcorecontrol_update_gateway_target <- function(gatewayIdentifier, tar
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_harness/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_harness/) for full documentation.
 #'
 #' @param harnessId &#91;required&#93; The ID of the harness to update.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
-#' @param executionRoleArn The ARN of the IAM role that the harness assumes when running. If not
-#' specified, the existing value is retained.
-#' @param environment The compute environment configuration for the harness. If not specified,
-#' the existing value is retained.
-#' @param environmentArtifact The environment artifact for the harness. Use the optionalValue wrapper
-#' to set a new value, or set it to null to clear the existing
-#' configuration.
-#' @param environmentVariables Environment variables to set in the harness runtime environment. If
-#' specified, this replaces all existing environment variables. If not
-#' specified, the existing value is retained.
-#' @param authorizerConfiguration 
-#' @param model The model configuration for the harness. If not specified, the existing
-#' value is retained.
-#' @param systemPrompt The system prompt that defines the agent's behavior. If not specified,
-#' the existing value is retained.
-#' @param tools The tools available to the agent. If specified, this replaces all
-#' existing tools. If not specified, the existing value is retained.
-#' @param skills The skills available to the agent. If specified, this replaces all
-#' existing skills. If not specified, the existing value is retained.
-#' @param allowedTools The tools that the agent is allowed to use. If specified, this replaces
-#' all existing allowed tools. If not specified, the existing value is
-#' retained.
-#' @param memory The AgentCore Memory configuration. Use the optionalValue wrapper to set
-#' a new value, or set it to null to clear the existing configuration.
-#' @param truncation The truncation configuration for managing conversation context. If not
-#' specified, the existing value is retained.
-#' @param maxIterations The maximum number of iterations the agent loop can execute per
-#' invocation. If not specified, the existing value is retained.
-#' @param maxTokens The maximum total number of output tokens the agent can generate across
-#' all model calls within a single invocation. If not specified, the
-#' existing value is retained.
-#' @param timeoutSeconds The maximum duration in seconds for the agent loop execution per
-#' invocation. If not specified, the existing value is retained.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
+#' @param executionRoleArn The ARN of the IAM role that the harness assumes when running. If not specified, the existing value is retained.
+#' @param environment The compute environment configuration for the harness. If not specified, the existing value is retained.
+#' @param environmentArtifact The environment artifact for the harness. Use the optionalValue wrapper to set a new value, or set it to null to clear the existing configuration.
+#' @param environmentVariables Environment variables to set in the harness runtime environment. If specified, this replaces all existing environment variables. If not specified, the existing value is retained.
+#' @param authorizerConfiguration Wrapper for updating an optional AuthorizerConfiguration field with PATCH semantics. When present in an update request, the authorizer configuration is replaced with optionalValue. When absent, the authorizer configuration is left unchanged. To unset, include the wrapper with optionalValue not specified.
+#' @param model The model configuration for the harness. If not specified, the existing value is retained.
+#' @param systemPrompt The system prompt that defines the agent's behavior. If not specified, the existing value is retained.
+#' @param tools The tools available to the agent. If specified, this replaces all existing tools. If not specified, the existing value is retained.
+#' @param skills The skills available to the agent. If specified, this replaces all existing skills. If not specified, the existing value is retained.
+#' @param allowedTools The tools that the agent is allowed to use. If specified, this replaces all existing allowed tools. If not specified, the existing value is retained.
+#' @param memory The AgentCore Memory configuration. Use the optionalValue wrapper to set a new value, or set it to null to clear the existing configuration.
+#' @param truncation The truncation configuration for managing conversation context. If not specified, the existing value is retained.
+#' @param maxIterations The maximum number of iterations the agent loop can execute per invocation. If not specified, the existing value is retained.
+#' @param maxTokens The maximum total number of output tokens the agent can generate across all model calls within a single invocation. If not specified, the existing value is retained.
+#' @param timeoutSeconds The maximum duration in seconds for the agent loop execution per invocation. If not specified, the existing value is retained.
 #'
 #' @keywords internal
 #'
@@ -4484,18 +4590,13 @@ bedrockagentcorecontrol_update_harness <- function(harnessId, clientToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_memory/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_memory/) for full documentation.
 #'
-#' @param clientToken A client token is used for keeping track of idempotent requests. It can
-#' contain a session id which can be around 250 chars, combined with a
-#' unique AWS identifier.
+#' @param clientToken A client token is used for keeping track of idempotent requests. It can contain a session id which can be around 250 chars, combined with a unique AWS identifier.
 #' @param memoryId &#91;required&#93; The unique identifier of the memory to update.
 #' @param description The updated description of the AgentCore Memory resource.
-#' @param eventExpiryDuration The number of days after which memory events will expire, between 7 and
-#' 365 days.
-#' @param memoryExecutionRoleArn The ARN of the IAM role that provides permissions for the AgentCore
-#' Memory resource.
+#' @param eventExpiryDuration The number of days after which memory events will expire, between 7 and 365 days.
+#' @param memoryExecutionRoleArn The ARN of the IAM role that provides permissions for the AgentCore Memory resource.
 #' @param memoryStrategies The memory strategies to add, modify, or delete.
-#' @param addIndexedKeys Additional metadata keys to index. Previously indexed keys cannot be
-#' removed.
+#' @param addIndexedKeys Additional metadata keys to index. Previously indexed keys cannot be removed.
 #' @param streamDeliveryResources Configuration for streaming memory record data to external resources.
 #'
 #' @keywords internal
@@ -4561,21 +4662,13 @@ bedrockagentcorecontrol_update_oauth_2_credential_provider <- function(name, cre
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_online_evaluation_config/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_online_evaluation_config/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param onlineEvaluationConfigId &#91;required&#93; The unique identifier of the online evaluation configuration to update.
 #' @param description The updated description of the online evaluation configuration.
-#' @param rule The updated evaluation rule containing sampling configuration, filters,
-#' and session settings.
-#' @param dataSourceConfig The updated data source configuration specifying CloudWatch log groups
-#' and service names to monitor.
+#' @param rule The updated evaluation rule containing sampling configuration, filters, and session settings.
+#' @param dataSourceConfig The updated data source configuration specifying CloudWatch log groups and service names to monitor.
 #' @param evaluators The updated list of evaluators to apply during online evaluation.
-#' @param evaluationExecutionRoleArn The updated Amazon Resource Name (ARN) of the IAM role used for
-#' evaluation execution.
+#' @param evaluationExecutionRoleArn The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.
 #' @param executionStatus The updated execution status to enable or disable the online evaluation.
 #'
 #' @keywords internal
@@ -4611,14 +4704,8 @@ bedrockagentcorecontrol_update_online_evaluation_config <- function(clientToken 
 #' @param paymentConnectorId &#91;required&#93; The unique identifier of the payment connector to update.
 #' @param description The updated description of the payment connector.
 #' @param type The updated type of the payment connector.
-#' @param credentialProviderConfigurations The updated credential provider configurations for the payment
-#' connector.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param credentialProviderConfigurations The updated credential provider configurations for the payment connector.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @keywords internal
 #'
@@ -4651,8 +4738,8 @@ bedrockagentcorecontrol_update_payment_connector <- function(paymentManagerId, p
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_payment_credential_provider/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_payment_credential_provider/) for full documentation.
 #'
 #' @param name &#91;required&#93; The name of the payment credential provider to update.
-#' @param credentialProviderVendor &#91;required&#93; 
-#' @param providerConfigurationInput &#91;required&#93; Configuration specific to the vendor, including API credentials
+#' @param credentialProviderVendor &#91;required&#93; The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).
+#' @param providerConfigurationInput &#91;required&#93; Configuration specific to the vendor, including API credentials.
 #'
 #' @keywords internal
 #'
@@ -4687,14 +4774,8 @@ bedrockagentcorecontrol_update_payment_credential_provider <- function(name, cre
 #' @param description The updated description of the payment manager.
 #' @param authorizerType The updated authorizer type for the payment manager.
 #' @param authorizerConfiguration The updated authorizer configuration for the payment manager.
-#' @param roleArn The updated Amazon Resource Name (ARN) of the IAM role for the payment
-#' manager.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If you don't specify this field, a
-#' value is randomly generated for you. If this token matches a previous
-#' request, the service ignores the request, but doesn't return an error.
-#' For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param roleArn The updated Amazon Resource Name (ARN) of the IAM role for the payment manager.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @keywords internal
 #'
@@ -4725,25 +4806,11 @@ bedrockagentcorecontrol_update_payment_manager <- function(paymentManagerId, des
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_policy/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_policy/) for full documentation.
 #'
-#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that manages the policy to be
-#' updated. This ensures the policy is updated within the correct policy
-#' engine context.
-#' @param policyId &#91;required&#93; The unique identifier of the policy to be updated. This must be a valid
-#' policy ID that exists within the specified policy engine.
-#' @param description The new human-readable description for the policy. This optional field
-#' allows updating the policy's documentation while keeping the same policy
-#' logic.
-#' @param definition The new Cedar policy statement that defines the access control rules.
-#' This replaces the existing policy definition with new logic while
-#' maintaining the policy's identity.
-#' @param validationMode The validation mode for the policy update. Determines how Cedar analyzer
-#' validation results are handled during policy updates.
-#' FAIL_ON_ANY_FINDINGS runs the Cedar analyzer and fails the update if
-#' validation issues are detected, ensuring the policy conforms to the
-#' Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar
-#' analyzer but allows updates despite validation warnings. Use
-#' FAIL_ON_ANY_FINDINGS to ensure policy correctness during updates,
-#' especially when modifying policy logic or conditions.
+#' @param policyEngineId &#91;required&#93; The identifier of the policy engine that manages the policy to be updated. This ensures the policy is updated within the correct policy engine context.
+#' @param policyId &#91;required&#93; The unique identifier of the policy to be updated. This must be a valid policy ID that exists within the specified policy engine.
+#' @param description The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.
+#' @param definition The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.
+#' @param validationMode The validation mode for the policy update. Determines how Cedar analyzer validation results are handled during policy updates. FAIL_ON_ANY_FINDINGS runs the Cedar analyzer and fails the update if validation issues are detected, ensuring the policy conforms to the Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows updates despite validation warnings. Use FAIL_ON_ANY_FINDINGS to ensure policy correctness during updates, especially when modifying policy logic or conditions.
 #'
 #' @keywords internal
 #'
@@ -4806,19 +4873,11 @@ bedrockagentcorecontrol_update_policy_engine <- function(policyEngineId, descrip
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_registry/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_registry/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry to update. You can specify either the
-#' Amazon Resource Name (ARN) or the ID of the registry.
+#' @param registryId &#91;required&#93; The identifier of the registry to update. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
 #' @param name The updated name of the registry.
-#' @param description The updated description of the registry. To clear the description,
-#' include the `UpdatedDescription` wrapper with `optionalValue` not
-#' specified.
-#' @param authorizerConfiguration The updated authorizer configuration for the registry. Changing the
-#' authorizer configuration can break existing consumers of the registry
-#' who are using the authorization type prior to the update.
-#' @param approvalConfiguration The updated approval configuration for registry records. The updated
-#' configuration only affects new records that move to `PENDING_APPROVAL`
-#' status after the change. Existing records already in `PENDING_APPROVAL`
-#' status are not affected.
+#' @param description The updated description of the registry. To clear the description, include the `UpdatedDescription` wrapper with `optionalValue` not specified.
+#' @param authorizerConfiguration The updated authorizer configuration for the registry. Changing the authorizer configuration can break existing consumers of the registry who are using the authorization type prior to the update.
+#' @param approvalConfiguration The updated approval configuration for registry records. The updated configuration only affects new records that move to `PENDING_APPROVAL` status after the change. Existing records already in `PENDING_APPROVAL` status are not affected.
 #'
 #' @keywords internal
 #'
@@ -4849,28 +4908,16 @@ bedrockagentcorecontrol_update_registry <- function(registryId, name = NULL, des
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_registry_record/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_registry_record/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify
-#' either the Amazon Resource Name (ARN) or the ID of the registry.
-#' @param recordId &#91;required&#93; The identifier of the registry record to update. You can specify either
-#' the Amazon Resource Name (ARN) or the ID of the record.
+#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
+#' @param recordId &#91;required&#93; The identifier of the registry record to update. You can specify either the Amazon Resource Name (ARN) or the ID of the record.
 #' @param name The updated name for the registry record.
-#' @param description The updated description for the registry record. To clear the
-#' description, include the `UpdatedDescription` wrapper with
-#' `optionalValue` not specified.
-#' @param descriptorType The updated descriptor type for the registry record. Changing the
-#' descriptor type may require updating the `descriptors` field to match
-#' the new type's schema requirements.
-#' @param descriptors The updated descriptor-type-specific configuration containing the
-#' resource schema and metadata. Uses PATCH semantics where individual
-#' descriptor fields can be updated independently.
-#' @param recordVersion The version of the registry record for optimistic locking. If provided,
-#' it must match the current version of the record. The service
-#' automatically increments the version after a successful update.
+#' @param description The updated description for the registry record. To clear the description, include the `UpdatedDescription` wrapper with `optionalValue` not specified.
+#' @param descriptorType The updated descriptor type for the registry record. Changing the descriptor type may require updating the `descriptors` field to match the new type's schema requirements.
+#' @param descriptors The updated descriptor-type-specific configuration containing the resource schema and metadata. Uses PATCH semantics where individual descriptor fields can be updated independently.
+#' @param recordVersion The version of the registry record for optimistic locking. If provided, it must match the current version of the record. The service automatically increments the version after a successful update.
 #' @param synchronizationType The updated synchronization type for the registry record.
 #' @param synchronizationConfiguration The updated synchronization configuration for the registry record.
-#' @param triggerSynchronization Whether to trigger synchronization using the stored or provided
-#' configuration. When set to `true`, the service will synchronize the
-#' record metadata from the configured external source.
+#' @param triggerSynchronization Whether to trigger synchronization using the stored or provided configuration. When set to `true`, the service will synchronize the record metadata from the configured external source.
 #'
 #' @keywords internal
 #'
@@ -4901,13 +4948,10 @@ bedrockagentcorecontrol_update_registry_record <- function(registryId, recordId,
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_registry_record_status/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_registry_record_status/) for full documentation.
 #'
-#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify
-#' either the Amazon Resource Name (ARN) or the ID of the registry.
-#' @param recordId &#91;required&#93; The identifier of the registry record to update the status for. You can
-#' specify either the Amazon Resource Name (ARN) or the ID of the record.
+#' @param registryId &#91;required&#93; The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.
+#' @param recordId &#91;required&#93; The identifier of the registry record to update the status for. You can specify either the Amazon Resource Name (ARN) or the ID of the record.
 #' @param status &#91;required&#93; The target status for the registry record.
-#' @param statusReason &#91;required&#93; The reason for the status change, such as why the record was approved or
-#' rejected.
+#' @param statusReason &#91;required&#93; The reason for the status change, such as why the record was approved or rejected.
 #'
 #' @keywords internal
 #'
@@ -4939,8 +4983,7 @@ bedrockagentcorecontrol_update_registry_record_status <- function(registryId, re
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_workload_identity/](https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_update_workload_identity/) for full documentation.
 #'
 #' @param name &#91;required&#93; The name of the workload identity to update.
-#' @param allowedResourceOauth2ReturnUrls The new list of allowed OAuth2 return URLs for resources associated with
-#' this workload identity. This list replaces the existing list.
+#' @param allowedResourceOauth2ReturnUrls The new list of allowed OAuth2 return URLs for resources associated with this workload identity. This list replaces the existing list.
 #'
 #' @keywords internal
 #'

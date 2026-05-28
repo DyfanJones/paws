@@ -16,20 +16,13 @@ servicediscovery_create_public_dns_namespace(
 \arguments{
 \item{Name}{[required] The name that you want to assign to this namespace.
 
-Do not include sensitive information in the name. The name is publicly
-available using DNS queries.}
+Do not include sensitive information in the name. The name is publicly available using DNS queries.}
 
-\item{CreatorRequestId}{A unique string that identifies the request and that allows failed
-\code{\link[=servicediscovery_create_public_dns_namespace]{create_public_dns_namespace}}
-requests to be retried without the risk of running the operation twice.
-\code{CreatorRequestId} can be any unique string (for example, a
-date/timestamp).}
+\item{CreatorRequestId}{A unique string that identifies the request and that allows failed \code{\link[=servicediscovery_create_public_dns_namespace]{create_public_dns_namespace}} requests to be retried without the risk of running the operation twice. \code{CreatorRequestId} can be any unique string (for example, a date/timestamp).}
 
 \item{Description}{A description for the namespace.}
 
-\item{Tags}{The tags to add to the namespace. Each tag consists of a key and an
-optional value that you define. Tags keys can be up to 128 characters in
-length, and tag values can be up to 256 characters in length.}
+\item{Tags}{The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.}
 
 \item{Properties}{Properties for the public DNS namespace.}
 }

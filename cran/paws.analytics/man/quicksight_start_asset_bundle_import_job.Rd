@@ -18,32 +18,23 @@ quicksight_start_asset_bundle_import_job(
 \arguments{
 \item{AwsAccountId}{[required] The ID of the Amazon Web Services account to import assets into.}
 
-\item{AssetBundleImportJobId}{[required] The ID of the job. This ID is unique while the job is running. After the
-job is completed, you can reuse this ID for another job.}
+\item{AssetBundleImportJobId}{[required] The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.}
 
-\item{AssetBundleImportSource}{[required] The source of the asset bundle zip file that contains the data that you
-want to import. The file must be in \code{QUICKSIGHT_JSON} format.}
+\item{AssetBundleImportSource}{[required] The source of the asset bundle zip file that contains the data that you want to import. The file must be in \code{QUICKSIGHT_JSON} format.}
 
-\item{OverrideParameters}{Optional overrides that are applied to the resource configuration before
-import.}
+\item{OverrideParameters}{Optional overrides that are applied to the resource configuration before import.}
 
 \item{FailureAction}{The failure action for the import job.
 
-If you choose \code{ROLLBACK}, failed import jobs will attempt to undo any
-asset changes caused by the failed job.
+If you choose \code{ROLLBACK}, failed import jobs will attempt to undo any asset changes caused by the failed job.
 
-If you choose \code{DO_NOTHING}, failed import jobs will not attempt to roll
-back any asset changes caused by the failed job, possibly keeping the
-Amazon Quick Sight account in an inconsistent state.}
+If you choose \code{DO_NOTHING}, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon Quick Sight account in an inconsistent state.}
 
-\item{OverridePermissions}{Optional permission overrides that are applied to the resource
-configuration before import.}
+\item{OverridePermissions}{Optional permission overrides that are applied to the resource configuration before import.}
 
-\item{OverrideTags}{Optional tag overrides that are applied to the resource configuration
-before import.}
+\item{OverrideTags}{Optional tag overrides that are applied to the resource configuration before import.}
 
-\item{OverrideValidationStrategy}{An optional validation strategy override for all analyses and dashboards
-that is applied to the resource configuration before import.}
+\item{OverrideValidationStrategy}{An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import.}
 }
 \description{
 Starts an Asset Bundle import job.

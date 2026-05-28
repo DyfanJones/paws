@@ -12,23 +12,20 @@ redshift_create_cluster_subnet_group(
 )
 }
 \arguments{
-\item{ClusterSubnetGroupName}{[required] The name for the subnet group. Amazon Redshift stores the value as a
-lowercase string.
+\item{ClusterSubnetGroupName}{[required] The name for the subnet group. Amazon Redshift stores the value as a lowercase string.
 
 Constraints:
 \itemize{
 \item Must contain no more than 255 alphanumeric characters or hyphens.
 \item Must not be "Default".
-\item Must be unique for all subnet groups that are created by your Amazon
-Web Services account.
+\item Must be unique for all subnet groups that are created by your Amazon Web Services account.
 }
 
 Example: \code{examplesubnetgroup}}
 
 \item{Description}{[required] A description for the subnet group.}
 
-\item{SubnetIds}{[required] An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-single request.}
+\item{SubnetIds}{[required] An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.}
 
 \item{Tags}{A list of tag instances.}
 }

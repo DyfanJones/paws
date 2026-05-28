@@ -19,8 +19,7 @@ translate_update_parallel_data(
 
 \item{ParallelDataConfig}{[required] Specifies the format and S3 location of the parallel data input file.}
 
-\item{ClientToken}{[required] A unique identifier for the request. This token is automatically
-generated when you use Amazon Translate through an AWS SDK.}
+\item{ClientToken}{[required] A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.}
 }
 \description{
 Updates a previously created parallel data resource by importing a new input file from Amazon S3.

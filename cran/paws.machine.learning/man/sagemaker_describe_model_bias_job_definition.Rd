@@ -7,8 +7,7 @@
 sagemaker_describe_model_bias_job_definition(JobDefinitionName)
 }
 \arguments{
-\item{JobDefinitionName}{[required] The name of the model bias job definition. The name must be unique
-within an Amazon Web Services Region in the Amazon Web Services account.}
+\item{JobDefinitionName}{[required] The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.}
 }
 \description{
 Returns a description of a model bias job definition.

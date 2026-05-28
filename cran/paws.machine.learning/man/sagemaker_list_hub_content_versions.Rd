@@ -29,11 +29,9 @@ sagemaker_list_hub_content_versions(
 
 \item{MaxSchemaVersion}{The upper bound of the hub content schema version.}
 
-\item{CreationTimeBefore}{Only list hub content versions that were created before the time
-specified.}
+\item{CreationTimeBefore}{Only list hub content versions that were created before the time specified.}
 
-\item{CreationTimeAfter}{Only list hub content versions that were created after the time
-specified.}
+\item{CreationTimeAfter}{Only list hub content versions that were created after the time specified.}
 
 \item{SortBy}{Sort hub content versions by either name or creation time.}
 
@@ -41,10 +39,7 @@ specified.}
 
 \item{MaxResults}{The maximum number of hub content versions to list.}
 
-\item{NextToken}{If the response to a previous
-\code{\link[=sagemaker_list_hub_content_versions]{list_hub_content_versions}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of hub content versions, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_hub_content_versions]{list_hub_content_versions}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of hub content versions, use the token in the next request.}
 }
 \description{
 List hub content versions.

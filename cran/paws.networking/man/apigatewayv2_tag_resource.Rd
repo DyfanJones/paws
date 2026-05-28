@@ -9,8 +9,7 @@ apigatewayv2_tag_resource(ResourceArn, Tags = NULL)
 \arguments{
 \item{ResourceArn}{[required] The resource ARN for the tag.}
 
-\item{Tags}{The collection of tags. Each tag element is associated with a given
-resource.}
+\item{Tags}{The collection of tags. Each tag element is associated with a given resource.}
 }
 \description{
 Creates a new Tag resource to represent a tag.

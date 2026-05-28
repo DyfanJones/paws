@@ -11,13 +11,11 @@ codecommit_batch_associate_approval_rule_template_with_repositories(
 )
 }
 \arguments{
-\item{approvalRuleTemplateName}{[required] The name of the template you want to associate with one or more
-repositories.}
+\item{approvalRuleTemplateName}{[required] The name of the template you want to associate with one or more repositories.}
 
 \item{repositoryNames}{[required] The names of the repositories you want to associate with the template.
 
-The length constraint limit is for each string in the array. The array
-itself can be empty.}
+The length constraint limit is for each string in the array. The array itself can be empty.}
 }
 \description{
 Creates an association between an approval rule template and one or more specified repositories.

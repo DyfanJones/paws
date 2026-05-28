@@ -14,20 +14,17 @@ datazone_create_subscription_grant(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription grant is
-created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription grant is created.}
 
 \item{environmentIdentifier}{[required] The ID of the environment in which the subscription grant is created.}
 
-\item{subscriptionTargetIdentifier}{The ID of the subscription target for which the subscription grant is
-created.}
+\item{subscriptionTargetIdentifier}{The ID of the subscription target for which the subscription grant is created.}
 
 \item{grantedEntity}{[required] The entity to which the subscription is to be granted.}
 
 \item{assetTargetNames}{The names of the assets for which the subscription grant is created.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a subsscription grant in Amazon DataZone.

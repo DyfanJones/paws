@@ -7,9 +7,7 @@
 cloudhsm_list_luna_clients(NextToken = NULL)
 }
 \arguments{
-\item{NextToken}{The \code{NextToken} value from a previous call to
-\code{\link[=cloudhsm_list_luna_clients]{list_luna_clients}}. Pass null if this is
-the first call.}
+\item{NextToken}{The \code{NextToken} value from a previous call to \code{\link[=cloudhsm_list_luna_clients]{list_luna_clients}}. Pass null if this is the first call.}
 }
 \description{
 This is documentation for \strong{AWS CloudHSM Classic}. For more information, see \href{https://aws.amazon.com/cloudhsm/faqs/}{AWS CloudHSM Classic FAQs}, the AWS CloudHSM Classic User Guide, and the AWS CloudHSM Classic API Reference.

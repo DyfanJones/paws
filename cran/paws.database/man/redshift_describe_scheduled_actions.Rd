@@ -20,30 +20,17 @@ redshift_describe_scheduled_actions(
 
 \item{TargetActionType}{The type of the scheduled actions to retrieve.}
 
-\item{StartTime}{The start time in UTC of the scheduled actions to retrieve. Only active
-scheduled actions that have invocations after this time are retrieved.}
+\item{StartTime}{The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.}
 
-\item{EndTime}{The end time in UTC of the scheduled action to retrieve. Only active
-scheduled actions that have invocations before this time are retrieved.}
+\item{EndTime}{The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.}
 
-\item{Active}{If true, retrieve only active scheduled actions. If false, retrieve only
-disabled scheduled actions.}
+\item{Active}{If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions.}
 
 \item{Filters}{List of scheduled action filters.}
 
-\item{Marker}{An optional parameter that specifies the starting point to return a set
-of response records. When the results of a
-\code{\link[=redshift_describe_scheduled_actions]{describe_scheduled_actions}}
-request exceed the value specified in \code{MaxRecords}, Amazon Web Services
-returns a value in the \code{Marker} field of the response. You can retrieve
-the next set of response records by providing the returned marker value
-in the \code{Marker} parameter and retrying the request.}
+\item{Marker}{An optional parameter that specifies the starting point to return a set of response records. When the results of a \code{\link[=redshift_describe_scheduled_actions]{describe_scheduled_actions}} request exceed the value specified in \code{MaxRecords}, Amazon Web Services returns a value in the \code{Marker} field of the response. You can retrieve the next set of response records by providing the returned marker value in the \code{Marker} parameter and retrying the request.}
 
-\item{MaxRecords}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.
+\item{MaxRecords}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 
 Default: \code{100}
 

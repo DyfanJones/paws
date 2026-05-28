@@ -12,16 +12,13 @@ budgets_describe_notifications_for_budget(
 )
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose notifications
-you want descriptions of.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose notifications you want descriptions of.}
 
 \item{BudgetName}{[required] The name of the budget whose notifications you want descriptions of.}
 
-\item{MaxResults}{An optional integer that represents how many entries a paginated
-response contains.}
+\item{MaxResults}{An optional integer that represents how many entries a paginated response contains.}
 
-\item{NextToken}{The pagination token that you include in your request to indicate the
-next set of results that you want to retrieve.}
+\item{NextToken}{The pagination token that you include in your request to indicate the next set of results that you want to retrieve.}
 }
 \description{
 Lists the notifications that are associated with a budget.

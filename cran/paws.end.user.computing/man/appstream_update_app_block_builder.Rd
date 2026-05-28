@@ -29,8 +29,7 @@ appstream_update_app_block_builder(
 
 \code{WINDOWS_SERVER_2019} is the only valid value.}
 
-\item{InstanceType}{The instance type to use when launching the app block builder. The
-following instance types are available:
+\item{InstanceType}{The instance type to use when launching the app block builder. The following instance types are available:
 \itemize{
 \item stream.standard.small
 \item stream.standard.medium
@@ -41,30 +40,19 @@ following instance types are available:
 
 \item{VpcConfig}{The VPC configuration for the app block builder.
 
-App block builders require that you specify at least two subnets in
-different availability zones.}
+App block builders require that you specify at least two subnets in different availability zones.}
 
 \item{EnableDefaultInternetAccess}{Enables or disables default internet access for the app block builder.}
 
-\item{IamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to apply to the app block
-builder. To assume a role, the app block builder calls the AWS Security
-Token Service (STS) \code{AssumeRole} API operation and passes the ARN of the
-role to use. The operation creates a new session with temporary
-credentials. WorkSpaces Applications retrieves the temporary credentials
-and creates the \strong{appstream_machine_role} credential profile on the
-instance.
+\item{IamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) \code{AssumeRole} API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the \strong{appstream_machine_role} credential profile on the instance.
 
-For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html}{Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html}{Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances} in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
 
-\item{AccessEndpoints}{The list of interface VPC endpoint (interface endpoint) objects.
-Administrators can connect to the app block builder only through the
-specified endpoints.}
+\item{AccessEndpoints}{The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.}
 
 \item{AttributesToDelete}{The attributes to delete from the app block builder.}
 
-\item{DisableIMDSV1}{Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and
-enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.}
+\item{DisableIMDSV1}{Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.}
 }
 \description{
 Updates an app block builder.

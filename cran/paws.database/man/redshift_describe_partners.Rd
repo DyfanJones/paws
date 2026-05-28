@@ -14,15 +14,11 @@ redshift_describe_partners(
 \arguments{
 \item{AccountId}{[required] The Amazon Web Services account ID that owns the cluster.}
 
-\item{ClusterIdentifier}{[required] The cluster identifier of the cluster whose partner integration is being
-described.}
+\item{ClusterIdentifier}{[required] The cluster identifier of the cluster whose partner integration is being described.}
 
-\item{DatabaseName}{The name of the database whose partner integration is being described.
-If database name is not specified, then all databases in the cluster are
-described.}
+\item{DatabaseName}{The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.}
 
-\item{PartnerName}{The name of the partner that is being described. If partner name is not
-specified, then all partner integrations are described.}
+\item{PartnerName}{The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.}
 }
 \description{
 Returns information about the partner integrations defined for a cluster.

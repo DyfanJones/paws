@@ -9,8 +9,7 @@ and the location that logs are sent to}
 route53resolver_get_resolver_query_log_config(ResolverQueryLogConfigId)
 }
 \arguments{
-\item{ResolverQueryLogConfigId}{[required] The ID of the Resolver query logging configuration that you want to get
-information about.}
+\item{ResolverQueryLogConfigId}{[required] The ID of the Resolver query logging configuration that you want to get information about.}
 }
 \description{
 Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to.

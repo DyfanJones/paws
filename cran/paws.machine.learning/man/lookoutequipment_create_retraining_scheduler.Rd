@@ -16,14 +16,9 @@ lookoutequipment_create_retraining_scheduler(
 \arguments{
 \item{ModelName}{[required] The name of the model to add the retraining scheduler to.}
 
-\item{RetrainingStartDate}{The start date for the retraining scheduler. Lookout for Equipment
-truncates the time you provide to the nearest UTC day.}
+\item{RetrainingStartDate}{The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.}
 
-\item{RetrainingFrequency}{[required] This parameter uses the \href{https://en.wikipedia.org/wiki/ISO_8601#Durations}{ISO 8601} standard to set
-the frequency at which you want retraining to occur in terms of Years,
-Months, and/or Days (note: other parameters like Time are not currently
-supported). The minimum value is 30 days (P30D) and the maximum value is
-1 year (P1Y). For example, the following values are valid:
+\item{RetrainingFrequency}{[required] This parameter uses the \href{https://en.wikipedia.org/wiki/ISO_8601#Durations}{ISO 8601} standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:
 \itemize{
 \item P3M15D – Every 3 months and 15 days
 \item P2M – Every 2 months
@@ -32,13 +27,9 @@ supported). The minimum value is 30 days (P30D) and the maximum value is
 
 \item{LookbackWindow}{[required] The number of past days of data that will be used for retraining.}
 
-\item{PromoteMode}{Indicates how the service will use new models. In \code{MANAGED} mode, new
-models will automatically be used for inference if they have better
-performance than the current model. In \code{MANUAL} mode, the new models
-will not be used \href{https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation}{until they are manually activated}.}
+\item{PromoteMode}{Indicates how the service will use new models. In \code{MANAGED} mode, new models will automatically be used for inference if they have better performance than the current model. In \code{MANUAL} mode, the new models will not be used \href{https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation}{until they are manually activated}.}
 
-\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client
-request token, Amazon Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.}
 }
 \description{
 Creates a retraining scheduler on the specified model.

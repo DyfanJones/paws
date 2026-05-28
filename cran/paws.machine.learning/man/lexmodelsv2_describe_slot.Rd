@@ -13,9 +13,7 @@ lexmodelsv2_describe_slot(slotId, botId, botVersion, localeId, intentId)
 
 \item{botVersion}{[required] The version of the bot associated with the slot.}
 
-\item{localeId}{[required] The identifier of the language and locale of the slot to describe. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{intentId}{[required] The identifier of the intent that contains the slot.}
 }

@@ -8,10 +8,7 @@ development environments (IDEs) and a remote SageMaker space}
 sagemaker_start_session(ResourceIdentifier)
 }
 \arguments{
-\item{ResourceIdentifier}{[required] The Amazon Resource Name (ARN) of the resource to which the remote
-connection will be established. For example, this identifies the
-specific ARN space application you want to connect to from your local
-IDE.}
+\item{ResourceIdentifier}{[required] The Amazon Resource Name (ARN) of the resource to which the remote connection will be established. For example, this identifies the specific ARN space application you want to connect to from your local IDE.}
 }
 \description{
 Initiates a remote connection session between a local integrated development environments (IDEs) and a remote SageMaker space.

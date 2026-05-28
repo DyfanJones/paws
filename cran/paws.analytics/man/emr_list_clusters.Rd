@@ -17,9 +17,7 @@ emr_list_clusters(
 
 \item{CreatedBefore}{The creation date and time end value filter for listing clusters.}
 
-\item{ClusterStates}{The cluster state filters to apply when listing clusters. Clusters that
-change state while this action runs may be not be returned as expected
-in the list of clusters.}
+\item{ClusterStates}{The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.}
 
 \item{Marker}{The pagination token that indicates the next set of results to retrieve.}
 }

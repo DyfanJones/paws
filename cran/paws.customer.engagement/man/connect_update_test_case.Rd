@@ -33,9 +33,7 @@ connect_update_test_case(
 
 \item{Description}{The description of the test case.}
 
-\item{Status}{Indicates the test status as either SAVED or PUBLISHED. The PUBLISHED
-status will initiate validation on the content. The SAVED status does
-not initiate validation of the content.}
+\item{Status}{Indicates the test status as either SAVED or PUBLISHED. The PUBLISHED status will initiate validation on the content. The SAVED status does not initiate validation of the content.}
 
 \item{LastModifiedTime}{The time at which the resource was last modified.}
 

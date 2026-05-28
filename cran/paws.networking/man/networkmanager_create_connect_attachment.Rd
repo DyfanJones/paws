@@ -22,8 +22,7 @@ networkmanager_create_connect_attachment(
 
 \item{TransportAttachmentId}{[required] The ID of the attachment between the two connections.}
 
-\item{RoutingPolicyLabel}{The routing policy label to apply to the Connect attachment for traffic
-routing decisions.}
+\item{RoutingPolicyLabel}{The routing policy label to apply to the Connect attachment for traffic routing decisions.}
 
 \item{Options}{[required] Options for creating an attachment.}
 

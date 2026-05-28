@@ -12,8 +12,7 @@ redshiftserverless_update_snapshot_copy_configuration(
 \arguments{
 \item{snapshotCopyConfigurationId}{[required] The ID of the snapshot copy configuration to update.}
 
-\item{snapshotRetentionPeriod}{The new retention period of how long to keep a snapshot in the
-destination Amazon Web Services Region.}
+\item{snapshotRetentionPeriod}{The new retention period of how long to keep a snapshot in the destination Amazon Web Services Region.}
 }
 \description{
 Updates a snapshot copy configuration.

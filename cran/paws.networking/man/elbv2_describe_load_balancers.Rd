@@ -12,13 +12,11 @@ elbv2_describe_load_balancers(
 )
 }
 \arguments{
-\item{LoadBalancerArns}{The Amazon Resource Names (ARN) of the load balancers. You can specify
-up to 20 load balancers in a single call.}
+\item{LoadBalancerArns}{The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.}
 
 \item{Names}{The names of the load balancers.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{PageSize}{The maximum number of results to return with this call.}
 }

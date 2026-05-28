@@ -7,8 +7,7 @@
 chatbot_delete_slack_channel_configuration(ChatConfigurationArn)
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the SlackChannelConfiguration to
-delete.}
+\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the SlackChannelConfiguration to delete.}
 }
 \description{
 Deletes a Slack channel configuration for AWS Chatbot

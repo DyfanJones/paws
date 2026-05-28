@@ -50,14 +50,11 @@ Operations section.
 \description{
 Amazon Managed Workflows for Apache Airflow
 
-This section contains the Amazon Managed Workflows for Apache Airflow
-(MWAA) API reference documentation. For more information, see \href{https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html}{What is Amazon MWAA?}.
+This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see \href{https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html}{What is Amazon MWAA?}.
 
 \strong{Endpoints}
 \itemize{
-\item \verb{api.airflow.\{region\}.amazonaws.com} (use
-\verb{api.airflow.\{region\}.api.aws} for IPv6) - This endpoint is used for
-environment management.
+\item \verb{api.airflow.\{region\}.amazonaws.com} (use \verb{api.airflow.\{region\}.api.aws} for IPv6) - This endpoint is used for environment management.
 \itemize{
 \item \code{create_environment}
 \item \code{delete_environment}
@@ -68,9 +65,7 @@ environment management.
 \item \code{untag_resource}
 \item \code{update_environment}
 }
-\item \verb{env.airflow.\{region\}.amazonaws.com} (use
-\verb{env.airflow.\{region\}.api.aws} for IPv6) - This endpoint is used to
-operate the Airflow environment.
+\item \verb{env.airflow.\{region\}.amazonaws.com} (use \verb{env.airflow.\{region\}.api.aws} for IPv6) - This endpoint is used to operate the Airflow environment.
 \itemize{
 \item \code{create_cli_token}
 \item \code{create_web_login_token}
@@ -80,8 +75,7 @@ operate the Airflow environment.
 
 \strong{Regions}
 
-For a list of supported regions, see \href{https://docs.aws.amazon.com/general/latest/gr/mwaa.html}{Amazon MWAA endpoints and quotas} in the
-\emph{Amazon Web Services General Reference}.
+For a list of supported regions, see \href{https://docs.aws.amazon.com/general/latest/gr/mwaa.html}{Amazon MWAA endpoints and quotas} in the \emph{Amazon Web Services General Reference}.
 }
 \section{Service syntax}{
 

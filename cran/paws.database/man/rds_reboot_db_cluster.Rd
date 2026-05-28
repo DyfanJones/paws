@@ -8,8 +8,7 @@ reasons}
 rds_reboot_db_cluster(DBClusterIdentifier)
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier. This parameter is stored as a lowercase
-string.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{

@@ -19,20 +19,15 @@ sagemaker_list_endpoint_configs(
 
 \item{SortOrder}{The sort order for results. The default is \code{Descending}.}
 
-\item{NextToken}{If the result of the previous \code{ListEndpointConfig} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of endpoint configurations, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{ListEndpointConfig} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of endpoint configurations, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of training jobs to return in the response.}
 
-\item{NameContains}{A string in the endpoint configuration name. This filter returns only
-endpoint configurations whose name contains the specified string.}
+\item{NameContains}{A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only endpoint configurations created before the
-specified time (timestamp).}
+\item{CreationTimeBefore}{A filter that returns only endpoint configurations created before the specified time (timestamp).}
 
-\item{CreationTimeAfter}{A filter that returns only endpoint configurations with a creation time
-greater than or equal to the specified time (timestamp).}
+\item{CreationTimeAfter}{A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).}
 }
 \description{
 Lists endpoint configurations.

@@ -20,17 +20,11 @@ bedrockagentcore_invoke_agent_runtime_command(
 )
 }
 \arguments{
-\item{contentType}{The MIME type of the input data in the request payload. This tells the
-agent runtime how to interpret the payload data. Common values include
-application/json for JSON data.}
+\item{contentType}{The MIME type of the input data in the request payload. This tells the agent runtime how to interpret the payload data. Common values include application/json for JSON data.}
 
-\item{accept}{The desired MIME type for the response from the agent runtime command.
-This tells the agent runtime what format to use for the response data.
-Common values include application/json for JSON data.}
+\item{accept}{The desired MIME type for the response from the agent runtime command. This tells the agent runtime what format to use for the response data. Common values include application/json for JSON data.}
 
-\item{runtimeSessionId}{The unique identifier of the runtime session in which to execute the
-command. This session ID is used to maintain state and context across
-multiple command invocations.}
+\item{runtimeSessionId}{The unique identifier of the runtime session in which to execute the command. This session ID is used to maintain state and context across multiple command invocations.}
 
 \item{traceId}{The trace identifier for request tracking.}
 
@@ -40,20 +34,13 @@ multiple command invocations.}
 
 \item{baggage}{Additional context information for distributed tracing.}
 
-\item{agentRuntimeArn}{[required] The Amazon Resource Name (ARN) of the agent runtime on which to execute
-the command. This identifies the specific agent runtime environment
-where the command will run.}
+\item{agentRuntimeArn}{[required] The Amazon Resource Name (ARN) of the agent runtime on which to execute the command. This identifies the specific agent runtime environment where the command will run.}
 
-\item{qualifier}{The qualifier to use for the agent runtime. This is an endpoint name
-that points to a specific version. If not specified, Amazon Bedrock
-AgentCore uses the default endpoint of the agent runtime.}
+\item{qualifier}{The qualifier to use for the agent runtime. This is an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint of the agent runtime.}
 
-\item{accountId}{The identifier of the Amazon Web Services account for the agent runtime
-resource. This parameter is required when you specify an agent ID
-instead of the full ARN for \code{agentRuntimeArn}.}
+\item{accountId}{The identifier of the Amazon Web Services account for the agent runtime resource. This parameter is required when you specify an agent ID instead of the full ARN for \code{agentRuntimeArn}.}
 
-\item{body}{[required] The request body containing the command to execute and optional
-configuration parameters such as timeout settings.}
+\item{body}{[required] The request body containing the command to execute and optional configuration parameters such as timeout settings.}
 }
 \description{
 Executes a command in a runtime session container and streams the output back to the caller. This operation allows you to run shell commands within the agent runtime environment and receive real-time streaming responses including standard output and standard error.

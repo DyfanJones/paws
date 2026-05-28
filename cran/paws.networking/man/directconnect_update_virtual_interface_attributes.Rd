@@ -15,8 +15,7 @@ directconnect_update_virtual_interface_attributes(
 \arguments{
 \item{virtualInterfaceId}{[required] The ID of the virtual private interface.}
 
-\item{mtu}{The maximum transmission unit (MTU), in bytes. The supported values are
-1500 and 8500. The default value is 1500.}
+\item{mtu}{The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.}
 
 \item{enableSiteLink}{Indicates whether to enable or disable SiteLink.}
 

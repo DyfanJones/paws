@@ -16,18 +16,13 @@ ssmsap_list_configuration_check_operations(
 \arguments{
 \item{ApplicationId}{[required] The ID of the application.}
 
-\item{ListMode}{The mode for listing configuration check operations. Defaults to
-"LATEST_PER_CHECK".
+\item{ListMode}{The mode for listing configuration check operations. Defaults to "LATEST_PER_CHECK".
 \itemize{
-\item LATEST_PER_CHECK - Will list the latest configuration check
-operation per check type.
-\item ALL_OPERATIONS - Will list all configuration check operations
-performed on the application.
+\item LATEST_PER_CHECK - Will list the latest configuration check operation per check type.
+\item ALL_OPERATIONS - Will list all configuration check operations performed on the application.
 }}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.}
 
 \item{NextToken}{The token for the next page of results.}
 

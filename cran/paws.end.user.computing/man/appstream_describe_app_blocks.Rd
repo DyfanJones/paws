@@ -9,8 +9,7 @@ appstream_describe_app_blocks(Arns = NULL, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{Arns}{The ARNs of the app blocks.}
 
-\item{NextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{NextToken}{The pagination token used to retrieve the next page of results for this operation.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 }

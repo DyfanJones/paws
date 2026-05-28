@@ -15,17 +15,11 @@ ivs_update_playback_restriction_policy(
 \arguments{
 \item{arn}{[required] ARN of the playback-restriction-policy to be updated.}
 
-\item{allowedCountries}{A list of country codes that control geoblocking restriction. Allowed
-values are the officially assigned \href{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}{ISO 3166-1 alpha-2} codes.
-Default: All countries (an empty array).}
+\item{allowedCountries}{A list of country codes that control geoblocking restriction. Allowed values are the officially assigned \href{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}{ISO 3166-1 alpha-2} codes. Default: All countries (an empty array).}
 
-\item{allowedOrigins}{A list of origin sites that control CORS restriction. Allowed values are
-the same as valid values of the Origin header defined at
-\href{https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin}{https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin}.
-Default: All origins (an empty array).}
+\item{allowedOrigins}{A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at \href{https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin}{https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin}. Default: All origins (an empty array).}
 
-\item{enableStrictOriginEnforcement}{Whether channel playback is constrained by origin site. Default:
-\code{false}.}
+\item{enableStrictOriginEnforcement}{Whether channel playback is constrained by origin site. Default: \code{false}.}
 
 \item{name}{Playback-restriction-policy name. The value does not need to be unique.}
 }

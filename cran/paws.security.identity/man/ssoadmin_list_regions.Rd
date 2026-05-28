@@ -10,11 +10,9 @@ ssoadmin_list_regions(InstanceArn, MaxResults = NULL, NextToken = NULL)
 \arguments{
 \item{InstanceArn}{[required] The Amazon Resource Name (ARN) of the IAM Identity Center instance.}
 
-\item{MaxResults}{The maximum number of results to return in a single call. Default is
-100.}
+\item{MaxResults}{The maximum number of results to return in a single call. Default is 100.}
 
-\item{NextToken}{The pagination token for the list API. Initially the value is null. Use
-the output of previous API calls to make subsequent calls.}
+\item{NextToken}{The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.}
 }
 \description{
 Lists all enabled Regions of an IAM Identity Center instance, including those that are being added or removed. This operation returns Regions with ACTIVE, ADDING, or REMOVING status.

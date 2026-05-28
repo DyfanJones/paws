@@ -10,11 +10,9 @@ prometheusservice_delete_query_logging_configuration(
 )
 }
 \arguments{
-\item{workspaceId}{[required] The ID of the workspace from which to delete the query logging
-configuration.}
+\item{workspaceId}{[required] The ID of the workspace from which to delete the query logging configuration.}
 
-\item{clientToken}{(Optional) A unique, case-sensitive identifier that you can provide to
-ensure the idempotency of the request.}
+\item{clientToken}{(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.}
 }
 \description{
 Deletes the query logging configuration for the specified workspace.

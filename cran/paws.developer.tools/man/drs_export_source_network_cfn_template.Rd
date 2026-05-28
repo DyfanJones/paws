@@ -7,8 +7,7 @@
 drs_export_source_network_cfn_template(sourceNetworkID)
 }
 \arguments{
-\item{sourceNetworkID}{[required] The Source Network ID to export its CloudFormation template to an S3
-bucket.}
+\item{sourceNetworkID}{[required] The Source Network ID to export its CloudFormation template to an S3 bucket.}
 }
 \description{
 Export the Source Network CloudFormation template to an S3 bucket.

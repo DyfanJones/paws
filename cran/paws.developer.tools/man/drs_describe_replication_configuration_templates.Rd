@@ -12,8 +12,7 @@ drs_describe_replication_configuration_templates(
 )
 }
 \arguments{
-\item{replicationConfigurationTemplateIDs}{The IDs of the Replication Configuration Templates to retrieve. An empty
-list means all Replication Configuration Templates.}
+\item{replicationConfigurationTemplateIDs}{The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.}
 
 \item{maxResults}{Maximum number of Replication Configuration Templates to retrieve.}
 

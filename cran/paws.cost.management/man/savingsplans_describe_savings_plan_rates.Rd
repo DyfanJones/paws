@@ -18,8 +18,7 @@ savingsplans_describe_savings_plan_rates(
 
 \item{nextToken}{The token for the next page of results.}
 
-\item{maxResults}{The maximum number of results to return with a single call. To retrieve
-additional results, make another call with the returned token value.}
+\item{maxResults}{The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.}
 }
 \description{
 Describes the rates for a specific, existing Savings Plan.

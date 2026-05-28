@@ -21,46 +21,27 @@ kendra_update_index(
 
 \item{Name}{A new name for the index.}
 
-\item{RoleArn}{An Identity and Access Management (IAM) role that gives Amazon Kendra
-permission to access Amazon CloudWatch logs and metrics.}
+\item{RoleArn}{An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.}
 
 \item{Description}{A new description for the index.}
 
-\item{DocumentMetadataConfigurationUpdates}{The document metadata configuration you want to update for the index.
-Document metadata are fields or attributes associated with your
-documents. For example, the company department name associated with each
-document.}
+\item{DocumentMetadataConfigurationUpdates}{The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.}
 
-\item{CapacityUnits}{Sets the number of additional document storage and query capacity units
-that should be used by the index. You can change the capacity of the
-index up to 5 times per day, or make 5 API calls.
+\item{CapacityUnits}{Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.
 
-If you are using extra storage units, you can't reduce the storage
-capacity below what is required to meet the storage needs for your
-index.}
+If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.}
 
 \item{UserTokenConfigurations}{The user token configuration.
 
-If you're using an Amazon Kendra Gen AI Enterprise Edition index and you
-try to use \code{UserTokenConfigurations} to configure user context policy,
-Amazon Kendra returns a \code{ValidationException} error.}
+If you're using an Amazon Kendra Gen AI Enterprise Edition index and you try to use \code{UserTokenConfigurations} to configure user context policy, Amazon Kendra returns a \code{ValidationException} error.}
 
 \item{UserContextPolicy}{The user context policy.
 
-If you're using an Amazon Kendra Gen AI Enterprise Edition index, you
-can only use \code{ATTRIBUTE_FILTER} to filter search results by user
-context. If you're using an Amazon Kendra Gen AI Enterprise Edition
-index and you try to use \code{USER_TOKEN} to configure user context policy,
-Amazon Kendra returns a \code{ValidationException} error.}
+If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can only use \code{ATTRIBUTE_FILTER} to filter search results by user context. If you're using an Amazon Kendra Gen AI Enterprise Edition index and you try to use \code{USER_TOKEN} to configure user context policy, Amazon Kendra returns a \code{ValidationException} error.}
 
-\item{UserGroupResolutionConfiguration}{Gets users and groups from IAM Identity Center identity source. To
-configure this, see
-\href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_UserGroupResolutionConfiguration.html}{UserGroupResolutionConfiguration}.
-This is useful for user context filtering, where search results are
-filtered based on the user or their group access to documents.
+\item{UserGroupResolutionConfiguration}{Gets users and groups from IAM Identity Center identity source. To configure this, see \href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_UserGroupResolutionConfiguration.html}{UserGroupResolutionConfiguration}. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.
 
-If you're using an Amazon Kendra Gen AI Enterprise Edition index,
-\code{UserGroupResolutionConfiguration} isn't supported.}
+If you're using an Amazon Kendra Gen AI Enterprise Edition index, \code{UserGroupResolutionConfiguration} isn't supported.}
 }
 \description{
 Updates an Amazon Kendra index.

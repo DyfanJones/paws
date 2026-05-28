@@ -15,14 +15,9 @@ opensearchserviceserverless_update_security_config(
 )
 }
 \arguments{
-\item{id}{[required] The security configuration identifier. For SAML the ID will be
-\verb{saml/<accountId>/<idpProviderName>}. For example,
-\code{saml/123456789123/OKTADev}.}
+\item{id}{[required] The security configuration identifier. For SAML the ID will be \verb{saml/<accountId>/<idpProviderName>}. For example, \code{saml/123456789123/OKTADev}.}
 
-\item{configVersion}{[required] The version of the security configuration to be updated. You can find
-the most recent version of a security configuration using the
-\code{\link[=opensearchserviceserverless_get_security_policy]{get_security_policy}}
-command.}
+\item{configVersion}{[required] The version of the security configuration to be updated. You can find the most recent version of a security configuration using the \code{\link[=opensearchserviceserverless_get_security_policy]{get_security_policy}} command.}
 
 \item{description}{A description of the security configuration.}
 
@@ -30,9 +25,7 @@ command.}
 
 \item{iamIdentityCenterOptionsUpdates}{Describes IAM Identity Center options in the form of a key-value map.}
 
-\item{iamFederationOptions}{Describes IAM federation options in the form of a key-value map for
-updating an existing security configuration. Use this field to modify
-IAM federation settings for the security configuration.}
+\item{iamFederationOptions}{Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.}
 
 \item{clientToken}{Unique, case-sensitive identifier to ensure idempotency of the request.}
 }

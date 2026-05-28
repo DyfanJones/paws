@@ -13,17 +13,13 @@ bedrock_list_automated_reasoning_policy_test_results(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-test results you want to list.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose test results you want to list.}
 
-\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose test results you want
-to list.}
+\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose test results you want to list.}
 
-\item{nextToken}{A pagination token from a previous request to continue listing test
-results from where the previous request left off.}
+\item{nextToken}{A pagination token from a previous request to continue listing test results from where the previous request left off.}
 
-\item{maxResults}{The maximum number of test results to return in a single response. Valid
-range is 1-100.}
+\item{maxResults}{The maximum number of test results to return in a single response. Valid range is 1-100.}
 }
 \description{
 Lists test results for an Automated Reasoning policy, showing how the policy performed against various test scenarios and validation checks.

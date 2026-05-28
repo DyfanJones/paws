@@ -14,12 +14,9 @@ directconnect_describe_hosted_connections(
 \arguments{
 \item{connectionId}{[required] The ID of the interconnect or LAG.}
 
-\item{maxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.
+\item{maxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.
 
-If \code{MaxResults} is given a value larger than 100, only 100 results are
-returned.}
+If \code{MaxResults} is given a value larger than 100, only 100 results are returned.}
 
 \item{nextToken}{The token for the next page of results.}
 }

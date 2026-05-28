@@ -13,8 +13,7 @@ backupgateway_put_hypervisor_property_mappings(
 \arguments{
 \item{HypervisorArn}{[required] The Amazon Resource Name (ARN) of the hypervisor.}
 
-\item{VmwareToAwsTagMappings}{[required] This action requests the mappings of VMware tags to the Amazon Web
-Services tags.}
+\item{VmwareToAwsTagMappings}{[required] This action requests the mappings of VMware tags to the Amazon Web Services tags.}
 
 \item{IamRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role.}
 }

@@ -12,37 +12,26 @@ rds_describe_global_clusters(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{The user-supplied DB cluster identifier. If this parameter is specified,
-information from only the specific DB cluster is returned. This
-parameter isn't case-sensitive.
+\item{GlobalClusterIdentifier}{The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
 \item If supplied, must match an existing DBClusterIdentifier.
 }}
 
-\item{Filters}{A filter that specifies one or more global database clusters to
-describe. This parameter is case-sensitive.
+\item{Filters}{A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.
 
 Currently, the only supported filter is \code{region}.
 
-If used, the request returns information about any global cluster with
-at least one member (primary or secondary) in the specified Amazon Web
-Services Regions.}
+If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so that you can retrieve the
-remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_global_clusters]{describe_global_clusters}} request. If
-this parameter is specified, the response includes only records beyond
-the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_global_clusters]{describe_global_clusters}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns information about Aurora global database clusters. This API supports pagination.

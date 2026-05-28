@@ -7,8 +7,7 @@
 redshift_delete_tags(ResourceName, TagKeys)
 }
 \arguments{
-\item{ResourceName}{[required] The Amazon Resource Name (ARN) from which you want to remove the tag or
-tags. For example, \code{arn:aws:redshift:us-east-2:123456789:cluster:t1}.}
+\item{ResourceName}{[required] The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, \code{arn:aws:redshift:us-east-2:123456789:cluster:t1}.}
 
 \item{TagKeys}{[required] The tag key that you want to delete.}
 }

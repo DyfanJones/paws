@@ -17,21 +17,15 @@ codecatalyst_list_event_logs(
 \arguments{
 \item{spaceName}{[required] The name of the space.}
 
-\item{startTime}{[required] The date and time when you want to start retrieving events, in
-coordinated universal time (UTC) timestamp format as specified in \href{https://www.rfc-editor.org/rfc/rfc3339#section-5.6}{RFC 3339}.}
+\item{startTime}{[required] The date and time when you want to start retrieving events, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.}
 
-\item{endTime}{[required] The time after which you do not want any events retrieved, in
-coordinated universal time (UTC) timestamp format as specified in \href{https://www.rfc-editor.org/rfc/rfc3339#section-5.6}{RFC 3339}.}
+\item{endTime}{[required] The time after which you do not want any events retrieved, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.}
 
 \item{eventName}{The name of the event.}
 
-\item{nextToken}{A token returned from a call to this API to indicate the next batch of
-results to return, if any.}
+\item{nextToken}{A token returned from a call to this API to indicate the next batch of results to return, if any.}
 
-\item{maxResults}{The maximum number of results to show in a single call to this API. If
-the number of results is larger than the number you specified, the
-response will include a \code{NextToken} element, which you can use to obtain
-additional results.}
+\item{maxResults}{The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a \code{NextToken} element, which you can use to obtain additional results.}
 }
 \description{
 Retrieves a list of events that occurred during a specific time in a space. You can use these events to audit user and system activity in a space. For more information, see \href{https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-monitoring.html}{Monitoring} in the \emph{Amazon CodeCatalyst User Guide}.

@@ -11,11 +11,9 @@ paymentcryptographycontrolplane_enable_default_key_replication_regions(
 )
 }
 \arguments{
-\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to enable as default replication
-regions for the Amazon Web Services account for \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html}{Multi-Region key replication}.
+\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html}{Multi-Region key replication}.
 
-New keys created in this account will automatically be replicated to
-these regions unless explicitly overridden during key creation.}
+New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.}
 }
 \description{
 Enables \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html}{Multi-Region key replication} settings for your Amazon Web Services account, causing new keys to be automatically replicated to the specified Amazon Web Services Regions when created.

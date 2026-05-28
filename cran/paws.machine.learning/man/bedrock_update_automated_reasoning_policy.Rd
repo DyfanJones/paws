@@ -13,11 +13,9 @@ bedrock_update_automated_reasoning_policy(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-update. This must be the ARN of a draft policy.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to update. This must be the ARN of a draft policy.}
 
-\item{policyDefinition}{[required] The updated policy definition containing the formal logic rules,
-variables, and types.}
+\item{policyDefinition}{[required] The updated policy definition containing the formal logic rules, variables, and types.}
 
 \item{name}{The updated name for the Automated Reasoning policy.}
 

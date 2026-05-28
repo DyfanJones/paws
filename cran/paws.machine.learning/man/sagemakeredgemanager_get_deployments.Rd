@@ -7,8 +7,7 @@
 sagemakeredgemanager_get_deployments(DeviceName, DeviceFleetName)
 }
 \arguments{
-\item{DeviceName}{[required] The unique name of the device you want to get the configuration of
-active deployments from.}
+\item{DeviceName}{[required] The unique name of the device you want to get the configuration of active deployments from.}
 
 \item{DeviceFleetName}{[required] The name of the fleet that the device belongs to.}
 }

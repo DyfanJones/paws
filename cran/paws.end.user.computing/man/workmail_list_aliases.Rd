@@ -17,8 +17,7 @@ workmail_list_aliases(
 
 \item{EntityId}{[required] The identifier for the entity for which to list the aliases.}
 
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not contain any tokens.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not contain any tokens.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 }

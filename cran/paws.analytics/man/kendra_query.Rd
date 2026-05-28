@@ -25,85 +25,47 @@ kendra_query(
 \arguments{
 \item{IndexId}{[required] The identifier of the index for the search.}
 
-\item{QueryText}{The input query text for the search. Amazon Kendra truncates queries at
-30 token words, which excludes punctuation and stop words. Truncation
-still applies if you use Boolean or more advanced, complex queries. For
-example, \verb{Timeoff AND October AND Category:HR} is counted as 3 tokens:
-\code{timeoff}, \code{october}, \code{hr}. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax}{Searching with advanced query syntax}
-in the Amazon Kendra Developer Guide.}
+\item{QueryText}{The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. For example, \verb{Timeoff AND October AND Category:HR} is counted as 3 tokens: \code{timeoff}, \code{october}, \code{hr}. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax}{Searching with advanced query syntax} in the Amazon Kendra Developer Guide.}
 
-\item{AttributeFilter}{Filters search results by document fields/attributes. You can only
-provide one attribute filter; however, the \code{AndAllFilters}, \code{NotFilter},
-and \code{OrAllFilters} parameters contain a list of other filters.
+\item{AttributeFilter}{Filters search results by document fields/attributes. You can only provide one attribute filter; however, the \code{AndAllFilters}, \code{NotFilter}, and \code{OrAllFilters} parameters contain a list of other filters.
 
-The \code{AttributeFilter} parameter means you can create a set of filtering
-rules that a document must satisfy to be included in the query results.
+The \code{AttributeFilter} parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.
 
-For Amazon Kendra Gen AI Enterprise Edition indices use
-\code{AttributeFilter} to enable document filtering for end users using
-\verb{_email_id} or include public documents (\verb{_email_id=null}).}
+For Amazon Kendra Gen AI Enterprise Edition indices use \code{AttributeFilter} to enable document filtering for end users using \verb{_email_id} or include public documents (\verb{_email_id=null}).}
 
-\item{Facets}{An array of documents fields/attributes for faceted search. Amazon
-Kendra returns a count for each field key specified. This helps your
-users narrow their search.}
+\item{Facets}{An array of documents fields/attributes for faceted search. Amazon Kendra returns a count for each field key specified. This helps your users narrow their search.}
 
-\item{RequestedDocumentAttributes}{An array of document fields/attributes to include in the response. You
-can limit the response to include certain document fields. By default,
-all document attributes are included in the response.}
+\item{RequestedDocumentAttributes}{An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.}
 
-\item{QueryResultTypeFilter}{Sets the type of query result or response. Only results for the
-specified type are returned.}
+\item{QueryResultTypeFilter}{Sets the type of query result or response. Only results for the specified type are returned.}
 
-\item{DocumentRelevanceOverrideConfigurations}{Overrides relevance tuning configurations of fields/attributes set at
-the index level.
+\item{DocumentRelevanceOverrideConfigurations}{Overrides relevance tuning configurations of fields/attributes set at the index level.
 
-If you use this API to override the relevance tuning configured at the
-index level, but there is no relevance tuning configured at the index
-level, then Amazon Kendra does not apply any relevance tuning.
+If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
 
-If there is relevance tuning configured for fields at the index level,
-and you use this API to override only some of these fields, then for the
-fields you did not override, the importance is set to 1.}
+If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.}
 
-\item{PageNumber}{Query results are returned in pages the size of the \code{PageSize}
-parameter. By default, Amazon Kendra returns the first page of results.
-Use this parameter to get result pages after the first one.}
+\item{PageNumber}{Query results are returned in pages the size of the \code{PageSize} parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.}
 
-\item{PageSize}{Sets the number of results that are returned in each page of results.
-The default page size is 10. The maximum number of results returned is
-100. If you ask for more than 100 results, only 100 are returned.}
+\item{PageSize}{Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.}
 
-\item{SortingConfiguration}{Provides information that determines how the results of the query are
-sorted. You can set the field that Amazon Kendra should sort the results
-on, and specify whether the results should be sorted in ascending or
-descending order. In the case of ties in sorting the results, the
-results are sorted by relevance.
+\item{SortingConfiguration}{Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.
 
-If you don't provide sorting configuration, the results are sorted by
-the relevance that Amazon Kendra determines for the result.}
+If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.}
 
-\item{SortingConfigurations}{Provides configuration information to determine how the results of a
-query are sorted.
+\item{SortingConfigurations}{Provides configuration information to determine how the results of a query are sorted.
 
-You can set upto 3 fields that Amazon Kendra should sort the results on,
-and specify whether the results should be sorted in ascending or
-descending order. The sort field quota can be increased.
+You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.
 
-If you don't provide a sorting configuration, the results are sorted by
-the relevance that Amazon Kendra determines for the result. In the case
-of ties in sorting the results, the results are sorted by relevance.}
+If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance.}
 
 \item{UserContext}{The user context token or user and group information.}
 
-\item{VisitorId}{Provides an identifier for a specific user. The \code{VisitorId} should be a
-unique identifier, such as a GUID. Don't use personally identifiable
-information, such as the user's email address, as the \code{VisitorId}.}
+\item{VisitorId}{Provides an identifier for a specific user. The \code{VisitorId} should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the \code{VisitorId}.}
 
 \item{SpellCorrectionConfiguration}{Enables suggested spell corrections for queries.}
 
-\item{CollapseConfiguration}{Provides configuration to determine how to group results by document
-attribute value, and how to display them (collapsed or expanded) under a
-designated primary document for each group.}
+\item{CollapseConfiguration}{Provides configuration to determine how to group results by document attribute value, and how to display them (collapsed or expanded) under a designated primary document for each group.}
 }
 \description{
 Searches an index given an input query.

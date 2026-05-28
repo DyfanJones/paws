@@ -12,16 +12,11 @@ kinesis_update_max_record_size(
 )
 }
 \arguments{
-\item{StreamARN}{The Amazon Resource Name (ARN) of the stream for the \code{MaxRecordSize}
-update.}
+\item{StreamARN}{The Amazon Resource Name (ARN) of the stream for the \code{MaxRecordSize} update.}
 
 \item{StreamId}{Not Implemented. Reserved for future use.}
 
-\item{MaxRecordSizeInKiB}{[required] The maximum record size of a single record in KiB that you can write to,
-and read from a stream. Specify a value between 1024 and 10240 KiB (1 to
-10 MiB). If you specify a value that is out of this range,
-\code{\link[=kinesis_update_max_record_size]{update_max_record_size}} sends back an
-\code{ValidationException} message.}
+\item{MaxRecordSizeInKiB}{[required] The maximum record size of a single record in KiB that you can write to, and read from a stream. Specify a value between 1024 and 10240 KiB (1 to 10 MiB). If you specify a value that is out of this range, \code{\link[=kinesis_update_max_record_size]{update_max_record_size}} sends back an \code{ValidationException} message.}
 }
 \description{
 This allows you to update the \code{MaxRecordSize} of a single record that you can write to, and read from a stream. You can ingest and digest single records up to 10240 KiB.

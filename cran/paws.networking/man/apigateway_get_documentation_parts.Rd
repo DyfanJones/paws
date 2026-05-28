@@ -25,12 +25,9 @@ apigateway_get_documentation_parts(
 
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 
-\item{locationStatus}{The status of the API documentation parts to retrieve. Valid values are
-\code{DOCUMENTED} for retrieving DocumentationPart resources with content and
-\code{UNDOCUMENTED} for DocumentationPart resources without content.}
+\item{locationStatus}{The status of the API documentation parts to retrieve. Valid values are \code{DOCUMENTED} for retrieving DocumentationPart resources with content and \code{UNDOCUMENTED} for DocumentationPart resources without content.}
 }
 \description{
 Gets documentation parts.

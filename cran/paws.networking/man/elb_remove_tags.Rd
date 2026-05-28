@@ -7,8 +7,7 @@
 elb_remove_tags(LoadBalancerNames, Tags)
 }
 \arguments{
-\item{LoadBalancerNames}{[required] The name of the load balancer. You can specify a maximum of one load
-balancer name.}
+\item{LoadBalancerNames}{[required] The name of the load balancer. You can specify a maximum of one load balancer name.}
 
 \item{Tags}{[required] The list of tag keys to remove.}
 }

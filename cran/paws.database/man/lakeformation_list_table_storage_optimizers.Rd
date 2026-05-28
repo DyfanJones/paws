@@ -21,8 +21,7 @@ lakeformation_list_table_storage_optimizers(
 
 \item{TableName}{[required] Name of the table.}
 
-\item{StorageOptimizerType}{The specific type of storage optimizers to list. The supported value is
-\code{compaction}.}
+\item{StorageOptimizerType}{The specific type of storage optimizers to list. The supported value is \code{compaction}.}
 
 \item{MaxResults}{The number of storage optimizers to return on each call.}
 

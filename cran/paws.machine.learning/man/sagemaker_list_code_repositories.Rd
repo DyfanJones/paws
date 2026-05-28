@@ -17,26 +17,19 @@ sagemaker_list_code_repositories(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only Git repositories that were created after the
-specified time.}
+\item{CreationTimeAfter}{A filter that returns only Git repositories that were created after the specified time.}
 
-\item{CreationTimeBefore}{A filter that returns only Git repositories that were created before the
-specified time.}
+\item{CreationTimeBefore}{A filter that returns only Git repositories that were created before the specified time.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only Git repositories that were last modified
-after the specified time.}
+\item{LastModifiedTimeAfter}{A filter that returns only Git repositories that were last modified after the specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns only Git repositories that were last modified
-before the specified time.}
+\item{LastModifiedTimeBefore}{A filter that returns only Git repositories that were last modified before the specified time.}
 
 \item{MaxResults}{The maximum number of Git repositories to return in the response.}
 
-\item{NameContains}{A string in the Git repositories name. This filter returns only
-repositories whose name contains the specified string.}
+\item{NameContains}{A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.}
 
-\item{NextToken}{If the result of a \code{ListCodeRepositoriesOutput} request was truncated,
-the response includes a \code{NextToken}. To get the next set of Git
-repositories, use the token in the next request.}
+\item{NextToken}{If the result of a \code{ListCodeRepositoriesOutput} request was truncated, the response includes a \code{NextToken}. To get the next set of Git repositories, use the token in the next request.}
 
 \item{SortBy}{The field to sort results by. The default is \code{Name}.}
 

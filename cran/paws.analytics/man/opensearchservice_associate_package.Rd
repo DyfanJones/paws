@@ -12,17 +12,13 @@ opensearchservice_associate_package(
 )
 }
 \arguments{
-\item{PackageID}{[required] Internal ID of the package to associate with a domain. Use
-\code{\link[=opensearchservice_describe_packages]{describe_packages}} to find this
-value.}
+\item{PackageID}{[required] Internal ID of the package to associate with a domain. Use \code{\link[=opensearchservice_describe_packages]{describe_packages}} to find this value.}
 
 \item{DomainName}{[required] Name of the domain to associate the package with.}
 
-\item{PrerequisitePackageIDList}{A list of package IDs that must be associated with the domain before the
-package specified in the request can be associated.}
+\item{PrerequisitePackageIDList}{A list of package IDs that must be associated with the domain before the package specified in the request can be associated.}
 
-\item{AssociationConfiguration}{The configuration for associating a package with an Amazon OpenSearch
-Service domain.}
+\item{AssociationConfiguration}{The configuration for associating a package with an Amazon OpenSearch Service domain.}
 }
 \description{
 Associates a package with an Amazon OpenSearch Service domain. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html}{Custom packages for Amazon OpenSearch Service}.

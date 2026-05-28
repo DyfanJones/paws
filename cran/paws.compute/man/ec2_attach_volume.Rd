@@ -18,16 +18,11 @@ ec2_attach_volume(
 
 \item{InstanceId}{[required] The ID of the instance.}
 
-\item{VolumeId}{[required] The ID of the EBS volume. The volume and instance must be within the
-same Availability Zone.}
+\item{VolumeId}{[required] The ID of the EBS volume. The volume and instance must be within the same Availability Zone.}
 
-\item{EbsCardIndex}{The index of the EBS card. Some instance types support multiple EBS
-cards. The default EBS card index is 0.}
+\item{EbsCardIndex}{The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Attaches an Amazon EBS volume to a \code{running} or \code{stopped} instance, and exposes it to the instance with the specified device name.

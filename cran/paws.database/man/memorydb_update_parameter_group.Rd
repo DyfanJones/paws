@@ -9,9 +9,7 @@ memorydb_update_parameter_group(ParameterGroupName, ParameterNameValues)
 \arguments{
 \item{ParameterGroupName}{[required] The name of the parameter group to update.}
 
-\item{ParameterNameValues}{[required] An array of parameter names and values for the parameter update. You
-must supply at least one parameter name and value; subsequent arguments
-are optional. A maximum of 20 parameters may be updated per request.}
+\item{ParameterNameValues}{[required] An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.}
 }
 \description{
 Updates the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.

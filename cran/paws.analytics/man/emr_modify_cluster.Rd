@@ -14,11 +14,7 @@ emr_modify_cluster(
 \arguments{
 \item{ClusterId}{[required] The unique identifier of the cluster.}
 
-\item{StepConcurrencyLevel}{The number of steps that can be executed concurrently. You can specify a
-minimum of 1 step and a maximum of 256 steps. We recommend that you do
-not change this parameter while steps are running or the
-\code{ActionOnFailure} setting may not behave as expected. For more
-information see Step$ActionOnFailure.}
+\item{StepConcurrencyLevel}{The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the \code{ActionOnFailure} setting may not behave as expected. For more information see Step$ActionOnFailure.}
 
 \item{ExtendedSupport}{Reserved.}
 }

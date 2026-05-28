@@ -12,14 +12,9 @@ cloudfront_list_distributions_by_owned_resource(
 )
 }
 \arguments{
-\item{ResourceArn}{[required] The ARN of the CloudFront resource that you've shared with other Amazon
-Web Services accounts.}
+\item{ResourceArn}{[required] The ARN of the CloudFront resource that you've shared with other Amazon Web Services accounts.}
 
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list of distributions. The response includes distributions in the
-list that occur after the marker. To get the next page of the list, set
-this field's value to the value of \code{NextMarker} from the current page's
-response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
 \item{MaxItems}{The maximum number of distributions to return.}
 }

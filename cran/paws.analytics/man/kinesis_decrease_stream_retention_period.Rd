@@ -16,8 +16,7 @@ kinesis_decrease_stream_retention_period(
 \arguments{
 \item{StreamName}{The name of the stream to modify.}
 
-\item{RetentionPeriodHours}{[required] The new retention period of the stream, in hours. Must be less than the
-current retention period.}
+\item{RetentionPeriodHours}{[required] The new retention period of the stream, in hours. Must be less than the current retention period.}
 
 \item{StreamARN}{The ARN of the stream.}
 

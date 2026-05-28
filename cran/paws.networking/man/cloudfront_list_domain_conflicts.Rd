@@ -16,9 +16,7 @@ cloudfront_list_domain_conflicts(
 \arguments{
 \item{Domain}{[required] The domain to check for conflicts.}
 
-\item{DomainControlValidationResource}{[required] The distribution resource identifier. This can be the standard
-distribution or distribution tenant that has a valid certificate, which
-covers the domain that you specify.}
+\item{DomainControlValidationResource}{[required] The distribution resource identifier. This can be the standard distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.}
 
 \item{MaxItems}{The maximum number of domain conflicts to return.}
 

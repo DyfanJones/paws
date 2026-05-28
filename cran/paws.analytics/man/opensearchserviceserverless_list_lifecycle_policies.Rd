@@ -14,19 +14,11 @@ opensearchserviceserverless_list_lifecycle_policies(
 \arguments{
 \item{type}{[required] The type of lifecycle policy.}
 
-\item{resources}{Resource filters that policies can apply to. Currently, the only
-supported resource type is \code{index}.}
+\item{resources}{Resource filters that policies can apply to. Currently, the only supported resource type is \code{index}.}
 
-\item{nextToken}{If your initial
-\code{\link[=opensearchserviceserverless_list_lifecycle_policies]{list_lifecycle_policies}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchserviceserverless_list_lifecycle_policies]{list_lifecycle_policies}}
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial \code{\link[=opensearchserviceserverless_list_lifecycle_policies]{list_lifecycle_policies}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchserviceserverless_list_lifecycle_policies]{list_lifecycle_policies}} operations, which returns results in the next page.}
 
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use use \code{nextToken} to get the next page of results. The
-default is 10.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use use \code{nextToken} to get the next page of results. The default is 10.}
 }
 \description{
 Returns a list of OpenSearch Serverless lifecycle policies. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list}{Viewing data lifecycle policies}.

@@ -12,13 +12,11 @@ personalize_list_batch_inference_jobs(
 )
 }
 \arguments{
-\item{solutionVersionArn}{The Amazon Resource Name (ARN) of the solution version from which the
-batch inference jobs were created.}
+\item{solutionVersionArn}{The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.}
 
 \item{nextToken}{The token to request the next page of results.}
 
-\item{maxResults}{The maximum number of batch inference job results to return in each
-page. The default value is 100.}
+\item{maxResults}{The maximum number of batch inference job results to return in each page. The default value is 100.}
 }
 \description{
 Gets a list of the batch inference jobs that have been performed off of a solution version.

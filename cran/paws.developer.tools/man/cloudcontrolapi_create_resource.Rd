@@ -15,39 +15,23 @@ cloudcontrolapi_create_resource(
 \arguments{
 \item{TypeName}{[required] The name of the resource type.}
 
-\item{TypeVersionId}{For private resource types, the type version to use in this resource
-operation. If you do not specify a resource version, CloudFormation uses
-the default version.}
+\item{TypeVersionId}{For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of the Identity and Access Management
-(IAM) role for Cloud Control API to use when performing this resource
-operation. The role specified must have the permissions required for
-this operation. The necessary permissions for each event handler are
-defined in the \code{handlers} section of the \href{https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html}{resource type definition schema}.
+\item{RoleArn}{The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the \code{handlers} section of the \href{https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html}{resource type definition schema}.
 
-If you do not specify a role, Cloud Control API uses a temporary session
-created using your Amazon Web Services user credentials.
+If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.
 
-For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions}{Specifying credentials}
-in the \emph{Amazon Web Services Cloud Control API User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions}{Specifying credentials} in the \emph{Amazon Web Services Cloud Control API User Guide}.}
 
-\item{ClientToken}{A unique identifier to ensure the idempotency of the resource request.
-As a best practice, specify this token to ensure idempotency, so that
-Amazon Web Services Cloud Control API can accurately distinguish between
-request retries and new resource requests. You might retry a resource
-request to ensure that it was successfully received.
+\item{ClientToken}{A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.
 
-A client token is valid for 36 hours once used. After that, a resource
-request with the same client token is treated as a new request.
+A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.
 
-If you do not specify a client token, one is generated for inclusion in
-the request.
+If you do not specify a client token, one is generated for inclusion in the request.
 
-For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency}{Ensuring resource operation requests are unique}
-in the \emph{Amazon Web Services Cloud Control API User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency}{Ensuring resource operation requests are unique} in the \emph{Amazon Web Services Cloud Control API User Guide}.}
 
-\item{DesiredState}{[required] Structured data format representing the desired state of the resource,
-consisting of that resource's properties and their desired values.
+\item{DesiredState}{[required] Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.
 
 Cloud Control API currently supports JSON as a structured data format.
 
@@ -57,12 +41,9 @@ Specify the desired state as one of the following:
 \item A local path containing the desired state in JSON data format
 }
 
-For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate}{Composing the desired state of the resource}
-in the \emph{Amazon Web Services Cloud Control API User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate}{Composing the desired state of the resource} in the \emph{Amazon Web Services Cloud Control API User Guide}.
 
-For more information about the properties of a specific resource, refer
-to the related topic for the resource in the \href{https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-template-resource-type-ref.html}{Resource and property types reference}
-in the \emph{CloudFormation Users Guide}.}
+For more information about the properties of a specific resource, refer to the related topic for the resource in the \href{https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-template-resource-type-ref.html}{Resource and property types reference} in the \emph{CloudFormation Users Guide}.}
 }
 \description{
 Creates the specified resource. For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html}{Creating a resource} in the \emph{Amazon Web Services Cloud Control API User Guide}.

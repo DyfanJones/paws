@@ -15,17 +15,12 @@ keyspaces_create_keyspace(
 
 \item{tags}{A list of key-value pair tags to be attached to the keyspace.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html}{Adding tags and labels to Amazon Keyspaces resources}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html}{Adding tags and labels to Amazon Keyspaces resources} in the \emph{Amazon Keyspaces Developer Guide}.}
 
 \item{replicationSpecification}{The replication specification of the keyspace includes:
 \itemize{
-\item \code{replicationStrategy} - the required value is \code{SINGLE_REGION} or
-\code{MULTI_REGION}.
-\item \code{regionList} - if the \code{replicationStrategy} is \code{MULTI_REGION}, the
-\code{regionList} requires the current Region and at least one additional
-Amazon Web Services Region where the keyspace is going to be
-replicated in.
+\item \code{replicationStrategy} - the required value is \code{SINGLE_REGION} or \code{MULTI_REGION}.
+\item \code{regionList} - if the \code{replicationStrategy} is \code{MULTI_REGION}, the \code{regionList} requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in.
 }}
 }
 \description{

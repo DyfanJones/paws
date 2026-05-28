@@ -53,23 +53,13 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon
-EMR Serverless provides a serverless runtime environment that simplifies
-running analytics applications using the latest open source frameworks
-such as Apache Spark and Apache Hive. With Amazon EMR Serverless, you
-don’t have to configure, optimize, secure, or operate clusters to run
-applications with these frameworks.
+Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless provides a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive. With Amazon EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters to run applications with these frameworks.
 
-The API reference to Amazon EMR Serverless is \code{emr-serverless}. The
-\code{emr-serverless} prefix is used in the following scenarios:
+The API reference to Amazon EMR Serverless is \code{emr-serverless}. The \code{emr-serverless} prefix is used in the following scenarios:
 \itemize{
-\item It is the prefix in the CLI commands for Amazon EMR Serverless. For
-example, \verb{aws emr-serverless start-job-run}.
-\item It is the prefix before IAM policy actions for Amazon EMR
-Serverless. For example, \verb{"Action": ["emr-serverless:StartJobRun"]}.
-For more information, see \href{https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions}{Policy actions for Amazon EMR Serverless}.
-\item It is the prefix used in Amazon EMR Serverless service endpoints.
-For example, \verb{emr-serverless.us-east-2.amazonaws.com}.
+\item It is the prefix in the CLI commands for Amazon EMR Serverless. For example, \verb{aws emr-serverless start-job-run}.
+\item It is the prefix before IAM policy actions for Amazon EMR Serverless. For example, \verb{"Action": ["emr-serverless:StartJobRun"]}. For more information, see \href{https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions}{Policy actions for Amazon EMR Serverless}.
+\item It is the prefix used in Amazon EMR Serverless service endpoints. For example, \verb{emr-serverless.us-east-2.amazonaws.com}.
 }
 }
 \section{Service syntax}{

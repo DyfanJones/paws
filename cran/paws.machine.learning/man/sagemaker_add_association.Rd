@@ -11,19 +11,12 @@ sagemaker_add_association(SourceArn, DestinationArn, AssociationType = NULL)
 
 \item{DestinationArn}{[required] The Amazon Resource Name (ARN) of the destination.}
 
-\item{AssociationType}{The type of association. The following are suggested uses for each type.
-Amazon SageMaker places no restrictions on their use.
+\item{AssociationType}{The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.
 \itemize{
-\item ContributedTo - The source contributed to the destination or had a
-part in enabling the destination. For example, the training data
-contributed to the training job.
-\item AssociatedWith - The source is connected to the destination. For
-example, an approval workflow is associated with a model deployment.
-\item DerivedFrom - The destination is a modification of the source. For
-example, a digest output of a channel input for a processing job is
-derived from the original inputs.
-\item Produced - The source generated the destination. For example, a
-training job produced a model artifact.
+\item ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.
+\item AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.
+\item DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.
+\item Produced - The source generated the destination. For example, a training job produced a model artifact.
 }}
 }
 \description{

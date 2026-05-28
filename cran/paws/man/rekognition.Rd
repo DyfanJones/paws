@@ -53,12 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-This is the API Reference for \href{https://docs.aws.amazon.com/rekognition/latest/dg/images.html}{Amazon Rekognition Image},
-\href{https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html}{Amazon Rekognition Custom Labels},
-\href{https://docs.aws.amazon.com/rekognition/latest/dg/video.html}{Amazon Rekognition Stored Video},
-\href{https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html}{Amazon Rekognition Streaming Video}.
-It provides descriptions of actions, data types, common parameters, and
-common errors.
+This is the API Reference for \href{https://docs.aws.amazon.com/rekognition/latest/dg/images.html}{Amazon Rekognition Image}, \href{https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html}{Amazon Rekognition Custom Labels}, \href{https://docs.aws.amazon.com/rekognition/latest/dg/video.html}{Amazon Rekognition Stored Video}, \href{https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html}{Amazon Rekognition Streaming Video}. It provides descriptions of actions, data types, common parameters, and common errors.
 
 \strong{Amazon Rekognition Image}
 \itemize{

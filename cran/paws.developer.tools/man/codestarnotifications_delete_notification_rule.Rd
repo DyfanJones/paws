@@ -7,8 +7,7 @@
 codestarnotifications_delete_notification_rule(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the notification rule you want to
-delete.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the notification rule you want to delete.}
 }
 \description{
 Deletes a notification rule for a resource.

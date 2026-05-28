@@ -32,63 +32,45 @@ keyspaces_create_table(
 For each column to be created:
 \itemize{
 \item \code{name} - The name of the column.
-\item \code{type} - An Amazon Keyspaces data type. For more information, see
-\href{https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types}{Data types}
-in the \emph{Amazon Keyspaces Developer Guide}.
+\item \code{type} - An Amazon Keyspaces data type. For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types}{Data types} in the \emph{Amazon Keyspaces Developer Guide}.
 }
 
 The primary key of the table consists of the following columns:
 \itemize{
-\item \code{partitionKeys} - The partition key can be a single column, or it
-can be a compound value composed of two or more columns. The
-partition key portion of the primary key is required and determines
-how Amazon Keyspaces stores your data.
+\item \code{partitionKeys} - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.
 \item \code{name} - The name of each partition key column.
-\item \code{clusteringKeys} - The optional clustering column portion of your
-primary key determines how the data is clustered and sorted within
-each partition.
+\item \code{clusteringKeys} - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.
 \item \code{name} - The name of the clustering column.
-\item \code{orderBy} - Sets the ascendant (\code{ASC}) or descendant (\code{DESC}) order
-modifier.
+\item \code{orderBy} - Sets the ascendant (\code{ASC}) or descendant (\code{DESC}) order modifier.
 
-To define a column as static use \code{staticColumns} - Static columns
-store values that are shared by all rows in the same partition:
+To define a column as static use \code{staticColumns} - Static columns store values that are shared by all rows in the same partition:
 \item \code{name} - The name of the column.
 \item \code{type} - An Amazon Keyspaces data type.
 }}
 
 \item{comment}{This parameter allows to enter a description of the table.}
 
-\item{capacitySpecification}{Specifies the read/write throughput capacity mode for the table. The
-options are:
+\item{capacitySpecification}{Specifies the read/write throughput capacity mode for the table. The options are:
 \itemize{
 \item \code{throughputMode:PAY_PER_REQUEST} and
-\item \code{throughputMode:PROVISIONED} - Provisioned capacity mode requires
-\code{readCapacityUnits} and \code{writeCapacityUnits} as input.
+\item \code{throughputMode:PROVISIONED} - Provisioned capacity mode requires \code{readCapacityUnits} and \code{writeCapacityUnits} as input.
 }
 
 The default is \code{throughput_mode:PAY_PER_REQUEST}.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html}{Read/write capacity modes}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html}{Read/write capacity modes} in the \emph{Amazon Keyspaces Developer Guide}.}
 
-\item{encryptionSpecification}{Specifies how the encryption key for encryption at rest is managed for
-the table. You can choose one of the following KMS key (KMS key):
+\item{encryptionSpecification}{Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):
 \itemize{
 \item \code{type:AWS_OWNED_KMS_KEY} - This key is owned by Amazon Keyspaces.
-\item \code{type:CUSTOMER_MANAGED_KMS_KEY} - This key is stored in your account
-and is created, owned, and managed by you. This option requires the
-\code{kms_key_identifier} of the KMS key in Amazon Resource Name (ARN)
-format as input.
+\item \code{type:CUSTOMER_MANAGED_KMS_KEY} - This key is stored in your account and is created, owned, and managed by you. This option requires the \code{kms_key_identifier} of the KMS key in Amazon Resource Name (ARN) format as input.
 }
 
 The default is \code{type:AWS_OWNED_KMS_KEY}.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html}{Encryption at rest}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html}{Encryption at rest} in the \emph{Amazon Keyspaces Developer Guide}.}
 
-\item{pointInTimeRecovery}{Specifies if \code{pointInTimeRecovery} is enabled or disabled for the table.
-The options are:
+\item{pointInTimeRecovery}{Specifies if \code{pointInTimeRecovery} is enabled or disabled for the table. The options are:
 \itemize{
 \item \code{status=ENABLED}
 \item \code{status=DISABLED}
@@ -96,8 +78,7 @@ The options are:
 
 If it's not specified, the default is \code{status=DISABLED}.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html}{Point-in-time recovery}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html}{Point-in-time recovery} in the \emph{Amazon Keyspaces Developer Guide}.}
 
 \item{ttl}{Enables Time to Live custom settings for the table. The options are:
 \itemize{
@@ -105,71 +86,45 @@ in the \emph{Amazon Keyspaces Developer Guide}.}
 \item \code{status:disabled}
 }
 
-The default is \code{status:disabled}. After \code{ttl} is enabled, you can't
-disable it for the table.
+The default is \code{status:disabled}. After \code{ttl} is enabled, you can't disable it for the table.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html}{Expiring data by using Amazon Keyspaces Time to Live (TTL)}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html}{Expiring data by using Amazon Keyspaces Time to Live (TTL)} in the \emph{Amazon Keyspaces Developer Guide}.}
 
 \item{defaultTimeToLive}{The default Time to Live setting in seconds for the table.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/#ttl-howitworks_default_ttl}{Setting the default TTL value for a table}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/#ttl-howitworks_default_ttl}{Setting the default TTL value for a table} in the \emph{Amazon Keyspaces Developer Guide}.}
 
 \item{tags}{A list of key-value pair tags to be attached to the resource.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html}{Adding tags and labels to Amazon Keyspaces resources}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html}{Adding tags and labels to Amazon Keyspaces resources} in the \emph{Amazon Keyspaces Developer Guide}.}
 
-\item{clientSideTimestamps}{Enables client-side timestamps for the table. By default, the setting is
-disabled. You can enable client-side timestamps with the following
-option:
+\item{clientSideTimestamps}{Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:
 \itemize{
 \item \code{status: "enabled"}
 }
 
-Once client-side timestamps are enabled for a table, this setting cannot
-be disabled.}
+Once client-side timestamps are enabled for a table, this setting cannot be disabled.}
 
-\item{autoScalingSpecification}{The optional auto scaling settings for a table in provisioned capacity
-mode. Specifies if the service can manage throughput capacity
-automatically on your behalf.
+\item{autoScalingSpecification}{The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.
 
-Auto scaling helps you provision throughput capacity for variable
-workloads efficiently by increasing and decreasing your table's read and
-write capacity automatically in response to application traffic. For
-more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html}{Managing throughput capacity automatically with Amazon Keyspaces auto scaling}
-in the \emph{Amazon Keyspaces Developer Guide}.
+Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html}{Managing throughput capacity automatically with Amazon Keyspaces auto scaling} in the \emph{Amazon Keyspaces Developer Guide}.
 
 By default, auto scaling is disabled for a table.}
 
-\item{replicaSpecifications}{The optional Amazon Web Services Region specific settings of a
-multi-Region table. These settings overwrite the general settings of the
-table for the specified Region.
+\item{replicaSpecifications}{The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.
 
-For a multi-Region table in provisioned capacity mode, you can configure
-the table's read capacity differently for each Region's replica. The
-write capacity, however, remains synchronized between all replicas to
-ensure that there's enough capacity to replicate writes across all
-Regions. To define the read capacity for a table replica in a specific
-Region, you can do so by configuring the following parameters.
+For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.
 \itemize{
 \item \code{region}: The Region where these settings are applied. (Required)
 \item \code{readCapacityUnits}: The provisioned read capacity units. (Optional)
-\item \code{readCapacityAutoScaling}: The read capacity auto scaling settings
-for the table. (Optional)
+\item \code{readCapacityAutoScaling}: The read capacity auto scaling settings for the table. (Optional)
 }}
 
 \item{cdcSpecification}{The CDC stream settings of the table.}
 
-\item{warmThroughputSpecification}{Specifies the warm throughput settings for the table. Pre-warming a
-table helps you avoid capacity exceeded exceptions by pre-provisioning
-read and write capacity units to reduce cold start latency when your
-table receives traffic.
+\item{warmThroughputSpecification}{Specifies the warm throughput settings for the table. Pre-warming a table helps you avoid capacity exceeded exceptions by pre-provisioning read and write capacity units to reduce cold start latency when your table receives traffic.
 
-For more information about pre-warming in Amazon Keyspaces, see
-\href{https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html}{Pre-warm a table in Amazon Keyspaces}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information about pre-warming in Amazon Keyspaces, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html}{Pre-warm a table in Amazon Keyspaces} in the \emph{Amazon Keyspaces Developer Guide}.}
 }
 \description{
 The \code{\link[=keyspaces_create_table]{create_table}} operation adds a new table to the specified keyspace. Within a keyspace, table names must be unique.

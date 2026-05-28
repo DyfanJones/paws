@@ -9,12 +9,9 @@ StartActivityStream operation}
 rds_stop_activity_stream(ResourceArn, ApplyImmediately = NULL)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the DB cluster for the database
-activity stream. For example,
-\code{arn:aws:rds:us-east-1:12345667890:cluster:das-cluster}.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, \code{arn:aws:rds:us-east-1:12345667890:cluster:das-cluster}.}
 
-\item{ApplyImmediately}{Specifies whether or not the database activity stream is to stop as soon
-as possible, regardless of the maintenance window for the database.}
+\item{ApplyImmediately}{Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.}
 }
 \description{
 Stops a database activity stream that was started using the Amazon Web Services console, the \code{start-activity-stream} CLI command, or the \code{\link[=rds_start_activity_stream]{start_activity_stream}} operation.

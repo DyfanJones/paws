@@ -8,11 +8,9 @@ Resource Name (ARN) in CodeCommit}
 codecommit_list_tags_for_resource(resourceArn, nextToken = NULL)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to get
-information about tags, if any.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.}
 
-\item{nextToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{nextToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 }
 \description{
 Gets information about Amazon Web Servicestags for a specified Amazon Resource Name (ARN) in CodeCommit. For a list of valid resources in CodeCommit, see \href{https://docs.aws.amazon.com/codecommit/latest/userguide/#arn-formats}{CodeCommit Resources and Operations} in the \emph{CodeCommit User Guide}.

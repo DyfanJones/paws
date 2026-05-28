@@ -25,8 +25,7 @@ datazone_create_listing_change_set(
 
 \item{action}{[required] Specifies whether to publish or unpublish a listing.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog.

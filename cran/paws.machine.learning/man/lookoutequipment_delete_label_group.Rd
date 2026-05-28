@@ -7,9 +7,7 @@
 lookoutequipment_delete_label_group(LabelGroupName)
 }
 \arguments{
-\item{LabelGroupName}{[required] The name of the label group that you want to delete. Data in this field
-will be retained for service usage. Follow best practices for the
-security of your data.}
+\item{LabelGroupName}{[required] The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 }
 \description{
 Deletes a group of labels.

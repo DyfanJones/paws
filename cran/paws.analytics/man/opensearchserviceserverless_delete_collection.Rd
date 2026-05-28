@@ -7,13 +7,9 @@
 opensearchserviceserverless_delete_collection(id, clientToken = NULL)
 }
 \arguments{
-\item{id}{[required] The unique identifier of the collection. For example, \verb{1iu5usc406kd}.
-The ID is part of the collection endpoint. You can also retrieve it
-using the
-\code{\link[=opensearchserviceserverless_list_collections]{list_collections}} API.}
+\item{id}{[required] The unique identifier of the collection. For example, \verb{1iu5usc406kd}. The ID is part of the collection endpoint. You can also retrieve it using the \code{\link[=opensearchserviceserverless_list_collections]{list_collections}} API.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Deletes an OpenSearch Serverless collection. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html}{Creating and managing Amazon OpenSearch Serverless collections}.

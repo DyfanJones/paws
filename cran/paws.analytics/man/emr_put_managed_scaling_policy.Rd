@@ -7,8 +7,7 @@
 emr_put_managed_scaling_policy(ClusterId, ManagedScalingPolicy)
 }
 \arguments{
-\item{ClusterId}{[required] Specifies the ID of an Amazon EMR cluster where the managed scaling
-policy is attached.}
+\item{ClusterId}{[required] Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.}
 
 \item{ManagedScalingPolicy}{[required] Specifies the constraints for the managed scaling policy.}
 }

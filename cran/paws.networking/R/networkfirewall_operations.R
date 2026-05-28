@@ -10,9 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_accept_network_firewall_transit_gateway_attachment/](https://www.paws-r-sdk.com/docs/networkfirewall_accept_network_firewall_transit_gateway_attachment/) for full documentation.
 #'
-#' @param TransitGatewayAttachmentId &#91;required&#93; Required. The unique identifier of the transit gateway attachment to
-#' accept. This ID is returned in the response when creating a transit
-#' gateway-attached firewall.
+#' @param TransitGatewayAttachmentId &#91;required&#93; Required. The unique identifier of the transit gateway attachment to accept. This ID is returned in the response when creating a transit gateway-attached firewall.
 #'
 #' @keywords internal
 #'
@@ -44,32 +42,18 @@ networkfirewall_accept_network_firewall_transit_gateway_attachment <- function(T
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_associate_availability_zones/](https://www.paws-r-sdk.com/docs/networkfirewall_associate_availability_zones/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param AvailabilityZoneMappings &#91;required&#93; Required. The Availability Zones where you want to create firewall
-#' endpoints. You must specify at least one Availability Zone.
+#' @param AvailabilityZoneMappings &#91;required&#93; Required. The Availability Zones where you want to create firewall endpoints. You must specify at least one Availability Zone.
 #'
 #' @keywords internal
 #'
@@ -100,28 +84,15 @@ networkfirewall_associate_availability_zones <- function(UpdateToken = NULL, Fir
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_associate_firewall_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_associate_firewall_policy/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param FirewallPolicyArn &#91;required&#93; The Amazon Resource Name (ARN) of the firewall policy.
@@ -155,28 +126,15 @@ networkfirewall_associate_firewall_policy <- function(UpdateToken = NULL, Firewa
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_associate_subnets/](https://www.paws-r-sdk.com/docs/networkfirewall_associate_subnets/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param SubnetMappings &#91;required&#93; The IDs of the subnets that you want to associate with the firewall.
@@ -210,25 +168,16 @@ networkfirewall_associate_subnets <- function(UpdateToken = NULL, FirewallArn = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_attach_rule_groups_to_proxy_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_attach_rule_groups_to_proxy_configuration/) for full documentation.
 #'
-#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyConfigurationArn The Amazon Resource Name (ARN) of a proxy configuration.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param RuleGroups &#91;required&#93; The proxy rule group(s) to attach to the proxy configuration
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the proxy configuration. The token marks the
-#' state of the proxy configuration resource at the time of the request.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy configuration. The token marks the state of the proxy configuration resource at the time of the request.
 #' 
-#' To make changes to the proxy configuration, you provide the token in
-#' your request. Network Firewall uses the token to ensure that the proxy
-#' configuration hasn't changed since you last retrieved it. If it has
-#' changed, the operation fails with an `InvalidTokenException`. If this
-#' happens, retrieve the proxy configuration again to get a current copy of
-#' it with a current token. Reapply your changes as needed, then try the
-#' operation again using the new token.
+#' To make changes to the proxy configuration, you provide the token in your request. Network Firewall uses the token to ensure that the proxy configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the proxy configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -260,71 +209,28 @@ networkfirewall_attach_rule_groups_to_proxy_configuration <- function(ProxyConfi
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_firewall/](https://www.paws-r-sdk.com/docs/networkfirewall_create_firewall/) for full documentation.
 #'
-#' @param FirewallName &#91;required&#93; The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
-#' @param FirewallPolicyArn &#91;required&#93; The Amazon Resource Name (ARN) of the FirewallPolicy that you want to
-#' use for the firewall.
-#' @param VpcId The unique identifier of the VPC where Network Firewall should create
-#' the firewall.
+#' @param FirewallName &#91;required&#93; The descriptive name of the firewall. You can't change the name of a firewall after you create it.
+#' @param FirewallPolicyArn &#91;required&#93; The Amazon Resource Name (ARN) of the FirewallPolicy that you want to use for the firewall.
+#' @param VpcId The unique identifier of the VPC where Network Firewall should create the firewall.
 #' 
 #' You can't change this setting after you create the firewall.
-#' @param SubnetMappings The public subnets to use for your Network Firewall firewalls. Each
-#' subnet must belong to a different Availability Zone in the VPC. Network
-#' Firewall creates a firewall endpoint in each subnet.
-#' @param DeleteProtection A flag indicating whether it is possible to delete the firewall. A
-#' setting of `TRUE` indicates that the firewall is protected against
-#' deletion. Use this setting to protect against accidentally deleting a
-#' firewall that is in use. When you create a firewall, the operation
-#' initializes this flag to `TRUE`.
-#' @param SubnetChangeProtection A setting indicating whether the firewall is protected against changes
-#' to the subnet associations. Use this setting to protect against
-#' accidentally modifying the subnet associations for a firewall that is in
-#' use. When you create a firewall, the operation initializes this setting
-#' to `TRUE`.
-#' @param FirewallPolicyChangeProtection A setting indicating whether the firewall is protected against a change
-#' to the firewall policy association. Use this setting to protect against
-#' accidentally modifying the firewall policy for a firewall that is in
-#' use. When you create a firewall, the operation initializes this setting
-#' to `TRUE`.
+#' @param SubnetMappings The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet.
+#' @param DeleteProtection A flag indicating whether it is possible to delete the firewall. A setting of `TRUE` indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to `TRUE`.
+#' @param SubnetChangeProtection A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to `TRUE`.
+#' @param FirewallPolicyChangeProtection A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to `TRUE`.
 #' @param Description A description of the firewall.
 #' @param Tags The key:value pairs to associate with the resource.
-#' @param EncryptionConfiguration A complex type that contains settings for encryption of your firewall
-#' resources.
-#' @param EnabledAnalysisTypes An optional setting indicating the specific traffic analysis types to
-#' enable on the firewall.
-#' @param TransitGatewayId Required when creating a transit gateway-attached firewall. The unique
-#' identifier of the transit gateway to attach to this firewall. You can
-#' provide either a transit gateway from your account or one that has been
-#' shared with you through Resource Access Manager.
+#' @param EncryptionConfiguration A complex type that contains settings for encryption of your firewall resources.
+#' @param EnabledAnalysisTypes An optional setting indicating the specific traffic analysis types to enable on the firewall.
+#' @param TransitGatewayId Required when creating a transit gateway-attached firewall. The unique identifier of the transit gateway to attach to this firewall. You can provide either a transit gateway from your account or one that has been shared with you through Resource Access Manager.
 #' 
-#' After creating the firewall, you cannot change the transit gateway
-#' association. To use a different transit gateway, you must create a new
-#' firewall.
+#' After creating the firewall, you cannot change the transit gateway association. To use a different transit gateway, you must create a new firewall.
 #' 
-#' For information about creating firewalls, see
-#' [`create_firewall`][networkfirewall_create_firewall]. For specific
-#' guidance about transit gateway-attached firewalls, see [Considerations
-#' for transit gateway-attached
-#' firewalls](https://docs.aws.amazon.com/network-firewall/latest/developerguide/tgw-firewall-considerations.html)
-#' in the *Network Firewall Developer Guide*.
-#' @param AvailabilityZoneMappings Required. The Availability Zones where you want to create firewall
-#' endpoints for a transit gateway-attached firewall. You must specify at
-#' least one Availability Zone. Consider enabling the firewall in every
-#' Availability Zone where you have workloads to maintain Availability Zone
-#' isolation.
+#' For information about creating firewalls, see [`create_firewall`][networkfirewall_create_firewall]. For specific guidance about transit gateway-attached firewalls, see [Considerations for transit gateway-attached firewalls](https://docs.aws.amazon.com/network-firewall/latest/developerguide/tgw-firewall-considerations.html) in the *Network Firewall Developer Guide*.
+#' @param AvailabilityZoneMappings Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone isolation.
 #' 
-#' You can modify Availability Zones later using
-#' [`associate_availability_zones`][networkfirewall_associate_availability_zones]
-#' or
-#' [`disassociate_availability_zones`][networkfirewall_disassociate_availability_zones],
-#' but this may briefly disrupt traffic. The
-#' `AvailabilityZoneChangeProtection` setting controls whether you can make
-#' these modifications.
-#' @param AvailabilityZoneChangeProtection Optional. A setting indicating whether the firewall is protected against
-#' changes to its Availability Zone configuration. When set to `TRUE`, you
-#' cannot add or remove Availability Zones without first disabling this
-#' protection using
-#' [`update_availability_zone_change_protection`][networkfirewall_update_availability_zone_change_protection].
+#' You can modify Availability Zones later using [`associate_availability_zones`][networkfirewall_associate_availability_zones] or [`disassociate_availability_zones`][networkfirewall_disassociate_availability_zones], but this may briefly disrupt traffic. The `AvailabilityZoneChangeProtection` setting controls whether you can make these modifications.
+#' @param AvailabilityZoneChangeProtection Optional. A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to `TRUE`, you cannot add or remove Availability Zones without first disabling this protection using [`update_availability_zone_change_protection`][networkfirewall_update_availability_zone_change_protection].
 #' 
 #' Default value: `FALSE`
 #'
@@ -358,26 +264,16 @@ networkfirewall_create_firewall <- function(FirewallName, FirewallPolicyArn, Vpc
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_firewall_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_create_firewall_policy/) for full documentation.
 #'
-#' @param FirewallPolicyName &#91;required&#93; The descriptive name of the firewall policy. You can't change the name
-#' of a firewall policy after you create it.
+#' @param FirewallPolicyName &#91;required&#93; The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.
 #' @param FirewallPolicy &#91;required&#93; The rule groups and policy actions to use in the firewall policy.
 #' @param Description A description of the firewall policy.
 #' @param Tags The key:value pairs to associate with the resource.
-#' @param DryRun Indicates whether you want Network Firewall to just check the validity
-#' of the request, rather than run the request.
+#' @param DryRun Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.
 #' 
-#' If set to `TRUE`, Network Firewall checks whether the request can run
-#' successfully, but doesn't actually make the requested changes. The call
-#' returns the value that the request would return if you ran it with dry
-#' run set to `FALSE`, but doesn't make additions or changes to your
-#' resources. This option allows you to make sure that you have the
-#' required permissions to run the request and that your request parameters
-#' are valid.
+#' If set to `TRUE`, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to `FALSE`, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.
 #' 
-#' If set to `FALSE`, Network Firewall makes the requested changes to your
-#' resources.
-#' @param EncryptionConfiguration A complex type that contains settings for encryption of your firewall
-#' policy resources.
+#' If set to `FALSE`, Network Firewall makes the requested changes to your resources.
+#' @param EncryptionConfiguration A complex type that contains settings for encryption of your firewall policy resources.
 #'
 #' @keywords internal
 #'
@@ -408,11 +304,9 @@ networkfirewall_create_firewall_policy <- function(FirewallPolicyName, FirewallP
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_proxy/](https://www.paws-r-sdk.com/docs/networkfirewall_create_proxy/) for full documentation.
 #'
-#' @param ProxyName &#91;required&#93; The descriptive name of the proxy. You can't change the name of a proxy
-#' after you create it.
+#' @param ProxyName &#91;required&#93; The descriptive name of the proxy. You can't change the name of a proxy after you create it.
 #' @param NatGatewayId &#91;required&#93; A unique identifier for the NAT gateway to use with proxy resources.
-#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyConfigurationArn The Amazon Resource Name (ARN) of a proxy configuration.
@@ -451,8 +345,7 @@ networkfirewall_create_proxy <- function(ProxyName, NatGatewayId, ProxyConfigura
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_proxy_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_create_proxy_configuration/) for full documentation.
 #'
-#' @param ProxyConfigurationName &#91;required&#93; The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName &#91;required&#93; The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' @param Description A description of the proxy configuration.
 #' @param RuleGroupNames The proxy rule group name(s) to attach to the proxy configuration.
 #' 
@@ -460,8 +353,7 @@ networkfirewall_create_proxy <- function(ProxyName, NatGatewayId, ProxyConfigura
 #' @param RuleGroupArns The proxy rule group arn(s) to attach to the proxy configuration.
 #' 
 #' You must specify the ARNs or the names, and you can specify both.
-#' @param DefaultRulePhaseActions &#91;required&#93; Evaluation points in the traffic flow where rules are applied. There are
-#' three phases in a traffic where the rule match is applied.
+#' @param DefaultRulePhaseActions &#91;required&#93; Evaluation points in the traffic flow where rules are applied. There are three phases in a traffic where the rule match is applied.
 #' @param Tags The key:value pairs to associate with the resource.
 #'
 #' @keywords internal
@@ -493,12 +385,9 @@ networkfirewall_create_proxy_configuration <- function(ProxyConfigurationName, D
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_proxy_rule_group/](https://www.paws-r-sdk.com/docs/networkfirewall_create_proxy_rule_group/) for full documentation.
 #'
-#' @param ProxyRuleGroupName &#91;required&#93; The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleGroupName &#91;required&#93; The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' @param Description A description of the proxy rule group.
-#' @param Rules Individual rules that define match conditions and actions for
-#' application-layer traffic. Rules specify what to inspect (domains,
-#' headers, methods) and what action to take (allow, deny, alert).
+#' @param Rules Individual rules that define match conditions and actions for application-layer traffic. Rules specify what to inspect (domains, headers, methods) and what action to take (allow, deny, alert).
 #' @param Tags The key:value pairs to associate with the resource.
 #'
 #' @keywords internal
@@ -533,13 +422,10 @@ networkfirewall_create_proxy_rule_group <- function(ProxyRuleGroupName, Descript
 #' @param ProxyRuleGroupArn The Amazon Resource Name (ARN) of a proxy rule group.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param Rules &#91;required&#93; Individual rules that define match conditions and actions for
-#' application-layer traffic. Rules specify what to inspect (domains,
-#' headers, methods) and what action to take (allow, deny, alert).
+#' @param Rules &#91;required&#93; Individual rules that define match conditions and actions for application-layer traffic. Rules specify what to inspect (domains, headers, methods) and what action to take (allow, deny, alert).
 #'
 #' @keywords internal
 #'
@@ -571,99 +457,50 @@ networkfirewall_create_proxy_rules <- function(ProxyRuleGroupArn = NULL, ProxyRu
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_rule_group/](https://www.paws-r-sdk.com/docs/networkfirewall_create_rule_group/) for full documentation.
 #'
-#' @param RuleGroupName &#91;required&#93; The descriptive name of the rule group. You can't change the name of a
-#' rule group after you create it.
+#' @param RuleGroupName &#91;required&#93; The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 #' @param RuleGroup An object that defines the rule group rules.
 #' 
-#' You must provide either this rule group setting or a `Rules` setting,
-#' but not both.
-#' @param Rules A string containing stateful rule group rules specifications in Suricata
-#' flat format, with one rule per line. Use this to import your existing
-#' Suricata compatible rule groups.
+#' You must provide either this rule group setting or a `Rules` setting, but not both.
+#' @param Rules A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.
 #' 
-#' You must provide either this rules setting or a populated `RuleGroup`
-#' setting, but not both.
+#' You must provide either this rules setting or a populated `RuleGroup` setting, but not both.
 #' 
-#' You can provide your rule group specification in Suricata flat format
-#' through this setting when you create or update your rule group. The call
-#' response returns a RuleGroup object that Network Firewall has populated
-#' from your string.
-#' @param Type &#91;required&#93; Indicates whether the rule group is stateless or stateful. If the rule
-#' group is stateless, it contains stateless rules. If it is stateful, it
-#' contains stateful rules.
+#' You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a RuleGroup object that Network Firewall has populated from your string.
+#' @param Type &#91;required&#93; Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 #' @param Description A description of the rule group.
-#' @param Capacity &#91;required&#93; The maximum operating resources that this rule group can use. Rule group
-#' capacity is fixed at creation. When you update a rule group, you are
-#' limited to this capacity. When you reference a rule group from a
-#' firewall policy, Network Firewall reserves this capacity for the rule
-#' group.
+#' @param Capacity &#91;required&#93; The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.
 #' 
-#' You can retrieve the capacity that would be required for a rule group
-#' before you create the rule group by calling
-#' [`create_rule_group`][networkfirewall_create_rule_group] with `DryRun`
-#' set to `TRUE`.
+#' You can retrieve the capacity that would be required for a rule group before you create the rule group by calling [`create_rule_group`][networkfirewall_create_rule_group] with `DryRun` set to `TRUE`.
 #' 
-#' You can't change or exceed this capacity when you update the rule group,
-#' so leave room for your rule group to grow.
+#' You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow.
 #' 
 #' **Capacity for a stateless rule group**
 #' 
-#' For a stateless rule group, the capacity required is the sum of the
-#' capacity requirements of the individual rules that you expect to have in
-#' the rule group.
+#' For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group.
 #' 
-#' To calculate the capacity requirement of a single rule, multiply the
-#' capacity requirement values of each of the rule's match settings:
+#' To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:
 #' 
 #' -   A match setting with no criteria specified has a value of 1.
 #' 
 #' -   A match setting with `Any` specified has a value of 1.
 #' 
-#' -   All other match settings have a value equal to the number of
-#'     elements provided in the setting. For example, a protocol setting
-#'     \["UDP"\] and a source setting \["10.0.0.0/24"\] each have a value
-#'     of 1. A protocol setting \["UDP","TCP"\] has a value of 2. A source
-#'     setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\] has a value of
-#'     3.
+#' -   All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting \["UDP"\] and a source setting \["10.0.0.0/24"\] each have a value of 1. A protocol setting \["UDP","TCP"\] has a value of 2. A source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\] has a value of 3.
 #' 
-#' A rule with no criteria specified in any of its match settings has a
-#' capacity requirement of 1. A rule with protocol setting \["UDP","TCP"\],
-#' source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\], and a
-#' single specification or no specification for each of the other match
-#' settings has a capacity requirement of 6.
+#' A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting \["UDP","TCP"\], source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.
 #' 
 #' **Capacity for a stateful rule group**
 #' 
-#' For a stateful rule group, the minimum capacity required is the number
-#' of individual rules that you expect to have in the rule group.
+#' For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group.
 #' @param Tags The key:value pairs to associate with the resource.
-#' @param DryRun Indicates whether you want Network Firewall to just check the validity
-#' of the request, rather than run the request.
+#' @param DryRun Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.
 #' 
-#' If set to `TRUE`, Network Firewall checks whether the request can run
-#' successfully, but doesn't actually make the requested changes. The call
-#' returns the value that the request would return if you ran it with dry
-#' run set to `FALSE`, but doesn't make additions or changes to your
-#' resources. This option allows you to make sure that you have the
-#' required permissions to run the request and that your request parameters
-#' are valid.
+#' If set to `TRUE`, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to `FALSE`, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.
 #' 
-#' If set to `FALSE`, Network Firewall makes the requested changes to your
-#' resources.
-#' @param EncryptionConfiguration A complex type that contains settings for encryption of your rule group
-#' resources.
-#' @param SourceMetadata A complex type that contains metadata about the rule group that your own
-#' rule group is copied from. You can use the metadata to keep track of
-#' updates made to the originating rule group.
-#' @param AnalyzeRuleGroup Indicates whether you want Network Firewall to analyze the stateless
-#' rules in the rule group for rule behavior such as asymmetric routing. If
-#' set to `TRUE`, Network Firewall runs the analysis and then creates the
-#' rule group for you. To run the stateless rule group analyzer without
-#' creating the rule group, set `DryRun` to `TRUE`.
-#' @param SummaryConfiguration An object that contains a `RuleOptions` array of strings. You use
-#' `RuleOptions` to determine which of the following RuleSummary values are
-#' returned in response to
-#' [`describe_rule_group_summary`][networkfirewall_describe_rule_group_summary].
+#' If set to `FALSE`, Network Firewall makes the requested changes to your resources.
+#' @param EncryptionConfiguration A complex type that contains settings for encryption of your rule group resources.
+#' @param SourceMetadata A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.
+#' @param AnalyzeRuleGroup Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to `TRUE`, Network Firewall runs the analysis and then creates the rule group for you. To run the stateless rule group analyzer without creating the rule group, set `DryRun` to `TRUE`.
+#' @param SummaryConfiguration An object that contains a `RuleOptions` array of strings. You use `RuleOptions` to determine which of the following RuleSummary values are returned in response to [`describe_rule_group_summary`][networkfirewall_describe_rule_group_summary].
 #' 
 #' -   `Metadata` - returns
 #' 
@@ -700,31 +537,15 @@ networkfirewall_create_rule_group <- function(RuleGroupName, RuleGroup = NULL, R
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_tls_inspection_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_create_tls_inspection_configuration/) for full documentation.
 #'
-#' @param TLSInspectionConfigurationName &#91;required&#93; The descriptive name of the TLS inspection configuration. You can't
-#' change the name of a TLS inspection configuration after you create it.
-#' @param TLSInspectionConfiguration &#91;required&#93; The object that defines a TLS inspection configuration. This, along with
-#' TLSInspectionConfigurationResponse, define the TLS inspection
-#' configuration. You can retrieve all objects for a TLS inspection
-#' configuration by calling
-#' [`describe_tls_inspection_configuration`][networkfirewall_describe_tls_inspection_configuration].
+#' @param TLSInspectionConfigurationName &#91;required&#93; The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.
+#' @param TLSInspectionConfiguration &#91;required&#93; The object that defines a TLS inspection configuration. This, along with TLSInspectionConfigurationResponse, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling [`describe_tls_inspection_configuration`][networkfirewall_describe_tls_inspection_configuration].
 #' 
-#' Network Firewall uses a TLS inspection configuration to decrypt traffic.
-#' Network Firewall re-encrypts the traffic before sending it to its
-#' destination.
+#' Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.
 #' 
-#' To use a TLS inspection configuration, you add it to a new Network
-#' Firewall firewall policy, then you apply the firewall policy to a
-#' firewall. Network Firewall acts as a proxy service to decrypt and
-#' inspect the traffic traveling through your firewalls. You can reference
-#' a TLS inspection configuration from more than one firewall policy, and
-#' you can use a firewall policy in more than one firewall. For more
-#' information about using TLS inspection configurations, see [Inspecting
-#' SSL/TLS traffic with TLS inspection
-#' configurations](https://docs.aws.amazon.com/network-firewall/latest/developerguide/)
-#' in the *Network Firewall Developer Guide*.
+#' To use a TLS inspection configuration, you add it to a new Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect the traffic traveling through your firewalls. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see [Inspecting SSL/TLS traffic with TLS inspection configurations](https://docs.aws.amazon.com/network-firewall/latest/developerguide/) in the *Network Firewall Developer Guide*.
 #' @param Description A description of the TLS inspection configuration.
 #' @param Tags The key:value pairs to associate with the resource.
-#' @param EncryptionConfiguration 
+#' @param EncryptionConfiguration A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see [Encryption at rest with Amazon Web Services Key Managment Service](https://docs.aws.amazon.com/kms/latest/developerguide/) in the *Network Firewall Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -756,9 +577,8 @@ networkfirewall_create_tls_inspection_configuration <- function(TLSInspectionCon
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_create_vpc_endpoint_association/](https://www.paws-r-sdk.com/docs/networkfirewall_create_vpc_endpoint_association/) for full documentation.
 #'
 #' @param FirewallArn &#91;required&#93; The Amazon Resource Name (ARN) of the firewall.
-#' @param VpcId &#91;required&#93; The unique identifier of the VPC where you want to create a firewall
-#' endpoint.
-#' @param SubnetMapping &#91;required&#93; 
+#' @param VpcId &#91;required&#93; The unique identifier of the VPC where you want to create a firewall endpoint.
+#' @param SubnetMapping &#91;required&#93; The ID for a subnet that's used in an association with a firewall. This is used in [`create_firewall`][networkfirewall_create_firewall], [`associate_subnets`][networkfirewall_associate_subnets], and [`create_vpc_endpoint_association`][networkfirewall_create_vpc_endpoint_association]. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.
 #' @param Description A description of the VPC endpoint association.
 #' @param Tags The key:value pairs to associate with the resource.
 #'
@@ -791,8 +611,7 @@ networkfirewall_create_vpc_endpoint_association <- function(FirewallArn, VpcId, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_firewall/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_firewall/) for full documentation.
 #'
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
@@ -828,8 +647,7 @@ networkfirewall_delete_firewall <- function(FirewallName = NULL, FirewallArn = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_firewall_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_firewall_policy/) for full documentation.
 #'
-#' @param FirewallPolicyName The descriptive name of the firewall policy. You can't change the name
-#' of a firewall policy after you create it.
+#' @param FirewallPolicyName The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param FirewallPolicyArn The Amazon Resource Name (ARN) of the firewall policy.
@@ -865,8 +683,7 @@ networkfirewall_delete_firewall_policy <- function(FirewallPolicyName = NULL, Fi
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_network_firewall_transit_gateway_attachment/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_network_firewall_transit_gateway_attachment/) for full documentation.
 #'
-#' @param TransitGatewayAttachmentId &#91;required&#93; Required. The unique identifier of the transit gateway attachment to
-#' delete.
+#' @param TransitGatewayAttachmentId &#91;required&#93; Required. The unique identifier of the transit gateway attachment to delete.
 #'
 #' @keywords internal
 #'
@@ -898,8 +715,7 @@ networkfirewall_delete_network_firewall_transit_gateway_attachment <- function(T
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_proxy/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_proxy/) for full documentation.
 #'
 #' @param NatGatewayId &#91;required&#93; The NAT Gateway the proxy is attached to.
-#' @param ProxyName The descriptive name of the proxy. You can't change the name of a proxy
-#' after you create it.
+#' @param ProxyName The descriptive name of the proxy. You can't change the name of a proxy after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyArn The Amazon Resource Name (ARN) of a proxy.
@@ -935,8 +751,7 @@ networkfirewall_delete_proxy <- function(NatGatewayId, ProxyName = NULL, ProxyAr
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_proxy_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_proxy_configuration/) for full documentation.
 #'
-#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyConfigurationArn The Amazon Resource Name (ARN) of a proxy configuration.
@@ -972,8 +787,7 @@ networkfirewall_delete_proxy_configuration <- function(ProxyConfigurationName = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_proxy_rule_group/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_proxy_rule_group/) for full documentation.
 #'
-#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyRuleGroupArn The Amazon Resource Name (ARN) of a proxy rule group.
@@ -1012,8 +826,7 @@ networkfirewall_delete_proxy_rule_group <- function(ProxyRuleGroupName = NULL, P
 #' @param ProxyRuleGroupArn The Amazon Resource Name (ARN) of a proxy rule group.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param Rules &#91;required&#93; The proxy rule(s) to remove from the existing proxy rule group.
@@ -1048,8 +861,7 @@ networkfirewall_delete_proxy_rules <- function(ProxyRuleGroupArn = NULL, ProxyRu
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_resource_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the rule group or firewall policy
-#' whose resource policy you want to delete.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete.
 #'
 #' @keywords internal
 #'
@@ -1080,19 +892,15 @@ networkfirewall_delete_resource_policy <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_delete_rule_group/](https://www.paws-r-sdk.com/docs/networkfirewall_delete_rule_group/) for full documentation.
 #'
-#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a
-#' rule group after you create it.
+#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param RuleGroupArn The Amazon Resource Name (ARN) of the rule group.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param Type Indicates whether the rule group is stateless or stateful. If the rule
-#' group is stateless, it contains stateless rules. If it is stateful, it
-#' contains stateful rules.
+#' @param Type Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 #' 
-#' This setting is required for requests that do not include the
-#' `RuleGroupARN`.
+#' This setting is required for requests that do not include the `RuleGroupARN`.
 #'
 #' @keywords internal
 #'
@@ -1126,8 +934,7 @@ networkfirewall_delete_rule_group <- function(RuleGroupName = NULL, RuleGroupArn
 #' @param TLSInspectionConfigurationArn The Amazon Resource Name (ARN) of the TLS inspection configuration.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param TLSInspectionConfigurationName The descriptive name of the TLS inspection configuration. You can't
-#' change the name of a TLS inspection configuration after you create it.
+#' @param TLSInspectionConfigurationName The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #'
@@ -1191,8 +998,7 @@ networkfirewall_delete_vpc_endpoint_association <- function(VpcEndpointAssociati
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_firewall/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_firewall/) for full documentation.
 #'
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
@@ -1260,8 +1066,7 @@ networkfirewall_describe_firewall_metadata <- function(FirewallArn = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_firewall_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_firewall_policy/) for full documentation.
 #'
-#' @param FirewallPolicyName The descriptive name of the firewall policy. You can't change the name
-#' of a firewall policy after you create it.
+#' @param FirewallPolicyName The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param FirewallPolicyArn The Amazon Resource Name (ARN) of the firewall policy.
@@ -1298,15 +1103,12 @@ networkfirewall_describe_firewall_policy <- function(FirewallPolicyName = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_flow_operation/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_flow_operation/) for full documentation.
 #'
 #' @param FirewallArn &#91;required&#93; The Amazon Resource Name (ARN) of the firewall.
-#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For
-#' example, `us-east-2a`.
+#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For example, `us-east-2a`.
 #' 
-#' Defines the scope a flow operation. You can use up to 20 filters to
-#' configure a single flow operation.
+#' Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.
 #' @param VpcEndpointAssociationArn The Amazon Resource Name (ARN) of a VPC endpoint association.
 #' @param VpcEndpointId A unique identifier for the primary endpoint associated with a firewall.
-#' @param FlowOperationId &#91;required&#93; A unique identifier for the flow operation. This ID is returned in the
-#' responses to start and list commands. You provide to describe commands.
+#' @param FlowOperationId &#91;required&#93; A unique identifier for the flow operation. This ID is returned in the responses to start and list commands. You provide to describe commands.
 #'
 #' @keywords internal
 #'
@@ -1340,8 +1142,7 @@ networkfirewall_describe_flow_operation <- function(FirewallArn, AvailabilityZon
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #'
@@ -1374,8 +1175,7 @@ networkfirewall_describe_logging_configuration <- function(FirewallArn = NULL, F
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy/) for full documentation.
 #'
-#' @param ProxyName The descriptive name of the proxy. You can't change the name of a proxy
-#' after you create it.
+#' @param ProxyName The descriptive name of the proxy. You can't change the name of a proxy after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyArn The Amazon Resource Name (ARN) of a proxy.
@@ -1411,8 +1211,7 @@ networkfirewall_describe_proxy <- function(ProxyName = NULL, ProxyArn = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy_configuration/) for full documentation.
 #'
-#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyConfigurationArn The Amazon Resource Name (ARN) of a proxy configuration.
@@ -1449,10 +1248,8 @@ networkfirewall_describe_proxy_configuration <- function(ProxyConfigurationName 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy_rule/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy_rule/) for full documentation.
 #'
-#' @param ProxyRuleName &#91;required&#93; The descriptive name of the proxy rule. You can't change the name of a
-#' proxy rule after you create it.
-#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleName &#91;required&#93; The descriptive name of the proxy rule. You can't change the name of a proxy rule after you create it.
+#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyRuleGroupArn The Amazon Resource Name (ARN) of a proxy rule group.
@@ -1488,8 +1285,7 @@ networkfirewall_describe_proxy_rule <- function(ProxyRuleName, ProxyRuleGroupNam
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy_rule_group/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_proxy_rule_group/) for full documentation.
 #'
-#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyRuleGroupArn The Amazon Resource Name (ARN) of a proxy rule group.
@@ -1526,8 +1322,7 @@ networkfirewall_describe_proxy_rule_group <- function(ProxyRuleGroupName = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_resource_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the rule group or firewall policy
-#' whose resource policy you want to retrieve.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.
 #'
 #' @keywords internal
 #'
@@ -1558,22 +1353,16 @@ networkfirewall_describe_resource_policy <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_rule_group/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_rule_group/) for full documentation.
 #'
-#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a
-#' rule group after you create it.
+#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param RuleGroupArn The Amazon Resource Name (ARN) of the rule group.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param Type Indicates whether the rule group is stateless or stateful. If the rule
-#' group is stateless, it contains stateless rules. If it is stateful, it
-#' contains stateful rules.
+#' @param Type Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 #' 
-#' This setting is required for requests that do not include the
-#' `RuleGroupARN`.
-#' @param AnalyzeRuleGroup Indicates whether you want Network Firewall to analyze the stateless
-#' rules in the rule group for rule behavior such as asymmetric routing. If
-#' set to `TRUE`, Network Firewall runs the analysis.
+#' This setting is required for requests that do not include the `RuleGroupARN`.
+#' @param AnalyzeRuleGroup Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to `TRUE`, Network Firewall runs the analysis.
 #'
 #' @keywords internal
 #'
@@ -1605,20 +1394,15 @@ networkfirewall_describe_rule_group <- function(RuleGroupName = NULL, RuleGroupA
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_rule_group_metadata/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_rule_group_metadata/) for full documentation.
 #'
-#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a
-#' rule group after you create it.
+#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param RuleGroupArn The descriptive name of the rule group. You can't change the name of a
-#' rule group after you create it.
+#' @param RuleGroupArn The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param Type Indicates whether the rule group is stateless or stateful. If the rule
-#' group is stateless, it contains stateless rules. If it is stateful, it
-#' contains stateful rules.
+#' @param Type Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 #' 
-#' This setting is required for requests that do not include the
-#' `RuleGroupARN`.
+#' This setting is required for requests that do not include the `RuleGroupARN`.
 #'
 #' @keywords internal
 #'
@@ -1649,8 +1433,7 @@ networkfirewall_describe_rule_group_metadata <- function(RuleGroupName = NULL, R
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_describe_rule_group_summary/](https://www.paws-r-sdk.com/docs/networkfirewall_describe_rule_group_summary/) for full documentation.
 #'
-#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a
-#' rule group after you create it.
+#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param RuleGroupArn Required. The Amazon Resource Name (ARN) of the rule group.
@@ -1660,8 +1443,7 @@ networkfirewall_describe_rule_group_metadata <- function(RuleGroupName = NULL, R
 #' 
 #' Valid value: `STATEFUL`
 #' 
-#' Note that `STATELESS` exists but is not currently supported. If you
-#' provide `STATELESS`, an exception is returned.
+#' Note that `STATELESS` exists but is not currently supported. If you provide `STATELESS`, an exception is returned.
 #'
 #' @keywords internal
 #'
@@ -1695,8 +1477,7 @@ networkfirewall_describe_rule_group_summary <- function(RuleGroupName = NULL, Ru
 #' @param TLSInspectionConfigurationArn The Amazon Resource Name (ARN) of the TLS inspection configuration.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param TLSInspectionConfigurationName The descriptive name of the TLS inspection configuration. You can't
-#' change the name of a TLS inspection configuration after you create it.
+#' @param TLSInspectionConfigurationName The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #'
@@ -1760,8 +1541,7 @@ networkfirewall_describe_vpc_endpoint_association <- function(VpcEndpointAssocia
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_detach_rule_groups_from_proxy_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_detach_rule_groups_from_proxy_configuration/) for full documentation.
 #'
-#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyConfigurationArn The Amazon Resource Name (ARN) of a proxy configuration.
@@ -1769,17 +1549,9 @@ networkfirewall_describe_vpc_endpoint_association <- function(VpcEndpointAssocia
 #' You must specify the ARN or the name, and you can specify both.
 #' @param RuleGroupNames The proxy rule group names to detach from the proxy configuration
 #' @param RuleGroupArns The proxy rule group arns to detach from the proxy configuration
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the proxy configuration. The token marks the
-#' state of the proxy configuration resource at the time of the request.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy configuration. The token marks the state of the proxy configuration resource at the time of the request.
 #' 
-#' To make changes to the proxy configuration, you provide the token in
-#' your request. Network Firewall uses the token to ensure that the proxy
-#' configuration hasn't changed since you last retrieved it. If it has
-#' changed, the operation fails with an `InvalidTokenException`. If this
-#' happens, retrieve the proxy configuration again to get a current copy of
-#' it with a current token. Reapply your changes as needed, then try the
-#' operation again using the new token.
+#' To make changes to the proxy configuration, you provide the token in your request. Network Firewall uses the token to ensure that the proxy configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the proxy configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -1811,32 +1583,18 @@ networkfirewall_detach_rule_groups_from_proxy_configuration <- function(ProxyCon
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_disassociate_availability_zones/](https://www.paws-r-sdk.com/docs/networkfirewall_disassociate_availability_zones/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param AvailabilityZoneMappings &#91;required&#93; Required. The Availability Zones to remove from the firewall's
-#' configuration.
+#' @param AvailabilityZoneMappings &#91;required&#93; Required. The Availability Zones to remove from the firewall's configuration.
 #'
 #' @keywords internal
 #'
@@ -1867,28 +1625,15 @@ networkfirewall_disassociate_availability_zones <- function(UpdateToken = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_disassociate_subnets/](https://www.paws-r-sdk.com/docs/networkfirewall_disassociate_subnets/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param SubnetIds &#91;required&#93; The unique identifiers for the subnets that you want to disassociate.
@@ -1923,24 +1668,15 @@ networkfirewall_disassociate_subnets <- function(UpdateToken = NULL, FirewallArn
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_get_analysis_report_results/](https://www.paws-r-sdk.com/docs/networkfirewall_get_analysis_report_results/) for full documentation.
 #'
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param AnalysisReportId &#91;required&#93; The unique ID of the query that ran when you requested an analysis
-#' report.
+#' @param AnalysisReportId &#91;required&#93; The unique ID of the query that ran when you requested an analysis report.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -1972,22 +1708,14 @@ networkfirewall_get_analysis_report_results <- function(FirewallName = NULL, Ana
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_analysis_reports/](https://www.paws-r-sdk.com/docs/networkfirewall_list_analysis_reports/) for full documentation.
 #'
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2018,15 +1746,8 @@ networkfirewall_list_analysis_reports <- function(FirewallName = NULL, FirewallA
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_firewall_policies/](https://www.paws-r-sdk.com/docs/networkfirewall_list_firewall_policies/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2057,18 +1778,9 @@ networkfirewall_list_firewall_policies <- function(NextToken = NULL, MaxResults 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_firewalls/](https://www.paws-r-sdk.com/docs/networkfirewall_list_firewalls/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param VpcIds The unique identifiers of the VPCs that you want Network Firewall to
-#' retrieve the firewalls for. Leave this blank to retrieve all firewalls
-#' that you have defined.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param VpcIds The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2100,22 +1812,12 @@ networkfirewall_list_firewalls <- function(NextToken = NULL, VpcIds = NULL, MaxR
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_flow_operation_results/](https://www.paws-r-sdk.com/docs/networkfirewall_list_flow_operation_results/) for full documentation.
 #'
 #' @param FirewallArn &#91;required&#93; The Amazon Resource Name (ARN) of the firewall.
-#' @param FlowOperationId &#91;required&#93; A unique identifier for the flow operation. This ID is returned in the
-#' responses to start and list commands. You provide to describe commands.
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
-#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For
-#' example, `us-east-2a`.
+#' @param FlowOperationId &#91;required&#93; A unique identifier for the flow operation. This ID is returned in the responses to start and list commands. You provide to describe commands.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
+#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For example, `us-east-2a`.
 #' 
-#' Defines the scope a flow operation. You can use up to 20 filters to
-#' configure a single flow operation.
+#' Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.
 #' @param VpcEndpointId A unique identifier for the primary endpoint associated with a firewall.
 #' @param VpcEndpointAssociationArn The Amazon Resource Name (ARN) of a VPC endpoint association.
 #'
@@ -2149,24 +1851,14 @@ networkfirewall_list_flow_operation_results <- function(FirewallArn, FlowOperati
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_flow_operations/](https://www.paws-r-sdk.com/docs/networkfirewall_list_flow_operations/) for full documentation.
 #'
 #' @param FirewallArn &#91;required&#93; The Amazon Resource Name (ARN) of the firewall.
-#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For
-#' example, `us-east-2a`.
+#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For example, `us-east-2a`.
 #' 
-#' Defines the scope a flow operation. You can use up to 20 filters to
-#' configure a single flow operation.
+#' Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.
 #' @param VpcEndpointAssociationArn The Amazon Resource Name (ARN) of a VPC endpoint association.
 #' @param VpcEndpointId A unique identifier for the primary endpoint associated with a firewall.
-#' @param FlowOperationType An optional string that defines whether any or all operation types are
-#' returned.
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param FlowOperationType An optional string that defines whether any or all operation types are returned.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2197,15 +1889,8 @@ networkfirewall_list_flow_operations <- function(FirewallArn, AvailabilityZone =
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_proxies/](https://www.paws-r-sdk.com/docs/networkfirewall_list_proxies/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2236,15 +1921,8 @@ networkfirewall_list_proxies <- function(NextToken = NULL, MaxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_proxy_configurations/](https://www.paws-r-sdk.com/docs/networkfirewall_list_proxy_configurations/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2275,15 +1953,8 @@ networkfirewall_list_proxy_configurations <- function(NextToken = NULL, MaxResul
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_proxy_rule_groups/](https://www.paws-r-sdk.com/docs/networkfirewall_list_proxy_rule_groups/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2314,26 +1985,12 @@ networkfirewall_list_proxy_rule_groups <- function(NextToken = NULL, MaxResults 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_rule_groups/](https://www.paws-r-sdk.com/docs/networkfirewall_list_rule_groups/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
-#' @param Scope The scope of the request. The default setting of `ACCOUNT` or a setting
-#' of `NULL` returns all of the rule groups in your account. A setting of
-#' `MANAGED` returns all available managed rule groups.
-#' @param ManagedType Indicates the general category of the Amazon Web Services managed rule
-#' group.
-#' @param SubscriptionStatus Filters the results to show only rule groups with the specified
-#' subscription status. Use this to find subscribed or unsubscribed rule
-#' groups.
-#' @param Type Indicates whether the rule group is stateless or stateful. If the rule
-#' group is stateless, it contains stateless rules. If it is stateful, it
-#' contains stateful rules.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
+#' @param Scope The scope of the request. The default setting of `ACCOUNT` or a setting of `NULL` returns all of the rule groups in your account. A setting of `MANAGED` returns all available managed rule groups.
+#' @param ManagedType Indicates the general category of the Amazon Web Services managed rule group.
+#' @param SubscriptionStatus Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.
+#' @param Type Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 #'
 #' @keywords internal
 #'
@@ -2365,15 +2022,8 @@ networkfirewall_list_rule_groups <- function(NextToken = NULL, MaxResults = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_tls_inspection_configurations/](https://www.paws-r-sdk.com/docs/networkfirewall_list_tls_inspection_configurations/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #'
 #' @keywords internal
 #'
@@ -2404,15 +2054,8 @@ networkfirewall_list_tls_inspection_configurations <- function(NextToken = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/networkfirewall_list_tags_for_resource/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource.
 #'
 #' @keywords internal
@@ -2445,19 +2088,11 @@ networkfirewall_list_tags_for_resource <- function(NextToken = NULL, MaxResults 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_list_vpc_endpoint_associations/](https://www.paws-r-sdk.com/docs/networkfirewall_list_vpc_endpoint_associations/) for full documentation.
 #'
-#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the
-#' number of objects that are still available for retrieval exceeds the
-#' maximum you requested, Network Firewall returns a `NextToken` value in
-#' the response. To retrieve the next batch of objects, use the token
-#' returned from the prior request in your next request.
-#' @param MaxResults The maximum number of objects that you want Network Firewall to return
-#' for this request. If more objects are available, in the response,
-#' Network Firewall provides a `NextToken` value that you can use in a
-#' subsequent call to get the next batch of objects.
+#' @param NextToken When you request a list of objects with a `MaxResults` setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a `NextToken` value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.
+#' @param MaxResults The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a `NextToken` value that you can use in a subsequent call to get the next batch of objects.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
-#' If you don't specify this, Network Firewall retrieves all VPC endpoint
-#' associations that you have defined.
+#' If you don't specify this, Network Firewall retrieves all VPC endpoint associations that you have defined.
 #'
 #' @keywords internal
 #'
@@ -2489,14 +2124,10 @@ networkfirewall_list_vpc_endpoint_associations <- function(NextToken = NULL, Max
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_put_resource_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_put_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the account that you want to share
-#' your Network Firewall resources with.
-#' @param Policy &#91;required&#93; The IAM policy statement that lists the accounts that you want to share
-#' your Network Firewall resources with and the operations that you want
-#' the accounts to be able to perform.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the account that you want to share your Network Firewall resources with.
+#' @param Policy &#91;required&#93; The IAM policy statement that lists the accounts that you want to share your Network Firewall resources with and the operations that you want the accounts to be able to perform.
 #' 
-#' For a rule group resource, you can specify the following operations in
-#' the Actions section of the statement:
+#' For a rule group resource, you can specify the following operations in the Actions section of the statement:
 #' 
 #' -   network-firewall:CreateFirewallPolicy
 #' 
@@ -2504,15 +2135,13 @@ networkfirewall_list_vpc_endpoint_associations <- function(NextToken = NULL, Max
 #' 
 #' -   network-firewall:ListRuleGroups
 #' 
-#' For a firewall policy resource, you can specify the following operations
-#' in the Actions section of the statement:
+#' For a firewall policy resource, you can specify the following operations in the Actions section of the statement:
 #' 
 #' -   network-firewall:AssociateFirewallPolicy
 #' 
 #' -   network-firewall:ListFirewallPolicies
 #' 
-#' For a firewall resource, you can specify the following operations in the
-#' Actions section of the statement:
+#' For a firewall resource, you can specify the following operations in the Actions section of the statement:
 #' 
 #' -   network-firewall:CreateVpcEndpointAssociation
 #' 
@@ -2520,9 +2149,7 @@ networkfirewall_list_vpc_endpoint_associations <- function(NextToken = NULL, Max
 #' 
 #' -   network-firewall:ListFirewalls
 #' 
-#' In the Resource section of the statement, you specify the ARNs for the
-#' Network Firewall resources that you want to share with the account that
-#' you specified in `Arn`.
+#' In the Resource section of the statement, you specify the ARNs for the Network Firewall resources that you want to share with the account that you specified in `Arn`.
 #'
 #' @keywords internal
 #'
@@ -2553,9 +2180,7 @@ networkfirewall_put_resource_policy <- function(ResourceArn, Policy) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_reject_network_firewall_transit_gateway_attachment/](https://www.paws-r-sdk.com/docs/networkfirewall_reject_network_firewall_transit_gateway_attachment/) for full documentation.
 #'
-#' @param TransitGatewayAttachmentId &#91;required&#93; Required. The unique identifier of the transit gateway attachment to
-#' reject. This ID is returned in the response when creating a transit
-#' gateway-attached firewall.
+#' @param TransitGatewayAttachmentId &#91;required&#93; Required. The unique identifier of the transit gateway attachment to reject. This ID is returned in the response when creating a transit gateway-attached firewall.
 #'
 #' @keywords internal
 #'
@@ -2587,8 +2212,7 @@ networkfirewall_reject_network_firewall_transit_gateway_attachment <- function(T
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_start_analysis_report/](https://www.paws-r-sdk.com/docs/networkfirewall_start_analysis_report/) for full documentation.
 #'
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
@@ -2627,21 +2251,15 @@ networkfirewall_start_analysis_report <- function(FirewallName = NULL, FirewallA
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_start_flow_capture/](https://www.paws-r-sdk.com/docs/networkfirewall_start_flow_capture/) for full documentation.
 #'
 #' @param FirewallArn &#91;required&#93; The Amazon Resource Name (ARN) of the firewall.
-#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For
-#' example, `us-east-2a`.
+#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For example, `us-east-2a`.
 #' 
-#' Defines the scope a flow operation. You can use up to 20 filters to
-#' configure a single flow operation.
+#' Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.
 #' @param VpcEndpointAssociationArn The Amazon Resource Name (ARN) of a VPC endpoint association.
 #' @param VpcEndpointId A unique identifier for the primary endpoint associated with a firewall.
-#' @param MinimumFlowAgeInSeconds The reqested `FlowOperation` ignores flows with an age (in seconds)
-#' lower than `MinimumFlowAgeInSeconds`. You provide this for start
-#' commands.
+#' @param MinimumFlowAgeInSeconds The reqested `FlowOperation` ignores flows with an age (in seconds) lower than `MinimumFlowAgeInSeconds`. You provide this for start commands.
 #' 
-#' We recommend setting this value to at least 1 minute (60 seconds) to
-#' reduce chance of capturing flows that are not yet established.
-#' @param FlowFilters &#91;required&#93; Defines the scope a flow operation. You can use up to 20 filters to
-#' configure a single flow operation.
+#' We recommend setting this value to at least 1 minute (60 seconds) to reduce chance of capturing flows that are not yet established.
+#' @param FlowFilters &#91;required&#93; Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.
 #'
 #' @keywords internal
 #'
@@ -2674,18 +2292,13 @@ networkfirewall_start_flow_capture <- function(FirewallArn, AvailabilityZone = N
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_start_flow_flush/](https://www.paws-r-sdk.com/docs/networkfirewall_start_flow_flush/) for full documentation.
 #'
 #' @param FirewallArn &#91;required&#93; The Amazon Resource Name (ARN) of the firewall.
-#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For
-#' example, `us-east-2a`.
+#' @param AvailabilityZone The ID of the Availability Zone where the firewall is located. For example, `us-east-2a`.
 #' 
-#' Defines the scope a flow operation. You can use up to 20 filters to
-#' configure a single flow operation.
+#' Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.
 #' @param VpcEndpointAssociationArn The Amazon Resource Name (ARN) of a VPC endpoint association.
 #' @param VpcEndpointId A unique identifier for the primary endpoint associated with a firewall.
-#' @param MinimumFlowAgeInSeconds The reqested `FlowOperation` ignores flows with an age (in seconds)
-#' lower than `MinimumFlowAgeInSeconds`. You provide this for start
-#' commands.
-#' @param FlowFilters &#91;required&#93; Defines the scope a flow operation. You can use up to 20 filters to
-#' configure a single flow operation.
+#' @param MinimumFlowAgeInSeconds The reqested `FlowOperation` ignores flows with an age (in seconds) lower than `MinimumFlowAgeInSeconds`. You provide this for start commands.
+#' @param FlowFilters &#91;required&#93; Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.
 #'
 #' @keywords internal
 #'
@@ -2781,35 +2394,18 @@ networkfirewall_untag_resource <- function(ResourceArn, TagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_availability_zone_change_protection/](https://www.paws-r-sdk.com/docs/networkfirewall_update_availability_zone_change_protection/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param AvailabilityZoneChangeProtection &#91;required&#93; A setting indicating whether the firewall is protected against changes
-#' to the subnet associations. Use this setting to protect against
-#' accidentally modifying the subnet associations for a firewall that is in
-#' use. When you create a firewall, the operation initializes this setting
-#' to `TRUE`.
+#' @param AvailabilityZoneChangeProtection &#91;required&#93; A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to `TRUE`.
 #'
 #' @keywords internal
 #'
@@ -2841,32 +2437,18 @@ networkfirewall_update_availability_zone_change_protection <- function(UpdateTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_analysis_settings/](https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_analysis_settings/) for full documentation.
 #'
-#' @param EnabledAnalysisTypes An optional setting indicating the specific traffic analysis types to
-#' enable on the firewall.
+#' @param EnabledAnalysisTypes An optional setting indicating the specific traffic analysis types to enable on the firewall.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -2898,35 +2480,18 @@ networkfirewall_update_firewall_analysis_settings <- function(EnabledAnalysisTyp
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_delete_protection/](https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_delete_protection/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param DeleteProtection &#91;required&#93; A flag indicating whether it is possible to delete the firewall. A
-#' setting of `TRUE` indicates that the firewall is protected against
-#' deletion. Use this setting to protect against accidentally deleting a
-#' firewall that is in use. When you create a firewall, the operation
-#' initializes this flag to `TRUE`.
+#' @param DeleteProtection &#91;required&#93; A flag indicating whether it is possible to delete the firewall. A setting of `TRUE` indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to `TRUE`.
 #'
 #' @keywords internal
 #'
@@ -2957,32 +2522,18 @@ networkfirewall_update_firewall_delete_protection <- function(UpdateToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_description/](https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_description/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param Description The new description for the firewall. If you omit this setting, Network
-#' Firewall removes the description for the firewall.
+#' @param Description The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.
 #'
 #' @keywords internal
 #'
@@ -3014,27 +2565,14 @@ networkfirewall_update_firewall_description <- function(UpdateToken = NULL, Fire
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_encryption_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_encryption_configuration/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
-#' @param EncryptionConfiguration 
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
+#' @param EncryptionConfiguration A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see [Encryption at rest with Amazon Web Services Key Managment Service](https://docs.aws.amazon.com/kms/latest/developerguide/) in the *Network Firewall Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -3065,44 +2603,23 @@ networkfirewall_update_firewall_encryption_configuration <- function(UpdateToken
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_policy/](https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_policy/) for full documentation.
 #'
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the firewall policy. The token marks the state
-#' of the policy resource at the time of the request.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.
 #' 
-#' To make changes to the policy, you provide the token in your request.
-#' Network Firewall uses the token to ensure that the policy hasn't changed
-#' since you last retrieved it. If it has changed, the operation fails with
-#' an `InvalidTokenException`. If this happens, retrieve the firewall
-#' policy again to get a current copy of it with current token. Reapply
-#' your changes as needed, then try the operation again using the new
-#' token.
+#' To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallPolicyArn The Amazon Resource Name (ARN) of the firewall policy.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallPolicyName The descriptive name of the firewall policy. You can't change the name
-#' of a firewall policy after you create it.
+#' @param FirewallPolicyName The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallPolicy &#91;required&#93; The updated firewall policy to use for the firewall. You can't add or
-#' remove a TLSInspectionConfiguration after you create a firewall policy.
-#' However, you can replace an existing TLS inspection configuration with
-#' another `TLSInspectionConfiguration`.
+#' @param FirewallPolicy &#91;required&#93; The updated firewall policy to use for the firewall. You can't add or remove a TLSInspectionConfiguration after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another `TLSInspectionConfiguration`.
 #' @param Description A description of the firewall policy.
-#' @param DryRun Indicates whether you want Network Firewall to just check the validity
-#' of the request, rather than run the request.
+#' @param DryRun Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.
 #' 
-#' If set to `TRUE`, Network Firewall checks whether the request can run
-#' successfully, but doesn't actually make the requested changes. The call
-#' returns the value that the request would return if you ran it with dry
-#' run set to `FALSE`, but doesn't make additions or changes to your
-#' resources. This option allows you to make sure that you have the
-#' required permissions to run the request and that your request parameters
-#' are valid.
+#' If set to `TRUE`, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to `FALSE`, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.
 #' 
-#' If set to `FALSE`, Network Firewall makes the requested changes to your
-#' resources.
-#' @param EncryptionConfiguration A complex type that contains settings for encryption of your firewall
-#' policy resources.
+#' If set to `FALSE`, Network Firewall makes the requested changes to your resources.
+#' @param EncryptionConfiguration A complex type that contains settings for encryption of your firewall policy resources.
 #'
 #' @keywords internal
 #'
@@ -3134,35 +2651,18 @@ networkfirewall_update_firewall_policy <- function(UpdateToken, FirewallPolicyAr
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_policy_change_protection/](https://www.paws-r-sdk.com/docs/networkfirewall_update_firewall_policy_change_protection/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallPolicyChangeProtection &#91;required&#93; A setting indicating whether the firewall is protected against a change
-#' to the firewall policy association. Use this setting to protect against
-#' accidentally modifying the firewall policy for a firewall that is in
-#' use. When you create a firewall, the operation initializes this setting
-#' to `TRUE`.
+#' @param FirewallPolicyChangeProtection &#91;required&#93; A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to `TRUE`.
 #'
 #' @keywords internal
 #'
@@ -3196,23 +2696,15 @@ networkfirewall_update_firewall_policy_change_protection <- function(UpdateToken
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param LoggingConfiguration Defines how Network Firewall performs logging for a firewall. If you
-#' omit this setting, Network Firewall disables logging for the firewall.
-#' @param EnableMonitoringDashboard A boolean that lets you enable or disable the detailed firewall
-#' monitoring dashboard on the firewall.
+#' @param LoggingConfiguration Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.
+#' @param EnableMonitoringDashboard A boolean that lets you enable or disable the detailed firewall monitoring dashboard on the firewall.
 #' 
-#' The monitoring dashboard provides comprehensive visibility into your
-#' firewall's flow logs and alert logs. After you enable detailed
-#' monitoring, you can access these dashboards directly from the
-#' **Monitoring** page of the Network Firewall console.
+#' The monitoring dashboard provides comprehensive visibility into your firewall's flow logs and alert logs. After you enable detailed monitoring, you can access these dashboards directly from the **Monitoring** page of the Network Firewall console.
 #' 
-#' Specify `TRUE` to enable the the detailed monitoring dashboard on the
-#' firewall. Specify `FALSE` to disable the the detailed monitoring
-#' dashboard on the firewall.
+#' Specify `TRUE` to enable the the detailed monitoring dashboard on the firewall. Specify `FALSE` to disable the the detailed monitoring dashboard on the firewall.
 #'
 #' @keywords internal
 #'
@@ -3244,8 +2736,7 @@ networkfirewall_update_logging_configuration <- function(FirewallArn = NULL, Fir
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy/](https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy/) for full documentation.
 #'
 #' @param NatGatewayId &#91;required&#93; The NAT Gateway the proxy is attached to.
-#' @param ProxyName The descriptive name of the proxy. You can't change the name of a proxy
-#' after you create it.
+#' @param ProxyName The descriptive name of the proxy. You can't change the name of a proxy after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyArn The Amazon Resource Name (ARN) of a proxy.
@@ -3254,16 +2745,9 @@ networkfirewall_update_logging_configuration <- function(FirewallArn = NULL, Fir
 #' @param ListenerPropertiesToAdd Listener properties for HTTP and HTTPS traffic to add.
 #' @param ListenerPropertiesToRemove Listener properties for HTTP and HTTPS traffic to remove.
 #' @param TlsInterceptProperties TLS decryption on traffic to filter on attributes in the HTTP header.
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the proxy. The token marks the state of the
-#' proxy resource at the time of the request.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy. The token marks the state of the proxy resource at the time of the request.
 #' 
-#' To make changes to the proxy, you provide the token in your request.
-#' Network Firewall uses the token to ensure that the proxy hasn't changed
-#' since you last retrieved it. If it has changed, the operation fails with
-#' an `InvalidTokenException`. If this happens, retrieve the proxy again to
-#' get a current copy of it with a current token. Reapply your changes as
-#' needed, then try the operation again using the new token.
+#' To make changes to the proxy, you provide the token in your request. Network Firewall uses the token to ensure that the proxy hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the proxy again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -3294,26 +2778,16 @@ networkfirewall_update_proxy <- function(NatGatewayId, ProxyName = NULL, ProxyAr
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_configuration/) for full documentation.
 #'
-#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyConfigurationArn The Amazon Resource Name (ARN) of a proxy configuration.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param DefaultRulePhaseActions &#91;required&#93; Evaluation points in the traffic flow where rules are applied. There are
-#' three phases in a traffic where the rule match is applied.
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the proxy configuration. The token marks the
-#' state of the proxy configuration resource at the time of the request.
+#' @param DefaultRulePhaseActions &#91;required&#93; Evaluation points in the traffic flow where rules are applied. There are three phases in a traffic where the rule match is applied.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy configuration. The token marks the state of the proxy configuration resource at the time of the request.
 #' 
-#' To make changes to the proxy configuration, you provide the token in
-#' your request. Network Firewall uses the token to ensure that the proxy
-#' configuration hasn't changed since you last retrieved it. If it has
-#' changed, the operation fails with an `InvalidTokenException`. If this
-#' happens, retrieve the proxy configuration again to get a current copy of
-#' it with a current token. Reapply your changes as needed, then try the
-#' operation again using the new token.
+#' To make changes to the proxy configuration, you provide the token in your request. Network Firewall uses the token to ensure that the proxy configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the proxy configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -3344,36 +2818,20 @@ networkfirewall_update_proxy_configuration <- function(ProxyConfigurationName = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_rule/](https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_rule/) for full documentation.
 #'
-#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyRuleGroupArn The Amazon Resource Name (ARN) of a proxy rule group.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param ProxyRuleName &#91;required&#93; The descriptive name of the proxy rule. You can't change the name of a
-#' proxy rule after you create it.
+#' @param ProxyRuleName &#91;required&#93; The descriptive name of the proxy rule. You can't change the name of a proxy rule after you create it.
 #' @param Description A description of the proxy rule.
-#' @param Action Depending on the match action, the proxy either stops the evaluation (if
-#' the action is terminal - allow or deny), or continues it (if the action
-#' is alert) until it matches a rule with a terminal action.
-#' @param AddConditions Proxy rule conditions to add. Match criteria that specify what traffic
-#' attributes to examine. Conditions include operators (StringEquals,
-#' StringLike) and values to match against.
-#' @param RemoveConditions Proxy rule conditions to remove. Match criteria that specify what
-#' traffic attributes to examine. Conditions include operators
-#' (StringEquals, StringLike) and values to match against.
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the proxy rule. The token marks the state of
-#' the proxy rule resource at the time of the request.
+#' @param Action Depending on the match action, the proxy either stops the evaluation (if the action is terminal - allow or deny), or continues it (if the action is alert) until it matches a rule with a terminal action.
+#' @param AddConditions Proxy rule conditions to add. Match criteria that specify what traffic attributes to examine. Conditions include operators (StringEquals, StringLike) and values to match against.
+#' @param RemoveConditions Proxy rule conditions to remove. Match criteria that specify what traffic attributes to examine. Conditions include operators (StringEquals, StringLike) and values to match against.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy rule. The token marks the state of the proxy rule resource at the time of the request.
 #' 
-#' To make changes to the proxy rule, you provide the token in your
-#' request. Network Firewall uses the token to ensure that the proxy rule
-#' hasn't changed since you last retrieved it. If it has changed, the
-#' operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the proxy rule again to get a current copy of it with a current
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make changes to the proxy rule, you provide the token in your request. Network Firewall uses the token to ensure that the proxy rule hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the proxy rule again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -3404,25 +2862,16 @@ networkfirewall_update_proxy_rule <- function(ProxyRuleGroupName = NULL, ProxyRu
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_rule_group_priorities/](https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_rule_group_priorities/) for full documentation.
 #'
-#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the
-#' name of a proxy configuration after you create it.
+#' @param ProxyConfigurationName The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyConfigurationArn The Amazon Resource Name (ARN) of a proxy configuration.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param RuleGroups &#91;required&#93; proxy rule group resources to update to new positions.
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the proxy configuration. The token marks the
-#' state of the proxy configuration resource at the time of the request.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy configuration. The token marks the state of the proxy configuration resource at the time of the request.
 #' 
-#' To make changes to the proxy configuration, you provide the token in
-#' your request. Network Firewall uses the token to ensure that the proxy
-#' configuration hasn't changed since you last retrieved it. If it has
-#' changed, the operation fails with an `InvalidTokenException`. If this
-#' happens, retrieve the proxy configuration again to get a current copy of
-#' it with a current token. Reapply your changes as needed, then try the
-#' operation again using the new token.
+#' To make changes to the proxy configuration, you provide the token in your request. Network Firewall uses the token to ensure that the proxy configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the proxy configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -3453,27 +2902,17 @@ networkfirewall_update_proxy_rule_group_priorities <- function(ProxyConfiguratio
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_rule_priorities/](https://www.paws-r-sdk.com/docs/networkfirewall_update_proxy_rule_priorities/) for full documentation.
 #'
-#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name
-#' of a proxy rule group after you create it.
+#' @param ProxyRuleGroupName The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param ProxyRuleGroupArn The Amazon Resource Name (ARN) of a proxy rule group.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param RuleGroupRequestPhase &#91;required&#93; Evaluation points in the traffic flow where rules are applied. There are
-#' three phases in a traffic where the rule match is applied.
+#' @param RuleGroupRequestPhase &#91;required&#93; Evaluation points in the traffic flow where rules are applied. There are three phases in a traffic where the rule match is applied.
 #' @param Rules &#91;required&#93; proxy rule resources to update to new positions.
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the proxy rule group. The token marks the
-#' state of the proxy rule group resource at the time of the request.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy rule group. The token marks the state of the proxy rule group resource at the time of the request.
 #' 
-#' To make changes to the proxy rule group, you provide the token in your
-#' request. Network Firewall uses the token to ensure that the proxy rule
-#' group hasn't changed since you last retrieved it. If it has changed, the
-#' operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the proxy rule group again to get a current copy of it with a
-#' current token. Reapply your changes as needed, then try the operation
-#' again using the new token.
+#' To make changes to the proxy rule group, you provide the token in your request. Network Firewall uses the token to ensure that the proxy rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the proxy rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'
@@ -3504,73 +2943,38 @@ networkfirewall_update_proxy_rule_priorities <- function(ProxyRuleGroupName = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_rule_group/](https://www.paws-r-sdk.com/docs/networkfirewall_update_rule_group/) for full documentation.
 #'
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the rule group. The token marks the state of
-#' the rule group resource at the time of the request.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.
 #' 
-#' To make changes to the rule group, you provide the token in your
-#' request. Network Firewall uses the token to ensure that the rule group
-#' hasn't changed since you last retrieved it. If it has changed, the
-#' operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the rule group again to get a current copy of it with a current
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param RuleGroupArn The Amazon Resource Name (ARN) of the rule group.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a
-#' rule group after you create it.
+#' @param RuleGroupName The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
 #' @param RuleGroup An object that defines the rule group rules.
 #' 
-#' You must provide either this rule group setting or a `Rules` setting,
-#' but not both.
-#' @param Rules A string containing stateful rule group rules specifications in Suricata
-#' flat format, with one rule per line. Use this to import your existing
-#' Suricata compatible rule groups.
+#' You must provide either this rule group setting or a `Rules` setting, but not both.
+#' @param Rules A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.
 #' 
-#' You must provide either this rules setting or a populated `RuleGroup`
-#' setting, but not both.
+#' You must provide either this rules setting or a populated `RuleGroup` setting, but not both.
 #' 
-#' You can provide your rule group specification in Suricata flat format
-#' through this setting when you create or update your rule group. The call
-#' response returns a RuleGroup object that Network Firewall has populated
-#' from your string.
-#' @param Type Indicates whether the rule group is stateless or stateful. If the rule
-#' group is stateless, it contains stateless rules. If it is stateful, it
-#' contains stateful rules.
+#' You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a RuleGroup object that Network Firewall has populated from your string.
+#' @param Type Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 #' 
-#' This setting is required for requests that do not include the
-#' `RuleGroupARN`.
+#' This setting is required for requests that do not include the `RuleGroupARN`.
 #' @param Description A description of the rule group.
-#' @param DryRun Indicates whether you want Network Firewall to just check the validity
-#' of the request, rather than run the request.
+#' @param DryRun Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.
 #' 
-#' If set to `TRUE`, Network Firewall checks whether the request can run
-#' successfully, but doesn't actually make the requested changes. The call
-#' returns the value that the request would return if you ran it with dry
-#' run set to `FALSE`, but doesn't make additions or changes to your
-#' resources. This option allows you to make sure that you have the
-#' required permissions to run the request and that your request parameters
-#' are valid.
+#' If set to `TRUE`, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to `FALSE`, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.
 #' 
-#' If set to `FALSE`, Network Firewall makes the requested changes to your
-#' resources.
-#' @param EncryptionConfiguration A complex type that contains settings for encryption of your rule group
-#' resources.
-#' @param SourceMetadata A complex type that contains metadata about the rule group that your own
-#' rule group is copied from. You can use the metadata to keep track of
-#' updates made to the originating rule group.
-#' @param AnalyzeRuleGroup Indicates whether you want Network Firewall to analyze the stateless
-#' rules in the rule group for rule behavior such as asymmetric routing. If
-#' set to `TRUE`, Network Firewall runs the analysis and then updates the
-#' rule group for you. To run the stateless rule group analyzer without
-#' updating the rule group, set `DryRun` to `TRUE`.
+#' If set to `FALSE`, Network Firewall makes the requested changes to your resources.
+#' @param EncryptionConfiguration A complex type that contains settings for encryption of your rule group resources.
+#' @param SourceMetadata A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.
+#' @param AnalyzeRuleGroup Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to `TRUE`, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set `DryRun` to `TRUE`.
 #' @param SummaryConfiguration Updates the selected summary configuration for a rule group.
 #' 
-#' Changes affect subsequent responses from
-#' [`describe_rule_group_summary`][networkfirewall_describe_rule_group_summary].
+#' Changes affect subsequent responses from [`describe_rule_group_summary`][networkfirewall_describe_rule_group_summary].
 #'
 #' @keywords internal
 #'
@@ -3601,35 +3005,18 @@ networkfirewall_update_rule_group <- function(UpdateToken, RuleGroupArn = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_subnet_change_protection/](https://www.paws-r-sdk.com/docs/networkfirewall_update_subnet_change_protection/) for full documentation.
 #'
-#' @param UpdateToken An optional token that you can use for optimistic locking. Network
-#' Firewall returns a token to your requests that access the firewall. The
-#' token marks the state of the firewall resource at the time of the
-#' request.
+#' @param UpdateToken An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 #' 
-#' To make an unconditional change to the firewall, omit the token in your
-#' update request. Without the token, Network Firewall performs your
-#' updates regardless of whether the firewall has changed since you last
-#' retrieved it.
+#' To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 #' 
-#' To make a conditional change to the firewall, provide the token in your
-#' update request. Network Firewall uses the token to ensure that the
-#' firewall hasn't changed since you last retrieved it. If it has changed,
-#' the operation fails with an `InvalidTokenException`. If this happens,
-#' retrieve the firewall again to get a current copy of it with a new
-#' token. Reapply your changes as needed, then try the operation again
-#' using the new token.
+#' To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.
 #' @param FirewallArn The Amazon Resource Name (ARN) of the firewall.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param FirewallName The descriptive name of the firewall. You can't change the name of a
-#' firewall after you create it.
+#' @param FirewallName The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 #' 
 #' You must specify the ARN or the name, and you can specify both.
-#' @param SubnetChangeProtection &#91;required&#93; A setting indicating whether the firewall is protected against changes
-#' to the subnet associations. Use this setting to protect against
-#' accidentally modifying the subnet associations for a firewall that is in
-#' use. When you create a firewall, the operation initializes this setting
-#' to `TRUE`.
+#' @param SubnetChangeProtection &#91;required&#93; A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to `TRUE`.
 #'
 #' @keywords internal
 #'
@@ -3662,44 +3049,17 @@ networkfirewall_update_subnet_change_protection <- function(UpdateToken = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/networkfirewall_update_tls_inspection_configuration/](https://www.paws-r-sdk.com/docs/networkfirewall_update_tls_inspection_configuration/) for full documentation.
 #'
 #' @param TLSInspectionConfigurationArn The Amazon Resource Name (ARN) of the TLS inspection configuration.
-#' @param TLSInspectionConfigurationName The descriptive name of the TLS inspection configuration. You can't
-#' change the name of a TLS inspection configuration after you create it.
-#' @param TLSInspectionConfiguration &#91;required&#93; The object that defines a TLS inspection configuration. This, along with
-#' TLSInspectionConfigurationResponse, define the TLS inspection
-#' configuration. You can retrieve all objects for a TLS inspection
-#' configuration by calling
-#' [`describe_tls_inspection_configuration`][networkfirewall_describe_tls_inspection_configuration].
+#' @param TLSInspectionConfigurationName The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.
+#' @param TLSInspectionConfiguration &#91;required&#93; The object that defines a TLS inspection configuration. This, along with TLSInspectionConfigurationResponse, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling [`describe_tls_inspection_configuration`][networkfirewall_describe_tls_inspection_configuration].
 #' 
-#' Network Firewall uses a TLS inspection configuration to decrypt traffic.
-#' Network Firewall re-encrypts the traffic before sending it to its
-#' destination.
+#' Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.
 #' 
-#' To use a TLS inspection configuration, you add it to a new Network
-#' Firewall firewall policy, then you apply the firewall policy to a
-#' firewall. Network Firewall acts as a proxy service to decrypt and
-#' inspect the traffic traveling through your firewalls. You can reference
-#' a TLS inspection configuration from more than one firewall policy, and
-#' you can use a firewall policy in more than one firewall. For more
-#' information about using TLS inspection configurations, see [Inspecting
-#' SSL/TLS traffic with TLS inspection
-#' configurations](https://docs.aws.amazon.com/network-firewall/latest/developerguide/)
-#' in the *Network Firewall Developer Guide*.
+#' To use a TLS inspection configuration, you add it to a new Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect the traffic traveling through your firewalls. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see [Inspecting SSL/TLS traffic with TLS inspection configurations](https://docs.aws.amazon.com/network-firewall/latest/developerguide/) in the *Network Firewall Developer Guide*.
 #' @param Description A description of the TLS inspection configuration.
-#' @param EncryptionConfiguration A complex type that contains the Amazon Web Services KMS encryption
-#' configuration settings for your TLS inspection configuration.
-#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to
-#' your requests that access the TLS inspection configuration. The token
-#' marks the state of the TLS inspection configuration resource at the time
-#' of the request.
+#' @param EncryptionConfiguration A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.
+#' @param UpdateToken &#91;required&#93; A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request.
 #' 
-#' To make changes to the TLS inspection configuration, you provide the
-#' token in your request. Network Firewall uses the token to ensure that
-#' the TLS inspection configuration hasn't changed since you last retrieved
-#' it. If it has changed, the operation fails with an
-#' `InvalidTokenException`. If this happens, retrieve the TLS inspection
-#' configuration again to get a current copy of it with a current token.
-#' Reapply your changes as needed, then try the operation again using the
-#' new token.
+#' To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an `InvalidTokenException`. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.
 #'
 #' @keywords internal
 #'

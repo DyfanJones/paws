@@ -15,19 +15,15 @@ cloudwatchrum_get_app_monitor_data(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the app monitor that collected the data that you want to
-retrieve.}
+\item{Name}{[required] The name of the app monitor that collected the data that you want to retrieve.}
 
-\item{TimeRange}{[required] A structure that defines the time range that you want to retrieve
-results from.}
+\item{TimeRange}{[required] A structure that defines the time range that you want to retrieve results from.}
 
-\item{Filters}{An array of structures that you can use to filter the results to those
-that match one or more sets of key-value pairs that you specify.}
+\item{Filters}{An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.}
 
 \item{MaxResults}{The maximum number of results to return in one operation.}
 
-\item{NextToken}{Use the token returned by the previous operation to request the next
-page of results.}
+\item{NextToken}{Use the token returned by the previous operation to request the next page of results.}
 }
 \description{
 Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.

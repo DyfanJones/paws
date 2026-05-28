@@ -27,11 +27,9 @@ neptune_restore_db_cluster_from_snapshot(
 )
 }
 \arguments{
-\item{AvailabilityZones}{Provides the list of EC2 Availability Zones that instances in the
-restored DB cluster can be created in.}
+\item{AvailabilityZones}{Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.}
 
-\item{DBClusterIdentifier}{[required] The name of the DB cluster to create from the DB snapshot or DB cluster
-snapshot. This parameter isn't case-sensitive.
+\item{DBClusterIdentifier}{[required] The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
@@ -42,12 +40,9 @@ Constraints:
 
 Example: \code{my-snapshot-id}}
 
-\item{SnapshotIdentifier}{[required] The identifier for the DB snapshot or DB cluster snapshot to restore
-from.
+\item{SnapshotIdentifier}{[required] The identifier for the DB snapshot or DB cluster snapshot to restore from.
 
-You can use either the name or the Amazon Resource Name (ARN) to specify
-a DB cluster snapshot. However, you can use only the ARN to specify a DB
-snapshot.
+You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.
 
 Constraints:
 \itemize{
@@ -70,8 +65,7 @@ Default: The same port as the original DB cluster.}
 
 \item{DBSubnetGroupName}{The name of the DB subnet group to use for the new DB cluster.
 
-Constraints: If supplied, must match the name of an existing
-DBSubnetGroup.
+Constraints: If supplied, must match the name of an existing DBSubnetGroup.
 
 Example: \code{mySubnetgroup}}
 
@@ -83,53 +77,36 @@ Example: \code{mySubnetgroup}}
 
 \item{Tags}{The tags to be assigned to the restored DB cluster.}
 
-\item{KmsKeyId}{The Amazon KMS key identifier to use when restoring an encrypted DB
-cluster from a DB snapshot or DB cluster snapshot.
+\item{KmsKeyId}{The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.
 
-The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-encryption key. If you are restoring a DB cluster with the same Amazon
-account that owns the KMS encryption key used to encrypt the new DB
-cluster, then you can use the KMS key alias instead of the ARN for the
-KMS encryption key.
+The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 
-If you do not specify a value for the \code{KmsKeyId} parameter, then the
-following will occur:
+If you do not specify a value for the \code{KmsKeyId} parameter, then the following will occur:
 \itemize{
-\item If the DB snapshot or DB cluster snapshot in \code{SnapshotIdentifier} is
-encrypted, then the restored DB cluster is encrypted using the KMS
-key that was used to encrypt the DB snapshot or DB cluster snapshot.
-\item If the DB snapshot or DB cluster snapshot in \code{SnapshotIdentifier} is
-not encrypted, then the restored DB cluster is not encrypted.
+\item If the DB snapshot or DB cluster snapshot in \code{SnapshotIdentifier} is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.
+\item If the DB snapshot or DB cluster snapshot in \code{SnapshotIdentifier} is not encrypted, then the restored DB cluster is not encrypted.
 }}
 
-\item{EnableIAMDatabaseAuthentication}{True to enable mapping of Amazon Identity and Access Management (IAM)
-accounts to database accounts, and otherwise false.
+\item{EnableIAMDatabaseAuthentication}{True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.
 
 Default: \code{false}}
 
-\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB cluster is to export to Amazon
-CloudWatch Logs.}
+\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.}
 
-\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with the new DB
-cluster.
+\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with the new DB cluster.
 
 Constraints:
 \itemize{
-\item If supplied, must match the name of an existing
-DBClusterParameterGroup.
+\item If supplied, must match the name of an existing DBClusterParameterGroup.
 }}
 
-\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection
-enabled. The database can't be deleted when deletion protection is
-enabled. By default, deletion protection is disabled.}
+\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.}
 
-\item{CopyTagsToSnapshot}{\emph{If set to true, tags are copied to any snapshot of the restored DB
-cluster that is created.}}
+\item{CopyTagsToSnapshot}{\emph{If set to true, tags are copied to any snapshot of the restored DB cluster that is created.}}
 
 \item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of a Neptune Serverless DB cluster.
 
-For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless}
-in the \emph{Amazon Neptune User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless} in the \emph{Amazon Neptune User Guide}.}
 
 \item{StorageType}{Specifies the storage type to be associated with the DB cluster.
 

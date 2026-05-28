@@ -9,8 +9,7 @@ redshift_modify_endpoint_access(EndpointName, VpcSecurityGroupIds = NULL)
 \arguments{
 \item{EndpointName}{[required] The endpoint to be modified.}
 
-\item{VpcSecurityGroupIds}{The complete list of VPC security groups associated with the endpoint
-after the endpoint is modified.}
+\item{VpcSecurityGroupIds}{The complete list of VPC security groups associated with the endpoint after the endpoint is modified.}
 }
 \description{
 Modifies a Redshift-managed VPC endpoint.

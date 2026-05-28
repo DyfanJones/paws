@@ -12,15 +12,11 @@ costexplorer_get_approximate_usage_records(
 )
 }
 \arguments{
-\item{Granularity}{[required] How granular you want the data to be. You can enable data at hourly or
-daily granularity.}
+\item{Granularity}{[required] How granular you want the data to be. You can enable data at hourly or daily granularity.}
 
-\item{Services}{The service metadata for the service or services you want to query. If
-not specified, all elements are returned.}
+\item{Services}{The service metadata for the service or services you want to query. If not specified, all elements are returned.}
 
-\item{ApproximationDimension}{[required] The service to evaluate for the usage records. You can choose
-resource-level data at daily granularity, or hourly granularity with or
-without resource-level data.}
+\item{ApproximationDimension}{[required] The service to evaluate for the usage records. You can choose resource-level data at daily granularity, or hourly granularity with or without resource-level data.}
 }
 \description{
 Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.

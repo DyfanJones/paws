@@ -20,25 +20,12 @@ redshiftserverless_update_scheduled_action(
 
 \item{endTime}{The end time in UTC of the scheduled action to update.}
 
-\item{roleArn}{The ARN of the IAM role to assume to run the scheduled action. This IAM
-role must have permission to run the Amazon Redshift Serverless API
-operation in the scheduled action. This IAM role must allow the Amazon
-Redshift scheduler to schedule creating snapshots (Principal
-scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-For more information about the IAM role to use with the Amazon Redshift
-scheduler, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html}{Using Identity-Based Policies for Amazon Redshift}
-in the Amazon Redshift Management Guide}
+\item{roleArn}{The ARN of the IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift Serverless API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler to schedule creating snapshots (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html}{Using Identity-Based Policies for Amazon Redshift} in the Amazon Redshift Management Guide}
 
-\item{schedule}{The schedule for a one-time (at timestamp format) or recurring (cron
-format) scheduled action. Schedule invocations must be separated by at
-least one hour. Times are in UTC.
+\item{schedule}{The schedule for a one-time (at timestamp format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour. Times are in UTC.
 \itemize{
-\item Format of at timestamp is \code{yyyy-mm-ddThh:mm:ss}. For example,
-\verb{2016-03-04T17:27:00}.
-\item Format of cron expression is
-\verb{(Minutes Hours Day-of-month Month Day-of-week Year)}. For example,
-\code{"(0 10 ? * MON *)"}. For more information, see \href{https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions}{Cron Expressions}
-in the \emph{Amazon CloudWatch Events User Guide}.
+\item Format of at timestamp is \code{yyyy-mm-ddThh:mm:ss}. For example, \verb{2016-03-04T17:27:00}.
+\item Format of cron expression is \verb{(Minutes Hours Day-of-month Month Day-of-week Year)}. For example, \code{"(0 10 ? * MON *)"}. For more information, see \href{https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions}{Cron Expressions} in the \emph{Amazon CloudWatch Events User Guide}.
 }}
 
 \item{scheduledActionDescription}{The descripion of the scheduled action to update to.}
@@ -46,6 +33,10 @@ in the \emph{Amazon CloudWatch Events User Guide}.
 \item{scheduledActionName}{[required] The name of the scheduled action to update to.}
 
 \item{startTime}{The start time in UTC of the scheduled action to update to.}
+
+\item{targetAction}{A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.
+
+\verb{"\{"CreateSnapshot": \{"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"\}\}"}}
 }
 \description{
 Updates a scheduled action.

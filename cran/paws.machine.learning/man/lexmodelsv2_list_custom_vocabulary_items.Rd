@@ -14,15 +14,11 @@ lexmodelsv2_list_custom_vocabulary_items(
 )
 }
 \arguments{
-\item{botId}{[required] The identifier of the version of the bot associated with this custom
-vocabulary.}
+\item{botId}{[required] The identifier of the version of the bot associated with this custom vocabulary.}
 
 \item{botVersion}{[required] The bot version of the bot to the list custom vocabulary request.}
 
-\item{localeId}{[required] The identifier of the language and locale where this custom vocabulary
-is used. The string must match one of the supported locales. For more
-information, see Supported languages
-(https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).}
+\item{localeId}{[required] The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).}
 
 \item{maxResults}{The maximum number of items returned by the list operation.}
 

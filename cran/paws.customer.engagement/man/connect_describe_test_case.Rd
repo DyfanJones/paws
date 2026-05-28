@@ -12,9 +12,7 @@ connect_describe_test_case(InstanceId, TestCaseId, Status = NULL)
 
 \item{TestCaseId}{[required] The identifier of the test case.}
 
-\item{Status}{The status of the test case version to retrieve. If not specified,
-returns the published version if available, otherwise returns the saved
-version.}
+\item{Status}{The status of the test case version to retrieve. If not specified, returns the published version if available, otherwise returns the saved version.}
 }
 \description{
 Describes the specified test case and allows you to get the content and metadata of the test case for the specified Amazon Connect instance.

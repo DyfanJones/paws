@@ -14,11 +14,9 @@ prometheusservice_delete_resource_policy(
 \arguments{
 \item{workspaceId}{[required] The ID of the workspace from which to delete the resource-based policy.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-request is safe to retry (idempotent).}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the request is safe to retry (idempotent).}
 
-\item{revisionId}{The revision ID of the policy to delete. Use this parameter to ensure
-that you are deleting the correct version of the policy.}
+\item{revisionId}{The revision ID of the policy to delete. Use this parameter to ensure that you are deleting the correct version of the policy.}
 }
 \description{
 Deletes the resource-based policy attached to an Amazon Managed Service for Prometheus workspace.

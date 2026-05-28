@@ -11,11 +11,9 @@ personalize_list_metric_attribution_metrics(
 )
 }
 \arguments{
-\item{metricAttributionArn}{The Amazon Resource Name (ARN) of the metric attribution to retrieve
-attributes for.}
+\item{metricAttributionArn}{The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of metrics to return in one page of results.}
 }

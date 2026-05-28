@@ -7,27 +7,17 @@ NULL
 #' services
 #'
 #' @description
-#' Returns the metadata for one service or a list of the metadata for all
-#' services. Use this without a service code to get the service codes for
-#' all services. Use it with a service code, such as `AmazonEC2`, to get
-#' information specific to that service, such as the attribute names
-#' available for that service. For example, some of the attribute names
-#' available for EC2 are `volumeType`, `maxIopsVolume`, `operation`,
-#' `locationType`, and `instanceCapacity10xlarge`.
+#' Returns the metadata for one service or a list of the metadata for all services. Use this without a service code to get the service codes for all services. Use it with a service code, such as `AmazonEC2`, to get information specific to that service, such as the attribute names available for that service. For example, some of the attribute names available for EC2 are `volumeType`, `maxIopsVolume`, `operation`, `locationType`, and `instanceCapacity10xlarge`.
 #'
 #' @usage
 #' pricing_describe_services(ServiceCode, FormatVersion, NextToken,
 #'   MaxResults)
 #'
-#' @param ServiceCode The code for the service whose information you want to retrieve, such as
-#' `AmazonEC2`. You can use the `ServiceCode` to filter the results in a
-#' [`get_products`][pricing_get_products] call. To retrieve a list of all
-#' services, leave this blank.
+#' @param ServiceCode The code for the service whose information you want to retrieve, such as `AmazonEC2`. You can use the `ServiceCode` to filter the results in a [`get_products`][pricing_get_products] call. To retrieve a list of all services, leave this blank.
 #' @param FormatVersion The format version that you want the response to be in.
 #' 
 #' Valid values are: `aws_v1`
-#' @param NextToken The pagination token that indicates the next set of results that you
-#' want to retrieve.
+#' @param NextToken The pagination token that indicates the next set of results that you want to retrieve.
 #' @param MaxResults The maximum number of results that you want returned in the response.
 #'
 #' @return
@@ -94,23 +84,15 @@ pricing_describe_services <- function(ServiceCode = NULL, FormatVersion = NULL, 
 #' Returns a list of attribute values
 #'
 #' @description
-#' Returns a list of attribute values. Attributes are similar to the
-#' details in a Price List API offer file. For a list of available
-#' attributes, see [Offer File
-#' Definitions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-service-price-list-file-for-savings-plans.html#pps-defs)
-#' in the [Billing and Cost Management User
-#' Guide](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html).
+#' Returns a list of attribute values. Attributes are similar to the details in a Price List API offer file. For a list of available attributes, see [Offer File Definitions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-service-price-list-file-for-savings-plans.html#pps-defs) in the [Billing and Cost Management User Guide](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html).
 #'
 #' @usage
 #' pricing_get_attribute_values(ServiceCode, AttributeName, NextToken,
 #'   MaxResults)
 #'
-#' @param ServiceCode &#91;required&#93; The service code for the service whose attributes you want to retrieve.
-#' For example, if you want the retrieve an EC2 attribute, use `AmazonEC2`.
-#' @param AttributeName &#91;required&#93; The name of the attribute that you want to retrieve the values for, such
-#' as `volumeType`.
-#' @param NextToken The pagination token that indicates the next set of results that you
-#' want to retrieve.
+#' @param ServiceCode &#91;required&#93; The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use `AmazonEC2`.
+#' @param AttributeName &#91;required&#93; The name of the attribute that you want to retrieve the values for, such as `volumeType`.
+#' @param NextToken The pagination token that indicates the next set of results that you want to retrieve.
 #' @param MaxResults The maximum number of results to return in response.
 #'
 #' @return
@@ -174,24 +156,15 @@ pricing_get_attribute_values <- function(ServiceCode, AttributeName, NextToken =
 #' This feature is in preview release and is subject to change
 #'
 #' @description
-#' *This feature is in preview release and is subject to change. Your use
-#' of Amazon Web Services Price List API is subject to the Beta Service
-#' Participation terms of the \href{https://aws.amazon.com/service-terms/}{Amazon Web Services Service Terms} (Section 1.10).*
+#' *This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the \href{https://aws.amazon.com/service-terms/}{Amazon Web Services Service Terms} (Section 1.10).*
 #' 
-#' This returns the URL that you can retrieve your Price List file from.
-#' This URL is based on the `PriceListArn` and `FileFormat` that you
-#' retrieve from the [`list_price_lists`][pricing_list_price_lists]
-#' response.
+#' This returns the URL that you can retrieve your Price List file from. This URL is based on the `PriceListArn` and `FileFormat` that you retrieve from the [`list_price_lists`][pricing_list_price_lists] response.
 #'
 #' @usage
 #' pricing_get_price_list_file_url(PriceListArn, FileFormat)
 #'
-#' @param PriceListArn &#91;required&#93; The unique identifier that maps to where your Price List files are
-#' located. `PriceListArn` can be obtained from the
-#' [`list_price_lists`][pricing_list_price_lists] response.
-#' @param FileFormat &#91;required&#93; The format that you want to retrieve your Price List files in. The
-#' `FileFormat` can be obtained from the
-#' [`list_price_lists`][pricing_list_price_lists] response.
+#' @param PriceListArn &#91;required&#93; The unique identifier that maps to where your Price List files are located. `PriceListArn` can be obtained from the [`list_price_lists`][pricing_list_price_lists] response.
+#' @param FileFormat &#91;required&#93; The format that you want to retrieve your Price List files in. The `FileFormat` can be obtained from the [`list_price_lists`][pricing_list_price_lists] response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -243,13 +216,11 @@ pricing_get_price_list_file_url <- function(PriceListArn, FileFormat) {
 #'   MaxResults)
 #'
 #' @param ServiceCode &#91;required&#93; The code for the service whose products you want to retrieve.
-#' @param Filters The list of filters that limit the returned products. only products that
-#' match all filters are returned.
+#' @param Filters The list of filters that limit the returned products. only products that match all filters are returned.
 #' @param FormatVersion The format version that you want the response to be in.
 #' 
 #' Valid values are: `aws_v1`
-#' @param NextToken The pagination token that indicates the next set of results that you
-#' want to retrieve.
+#' @param NextToken The pagination token that indicates the next set of results that you want to retrieve.
 #' @param MaxResults The maximum number of results to return in the response.
 #'
 #' @return
@@ -329,45 +300,23 @@ pricing_get_products <- function(ServiceCode, Filters = NULL, FormatVersion = NU
 #' This feature is in preview release and is subject to change
 #'
 #' @description
-#' *This feature is in preview release and is subject to change. Your use
-#' of Amazon Web Services Price List API is subject to the Beta Service
-#' Participation terms of the \href{https://aws.amazon.com/service-terms/}{Amazon Web Services Service Terms} (Section 1.10).*
+#' *This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the \href{https://aws.amazon.com/service-terms/}{Amazon Web Services Service Terms} (Section 1.10).*
 #' 
-#' This returns a list of Price List references that the requester if
-#' authorized to view, given a `ServiceCode`, `CurrencyCode`, and an
-#' `EffectiveDate`. Use without a `RegionCode` filter to list Price List
-#' references from all available Amazon Web Services Regions. Use with a
-#' `RegionCode` filter to get the Price List reference that's specific to a
-#' specific Amazon Web Services Region. You can use the `PriceListArn` from
-#' the response to get your preferred Price List files through the
-#' [`get_price_list_file_url`][pricing_get_price_list_file_url] API.
+#' This returns a list of Price List references that the requester if authorized to view, given a `ServiceCode`, `CurrencyCode`, and an `EffectiveDate`. Use without a `RegionCode` filter to list Price List references from all available Amazon Web Services Regions. Use with a `RegionCode` filter to get the Price List reference that's specific to a specific Amazon Web Services Region. You can use the `PriceListArn` from the response to get your preferred Price List files through the [`get_price_list_file_url`][pricing_get_price_list_file_url] API.
 #'
 #' @usage
 #' pricing_list_price_lists(ServiceCode, EffectiveDate, RegionCode,
 #'   CurrencyCode, NextToken, MaxResults)
 #'
-#' @param ServiceCode &#91;required&#93; The service code or the Savings Plans service code for the attributes
-#' that you want to retrieve. For example, to get the list of applicable
-#' Amazon EC2 price lists, use `AmazonEC2`. For a full list of service
-#' codes containing On-Demand and Reserved Instance (RI) pricing, use the
-#' [`describe_services`][pricing_describe_services] API.
+#' @param ServiceCode &#91;required&#93; The service code or the Savings Plans service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use `AmazonEC2`. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the [`describe_services`][pricing_describe_services] API.
 #' 
-#' To retrieve the Reserved Instance and Compute Savings Plans price lists,
-#' use `ComputeSavingsPlans`.
+#' To retrieve the Reserved Instance and Compute Savings Plans price lists, use `ComputeSavingsPlans`.
 #' 
-#' To retrieve Machine Learning Savings Plans price lists, use
-#' `MachineLearningSavingsPlans`.
+#' To retrieve Machine Learning Savings Plans price lists, use `MachineLearningSavingsPlans`.
 #' @param EffectiveDate &#91;required&#93; The date that the Price List file prices are effective from.
-#' @param RegionCode This is used to filter the Price List by Amazon Web Services Region. For
-#' example, to get the price list only for the `US East (N. Virginia)`
-#' Region, use `us-east-1`. If nothing is specified, you retrieve price
-#' lists for all applicable Regions. The available `RegionCode` list can be
-#' retrieved from [`get_attribute_values`][pricing_get_attribute_values]
-#' API.
-#' @param CurrencyCode &#91;required&#93; The three alphabetical character ISO-4217 currency code that the Price
-#' List files are denominated in.
-#' @param NextToken The pagination token that indicates the next set of results that you
-#' want to retrieve.
+#' @param RegionCode This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the `US East (N. Virginia)` Region, use `us-east-1`. If nothing is specified, you retrieve price lists for all applicable Regions. The available `RegionCode` list can be retrieved from [`get_attribute_values`][pricing_get_attribute_values] API.
+#' @param CurrencyCode &#91;required&#93; The three alphabetical character ISO-4217 currency code that the Price List files are denominated in.
+#' @param NextToken The pagination token that indicates the next set of results that you want to retrieve.
 #' @param MaxResults The maximum number of results to return in the response.
 #'
 #' @return

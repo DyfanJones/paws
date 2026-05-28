@@ -9,9 +9,7 @@ kendra_list_featured_results_sets(IndexId, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{IndexId}{[required] The identifier of the index used for featuring results.}
 
-\item{NextToken}{If the response is truncated, Amazon Kendra returns a pagination token
-in the response. You can use this pagination token to retrieve the next
-set of featured results sets.}
+\item{NextToken}{If the response is truncated, Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of featured results sets.}
 
 \item{MaxResults}{The maximum number of featured results sets to return.}
 }

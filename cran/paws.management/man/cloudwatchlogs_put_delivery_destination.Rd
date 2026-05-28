@@ -13,32 +13,23 @@ cloudwatchlogs_put_delivery_destination(
 )
 }
 \arguments{
-\item{name}{[required] A name for this delivery destination. This name must be unique for all
-delivery destinations in your account.}
+\item{name}{[required] A name for this delivery destination. This name must be unique for all delivery destinations in your account.}
 
 \item{outputFormat}{The format for the logs that this delivery destination will receive.}
 
-\item{deliveryDestinationConfiguration}{A structure that contains the ARN of the Amazon Web Services resource
-that will receive the logs.
+\item{deliveryDestinationConfiguration}{A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.
 
-\code{deliveryDestinationConfiguration} is required for CloudWatch Logs,
-Amazon S3, Firehose log delivery destinations and not required for X-Ray
-trace delivery destinations. \code{deliveryDestinationType} is needed for
-X-Ray trace delivery destinations but not required for other logs
-delivery destinations.}
+\code{deliveryDestinationConfiguration} is required for CloudWatch Logs, Amazon S3, Firehose log delivery destinations and not required for X-Ray trace delivery destinations. \code{deliveryDestinationType} is needed for X-Ray trace delivery destinations but not required for other logs delivery destinations.}
 
-\item{deliveryDestinationType}{The type of delivery destination. This parameter specifies the target
-service where log data will be delivered. Valid values include:
+\item{deliveryDestinationType}{The type of delivery destination. This parameter specifies the target service where log data will be delivered. Valid values include:
 \itemize{
 \item \code{S3} - Amazon S3 for long-term storage and analytics
 \item \code{CWL} - CloudWatch Logs for centralized log management
 \item \code{FH} - Amazon Kinesis Data Firehose for real-time data streaming
-\item \code{XRAY} - Amazon Web Services X-Ray for distributed tracing and
-application monitoring
+\item \code{XRAY} - Amazon Web Services X-Ray for distributed tracing and application monitoring
 }
 
-The delivery destination type determines the format and configuration
-options available for log delivery.}
+The delivery destination type determines the format and configuration options available for log delivery.}
 
 \item{tags}{An optional list of key-value pairs to associate with the resource.
 

@@ -19,8 +19,7 @@ opensearchservice_revoke_vpc_endpoint_access(
 
 \item{Service}{The service SP to revoke access from.}
 
-\item{ServiceOptions}{The options for the service, including the supported Regions for the
-endpoint access.}
+\item{ServiceOptions}{The options for the service, including the supported Regions for the endpoint access.}
 }
 \description{
 Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.

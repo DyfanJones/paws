@@ -18,55 +18,33 @@ sagemaker_list_cluster_nodes(
 )
 }
 \arguments{
-\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker
-HyperPod cluster in which you want to retrieve the list of nodes.}
+\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.}
 
-\item{CreationTimeAfter}{A filter that returns nodes in a SageMaker HyperPod cluster created
-after the specified time. Timestamps are formatted according to the ISO
-8601 standard.
+\item{CreationTimeAfter}{A filter that returns nodes in a SageMaker HyperPod cluster created after the specified time. Timestamps are formatted according to the ISO 8601 standard.
 
 Acceptable formats include:
 \itemize{
-\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (UTC), for example,
-\verb{2014-10-01T20:30:00.000Z}
-\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (with offset), for example,
-\verb{2014-10-01T12:30:00.000-08:00}
+\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (UTC), for example, \verb{2014-10-01T20:30:00.000Z}
+\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (with offset), for example, \verb{2014-10-01T12:30:00.000-08:00}
 \item \code{YYYY-MM-DD}, for example, \code{2014-10-01}
-\item Unix time in seconds, for example, \code{1412195400}. This is also
-referred to as Unix Epoch time and represents the number of seconds
-since midnight, January 1, 1970 UTC.
+\item Unix time in seconds, for example, \code{1412195400}. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.
 }
 
-For more information about the timestamp format, see
-\href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp}
-in the \emph{Amazon Web Services Command Line Interface User Guide}.}
+For more information about the timestamp format, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp} in the \emph{Amazon Web Services Command Line Interface User Guide}.}
 
-\item{CreationTimeBefore}{A filter that returns nodes in a SageMaker HyperPod cluster created
-before the specified time. The acceptable formats are the same as the
-timestamp formats for \code{CreationTimeAfter}. For more information about
-the timestamp format, see
-\href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp}
-in the \emph{Amazon Web Services Command Line Interface User Guide}.}
+\item{CreationTimeBefore}{A filter that returns nodes in a SageMaker HyperPod cluster created before the specified time. The acceptable formats are the same as the timestamp formats for \code{CreationTimeAfter}. For more information about the timestamp format, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp} in the \emph{Amazon Web Services Command Line Interface User Guide}.}
 
-\item{InstanceGroupNameContains}{A filter that returns the instance groups whose name contain a specified
-string.}
+\item{InstanceGroupNameContains}{A filter that returns the instance groups whose name contain a specified string.}
 
 \item{MaxResults}{The maximum number of nodes to return in the response.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_cluster_nodes]{list_cluster_nodes}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of cluster nodes, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_cluster_nodes]{list_cluster_nodes}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of cluster nodes, use the token in the next request.}
 
-\item{SortBy}{The field by which to sort results. The default value is
-\code{CREATION_TIME}.}
+\item{SortBy}{The field by which to sort results. The default value is \code{CREATION_TIME}.}
 
 \item{SortOrder}{The sort order for results. The default value is \code{Ascending}.}
 
-\item{IncludeNodeLogicalIds}{Specifies whether to include nodes that are still being provisioned in
-the response. When set to true, the response includes all nodes
-regardless of their provisioning status. When set to \code{False} (default),
-only nodes with assigned \code{InstanceIds} are returned.}
+\item{IncludeNodeLogicalIds}{Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to \code{False} (default), only nodes with assigned \code{InstanceIds} are returned.}
 }
 \description{
 Retrieves the list of instances (also called \emph{nodes} interchangeably) in a SageMaker HyperPod cluster.

@@ -11,12 +11,9 @@ rds_delete_db_instance_automated_backup(
 )
 }
 \arguments{
-\item{DbiResourceId}{The identifier for the source DB instance, which can't be changed and
-which is unique to an Amazon Web Services Region.}
+\item{DbiResourceId}{The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.}
 
-\item{DBInstanceAutomatedBackupsArn}{The Amazon Resource Name (ARN) of the automated backups to delete, for
-example,
-\code{arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE}.
+\item{DBInstanceAutomatedBackupsArn}{The Amazon Resource Name (ARN) of the automated backups to delete, for example, \code{arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE}.
 
 This setting doesn't apply to RDS Custom.}
 }

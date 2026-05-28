@@ -10,8 +10,7 @@ opensearchingestion_revoke_pipeline_endpoint_connections(
 )
 }
 \arguments{
-\item{PipelineArn}{[required] The Amazon Resource Name (ARN) of the pipeline from which to revoke
-endpoint connections.}
+\item{PipelineArn}{[required] The Amazon Resource Name (ARN) of the pipeline from which to revoke endpoint connections.}
 
 \item{EndpointIds}{[required] A list of endpoint IDs for which to revoke access to the pipeline.}
 }

@@ -55,19 +55,9 @@ Operations section.
 \description{
 Directory Service
 
-Directory Service is a web service that makes it easy for you to setup
-and run directories in the Amazon Web Services cloud, or connect your
-Amazon Web Services resources with an existing self-managed Microsoft
-Active Directory. This guide provides detailed information about
-Directory Service operations, data types, parameters, and errors. For
-information about Directory Services features, see \href{https://aws.amazon.com/directoryservice/}{Directory Service} and the \href{https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html}{Directory Service Administration Guide}.
+Directory Service is a web service that makes it easy for you to setup and run directories in the Amazon Web Services cloud, or connect your Amazon Web Services resources with an existing self-managed Microsoft Active Directory. This guide provides detailed information about Directory Service operations, data types, parameters, and errors. For information about Directory Services features, see \href{https://aws.amazon.com/directoryservice/}{Directory Service} and the \href{https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html}{Directory Service Administration Guide}.
 
-Amazon Web Services provides SDKs that consist of libraries and sample
-code for various programming languages and platforms (Java, Ruby, .Net,
-iOS, Android, etc.). The SDKs provide a convenient way to create
-programmatic access to Directory Service and other Amazon Web Services
-services. For more information about the Amazon Web Services SDKs,
-including how to download and install them, see \href{https://builder.aws.com/build/tools}{Tools for Amazon Web Services}.
+Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to Directory Service and other Amazon Web Services services. For more information about the Amazon Web Services SDKs, including how to download and install them, see \href{https://builder.aws.com/build/tools}{Tools for Amazon Web Services}.
 }
 \section{Service syntax}{
 

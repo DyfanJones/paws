@@ -14,13 +14,9 @@ timestreamwrite_list_tables(
 \arguments{
 \item{DatabaseName}{The name of the Timestream database.}
 
-\item{NextToken}{The pagination token. To resume pagination, provide the NextToken value
-as argument of a subsequent API invocation.}
+\item{NextToken}{The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.}
 
-\item{MaxResults}{The total number of items to return in the output. If the total number
-of items available is more than the value specified, a NextToken is
-provided in the output. To resume pagination, provide the NextToken
-value as argument of a subsequent API invocation.}
+\item{MaxResults}{The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.}
 }
 \description{
 Provides a list of tables, along with the name, status, and retention properties of each table. See \href{https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html}{code sample} for details.

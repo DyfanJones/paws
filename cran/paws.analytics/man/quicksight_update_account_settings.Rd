@@ -13,22 +13,13 @@ quicksight_update_account_settings(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the Quick Sight
-settings that you want to list.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the Quick Sight settings that you want to list.}
 
-\item{DefaultNamespace}{[required] The default namespace for this Amazon Web Services account. Currently,
-the default is \code{default}. IAM users that register for the first time
-with Amazon Quick Sight provide an email address that becomes associated
-with the default namespace.}
+\item{DefaultNamespace}{[required] The default namespace for this Amazon Web Services account. Currently, the default is \code{default}. IAM users that register for the first time with Amazon Quick Sight provide an email address that becomes associated with the default namespace.}
 
-\item{NotificationEmail}{The email address that you want Quick Sight to send notifications to
-regarding your Amazon Web Services account or Quick Sight subscription.}
+\item{NotificationEmail}{The email address that you want Quick Sight to send notifications to regarding your Amazon Web Services account or Quick Sight subscription.}
 
-\item{TerminationProtectionEnabled}{A boolean value that determines whether or not an Quick Sight account
-can be deleted. A \code{True} value doesn't allow the account to be deleted
-and results in an error message if a user tries to make a
-\code{\link[=quicksight_delete_account_subscription]{delete_account_subscription}}
-request. A \code{False} value will allow the account to be deleted.}
+\item{TerminationProtectionEnabled}{A boolean value that determines whether or not an Quick Sight account can be deleted. A \code{True} value doesn't allow the account to be deleted and results in an error message if a user tries to make a \code{\link[=quicksight_delete_account_subscription]{delete_account_subscription}} request. A \code{False} value will allow the account to be deleted.}
 }
 \description{
 Updates the Amazon Quick Sight settings in your Amazon Web Services account.

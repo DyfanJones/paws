@@ -10,11 +10,9 @@ bedrockagentcorecontrol_submit_registry_record_for_approval(
 )
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry containing the record. You can specify
-either the Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 
-\item{recordId}{[required] The identifier of the registry record to submit for approval. You can
-specify either the Amazon Resource Name (ARN) or the ID of the record.}
+\item{recordId}{[required] The identifier of the registry record to submit for approval. You can specify either the Amazon Resource Name (ARN) or the ID of the record.}
 }
 \description{
 Submits a registry record for approval. This transitions the record from \code{DRAFT} status to \code{PENDING_APPROVAL} status. If the registry has auto-approval enabled, the record is automatically approved.

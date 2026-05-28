@@ -7,11 +7,9 @@
 quicksight_list_flows(AwsAccountId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow list
-that you are getting.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow list that you are getting.}
 
-\item{NextToken}{The token to request the next set of results, or null if you want to
-retrieve the first set.}
+\item{NextToken}{The token to request the next set of results, or null if you want to retrieve the first set.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

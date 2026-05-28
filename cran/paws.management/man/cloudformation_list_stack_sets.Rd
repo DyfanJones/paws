@@ -13,32 +13,20 @@ cloudformation_list_stack_sets(
 )
 }
 \arguments{
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 
-\item{MaxResults}{The maximum number of results to be returned with a single call. If the
-number of available results exceeds this maximum, the response includes
-a \code{NextToken} value that you can assign to the \code{NextToken} request
-parameter to get the next set of results.}
+\item{MaxResults}{The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a \code{NextToken} value that you can assign to the \code{NextToken} request parameter to get the next set of results.}
 
-\item{Status}{The status of the StackSets that you want to get summary information
-about.}
+\item{Status}{The status of the StackSets that you want to get summary information about.}
 
-\item{CallAs}{[Service-managed permissions] Specifies whether you are acting as an
-account administrator in the management account or as a delegated
-administrator in a member account.
+\item{CallAs}{[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.
 
-By default, \code{SELF} is specified. Use \code{SELF} for StackSets with
-self-managed permissions.
+By default, \code{SELF} is specified. Use \code{SELF} for StackSets with self-managed permissions.
 \itemize{
 \item If you are signed in to the management account, specify \code{SELF}.
-\item If you are signed in to a delegated administrator account, specify
-\code{DELEGATED_ADMIN}.
+\item If you are signed in to a delegated administrator account, specify \code{DELEGATED_ADMIN}.
 
-Your Amazon Web Services account must be registered as a delegated
-administrator in the management account. For more information, see
-\href{https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html}{Register a delegated administrator}
-in the \emph{CloudFormation User Guide}.
+Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see \href{https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html}{Register a delegated administrator} in the \emph{CloudFormation User Guide}.
 }}
 }
 \description{

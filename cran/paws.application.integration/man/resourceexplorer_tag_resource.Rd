@@ -8,11 +8,9 @@ Resource Explorer view or index}
 resourceexplorer_tag_resource(resourceArn, Tags = NULL)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the view or index that you want to
-attach tags to.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the view or index that you want to attach tags to.}
 
-\item{Tags}{A list of tag key and value pairs that you want to attach to the
-specified view or index.}
+\item{Tags}{A list of tag key and value pairs that you want to attach to the specified view or index.}
 }
 \description{
 Adds one or more tag key and value pairs to an Amazon Web Services Resource Explorer view or index.

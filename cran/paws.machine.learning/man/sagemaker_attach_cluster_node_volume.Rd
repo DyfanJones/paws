@@ -8,16 +8,11 @@ in your EKS orchestrated HyperPod cluster}
 sagemaker_attach_cluster_node_volume(ClusterArn, NodeId, VolumeId)
 }
 \arguments{
-\item{ClusterArn}{[required] The Amazon Resource Name (ARN) of your SageMaker HyperPod cluster
-containing the target node. Your cluster must use EKS as the
-orchestration and be in the \code{InService} state.}
+\item{ClusterArn}{[required] The Amazon Resource Name (ARN) of your SageMaker HyperPod cluster containing the target node. Your cluster must use EKS as the orchestration and be in the \code{InService} state.}
 
-\item{NodeId}{[required] The unique identifier of the cluster node to which you want to attach
-the volume. The node must belong to your specified HyperPod cluster and
-cannot be part of a Restricted Instance Group (RIG).}
+\item{NodeId}{[required] The unique identifier of the cluster node to which you want to attach the volume. The node must belong to your specified HyperPod cluster and cannot be part of a Restricted Instance Group (RIG).}
 
-\item{VolumeId}{[required] The unique identifier of your EBS volume to attach. The volume must be
-in the \code{available} state.}
+\item{VolumeId}{[required] The unique identifier of your EBS volume to attach. The volume must be in the \code{available} state.}
 }
 \description{
 Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS orchestrated HyperPod cluster.

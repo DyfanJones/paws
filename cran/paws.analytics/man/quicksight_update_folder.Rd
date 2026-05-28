@@ -7,8 +7,7 @@
 quicksight_update_folder(AwsAccountId, FolderId, Name)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the folder to
-update.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the folder to update.}
 
 \item{FolderId}{[required] The ID of the folder.}
 

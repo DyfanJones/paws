@@ -16,28 +16,15 @@ cloudcontrolapi_list_resources(
 \arguments{
 \item{TypeName}{[required] The name of the resource type.}
 
-\item{TypeVersionId}{For private resource types, the type version to use in this resource
-operation. If you do not specify a resource version, CloudFormation uses
-the default version.}
+\item{TypeVersionId}{For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of the Identity and Access Management
-(IAM) role for Cloud Control API to use when performing this resource
-operation. The role specified must have the permissions required for
-this operation. The necessary permissions for each event handler are
-defined in the \code{handlers} section of the \href{https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html}{resource type definition schema}.
+\item{RoleArn}{The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the \code{handlers} section of the \href{https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html}{resource type definition schema}.
 
-If you do not specify a role, Cloud Control API uses a temporary session
-created using your Amazon Web Services user credentials.
+If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.
 
-For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions}{Specifying credentials}
-in the \emph{Amazon Web Services Cloud Control API User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions}{Specifying credentials} in the \emph{Amazon Web Services Cloud Control API User Guide}.}
 
-\item{NextToken}{If the previous paginated request didn't return all of the remaining
-results, the response object's \code{NextToken} parameter value is set to a
-token. To retrieve the next set of results, call this action again and
-assign that token to the request object's \code{NextToken} parameter. If
-there are no remaining results, the previous response object's
-\code{NextToken} parameter is set to \code{null}.}
+\item{NextToken}{If the previous paginated request didn't return all of the remaining results, the response object's \code{NextToken} parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's \code{NextToken} parameter. If there are no remaining results, the previous response object's \code{NextToken} parameter is set to \code{null}.}
 
 \item{MaxResults}{Reserved.}
 

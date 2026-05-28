@@ -12,15 +12,9 @@ emr_list_steps(ClusterId, StepStates = NULL, StepIds = NULL, Marker = NULL)
 
 \item{StepStates}{The filter to limit the step list based on certain states.}
 
-\item{StepIds}{The filter to limit the step list based on the identifier of the steps.
-You can specify a maximum of ten Step IDs. The character constraint
-applies to the overall length of the array.}
+\item{StepIds}{The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.}
 
-\item{Marker}{The maximum number of steps that a single \code{\link[=emr_list_steps]{list_steps}}
-action returns is 50. To return a longer list of steps, use multiple
-\code{\link[=emr_list_steps]{list_steps}} actions along with the \code{Marker}
-parameter, which is a pagination token that indicates the next set of
-results to retrieve.}
+\item{Marker}{The maximum number of steps that a single \code{\link[=emr_list_steps]{list_steps}} action returns is 50. To return a longer list of steps, use multiple \code{\link[=emr_list_steps]{list_steps}} actions along with the \code{Marker} parameter, which is a pagination token that indicates the next set of results to retrieve.}
 }
 \description{
 Provides a list of steps for the cluster in reverse order unless you specify \code{stepIds} with the request or filter by \code{StepStates}. You can specify a maximum of 10 \code{stepIDs}. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a \code{Marker}, which is a pagination token that indicates the next set of steps to retrieve.

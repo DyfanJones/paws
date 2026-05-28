@@ -15,20 +15,15 @@ sagemaker_list_projects(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns the projects that were created after a specified
-time.}
+\item{CreationTimeAfter}{A filter that returns the projects that were created after a specified time.}
 
-\item{CreationTimeBefore}{A filter that returns the projects that were created before a specified
-time.}
+\item{CreationTimeBefore}{A filter that returns the projects that were created before a specified time.}
 
 \item{MaxResults}{The maximum number of projects to return in the response.}
 
-\item{NameContains}{A filter that returns the projects whose name contains a specified
-string.}
+\item{NameContains}{A filter that returns the projects whose name contains a specified string.}
 
-\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_projects]{list_projects}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of projects, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_projects]{list_projects}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of projects, use the token in the next request.}
 
 \item{SortBy}{The field by which to sort results. The default is \code{CreationTime}.}
 

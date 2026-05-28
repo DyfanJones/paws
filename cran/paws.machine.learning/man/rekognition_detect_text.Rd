@@ -8,16 +8,11 @@ text}
 rekognition_detect_text(Image, Filters = NULL)
 }
 \arguments{
-\item{Image}{[required] The input image as base64-encoded bytes or an Amazon S3 object. If you
-use the AWS CLI to call Amazon Rekognition operations, you can't pass
-image bytes.
+\item{Image}{[required] The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes.
 
-If you are using an AWS SDK to call Amazon Rekognition, you might not
-need to base64-encode image bytes passed using the \code{Bytes} field. For
-more information, see Images in the Amazon Rekognition developer guide.}
+If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the \code{Bytes} field. For more information, see Images in the Amazon Rekognition developer guide.}
 
-\item{Filters}{Optional parameters that let you set the criteria that the text must
-meet to be included in your response.}
+\item{Filters}{Optional parameters that let you set the criteria that the text must meet to be included in your response.}
 }
 \description{
 Detects text in the input image and converts it into machine-readable text.

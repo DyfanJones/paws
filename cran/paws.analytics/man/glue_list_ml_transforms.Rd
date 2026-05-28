@@ -19,8 +19,7 @@ glue_list_ml_transforms(
 
 \item{MaxResults}{The maximum size of a list to return.}
 
-\item{Filter}{A \code{TransformFilterCriteria} used to filter the machine learning
-transforms.}
+\item{Filter}{A \code{TransformFilterCriteria} used to filter the machine learning transforms.}
 
 \item{Sort}{A \code{TransformSortCriteria} used to sort the machine learning transforms.}
 

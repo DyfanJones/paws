@@ -7,16 +7,13 @@
 verifiedpermissions_create_policy_store_alias(aliasName, policyStoreId)
 }
 \arguments{
-\item{aliasName}{[required] Specifies the name of the policy store alias to create. The name must be
-unique within your Amazon Web Services account and Amazon Web Services
-Region.
+\item{aliasName}{[required] Specifies the name of the policy store alias to create. The name must be unique within your Amazon Web Services account and Amazon Web Services Region.
 
 The alias name must always be prefixed with \verb{policy-store-alias/}.}
 
 \item{policyStoreId}{[required] Specifies the ID of the policy store to associate with the alias.
 
-The associated policy store must be specified using its ID. The alias
-name cannot be used.}
+The associated policy store must be specified using its ID. The alias name cannot be used.}
 }
 \description{
 Creates a policy store alias for the specified policy store. A policy store alias is an alternative identifier that you can use to reference a policy store in API operations.

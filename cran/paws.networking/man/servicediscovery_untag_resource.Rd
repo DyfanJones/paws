@@ -7,8 +7,7 @@
 servicediscovery_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the resource that you want to retrieve
-tags for.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.}
 
 \item{TagKeys}{[required] The tag keys to remove from the specified resource.}
 }

@@ -7,12 +7,9 @@
 bedrockagentcorecontrol_delete_policy(policyEngineId, policyId)
 }
 \arguments{
-\item{policyEngineId}{[required] The identifier of the policy engine that manages the policy to be
-deleted. This ensures the policy is deleted from the correct policy
-engine context.}
+\item{policyEngineId}{[required] The identifier of the policy engine that manages the policy to be deleted. This ensures the policy is deleted from the correct policy engine context.}
 
-\item{policyId}{[required] The unique identifier of the policy to be deleted. This must be a valid
-policy ID that exists within the specified policy engine.}
+\item{policyId}{[required] The unique identifier of the policy to be deleted. This must be a valid policy ID that exists within the specified policy engine.}
 }
 \description{
 Deletes an existing policy from the AgentCore Policy system. Once deleted, the policy can no longer be used for agent behavior control and all references to it become invalid. This is an asynchronous operation. Use the \code{\link[=bedrockagentcorecontrol_get_policy]{get_policy}} operation to poll the \code{status} field to track completion.

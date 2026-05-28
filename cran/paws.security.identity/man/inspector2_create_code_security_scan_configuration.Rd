@@ -19,14 +19,9 @@ inspector2_create_code_security_scan_configuration(
 
 \item{configuration}{[required] The configuration settings for the code security scan.}
 
-\item{scopeSettings}{The scope settings that define which repositories will be scanned.
-Include this parameter to create a default scan configuration. Otherwise
-Amazon Inspector creates a general scan configuration.
+\item{scopeSettings}{The scope settings that define which repositories will be scanned. Include this parameter to create a default scan configuration. Otherwise Amazon Inspector creates a general scan configuration.
 
-A default scan configuration automatically applies to all existing and
-future projects imported into Amazon Inspector. Use the
-\code{\link[=inspector2_batch_associate_code_security_scan_configuration]{batch_associate_code_security_scan_configuration}}
-operation to associate a general scan configuration with projects.}
+A default scan configuration automatically applies to all existing and future projects imported into Amazon Inspector. Use the \code{\link[=inspector2_batch_associate_code_security_scan_configuration]{batch_associate_code_security_scan_configuration}} operation to associate a general scan configuration with projects.}
 
 \item{tags}{The tags to apply to the scan configuration.}
 }

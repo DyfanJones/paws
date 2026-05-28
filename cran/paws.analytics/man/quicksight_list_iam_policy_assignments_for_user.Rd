@@ -19,8 +19,7 @@ quicksight_list_iam_policy_assignments_for_user(
 
 \item{UserName}{[required] The name of the user.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 

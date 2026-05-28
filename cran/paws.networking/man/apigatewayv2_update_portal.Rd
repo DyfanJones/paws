@@ -23,8 +23,7 @@ apigatewayv2_update_portal(
 
 \item{LogoUri}{The logo URI.}
 
-\item{PortalContent}{Contains the content that is visible to portal consumers including the
-themes, display names, and description.}
+\item{PortalContent}{Contains the content that is visible to portal consumers including the themes, display names, and description.}
 
 \item{PortalId}{[required] The portal identifier.}
 

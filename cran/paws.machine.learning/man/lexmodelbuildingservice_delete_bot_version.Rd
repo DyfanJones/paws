@@ -9,9 +9,7 @@ lexmodelbuildingservice_delete_bot_version(name, version)
 \arguments{
 \item{name}{[required] The name of the bot.}
 
-\item{version}{[required] The version of the bot to delete. You cannot delete the \verb{$LATEST}
-version of the bot. To delete the \verb{$LATEST} version, use the
-\code{\link[=lexmodelbuildingservice_delete_bot]{delete_bot}} operation.}
+\item{version}{[required] The version of the bot to delete. You cannot delete the \verb{$LATEST} version of the bot. To delete the \verb{$LATEST} version, use the \code{\link[=lexmodelbuildingservice_delete_bot]{delete_bot}} operation.}
 }
 \description{
 Deletes a specific version of a bot. To delete all versions of a bot, use the \code{\link[=lexmodelbuildingservice_delete_bot]{delete_bot}} operation.

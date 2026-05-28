@@ -7,8 +7,7 @@
 appfabric_get_app_bundle(appBundleIdentifier)
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 }
 \description{
 Returns information about an app bundle.

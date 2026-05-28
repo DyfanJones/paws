@@ -14,25 +14,15 @@ datazone_list_metadata_generation_runs(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain where you want to list metadata
-generation runs.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain where you want to list metadata generation runs.}
 
 \item{status}{The status of the metadata generation runs.}
 
 \item{type}{The type of the metadata generation runs.}
 
-\item{nextToken}{When the number of metadata generation runs is greater than the default
-value for the MaxResults parameter, or if you explicitly specify a value
-for MaxResults that is less than the number of metadata generation runs,
-the response includes a pagination token named NextToken. You can
-specify this NextToken value in a subsequent call to
-ListMetadataGenerationRuns to list the next set of revisions.}
+\item{nextToken}{When the number of metadata generation runs is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of metadata generation runs, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListMetadataGenerationRuns to list the next set of revisions.}
 
-\item{maxResults}{The maximum number of metadata generation runs to return in a single
-call to ListMetadataGenerationRuns. When the number of metadata
-generation runs to be listed is greater than the value of MaxResults,
-the response contains a NextToken value that you can use in a subsequent
-call to ListMetadataGenerationRuns to list the next set of revisions.}
+\item{maxResults}{The maximum number of metadata generation runs to return in a single call to ListMetadataGenerationRuns. When the number of metadata generation runs to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListMetadataGenerationRuns to list the next set of revisions.}
 
 \item{targetIdentifier}{The target ID for which you want to list metadata generation runs.}
 }

@@ -77,8 +77,7 @@ panorama_create_application_instance <- function(ApplicationInstanceIdToReplace 
 #' Creates a job to run on a device
 #'
 #' @description
-#' Creates a job to run on a device. A job can update a device's software
-#' or reboot it.
+#' Creates a job to run on a device. A job can update a device's software or reboot it.
 #'
 #' @usage
 #' panorama_create_job_for_devices(DeviceIds, DeviceJobConfig, JobType)
@@ -406,14 +405,12 @@ panorama_delete_device <- function(DeviceId) {
 #' @description
 #' Deletes a package.
 #' 
-#' To delete a package, you need permission to call `s3:DeleteObject` in
-#' addition to permissions for the AWS Panorama API.
+#' To delete a package, you need permission to call `s3:DeleteObject` in addition to permissions for the AWS Panorama API.
 #'
 #' @usage
 #' panorama_delete_package(ForceDelete, PackageId)
 #'
-#' @param ForceDelete Delete the package even if it has artifacts stored in its access point.
-#' Deletes the package's artifacts from Amazon S3.
+#' @param ForceDelete Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.
 #' @param PackageId &#91;required&#93; The package's ID.
 #'
 #' @return
@@ -586,8 +583,7 @@ panorama_describe_application_instance <- function(ApplicationInstanceId) {
 #' manifest
 #'
 #' @description
-#' Returns information about an application instance's configuration
-#' manifest.
+#' Returns information about an application instance's configuration manifest.
 #'
 #' @usage
 #' panorama_describe_application_instance_details(ApplicationInstanceId)
@@ -1231,10 +1227,8 @@ panorama_describe_package_version <- function(OwnerAccount = NULL, PackageId, Pa
 #'   MaxResults, NextToken)
 #'
 #' @param ApplicationInstanceId &#91;required&#93; The application instance's ID.
-#' @param MaxResults The maximum number of application instance dependencies to return in one
-#' page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of application instance dependencies to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1295,8 +1289,7 @@ panorama_list_application_instance_dependencies <- function(ApplicationInstanceI
 #'
 #' @param ApplicationInstanceId &#91;required&#93; The node instances' application instance ID.
 #' @param MaxResults The maximum number of node instances to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1360,10 +1353,8 @@ panorama_list_application_instance_node_instances <- function(ApplicationInstanc
 #'   StatusFilter)
 #'
 #' @param DeviceId The application instances' device ID.
-#' @param MaxResults The maximum number of application instances to return in one page of
-#' results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of application instances to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param StatusFilter Only include instances with a specific status.
 #'
 #' @return
@@ -1449,11 +1440,9 @@ panorama_list_application_instances <- function(DeviceId = NULL, MaxResults = NU
 #' @param DeviceAggregatedStatusFilter Filter based on a device's status.
 #' @param MaxResults The maximum number of devices to return in one page of results.
 #' @param NameFilter Filter based on device's name. Prefixes supported.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param SortBy The target column to be sorted on. Default column sort is CREATED_TIME.
-#' @param SortOrder The sorting order for the returned list. SortOrder is DESCENDING by
-#' default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.
+#' @param SortOrder The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1538,8 +1527,7 @@ panorama_list_devices <- function(DeviceAggregatedStatusFilter = NULL, MaxResult
 #'
 #' @param DeviceId Filter results by the job's target device ID.
 #' @param MaxResults The maximum number of device jobs to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1601,10 +1589,8 @@ panorama_list_devices_jobs <- function(DeviceId = NULL, MaxResults = NULL, NextT
 #' @usage
 #' panorama_list_node_from_template_jobs(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of node from template jobs to return in one page of
-#' results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of node from template jobs to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1669,8 +1655,7 @@ panorama_list_node_from_template_jobs <- function(MaxResults = NULL, NextToken =
 #'
 #' @param Category Search for nodes by category.
 #' @param MaxResults The maximum number of nodes to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param OwnerAccount Search for nodes by the account ID of the nodes' owner.
 #' @param PackageName Search for nodes by name.
 #' @param PackageVersion Search for nodes by version.
@@ -1746,10 +1731,8 @@ panorama_list_nodes <- function(Category = NULL, MaxResults = NULL, NextToken = 
 #' @usage
 #' panorama_list_package_import_jobs(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of package import jobs to return in one page of
-#' results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of package import jobs to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1814,8 +1797,7 @@ panorama_list_package_import_jobs <- function(MaxResults = NULL, NextToken = NUL
 #' panorama_list_packages(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of packages to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1924,12 +1906,7 @@ panorama_list_tags_for_resource <- function(ResourceArn) {
 #' Creates a device and returns a configuration archive
 #'
 #' @description
-#' Creates a device and returns a configuration archive. The configuration
-#' archive is a ZIP file that contains a provisioning certificate that is
-#' valid for 5 minutes. Name the configuration archive
-#' `certificates-omni_device-name.zip` and transfer it to the device within
-#' 5 minutes. Use the included USB storage device and connect it to the USB
-#' 3.0 port next to the HDMI output.
+#' Creates a device and returns a configuration archive. The configuration archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Name the configuration archive `certificates-omni_device-name.zip` and transfer it to the device within 5 minutes. Use the included USB storage device and connect it to the USB 3.0 port next to the HDMI output.
 #'
 #' @usage
 #' panorama_provision_device(Description, Name, NetworkingConfiguration,

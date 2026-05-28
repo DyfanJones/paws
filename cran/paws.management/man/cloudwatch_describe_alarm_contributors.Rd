@@ -10,8 +10,7 @@ cloudwatch_describe_alarm_contributors(AlarmName, NextToken = NULL)
 \arguments{
 \item{AlarmName}{[required] The name of the alarm for which to retrieve contributor information.}
 
-\item{NextToken}{The token returned by a previous call to indicate that there is more
-data available.}
+\item{NextToken}{The token returned by a previous call to indicate that there is more data available.}
 }
 \description{
 Returns the information of the current alarm contributors that are in \code{ALARM} state. This operation returns details about the individual time series that contribute to the alarm's state.

@@ -8,18 +8,13 @@ information}
 glue_list_schema_versions(SchemaId, MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The
-structure contains:
+\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The structure contains:
 \itemize{
-\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-Either \code{SchemaArn} or \code{SchemaName} and \code{RegistryName} has to be
-provided.
-\item SchemaId$SchemaName: The name of the schema. Either \code{SchemaArn} or
-\code{SchemaName} and \code{RegistryName} has to be provided.
+\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either \code{SchemaArn} or \code{SchemaName} and \code{RegistryName} has to be provided.
+\item SchemaId$SchemaName: The name of the schema. Either \code{SchemaArn} or \code{SchemaName} and \code{RegistryName} has to be provided.
 }}
 
-\item{MaxResults}{Maximum number of results required per page. If the value is not
-supplied, this will be defaulted to 25 per page.}
+\item{MaxResults}{Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 }

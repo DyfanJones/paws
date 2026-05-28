@@ -25,40 +25,23 @@ mturk_update_qualification_type(
 
 \item{QualificationTypeStatus}{The new status of the Qualification type - Active | Inactive}
 
-\item{Test}{The questions for the Qualification test a Worker must answer correctly
-to obtain a Qualification of this type. If this parameter is specified,
-\code{TestDurationInSeconds} must also be specified.
+\item{Test}{The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, \code{TestDurationInSeconds} must also be specified.
 
-Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm
-data structure. This parameter cannot be specified if AutoGranted is
-true.
+Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.
 
-Constraints: None. If not specified, the Worker may request the
-Qualification without answering any questions.}
+Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.}
 
-\item{AnswerKey}{The answers to the Qualification test specified in the Test parameter,
-in the form of an AnswerKey data structure.}
+\item{AnswerKey}{The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.}
 
-\item{TestDurationInSeconds}{The number of seconds the Worker has to complete the Qualification test,
-starting from the time the Worker requests the Qualification.}
+\item{TestDurationInSeconds}{The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.}
 
-\item{RetryDelayInSeconds}{The amount of time, in seconds, that Workers must wait after requesting
-a Qualification of the specified Qualification type before they can
-retry the Qualification request. It is not possible to disable retries
-for a Qualification type after it has been created with retries enabled.
-If you want to disable retries, you must dispose of the existing
-retry-enabled Qualification type using DisposeQualificationType and then
-create a new Qualification type with retries disabled using
-CreateQualificationType.}
+\item{RetryDelayInSeconds}{The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.}
 
-\item{AutoGranted}{Specifies whether requests for the Qualification type are granted
-immediately, without prompting the Worker with a Qualification test.
+\item{AutoGranted}{Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.
 
-Constraints: If the Test parameter is specified, this parameter cannot
-be true.}
+Constraints: If the Test parameter is specified, this parameter cannot be true.}
 
-\item{AutoGrantedValue}{The Qualification value to use for automatically granted Qualifications.
-This parameter is used only if the AutoGranted parameter is true.}
+\item{AutoGrantedValue}{The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.}
 }
 \description{
 The \code{\link[=mturk_update_qualification_type]{update_qualification_type}} operation modifies the attributes of an existing Qualification type, which is represented by a QualificationType data structure. Only the owner of a Qualification type can modify its attributes.

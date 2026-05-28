@@ -8,14 +8,12 @@ NULL
 #' @description
 #' Gets user access details in a batch request.
 #' 
-#' This action polls data from the tasks that are kicked off by the
-#' [`start_user_access_tasks`][appfabric_start_user_access_tasks] action.
+#' This action polls data from the tasks that are kicked off by the [`start_user_access_tasks`][appfabric_start_user_access_tasks] action.
 #'
 #' @usage
 #' appfabric_batch_get_user_access_tasks(appBundleIdentifier, taskIdList)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 #' @param taskIdList &#91;required&#93; The tasks IDs to use for the request.
 #'
 #' @return
@@ -82,22 +80,17 @@ appfabric_batch_get_user_access_tasks <- function(appBundleIdentifier, taskIdLis
 #' application, which allows AppFabric to call the APIs of the application
 #'
 #' @description
-#' Establishes a connection between Amazon Web Services AppFabric and an
-#' application, which allows AppFabric to call the APIs of the application.
+#' Establishes a connection between Amazon Web Services AppFabric and an application, which allows AppFabric to call the APIs of the application.
 #'
 #' @usage
 #' appfabric_connect_app_authorization(appBundleIdentifier,
 #'   appAuthorizationIdentifier, authRequest)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle that contains the app authorization to use for the
-#' request.
-#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app authorization to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.
+#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
 #' @param authRequest Contains OAuth2 authorization information.
 #' 
-#' This is required if the app authorization for the request is configured
-#' with an OAuth2 (`oauth2`) authorization type.
+#' This is required if the app authorization for the request is configured with an OAuth2 (`oauth2`) authorization type.
 #'
 #' @return
 #' A list with the following syntax:
@@ -159,15 +152,13 @@ appfabric_connect_app_authorization <- function(appBundleIdentifier, appAuthoriz
 #' AppFabric to connect to an application
 #'
 #' @description
-#' Creates an app authorization within an app bundle, which allows
-#' AppFabric to connect to an application.
+#' Creates an app authorization within an app bundle, which allows AppFabric to connect to an application.
 #'
 #' @usage
 #' appfabric_create_app_authorization(appBundleIdentifier, app, credential,
 #'   tenant, authType, clientToken, tags)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 #' @param app &#91;required&#93; The name of the application.
 #' 
 #' Valid values are:
@@ -195,31 +186,17 @@ appfabric_connect_app_authorization <- function(appBundleIdentifier, appAuthoriz
 #' -   `SMARTSHEET`
 #' 
 #' -   `CISCO`
-#' @param credential &#91;required&#93; Contains credentials for the application, such as an API key or OAuth2
-#' client ID and secret.
+#' @param credential &#91;required&#93; Contains credentials for the application, such as an API key or OAuth2 client ID and secret.
 #' 
-#' Specify credentials that match the authorization type for your request.
-#' For example, if the authorization type for your request is OAuth2
-#' (`oauth2`), then you should provide only the OAuth2 credentials.
-#' @param tenant &#91;required&#93; Contains information about an application tenant, such as the
-#' application display name and identifier.
+#' Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (`oauth2`), then you should provide only the OAuth2 credentials.
+#' @param tenant &#91;required&#93; Contains information about an application tenant, such as the application display name and identifier.
 #' @param authType &#91;required&#93; The authorization type for the app authorization.
-#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure
-#' the idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an
-#' `IdempotentParameterMismatch` error.
-#' @param tags A map of the key-value pairs of the tag or tags to assign to the
-#' resource.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `IdempotentParameterMismatch` error.
+#' @param tags A map of the key-value pairs of the tag or tags to assign to the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -304,32 +281,19 @@ appfabric_create_app_authorization <- function(appBundleIdentifier, app, credent
 #' AppFabric
 #'
 #' @description
-#' Creates an app bundle to collect data from an application using
-#' AppFabric.
+#' Creates an app bundle to collect data from an application using AppFabric.
 #'
 #' @usage
 #' appfabric_create_app_bundle(clientToken, customerManagedKeyIdentifier,
 #'   tags)
 #'
-#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure
-#' the idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an
-#' `IdempotentParameterMismatch` error.
-#' @param customerManagedKeyIdentifier The Amazon Resource Name (ARN) of the Key Management Service (KMS) key
-#' to use to encrypt the application data. If this is not specified, an
-#' Amazon Web Services owned key is used for encryption.
-#' @param tags A map of the key-value pairs of the tag or tags to assign to the
-#' resource.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `IdempotentParameterMismatch` error.
+#' @param customerManagedKeyIdentifier The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.
+#' @param tags A map of the key-value pairs of the tag or tags to assign to the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -389,8 +353,7 @@ appfabric_create_app_bundle <- function(clientToken = NULL, customerManagedKeyId
 #' appfabric_create_ingestion(appBundleIdentifier, app, tenantId,
 #'   ingestionType, clientToken, tags)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 #' @param app &#91;required&#93; The name of the application.
 #' 
 #' Valid values are:
@@ -420,22 +383,12 @@ appfabric_create_app_bundle <- function(clientToken = NULL, customerManagedKeyId
 #' -   `CISCO`
 #' @param tenantId &#91;required&#93; The ID of the application tenant.
 #' @param ingestionType &#91;required&#93; The ingestion type.
-#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure
-#' the idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an
-#' `IdempotentParameterMismatch` error.
-#' @param tags A map of the key-value pairs of the tag or tags to assign to the
-#' resource.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `IdempotentParameterMismatch` error.
+#' @param tags A map of the key-value pairs of the tag or tags to assign to the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -504,37 +457,23 @@ appfabric_create_ingestion <- function(appBundleIdentifier, app, tenantId, inges
 #' it's delivered
 #'
 #' @description
-#' Creates an ingestion destination, which specifies how an application's
-#' ingested data is processed by Amazon Web Services AppFabric and where
-#' it's delivered.
+#' Creates an ingestion destination, which specifies how an application's ingested data is processed by Amazon Web Services AppFabric and where it's delivered.
 #'
 #' @usage
 #' appfabric_create_ingestion_destination(appBundleIdentifier,
 #'   ingestionIdentifier, processingConfiguration, destinationConfiguration,
 #'   clientToken, tags)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
 #' @param processingConfiguration &#91;required&#93; Contains information about how ingested data is processed.
 #' @param destinationConfiguration &#91;required&#93; Contains information about the destination of ingested data.
-#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure
-#' the idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an
-#' `IdempotentParameterMismatch` error.
-#' @param tags A map of the key-value pairs of the tag or tags to assign to the
-#' resource.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `IdempotentParameterMismatch` error.
+#' @param tags A map of the key-value pairs of the tag or tags to assign to the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -635,17 +574,14 @@ appfabric_create_ingestion_destination <- function(appBundleIdentifier, ingestio
 #' Deletes an app authorization
 #'
 #' @description
-#' Deletes an app authorization. You must delete the associated ingestion
-#' before you can delete an app authorization.
+#' Deletes an app authorization. You must delete the associated ingestion before you can delete an app authorization.
 #'
 #' @usage
 #' appfabric_delete_app_authorization(appBundleIdentifier,
 #'   appAuthorizationIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app authorization to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
 #'
 #' @return
 #' An empty list.
@@ -685,14 +621,12 @@ appfabric_delete_app_authorization <- function(appBundleIdentifier, appAuthoriza
 #' Deletes an app bundle
 #'
 #' @description
-#' Deletes an app bundle. You must delete all associated app authorizations
-#' before you can delete an app bundle.
+#' Deletes an app bundle. You must delete all associated app authorizations before you can delete an app bundle.
 #'
 #' @usage
 #' appfabric_delete_app_bundle(appBundleIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The ID or Amazon Resource Name (ARN) of the app bundle that needs to be
-#' deleted.
+#' @param appBundleIdentifier &#91;required&#93; The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.
 #'
 #' @return
 #' An empty list.
@@ -731,17 +665,13 @@ appfabric_delete_app_bundle <- function(appBundleIdentifier) {
 #' Deletes an ingestion
 #'
 #' @description
-#' Deletes an ingestion. You must stop (disable) the ingestion and you must
-#' delete all associated ingestion destinations before you can delete an
-#' app ingestion.
+#' Deletes an ingestion. You must stop (disable) the ingestion and you must delete all associated ingestion destinations before you can delete an app ingestion.
 #'
 #' @usage
 #' appfabric_delete_ingestion(appBundleIdentifier, ingestionIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
 #'
 #' @return
 #' An empty list.
@@ -783,22 +713,15 @@ appfabric_delete_ingestion <- function(appBundleIdentifier, ingestionIdentifier)
 #' @description
 #' Deletes an ingestion destination.
 #' 
-#' This deletes the association between an ingestion and it's destination.
-#' It doesn't delete previously ingested data or the storage destination,
-#' such as the Amazon S3 bucket where the data is delivered. If the
-#' ingestion destination is deleted while the associated ingestion is
-#' enabled, the ingestion will fail and is eventually disabled.
+#' This deletes the association between an ingestion and it's destination. It doesn't delete previously ingested data or the storage destination, such as the Amazon S3 bucket where the data is delivered. If the ingestion destination is deleted while the associated ingestion is enabled, the ingestion will fail and is eventually disabled.
 #'
 #' @usage
 #' appfabric_delete_ingestion_destination(appBundleIdentifier,
 #'   ingestionIdentifier, ingestionDestinationIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
-#' @param ingestionDestinationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion destination to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+#' @param ingestionDestinationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
 #'
 #' @return
 #' An empty list.
@@ -845,10 +768,8 @@ appfabric_delete_ingestion_destination <- function(appBundleIdentifier, ingestio
 #' appfabric_get_app_authorization(appBundleIdentifier,
 #'   appAuthorizationIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app authorization to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -916,8 +837,7 @@ appfabric_get_app_authorization <- function(appBundleIdentifier, appAuthorizatio
 #' @usage
 #' appfabric_get_app_bundle(appBundleIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -969,10 +889,8 @@ appfabric_get_app_bundle <- function(appBundleIdentifier) {
 #' @usage
 #' appfabric_get_ingestion(appBundleIdentifier, ingestionIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1036,12 +954,9 @@ appfabric_get_ingestion <- function(appBundleIdentifier, ingestionIdentifier) {
 #' appfabric_get_ingestion_destination(appBundleIdentifier,
 #'   ingestionIdentifier, ingestionDestinationIdentifier)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
-#' @param ingestionDestinationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion destination to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+#' @param ingestionDestinationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1123,19 +1038,11 @@ appfabric_get_ingestion_destination <- function(appBundleIdentifier, ingestionId
 #' appfabric_list_app_authorizations(appBundleIdentifier, maxResults,
 #'   nextToken)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken
-#' error*.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken error*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1201,17 +1108,10 @@ appfabric_list_app_authorizations <- function(appBundleIdentifier, maxResults = 
 #' @usage
 #' appfabric_list_app_bundles(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken
-#' error*.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken error*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1261,28 +1161,18 @@ appfabric_list_app_bundles <- function(maxResults = NULL, nextToken = NULL) {
 #' Returns a list of all ingestion destinations configured for an ingestion
 #'
 #' @description
-#' Returns a list of all ingestion destinations configured for an
-#' ingestion.
+#' Returns a list of all ingestion destinations configured for an ingestion.
 #'
 #' @usage
 #' appfabric_list_ingestion_destinations(appBundleIdentifier,
 #'   ingestionIdentifier, maxResults, nextToken)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken
-#' error*.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken error*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1339,19 +1229,11 @@ appfabric_list_ingestion_destinations <- function(appBundleIdentifier, ingestion
 #' @usage
 #' appfabric_list_ingestions(appBundleIdentifier, maxResults, nextToken)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken
-#' error*.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken error*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1410,8 +1292,7 @@ appfabric_list_ingestions <- function(appBundleIdentifier, maxResults = NULL, ne
 #' @usage
 #' appfabric_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to
-#' retrieve tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1465,10 +1346,8 @@ appfabric_list_tags_for_resource <- function(resourceArn) {
 #' @usage
 #' appfabric_start_ingestion(ingestionIdentifier, appBundleIdentifier)
 #'
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 #'
 #' @return
 #' An empty list.
@@ -1509,17 +1388,14 @@ appfabric_start_ingestion <- function(ingestionIdentifier, appBundleIdentifier) 
 #' address
 #'
 #' @description
-#' Starts the tasks to search user access status for a specific email
-#' address.
+#' Starts the tasks to search user access status for a specific email address.
 #' 
-#' The tasks are stopped when the user access status data is found. The
-#' tasks are terminated when the API calls to the application time out.
+#' The tasks are stopped when the user access status data is found. The tasks are terminated when the API calls to the application time out.
 #'
 #' @usage
 #' appfabric_start_user_access_tasks(appBundleIdentifier, email)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 #' @param email &#91;required&#93; The email address of the target user.
 #'
 #' @return
@@ -1580,10 +1456,8 @@ appfabric_start_user_access_tasks <- function(appBundleIdentifier, email) {
 #' @usage
 #' appfabric_stop_ingestion(ingestionIdentifier, appBundleIdentifier)
 #'
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
 #'
 #' @return
 #' An empty list.
@@ -1629,8 +1503,7 @@ appfabric_stop_ingestion <- function(ingestionIdentifier, appBundleIdentifier) {
 #' appfabric_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to tag.
-#' @param tags &#91;required&#93; A map of the key-value pairs of the tag or tags to assign to the
-#' resource.
+#' @param tags &#91;required&#93; A map of the key-value pairs of the tag or tags to assign to the resource.
 #'
 #' @return
 #' An empty list.
@@ -1681,8 +1554,7 @@ appfabric_tag_resource <- function(resourceArn, tags) {
 #' appfabric_untag_resource(resourceArn, tagKeys)
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to untag.
-#' @param tagKeys &#91;required&#93; The keys of the key-value pairs for the tag or tags you want to remove
-#' from the specified resource.
+#' @param tagKeys &#91;required&#93; The keys of the key-value pairs for the tag or tags you want to remove from the specified resource.
 #'
 #' @return
 #' An empty list.
@@ -1725,29 +1597,20 @@ appfabric_untag_resource <- function(resourceArn, tagKeys) {
 #' AppFabric to connect to an application
 #'
 #' @description
-#' Updates an app authorization within an app bundle, which allows
-#' AppFabric to connect to an application.
+#' Updates an app authorization within an app bundle, which allows AppFabric to connect to an application.
 #' 
-#' If the app authorization was in a `connected` state, updating the app
-#' authorization will set it back to a `PendingConnect` state.
+#' If the app authorization was in a `connected` state, updating the app authorization will set it back to a `PendingConnect` state.
 #'
 #' @usage
 #' appfabric_update_app_authorization(appBundleIdentifier,
 #'   appAuthorizationIdentifier, credential, tenant)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app authorization to use for the request.
-#' @param credential Contains credentials for the application, such as an API key or OAuth2
-#' client ID and secret.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param appAuthorizationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
+#' @param credential Contains credentials for the application, such as an API key or OAuth2 client ID and secret.
 #' 
-#' Specify credentials that match the authorization type of the app
-#' authorization to update. For example, if the authorization type of the
-#' app authorization is OAuth2 (`oauth2`), then you should provide only the
-#' OAuth2 credentials.
-#' @param tenant Contains information about an application tenant, such as the
-#' application display name and identifier.
+#' Specify credentials that match the authorization type of the app authorization to update. For example, if the authorization type of the app authorization is OAuth2 (`oauth2`), then you should provide only the OAuth2 credentials.
+#' @param tenant Contains information about an application tenant, such as the application display name and identifier.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1825,21 +1688,16 @@ appfabric_update_app_authorization <- function(appBundleIdentifier, appAuthoriza
 #' it's delivered
 #'
 #' @description
-#' Updates an ingestion destination, which specifies how an application's
-#' ingested data is processed by Amazon Web Services AppFabric and where
-#' it's delivered.
+#' Updates an ingestion destination, which specifies how an application's ingested data is processed by Amazon Web Services AppFabric and where it's delivered.
 #'
 #' @usage
 #' appfabric_update_ingestion_destination(appBundleIdentifier,
 #'   ingestionIdentifier, ingestionDestinationIdentifier,
 #'   destinationConfiguration)
 #'
-#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the app bundle to use for the request.
-#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion to use for the request.
-#' @param ingestionDestinationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-#' the ingestion destination to use for the request.
+#' @param appBundleIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.
+#' @param ingestionIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.
+#' @param ingestionDestinationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.
 #' @param destinationConfiguration &#91;required&#93; Contains information about the destination of ingested data.
 #'
 #' @return

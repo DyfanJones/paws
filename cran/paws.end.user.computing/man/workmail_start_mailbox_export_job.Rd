@@ -24,23 +24,18 @@ workmail_start_mailbox_export_job(
 
 \item{EntityId}{[required] The identifier of the user or resource associated with the mailbox.
 
-The identifier can accept \emph{UserId or ResourceId}, \emph{Username or
-Resourcename}, or \emph{email}. The following identity formats are available:
+The identifier can accept \emph{UserId or ResourceId}, \emph{Username or Resourcename}, or \emph{email}. The following identity formats are available:
 \itemize{
-\item Entity ID: 12345678-1234-1234-1234-123456789012,
-r-0123456789a0123456789b0123456789 , or
-S-1-1-12-1234567890-123456789-123456789-1234
+\item Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234
 \item Email address: entity@domain.tld
 \item Entity name: entity
 }}
 
 \item{Description}{The mailbox export job description.}
 
-\item{RoleArn}{[required] The ARN of the AWS Identity and Access Management (IAM) role that grants
-write permission to the S3 bucket.}
+\item{RoleArn}{[required] The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.}
 
-\item{KmsKeyArn}{[required] The Amazon Resource Name (ARN) of the symmetric AWS Key Management
-Service (AWS KMS) key that encrypts the exported mailbox content.}
+\item{KmsKeyArn}{[required] The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.}
 
 \item{S3BucketName}{[required] The name of the S3 bucket.}
 

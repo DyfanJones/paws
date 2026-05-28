@@ -9,8 +9,7 @@ locationservice_get_map_style_descriptor(MapName, Key = NULL)
 \arguments{
 \item{MapName}{[required] The map resource to retrieve the style descriptor from.}
 
-\item{Key}{The optional \href{https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html}{API key}
-to authorize the request.}
+\item{Key}{The optional \href{https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html}{API key} to authorize the request.}
 }
 \description{
 This operation is no longer current and may be deprecated in the future. We recommend upgrading to \href{https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStyleDescriptor.html}{\code{GetStyleDescriptor}} unless you require \code{Grab} data.

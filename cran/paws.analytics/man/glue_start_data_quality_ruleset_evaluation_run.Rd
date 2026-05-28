@@ -24,20 +24,15 @@ glue_start_data_quality_ruleset_evaluation_run(
 
 \item{NumberOfWorkers}{The number of \code{G.1X} workers to be used in the run. The default is 5.}
 
-\item{Timeout}{The timeout for a run in minutes. This is the maximum time that a run
-can consume resources before it is terminated and enters \code{TIMEOUT}
-status. The default is 2,880 minutes (48 hours).}
+\item{Timeout}{The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters \code{TIMEOUT} status. The default is 2,880 minutes (48 hours).}
 
-\item{ClientToken}{Used for idempotency and is recommended to be set to a random ID (such
-as a UUID) to avoid creating or starting multiple instances of the same
-resource.}
+\item{ClientToken}{Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.}
 
 \item{AdditionalRunOptions}{Additional run options you can specify for an evaluation run.}
 
 \item{RulesetNames}{[required] A list of ruleset names.}
 
-\item{AdditionalDataSources}{A map of reference strings to additional data sources you can specify
-for an evaluation run.}
+\item{AdditionalDataSources}{A map of reference strings to additional data sources you can specify for an evaluation run.}
 }
 \description{
 Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the \code{\link[=glue_get_data_quality_result]{get_data_quality_result}} API.

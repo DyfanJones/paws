@@ -16,8 +16,7 @@ ec2_create_placement_group(
 )
 }
 \arguments{
-\item{PartitionCount}{The number of partitions. Valid only when \strong{Strategy} is set to
-\code{partition}.}
+\item{PartitionCount}{The number of partitions. Valid only when \strong{Strategy} is set to \code{partition}.}
 
 \item{TagSpecifications}{The tags to apply to the new placement group.}
 
@@ -31,13 +30,9 @@ ec2_create_placement_group(
 
 \item{Operator}{Reserved for internal use.}
 
-\item{DryRun}{Checks whether you have the required permissions for the operation,
-without actually making the request, and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{GroupName}{A name for the placement group. Must be unique within the scope of your
-account for the Region.
+\item{GroupName}{A name for the placement group. Must be unique within the scope of your account for the Region.
 
 Constraints: Up to 255 ASCII characters}
 

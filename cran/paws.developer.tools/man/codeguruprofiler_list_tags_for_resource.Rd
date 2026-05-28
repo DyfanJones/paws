@@ -7,8 +7,7 @@
 codeguruprofiler_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that contains the tags to
-return.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that contains the tags to return.}
 }
 \description{
 Returns a list of the tags that are assigned to a specified resource.

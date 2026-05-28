@@ -19,48 +19,33 @@ pinpointsmsvoicev2_request_phone_number(
 )
 }
 \arguments{
-\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-region.}
+\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.}
 
-\item{MessageType}{[required] The type of message. Valid values are \code{TRANSACTIONAL} for messages that
-are critical or time-sensitive and \code{PROMOTIONAL} for messages that
-aren't critical or time-sensitive.}
+\item{MessageType}{[required] The type of message. Valid values are \code{TRANSACTIONAL} for messages that are critical or time-sensitive and \code{PROMOTIONAL} for messages that aren't critical or time-sensitive.}
 
-\item{NumberCapabilities}{[required] Indicates if the phone number will be used for text messages, voice
-messages, or both.}
+\item{NumberCapabilities}{[required] Indicates if the phone number will be used for text messages, voice messages, or both.}
 
 \item{NumberType}{[required] The type of phone number to request.
 
-When you request a \code{SIMULATOR} phone number, you must set
-\strong{MessageType} as \code{TRANSACTIONAL}.}
+When you request a \code{SIMULATOR} phone number, you must set \strong{MessageType} as \code{TRANSACTIONAL}.}
 
-\item{OptOutListName}{The name of the OptOutList to associate with the phone number. You can
-use the OptOutListName or OptOutListArn.
+\item{OptOutListName}{The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.
 
-If you are using a shared End User Messaging SMS resource then you must
-use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
-\item{PoolId}{The pool to associated with the phone number. You can use the PoolId or
-PoolArn.
+\item{PoolId}{The pool to associated with the phone number. You can use the PoolId or PoolArn.
 
-If you are using a shared End User Messaging SMS resource then you must
-use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
-\item{RegistrationId}{Use this field to attach your phone number for an external registration
-process.}
+\item{RegistrationId}{Use this field to attach your phone number for an external registration process.}
 
-\item{InternationalSendingEnabled}{By default this is set to false. When set to true the international
-sending of phone number is Enabled.}
+\item{InternationalSendingEnabled}{By default this is set to false. When set to true the international sending of phone number is Enabled.}
 
-\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the phone number can't
-be deleted.}
+\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the phone number can't be deleted.}
 
-\item{Tags}{An array of tags (key and value pairs) to associate with the requested
-phone number.}
+\item{Tags}{An array of tags (key and value pairs) to associate with the requested phone number.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 Request an origination phone number for use in your account. For more information on phone number request see \href{https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html}{Request a phone number} in the \emph{End User Messaging SMS User Guide}.

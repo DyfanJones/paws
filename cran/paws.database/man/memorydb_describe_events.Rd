@@ -16,29 +16,19 @@ memorydb_describe_events(
 )
 }
 \arguments{
-\item{SourceName}{The identifier of the event source for which events are returned. If not
-specified, all sources are included in the response.}
+\item{SourceName}{The identifier of the event source for which events are returned. If not specified, all sources are included in the response.}
 
-\item{SourceType}{The event source to retrieve events for. If no value is specified, all
-events are returned.}
+\item{SourceType}{The event source to retrieve events for. If no value is specified, all events are returned.}
 
-\item{StartTime}{The beginning of the time interval to retrieve events for, specified in
-ISO 8601 format. Example: 2017-03-30T07:03:49.555Z}
+\item{StartTime}{The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z}
 
-\item{EndTime}{The end of the time interval for which to retrieve events, specified in
-ISO 8601 format. Example: 2017-03-30T07:03:49.555Z}
+\item{EndTime}{The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z}
 
 \item{Duration}{The number of minutes worth of events to retrieve.}
 
-\item{MaxResults}{The maximum number of records to include in the response. If more
-records exist than the specified MaxResults value, a token is included
-in the response so that the remaining results can be retrieved.}
+\item{MaxResults}{The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.}
 
-\item{NextToken}{An optional argument to pass in case the total number of records exceeds
-the value of MaxResults. If nextToken is returned, there are more
-results available. The value of nextToken is a unique pagination token
-for each page. Make the call again using the returned token to retrieve
-the next page. Keep all other arguments unchanged.}
+\item{NextToken}{An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.}
 }
 \description{
 Returns events related to clusters, security groups, and parameter groups. You can obtain events specific to a particular cluster, security group, or parameter group by providing the name as a parameter. By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.

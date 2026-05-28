@@ -29,15 +29,13 @@ braket_create_quantum_task(
 
 \item{outputS3Bucket}{[required] The S3 bucket to store quantum task result files in.}
 
-\item{outputS3KeyPrefix}{[required] The key prefix for the location in the S3 bucket to store quantum task
-results in.}
+\item{outputS3KeyPrefix}{[required] The key prefix for the location in the S3 bucket to store quantum task results in.}
 
 \item{action}{[required] The action associated with the quantum task.}
 
 \item{tags}{Tags to be added to the quantum task you're creating.}
 
-\item{jobToken}{The token for an Amazon Braket hybrid job that associates it with the
-quantum task.}
+\item{jobToken}{The token for an Amazon Braket hybrid job that associates it with the quantum task.}
 
 \item{associations}{The list of Amazon Braket resources associated with the quantum task.}
 

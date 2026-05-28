@@ -7,8 +7,7 @@
 servicequotas_create_support_case(RequestId)
 }
 \arguments{
-\item{RequestId}{[required] The ID of the pending quota increase request for which you want to open
-a Support case.}
+\item{RequestId}{[required] The ID of the pending quota increase request for which you want to open a Support case.}
 }
 \description{
 Creates a Support case for an existing quota increase request. This call only creates a Support case if the request has a \code{Pending} status.

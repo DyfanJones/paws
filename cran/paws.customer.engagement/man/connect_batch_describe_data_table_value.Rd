@@ -10,11 +10,9 @@ connect_batch_describe_data_table_value(InstanceId, DataTableId, Values)
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias.}
 
-\item{Values}{[required] A list of value identifiers to retrieve, each specifying primary values
-and attribute names.}
+\item{Values}{[required] A list of value identifiers to retrieve, each specifying primary values and attribute names.}
 }
 \description{
 Retrieves multiple values from a data table without evaluating expressions. Returns the raw stored values along with metadata such as lock versions and modification timestamps. "Describe" is a deprecated term but is allowed to maintain consistency with existing operations.

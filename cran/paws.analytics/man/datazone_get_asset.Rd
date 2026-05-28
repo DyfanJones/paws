@@ -11,10 +11,7 @@ datazone_get_asset(domainIdentifier, identifier, revision = NULL)
 
 \item{identifier}{[required] The ID of the Amazon DataZone asset.
 
-This parameter supports either the value of \code{assetId} or
-\code{externalIdentifier} as input. If you are passing the value of
-\code{externalIdentifier}, you must prefix this value with
-\verb{externalIdentifer\%2F}.}
+This parameter supports either the value of \code{assetId} or \code{externalIdentifier} as input. If you are passing the value of \code{externalIdentifier}, you must prefix this value with \verb{externalIdentifer\%2F}.}
 
 \item{revision}{The revision of the Amazon DataZone asset.}
 }

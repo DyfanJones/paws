@@ -7,8 +7,7 @@
 firehose_stop_delivery_stream_encryption(DeliveryStreamName)
 }
 \arguments{
-\item{DeliveryStreamName}{[required] The name of the Firehose stream for which you want to disable
-server-side encryption (SSE).}
+\item{DeliveryStreamName}{[required] The name of the Firehose stream for which you want to disable server-side encryption (SSE).}
 }
 \description{
 Disables server-side encryption (SSE) for the Firehose stream.

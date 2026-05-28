@@ -11,15 +11,11 @@ braket_search_spending_limits(
 )
 }
 \arguments{
-\item{nextToken}{The token to retrieve the next page of results. This value is returned
-from a previous call to SearchSpendingLimits when there are more results
-available.}
+\item{nextToken}{The token to retrieve the next page of results. This value is returned from a previous call to SearchSpendingLimits when there are more results available.}
 
-\item{maxResults}{The maximum number of results to return in a single call. Minimum value
-of 1, maximum value of 100. Default is 20.}
+\item{maxResults}{The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.}
 
-\item{filters}{The filters to apply when searching for spending limits. Use filters to
-narrow down the results based on specific criteria.}
+\item{filters}{The filters to apply when searching for spending limits. Use filters to narrow down the results based on specific criteria.}
 }
 \description{
 Searches and lists spending limits based on specified filters. This operation supports pagination and allows filtering by various criteria to find specific spending limits. We recommend using pagination to ensure that the operation returns quickly and successfully.

@@ -14,8 +14,7 @@ sagemaker_create_presigned_mlflow_tracking_server_url(
 \arguments{
 \item{TrackingServerName}{[required] The name of the tracking server to connect to your MLflow UI.}
 
-\item{ExpiresInSeconds}{The duration in seconds that your presigned URL is valid. The presigned
-URL can be used only once.}
+\item{ExpiresInSeconds}{The duration in seconds that your presigned URL is valid. The presigned URL can be used only once.}
 
 \item{SessionExpirationDurationInSeconds}{The duration in seconds that your MLflow UI session is valid.}
 }

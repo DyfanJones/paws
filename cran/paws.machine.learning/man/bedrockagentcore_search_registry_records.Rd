@@ -14,20 +14,11 @@ bedrockagentcore_search_registry_records(
 \arguments{
 \item{searchQuery}{[required] The search query to find matching registry records.}
 
-\item{registryIds}{[required] The list of registry identifiers to search within. Currently, you can
-specify exactly one registry identifier. You can provide either the full
-Amazon Web Services Resource Name (ARN) or the 12-character alphanumeric
-registry ID.}
+\item{registryIds}{[required] The list of registry identifiers to search within. Currently, you can specify exactly one registry identifier. You can provide either the full Amazon Web Services Resource Name (ARN) or the 12-character alphanumeric registry ID.}
 
-\item{maxResults}{The maximum number of records to return in a single call. Valid values
-are 1 through 20. The default value is 10.}
+\item{maxResults}{The maximum number of records to return in a single call. Valid values are 1 through 20. The default value is 10.}
 
-\item{filters}{A metadata filter expression to narrow search results. Uses structured
-JSON operators including field-level operators (\verb{$eq}, \verb{$ne}, \verb{$in}) and
-logical operators (\verb{$and}, \verb{$or}) on filterable fields (\code{name},
-\code{descriptorType}, \code{version}). For example, to filter by descriptor type:
-\code{{"descriptorType": {"$eq": "MCP"}}}. To combine filters:
-\verb{\{"$and": [\{"descriptorType": \{"$eq": "MCP"\}\}, \{"name": \{"$eq": "my-tool"\}\}]\}}.}
+\item{filters}{A metadata filter expression to narrow search results. Uses structured JSON operators including field-level operators (\verb{$eq}, \verb{$ne}, \verb{$in}) and logical operators (\verb{$and}, \verb{$or}) on filterable fields (\code{name}, \code{descriptorType}, \code{version}). For example, to filter by descriptor type: \code{{"descriptorType": {"$eq": "MCP"}}}. To combine filters: \verb{\{"$and": [\{"descriptorType": \{"$eq": "MCP"\}\}, \{"name": \{"$eq": "my-tool"\}\}]\}}.}
 }
 \description{
 Searches for registry records using semantic, lexical, or hybrid queries. Returns metadata for matching records ordered by relevance within the specified registry.

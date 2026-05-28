@@ -10,8 +10,7 @@ bedrockagentcore_batch_delete_memory_records(memoryId, records)
 \arguments{
 \item{memoryId}{[required] The unique ID of the memory resource where records will be deleted.}
 
-\item{records}{[required] A list of memory record deletion inputs to be processed in the batch
-operation.}
+\item{records}{[required] A list of memory record deletion inputs to be processed in the batch operation.}
 }
 \description{
 Deletes multiple memory records in a single batch operation from the specified memory.

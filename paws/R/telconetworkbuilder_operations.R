@@ -8,8 +8,7 @@ NULL
 #' @description
 #' Cancels a network operation.
 #' 
-#' A network operation is any operation that is done to your network, such
-#' as network instance instantiation or termination.
+#' A network operation is any operation that is done to your network, such as network instance instantiation or termination.
 #'
 #' @usage
 #' telconetworkbuilder_cancel_sol_network_operation(nsLcmOpOccId)
@@ -55,27 +54,14 @@ telconetworkbuilder_cancel_sol_network_operation <- function(nsLcmOpOccId) {
 #' @description
 #' Creates a function package.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network. For more information, see [Function
-#' packages](https://docs.aws.amazon.com/tnb/latest/ug/function-packages.html)
-#' in the *Amazon Web Services Telco Network Builder User Guide*.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network. For more information, see [Function packages](https://docs.aws.amazon.com/tnb/latest/ug/function-packages.html) in the *Amazon Web Services Telco Network Builder User Guide*.
 #' 
-#' Creating a function package is the first step for creating a network in
-#' AWS TNB. This request creates an empty container with an ID. The next
-#' step is to upload the actual CSAR zip file into that empty container. To
-#' upload function package content, see
-#' [`put_sol_function_package_content`][telconetworkbuilder_put_sol_function_package_content].
+#' Creating a function package is the first step for creating a network in AWS TNB. This request creates an empty container with an ID. The next step is to upload the actual CSAR zip file into that empty container. To upload function package content, see [`put_sol_function_package_content`][telconetworkbuilder_put_sol_function_package_content].
 #'
 #' @usage
 #' telconetworkbuilder_create_sol_function_package(tags)
 #'
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -130,17 +116,9 @@ telconetworkbuilder_create_sol_function_package <- function(tags = NULL) {
 #' @description
 #' Creates a network instance.
 #' 
-#' A network instance is a single network created in Amazon Web Services
-#' TNB that can be deployed and on which life-cycle operations (like
-#' terminate, update, and delete) can be performed. Creating a network
-#' instance is the third step after creating a network package. For more
-#' information about network instances, [Network
-#' instances](https://docs.aws.amazon.com/tnb/latest/ug/network-instances.html)
-#' in the *Amazon Web Services Telco Network Builder User Guide*.
+#' A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed. Creating a network instance is the third step after creating a network package. For more information about network instances, [Network instances](https://docs.aws.amazon.com/tnb/latest/ug/network-instances.html) in the *Amazon Web Services Telco Network Builder User Guide*.
 #' 
-#' Once you create a network instance, you can instantiate it. To
-#' instantiate a network, see
-#' [`instantiate_sol_network_instance`][telconetworkbuilder_instantiate_sol_network_instance].
+#' Once you create a network instance, you can instantiate it. To instantiate a network, see [`instantiate_sol_network_instance`][telconetworkbuilder_instantiate_sol_network_instance].
 #'
 #' @usage
 #' telconetworkbuilder_create_sol_network_instance(nsDescription, nsName,
@@ -149,10 +127,7 @@ telconetworkbuilder_create_sol_function_package <- function(tags = NULL) {
 #' @param nsDescription Network instance description.
 #' @param nsName &#91;required&#93; Network instance name.
 #' @param nsdInfoId &#91;required&#93; ID for network service descriptor.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -209,31 +184,16 @@ telconetworkbuilder_create_sol_network_instance <- function(nsDescription = NULL
 #' @description
 #' Creates a network package.
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on. For more
-#' information, see [Network
-#' instances](https://docs.aws.amazon.com/tnb/latest/ug/network-instances.html)
-#' in the *Amazon Web Services Telco Network Builder User Guide*.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on. For more information, see [Network instances](https://docs.aws.amazon.com/tnb/latest/ug/network-instances.html) in the *Amazon Web Services Telco Network Builder User Guide*.
 #' 
-#' A network package consists of a network service descriptor (NSD) file
-#' (required) and any additional files (optional), such as scripts specific
-#' to your needs. For example, if you have multiple function packages in
-#' your network package, you can use the NSD to define which network
-#' functions should run in certain VPCs, subnets, or EKS clusters.
+#' A network package consists of a network service descriptor (NSD) file (required) and any additional files (optional), such as scripts specific to your needs. For example, if you have multiple function packages in your network package, you can use the NSD to define which network functions should run in certain VPCs, subnets, or EKS clusters.
 #' 
-#' This request creates an empty network package container with an ID. Once
-#' you create a network package, you can upload the network package content
-#' using
-#' [`put_sol_network_package_content`][telconetworkbuilder_put_sol_network_package_content].
+#' This request creates an empty network package container with an ID. Once you create a network package, you can upload the network package content using [`put_sol_network_package_content`][telconetworkbuilder_put_sol_network_package_content].
 #'
 #' @usage
 #' telconetworkbuilder_create_sol_network_package(tags)
 #'
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -288,15 +248,9 @@ telconetworkbuilder_create_sol_network_package <- function(tags = NULL) {
 #' @description
 #' Deletes a function package.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.
 #' 
-#' To delete a function package, the package must be in a disabled state.
-#' To disable a function package, see
-#' [`update_sol_function_package`][telconetworkbuilder_update_sol_function_package].
+#' To delete a function package, the package must be in a disabled state. To disable a function package, see [`update_sol_function_package`][telconetworkbuilder_update_sol_function_package].
 #'
 #' @usage
 #' telconetworkbuilder_delete_sol_function_package(vnfPkgId)
@@ -342,13 +296,9 @@ telconetworkbuilder_delete_sol_function_package <- function(vnfPkgId) {
 #' @description
 #' Deletes a network instance.
 #' 
-#' A network instance is a single network created in Amazon Web Services
-#' TNB that can be deployed and on which life-cycle operations (like
-#' terminate, update, and delete) can be performed.
+#' A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.
 #' 
-#' To delete a network instance, the instance must be in a stopped or
-#' terminated state. To terminate a network instance, see
-#' [`terminate_sol_network_instance`][telconetworkbuilder_terminate_sol_network_instance].
+#' To delete a network instance, the instance must be in a stopped or terminated state. To terminate a network instance, see [`terminate_sol_network_instance`][telconetworkbuilder_terminate_sol_network_instance].
 #'
 #' @usage
 #' telconetworkbuilder_delete_sol_network_instance(nsInstanceId)
@@ -394,13 +344,9 @@ telconetworkbuilder_delete_sol_network_instance <- function(nsInstanceId) {
 #' @description
 #' Deletes network package.
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.
 #' 
-#' To delete a network package, the package must be in a disable state. To
-#' disable a network package, see
-#' [`update_sol_network_package`][telconetworkbuilder_update_sol_network_package].
+#' To delete a network package, the package must be in a disable state. To disable a network package, see [`update_sol_network_package`][telconetworkbuilder_update_sol_network_package].
 #'
 #' @usage
 #' telconetworkbuilder_delete_sol_network_package(nsdInfoId)
@@ -446,9 +392,7 @@ telconetworkbuilder_delete_sol_network_package <- function(nsdInfoId) {
 #' the network function package
 #'
 #' @description
-#' Gets the details of a network function instance, including the
-#' instantiation state and metadata from the function package descriptor in
-#' the network function package.
+#' Gets the details of a network function instance, including the instantiation state and metadata from the function package descriptor in the network function package.
 #' 
 #' A network function instance is a function in a function package .
 #'
@@ -531,14 +475,9 @@ telconetworkbuilder_get_sol_function_instance <- function(vnfInstanceId) {
 #' operational state and whether the package is in use
 #'
 #' @description
-#' Gets the details of an individual function package, such as the
-#' operational state and whether the package is in use.
+#' Gets the details of an individual function package, such as the operational state and whether the package is in use.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network..
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network..
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_function_package(vnfPkgId)
@@ -616,17 +555,12 @@ telconetworkbuilder_get_sol_function_package <- function(vnfPkgId) {
 #' @description
 #' Gets the contents of a function package.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_function_package_content(accept, vnfPkgId)
 #'
-#' @param accept &#91;required&#93; The format of the package that you want to download from the function
-#' packages.
+#' @param accept &#91;required&#93; The format of the package that you want to download from the function packages.
 #' @param vnfPkgId &#91;required&#93; ID of the function package.
 #'
 #' @return
@@ -675,22 +609,15 @@ telconetworkbuilder_get_sol_function_package_content <- function(accept, vnfPkgI
 #' @description
 #' Gets a function package descriptor in a function package.
 #' 
-#' A function package descriptor is a .yaml file in a function package that
-#' uses the TOSCA standard to describe how the network function in the
-#' function package should run on your network.
+#' A function package descriptor is a .yaml file in a function package that uses the TOSCA standard to describe how the network function in the function package should run on your network.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_function_package_descriptor(accept,
 #'   vnfPkgId)
 #'
-#' @param accept &#91;required&#93; Indicates which content types, expressed as MIME types, the client is
-#' able to understand.
+#' @param accept &#91;required&#93; Indicates which content types, expressed as MIME types, the client is able to understand.
 #' @param vnfPkgId &#91;required&#93; ID of the function package.
 #'
 #' @return
@@ -739,9 +666,7 @@ telconetworkbuilder_get_sol_function_package_descriptor <- function(accept, vnfP
 #' @description
 #' Gets the details of the network instance.
 #' 
-#' A network instance is a single network created in Amazon Web Services
-#' TNB that can be deployed and on which life-cycle operations (like
-#' terminate, update, and delete) can be performed.
+#' A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_network_instance(nsInstanceId)
@@ -811,11 +736,9 @@ telconetworkbuilder_get_sol_network_instance <- function(nsInstanceId) {
 #' the network operation and the status of the tasks
 #'
 #' @description
-#' Gets the details of a network operation, including the tasks involved in
-#' the network operation and the status of the tasks.
+#' Gets the details of a network operation, including the tasks involved in the network operation and the status of the tasks.
 #' 
-#' A network operation is any operation that is done to your network, such
-#' as network instance instantiation or termination.
+#' A network operation is any operation that is done to your network, such as network instance instantiation or termination.
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_network_operation(nsLcmOpOccId)
@@ -917,9 +840,7 @@ telconetworkbuilder_get_sol_network_operation <- function(nsLcmOpOccId) {
 #' @description
 #' Gets the details of a network package.
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_network_package(nsdInfoId)
@@ -999,9 +920,7 @@ telconetworkbuilder_get_sol_network_package <- function(nsdInfoId) {
 #' @description
 #' Gets the contents of a network package.
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_network_package_content(accept, nsdInfoId)
@@ -1055,10 +974,7 @@ telconetworkbuilder_get_sol_network_package_content <- function(accept, nsdInfoI
 #' @description
 #' Gets the content of the network service descriptor.
 #' 
-#' A network service descriptor is a .yaml file in a network package that
-#' uses the TOSCA standard to describe the network functions you want to
-#' deploy and the Amazon Web Services infrastructure you want to deploy the
-#' network functions on.
+#' A network service descriptor is a .yaml file in a network package that uses the TOSCA standard to describe the network functions you want to deploy and the Amazon Web Services infrastructure you want to deploy the network functions on.
 #'
 #' @usage
 #' telconetworkbuilder_get_sol_network_package_descriptor(nsdInfoId)
@@ -1110,29 +1026,18 @@ telconetworkbuilder_get_sol_network_package_descriptor <- function(nsdInfoId) {
 #' @description
 #' Instantiates a network instance.
 #' 
-#' A network instance is a single network created in Amazon Web Services
-#' TNB that can be deployed and on which life-cycle operations (like
-#' terminate, update, and delete) can be performed.
+#' A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.
 #' 
-#' Before you can instantiate a network instance, you have to create a
-#' network instance. For more information, see
-#' [`create_sol_network_instance`][telconetworkbuilder_create_sol_network_instance].
+#' Before you can instantiate a network instance, you have to create a network instance. For more information, see [`create_sol_network_instance`][telconetworkbuilder_create_sol_network_instance].
 #'
 #' @usage
 #' telconetworkbuilder_instantiate_sol_network_instance(
 #'   additionalParamsForNs, dryRun, nsInstanceId, tags)
 #'
 #' @param additionalParamsForNs Provides values for the configurable properties.
-#' @param dryRun A check for whether you have the required permissions for the action
-#' without actually making the request and provides an error response. If
-#' you have the required permissions, the error response is
-#' `DryRunOperation`. Otherwise, it is `UnauthorizedOperation`.
+#' @param dryRun A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is `DryRunOperation`. Otherwise, it is `UnauthorizedOperation`.
 #' @param nsInstanceId &#91;required&#93; ID of the network instance.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. When you use this API,
-#' the tags are only applied to the network operation that is created.
-#' These tags are not applied to the network instance. Use tags to search
-#' and filter your resources or track your Amazon Web Services costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1260,11 +1165,7 @@ telconetworkbuilder_list_sol_function_instances <- function(maxResults = NULL, n
 #' @description
 #' Lists information about function packages.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.
 #'
 #' @usage
 #' telconetworkbuilder_list_sol_function_packages(maxResults, nextToken)
@@ -1338,9 +1239,7 @@ telconetworkbuilder_list_sol_function_packages <- function(maxResults = NULL, ne
 #' @description
 #' Lists your network instances.
 #' 
-#' A network instance is a single network created in Amazon Web Services
-#' TNB that can be deployed and on which life-cycle operations (like
-#' terminate, update, and delete) can be performed.
+#' A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.
 #'
 #' @usage
 #' telconetworkbuilder_list_sol_network_instances(maxResults, nextToken)
@@ -1411,11 +1310,9 @@ telconetworkbuilder_list_sol_network_instances <- function(maxResults = NULL, ne
 #' started and the status of the operation
 #'
 #' @description
-#' Lists details for a network operation, including when the operation
-#' started and the status of the operation.
+#' Lists details for a network operation, including when the operation started and the status of the operation.
 #' 
-#' A network operation is any operation that is done to your network, such
-#' as network instance instantiation or termination.
+#' A network operation is any operation that is done to your network, such as network instance instantiation or termination.
 #'
 #' @usage
 #' telconetworkbuilder_list_sol_network_operations(maxResults, nextToken,
@@ -1423,8 +1320,7 @@ telconetworkbuilder_list_sol_network_instances <- function(maxResults = NULL, ne
 #'
 #' @param maxResults The maximum number of results to include in the response.
 #' @param nextToken The token for the next page of results.
-#' @param nsInstanceId Network instance id filter, to retrieve network operations associated to
-#' a network instance.
+#' @param nsInstanceId Network instance id filter, to retrieve network operations associated to a network instance.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1496,9 +1392,7 @@ telconetworkbuilder_list_sol_network_operations <- function(maxResults = NULL, n
 #' @description
 #' Lists network packages.
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.
 #'
 #' @usage
 #' telconetworkbuilder_list_sol_network_packages(maxResults, nextToken)
@@ -1627,11 +1521,7 @@ telconetworkbuilder_list_tags_for_resource <- function(resourceArn) {
 #' @description
 #' Uploads the contents of a function package.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.
 #'
 #' @usage
 #' telconetworkbuilder_put_sol_function_package_content(contentType, file,
@@ -1701,9 +1591,7 @@ telconetworkbuilder_put_sol_function_package_content <- function(contentType = N
 #' @description
 #' Uploads the contents of a network package.
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.
 #'
 #' @usage
 #' telconetworkbuilder_put_sol_network_package_content(contentType, file,
@@ -1776,19 +1664,13 @@ telconetworkbuilder_put_sol_network_package_content <- function(contentType = NU
 #' @description
 #' Tags an AWS TNB resource.
 #' 
-#' A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @usage
 #' telconetworkbuilder_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; Resource ARN.
-#' @param tags &#91;required&#93; A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags &#91;required&#93; A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @return
 #' An empty list.
@@ -1832,9 +1714,7 @@ telconetworkbuilder_tag_resource <- function(resourceArn, tags) {
 #' @description
 #' Terminates a network instance.
 #' 
-#' A network instance is a single network created in Amazon Web Services
-#' TNB that can be deployed and on which life-cycle operations (like
-#' terminate, update, and delete) can be performed.
+#' A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.
 #' 
 #' You must terminate a network instance before you can delete it.
 #'
@@ -1842,11 +1722,7 @@ telconetworkbuilder_tag_resource <- function(resourceArn, tags) {
 #' telconetworkbuilder_terminate_sol_network_instance(nsInstanceId, tags)
 #'
 #' @param nsInstanceId &#91;required&#93; ID of the network instance.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. When you use this API,
-#' the tags are only applied to the network operation that is created.
-#' These tags are not applied to the network instance. Use tags to search
-#' and filter your resources or track your Amazon Web Services costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1898,10 +1774,7 @@ telconetworkbuilder_terminate_sol_network_instance <- function(nsInstanceId, tag
 #' @description
 #' Untags an AWS TNB resource.
 #' 
-#' A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @usage
 #' telconetworkbuilder_untag_resource(resourceArn, tagKeys)
@@ -1951,11 +1824,7 @@ telconetworkbuilder_untag_resource <- function(resourceArn, tagKeys) {
 #' @description
 #' Updates the operational state of function package.
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.
 #'
 #' @usage
 #' telconetworkbuilder_update_sol_function_package(operationalState,
@@ -2009,39 +1878,27 @@ telconetworkbuilder_update_sol_function_package <- function(operationalState, vn
 #' @description
 #' Update a network instance.
 #' 
-#' A network instance is a single network created in Amazon Web Services
-#' TNB that can be deployed and on which life-cycle operations (like
-#' terminate, update, and delete) can be performed.
+#' A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.
 #' 
-#' Choose the *updateType* parameter to target the necessary update of the
-#' network instance.
+#' Choose the *updateType* parameter to target the necessary update of the network instance.
 #'
 #' @usage
 #' telconetworkbuilder_update_sol_network_instance(modifyVnfInfoData,
 #'   nsInstanceId, tags, updateNs, updateType)
 #'
-#' @param modifyVnfInfoData Identifies the network function information parameters and/or the
-#' configurable properties of the network function to be modified.
+#' @param modifyVnfInfoData Identifies the network function information parameters and/or the configurable properties of the network function to be modified.
 #' 
-#' Include this property only if the update type is
-#' `MODIFY_VNF_INFORMATION`.
+#' Include this property only if the update type is `MODIFY_VNF_INFORMATION`.
 #' @param nsInstanceId &#91;required&#93; ID of the network instance.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. When you use this API,
-#' the tags are only applied to the network operation that is created.
-#' These tags are not applied to the network instance. Use tags to search
-#' and filter your resources or track your Amazon Web Services costs.
-#' @param updateNs Identifies the network service descriptor and the configurable
-#' properties of the descriptor, to be used for the update.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.
+#' @param updateNs Identifies the network service descriptor and the configurable properties of the descriptor, to be used for the update.
 #' 
 #' Include this property only if the update type is `UPDATE_NS`.
 #' @param updateType &#91;required&#93; The type of update.
 #' 
-#' -   Use the `MODIFY_VNF_INFORMATION` update type, to update a specific
-#'     network function configuration, in the network instance.
+#' -   Use the `MODIFY_VNF_INFORMATION` update type, to update a specific network function configuration, in the network instance.
 #' 
-#' -   Use the `UPDATE_NS` update type, to update the network instance to a
-#'     new network service descriptor.
+#' -   Use the `UPDATE_NS` update type, to update the network instance to a new network service descriptor.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2102,22 +1959,16 @@ telconetworkbuilder_update_sol_network_instance <- function(modifyVnfInfoData = 
 #' @description
 #' Updates the operational state of a network package.
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.
 #' 
-#' A network service descriptor is a .yaml file in a network package that
-#' uses the TOSCA standard to describe the network functions you want to
-#' deploy and the Amazon Web Services infrastructure you want to deploy the
-#' network functions on.
+#' A network service descriptor is a .yaml file in a network package that uses the TOSCA standard to describe the network functions you want to deploy and the Amazon Web Services infrastructure you want to deploy the network functions on.
 #'
 #' @usage
 #' telconetworkbuilder_update_sol_network_package(nsdInfoId,
 #'   nsdOperationalState)
 #'
 #' @param nsdInfoId &#91;required&#93; ID of the network service descriptor in the network package.
-#' @param nsdOperationalState &#91;required&#93; Operational state of the network service descriptor in the network
-#' package.
+#' @param nsdOperationalState &#91;required&#93; Operational state of the network service descriptor in the network package.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2162,15 +2013,9 @@ telconetworkbuilder_update_sol_network_package <- function(nsdInfoId, nsdOperati
 #' Validates function package content
 #'
 #' @description
-#' Validates function package content. This can be used as a dry run before
-#' uploading function package content with
-#' [`put_sol_function_package_content`][telconetworkbuilder_put_sol_function_package_content].
+#' Validates function package content. This can be used as a dry run before uploading function package content with [`put_sol_function_package_content`][telconetworkbuilder_put_sol_function_package_content].
 #' 
-#' A function package is a .zip file in CSAR (Cloud Service Archive) format
-#' that contains a network function (an ETSI standard telecommunication
-#' application) and function package descriptor that uses the TOSCA
-#' standard to describe how the network functions should run on your
-#' network.
+#' A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.
 #'
 #' @usage
 #' telconetworkbuilder_validate_sol_function_package_content(contentType,
@@ -2238,13 +2083,9 @@ telconetworkbuilder_validate_sol_function_package_content <- function(contentTyp
 #' Validates network package content
 #'
 #' @description
-#' Validates network package content. This can be used as a dry run before
-#' uploading network package content with
-#' [`put_sol_network_package_content`][telconetworkbuilder_put_sol_network_package_content].
+#' Validates network package content. This can be used as a dry run before uploading network package content with [`put_sol_network_package_content`][telconetworkbuilder_put_sol_network_package_content].
 #' 
-#' A network package is a .zip file in CSAR (Cloud Service Archive) format
-#' defines the function packages you want to deploy and the Amazon Web
-#' Services infrastructure you want to deploy them on.
+#' A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.
 #'
 #' @usage
 #' telconetworkbuilder_validate_sol_network_package_content(contentType,

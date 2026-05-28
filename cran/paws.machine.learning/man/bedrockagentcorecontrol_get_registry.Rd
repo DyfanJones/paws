@@ -7,8 +7,7 @@
 bedrockagentcorecontrol_get_registry(registryId)
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry to retrieve. You can specify either the
-Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry to retrieve. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 }
 \description{
 Retrieves information about a specific registry.

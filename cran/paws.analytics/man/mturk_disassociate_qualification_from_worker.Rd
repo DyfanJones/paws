@@ -16,8 +16,7 @@ mturk_disassociate_qualification_from_worker(
 
 \item{QualificationTypeId}{[required] The ID of the Qualification type of the Qualification to be revoked.}
 
-\item{Reason}{A text message that explains why the Qualification was revoked. The user
-who had the Qualification sees this message.}
+\item{Reason}{A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.}
 }
 \description{
 The \code{\link[=mturk_disassociate_qualification_from_worker]{disassociate_qualification_from_worker}} revokes a previously granted Qualification from a user.

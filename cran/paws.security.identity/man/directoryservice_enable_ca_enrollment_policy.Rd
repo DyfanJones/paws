@@ -8,15 +8,11 @@ directory}
 directoryservice_enable_ca_enrollment_policy(DirectoryId, PcaConnectorArn)
 }
 \arguments{
-\item{DirectoryId}{[required] The identifier of the directory for which to enable the CA enrollment
-policy.}
+\item{DirectoryId}{[required] The identifier of the directory for which to enable the CA enrollment policy.}
 
-\item{PcaConnectorArn}{[required] The Amazon Resource Name (ARN) of the Private Certificate Authority
-(PCA) connector to use for automatic certificate enrollment. This
-connector must be properly configured and accessible from the directory.
+\item{PcaConnectorArn}{[required] The Amazon Resource Name (ARN) of the Private Certificate Authority (PCA) connector to use for automatic certificate enrollment. This connector must be properly configured and accessible from the directory.
 
-The ARN format is:
-\code{arn:aws:pca-connector-ad:region:account-id:connector/connector-id }}
+The ARN format is: \code{arn:aws:pca-connector-ad:region:account-id:connector/connector-id }}
 }
 \description{
 Enables certificate authority (CA) enrollment policy for the specified directory. This allows domain-joined clients to automatically request and receive certificates from the specified Amazon Web Services Private Certificate Authority.

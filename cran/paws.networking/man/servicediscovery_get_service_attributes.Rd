@@ -7,11 +7,7 @@
 servicediscovery_get_service_attributes(ServiceId)
 }
 \arguments{
-\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that you want to get
-attributes for. For services created in a namespace shared with your
-Amazon Web Services account, specify the service ARN. For more
-information about shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing}
-in the \emph{Cloud Map Developer Guide}.}
+\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that you want to get attributes for. For services created in a namespace shared with your Amazon Web Services account, specify the service ARN. For more information about shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing} in the \emph{Cloud Map Developer Guide}.}
 }
 \description{
 Returns the attributes associated with a specified service.

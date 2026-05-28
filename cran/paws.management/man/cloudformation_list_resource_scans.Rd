@@ -11,16 +11,11 @@ cloudformation_list_resource_scans(
 )
 }
 \arguments{
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 
-\item{MaxResults}{If the number of available results exceeds this maximum, the response
-includes a \code{NextToken} value that you can use for the \code{NextToken}
-parameter to get the next set of results. The default value is 10. The
-maximum value is 100.}
+\item{MaxResults}{If the number of available results exceeds this maximum, the response includes a \code{NextToken} value that you can use for the \code{NextToken} parameter to get the next set of results. The default value is 10. The maximum value is 100.}
 
-\item{ScanTypeFilter}{The scan type that you want to get summary information about. The
-default is \code{FULL}.}
+\item{ScanTypeFilter}{The scan type that you want to get summary information about. The default is \code{FULL}.}
 }
 \description{
 List the resource scans from newest to oldest. By default it will return up to 10 resource scans.

@@ -7,8 +7,7 @@
 globalaccelerator_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Global Accelerator resource to
-remove tags from. An ARN uniquely identifies a resource.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.}
 
 \item{TagKeys}{[required] The tag key pairs that you want to remove from the specified resources.}
 }

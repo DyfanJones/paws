@@ -15,15 +15,11 @@ mturk_associate_qualification_with_worker(
 \arguments{
 \item{QualificationTypeId}{[required] The ID of the Qualification type to use for the assigned Qualification.}
 
-\item{WorkerId}{[required] The ID of the Worker to whom the Qualification is being assigned. Worker
-IDs are included with submitted HIT assignments and Qualification
-requests.}
+\item{WorkerId}{[required] The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.}
 
 \item{IntegerValue}{The value of the Qualification to assign.}
 
-\item{SendNotification}{Specifies whether to send a notification email message to the Worker
-saying that the qualification was assigned to the Worker. Note: this is
-true by default.}
+\item{SendNotification}{Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.}
 }
 \description{
 The \code{\link[=mturk_associate_qualification_with_worker]{associate_qualification_with_worker}} operation gives a Worker a Qualification. \code{\link[=mturk_associate_qualification_with_worker]{associate_qualification_with_worker}} does not require that the Worker submit a Qualification request. It gives the Qualification directly to the Worker.

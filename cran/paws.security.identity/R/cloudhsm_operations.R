@@ -77,16 +77,16 @@ cloudhsm_create_hapg <- function(Label) {
 #' @param SshKey &#91;required&#93; The SSH public key to install on the HSM.
 #' @param EniIp The IP address to assign to the HSM's ENI.
 #' 
-#' If an IP address is not specified, an IP address will be randomly chosen
-#' from the CIDR range of the subnet.
-#' @param IamRoleArn &#91;required&#93; The ARN of an IAM role to enable the AWS CloudHSM service to allocate an
-#' ENI on your behalf.
+#' If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.
+#' @param IamRoleArn &#91;required&#93; The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.
 #' @param ExternalId The external ID from `IamRoleArn`, if present.
-#' @param SubscriptionType &#91;required&#93; 
-#' @param ClientToken A user-defined token to ensure idempotence. Subsequent calls to this
-#' operation with the same token will be ignored.
-#' @param SyslogIp The IP address for the syslog monitoring server. The AWS CloudHSM
-#' service only supports one syslog monitoring server.
+#' @param SubscriptionType &#91;required&#93; Specifies the type of subscription for the HSM.
+#' 
+#' -   **PRODUCTION** - The HSM is being used in a production environment.
+#' 
+#' -   **TRIAL** - The HSM is being used in a product trial.
+#' @param ClientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.
+#' @param SyslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.
 #'
 #' @keywords internal
 #'
@@ -118,8 +118,7 @@ cloudhsm_create_hsm <- function(SubnetId, SshKey, EniIp = NULL, IamRoleArn, Exte
 #' See [https://www.paws-r-sdk.com/docs/cloudhsm_create_luna_client/](https://www.paws-r-sdk.com/docs/cloudhsm_create_luna_client/) for full documentation.
 #'
 #' @param Label The label for the client.
-#' @param Certificate &#91;required&#93; The contents of a Base64-Encoded X.509 v3 certificate to be installed on
-#' the HSMs used by this client.
+#' @param Certificate &#91;required&#93; The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.
 #'
 #' @keywords internal
 #'
@@ -274,10 +273,8 @@ cloudhsm_describe_hapg <- function(HapgArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudhsm_describe_hsm/](https://www.paws-r-sdk.com/docs/cloudhsm_describe_hsm/) for full documentation.
 #'
-#' @param HsmArn The ARN of the HSM. Either the `HsmArn` or the `SerialNumber` parameter
-#' must be specified.
-#' @param HsmSerialNumber The serial number of the HSM. Either the `HsmArn` or the
-#' `HsmSerialNumber` parameter must be specified.
+#' @param HsmArn The ARN of the HSM. Either the `HsmArn` or the `SerialNumber` parameter must be specified.
+#' @param HsmSerialNumber The serial number of the HSM. Either the `HsmArn` or the `HsmSerialNumber` parameter must be specified.
 #'
 #' @keywords internal
 #'
@@ -342,8 +339,7 @@ cloudhsm_describe_luna_client <- function(ClientArn = NULL, CertificateFingerpri
 #'
 #' @param ClientArn &#91;required&#93; The ARN of the client.
 #' @param ClientVersion &#91;required&#93; The client version.
-#' @param HapgList &#91;required&#93; A list of ARNs that identify the high-availability partition groups that
-#' are associated with the client.
+#' @param HapgList &#91;required&#93; A list of ARNs that identify the high-availability partition groups that are associated with the client.
 #'
 #' @keywords internal
 #'
@@ -405,9 +401,7 @@ cloudhsm_list_available_zones <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudhsm_list_hapgs/](https://www.paws-r-sdk.com/docs/cloudhsm_list_hapgs/) for full documentation.
 #'
-#' @param NextToken The `NextToken` value from a previous call to
-#' [`list_hapgs`][cloudhsm_list_hapgs]. Pass null if this is the first
-#' call.
+#' @param NextToken The `NextToken` value from a previous call to [`list_hapgs`][cloudhsm_list_hapgs]. Pass null if this is the first call.
 #'
 #' @keywords internal
 #'
@@ -438,8 +432,7 @@ cloudhsm_list_hapgs <- function(NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudhsm_list_hsms/](https://www.paws-r-sdk.com/docs/cloudhsm_list_hsms/) for full documentation.
 #'
-#' @param NextToken The `NextToken` value from a previous call to
-#' [`list_hsms`][cloudhsm_list_hsms]. Pass null if this is the first call.
+#' @param NextToken The `NextToken` value from a previous call to [`list_hsms`][cloudhsm_list_hsms]. Pass null if this is the first call.
 #'
 #' @keywords internal
 #'
@@ -470,9 +463,7 @@ cloudhsm_list_hsms <- function(NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudhsm_list_luna_clients/](https://www.paws-r-sdk.com/docs/cloudhsm_list_luna_clients/) for full documentation.
 #'
-#' @param NextToken The `NextToken` value from a previous call to
-#' [`list_luna_clients`][cloudhsm_list_luna_clients]. Pass null if this is
-#' the first call.
+#' @param NextToken The `NextToken` value from a previous call to [`list_luna_clients`][cloudhsm_list_luna_clients]. Pass null if this is the first call.
 #'
 #' @keywords internal
 #'
@@ -536,8 +527,7 @@ cloudhsm_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' @param HapgArn &#91;required&#93; The ARN of the high-availability partition group to modify.
 #' @param Label The new label for the high-availability partition group.
-#' @param PartitionSerialList The list of partition serial numbers to make members of the
-#' high-availability partition group.
+#' @param PartitionSerialList The list of partition serial numbers to make members of the high-availability partition group.
 #'
 #' @keywords internal
 #'
@@ -569,18 +559,13 @@ cloudhsm_modify_hapg <- function(HapgArn, Label = NULL, PartitionSerialList = NU
 #' See [https://www.paws-r-sdk.com/docs/cloudhsm_modify_hsm/](https://www.paws-r-sdk.com/docs/cloudhsm_modify_hsm/) for full documentation.
 #'
 #' @param HsmArn &#91;required&#93; The ARN of the HSM to modify.
-#' @param SubnetId The new identifier of the subnet that the HSM is in. The new subnet must
-#' be in the same Availability Zone as the current subnet.
-#' @param EniIp The new IP address for the elastic network interface (ENI) attached to
-#' the HSM.
+#' @param SubnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.
+#' @param EniIp The new IP address for the elastic network interface (ENI) attached to the HSM.
 #' 
-#' If the HSM is moved to a different subnet, and an IP address is not
-#' specified, an IP address will be randomly chosen from the CIDR range of
-#' the new subnet.
+#' If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.
 #' @param IamRoleArn The new IAM role ARN.
 #' @param ExternalId The new external ID.
-#' @param SyslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM
-#' service only supports one syslog monitoring server.
+#' @param SyslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.
 #'
 #' @keywords internal
 #'
@@ -646,9 +631,7 @@ cloudhsm_modify_luna_client <- function(ClientArn, Certificate) {
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
 #' @param TagKeyList &#91;required&#93; The tag key or keys to remove.
 #' 
-#' Specify only the tag key to remove (not the value). To overwrite the
-#' value for an existing tag, use
-#' [`add_tags_to_resource`][cloudhsm_add_tags_to_resource].
+#' Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use [`add_tags_to_resource`][cloudhsm_add_tags_to_resource].
 #'
 #' @keywords internal
 #'

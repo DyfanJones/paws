@@ -15,25 +15,17 @@ bedrockagentcore_retrieve_memory_records(
 )
 }
 \arguments{
-\item{memoryId}{[required] The identifier of the AgentCore Memory resource from which to retrieve
-memory records.}
+\item{memoryId}{[required] The identifier of the AgentCore Memory resource from which to retrieve memory records.}
 
-\item{namespace}{The namespace prefix to filter memory records by. Searches for memory
-records in namespaces that start with the provided prefix.}
+\item{namespace}{The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix. Either \code{namespace} or \code{namespacePath} is required.}
 
-\item{namespacePath}{Use namespacePath for hierarchical retrievals. Return all memory records
-where namespace falls under the same parent hierarchy.}
+\item{namespacePath}{Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy. Either \code{namespace} or \code{namespacePath} is required.}
 
-\item{searchCriteria}{[required] The search criteria to use for finding relevant memory records. This
-includes the search query, memory strategy ID, and other search
-parameters.}
+\item{searchCriteria}{[required] The search criteria to use for finding relevant memory records. This includes the search query, memory strategy ID, and other search parameters.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 20.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 20.}
 }
 \description{
 Searches for and retrieves memory records from an AgentCore Memory resource based on specified search criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.

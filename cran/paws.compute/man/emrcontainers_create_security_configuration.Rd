@@ -13,8 +13,7 @@ emrcontainers_create_security_configuration(
 )
 }
 \arguments{
-\item{clientToken}{[required] The client idempotency token to use when creating the security
-configuration.}
+\item{clientToken}{[required] The client idempotency token to use when creating the security configuration.}
 
 \item{name}{[required] The name of the security configuration.}
 

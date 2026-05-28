@@ -11,13 +11,9 @@ networkmanager_update_direct_connect_gateway_attachment(
 )
 }
 \arguments{
-\item{AttachmentId}{[required] The ID of the Direct Connect gateway attachment for the updated edge
-locations.}
+\item{AttachmentId}{[required] The ID of the Direct Connect gateway attachment for the updated edge locations.}
 
-\item{EdgeLocations}{One or more edge locations to update for the Direct Connect gateway
-attachment. The updated array of edge locations overwrites the previous
-array of locations. \code{EdgeLocations} is only used for Direct Connect
-gateway attachments.}
+\item{EdgeLocations}{One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. \code{EdgeLocations} is only used for Direct Connect gateway attachments.}
 }
 \description{
 Updates the edge locations associated with an Amazon Web Services Direct Connect gateway attachment.

@@ -7,8 +7,7 @@
 kafkaconnect_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which you want to
-attach tags.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which you want to attach tags.}
 
 \item{tags}{[required] The tags that you want to attach to the resource.}
 }

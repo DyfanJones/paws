@@ -21,8 +21,7 @@ omics_create_reference_store(
 
 \item{tags}{Tags for the store.}
 
-\item{clientToken}{To ensure that requests don't run multiple times, specify a unique token
-for each request.}
+\item{clientToken}{To ensure that requests don't run multiple times, specify a unique token for each request.}
 }
 \description{
 Creates a reference store and returns metadata in JSON format. Reference stores are used to store reference genomes in FASTA format. A reference store is created when the first reference genome is imported. To import additional reference genomes from an Amazon S3 bucket, use the \code{\link[=omics_start_reference_import_job]{start_reference_import_job}} API operation.

@@ -26,8 +26,9 @@ lexmodelsv2_update_bot_alias(
 
 \item{botAliasLocaleSettings}{The new Lambda functions to use in each locale for the bot alias.}
 
-\item{conversationLogSettings}{The new settings for storing conversation logs in Amazon CloudWatch Logs
-and Amazon S3 buckets.}
+\item{conversationLogSettings}{The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.}
+
+\item{sentimentAnalysisSettings}{Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.}
 
 \item{botId}{[required] The identifier of the bot with the updated alias.}
 }

@@ -11,18 +11,13 @@ rekognition_start_project_version(
 )
 }
 \arguments{
-\item{ProjectVersionArn}{[required] The Amazon Resource Name(ARN) of the model version that you want to
-start.}
+\item{ProjectVersionArn}{[required] The Amazon Resource Name(ARN) of the model version that you want to start.}
 
-\item{MinInferenceUnits}{[required] The minimum number of inference units to use. A single inference unit
-represents 1 hour of processing.
+\item{MinInferenceUnits}{[required] The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
 
-Use a higher number to increase the TPS throughput of your model. You
-are charged for the number of inference units that you use.}
+Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use.}
 
-\item{MaxInferenceUnits}{The maximum number of inference units to use for auto-scaling the model.
-If you don't specify a value, Amazon Rekognition Custom Labels doesn't
-auto-scale the model.}
+\item{MaxInferenceUnits}{The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

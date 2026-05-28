@@ -13,8 +13,7 @@ globalaccelerator_add_custom_routing_endpoints(
 \arguments{
 \item{EndpointConfigurations}{[required] The list of endpoint objects to add to a custom routing accelerator.}
 
-\item{EndpointGroupArn}{[required] The Amazon Resource Name (ARN) of the endpoint group for the custom
-routing endpoint.}
+\item{EndpointGroupArn}{[required] The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.}
 }
 \description{
 Associate a virtual private cloud (VPC) subnet endpoint with your custom routing accelerator.

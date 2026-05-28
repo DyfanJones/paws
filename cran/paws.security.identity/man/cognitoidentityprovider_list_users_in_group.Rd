@@ -13,23 +13,13 @@ cognitoidentityprovider_list_users_in_group(
 )
 }
 \arguments{
-\item{UserPoolId}{[required] The ID of the user pool where you want to view the membership of the
-requested group.}
+\item{UserPoolId}{[required] The ID of the user pool where you want to view the membership of the requested group.}
 
 \item{GroupName}{[required] The name of the group that you want to query for user membership.}
 
-\item{Limit}{The maximum number of groups that you want Amazon Cognito to return in
-the response. In some SDK contexts, this operation might return fewer
-items than you specify in the \code{Limit} parameter without having reached
-the end of the full list. If the response contains a \code{PaginationToken},
-then there are more results.}
+\item{Limit}{The maximum number of groups that you want Amazon Cognito to return in the response. In some SDK contexts, this operation might return fewer items than you specify in the \code{Limit} parameter without having reached the end of the full list. If the response contains a \code{PaginationToken}, then there are more results.}
 
-\item{NextToken}{This API operation returns a limited number of results. The pagination
-token is an identifier that you can present in an additional API request
-with the same parameters. When you include the pagination token, Amazon
-Cognito returns the next set of items after the current list. Subsequent
-requests return a new pagination token. By use of this token, you can
-paginate through the full list of items.}
+\item{NextToken}{This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.}
 }
 \description{
 Given a user pool ID and a group name, returns a list of users in the group. For more information about user pool groups, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html}{Adding groups to a user pool}.

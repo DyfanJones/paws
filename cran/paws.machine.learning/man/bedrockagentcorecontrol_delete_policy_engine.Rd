@@ -7,8 +7,7 @@
 bedrockagentcorecontrol_delete_policy_engine(policyEngineId)
 }
 \arguments{
-\item{policyEngineId}{[required] The unique identifier of the policy engine to be deleted. This must be a
-valid policy engine ID that exists within the account.}
+\item{policyEngineId}{[required] The unique identifier of the policy engine to be deleted. This must be a valid policy engine ID that exists within the account.}
 }
 \description{
 Deletes an existing policy engine from the AgentCore Policy system. The policy engine must not have any associated policies before deletion. Once deleted, the policy engine and all its configurations become unavailable for policy management and evaluation. This is an asynchronous operation. Use the \code{\link[=bedrockagentcorecontrol_get_policy_engine]{get_policy_engine}} operation to poll the \code{status} field to track completion.

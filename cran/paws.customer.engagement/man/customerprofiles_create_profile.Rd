@@ -54,8 +54,7 @@ customerprofiles_create_profile(
 
 \item{Gender}{The gender with which the customer identifies.}
 
-\item{PhoneNumber}{The customer’s phone number, which has not been specified as a mobile,
-home, or business number.}
+\item{PhoneNumber}{The customer’s phone number, which has not been specified as a mobile, home, or business number.}
 
 \item{MobilePhoneNumber}{The customer’s mobile phone number.}
 
@@ -63,15 +62,13 @@ home, or business number.}
 
 \item{BusinessPhoneNumber}{The customer’s business phone number.}
 
-\item{EmailAddress}{The customer’s email address, which has not been specified as a personal
-or business address.}
+\item{EmailAddress}{The customer’s email address, which has not been specified as a personal or business address.}
 
 \item{PersonalEmailAddress}{The customer’s personal email address.}
 
 \item{BusinessEmailAddress}{The customer’s business email address.}
 
-\item{Address}{A generic address associated with the customer that is not mailing,
-shipping, or billing.}
+\item{Address}{A generic address associated with the customer that is not mailing, shipping, or billing.}
 
 \item{ShippingAddress}{The customer’s shipping address.}
 

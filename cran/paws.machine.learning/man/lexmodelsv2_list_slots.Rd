@@ -20,29 +20,17 @@ lexmodelsv2_list_slots(
 
 \item{botVersion}{[required] The version of the bot that contains the slot.}
 
-\item{localeId}{[required] The identifier of the language and locale of the slots to list. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{intentId}{[required] The unique identifier of the intent that contains the slot.}
 
-\item{sortBy}{Determines the sort order for the response from the
-\code{\link[=lexmodelsv2_list_slots]{list_slots}} operation. You can choose to sort
-by the slot name or last updated date in either ascending or descending
-order.}
+\item{sortBy}{Determines the sort order for the response from the \code{\link[=lexmodelsv2_list_slots]{list_slots}} operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.}
 
-\item{filters}{Provides the specification of a filter used to limit the slots in the
-response to only those that match the filter specification. You can only
-specify one filter and only one string to filter on.}
+\item{filters}{Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.}
 
-\item{maxResults}{The maximum number of slots to return in each page of results. If there
-are fewer results than the max page size, only the actual number of
-results are returned.}
+\item{maxResults}{The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the \code{\link[=lexmodelsv2_list_slots]{list_slots}}
-operation contains more results than specified in the \code{maxResults}
-parameter, a token is returned in the response. Use that token in the
-\code{nextToken} parameter to return the next page of results.}
+\item{nextToken}{If the response from the \code{\link[=lexmodelsv2_list_slots]{list_slots}} operation contains more results than specified in the \code{maxResults} parameter, a token is returned in the response. Use that token in the \code{nextToken} parameter to return the next page of results.}
 }
 \description{
 Gets a list of slots that match the specified criteria.

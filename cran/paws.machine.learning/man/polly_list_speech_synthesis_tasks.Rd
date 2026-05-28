@@ -14,8 +14,7 @@ polly_list_speech_synthesis_tasks(
 \arguments{
 \item{MaxResults}{Maximum number of speech synthesis tasks returned in a List operation.}
 
-\item{NextToken}{The pagination token to use in the next request to continue the listing
-of speech synthesis tasks.}
+\item{NextToken}{The pagination token to use in the next request to continue the listing of speech synthesis tasks.}
 
 \item{Status}{Status of the speech synthesis tasks returned in a List operation}
 }

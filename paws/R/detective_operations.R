@@ -7,9 +7,7 @@ NULL
 #' behavior graph
 #'
 #' @description
-#' Accepts an invitation for the member account to contribute data to a
-#' behavior graph. This operation can only be called by an invited member
-#' account.
+#' Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be called by an invited member account.
 #' 
 #' The request provides the ARN of behavior graph.
 #' 
@@ -18,8 +16,7 @@ NULL
 #' @usage
 #' detective_accept_invitation(GraphArn)
 #'
-#' @param GraphArn &#91;required&#93; The ARN of the behavior graph that the member account is accepting the
-#' invitation for.
+#' @param GraphArn &#91;required&#93; The ARN of the behavior graph that the member account is accepting the invitation for.
 #' 
 #' The member account status in the behavior graph must be `INVITED`.
 #'
@@ -66,8 +63,7 @@ detective_accept_invitation <- function(GraphArn) {
 #' detective_batch_get_graph_member_datasources(GraphArn, AccountIds)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph.
-#' @param AccountIds &#91;required&#93; The list of Amazon Web Services accounts to get data source package
-#' information on.
+#' @param AccountIds &#91;required&#93; The list of Amazon Web Services accounts to get data source package information on.
 #'
 #' @return
 #' A list with the following syntax:
@@ -206,29 +202,18 @@ detective_batch_get_membership_datasources <- function(GraphArns) {
 #' account as the administrator account
 #'
 #' @description
-#' Creates a new behavior graph for the calling account, and sets that
-#' account as the administrator account. This operation is called by the
-#' account that is enabling Detective.
+#' Creates a new behavior graph for the calling account, and sets that account as the administrator account. This operation is called by the account that is enabling Detective.
 #' 
-#' The operation also enables Detective for the calling account in the
-#' currently selected Region. It returns the ARN of the new behavior graph.
+#' The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN of the new behavior graph.
 #' 
-#' [`create_graph`][detective_create_graph] triggers a process to create
-#' the corresponding data tables for the new behavior graph.
+#' [`create_graph`][detective_create_graph] triggers a process to create the corresponding data tables for the new behavior graph.
 #' 
-#' An account can only be the administrator account for one behavior graph
-#' within a Region. If the same account calls
-#' [`create_graph`][detective_create_graph] with the same administrator
-#' account, it always returns the same behavior graph ARN. It does not
-#' create a new behavior graph.
+#' An account can only be the administrator account for one behavior graph within a Region. If the same account calls [`create_graph`][detective_create_graph] with the same administrator account, it always returns the same behavior graph ARN. It does not create a new behavior graph.
 #'
 #' @usage
 #' detective_create_graph(Tags)
 #'
-#' @param Tags The tags to assign to the new behavior graph. You can add up to 50 tags.
-#' For each tag, you provide the tag key and the tag value. Each tag key
-#' can contain up to 128 characters. Each tag value can contain up to 256
-#' characters.
+#' @param Tags The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -274,59 +259,32 @@ detective_create_graph <- function(Tags = NULL) {
 #' CreateMembers is used to send invitations to accounts
 #'
 #' @description
-#' [`create_members`][detective_create_members] is used to send invitations
-#' to accounts. For the organization behavior graph, the Detective
-#' administrator account uses [`create_members`][detective_create_members]
-#' to enable organization accounts as member accounts.
+#' [`create_members`][detective_create_members] is used to send invitations to accounts. For the organization behavior graph, the Detective administrator account uses [`create_members`][detective_create_members] to enable organization accounts as member accounts.
 #' 
-#' For invited accounts, [`create_members`][detective_create_members] sends
-#' a request to invite the specified Amazon Web Services accounts to be
-#' member accounts in the behavior graph. This operation can only be called
-#' by the administrator account for a behavior graph.
+#' For invited accounts, [`create_members`][detective_create_members] sends a request to invite the specified Amazon Web Services accounts to be member accounts in the behavior graph. This operation can only be called by the administrator account for a behavior graph.
 #' 
-#' [`create_members`][detective_create_members] verifies the accounts and
-#' then invites the verified accounts. The administrator can optionally
-#' specify to not send invitation emails to the member accounts. This would
-#' be used when the administrator manages their member accounts centrally.
+#' [`create_members`][detective_create_members] verifies the accounts and then invites the verified accounts. The administrator can optionally specify to not send invitation emails to the member accounts. This would be used when the administrator manages their member accounts centrally.
 #' 
-#' For organization accounts in the organization behavior graph,
-#' [`create_members`][detective_create_members] attempts to enable the
-#' accounts. The organization accounts do not receive invitations.
+#' For organization accounts in the organization behavior graph, [`create_members`][detective_create_members] attempts to enable the accounts. The organization accounts do not receive invitations.
 #' 
-#' The request provides the behavior graph ARN and the list of accounts to
-#' invite or to enable.
+#' The request provides the behavior graph ARN and the list of accounts to invite or to enable.
 #' 
 #' The response separates the requested accounts into two lists:
 #' 
-#' -   The accounts that [`create_members`][detective_create_members] was
-#'     able to process. For invited accounts, includes member accounts that
-#'     are being verified, that have passed verification and are to be
-#'     invited, and that have failed verification. For organization
-#'     accounts in the organization behavior graph, includes accounts that
-#'     can be enabled and that cannot be enabled.
+#' -   The accounts that [`create_members`][detective_create_members] was able to process. For invited accounts, includes member accounts that are being verified, that have passed verification and are to be invited, and that have failed verification. For organization accounts in the organization behavior graph, includes accounts that can be enabled and that cannot be enabled.
 #' 
-#' -   The accounts that [`create_members`][detective_create_members] was
-#'     unable to process. This list includes accounts that were already
-#'     invited to be member accounts in the behavior graph.
+#' -   The accounts that [`create_members`][detective_create_members] was unable to process. This list includes accounts that were already invited to be member accounts in the behavior graph.
 #'
 #' @usage
 #' detective_create_members(GraphArn, Message, DisableEmailNotification,
 #'   Accounts)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph.
-#' @param Message Customized message text to include in the invitation email message to
-#' the invited member accounts.
-#' @param DisableEmailNotification if set to `true`, then the invited accounts do not receive email
-#' notifications. By default, this is set to `false`, and the invited
-#' accounts receive email notifications.
+#' @param Message Customized message text to include in the invitation email message to the invited member accounts.
+#' @param DisableEmailNotification if set to `true`, then the invited accounts do not receive email notifications. By default, this is set to `false`, and the invited accounts receive email notifications.
 #' 
-#' Organization accounts in the organization behavior graph do not receive
-#' email notifications.
-#' @param Accounts &#91;required&#93; The list of Amazon Web Services accounts to invite or to enable. You can
-#' invite or enable up to 50 accounts at a time. For each invited account,
-#' the account list contains the account identifier and the Amazon Web
-#' Services account root user email address. For organization accounts in
-#' the organization behavior graph, the email address is not required.
+#' Organization accounts in the organization behavior graph do not receive email notifications.
+#' @param Accounts &#91;required&#93; The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.
 #'
 #' @return
 #' A list with the following syntax:
@@ -420,12 +378,9 @@ detective_create_members <- function(GraphArn, Message = NULL, DisableEmailNotif
 #' Disables the specified behavior graph and queues it to be deleted
 #'
 #' @description
-#' Disables the specified behavior graph and queues it to be deleted. This
-#' operation removes the behavior graph from each member account's list of
-#' behavior graphs.
+#' Disables the specified behavior graph and queues it to be deleted. This operation removes the behavior graph from each member account's list of behavior graphs.
 #' 
-#' [`delete_graph`][detective_delete_graph] can only be called by the
-#' administrator account for a behavior graph.
+#' [`delete_graph`][detective_delete_graph] can only be called by the administrator account for a behavior graph.
 #'
 #' @usage
 #' detective_delete_graph(GraphArn)
@@ -469,34 +424,19 @@ detective_delete_graph <- function(GraphArn) {
 #' Removes the specified member accounts from the behavior graph
 #'
 #' @description
-#' Removes the specified member accounts from the behavior graph. The
-#' removed accounts no longer contribute data to the behavior graph. This
-#' operation can only be called by the administrator account for the
-#' behavior graph.
+#' Removes the specified member accounts from the behavior graph. The removed accounts no longer contribute data to the behavior graph. This operation can only be called by the administrator account for the behavior graph.
 #' 
-#' For invited accounts, the removed accounts are deleted from the list of
-#' accounts in the behavior graph. To restore the account, the
-#' administrator account must send another invitation.
+#' For invited accounts, the removed accounts are deleted from the list of accounts in the behavior graph. To restore the account, the administrator account must send another invitation.
 #' 
-#' For organization accounts in the organization behavior graph, the
-#' Detective administrator account can always enable the organization
-#' account again. Organization accounts that are not enabled as member
-#' accounts are not included in the
-#' [`list_members`][detective_list_members] results for the organization
-#' behavior graph.
+#' For organization accounts in the organization behavior graph, the Detective administrator account can always enable the organization account again. Organization accounts that are not enabled as member accounts are not included in the [`list_members`][detective_list_members] results for the organization behavior graph.
 #' 
-#' An administrator account cannot use
-#' [`delete_members`][detective_delete_members] to remove their own account
-#' from the behavior graph. To disable a behavior graph, the administrator
-#' account uses the [`delete_graph`][detective_delete_graph] API method.
+#' An administrator account cannot use [`delete_members`][detective_delete_members] to remove their own account from the behavior graph. To disable a behavior graph, the administrator account uses the [`delete_graph`][detective_delete_graph] API method.
 #'
 #' @usage
 #' detective_delete_members(GraphArn, AccountIds)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph to remove members from.
-#' @param AccountIds &#91;required&#93; The list of Amazon Web Services account identifiers for the member
-#' accounts to remove from the behavior graph. You can remove up to 50
-#' member accounts at a time.
+#' @param AccountIds &#91;required&#93; The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.
 #'
 #' @return
 #' A list with the following syntax:
@@ -552,12 +492,9 @@ detective_delete_members <- function(GraphArn, AccountIds) {
 #' behavior graph
 #'
 #' @description
-#' Returns information about the configuration for the organization
-#' behavior graph. Currently indicates whether to automatically enable new
-#' organization accounts as member accounts.
+#' Returns information about the configuration for the organization behavior graph. Currently indicates whether to automatically enable new organization accounts as member accounts.
 #' 
-#' Can only be called by the Detective administrator account for the
-#' organization.
+#' Can only be called by the Detective administrator account for the organization.
 #'
 #' @usage
 #' detective_describe_organization_configuration(GraphArn)
@@ -606,19 +543,13 @@ detective_describe_organization_configuration <- function(GraphArn) {
 #' Removes the Detective administrator account in the current Region
 #'
 #' @description
-#' Removes the Detective administrator account in the current Region.
-#' Deletes the organization behavior graph.
+#' Removes the Detective administrator account in the current Region. Deletes the organization behavior graph.
 #' 
 #' Can only be called by the organization management account.
 #' 
-#' Removing the Detective administrator account does not affect the
-#' delegated administrator account for Detective in Organizations.
+#' Removing the Detective administrator account does not affect the delegated administrator account for Detective in Organizations.
 #' 
-#' To remove the delegated administrator account in Organizations, use the
-#' Organizations API. Removing the delegated administrator account also
-#' removes the Detective administrator account in all Regions, except for
-#' Regions where the Detective administrator account is the organization
-#' management account.
+#' To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated administrator account also removes the Detective administrator account in all Regions, except for Regions where the Detective administrator account is the organization management account.
 #'
 #' @usage
 #' detective_disable_organization_admin_account()
@@ -657,23 +588,16 @@ detective_disable_organization_admin_account <- function() {
 #' Removes the member account from the specified behavior graph
 #'
 #' @description
-#' Removes the member account from the specified behavior graph. This
-#' operation can only be called by an invited member account that has the
-#' `ENABLED` status.
+#' Removes the member account from the specified behavior graph. This operation can only be called by an invited member account that has the `ENABLED` status.
 #' 
-#' [`disassociate_membership`][detective_disassociate_membership] cannot be
-#' called by an organization account in the organization behavior graph.
-#' For the organization behavior graph, the Detective administrator account
-#' determines which organization accounts to enable or disable as member
-#' accounts.
+#' [`disassociate_membership`][detective_disassociate_membership] cannot be called by an organization account in the organization behavior graph. For the organization behavior graph, the Detective administrator account determines which organization accounts to enable or disable as member accounts.
 #'
 #' @usage
 #' detective_disassociate_membership(GraphArn)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph to remove the member account from.
 #' 
-#' The member account's member status in the behavior graph must be
-#' `ENABLED`.
+#' The member account's member status in the behavior graph must be `ENABLED`.
 #'
 #' @return
 #' An empty list.
@@ -713,31 +637,20 @@ detective_disassociate_membership <- function(GraphArn) {
 #' the current Region
 #'
 #' @description
-#' Designates the Detective administrator account for the organization in
-#' the current Region.
+#' Designates the Detective administrator account for the organization in the current Region.
 #' 
-#' If the account does not have Detective enabled, then enables Detective
-#' for that account and creates a new behavior graph.
+#' If the account does not have Detective enabled, then enables Detective for that account and creates a new behavior graph.
 #' 
 #' Can only be called by the organization management account.
 #' 
-#' If the organization has a delegated administrator account in
-#' Organizations, then the Detective administrator account must be either
-#' the delegated administrator account or the organization management
-#' account.
+#' If the organization has a delegated administrator account in Organizations, then the Detective administrator account must be either the delegated administrator account or the organization management account.
 #' 
-#' If the organization does not have a delegated administrator account in
-#' Organizations, then you can choose any account in the organization. If
-#' you choose an account other than the organization management account,
-#' Detective calls Organizations to make that account the delegated
-#' administrator account for Detective. The organization management account
-#' cannot be the delegated administrator account.
+#' If the organization does not have a delegated administrator account in Organizations, then you can choose any account in the organization. If you choose an account other than the organization management account, Detective calls Organizations to make that account the delegated administrator account for Detective. The organization management account cannot be the delegated administrator account.
 #'
 #' @usage
 #' detective_enable_organization_admin_account(AccountId)
 #'
-#' @param AccountId &#91;required&#93; The Amazon Web Services account identifier of the account to designate
-#' as the Detective administrator account for the organization.
+#' @param AccountId &#91;required&#93; The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.
 #'
 #' @return
 #' An empty list.
@@ -777,13 +690,7 @@ detective_enable_organization_admin_account <- function(AccountId) {
 #' using indicators of compromise
 #'
 #' @description
-#' Detective investigations lets you investigate IAM users and IAM roles
-#' using indicators of compromise. An indicator of compromise (IOC) is an
-#' artifact observed in or on a network, system, or environment that can
-#' (with a high level of confidence) identify malicious activity or a
-#' security incident. [`get_investigation`][detective_get_investigation]
-#' returns the investigation results of an investigation for a behavior
-#' graph.
+#' Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a high level of confidence) identify malicious activity or a security incident. [`get_investigation`][detective_get_investigation] returns the investigation results of an investigation for a behavior graph.
 #'
 #' @usage
 #' detective_get_investigation(GraphArn, InvestigationId)
@@ -850,20 +757,15 @@ detective_get_investigation <- function(GraphArn, InvestigationId) {
 #' behavior graph
 #'
 #' @description
-#' Returns the membership details for specified member accounts for a
-#' behavior graph.
+#' Returns the membership details for specified member accounts for a behavior graph.
 #'
 #' @usage
 #' detective_get_members(GraphArn, AccountIds)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph for which to request the member details.
-#' @param AccountIds &#91;required&#93; The list of Amazon Web Services account identifiers for the member
-#' account for which to return member details. You can request details for
-#' up to 50 member accounts at a time.
+#' @param AccountIds &#91;required&#93; The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.
 #' 
-#' You cannot use [`get_members`][detective_get_members] to retrieve
-#' information about member accounts that were removed from the behavior
-#' graph.
+#' You cannot use [`get_members`][detective_get_members] to retrieve information about member accounts that were removed from the behavior graph.
 #'
 #' @return
 #' A list with the following syntax:
@@ -958,9 +860,7 @@ detective_get_members <- function(GraphArn, AccountIds) {
 #' detective_list_datasource_packages(GraphArn, NextToken, MaxResults)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph.
-#' @param NextToken For requests to get the next page of results, the pagination token that
-#' was returned with the previous set of results. The initial request does
-#' not include a pagination token.
+#' @param NextToken For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -1020,23 +920,15 @@ detective_list_datasource_packages <- function(GraphArn, NextToken = NULL, MaxRe
 #' administrator account of
 #'
 #' @description
-#' Returns the list of behavior graphs that the calling account is an
-#' administrator account of. This operation can only be called by an
-#' administrator account.
+#' Returns the list of behavior graphs that the calling account is an administrator account of. This operation can only be called by an administrator account.
 #' 
-#' Because an account can currently only be the administrator of one
-#' behavior graph within a Region, the results always contain a single
-#' behavior graph.
+#' Because an account can currently only be the administrator of one behavior graph within a Region, the results always contain a single behavior graph.
 #'
 #' @usage
 #' detective_list_graphs(NextToken, MaxResults)
 #'
-#' @param NextToken For requests to get the next page of results, the pagination token that
-#' was returned with the previous set of results. The initial request does
-#' not include a pagination token.
-#' @param MaxResults The maximum number of graphs to return at a time. The total must be less
-#' than the overall limit on the number of results to return, which is
-#' currently 200.
+#' @param NextToken For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
+#' @param MaxResults The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1089,10 +981,7 @@ detective_list_graphs <- function(NextToken = NULL, MaxResults = NULL) {
 #' Gets the indicators from an investigation
 #'
 #' @description
-#' Gets the indicators from an investigation. You can use the information
-#' from the indicators to determine if an IAM user and/or IAM role is
-#' involved in an unusual activity that could indicate malicious behavior
-#' and its impact.
+#' Gets the indicators from an investigation. You can use the information from the indicators to determine if an IAM user and/or IAM role is involved in an unusual activity that could indicate malicious behavior and its impact.
 #'
 #' @usage
 #' detective_list_indicators(GraphArn, InvestigationId, IndicatorType,
@@ -1100,16 +989,10 @@ detective_list_graphs <- function(NextToken = NULL, MaxResults = NULL) {
 #'
 #' @param GraphArn &#91;required&#93; The Amazon Resource Name (ARN) of the behavior graph.
 #' @param InvestigationId &#91;required&#93; The investigation ID of the investigation report.
-#' @param IndicatorType For the list of indicators of compromise that are generated by Detective
-#' investigations, see [Detective
-#' investigations](https://docs.aws.amazon.com/detective/latest/userguide/detective-investigation-about.html).
-#' @param NextToken Lists if there are more results available. The value of nextToken is a
-#' unique pagination token for each page. Repeat the call using the
-#' returned token to retrieve the next page. Keep all other arguments
-#' unchanged.
+#' @param IndicatorType For the list of indicators of compromise that are generated by Detective investigations, see [Detective investigations](https://docs.aws.amazon.com/detective/latest/userguide/detective-investigation-about.html).
+#' @param NextToken Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #' 
-#' Each pagination token expires after 24 hours. Using an expired
-#' pagination token will return a Validation Exception error.
+#' Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.
 #' @param MaxResults Lists the maximum number of indicators in a page.
 #'
 #' @return
@@ -1209,26 +1092,16 @@ detective_list_indicators <- function(GraphArn, InvestigationId, IndicatorType =
 #' using indicators of compromise
 #'
 #' @description
-#' Detective investigations lets you investigate IAM users and IAM roles
-#' using indicators of compromise. An indicator of compromise (IOC) is an
-#' artifact observed in or on a network, system, or environment that can
-#' (with a high level of confidence) identify malicious activity or a
-#' security incident.
-#' [`list_investigations`][detective_list_investigations] lists all active
-#' Detective investigations.
+#' Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a high level of confidence) identify malicious activity or a security incident. [`list_investigations`][detective_list_investigations] lists all active Detective investigations.
 #'
 #' @usage
 #' detective_list_investigations(GraphArn, NextToken, MaxResults,
 #'   FilterCriteria, SortCriteria)
 #'
 #' @param GraphArn &#91;required&#93; The Amazon Resource Name (ARN) of the behavior graph.
-#' @param NextToken Lists if there are more results available. The value of nextToken is a
-#' unique pagination token for each page. Repeat the call using the
-#' returned token to retrieve the next page. Keep all other arguments
-#' unchanged.
+#' @param NextToken Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #' 
-#' Each pagination token expires after 24 hours. Using an expired
-#' pagination token will return a Validation Exception error.
+#' Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.
 #' @param MaxResults Lists the maximum number of investigations in a page.
 #' @param FilterCriteria Filters the investigation results based on a criteria.
 #' @param SortCriteria Sorts the investigation results based on a criteria.
@@ -1317,26 +1190,17 @@ detective_list_investigations <- function(GraphArn, NextToken = NULL, MaxResults
 #' the member account
 #'
 #' @description
-#' Retrieves the list of open and accepted behavior graph invitations for
-#' the member account. This operation can only be called by an invited
-#' member account.
+#' Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can only be called by an invited member account.
 #' 
-#' Open invitations are invitations that the member account has not
-#' responded to.
+#' Open invitations are invitations that the member account has not responded to.
 #' 
-#' The results do not include behavior graphs for which the member account
-#' declined the invitation. The results also do not include behavior graphs
-#' that the member account resigned from or was removed from.
+#' The results do not include behavior graphs for which the member account declined the invitation. The results also do not include behavior graphs that the member account resigned from or was removed from.
 #'
 #' @usage
 #' detective_list_invitations(NextToken, MaxResults)
 #'
-#' @param NextToken For requests to retrieve the next page of results, the pagination token
-#' that was returned with the previous page of results. The initial request
-#' does not include a pagination token.
-#' @param MaxResults The maximum number of behavior graph invitations to return in the
-#' response. The total must be less than the overall limit on the number of
-#' results to return, which is currently 200.
+#' @param NextToken For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
+#' @param MaxResults The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1420,24 +1284,16 @@ detective_list_invitations <- function(NextToken = NULL, MaxResults = NULL) {
 #' @description
 #' Retrieves the list of member accounts for a behavior graph.
 #' 
-#' For invited accounts, the results do not include member accounts that
-#' were removed from the behavior graph.
+#' For invited accounts, the results do not include member accounts that were removed from the behavior graph.
 #' 
-#' For the organization behavior graph, the results do not include
-#' organization accounts that the Detective administrator account has not
-#' enabled as member accounts.
+#' For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.
 #'
 #' @usage
 #' detective_list_members(GraphArn, NextToken, MaxResults)
 #'
-#' @param GraphArn &#91;required&#93; The ARN of the behavior graph for which to retrieve the list of member
-#' accounts.
-#' @param NextToken For requests to retrieve the next page of member account results, the
-#' pagination token that was returned with the previous page of results.
-#' The initial request does not include a pagination token.
-#' @param MaxResults The maximum number of member accounts to include in the response. The
-#' total must be less than the overall limit on the number of results to
-#' return, which is currently 200.
+#' @param GraphArn &#91;required&#93; The ARN of the behavior graph for which to retrieve the list of member accounts.
+#' @param NextToken For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
+#' @param MaxResults The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1521,15 +1377,12 @@ detective_list_members <- function(GraphArn, NextToken = NULL, MaxResults = NULL
 #' organization
 #'
 #' @description
-#' Returns information about the Detective administrator account for an
-#' organization. Can only be called by the organization management account.
+#' Returns information about the Detective administrator account for an organization. Can only be called by the organization management account.
 #'
 #' @usage
 #' detective_list_organization_admin_accounts(NextToken, MaxResults)
 #'
-#' @param NextToken For requests to get the next page of results, the pagination token that
-#' was returned with the previous set of results. The initial request does
-#' not include a pagination token.
+#' @param NextToken For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -1635,22 +1488,16 @@ detective_list_tags_for_resource <- function(ResourceArn) {
 #' Rejects an invitation to contribute the account data to a behavior graph
 #'
 #' @description
-#' Rejects an invitation to contribute the account data to a behavior
-#' graph. This operation must be called by an invited member account that
-#' has the `INVITED` status.
+#' Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by an invited member account that has the `INVITED` status.
 #' 
-#' [`reject_invitation`][detective_reject_invitation] cannot be called by
-#' an organization account in the organization behavior graph. In the
-#' organization behavior graph, organization accounts do not receive an
-#' invitation.
+#' [`reject_invitation`][detective_reject_invitation] cannot be called by an organization account in the organization behavior graph. In the organization behavior graph, organization accounts do not receive an invitation.
 #'
 #' @usage
 #' detective_reject_invitation(GraphArn)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph to reject the invitation to.
 #' 
-#' The member account's current member status in the behavior graph must be
-#' `INVITED`.
+#' The member account's current member status in the behavior graph must be `INVITED`.
 #'
 #' @return
 #' An empty list.
@@ -1690,13 +1537,7 @@ detective_reject_invitation <- function(GraphArn) {
 #' using indicators of compromise
 #'
 #' @description
-#' Detective investigations lets you investigate IAM users and IAM roles
-#' using indicators of compromise. An indicator of compromise (IOC) is an
-#' artifact observed in or on a network, system, or environment that can
-#' (with a high level of confidence) identify malicious activity or a
-#' security incident.
-#' [`start_investigation`][detective_start_investigation] initiates an
-#' investigation on an entity in a behavior graph.
+#' Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a high level of confidence) identify malicious activity or a security incident. [`start_investigation`][detective_start_investigation] initiates an investigation on an entity in a behavior graph.
 #'
 #' @usage
 #' detective_start_investigation(GraphArn, EntityArn, ScopeStartTime,
@@ -1704,10 +1545,8 @@ detective_reject_invitation <- function(GraphArn) {
 #'
 #' @param GraphArn &#91;required&#93; The Amazon Resource Name (ARN) of the behavior graph.
 #' @param EntityArn &#91;required&#93; The unique Amazon Resource Name (ARN) of the IAM user and IAM role.
-#' @param ScopeStartTime &#91;required&#93; The data and time when the investigation began. The value is an UTC
-#' ISO8601 formatted string. For example, `2021-08-18T16:35:56.284Z`.
-#' @param ScopeEndTime &#91;required&#93; The data and time when the investigation ended. The value is an UTC
-#' ISO8601 formatted string. For example, `2021-08-18T16:35:56.284Z`.
+#' @param ScopeStartTime &#91;required&#93; The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, `2021-08-18T16:35:56.284Z`.
+#' @param ScopeEndTime &#91;required&#93; The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, `2021-08-18T16:35:56.284Z`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1759,16 +1598,13 @@ detective_start_investigation <- function(GraphArn, EntityArn, ScopeStartTime, S
 #' status of ACCEPTED_BUT_DISABLED
 #'
 #' @description
-#' Sends a request to enable data ingest for a member account that has a
-#' status of `ACCEPTED_BUT_DISABLED`.
+#' Sends a request to enable data ingest for a member account that has a status of `ACCEPTED_BUT_DISABLED`.
 #' 
 #' For valid member accounts, the status is updated as follows.
 #' 
-#' -   If Detective enabled the member account, then the new status is
-#'     `ENABLED`.
+#' -   If Detective enabled the member account, then the new status is `ENABLED`.
 #' 
-#' -   If Detective cannot enable the member account, the status remains
-#'     `ACCEPTED_BUT_DISABLED`.
+#' -   If Detective cannot enable the member account, the status remains `ACCEPTED_BUT_DISABLED`.
 #'
 #' @usage
 #' detective_start_monitoring_member(GraphArn, AccountId)
@@ -1776,8 +1612,7 @@ detective_start_investigation <- function(GraphArn, EntityArn, ScopeStartTime, S
 #' @param GraphArn &#91;required&#93; The ARN of the behavior graph.
 #' @param AccountId &#91;required&#93; The account ID of the member account to try to enable.
 #' 
-#' The account must be an invited member account with a status of
-#' `ACCEPTED_BUT_DISABLED`.
+#' The account must be an invited member account with a status of `ACCEPTED_BUT_DISABLED`.
 #'
 #' @return
 #' An empty list.
@@ -1823,10 +1658,7 @@ detective_start_monitoring_member <- function(GraphArn, AccountId) {
 #' detective_tag_resource(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the behavior graph to assign the tags to.
-#' @param Tags &#91;required&#93; The tags to assign to the behavior graph. You can add up to 50 tags. For
-#' each tag, you provide the tag key and the tag value. Each tag key can
-#' contain up to 128 characters. Each tag value can contain up to 256
-#' characters.
+#' @param Tags &#91;required&#93; The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.
 #'
 #' @return
 #' An empty list.
@@ -1874,8 +1706,7 @@ detective_tag_resource <- function(ResourceArn, Tags) {
 #' detective_untag_resource(ResourceArn, TagKeys)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the behavior graph to remove the tags from.
-#' @param TagKeys &#91;required&#93; The tag keys of the tags to remove from the behavior graph. You can
-#' remove up to 50 tags at a time.
+#' @param TagKeys &#91;required&#93; The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
 #'
 #' @return
 #' An empty list.
@@ -1972,8 +1803,7 @@ detective_update_datasource_packages <- function(GraphArn, DatasourcePackages) {
 #'
 #' @param GraphArn &#91;required&#93; The Amazon Resource Name (ARN) of the behavior graph.
 #' @param InvestigationId &#91;required&#93; The investigation ID of the investigation report.
-#' @param State &#91;required&#93; The current state of the investigation. An archived investigation
-#' indicates you have completed reviewing the investigation.
+#' @param State &#91;required&#93; The current state of the investigation. An archived investigation indicates you have completed reviewing the investigation.
 #'
 #' @return
 #' An empty list.
@@ -2015,16 +1845,13 @@ detective_update_investigation_state <- function(GraphArn, InvestigationId, Stat
 #' current Region
 #'
 #' @description
-#' Updates the configuration for the Organizations integration in the
-#' current Region. Can only be called by the Detective administrator
-#' account for the organization.
+#' Updates the configuration for the Organizations integration in the current Region. Can only be called by the Detective administrator account for the organization.
 #'
 #' @usage
 #' detective_update_organization_configuration(GraphArn, AutoEnable)
 #'
 #' @param GraphArn &#91;required&#93; The ARN of the organization behavior graph.
-#' @param AutoEnable Indicates whether to automatically enable new organization accounts as
-#' member accounts in the organization behavior graph.
+#' @param AutoEnable Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.
 #'
 #' @return
 #' An empty list.

@@ -55,22 +55,11 @@ Operations section.
 \description{
 Amazon WorkSpaces Applications
 
-This is the \emph{Amazon WorkSpaces Applications API Reference}. This
-documentation provides descriptions and syntax for each of the actions
-and data types in WorkSpaces Applications. WorkSpaces Applications is a
-fully managed, secure application streaming service that lets you stream
-desktop applications to users without rewriting applications. WorkSpaces
-Applications manages the AWS resources that are required to host and run
-your applications, scales automatically, and provides access to your
-users on demand.
+This is the \emph{Amazon WorkSpaces Applications API Reference}. This documentation provides descriptions and syntax for each of the actions and data types in WorkSpaces Applications. WorkSpaces Applications is a fully managed, secure application streaming service that lets you stream desktop applications to users without rewriting applications. WorkSpaces Applications manages the AWS resources that are required to host and run your applications, scales automatically, and provides access to your users on demand.
 
-You can call the WorkSpaces Applications API operations by using an
-interface VPC endpoint (interface endpoint). For more information, see
-\href{https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html}{Access WorkSpaces Applications API Operations and CLI Commands Through an Interface VPC Endpoint}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.
+You can call the WorkSpaces Applications API operations by using an interface VPC endpoint (interface endpoint). For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html}{Access WorkSpaces Applications API Operations and CLI Commands Through an Interface VPC Endpoint} in the \emph{Amazon WorkSpaces Applications Administration Guide}.
 
-To learn more about WorkSpaces Applications, see the following
-resources:
+To learn more about WorkSpaces Applications, see the following resources:
 \itemize{
 \item \href{https://aws.amazon.com/workspaces/applications/}{Amazon WorkSpaces Applications product page}
 \item \href{https://docs.aws.amazon.com/appstream2/}{Amazon WorkSpaces Applications documentation}

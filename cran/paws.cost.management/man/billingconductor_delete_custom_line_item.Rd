@@ -9,6 +9,8 @@ billingconductor_delete_custom_line_item(Arn, BillingPeriodRange = NULL)
 }
 \arguments{
 \item{Arn}{[required] The ARN of the custom line item to be deleted.}
+
+\item{BillingPeriodRange}{A time range for which the margin summary is effective. The time range can be up to 12 months.}
 }
 \description{
 Deletes the custom line item identified by the given ARN in the current, or previous billing period.

@@ -13,23 +13,17 @@ sagemaker_update_workforce(
 )
 }
 \arguments{
-\item{WorkforceName}{[required] The name of the private workforce that you want to update. You can find
-your workforce name by using the
-\code{\link[=sagemaker_list_workforces]{list_workforces}} operation.}
+\item{WorkforceName}{[required] The name of the private workforce that you want to update. You can find your workforce name by using the \code{\link[=sagemaker_list_workforces]{list_workforces}} operation.}
 
-\item{SourceIpConfig}{A list of one to ten worker IP address ranges
-(\href{https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html}{CIDRs})
-that can be used to access tasks assigned to this workforce.
+\item{SourceIpConfig}{A list of one to ten worker IP address ranges (\href{https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html}{CIDRs}) that can be used to access tasks assigned to this workforce.
 
 Maximum: Ten CIDR values}
 
-\item{OidcConfig}{Use this parameter to update your OIDC Identity Provider (IdP)
-configuration for a workforce made using your own IdP.}
+\item{OidcConfig}{Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.}
 
 \item{WorkforceVpcConfig}{Use this parameter to update your VPC configuration for a workforce.}
 
-\item{IpAddressType}{Use this parameter to specify whether you want \code{IPv4} only or
-\code{dualstack} (\code{IPv4} and \code{IPv6}) to support your labeling workforce.}
+\item{IpAddressType}{Use this parameter to specify whether you want \code{IPv4} only or \code{dualstack} (\code{IPv4} and \code{IPv6}) to support your labeling workforce.}
 }
 \description{
 Use this operation to update your workforce. You can use this operation to require that workers use specific IP addresses to work on tasks and to update your OpenID Connect (OIDC) Identity Provider (IdP) workforce configuration.

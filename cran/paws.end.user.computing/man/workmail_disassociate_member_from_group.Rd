@@ -11,22 +11,18 @@ workmail_disassociate_member_from_group(OrganizationId, GroupId, MemberId)
 
 \item{GroupId}{[required] The identifier for the group from which members are removed.
 
-The identifier can accept \emph{GroupId}, \emph{Groupname}, or \emph{email}. The
-following identity formats are available:
+The identifier can accept \emph{GroupId}, \emph{Groupname}, or \emph{email}. The following identity formats are available:
 \itemize{
-\item Group ID: 12345678-1234-1234-1234-123456789012 or
-S-1-1-12-1234567890-123456789-123456789-1234
+\item Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 \item Email address: group@domain.tld
 \item Group name: group
 }}
 
 \item{MemberId}{[required] The identifier for the member to be removed from the group.
 
-The member ID can accept \emph{UserID or GroupId}, \emph{Username or Groupname},
-or \emph{email}.
+The member ID can accept \emph{UserID or GroupId}, \emph{Username or Groupname}, or \emph{email}.
 \itemize{
-\item Member ID: 12345678-1234-1234-1234-123456789012 or
-S-1-1-12-1234567890-123456789-123456789-1234
+\item Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 \item Email address: member@domain.tld
 \item Member name: member
 }}

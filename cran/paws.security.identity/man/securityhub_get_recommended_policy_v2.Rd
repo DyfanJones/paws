@@ -11,15 +11,9 @@ securityhub_get_recommended_policy_v2(
 )
 }
 \arguments{
-\item{MetadataUid}{[required] The unique identifier (ID) of Security Hub OCSF findings found under the
-\code{metadata.uid} field of the finding.}
+\item{MetadataUid}{[required] The unique identifier (ID) of Security Hub OCSF findings found under the \code{metadata.uid} field of the finding.}
 
-\item{NextToken}{The token used to paginate the \code{RecommendationSteps} list returned. On
-your first call to
-\code{\link[=securityhub_get_recommended_policy_v2]{get_recommended_policy_v2}},
-omit this parameter or set it to \code{NULL}. For subsequent calls, use the
-\code{NextToken} value returned in the previous response to retrieve the next
-page of results.}
+\item{NextToken}{The token used to paginate the \code{RecommendationSteps} list returned. On your first call to \code{\link[=securityhub_get_recommended_policy_v2]{get_recommended_policy_v2}}, omit this parameter or set it to \code{NULL}. For subsequent calls, use the \code{NextToken} value returned in the previous response to retrieve the next page of results.}
 
 \item{MaxResults}{The maximum number of recommendation steps to return.}
 }

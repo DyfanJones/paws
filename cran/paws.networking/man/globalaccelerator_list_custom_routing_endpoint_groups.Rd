@@ -12,14 +12,11 @@ globalaccelerator_list_custom_routing_endpoint_groups(
 )
 }
 \arguments{
-\item{ListenerArn}{[required] The Amazon Resource Name (ARN) of the listener to list endpoint groups
-for.}
+\item{ListenerArn}{[required] The Amazon Resource Name (ARN) of the listener to list endpoint groups for.}
 
-\item{MaxResults}{The number of endpoint group objects that you want to return with this
-call. The default value is 10.}
+\item{MaxResults}{The number of endpoint group objects that you want to return with this call. The default value is 10.}
 
-\item{NextToken}{The token for the next set of results. You receive this token from a
-previous call.}
+\item{NextToken}{The token for the next set of results. You receive this token from a previous call.}
 }
 \description{
 List the endpoint groups that are associated with a listener for a custom routing accelerator.

@@ -12,20 +12,13 @@ bedrockagentcorecontrol_create_browser_profile(
 )
 }
 \arguments{
-\item{name}{[required] The name of the browser profile. The name must be unique within your
-account and can contain alphanumeric characters and underscores.}
+\item{name}{[required] The name of the browser profile. The name must be unique within your account and can contain alphanumeric characters and underscores.}
 
-\item{description}{A description of the browser profile. Use this field to describe the
-purpose or contents of the profile.}
+\item{description}{A description of the browser profile. Use this field to describe the purpose or contents of the profile.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock AgentCore ignores the request but does not
-return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.}
 
-\item{tags}{A map of tag keys and values to assign to the browser profile. Tags
-enable you to categorize your resources in different ways, for example,
-by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the browser profile. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a browser profile in Amazon Bedrock AgentCore. A browser profile stores persistent browser data such as cookies, local storage, session storage, and browsing history that can be saved from browser sessions and reused in subsequent sessions.

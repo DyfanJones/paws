@@ -212,12 +212,14 @@ auditmanager_batch_import_evidence_to_assessment_control <- function(assessmentI
 #'
 #' @param name &#91;required&#93; The name of the assessment to be created.
 #' @param description The optional description of the assessment to be created.
-#' @param assessmentReportsDestination &#91;required&#93; The assessment report storage destination for the assessment that's
-#' being created.
-#' @param scope &#91;required&#93; 
+#' @param assessmentReportsDestination &#91;required&#93; The assessment report storage destination for the assessment that's being created.
+#' @param scope &#91;required&#93; The wrapper that contains the Amazon Web Services accounts that are in scope for the assessment.
+#' 
+#' You no longer need to specify which Amazon Web Services services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services services.
+#' 
+#' If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.
 #' @param roles &#91;required&#93; The list of roles for the assessment.
-#' @param frameworkId &#91;required&#93; The identifier for the framework that the assessment will be created
-#' from.
+#' @param frameworkId &#91;required&#93; The identifier for the framework that the assessment will be created from.
 #' @param tags The tags that are associated with the assessment.
 #'
 #' @keywords internal
@@ -251,13 +253,10 @@ auditmanager_create_assessment <- function(name, description = NULL, assessmentR
 #'
 #' @param name &#91;required&#93; The name of the new custom framework.
 #' @param description An optional description for the new custom framework.
-#' @param complianceType The compliance type that the new custom framework supports, such as CIS
-#' or HIPAA.
+#' @param complianceType The compliance type that the new custom framework supports, such as CIS or HIPAA.
 #' @param controlSets &#91;required&#93; The control sets that are associated with the framework.
 #' 
-#' The `Controls` object returns a partial response when called through
-#' Framework APIs. For a complete `Controls` object, use
-#' [`get_control`][auditmanager_get_control].
+#' The `Controls` object returns a partial response when called through Framework APIs. For a complete `Controls` object, use [`get_control`][auditmanager_get_control].
 #' @param tags The tags that are associated with the framework.
 #'
 #' @keywords internal
@@ -294,23 +293,11 @@ auditmanager_create_assessment_framework <- function(name, description = NULL, c
 #' @param assessmentId &#91;required&#93; The identifier for the assessment.
 #' @param queryStatement A SQL statement that represents an evidence finder query.
 #' 
-#' Provide this parameter when you want to generate an assessment report
-#' from the results of an evidence finder search query. When you use this
-#' parameter, Audit Manager generates a one-time report using only the
-#' evidence from the query output. This report does not include any
-#' assessment evidence that was manually [added to a report using the
-#' console](https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence),
-#' or [associated with a report using the
-#' API](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html).
+#' Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually [added to a report using the console](https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence), or [associated with a report using the API](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html).
 #' 
-#' To use this parameter, the
-#' [enablementStatus](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus)
-#' of evidence finder must be `ENABLED`.
+#' To use this parameter, the [enablementStatus](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus) of evidence finder must be `ENABLED`.
 #' 
-#' For examples and help resolving `queryStatement` validation exceptions,
-#' see [Troubleshooting evidence finder
-#' issues](https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions)
-#' in the *Audit Manager User Guide.*
+#' For examples and help resolving `queryStatement` validation exceptions, see [Troubleshooting evidence finder issues](https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions) in the *Audit Manager User Guide.*
 #'
 #' @keywords internal
 #'
@@ -441,8 +428,7 @@ auditmanager_delete_assessment_framework <- function(frameworkId) {
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_delete_assessment_framework_share/](https://www.paws-r-sdk.com/docs/auditmanager_delete_assessment_framework_share/) for full documentation.
 #'
 #' @param requestId &#91;required&#93; The unique identifier for the share request to be deleted.
-#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received
-#' request.
+#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received request.
 #'
 #' @keywords internal
 #'
@@ -761,8 +747,7 @@ auditmanager_get_assessment_report_url <- function(assessmentReportId, assessmen
 #' @param controlSetId The unique identifier for the control set.
 #' @param controlId The unique identifier for the control.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -825,8 +810,7 @@ auditmanager_get_control <- function(controlId) {
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_get_delegations/](https://www.paws-r-sdk.com/docs/auditmanager_get_delegations/) for full documentation.
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -895,8 +879,7 @@ auditmanager_get_evidence <- function(assessmentId, controlSetId, evidenceFolder
 #' @param controlSetId &#91;required&#93; The identifier for the control set.
 #' @param evidenceFolderId &#91;required&#93; The unique identifier for the folder that the evidence is stored in.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -928,10 +911,7 @@ auditmanager_get_evidence_by_evidence_folder <- function(assessmentId, controlSe
 #'
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_get_evidence_file_upload_url/](https://www.paws-r-sdk.com/docs/auditmanager_get_evidence_file_upload_url/) for full documentation.
 #'
-#' @param fileName &#91;required&#93; The file that you want to upload. For a list of supported file formats,
-#' see [Supported file types for manual
-#' evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files)
-#' in the *Audit Manager User Guide*.
+#' @param fileName &#91;required&#93; The file that you want to upload. For a list of supported file formats, see [Supported file types for manual evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files) in the *Audit Manager User Guide*.
 #'
 #' @keywords internal
 #'
@@ -997,8 +977,7 @@ auditmanager_get_evidence_folder <- function(assessmentId, controlSetId, evidenc
 #'
 #' @param assessmentId &#91;required&#93; The unique identifier for the assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1034,8 +1013,7 @@ auditmanager_get_evidence_folders_by_assessment <- function(assessmentId, nextTo
 #' @param controlSetId &#91;required&#93; The identifier for the control set.
 #' @param controlId &#91;required&#93; The identifier for the control.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1226,15 +1204,10 @@ auditmanager_get_settings <- function(attribute) {
 #'
 #' @param controlDomainId &#91;required&#93; The unique identifier for the control domain.
 #' 
-#' Audit Manager supports the control domains that are provided by Amazon
-#' Web Services Control Catalog. For information about how to find a list
-#' of available control domains, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' in the Amazon Web Services Control Catalog API Reference.
+#' Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) in the Amazon Web Services Control Catalog API Reference.
 #' @param assessmentId &#91;required&#93; The unique identifier for the active assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1266,11 +1239,9 @@ auditmanager_list_assessment_control_insights_by_control_domain <- function(cont
 #'
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_list_assessment_framework_share_requests/](https://www.paws-r-sdk.com/docs/auditmanager_list_assessment_framework_share_requests/) for full documentation.
 #'
-#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received
-#' request.
+#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received request.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1302,11 +1273,9 @@ auditmanager_list_assessment_framework_share_requests <- function(requestType, n
 #'
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_list_assessment_frameworks/](https://www.paws-r-sdk.com/docs/auditmanager_list_assessment_frameworks/) for full documentation.
 #'
-#' @param frameworkType &#91;required&#93; The type of framework, such as a standard framework or a custom
-#' framework.
+#' @param frameworkType &#91;required&#93; The type of framework, such as a standard framework or a custom framework.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1338,8 +1307,7 @@ auditmanager_list_assessment_frameworks <- function(frameworkType, nextToken = N
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_list_assessment_reports/](https://www.paws-r-sdk.com/docs/auditmanager_list_assessment_reports/) for full documentation.
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1372,8 +1340,7 @@ auditmanager_list_assessment_reports <- function(nextToken = NULL, maxResults = 
 #'
 #' @param status The current status of the assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1406,8 +1373,7 @@ auditmanager_list_assessments <- function(status = NULL, nextToken = NULL, maxRe
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_list_control_domain_insights/](https://www.paws-r-sdk.com/docs/auditmanager_list_control_domain_insights/) for full documentation.
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1441,8 +1407,7 @@ auditmanager_list_control_domain_insights <- function(nextToken = NULL, maxResul
 #'
 #' @param assessmentId &#91;required&#93; The unique identifier for the active assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1476,14 +1441,9 @@ auditmanager_list_control_domain_insights_by_assessment <- function(assessmentId
 #'
 #' @param controlDomainId &#91;required&#93; The unique identifier for the control domain.
 #' 
-#' Audit Manager supports the control domains that are provided by Amazon
-#' Web Services Control Catalog. For information about how to find a list
-#' of available control domains, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' in the Amazon Web Services Control Catalog API Reference.
+#' Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) in the Amazon Web Services Control Catalog API Reference.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1517,30 +1477,13 @@ auditmanager_list_control_insights_by_control_domain <- function(controlDomainId
 #' @param controlType &#91;required&#93; A filter that narrows the list of controls to a specific type.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
 #' @param maxResults The maximum number of results on a page or for an API request call.
-#' @param controlCatalogId A filter that narrows the list of controls to a specific resource from
-#' the Amazon Web Services Control Catalog.
+#' @param controlCatalogId A filter that narrows the list of controls to a specific resource from the Amazon Web Services Control Catalog.
 #' 
-#' To use this parameter, specify the ARN of the Control Catalog resource.
-#' You can specify either a control domain, a control objective, or a
-#' common control. For information about how to find the ARNs for these
-#' resources, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' ,
-#' [`ListObjectives`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html)
-#' , and
-#' [`ListCommonControls`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html)
-#' .
+#' To use this parameter, specify the ARN of the Control Catalog resource. You can specify either a control domain, a control objective, or a common control. For information about how to find the ARNs for these resources, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) , [`ListObjectives`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html) , and [`ListCommonControls`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html) .
 #' 
-#' You can only filter by one Control Catalog resource at a time.
-#' Specifying multiple resource ARNs isn’t currently supported. If you want
-#' to filter by more than one ARN, we recommend that you run the
-#' [`list_controls`][auditmanager_list_controls] operation separately for
-#' each ARN.
+#' You can only filter by one Control Catalog resource at a time. Specifying multiple resource ARNs isn’t currently supported. If you want to filter by more than one ARN, we recommend that you run the [`list_controls`][auditmanager_list_controls] operation separately for each ARN.
 #' 
-#' Alternatively, specify `UNCATEGORIZED` to list controls that aren't
-#' mapped to a Control Catalog resource. For example, this operation might
-#' return a list of custom controls that don't belong to any control domain
-#' or control objective.
+#' Alternatively, specify `UNCATEGORIZED` to list controls that aren't mapped to a Control Catalog resource. For example, this operation might return a list of custom controls that don't belong to any control domain or control objective.
 #'
 #' @keywords internal
 #'
@@ -1574,8 +1517,7 @@ auditmanager_list_controls <- function(controlType, nextToken = NULL, maxResults
 #'
 #' @param source &#91;required&#93; The control mapping data source that the keywords apply to.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1607,8 +1549,7 @@ auditmanager_list_keywords_for_data_source <- function(source, nextToken = NULL,
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_list_notifications/](https://www.paws-r-sdk.com/docs/auditmanager_list_notifications/) for full documentation.
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @keywords internal
 #'
@@ -1836,8 +1777,7 @@ auditmanager_untag_resource <- function(resourceArn, tagKeys) {
 #' @param assessmentName The name of the assessment to be updated.
 #' @param assessmentDescription The description of the assessment.
 #' @param scope &#91;required&#93; The scope of the assessment.
-#' @param assessmentReportsDestination The assessment report storage destination for the assessment that's
-#' being updated.
+#' @param assessmentReportsDestination The assessment report storage destination for the assessment that's being updated.
 #' @param roles The list of roles for the assessment.
 #'
 #' @keywords internal
@@ -1941,13 +1881,10 @@ auditmanager_update_assessment_control_set_status <- function(assessmentId, cont
 #' @param frameworkId &#91;required&#93; The unique identifier for the framework.
 #' @param name &#91;required&#93; The name of the framework to be updated.
 #' @param description The description of the updated framework.
-#' @param complianceType The compliance type that the new custom framework supports, such as CIS
-#' or HIPAA.
+#' @param complianceType The compliance type that the new custom framework supports, such as CIS or HIPAA.
 #' @param controlSets &#91;required&#93; The control sets that are associated with the framework.
 #' 
-#' The `Controls` object returns a partial response when called through
-#' Framework APIs. For a complete `Controls` object, use
-#' [`get_control`][auditmanager_get_control].
+#' The `Controls` object returns a partial response when called through Framework APIs. For a complete `Controls` object, use [`get_control`][auditmanager_get_control].
 #'
 #' @keywords internal
 #'
@@ -1979,8 +1916,7 @@ auditmanager_update_assessment_framework <- function(frameworkId, name, descript
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_update_assessment_framework_share/](https://www.paws-r-sdk.com/docs/auditmanager_update_assessment_framework_share/) for full documentation.
 #'
 #' @param requestId &#91;required&#93; The unique identifier for the share request.
-#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received
-#' request.
+#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received request.
 #' @param action &#91;required&#93; Specifies the update action for the share request.
 #'
 #' @keywords internal
@@ -2081,25 +2017,14 @@ auditmanager_update_control <- function(controlId, name, description = NULL, tes
 #'
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_update_settings/](https://www.paws-r-sdk.com/docs/auditmanager_update_settings/) for full documentation.
 #'
-#' @param snsTopic The Amazon Simple Notification Service (Amazon SNS) topic that Audit
-#' Manager sends notifications to.
+#' @param snsTopic The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.
 #' @param defaultAssessmentReportsDestination The default S3 destination bucket for storing assessment reports.
 #' @param defaultProcessOwners A list of the default audit owners.
 #' @param kmsKey The KMS key details.
-#' @param evidenceFinderEnabled Specifies whether the evidence finder feature is enabled. Change this
-#' attribute to enable or disable evidence finder.
+#' @param evidenceFinderEnabled Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.
 #' 
-#' When you use this attribute to disable evidence finder, Audit Manager
-#' deletes the event data store that’s used to query your evidence data. As
-#' a result, you can’t re-enable evidence finder and use the feature again.
-#' Your only alternative is to
-#' [deregister](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html)
-#' and then
-#' [re-register](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html)
-#' Audit Manager.
-#' @param deregistrationPolicy The deregistration policy for your Audit Manager data. You can use this
-#' attribute to determine how your data is handled when you deregister
-#' Audit Manager.
+#' When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to [deregister](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html) and then [re-register](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html) Audit Manager.
+#' @param deregistrationPolicy The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.
 #' @param defaultExportDestination The default S3 destination bucket for storing evidence finder exports.
 #'
 #' @keywords internal
@@ -2131,8 +2056,7 @@ auditmanager_update_settings <- function(snsTopic = NULL, defaultAssessmentRepor
 #'
 #' See [https://www.paws-r-sdk.com/docs/auditmanager_validate_assessment_report_integrity/](https://www.paws-r-sdk.com/docs/auditmanager_validate_assessment_report_integrity/) for full documentation.
 #'
-#' @param s3RelativePath &#91;required&#93; The relative path of the Amazon S3 bucket that the assessment report is
-#' stored in.
+#' @param s3RelativePath &#91;required&#93; The relative path of the Amazon S3 bucket that the assessment report is stored in.
 #'
 #' @keywords internal
 #'

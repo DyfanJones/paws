@@ -9,12 +9,7 @@ codebuild_retry_build(id = NULL, idempotencyToken = NULL)
 \arguments{
 \item{id}{Specifies the identifier of the build to restart.}
 
-\item{idempotencyToken}{A unique, case sensitive identifier you provide to ensure the
-idempotency of the \code{\link[=codebuild_retry_build]{retry_build}} request. The
-token is included in the \code{\link[=codebuild_retry_build]{retry_build}} request
-and is valid for five minutes. If you repeat the
-\code{\link[=codebuild_retry_build]{retry_build}} request with the same token, but
-change a parameter, CodeBuild returns a parameter mismatch error.}
+\item{idempotencyToken}{A unique, case sensitive identifier you provide to ensure the idempotency of the \code{\link[=codebuild_retry_build]{retry_build}} request. The token is included in the \code{\link[=codebuild_retry_build]{retry_build}} request and is valid for five minutes. If you repeat the \code{\link[=codebuild_retry_build]{retry_build}} request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.}
 }
 \description{
 Restarts a build.

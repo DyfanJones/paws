@@ -27,8 +27,7 @@ licensemanager_create_license_asset_group(
 
 \item{Tags}{Tags to add to the license asset group.}
 
-\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Creates a license asset group.

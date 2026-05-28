@@ -30,12 +30,9 @@ glue_create_integration(
 
 \item{KmsKeyId}{The ARN of a KMS key used for encrypting the channel.}
 
-\item{AdditionalEncryptionContext}{An optional set of non-secret key–value pairs that contains additional
-contextual information for encryption. This can only be provided if
-\code{KMSKeyId} is provided.}
+\item{AdditionalEncryptionContext}{An optional set of non-secret key–value pairs that contains additional contextual information for encryption. This can only be provided if \code{KMSKeyId} is provided.}
 
-\item{Tags}{Metadata assigned to the resource consisting of a list of key-value
-pairs.}
+\item{Tags}{Metadata assigned to the resource consisting of a list of key-value pairs.}
 
 \item{IntegrationConfig}{The configuration settings.}
 }

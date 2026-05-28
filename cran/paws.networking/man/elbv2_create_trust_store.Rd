@@ -21,8 +21,7 @@ This name must be unique per region and can't be changed after creation.}
 
 \item{CaCertificatesBundleS3Key}{[required] The Amazon S3 path for the ca certificates bundle.}
 
-\item{CaCertificatesBundleS3ObjectVersion}{The Amazon S3 object version for the ca certificates bundle. If
-undefined the current version is used.}
+\item{CaCertificatesBundleS3ObjectVersion}{The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.}
 
 \item{Tags}{The tags to assign to the trust store.}
 }

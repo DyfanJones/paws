@@ -9,11 +9,9 @@ kafka_update_broker_type(ClusterArn, CurrentVersion, TargetInstanceType)
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the cluster.}
 
-\item{CurrentVersion}{[required] The cluster version that you want to change. After this operation
-completes successfully, the cluster will have a new version.}
+\item{CurrentVersion}{[required] The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.}
 
-\item{TargetInstanceType}{[required] The Amazon MSK broker type that you want all of the brokers in this
-cluster to be.}
+\item{TargetInstanceType}{[required] The Amazon MSK broker type that you want all of the brokers in this cluster to be.}
 }
 \description{
 Updates EC2 instance type.

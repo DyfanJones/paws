@@ -15,10 +15,7 @@ bedrock_list_guardrails(
 
 \item{maxResults}{The maximum number of results to return in the response.}
 
-\item{nextToken}{If there are more results than were returned in the response, the
-response returns a \code{nextToken} that you can send in another
-\code{\link[=bedrock_list_guardrails]{list_guardrails}} request to see the next
-batch of results.}
+\item{nextToken}{If there are more results than were returned in the response, the response returns a \code{nextToken} that you can send in another \code{\link[=bedrock_list_guardrails]{list_guardrails}} request to see the next batch of results.}
 }
 \description{
 Lists details about all the guardrails in an account. To list the \code{DRAFT} version of all your guardrails, don't specify the \code{guardrailIdentifier} field. To list all versions of a guardrail, specify the ARN of the guardrail in the \code{guardrailIdentifier} field.

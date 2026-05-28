@@ -26,8 +26,7 @@ gluedatabrew_create_recipe_job(
 \arguments{
 \item{DatasetName}{The name of the dataset that this job processes.}
 
-\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of an encryption key that is used to
-protect the job.}
+\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.}
 
 \item{EncryptionMode}{The encryption mode for the job, which can be one of the following:
 \itemize{
@@ -35,35 +34,29 @@ protect the job.}
 \item \code{SSE-S3} - Server-side encryption with keys managed by Amazon S3.
 }}
 
-\item{Name}{[required] A unique name for the job. Valid characters are alphanumeric (A-Z, a-z,
-0-9), hyphen (-), period (.), and space.}
+\item{Name}{[required] A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
 
-\item{LogSubscription}{Enables or disables Amazon CloudWatch logging for the job. If logging is
-enabled, CloudWatch writes one log stream for each job run.}
+\item{LogSubscription}{Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.}
 
-\item{MaxCapacity}{The maximum number of nodes that DataBrew can consume when the job
-processes data.}
+\item{MaxCapacity}{The maximum number of nodes that DataBrew can consume when the job processes data.}
 
 \item{MaxRetries}{The maximum number of times to retry the job after a job run fails.}
 
 \item{Outputs}{One or more artifacts that represent the output from running the job.}
 
-\item{DataCatalogOutputs}{One or more artifacts that represent the Glue Data Catalog output from
-running the job.}
+\item{DataCatalogOutputs}{One or more artifacts that represent the Glue Data Catalog output from running the job.}
 
-\item{DatabaseOutputs}{Represents a list of JDBC database output objects which defines the
-output destination for a DataBrew recipe job to write to.}
+\item{DatabaseOutputs}{Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.}
 
-\item{ProjectName}{Either the name of an existing project, or a combination of a recipe and
-a dataset to associate with the recipe.}
+\item{ProjectName}{Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management
-(IAM) role to be assumed when DataBrew runs the job.}
+\item{RecipeReference}{Represents the name and version of a DataBrew recipe.}
+
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.}
 
 \item{Tags}{Metadata tags to apply to this job.}
 
-\item{Timeout}{The job's timeout in minutes. A job that attempts to run longer than
-this timeout period ends with a status of \code{TIMEOUT}.}
+\item{Timeout}{The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of \code{TIMEOUT}.}
 }
 \description{
 Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe

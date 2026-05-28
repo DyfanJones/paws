@@ -14,22 +14,15 @@ ec2_create_interruptible_capacity_reservation_allocation(
 )
 }
 \arguments{
-\item{CapacityReservationId}{[required] The ID of the source Capacity Reservation from which to create the
-interruptible Capacity Reservation. Your Capacity Reservation must be in
-active state with no end date set and have available capacity for
-allocation.}
+\item{CapacityReservationId}{[required] The ID of the source Capacity Reservation from which to create the interruptible Capacity Reservation. Your Capacity Reservation must be in active state with no end date set and have available capacity for allocation.}
 
-\item{InstanceCount}{[required] The number of instances to allocate from your source reservation. You
-can only allocate available instances (also called unused capacity).}
+\item{InstanceCount}{[required] The number of instances to allocate from your source reservation. You can only allocate available instances (also called unused capacity).}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response.}
 
-\item{TagSpecifications}{The tags to apply to the interruptible Capacity Reservation during
-creation.}
+\item{TagSpecifications}{The tags to apply to the interruptible Capacity Reservation during creation.}
 }
 \description{
 Creates an interruptible Capacity Reservation by specifying the number of unused instances you want to allocate from your source reservation. This helps you make unused capacity available for other workloads within your account while maintaining control to reclaim it.

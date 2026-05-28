@@ -12,13 +12,9 @@ route53recoverycluster_update_routing_control_states(
 \arguments{
 \item{UpdateRoutingControlStateEntries}{[required] A set of routing control entries that you want to update.}
 
-\item{SafetyRulesToOverride}{The Amazon Resource Names (ARNs) for the safety rules that you want to
-override when you're updating routing control states. You can override
-one safety rule or multiple safety rules by including one or more ARNs,
-separated by commas.
+\item{SafetyRulesToOverride}{The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.
 
-For more information, see \href{https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html}{Override safety rules to reroute traffic}
-in the Amazon Route 53 Application Recovery Controller Developer Guide.}
+For more information, see \href{https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html}{Override safety rules to reroute traffic} in the Amazon Route 53 Application Recovery Controller Developer Guide.}
 }
 \description{
 Set multiple routing control states. You can set the value for each state to be ON or OFF. When the state is ON, traffic flows to a cell. When it's OFF, traffic does not flow.

@@ -10,9 +10,7 @@ kinesisanalyticsv2_list_applications(Limit = NULL, NextToken = NULL)
 \arguments{
 \item{Limit}{The maximum number of applications to list.}
 
-\item{NextToken}{If a previous command returned a pagination token, pass it into this
-value to retrieve the next set of results. For more information about
-pagination, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html}{Using the Amazon Command Line Interface's Pagination Options}.}
+\item{NextToken}{If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html}{Using the Amazon Command Line Interface's Pagination Options}.}
 }
 \description{
 Returns a list of Managed Service for Apache Flink applications in your account. For each application, the response includes the application name, Amazon Resource Name (ARN), and status.

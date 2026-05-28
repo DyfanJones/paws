@@ -75,8 +75,7 @@ frauddetector_batch_get_variable <- function(names) {
 #'
 #' @param jobId &#91;required&#93; The ID of an in-progress batch import job to cancel.
 #' 
-#' Amazon Fraud Detector will throw an error if the batch import job is in
-#' `FAILED`, `CANCELED`, or `COMPLETED` state.
+#' Amazon Fraud Detector will throw an error if the batch import job is in `FAILED`, `CANCELED`, or `COMPLETED` state.
 #'
 #' @keywords internal
 #'
@@ -138,19 +137,13 @@ frauddetector_cancel_batch_prediction_job <- function(jobId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/frauddetector_create_batch_import_job/](https://www.paws-r-sdk.com/docs/frauddetector_create_batch_import_job/) for full documentation.
 #'
-#' @param jobId &#91;required&#93; The ID of the batch import job. The ID cannot be of a past job, unless
-#' the job exists in `CREATE_FAILED` state.
+#' @param jobId &#91;required&#93; The ID of the batch import job. The ID cannot be of a past job, unless the job exists in `CREATE_FAILED` state.
 #' @param inputPath &#91;required&#93; The URI that points to the Amazon S3 location of your data file.
 #' @param outputPath &#91;required&#93; The URI that points to the Amazon S3 location for storing your results.
 #' @param eventTypeName &#91;required&#93; The name of the event type.
-#' @param iamRoleArn &#91;required&#93; The ARN of the IAM role created for Amazon S3 bucket that holds your
-#' data file.
+#' @param iamRoleArn &#91;required&#93; The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
 #' 
-#' The IAM role must have read permissions to your input S3 bucket and
-#' write permissions to your output S3 bucket. For more information about
-#' bucket permissions, see [User policy
-#' examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html)
-#' in the *Amazon S3 User Guide*.
+#' The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see [User policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html) in the *Amazon S3 User Guide*.
 #' @param tags A collection of key-value pairs associated with this request.
 #'
 #' @keywords internal
@@ -190,11 +183,7 @@ frauddetector_create_batch_import_job <- function(jobId, inputPath, outputPath, 
 #' @param detectorVersion The detector version.
 #' @param iamRoleArn &#91;required&#93; The ARN of the IAM role to use for this job request.
 #' 
-#' The IAM Role must have read permissions to your input S3 bucket and
-#' write permissions to your output S3 bucket. For more information about
-#' bucket permissions, see [User policy
-#' examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html)
-#' in the *Amazon S3 User Guide*.
+#' The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see [User policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html) in the *Amazon S3 User Guide*.
 #' @param tags A collection of key and value pairs.
 #'
 #' @keywords internal
@@ -233,15 +222,11 @@ frauddetector_create_batch_prediction_job <- function(jobId, inputPath, outputPa
 #' @param modelVersions The model versions to include in the detector version.
 #' @param ruleExecutionMode The rule execution mode for the rules included in the detector version.
 #' 
-#' You can define and edit the rule mode at the detector version level,
-#' when it is in draft status.
+#' You can define and edit the rule mode at the detector version level, when it is in draft status.
 #' 
-#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules
-#' sequentially, first to last, stopping at the first matched rule. Amazon
-#' Fraud dectector then provides the outcomes for that single rule.
+#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
 #' 
-#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules
-#' and returns the outcomes for all matched rules.
+#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules.
 #' 
 #' The default behavior is `FIRST_MATCHED`.
 #' @param tags A collection of key and value pairs.
@@ -276,12 +261,8 @@ frauddetector_create_detector_version <- function(detectorId, description = NULL
 #' See [https://www.paws-r-sdk.com/docs/frauddetector_create_list/](https://www.paws-r-sdk.com/docs/frauddetector_create_list/) for full documentation.
 #'
 #' @param name &#91;required&#93; The name of the list.
-#' @param elements The names of the elements, if providing. You can also create an empty
-#' list and add elements later using the
-#' [`update_list`][frauddetector_update_list] API.
-#' @param variableType The variable type of the list. You can only assign the variable type
-#' with String data type. For more information, see [Variable
-#' types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
+#' @param elements The names of the elements, if providing. You can also create an empty list and add elements later using the [`update_list`][frauddetector_update_list] API.
+#' @param variableType The variable type of the list. You can only assign the variable type with String data type. For more information, see [Variable types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
 #' @param description The description of the list.
 #' @param tags A collection of the key and value pairs.
 #'
@@ -354,10 +335,8 @@ frauddetector_create_model <- function(modelId, modelType, description = NULL, e
 #' @param modelType &#91;required&#93; The model type.
 #' @param trainingDataSource &#91;required&#93; The training data source location in Amazon S3.
 #' @param trainingDataSchema &#91;required&#93; The training data schema.
-#' @param externalEventsDetail Details of the external events data used for model version training.
-#' Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
-#' @param ingestedEventsDetail Details of the ingested events data used for model version training.
-#' Required if `trainingDataSource` is `INGESTED_EVENTS`.
+#' @param externalEventsDetail Details of the external events data used for model version training. Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
+#' @param ingestedEventsDetail Details of the ingested events data used for model version training. Required if `trainingDataSource` is `INGESTED_EVENTS`.
 #' @param tags A collection of key and value pairs.
 #'
 #' @keywords internal
@@ -431,11 +410,9 @@ frauddetector_create_rule <- function(ruleId, detectorId, description = NULL, ex
 #' @param dataSource &#91;required&#93; The source of the data.
 #' @param defaultValue &#91;required&#93; The default value for the variable when no value is received.
 #' @param description The description.
-#' @param variableType The variable type. For more information see [Variable
-#' types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
+#' @param variableType The variable type. For more information see [Variable types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
 #' 
-#' Valid Values:
-#' `AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT`
+#' Valid Values: `AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT`
 #' @param tags A collection of key and value pairs.
 #'
 #' @keywords internal
@@ -625,8 +602,7 @@ frauddetector_delete_entity_type <- function(name) {
 #'
 #' @param eventId &#91;required&#93; The ID of the event to delete.
 #' @param eventTypeName &#91;required&#93; The name of the event type.
-#' @param deleteAuditHistory Specifies whether or not to delete any predictions associated with the
-#' event. If set to `True`,
+#' @param deleteAuditHistory Specifies whether or not to delete any predictions associated with the event. If set to `True`,
 #'
 #' @keywords internal
 #'
@@ -908,7 +884,7 @@ frauddetector_delete_outcome <- function(name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/frauddetector_delete_rule/](https://www.paws-r-sdk.com/docs/frauddetector_delete_rule/) for full documentation.
 #'
-#' @param rule &#91;required&#93; 
+#' @param rule &#91;required&#93; A rule.
 #'
 #' @keywords internal
 #'
@@ -1269,37 +1245,22 @@ frauddetector_get_event <- function(eventId, eventTypeName) {
 #' @param detectorId &#91;required&#93; The detector ID.
 #' @param detectorVersionId The detector version ID.
 #' @param eventId &#91;required&#93; The unique ID used to identify the event.
-#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the
-#' prediction.
-#' @param entities &#91;required&#93; The entity type (associated with the detector's event type) and specific
-#' entity ID representing who performed the event. If an entity id is not
-#' available, use "UNKNOWN."
-#' @param eventTimestamp &#91;required&#93; Timestamp that defines when the event under evaluation occurred. The
-#' timestamp must be specified using ISO 8601 standard in UTC.
-#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector
-#' to represent data elements and their corresponding values for the event
-#' you are sending for evaluation.
+#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the prediction.
+#' @param entities &#91;required&#93; The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."
+#' @param eventTimestamp &#91;required&#93; Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.
+#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.
 #' 
 #' You must provide at least one eventVariable
 #' 
-#' To ensure most accurate fraud prediction and to simplify your data
-#' preparation, Amazon Fraud Detector will replace all missing variables or
-#' values as follows:
+#' To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:
 #' 
 #' **For Amazon Fraud Detector trained models:**
 #' 
-#' If a null value is provided explicitly for a variable or if a variable
-#' is missing, model will replace the null value or the missing variable
-#' (no variable name in the eventVariables map) with calculated default
-#' mean/medians for numeric variables and with special values for
-#' categorical variables.
+#' If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.
 #' 
 #' **For imported SageMaker models:**
 #' 
-#' If a null value is provided explicitly for a variable, the model and
-#' rules will use “null” as the value. If a variable is not provided (no
-#' variable name in the eventVariables map), model and rules will use the
-#' default value that is provided for the variable.
+#' If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.
 #' @param externalModelEndpointDataBlobs The Amazon SageMaker model endpoint input data blobs.
 #'
 #' @keywords internal
@@ -1334,17 +1295,12 @@ frauddetector_get_event_prediction <- function(detectorId, detectorVersionId = N
 #' See [https://www.paws-r-sdk.com/docs/frauddetector_get_event_prediction_metadata/](https://www.paws-r-sdk.com/docs/frauddetector_get_event_prediction_metadata/) for full documentation.
 #'
 #' @param eventId &#91;required&#93; The event ID.
-#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the
-#' prediction.
+#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the prediction.
 #' @param detectorId &#91;required&#93; The detector ID.
 #' @param detectorVersionId &#91;required&#93; The detector version ID.
-#' @param predictionTimestamp &#91;required&#93; The timestamp that defines when the prediction was generated. The
-#' timestamp must be specified using ISO 8601 standard in UTC.
+#' @param predictionTimestamp &#91;required&#93; The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.
 #' 
-#' We recommend calling
-#' [`list_event_predictions`][frauddetector_list_event_predictions] first,
-#' and using the `predictionTimestamp` value in the response to provide an
-#' accurate prediction timestamp value.
+#' We recommend calling [`list_event_predictions`][frauddetector_list_event_predictions] first, and using the `predictionTimestamp` value in the response to provide an accurate prediction timestamp value.
 #'
 #' @keywords internal
 #'
@@ -1748,9 +1704,7 @@ frauddetector_get_variables <- function(name = NULL, nextToken = NULL, maxResult
 #' @param detectorId The detector ID.
 #' @param detectorVersionId The detector version ID.
 #' @param predictionTimeRange The time period for when the predictions were generated.
-#' @param nextToken Identifies the next page of results to return. Use the token to make the
-#' call again to retrieve the next page. Keep all other arguments
-#' unchanged. Each pagination token expires after 24 hours.
+#' @param nextToken Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
 #' @param maxResults The maximum number of predictions to return for the request.
 #'
 #' @keywords internal
@@ -1886,13 +1840,10 @@ frauddetector_put_entity_type <- function(name, description = NULL, tags = NULL)
 #' @param description The description of the event type.
 #' @param eventVariables &#91;required&#93; The event type variables.
 #' @param labels The event type labels.
-#' @param entityTypes &#91;required&#93; The entity type for the event type. Example entity types: customer,
-#' merchant, account.
+#' @param entityTypes &#91;required&#93; The entity type for the event type. Example entity types: customer, merchant, account.
 #' @param eventIngestion Specifies if ingestion is enabled or disabled.
 #' @param tags A collection of key and value pairs.
-#' @param eventOrchestration Enables or disables event orchestration. If enabled, you can send event
-#' predictions to select AWS services for downstream processing of the
-#' events.
+#' @param eventOrchestration Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.
 #'
 #' @keywords internal
 #'
@@ -1963,8 +1914,7 @@ frauddetector_put_external_model <- function(modelEndpoint, modelSource, invokeM
 #'
 #' @param kmsEncryptionKeyArn &#91;required&#93; The KMS encryption key ARN.
 #' 
-#' The KMS key must be single-Region key. Amazon Fraud Detector does not
-#' support multi-Region KMS key.
+#' The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
 #'
 #' @keywords internal
 #'
@@ -2064,15 +2014,10 @@ frauddetector_put_outcome <- function(name, description = NULL, tags = NULL) {
 #'
 #' @param eventId &#91;required&#93; The event ID to upload.
 #' @param eventTypeName &#91;required&#93; The event type name of the event.
-#' @param eventTimestamp &#91;required&#93; The timestamp that defines when the event under evaluation occurred. The
-#' timestamp must be specified using ISO 8601 standard in UTC.
-#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector
-#' to represent data elements and their corresponding values for the event
-#' you are sending for evaluation.
-#' @param assignedLabel The label to associate with the event. Required if specifying
-#' `labelTimestamp`.
-#' @param labelTimestamp The timestamp associated with the label. Required if specifying
-#' `assignedLabel`.
+#' @param eventTimestamp &#91;required&#93; The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.
+#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.
+#' @param assignedLabel The label to associate with the event. Required if specifying `labelTimestamp`.
+#' @param labelTimestamp The timestamp associated with the label. Required if specifying `assignedLabel`.
 #' @param entities &#91;required&#93; An array of entities.
 #'
 #' @keywords internal
@@ -2176,13 +2121,9 @@ frauddetector_untag_resource <- function(resourceARN, tagKeys) {
 #' @param modelVersions The model versions to include in the detector version.
 #' @param ruleExecutionMode The rule execution mode to add to the detector.
 #' 
-#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules
-#' sequentially, first to last, stopping at the first matched rule. Amazon
-#' Fraud dectector then provides the outcomes for that single rule.
+#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
 #' 
-#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules
-#' and returns the outcomes for all matched rules. You can define and edit
-#' the rule mode at the detector version level, when it is in draft status.
+#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.
 #' 
 #' The default behavior is `FIRST_MATCHED`.
 #'
@@ -2286,8 +2227,7 @@ frauddetector_update_detector_version_status <- function(detectorId, detectorVer
 #' @param eventId &#91;required&#93; The ID of the event associated with the label to update.
 #' @param eventTypeName &#91;required&#93; The event type of the event associated with the label to update.
 #' @param assignedLabel &#91;required&#93; The new label to assign to the event.
-#' @param labelTimestamp &#91;required&#93; The timestamp associated with the label. The timestamp must be specified
-#' using ISO 8601 standard in UTC.
+#' @param labelTimestamp &#91;required&#93; The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.
 #'
 #' @keywords internal
 #'
@@ -2319,11 +2259,9 @@ frauddetector_update_event_label <- function(eventId, eventTypeName, assignedLab
 #' See [https://www.paws-r-sdk.com/docs/frauddetector_update_list/](https://www.paws-r-sdk.com/docs/frauddetector_update_list/) for full documentation.
 #'
 #' @param name &#91;required&#93; The name of the list to update.
-#' @param elements One or more list elements to add or replace. If you are providing the
-#' elements, make sure to specify the `updateMode` to use.
+#' @param elements One or more list elements to add or replace. If you are providing the elements, make sure to specify the `updateMode` to use.
 #' 
-#' If you are deleting all elements from the list, use `REPLACE` for the
-#' `updateMode` and provide an empty list (0 elements).
+#' If you are deleting all elements from the list, use `REPLACE` for the `updateMode` and provide an empty list (0 elements).
 #' @param description The new description.
 #' @param updateMode The update mode (type).
 #' 
@@ -2334,9 +2272,7 @@ frauddetector_update_event_label <- function(eventId, eventTypeName, assignedLab
 #' -   Use `REMOVE` if you are removing elements from the list.
 #' @param variableType The variable type you want to assign to the list.
 #' 
-#' You cannot update a variable type of a list that already has a variable
-#' type assigned to it. You can assign a variable type to a list only if
-#' the list does not already have a variable type.
+#' You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.
 #'
 #' @keywords internal
 #'
@@ -2403,10 +2339,8 @@ frauddetector_update_model <- function(modelId, modelType, description = NULL) {
 #' @param modelId &#91;required&#93; The model ID.
 #' @param modelType &#91;required&#93; The model type.
 #' @param majorVersionNumber &#91;required&#93; The major version number.
-#' @param externalEventsDetail The details of the external events data used for training the model
-#' version. Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
-#' @param ingestedEventsDetail The details of the ingested event used for training the model version.
-#' Required if your `trainingDataSource` is `INGESTED_EVENTS`.
+#' @param externalEventsDetail The details of the external events data used for training the model version. Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
+#' @param ingestedEventsDetail The details of the ingested event used for training the model version. Required if your `trainingDataSource` is `INGESTED_EVENTS`.
 #' @param tags A collection of key and value pairs.
 #'
 #' @keywords internal
@@ -2543,8 +2477,7 @@ frauddetector_update_rule_version <- function(rule, description = NULL, expressi
 #' @param name &#91;required&#93; The name of the variable.
 #' @param defaultValue The new default value of the variable.
 #' @param description The new description.
-#' @param variableType The variable type. For more information see [Variable
-#' types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
+#' @param variableType The variable type. For more information see [Variable types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
 #'
 #' @keywords internal
 #'

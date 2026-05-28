@@ -10,8 +10,7 @@ bedrockagentcore_batch_update_memory_records(memoryId, records)
 \arguments{
 \item{memoryId}{[required] The unique ID of the memory resource where records will be updated.}
 
-\item{records}{[required] A list of memory record update inputs to be processed in the batch
-operation.}
+\item{records}{[required] A list of memory record update inputs to be processed in the batch operation.}
 }
 \description{
 Updates multiple memory records with custom content in a single batch operation within the specified memory.

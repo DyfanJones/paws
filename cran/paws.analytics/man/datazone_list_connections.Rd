@@ -20,18 +20,9 @@ datazone_list_connections(
 \arguments{
 \item{domainIdentifier}{[required] The ID of the domain where you want to list connections.}
 
-\item{maxResults}{The maximum number of connections to return in a single call to
-ListConnections. When the number of connections to be listed is greater
-than the value of MaxResults, the response contains a NextToken value
-that you can use in a subsequent call to ListConnections to list the
-next set of connections.}
+\item{maxResults}{The maximum number of connections to return in a single call to ListConnections. When the number of connections to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListConnections to list the next set of connections.}
 
-\item{nextToken}{When the number of connections is greater than the default value for the
-MaxResults parameter, or if you explicitly specify a value for
-MaxResults that is less than the number of connections, the response
-includes a pagination token named NextToken. You can specify this
-NextToken value in a subsequent call to ListConnections to list the next
-set of connections.}
+\item{nextToken}{When the number of connections is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of connections, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListConnections to list the next set of connections.}
 
 \item{sortBy}{Specifies how you want to sort the listed connections.}
 

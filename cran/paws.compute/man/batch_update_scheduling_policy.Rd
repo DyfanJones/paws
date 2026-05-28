@@ -13,11 +13,9 @@ batch_update_scheduling_policy(
 \arguments{
 \item{arn}{[required] The Amazon Resource Name (ARN) of the scheduling policy to update.}
 
-\item{quotaSharePolicy}{The quota share scheduling policy details. Once set during creation, a
-quotaSharePolicy cannot be removed or changed to a fairsharePolicy.}
+\item{quotaSharePolicy}{The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.}
 
-\item{fairsharePolicy}{The fair-share policy scheduling details. Once set during creation, a
-fairsharePolicy cannot be removed or changed to a quotaSharePolicy.}
+\item{fairsharePolicy}{The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.}
 }
 \description{
 Updates a scheduling policy.

@@ -9,8 +9,7 @@ cloudsearchdomain_upload_documents(documents, contentType)
 \arguments{
 \item{documents}{[required] A batch of documents formatted in JSON or HTML.}
 
-\item{contentType}{[required] The format of the batch you are uploading. Amazon CloudSearch supports
-two document batch formats:
+\item{contentType}{[required] The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:
 \itemize{
 \item application/json
 \item application/xml

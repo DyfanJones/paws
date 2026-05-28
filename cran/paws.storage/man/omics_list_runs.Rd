@@ -20,8 +20,7 @@ omics_list_runs(
 
 \item{batchId}{Filter by batch ID.}
 
-\item{startingToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{startingToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of runs to return in one page of results.}
 

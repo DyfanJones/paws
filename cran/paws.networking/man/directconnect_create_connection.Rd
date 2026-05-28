@@ -26,15 +26,11 @@ directconnect_create_connection(
 
 \item{tags}{The tags to associate with the lag.}
 
-\item{providerName}{The name of the service provider associated with the requested
-connection.}
+\item{providerName}{The name of the service provider associated with the requested connection.}
 
-\item{requestMACSec}{Indicates whether you want the connection to support MAC Security
-(MACsec).
+\item{requestMACSec}{Indicates whether you want the connection to support MAC Security (MACsec).
 
-MAC Security (MACsec) is unavailable on hosted connections. For
-information about MAC Security (MACsec) prerequisites, see \href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/}{MAC Security in Direct Connect} in
-the \emph{Direct Connect User Guide}.}
+MAC Security (MACsec) is unavailable on hosted connections. For information about MAC Security (MACsec) prerequisites, see \href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/}{MAC Security in Direct Connect} in the \emph{Direct Connect User Guide}.}
 }
 \description{
 Creates a connection between a customer network and a specific Direct Connect location.

@@ -19,21 +19,13 @@ bedrockagentcore_save_browser_session_profile(
 
 \item{traceParent}{The parent trace information for distributed tracing.}
 
-\item{profileIdentifier}{[required] The unique identifier for the browser profile. This identifier is used
-to reference the profile when starting new browser sessions. The
-identifier must follow the pattern of an alphanumeric name (up to 48
-characters) followed by a hyphen and a 10-character alphanumeric suffix.}
+\item{profileIdentifier}{[required] The unique identifier for the browser profile. This identifier is used to reference the profile when starting new browser sessions. The identifier must follow the pattern of an alphanumeric name (up to 48 characters) followed by a hyphen and a 10-character alphanumeric suffix.}
 
-\item{browserIdentifier}{[required] The unique identifier of the browser associated with the session from
-which to save the profile.}
+\item{browserIdentifier}{[required] The unique identifier of the browser associated with the session from which to save the profile.}
 
-\item{sessionId}{[required] The unique identifier of the browser session from which to save the
-profile. The session must be active when saving the profile.}
+\item{sessionId}{[required] The unique identifier of the browser session from which to save the profile. The session must be active when saving the profile.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock AgentCore ignores the request, but does not
-return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error.}
 }
 \description{
 Saves the current state of a browser session as a reusable profile in Amazon Bedrock AgentCore. A browser profile captures persistent browser data such as cookies and local storage from an active session, enabling you to reuse this data in future browser sessions.

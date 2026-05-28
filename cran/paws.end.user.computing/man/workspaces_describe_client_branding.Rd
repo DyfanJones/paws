@@ -7,8 +7,7 @@
 workspaces_describe_client_branding(ResourceId)
 }
 \arguments{
-\item{ResourceId}{[required] The directory identifier of the WorkSpace for which you want to view
-client branding information.}
+\item{ResourceId}{[required] The directory identifier of the WorkSpace for which you want to view client branding information.}
 }
 \description{
 Describes the specified client branding. Client branding allows you to customize the log in page of various device types for your users. You can add your company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.

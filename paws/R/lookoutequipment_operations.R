@@ -6,23 +6,16 @@ NULL
 #' Creates a container for a collection of data being ingested for analysis
 #'
 #' @description
-#' Creates a container for a collection of data being ingested for
-#' analysis. The dataset contains the metadata describing where the data is
-#' and what the data actually looks like. For example, it contains the
-#' location of the data source, the data schema, and other information. A
-#' dataset also contains any tags associated with the ingested data.
+#' Creates a container for a collection of data being ingested for analysis. The dataset contains the metadata describing where the data is and what the data actually looks like. For example, it contains the location of the data source, the data schema, and other information. A dataset also contains any tags associated with the ingested data.
 #'
 #' @usage
 #' lookoutequipment_create_dataset(DatasetName, DatasetSchema,
 #'   ServerSideKmsKeyId, ClientToken, Tags)
 #'
 #' @param DatasetName &#91;required&#93; The name of the dataset being created.
-#' @param DatasetSchema A JSON description of the data that is in each time series dataset,
-#' including names, column names, and data types.
-#' @param ServerSideKmsKeyId Provides the identifier of the KMS key used to encrypt dataset data by
-#' Amazon Lookout for Equipment.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
+#' @param DatasetSchema A JSON description of the data that is in each time series dataset, including names, column names, and data types.
+#' @param ServerSideKmsKeyId Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
 #' @param Tags Any tags associated with the ingested data described in the dataset.
 #'
 #' @return
@@ -80,12 +73,7 @@ lookoutequipment_create_dataset <- function(DatasetName, DatasetSchema = NULL, S
 #' Creates a scheduled inference
 #'
 #' @description
-#' Creates a scheduled inference. Scheduling an inference is setting up a
-#' continuous real-time inference plan to analyze new measurement data.
-#' When setting up the schedule, you provide an S3 bucket location for the
-#' input data, assign it a delimiter between separate entries in the data,
-#' set an offset delay if desired, and set the frequency of inferencing.
-#' You must also provide an S3 bucket location for the output data.
+#' Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data.
 #'
 #' @usage
 #' lookoutequipment_create_inference_scheduler(ModelName,
@@ -93,40 +81,19 @@ lookoutequipment_create_dataset <- function(DatasetName, DatasetSchema = NULL, S
 #'   DataInputConfiguration, DataOutputConfiguration, RoleArn,
 #'   ServerSideKmsKeyId, ClientToken, Tags)
 #'
-#' @param ModelName &#91;required&#93; The name of the previously trained machine learning model being used to
-#' create the inference scheduler.
+#' @param ModelName &#91;required&#93; The name of the previously trained machine learning model being used to create the inference scheduler.
 #' @param InferenceSchedulerName &#91;required&#93; The name of the inference scheduler being created.
-#' @param DataDelayOffsetInMinutes The interval (in minutes) of planned delay at the start of each
-#' inference segment. For example, if inference is set to run every ten
-#' minutes, the delay is set to five minutes and the time is 09:08. The
-#' inference scheduler will wake up at the configured interval (which,
-#' without a delay configured, would be 09:10) plus the additional five
-#' minute delay time (so 09:15) to check your Amazon S3 bucket. The delay
-#' provides a buffer for you to upload data at the same frequency, so that
-#' you don't have to stop and restart the scheduler when uploading new
-#' data.
+#' @param DataDelayOffsetInMinutes The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.
 #' 
-#' For more information, see [Understanding the inference
-#' process](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html).
-#' @param DataUploadFrequency &#91;required&#93; How often data is uploaded to the source Amazon S3 bucket for the input
-#' data. The value chosen is the length of time between data uploads. For
-#' instance, if you select 5 minutes, Amazon Lookout for Equipment will
-#' upload the real-time data to the source bucket once every 5 minutes.
-#' This frequency also determines how often Amazon Lookout for Equipment
-#' runs inference on your data.
+#' For more information, see [Understanding the inference process](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html).
+#' @param DataUploadFrequency &#91;required&#93; How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.
 #' 
-#' For more information, see [Understanding the inference
-#' process](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html).
-#' @param DataInputConfiguration &#91;required&#93; Specifies configuration information for the input data for the inference
-#' scheduler, including delimiter, format, and dataset location.
-#' @param DataOutputConfiguration &#91;required&#93; Specifies configuration information for the output results for the
-#' inference scheduler, including the S3 location for the output.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of a role with permission to access the
-#' data source being used for the inference.
-#' @param ServerSideKmsKeyId Provides the identifier of the KMS key used to encrypt inference
-#' scheduler data by Amazon Lookout for Equipment.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
+#' For more information, see [Understanding the inference process](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html).
+#' @param DataInputConfiguration &#91;required&#93; Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location.
+#' @param DataOutputConfiguration &#91;required&#93; Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference.
+#' @param ServerSideKmsKeyId Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
 #' @param Tags Any tags associated with the inference scheduler.
 #'
 #' @return
@@ -212,26 +179,20 @@ lookoutequipment_create_inference_scheduler <- function(ModelName, InferenceSche
 #'
 #' @param LabelGroupName &#91;required&#93; The name of a group of labels.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
 #' @param StartTime &#91;required&#93; The start time of the labeled event.
 #' @param EndTime &#91;required&#93; The end time of the labeled event.
 #' @param Rating &#91;required&#93; Indicates whether a labeled event represents an anomaly.
-#' @param FaultCode Provides additional information about the label. The fault code must be
-#' defined in the FaultCodes attribute of the label group.
+#' @param FaultCode Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
 #' @param Notes Metadata providing additional information about the label.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
 #' @param Equipment Indicates that a label pertains to a particular piece of equipment.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request to create a label. If you do not set
-#' the client request token, Lookout for Equipment generates one.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one.
 #'
 #' @return
 #' A list with the following syntax:
@@ -294,19 +255,14 @@ lookoutequipment_create_label <- function(LabelGroupName, StartTime, EndTime, Ra
 #'
 #' @param LabelGroupName &#91;required&#93; Names a group of labels.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
-#' @param FaultCodes The acceptable fault codes (indicating the type of anomaly associated
-#' with the label) that can be used with this label group.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
+#' @param FaultCodes The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request to create a label group. If you do
-#' not set the client request token, Lookout for Equipment generates one.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one.
 #' @param Tags Tags that provide metadata about the label group you are creating.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -363,17 +319,9 @@ lookoutequipment_create_label_group <- function(LabelGroupName, FaultCodes = NUL
 #' @description
 #' Creates a machine learning model for data inference.
 #' 
-#' A machine-learning (ML) model is a mathematical model that finds
-#' patterns in your data. In Amazon Lookout for Equipment, the model learns
-#' the patterns of normal behavior and detects abnormal behavior that could
-#' be potential equipment failure (or maintenance events). The models are
-#' made by analyzing normal data and abnormalities in machine behavior that
-#' have already occurred.
+#' A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred.
 #' 
-#' Your model is trained using a portion of the data from your dataset and
-#' uses that data to learn patterns of normal behavior and abnormal
-#' patterns that lead to equipment failure. Another portion of the data is
-#' used to evaluate the model's accuracy.
+#' Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model's accuracy.
 #'
 #' @usage
 #' lookoutequipment_create_model(ModelName, DatasetName, DatasetSchema,
@@ -385,39 +333,20 @@ lookoutequipment_create_label_group <- function(LabelGroupName, FaultCodes = NUL
 #' @param ModelName &#91;required&#93; The name for the machine learning model to be created.
 #' @param DatasetName &#91;required&#93; The name of the dataset for the machine learning model being created.
 #' @param DatasetSchema The data schema for the machine learning model being created.
-#' @param LabelsInputConfiguration The input configuration for the labels being used for the machine
-#' learning model that's being created.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
-#' @param TrainingDataStartTime Indicates the time reference in the dataset that should be used to begin
-#' the subset of training data for the machine learning model.
-#' @param TrainingDataEndTime Indicates the time reference in the dataset that should be used to end
-#' the subset of training data for the machine learning model.
-#' @param EvaluationDataStartTime Indicates the time reference in the dataset that should be used to begin
-#' the subset of evaluation data for the machine learning model.
-#' @param EvaluationDataEndTime Indicates the time reference in the dataset that should be used to end
-#' the subset of evaluation data for the machine learning model.
-#' @param RoleArn The Amazon Resource Name (ARN) of a role with permission to access the
-#' data source being used to create the machine learning model.
-#' @param DataPreProcessingConfiguration The configuration is the `TargetSamplingRate`, which is the sampling
-#' rate of the data after post processing by Amazon Lookout for Equipment.
-#' For example, if you provide data that has been collected at a 1 second
-#' level and you want the system to resample the data at a 1 minute rate
-#' before training, the `TargetSamplingRate` is 1 minute.
+#' @param LabelsInputConfiguration The input configuration for the labels being used for the machine learning model that's being created.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
+#' @param TrainingDataStartTime Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model.
+#' @param TrainingDataEndTime Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model.
+#' @param EvaluationDataStartTime Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model.
+#' @param EvaluationDataEndTime Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model.
+#' @param RoleArn The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.
+#' @param DataPreProcessingConfiguration The configuration is the `TargetSamplingRate`, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the `TargetSamplingRate` is 1 minute.
 #' 
-#' When providing a value for the `TargetSamplingRate`, you must attach the
-#' prefix "PT" to the rate you want. The value for a 1 second rate is
-#' therefore *PT1S*, the value for a 15 minute rate is *PT15M*, and the
-#' value for a 1 hour rate is *PT1H*
-#' @param ServerSideKmsKeyId Provides the identifier of the KMS key used to encrypt model data by
-#' Amazon Lookout for Equipment.
+#' When providing a value for the `TargetSamplingRate`, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore *PT1S*, the value for a 15 minute rate is *PT15M*, and the value for a 1 hour rate is *PT1H*
+#' @param ServerSideKmsKeyId Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment.
 #' @param Tags Any tags associated with the machine learning model being created.
-#' @param OffCondition Indicates that the asset associated with this sensor has been shut off.
-#' As long as this condition is met, Lookout for Equipment will not use
-#' data from this asset for training, evaluation, or inference.
-#' @param ModelDiagnosticsOutputConfiguration The Amazon S3 location where you want Amazon Lookout for Equipment to
-#' save the pointwise model diagnostics. You must also specify the
-#' `RoleArn` request parameter.
+#' @param OffCondition Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.
+#' @param ModelDiagnosticsOutputConfiguration The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the `RoleArn` request parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -513,14 +442,8 @@ lookoutequipment_create_model <- function(ModelName, DatasetName, DatasetSchema 
 #'   ClientToken)
 #'
 #' @param ModelName &#91;required&#93; The name of the model to add the retraining scheduler to.
-#' @param RetrainingStartDate The start date for the retraining scheduler. Lookout for Equipment
-#' truncates the time you provide to the nearest UTC day.
-#' @param RetrainingFrequency &#91;required&#93; This parameter uses the [ISO
-#' 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) standard to set
-#' the frequency at which you want retraining to occur in terms of Years,
-#' Months, and/or Days (note: other parameters like Time are not currently
-#' supported). The minimum value is 30 days (P30D) and the maximum value is
-#' 1 year (P1Y). For example, the following values are valid:
+#' @param RetrainingStartDate The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.
+#' @param RetrainingFrequency &#91;required&#93; This parameter uses the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:
 #' 
 #' -   P3M15D – Every 3 months and 15 days
 #' 
@@ -528,13 +451,8 @@ lookoutequipment_create_model <- function(ModelName, DatasetName, DatasetSchema 
 #' 
 #' -   P150D – Every 150 days
 #' @param LookbackWindow &#91;required&#93; The number of past days of data that will be used for retraining.
-#' @param PromoteMode Indicates how the service will use new models. In `MANAGED` mode, new
-#' models will automatically be used for inference if they have better
-#' performance than the current model. In `MANUAL` mode, the new models
-#' will not be used [until they are manually
-#' activated](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation).
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
+#' @param PromoteMode Indicates how the service will use new models. In `MANAGED` mode, new models will automatically be used for inference if they have better performance than the current model. In `MANUAL` mode, the new models will not be used [until they are manually activated](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation).
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
 #'
 #' @return
 #' A list with the following syntax:
@@ -587,12 +505,7 @@ lookoutequipment_create_retraining_scheduler <- function(ModelName, RetrainingSt
 #' Deletes a dataset and associated artifacts
 #'
 #' @description
-#' Deletes a dataset and associated artifacts. The operation will check to
-#' see if any inference scheduler or data ingestion job is currently using
-#' the dataset, and if there isn't, the dataset, its metadata, and any
-#' associated data stored in S3 will be deleted. This does not affect any
-#' models that used this dataset for training and evaluation, but does
-#' prevent it from being used in the future.
+#' Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted. This does not affect any models that used this dataset for training and evaluation, but does prevent it from being used in the future.
 #'
 #' @usage
 #' lookoutequipment_delete_dataset(DatasetName)
@@ -636,8 +549,7 @@ lookoutequipment_delete_dataset <- function(DatasetName) {
 #' Deletes an inference scheduler that has been set up
 #'
 #' @description
-#' Deletes an inference scheduler that has been set up. Prior inference
-#' results will not be deleted.
+#' Deletes an inference scheduler that has been set up. Prior inference results will not be deleted.
 #'
 #' @usage
 #' lookoutequipment_delete_inference_scheduler(InferenceSchedulerName)
@@ -686,9 +598,7 @@ lookoutequipment_delete_inference_scheduler <- function(InferenceSchedulerName) 
 #' @usage
 #' lookoutequipment_delete_label(LabelGroupName, LabelId)
 #'
-#' @param LabelGroupName &#91;required&#93; The name of the label group that contains the label that you want to
-#' delete. Data in this field will be retained for service usage. Follow
-#' best practices for the security of your data.
+#' @param LabelGroupName &#91;required&#93; The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.
 #' @param LabelId &#91;required&#93; The ID of the label that you want to delete.
 #'
 #' @return
@@ -734,9 +644,7 @@ lookoutequipment_delete_label <- function(LabelGroupName, LabelId) {
 #' @usage
 #' lookoutequipment_delete_label_group(LabelGroupName)
 #'
-#' @param LabelGroupName &#91;required&#93; The name of the label group that you want to delete. Data in this field
-#' will be retained for service usage. Follow best practices for the
-#' security of your data.
+#' @param LabelGroupName &#91;required&#93; The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.
 #'
 #' @return
 #' An empty list.
@@ -776,9 +684,7 @@ lookoutequipment_delete_label_group <- function(LabelGroupName) {
 #' for Equipment
 #'
 #' @description
-#' Deletes a machine learning model currently available for Amazon Lookout
-#' for Equipment. This will prevent it from being used with an inference
-#' scheduler, even one that is already set up.
+#' Deletes a machine learning model currently available for Amazon Lookout for Equipment. This will prevent it from being used with an inference scheduler, even one that is already set up.
 #'
 #' @usage
 #' lookoutequipment_delete_model(ModelName)
@@ -827,8 +733,7 @@ lookoutequipment_delete_model <- function(ModelName) {
 #' @usage
 #' lookoutequipment_delete_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the resource
-#' policy should be deleted.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the resource policy should be deleted.
 #'
 #' @return
 #' An empty list.
@@ -867,8 +772,7 @@ lookoutequipment_delete_resource_policy <- function(ResourceArn) {
 #' Deletes a retraining scheduler from a model
 #'
 #' @description
-#' Deletes a retraining scheduler from a model. The retraining scheduler
-#' must be in the `STOPPED` status.
+#' Deletes a retraining scheduler from a model. The retraining scheduler must be in the `STOPPED` status.
 #'
 #' @usage
 #' lookoutequipment_delete_retraining_scheduler(ModelName)
@@ -913,8 +817,7 @@ lookoutequipment_delete_retraining_scheduler <- function(ModelName) {
 #' time, dataset ARN, and status
 #'
 #' @description
-#' Provides information on a specific data ingestion job such as creation
-#' time, dataset ARN, and status.
+#' Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
 #'
 #' @usage
 #' lookoutequipment_describe_data_ingestion_job(JobId)
@@ -1021,8 +924,7 @@ lookoutequipment_describe_data_ingestion_job <- function(JobId) {
 #' including names, column names, and data types
 #'
 #' @description
-#' Provides a JSON description of the data in each time series dataset,
-#' including names, column names, and data types.
+#' Provides a JSON description of the data in each time series dataset, including names, column names, and data types.
 #'
 #' @usage
 #' lookoutequipment_describe_dataset(DatasetName)
@@ -1131,8 +1033,7 @@ lookoutequipment_describe_dataset <- function(DatasetName) {
 #' including name, model, status, and associated metadata
 #'
 #' @description
-#' Specifies information about the inference scheduler being used,
-#' including name, model, status, and associated metadata
+#' Specifies information about the inference scheduler being used, including name, model, status, and associated metadata
 #'
 #' @usage
 #' lookoutequipment_describe_inference_scheduler(InferenceSchedulerName)
@@ -1341,9 +1242,7 @@ lookoutequipment_describe_label_group <- function(LabelGroupName) {
 #' and evaluation information, status, and so on
 #'
 #' @description
-#' Provides a JSON containing the overall information about a specific
-#' machine learning model, including model name and ARN, dataset, training
-#' and evaluation information, status, and so on.
+#' Provides a JSON containing the overall information about a specific machine learning model, including model name and ARN, dataset, training and evaluation information, status, and so on.
 #'
 #' @usage
 #' lookoutequipment_describe_model(ModelName)
@@ -1606,8 +1505,7 @@ lookoutequipment_describe_model_version <- function(ModelName, ModelVersion) {
 #' @usage
 #' lookoutequipment_describe_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that is associated with
-#' the resource policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that is associated with the resource policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1659,8 +1557,7 @@ lookoutequipment_describe_resource_policy <- function(ResourceArn) {
 #' information such as the model name and retraining parameters
 #'
 #' @description
-#' Provides a description of the retraining scheduler, including
-#' information such as the model name and retraining parameters.
+#' Provides a description of the retraining scheduler, including information such as the model name and retraining parameters.
 #'
 #' @usage
 #' lookoutequipment_describe_retraining_scheduler(ModelName)
@@ -1730,14 +1627,9 @@ lookoutequipment_describe_retraining_scheduler <- function(ModelName) {
 #'   ClientToken, ServerSideKmsKeyId, Tags)
 #'
 #' @param SourceDatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset to import.
-#' @param DatasetName The name of the machine learning dataset to be created. If the dataset
-#' already exists, Amazon Lookout for Equipment overwrites the existing
-#' dataset. If you don't specify this field, it is filled with the name of
-#' the source dataset.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
-#' @param ServerSideKmsKeyId Provides the identifier of the KMS key key used to encrypt model data by
-#' Amazon Lookout for Equipment.
+#' @param DatasetName The name of the machine learning dataset to be created. If the dataset already exists, Amazon Lookout for Equipment overwrites the existing dataset. If you don't specify this field, it is filled with the name of the source dataset.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
+#' @param ServerSideKmsKeyId Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.
 #' @param Tags Any tags associated with the dataset to be created.
 #'
 #' @return
@@ -1802,29 +1694,20 @@ lookoutequipment_import_dataset <- function(SourceDatasetArn, DatasetName = NULL
 #'   ServerSideKmsKeyId, Tags, InferenceDataImportStrategy)
 #'
 #' @param SourceModelVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the model version to import.
-#' @param ModelName The name for the machine learning model to be created. If the model
-#' already exists, Amazon Lookout for Equipment creates a new version. If
-#' you do not specify this field, it is filled with the name of the source
-#' model.
+#' @param ModelName The name for the machine learning model to be created. If the model already exists, Amazon Lookout for Equipment creates a new version. If you do not specify this field, it is filled with the name of the source model.
 #' @param DatasetName &#91;required&#93; The name of the dataset for the machine learning model being imported.
-#' @param LabelsInputConfiguration 
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
-#' @param RoleArn The Amazon Resource Name (ARN) of a role with permission to access the
-#' data source being used to create the machine learning model.
-#' @param ServerSideKmsKeyId Provides the identifier of the KMS key key used to encrypt model data by
-#' Amazon Lookout for Equipment.
+#' @param LabelsInputConfiguration Contains the configuration information for the S3 location being used to hold label data.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
+#' @param RoleArn The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.
+#' @param ServerSideKmsKeyId Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.
 #' @param Tags The tags associated with the machine learning model to be created.
-#' @param InferenceDataImportStrategy Indicates how to import the accumulated inference data when a model
-#' version is imported. The possible values are as follows:
+#' @param InferenceDataImportStrategy Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:
 #' 
 #' -   NO_IMPORT – Don't import the data.
 #' 
-#' -   ADD_WHEN_EMPTY – Only import the data from the source model if there
-#'     is no existing data in the target model.
+#' -   ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.
 #' 
-#' -   OVERWRITE – Import the data from the source model and overwrite the
-#'     existing data in the target model.
+#' -   OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1892,16 +1775,14 @@ lookoutequipment_import_model_version <- function(SourceModelVersionArn, ModelNa
 #' ARN, S3 location of the input data, status, and so on
 #'
 #' @description
-#' Provides a list of all data ingestion jobs, including dataset name and
-#' ARN, S3 location of the input data, status, and so on.
+#' Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data, status, and so on.
 #'
 #' @usage
 #' lookoutequipment_list_data_ingestion_jobs(DatasetName, NextToken,
 #'   MaxResults, Status)
 #'
 #' @param DatasetName The name of the dataset being used for the data ingestion job.
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' data ingestion jobs.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of data ingestion jobs.
 #' @param MaxResults Specifies the maximum number of data ingestion jobs to list.
 #' @param Status Indicates the status of the data ingestion job.
 #'
@@ -1966,15 +1847,13 @@ lookoutequipment_list_data_ingestion_jobs <- function(DatasetName = NULL, NextTo
 #' dataset name
 #'
 #' @description
-#' Lists all datasets currently available in your account, filtering on the
-#' dataset name.
+#' Lists all datasets currently available in your account, filtering on the dataset name.
 #'
 #' @usage
 #' lookoutequipment_list_datasets(NextToken, MaxResults,
 #'   DatasetNameBeginsWith)
 #'
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' datasets.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of datasets.
 #' @param MaxResults Specifies the maximum number of datasets to list.
 #' @param DatasetNameBeginsWith The beginning of the name of the datasets to be listed.
 #'
@@ -2033,21 +1912,17 @@ lookoutequipment_list_datasets <- function(NextToken = NULL, MaxResults = NULL, 
 #' inference scheduler
 #'
 #' @description
-#' Lists all inference events that have been found for the specified
-#' inference scheduler.
+#' Lists all inference events that have been found for the specified inference scheduler.
 #'
 #' @usage
 #' lookoutequipment_list_inference_events(NextToken, MaxResults,
 #'   InferenceSchedulerName, IntervalStartTime, IntervalEndTime)
 #'
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' inference events.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of inference events.
 #' @param MaxResults Specifies the maximum number of inference events to list.
 #' @param InferenceSchedulerName &#91;required&#93; The name of the inference scheduler for the inference events listed.
-#' @param IntervalStartTime &#91;required&#93; Lookout for Equipment will return all the inference events with an end
-#' time equal to or greater than the start time given.
-#' @param IntervalEndTime &#91;required&#93; Returns all the inference events with an end start time equal to or
-#' greater than less than the end time given.
+#' @param IntervalStartTime &#91;required&#93; Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.
+#' @param IntervalEndTime &#91;required&#93; Returns all the inference events with an end start time equal to or greater than less than the end time given.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2114,21 +1989,17 @@ lookoutequipment_list_inference_events <- function(NextToken = NULL, MaxResults 
 #' inference scheduler
 #'
 #' @description
-#' Lists all inference executions that have been performed by the specified
-#' inference scheduler.
+#' Lists all inference executions that have been performed by the specified inference scheduler.
 #'
 #' @usage
 #' lookoutequipment_list_inference_executions(NextToken, MaxResults,
 #'   InferenceSchedulerName, DataStartTimeAfter, DataEndTimeBefore, Status)
 #'
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' inference executions.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of inference executions.
 #' @param MaxResults Specifies the maximum number of inference executions to list.
 #' @param InferenceSchedulerName &#91;required&#93; The name of the inference scheduler for the inference execution listed.
-#' @param DataStartTimeAfter The time reference in the inferenced dataset after which Amazon Lookout
-#' for Equipment started the inference execution.
-#' @param DataEndTimeBefore The time reference in the inferenced dataset before which Amazon Lookout
-#' for Equipment stopped the inference execution.
+#' @param DataStartTimeAfter The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution.
+#' @param DataEndTimeBefore The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution.
 #' @param Status The status of the inference execution.
 #'
 #' @return
@@ -2226,19 +2097,16 @@ lookoutequipment_list_inference_executions <- function(NextToken = NULL, MaxResu
 #' your account
 #'
 #' @description
-#' Retrieves a list of all inference schedulers currently available for
-#' your account.
+#' Retrieves a list of all inference schedulers currently available for your account.
 #'
 #' @usage
 #' lookoutequipment_list_inference_schedulers(NextToken, MaxResults,
 #'   InferenceSchedulerNameBeginsWith, ModelName, Status)
 #'
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' inference schedulers.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of inference schedulers.
 #' @param MaxResults Specifies the maximum number of inference schedulers to list.
 #' @param InferenceSchedulerNameBeginsWith The beginning of the name of the inference schedulers to be listed.
-#' @param ModelName The name of the machine learning model used by the inference scheduler
-#' to be listed.
+#' @param ModelName The name of the machine learning model used by the inference scheduler to be listed.
 #' @param Status Specifies the current status of the inference schedulers.
 #'
 #' @return
@@ -2306,8 +2174,7 @@ lookoutequipment_list_inference_schedulers <- function(NextToken = NULL, MaxResu
 #'   MaxResults)
 #'
 #' @param LabelGroupNameBeginsWith The beginning of the name of the label groups to be listed.
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' label groups.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of label groups.
 #' @param MaxResults Specifies the maximum number of label groups to list.
 #'
 #' @return
@@ -2373,13 +2240,11 @@ lookoutequipment_list_label_groups <- function(LabelGroupNameBeginsWith = NULL, 
 #'   IntervalEndTime, FaultCode, Equipment, NextToken, MaxResults)
 #'
 #' @param LabelGroupName &#91;required&#93; Returns the name of the label group.
-#' @param IntervalStartTime Returns all the labels with a end time equal to or later than the start
-#' time given.
+#' @param IntervalStartTime Returns all the labels with a end time equal to or later than the start time given.
 #' @param IntervalEndTime Returns all labels with a start time earlier than the end time given.
 #' @param FaultCode Returns labels with a particular fault code.
 #' @param Equipment Lists the labels that pertain to a particular piece of equipment.
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' label groups.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of label groups.
 #' @param MaxResults Specifies the maximum number of labels to list.
 #'
 #' @return
@@ -2454,27 +2319,19 @@ lookoutequipment_list_labels <- function(LabelGroupName, IntervalStartTime = NUL
 #' model version, model version ARN, and status
 #'
 #' @description
-#' Generates a list of all model versions for a given model, including the
-#' model version, model version ARN, and status. To list a subset of
-#' versions, use the `MaxModelVersion` and `MinModelVersion` fields.
+#' Generates a list of all model versions for a given model, including the model version, model version ARN, and status. To list a subset of versions, use the `MaxModelVersion` and `MinModelVersion` fields.
 #'
 #' @usage
 #' lookoutequipment_list_model_versions(ModelName, NextToken, MaxResults,
 #'   Status, SourceType, CreatedAtEndTime, CreatedAtStartTime,
 #'   MaxModelVersion, MinModelVersion)
 #'
-#' @param ModelName &#91;required&#93; Then name of the machine learning model for which the model versions are
-#' to be listed.
-#' @param NextToken If the total number of results exceeds the limit that the response can
-#' display, the response returns an opaque pagination token indicating
-#' where to continue the listing of machine learning model versions. Use
-#' this token in the `NextToken` field in the request to list the next page
-#' of results.
+#' @param ModelName &#91;required&#93; Then name of the machine learning model for which the model versions are to be listed.
+#' @param NextToken If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the `NextToken` field in the request to list the next page of results.
 #' @param MaxResults Specifies the maximum number of machine learning model versions to list.
 #' @param Status Filter the results based on the current status of the model version.
 #' @param SourceType Filter the results based on the way the model version was generated.
-#' @param CreatedAtEndTime Filter results to return all the model versions created before this
-#' time.
+#' @param CreatedAtEndTime Filter results to return all the model versions created before this time.
 #' @param CreatedAtStartTime Filter results to return all the model versions created after this time.
 #' @param MaxModelVersion Specifies the highest version of the model to return in the list.
 #' @param MinModelVersion Specifies the lowest version of the model to return in the list.
@@ -2548,20 +2405,17 @@ lookoutequipment_list_model_versions <- function(ModelName, NextToken = NULL, Ma
 #' ARN, dataset, and status
 #'
 #' @description
-#' Generates a list of all models in the account, including model name and
-#' ARN, dataset, and status.
+#' Generates a list of all models in the account, including model name and ARN, dataset, and status.
 #'
 #' @usage
 #' lookoutequipment_list_models(NextToken, MaxResults, Status,
 #'   ModelNameBeginsWith, DatasetNameBeginsWith)
 #'
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' machine learning models.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of machine learning models.
 #' @param MaxResults Specifies the maximum number of machine learning models to list.
 #' @param Status The status of the machine learning model.
 #' @param ModelNameBeginsWith The beginning of the name of the machine learning models being listed.
-#' @param DatasetNameBeginsWith The beginning of the name of the dataset of the machine learning models
-#' to be listed.
+#' @param DatasetNameBeginsWith The beginning of the name of the dataset of the machine learning models to be listed.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2641,20 +2495,15 @@ lookoutequipment_list_models <- function(NextToken = NULL, MaxResults = NULL, St
 #' prefix and status
 #'
 #' @description
-#' Lists all retraining schedulers in your account, filtering by model name
-#' prefix and status.
+#' Lists all retraining schedulers in your account, filtering by model name prefix and status.
 #'
 #' @usage
 #' lookoutequipment_list_retraining_schedulers(ModelNameBeginsWith, Status,
 #'   NextToken, MaxResults)
 #'
-#' @param ModelNameBeginsWith Specify this field to only list retraining schedulers whose machine
-#' learning models begin with the value you specify.
-#' @param Status Specify this field to only list retraining schedulers whose status
-#' matches the value you specify.
-#' @param NextToken If the number of results exceeds the maximum, a pagination token is
-#' returned. Use the token in the request to show the next page of
-#' retraining schedulers.
+#' @param ModelNameBeginsWith Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.
+#' @param Status Specify this field to only list retraining schedulers whose status matches the value you specify.
+#' @param NextToken If the number of results exceeds the maximum, a pagination token is returned. Use the token in the request to show the next page of retraining schedulers.
 #' @param MaxResults Specifies the maximum number of retraining schedulers to list.
 #'
 #' @return
@@ -2715,22 +2564,16 @@ lookoutequipment_list_retraining_schedulers <- function(ModelNameBeginsWith = NU
 #' have been successfully ingested in the particular dataset
 #'
 #' @description
-#' Lists statistics about the data collected for each of the sensors that
-#' have been successfully ingested in the particular dataset. Can also be
-#' used to retreive Sensor Statistics for a previous ingestion job.
+#' Lists statistics about the data collected for each of the sensors that have been successfully ingested in the particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
 #'
 #' @usage
 #' lookoutequipment_list_sensor_statistics(DatasetName, IngestionJobId,
 #'   MaxResults, NextToken)
 #'
 #' @param DatasetName &#91;required&#93; The name of the dataset associated with the list of Sensor Statistics.
-#' @param IngestionJobId The ingestion job id associated with the list of Sensor Statistics. To
-#' get sensor statistics for a particular ingestion job id, both dataset
-#' name and ingestion job id must be submitted as inputs.
-#' @param MaxResults Specifies the maximum number of sensors for which to retrieve
-#' statistics.
-#' @param NextToken An opaque pagination token indicating where to continue the listing of
-#' sensor statistics.
+#' @param IngestionJobId The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.
+#' @param MaxResults Specifies the maximum number of sensors for which to retrieve statistics.
+#' @param NextToken An opaque pagination token indicating where to continue the listing of sensor statistics.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2827,10 +2670,7 @@ lookoutequipment_list_sensor_statistics <- function(DatasetName, IngestionJobId 
 #' @usage
 #' lookoutequipment_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource (such as the dataset or
-#' model) that is the focus of the
-#' [`list_tags_for_resource`][lookoutequipment_list_tags_for_resource]
-#' operation.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the [`list_tags_for_resource`][lookoutequipment_list_tags_for_resource] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2885,12 +2725,10 @@ lookoutequipment_list_tags_for_resource <- function(ResourceArn) {
 #' lookoutequipment_put_resource_policy(ResourceArn, ResourcePolicy,
 #'   PolicyRevisionId, ClientToken)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the policy is
-#' being created.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the policy is being created.
 #' @param ResourcePolicy &#91;required&#93; The JSON-formatted resource policy to create.
 #' @param PolicyRevisionId A unique identifier for a revision of the resource policy.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2938,20 +2776,16 @@ lookoutequipment_put_resource_policy <- function(ResourceArn, ResourcePolicy, Po
 #' Starts a data ingestion job
 #'
 #' @description
-#' Starts a data ingestion job. Amazon Lookout for Equipment returns the
-#' job status.
+#' Starts a data ingestion job. Amazon Lookout for Equipment returns the job status.
 #'
 #' @usage
 #' lookoutequipment_start_data_ingestion_job(DatasetName,
 #'   IngestionInputConfiguration, RoleArn, ClientToken)
 #'
 #' @param DatasetName &#91;required&#93; The name of the dataset being used by the data ingestion job.
-#' @param IngestionInputConfiguration &#91;required&#93; Specifies information for the input data for the data ingestion job,
-#' including dataset S3 location.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of a role with permission to access the
-#' data source for the data ingestion job.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client
-#' request token, Amazon Lookout for Equipment generates one.
+#' @param IngestionInputConfiguration &#91;required&#93; Specifies information for the input data for the data ingestion job, including dataset S3 location.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3213,20 +3047,13 @@ lookoutequipment_stop_retraining_scheduler <- function(ModelName) {
 #' Associates a given tag to a resource in your account
 #'
 #' @description
-#' Associates a given tag to a resource in your account. A tag is a
-#' key-value pair which can be added to an Amazon Lookout for Equipment
-#' resource as metadata. Tags can be used for organizing your resources as
-#' well as helping you to search and filter by tag. Multiple tags can be
-#' added to a resource, either when you create it, or later. Up to 50 tags
-#' can be associated with each resource.
+#' Associates a given tag to a resource in your account. A tag is a key-value pair which can be added to an Amazon Lookout for Equipment resource as metadata. Tags can be used for organizing your resources as well as helping you to search and filter by tag. Multiple tags can be added to a resource, either when you create it, or later. Up to 50 tags can be associated with each resource.
 #'
 #' @usage
 #' lookoutequipment_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the specific resource to which the tag
-#' should be associated.
-#' @param Tags &#91;required&#93; The tag or tags to be associated with a specific resource. Both the tag
-#' key and value are specified.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated.
+#' @param Tags &#91;required&#93; The tag or tags to be associated with a specific resource. Both the tag key and value are specified.
 #'
 #' @return
 #' An empty list.
@@ -3271,14 +3098,12 @@ lookoutequipment_tag_resource <- function(ResourceArn, Tags) {
 #' Removes a specific tag from a given resource
 #'
 #' @description
-#' Removes a specific tag from a given resource. The tag is specified by
-#' its key.
+#' Removes a specific tag from a given resource. The tag is specified by its key.
 #'
 #' @usage
 #' lookoutequipment_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which the tag is
-#' currently associated.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.
 #' @param TagKeys &#91;required&#93; Specifies the key of the tag to be removed from a specified resource.
 #'
 #' @return
@@ -3326,10 +3151,8 @@ lookoutequipment_untag_resource <- function(ResourceArn, TagKeys) {
 #' @usage
 #' lookoutequipment_update_active_model_version(ModelName, ModelVersion)
 #'
-#' @param ModelName &#91;required&#93; The name of the machine learning model for which the active model
-#' version is being set.
-#' @param ModelVersion &#91;required&#93; The version of the machine learning model for which the active model
-#' version is being set.
+#' @param ModelName &#91;required&#93; The name of the machine learning model for which the active model version is being set.
+#' @param ModelVersion &#91;required&#93; The version of the machine learning model for which the active model version is being set.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3387,28 +3210,11 @@ lookoutequipment_update_active_model_version <- function(ModelName, ModelVersion
 #'   DataOutputConfiguration, RoleArn)
 #'
 #' @param InferenceSchedulerName &#91;required&#93; The name of the inference scheduler to be updated.
-#' @param DataDelayOffsetInMinutes A period of time (in minutes) by which inference on the data is delayed
-#' after the data starts. For instance, if you select an offset delay time
-#' of five minutes, inference will not begin on the data until the first
-#' data measurement after the five minute mark. For example, if five
-#' minutes is selected, the inference scheduler will wake up at the
-#' configured frequency with the additional five minute delay time to check
-#' the customer S3 bucket. The customer can upload data at the same
-#' frequency and they don't need to stop and restart the scheduler when
-#' uploading new data.
-#' @param DataUploadFrequency How often data is uploaded to the source S3 bucket for the input data.
-#' The value chosen is the length of time between data uploads. For
-#' instance, if you select 5 minutes, Amazon Lookout for Equipment will
-#' upload the real-time data to the source bucket once every 5 minutes.
-#' This frequency also determines how often Amazon Lookout for Equipment
-#' starts a scheduled inference on your data. In this example, it starts
-#' once every 5 minutes.
-#' @param DataInputConfiguration Specifies information for the input data for the inference scheduler,
-#' including delimiter, format, and dataset location.
-#' @param DataOutputConfiguration Specifies information for the output results from the inference
-#' scheduler, including the output S3 location.
-#' @param RoleArn The Amazon Resource Name (ARN) of a role with permission to access the
-#' data source for the inference scheduler.
+#' @param DataDelayOffsetInMinutes A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.
+#' @param DataUploadFrequency How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.
+#' @param DataInputConfiguration Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location.
+#' @param DataOutputConfiguration Specifies information for the output results from the inference scheduler, including the output S3 location.
+#' @param RoleArn The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler.
 #'
 #' @return
 #' An empty list.
@@ -3474,11 +3280,9 @@ lookoutequipment_update_inference_scheduler <- function(InferenceSchedulerName, 
 #' lookoutequipment_update_label_group(LabelGroupName, FaultCodes)
 #'
 #' @param LabelGroupName &#91;required&#93; The name of the label group to be updated.
-#' @param FaultCodes Updates the code indicating the type of anomaly associated with the
-#' label.
+#' @param FaultCodes Updates the code indicating the type of anomaly associated with the label.
 #' 
-#' Data in this field will be retained for service usage. Follow best
-#' practices for the security of your data.
+#' Data in this field will be retained for service usage. Follow best practices for the security of your data.
 #'
 #' @return
 #' An empty list.
@@ -3527,11 +3331,9 @@ lookoutequipment_update_label_group <- function(LabelGroupName, FaultCodes = NUL
 #'   RoleArn, ModelDiagnosticsOutputConfiguration)
 #'
 #' @param ModelName &#91;required&#93; The name of the model to update.
-#' @param LabelsInputConfiguration 
+#' @param LabelsInputConfiguration Contains the configuration information for the S3 location being used to hold label data.
 #' @param RoleArn The ARN of the model to update.
-#' @param ModelDiagnosticsOutputConfiguration The Amazon S3 location where you want Amazon Lookout for Equipment to
-#' save the pointwise model diagnostics for the model. You must also
-#' specify the `RoleArn` request parameter.
+#' @param ModelDiagnosticsOutputConfiguration The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics for the model. You must also specify the `RoleArn` request parameter.
 #'
 #' @return
 #' An empty list.
@@ -3592,14 +3394,8 @@ lookoutequipment_update_model <- function(ModelName, LabelsInputConfiguration = 
 #'   RetrainingStartDate, RetrainingFrequency, LookbackWindow, PromoteMode)
 #'
 #' @param ModelName &#91;required&#93; The name of the model whose retraining scheduler you want to update.
-#' @param RetrainingStartDate The start date for the retraining scheduler. Lookout for Equipment
-#' truncates the time you provide to the nearest UTC day.
-#' @param RetrainingFrequency This parameter uses the [ISO
-#' 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) standard to set
-#' the frequency at which you want retraining to occur in terms of Years,
-#' Months, and/or Days (note: other parameters like Time are not currently
-#' supported). The minimum value is 30 days (P30D) and the maximum value is
-#' 1 year (P1Y). For example, the following values are valid:
+#' @param RetrainingStartDate The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.
+#' @param RetrainingFrequency This parameter uses the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:
 #' 
 #' -   P3M15D – Every 3 months and 15 days
 #' 
@@ -3607,11 +3403,7 @@ lookoutequipment_update_model <- function(ModelName, LabelsInputConfiguration = 
 #' 
 #' -   P150D – Every 150 days
 #' @param LookbackWindow The number of past days of data that will be used for retraining.
-#' @param PromoteMode Indicates how the service will use new models. In `MANAGED` mode, new
-#' models will automatically be used for inference if they have better
-#' performance than the current model. In `MANUAL` mode, the new models
-#' will not be used [until they are manually
-#' activated](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation).
+#' @param PromoteMode Indicates how the service will use new models. In `MANAGED` mode, new models will automatically be used for inference if they have better performance than the current model. In `MANUAL` mode, the new models will not be used [until they are manually activated](https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation).
 #'
 #' @return
 #' An empty list.

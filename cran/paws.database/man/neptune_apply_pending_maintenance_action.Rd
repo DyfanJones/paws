@@ -12,24 +12,19 @@ neptune_apply_pending_maintenance_action(
 )
 }
 \arguments{
-\item{ResourceIdentifier}{[required] The Amazon Resource Name (ARN) of the resource that the pending
-maintenance action applies to. For information about creating an ARN,
-see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing}{Constructing an Amazon Resource Name (ARN)}.}
+\item{ResourceIdentifier}{[required] The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing}{Constructing an Amazon Resource Name (ARN)}.}
 
 \item{ApplyAction}{[required] The pending maintenance action to apply to this resource.
 
 Valid values: \code{system-update}, \code{db-upgrade}}
 
-\item{OptInType}{[required] A value that specifies the type of opt-in request, or undoes an opt-in
-request. An opt-in request of type \code{immediate} can't be undone.
+\item{OptInType}{[required] A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type \code{immediate} can't be undone.
 
 Valid values:
 \itemize{
 \item \code{immediate} - Apply the maintenance action immediately.
-\item \code{next-maintenance} - Apply the maintenance action during the next
-maintenance window for the resource.
-\item \verb{undo-opt-in} - Cancel any existing \code{next-maintenance} opt-in
-requests.
+\item \code{next-maintenance} - Apply the maintenance action during the next maintenance window for the resource.
+\item \verb{undo-opt-in} - Cancel any existing \code{next-maintenance} opt-in requests.
 }}
 }
 \description{

@@ -7,9 +7,7 @@
 opensearchserviceserverless_delete_security_config(id, clientToken = NULL)
 }
 \arguments{
-\item{id}{[required] The security configuration identifier. For SAML the ID will be
-\verb{saml/<accountId>/<idpProviderName>}. For example,
-\code{saml/123456789123/OKTADev}.}
+\item{id}{[required] The security configuration identifier. For SAML the ID will be \verb{saml/<accountId>/<idpProviderName>}. For example, \code{saml/123456789123/OKTADev}.}
 
 \item{clientToken}{Unique, case-sensitive identifier to ensure idempotency of the request.}
 }

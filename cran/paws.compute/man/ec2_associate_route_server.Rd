@@ -11,10 +11,7 @@ ec2_associate_route_server(RouteServerId, VpcId, DryRun = NULL)
 
 \item{VpcId}{[required] The ID of the VPC to associate with the route server.}
 
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Associates a route server with a VPC to enable dynamic route updates.

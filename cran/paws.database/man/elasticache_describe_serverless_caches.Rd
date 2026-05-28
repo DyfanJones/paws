@@ -11,18 +11,11 @@ elasticache_describe_serverless_caches(
 )
 }
 \arguments{
-\item{ServerlessCacheName}{The identifier for the serverless cache. If this parameter is specified,
-only information about that specific serverless cache is returned.
-Default: NULL}
+\item{ServerlessCacheName}{The identifier for the serverless cache. If this parameter is specified, only information about that specific serverless cache is returned. Default: NULL}
 
-\item{MaxResults}{The maximum number of records in the response. If more records exist
-than the specified max-records value, the next token is included in the
-response so that remaining results can be retrieved. The default is 50.}
+\item{MaxResults}{The maximum number of records in the response. If more records exist than the specified max-records value, the next token is included in the response so that remaining results can be retrieved. The default is 50.}
 
-\item{NextToken}{An optional marker returned from a prior request to support pagination
-of results from this operation. If this parameter is specified, the
-response includes only records beyond the marker, up to the value
-specified by MaxResults.}
+\item{NextToken}{An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxResults.}
 }
 \description{
 Returns information about a specific serverless cache. If no identifier is specified, then the API returns information on all the serverless caches belonging to this Amazon Web Services account.

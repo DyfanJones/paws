@@ -11,13 +11,9 @@ personalize_list_campaigns(
 )
 }
 \arguments{
-\item{solutionArn}{The Amazon Resource Name (ARN) of the solution to list the campaigns
-for. When a solution is not specified, all the campaigns associated with
-the account are listed.}
+\item{solutionArn}{The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_campaigns]{list_campaigns}} for getting the next set
-of campaigns (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_campaigns]{list_campaigns}} for getting the next set of campaigns (if they exist).}
 
 \item{maxResults}{The maximum number of campaigns to return.}
 }

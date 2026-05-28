@@ -7,18 +7,11 @@
 sesv2_list_resource_tenants(ResourceArn, PageSize = NULL, NextToken = NULL)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to list associated
-tenants for.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to list associated tenants for.}
 
-\item{PageSize}{The number of results to show in a single call to
-\code{\link[=sesv2_list_resource_tenants]{list_resource_tenants}}. If the number of
-results is larger than the number you specified in this parameter, then
-the response includes a \code{NextToken} element, which you can use to obtain
-additional results.}
+\item{PageSize}{The number of results to show in a single call to \code{\link[=sesv2_list_resource_tenants]{list_resource_tenants}}. If the number of results is larger than the number you specified in this parameter, then the response includes a \code{NextToken} element, which you can use to obtain additional results.}
 
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=sesv2_list_resource_tenants]{list_resource_tenants}} to indicate the
-position in the list of resource tenants.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=sesv2_list_resource_tenants]{list_resource_tenants}} to indicate the position in the list of resource tenants.}
 }
 \description{
 List all tenants associated with a specific resource.

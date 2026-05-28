@@ -7,8 +7,7 @@
 datazone_get_environment_profile(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this environment profile
-exists.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this environment profile exists.}
 
 \item{identifier}{[required] The ID of the environment profile.}
 }

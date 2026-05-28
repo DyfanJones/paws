@@ -7,8 +7,7 @@
 costandusagereportservice_put_report_definition(ReportDefinition, Tags = NULL)
 }
 \arguments{
-\item{ReportDefinition}{[required] Represents the output of the PutReportDefinition operation. The content
-consists of the detailed metadata and data file information.}
+\item{ReportDefinition}{[required] Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.}
 
 \item{Tags}{The tags to be assigned to the report definition resource.}
 }

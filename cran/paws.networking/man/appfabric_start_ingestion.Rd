@@ -7,11 +7,9 @@
 appfabric_start_ingestion(ingestionIdentifier, appBundleIdentifier)
 }
 \arguments{
-\item{ingestionIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the ingestion to use for the request.}
+\item{ingestionIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.}
 
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 }
 \description{
 Starts (enables) an ingestion, which collects data from an application.

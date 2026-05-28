@@ -14,30 +14,19 @@ personalizeruntime_get_action_recommendations(
 )
 }
 \arguments{
-\item{campaignArn}{The Amazon Resource Name (ARN) of the campaign to use for getting action
-recommendations. This campaign must deploy a solution version trained
-with a PERSONALIZED_ACTIONS recipe.}
+\item{campaignArn}{The Amazon Resource Name (ARN) of the campaign to use for getting action recommendations. This campaign must deploy a solution version trained with a PERSONALIZED_ACTIONS recipe.}
 
 \item{userId}{The user ID of the user to provide action recommendations for.}
 
 \item{numResults}{The number of results to return. The default is 5. The maximum is 100.}
 
-\item{filterArn}{The ARN of the filter to apply to the returned recommendations. For more
-information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/filter.html}{Filtering Recommendations}.
+\item{filterArn}{The ARN of the filter to apply to the returned recommendations. For more information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/filter.html}{Filtering Recommendations}.
 
 When using this parameter, be sure the filter resource is \code{ACTIVE}.}
 
-\item{filterValues}{The values to use when filtering recommendations. For each placeholder
-parameter in your filter expression, provide the parameter name (in
-matching case) as a key and the filter value(s) as the corresponding
-value. Separate multiple values for one parameter with a comma.
+\item{filterValues}{The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.
 
-For filter expressions that use an \code{INCLUDE} element to include actions,
-you must provide values for all parameters that are defined in the
-expression. For filters with expressions that use an \code{EXCLUDE} element
-to exclude actions, you can omit the \code{filter-values}. In this case,
-Amazon Personalize doesn't use that portion of the expression to filter
-recommendations.
+For filter expressions that use an \code{INCLUDE} element to include actions, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an \code{EXCLUDE} element to exclude actions, you can omit the \code{filter-values}. In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.
 
 For more information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/filter.html}{Filtering recommendations and user segments}.}
 }

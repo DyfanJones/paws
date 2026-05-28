@@ -10,8 +10,7 @@ elbv2_add_listener_certificates(ListenerArn, Certificates)
 \arguments{
 \item{ListenerArn}{[required] The Amazon Resource Name (ARN) of the listener.}
 
-\item{Certificates}{[required] The certificate to add. You can specify one certificate per call. Set
-\code{CertificateArn} to the certificate ARN but do not set \code{IsDefault}.}
+\item{Certificates}{[required] The certificate to add. You can specify one certificate per call. Set \code{CertificateArn} to the certificate ARN but do not set \code{IsDefault}.}
 }
 \description{
 Adds the specified SSL server certificate to the certificate list for the specified HTTPS or TLS listener.

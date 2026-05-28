@@ -8,8 +8,7 @@ another Availability Zone}
 redshift_failover_primary_compute(ClusterIdentifier)
 }
 \arguments{
-\item{ClusterIdentifier}{[required] The unique identifier of the cluster for which the primary compute unit
-will be failed over to another Availability Zone.}
+\item{ClusterIdentifier}{[required] The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone.}
 }
 \description{
 Fails over the primary compute unit of the specified Multi-AZ cluster to another Availability Zone.

@@ -7,8 +7,7 @@
 translate_list_parallel_data(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{A string that specifies the next page of results to return in a
-paginated response.}
+\item{NextToken}{A string that specifies the next page of results to return in a paginated response.}
 
 \item{MaxResults}{The maximum number of parallel data resources returned for each request.}
 }

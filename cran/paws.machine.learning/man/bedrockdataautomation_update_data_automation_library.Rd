@@ -12,6 +12,10 @@ bedrockdataautomation_update_data_automation_library(
 }
 \arguments{
 \item{libraryArn}{[required] ARN generated at the server side when a DataAutomationLibrary is created}
+
+\item{libraryDescription}{Description of the DataAutomationLibrary}
+
+\item{clientToken}{Client specified token used for idempotency checks}
 }
 \description{
 Updates an existing Amazon Bedrock Data Automation Library

@@ -7,12 +7,9 @@
 iam_get_human_readable_summary(EntityArn, Locale = NULL)
 }
 \arguments{
-\item{EntityArn}{[required] Arn of the entity to be summarized. At this time, the only supported
-entity type is \code{delegation-request}}
+\item{EntityArn}{[required] Arn of the entity to be summarized. At this time, the only supported entity type is \code{delegation-request}}
 
-\item{Locale}{A string representing the locale to use for the summary generation. The
-supported locale strings are based on the Supported languages of the
-Amazon Web Services Management Console .}
+\item{Locale}{A string representing the locale to use for the summary generation. The supported locale strings are based on the Supported languages of the Amazon Web Services Management Console .}
 }
 \description{
 Retrieves a human readable summary for a given entity. At this time, the only supported entity type is \code{delegation-request}

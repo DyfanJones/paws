@@ -41,10 +41,7 @@ telconetworkbuilder_cancel_sol_network_operation <- function(nsLcmOpOccId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_create_sol_function_package/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_create_sol_function_package/) for full documentation.
 #'
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @keywords internal
 #'
@@ -78,10 +75,7 @@ telconetworkbuilder_create_sol_function_package <- function(tags = NULL) {
 #' @param nsDescription Network instance description.
 #' @param nsName &#91;required&#93; Network instance name.
 #' @param nsdInfoId &#91;required&#93; ID for network service descriptor.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @keywords internal
 #'
@@ -112,10 +106,7 @@ telconetworkbuilder_create_sol_network_instance <- function(nsDescription = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_create_sol_network_package/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_create_sol_network_package/) for full documentation.
 #'
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @keywords internal
 #'
@@ -304,8 +295,7 @@ telconetworkbuilder_get_sol_function_package <- function(vnfPkgId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_get_sol_function_package_content/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_get_sol_function_package_content/) for full documentation.
 #'
-#' @param accept &#91;required&#93; The format of the package that you want to download from the function
-#' packages.
+#' @param accept &#91;required&#93; The format of the package that you want to download from the function packages.
 #' @param vnfPkgId &#91;required&#93; ID of the function package.
 #'
 #' @keywords internal
@@ -337,8 +327,7 @@ telconetworkbuilder_get_sol_function_package_content <- function(accept, vnfPkgI
 #'
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_get_sol_function_package_descriptor/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_get_sol_function_package_descriptor/) for full documentation.
 #'
-#' @param accept &#91;required&#93; Indicates which content types, expressed as MIME types, the client is
-#' able to understand.
+#' @param accept &#91;required&#93; Indicates which content types, expressed as MIME types, the client is able to understand.
 #' @param vnfPkgId &#91;required&#93; ID of the function package.
 #'
 #' @keywords internal
@@ -528,16 +517,9 @@ telconetworkbuilder_get_sol_network_package_descriptor <- function(nsdInfoId) {
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_instantiate_sol_network_instance/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_instantiate_sol_network_instance/) for full documentation.
 #'
 #' @param additionalParamsForNs Provides values for the configurable properties.
-#' @param dryRun A check for whether you have the required permissions for the action
-#' without actually making the request and provides an error response. If
-#' you have the required permissions, the error response is
-#' `DryRunOperation`. Otherwise, it is `UnauthorizedOperation`.
+#' @param dryRun A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is `DryRunOperation`. Otherwise, it is `UnauthorizedOperation`.
 #' @param nsInstanceId &#91;required&#93; ID of the network instance.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. When you use this API,
-#' the tags are only applied to the network operation that is created.
-#' These tags are not applied to the network instance. Use tags to search
-#' and filter your resources or track your Amazon Web Services costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @keywords internal
 #'
@@ -667,8 +649,7 @@ telconetworkbuilder_list_sol_network_instances <- function(maxResults = NULL, ne
 #'
 #' @param maxResults The maximum number of results to include in the response.
 #' @param nextToken The token for the next page of results.
-#' @param nsInstanceId Network instance id filter, to retrieve network operations associated to
-#' a network instance.
+#' @param nsInstanceId Network instance id filter, to retrieve network operations associated to a network instance.
 #'
 #' @keywords internal
 #'
@@ -829,10 +810,7 @@ telconetworkbuilder_put_sol_network_package_content <- function(contentType = NU
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_tag_resource/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_tag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; Resource ARN.
-#' @param tags &#91;required&#93; A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. You can use tags to
-#' search and filter your resources or track your Amazon Web Services
-#' costs.
+#' @param tags &#91;required&#93; A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @keywords internal
 #'
@@ -864,11 +842,7 @@ telconetworkbuilder_tag_resource <- function(resourceArn, tags) {
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_terminate_sol_network_instance/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_terminate_sol_network_instance/) for full documentation.
 #'
 #' @param nsInstanceId &#91;required&#93; ID of the network instance.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. When you use this API,
-#' the tags are only applied to the network operation that is created.
-#' These tags are not applied to the network instance. Use tags to search
-#' and filter your resources or track your Amazon Web Services costs.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.
 #'
 #' @keywords internal
 #'
@@ -963,28 +937,19 @@ telconetworkbuilder_update_sol_function_package <- function(operationalState, vn
 #'
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_update_sol_network_instance/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_update_sol_network_instance/) for full documentation.
 #'
-#' @param modifyVnfInfoData Identifies the network function information parameters and/or the
-#' configurable properties of the network function to be modified.
+#' @param modifyVnfInfoData Identifies the network function information parameters and/or the configurable properties of the network function to be modified.
 #' 
-#' Include this property only if the update type is
-#' `MODIFY_VNF_INFORMATION`.
+#' Include this property only if the update type is `MODIFY_VNF_INFORMATION`.
 #' @param nsInstanceId &#91;required&#93; ID of the network instance.
-#' @param tags A tag is a label that you assign to an Amazon Web Services resource.
-#' Each tag consists of a key and an optional value. When you use this API,
-#' the tags are only applied to the network operation that is created.
-#' These tags are not applied to the network instance. Use tags to search
-#' and filter your resources or track your Amazon Web Services costs.
-#' @param updateNs Identifies the network service descriptor and the configurable
-#' properties of the descriptor, to be used for the update.
+#' @param tags A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.
+#' @param updateNs Identifies the network service descriptor and the configurable properties of the descriptor, to be used for the update.
 #' 
 #' Include this property only if the update type is `UPDATE_NS`.
 #' @param updateType &#91;required&#93; The type of update.
 #' 
-#' -   Use the `MODIFY_VNF_INFORMATION` update type, to update a specific
-#'     network function configuration, in the network instance.
+#' -   Use the `MODIFY_VNF_INFORMATION` update type, to update a specific network function configuration, in the network instance.
 #' 
-#' -   Use the `UPDATE_NS` update type, to update the network instance to a
-#'     new network service descriptor.
+#' -   Use the `UPDATE_NS` update type, to update the network instance to a new network service descriptor.
 #'
 #' @keywords internal
 #'
@@ -1016,8 +981,7 @@ telconetworkbuilder_update_sol_network_instance <- function(modifyVnfInfoData = 
 #' See [https://www.paws-r-sdk.com/docs/telconetworkbuilder_update_sol_network_package/](https://www.paws-r-sdk.com/docs/telconetworkbuilder_update_sol_network_package/) for full documentation.
 #'
 #' @param nsdInfoId &#91;required&#93; ID of the network service descriptor in the network package.
-#' @param nsdOperationalState &#91;required&#93; Operational state of the network service descriptor in the network
-#' package.
+#' @param nsdOperationalState &#91;required&#93; Operational state of the network service descriptor in the network package.
 #'
 #' @keywords internal
 #'

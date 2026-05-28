@@ -14,11 +14,9 @@ mturk_list_reviewable_hi_ts(
 )
 }
 \arguments{
-\item{HITTypeId}{The ID of the HIT type of the HITs to consider for the query. If not
-specified, all HITs for the Reviewer are considered}
+\item{HITTypeId}{The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered}
 
-\item{Status}{Can be either \code{Reviewable} or \code{Reviewing}. Reviewable is the default
-value.}
+\item{Status}{Can be either \code{Reviewable} or \code{Reviewing}. Reviewable is the default value.}
 
 \item{NextToken}{Pagination Token}
 

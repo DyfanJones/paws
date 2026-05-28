@@ -15,13 +15,11 @@ workmail_update_resource(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The identifier associated with the organization for which the resource
-is updated.}
+\item{OrganizationId}{[required] The identifier associated with the organization for which the resource is updated.}
 
 \item{ResourceId}{[required] The identifier of the resource to be updated.
 
-The identifier can accept \emph{ResourceId}, \emph{Resourcename}, or \emph{email}. The
-following identity formats are available:
+The identifier can accept \emph{ResourceId}, \emph{Resourcename}, or \emph{email}. The following identity formats are available:
 \itemize{
 \item Resource ID: r-0123456789a0123456789b0123456789
 \item Email address: resource@domain.tld

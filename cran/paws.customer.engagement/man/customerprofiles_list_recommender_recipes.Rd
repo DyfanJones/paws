@@ -8,11 +8,9 @@ create recommenders}
 customerprofiles_list_recommender_recipes(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{The maximum number of recommender recipes to return in the response. The
-default value is 100.}
+\item{MaxResults}{The maximum number of recommender recipes to return in the response. The default value is 100.}
 
-\item{NextToken}{A token received from a previous ListRecommenderRecipes call to retrieve
-the next page of results.}
+\item{NextToken}{A token received from a previous ListRecommenderRecipes call to retrieve the next page of results.}
 }
 \description{
 Returns a list of available recommender recipes that can be used to create recommenders.

@@ -14,8 +14,7 @@ s3_update_bucket_metadata_inventory_table_configuration(
 )
 }
 \arguments{
-\item{Bucket}{[required] The general purpose bucket that corresponds to the metadata
-configuration that you want to enable or disable an inventory table for.}
+\item{Bucket}{[required] The general purpose bucket that corresponds to the metadata configuration that you want to enable or disable an inventory table for.}
 
 \item{ContentMD5}{The \code{Content-MD5} header for the inventory table configuration.}
 
@@ -23,9 +22,7 @@ configuration that you want to enable or disable an inventory table for.}
 
 \item{InventoryTableConfiguration}{[required] The contents of your inventory table configuration.}
 
-\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to the
-metadata table configuration that you want to enable or disable an
-inventory table for.}
+\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to the metadata table configuration that you want to enable or disable an inventory table for.}
 }
 \description{
 Enables or disables a live inventory table for an S3 Metadata configuration on a general purpose bucket. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html}{Accelerating data discovery with S3 Metadata} in the \emph{Amazon S3 User Guide}.

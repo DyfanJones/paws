@@ -25,22 +25,19 @@ lexmodelsv2_update_slot_type(
 
 \item{description}{The new description of the slot type.}
 
-\item{slotTypeValues}{A new list of values and their optional synonyms that define the values
-that the slot type can take.}
+\item{slotTypeValues}{A new list of values and their optional synonyms that define the values that the slot type can take.}
 
-\item{valueSelectionSetting}{The strategy that Amazon Lex should use when deciding on a value from
-the list of slot type values.}
+\item{valueSelectionSetting}{The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.}
 
-\item{parentSlotTypeSignature}{The new built-in slot type that should be used as the parent of this
-slot type.}
+\item{parentSlotTypeSignature}{The new built-in slot type that should be used as the parent of this slot type.}
 
 \item{botId}{[required] The identifier of the bot that contains the slot type.}
 
 \item{botVersion}{[required] The version of the bot that contains the slot type. Must be \code{DRAFT}.}
 
-\item{localeId}{[required] The identifier of the language and locale that contains the slot type.
-The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+
+\item{externalSourceSetting}{Provides information about the external source of the slot type's definition.}
 
 \item{compositeSlotTypeSetting}{Specifications for a composite slot type.}
 }

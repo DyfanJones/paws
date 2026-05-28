@@ -53,43 +53,22 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-With the Amazon Cognito user pools API, you can configure user pools and
-authenticate users. To authenticate users from third-party identity
-providers (IdPs) in this API, you can \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html}{link IdP users to native user profiles}.
-Learn more about the authentication and authorization of federated users
-at \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html}{Adding user pool sign-in through a third party}
-and in the \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html}{User pool federation endpoints and managed login reference}.
+With the Amazon Cognito user pools API, you can configure user pools and authenticate users. To authenticate users from third-party identity providers (IdPs) in this API, you can \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html}{link IdP users to native user profiles}. Learn more about the authentication and authorization of federated users at \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html}{Adding user pool sign-in through a third party} and in the \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html}{User pool federation endpoints and managed login reference}.
 
-This API reference provides detailed information about API operations
-and object types in Amazon Cognito.
+This API reference provides detailed information about API operations and object types in Amazon Cognito.
 
-Along with resource management operations, the Amazon Cognito user pools
-API includes classes of operations and authorization models for
-client-side and server-side authentication of users. You can interact
-with operations in the Amazon Cognito user pools API as any of the
-following subjects.
+Along with resource management operations, the Amazon Cognito user pools API includes classes of operations and authorization models for client-side and server-side authentication of users. You can interact with operations in the Amazon Cognito user pools API as any of the following subjects.
 \enumerate{
-\item An administrator who wants to configure user pools, app clients,
-users, groups, or other user pool functions.
-\item A server-side app, like a web application, that wants to use its
-Amazon Web Services privileges to manage, authenticate, or authorize
-a user.
-\item A client-side app, like a mobile app, that wants to make
-unauthenticated requests to manage, authenticate, or authorize a
-user.
+\item An administrator who wants to configure user pools, app clients, users, groups, or other user pool functions.
+\item A server-side app, like a web application, that wants to use its Amazon Web Services privileges to manage, authenticate, or authorize a user.
+\item A client-side app, like a mobile app, that wants to make unauthenticated requests to manage, authenticate, or authorize a user.
 }
 
-For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html#user-pools-API-operations}{Understanding API, OIDC, and managed login pages authentication}
-in the \emph{Amazon Cognito Developer Guide}.
+For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html#user-pools-API-operations}{Understanding API, OIDC, and managed login pages authentication} in the \emph{Amazon Cognito Developer Guide}.
 
-With your Amazon Web Services SDK, you can build the logic to support
-operational flows in every use case for this API. You can also make
-direct REST API requests to \href{https://docs.aws.amazon.com/general/latest/gr/cognito.html#cognito_identity_your_user_pools_region}{Amazon Cognito user pools service endpoints}.
-The following links can get you started with the
-\code{CognitoIdentityProvider} client in supported Amazon Web Services SDKs.
+With your Amazon Web Services SDK, you can build the logic to support operational flows in every use case for this API. You can also make direct REST API requests to \href{https://docs.aws.amazon.com/general/latest/gr/cognito.html#cognito_identity_your_user_pools_region}{Amazon Cognito user pools service endpoints}. The following links can get you started with the \code{CognitoIdentityProvider} client in supported Amazon Web Services SDKs.
 
-To get started with an Amazon Web Services SDK, see \href{https://builder.aws.com/build/tools}{Tools to Build on Amazon Web Services}. For example
-actions and scenarios, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html}{Code examples for Amazon Cognito Identity Provider using Amazon Web Services SDKs}.
+To get started with an Amazon Web Services SDK, see \href{https://builder.aws.com/build/tools}{Tools to Build on Amazon Web Services}. For example actions and scenarios, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html}{Code examples for Amazon Cognito Identity Provider using Amazon Web Services SDKs}.
 }
 \section{Service syntax}{
 

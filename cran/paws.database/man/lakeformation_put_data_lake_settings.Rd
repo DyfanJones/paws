@@ -8,13 +8,9 @@ all resources managed by Lake Formation}
 lakeformation_put_data_lake_settings(CatalogId = NULL, DataLakeSettings)
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
-\item{DataLakeSettings}{[required] A structure representing a list of Lake Formation principals designated
-as data lake administrators.}
+\item{DataLakeSettings}{[required] A structure representing a list of Lake Formation principals designated as data lake administrators.}
 }
 \description{
 Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation. For more information on admin privileges, see \href{https://docs.aws.amazon.com/lake-formation/latest/dg/}{Granting Lake Formation Permissions}.

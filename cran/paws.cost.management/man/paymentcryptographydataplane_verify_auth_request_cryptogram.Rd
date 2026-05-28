@@ -15,30 +15,17 @@ paymentcryptographydataplane_verify_auth_request_cryptogram(
 )
 }
 \arguments{
-\item{KeyIdentifier}{[required] The \code{keyARN} of the major encryption key that Amazon Web Services
-Payment Cryptography uses for ARQC verification.}
+\item{KeyIdentifier}{[required] The \code{keyARN} of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.}
 
-\item{TransactionData}{[required] The transaction data that Amazon Web Services Payment Cryptography uses
-for ARQC verification. The same transaction is used for ARQC generation
-outside of Amazon Web Services Payment Cryptography.}
+\item{TransactionData}{[required] The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.}
 
-\item{AuthRequestCryptogram}{[required] The auth request cryptogram imported into Amazon Web Services Payment
-Cryptography for ARQC verification using a major encryption key and
-transaction data.}
+\item{AuthRequestCryptogram}{[required] The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.}
 
-\item{MajorKeyDerivationMode}{[required] The method to use when deriving the major encryption key for ARQC
-verification within Amazon Web Services Payment Cryptography. The same
-key derivation mode was used for ARQC generation outside of Amazon Web
-Services Payment Cryptography.}
+\item{MajorKeyDerivationMode}{[required] The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.}
 
-\item{SessionKeyDerivationAttributes}{[required] The attributes and values to use for deriving a session key for ARQC
-verification within Amazon Web Services Payment Cryptography. The same
-attributes were used for ARQC generation outside of Amazon Web Services
-Payment Cryptography.}
+\item{SessionKeyDerivationAttributes}{[required] The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.}
 
-\item{AuthResponseAttributes}{The attributes and values for auth request cryptogram verification.
-These parameters are required in case using ARPC Method 1 or Method 2
-for ARQC verification.}
+\item{AuthResponseAttributes}{The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.}
 }
 \description{
 Verifies Authorization Request Cryptogram (ARQC) for a EMV chip payment card authorization. For more information, see \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.verifyauthrequestcryptogram.html}{Verify auth request cryptogram} in the \emph{Amazon Web Services Payment Cryptography User Guide}.

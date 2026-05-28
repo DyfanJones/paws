@@ -21,8 +21,7 @@ rdsdataservice_execute_statement(
 \arguments{
 \item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.}
 
-\item{secretArn}{[required] The ARN of the secret that enables access to the DB cluster. Enter the
-database user name and password for the credentials in the secret.
+\item{secretArn}{[required] The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 
 For information about creating the secret, see \href{https://docs.aws.amazon.com/secretsmanager/latest/userguide/}{Create a database secret}.}
 
@@ -38,35 +37,21 @@ Currently, the \code{schema} parameter isn't supported.}
 
 Array parameters are not supported.}
 
-\item{transactionId}{The identifier of a transaction that was started by using the
-\code{\link[=rdsdataservice_begin_transaction]{begin_transaction}} operation.
-Specify the transaction ID of the transaction that you want to include
-the SQL statement in.
+\item{transactionId}{The identifier of a transaction that was started by using the \code{\link[=rdsdataservice_begin_transaction]{begin_transaction}} operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.
 
-If the SQL statement is not part of a transaction, don't set this
-parameter.}
+If the SQL statement is not part of a transaction, don't set this parameter.}
 
 \item{includeResultMetadata}{A value that indicates whether to include metadata in the results.}
 
-\item{continueAfterTimeout}{A value that indicates whether to continue running the statement after
-the call times out. By default, the statement stops running when the
-call times out.
+\item{continueAfterTimeout}{A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.
 
-For DDL statements, we recommend continuing to run the statement after
-the call times out. When a DDL statement terminates before it is
-finished running, it can result in errors and possibly corrupted data
-structures.}
+For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.}
 
 \item{resultSetOptions}{Options that control how the result set is returned.}
 
-\item{formatRecordsAs}{A value that indicates whether to format the result set as a single JSON
-string. This parameter only applies to \code{SELECT} statements and is
-ignored for other types of statements. Allowed values are \code{NONE} and
-\code{JSON}. The default value is \code{NONE}. The result is returned in the
-\code{formattedRecords} field.
+\item{formatRecordsAs}{A value that indicates whether to format the result set as a single JSON string. This parameter only applies to \code{SELECT} statements and is ignored for other types of statements. Allowed values are \code{NONE} and \code{JSON}. The default value is \code{NONE}. The result is returned in the \code{formattedRecords} field.
 
-For usage information about the JSON format for result sets, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html}{Using the Data API}
-in the \emph{Amazon Aurora User Guide}.}
+For usage information about the JSON format for result sets, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html}{Using the Data API} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Runs a SQL statement against a database.

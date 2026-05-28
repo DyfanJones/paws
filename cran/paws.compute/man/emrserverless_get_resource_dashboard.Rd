@@ -12,8 +12,7 @@ emrserverless_get_resource_dashboard(applicationId, resourceId, resourceType)
 
 \item{resourceId}{[required] The ID of the resource.}
 
-\item{resourceType}{[required] The type of resource to access the dashboard for. Currently, only
-\code{Session} is supported.}
+\item{resourceType}{[required] The type of resource to access the dashboard for. Currently, only \code{Session} is supported.}
 }
 \description{
 Returns a URL that you can use to access the application UIs for a specified resource, such as a session.

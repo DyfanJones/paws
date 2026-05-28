@@ -10,15 +10,9 @@ opensearchserviceserverless_list_collection_groups(
 )
 }
 \arguments{
-\item{nextToken}{If your initial
-\code{\link[=opensearchserviceserverless_list_collection_groups]{list_collection_groups}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchserviceserverless_list_collection_groups]{list_collection_groups}}
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial \code{\link[=opensearchserviceserverless_list_collection_groups]{list_collection_groups}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchserviceserverless_list_collection_groups]{list_collection_groups}} operations, which returns results in the next page.}
 
-\item{maxResults}{The maximum number of results to return. Default is 20. You can use
-\code{nextToken} to get the next page of results.}
+\item{maxResults}{The maximum number of results to return. Default is 20. You can use \code{nextToken} to get the next page of results.}
 }
 \description{
 Returns a list of collection groups. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html}{Creating and managing Amazon OpenSearch Serverless collections}.

@@ -19,16 +19,11 @@ bedrockagentcore_start_recommendation(
 
 \item{description}{The description of the recommendation.}
 
-\item{type}{[required] The type of recommendation to generate. Valid values are
-\code{SYSTEM_PROMPT_RECOMMENDATION} for system prompt optimization or
-\code{TOOL_DESCRIPTION_RECOMMENDATION} for tool description optimization.}
+\item{type}{[required] The type of recommendation to generate. Valid values are \code{SYSTEM_PROMPT_RECOMMENDATION} for system prompt optimization or \code{TOOL_DESCRIPTION_RECOMMENDATION} for tool description optimization.}
 
-\item{recommendationConfig}{[required] The configuration for the recommendation, including the input to
-optimize, agent traces to analyze, and evaluation settings.}
+\item{recommendationConfig}{[required] The configuration for the recommendation, including the input to optimize, agent traces to analyze, and evaluation settings.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, the service ignores the request, but does not return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.}
 }
 \description{
 Starts a recommendation job that analyzes agent traces and generates optimization suggestions for system prompts or tool descriptions to improve agent performance.

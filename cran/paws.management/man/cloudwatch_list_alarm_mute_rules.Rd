@@ -12,17 +12,13 @@ cloudwatch_list_alarm_mute_rules(
 )
 }
 \arguments{
-\item{AlarmName}{Filter results to show only mute rules that target the specified alarm
-name.}
+\item{AlarmName}{Filter results to show only mute rules that target the specified alarm name.}
 
-\item{Statuses}{Filter results to show only mute rules with the specified statuses.
-Valid values are \code{SCHEDULED}, \code{ACTIVE}, or \code{EXPIRED}.}
+\item{Statuses}{Filter results to show only mute rules with the specified statuses. Valid values are \code{SCHEDULED}, \code{ACTIVE}, or \code{EXPIRED}.}
 
-\item{MaxRecords}{The maximum number of mute rules to return in one call. The default is
-50.}
+\item{MaxRecords}{The maximum number of mute rules to return in one call. The default is 50.}
 
-\item{NextToken}{The token returned from a previous call to indicate where to continue
-retrieving results.}
+\item{NextToken}{The token returned from a previous call to indicate where to continue retrieving results.}
 }
 \description{
 Lists alarm mute rules in your Amazon Web Services account and region.

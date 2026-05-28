@@ -29,50 +29,31 @@ lookoutequipment_create_model(
 
 \item{DatasetSchema}{The data schema for the machine learning model being created.}
 
-\item{LabelsInputConfiguration}{The input configuration for the labels being used for the machine
-learning model that's being created.}
+\item{LabelsInputConfiguration}{The input configuration for the labels being used for the machine learning model that's being created.}
 
-\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client
-request token, Amazon Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.}
 
-\item{TrainingDataStartTime}{Indicates the time reference in the dataset that should be used to begin
-the subset of training data for the machine learning model.}
+\item{TrainingDataStartTime}{Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model.}
 
-\item{TrainingDataEndTime}{Indicates the time reference in the dataset that should be used to end
-the subset of training data for the machine learning model.}
+\item{TrainingDataEndTime}{Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model.}
 
-\item{EvaluationDataStartTime}{Indicates the time reference in the dataset that should be used to begin
-the subset of evaluation data for the machine learning model.}
+\item{EvaluationDataStartTime}{Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model.}
 
-\item{EvaluationDataEndTime}{Indicates the time reference in the dataset that should be used to end
-the subset of evaluation data for the machine learning model.}
+\item{EvaluationDataEndTime}{Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of a role with permission to access the
-data source being used to create the machine learning model.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.}
 
-\item{DataPreProcessingConfiguration}{The configuration is the \code{TargetSamplingRate}, which is the sampling
-rate of the data after post processing by Amazon Lookout for Equipment.
-For example, if you provide data that has been collected at a 1 second
-level and you want the system to resample the data at a 1 minute rate
-before training, the \code{TargetSamplingRate} is 1 minute.
+\item{DataPreProcessingConfiguration}{The configuration is the \code{TargetSamplingRate}, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the \code{TargetSamplingRate} is 1 minute.
 
-When providing a value for the \code{TargetSamplingRate}, you must attach the
-prefix "PT" to the rate you want. The value for a 1 second rate is
-therefore \emph{PT1S}, the value for a 15 minute rate is \emph{PT15M}, and the
-value for a 1 hour rate is \emph{PT1H}}
+When providing a value for the \code{TargetSamplingRate}, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore \emph{PT1S}, the value for a 15 minute rate is \emph{PT15M}, and the value for a 1 hour rate is \emph{PT1H}}
 
-\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key used to encrypt model data by
-Amazon Lookout for Equipment.}
+\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment.}
 
 \item{Tags}{Any tags associated with the machine learning model being created.}
 
-\item{OffCondition}{Indicates that the asset associated with this sensor has been shut off.
-As long as this condition is met, Lookout for Equipment will not use
-data from this asset for training, evaluation, or inference.}
+\item{OffCondition}{Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.}
 
-\item{ModelDiagnosticsOutputConfiguration}{The Amazon S3 location where you want Amazon Lookout for Equipment to
-save the pointwise model diagnostics. You must also specify the
-\code{RoleArn} request parameter.}
+\item{ModelDiagnosticsOutputConfiguration}{The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the \code{RoleArn} request parameter.}
 }
 \description{
 Creates a machine learning model for data inference.

@@ -7,8 +7,7 @@
 marketplacecatalog_put_resource_policy(ResourceArn, Policy)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the entity resource you want to
-associate with a resource policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.}
 
 \item{Policy}{[required] The policy document to set; formatted in JSON.}
 }

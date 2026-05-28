@@ -14,27 +14,15 @@ cloudfront_copy_distribution(
 )
 }
 \arguments{
-\item{PrimaryDistributionId}{[required] The identifier of the primary distribution whose configuration you are
-copying. To get a distribution ID, use
-\code{\link[=cloudfront_list_distributions]{list_distributions}}.}
+\item{PrimaryDistributionId}{[required] The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use \code{\link[=cloudfront_list_distributions]{list_distributions}}.}
 
-\item{Staging}{The type of distribution that your primary distribution will be copied
-to. The only valid value is \code{True}, indicating that you are copying to a
-staging distribution.}
+\item{Staging}{The type of distribution that your primary distribution will be copied to. The only valid value is \code{True}, indicating that you are copying to a staging distribution.}
 
-\item{IfMatch}{The version identifier of the primary distribution whose configuration
-you are copying. This is the \code{ETag} value returned in the response to
-\code{\link[=cloudfront_get_distribution]{get_distribution}} and
-\code{\link[=cloudfront_get_distribution_config]{get_distribution_config}}.}
+\item{IfMatch}{The version identifier of the primary distribution whose configuration you are copying. This is the \code{ETag} value returned in the response to \code{\link[=cloudfront_get_distribution]{get_distribution}} and \code{\link[=cloudfront_get_distribution_config]{get_distribution_config}}.}
 
-\item{CallerReference}{[required] A value that uniquely identifies a request to create a resource. This
-helps to prevent CloudFront from creating a duplicate resource if you
-accidentally resubmit an identical request.}
+\item{CallerReference}{[required] A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.}
 
-\item{Enabled}{A Boolean flag to specify the state of the staging distribution when
-it's created. When you set this value to \code{True}, the staging
-distribution is enabled. When you set this value to \code{False}, the staging
-distribution is disabled.
+\item{Enabled}{A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to \code{True}, the staging distribution is enabled. When you set this value to \code{False}, the staging distribution is disabled.
 
 If you omit this field, the default value is \code{True}.}
 }

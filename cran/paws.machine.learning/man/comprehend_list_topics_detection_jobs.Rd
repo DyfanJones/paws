@@ -11,14 +11,11 @@ comprehend_list_topics_detection_jobs(
 )
 }
 \arguments{
-\item{Filter}{Filters the jobs that are returned. Jobs can be filtered on their name,
-status, or the date and time that they were submitted. You can set only
-one filter at a time.}
+\item{Filter}{Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.}
 
 \item{NextToken}{Identifies the next page of results to return.}
 
-\item{MaxResults}{The maximum number of results to return in each page. The default is
-100.}
+\item{MaxResults}{The maximum number of results to return in each page. The default is 100.}
 }
 \description{
 Gets a list of the topic detection jobs that you have submitted.

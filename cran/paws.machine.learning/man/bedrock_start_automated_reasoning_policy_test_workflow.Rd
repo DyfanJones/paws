@@ -12,18 +12,13 @@ bedrock_start_automated_reasoning_policy_test_workflow(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-test.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to test.}
 
-\item{buildWorkflowId}{[required] The build workflow identifier. The build workflow must show a
-\code{COMPLETED} status before running tests.}
+\item{buildWorkflowId}{[required] The build workflow identifier. The build workflow must show a \code{COMPLETED} status before running tests.}
 
-\item{testCaseIds}{The list of test identifiers to run. If not provided, all tests for the
-policy are run.}
+\item{testCaseIds}{The list of test identifiers to run. If not provided, all tests for the policy are run.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request but doesn't return an error.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but doesn't return an error.}
 }
 \description{
 Initiates a test workflow to validate Automated Reasoning policy tests. The workflow executes the specified tests against the policy and generates validation results.

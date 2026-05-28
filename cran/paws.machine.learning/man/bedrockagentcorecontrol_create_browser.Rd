@@ -22,30 +22,21 @@ bedrockagentcorecontrol_create_browser(
 
 \item{description}{The description of the browser.}
 
-\item{executionRoleArn}{The Amazon Resource Name (ARN) of the IAM role that provides permissions
-for the browser to access Amazon Web Services services.}
+\item{executionRoleArn}{The Amazon Resource Name (ARN) of the IAM role that provides permissions for the browser to access Amazon Web Services services.}
 
-\item{networkConfiguration}{[required] The network configuration for the browser. This configuration specifies
-the network mode for the browser.}
+\item{networkConfiguration}{[required] The network configuration for the browser. This configuration specifies the network mode for the browser.}
 
-\item{recording}{The recording configuration for the browser. When enabled, browser
-sessions are recorded and stored in the specified Amazon S3 location.}
+\item{recording}{The recording configuration for the browser. When enabled, browser sessions are recorded and stored in the specified Amazon S3 location.}
 
-\item{browserSigning}{The browser signing configuration that enables cryptographic agent
-identification using HTTP message signatures for web bot authentication.}
+\item{browserSigning}{The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.}
 
 \item{enterprisePolicies}{A list of enterprise policy files for the browser.}
 
 \item{certificates}{A list of certificates to install in the browser.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock AgentCore ignores the request but does not
-return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.}
 
-\item{tags}{A map of tag keys and values to assign to the browser. Tags enable you
-to categorize your resources in different ways, for example, by purpose,
-owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a custom browser.

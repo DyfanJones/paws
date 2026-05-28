@@ -7,8 +7,7 @@
 datazone_get_environment_credentials(domainIdentifier, environmentIdentifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this environment and its
-credentials exist.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this environment and its credentials exist.}
 
 \item{environmentIdentifier}{[required] The ID of the environment whose credentials this operation gets.}
 }

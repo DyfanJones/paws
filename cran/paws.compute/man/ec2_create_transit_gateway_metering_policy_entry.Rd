@@ -24,27 +24,19 @@ ec2_create_transit_gateway_metering_policy_entry(
 \arguments{
 \item{TransitGatewayMeteringPolicyId}{[required] The ID of the transit gateway metering policy to add the entry to.}
 
-\item{PolicyRuleNumber}{[required] The rule number for the metering policy entry. Rules are processed in
-order from lowest to highest number.}
+\item{PolicyRuleNumber}{[required] The rule number for the metering policy entry. Rules are processed in order from lowest to highest number.}
 
 \item{SourceTransitGatewayAttachmentId}{The ID of the source transit gateway attachment for traffic matching.}
 
-\item{SourceTransitGatewayAttachmentType}{The type of the source transit gateway attachment for traffic matching.
-Note that the \code{tgw-peering} resource type has been deprecated. To
-configure metering policies for Connect, use the transport attachment
-type.}
+\item{SourceTransitGatewayAttachmentType}{The type of the source transit gateway attachment for traffic matching. Note that the \code{tgw-peering} resource type has been deprecated. To configure metering policies for Connect, use the transport attachment type.}
 
 \item{SourceCidrBlock}{The source CIDR block for traffic matching.}
 
 \item{SourcePortRange}{The source port range for traffic matching.}
 
-\item{DestinationTransitGatewayAttachmentId}{The ID of the destination transit gateway attachment for traffic
-matching.}
+\item{DestinationTransitGatewayAttachmentId}{The ID of the destination transit gateway attachment for traffic matching.}
 
-\item{DestinationTransitGatewayAttachmentType}{The type of the destination transit gateway attachment for traffic
-matching. Note that the \code{tgw-peering} resource type has been deprecated.
-To configure metering policies for Connect, use the transport attachment
-type.}
+\item{DestinationTransitGatewayAttachmentType}{The type of the destination transit gateway attachment for traffic matching. Note that the \code{tgw-peering} resource type has been deprecated. To configure metering policies for Connect, use the transport attachment type.}
 
 \item{DestinationCidrBlock}{The destination CIDR block for traffic matching.}
 
@@ -52,13 +44,9 @@ type.}
 
 \item{Protocol}{The protocol for traffic matching (1, 6, 17, etc.).}
 
-\item{MeteredAccount}{[required] The Amazon Web Services account ID to which the metered traffic should
-be attributed.}
+\item{MeteredAccount}{[required] The Amazon Web Services account ID to which the metered traffic should be attributed.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Creates an entry in a transit gateway metering policy to define traffic measurement rules.

@@ -18,11 +18,7 @@ bedrockagentcorecontrol_update_configuration_bundle(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
 \item{bundleId}{[required] The unique identifier of the configuration bundle to update.}
 
@@ -30,21 +26,15 @@ For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/
 
 \item{description}{The updated description for the configuration bundle.}
 
-\item{components}{The updated component configurations. Creates a new version of the
-bundle.}
+\item{components}{The updated component configurations. Creates a new version of the bundle.}
 
-\item{parentVersionIds}{A list of parent version identifiers for lineage tracking. Regular
-commits have a single parent. Merge commits have two parents: the target
-branch parent and the source branch parent. If the branch already
-exists, the first parent must be the latest version on that branch.}
+\item{parentVersionIds}{A list of parent version identifiers for lineage tracking. Regular commits have a single parent. Merge commits have two parents: the target branch parent and the source branch parent. If the branch already exists, the first parent must be the latest version on that branch.}
 
-\item{branchName}{The branch name for this version. If not specified, inherits the
-parent's branch or defaults to \code{mainline}.}
+\item{branchName}{The branch name for this version. If not specified, inherits the parent's branch or defaults to \code{mainline}.}
 
 \item{commitMessage}{A commit message describing the changes in this version.}
 
-\item{createdBy}{The source that created this version, including the source name and
-optional ARN.}
+\item{createdBy}{The source that created this version, including the source name and optional ARN.}
 }
 \description{
 Updates a configuration bundle by creating a new version with the specified changes. Each update creates a new version in the version history.

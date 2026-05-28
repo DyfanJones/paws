@@ -13,25 +13,15 @@ securityhub_batch_update_findings_v2(
 )
 }
 \arguments{
-\item{MetadataUids}{The list of finding \code{metadata.uid} to indicate findings to update.
-Finding \code{metadata.uid} is a globally unique identifier associated with
-the finding. Customers cannot use \code{MetadataUids} together with
-\code{FindingIdentifiers}.}
+\item{MetadataUids}{The list of finding \code{metadata.uid} to indicate findings to update. Finding \code{metadata.uid} is a globally unique identifier associated with the finding. Customers cannot use \code{MetadataUids} together with \code{FindingIdentifiers}.}
 
 \item{FindingIdentifiers}{Provides information to identify a specific V2 finding.}
 
-\item{Comment}{The updated value for a user provided comment about the finding. Minimum
-character length 1. Maximum character length 512.}
+\item{Comment}{The updated value for a user provided comment about the finding. Minimum character length 1. Maximum character length 512.}
 
-\item{SeverityId}{The updated value for the normalized severity identifier. The severity
-ID is an integer with the allowed enum values [0, 1, 2, 3, 4, 5, 6,
-99]. When customer provides the updated severity ID, the string sibling
-severity will automatically be updated in the finding.}
+\item{SeverityId}{The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values [0, 1, 2, 3, 4, 5, 6, 99]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.}
 
-\item{StatusId}{The updated value for the normalized status identifier. The status ID is
-an integer with the allowed enum values [0, 1, 2, 3, 4, 5, 99]. When
-customer provides the updated status ID, the string sibling status will
-automatically be updated in the finding.}
+\item{StatusId}{The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values [0, 1, 2, 3, 4, 5, 99]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.}
 }
 \description{
 Updates information about a customer's investigation into a finding. Delegated administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their own account.

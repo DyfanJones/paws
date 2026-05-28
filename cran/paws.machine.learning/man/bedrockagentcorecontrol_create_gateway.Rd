@@ -25,19 +25,13 @@ bedrockagentcorecontrol_create_gateway(
 
 \item{description}{The description of the gateway.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that provides permissions
-for the gateway to access Amazon Web Services services.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that provides permissions for the gateway to access Amazon Web Services services.}
 
 \item{protocolType}{The protocol type for the gateway.}
 
-\item{protocolConfiguration}{The configuration settings for the protocol specified in the
-\code{protocolType} parameter.}
+\item{protocolConfiguration}{The configuration settings for the protocol specified in the \code{protocolType} parameter.}
 
 \item{authorizerType}{[required] The type of authorizer to use for the gateway.
 \itemize{
@@ -46,28 +40,18 @@ for the gateway to access Amazon Web Services services.}
 \item \code{NONE} - No authorization
 }}
 
-\item{authorizerConfiguration}{The authorizer configuration for the gateway. Required if
-\code{authorizerType} is \code{CUSTOM_JWT}.}
+\item{authorizerConfiguration}{The authorizer configuration for the gateway. Required if \code{authorizerType} is \code{CUSTOM_JWT}.}
 
-\item{kmsKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt data
-associated with the gateway.}
+\item{kmsKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.}
 
-\item{interceptorConfigurations}{A list of configuration settings for a gateway interceptor. Gateway
-interceptors allow custom code to be invoked during gateway invocations.}
+\item{interceptorConfigurations}{A list of configuration settings for a gateway interceptor. Gateway interceptors allow custom code to be invoked during gateway invocations.}
 
-\item{policyEngineConfiguration}{The policy engine configuration for the gateway. A policy engine is a
-collection of policies that evaluates and authorizes agent tool calls.
-When associated with a gateway, the policy engine intercepts all agent
-requests and determines whether to allow or deny each action based on
-the defined policies.}
+\item{policyEngineConfiguration}{The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.}
 
-\item{exceptionLevel}{The level of detail in error messages returned when invoking the
-gateway.
+\item{exceptionLevel}{The level of detail in error messages returned when invoking the gateway.
 \itemize{
-\item If the value is \code{DEBUG}, granular exception messages are returned to
-help a user debug the gateway.
-\item If the value is omitted, a generic error message is returned to the
-end user.
+\item If the value is \code{DEBUG}, granular exception messages are returned to help a user debug the gateway.
+\item If the value is omitted, a generic error message is returned to the end user.
 }}
 
 \item{tags}{A map of key-value pairs to associate with the gateway as metadata tags.}

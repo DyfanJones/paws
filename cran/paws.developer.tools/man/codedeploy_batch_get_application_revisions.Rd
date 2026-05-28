@@ -7,12 +7,9 @@
 codedeploy_batch_get_application_revisions(applicationName, revisions)
 }
 \arguments{
-\item{applicationName}{[required] The name of an CodeDeploy application about which to get revision
-information.}
+\item{applicationName}{[required] The name of an CodeDeploy application about which to get revision information.}
 
-\item{revisions}{[required] An array of \code{RevisionLocation} objects that specify information to get
-about the application revisions, including type and location. The
-maximum number of \code{RevisionLocation} objects you can specify is 25.}
+\item{revisions}{[required] An array of \code{RevisionLocation} objects that specify information to get about the application revisions, including type and location. The maximum number of \code{RevisionLocation} objects you can specify is 25.}
 }
 \description{
 Gets information about one or more application revisions. The maximum number of application revisions that can be returned is 25.

@@ -14,19 +14,11 @@ lexmodelbuildingservice_get_builtin_intents(
 \arguments{
 \item{locale}{A list of locales that the intent supports.}
 
-\item{signatureContains}{Substring to match in built-in intent signatures. An intent will be
-returned if any part of its signature matches the substring. For
-example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature
-for an intent, see \href{https://developer.amazon.com/en-US/docs/alexa/custom-skills/standard-built-in-intents.html}{Standard Built-in Intents}
-in the \emph{Alexa Skills Kit}.}
+\item{signatureContains}{Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see \href{https://developer.amazon.com/en-US/docs/alexa/custom-skills/standard-built-in-intents.html}{Standard Built-in Intents} in the \emph{Alexa Skills Kit}.}
 
-\item{nextToken}{A pagination token that fetches the next page of intents. If this API
-call is truncated, Amazon Lex returns a pagination token in the
-response. To fetch the next page of intents, use the pagination token in
-the next request.}
+\item{nextToken}{A pagination token that fetches the next page of intents. If this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, use the pagination token in the next request.}
 
-\item{maxResults}{The maximum number of intents to return in the response. The default is
-10.}
+\item{maxResults}{The maximum number of intents to return in the response. The default is 10.}
 }
 \description{
 Gets a list of built-in intents that meet the specified criteria.

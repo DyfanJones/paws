@@ -6,100 +6,42 @@ NULL
 #' Creates a root or subordinate private certificate authority (CA)
 #'
 #' @description
-#' Creates a root or subordinate private certificate authority (CA). You
-#' must specify the CA configuration, an optional configuration for Online
-#' Certificate Status Protocol (OCSP) and/or a certificate revocation list
-#' (CRL), the CA type, and an optional idempotency token to avoid
-#' accidental creation of multiple CAs. The CA configuration specifies the
-#' name of the algorithm and key size to be used to create the CA private
-#' key, the type of signing algorithm that the CA uses, and X.500 subject
-#' information. The OCSP configuration can optionally specify a custom URL
-#' for the OCSP responder. The CRL configuration specifies the CRL
-#' expiration period in days (the validity period of the CRL), the Amazon
-#' S3 bucket that will contain the CRL, and a CNAME alias for the S3 bucket
-#' that is included in certificates issued by the CA. If successful, this
-#' action returns the Amazon Resource Name (ARN) of the CA.
+#' Creates a root or subordinate private certificate authority (CA). You must specify the CA configuration, an optional configuration for Online Certificate Status Protocol (OCSP) and/or a certificate revocation list (CRL), the CA type, and an optional idempotency token to avoid accidental creation of multiple CAs. The CA configuration specifies the name of the algorithm and key size to be used to create the CA private key, the type of signing algorithm that the CA uses, and X.500 subject information. The OCSP configuration can optionally specify a custom URL for the OCSP responder. The CRL configuration specifies the CRL expiration period in days (the validity period of the CRL), the Amazon S3 bucket that will contain the CRL, and a CNAME alias for the S3 bucket that is included in certificates issued by the CA. If successful, this action returns the Amazon Resource Name (ARN) of the CA.
 #' 
-#' Both Amazon Web Services Private CA and the IAM principal must have
-#' permission to write to the S3 bucket that you specify. If the IAM
-#' principal making the call does not have permission to write to the
-#' bucket, then an exception is thrown. For more information, see [Access
-#' policies for CRLs in Amazon
-#' S3](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies).
+#' Both Amazon Web Services Private CA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see [Access policies for CRLs in Amazon S3](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies).
 #' 
-#' Amazon Web Services Private CA assets that are stored in Amazon S3 can
-#' be protected with encryption. For more information, see [Encrypting Your
-#' CRLs](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#crl-encryption).
+#' Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [Encrypting Your CRLs](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#crl-encryption).
 #'
 #' @usage
 #' acmpca_create_certificate_authority(CertificateAuthorityConfiguration,
 #'   RevocationConfiguration, CertificateAuthorityType, IdempotencyToken,
 #'   KeyStorageSecurityStandard, Tags, UsageMode)
 #'
-#' @param CertificateAuthorityConfiguration &#91;required&#93; Name and bit size of the private key algorithm, the name of the signing
-#' algorithm, and X.500 certificate subject information.
-#' @param RevocationConfiguration Contains information to enable support for Online Certificate Status
-#' Protocol (OCSP), certificate revocation list (CRL), both protocols, or
-#' neither. By default, both certificate validation mechanisms are
-#' disabled.
+#' @param CertificateAuthorityConfiguration &#91;required&#93; Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.
+#' @param RevocationConfiguration Contains information to enable support for Online Certificate Status Protocol (OCSP), certificate revocation list (CRL), both protocols, or neither. By default, both certificate validation mechanisms are disabled.
 #' 
 #' The following requirements apply to revocation configurations.
 #' 
-#' -   A configuration disabling CRLs or OCSP must contain only the
-#'     `Enabled=False` parameter, and will fail if other parameters such as
-#'     `CustomCname` or `ExpirationInDays` are included.
+#' -   A configuration disabling CRLs or OCSP must contain only the `Enabled=False` parameter, and will fail if other parameters such as `CustomCname` or `ExpirationInDays` are included.
 #' 
-#' -   In a CRL configuration, the `S3BucketName` parameter must conform to
-#'     [Amazon S3 bucket naming
-#'     rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
+#' -   In a CRL configuration, the `S3BucketName` parameter must conform to [Amazon S3 bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
 #' 
-#' -   A configuration containing a custom Canonical Name (CNAME) parameter
-#'     for CRLs or OCSP must conform to
-#'     [RFC2396](https://www.ietf.org/rfc/rfc2396.txt) restrictions on the
-#'     use of special characters in a CNAME.
+#' -   A configuration containing a custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to [RFC2396](https://www.ietf.org/rfc/rfc2396.txt) restrictions on the use of special characters in a CNAME.
 #' 
-#' -   In a CRL or OCSP configuration, the value of a CNAME parameter must
-#'     not include a protocol prefix such as "http://" or "https://".
+#' -   In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".
 #' 
-#' For more information, see the
-#' [OcspConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html)
-#' and
-#' [CrlConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html)
-#' types.
+#' For more information, see the [OcspConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html) and [CrlConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html) types.
 #' @param CertificateAuthorityType &#91;required&#93; The type of the certificate authority.
-#' @param IdempotencyToken Custom string that can be used to distinguish between calls to the
-#' **CreateCertificateAuthority** action. Idempotency tokens for
-#' **CreateCertificateAuthority** time out after five minutes. Therefore,
-#' if you call **CreateCertificateAuthority** multiple times with the same
-#' idempotency token within five minutes, Amazon Web Services Private CA
-#' recognizes that you are requesting only certificate authority and will
-#' issue only one. If you change the idempotency token for each call,
-#' Amazon Web Services Private CA recognizes that you are requesting
-#' multiple certificate authorities.
-#' @param KeyStorageSecurityStandard Specifies a cryptographic key management compliance standard for
-#' handling and protecting CA keys.
+#' @param IdempotencyToken Custom string that can be used to distinguish between calls to the **CreateCertificateAuthority** action. Idempotency tokens for **CreateCertificateAuthority** time out after five minutes. Therefore, if you call **CreateCertificateAuthority** multiple times with the same idempotency token within five minutes, Amazon Web Services Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, Amazon Web Services Private CA recognizes that you are requesting multiple certificate authorities.
+#' @param KeyStorageSecurityStandard Specifies a cryptographic key management compliance standard for handling and protecting CA keys.
 #' 
 #' Default: FIPS_140_2_LEVEL_3_OR_HIGHER
 #' 
-#' Some Amazon Web Services Regions don't support the default value. When
-#' you create a CA in these Regions, you must use `CCPC_LEVEL_1_OR_HIGHER`
-#' for the `KeyStorageSecurityStandard` parameter. If you don't, the
-#' operation returns an `InvalidArgsException` with this message: "A
-#' certificate authority cannot be created in this region with the
-#' specified security standard."
+#' Some Amazon Web Services Regions don't support the default value. When you create a CA in these Regions, you must use `CCPC_LEVEL_1_OR_HIGHER` for the `KeyStorageSecurityStandard` parameter. If you don't, the operation returns an `InvalidArgsException` with this message: "A certificate authority cannot be created in this region with the specified security standard."
 #' 
-#' For information about security standard support in different Amazon Web
-#' Services Regions, see [Storage and security compliance of Amazon Web
-#' Services Private CA private
-#' keys](https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys).
-#' @param Tags Key-value pairs that will be attached to the new private CA. You can
-#' associate up to 50 tags with a private CA. For information using tags
-#' with IAM to manage permissions, see [Controlling Access Using IAM
-#' Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
-#' @param UsageMode Specifies whether the CA issues general-purpose certificates that
-#' typically require a revocation mechanism, or short-lived certificates
-#' that may optionally omit revocation because they expire quickly.
-#' Short-lived certificate validity is limited to seven days.
+#' For information about security standard support in different Amazon Web Services Regions, see [Storage and security compliance of Amazon Web Services Private CA private keys](https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys).
+#' @param Tags Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see [Controlling Access Using IAM Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
+#' @param UsageMode Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.
 #' 
 #' The default value is GENERAL_PURPOSE.
 #'
@@ -257,22 +199,11 @@ acmpca_create_certificate_authority <- function(CertificateAuthorityConfiguratio
 #' is used to issue a certificate
 #'
 #' @description
-#' Creates an audit report that lists every time that your CA private key
-#' is used to issue a certificate. The
-#' [`issue_certificate`][acmpca_issue_certificate] and
-#' [`revoke_certificate`][acmpca_revoke_certificate] actions use the
-#' private key.
+#' Creates an audit report that lists every time that your CA private key is used to issue a certificate. The [`issue_certificate`][acmpca_issue_certificate] and [`revoke_certificate`][acmpca_revoke_certificate] actions use the private key.
 #' 
-#' To save the audit report to your designated Amazon S3 bucket, you must
-#' create a bucket policy that grants Amazon Web Services Private CA
-#' permission to access and write to it. For an example policy, see
-#' [Prepare an Amazon S3 bucket for audit
-#' reports](https://docs.aws.amazon.com/privateca/latest/userguide/PcaAuditReport.html#s3-access).
+#' To save the audit report to your designated Amazon S3 bucket, you must create a bucket policy that grants Amazon Web Services Private CA permission to access and write to it. For an example policy, see [Prepare an Amazon S3 bucket for audit reports](https://docs.aws.amazon.com/privateca/latest/userguide/PcaAuditReport.html#s3-access).
 #' 
-#' Amazon Web Services Private CA assets that are stored in Amazon S3 can
-#' be protected with encryption. For more information, see [Encrypting Your
-#' Audit
-#' Reports](https://docs.aws.amazon.com/privateca/latest/userguide/PcaAuditReport.html#audit-report-encryption).
+#' Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [Encrypting Your Audit Reports](https://docs.aws.amazon.com/privateca/latest/userguide/PcaAuditReport.html#audit-report-encryption).
 #' 
 #' You can generate a maximum of one report every 30 minutes.
 #'
@@ -280,13 +211,11 @@ acmpca_create_certificate_authority <- function(CertificateAuthorityConfiguratio
 #' acmpca_create_certificate_authority_audit_report(
 #'   CertificateAuthorityArn, S3BucketName, AuditReportResponseFormat)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) of the CA to be audited. This is of the
-#' form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `.
 #' @param S3BucketName &#91;required&#93; The name of the S3 bucket that will contain the audit report.
-#' @param AuditReportResponseFormat &#91;required&#93; The format in which to create the report. This can be either **JSON** or
-#' **CSV**.
+#' @param AuditReportResponseFormat &#91;required&#93; The format in which to create the report. This can be either **JSON** or **CSV**.
 #'
 #' @return
 #' A list with the following syntax:
@@ -334,52 +263,28 @@ acmpca_create_certificate_authority_audit_report <- function(CertificateAuthorit
 #' Manager (ACM) service principal (acm
 #'
 #' @description
-#' Grants one or more permissions on a private CA to the Certificate
-#' Manager (ACM) service principal (`acm.amazonaws.com`). These permissions
-#' allow ACM to issue and renew ACM certificates that reside in the same
-#' Amazon Web Services account as the CA.
+#' Grants one or more permissions on a private CA to the Certificate Manager (ACM) service principal (`acm.amazonaws.com`). These permissions allow ACM to issue and renew ACM certificates that reside in the same Amazon Web Services account as the CA.
 #' 
-#' You can list current permissions with the
-#' [`list_permissions`][acmpca_list_permissions] action and revoke them
-#' with the [`delete_permission`][acmpca_delete_permission] action.
+#' You can list current permissions with the [`list_permissions`][acmpca_list_permissions] action and revoke them with the [`delete_permission`][acmpca_delete_permission] action.
 #' 
 #' **About Permissions**
 #' 
-#' -   If the private CA and the certificates it issues reside in the same
-#'     account, you can use [`create_permission`][acmpca_create_permission]
-#'     to grant permissions for ACM to carry out automatic certificate
-#'     renewals.
+#' -   If the private CA and the certificates it issues reside in the same account, you can use [`create_permission`][acmpca_create_permission] to grant permissions for ACM to carry out automatic certificate renewals.
 #' 
-#' -   For automatic certificate renewal to succeed, the ACM service
-#'     principal needs permissions to create, retrieve, and list
-#'     certificates.
+#' -   For automatic certificate renewal to succeed, the ACM service principal needs permissions to create, retrieve, and list certificates.
 #' 
-#' -   If the private CA and the ACM certificates reside in different
-#'     accounts, then permissions cannot be used to enable automatic
-#'     renewals. Instead, the ACM certificate owner must set up a
-#'     resource-based policy to enable cross-account issuance and renewals.
-#'     For more information, see [Using a Resource Based Policy with Amazon
-#'     Web Services Private
-#'     CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
+#' -   If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable cross-account issuance and renewals. For more information, see [Using a Resource Based Policy with Amazon Web Services Private CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
 #'
 #' @usage
 #' acmpca_create_permission(CertificateAuthorityArn, Principal,
 #'   SourceAccount, Actions)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) of the CA that grants the permissions.
-#' You can find the ARN by calling the
-#' [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' action. This must have the following form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the [`list_certificate_authorities`][acmpca_list_certificate_authorities] action. This must have the following form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `.
-#' @param Principal &#91;required&#93; The Amazon Web Services service or identity that receives the
-#' permission. At this time, the only valid principal is
-#' `acm.amazonaws.com`.
+#' @param Principal &#91;required&#93; The Amazon Web Services service or identity that receives the permission. At this time, the only valid principal is `acm.amazonaws.com`.
 #' @param SourceAccount The ID of the calling account.
-#' @param Actions &#91;required&#93; The actions that the specified Amazon Web Services service principal can
-#' use. These include [`issue_certificate`][acmpca_issue_certificate],
-#' [`get_certificate`][acmpca_get_certificate], and
-#' [`list_permissions`][acmpca_list_permissions].
+#' @param Actions &#91;required&#93; The actions that the specified Amazon Web Services service principal can use. These include [`issue_certificate`][acmpca_issue_certificate], [`get_certificate`][acmpca_get_certificate], and [`list_permissions`][acmpca_list_permissions].
 #'
 #' @return
 #' An empty list.
@@ -423,61 +328,26 @@ acmpca_create_permission <- function(CertificateAuthorityArn, Principal, SourceA
 #' Deletes a private certificate authority (CA)
 #'
 #' @description
-#' Deletes a private certificate authority (CA). You must provide the
-#' Amazon Resource Name (ARN) of the private CA that you want to delete.
-#' You can find the ARN by calling the
-#' [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' action.
+#' Deletes a private certificate authority (CA). You must provide the Amazon Resource Name (ARN) of the private CA that you want to delete. You can find the ARN by calling the [`list_certificate_authorities`][acmpca_list_certificate_authorities] action.
 #' 
-#' Deleting a CA will invalidate other CAs and certificates below it in
-#' your CA hierarchy.
+#' Deleting a CA will invalidate other CAs and certificates below it in your CA hierarchy.
 #' 
-#' Before you can delete a CA that you have created and activated, you must
-#' disable it. To do this, call the
-#' [`update_certificate_authority`][acmpca_update_certificate_authority]
-#' action and set the **CertificateAuthorityStatus** parameter to
-#' `DISABLED`.
+#' Before you can delete a CA that you have created and activated, you must disable it. To do this, call the [`update_certificate_authority`][acmpca_update_certificate_authority] action and set the **CertificateAuthorityStatus** parameter to `DISABLED`.
 #' 
-#' Additionally, you can delete a CA if you are waiting for it to be
-#' created (that is, the status of the CA is `CREATING`). You can also
-#' delete it if the CA has been created but you haven't yet imported the
-#' signed certificate into Amazon Web Services Private CA (that is, the
-#' status of the CA is `PENDING_CERTIFICATE`).
+#' Additionally, you can delete a CA if you are waiting for it to be created (that is, the status of the CA is `CREATING`). You can also delete it if the CA has been created but you haven't yet imported the signed certificate into Amazon Web Services Private CA (that is, the status of the CA is `PENDING_CERTIFICATE`).
 #' 
-#' When you successfully call
-#' [`delete_certificate_authority`][acmpca_delete_certificate_authority],
-#' the CA's status changes to `DELETED`. However, the CA won't be
-#' permanently deleted until the restoration period has passed. By default,
-#' if you do not set the `PermanentDeletionTimeInDays` parameter, the CA
-#' remains restorable for 30 days. You can set the parameter from 7 to 30
-#' days. The
-#' [`describe_certificate_authority`][acmpca_describe_certificate_authority]
-#' action returns the time remaining in the restoration window of a private
-#' CA in the `DELETED` state. To restore an eligible CA, call the
-#' [`restore_certificate_authority`][acmpca_restore_certificate_authority]
-#' action.
+#' When you successfully call [`delete_certificate_authority`][acmpca_delete_certificate_authority], the CA's status changes to `DELETED`. However, the CA won't be permanently deleted until the restoration period has passed. By default, if you do not set the `PermanentDeletionTimeInDays` parameter, the CA remains restorable for 30 days. You can set the parameter from 7 to 30 days. The [`describe_certificate_authority`][acmpca_describe_certificate_authority] action returns the time remaining in the restoration window of a private CA in the `DELETED` state. To restore an eligible CA, call the [`restore_certificate_authority`][acmpca_restore_certificate_authority] action.
 #' 
-#' A private CA can be deleted if it is in the `PENDING_CERTIFICATE`,
-#' `CREATING`, `EXPIRED`, `DISABLED`, or `FAILED` state. To delete a CA in
-#' the `ACTIVE` state, you must first disable it, or else the delete
-#' request results in an exception. If you are deleting a private CA in the
-#' `PENDING_CERTIFICATE` or `DISABLED` state, you can set the length of its
-#' restoration period to 7-30 days. The default is 30. During this time,
-#' the status is set to `DELETED` and the CA can be restored. A private CA
-#' deleted in the `CREATING` or `FAILED` state has no assigned restoration
-#' period and cannot be restored.
+#' A private CA can be deleted if it is in the `PENDING_CERTIFICATE`, `CREATING`, `EXPIRED`, `DISABLED`, or `FAILED` state. To delete a CA in the `ACTIVE` state, you must first disable it, or else the delete request results in an exception. If you are deleting a private CA in the `PENDING_CERTIFICATE` or `DISABLED` state, you can set the length of its restoration period to 7-30 days. The default is 30. During this time, the status is set to `DELETED` and the CA can be restored. A private CA deleted in the `CREATING` or `FAILED` state has no assigned restoration period and cannot be restored.
 #'
 #' @usage
 #' acmpca_delete_certificate_authority(CertificateAuthorityArn,
 #'   PermanentDeletionTimeInDays)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_certificate_authority`][acmpca_create_certificate_authority].
-#' This must have the following form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_certificate_authority`][acmpca_create_certificate_authority]. This must have the following form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `.
-#' @param PermanentDeletionTimeInDays The number of days to make a CA restorable after it has been deleted.
-#' This can be anywhere from 7 to 30 days, with 30 being the default.
+#' @param PermanentDeletionTimeInDays The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.
 #'
 #' @return
 #' An empty list.
@@ -518,50 +388,28 @@ acmpca_delete_certificate_authority <- function(CertificateAuthorityArn, Permane
 #' (ACM) service principal (acm
 #'
 #' @description
-#' Revokes permissions on a private CA granted to the Certificate Manager
-#' (ACM) service principal (acm.amazonaws.com).
+#' Revokes permissions on a private CA granted to the Certificate Manager (ACM) service principal (acm.amazonaws.com).
 #' 
-#' These permissions allow ACM to issue and renew ACM certificates that
-#' reside in the same Amazon Web Services account as the CA. If you revoke
-#' these permissions, ACM will no longer renew the affected certificates
-#' automatically.
+#' These permissions allow ACM to issue and renew ACM certificates that reside in the same Amazon Web Services account as the CA. If you revoke these permissions, ACM will no longer renew the affected certificates automatically.
 #' 
-#' Permissions can be granted with the
-#' [`create_permission`][acmpca_create_permission] action and listed with
-#' the [`list_permissions`][acmpca_list_permissions] action.
+#' Permissions can be granted with the [`create_permission`][acmpca_create_permission] action and listed with the [`list_permissions`][acmpca_list_permissions] action.
 #' 
 #' **About Permissions**
 #' 
-#' -   If the private CA and the certificates it issues reside in the same
-#'     account, you can use [`create_permission`][acmpca_create_permission]
-#'     to grant permissions for ACM to carry out automatic certificate
-#'     renewals.
+#' -   If the private CA and the certificates it issues reside in the same account, you can use [`create_permission`][acmpca_create_permission] to grant permissions for ACM to carry out automatic certificate renewals.
 #' 
-#' -   For automatic certificate renewal to succeed, the ACM service
-#'     principal needs permissions to create, retrieve, and list
-#'     certificates.
+#' -   For automatic certificate renewal to succeed, the ACM service principal needs permissions to create, retrieve, and list certificates.
 #' 
-#' -   If the private CA and the ACM certificates reside in different
-#'     accounts, then permissions cannot be used to enable automatic
-#'     renewals. Instead, the ACM certificate owner must set up a
-#'     resource-based policy to enable cross-account issuance and renewals.
-#'     For more information, see [Using a Resource Based Policy with Amazon
-#'     Web Services Private
-#'     CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
+#' -   If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable cross-account issuance and renewals. For more information, see [Using a Resource Based Policy with Amazon Web Services Private CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
 #'
 #' @usage
 #' acmpca_delete_permission(CertificateAuthorityArn, Principal,
 #'   SourceAccount)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA that issued the
-#' permissions. You can find the CA's ARN by calling the
-#' [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' action. This must have the following form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the [`list_certificate_authorities`][acmpca_list_certificate_authorities] action. This must have the following form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `.
-#' @param Principal &#91;required&#93; The Amazon Web Services service or identity that will have its CA
-#' permissions revoked. At this time, the only valid service principal is
-#' `acm.amazonaws.com`
+#' @param Principal &#91;required&#93; The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is `acm.amazonaws.com`
 #' @param SourceAccount The Amazon Web Services account that calls this action.
 #'
 #' @return
@@ -603,52 +451,28 @@ acmpca_delete_permission <- function(CertificateAuthorityArn, Principal, SourceA
 #' Deletes the resource-based policy attached to a private CA
 #'
 #' @description
-#' Deletes the resource-based policy attached to a private CA. Deletion
-#' will remove any access that the policy has granted. If there is no
-#' policy attached to the private CA, this action will return successful.
+#' Deletes the resource-based policy attached to a private CA. Deletion will remove any access that the policy has granted. If there is no policy attached to the private CA, this action will return successful.
 #' 
-#' If you delete a policy that was applied through Amazon Web Services
-#' Resource Access Manager (RAM), the CA will be removed from all shares in
-#' which it was included.
+#' If you delete a policy that was applied through Amazon Web Services Resource Access Manager (RAM), the CA will be removed from all shares in which it was included.
 #' 
-#' The Certificate Manager Service Linked Role that the policy supports is
-#' not affected when you delete the policy.
+#' The Certificate Manager Service Linked Role that the policy supports is not affected when you delete the policy.
 #' 
-#' The current policy can be shown with [`get_policy`][acmpca_get_policy]
-#' and updated with [`put_policy`][acmpca_put_policy].
+#' The current policy can be shown with [`get_policy`][acmpca_get_policy] and updated with [`put_policy`][acmpca_put_policy].
 #' 
 #' **About Policies**
 #' 
-#' -   A policy grants access on a private CA to an Amazon Web Services
-#'     customer account, to Amazon Web Services Organizations, or to an
-#'     Amazon Web Services Organizations unit. Policies are under the
-#'     control of a CA administrator. For more information, see [Using a
-#'     Resource Based Policy with Amazon Web Services Private
-#'     CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
+#' -   A policy grants access on a private CA to an Amazon Web Services customer account, to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit. Policies are under the control of a CA administrator. For more information, see [Using a Resource Based Policy with Amazon Web Services Private CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
 #' 
-#' -   A policy permits a user of Certificate Manager (ACM) to issue ACM
-#'     certificates signed by a CA in another account.
+#' -   A policy permits a user of Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.
 #' 
-#' -   For ACM to manage automatic renewal of these certificates, the ACM
-#'     user must configure a Service Linked Role (SLR). The SLR allows the
-#'     ACM service to assume the identity of the user, subject to
-#'     confirmation against the Amazon Web Services Private CA policy. For
-#'     more information, see [Using a Service Linked Role with
-#'     ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html).
+#' -   For ACM to manage automatic renewal of these certificates, the ACM user must configure a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity of the user, subject to confirmation against the Amazon Web Services Private CA policy. For more information, see [Using a Service Linked Role with ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html).
 #' 
-#' -   Updates made in Amazon Web Services Resource Manager (RAM) are
-#'     reflected in policies. For more information, see [Attach a Policy
-#'     for Cross-Account
-#'     Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
+#' -   Updates made in Amazon Web Services Resource Manager (RAM) are reflected in policies. For more information, see [Attach a Policy for Cross-Account Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
 #'
 #' @usage
 #' acmpca_delete_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA that will have its
-#' policy deleted. You can find the CA's ARN by calling the
-#' [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' action. The ARN value must have the form
-#' `arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab`.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA that will have its policy deleted. You can find the CA's ARN by calling the [`list_certificate_authorities`][acmpca_list_certificate_authorities] action. The ARN value must have the form `arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab`.
 #'
 #' @return
 #' An empty list.
@@ -688,18 +512,11 @@ acmpca_delete_policy <- function(ResourceArn) {
 #' that has been shared with you
 #'
 #' @description
-#' Lists information about your private certificate authority (CA) or one
-#' that has been shared with you. You specify the private CA on input by
-#' its ARN (Amazon Resource Name). The output contains the status of your
-#' CA. This can be any of the following:
+#' Lists information about your private certificate authority (CA) or one that has been shared with you. You specify the private CA on input by its ARN (Amazon Resource Name). The output contains the status of your CA. This can be any of the following:
 #' 
-#' -   `CREATING` - Amazon Web Services Private CA is creating your private
-#'     certificate authority.
+#' -   `CREATING` - Amazon Web Services Private CA is creating your private certificate authority.
 #' 
-#' -   `PENDING_CERTIFICATE` - The certificate is pending. You must use
-#'     your Amazon Web Services Private CA-hosted or on-premises root or
-#'     subordinate CA to sign your private CA CSR and then import it into
-#'     Amazon Web Services Private CA.
+#' -   `PENDING_CERTIFICATE` - The certificate is pending. You must use your Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to sign your private CA CSR and then import it into Amazon Web Services Private CA.
 #' 
 #' -   `ACTIVE` - Your private CA is active.
 #' 
@@ -707,21 +524,14 @@ acmpca_delete_policy <- function(ResourceArn) {
 #' 
 #' -   `EXPIRED` - Your private CA certificate has expired.
 #' 
-#' -   `FAILED` - Your private CA has failed. Your CA can fail because of
-#'     problems such a network outage or back-end Amazon Web Services
-#'     failure or other errors. A failed CA can never return to the pending
-#'     state. You must create a new CA.
+#' -   `FAILED` - Your private CA has failed. Your CA can fail because of problems such a network outage or back-end Amazon Web Services failure or other errors. A failed CA can never return to the pending state. You must create a new CA.
 #' 
-#' -   `DELETED` - Your private CA is within the restoration period, after
-#'     which it is permanently deleted. The length of time remaining in the
-#'     CA's restoration period is also included in this action's output.
+#' -   `DELETED` - Your private CA is within the restoration period, after which it is permanently deleted. The length of time remaining in the CA's restoration period is also included in this action's output.
 #'
 #' @usage
 #' acmpca_describe_certificate_authority(CertificateAuthorityArn)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_certificate_authority`][acmpca_create_certificate_authority].
-#' This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_certificate_authority`][acmpca_create_certificate_authority]. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `.
 #'
@@ -894,24 +704,16 @@ acmpca_describe_certificate_authority <- function(CertificateAuthorityArn) {
 #' CreateCertificateAuthorityAuditReport action
 #'
 #' @description
-#' Lists information about a specific audit report created by calling the
-#' [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report]
-#' action. Audit information is created every time the certificate
-#' authority (CA) private key is used. The private key is used when you
-#' call the [`issue_certificate`][acmpca_issue_certificate] action or the
-#' [`revoke_certificate`][acmpca_revoke_certificate] action.
+#' Lists information about a specific audit report created by calling the [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report] action. Audit information is created every time the certificate authority (CA) private key is used. The private key is used when you call the [`issue_certificate`][acmpca_issue_certificate] action or the [`revoke_certificate`][acmpca_revoke_certificate] action.
 #'
 #' @usage
 #' acmpca_describe_certificate_authority_audit_report(
 #'   CertificateAuthorityArn, AuditReportId)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) of the private CA. This must be of the
-#' form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) of the private CA. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `.
-#' @param AuditReportId &#91;required&#93; The report ID returned by calling the
-#' [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report]
-#' action.
+#' @param AuditReportId &#91;required&#93; The report ID returned by calling the [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report] action.
 #'
 #' @return
 #' A list with the following syntax:
@@ -962,27 +764,15 @@ acmpca_describe_certificate_authority_audit_report <- function(CertificateAuthor
 #' with you
 #'
 #' @description
-#' Retrieves a certificate from your private CA or one that has been shared
-#' with you. The ARN of the certificate is returned when you call the
-#' [`issue_certificate`][acmpca_issue_certificate] action. You must specify
-#' both the ARN of your private CA and the ARN of the issued certificate
-#' when calling the **GetCertificate** action. You can retrieve the
-#' certificate if it is in the **ISSUED**, **EXPIRED**, or **REVOKED**
-#' state. You can call the
-#' [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report]
-#' action to create a report that contains information about all of the
-#' certificates issued and revoked by your private CA.
+#' Retrieves a certificate from your private CA or one that has been shared with you. The ARN of the certificate is returned when you call the [`issue_certificate`][acmpca_issue_certificate] action. You must specify both the ARN of your private CA and the ARN of the issued certificate when calling the **GetCertificate** action. You can retrieve the certificate if it is in the **ISSUED**, **EXPIRED**, or **REVOKED** state. You can call the [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report] action to create a report that contains information about all of the certificates issued and revoked by your private CA.
 #'
 #' @usage
 #' acmpca_get_certificate(CertificateAuthorityArn, CertificateArn)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_certificate_authority`][acmpca_create_certificate_authority].
-#' This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_certificate_authority`][acmpca_create_certificate_authority]. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `.
-#' @param CertificateArn &#91;required&#93; The ARN of the issued certificate. The ARN contains the certificate
-#' serial number and must be in the following form:
+#' @param CertificateArn &#91;required&#93; The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012/certificate/286535153982981100925020015808220737245 `
 #'
@@ -1031,11 +821,7 @@ acmpca_get_certificate <- function(CertificateAuthorityArn, CertificateArn) {
 #' certificate authority (CA) or one that has been shared with you
 #'
 #' @description
-#' Retrieves the certificate and certificate chain for your private
-#' certificate authority (CA) or one that has been shared with you. Both
-#' the certificate and the chain are base64 PEM-encoded. The chain does not
-#' include the CA certificate. Each certificate in the chain signs the one
-#' before it.
+#' Retrieves the certificate and certificate chain for your private certificate authority (CA) or one that has been shared with you. Both the certificate and the chain are base64 PEM-encoded. The chain does not include the CA certificate. Each certificate in the chain signs the one before it.
 #'
 #' @usage
 #' acmpca_get_certificate_authority_certificate(CertificateAuthorityArn)
@@ -1088,21 +874,12 @@ acmpca_get_certificate_authority_certificate <- function(CertificateAuthorityArn
 #' certificate authority (CA)
 #'
 #' @description
-#' Retrieves the certificate signing request (CSR) for your private
-#' certificate authority (CA). The CSR is created when you call the
-#' [`create_certificate_authority`][acmpca_create_certificate_authority]
-#' action. Sign the CSR with your Amazon Web Services Private CA-hosted or
-#' on-premises root or subordinate CA. Then import the signed certificate
-#' back into Amazon Web Services Private CA by calling the
-#' [`import_certificate_authority_certificate`][acmpca_import_certificate_authority_certificate]
-#' action. The CSR is returned as a base64 PEM-encoded string.
+#' Retrieves the certificate signing request (CSR) for your private certificate authority (CA). The CSR is created when you call the [`create_certificate_authority`][acmpca_create_certificate_authority] action. Sign the CSR with your Amazon Web Services Private CA-hosted or on-premises root or subordinate CA. Then import the signed certificate back into Amazon Web Services Private CA by calling the [`import_certificate_authority_certificate`][acmpca_import_certificate_authority_certificate] action. The CSR is returned as a base64 PEM-encoded string.
 #'
 #' @usage
 #' acmpca_get_certificate_authority_csr(CertificateAuthorityArn)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called the
-#' [`create_certificate_authority`][acmpca_create_certificate_authority]
-#' action. This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called the [`create_certificate_authority`][acmpca_create_certificate_authority] action. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
 #'
@@ -1148,44 +925,24 @@ acmpca_get_certificate_authority_csr <- function(CertificateAuthorityArn) {
 #' Retrieves the resource-based policy attached to a private CA
 #'
 #' @description
-#' Retrieves the resource-based policy attached to a private CA. If either
-#' the private CA resource or the policy cannot be found, this action
-#' returns a `ResourceNotFoundException`.
+#' Retrieves the resource-based policy attached to a private CA. If either the private CA resource or the policy cannot be found, this action returns a `ResourceNotFoundException`.
 #' 
-#' The policy can be attached or updated with
-#' [`put_policy`][acmpca_put_policy] and removed with
-#' [`delete_policy`][acmpca_delete_policy].
+#' The policy can be attached or updated with [`put_policy`][acmpca_put_policy] and removed with [`delete_policy`][acmpca_delete_policy].
 #' 
 #' **About Policies**
 #' 
-#' -   A policy grants access on a private CA to an Amazon Web Services
-#'     customer account, to Amazon Web Services Organizations, or to an
-#'     Amazon Web Services Organizations unit. Policies are under the
-#'     control of a CA administrator. For more information, see [Using a
-#'     Resource Based Policy with Amazon Web Services Private
-#'     CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
+#' -   A policy grants access on a private CA to an Amazon Web Services customer account, to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit. Policies are under the control of a CA administrator. For more information, see [Using a Resource Based Policy with Amazon Web Services Private CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
 #' 
-#' -   A policy permits a user of Certificate Manager (ACM) to issue ACM
-#'     certificates signed by a CA in another account.
+#' -   A policy permits a user of Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.
 #' 
-#' -   For ACM to manage automatic renewal of these certificates, the ACM
-#'     user must configure a Service Linked Role (SLR). The SLR allows the
-#'     ACM service to assume the identity of the user, subject to
-#'     confirmation against the Amazon Web Services Private CA policy. For
-#'     more information, see [Using a Service Linked Role with
-#'     ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html).
+#' -   For ACM to manage automatic renewal of these certificates, the ACM user must configure a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity of the user, subject to confirmation against the Amazon Web Services Private CA policy. For more information, see [Using a Service Linked Role with ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html).
 #' 
-#' -   Updates made in Amazon Web Services Resource Manager (RAM) are
-#'     reflected in policies. For more information, see [Attach a Policy
-#'     for Cross-Account
-#'     Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
+#' -   Updates made in Amazon Web Services Resource Manager (RAM) are reflected in policies. For more information, see [Attach a Policy for Cross-Account Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
 #'
 #' @usage
 #' acmpca_get_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA that will have its
-#' policy retrieved. You can find the CA's ARN by calling the
-#' ListCertificateAuthorities action.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1230,52 +987,33 @@ acmpca_get_policy <- function(ResourceArn) {
 #' CA
 #'
 #' @description
-#' Imports a signed private CA certificate into Amazon Web Services Private
-#' CA. This action is used when you are using a chain of trust whose root
-#' is located outside Amazon Web Services Private CA. Before you can call
-#' this action, the following preparations must in place:
+#' Imports a signed private CA certificate into Amazon Web Services Private CA. This action is used when you are using a chain of trust whose root is located outside Amazon Web Services Private CA. Before you can call this action, the following preparations must in place:
 #' 
-#' 1.  In Amazon Web Services Private CA, call the
-#'     [`create_certificate_authority`][acmpca_create_certificate_authority]
-#'     action to create the private CA that you plan to back with the
-#'     imported certificate.
+#' 1.  In Amazon Web Services Private CA, call the [`create_certificate_authority`][acmpca_create_certificate_authority] action to create the private CA that you plan to back with the imported certificate.
 #' 
-#' 2.  Call the
-#'     [`get_certificate_authority_csr`][acmpca_get_certificate_authority_csr]
-#'     action to generate a certificate signing request (CSR).
+#' 2.  Call the [`get_certificate_authority_csr`][acmpca_get_certificate_authority_csr] action to generate a certificate signing request (CSR).
 #' 
-#' 3.  Sign the CSR using a root or intermediate CA hosted by either an
-#'     on-premises PKI hierarchy or by a commercial CA.
+#' 3.  Sign the CSR using a root or intermediate CA hosted by either an on-premises PKI hierarchy or by a commercial CA.
 #' 
-#' 4.  Create a certificate chain and copy the signed certificate and the
-#'     certificate chain to your working directory.
+#' 4.  Create a certificate chain and copy the signed certificate and the certificate chain to your working directory.
 #' 
-#' Amazon Web Services Private CA supports three scenarios for installing a
-#' CA certificate:
+#' Amazon Web Services Private CA supports three scenarios for installing a CA certificate:
 #' 
-#' -   Installing a certificate for a root CA hosted by Amazon Web Services
-#'     Private CA.
+#' -   Installing a certificate for a root CA hosted by Amazon Web Services Private CA.
 #' 
-#' -   Installing a subordinate CA certificate whose parent authority is
-#'     hosted by Amazon Web Services Private CA.
+#' -   Installing a subordinate CA certificate whose parent authority is hosted by Amazon Web Services Private CA.
 #' 
-#' -   Installing a subordinate CA certificate whose parent authority is
-#'     externally hosted.
+#' -   Installing a subordinate CA certificate whose parent authority is externally hosted.
 #' 
-#' The following additional requirements apply when you import a CA
-#' certificate.
+#' The following additional requirements apply when you import a CA certificate.
 #' 
 #' -   Only a self-signed certificate can be imported as a root CA.
 #' 
 #' -   A self-signed certificate cannot be imported as a subordinate CA.
 #' 
-#' -   Your certificate chain must not include the private CA certificate
-#'     that you are importing.
+#' -   Your certificate chain must not include the private CA certificate that you are importing.
 #' 
-#' -   Your root CA must be the last certificate in your chain. The
-#'     subordinate certificate, if any, that your root CA signed must be
-#'     next to last. The subordinate certificate signed by the preceding
-#'     subordinate CA must come next, and so on until your chain is built.
+#' -   Your root CA must be the last certificate in your chain. The subordinate certificate, if any, that your root CA signed must be next to last. The subordinate certificate signed by the preceding subordinate CA must come next, and so on until your chain is built.
 #' 
 #' -   The chain must be PEM-encoded.
 #' 
@@ -1285,8 +1023,7 @@ acmpca_get_policy <- function(ResourceArn) {
 #' 
 #' *Enforcement of Critical Constraints*
 #' 
-#' Amazon Web Services Private CA allows the following extensions to be
-#' marked critical in the imported CA certificate or chain.
+#' Amazon Web Services Private CA allows the following extensions to be marked critical in the imported CA certificate or chain.
 #' 
 #' -   Authority key identifier
 #' 
@@ -1314,8 +1051,7 @@ acmpca_get_policy <- function(ResourceArn) {
 #' 
 #' -   Subject information access
 #' 
-#' Amazon Web Services Private CA rejects the following extensions when
-#' they are marked critical in an imported CA certificate or chain.
+#' Amazon Web Services Private CA rejects the following extensions when they are marked critical in an imported CA certificate or chain.
 #' 
 #' -   Authority information access
 #' 
@@ -1325,30 +1061,19 @@ acmpca_get_policy <- function(ResourceArn) {
 #' 
 #' -   Policy constraints
 #' 
-#' Amazon Web Services Private Certificate Authority will also reject any
-#' other extension marked as critical not contained on the preceding list
-#' of allowed extensions.
+#' Amazon Web Services Private Certificate Authority will also reject any other extension marked as critical not contained on the preceding list of allowed extensions.
 #'
 #' @usage
 #' acmpca_import_certificate_authority_certificate(CertificateAuthorityArn,
 #'   Certificate, CertificateChain)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_certificate_authority`][acmpca_create_certificate_authority].
-#' This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_certificate_authority`][acmpca_create_certificate_authority]. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
-#' @param Certificate &#91;required&#93; The PEM-encoded certificate for a private CA. This may be a self-signed
-#' certificate in the case of a root CA, or it may be signed by another CA
-#' that you control.
-#' @param CertificateChain A PEM-encoded file that contains all of your certificates, other than
-#' the certificate you're importing, chaining up to your root CA. Your
-#' Amazon Web Services Private CA-hosted or on-premises root certificate is
-#' the last in the chain, and each certificate in the chain signs the one
-#' preceding.
+#' @param Certificate &#91;required&#93; The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.
+#' @param CertificateChain A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding.
 #' 
-#' This parameter must be supplied when you import a subordinate CA. When
-#' you import a root CA, there is no chain.
+#' This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
 #'
 #' @return
 #' An empty list.
@@ -1390,120 +1115,55 @@ acmpca_import_certificate_authority_certificate <- function(CertificateAuthority
 #' shared with you, to issue a client certificate
 #'
 #' @description
-#' Uses your private certificate authority (CA), or one that has been
-#' shared with you, to issue a client certificate. This action returns the
-#' Amazon Resource Name (ARN) of the certificate. You can retrieve the
-#' certificate by calling the [`get_certificate`][acmpca_get_certificate]
-#' action and specifying the ARN.
+#' Uses your private certificate authority (CA), or one that has been shared with you, to issue a client certificate. This action returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate by calling the [`get_certificate`][acmpca_get_certificate] action and specifying the ARN.
 #' 
-#' You cannot use the ACM **ListCertificateAuthorities** action to retrieve
-#' the ARNs of the certificates that you issue by using Amazon Web Services
-#' Private CA.
+#' You cannot use the ACM **ListCertificateAuthorities** action to retrieve the ARNs of the certificates that you issue by using Amazon Web Services Private CA.
 #'
 #' @usage
 #' acmpca_issue_certificate(ApiPassthrough, CertificateAuthorityArn, Csr,
 #'   SigningAlgorithm, TemplateArn, Validity, ValidityNotBefore,
 #'   IdempotencyToken)
 #'
-#' @param ApiPassthrough Specifies X.509 certificate information to be included in the issued
-#' certificate. An `APIPassthrough` or `APICSRPassthrough` template variant
-#' must be selected, or else this parameter is ignored. For more
-#' information about using these templates, see [Understanding Certificate
-#' Templates](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html).
+#' @param ApiPassthrough Specifies X.509 certificate information to be included in the issued certificate. An `APIPassthrough` or `APICSRPassthrough` template variant must be selected, or else this parameter is ignored. For more information about using these templates, see [Understanding Certificate Templates](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html).
 #' 
-#' If conflicting or duplicate certificate information is supplied during
-#' certificate issuance, Amazon Web Services Private CA applies [order of
-#' operation
-#' rules](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations)
-#' to determine what information is used.
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_certificate_authority`][acmpca_create_certificate_authority].
-#' This must be of the form:
+#' If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web Services Private CA applies [order of operation rules](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations) to determine what information is used.
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_certificate_authority`][acmpca_create_certificate_authority]. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
-#' @param Csr &#91;required&#93; The certificate signing request (CSR) for the certificate you want to
-#' issue. As an example, you can use the following OpenSSL command to
-#' create the CSR and a 2048 bit RSA private key.
+#' @param Csr &#91;required&#93; The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key.
 #' 
 #' `openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr`
 #' 
-#' If you have a configuration file, you can then use the following OpenSSL
-#' command. The `usr_cert` block in the configuration file contains your
-#' X509 version 3 extensions.
+#' If you have a configuration file, you can then use the following OpenSSL command. The `usr_cert` block in the configuration file contains your X509 version 3 extensions.
 #' 
 #' `openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr`
 #' 
-#' Note: A CSR must provide either a *subject name* or a *subject
-#' alternative name* or the request will be rejected.
-#' @param SigningAlgorithm &#91;required&#93; The name of the algorithm that will be used to sign the certificate to
-#' be issued.
+#' Note: A CSR must provide either a *subject name* or a *subject alternative name* or the request will be rejected.
+#' @param SigningAlgorithm &#91;required&#93; The name of the algorithm that will be used to sign the certificate to be issued.
 #' 
-#' This parameter should not be confused with the `SigningAlgorithm`
-#' parameter used to sign a CSR in the
-#' [`create_certificate_authority`][acmpca_create_certificate_authority]
-#' action.
+#' This parameter should not be confused with the `SigningAlgorithm` parameter used to sign a CSR in the [`create_certificate_authority`][acmpca_create_certificate_authority] action.
 #' 
-#' The specified signing algorithm family (RSA or ECDSA) must match the
-#' algorithm family of the CA's secret key.
-#' @param TemplateArn Specifies a custom configuration template to use when issuing a
-#' certificate. If this parameter is not provided, Amazon Web Services
-#' Private CA defaults to the `EndEntityCertificate/V1` template. For CA
-#' certificates, you should choose the shortest path length that meets your
-#' needs. The path length is indicated by the PathLen*N* portion of the
-#' ARN, where *N* is the [CA
-#' depth](https://docs.aws.amazon.com/privateca/latest/userguide/PcaTerms.html#terms-cadepth).
+#' The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.
+#' @param TemplateArn Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, Amazon Web Services Private CA defaults to the `EndEntityCertificate/V1` template. For CA certificates, you should choose the shortest path length that meets your needs. The path length is indicated by the PathLen*N* portion of the ARN, where *N* is the [CA depth](https://docs.aws.amazon.com/privateca/latest/userguide/PcaTerms.html#terms-cadepth).
 #' 
-#' Note: The CA depth configured on a subordinate CA certificate must not
-#' exceed the limit set by its parents in the CA hierarchy.
+#' Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the CA hierarchy.
 #' 
-#' For a list of `TemplateArn` values supported by Amazon Web Services
-#' Private CA, see [Understanding Certificate
-#' Templates](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html).
-#' @param Validity &#91;required&#93; Information describing the end of the validity period of the
-#' certificate. This parameter sets the “Not After” date for the
-#' certificate.
+#' For a list of `TemplateArn` values supported by Amazon Web Services Private CA, see [Understanding Certificate Templates](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html).
+#' @param Validity &#91;required&#93; Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.
 #' 
-#' Certificate validity is the period of time during which a certificate is
-#' valid. Validity can be expressed as an explicit date and time when the
-#' certificate expires, or as a span of time after issuance, stated in
-#' days, months, or years. For more information, see
-#' [Validity](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5)
-#' in RFC 5280.
+#' Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [Validity](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5) in RFC 5280.
 #' 
-#' This value is unaffected when `ValidityNotBefore` is also specified. For
-#' example, if `Validity` is set to 20 days in the future, the certificate
-#' will expire 20 days from issuance time regardless of the
-#' `ValidityNotBefore` value.
+#' This value is unaffected when `ValidityNotBefore` is also specified. For example, if `Validity` is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the `ValidityNotBefore` value.
 #' 
-#' The end of the validity period configured on a certificate must not
-#' exceed the limit set on its parents in the CA hierarchy.
-#' @param ValidityNotBefore Information describing the start of the validity period of the
-#' certificate. This parameter sets the “Not Before" date for the
-#' certificate.
+#' The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.
+#' @param ValidityNotBefore Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.
 #' 
-#' By default, when issuing a certificate, Amazon Web Services Private CA
-#' sets the "Not Before" date to the issuance time minus 60 minutes. This
-#' compensates for clock inconsistencies across computer systems. The
-#' `ValidityNotBefore` parameter can be used to customize the “Not Before”
-#' value.
+#' By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The `ValidityNotBefore` parameter can be used to customize the “Not Before” value.
 #' 
-#' Unlike the `Validity` parameter, the `ValidityNotBefore` parameter is
-#' optional.
+#' Unlike the `Validity` parameter, the `ValidityNotBefore` parameter is optional.
 #' 
-#' The `ValidityNotBefore` value is expressed as an explicit date and time,
-#' using the `Validity` type value `ABSOLUTE`. For more information, see
-#' [Validity](https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html)
-#' in this API reference and
-#' [Validity](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5)
-#' in RFC 5280.
-#' @param IdempotencyToken Alphanumeric string that can be used to distinguish between calls to the
-#' **IssueCertificate** action. Idempotency tokens for **IssueCertificate**
-#' time out after five minutes. Therefore, if you call **IssueCertificate**
-#' multiple times with the same idempotency token within five minutes,
-#' Amazon Web Services Private CA recognizes that you are requesting only
-#' one certificate and will issue only one. If you change the idempotency
-#' token for each call, Amazon Web Services Private CA recognizes that you
-#' are requesting multiple certificates.
+#' The `ValidityNotBefore` value is expressed as an explicit date and time, using the `Validity` type value `ABSOLUTE`. For more information, see [Validity](https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html) in this API reference and [Validity](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5) in RFC 5280.
+#' @param IdempotencyToken Alphanumeric string that can be used to distinguish between calls to the **IssueCertificate** action. Idempotency tokens for **IssueCertificate** time out after five minutes. Therefore, if you call **IssueCertificate** multiple times with the same idempotency token within five minutes, Amazon Web Services Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, Amazon Web Services Private CA recognizes that you are requesting multiple certificates.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1662,27 +1322,17 @@ acmpca_issue_certificate <- function(ApiPassthrough = NULL, CertificateAuthority
 #' CreateCertificateAuthority action
 #'
 #' @description
-#' Lists the private certificate authorities that you created by using the
-#' [`create_certificate_authority`][acmpca_create_certificate_authority]
-#' action.
+#' Lists the private certificate authorities that you created by using the [`create_certificate_authority`][acmpca_create_certificate_authority] action.
 #'
 #' @usage
 #' acmpca_list_certificate_authorities(MaxResults, NextToken,
 #'   ResourceOwner)
 #'
-#' @param MaxResults Use this parameter when paginating results to specify the maximum number
-#' of items to return in the response on each page. If additional items
-#' exist beyond the number you specify, the `NextToken` element is sent in
-#' the response. Use this `NextToken` value in a subsequent request to
-#' retrieve additional items.
+#' @param MaxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the `NextToken` element is sent in the response. Use this `NextToken` value in a subsequent request to retrieve additional items.
 #' 
-#' Although the maximum value is 1000, the action only returns a maximum of
-#' 100 items.
-#' @param NextToken Use this parameter when paginating results in a subsequent request after
-#' you receive a response with truncated results. Set it to the value of
-#' the `NextToken` parameter from the response you just received.
-#' @param ResourceOwner Use this parameter to filter the returned set of certificate authorities
-#' based on their owner. The default is SELF.
+#' Although the maximum value is 1000, the action only returns a maximum of 100 items.
+#' @param NextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the `NextToken` parameter from the response you just received.
+#' @param ResourceOwner Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1858,54 +1508,26 @@ acmpca_list_certificate_authorities <- function(MaxResults = NULL, NextToken = N
 #' Manager (ACM) service principal (acm
 #'
 #' @description
-#' List all permissions on a private CA, if any, granted to the Certificate
-#' Manager (ACM) service principal (acm.amazonaws.com).
+#' List all permissions on a private CA, if any, granted to the Certificate Manager (ACM) service principal (acm.amazonaws.com).
 #' 
-#' These permissions allow ACM to issue and renew ACM certificates that
-#' reside in the same Amazon Web Services account as the CA.
+#' These permissions allow ACM to issue and renew ACM certificates that reside in the same Amazon Web Services account as the CA.
 #' 
-#' Permissions can be granted with the
-#' [`create_permission`][acmpca_create_permission] action and revoked with
-#' the [`delete_permission`][acmpca_delete_permission] action.
+#' Permissions can be granted with the [`create_permission`][acmpca_create_permission] action and revoked with the [`delete_permission`][acmpca_delete_permission] action.
 #' 
 #' **About Permissions**
 #' 
-#' -   If the private CA and the certificates it issues reside in the same
-#'     account, you can use [`create_permission`][acmpca_create_permission]
-#'     to grant permissions for ACM to carry out automatic certificate
-#'     renewals.
+#' -   If the private CA and the certificates it issues reside in the same account, you can use [`create_permission`][acmpca_create_permission] to grant permissions for ACM to carry out automatic certificate renewals.
 #' 
-#' -   For automatic certificate renewal to succeed, the ACM service
-#'     principal needs permissions to create, retrieve, and list
-#'     certificates.
+#' -   For automatic certificate renewal to succeed, the ACM service principal needs permissions to create, retrieve, and list certificates.
 #' 
-#' -   If the private CA and the ACM certificates reside in different
-#'     accounts, then permissions cannot be used to enable automatic
-#'     renewals. Instead, the ACM certificate owner must set up a
-#'     resource-based policy to enable cross-account issuance and renewals.
-#'     For more information, see [Using a Resource Based Policy with Amazon
-#'     Web Services Private
-#'     CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
+#' -   If the private CA and the ACM certificates reside in different accounts, then permissions cannot be used to enable automatic renewals. Instead, the ACM certificate owner must set up a resource-based policy to enable cross-account issuance and renewals. For more information, see [Using a Resource Based Policy with Amazon Web Services Private CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
 #'
 #' @usage
 #' acmpca_list_permissions(MaxResults, NextToken, CertificateAuthorityArn)
 #'
-#' @param MaxResults When paginating results, use this parameter to specify the maximum
-#' number of items to return in the response. If additional items exist
-#' beyond the number you specify, the **NextToken** element is sent in the
-#' response. Use this **NextToken** value in a subsequent request to
-#' retrieve additional items.
-#' @param NextToken When paginating results, use this parameter in a subsequent request
-#' after you receive a response with truncated results. Set it to the value
-#' of **NextToken** from the response you just received.
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA to inspect. You can
-#' find the ARN by calling the
-#' [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' action. This must be of the form:
-#' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012`
-#' You can get a private CA's ARN by running the
-#' [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' action.
+#' @param MaxResults When paginating results, use this parameter to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the **NextToken** element is sent in the response. Use this **NextToken** value in a subsequent request to retrieve additional items.
+#' @param NextToken When paginating results, use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of **NextToken** from the response you just received.
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the [`list_certificate_authorities`][acmpca_list_certificate_authorities] action. This must be of the form: `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012` You can get a private CA's ARN by running the [`list_certificate_authorities`][acmpca_list_certificate_authorities] action.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1966,29 +1588,14 @@ acmpca_list_permissions <- function(MaxResults = NULL, NextToken = NULL, Certifi
 #' that has been shared with you
 #'
 #' @description
-#' Lists the tags, if any, that are associated with your private CA or one
-#' that has been shared with you. Tags are labels that you can use to
-#' identify and organize your CAs. Each tag consists of a key and an
-#' optional value. Call the
-#' [`tag_certificate_authority`][acmpca_tag_certificate_authority] action
-#' to add one or more tags to your CA. Call the
-#' [`untag_certificate_authority`][acmpca_untag_certificate_authority]
-#' action to remove tags.
+#' Lists the tags, if any, that are associated with your private CA or one that has been shared with you. Tags are labels that you can use to identify and organize your CAs. Each tag consists of a key and an optional value. Call the [`tag_certificate_authority`][acmpca_tag_certificate_authority] action to add one or more tags to your CA. Call the [`untag_certificate_authority`][acmpca_untag_certificate_authority] action to remove tags.
 #'
 #' @usage
 #' acmpca_list_tags(MaxResults, NextToken, CertificateAuthorityArn)
 #'
-#' @param MaxResults Use this parameter when paginating results to specify the maximum number
-#' of items to return in the response. If additional items exist beyond the
-#' number you specify, the **NextToken** element is sent in the response.
-#' Use this **NextToken** value in a subsequent request to retrieve
-#' additional items.
-#' @param NextToken Use this parameter when paginating results in a subsequent request after
-#' you receive a response with truncated results. Set it to the value of
-#' **NextToken** from the response you just received.
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called the
-#' [`create_certificate_authority`][acmpca_create_certificate_authority]
-#' action. This must be of the form:
+#' @param MaxResults Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the **NextToken** element is sent in the response. Use this **NextToken** value in a subsequent request to retrieve additional items.
+#' @param NextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of **NextToken** from the response you just received.
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called the [`create_certificate_authority`][acmpca_create_certificate_authority] action. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
 #'
@@ -2044,52 +1651,25 @@ acmpca_list_tags <- function(MaxResults = NULL, NextToken = NULL, CertificateAut
 #' @description
 #' Attaches a resource-based policy to a private CA.
 #' 
-#' A policy can also be applied by sharing a private CA through Amazon Web
-#' Services Resource Access Manager (RAM). For more information, see
-#' [Attach a Policy for Cross-Account
-#' Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
+#' A policy can also be applied by sharing a private CA through Amazon Web Services Resource Access Manager (RAM). For more information, see [Attach a Policy for Cross-Account Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
 #' 
-#' The policy can be displayed with [`get_policy`][acmpca_get_policy] and
-#' removed with [`delete_policy`][acmpca_delete_policy].
+#' The policy can be displayed with [`get_policy`][acmpca_get_policy] and removed with [`delete_policy`][acmpca_delete_policy].
 #' 
 #' **About Policies**
 #' 
-#' -   A policy grants access on a private CA to an Amazon Web Services
-#'     customer account, to Amazon Web Services Organizations, or to an
-#'     Amazon Web Services Organizations unit. Policies are under the
-#'     control of a CA administrator. For more information, see [Using a
-#'     Resource Based Policy with Amazon Web Services Private
-#'     CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
+#' -   A policy grants access on a private CA to an Amazon Web Services customer account, to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit. Policies are under the control of a CA administrator. For more information, see [Using a Resource Based Policy with Amazon Web Services Private CA](https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html).
 #' 
-#' -   A policy permits a user of Certificate Manager (ACM) to issue ACM
-#'     certificates signed by a CA in another account.
+#' -   A policy permits a user of Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.
 #' 
-#' -   For ACM to manage automatic renewal of these certificates, the ACM
-#'     user must configure a Service Linked Role (SLR). The SLR allows the
-#'     ACM service to assume the identity of the user, subject to
-#'     confirmation against the Amazon Web Services Private CA policy. For
-#'     more information, see [Using a Service Linked Role with
-#'     ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html).
+#' -   For ACM to manage automatic renewal of these certificates, the ACM user must configure a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity of the user, subject to confirmation against the Amazon Web Services Private CA policy. For more information, see [Using a Service Linked Role with ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html).
 #' 
-#' -   Updates made in Amazon Web Services Resource Manager (RAM) are
-#'     reflected in policies. For more information, see [Attach a Policy
-#'     for Cross-Account
-#'     Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
+#' -   Updates made in Amazon Web Services Resource Manager (RAM) are reflected in policies. For more information, see [Attach a Policy for Cross-Account Access](https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html).
 #'
 #' @usage
 #' acmpca_put_policy(ResourceArn, Policy)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA to associate with the
-#' policy. The ARN of the CA can be found by calling the
-#' [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' action.
-#' @param Policy &#91;required&#93; The path and file name of a JSON-formatted IAM policy to attach to the
-#' specified private CA resource. If this policy does not contain all
-#' required statements or if it includes any statement that is not allowed,
-#' the [`put_policy`][acmpca_put_policy] action returns an
-#' `InvalidPolicyException`. For information about IAM policy and statement
-#' structure, see [Overview of JSON
-#' Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json).
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found by calling the [`list_certificate_authorities`][acmpca_list_certificate_authorities] action.
+#' @param Policy &#91;required&#93; The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this policy does not contain all required statements or if it includes any statement that is not allowed, the [`put_policy`][acmpca_put_policy] action returns an `InvalidPolicyException`. For information about IAM policy and statement structure, see [Overview of JSON Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json).
 #'
 #' @return
 #' An empty list.
@@ -2129,34 +1709,12 @@ acmpca_put_policy <- function(ResourceArn, Policy) {
 #' Restores a certificate authority (CA) that is in the DELETED state
 #'
 #' @description
-#' Restores a certificate authority (CA) that is in the `DELETED` state.
-#' You can restore a CA during the period that you defined in the
-#' **PermanentDeletionTimeInDays** parameter of the
-#' [`delete_certificate_authority`][acmpca_delete_certificate_authority]
-#' action. Currently, you can specify 7 to 30 days. If you did not specify
-#' a **PermanentDeletionTimeInDays** value, by default you can restore the
-#' CA at any time in a 30 day period. You can check the time remaining in
-#' the restoration period of a private CA in the `DELETED` state by calling
-#' the
-#' [`describe_certificate_authority`][acmpca_describe_certificate_authority]
-#' or [`list_certificate_authorities`][acmpca_list_certificate_authorities]
-#' actions. The status of a restored CA is set to its pre-deletion status
-#' when the **RestoreCertificateAuthority** action returns. To change its
-#' status to `ACTIVE`, call the
-#' [`update_certificate_authority`][acmpca_update_certificate_authority]
-#' action. If the private CA was in the `PENDING_CERTIFICATE` state at
-#' deletion, you must use the
-#' [`import_certificate_authority_certificate`][acmpca_import_certificate_authority_certificate]
-#' action to import a certificate authority into the private CA before it
-#' can be activated. You cannot restore a CA after the restoration period
-#' has ended.
+#' Restores a certificate authority (CA) that is in the `DELETED` state. You can restore a CA during the period that you defined in the **PermanentDeletionTimeInDays** parameter of the [`delete_certificate_authority`][acmpca_delete_certificate_authority] action. Currently, you can specify 7 to 30 days. If you did not specify a **PermanentDeletionTimeInDays** value, by default you can restore the CA at any time in a 30 day period. You can check the time remaining in the restoration period of a private CA in the `DELETED` state by calling the [`describe_certificate_authority`][acmpca_describe_certificate_authority] or [`list_certificate_authorities`][acmpca_list_certificate_authorities] actions. The status of a restored CA is set to its pre-deletion status when the **RestoreCertificateAuthority** action returns. To change its status to `ACTIVE`, call the [`update_certificate_authority`][acmpca_update_certificate_authority] action. If the private CA was in the `PENDING_CERTIFICATE` state at deletion, you must use the [`import_certificate_authority_certificate`][acmpca_import_certificate_authority_certificate] action to import a certificate authority into the private CA before it can be activated. You cannot restore a CA after the restoration period has ended.
 #'
 #' @usage
 #' acmpca_restore_certificate_authority(CertificateAuthorityArn)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called the
-#' [`create_certificate_authority`][acmpca_create_certificate_authority]
-#' action. This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called the [`create_certificate_authority`][acmpca_create_certificate_authority] action. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
 #'
@@ -2198,28 +1756,11 @@ acmpca_restore_certificate_authority <- function(CertificateAuthorityArn) {
 #' CA
 #'
 #' @description
-#' Revokes a certificate that was issued inside Amazon Web Services Private
-#' CA. If you enable a certificate revocation list (CRL) when you create or
-#' update your private CA, information about the revoked certificates will
-#' be included in the CRL. Amazon Web Services Private CA writes the CRL to
-#' an S3 bucket that you specify. A CRL is typically updated approximately
-#' 30 minutes after a certificate is revoked. If for any reason the CRL
-#' update fails, Amazon Web Services Private CA attempts makes further
-#' attempts every 15 minutes. With Amazon CloudWatch, you can create alarms
-#' for the metrics `CRLGenerated` and `MisconfiguredCRLBucket`. For more
-#' information, see [Supported CloudWatch
-#' Metrics](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html).
+#' Revokes a certificate that was issued inside Amazon Web Services Private CA. If you enable a certificate revocation list (CRL) when you create or update your private CA, information about the revoked certificates will be included in the CRL. Amazon Web Services Private CA writes the CRL to an S3 bucket that you specify. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason the CRL update fails, Amazon Web Services Private CA attempts makes further attempts every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics `CRLGenerated` and `MisconfiguredCRLBucket`. For more information, see [Supported CloudWatch Metrics](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html).
 #' 
-#' Both Amazon Web Services Private CA and the IAM principal must have
-#' permission to write to the S3 bucket that you specify. If the IAM
-#' principal making the call does not have permission to write to the
-#' bucket, then an exception is thrown. For more information, see [Access
-#' policies for CRLs in Amazon
-#' S3](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies).
+#' Both Amazon Web Services Private CA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see [Access policies for CRLs in Amazon S3](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies).
 #' 
-#' Amazon Web Services Private CA also writes revocation information to the
-#' audit report. For more information, see
-#' [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report].
+#' Amazon Web Services Private CA also writes revocation information to the audit report. For more information, see [`create_certificate_authority_audit_report`][acmpca_create_certificate_authority_audit_report].
 #' 
 #' You cannot revoke a root CA self-signed certificate.
 #'
@@ -2227,23 +1768,14 @@ acmpca_restore_certificate_authority <- function(CertificateAuthorityArn) {
 #' acmpca_revoke_certificate(CertificateAuthorityArn, CertificateSerial,
 #'   RevocationReason)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; Amazon Resource Name (ARN) of the private CA that issued the certificate
-#' to be revoked. This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
-#' @param CertificateSerial &#91;required&#93; Serial number of the certificate to be revoked. This must be in
-#' hexadecimal format. You can retrieve the serial number by calling
-#' [`get_certificate`][acmpca_get_certificate] with the Amazon Resource
-#' Name (ARN) of the certificate you want and the ARN of your private CA.
-#' The **GetCertificate** action retrieves the certificate in the PEM
-#' format. You can use the following OpenSSL command to list the
-#' certificate in text format and copy the hexadecimal serial number.
+#' @param CertificateSerial &#91;required&#93; Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling [`get_certificate`][acmpca_get_certificate] with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The **GetCertificate** action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number.
 #' 
 #' `openssl x509 -in file_path -text -noout`
 #' 
-#' You can also copy the serial number from the console or use the
-#' [DescribeCertificate](https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html)
-#' action in the *Certificate Manager API Reference*.
+#' You can also copy the serial number from the console or use the [DescribeCertificate](https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html) action in the *Certificate Manager API Reference*.
 #' @param RevocationReason &#91;required&#93; Specifies why you revoked the certificate.
 #'
 #' @return
@@ -2285,31 +1817,14 @@ acmpca_revoke_certificate <- function(CertificateAuthorityArn, CertificateSerial
 #' Adds one or more tags to your private CA
 #'
 #' @description
-#' Adds one or more tags to your private CA. Tags are labels that you can
-#' use to identify and organize your Amazon Web Services resources. Each
-#' tag consists of a key and an optional value. You specify the private CA
-#' on input by its Amazon Resource Name (ARN). You specify the tag by using
-#' a key-value pair. You can apply a tag to just one private CA if you want
-#' to identify a specific characteristic of that CA, or you can apply the
-#' same tag to multiple private CAs if you want to filter for a common
-#' relationship among those CAs. To remove one or more tags, use the
-#' [`untag_certificate_authority`][acmpca_untag_certificate_authority]
-#' action. Call the [`list_tags`][acmpca_list_tags] action to see what tags
-#' are associated with your CA.
+#' Adds one or more tags to your private CA. Tags are labels that you can use to identify and organize your Amazon Web Services resources. Each tag consists of a key and an optional value. You specify the private CA on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. You can apply a tag to just one private CA if you want to identify a specific characteristic of that CA, or you can apply the same tag to multiple private CAs if you want to filter for a common relationship among those CAs. To remove one or more tags, use the [`untag_certificate_authority`][acmpca_untag_certificate_authority] action. Call the [`list_tags`][acmpca_list_tags] action to see what tags are associated with your CA.
 #' 
-#' To attach tags to a private CA during the creation procedure, a CA
-#' administrator must first associate an inline IAM policy with the
-#' [`create_certificate_authority`][acmpca_create_certificate_authority]
-#' action and explicitly allow tagging. For more information, see
-#' [Attaching tags to a CA at the time of
-#' creation](https://docs.aws.amazon.com/privateca/latest/userguide/auth-InlinePolicies.html#policy-tag-ca).
+#' To attach tags to a private CA during the creation procedure, a CA administrator must first associate an inline IAM policy with the [`create_certificate_authority`][acmpca_create_certificate_authority] action and explicitly allow tagging. For more information, see [Attaching tags to a CA at the time of creation](https://docs.aws.amazon.com/privateca/latest/userguide/auth-InlinePolicies.html#policy-tag-ca).
 #'
 #' @usage
 #' acmpca_tag_certificate_authority(CertificateAuthorityArn, Tags)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_certificate_authority`][acmpca_create_certificate_authority].
-#' This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_certificate_authority`][acmpca_create_certificate_authority]. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
 #' @param Tags &#91;required&#93; List of tags to be associated with the CA.
@@ -2357,21 +1872,12 @@ acmpca_tag_certificate_authority <- function(CertificateAuthorityArn, Tags) {
 #' Remove one or more tags from your private CA
 #'
 #' @description
-#' Remove one or more tags from your private CA. A tag consists of a
-#' key-value pair. If you do not specify the value portion of the tag when
-#' calling this action, the tag will be removed regardless of value. If you
-#' specify a value, the tag is removed only if it is associated with the
-#' specified value. To add tags to a private CA, use the
-#' [`tag_certificate_authority`][acmpca_tag_certificate_authority]. Call
-#' the [`list_tags`][acmpca_list_tags] action to see what tags are
-#' associated with your CA.
+#' Remove one or more tags from your private CA. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this action, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value. To add tags to a private CA, use the [`tag_certificate_authority`][acmpca_tag_certificate_authority]. Call the [`list_tags`][acmpca_list_tags] action to see what tags are associated with your CA.
 #'
 #' @usage
 #' acmpca_untag_certificate_authority(CertificateAuthorityArn, Tags)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_certificate_authority`][acmpca_create_certificate_authority].
-#' This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_certificate_authority`][acmpca_create_certificate_authority]. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
 #' @param Tags &#91;required&#93; List of tags to be removed from the CA.
@@ -2420,67 +1926,30 @@ acmpca_untag_certificate_authority <- function(CertificateAuthorityArn, Tags) {
 #' (CA)
 #'
 #' @description
-#' Updates the status or configuration of a private certificate authority
-#' (CA). Your private CA must be in the `ACTIVE` or `DISABLED` state before
-#' you can update it. You can disable a private CA that is in the `ACTIVE`
-#' state or make a CA that is in the `DISABLED` state active again.
+#' Updates the status or configuration of a private certificate authority (CA). Your private CA must be in the `ACTIVE` or `DISABLED` state before you can update it. You can disable a private CA that is in the `ACTIVE` state or make a CA that is in the `DISABLED` state active again.
 #' 
-#' Both Amazon Web Services Private CA and the IAM principal must have
-#' permission to write to the S3 bucket that you specify. If the IAM
-#' principal making the call does not have permission to write to the
-#' bucket, then an exception is thrown. For more information, see [Access
-#' policies for CRLs in Amazon
-#' S3](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies).
+#' Both Amazon Web Services Private CA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see [Access policies for CRLs in Amazon S3](https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies).
 #'
 #' @usage
 #' acmpca_update_certificate_authority(CertificateAuthorityArn,
 #'   RevocationConfiguration, Status)
 #'
-#' @param CertificateAuthorityArn &#91;required&#93; Amazon Resource Name (ARN) of the private CA that issued the certificate
-#' to be revoked. This must be of the form:
+#' @param CertificateAuthorityArn &#91;required&#93; Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:
 #' 
 #' `arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 `
-#' @param RevocationConfiguration Contains information to enable support for Online Certificate Status
-#' Protocol (OCSP), certificate revocation list (CRL), both protocols, or
-#' neither. If you don't supply this parameter, existing capibilites remain
-#' unchanged. For more information, see the
-#' [OcspConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html)
-#' and
-#' [CrlConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html)
-#' types.
+#' @param RevocationConfiguration Contains information to enable support for Online Certificate Status Protocol (OCSP), certificate revocation list (CRL), both protocols, or neither. If you don't supply this parameter, existing capibilites remain unchanged. For more information, see the [OcspConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html) and [CrlConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html) types.
 #' 
 #' The following requirements apply to revocation configurations.
 #' 
-#' -   A configuration disabling CRLs or OCSP must contain only the
-#'     `Enabled=False` parameter, and will fail if other parameters such as
-#'     `CustomCname` or `ExpirationInDays` are included.
+#' -   A configuration disabling CRLs or OCSP must contain only the `Enabled=False` parameter, and will fail if other parameters such as `CustomCname` or `ExpirationInDays` are included.
 #' 
-#' -   In a CRL configuration, the `S3BucketName` parameter must conform to
-#'     [Amazon S3 bucket naming
-#'     rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
+#' -   In a CRL configuration, the `S3BucketName` parameter must conform to [Amazon S3 bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
 #' 
-#' -   A configuration containing a custom Canonical Name (CNAME) parameter
-#'     for CRLs or OCSP must conform to
-#'     [RFC2396](https://www.ietf.org/rfc/rfc2396.txt) restrictions on the
-#'     use of special characters in a CNAME.
+#' -   A configuration containing a custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to [RFC2396](https://www.ietf.org/rfc/rfc2396.txt) restrictions on the use of special characters in a CNAME.
 #' 
-#' -   In a CRL or OCSP configuration, the value of a CNAME parameter must
-#'     not include a protocol prefix such as "http://" or "https://".
+#' -   In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".
 #' 
-#' If you update the `S3BucketName` of
-#' [CrlConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html),
-#' you can break revocation for existing certificates. In other words, if
-#' you call
-#' [`update_certificate_authority`][acmpca_update_certificate_authority] to
-#' update the CRL configuration's S3 bucket name, Amazon Web Services
-#' Private CA only writes CRLs to the new S3 bucket. Certificates issued
-#' prior to this point will have the old S3 bucket name in your CRL
-#' Distribution Point (CDP) extension, essentially breaking revocation. If
-#' you must update the S3 bucket, you'll need to reissue old certificates
-#' to keep the revocation working. Alternatively, you can use a
-#' [CustomCname](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html#privateca-Type-CrlConfiguration-CustomCname)
-#' in your CRL configuration if you might need to change the S3 bucket name
-#' in the future.
+#' If you update the `S3BucketName` of [CrlConfiguration](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html), you can break revocation for existing certificates. In other words, if you call [`update_certificate_authority`][acmpca_update_certificate_authority] to update the CRL configuration's S3 bucket name, Amazon Web Services Private CA only writes CRLs to the new S3 bucket. Certificates issued prior to this point will have the old S3 bucket name in your CRL Distribution Point (CDP) extension, essentially breaking revocation. If you must update the S3 bucket, you'll need to reissue old certificates to keep the revocation working. Alternatively, you can use a [CustomCname](https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html#privateca-Type-CrlConfiguration-CustomCname) in your CRL configuration if you might need to change the S3 bucket name in the future.
 #' @param Status Status of your private CA.
 #'
 #' @return

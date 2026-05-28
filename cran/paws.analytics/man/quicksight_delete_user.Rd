@@ -10,9 +10,7 @@ quicksight_delete_user(UserName, AwsAccountId, Namespace)
 \arguments{
 \item{UserName}{[required] The name of the user that you want to delete.}
 
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in.
-Currently, you use the ID for the Amazon Web Services account that
-contains your Amazon Quick Sight account.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{Namespace}{[required] The namespace. Currently, you should set this to \code{default}.}
 }

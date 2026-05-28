@@ -7,10 +7,7 @@
 codegurusecurity_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The ARN of the \code{ScanName} object. You can retrieve this ARN by calling
-\code{\link[=codegurusecurity_create_scan]{create_scan}},
-\code{\link[=codegurusecurity_list_scans]{list_scans}}, or
-\code{\link[=codegurusecurity_get_scan]{get_scan}}.}
+\item{resourceArn}{[required] The ARN of the \code{ScanName} object. You can retrieve this ARN by calling \code{\link[=codegurusecurity_create_scan]{create_scan}}, \code{\link[=codegurusecurity_list_scans]{list_scans}}, or \code{\link[=codegurusecurity_get_scan]{get_scan}}.}
 }
 \description{
 Returns a list of all tags associated with a scan.

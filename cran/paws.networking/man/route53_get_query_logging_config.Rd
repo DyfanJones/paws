@@ -7,8 +7,7 @@
 route53_get_query_logging_config(Id)
 }
 \arguments{
-\item{Id}{[required] The ID of the configuration for DNS query logging that you want to get
-information about.}
+\item{Id}{[required] The ID of the configuration for DNS query logging that you want to get information about.}
 }
 \description{
 Gets information about a specified configuration for DNS query logging.

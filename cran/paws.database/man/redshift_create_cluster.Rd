@@ -49,13 +49,9 @@ redshift_create_cluster(
 )
 }
 \arguments{
-\item{DBName}{The name of the first database to be created when the cluster is
-created.
+\item{DBName}{The name of the first database to be created when the cluster is created.
 
-To create additional databases after the cluster is created, connect to
-the cluster with a SQL client and use SQL commands to create a database.
-For more information, go to \href{https://docs.aws.amazon.com/redshift/latest/gsg/t_creating_database.html}{Create a Database}
-in the Amazon Redshift Database Developer Guide.
+To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to \href{https://docs.aws.amazon.com/redshift/latest/gsg/t_creating_database.html}{Create a Database} in the Amazon Redshift Database Developer Guide.
 
 Default: \code{dev}
 
@@ -63,14 +59,10 @@ Constraints:
 \itemize{
 \item Must contain 1 to 64 alphanumeric characters.
 \item Must contain only lowercase letters.
-\item Cannot be a word that is reserved by the service. A list of reserved
-words can be found in \href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words}
-in the Amazon Redshift Database Developer Guide.
+\item Cannot be a word that is reserved by the service. A list of reserved words can be found in \href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words} in the Amazon Redshift Database Developer Guide.
 }}
 
-\item{ClusterIdentifier}{[required] A unique identifier for the cluster. You use this identifier to refer to
-the cluster for any subsequent cluster operations such as deleting or
-modifying. The identifier also appears in the Amazon Redshift console.
+\item{ClusterIdentifier}{[required] A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.
 
 Constraints:
 \itemize{
@@ -78,8 +70,7 @@ Constraints:
 \item Alphabetic characters must be lowercase.
 \item First character must be a letter.
 \item Cannot end with a hyphen or contain two consecutive hyphens.
-\item Must be unique for all clusters within an Amazon Web Services
-account.
+\item Must be unique for all clusters within an Amazon Web Services account.
 }
 
 Example: \code{myexamplecluster}}
@@ -94,31 +85,22 @@ Valid Values: \code{multi-node} | \code{single-node}
 
 Default: \code{multi-node}}
 
-\item{NodeType}{[required] The node type to be provisioned for the cluster. For information about
-node types, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes}{Working with Clusters}
-in the \emph{Amazon Redshift Cluster Management Guide}.
+\item{NodeType}{[required] The node type to be provisioned for the cluster. For information about node types, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes}{Working with Clusters} in the \emph{Amazon Redshift Cluster Management Guide}.
 
-Valid Values: \code{dc2.large} | \code{dc2.8xlarge} | \code{ra3.large} | \code{ra3.xlplus} |
-\code{ra3.4xlarge} | \code{ra3.16xlarge}}
+Valid Values: \code{dc2.large} | \code{dc2.8xlarge}| \code{rg.xlarge} | \code{rg.4xlarge} | \code{ra3.large} | \code{ra3.xlplus} | \code{ra3.4xlarge} | \code{ra3.16xlarge}}
 
-\item{MasterUsername}{[required] The user name associated with the admin user account for the cluster
-that is being created.
+\item{MasterUsername}{[required] The user name associated with the admin user account for the cluster that is being created.
 
 Constraints:
 \itemize{
-\item Must be 1 - 128 alphanumeric characters or hyphens. The user name
-can't be \code{PUBLIC}.
-\item Must contain only lowercase letters, numbers, underscore, plus sign,
-period (dot), at symbol (@), or hyphen.
+\item Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be \code{PUBLIC}.
+\item Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
 \item The first character must be a letter.
 \item Must not contain a colon (:) or a slash (/).
-\item Cannot be a reserved word. A list of reserved words can be found in
-\href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words}
-in the Amazon Redshift Database Developer Guide.
+\item Cannot be a reserved word. A list of reserved words can be found in \href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words} in the Amazon Redshift Database Developer Guide.
 }}
 
-\item{MasterUserPassword}{The password associated with the admin user account for the cluster that
-is being created.
+\item{MasterUserPassword}{The password associated with the admin user account for the cluster that is being created.
 
 You can't use \code{MasterUserPassword} if \code{ManageMasterPassword} is \code{true}.
 
@@ -128,46 +110,34 @@ Constraints:
 \item Must contain at least one uppercase letter.
 \item Must contain at least one lowercase letter.
 \item Must contain one number.
-\item Can be any printable ASCII character (ASCII code 33-126) except \verb{\\'}
-(single quote), \verb{\\"} (double quote), \verb{\\}, \code{/}, or \code{@}.
+\item Can be any printable ASCII character (ASCII code 33-126) except \verb{\\'} (single quote), \verb{\\"} (double quote), \verb{\\}, \code{/}, or \code{@}.
 }}
 
 \item{ClusterSecurityGroups}{A list of security groups to be associated with this cluster.
 
 Default: The default cluster security group for Amazon Redshift.}
 
-\item{VpcSecurityGroupIds}{A list of Virtual Private Cloud (VPC) security groups to be associated
-with the cluster.
+\item{VpcSecurityGroupIds}{A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
 
 Default: The default VPC security group is associated with the cluster.}
 
 \item{ClusterSubnetGroupName}{The name of a cluster subnet group to be associated with this cluster.
 
-If this parameter is not provided the resulting cluster will be deployed
-outside virtual private cloud (VPC).}
+If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).}
 
-\item{AvailabilityZone}{The EC2 Availability Zone (AZ) in which you want Amazon Redshift to
-provision the cluster. For example, if you have several EC2 instances
-running in a specific Availability Zone, then you might want the cluster
-to be provisioned in the same zone in order to decrease network latency.
+\item{AvailabilityZone}{The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.
 
-Default: A random, system-chosen Availability Zone in the region that is
-specified by the endpoint.
+Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
 
 Example: \verb{us-east-2d}
 
-Constraint: The specified Availability Zone must be in the same region
-as the current endpoint.}
+Constraint: The specified Availability Zone must be in the same region as the current endpoint.}
 
-\item{PreferredMaintenanceWindow}{The weekly time range (in UTC) during which automated cluster
-maintenance can occur.
+\item{PreferredMaintenanceWindow}{The weekly time range (in UTC) during which automated cluster maintenance can occur.
 
 Format: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-Default: A 30-minute window selected at random from an 8-hour block of
-time per region, occurring on a random day of the week. For more
-information about the time blocks for each region, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows}{Maintenance Windows}
-in Amazon Redshift Cluster Management Guide.
+Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. For more information about the time blocks for each region, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows}{Maintenance Windows} in Amazon Redshift Cluster Management Guide.
 
 Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
 
@@ -175,8 +145,7 @@ Constraints: Minimum 30-minute window.}
 
 \item{ClusterParameterGroupName}{The name of the parameter group to be associated with this cluster.
 
-Default: The default Amazon Redshift cluster parameter group. For
-information about the default parameter group, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html}{Working with Amazon Redshift Parameter Groups}
+Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html}{Working with Amazon Redshift Parameter Groups}
 
 Constraints:
 \itemize{
@@ -185,44 +154,31 @@ Constraints:
 \item Cannot end with a hyphen or contain two consecutive hyphens.
 }}
 
-\item{AutomatedSnapshotRetentionPeriod}{The number of days that automated snapshots are retained. If the value
-is 0, automated snapshots are disabled. Even if automated snapshots are
-disabled, you can still create manual snapshots when you want with
-\code{\link[=redshift_create_cluster_snapshot]{create_cluster_snapshot}}.
+\item{AutomatedSnapshotRetentionPeriod}{The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with \code{\link[=redshift_create_cluster_snapshot]{create_cluster_snapshot}}.
 
-You can't disable automated snapshots for RA3 node types. Set the
-automated retention period from 1-35 days.
+You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.
 
 Default: \code{1}
 
 Constraints: Must be a value from 0 to 35.}
 
-\item{ManualSnapshotRetentionPeriod}{The default number of days to retain a manual snapshot. If the value is
--1, the snapshot is retained indefinitely. This setting doesn't change
-the retention period of existing snapshots.
+\item{ManualSnapshotRetentionPeriod}{The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.
 
 The value must be either -1 or an integer between 1 and 3,653.}
 
 \item{Port}{The port number on which the cluster accepts incoming connections.
 
-The cluster is accessible only via the JDBC and ODBC connection strings.
-Part of the connection string requires the port on which the cluster
-will listen for incoming connections.
+The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.
 
 Default: \code{5439}
 
 Valid Values:
 \itemize{
-\item For clusters with ra3 nodes - Select a port within the ranges
-\code{5431-5455} or \code{8191-8215}. (If you have an existing cluster with
-ra3 nodes, it isn't required that you change the port to these
-ranges.)
-\item For clusters with dc2 nodes - Select a port within the range
-\code{1150-65535}.
+\item For clusters with RG or RA3 nodes - Select a port within the ranges \code{5431-5455} or \code{8191-8215}. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)
+\item For clusters with dc2 nodes - Select a port within the range \code{1150-65535}.
 }}
 
-\item{ClusterVersion}{The version of the Amazon Redshift engine software that you want to
-deploy on the cluster.
+\item{ClusterVersion}{The version of the Amazon Redshift engine software that you want to deploy on the cluster.
 
 The version selected runs on all the nodes in the cluster.
 
@@ -230,26 +186,17 @@ Constraints: Only version 1.0 is currently available.
 
 Example: \code{1.0}}
 
-\item{AllowVersionUpgrade}{If \code{true}, major version upgrades can be applied during the maintenance
-window to the Amazon Redshift engine that is running on the cluster.
+\item{AllowVersionUpgrade}{If \code{true}, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.
 
-When a new major version of the Amazon Redshift engine is released, you
-can request that the service automatically apply upgrades during the
-maintenance window to the Amazon Redshift engine that is running on your
-cluster.
+When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.
 
 Default: \code{true}}
 
-\item{NumberOfNodes}{The number of compute nodes in the cluster. This parameter is required
-when the \strong{ClusterType} parameter is specified as \code{multi-node}.
+\item{NumberOfNodes}{The number of compute nodes in the cluster. This parameter is required when the \strong{ClusterType} parameter is specified as \code{multi-node}.
 
-For information about determining how many nodes you need, go to
-\href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes}{Working with Clusters}
-in the \emph{Amazon Redshift Cluster Management Guide}.
+For information about determining how many nodes you need, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes}{Working with Clusters} in the \emph{Amazon Redshift Cluster Management Guide}.
 
-If you don't specify this parameter, you get a single-node cluster. When
-requesting a multi-node cluster, you must specify the number of nodes
-that you want in the cluster.
+If you don't specify this parameter, you get a single-node cluster. When requesting a multi-node cluster, you must specify the number of nodes that you want in the cluster.
 
 Default: \code{1}
 
@@ -259,36 +206,23 @@ Constraints: Value must be at least 1 and no more than 100.}
 
 Default: false}
 
-\item{Encrypted}{If \code{true}, the data in the cluster is encrypted at rest. If you set the
-value on this parameter to \code{false}, the request will fail.
+\item{Encrypted}{If \code{true}, the data in the cluster is encrypted at rest. If you set the value on this parameter to \code{false}, the request will fail.
 
 Default: true}
 
-\item{HsmClientCertificateIdentifier}{Specifies the name of the HSM client certificate the Amazon Redshift
-cluster uses to retrieve the data encryption keys stored in an HSM.}
+\item{HsmClientCertificateIdentifier}{Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.}
 
-\item{HsmConfigurationIdentifier}{Specifies the name of the HSM configuration that contains the
-information the Amazon Redshift cluster can use to retrieve and store
-keys in an HSM.}
+\item{HsmConfigurationIdentifier}{Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.}
 
 \item{ElasticIp}{The Elastic IP (EIP) address for the cluster.
 
-Constraints: The cluster must be provisioned in EC2-VPC and
-publicly-accessible through an Internet gateway. Don't specify the
-Elastic IP address for a publicly accessible cluster with availability
-zone relocation turned on. For more information about provisioning
-clusters in EC2-VPC, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms}{Supported Platforms to Launch Your Cluster}
-in the Amazon Redshift Cluster Management Guide.}
+Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms}{Supported Platforms to Launch Your Cluster} in the Amazon Redshift Cluster Management Guide.}
 
 \item{Tags}{A list of tag instances.}
 
-\item{KmsKeyId}{The Key Management Service (KMS) key ID of the encryption key that you
-want to use to encrypt data in the cluster.}
+\item{KmsKeyId}{The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.}
 
-\item{EnhancedVpcRouting}{An option that specifies whether to create the cluster with enhanced VPC
-routing enabled. To create a cluster that uses enhanced VPC routing, the
-cluster must be in a VPC. For more information, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html}{Enhanced VPC Routing}
-in the Amazon Redshift Cluster Management Guide.
+\item{EnhancedVpcRouting}{An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html}{Enhanced VPC Routing} in the Amazon Redshift Cluster Management Guide.
 
 If this option is \code{true}, enhanced VPC routing is enabled.
 
@@ -296,68 +230,45 @@ Default: false}
 
 \item{AdditionalInfo}{Reserved.}
 
-\item{IamRoles}{A list of Identity and Access Management (IAM) roles that can be used by
-the cluster to access other Amazon Web Services services. You must
-supply the IAM roles in their Amazon Resource Name (ARN) format.
+\item{IamRoles}{A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
 
-The maximum number of IAM roles that you can associate is subject to a
-quota. For more information, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html}{Quotas and limits}
-in the \emph{Amazon Redshift Cluster Management Guide}.}
+The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html}{Quotas and limits} in the \emph{Amazon Redshift Cluster Management Guide}.}
 
-\item{MaintenanceTrackName}{An optional parameter for the name of the maintenance track for the
-cluster. If you don't provide a maintenance track name, the cluster is
-assigned to the \code{current} track.}
+\item{MaintenanceTrackName}{An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the \code{current} track.}
 
 \item{SnapshotScheduleIdentifier}{A unique identifier for the snapshot schedule.}
 
-\item{AvailabilityZoneRelocation}{The option to enable relocation for an Amazon Redshift cluster between
-Availability Zones after the cluster is created.}
+\item{AvailabilityZoneRelocation}{The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.}
 
-\item{AquaConfigurationStatus}{This parameter is retired. It does not set the AQUA configuration
-status. Amazon Redshift automatically determines whether to use AQUA
-(Advanced Query Accelerator).}
+\item{AquaConfigurationStatus}{This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).}
 
-\item{DefaultIamRoleArn}{The Amazon Resource Name (ARN) for the IAM role that was set as default
-for the cluster when the cluster was created.}
+\item{DefaultIamRoleArn}{The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.}
 
-\item{LoadSampleData}{A flag that specifies whether to load sample data once the cluster is
-created.}
+\item{LoadSampleData}{A flag that specifies whether to load sample data once the cluster is created.}
 
-\item{ManageMasterPassword}{If \code{true}, Amazon Redshift uses Secrets Manager to manage this cluster's
-admin credentials. You can't use \code{MasterUserPassword} if
-\code{ManageMasterPassword} is true. If \code{ManageMasterPassword} is false or
-not set, Amazon Redshift uses \code{MasterUserPassword} for the admin user
-account's password.}
+\item{ManageMasterPassword}{If \code{true}, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use \code{MasterUserPassword} if \code{ManageMasterPassword} is true. If \code{ManageMasterPassword} is false or not set, Amazon Redshift uses \code{MasterUserPassword} for the admin user account's password.}
 
-\item{MasterPasswordSecretKmsKeyId}{The ID of the Key Management Service (KMS) key used to encrypt and store
-the cluster's admin credentials secret. You can only use this parameter
-if \code{ManageMasterPassword} is true.}
+\item{MasterPasswordSecretKmsKeyId}{The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if \code{ManageMasterPassword} is true.}
 
-\item{IpAddressType}{The IP address types that the cluster supports. Possible values are
-\code{ipv4} and \code{dualstack}.}
+\item{IpAddressType}{The IP address types that the cluster supports. Possible values are \code{ipv4} and \code{dualstack}.}
 
-\item{MultiAZ}{If true, Amazon Redshift will deploy the cluster in two Availability
-Zones (AZ).}
+\item{MultiAZ}{If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).}
 
-\item{RedshiftIdcApplicationArn}{The Amazon resource name (ARN) of the Amazon Redshift IAM Identity
-Center application.}
+\item{RedshiftIdcApplicationArn}{The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.}
 
-\item{CatalogName}{The name of the Glue data catalog that will be associated with the
-cluster enabled with Amazon Redshift federated permissions.
+\item{CatalogName}{The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.
 
 Constraints:
 \itemize{
 \item Must contain at least one lowercase letter.
-\item Can only contain lowercase letters (a-z), numbers (0-9), underscores
-(_), and hyphens (-).
+\item Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).
 }
 
 Pattern: \verb{^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$}
 
 Example: \code{my-catalog_01}}
 
-\item{ExtraComputeForAutomaticOptimization}{If \code{true}, allocates additional compute resources for running automatic
-optimization operations.
+\item{ExtraComputeForAutomaticOptimization}{If \code{true}, allocates additional compute resources for running automatic optimization operations.
 
 Default: false}
 }

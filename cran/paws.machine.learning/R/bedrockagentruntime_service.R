@@ -5,8 +5,7 @@ NULL
 #' Agents for Amazon Bedrock Runtime
 #'
 #' @description
-#' Contains APIs related to model invocation and querying of knowledge
-#' bases.
+#' Contains APIs related to model invocation and querying of knowledge bases.
 #'
 #' @param
 #' config

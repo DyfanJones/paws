@@ -12,36 +12,17 @@ route53_list_geo_locations(
 )
 }
 \arguments{
-\item{StartContinentCode}{The code for the continent with which you want to start listing
-locations that Amazon Route 53 supports for geolocation. If Route 53 has
-already returned a page or more of results, if \code{IsTruncated} is true,
-and if \code{NextContinentCode} from the previous response has a value, enter
-that value in \code{startcontinentcode} to return the next page of results.
+\item{StartContinentCode}{The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if \code{IsTruncated} is true, and if \code{NextContinentCode} from the previous response has a value, enter that value in \code{startcontinentcode} to return the next page of results.
 
-Include \code{startcontinentcode} only if you want to list continents. Don't
-include \code{startcontinentcode} when you're listing countries or countries
-with their subdivisions.}
+Include \code{startcontinentcode} only if you want to list continents. Don't include \code{startcontinentcode} when you're listing countries or countries with their subdivisions.}
 
-\item{StartCountryCode}{The code for the country with which you want to start listing locations
-that Amazon Route 53 supports for geolocation. If Route 53 has already
-returned a page or more of results, if \code{IsTruncated} is \code{true}, and if
-\code{NextCountryCode} from the previous response has a value, enter that
-value in \code{startcountrycode} to return the next page of results.}
+\item{StartCountryCode}{The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if \code{IsTruncated} is \code{true}, and if \code{NextCountryCode} from the previous response has a value, enter that value in \code{startcountrycode} to return the next page of results.}
 
-\item{StartSubdivisionCode}{The code for the state of the United States with which you want to start
-listing locations that Amazon Route 53 supports for geolocation. If
-Route 53 has already returned a page or more of results, if
-\code{IsTruncated} is \code{true}, and if \code{NextSubdivisionCode} from the previous
-response has a value, enter that value in \code{startsubdivisioncode} to
-return the next page of results.
+\item{StartSubdivisionCode}{The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if \code{IsTruncated} is \code{true}, and if \code{NextSubdivisionCode} from the previous response has a value, enter that value in \code{startsubdivisioncode} to return the next page of results.
 
-To list subdivisions (U.S. states), you must include both
-\code{startcountrycode} and \code{startsubdivisioncode}.}
+To list subdivisions (U.S. states), you must include both \code{startcountrycode} and \code{startsubdivisioncode}.}
 
-\item{MaxItems}{(Optional) The maximum number of geolocations to be included in the
-response body for this request. If more than \code{maxitems} geolocations
-remain to be listed, then the value of the \code{IsTruncated} element in the
-response is \code{true}.}
+\item{MaxItems}{(Optional) The maximum number of geolocations to be included in the response body for this request. If more than \code{maxitems} geolocations remain to be listed, then the value of the \code{IsTruncated} element in the response is \code{true}.}
 }
 \description{
 Retrieves a list of supported geographic locations.

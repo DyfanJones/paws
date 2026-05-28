@@ -8,8 +8,7 @@ of 20}
 costexplorer_update_cost_allocation_tags_status(CostAllocationTagsStatus)
 }
 \arguments{
-\item{CostAllocationTagsStatus}{[required] The list of \code{CostAllocationTagStatusEntry} objects that are used to
-update cost allocation tags status for this request.}
+\item{CostAllocationTagsStatus}{[required] The list of \code{CostAllocationTagStatusEntry} objects that are used to update cost allocation tags status for this request.}
 }
 \description{
 Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag status (for example, activating the active tag).

@@ -14,9 +14,7 @@ kinesisanalytics_update_application(
 \arguments{
 \item{ApplicationName}{[required] Name of the Amazon Kinesis Analytics application to update.}
 
-\item{CurrentApplicationVersionId}{[required] The current application version ID. You can use the
-\code{\link[=kinesisanalytics_describe_application]{describe_application}}
-operation to get this value.}
+\item{CurrentApplicationVersionId}{[required] The current application version ID. You can use the \code{\link[=kinesisanalytics_describe_application]{describe_application}} operation to get this value.}
 
 \item{ApplicationUpdate}{[required] Describes application updates.}
 }

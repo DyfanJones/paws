@@ -8,7 +8,17 @@ related relationships between text}
 textract_analyze_expense(Document)
 }
 \arguments{
-\item{Document}{[required]}
+\item{Document}{[required] The input document, either as bytes or as an S3 object.
+
+You pass image bytes to an Amazon Textract API operation by using the \code{Bytes} property. For example, you would use the \code{Bytes} property to pass a document loaded from a local file system. Image bytes passed by using the \code{Bytes} property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations.
+
+You pass images stored in an S3 bucket to an Amazon Textract API operation by using the \code{S3Object} property. Documents stored in an S3 bucket don't need to be base64 encoded.
+
+The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.
+
+If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.
+
+For Amazon Textract to process an S3 object, the user must have permission to access the S3 object.}
 }
 \description{
 \code{\link[=textract_analyze_expense]{analyze_expense}} synchronously analyzes an input document for financially related relationships between text.

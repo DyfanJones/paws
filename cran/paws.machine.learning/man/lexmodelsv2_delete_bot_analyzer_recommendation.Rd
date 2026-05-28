@@ -10,8 +10,7 @@ lexmodelsv2_delete_bot_analyzer_recommendation(botId, botAnalyzerRequestId)
 \arguments{
 \item{botId}{[required] The unique identifier of the bot.}
 
-\item{botAnalyzerRequestId}{[required] The unique identifier of the analysis request whose recommendations
-should be deleted.}
+\item{botAnalyzerRequestId}{[required] The unique identifier of the analysis request whose recommendations should be deleted.}
 }
 \description{
 Permanently deletes the recommendations and analysis results for a specific bot analysis request. This operation is provided for GDPR compliance and cannot be undone.

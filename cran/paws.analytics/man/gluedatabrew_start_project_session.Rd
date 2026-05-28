@@ -10,8 +10,7 @@ gluedatabrew_start_project_session(Name, AssumeControl = NULL)
 \arguments{
 \item{Name}{[required] The name of the project to act upon.}
 
-\item{AssumeControl}{A value that, if true, enables you to take control of a session, even if
-a different client is currently accessing the project.}
+\item{AssumeControl}{A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.}
 }
 \description{
 Creates an interactive session, enabling you to manipulate data in a DataBrew project.

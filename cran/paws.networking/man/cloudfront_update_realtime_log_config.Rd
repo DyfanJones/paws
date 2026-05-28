@@ -13,22 +13,17 @@ cloudfront_update_realtime_log_config(
 )
 }
 \arguments{
-\item{EndPoints}{Contains information about the Amazon Kinesis data stream where you are
-sending real-time log data.}
+\item{EndPoints}{Contains information about the Amazon Kinesis data stream where you are sending real-time log data.}
 
 \item{Fields}{A list of fields to include in each real-time log record.
 
-For more information about fields, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields}{Real-time log configuration fields}
-in the \emph{Amazon CloudFront Developer Guide}.}
+For more information about fields, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields}{Real-time log configuration fields} in the \emph{Amazon CloudFront Developer Guide}.}
 
 \item{Name}{The name for this real-time log configuration.}
 
 \item{ARN}{The Amazon Resource Name (ARN) for this real-time log configuration.}
 
-\item{SamplingRate}{The sampling rate for this real-time log configuration. The sampling
-rate determines the percentage of viewer requests that are represented
-in the real-time log data. You must provide an integer between 1 and
-100, inclusive.}
+\item{SamplingRate}{The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.}
 }
 \description{
 Updates a real-time log configuration.

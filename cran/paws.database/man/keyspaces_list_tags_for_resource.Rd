@@ -14,13 +14,9 @@ keyspaces_list_tags_for_resource(
 \arguments{
 \item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.}
 
-\item{nextToken}{The pagination token. To resume pagination, provide the \code{NextToken}
-value as argument of a subsequent API invocation.}
+\item{nextToken}{The pagination token. To resume pagination, provide the \code{NextToken} value as argument of a subsequent API invocation.}
 
-\item{maxResults}{The total number of tags to return in the output. If the total number of
-tags available is more than the value specified, a \code{NextToken} is
-provided in the output. To resume pagination, provide the \code{NextToken}
-value as an argument of a subsequent API invocation.}
+\item{maxResults}{The total number of tags to return in the output. If the total number of tags available is more than the value specified, a \code{NextToken} is provided in the output. To resume pagination, provide the \code{NextToken} value as an argument of a subsequent API invocation.}
 }
 \description{
 Returns a list of all tags associated with the specified Amazon Keyspaces resource.

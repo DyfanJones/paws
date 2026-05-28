@@ -7,8 +7,7 @@
 quicksight_describe_dashboards_qa_configuration(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the dashboard QA
-configuration that you want described.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the dashboard QA configuration that you want described.}
 }
 \description{
 Describes an existing dashboard QA configuration.

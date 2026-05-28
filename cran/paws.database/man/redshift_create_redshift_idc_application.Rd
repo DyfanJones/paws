@@ -18,37 +18,25 @@ redshift_create_redshift_idc_application(
 )
 }
 \arguments{
-\item{IdcInstanceArn}{[required] The Amazon resource name (ARN) of the IAM Identity Center instance where
-Amazon Redshift creates a new managed application.}
+\item{IdcInstanceArn}{[required] The Amazon resource name (ARN) of the IAM Identity Center instance where Amazon Redshift creates a new managed application.}
 
 \item{RedshiftIdcApplicationName}{[required] The name of the Redshift application in IAM Identity Center.}
 
-\item{IdentityNamespace}{The namespace for the Amazon Redshift IAM Identity Center application
-instance. It determines which managed application verifies the
-connection token.}
+\item{IdentityNamespace}{The namespace for the Amazon Redshift IAM Identity Center application instance. It determines which managed application verifies the connection token.}
 
-\item{IdcDisplayName}{[required] The display name for the Amazon Redshift IAM Identity Center application
-instance. It appears in the console.}
+\item{IdcDisplayName}{[required] The display name for the Amazon Redshift IAM Identity Center application instance. It appears in the console.}
 
-\item{IamRoleArn}{[required] The IAM role ARN for the Amazon Redshift IAM Identity Center application
-instance. It has the required permissions to be assumed and invoke the
-IDC Identity Center API.}
+\item{IamRoleArn}{[required] The IAM role ARN for the Amazon Redshift IAM Identity Center application instance. It has the required permissions to be assumed and invoke the IDC Identity Center API.}
 
-\item{AuthorizedTokenIssuerList}{The token issuer list for the Amazon Redshift IAM Identity Center
-application instance.}
+\item{AuthorizedTokenIssuerList}{The token issuer list for the Amazon Redshift IAM Identity Center application instance.}
 
-\item{ServiceIntegrations}{A collection of service integrations for the Redshift IAM Identity
-Center application.}
+\item{ServiceIntegrations}{A collection of service integrations for the Redshift IAM Identity Center application.}
 
-\item{ApplicationType}{The type of application being created. Valid values are \code{None} or
-\code{Lakehouse}. Use \code{Lakehouse} to enable Amazon Redshift federated
-permissions on cluster.}
+\item{ApplicationType}{The type of application being created. Valid values are \code{None} or \code{Lakehouse}. Use \code{Lakehouse} to enable Amazon Redshift federated permissions on cluster.}
 
 \item{Tags}{A list of tags.}
 
-\item{SsoTagKeys}{A list of tags keys that Redshift Identity Center applications copy to
-IAM Identity Center. For each input key, the tag corresponding to the
-key-value pair is propagated.}
+\item{SsoTagKeys}{A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.}
 }
 \description{
 Creates an Amazon Redshift application for use with IAM Identity Center.

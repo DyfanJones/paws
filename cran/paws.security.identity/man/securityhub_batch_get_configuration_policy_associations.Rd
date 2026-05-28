@@ -10,8 +10,7 @@ securityhub_batch_get_configuration_policy_associations(
 )
 }
 \arguments{
-\item{ConfigurationPolicyAssociationIdentifiers}{[required] Specifies one or more target account IDs, organizational unit (OU) IDs,
-or the root ID to retrieve associations for.}
+\item{ConfigurationPolicyAssociationIdentifiers}{[required] Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.}
 }
 \description{
 Returns associations between an Security Hub CSPM configuration and a batch of target accounts, organizational units, or the root. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region. A configuration can refer to a configuration policy or to a self-managed configuration.

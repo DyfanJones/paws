@@ -15,21 +15,13 @@ connect_update_data_table_primary_values(
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias. If the version is provided as part of
-the identifier or ARN, the version must be one of the two available
-system managed aliases, $SAVED or $LATEST.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias. If the version is provided as part of the identifier or ARN, the version must be one of the two available system managed aliases, $SAVED or $LATEST.}
 
-\item{PrimaryValues}{[required] The current primary values for the record. Required and must include
-values for all primary attributes. Fails if the table has primary
-attributes and some primary values are omitted.}
+\item{PrimaryValues}{[required] The current primary values for the record. Required and must include values for all primary attributes. Fails if the table has primary attributes and some primary values are omitted.}
 
-\item{NewPrimaryValues}{[required] The new primary values for the record. Required and must include values
-for all primary attributes. The combination must be unique within the
-table.}
+\item{NewPrimaryValues}{[required] The new primary values for the record. Required and must include values for all primary attributes. The combination must be unique within the table.}
 
-\item{LockVersion}{[required] The lock version information required for optimistic locking to prevent
-concurrent modifications.}
+\item{LockVersion}{[required] The lock version information required for optimistic locking to prevent concurrent modifications.}
 }
 \description{
 Updates the primary values for a record. This operation affects all existing values that are currently associated to the record and its primary values. Users that have restrictions on attributes and/or primary values are not authorized to use this endpoint. The combination of new primary values must be unique within the table.

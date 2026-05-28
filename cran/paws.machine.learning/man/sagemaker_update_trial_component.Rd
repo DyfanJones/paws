@@ -21,9 +21,7 @@ sagemaker_update_trial_component(
 \arguments{
 \item{TrialComponentName}{[required] The name of the component to update.}
 
-\item{DisplayName}{The name of the component as displayed. The name doesn't need to be
-unique. If \code{DisplayName} isn't specified, \code{TrialComponentName} is
-displayed.}
+\item{DisplayName}{The name of the component as displayed. The name doesn't need to be unique. If \code{DisplayName} isn't specified, \code{TrialComponentName} is displayed.}
 
 \item{Status}{The new status of the component.}
 
@@ -31,24 +29,15 @@ displayed.}
 
 \item{EndTime}{When the component ended.}
 
-\item{Parameters}{Replaces all of the component's hyperparameters with the specified
-hyperparameters or add new hyperparameters. Existing hyperparameters are
-replaced if the trial component is updated with an identical
-hyperparameter key.}
+\item{Parameters}{Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.}
 
 \item{ParametersToRemove}{The hyperparameters to remove from the component.}
 
-\item{InputArtifacts}{Replaces all of the component's input artifacts with the specified
-artifacts or adds new input artifacts. Existing input artifacts are
-replaced if the trial component is updated with an identical input
-artifact key.}
+\item{InputArtifacts}{Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.}
 
 \item{InputArtifactsToRemove}{The input artifacts to remove from the component.}
 
-\item{OutputArtifacts}{Replaces all of the component's output artifacts with the specified
-artifacts or adds new output artifacts. Existing output artifacts are
-replaced if the trial component is updated with an identical output
-artifact key.}
+\item{OutputArtifacts}{Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.}
 
 \item{OutputArtifactsToRemove}{The output artifacts to remove from the component.}
 }

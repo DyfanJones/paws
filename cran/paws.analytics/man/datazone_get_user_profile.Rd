@@ -12,8 +12,7 @@ datazone_get_user_profile(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] the ID of the Amazon DataZone domain the data portal of which you want
-to get.}
+\item{domainIdentifier}{[required] the ID of the Amazon DataZone domain the data portal of which you want to get.}
 
 \item{userIdentifier}{[required] The identifier of the user for which you want to get the user profile.}
 

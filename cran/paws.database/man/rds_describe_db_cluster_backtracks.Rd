@@ -13,8 +13,7 @@ rds_describe_db_cluster_backtracks(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier of the DB cluster to be described. This
-parameter is stored as a lowercase string.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -25,25 +24,19 @@ Constraints:
 
 Example: \code{my-cluster1}}
 
-\item{BacktrackIdentifier}{If specified, this value is the backtrack identifier of the backtrack to
-be described.
+\item{BacktrackIdentifier}{If specified, this value is the backtrack identifier of the backtrack to be described.
 
 Constraints:
 \itemize{
-\item Must contain a valid universally unique identifier (UUID). For more
-information about UUIDs, see \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{Universally unique identifier}.
+\item Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{Universally unique identifier}.
 }
 
 Example: \verb{123e4567-e89b-12d3-a456-426655440000}}
 
-\item{Filters}{A filter that specifies one or more DB clusters to describe. Supported
-filters include the following:
+\item{Filters}{A filter that specifies one or more DB clusters to describe. Supported filters include the following:
 \itemize{
-\item \code{db-cluster-backtrack-id} - Accepts backtrack identifiers. The
-results list includes information about only the backtracks
-identified by these identifiers.
-\item \code{db-cluster-backtrack-status} - Accepts any of the following
-backtrack status values:
+\item \code{db-cluster-backtrack-id} - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.
+\item \code{db-cluster-backtrack-status} - Accepts any of the following backtrack status values:
 \itemize{
 \item \code{applying}
 \item \code{completed}
@@ -51,23 +44,16 @@ backtrack status values:
 \item \code{pending}
 }
 
-The results list includes information about only the backtracks
-identified by these values.
+The results list includes information about only the backtracks identified by these values.
 }}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so you can retrieve the
-remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so you can retrieve the remaining results.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_db_cluster_backtracks]{describe_db_cluster_backtracks}}
-request. If this parameter is specified, the response includes only
-records beyond the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_db_cluster_backtracks]{describe_db_cluster_backtracks}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns information about backtracks for a DB cluster.

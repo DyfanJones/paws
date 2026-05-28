@@ -14,8 +14,7 @@ quicksight_predict_qa_results(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that the user wants to execute
-Predict QA results in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that the user wants to execute Predict QA results in.}
 
 \item{QueryText}{[required] The query text to be used to predict QA results.}
 

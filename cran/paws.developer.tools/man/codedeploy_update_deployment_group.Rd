@@ -33,85 +33,51 @@ codedeploy_update_deployment_group(
 
 \item{newDeploymentGroupName}{The new name of the deployment group, if you want to change it.}
 
-\item{deploymentConfigName}{The replacement deployment configuration name to use, if you want to
-change it.}
+\item{deploymentConfigName}{The replacement deployment configuration name to use, if you want to change it.}
 
-\item{ec2TagFilters}{The replacement set of Amazon EC2 tags on which to filter, if you want
-to change them. To keep the existing tags, enter their names. To remove
-tags, do not enter any tag names.}
+\item{ec2TagFilters}{The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.}
 
-\item{onPremisesInstanceTagFilters}{The replacement set of on-premises instance tags on which to filter, if
-you want to change them. To keep the existing tags, enter their names.
-To remove tags, do not enter any tag names.}
+\item{onPremisesInstanceTagFilters}{The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.}
 
-\item{autoScalingGroups}{The replacement list of Auto Scaling groups to be included in the
-deployment group, if you want to change them.
+\item{autoScalingGroups}{The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.
 \itemize{
-\item To keep the Auto Scaling groups, enter their names or do not specify
-this parameter.
-\item To remove Auto Scaling groups, specify a non-null empty list of Auto
-Scaling group names to detach all CodeDeploy-managed Auto Scaling
-lifecycle hooks. For examples, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat}{Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"}
-in the \emph{CodeDeploy User Guide}.
+\item To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+\item To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat}{Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"} in the \emph{CodeDeploy User Guide}.
 }}
 
 \item{serviceRoleArn}{A replacement ARN for the service role, if you want to change it.}
 
-\item{triggerConfigurations}{Information about triggers to change when the deployment group is
-updated. For examples, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications-edit-trigger.html}{Edit a Trigger in a CodeDeploy Deployment Group}
-in the \emph{CodeDeploy User Guide}.}
+\item{triggerConfigurations}{Information about triggers to change when the deployment group is updated. For examples, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications-edit-trigger.html}{Edit a Trigger in a CodeDeploy Deployment Group} in the \emph{CodeDeploy User Guide}.}
 
-\item{alarmConfiguration}{Information to add or change about Amazon CloudWatch alarms when the
-deployment group is updated.}
+\item{alarmConfiguration}{Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.}
 
-\item{autoRollbackConfiguration}{Information for an automatic rollback configuration that is added or
-changed when a deployment group is updated.}
+\item{autoRollbackConfiguration}{Information for an automatic rollback configuration that is added or changed when a deployment group is updated.}
 
-\item{outdatedInstancesStrategy}{Indicates what happens when new Amazon EC2 instances are launched
-mid-deployment and do not receive the deployed application revision.
+\item{outdatedInstancesStrategy}{Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.
 
-If this option is set to \code{UPDATE} or is unspecified, CodeDeploy
-initiates one or more 'auto-update outdated instances' deployments to
-apply the deployed application revision to the new Amazon EC2 instances.
+If this option is set to \code{UPDATE} or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
 
-If this option is set to \code{IGNORE}, CodeDeploy does not initiate a
-deployment to update the new Amazon EC2 instances. This may result in
-instances having different revisions.}
+If this option is set to \code{IGNORE}, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.}
 
-\item{deploymentStyle}{Information about the type of deployment, either in-place or blue/green,
-you want to run and whether to route deployment traffic behind a load
-balancer.}
+\item{deploymentStyle}{Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.}
 
 \item{blueGreenDeploymentConfiguration}{Information about blue/green deployment options for a deployment group.}
 
 \item{loadBalancerInfo}{Information about the load balancer used in a deployment.}
 
-\item{ec2TagSet}{Information about groups of tags applied to on-premises instances. The
-deployment group includes only Amazon EC2 instances identified by all
-the tag groups.}
+\item{ec2TagSet}{Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups.}
 
-\item{ecsServices}{The target Amazon ECS services in the deployment group. This applies
-only to deployment groups that use the Amazon ECS compute platform. A
-target Amazon ECS service is specified as an Amazon ECS cluster and
-service name pair using the format \verb{<clustername>:<servicename>}.}
+\item{ecsServices}{The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format \verb{<clustername>:<servicename>}.}
 
-\item{onPremisesTagSet}{Information about an on-premises instance tag set. The deployment group
-includes only on-premises instances identified by all the tag groups.}
+\item{onPremisesTagSet}{Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.}
 
-\item{terminationHookEnabled}{This parameter only applies if you are using CodeDeploy with Amazon EC2
-Auto Scaling. For more information, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html}{Integrating CodeDeploy with Amazon EC2 Auto Scaling}
-in the \emph{CodeDeploy User Guide}.
+\item{terminationHookEnabled}{This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html}{Integrating CodeDeploy with Amazon EC2 Auto Scaling} in the \emph{CodeDeploy User Guide}.
 
-Set \code{terminationHookEnabled} to \code{true} to have CodeDeploy install a
-termination hook into your Auto Scaling group when you update a
-deployment group. When this hook is installed, CodeDeploy will perform
-termination deployments.
+Set \code{terminationHookEnabled} to \code{true} to have CodeDeploy install a termination hook into your Auto Scaling group when you update a deployment group. When this hook is installed, CodeDeploy will perform termination deployments.
 
-For information about termination deployments, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable}{Enabling termination deployments during Auto Scaling scale-in events}
-in the \emph{CodeDeploy User Guide}.
+For information about termination deployments, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable}{Enabling termination deployments during Auto Scaling scale-in events} in the \emph{CodeDeploy User Guide}.
 
-For more information about Auto Scaling scale-in events, see the \href{https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in}{Scale in}
-topic in the \emph{Amazon EC2 Auto Scaling User Guide}.}
+For more information about Auto Scaling scale-in events, see the \href{https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in}{Scale in} topic in the \emph{Amazon EC2 Auto Scaling User Guide}.}
 }
 \description{
 Changes information about a deployment group.

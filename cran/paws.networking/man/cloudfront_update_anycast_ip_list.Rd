@@ -14,19 +14,16 @@ cloudfront_update_anycast_ip_list(
 \arguments{
 \item{Id}{[required] The ID of the Anycast static IP list.}
 
-\item{IpAddressType}{The IP address type for the Anycast static IP list. You can specify one
-of the following options:
+\item{IpAddressType}{The IP address type for the Anycast static IP list. You can specify one of the following options:
 \itemize{
 \item \code{ipv4} only
 \item \code{ipv6} only
 \item \code{dualstack} - Allocate a list of both IPv4 and IPv6 addresses
 }}
 
-\item{IpamCidrConfigs}{A list of IPAM CIDR configurations that specify the IP address ranges
-and IPAM pool settings for updating the Anycast static IP list.}
+\item{IpamCidrConfigs}{A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.}
 
-\item{IfMatch}{[required] The current version (ETag value) of the Anycast static IP list that you
-are updating.}
+\item{IfMatch}{[required] The current version (ETag value) of the Anycast static IP list that you are updating.}
 }
 \description{
 Updates an Anycast static IP list.

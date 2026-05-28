@@ -13,15 +13,13 @@ workdocs_describe_groups(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{SearchQuery}{[required] A query to describe groups by group name.}
 
 \item{OrganizationId}{The ID of the organization.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{Limit}{The maximum number of items to return with this call.}
 }

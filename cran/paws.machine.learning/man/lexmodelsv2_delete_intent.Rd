@@ -13,9 +13,7 @@ lexmodelsv2_delete_intent(intentId, botId, botVersion, localeId)
 
 \item{botVersion}{[required] The version of the bot associated with the intent.}
 
-\item{localeId}{[required] The identifier of the language and locale where the bot will be deleted.
-The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 }
 \description{
 Removes the specified intent.

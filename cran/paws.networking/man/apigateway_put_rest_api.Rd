@@ -16,21 +16,13 @@ apigateway_put_rest_api(
 \arguments{
 \item{restApiId}{[required] The string identifier of the associated RestApi.}
 
-\item{mode}{The \code{mode} query parameter to specify the update mode. Valid values are
-"merge" and "overwrite". By default, the update mode is "merge".}
+\item{mode}{The \code{mode} query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".}
 
-\item{failOnWarnings}{A query parameter to indicate whether to rollback the API update
-(\code{true}) or not (\code{false}) when a warning is encountered. The default
-value is \code{false}.}
+\item{failOnWarnings}{A query parameter to indicate whether to rollback the API update (\code{true}) or not (\code{false}) when a warning is encountered. The default value is \code{false}.}
 
-\item{parameters}{Custom header parameters as part of the request. For example, to exclude
-DocumentationParts from an imported API, set \code{ignore=documentation} as a
-\code{parameters} value, as in the AWS CLI command of
-\verb{aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'}.}
+\item{parameters}{Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set \code{ignore=documentation} as a \code{parameters} value, as in the AWS CLI command of \verb{aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'}.}
 
-\item{body}{[required] The PUT request body containing external API definitions. Currently,
-only OpenAPI definition JSON/YAML files are supported. The maximum size
-of the API definition file is 6MB.}
+\item{body}{[required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.}
 }
 \description{
 A feature of the API Gateway control service for updating an existing API with an input of external API definitions. The update can take the form of merging the supplied definition into the existing API or overwriting the existing API.

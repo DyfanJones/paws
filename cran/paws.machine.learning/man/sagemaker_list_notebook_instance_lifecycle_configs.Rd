@@ -18,32 +18,23 @@ sagemaker_list_notebook_instance_lifecycle_configs(
 )
 }
 \arguments{
-\item{NextToken}{If the result of a
-\code{\link[=sagemaker_list_notebook_instance_lifecycle_configs]{list_notebook_instance_lifecycle_configs}}
-request was truncated, the response includes a \code{NextToken}. To get the
-next set of lifecycle configurations, use the token in the next request.}
+\item{NextToken}{If the result of a \code{\link[=sagemaker_list_notebook_instance_lifecycle_configs]{list_notebook_instance_lifecycle_configs}} request was truncated, the response includes a \code{NextToken}. To get the next set of lifecycle configurations, use the token in the next request.}
 
-\item{MaxResults}{The maximum number of lifecycle configurations to return in the
-response.}
+\item{MaxResults}{The maximum number of lifecycle configurations to return in the response.}
 
 \item{SortBy}{Sorts the list of results. The default is \code{CreationTime}.}
 
 \item{SortOrder}{The sort order for results.}
 
-\item{NameContains}{A string in the lifecycle configuration name. This filter returns only
-lifecycle configurations whose name contains the specified string.}
+\item{NameContains}{A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only lifecycle configurations that were created
-before the specified time (timestamp).}
+\item{CreationTimeBefore}{A filter that returns only lifecycle configurations that were created before the specified time (timestamp).}
 
-\item{CreationTimeAfter}{A filter that returns only lifecycle configurations that were created
-after the specified time (timestamp).}
+\item{CreationTimeAfter}{A filter that returns only lifecycle configurations that were created after the specified time (timestamp).}
 
-\item{LastModifiedTimeBefore}{A filter that returns only lifecycle configurations that were modified
-before the specified time (timestamp).}
+\item{LastModifiedTimeBefore}{A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).}
 
-\item{LastModifiedTimeAfter}{A filter that returns only lifecycle configurations that were modified
-after the specified time (timestamp).}
+\item{LastModifiedTimeAfter}{A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).}
 }
 \description{
 Lists notebook instance lifestyle configurations created with the \code{\link[=sagemaker_create_notebook_instance_lifecycle_config]{create_notebook_instance_lifecycle_config}} API.

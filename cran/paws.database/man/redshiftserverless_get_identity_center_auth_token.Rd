@@ -8,16 +8,13 @@ Redshift Serverless workgroups}
 redshiftserverless_get_identity_center_auth_token(workgroupNames)
 }
 \arguments{
-\item{workgroupNames}{[required] A list of workgroup names for which to generate the Identity Center
-authentication token.
+\item{workgroupNames}{[required] A list of workgroup names for which to generate the Identity Center authentication token.
 
 Constraints:
 \itemize{
 \item Must contain between 1 and 20 workgroup names.
-\item Each workgroup name must be a valid Amazon Redshift Serverless
-workgroup identifier.
-\item All specified workgroups must have Identity Center integration
-enabled.
+\item Each workgroup name must be a valid Amazon Redshift Serverless workgroup identifier.
+\item All specified workgroups must have Identity Center integration enabled.
 }}
 }
 \description{

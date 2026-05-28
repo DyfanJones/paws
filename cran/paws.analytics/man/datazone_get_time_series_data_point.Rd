@@ -13,8 +13,7 @@ datazone_get_time_series_data_point(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain that houses the asset for which you
-want to get the data point.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain that houses the asset for which you want to get the data point.}
 
 \item{entityIdentifier}{[required] The ID of the asset for which you want to get the data point.}
 
@@ -22,8 +21,7 @@ want to get the data point.}
 
 \item{identifier}{[required] The ID of the data point that you want to get.}
 
-\item{formName}{[required] The name of the time series form that houses the data point that you
-want to get.}
+\item{formName}{[required] The name of the time series form that houses the data point that you want to get.}
 }
 \description{
 Gets the existing data point for the asset.

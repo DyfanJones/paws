@@ -53,12 +53,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Contains all data plane API operations and data types for the Amazon
-SageMaker Feature Store. Use this API to put, delete, and retrieve (get)
-features from a feature store.
+Contains all data plane API operations and data types for the Amazon SageMaker Feature Store. Use this API to put, delete, and retrieve (get) features from a feature store.
 
-Use the following operations to configure your \code{OnlineStore} and
-\code{OfflineStore} features, and to create and manage feature groups:
+Use the following operations to configure your \code{OnlineStore} and \code{OfflineStore} features, and to create and manage feature groups:
 \itemize{
 \item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFeatureGroup.html}{CreateFeatureGroup}
 \item \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteFeatureGroup.html}{DeleteFeatureGroup}

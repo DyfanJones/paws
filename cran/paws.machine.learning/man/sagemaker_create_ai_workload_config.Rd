@@ -14,20 +14,13 @@ sagemaker_create_ai_workload_config(
 )
 }
 \arguments{
-\item{AIWorkloadConfigName}{[required] The name of the AI workload configuration. The name must be unique
-within your Amazon Web Services account in the current Amazon Web
-Services Region.}
+\item{AIWorkloadConfigName}{[required] The name of the AI workload configuration. The name must be unique within your Amazon Web Services account in the current Amazon Web Services Region.}
 
-\item{DatasetConfig}{The dataset configuration for the workload. Specify input data channels
-with their data sources for benchmark workloads.}
+\item{DatasetConfig}{The dataset configuration for the workload. Specify input data channels with their data sources for benchmark workloads.}
 
-\item{AIWorkloadConfigs}{The benchmark tool configuration and workload specification. Provide the
-specification as an inline YAML or JSON string.}
+\item{AIWorkloadConfigs}{The benchmark tool configuration and workload specification. Provide the specification as an inline YAML or JSON string.}
 
-\item{Tags}{The metadata that you apply to Amazon Web Services resources to help you
-categorize and organize them. Each tag consists of a key and a value,
-both of which you define. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}
-in the Amazon Web Services General Reference.}
+\item{Tags}{The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources} in the Amazon Web Services General Reference.}
 }
 \description{
 Creates a reusable AI workload configuration that defines datasets, data sources, and benchmark tool settings for consistent performance testing of generative AI inference deployments on Amazon SageMaker AI.

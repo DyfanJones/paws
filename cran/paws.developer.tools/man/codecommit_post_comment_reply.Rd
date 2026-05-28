@@ -8,17 +8,9 @@ commits or a pull request}
 codecommit_post_comment_reply(inReplyTo, clientRequestToken = NULL, content)
 }
 \arguments{
-\item{inReplyTo}{[required] The system-generated ID of the comment to which you want to reply. To
-get this ID, use
-\code{\link[=codecommit_get_comments_for_compared_commit]{get_comments_for_compared_commit}}
-or
-\code{\link[=codecommit_get_comments_for_pull_request]{get_comments_for_pull_request}}.}
+\item{inReplyTo}{[required] The system-generated ID of the comment to which you want to reply. To get this ID, use \code{\link[=codecommit_get_comments_for_compared_commit]{get_comments_for_compared_commit}} or \code{\link[=codecommit_get_comments_for_pull_request]{get_comments_for_pull_request}}.}
 
-\item{clientRequestToken}{A unique, client-generated idempotency token that, when provided in a
-request, ensures the request cannot be repeated with a changed
-parameter. If a request is received with the same parameters and a token
-is included, the request returns information about the initial request
-that used that token.}
+\item{clientRequestToken}{A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.}
 
 \item{content}{[required] The contents of your reply to a comment.}
 }

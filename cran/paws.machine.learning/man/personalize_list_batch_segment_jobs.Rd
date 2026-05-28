@@ -12,13 +12,11 @@ personalize_list_batch_segment_jobs(
 )
 }
 \arguments{
-\item{solutionVersionArn}{The Amazon Resource Name (ARN) of the solution version that the batch
-segment jobs used to generate batch segments.}
+\item{solutionVersionArn}{The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.}
 
 \item{nextToken}{The token to request the next page of results.}
 
-\item{maxResults}{The maximum number of batch segment job results to return in each page.
-The default value is 100.}
+\item{maxResults}{The maximum number of batch segment job results to return in each page. The default value is 100.}
 }
 \description{
 Gets a list of the batch segment jobs that have been performed off of a solution version that you specify.

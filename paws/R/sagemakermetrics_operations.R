@@ -76,14 +76,12 @@ sagemakermetrics_batch_get_metrics <- function(MetricQueries) {
 #' Used to ingest training metrics into SageMaker
 #'
 #' @description
-#' Used to ingest training metrics into SageMaker. These metrics can be
-#' visualized in SageMaker Studio.
+#' Used to ingest training metrics into SageMaker. These metrics can be visualized in SageMaker Studio.
 #'
 #' @usage
 #' sagemakermetrics_batch_put_metrics(TrialComponentName, MetricData)
 #'
-#' @param TrialComponentName &#91;required&#93; The name of the Trial Component to associate with the metrics. The Trial
-#' Component name must be entirely lowercase.
+#' @param TrialComponentName &#91;required&#93; The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.
 #' @param MetricData &#91;required&#93; A list of raw metric values to put.
 #'
 #' @return

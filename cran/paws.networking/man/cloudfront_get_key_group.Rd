@@ -8,8 +8,7 @@ last modified}
 cloudfront_get_key_group(Id)
 }
 \arguments{
-\item{Id}{[required] The identifier of the key group that you are getting. To get the
-identifier, use \code{\link[=cloudfront_list_key_groups]{list_key_groups}}.}
+\item{Id}{[required] The identifier of the key group that you are getting. To get the identifier, use \code{\link[=cloudfront_list_key_groups]{list_key_groups}}.}
 }
 \description{
 Gets a key group, including the date and time when the key group was last modified.

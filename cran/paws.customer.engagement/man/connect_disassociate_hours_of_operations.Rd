@@ -12,13 +12,11 @@ connect_disassociate_hours_of_operations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{HoursOfOperationId}{[required] The identifier of the child hours of operation.}
 
-\item{ParentHoursOfOperationIds}{[required] The Amazon Resource Names (ARNs) of the parent hours of operation
-resources to disassociate with the child hours of operation resource.}
+\item{ParentHoursOfOperationIds}{[required] The Amazon Resource Names (ARNs) of the parent hours of operation resources to disassociate with the child hours of operation resource.}
 }
 \description{
 Disassociates a set of hours of operations with another hours of operation. Refer to Administrator Guide \href{https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html}{here} for more information on inheriting overrides from parent hours of operation(s).

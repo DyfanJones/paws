@@ -12,9 +12,7 @@ rds_describe_db_shard_groups(
 )
 }
 \arguments{
-\item{DBShardGroupIdentifier}{The user-supplied DB shard group identifier. If this parameter is
-specified, information for only the specific DB shard group is returned.
-This parameter isn't case-sensitive.
+\item{DBShardGroupIdentifier}{The user-supplied DB shard group identifier. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
@@ -23,15 +21,9 @@ Constraints:
 
 \item{Filters}{A filter that specifies one or more DB shard groups to describe.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_db_shard_groups]{describe_db_shard_groups}} request. If
-this parameter is specified, the response includes only records beyond
-the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_db_shard_groups]{describe_db_shard_groups}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so you can retrieve the
-remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so you can retrieve the remaining results.
 
 Default: 100
 

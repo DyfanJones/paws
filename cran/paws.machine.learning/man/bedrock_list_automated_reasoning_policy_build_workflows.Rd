@@ -12,14 +12,11 @@ bedrock_list_automated_reasoning_policy_build_workflows(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-build workflows you want to list.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflows you want to list.}
 
-\item{nextToken}{A pagination token from a previous request to continue listing build
-workflows from where the previous request left off.}
+\item{nextToken}{A pagination token from a previous request to continue listing build workflows from where the previous request left off.}
 
-\item{maxResults}{The maximum number of build workflows to return in a single response.
-Valid range is 1-100.}
+\item{maxResults}{The maximum number of build workflows to return in a single response. Valid range is 1-100.}
 }
 \description{
 Lists all build workflows for an Automated Reasoning policy, showing the history of policy creation and modification attempts.

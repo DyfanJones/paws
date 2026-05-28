@@ -8,11 +8,9 @@ region for a specified cluster}
 redshift_disable_snapshot_copy(ClusterIdentifier)
 }
 \arguments{
-\item{ClusterIdentifier}{[required] The unique identifier of the source cluster that you want to disable
-copying of snapshots to a destination region.
+\item{ClusterIdentifier}{[required] The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.
 
-Constraints: Must be the valid name of an existing cluster that has
-cross-region snapshot copy enabled.}
+Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.}
 }
 \description{
 Disables the automatic copying of snapshots from one region to another region for a specified cluster.

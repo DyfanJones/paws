@@ -50,18 +50,11 @@ Operations section.
 \description{
 Welcome to the \emph{Amazon SQS API Reference}.
 
-Amazon SQS is a reliable, highly-scalable hosted queue for storing
-messages as they travel between applications or microservices. Amazon
-SQS moves data between distributed application components and helps you
-decouple these components.
+Amazon SQS is a reliable, highly-scalable hosted queue for storing messages as they travel between applications or microservices. Amazon SQS moves data between distributed application components and helps you decouple these components.
 
-For information on the permissions you need to use this API, see
-\href{https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/}{Identity and access management}
-in the \emph{Amazon SQS Developer Guide.}
+For information on the permissions you need to use this API, see \href{https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/}{Identity and access management} in the \emph{Amazon SQS Developer Guide.}
 
-You can use \href{https://builder.aws.com/build/tools#sdk}{Amazon Web Services SDKs} to access Amazon SQS
-using your favorite programming language. The SDKs perform tasks such as
-the following automatically:
+You can use \href{https://builder.aws.com/build/tools#sdk}{Amazon Web Services SDKs} to access Amazon SQS using your favorite programming language. The SDKs perform tasks such as the following automatically:
 \itemize{
 \item Cryptographically sign your service requests
 \item Retry requests

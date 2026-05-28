@@ -7,8 +7,7 @@
 ivs_list_playback_restriction_policies(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{The first policy to retrieve. This is used for pagination; see the
-\code{nextToken} response field.}
+\item{nextToken}{The first policy to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of policies to return. Default: 1.}
 }

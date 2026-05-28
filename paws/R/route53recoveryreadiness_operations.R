@@ -12,10 +12,8 @@ NULL
 #' route53recoveryreadiness_create_cell(CellName, Cells, Tags)
 #'
 #' @param CellName &#91;required&#93; The name of the cell to create.
-#' @param Cells A list of cell Amazon Resource Names (ARNs) contained within this cell,
-#' for use in nested cells. For example, Availability Zones within specific
-#' Amazon Web Services Regions.
-#' @param Tags 
+#' @param Cells A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.
+#' @param Tags A collection of tags associated with a resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -75,10 +73,7 @@ route53recoveryreadiness_create_cell <- function(CellName, Cells = NULL, Tags = 
 #' Creates a cross-account readiness authorization
 #'
 #' @description
-#' Creates a cross-account readiness authorization. This lets you authorize
-#' another account to work with Route 53 Application Recovery Controller,
-#' for example, to check the readiness status of resources in a separate
-#' account.
+#' Creates a cross-account readiness authorization. This lets you authorize another account to work with Route 53 Application Recovery Controller, for example, to check the readiness status of resources in a separate account.
 #'
 #' @usage
 #' route53recoveryreadiness_create_cross_account_authorization(
@@ -128,11 +123,7 @@ route53recoveryreadiness_create_cross_account_authorization <- function(CrossAcc
 #' Creates a readiness check in an account
 #'
 #' @description
-#' Creates a readiness check in an account. A readiness check monitors a
-#' resource set in your application, such as a set of Amazon Aurora
-#' instances, that Application Recovery Controller is auditing recovery
-#' readiness for. The audits run once every minute on every resource that's
-#' associated with a readiness check.
+#' Creates a readiness check in an account. A readiness check monitors a resource set in your application, such as a set of Amazon Aurora instances, that Application Recovery Controller is auditing recovery readiness for. The audits run once every minute on every resource that's associated with a readiness check.
 #'
 #' @usage
 #' route53recoveryreadiness_create_readiness_check(ReadinessCheckName,
@@ -140,7 +131,7 @@ route53recoveryreadiness_create_cross_account_authorization <- function(CrossAcc
 #'
 #' @param ReadinessCheckName &#91;required&#93; The name of the readiness check to create.
 #' @param ResourceSetName &#91;required&#93; The name of the resource set to check.
-#' @param Tags 
+#' @param Tags A collection of tags associated with a resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -193,9 +184,7 @@ route53recoveryreadiness_create_readiness_check <- function(ReadinessCheckName, 
 #' Creates a recovery group in an account
 #'
 #' @description
-#' Creates a recovery group in an account. A recovery group corresponds to
-#' an application and includes a list of the cells that make up the
-#' application.
+#' Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application.
 #'
 #' @usage
 #' route53recoveryreadiness_create_recovery_group(Cells, RecoveryGroupName,
@@ -203,7 +192,7 @@ route53recoveryreadiness_create_readiness_check <- function(ReadinessCheckName, 
 #'
 #' @param Cells A list of the cell Amazon Resource Names (ARNs) in the recovery group.
 #' @param RecoveryGroupName &#91;required&#93; The name of the recovery group to create.
-#' @param Tags 
+#' @param Tags A collection of tags associated with a resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -260,27 +249,16 @@ route53recoveryreadiness_create_recovery_group <- function(Cells = NULL, Recover
 #' Creates a resource set
 #'
 #' @description
-#' Creates a resource set. A resource set is a set of resources of one type
-#' that span multiple cells. You can associate a resource set with a
-#' readiness check to monitor the resources for failover readiness.
+#' Creates a resource set. A resource set is a set of resources of one type that span multiple cells. You can associate a resource set with a readiness check to monitor the resources for failover readiness.
 #'
 #' @usage
 #' route53recoveryreadiness_create_resource_set(ResourceSetName,
 #'   ResourceSetType, Resources, Tags)
 #'
 #' @param ResourceSetName &#91;required&#93; The name of the resource set to create.
-#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the
-#' following values for resource type:
+#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the following values for resource type:
 #' 
-#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage,
-#' AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm,
-#' AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume,
-#' AWS::ElasticLoadBalancing::LoadBalancer,
-#' AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function,
-#' AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck,
-#' AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC,
-#' AWS::EC2::VPNConnection, AWS::EC2::VPNGateway,
-#' AWS::Route53RecoveryReadiness::DNSTargetResource
+#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource
 #' @param Resources &#91;required&#93; A list of resource objects in the resource set.
 #' @param Tags A tag to associate with the parameters for a resource set.
 #'
@@ -383,8 +361,7 @@ route53recoveryreadiness_create_resource_set <- function(ResourceSetName, Resour
 #' Delete a cell
 #'
 #' @description
-#' Delete a cell. When successful, the response code is 204, with no
-#' response body.
+#' Delete a cell. When successful, the response code is 204, with no response body.
 #'
 #' @usage
 #' route53recoveryreadiness_delete_cell(CellName)
@@ -606,8 +583,7 @@ route53recoveryreadiness_delete_resource_set <- function(ResourceSetName) {
 #' for an application, based on a recovery group
 #'
 #' @description
-#' Gets recommendations about architecture designs for improving resiliency
-#' for an application, based on a recovery group.
+#' Gets recommendations about architecture designs for improving resiliency for an application, based on a recovery group.
 #'
 #' @usage
 #' route53recoveryreadiness_get_architecture_recommendations(MaxResults,
@@ -671,9 +647,7 @@ route53recoveryreadiness_get_architecture_recommendations <- function(MaxResults
 #' ARNs with their associated recovery group ARNs
 #'
 #' @description
-#' Gets information about a cell including cell name, cell Amazon Resource
-#' Name (ARN), ARNs of nested cells for this cell, and a list of those cell
-#' ARNs with their associated recovery group ARNs.
+#' Gets information about a cell including cell name, cell Amazon Resource Name (ARN), ARNs of nested cells for this cell, and a list of those cell ARNs with their associated recovery group ARNs.
 #'
 #' @usage
 #' route53recoveryreadiness_get_cell(CellName)
@@ -732,8 +706,7 @@ route53recoveryreadiness_get_cell <- function(CellName) {
 #' Gets readiness for a cell
 #'
 #' @description
-#' Gets readiness for a cell. Aggregates the readiness of all the resources
-#' that are associated with the cell into a single value.
+#' Gets readiness for a cell. Aggregates the readiness of all the resources that are associated with the cell into a single value.
 #'
 #' @usage
 #' route53recoveryreadiness_get_cell_readiness_summary(CellName,
@@ -848,10 +821,7 @@ route53recoveryreadiness_get_readiness_check <- function(ReadinessCheckName) {
 #' Gets individual readiness status for a readiness check
 #'
 #' @description
-#' Gets individual readiness status for a readiness check. To see the
-#' overall readiness status for a recovery group, that considers the
-#' readiness status for all the readiness checks in the recovery group, use
-#' GetRecoveryGroupReadinessSummary.
+#' Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.
 #'
 #' @usage
 #' route53recoveryreadiness_get_readiness_check_resource_status(MaxResults,
@@ -860,9 +830,7 @@ route53recoveryreadiness_get_readiness_check <- function(ReadinessCheckName) {
 #' @param MaxResults The number of objects that you want to return with this call.
 #' @param NextToken The token that identifies which batch of results you want to see.
 #' @param ReadinessCheckName &#91;required&#93; Name of a readiness check.
-#' @param ResourceIdentifier &#91;required&#93; The resource identifier, which is the Amazon Resource Name (ARN) or the
-#' identifier generated for the resource by Application Recovery Controller
-#' (for example, for a DNS target resource).
+#' @param ResourceIdentifier &#91;required&#93; The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).
 #'
 #' @return
 #' A list with the following syntax:
@@ -924,10 +892,7 @@ route53recoveryreadiness_get_readiness_check_resource_status <- function(MaxResu
 #' Gets the readiness status for an individual readiness check
 #'
 #' @description
-#' Gets the readiness status for an individual readiness check. To see the
-#' overall readiness status for a recovery group, that considers the
-#' readiness status for all the readiness checks in a recovery group, use
-#' GetRecoveryGroupReadinessSummary.
+#' Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary.
 #'
 #' @usage
 #' route53recoveryreadiness_get_readiness_check_status(MaxResults,
@@ -998,8 +963,7 @@ route53recoveryreadiness_get_readiness_check_status <- function(MaxResults = NUL
 #' are included in it
 #'
 #' @description
-#' Gets details about a recovery group, including a list of the cells that
-#' are included in it.
+#' Gets details about a recovery group, including a list of the cells that are included in it.
 #'
 #' @usage
 #' route53recoveryreadiness_get_recovery_group(RecoveryGroupName)
@@ -1056,9 +1020,7 @@ route53recoveryreadiness_get_recovery_group <- function(RecoveryGroupName) {
 #' status
 #'
 #' @description
-#' Displays a summary of information about a recovery group's readiness
-#' status. Includes the readiness checks for resources in the recovery
-#' group and the readiness status of each one.
+#' Displays a summary of information about a recovery group's readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one.
 #'
 #' @usage
 #' route53recoveryreadiness_get_recovery_group_readiness_summary(
@@ -1120,8 +1082,7 @@ route53recoveryreadiness_get_recovery_group_readiness_summary <- function(MaxRes
 #' resources in the set
 #'
 #' @description
-#' Displays the details about a resource set, including a list of the
-#' resources in the set.
+#' Displays the details about a resource set, including a list of the resources in the set.
 #'
 #' @usage
 #' route53recoveryreadiness_get_resource_set(ResourceSetName)
@@ -1266,8 +1227,7 @@ route53recoveryreadiness_list_cells <- function(MaxResults = NULL, NextToken = N
 #' an account
 #'
 #' @description
-#' Lists the cross-account readiness authorizations that are in place for
-#' an account.
+#' Lists the cross-account readiness authorizations that are in place for an account.
 #'
 #' @usage
 #' route53recoveryreadiness_list_cross_account_authorizations(MaxResults,
@@ -1532,8 +1492,7 @@ route53recoveryreadiness_list_resource_sets <- function(MaxResults = NULL, NextT
 #' resource type
 #'
 #' @description
-#' Lists all readiness rules, or lists the readiness rules for a specific
-#' resource type.
+#' Lists all readiness rules, or lists the readiness rules for a specific resource type.
 #'
 #' @usage
 #' route53recoveryreadiness_list_rules(MaxResults, NextToken, ResourceType)
@@ -1741,15 +1700,13 @@ route53recoveryreadiness_untag_resource <- function(ResourceArn, TagKeys) {
 #' nested cells
 #'
 #' @description
-#' Updates a cell to replace the list of nested cells with a new list of
-#' nested cells.
+#' Updates a cell to replace the list of nested cells with a new list of nested cells.
 #'
 #' @usage
 #' route53recoveryreadiness_update_cell(CellName, Cells)
 #'
 #' @param CellName &#91;required&#93; The name of the cell.
-#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs), which completely replaces
-#' the previous list.
+#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1868,8 +1825,7 @@ route53recoveryreadiness_update_readiness_check <- function(ReadinessCheckName, 
 #' @usage
 #' route53recoveryreadiness_update_recovery_group(Cells, RecoveryGroupName)
 #'
-#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs). This list completely
-#' replaces the previous list.
+#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.
 #' @param RecoveryGroupName &#91;required&#93; The name of a recovery group.
 #'
 #' @return
@@ -1931,18 +1887,9 @@ route53recoveryreadiness_update_recovery_group <- function(Cells, RecoveryGroupN
 #'   ResourceSetType, Resources)
 #'
 #' @param ResourceSetName &#91;required&#93; Name of a resource set.
-#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the
-#' following values for resource type:
+#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the following values for resource type:
 #' 
-#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage,
-#' AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm,
-#' AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume,
-#' AWS::ElasticLoadBalancing::LoadBalancer,
-#' AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function,
-#' AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck,
-#' AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC,
-#' AWS::EC2::VPNConnection, AWS::EC2::VPNGateway,
-#' AWS::Route53RecoveryReadiness::DNSTargetResource
+#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource
 #' @param Resources &#91;required&#93; A list of resource objects.
 #'
 #' @return

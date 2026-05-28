@@ -9,8 +9,7 @@ bedrockagentcorecontrol_delete_harness(harnessId, clientToken = NULL)
 \arguments{
 \item{harnessId}{[required] The ID of the harness to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Operation to delete a Harness.

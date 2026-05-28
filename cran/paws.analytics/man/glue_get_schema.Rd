@@ -7,14 +7,10 @@
 glue_get_schema(SchemaId)
 }
 \arguments{
-\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The
-structure contains:
+\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The structure contains:
 \itemize{
-\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-Either \code{SchemaArn} or \code{SchemaName} and \code{RegistryName} has to be
-provided.
-\item SchemaId$SchemaName: The name of the schema. Either \code{SchemaArn} or
-\code{SchemaName} and \code{RegistryName} has to be provided.
+\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either \code{SchemaArn} or \code{SchemaName} and \code{RegistryName} has to be provided.
+\item SchemaId$SchemaName: The name of the schema. Either \code{SchemaArn} or \code{SchemaName} and \code{RegistryName} has to be provided.
 }}
 }
 \description{

@@ -11,8 +11,7 @@ apigatewayv2_delete_route_settings(ApiId, RouteKey, StageName)
 
 \item{RouteKey}{[required] The route key.}
 
-\item{StageName}{[required] The stage name. Stage names can only contain alphanumeric characters,
-hyphens, and underscores. Maximum length is 128 characters.}
+\item{StageName}{[required] The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.}
 }
 \description{
 Deletes the RouteSettings for a stage.

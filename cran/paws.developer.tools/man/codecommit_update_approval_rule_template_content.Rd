@@ -11,15 +11,11 @@ codecommit_update_approval_rule_template_content(
 )
 }
 \arguments{
-\item{approvalRuleTemplateName}{[required] The name of the approval rule template where you want to update the
-content of the rule.}
+\item{approvalRuleTemplateName}{[required] The name of the approval rule template where you want to update the content of the rule.}
 
-\item{newRuleContent}{[required] The content that replaces the existing content of the rule. Content
-statements must be complete. You cannot provide only the changes.}
+\item{newRuleContent}{[required] The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.}
 
-\item{existingRuleContentSha256}{The SHA-256 hash signature for the content of the approval rule. You can
-retrieve this information by using
-\code{\link[=codecommit_get_pull_request]{get_pull_request}}.}
+\item{existingRuleContentSha256}{The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using \code{\link[=codecommit_get_pull_request]{get_pull_request}}.}
 }
 \description{
 Updates the content of an approval rule template. You can change the number of required approvals, the membership of the approval rule, and whether an approval pool is defined.

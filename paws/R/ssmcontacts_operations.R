@@ -7,8 +7,7 @@ NULL
 #' incident
 #'
 #' @description
-#' Used to acknowledge an engagement to a contact channel during an
-#' incident.
+#' Used to acknowledge an engagement to a contact channel during an incident.
 #'
 #' @usage
 #' ssmcontacts_accept_page(PageId, ContactChannelId, AcceptType, Note,
@@ -19,16 +18,9 @@ NULL
 #' @param AcceptType &#91;required&#93; The type indicates if the page was `DELIVERED` or `READ`.
 #' @param Note Information provided by the user when the user acknowledges the page.
 #' @param AcceptCode &#91;required&#93; A 6-digit code used to acknowledge the page.
-#' @param AcceptCodeValidation An optional field that Incident Manager uses to `ENFORCE` `AcceptCode`
-#' validation when acknowledging an page. Acknowledgement can occur by
-#' replying to a page, or when entering the AcceptCode in the console.
-#' Enforcing AcceptCode validation causes Incident Manager to verify that
-#' the code entered by the user matches the code sent by Incident Manager
-#' with the page.
+#' @param AcceptCodeValidation An optional field that Incident Manager uses to `ENFORCE` `AcceptCode` validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.
 #' 
-#' Incident Manager can also `IGNORE` `AcceptCode` validation. Ignoring
-#' `AcceptCode` validation causes Incident Manager to accept any value
-#' entered for the `AcceptCode`.
+#' Incident Manager can also `IGNORE` `AcceptCode` validation. Ignoring `AcceptCode` validation causes Incident Manager to accept any value entered for the `AcceptCode`.
 #'
 #' @return
 #' An empty list.
@@ -83,8 +75,7 @@ ssmcontacts_accept_page <- function(PageId, ContactChannelId = NULL, AcceptType,
 #' Activates a contact's contact channel
 #'
 #' @description
-#' Activates a contact's contact channel. Incident Manager can't engage a
-#' contact until the contact channel has been activated.
+#' Activates a contact's contact channel. Incident Manager can't engage a contact until the contact channel has been activated.
 #'
 #' @usage
 #' ssmcontacts_activate_contact_channel(ContactChannelId, ActivationCode)
@@ -142,16 +133,13 @@ ssmcontacts_activate_contact_channel <- function(ContactChannelId, ActivationCod
 #' contacts in phases during an incident
 #'
 #' @description
-#' Contacts are either the contacts that Incident Manager engages during an
-#' incident or the escalation plans that Incident Manager uses to engage
-#' contacts in phases during an incident.
+#' Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident.
 #'
 #' @usage
 #' ssmcontacts_create_contact(Alias, DisplayName, Type, Plan, Tags,
 #'   IdempotencyToken)
 #'
-#' @param Alias &#91;required&#93; The short name to quickly identify a contact or escalation plan. The
-#' contact alias must be unique and identifiable.
+#' @param Alias &#91;required&#93; The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.
 #' @param DisplayName The full name of the contact or escalation plan.
 #' @param Type &#91;required&#93; The type of contact to create.
 #' 
@@ -160,13 +148,9 @@ ssmcontacts_activate_contact_channel <- function(ContactChannelId, ActivationCod
 #' -   `ESCALATION`: An escalation plan.
 #' 
 #' -   `ONCALL_SCHEDULE`: An on-call schedule.
-#' @param Plan &#91;required&#93; A list of stages. A contact has an engagement plan with stages that
-#' contact specified contact channels. An escalation plan uses stages that
-#' contact specified contacts.
-#' @param Tags Adds a tag to the target. You can only tag resources created in the
-#' first Region of your replication set.
-#' @param IdempotencyToken A token ensuring that the operation is called only once with the
-#' specified details.
+#' @param Plan &#91;required&#93; A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.
+#' @param Tags Adds a tag to the target. You can only tag resources created in the first Region of your replication set.
+#' @param IdempotencyToken A token ensuring that the operation is called only once with the specified details.
 #'
 #' @return
 #' A list with the following syntax:
@@ -259,15 +243,13 @@ ssmcontacts_create_contact <- function(Alias, DisplayName = NULL, Type, Plan, Ta
 #' your contact
 #'
 #' @description
-#' A contact channel is the method that Incident Manager uses to engage
-#' your contact.
+#' A contact channel is the method that Incident Manager uses to engage your contact.
 #'
 #' @usage
 #' ssmcontacts_create_contact_channel(ContactId, Name, Type,
 #'   DeliveryAddress, DeferActivation, IdempotencyToken)
 #'
-#' @param ContactId &#91;required&#93; The Amazon Resource Name (ARN) of the contact you are adding the contact
-#' channel to.
+#' @param ContactId &#91;required&#93; The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
 #' @param Name &#91;required&#93; The name of the contact channel.
 #' @param Type &#91;required&#93; Incident Manager supports three types of contact channels:
 #' 
@@ -276,20 +258,15 @@ ssmcontacts_create_contact <- function(Alias, DisplayName = NULL, Type, Plan, Ta
 #' -   `VOICE`
 #' 
 #' -   `EMAIL`
-#' @param DeliveryAddress &#91;required&#93; The details that Incident Manager uses when trying to engage the contact
-#' channel. The format is dependent on the type of the contact channel. The
-#' following are the expected formats:
+#' @param DeliveryAddress &#91;required&#93; The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:
 #' 
 #' -   SMS - '+' followed by the country code and phone number
 #' 
 #' -   VOICE - '+' followed by the country code and phone number
 #' 
 #' -   EMAIL - any standard email format
-#' @param DeferActivation If you want to activate the channel at a later time, you can choose to
-#' defer activation. Incident Manager can't engage your contact channel
-#' until it has been activated.
-#' @param IdempotencyToken A token ensuring that the operation is called only once with the
-#' specified details.
+#' @param DeferActivation If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.
+#' @param IdempotencyToken A token ensuring that the operation is called only once with the specified details.
 #'
 #' @return
 #' A list with the following syntax:
@@ -363,29 +340,16 @@ ssmcontacts_create_contact_channel <- function(ContactId, Name, Type, DeliveryAd
 #' @param Name &#91;required&#93; The name of the rotation.
 #' @param ContactIds &#91;required&#93; The Amazon Resource Names (ARNs) of the contacts to add to the rotation.
 #' 
-#' Only the `PERSONAL` contact type is supported. The contact types
-#' `ESCALATION` and `ONCALL_SCHEDULE` are not supported for this operation.
+#' Only the `PERSONAL` contact type is supported. The contact types `ESCALATION` and `ONCALL_SCHEDULE` are not supported for this operation.
 #' 
-#' The order that you list the contacts in is their shift order in the
-#' rotation schedule. To change the order of the contact's shifts, use the
-#' [`update_rotation`][ssmcontacts_update_rotation] operation.
+#' The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the [`update_rotation`][ssmcontacts_update_rotation] operation.
 #' @param StartTime The date and time that the rotation goes into effect.
-#' @param TimeZoneId &#91;required&#93; The time zone to base the rotation’s activity on in Internet Assigned
-#' Numbers Authority (IANA) format. For example: "America/Los_Angeles",
-#' "UTC", or "Asia/Seoul". For more information, see the [Time Zone
-#' Database](https://www.iana.org/time-zones) on the IANA website.
+#' @param TimeZoneId &#91;required&#93; The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the [Time Zone Database](https://www.iana.org/time-zones) on the IANA website.
 #' 
-#' Designators for time zones that don’t support Daylight Savings Time
-#' rules, such as Pacific Standard Time (PST), are not supported.
-#' @param Recurrence &#91;required&#93; Information about the rule that specifies when a shift's team members
-#' rotate.
-#' @param Tags Optional metadata to assign to the rotation. Tags enable you to
-#' categorize a resource in different ways, such as by purpose, owner, or
-#' environment. For more information, see [Tagging Incident Manager
-#' resources](https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html)
-#' in the *Incident Manager User Guide*.
-#' @param IdempotencyToken A token that ensures that the operation is called only once with the
-#' specified details.
+#' Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST), are not supported.
+#' @param Recurrence &#91;required&#93; Information about the rule that specifies when a shift's team members rotate.
+#' @param Tags Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see [Tagging Incident Manager resources](https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html) in the *Incident Manager User Guide*.
+#' @param IdempotencyToken A token that ensures that the operation is called only once with the specified details.
 #'
 #' @return
 #' A list with the following syntax:
@@ -491,17 +455,13 @@ ssmcontacts_create_rotation <- function(Name, ContactIds, StartTime = NULL, Time
 #' ssmcontacts_create_rotation_override(RotationId, NewContactIds,
 #'   StartTime, EndTime, IdempotencyToken)
 #'
-#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation to create an override
-#' for.
-#' @param NewContactIds &#91;required&#93; The Amazon Resource Names (ARNs) of the contacts to replace those in the
-#' current on-call rotation with.
+#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation to create an override for.
+#' @param NewContactIds &#91;required&#93; The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.
 #' 
-#' If you want to include any current team members in the override shift,
-#' you must include their ARNs in the new contact ID list.
+#' If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.
 #' @param StartTime &#91;required&#93; The date and time when the override goes into effect.
 #' @param EndTime &#91;required&#93; The date and time when the override ends.
-#' @param IdempotencyToken A token that ensures that the operation is called only once with the
-#' specified details.
+#' @param IdempotencyToken A token that ensures that the operation is called only once with the specified details.
 #'
 #' @return
 #' A list with the following syntax:
@@ -556,14 +516,12 @@ ssmcontacts_create_rotation_override <- function(RotationId, NewContactIds, Star
 #' you can deactivate the channel
 #'
 #' @description
-#' To no longer receive Incident Manager engagements to a contact channel,
-#' you can deactivate the channel.
+#' To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.
 #'
 #' @usage
 #' ssmcontacts_deactivate_contact_channel(ContactChannelId)
 #'
-#' @param ContactChannelId &#91;required&#93; The Amazon Resource Name (ARN) of the contact channel you're
-#' deactivating.
+#' @param ContactChannelId &#91;required&#93; The Amazon Resource Name (ARN) of the contact channel you're deactivating.
 #'
 #' @return
 #' An empty list.
@@ -614,12 +572,7 @@ ssmcontacts_deactivate_contact_channel <- function(ContactChannelId) {
 #' To remove a contact from Incident Manager, you can delete the contact
 #'
 #' @description
-#' To remove a contact from Incident Manager, you can delete the contact.
-#' However, deleting a contact does not remove it from escalation plans and
-#' related response plans. Deleting an escalation plan also does not remove
-#' it from all related response plans. To modify an escalation plan, we
-#' recommend using the [`update_contact`][ssmcontacts_update_contact]
-#' action to specify a different existing contact.
+#' To remove a contact from Incident Manager, you can delete the contact. However, deleting a contact does not remove it from escalation plans and related response plans. Deleting an escalation plan also does not remove it from all related response plans. To modify an escalation plan, we recommend using the [`update_contact`][ssmcontacts_update_contact] action to specify a different existing contact.
 #'
 #' @usage
 #' ssmcontacts_delete_contact(ContactId)
@@ -673,12 +626,7 @@ ssmcontacts_delete_contact <- function(ContactId) {
 #' channel from a contact
 #'
 #' @description
-#' To stop receiving engagements on a contact channel, you can delete the
-#' channel from a contact. Deleting the contact channel does not remove it
-#' from the contact's engagement plan, but the stage that includes the
-#' channel will be ignored. If you delete the only contact channel for a
-#' contact, you'll no longer be able to engage that contact during an
-#' incident.
+#' To stop receiving engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel does not remove it from the contact's engagement plan, but the stage that includes the channel will be ignored. If you delete the only contact channel for a contact, you'll no longer be able to engage that contact during an incident.
 #'
 #' @usage
 #' ssmcontacts_delete_contact_channel(ContactChannelId)
@@ -732,8 +680,7 @@ ssmcontacts_delete_contact_channel <- function(ContactChannelId) {
 #' Deletes a rotation from the system
 #'
 #' @description
-#' Deletes a rotation from the system. If a rotation belongs to more than
-#' one on-call schedule, this operation deletes it from all of them.
+#' Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation deletes it from all of them.
 #'
 #' @usage
 #' ssmcontacts_delete_rotation(RotationId)
@@ -783,8 +730,7 @@ ssmcontacts_delete_rotation <- function(RotationId) {
 #' ssmcontacts_delete_rotation_override(RotationId, RotationOverrideId)
 #'
 #' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation that was overridden.
-#' @param RotationOverrideId &#91;required&#93; The Amazon Resource Name (ARN) of the on-call rotation override to
-#' delete.
+#' @param RotationOverrideId &#91;required&#93; The Amazon Resource Name (ARN) of the on-call rotation override to delete.
 #'
 #' @return
 #' An empty list.
@@ -825,15 +771,12 @@ ssmcontacts_delete_rotation_override <- function(RotationId, RotationOverrideId)
 #' plans during an incident
 #'
 #' @description
-#' Incident Manager uses engagements to engage contacts and escalation
-#' plans during an incident. Use this command to describe the engagement
-#' that occurred during an incident.
+#' Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident.
 #'
 #' @usage
 #' ssmcontacts_describe_engagement(EngagementId)
 #'
-#' @param EngagementId &#91;required&#93; The Amazon Resource Name (ARN) of the engagement you want the details
-#' of.
+#' @param EngagementId &#91;required&#93; The Amazon Resource Name (ARN) of the engagement you want the details of.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1067,8 +1010,7 @@ ssmcontacts_get_contact <- function(ContactId) {
 #' @usage
 #' ssmcontacts_get_contact_channel(ContactChannelId)
 #'
-#' @param ContactChannelId &#91;required&#93; The Amazon Resource Name (ARN) of the contact channel you want
-#' information about.
+#' @param ContactChannelId &#91;required&#93; The Amazon Resource Name (ARN) of the contact channel you want information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1129,8 +1071,7 @@ ssmcontacts_get_contact_channel <- function(ContactChannelId) {
 #' escalation plan
 #'
 #' @description
-#' Retrieves the resource policies attached to the specified contact or
-#' escalation plan.
+#' Retrieves the resource policies attached to the specified contact or escalation plan.
 #'
 #' @usage
 #' ssmcontacts_get_contact_policy(ContactArn)
@@ -1194,8 +1135,7 @@ ssmcontacts_get_contact_policy <- function(ContactArn) {
 #' @usage
 #' ssmcontacts_get_rotation(RotationId)
 #'
-#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the on-call rotation to retrieve
-#' information about.
+#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1294,10 +1234,8 @@ ssmcontacts_get_rotation <- function(RotationId) {
 #' @usage
 #' ssmcontacts_get_rotation_override(RotationId, RotationOverrideId)
 #'
-#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the overridden rotation to retrieve
-#' information about.
-#' @param RotationOverrideId &#91;required&#93; The Amazon Resource Name (ARN) of the on-call rotation override to
-#' retrieve information about.
+#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+#' @param RotationOverrideId &#91;required&#93; The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1436,8 +1374,7 @@ ssmcontacts_list_contact_channels <- function(ContactId, NextToken = NULL, MaxRe
 #'
 #' @param NextToken The pagination token to continue to the next page of results.
 #' @param MaxResults The maximum number of contacts and escalation plans per page of results.
-#' @param AliasPrefix Used to list only contacts who's aliases start with the specified
-#' prefix.
+#' @param AliasPrefix Used to list only contacts who's aliases start with the specified prefix.
 #' @param Type The type of contact.
 #'
 #' @return
@@ -1508,8 +1445,7 @@ ssmcontacts_list_contacts <- function(NextToken = NULL, MaxResults = NULL, Alias
 #'
 #' @param NextToken The pagination token to continue to the next page of results.
 #' @param MaxResults The maximum number of engagements per page of results.
-#' @param IncidentId The Amazon Resource Name (ARN) of the incident you're listing
-#' engagements for.
+#' @param IncidentId The Amazon Resource Name (ARN) of the incident you're listing engagements for.
 #' @param TimeRangeValue The time range to lists engagements for an incident.
 #'
 #' @return
@@ -1586,14 +1522,12 @@ ssmcontacts_list_engagements <- function(NextToken = NULL, MaxResults = NULL, In
 #' acknowledged
 #'
 #' @description
-#' Lists all of the engagements to contact channels that have been
-#' acknowledged.
+#' Lists all of the engagements to contact channels that have been acknowledged.
 #'
 #' @usage
 #' ssmcontacts_list_page_receipts(PageId, NextToken, MaxResults)
 #'
-#' @param PageId &#91;required&#93; The Amazon Resource Name (ARN) of the engagement to a specific contact
-#' channel.
+#' @param PageId &#91;required&#93; The Amazon Resource Name (ARN) of the engagement to a specific contact channel.
 #' @param NextToken The pagination token to continue to the next page of results.
 #' @param MaxResults The maximum number of acknowledgements per page of results.
 #'
@@ -1660,17 +1594,12 @@ ssmcontacts_list_page_receipts <- function(PageId, NextToken = NULL, MaxResults 
 #' Returns the resolution path of an engagement
 #'
 #' @description
-#' Returns the resolution path of an engagement. For example, the
-#' escalation plan engaged in an incident might target an on-call schedule
-#' that includes several contacts in a rotation, but just one contact
-#' on-call when the incident starts. The resolution path indicates the
-#' hierarchy of *escalation plan \> on-call schedule \> contact*.
+#' Returns the resolution path of an engagement. For example, the escalation plan engaged in an incident might target an on-call schedule that includes several contacts in a rotation, but just one contact on-call when the incident starts. The resolution path indicates the hierarchy of *escalation plan \> on-call schedule \> contact*.
 #'
 #' @usage
 #' ssmcontacts_list_page_resolutions(NextToken, PageId)
 #'
-#' @param NextToken A token to start the list. Use this token to get the next set of
-#' results.
+#' @param NextToken A token to start the list. Use this token to get the next set of results.
 #' @param PageId &#91;required&#93; The Amazon Resource Name (ARN) of the contact engaged for the incident.
 #'
 #' @return
@@ -1728,11 +1657,9 @@ ssmcontacts_list_page_resolutions <- function(NextToken = NULL, PageId) {
 #' @usage
 #' ssmcontacts_list_pages_by_contact(ContactId, NextToken, MaxResults)
 #'
-#' @param ContactId &#91;required&#93; The Amazon Resource Name (ARN) of the contact you are retrieving
-#' engagements for.
+#' @param ContactId &#91;required&#93; The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.
 #' @param NextToken The pagination token to continue to the next page of results.
-#' @param MaxResults The maximum number of engagements to contact channels to list per page
-#' of results.
+#' @param MaxResults The maximum number of engagements to contact channels to list per page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1806,8 +1733,7 @@ ssmcontacts_list_pages_by_contact <- function(ContactId, NextToken = NULL, MaxRe
 #' contact
 #'
 #' @description
-#' Lists the engagements to contact channels that occurred by engaging a
-#' contact.
+#' Lists the engagements to contact channels that occurred by engaging a contact.
 #'
 #' @usage
 #' ssmcontacts_list_pages_by_engagement(EngagementId, NextToken,
@@ -1815,8 +1741,7 @@ ssmcontacts_list_pages_by_contact <- function(ContactId, NextToken = NULL, MaxRe
 #'
 #' @param EngagementId &#91;required&#93; The Amazon Resource Name (ARN) of the engagement.
 #' @param NextToken The pagination token to continue to the next page of results.
-#' @param MaxResults The maximum number of engagements to contact channels to list per page
-#' of results.
+#' @param MaxResults The maximum number of engagements to contact channels to list per page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1891,31 +1816,22 @@ ssmcontacts_list_pages_by_engagement <- function(EngagementId, NextToken = NULL,
 #' @description
 #' Returns a list of shifts based on rotation configuration parameters.
 #' 
-#' The Incident Manager primarily uses this operation to populate the
-#' **Preview** calendar. It is not typically run by end users.
+#' The Incident Manager primarily uses this operation to populate the **Preview** calendar. It is not typically run by end users.
 #'
 #' @usage
 #' ssmcontacts_list_preview_rotation_shifts(RotationStartTime, StartTime,
 #'   EndTime, Members, TimeZoneId, Recurrence, Overrides, NextToken,
 #'   MaxResults)
 #'
-#' @param RotationStartTime The date and time a rotation would begin. The first shift is calculated
-#' from this date and time.
-#' @param StartTime Used to filter the range of calculated shifts before sending the
-#' response back to the user.
+#' @param RotationStartTime The date and time a rotation would begin. The first shift is calculated from this date and time.
+#' @param StartTime Used to filter the range of calculated shifts before sending the response back to the user.
 #' @param EndTime &#91;required&#93; The date and time a rotation shift would end.
 #' @param Members &#91;required&#93; The contacts that would be assigned to a rotation.
-#' @param TimeZoneId &#91;required&#93; The time zone the rotation’s activity would be based on, in Internet
-#' Assigned Numbers Authority (IANA) format. For example:
-#' "America/Los_Angeles", "UTC", or "Asia/Seoul".
-#' @param Recurrence &#91;required&#93; Information about how long a rotation would last before restarting at
-#' the beginning of the shift order.
+#' @param TimeZoneId &#91;required&#93; The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".
+#' @param Recurrence &#91;required&#93; Information about how long a rotation would last before restarting at the beginning of the shift order.
 #' @param Overrides Information about changes that would be made in a rotation override.
-#' @param NextToken A token to start the list. This token is used to get the next set of
-#' results.
-#' @param MaxResults The maximum number of items to return for this call. The call also
-#' returns a token that can be specified in a subsequent call to get the
-#' next set of results.
+#' @param NextToken A token to start the list. This token is used to get the next set of results.
+#' @param MaxResults The maximum number of items to return for this call. The call also returns a token that can be specified in a subsequent call to get the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2048,23 +1964,17 @@ ssmcontacts_list_preview_rotation_shifts <- function(RotationStartTime = NULL, S
 #' rotation
 #'
 #' @description
-#' Retrieves a list of overrides currently specified for an on-call
-#' rotation.
+#' Retrieves a list of overrides currently specified for an on-call rotation.
 #'
 #' @usage
 #' ssmcontacts_list_rotation_overrides(RotationId, StartTime, EndTime,
 #'   NextToken, MaxResults)
 #'
-#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation to retrieve information
-#' about.
-#' @param StartTime &#91;required&#93; The date and time for the beginning of a time range for listing
-#' overrides.
+#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation to retrieve information about.
+#' @param StartTime &#91;required&#93; The date and time for the beginning of a time range for listing overrides.
 #' @param EndTime &#91;required&#93; The date and time for the end of a time range for listing overrides.
-#' @param NextToken A token to start the list. Use this token to get the next set of
-#' results.
-#' @param MaxResults The maximum number of items to return for this call. The call also
-#' returns a token that you can specify in a subsequent call to get the
-#' next set of results.
+#' @param NextToken A token to start the list. Use this token to get the next set of results.
+#' @param MaxResults The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2133,23 +2043,17 @@ ssmcontacts_list_rotation_overrides <- function(RotationId, StartTime, EndTime, 
 #' Returns a list of shifts generated by an existing rotation in the system
 #'
 #' @description
-#' Returns a list of shifts generated by an existing rotation in the
-#' system.
+#' Returns a list of shifts generated by an existing rotation in the system.
 #'
 #' @usage
 #' ssmcontacts_list_rotation_shifts(RotationId, StartTime, EndTime,
 #'   NextToken, MaxResults)
 #'
-#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation to retrieve shift
-#' information about.
-#' @param StartTime The date and time for the beginning of the time range to list shifts
-#' for.
+#' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation to retrieve shift information about.
+#' @param StartTime The date and time for the beginning of the time range to list shifts for.
 #' @param EndTime &#91;required&#93; The date and time for the end of the time range to list shifts for.
-#' @param NextToken A token to start the list. Use this token to get the next set of
-#' results.
-#' @param MaxResults The maximum number of items to return for this call. The call also
-#' returns a token that you can specify in a subsequent call to get the
-#' next set of results.
+#' @param NextToken A token to start the list. Use this token to get the next set of results.
+#' @param MaxResults The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2225,14 +2129,9 @@ ssmcontacts_list_rotation_shifts <- function(RotationId, StartTime = NULL, EndTi
 #' @usage
 #' ssmcontacts_list_rotations(RotationNamePrefix, NextToken, MaxResults)
 #'
-#' @param RotationNamePrefix A filter to include rotations in list results based on their common
-#' prefix. For example, entering prod returns a list of all rotation names
-#' that begin with `prod`, such as `production` and `prod-1`.
-#' @param NextToken A token to start the list. Use this token to get the next set of
-#' results.
-#' @param MaxResults The maximum number of items to return for this call. The call also
-#' returns a token that you can specify in a subsequent call to get the
-#' next set of results.
+#' @param RotationNamePrefix A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with `prod`, such as `production` and `prod-1`.
+#' @param NextToken A token to start the list. Use this token to get the next set of results.
+#' @param MaxResults The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2334,14 +2233,12 @@ ssmcontacts_list_rotations <- function(RotationNamePrefix = NULL, NextToken = NU
 #' schedule
 #'
 #' @description
-#' Lists the tags of a contact, escalation plan, rotation, or on-call
-#' schedule.
+#' Lists the tags of a contact, escalation plan, rotation, or on-call schedule.
 #'
 #' @usage
 #' ssmcontacts_list_tags_for_resource(ResourceARN)
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the contact, escalation plan,
-#' rotation, or on-call schedule.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the contact, escalation plan, rotation, or on-call schedule.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2399,11 +2296,7 @@ ssmcontacts_list_tags_for_resource <- function(ResourceARN) {
 #' Adds a resource policy to the specified contact or escalation plan
 #'
 #' @description
-#' Adds a resource policy to the specified contact or escalation plan. The
-#' resource policy is used to share the contact or escalation plan using
-#' Resource Access Manager (RAM). For more information about cross-account
-#' sharing, see [Setting up cross-account
-#' functionality](https://docs.aws.amazon.com/incident-manager/latest/userguide/).
+#' Adds a resource policy to the specified contact or escalation plan. The resource policy is used to share the contact or escalation plan using Resource Access Manager (RAM). For more information about cross-account sharing, see [Setting up cross-account functionality](https://docs.aws.amazon.com/incident-manager/latest/userguide/).
 #'
 #' @usage
 #' ssmcontacts_put_contact_policy(ContactArn, Policy)
@@ -2460,10 +2353,7 @@ ssmcontacts_put_contact_policy <- function(ContactArn, Policy) {
 #' Sends an activation code to a contact channel
 #'
 #' @description
-#' Sends an activation code to a contact channel. The contact can use this
-#' code to activate the contact channel in the console or with the
-#' `ActivateChannel` operation. Incident Manager can't engage a contact
-#' channel until it has been activated.
+#' Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the `ActivateChannel` operation. Incident Manager can't engage a contact channel until it has been activated.
 #'
 #' @usage
 #' ssmcontacts_send_activation_code(ContactChannelId)
@@ -2516,8 +2406,7 @@ ssmcontacts_send_activation_code <- function(ContactChannelId) {
 #' Starts an engagement to a contact or escalation plan
 #'
 #' @description
-#' Starts an engagement to a contact or escalation plan. The engagement
-#' engages each contact specified in the incident.
+#' Starts an engagement to a contact or escalation plan. The engagement engages each contact specified in the incident.
 #'
 #' @usage
 #' ssmcontacts_start_engagement(ContactId, Sender, Subject, Content,
@@ -2525,17 +2414,12 @@ ssmcontacts_send_activation_code <- function(ContactChannelId) {
 #'
 #' @param ContactId &#91;required&#93; The Amazon Resource Name (ARN) of the contact being engaged.
 #' @param Sender &#91;required&#93; The user that started the engagement.
-#' @param Subject &#91;required&#93; The secure subject of the message that was sent to the contact. Use this
-#' field for engagements to `VOICE` or `EMAIL`.
-#' @param Content &#91;required&#93; The secure content of the message that was sent to the contact. Use this
-#' field for engagements to `VOICE` or `EMAIL`.
-#' @param PublicSubject The insecure subject of the message that was sent to the contact. Use
-#' this field for engagements to `SMS`.
-#' @param PublicContent The insecure content of the message that was sent to the contact. Use
-#' this field for engagements to `SMS`.
+#' @param Subject &#91;required&#93; The secure subject of the message that was sent to the contact. Use this field for engagements to `VOICE` or `EMAIL`.
+#' @param Content &#91;required&#93; The secure content of the message that was sent to the contact. Use this field for engagements to `VOICE` or `EMAIL`.
+#' @param PublicSubject The insecure subject of the message that was sent to the contact. Use this field for engagements to `SMS`.
+#' @param PublicContent The insecure content of the message that was sent to the contact. Use this field for engagements to `SMS`.
 #' @param IncidentId The ARN of the incident that the engagement is part of.
-#' @param IdempotencyToken A token ensuring that the operation is called only once with the
-#' specified details.
+#' @param IdempotencyToken A token ensuring that the operation is called only once with the specified details.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2616,8 +2500,7 @@ ssmcontacts_start_engagement <- function(ContactId, Sender, Subject, Content, Pu
 #' plan or engagement plan
 #'
 #' @description
-#' Stops an engagement before it finishes the final stage of the escalation
-#' plan or engagement plan. Further contacts aren't engaged.
+#' Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.
 #'
 #' @usage
 #' ssmcontacts_stop_engagement(EngagementId, Reason)
@@ -2672,8 +2555,7 @@ ssmcontacts_stop_engagement <- function(EngagementId, Reason = NULL) {
 #' Tags a contact or escalation plan
 #'
 #' @description
-#' Tags a contact or escalation plan. You can tag only contacts and
-#' escalation plans in the first region of your replication set.
+#' Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set.
 #'
 #' @usage
 #' ssmcontacts_tag_resource(ResourceARN, Tags)
@@ -2804,12 +2686,9 @@ ssmcontacts_untag_resource <- function(ResourceARN, TagKeys) {
 #' @usage
 #' ssmcontacts_update_contact(ContactId, DisplayName, Plan)
 #'
-#' @param ContactId &#91;required&#93; The Amazon Resource Name (ARN) of the contact or escalation plan you're
-#' updating.
+#' @param ContactId &#91;required&#93; The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.
 #' @param DisplayName The full name of the contact or escalation plan.
-#' @param Plan A list of stages. A contact has an engagement plan with stages for
-#' specified contact channels. An escalation plan uses these stages to
-#' contact specified contacts.
+#' @param Plan A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.
 #'
 #' @return
 #' An empty list.
@@ -2924,11 +2803,9 @@ ssmcontacts_update_contact <- function(ContactId, DisplayName = NULL, Plan = NUL
 #' ssmcontacts_update_contact_channel(ContactChannelId, Name,
 #'   DeliveryAddress)
 #'
-#' @param ContactChannelId &#91;required&#93; The Amazon Resource Name (ARN) of the contact channel you want to
-#' update.
+#' @param ContactChannelId &#91;required&#93; The Amazon Resource Name (ARN) of the contact channel you want to update.
 #' @param Name The name of the contact channel.
-#' @param DeliveryAddress The details that Incident Manager uses when trying to engage the contact
-#' channel.
+#' @param DeliveryAddress The details that Incident Manager uses when trying to engage the contact channel.
 #'
 #' @return
 #' An empty list.
@@ -2991,25 +2868,16 @@ ssmcontacts_update_contact_channel <- function(ContactChannelId, Name = NULL, De
 #'   TimeZoneId, Recurrence)
 #'
 #' @param RotationId &#91;required&#93; The Amazon Resource Name (ARN) of the rotation to update.
-#' @param ContactIds The Amazon Resource Names (ARNs) of the contacts to include in the
-#' updated rotation.
+#' @param ContactIds The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.
 #' 
-#' Only the `PERSONAL` contact type is supported. The contact types
-#' `ESCALATION` and `ONCALL_SCHEDULE` are not supported for this operation.
+#' Only the `PERSONAL` contact type is supported. The contact types `ESCALATION` and `ONCALL_SCHEDULE` are not supported for this operation.
 #' 
-#' The order in which you list the contacts is their shift order in the
-#' rotation schedule.
+#' The order in which you list the contacts is their shift order in the rotation schedule.
 #' @param StartTime The date and time the rotation goes into effect.
-#' @param TimeZoneId The time zone to base the updated rotation’s activity on, in Internet
-#' Assigned Numbers Authority (IANA) format. For example:
-#' "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
-#' the [Time Zone Database](https://www.iana.org/time-zones) on the IANA
-#' website.
+#' @param TimeZoneId The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the [Time Zone Database](https://www.iana.org/time-zones) on the IANA website.
 #' 
-#' Designators for time zones that don’t support Daylight Savings Time
-#' Rules, such as Pacific Standard Time (PST), aren't supported.
-#' @param Recurrence &#91;required&#93; Information about how long the updated rotation lasts before restarting
-#' at the beginning of the shift order.
+#' Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST), aren't supported.
+#' @param Recurrence &#91;required&#93; Information about how long the updated rotation lasts before restarting at the beginning of the shift order.
 #'
 #' @return
 #' An empty list.

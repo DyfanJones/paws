@@ -8,8 +8,7 @@ invitations to manage your member accounts}
 securityhub_decline_invitations(AccountIds)
 }
 \arguments{
-\item{AccountIds}{[required] The list of prospective member account IDs for which to decline an
-invitation.}
+\item{AccountIds}{[required] The list of prospective member account IDs for which to decline an invitation.}
 }
 \description{
 We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see \href{https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html}{Managing Security Hub CSPM administrator and member accounts with Organizations} in the \emph{Security Hub CSPM User Guide}.

@@ -20,8 +20,7 @@ securityhub_create_connector_v2(
 
 \item{Provider}{[required] The third-party provider’s service configuration.}
 
-\item{KmsKeyArn}{The Amazon Resource Name (ARN) of KMS key used to encrypt secrets for
-the connectorV2.}
+\item{KmsKeyArn}{The Amazon Resource Name (ARN) of KMS key used to encrypt secrets for the connectorV2.}
 
 \item{Tags}{The tags to add to the connectorV2 when you create.}
 

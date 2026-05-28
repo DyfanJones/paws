@@ -12,14 +12,11 @@ codecommit_list_repositories_for_approval_rule_template(
 )
 }
 \arguments{
-\item{approvalRuleTemplateName}{[required] The name of the approval rule template for which you want to list
-repositories that are associated with that template.}
+\item{approvalRuleTemplateName}{[required] The name of the approval rule template for which you want to list repositories that are associated with that template.}
 
-\item{nextToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{nextToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 
-\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned
-results.}
+\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned results.}
 }
 \description{
 Lists all repositories associated with the specified approval rule template.

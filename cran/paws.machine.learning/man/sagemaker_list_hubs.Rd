@@ -33,9 +33,7 @@ sagemaker_list_hubs(
 
 \item{MaxResults}{The maximum number of hubs to list.}
 
-\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_hubs]{list_hubs}} request
-was truncated, the response includes a \code{NextToken}. To retrieve the next
-set of hubs, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_hubs]{list_hubs}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of hubs, use the token in the next request.}
 }
 \description{
 List all existing hubs.

@@ -23,17 +23,13 @@ xray_get_time_series_service_statistics(
 
 \item{GroupName}{The case-sensitive name of the group for which to pull statistics from.}
 
-\item{GroupARN}{The Amazon Resource Name (ARN) of the group for which to pull statistics
-from.}
+\item{GroupARN}{The Amazon Resource Name (ARN) of the group for which to pull statistics from.}
 
-\item{EntitySelectorExpression}{A filter expression defining entities that will be aggregated for
-statistics. Supports ID, service, and edge functions. If no selector
-expression is specified, edge statistics are returned.}
+\item{EntitySelectorExpression}{A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.}
 
 \item{Period}{Aggregation period in seconds.}
 
-\item{ForecastStatistics}{The forecasted high and low fault count values. Forecast enabled
-requests require the EntitySelectorExpression ID be provided.}
+\item{ForecastStatistics}{The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.}
 
 \item{NextToken}{Pagination token.}
 }

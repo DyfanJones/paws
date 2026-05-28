@@ -17,8 +17,7 @@ sagemakergeospatialcapabilities_start_vector_enrichment_job(
 \arguments{
 \item{ClientToken}{A unique token that guarantees that the call to this API is idempotent.}
 
-\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that you specified for
-the job.}
+\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that you specified for the job.}
 
 \item{InputConfig}{[required] Input configuration information for the Vector Enrichment job.}
 

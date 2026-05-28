@@ -13,11 +13,9 @@ bedrockagentcore_get_agent_card(
 \arguments{
 \item{runtimeSessionId}{The session ID that the AgentCore Runtime agent is using.}
 
-\item{agentRuntimeArn}{[required] The ARN of the AgentCore Runtime agent for which you want to get the A2A
-agent card.}
+\item{agentRuntimeArn}{[required] The ARN of the AgentCore Runtime agent for which you want to get the A2A agent card.}
 
-\item{qualifier}{Optional qualifier to specify an agent alias, such as \code{prod}code\> or
-\code{dev}. If you don't provide a value, the DEFAULT alias is used.}
+\item{qualifier}{Optional qualifier to specify an agent alias, such as \code{prod}code\> or \code{dev}. If you don't provide a value, the DEFAULT alias is used.}
 }
 \description{
 Retrieves the A2A agent card associated with an AgentCore Runtime agent.

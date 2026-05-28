@@ -11,10 +11,11 @@ comprehendmedical_list_snomedct_inference_jobs(
 )
 }
 \arguments{
+\item{Filter}{Provides information for filtering a list of detection jobs.}
+
 \item{NextToken}{Identifies the next page of InferSNOMEDCT results to return.}
 
-\item{MaxResults}{The maximum number of results to return in each page. The default is
-100.}
+\item{MaxResults}{The maximum number of results to return in each page. The default is 100.}
 }
 \description{
 Gets a list of InferSNOMEDCT jobs a user has submitted.

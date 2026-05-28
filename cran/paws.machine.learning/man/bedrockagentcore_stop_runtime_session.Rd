@@ -16,12 +16,9 @@ bedrockagentcore_stop_runtime_session(
 
 \item{agentRuntimeArn}{[required] The ARN of the agent that contains the session that you want to stop.}
 
-\item{qualifier}{Optional qualifier to specify an agent alias, such as \code{prod}code\> or
-\code{dev}. If you don't provide a value, the DEFAULT alias is used.}
+\item{qualifier}{Optional qualifier to specify an agent alias, such as \code{prod}code\> or \code{dev}. If you don't provide a value, the DEFAULT alias is used.}
 
-\item{clientToken}{Idempotent token used to identify the request. If you use the same token
-with multiple requests, the same response is returned. Use ClientToken
-to prevent the same request from being processed more than once.}
+\item{clientToken}{Idempotent token used to identify the request. If you use the same token with multiple requests, the same response is returned. Use ClientToken to prevent the same request from being processed more than once.}
 }
 \description{
 Stops a session that is running in an running AgentCore Runtime agent.

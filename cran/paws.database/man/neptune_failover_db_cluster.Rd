@@ -10,8 +10,7 @@ neptune_failover_db_cluster(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{A DB cluster identifier to force a failover for. This parameter is not
-case-sensitive.
+\item{DBClusterIdentifier}{A DB cluster identifier to force a failover for. This parameter is not case-sensitive.
 
 Constraints:
 \itemize{
@@ -20,8 +19,7 @@ Constraints:
 
 \item{TargetDBInstanceIdentifier}{The name of the instance to promote to the primary instance.
 
-You must specify the instance identifier for an Read Replica in the DB
-cluster. For example, \code{mydbcluster-replica1}.}
+You must specify the instance identifier for an Read Replica in the DB cluster. For example, \code{mydbcluster-replica1}.}
 }
 \description{
 Forces a failover for a DB cluster.

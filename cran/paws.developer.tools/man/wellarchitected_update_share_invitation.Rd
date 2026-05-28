@@ -12,7 +12,7 @@ wellarchitected_update_share_invitation(
 \arguments{
 \item{ShareInvitationId}{[required] The ID assigned to the share invitation.}
 
-\item{ShareInvitationAction}{[required]}
+\item{ShareInvitationAction}{[required] Share invitation action taken by contributor.}
 }
 \description{
 Update a workload or custom lens share invitation.

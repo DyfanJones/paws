@@ -8,8 +8,7 @@ if one exists}
 athena_get_capacity_assignment_configuration(CapacityReservationName)
 }
 \arguments{
-\item{CapacityReservationName}{[required] The name of the capacity reservation to retrieve the capacity assignment
-configuration for.}
+\item{CapacityReservationName}{[required] The name of the capacity reservation to retrieve the capacity assignment configuration for.}
 }
 \description{
 Gets the capacity assignment configuration for a capacity reservation, if one exists.

@@ -8,21 +8,11 @@ API is called}
 emr_list_release_labels(Filters = NULL, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{Filters}{Filters the results of the request. \code{Prefix} specifies the prefix of
-release labels to return. \code{Application} specifies the application
-(with/without version) of release labels to return.}
+\item{Filters}{Filters the results of the request. \code{Prefix} specifies the prefix of release labels to return. \code{Application} specifies the application (with/without version) of release labels to return.}
 
-\item{NextToken}{Specifies the next page of results. If \code{NextToken} is not specified,
-which is usually the case for the first request of ListReleaseLabels,
-the first page of results are determined by other filtering parameters
-or by the latest version. The
-\code{\link[=emr_list_release_labels]{list_release_labels}} request fails if the
-identity (Amazon Web Services account ID) and all filtering parameters
-are different from the original request, or if the \code{NextToken} is
-expired or tampered with.}
+\item{NextToken}{Specifies the next page of results. If \code{NextToken} is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The \code{\link[=emr_list_release_labels]{list_release_labels}} request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the \code{NextToken} is expired or tampered with.}
 
-\item{MaxResults}{Defines the maximum number of release labels to return in a single
-response. The default is \code{100}.}
+\item{MaxResults}{Defines the maximum number of release labels to return in a single response. The default is \code{100}.}
 }
 \description{
 Retrieves release labels of Amazon EMR services in the Region where the API is called.

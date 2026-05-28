@@ -13,8 +13,7 @@ securityhub_update_aggregator_v2(
 \arguments{
 \item{AggregatorV2Arn}{[required] The ARN of the Aggregator V2.}
 
-\item{RegionLinkingMode}{[required] Determines how Amazon Web Services Regions should be linked to the
-Aggregator V2.}
+\item{RegionLinkingMode}{[required] Determines how Amazon Web Services Regions should be linked to the Aggregator V2.}
 
 \item{LinkedRegions}{A list of Amazon Web Services Regions linked to the aggegation Region.}
 }

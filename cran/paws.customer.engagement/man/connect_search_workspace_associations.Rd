@@ -14,19 +14,15 @@ connect_search_workspace_associations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
 \item{SearchFilter}{Filters to apply to the search, such as tag-based filters.}
 
-\item{SearchCriteria}{The search criteria, including workspace ID, resource ID, or resource
-type.}
+\item{SearchCriteria}{The search criteria, including workspace ID, resource ID, or resource type.}
 }
 \description{
 Searches for workspace associations with users or routing profiles based on various criteria.

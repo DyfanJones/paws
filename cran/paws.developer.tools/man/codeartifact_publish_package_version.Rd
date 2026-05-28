@@ -19,17 +19,13 @@ codeartifact_publish_package_version(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the repository that contains the
-package version to publish.}
+\item{domain}{[required] The name of the domain that contains the repository that contains the package version to publish.}
 
-\item{domainOwner}{The 12-digit account number of the AWS account that owns the domain. It
-does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.}
 
-\item{repository}{[required] The name of the repository that the package version will be published
-to.}
+\item{repository}{[required] The name of the repository that the package version will be published to.}
 
-\item{format}{[required] A format that specifies the type of the package version with the
-requested asset file.
+\item{format}{[required] A format that specifies the type of the package version with the requested asset file.
 
 The only supported value is \code{generic}.}
 
@@ -41,23 +37,15 @@ The only supported value is \code{generic}.}
 
 \item{assetContent}{[required] The content of the asset to publish.}
 
-\item{assetName}{[required] The name of the asset to publish. Asset names can include Unicode
-letters and numbers, and the following special characters:
-\verb{~ ! @ ^ & ( ) - ` _ + [ ] \{ \} ; , . `}
+\item{assetName}{[required] The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: \verb{~ ! @ ^ & ( ) - ` _ + [ ] \{ \} ; , . `}
 
 [ ]: R:\%20}
 
-\item{assetSHA256}{[required] The SHA256 hash of the \code{assetContent} to publish. This value must be
-calculated by the caller and provided with the request (see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages}{Publishing a generic package}
-in the \emph{CodeArtifact User Guide}).
+\item{assetSHA256}{[required] The SHA256 hash of the \code{assetContent} to publish. This value must be calculated by the caller and provided with the request (see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages}{Publishing a generic package} in the \emph{CodeArtifact User Guide}).
 
-This value is used as an integrity check to verify that the
-\code{assetContent} has not changed after it was originally sent.}
+This value is used as an integrity check to verify that the \code{assetContent} has not changed after it was originally sent.}
 
-\item{unfinished}{Specifies whether the package version should remain in the \code{unfinished}
-state. If omitted, the package version status will be set to \code{Published}
-(see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status}{Package version status}
-in the \emph{CodeArtifact User Guide}).
+\item{unfinished}{Specifies whether the package version should remain in the \code{unfinished} state. If omitted, the package version status will be set to \code{Published} (see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status}{Package version status} in the \emph{CodeArtifact User Guide}).
 
 Valid values: \code{unfinished}}
 }

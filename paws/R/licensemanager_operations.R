@@ -57,8 +57,7 @@ licensemanager_accept_grant <- function(GrantArn) {
 #' Checks in the specified license
 #'
 #' @description
-#' Checks in the specified license. Check in a license when it is no longer
-#' in use.
+#' Checks in the specified license. Check in a license when it is no longer in use.
 #'
 #' @usage
 #' licensemanager_check_in_license(LicenseConsumptionToken, Beneficiary)
@@ -110,17 +109,12 @@ licensemanager_check_in_license <- function(LicenseConsumptionToken, Beneficiary
 #' licensemanager_checkout_borrow_license(LicenseArn, Entitlements,
 #'   DigitalSignatureMethod, NodeId, CheckoutMetadata, ClientToken)
 #'
-#' @param LicenseArn &#91;required&#93; Amazon Resource Name (ARN) of the license. The license must use the
-#' borrow consumption configuration.
+#' @param LicenseArn &#91;required&#93; Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.
 #' @param Entitlements &#91;required&#93; License entitlements. Partial checkouts are not supported.
-#' @param DigitalSignatureMethod &#91;required&#93; Digital signature method. The possible value is JSON Web Signature (JWS)
-#' algorithm PS384. For more information, see [RFC 7518 Digital Signature
-#' with
-#' RSASSA-PSS](https://datatracker.ietf.org/doc/html/rfc7518#section-3.5).
+#' @param DigitalSignatureMethod &#91;required&#93; Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see [RFC 7518 Digital Signature with RSASSA-PSS](https://datatracker.ietf.org/doc/html/rfc7518#section-3.5).
 #' @param NodeId Node ID.
 #' @param CheckoutMetadata Information about constraints.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -200,8 +194,7 @@ licensemanager_checkout_borrow_license <- function(LicenseArn, Entitlements, Dig
 #' @description
 #' Checks out the specified license.
 #' 
-#' If the account that created the license is the same that is performing
-#' the check out, you must specify the account as the beneficiary.
+#' If the account that created the license is the same that is performing the check out, you must specify the account as the beneficiary.
 #'
 #' @usage
 #' licensemanager_checkout_license(ProductSKU, CheckoutType,
@@ -211,8 +204,7 @@ licensemanager_checkout_borrow_license <- function(LicenseArn, Entitlements, Dig
 #' @param CheckoutType &#91;required&#93; Checkout type.
 #' @param KeyFingerprint &#91;required&#93; Key fingerprint identifying the license.
 #' @param Entitlements &#91;required&#93; License entitlements.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param Beneficiary License beneficiary.
 #' @param NodeId Node ID.
 #'
@@ -283,38 +275,27 @@ licensemanager_checkout_license <- function(ProductSKU, CheckoutType, KeyFingerp
 #' Creates a grant for the specified license
 #'
 #' @description
-#' Creates a grant for the specified license. A grant shares the use of
-#' license entitlements with a specific Amazon Web Services account, an
-#' organization, or an organizational unit (OU). For more information, see
-#' [Granted licenses in License
-#' Manager](https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html)
-#' in the *License Manager User Guide*.
+#' Creates a grant for the specified license. A grant shares the use of license entitlements with a specific Amazon Web Services account, an organization, or an organizational unit (OU). For more information, see [Granted licenses in License Manager](https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html) in the *License Manager User Guide*.
 #'
 #' @usage
 #' licensemanager_create_grant(ClientToken, GrantName, LicenseArn,
 #'   Principals, HomeRegion, AllowedOperations, Tags)
 #'
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param GrantName &#91;required&#93; Grant name.
 #' @param LicenseArn &#91;required&#93; Amazon Resource Name (ARN) of the license.
-#' @param Principals &#91;required&#93; The grant principals. You can specify one of the following as an Amazon
-#' Resource Name (ARN):
+#' @param Principals &#91;required&#93; The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):
 #' 
-#' -   An Amazon Web Services account, which includes only the account
-#'     specified.
+#' -   An Amazon Web Services account, which includes only the account specified.
 #' 
 #' 
 #' -   An organizational unit (OU), which includes all accounts in the OU.
 #' 
 #' 
-#' -   An organization, which will include all accounts across your
-#'     organization.
+#' -   An organization, which will include all accounts across your organization.
 #' @param HomeRegion &#91;required&#93; Home Region of the grant.
 #' @param AllowedOperations &#91;required&#93; Allowed operations for the grant.
-#' @param Tags Tags to add to the grant. For more information about tagging support in
-#' License Manager, see the [`tag_resource`][licensemanager_tag_resource]
-#' operation.
+#' @param Tags Tags to add to the grant. For more information about tagging support in License Manager, see the [`tag_resource`][licensemanager_tag_resource] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -375,17 +356,13 @@ licensemanager_create_grant <- function(ClientToken, GrantName, LicenseArn, Prin
 #' Creates a new version of the specified grant
 #'
 #' @description
-#' Creates a new version of the specified grant. For more information, see
-#' [Granted licenses in License
-#' Manager](https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html)
-#' in the *License Manager User Guide*.
+#' Creates a new version of the specified grant. For more information, see [Granted licenses in License Manager](https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html) in the *License Manager User Guide*.
 #'
 #' @usage
 #' licensemanager_create_grant_version(ClientToken, GrantArn, GrantName,
 #'   AllowedOperations, Status, StatusReason, SourceVersion, Options)
 #'
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param GrantArn &#91;required&#93; Amazon Resource Name (ARN) of the grant.
 #' @param GrantName Grant name.
 #' @param AllowedOperations Allowed operations for the grant.
@@ -461,19 +438,13 @@ licensemanager_create_grant_version <- function(ClientToken, GrantArn, GrantName
 #' @param ProductSKU &#91;required&#93; Product SKU.
 #' @param Issuer &#91;required&#93; License issuer.
 #' @param HomeRegion &#91;required&#93; Home Region for the license.
-#' @param Validity &#91;required&#93; Date and time range during which the license is valid, in ISO8601-UTC
-#' format.
+#' @param Validity &#91;required&#93; Date and time range during which the license is valid, in ISO8601-UTC format.
 #' @param Entitlements &#91;required&#93; License entitlements.
 #' @param Beneficiary &#91;required&#93; License beneficiary.
-#' @param ConsumptionConfiguration &#91;required&#93; Configuration for consumption of the license. Choose a provisional
-#' configuration for workloads running with continuous connectivity. Choose
-#' a borrow configuration for workloads with offline usage.
+#' @param ConsumptionConfiguration &#91;required&#93; Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.
 #' @param LicenseMetadata Information about the license.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
-#' @param Tags Tags to add to the license. For more information about tagging support
-#' in License Manager, see the
-#' [`tag_resource`][licensemanager_tag_resource] operation.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+#' @param Tags Tags to add to the license. For more information about tagging support in License Manager, see the [`tag_resource`][licensemanager_tag_resource] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -577,8 +548,7 @@ licensemanager_create_license <- function(LicenseName, ProductName, ProductSKU, 
 #' @param AssociatedLicenseAssetRulesetARNs &#91;required&#93; ARNs of associated license asset rulesets.
 #' @param Properties License asset group properties.
 #' @param Tags Tags to add to the license asset group.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -655,8 +625,7 @@ licensemanager_create_license_asset_group <- function(Name, Description = NULL, 
 #' @param Description License asset ruleset description.
 #' @param Rules &#91;required&#93; License asset rules.
 #' @param Tags Tags to add to the license asset ruleset.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -849,13 +818,7 @@ licensemanager_create_license_asset_ruleset <- function(Name, Description = NULL
 #' @description
 #' Creates a license configuration.
 #' 
-#' A license configuration is an abstraction of a customer license
-#' agreement that can be consumed and enforced by License Manager.
-#' Components include specifications for the license type (licensing by
-#' instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
-#' Dedicated Instance, Dedicated Host, or all of these), license affinity
-#' to host (how long a license must be associated with a host), and the
-#' number of licenses purchased and used.
+#' A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), license affinity to host (how long a license must be associated with a host), and the number of licenses purchased and used.
 #'
 #' @usage
 #' licensemanager_create_license_configuration(Name, Description,
@@ -866,28 +829,18 @@ licensemanager_create_license_asset_ruleset <- function(Name, Description = NULL
 #' @param Description Description of the license configuration.
 #' @param LicenseCountingType &#91;required&#93; Dimension used to track the license inventory.
 #' @param LicenseCount Number of licenses managed by the license configuration.
-#' @param LicenseCountHardLimit Indicates whether hard or soft license enforcement is used. Exceeding a
-#' hard limit blocks the launch of new instances.
-#' @param LicenseRules License rules. The syntax is #name=value (for example,
-#' #allowedTenancy=EC2-DedicatedHost). The available rules vary by
-#' dimension, as follows.
+#' @param LicenseCountHardLimit Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.
+#' @param LicenseRules License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.
 #' 
-#' -   `Cores` dimension: `allowedTenancy` | `licenseAffinityToHost` |
-#'     `maximumCores` | `minimumCores`
+#' -   `Cores` dimension: `allowedTenancy` | `licenseAffinityToHost` | `maximumCores` | `minimumCores`
 #' 
-#' -   `Instances` dimension: `allowedTenancy` | `maximumVcpus` |
-#'     `minimumVcpus`
+#' -   `Instances` dimension: `allowedTenancy` | `maximumVcpus` | `minimumVcpus`
 #' 
-#' -   `Sockets` dimension: `allowedTenancy` | `licenseAffinityToHost` |
-#'     `maximumSockets` | `minimumSockets`
+#' -   `Sockets` dimension: `allowedTenancy` | `licenseAffinityToHost` | `maximumSockets` | `minimumSockets`
 #' 
-#' -   `vCPUs` dimension: `allowedTenancy` | `honorVcpuOptimization` |
-#'     `maximumVcpus` | `minimumVcpus`
+#' -   `vCPUs` dimension: `allowedTenancy` | `honorVcpuOptimization` | `maximumVcpus` | `minimumVcpus`
 #' 
-#' The unit for `licenseAffinityToHost` is days and the range is 1 to 180.
-#' The possible values for `allowedTenancy` are `EC2-Default`,
-#' `EC2-DedicatedHost`, and `EC2-DedicatedInstance`. The possible values
-#' for `honorVcpuOptimization` are `True` and `False`.
+#' The unit for `licenseAffinityToHost` is days and the range is 1 to 180. The possible values for `allowedTenancy` are `EC2-Default`, `EC2-DedicatedHost`, and `EC2-DedicatedInstance`. The possible values for `honorVcpuOptimization` are `True` and `False`.
 #' @param Tags Tags to add to the license configuration.
 #' @param DisassociateWhenNotFound When true, disassociates a resource when software is uninstalled.
 #' @param ProductInformationList Product information.
@@ -970,18 +923,9 @@ licensemanager_create_license_configuration <- function(Name, Description = NULL
 #' licensemanager_create_license_conversion_task_for_resource(ResourceArn,
 #'   SourceLicenseContext, DestinationLicenseContext)
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource you are converting the
-#' license type for.
-#' @param SourceLicenseContext &#91;required&#93; Information that identifies the license type you are converting from.
-#' For the structure of the source license, see [Convert a license type
-#' using the
-#' CLI](https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli)
-#' in the *License Manager User Guide*.
-#' @param DestinationLicenseContext &#91;required&#93; Information that identifies the license type you are converting to. For
-#' the structure of the destination license, see [Convert a license type
-#' using the
-#' CLI](https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli)
-#' in the *License Manager User Guide*.
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource you are converting the license type for.
+#' @param SourceLicenseContext &#91;required&#93; Information that identifies the license type you are converting from. For the structure of the source license, see [Convert a license type using the CLI](https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli) in the *License Manager User Guide*.
+#' @param DestinationLicenseContext &#91;required&#93; Information that identifies the license type you are converting to. For the structure of the destination license, see [Convert a license type using the CLI](https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli) in the *License Manager User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1053,16 +997,12 @@ licensemanager_create_license_conversion_task_for_resource <- function(ResourceA
 #' @param ReportGeneratorName &#91;required&#93; Name of the report generator.
 #' @param Type &#91;required&#93; Type of reports to generate. The following report types an be generated:
 #' 
-#' -   License configuration report - Reports the number and details of
-#'     consumed licenses for a license configuration.
+#' -   License configuration report - Reports the number and details of consumed licenses for a license configuration.
 #' 
-#' -   Resource report - Reports the tracked licenses and resource
-#'     consumption for a license configuration.
+#' -   Resource report - Reports the tracked licenses and resource consumption for a license configuration.
 #' @param ReportContext &#91;required&#93; Defines the type of license configuration the report generator tracks.
-#' @param ReportFrequency &#91;required&#93; Frequency by which reports are generated. Reports can be generated
-#' daily, monthly, or weekly.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ReportFrequency &#91;required&#93; Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param Description Description of the report generator.
 #' @param Tags Tags to add to the report generator.
 #'
@@ -1150,16 +1090,12 @@ licensemanager_create_license_manager_report_generator <- function(ReportGenerat
 #' @param ProductName &#91;required&#93; Product name.
 #' @param Issuer &#91;required&#93; License issuer.
 #' @param HomeRegion &#91;required&#93; Home Region of the license.
-#' @param Validity &#91;required&#93; Date and time range during which the license is valid, in ISO8601-UTC
-#' format.
+#' @param Validity &#91;required&#93; Date and time range during which the license is valid, in ISO8601-UTC format.
 #' @param LicenseMetadata Information about the license.
 #' @param Entitlements &#91;required&#93; License entitlements.
-#' @param ConsumptionConfiguration &#91;required&#93; Configuration for consumption of the license. Choose a provisional
-#' configuration for workloads running with continuous connectivity. Choose
-#' a borrow configuration for workloads with offline usage.
+#' @param ConsumptionConfiguration &#91;required&#93; Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.
 #' @param Status &#91;required&#93; License status.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param SourceVersion Current version of the license.
 #'
 #' @return
@@ -1248,23 +1184,16 @@ licensemanager_create_license_version <- function(LicenseArn, LicenseName, Produ
 #' @description
 #' Creates a long-lived token.
 #' 
-#' A refresh token is a JWT token used to get an access token. With an
-#' access token, you can call AssumeRoleWithWebIdentity to get role
-#' credentials that you can use to call License Manager to manage the
-#' specified license.
+#' A refresh token is a JWT token used to get an access token. With an access token, you can call AssumeRoleWithWebIdentity to get role credentials that you can use to call License Manager to manage the specified license.
 #'
 #' @usage
 #' licensemanager_create_token(LicenseArn, RoleArns, ExpirationInDays,
 #'   TokenProperties, ClientToken)
 #'
-#' @param LicenseArn &#91;required&#93; Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud
-#' claim of the JWT token.
-#' @param RoleArns Amazon Resource Name (ARN) of the IAM roles to embed in the token.
-#' License Manager does not check whether the roles are in use.
-#' @param ExpirationInDays Token expiration, in days, counted from token creation. The default is
-#' 365 days.
-#' @param TokenProperties Data specified by the caller to be included in the JWT token. The data
-#' is mapped to the amr claim of the JWT token.
+#' @param LicenseArn &#91;required&#93; Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.
+#' @param RoleArns Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.
+#' @param ExpirationInDays Token expiration, in days, counted from token creation. The default is 365 days.
+#' @param TokenProperties Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.
 #' @param ClientToken &#91;required&#93; Idempotency token, valid for 10 minutes.
 #'
 #' @return
@@ -1567,9 +1496,7 @@ licensemanager_delete_license_configuration <- function(LicenseConfigurationArn)
 #' @description
 #' Deletes the specified report generator.
 #' 
-#' This action deletes the report generator, which stops it from generating
-#' future reports. The action cannot be reversed. It has no effect on the
-#' previous reports from this generator.
+#' This action deletes the report generator, which stops it from generating future reports. The action cannot be reversed. It has no effect on the previous reports from this generator.
 #'
 #' @usage
 #' licensemanager_delete_license_manager_report_generator(
@@ -1665,9 +1592,7 @@ licensemanager_delete_token <- function(TokenId) {
 #'   DryRun)
 #'
 #' @param LicenseConsumptionToken &#91;required&#93; License consumption token.
-#' @param DryRun Checks whether you have the required permissions for the action, without
-#' actually making the request. Provides an error response if you do not
-#' have the required permissions.
+#' @param DryRun Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1713,8 +1638,7 @@ licensemanager_extend_license_consumption <- function(LicenseConsumptionToken, D
 #' Gets a temporary access token to use with AssumeRoleWithWebIdentity
 #'
 #' @description
-#' Gets a temporary access token to use with AssumeRoleWithWebIdentity.
-#' Access tokens are valid for one hour.
+#' Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens are valid for one hour.
 #'
 #' @usage
 #' licensemanager_get_access_token(Token, TokenProperties)
@@ -2600,8 +2524,7 @@ licensemanager_get_service_settings <- function() {
 #'   AssetType, MaxResults, NextToken)
 #'
 #' @param LicenseAssetGroupArn &#91;required&#93; Amazon Resource Name (ARN) of the license asset group.
-#' @param AssetType &#91;required&#93; Asset type. The possible values are `Instance` | `License` |
-#' `LicenseConfiguration`.
+#' @param AssetType &#91;required&#93; Asset type. The possible values are `Instance` | `License` | `LicenseConfiguration`.
 #' @param MaxResults Maximum number of results to return in a single call.
 #' @param NextToken Token for the next set of results.
 #'
@@ -2660,9 +2583,7 @@ licensemanager_list_assets_for_license_asset_group <- function(LicenseAssetGroup
 #' @description
 #' Lists the resource associations for the specified license configuration.
 #' 
-#' Resource associations need not consume licenses from a license
-#' configuration. For example, an AMI or a stopped instance might not
-#' consume a license (depending on the license rules).
+#' Resource associations need not consume licenses from a license configuration. For example, an AMI or a stopped instance might not consume a license (depending on the license rules).
 #'
 #' @usage
 #' licensemanager_list_associations_for_license_configuration(
@@ -2994,8 +2915,7 @@ licensemanager_list_license_asset_groups <- function(Filters = NULL, MaxResults 
 #' @param Filters Filters to scope the results. Following filters are supported
 #' 
 #' -   `Name`
-#' @param ShowAWSManagedLicenseAssetRulesets Specifies whether to show License Manager managed license asset
-#' rulesets.
+#' @param ShowAWSManagedLicenseAssetRulesets Specifies whether to show License Manager managed license asset rulesets.
 #' @param MaxResults Maximum number of results to return in a single call.
 #' @param NextToken Token for the next set of results.
 #'
@@ -3206,18 +3126,13 @@ licensemanager_list_license_asset_rulesets <- function(Filters = NULL, ShowAWSMa
 #' @param LicenseConfigurationArns Amazon Resource Names (ARN) of the license configurations.
 #' @param MaxResults Maximum number of results to return in a single call.
 #' @param NextToken Token for the next set of results.
-#' @param Filters Filters to scope the results. The following filters and logical
-#' operators are supported:
+#' @param Filters Filters to scope the results. The following filters and logical operators are supported:
 #' 
-#' -   `licenseCountingType` - The dimension for which licenses are
-#'     counted. Possible values are `vCPU` | `Instance` | `Core` |
-#'     `Socket`.
+#' -   `licenseCountingType` - The dimension for which licenses are counted. Possible values are `vCPU` | `Instance` | `Core` | `Socket`.
 #' 
-#' -   `enforceLicenseCount` - A Boolean value that indicates whether hard
-#'     license enforcement is used.
+#' -   `enforceLicenseCount` - A Boolean value that indicates whether hard license enforcement is used.
 #' 
-#' -   `usagelimitExceeded` - A Boolean value that indicates whether the
-#'     available licenses have been exceeded.
+#' -   `usagelimitExceeded` - A Boolean value that indicates whether the available licenses have been exceeded.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3446,8 +3361,7 @@ licensemanager_list_license_configurations_for_organization <- function(LicenseC
 #'
 #' @param NextToken Token for the next set of results.
 #' @param MaxResults Maximum number of results to return in a single call.
-#' @param Filters Filters to scope the results. Valid filters are `ResourceArns` and
-#' `Status`.
+#' @param Filters Filters to scope the results. Valid filters are `ResourceArns` and `Status`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3647,8 +3561,7 @@ licensemanager_list_license_manager_report_generators <- function(Filters = NULL
 #' licensemanager_list_license_specifications_for_resource(ResourceArn,
 #'   MaxResults, NextToken)
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of a resource that has an associated license
-#' configuration.
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of a resource that has an associated license configuration.
 #' @param MaxResults Maximum number of results to return in a single call.
 #' @param NextToken Token for the next set of results.
 #'
@@ -3924,10 +3837,7 @@ licensemanager_list_licenses <- function(LicenseArns = NULL, Filters = NULL, Nex
 #' Lists grants that are received
 #'
 #' @description
-#' Lists grants that are received. Received grants are grants created while
-#' specifying the recipient as this Amazon Web Services account, your
-#' organization, or an organizational unit (OU) to which this member
-#' account belongs.
+#' Lists grants that are received. Received grants are grants created while specifying the recipient as this Amazon Web Services account, your organization, or an organizational unit (OU) to which this member account belongs.
 #'
 #' @usage
 #' licensemanager_list_received_grants(GrantArns, Filters, NextToken,
@@ -4364,29 +4274,19 @@ licensemanager_list_received_licenses_for_organization <- function(Filters = NUL
 #'
 #' @param MaxResults Maximum number of results to return in a single call.
 #' @param NextToken Token for the next set of results.
-#' @param Filters Filters to scope the results. The following filters and logical
-#' operators are supported:
+#' @param Filters Filters to scope the results. The following filters and logical operators are supported:
 #' 
-#' -   `account_id` - The ID of the Amazon Web Services account that owns
-#'     the resource. Logical operators are `EQUALS` | `NOT_EQUALS`.
+#' -   `account_id` - The ID of the Amazon Web Services account that owns the resource. Logical operators are `EQUALS` | `NOT_EQUALS`.
 #' 
-#' -   `application_name` - The name of the application. Logical operators
-#'     are `EQUALS` | `BEGINS_WITH`.
+#' -   `application_name` - The name of the application. Logical operators are `EQUALS` | `BEGINS_WITH`.
 #' 
-#' -   `license_included` - The type of license included. Logical operators
-#'     are `EQUALS` | `NOT_EQUALS`. Possible values are
-#'     `sql-server-enterprise` | `sql-server-standard` | `sql-server-web` |
-#'     `windows-server-datacenter`.
+#' -   `license_included` - The type of license included. Logical operators are `EQUALS` | `NOT_EQUALS`. Possible values are `sql-server-enterprise` | `sql-server-standard` | `sql-server-web` | `windows-server-datacenter`.
 #' 
-#' -   `platform` - The platform of the resource. Logical operators are
-#'     `EQUALS` | `BEGINS_WITH`.
+#' -   `platform` - The platform of the resource. Logical operators are `EQUALS` | `BEGINS_WITH`.
 #' 
-#' -   `resource_id` - The ID of the resource. Logical operators are
-#'     `EQUALS` | `NOT_EQUALS`.
+#' -   `resource_id` - The ID of the resource. Logical operators are `EQUALS` | `NOT_EQUALS`.
 #' 
-#' -   `tag:<key>` - The key/value combination of a tag assigned to the
-#'     resource. Logical operators are `EQUALS` (single account) or
-#'     `EQUALS` | `NOT_EQUALS` (cross account).
+#' -   `tag:<key>` - The key/value combination of a tag assigned to the resource. Logical operators are `EQUALS` (single account) or `EQUALS` | `NOT_EQUALS` (cross account).
 #'
 #' @return
 #' A list with the following syntax:
@@ -4456,9 +4356,7 @@ licensemanager_list_resource_inventory <- function(MaxResults = NULL, NextToken 
 #' Lists the tags for the specified resource
 #'
 #' @description
-#' Lists the tags for the specified resource. For more information about
-#' tagging support in License Manager, see the
-#' [`tag_resource`][licensemanager_tag_resource] operation.
+#' Lists the tags for the specified resource. For more information about tagging support in License Manager, see the [`tag_resource`][licensemanager_tag_resource] operation.
 #'
 #' @usage
 #' licensemanager_list_tags_for_resource(ResourceArn)
@@ -4594,10 +4492,7 @@ licensemanager_list_tokens <- function(TokenIds = NULL, Filters = NULL, NextToke
 #' license consumption details by resource at a selected point in time
 #'
 #' @description
-#' Lists all license usage records for a license configuration, displaying
-#' license consumption details by resource at a selected point in time. Use
-#' this action to audit the current license consumption for any license
-#' inventory and configuration.
+#' Lists all license usage records for a license configuration, displaying license consumption details by resource at a selected point in time. Use this action to audit the current license consumption for any license inventory and configuration.
 #'
 #' @usage
 #' licensemanager_list_usage_for_license_configuration(
@@ -4606,13 +4501,11 @@ licensemanager_list_tokens <- function(TokenIds = NULL, Filters = NULL, NextToke
 #' @param LicenseConfigurationArn &#91;required&#93; Amazon Resource Name (ARN) of the license configuration.
 #' @param MaxResults Maximum number of results to return in a single call.
 #' @param NextToken Token for the next set of results.
-#' @param Filters Filters to scope the results. The following filters and logical
-#' operators are supported:
+#' @param Filters Filters to scope the results. The following filters and logical operators are supported:
 #' 
 #' -   `resourceArn` - The ARN of the license configuration resource.
 #' 
-#' -   `resourceType` - The resource type (`EC2_INSTANCE` | `EC2_HOST` |
-#'     `EC2_AMI` | `SYSTEMS_MANAGER_MANAGED_INSTANCE`).
+#' -   `resourceType` - The resource type (`EC2_INSTANCE` | `EC2_HOST` | `EC2_AMI` | `SYSTEMS_MANAGER_MANAGED_INSTANCE`).
 #' 
 #' -   `resourceAccount` - The ID of the account that owns the resource.
 #'
@@ -4731,8 +4624,7 @@ licensemanager_reject_grant <- function(GrantArn) {
 #' Adds the specified tags to the specified resource
 #'
 #' @description
-#' Adds the specified tags to the specified resource. The following
-#' resources support tagging in License Manager:
+#' Adds the specified tags to the specified resource. The following resources support tagging in License Manager:
 #' 
 #' -   Licenses
 #' 
@@ -4745,20 +4637,15 @@ licensemanager_reject_grant <- function(GrantArn) {
 #' @usage
 #' licensemanager_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource. The following examples
-#' provide an example ARN for each supported resource in License Manager:
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource. The following examples provide an example ARN for each supported resource in License Manager:
 #' 
-#' -   Licenses -
-#'     `arn:aws:license-manager::111122223333:license:l-EXAMPLE2da7646d6861033667f20e895`
+#' -   Licenses - `arn:aws:license-manager::111122223333:license:l-EXAMPLE2da7646d6861033667f20e895`
 #' 
-#' -   Grants -
-#'     `arn:aws:license-manager::111122223333:grant:g-EXAMPLE7b19f4a0ab73679b0beb52707`
+#' -   Grants - `arn:aws:license-manager::111122223333:grant:g-EXAMPLE7b19f4a0ab73679b0beb52707`
 #' 
-#' -   License configurations -
-#'     `arn:aws:license-manager:us-east-1:111122223333:license-configuration:lic-EXAMPLE6a788d4c8acd4264ff0ecf2ed2d`
+#' -   License configurations - `arn:aws:license-manager:us-east-1:111122223333:license-configuration:lic-EXAMPLE6a788d4c8acd4264ff0ecf2ed2d`
 #' 
-#' -   Report generators -
-#'     `arn:aws:license-manager:us-east-1:111122223333:report-generator:r-EXAMPLE825b4a4f8fe5a3e0c88824e5fc6`
+#' -   Report generators - `arn:aws:license-manager:us-east-1:111122223333:report-generator:r-EXAMPLE825b4a4f8fe5a3e0c88824e5fc6`
 #' @param Tags &#91;required&#93; One or more tags.
 #'
 #' @return
@@ -4865,10 +4752,8 @@ licensemanager_untag_resource <- function(ResourceArn, TagKeys) {
 #' @param AssociatedLicenseAssetRulesetARNs &#91;required&#93; ARNs of associated license asset rulesets.
 #' @param Properties License asset group properties.
 #' @param LicenseAssetGroupArn &#91;required&#93; Amazon Resource Name (ARN) of the license asset group.
-#' @param Status License asset group status. The possible values are `ACTIVE` |
-#' `DISABLED`.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param Status License asset group status. The possible values are `ACTIVE` | `DISABLED`.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4941,8 +4826,7 @@ licensemanager_update_license_asset_group <- function(Name = NULL, Description =
 #' @param Description License asset ruleset description.
 #' @param Rules &#91;required&#93; License asset rules.
 #' @param LicenseAssetRulesetArn &#91;required&#93; Amazon Resource Name (ARN) of the license asset ruleset.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5138,8 +5022,7 @@ licensemanager_update_license_asset_ruleset <- function(Name = NULL, Description
 #'
 #' @param LicenseConfigurationArn &#91;required&#93; Amazon Resource Name (ARN) of the license configuration.
 #' @param LicenseConfigurationStatus New status of the license configuration.
-#' @param LicenseRules New license rule. The only rule that you can add after you create a
-#' license configuration is licenseAffinityToHost.
+#' @param LicenseRules New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.
 #' @param LicenseCount New number of licenses managed by the license configuration.
 #' @param LicenseCountHardLimit New hard limit of the number of available licenses.
 #' @param Name New name of the license configuration.
@@ -5211,8 +5094,7 @@ licensemanager_update_license_configuration <- function(LicenseConfigurationArn,
 #' @description
 #' Updates a report generator.
 #' 
-#' After you make changes to a report generator, it starts generating new
-#' reports within 60 minutes of being updated.
+#' After you make changes to a report generator, it starts generating new reports within 60 minutes of being updated.
 #'
 #' @usage
 #' licensemanager_update_license_manager_report_generator(
@@ -5223,15 +5105,12 @@ licensemanager_update_license_configuration <- function(LicenseConfigurationArn,
 #' @param ReportGeneratorName &#91;required&#93; Name of the report generator.
 #' @param Type &#91;required&#93; Type of reports to generate. The following report types are supported:
 #' 
-#' -   License configuration report - Reports the number and details of
-#'     consumed licenses for a license configuration.
+#' -   License configuration report - Reports the number and details of consumed licenses for a license configuration.
 #' 
-#' -   Resource report - Reports the tracked licenses and resource
-#'     consumption for a license configuration.
+#' -   Resource report - Reports the tracked licenses and resource consumption for a license configuration.
 #' @param ReportContext &#91;required&#93; The report context.
 #' @param ReportFrequency &#91;required&#93; Frequency by which reports are generated.
-#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param Description Description of the report generator.
 #'
 #' @return
@@ -5296,13 +5175,9 @@ licensemanager_update_license_manager_report_generator <- function(LicenseManage
 #' Amazon Web Services resource
 #'
 #' @description
-#' Adds or removes the specified license configurations for the specified
-#' Amazon Web Services resource.
+#' Adds or removes the specified license configurations for the specified Amazon Web Services resource.
 #' 
-#' You can update the license specifications of AMIs, instances, and hosts.
-#' You cannot update the license specifications for launch templates and
-#' CloudFormation templates, as they send license configurations to the
-#' operation that creates the resource.
+#' You can update the license specifications of AMIs, instances, and hosts. You cannot update the license specifications for launch templates and CloudFormation templates, as they send license configurations to the operation that creates the resource.
 #'
 #' @usage
 #' licensemanager_update_license_specifications_for_resource(ResourceArn,
@@ -5368,10 +5243,8 @@ licensemanager_update_license_specifications_for_resource <- function(ResourceAr
 #'   OrganizationConfiguration, EnableCrossAccountsDiscovery,
 #'   EnabledDiscoverySourceRegions)
 #'
-#' @param S3BucketArn Amazon Resource Name (ARN) of the Amazon S3 bucket where the License
-#' Manager information is stored.
-#' @param SnsTopicArn Amazon Resource Name (ARN) of the Amazon SNS topic used for License
-#' Manager alerts.
+#' @param S3BucketArn Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
+#' @param SnsTopicArn Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
 #' @param OrganizationConfiguration Enables integration with Organizations for cross-account discovery.
 #' @param EnableCrossAccountsDiscovery Activates cross-account discovery.
 #' @param EnabledDiscoverySourceRegions Cross region discovery enabled source regions.

@@ -21,30 +21,23 @@ sagemaker_list_inference_experiments(
 \arguments{
 \item{NameContains}{Selects inference experiments whose names contain this name.}
 
-\item{Type}{Selects inference experiments of this type. For the possible types of
-inference experiments, see
-\code{\link[=sagemaker_create_inference_experiment]{create_inference_experiment}}.}
+\item{Type}{Selects inference experiments of this type. For the possible types of inference experiments, see \code{\link[=sagemaker_create_inference_experiment]{create_inference_experiment}}.}
 
-\item{StatusEquals}{Selects inference experiments which are in this status. For the possible
-statuses, see
-\code{\link[=sagemaker_describe_inference_experiment]{describe_inference_experiment}}.}
+\item{StatusEquals}{Selects inference experiments which are in this status. For the possible statuses, see \code{\link[=sagemaker_describe_inference_experiment]{describe_inference_experiment}}.}
 
 \item{CreationTimeAfter}{Selects inference experiments which were created after this timestamp.}
 
 \item{CreationTimeBefore}{Selects inference experiments which were created before this timestamp.}
 
-\item{LastModifiedTimeAfter}{Selects inference experiments which were last modified after this
-timestamp.}
+\item{LastModifiedTimeAfter}{Selects inference experiments which were last modified after this timestamp.}
 
-\item{LastModifiedTimeBefore}{Selects inference experiments which were last modified before this
-timestamp.}
+\item{LastModifiedTimeBefore}{Selects inference experiments which were last modified before this timestamp.}
 
 \item{SortBy}{The column by which to sort the listed inference experiments.}
 
 \item{SortOrder}{The direction of sorting (ascending or descending).}
 
-\item{NextToken}{The response from the last list when returning a list large enough to
-need tokening.}
+\item{NextToken}{The response from the last list when returning a list large enough to need tokening.}
 
 \item{MaxResults}{The maximum number of results to select.}
 }

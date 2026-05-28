@@ -9,11 +9,9 @@ s3tables_put_table_replication(tableArn, versionToken = NULL, configuration)
 \arguments{
 \item{tableArn}{[required] The Amazon Resource Name (ARN) of the source table.}
 
-\item{versionToken}{A version token from a previous GetTableReplication call. Use this token
-to ensure you're updating the expected version of the configuration.}
+\item{versionToken}{A version token from a previous GetTableReplication call. Use this token to ensure you're updating the expected version of the configuration.}
 
-\item{configuration}{[required] The replication configuration to apply to the table, including the IAM
-role and replication rules.}
+\item{configuration}{[required] The replication configuration to apply to the table, including the IAM role and replication rules.}
 }
 \description{
 Creates or updates the replication configuration for a specific table. This operation allows you to define table-level replication independently of bucket-level replication, providing granular control over which tables are replicated and where.

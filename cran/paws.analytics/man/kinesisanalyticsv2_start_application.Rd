@@ -9,8 +9,7 @@ kinesisanalyticsv2_start_application(ApplicationName, RunConfiguration = NULL)
 \arguments{
 \item{ApplicationName}{[required] The name of the application.}
 
-\item{RunConfiguration}{Identifies the run configuration (start parameters) of a Managed Service
-for Apache Flink application.}
+\item{RunConfiguration}{Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.}
 }
 \description{
 Starts the specified Managed Service for Apache Flink application. After creating an application, you must exclusively call this operation to start your application.

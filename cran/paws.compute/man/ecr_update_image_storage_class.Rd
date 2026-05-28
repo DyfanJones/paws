@@ -12,13 +12,11 @@ ecr_update_image_storage_class(
 )
 }
 \arguments{
-\item{registryId}{The Amazon Web Services account ID associated with the registry that
-contains the image to transition. If you do not specify a registry, the
-default registry is assumed.}
+\item{registryId}{The Amazon Web Services account ID associated with the registry that contains the image to transition. If you do not specify a registry, the default registry is assumed.}
 
 \item{repositoryName}{[required] The name of the repository that contains the image to transition.}
 
-\item{imageId}{[required]}
+\item{imageId}{[required] An object with identifying information for an image in an Amazon ECR repository.}
 
 \item{targetStorageClass}{[required] The target storage class for the image.}
 }

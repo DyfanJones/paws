@@ -12,11 +12,9 @@ elasticache_create_cache_subnet_group(
 )
 }
 \arguments{
-\item{CacheSubnetGroupName}{[required] A name for the cache subnet group. This value is stored as a lowercase
-string.
+\item{CacheSubnetGroupName}{[required] A name for the cache subnet group. This value is stored as a lowercase string.
 
-Constraints: Must contain no more than 255 alphanumeric characters or
-hyphens.
+Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
 
 Example: \code{mysubnetgroup}}
 
@@ -24,8 +22,7 @@ Example: \code{mysubnetgroup}}
 
 \item{SubnetIds}{[required] A list of VPC subnet IDs for the cache subnet group.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates a new cache subnet group.

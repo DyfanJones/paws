@@ -13,8 +13,7 @@ fis_create_target_account_configuration(
 )
 }
 \arguments{
-\item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
 \item{experimentTemplateId}{[required] The experiment template ID.}
 

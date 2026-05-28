@@ -15,9 +15,7 @@ elasticache_revoke_cache_security_group_ingress(
 
 \item{EC2SecurityGroupName}{[required] The name of the Amazon EC2 security group to revoke access from.}
 
-\item{EC2SecurityGroupOwnerId}{[required] The Amazon account number of the Amazon EC2 security group owner. Note
-that this is not the same thing as an Amazon access key ID - you must
-provide a valid Amazon account number for this parameter.}
+\item{EC2SecurityGroupOwnerId}{[required] The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.}
 }
 \description{
 Revokes ingress from a cache security group. Use this operation to disallow access from an Amazon EC2 security group that had been previously authorized.

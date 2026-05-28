@@ -8,14 +8,11 @@ changed a value of an auto-verified attribute}
 cognitoidentityprovider_verify_user_attribute(AccessToken, AttributeName, Code)
 }
 \arguments{
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 
 \item{AttributeName}{[required] The name of the attribute that you want to verify.}
 
-\item{Code}{[required] The verification code that your user pool sent to the added or changed
-attribute, for example the user's email address.}
+\item{Code}{[required] The verification code that your user pool sent to the added or changed attribute, for example the user's email address.}
 }
 \description{
 Submits a verification code for a signed-in user who has added or changed a value of an auto-verified attribute. When successful, the user's attribute becomes verified and the attribute \code{email_verified} or \code{phone_number_verified} becomes \code{true}.

@@ -24,15 +24,13 @@ bedrockagentcorecontrol_update_gateway_target(
 
 \item{description}{The updated description for the gateway target.}
 
-\item{targetConfiguration}{[required]}
+\item{targetConfiguration}{[required] The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint.}
 
 \item{credentialProviderConfigurations}{The updated credential provider configurations for the gateway target.}
 
-\item{metadataConfiguration}{Configuration for HTTP header and query parameter propagation to the
-gateway target.}
+\item{metadataConfiguration}{Configuration for HTTP header and query parameter propagation to the gateway target.}
 
-\item{privateEndpoint}{The private endpoint configuration for the gateway target. Use this to
-connect the gateway to private resources in your VPC.}
+\item{privateEndpoint}{The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.}
 }
 \description{
 Updates an existing gateway target.

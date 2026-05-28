@@ -7,8 +7,7 @@
 translate_list_terminologies(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{If the result of the request to ListTerminologies was truncated, include
-the NextToken to fetch the next group of custom terminologies.}
+\item{NextToken}{If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.}
 
 \item{MaxResults}{The maximum number of custom terminologies returned per list request.}
 }

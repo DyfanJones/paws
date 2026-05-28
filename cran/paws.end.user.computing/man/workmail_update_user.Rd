@@ -30,11 +30,9 @@ workmail_update_user(
 
 \item{UserId}{[required] The identifier for the user to be updated.
 
-The identifier can be the \emph{UserId}, \emph{Username}, or \emph{email}. The
-following identity formats are available:
+The identifier can be the \emph{UserId}, \emph{Username}, or \emph{email}. The following identity formats are available:
 \itemize{
-\item User ID: 12345678-1234-1234-1234-123456789012 or
-S-1-1-12-1234567890-123456789-123456789-1234
+\item User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 \item Email address: user@domain.tld
 \item User name: user
 }}
@@ -71,9 +69,7 @@ You cannot pass \emph{SYSTEM_USER} or \emph{RESOURCE}.}
 
 \item{Office}{Updates the user's office.}
 
-\item{IdentityProviderUserId}{User ID from the IAM Identity Center. If this parameter is empty it will
-be updated automatically when the user logs in for the first time to the
-mailbox associated with WorkMail.}
+\item{IdentityProviderUserId}{User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.}
 }
 \description{
 Updates data for the user. To have the latest information, it must be preceded by a \code{\link[=workmail_describe_user]{describe_user}} call. The dataset in the request should be the one expected when performing another \code{\link[=workmail_describe_user]{describe_user}} call.

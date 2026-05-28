@@ -15,17 +15,11 @@ memorydb_describe_multi_region_parameters(
 \arguments{
 \item{MultiRegionParameterGroupName}{[required] The name of the multi-region parameter group to return details for.}
 
-\item{Source}{The parameter types to return. Valid values: user | system |
-engine-default}
+\item{Source}{The parameter types to return. Valid values: user | system | engine-default}
 
-\item{MaxResults}{The maximum number of records to include in the response. If more
-records exist than the specified MaxResults value, a token is included
-in the response so that the remaining results can be retrieved.}
+\item{MaxResults}{The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.}
 
-\item{NextToken}{An optional token returned from a prior request. Use this token for
-pagination of results from this action. If this parameter is specified,
-the response includes only results beyond the token, up to the value
-specified by MaxResults.}
+\item{NextToken}{An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.}
 }
 \description{
 Returns the detailed parameter list for a particular multi-region parameter group.

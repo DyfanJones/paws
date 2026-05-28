@@ -20,8 +20,7 @@ licensemanagerusersubscriptions_list_identity_providers(
 \item DirectoryId
 }}
 
-\item{NextToken}{A token to specify where to start paginating. This is the nextToken from
-a previously truncated response.}
+\item{NextToken}{A token to specify where to start paginating. This is the nextToken from a previously truncated response.}
 }
 \description{
 Lists the Active Directory identity providers for user-based subscriptions.

@@ -14,16 +14,13 @@ gluedatabrew_create_ruleset(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the ruleset to be created. Valid characters are alphanumeric
-(A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
+\item{Name}{[required] The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
 
 \item{Description}{The description of the ruleset.}
 
-\item{TargetArn}{[required] The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset
-is associated with.}
+\item{TargetArn}{[required] The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.}
 
-\item{Rules}{[required] A list of rules that are defined with the ruleset. A rule includes one
-or more checks to be validated on a DataBrew dataset.}
+\item{Rules}{[required] A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.}
 
 \item{Tags}{Metadata tags to apply to the ruleset.}
 }

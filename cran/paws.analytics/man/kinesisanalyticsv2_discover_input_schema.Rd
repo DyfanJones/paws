@@ -20,14 +20,11 @@ kinesisanalyticsv2_discover_input_schema(
 
 \item{ServiceExecutionRole}{[required] The ARN of the role that is used to access the streaming source.}
 
-\item{InputStartingPositionConfiguration}{The point at which you want Kinesis Data Analytics to start reading
-records from the specified streaming source for discovery purposes.}
+\item{InputStartingPositionConfiguration}{The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source for discovery purposes.}
 
-\item{S3Configuration}{Specify this parameter to discover a schema from data in an Amazon S3
-object.}
+\item{S3Configuration}{Specify this parameter to discover a schema from data in an Amazon S3 object.}
 
-\item{InputProcessingConfiguration}{The InputProcessingConfiguration to use to preprocess the records before
-discovering the schema of the records.}
+\item{InputProcessingConfiguration}{The InputProcessingConfiguration to use to preprocess the records before discovering the schema of the records.}
 }
 \description{
 Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response, the operation returns the inferred schema and also the sample records that the operation used to infer the schema.

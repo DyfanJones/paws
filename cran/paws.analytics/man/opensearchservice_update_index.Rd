@@ -8,12 +8,11 @@ configuration}
 opensearchservice_update_index(DomainName, IndexName, IndexSchema)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.}
 
 \item{IndexName}{[required] The name of the index to update.}
 
-\item{IndexSchema}{[required] The updated JSON schema for the index including any changes to mappings,
-settings, and semantic enrichment configuration.}
+\item{IndexSchema}{[required] The updated JSON schema for the index including any changes to mappings, settings, and semantic enrichment configuration.}
 }
 \description{
 Updates an existing OpenSearch index schema and semantic enrichment configuration. This operation allows modification of field mappings and semantic search settings for text fields. Changes to semantic enrichment configuration will apply to newly ingested documents.

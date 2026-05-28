@@ -13,10 +13,7 @@ kendra_list_access_control_configurations(
 \arguments{
 \item{IndexId}{[required] The identifier of the index for the access control configuration.}
 
-\item{NextToken}{If the previous response was incomplete (because there's more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of access control
-configurations.}
+\item{NextToken}{If the previous response was incomplete (because there's more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.}
 
 \item{MaxResults}{The maximum number of access control configurations to return.}
 }

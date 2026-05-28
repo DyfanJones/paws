@@ -8,8 +8,7 @@ source server in staging account}
 drs_create_extended_source_server(sourceServerArn, tags = NULL)
 }
 \arguments{
-\item{sourceServerArn}{[required] This defines the ARN of the source server in staging Account based on
-which you want to create an extended source server.}
+\item{sourceServerArn}{[required] This defines the ARN of the source server in staging Account based on which you want to create an extended source server.}
 
 \item{tags}{A list of tags associated with the extended source server.}
 }

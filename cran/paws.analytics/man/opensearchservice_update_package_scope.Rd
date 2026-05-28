@@ -9,8 +9,7 @@ opensearchservice_update_package_scope(PackageID, Operation, PackageUserList)
 \arguments{
 \item{PackageID}{[required] ID of the package whose scope is being updated.}
 
-\item{Operation}{[required] The operation to perform on the package scope (e.g., add/remove/override
-users).}
+\item{Operation}{[required] The operation to perform on the package scope (e.g., add/remove/override users).}
 
 \item{PackageUserList}{[required] List of users to be added or removed from the package scope.}
 }

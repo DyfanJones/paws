@@ -17,31 +17,19 @@ comprehend_create_endpoint(
 )
 }
 \arguments{
-\item{EndpointName}{[required] This is the descriptive suffix that becomes part of the \code{EndpointArn}
-used for all subsequent requests to this resource.}
+\item{EndpointName}{[required] This is the descriptive suffix that becomes part of the \code{EndpointArn} used for all subsequent requests to this resource.}
 
-\item{ModelArn}{The Amazon Resource Number (ARN) of the model to which the endpoint will
-be attached.}
+\item{ModelArn}{The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.}
 
-\item{DesiredInferenceUnits}{[required] The desired number of inference units to be used by the model using this
-endpoint. Each inference unit represents of a throughput of 100
-characters per second.}
+\item{DesiredInferenceUnits}{[required] The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.}
 
-\item{ClientRequestToken}{An idempotency token provided by the customer. If this token matches a
-previous endpoint creation request, Amazon Comprehend will not return a
-\code{ResourceInUseException}.}
+\item{ClientRequestToken}{An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a \code{ResourceInUseException}.}
 
-\item{Tags}{Tags to associate with the endpoint. A tag is a key-value pair that adds
-metadata to the endpoint. For example, a tag with "Sales" as the key
-might be added to an endpoint to indicate its use by the sales
-department.}
+\item{Tags}{Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department.}
 
-\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants Amazon
-Comprehend read access to trained custom models encrypted with a
-customer managed key (ModelKmsKeyId).}
+\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).}
 
-\item{FlywheelArn}{The Amazon Resource Number (ARN) of the flywheel to which the endpoint
-will be attached.}
+\item{FlywheelArn}{The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.}
 }
 \description{
 Creates a model-specific endpoint for synchronous inference for a previously trained custom model For information about endpoints, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html}{Managing endpoints}.

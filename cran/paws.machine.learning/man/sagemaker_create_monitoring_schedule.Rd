@@ -12,15 +12,11 @@ sagemaker_create_monitoring_schedule(
 )
 }
 \arguments{
-\item{MonitoringScheduleName}{[required] The name of the monitoring schedule. The name must be unique within an
-Amazon Web Services Region within an Amazon Web Services account.}
+\item{MonitoringScheduleName}{[required] The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.}
 
-\item{MonitoringScheduleConfig}{[required] The configuration object that specifies the monitoring schedule and
-defines the monitoring job.}
+\item{MonitoringScheduleConfig}{[required] The configuration object that specifies the monitoring schedule and defines the monitoring job.}
 
-\item{Tags}{(Optional) An array of key-value pairs. For more information, see Using
-Cost Allocation Tags in the \emph{Amazon Web Services Billing and Cost
-Management User Guide}.}
+\item{Tags}{(Optional) An array of key-value pairs. For more information, see Using Cost Allocation Tags in the \emph{Amazon Web Services Billing and Cost Management User Guide}.}
 }
 \description{
 Creates a schedule that regularly starts Amazon SageMaker AI Processing Jobs to monitor the data captured for an Amazon SageMaker AI Endpoint.

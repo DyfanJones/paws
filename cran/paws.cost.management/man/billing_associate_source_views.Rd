@@ -8,8 +8,7 @@ view}
 billing_associate_source_views(arn, sourceViews)
 }
 \arguments{
-\item{arn}{[required] The Amazon Resource Name (ARN) of the billing view to associate source
-views with.}
+\item{arn}{[required] The Amazon Resource Name (ARN) of the billing view to associate source views with.}
 
 \item{sourceViews}{[required] A list of ARNs of the source billing views to associate.}
 }

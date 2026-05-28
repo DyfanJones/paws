@@ -12,16 +12,13 @@ controltower_list_enabled_baselines(
 )
 }
 \arguments{
-\item{filter}{A filter applied on the \code{ListEnabledBaseline} operation. Allowed filters
-are \code{baselineIdentifiers} and \code{targetIdentifiers}. The filter can be
-applied for either, or both.}
+\item{filter}{A filter applied on the \code{ListEnabledBaseline} operation. Allowed filters are \code{baselineIdentifiers} and \code{targetIdentifiers}. The filter can be applied for either, or both.}
 
 \item{nextToken}{A pagination token.}
 
 \item{maxResults}{The maximum number of results to be shown.}
 
-\item{includeChildren}{A value that can be set to include the child enabled baselines in
-responses. The default value is false.}
+\item{includeChildren}{A value that can be set to include the child enabled baselines in responses. The default value is false.}
 }
 \description{
 Returns a list of summaries describing \code{EnabledBaseline} resources. You can filter the list by the corresponding \code{Baseline} or \code{Target} of the \code{EnabledBaseline} resources. For usage examples, see \href{https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html}{\emph{the Amazon Web Services Control Tower User Guide}} .

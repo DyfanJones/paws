@@ -7,8 +7,7 @@
 cloudfront_get_continuous_deployment_policy_config(Id)
 }
 \arguments{
-\item{Id}{[required] The identifier of the continuous deployment policy whose configuration
-you are getting.}
+\item{Id}{[required] The identifier of the continuous deployment policy whose configuration you are getting.}
 }
 \description{
 Gets configuration information about a continuous deployment policy.

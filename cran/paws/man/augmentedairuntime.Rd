@@ -53,37 +53,17 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to
-any machine learning application. When an AI application can't evaluate
-data with a high degree of confidence, human reviewers can take over.
-This human review is called a human review workflow. To create and start
-a human review workflow, you need three resources: a \emph{worker task
-template}, a \emph{flow definition}, and a \emph{human loop}.
+Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is called a human review workflow. To create and start a human review workflow, you need three resources: a \emph{worker task template}, a \emph{flow definition}, and a \emph{human loop}.
 
-For information about these resources and prerequisites for using Amazon
-A2I, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html}{Get Started with Amazon Augmented AI}
-in the Amazon SageMaker Developer Guide.
+For information about these resources and prerequisites for using Amazon A2I, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html}{Get Started with Amazon Augmented AI} in the Amazon SageMaker Developer Guide.
 
-This API reference includes information about API actions and data types
-that you can use to interact with Amazon A2I programmatically. Use this
-guide to:
+This API reference includes information about API actions and data types that you can use to interact with Amazon A2I programmatically. Use this guide to:
 \itemize{
-\item Start a human loop with the
-\code{start_human_loop} operation
-when using Amazon A2I with a \emph{custom task type}. To learn more about
-the difference between custom and built-in task types, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html}{Use Task Types}
-. To learn how to start a human loop using this API, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop}{Create and Start a Human Loop for a Custom Task Type}
-in the Amazon SageMaker Developer Guide.
-\item Manage your human loops. You can list all human loops that you have
-created, describe individual human loops, and stop and delete human
-loops. To learn more, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html}{Monitor and Manage Your Human Loop}
-in the Amazon SageMaker Developer Guide.
+\item Start a human loop with the \code{start_human_loop} operation when using Amazon A2I with a \emph{custom task type}. To learn more about the difference between custom and built-in task types, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html}{Use Task Types} . To learn how to start a human loop using this API, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop}{Create and Start a Human Loop for a Custom Task Type} in the Amazon SageMaker Developer Guide.
+\item Manage your human loops. You can list all human loops that you have created, describe individual human loops, and stop and delete human loops. To learn more, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html}{Monitor and Manage Your Human Loop} in the Amazon SageMaker Developer Guide.
 }
 
-Amazon A2I integrates APIs from various AWS services to create and start
-human review workflows for those services. To learn how Amazon A2I uses
-these APIs, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html}{Use APIs in Amazon A2I}
-in the Amazon SageMaker Developer Guide.
+Amazon A2I integrates APIs from various AWS services to create and start human review workflows for those services. To learn how Amazon A2I uses these APIs, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html}{Use APIs in Amazon A2I} in the Amazon SageMaker Developer Guide.
 }
 \section{Service syntax}{
 

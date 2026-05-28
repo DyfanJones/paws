@@ -12,20 +12,13 @@ quicksight_describe_theme(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme that
-you're describing.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme that you're describing.}
 
 \item{ThemeId}{[required] The ID for the theme.}
 
-\item{VersionNumber}{The version number for the version to describe. If a \code{VersionNumber}
-parameter value isn't provided, the latest version of the theme is
-described.}
+\item{VersionNumber}{The version number for the version to describe. If a \code{VersionNumber} parameter value isn't provided, the latest version of the theme is described.}
 
-\item{AliasName}{The alias of the theme that you want to describe. If you name a specific
-alias, you describe the version that the alias points to. You can
-specify the latest version of the theme by providing the keyword
-\verb{$LATEST} in the \code{AliasName} parameter. The keyword \verb{$PUBLISHED} doesn't
-apply to themes.}
+\item{AliasName}{The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword \verb{$LATEST} in the \code{AliasName} parameter. The keyword \verb{$PUBLISHED} doesn't apply to themes.}
 }
 \description{
 Describes a theme.

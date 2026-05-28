@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search
-capabilities to intelligently re-rank a search service's results.
+Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities to intelligently re-rank a search service's results.
 }
 \section{Service syntax}{
 

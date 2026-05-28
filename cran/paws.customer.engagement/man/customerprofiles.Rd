@@ -53,21 +53,15 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
+Connect Customer Customer Profiles
 \itemize{
 \item \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html}{Customer Profiles actions}
 \item \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html}{Customer Profiles data types}
 }
 
-Amazon Connect Customer Profiles is a unified customer profile for your
-contact center that has pre-built connectors powered by AppFlow that
-make it easy to combine customer information from third party
-applications, such as Salesforce (CRM), ServiceNow (ITSM), and your
-enterprise resource planning (ERP), with contact history from your
-Amazon Connect contact center.
+Connect Customer Customer Profiles is a unified customer profile for your contact center that has pre-built connectors powered by AppFlow that make it easy to combine customer information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your Connect Customer contact center.
 
-For more information about the Amazon Connect Customer Profiles feature,
-see \href{https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html}{Use Customer Profiles}
-in the \emph{Amazon Connect Administrator's Guide}.
+For more information about the Connect Customer Customer Profiles feature, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html}{Use Customer Profiles} in the \emph{Connect Customer Administrator's Guide}.
 }
 \section{Service syntax}{
 
@@ -114,7 +108,7 @@ in the \emph{Amazon Connect Administrator's Guide}.
 \link[=customerprofiles_create_calculated_attribute_definition]{create_calculated_attribute_definition} \tab Creates a new calculated attribute definition\cr
 \link[=customerprofiles_create_domain]{create_domain} \tab Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys\cr
 \link[=customerprofiles_create_domain_layout]{create_domain_layout} \tab Creates the layout to view data for a specific domain\cr
-\link[=customerprofiles_create_event_stream]{create_event_stream} \tab Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles\cr
+\link[=customerprofiles_create_event_stream]{create_event_stream} \tab Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Connect Customer Customer Profiles\cr
 \link[=customerprofiles_create_event_trigger]{create_event_trigger} \tab Creates an event trigger, which specifies the rules when to perform action based on customer's ingested data\cr
 \link[=customerprofiles_create_integration_workflow]{create_integration_workflow} \tab Creates an integration workflow\cr
 \link[=customerprofiles_create_profile]{create_profile} \tab Creates a standard profile\cr

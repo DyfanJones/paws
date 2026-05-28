@@ -9,22 +9,19 @@ locationservice_get_map_sprites(MapName, FileName, Key = NULL)
 \arguments{
 \item{MapName}{[required] The map resource associated with the sprite file.}
 
-\item{FileName}{[required] The name of the sprite file. Use the following file names for the sprite
-sheet:
+\item{FileName}{[required] The name of the sprite file. Use the following file names for the sprite sheet:
 \itemize{
 \item \code{sprites.png}
 \item \verb{sprites@2x.png} for high pixel density displays
 }
 
-For the JSON document containing image offsets. Use the following file
-names:
+For the JSON document containing image offsets. Use the following file names:
 \itemize{
 \item \code{sprites.json}
 \item \verb{sprites@2x.json} for high pixel density displays
 }}
 
-\item{Key}{The optional \href{https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html}{API key}
-to authorize the request.}
+\item{Key}{The optional \href{https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html}{API key} to authorize the request.}
 }
 \description{
 This operation is no longer current and may be deprecated in the future. We recommend upgrading to \href{https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetSprites.html}{\code{GetSprites}} unless you require \code{Grab} data.

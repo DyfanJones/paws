@@ -15,41 +15,29 @@ costexplorer_create_cost_category_definition(
 )
 }
 \arguments{
-\item{Name}{[required]}
+\item{Name}{[required] The unique name of the cost category.}
 
-\item{EffectiveStart}{The cost category's effective start date. It can only be a billing start
-date (first day of the month). If the date isn't provided, it's the
-first day of the current month. Dates can't be before the previous
-twelve months, or in the future.}
+\item{EffectiveStart}{The cost category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.}
 
-\item{RuleVersion}{[required]}
+\item{RuleVersion}{[required] The rule schema version in this particular cost category.}
 
-\item{Rules}{[required] The cost category rules used to categorize costs. For more information,
-see
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html}{CostCategoryRule}.}
+\item{Rules}{[required] The cost category rules used to categorize costs. For more information, see \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html}{CostCategoryRule}.}
 
-\item{SplitChargeRules}{The split charge rules used to allocate your charges between your cost
-category values.}
+\item{DefaultValue}{The default value for the cost category.}
 
-\item{ResourceTags}{An optional list of tags to associate with the specified
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html}{\code{CostCategory}}
-. You can use resource tags to control access to your \verb{cost category}
-using IAM policies.
+\item{SplitChargeRules}{The split charge rules used to allocate your charges between your cost category values.}
 
-Each tag consists of a key and a value, and each key must be unique for
-the resource. The following restrictions apply to resource tags:
+\item{ResourceTags}{An optional list of tags to associate with the specified \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html}{\code{CostCategory}} . You can use resource tags to control access to your \verb{cost category} using IAM policies.
+
+Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:
 \itemize{
-\item Although the maximum number of array members is 200, you can assign
-a maximum of 50 user-tags to one resource. The remaining are
-reserved for Amazon Web Services use
+\item Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use
 \item The maximum length of a key is 128 characters
 \item The maximum length of a value is 256 characters
-\item Keys and values can only contain alphanumeric characters, spaces,
-and any of the following: \verb{_.:/=+@-}
+\item Keys and values can only contain alphanumeric characters, spaces, and any of the following: \verb{_.:/=+@-}
 \item Keys and values are case sensitive
 \item Keys and values are trimmed for any leading or trailing whitespaces
-\item Don’t use \verb{aws:} as a prefix for your keys. This prefix is reserved
-for Amazon Web Services use
+\item Don’t use \verb{aws:} as a prefix for your keys. This prefix is reserved for Amazon Web Services use
 }}
 }
 \description{

@@ -15,26 +15,19 @@ pinpointsmsvoicev2_update_rcs_agent(
 )
 }
 \arguments{
-\item{RcsAgentId}{[required] The unique identifier of the RCS agent to update. You can use either the
-RcsAgentId or RcsAgentArn.}
+\item{RcsAgentId}{[required] The unique identifier of the RCS agent to update. You can use either the RcsAgentId or RcsAgentArn.}
 
-\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the RCS agent can't be
-deleted.}
+\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the RCS agent can't be deleted.}
 
-\item{OptOutListName}{The OptOutList to associate with the RCS agent. Valid values are either
-OptOutListName or OptOutListArn.}
+\item{OptOutListName}{The OptOutList to associate with the RCS agent. Valid values are either OptOutListName or OptOutListArn.}
 
-\item{SelfManagedOptOutsEnabled}{By default this is set to false. When set to true you're responsible for
-responding to HELP and STOP requests. You're also responsible for
-tracking and honoring opt-out requests.}
+\item{SelfManagedOptOutsEnabled}{By default this is set to false. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.}
 
 \item{TwoWayChannelArn}{The Amazon Resource Name (ARN) of the two way channel.}
 
-\item{TwoWayChannelRole}{An optional IAM Role Arn for a service to assume, to be able to post
-inbound SMS messages.}
+\item{TwoWayChannelRole}{An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.}
 
-\item{TwoWayEnabled}{By default this is set to false. When set to true you can receive
-incoming text messages from your end recipients.}
+\item{TwoWayEnabled}{By default this is set to false. When set to true you can receive incoming text messages from your end recipients.}
 }
 \description{
 Updates the configuration of an existing RCS agent. You can update the opt-out list, deletion protection, two-way messaging settings, and self-managed opt-outs configuration.

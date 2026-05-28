@@ -7,12 +7,7 @@ NULL
 #' @description
 #' Service Catalog
 #' 
-#' [Service Catalog](https://aws.amazon.com/servicecatalog/) enables
-#' organizations to create and manage catalogs of IT services that are
-#' approved for Amazon Web Services. To get the most out of this
-#' documentation, you should be familiar with the terminology discussed in
-#' [Service Catalog
-#' Concepts](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html).
+#' [Service Catalog](https://aws.amazon.com/servicecatalog/) enables organizations to create and manage catalogs of IT services that are approved for Amazon Web Services. To get the most out of this documentation, you should be familiar with the terminology discussed in [Service Catalog Concepts](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html).
 #'
 #' @param
 #' config

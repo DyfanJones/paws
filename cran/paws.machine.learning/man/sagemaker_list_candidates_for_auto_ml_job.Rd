@@ -27,8 +27,7 @@ sagemaker_list_candidates_for_auto_ml_job(
 
 \item{MaxResults}{List the job's candidates up to a specified limit.}
 
-\item{NextToken}{If the previous response was truncated, you receive this token. Use it
-in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.}
 }
 \description{
 List the candidates created for the job.

@@ -50,9 +50,7 @@ Operations section.
 \description{
 Certificate Manager
 
-You can use Certificate Manager (ACM) to manage SSL/TLS certificates for
-your Amazon Web Services-based websites and applications. For more
-information about using ACM, see the \href{https://docs.aws.amazon.com/acm/latest/userguide/}{Certificate Manager User Guide}.
+You can use Certificate Manager (ACM) to manage SSL/TLS certificates for your Amazon Web Services-based websites and applications. For more information about using ACM, see the \href{https://docs.aws.amazon.com/acm/latest/userguide/}{Certificate Manager User Guide}.
 }
 \section{Service syntax}{
 

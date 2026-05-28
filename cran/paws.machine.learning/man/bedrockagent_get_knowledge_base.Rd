@@ -7,8 +7,7 @@
 bedrockagent_get_knowledge_base(knowledgeBaseId)
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base you want to get information
-on.}
+\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base you want to get information on.}
 }
 \description{
 Gets information about a knowledge base.

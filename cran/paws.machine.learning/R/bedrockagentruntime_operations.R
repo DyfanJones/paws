@@ -10,12 +10,9 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_create_invocation/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_create_invocation/) for full documentation.
 #'
-#' @param description A description for the interactions in the invocation. For example, "User
-#' asking about weather in Seattle".
+#' @param description A description for the interactions in the invocation. For example, "User asking about weather in Seattle".
 #' @param invocationId A unique identifier for the invocation in UUID format.
-#' @param sessionIdentifier &#91;required&#93; The unique identifier for the associated session for the invocation. You
-#' can specify either the session's `sessionId` or its Amazon Resource Name
-#' (ARN).
+#' @param sessionIdentifier &#91;required&#93; The unique identifier for the associated session for the invocation. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -48,15 +45,9 @@ bedrockagentruntime_create_invocation <- function(description = NULL, invocation
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_create_session/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_create_session/) for full documentation.
 #'
-#' @param encryptionKeyArn The Amazon Resource Name (ARN) of the KMS key to use to encrypt the
-#' session data. The user or role creating the session must have permission
-#' to use the key. For more information, see [Amazon Bedrock session
-#' encryption](https://docs.aws.amazon.com/bedrock/latest/userguide/).
-#' @param sessionMetadata A map of key-value pairs containing attributes to be persisted across
-#' the session. For example, the user's ID, their language preference, and
-#' the type of device they are using.
-#' @param tags Specify the key-value pairs for the tags that you want to attach to the
-#' session.
+#' @param encryptionKeyArn The Amazon Resource Name (ARN) of the KMS key to use to encrypt the session data. The user or role creating the session must have permission to use the key. For more information, see [Amazon Bedrock session encryption](https://docs.aws.amazon.com/bedrock/latest/userguide/).
+#' @param sessionMetadata A map of key-value pairs containing attributes to be persisted across the session. For example, the user's ID, their language preference, and the type of device they are using.
+#' @param tags Specify the key-value pairs for the tags that you want to attach to the session.
 #'
 #' @keywords internal
 #'
@@ -121,8 +112,7 @@ bedrockagentruntime_delete_agent_memory <- function(agentAliasId, agentId, memor
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_delete_session/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_delete_session/) for full documentation.
 #'
-#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to be deleted. You can specify
-#' either the session's `sessionId` or its Amazon Resource Name (ARN).
+#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to be deleted. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -153,8 +143,7 @@ bedrockagentruntime_delete_session <- function(sessionIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_end_session/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_end_session/) for full documentation.
 #'
-#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to end. You can specify either the
-#' session's `sessionId` or its Amazon Resource Name (ARN).
+#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to end. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -185,10 +174,8 @@ bedrockagentruntime_end_session <- function(sessionIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_generate_query/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_generate_query/) for full documentation.
 #'
-#' @param queryGenerationInput &#91;required&#93; Specifies information about a natural language query to transform into
-#' SQL.
-#' @param transformationConfiguration &#91;required&#93; Specifies configurations for transforming the natural language query
-#' into SQL.
+#' @param queryGenerationInput &#91;required&#93; Specifies information about a natural language query to transform into SQL.
+#' @param transformationConfiguration &#91;required&#93; Specifies configurations for transforming the natural language query into SQL.
 #'
 #' @keywords internal
 #'
@@ -221,15 +208,10 @@ bedrockagentruntime_generate_query <- function(queryGenerationInput, transformat
 #'
 #' @param agentAliasId &#91;required&#93; The unique identifier of an alias of an agent.
 #' @param agentId &#91;required&#93; The unique identifier of the agent to which the alias belongs.
-#' @param maxItems The maximum number of items to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
+#' @param maxItems The maximum number of items to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
 #' @param memoryId &#91;required&#93; The unique identifier of the memory.
 #' @param memoryType &#91;required&#93; The type of memory.
-#' @param nextToken If the total number of results is greater than the maxItems value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the maxItems value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -329,11 +311,8 @@ bedrockagentruntime_get_flow_execution <- function(executionIdentifier, flowAlia
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_get_invocation_step/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_get_invocation_step/) for full documentation.
 #'
 #' @param invocationIdentifier &#91;required&#93; The unique identifier for the invocation in UUID format.
-#' @param invocationStepId &#91;required&#93; The unique identifier (in UUID format) for the specific invocation step
-#' to retrieve.
-#' @param sessionIdentifier &#91;required&#93; The unique identifier for the invocation step's associated session. You
-#' can specify either the session's `sessionId` or its Amazon Resource Name
-#' (ARN).
+#' @param invocationStepId &#91;required&#93; The unique identifier (in UUID format) for the specific invocation step to retrieve.
+#' @param sessionIdentifier &#91;required&#93; The unique identifier for the invocation step's associated session. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -364,8 +343,7 @@ bedrockagentruntime_get_invocation_step <- function(invocationIdentifier, invoca
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_get_session/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_get_session/) for full documentation.
 #'
-#' @param sessionIdentifier &#91;required&#93; A unique identifier for the session to retrieve. You can specify either
-#' the session's `sessionId` or its Amazon Resource Name (ARN).
+#' @param sessionIdentifier &#91;required&#93; A unique identifier for the session to retrieve. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -399,34 +377,21 @@ bedrockagentruntime_get_session <- function(sessionIdentifier) {
 #' @param agentAliasId &#91;required&#93; The alias of the agent to use.
 #' @param agentId &#91;required&#93; The unique identifier of the agent to use.
 #' @param bedrockModelConfigurations Model performance settings for the request.
-#' @param enableTrace Specifies whether to turn on the trace or not to track the agent's
-#' reasoning process. For more information, see [Trace
-#' enablement](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events).
+#' @param enableTrace Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see [Trace enablement](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events).
 #' @param endSession Specifies whether to end the session with the agent or not.
 #' @param inputText The prompt text to send the agent.
 #' 
-#' If you include `returnControlInvocationResults` in the `sessionState`
-#' field, the `inputText` field will be ignored.
+#' If you include `returnControlInvocationResults` in the `sessionState` field, the `inputText` field will be ignored.
 #' @param memoryId The unique identifier of the agent memory.
-#' @param promptCreationConfigurations Specifies parameters that control how the service populates the agent
-#' prompt for an [`invoke_agent`][bedrockagentruntime_invoke_agent]
-#' request. You can control which aspects of previous invocations in the
-#' same agent session the service uses to populate the agent prompt. This
-#' gives you more granular control over the contextual history that is used
-#' to process the current request.
-#' @param sessionId &#91;required&#93; The unique identifier of the session. Use the same value across requests
-#' to continue the same conversation.
-#' @param sessionState Contains parameters that specify various attributes of the session. For
-#' more information, see [Control session
-#' context](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html).
+#' @param promptCreationConfigurations Specifies parameters that control how the service populates the agent prompt for an [`invoke_agent`][bedrockagentruntime_invoke_agent] request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.
+#' @param sessionId &#91;required&#93; The unique identifier of the session. Use the same value across requests to continue the same conversation.
+#' @param sessionState Contains parameters that specify various attributes of the session. For more information, see [Control session context](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html).
 #' 
-#' If you include `returnControlInvocationResults` in the `sessionState`
-#' field, the `inputText` field will be ignored.
+#' If you include `returnControlInvocationResults` in the `sessionState` field, the `inputText` field will be ignored.
 #' @param sourceArn The ARN of the resource making the request.
 #' @param streamingConfigurations Specifies the configurations for streaming.
 #' 
-#' To use agent streaming, you need permissions to perform the
-#' `bedrock:InvokeModelWithResponseStream` action.
+#' To use agent streaming, you need permissions to perform the `bedrock:InvokeModelWithResponseStream` action.
 #'
 #' @keywords internal
 #'
@@ -458,16 +423,11 @@ bedrockagentruntime_invoke_agent <- function(agentAliasId, agentId, bedrockModel
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_invoke_flow/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_invoke_flow/) for full documentation.
 #'
-#' @param enableTrace Specifies whether to return the trace for the flow or not. Traces track
-#' inputs and outputs for nodes in the flow. For more information, see
-#' [Track each step in your prompt flow by viewing its trace in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html).
-#' @param executionId The unique identifier for the current flow execution. If you don't
-#' provide a value, Amazon Bedrock creates the identifier for you.
+#' @param enableTrace Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see [Track each step in your prompt flow by viewing its trace in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html).
+#' @param executionId The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.
 #' @param flowAliasIdentifier &#91;required&#93; The unique identifier of the flow alias.
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow.
-#' @param inputs &#91;required&#93; A list of objects, each containing information about an input into the
-#' flow.
+#' @param inputs &#91;required&#93; A list of objects, each containing information about an input into the flow.
 #' @param modelPerformanceConfiguration Model performance settings for the request.
 #'
 #' @keywords internal
@@ -500,70 +460,36 @@ bedrockagentruntime_invoke_flow <- function(enableTrace = NULL, executionId = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_invoke_inline_agent/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_invoke_inline_agent/) for full documentation.
 #'
-#' @param actionGroups A list of action groups with each action group defining the action the
-#' inline agent needs to carry out.
-#' @param agentCollaboration Defines how the inline collaborator agent handles information across
-#' multiple collaborator agents to coordinate a final response. The inline
-#' collaborator agent can also be the supervisor.
+#' @param actionGroups A list of action groups with each action group defining the action the inline agent needs to carry out.
+#' @param agentCollaboration Defines how the inline collaborator agent handles information across multiple collaborator agents to coordinate a final response. The inline collaborator agent can also be the supervisor.
 #' @param agentName The name for the agent.
 #' @param bedrockModelConfigurations Model settings for the request.
-#' @param collaboratorConfigurations Settings for an inline agent collaborator called with
-#' [`invoke_inline_agent`][bedrockagentruntime_invoke_inline_agent].
+#' @param collaboratorConfigurations Settings for an inline agent collaborator called with [`invoke_inline_agent`][bedrockagentruntime_invoke_inline_agent].
 #' @param collaborators List of collaborator inline agents.
 #' @param customOrchestration Contains details of the custom orchestration configured for the agent.
-#' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use
-#' to encrypt your inline agent.
-#' @param enableTrace Specifies whether to turn on the trace or not to track the agent's
-#' reasoning process. For more information, see [Using
-#' trace](https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html).
+#' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to encrypt your inline agent.
+#' @param enableTrace Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see [Using trace](https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html).
 #' @param endSession Specifies whether to end the session with the inline agent or not.
-#' @param foundationModel &#91;required&#93; The [model identifier
-#' (ID)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns)
-#' of the model to use for orchestration by the inline agent. For example,
-#' `meta.llama3-1-70b-instruct-v1:0`.
-#' @param guardrailConfiguration The
-#' [guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html)
-#' to assign to the inline agent.
-#' @param idleSessionTTLInSeconds The number of seconds for which the inline agent should maintain session
-#' information. After this time expires, the subsequent
-#' [`invoke_inline_agent`][bedrockagentruntime_invoke_inline_agent] request
-#' begins a new session.
+#' @param foundationModel &#91;required&#93; The [model identifier (ID)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns) of the model to use for orchestration by the inline agent. For example, `meta.llama3-1-70b-instruct-v1:0`.
+#' @param guardrailConfiguration The [guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html) to assign to the inline agent.
+#' @param idleSessionTTLInSeconds The number of seconds for which the inline agent should maintain session information. After this time expires, the subsequent [`invoke_inline_agent`][bedrockagentruntime_invoke_inline_agent] request begins a new session.
 #' 
-#' A user interaction remains active for the amount of time specified. If
-#' no conversation occurs during this time, the session expires and the
-#' data provided before the timeout is deleted.
-#' @param inlineSessionState Parameters that specify the various attributes of a sessions. You can
-#' include attributes for the session or prompt or, if you configured an
-#' action group to return control, results from invocation of the action
-#' group. For more information, see [Control session
-#' context](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html).
+#' A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and the data provided before the timeout is deleted.
+#' @param inlineSessionState Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see [Control session context](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html).
 #' 
-#' If you include `returnControlInvocationResults` in the `sessionState`
-#' field, the `inputText` field will be ignored.
+#' If you include `returnControlInvocationResults` in the `sessionState` field, the `inputText` field will be ignored.
 #' @param inputText The prompt text to send to the agent.
 #' 
-#' If you include `returnControlInvocationResults` in the `sessionState`
-#' field, the `inputText` field will be ignored.
-#' @param instruction &#91;required&#93; The instructions that tell the inline agent what it should do and how it
-#' should interact with users.
+#' If you include `returnControlInvocationResults` in the `sessionState` field, the `inputText` field will be ignored.
+#' @param instruction &#91;required&#93; The instructions that tell the inline agent what it should do and how it should interact with users.
 #' @param knowledgeBases Contains information of the knowledge bases to associate with.
-#' @param orchestrationType Specifies the type of orchestration strategy for the agent. This is set
-#' to DEFAULT orchestration type, by default.
-#' @param promptCreationConfigurations Specifies parameters that control how the service populates the agent
-#' prompt for an
-#' [`invoke_inline_agent`][bedrockagentruntime_invoke_inline_agent]
-#' request. You can control which aspects of previous invocations in the
-#' same agent session the service uses to populate the agent prompt. This
-#' gives you more granular control over the contextual history that is used
-#' to process the current request.
-#' @param promptOverrideConfiguration Configurations for advanced prompts used to override the default prompts
-#' to enhance the accuracy of the inline agent.
-#' @param sessionId &#91;required&#93; The unique identifier of the session. Use the same value across requests
-#' to continue the same conversation.
+#' @param orchestrationType Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.
+#' @param promptCreationConfigurations Specifies parameters that control how the service populates the agent prompt for an [`invoke_inline_agent`][bedrockagentruntime_invoke_inline_agent] request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.
+#' @param promptOverrideConfiguration Configurations for advanced prompts used to override the default prompts to enhance the accuracy of the inline agent.
+#' @param sessionId &#91;required&#93; The unique identifier of the session. Use the same value across requests to continue the same conversation.
 #' @param streamingConfigurations Specifies the configurations for streaming.
 #' 
-#' To use agent streaming, you need permissions to perform the
-#' `bedrock:InvokeModelWithResponseStream` action.
+#' To use agent streaming, you need permissions to perform the `bedrock:InvokeModelWithResponseStream` action.
 #'
 #' @keywords internal
 #'
@@ -594,16 +520,12 @@ bedrockagentruntime_invoke_inline_agent <- function(actionGroups = NULL, agentCo
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_flow_execution_events/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_flow_execution_events/) for full documentation.
 #'
-#' @param eventType &#91;required&#93; The type of events to retrieve. Specify `Node` for node-level events or
-#' `Flow` for flow-level events.
+#' @param eventType &#91;required&#93; The type of events to retrieve. Specify `Node` for node-level events or `Flow` for flow-level events.
 #' @param executionIdentifier &#91;required&#93; The unique identifier of the flow execution.
 #' @param flowAliasIdentifier &#91;required&#93; The unique identifier of the flow alias used for the execution.
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow.
-#' @param maxResults The maximum number of events to return in a single response. If more
-#' events exist than the specified maxResults value, a token is included in
-#' the response so that the remaining results can be retrieved.
-#' @param nextToken A token to retrieve the next set of results. This value is returned in
-#' the response if more results are available.
+#' @param maxResults The maximum number of events to return in a single response. If more events exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param nextToken A token to retrieve the next set of results. This value is returned in the response if more results are available.
 #'
 #' @keywords internal
 #'
@@ -636,11 +558,8 @@ bedrockagentruntime_list_flow_execution_events <- function(eventType, executionI
 #'
 #' @param flowAliasIdentifier The unique identifier of the flow alias to list executions for.
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow to list executions for.
-#' @param maxResults The maximum number of flow executions to return in a single response. If
-#' more executions exist than the specified `maxResults` value, a token is
-#' included in the response so that the remaining results can be retrieved.
-#' @param nextToken A token to retrieve the next set of results. This value is returned in
-#' the response if more results are available.
+#' @param maxResults The maximum number of flow executions to return in a single response. If more executions exist than the specified `maxResults` value, a token is included in the response so that the remaining results can be retrieved.
+#' @param nextToken A token to retrieve the next set of results. This value is returned in the response if more results are available.
 #'
 #' @keywords internal
 #'
@@ -672,18 +591,10 @@ bedrockagentruntime_list_flow_executions <- function(flowAliasIdentifier = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_invocation_steps/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_invocation_steps/) for full documentation.
 #'
-#' @param invocationIdentifier The unique identifier (in UUID format) for the invocation to list
-#' invocation steps for.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
-#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session associated with the invocation
-#' steps. You can specify either the session's `sessionId` or its Amazon
-#' Resource Name (ARN).
+#' @param invocationIdentifier The unique identifier (in UUID format) for the invocation to list invocation steps for.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
+#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session associated with the invocation steps. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -714,16 +625,9 @@ bedrockagentruntime_list_invocation_steps <- function(invocationIdentifier = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_invocations/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_invocations/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
-#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to list invocations for. You can
-#' specify either the session's `sessionId` or its Amazon Resource Name
-#' (ARN).
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
+#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to list invocations for. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -754,13 +658,8 @@ bedrockagentruntime_list_invocations <- function(maxResults = NULL, nextToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_sessions/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_list_sessions/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -823,8 +722,7 @@ bedrockagentruntime_list_tags_for_resource <- function(resourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_optimize_prompt/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_optimize_prompt/) for full documentation.
 #'
 #' @param input &#91;required&#93; Contains the prompt to optimize.
-#' @param targetModelId &#91;required&#93; The unique identifier of the model that you want to optimize the prompt
-#' for.
+#' @param targetModelId &#91;required&#93; The unique identifier of the model that you want to optimize the prompt for.
 #'
 #' @keywords internal
 #'
@@ -855,15 +753,11 @@ bedrockagentruntime_optimize_prompt <- function(input, targetModelId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_put_invocation_step/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_put_invocation_step/) for full documentation.
 #'
-#' @param invocationIdentifier &#91;required&#93; The unique identifier (in UUID format) of the invocation to add the
-#' invocation step to.
+#' @param invocationIdentifier &#91;required&#93; The unique identifier (in UUID format) of the invocation to add the invocation step to.
 #' @param invocationStepId The unique identifier of the invocation step in UUID format.
 #' @param invocationStepTime &#91;required&#93; The timestamp for when the invocation step occurred.
-#' @param payload &#91;required&#93; The payload for the invocation step, including text and images for the
-#' interaction.
-#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to add the invocation step to. You
-#' can specify either the session's `sessionId` or its Amazon Resource Name
-#' (ARN).
+#' @param payload &#91;required&#93; The payload for the invocation step, including text and images for the interaction.
+#' @param sessionIdentifier &#91;required&#93; The unique identifier for the session to add the invocation step to. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -894,14 +788,10 @@ bedrockagentruntime_put_invocation_step <- function(invocationIdentifier, invoca
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_rerank/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_rerank/) for full documentation.
 #'
-#' @param nextToken If the total number of results was greater than could fit in a response,
-#' a token is returned in the `nextToken` field. You can enter that token
-#' in this field to return the next batch of results.
-#' @param queries &#91;required&#93; An array of objects, each of which contains information about a query to
-#' submit to the reranker model.
+#' @param nextToken If the total number of results was greater than could fit in a response, a token is returned in the `nextToken` field. You can enter that token in this field to return the next batch of results.
+#' @param queries &#91;required&#93; An array of objects, each of which contains information about a query to submit to the reranker model.
 #' @param rerankingConfiguration &#91;required&#93; Contains configurations for reranking.
-#' @param sources &#91;required&#93; An array of objects, each of which contains information about the
-#' sources to rerank.
+#' @param sources &#91;required&#93; An array of objects, each of which contains information about the sources to rerank.
 #'
 #' @keywords internal
 #'
@@ -934,12 +824,8 @@ bedrockagentruntime_rerank <- function(nextToken = NULL, queries, rerankingConfi
 #'
 #' @param guardrailConfiguration Guardrail settings.
 #' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to query.
-#' @param nextToken If there are more results than can fit in the response, the response
-#' returns a `nextToken`. Use this token in the `nextToken` field of
-#' another request to retrieve the next batch of results.
-#' @param retrievalConfiguration Contains configurations for the knowledge base query and retrieval
-#' process. For more information, see [Query
-#' configurations](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html).
+#' @param nextToken If there are more results than can fit in the response, the response returns a `nextToken`. Use this token in the `nextToken` field of another request to retrieve the next batch of results.
+#' @param retrievalConfiguration Contains configurations for the knowledge base query and retrieval process. For more information, see [Query configurations](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html).
 #' @param retrievalQuery &#91;required&#93; Contains the query to send the knowledge base.
 #'
 #' @keywords internal
@@ -973,17 +859,9 @@ bedrockagentruntime_retrieve <- function(guardrailConfiguration = NULL, knowledg
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_retrieve_and_generate/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_retrieve_and_generate/) for full documentation.
 #'
 #' @param input &#91;required&#93; Contains the query to be made to the knowledge base.
-#' @param retrieveAndGenerateConfiguration Contains configurations for the knowledge base query and retrieval
-#' process. For more information, see [Query
-#' configurations](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html).
+#' @param retrieveAndGenerateConfiguration Contains configurations for the knowledge base query and retrieval process. For more information, see [Query configurations](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html).
 #' @param sessionConfiguration Contains details about the session with the knowledge base.
-#' @param sessionId The unique identifier of the session. When you first make a
-#' [`retrieve_and_generate`][bedrockagentruntime_retrieve_and_generate]
-#' request, Amazon Bedrock automatically generates this value. You must
-#' reuse this value for all subsequent requests in the same conversational
-#' session. This value allows Amazon Bedrock to maintain context and
-#' knowledge from previous interactions. You can't explicitly set the
-#' `sessionId` yourself.
+#' @param sessionId The unique identifier of the session. When you first make a [`retrieve_and_generate`][bedrockagentruntime_retrieve_and_generate] request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the `sessionId` yourself.
 #'
 #' @keywords internal
 #'
@@ -1016,17 +894,9 @@ bedrockagentruntime_retrieve_and_generate <- function(input, retrieveAndGenerate
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_retrieve_and_generate_stream/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_retrieve_and_generate_stream/) for full documentation.
 #'
 #' @param input &#91;required&#93; Contains the query to be made to the knowledge base.
-#' @param retrieveAndGenerateConfiguration Contains configurations for the knowledge base query and retrieval
-#' process. For more information, see [Query
-#' configurations](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html).
+#' @param retrieveAndGenerateConfiguration Contains configurations for the knowledge base query and retrieval process. For more information, see [Query configurations](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html).
 #' @param sessionConfiguration Contains details about the session with the knowledge base.
-#' @param sessionId The unique identifier of the session. When you first make a
-#' [`retrieve_and_generate`][bedrockagentruntime_retrieve_and_generate]
-#' request, Amazon Bedrock automatically generates this value. You must
-#' reuse this value for all subsequent requests in the same conversational
-#' session. This value allows Amazon Bedrock to maintain context and
-#' knowledge from previous interactions. You can't explicitly set the
-#' `sessionId` yourself.
+#' @param sessionId The unique identifier of the session. When you first make a [`retrieve_and_generate`][bedrockagentruntime_retrieve_and_generate] request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the `sessionId` yourself.
 #'
 #' @keywords internal
 #'
@@ -1058,13 +928,10 @@ bedrockagentruntime_retrieve_and_generate_stream <- function(input, retrieveAndG
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_start_flow_execution/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_start_flow_execution/) for full documentation.
 #'
 #' @param flowAliasIdentifier &#91;required&#93; The unique identifier of the flow alias to use for the flow execution.
-#' @param flowExecutionName The unique name for the flow execution. If you don't provide one, a
-#' system-generated name is used.
+#' @param flowExecutionName The unique name for the flow execution. If you don't provide one, a system-generated name is used.
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow to execute.
-#' @param inputs &#91;required&#93; The input data required for the flow execution. This must match the
-#' input schema defined in the flow.
-#' @param modelPerformanceConfiguration The performance settings for the foundation model used in the flow
-#' execution.
+#' @param inputs &#91;required&#93; The input data required for the flow execution. This must match the input schema defined in the flow.
+#' @param modelPerformanceConfiguration The performance settings for the foundation model used in the flow execution.
 #'
 #' @keywords internal
 #'
@@ -1129,8 +996,7 @@ bedrockagentruntime_stop_flow_execution <- function(executionIdentifier, flowAli
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_tag_resource/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_tag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to tag.
-#' @param tags &#91;required&#93; An object containing key-value pairs that define the tags to attach to
-#' the resource.
+#' @param tags &#91;required&#93; An object containing key-value pairs that define the tags to attach to the resource.
 #'
 #' @keywords internal
 #'
@@ -1161,8 +1027,7 @@ bedrockagentruntime_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_untag_resource/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove
-#' tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove tags.
 #' @param tagKeys &#91;required&#93; A list of keys of the tags to remove from the resource.
 #'
 #' @keywords internal
@@ -1194,11 +1059,8 @@ bedrockagentruntime_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockagentruntime_update_session/](https://www.paws-r-sdk.com/docs/bedrockagentruntime_update_session/) for full documentation.
 #'
-#' @param sessionIdentifier &#91;required&#93; The unique identifier of the session to modify. You can specify either
-#' the session's `sessionId` or its Amazon Resource Name (ARN).
-#' @param sessionMetadata A map of key-value pairs containing attributes to be persisted across
-#' the session. For example the user's ID, their language preference, and
-#' the type of device they are using.
+#' @param sessionIdentifier &#91;required&#93; The unique identifier of the session to modify. You can specify either the session's `sessionId` or its Amazon Resource Name (ARN).
+#' @param sessionMetadata A map of key-value pairs containing attributes to be persisted across the session. For example the user's ID, their language preference, and the type of device they are using.
 #'
 #' @keywords internal
 #'

@@ -7,13 +7,11 @@
 quicksight_update_dashboard_links(AwsAccountId, DashboardId, LinkEntities)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the dashboard
-whose links you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the dashboard whose links you want to update.}
 
 \item{DashboardId}{[required] The ID for the dashboard.}
 
-\item{LinkEntities}{[required] list of analysis Amazon Resource Names (ARNs) to be linked to the
-dashboard.}
+\item{LinkEntities}{[required] list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.}
 }
 \description{
 Updates the linked analyses on a dashboard.

@@ -13,17 +13,13 @@ directoryservice_update_conditional_forwarder(
 )
 }
 \arguments{
-\item{DirectoryId}{[required] The directory ID of the Amazon Web Services directory for which to
-update the conditional forwarder.}
+\item{DirectoryId}{[required] The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.}
 
-\item{RemoteDomainName}{[required] The fully qualified domain name (FQDN) of the remote domain with which
-you will set up a trust relationship.}
+\item{RemoteDomainName}{[required] The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.}
 
-\item{DnsIpAddrs}{The updated IP addresses of the remote DNS server associated with the
-conditional forwarder.}
+\item{DnsIpAddrs}{The updated IP addresses of the remote DNS server associated with the conditional forwarder.}
 
-\item{DnsIpv6Addrs}{The updated IPv6 addresses of the remote DNS server associated with the
-conditional forwarder.}
+\item{DnsIpv6Addrs}{The updated IPv6 addresses of the remote DNS server associated with the conditional forwarder.}
 }
 \description{
 Updates a conditional forwarder that has been set up for your Amazon Web Services directory.

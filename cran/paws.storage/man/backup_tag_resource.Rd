@@ -9,9 +9,7 @@ backup_tag_resource(ResourceArn, Tags)
 \arguments{
 \item{ResourceArn}{[required] The ARN that uniquely identifies the resource.}
 
-\item{Tags}{[required] Key-value pairs that are used to help organize your resources. You can
-assign your own metadata to the resources you create. For clarity, this
-is the structure to assign tags: \verb{[\{"Key":"string","Value":"string"\}]}.}
+\item{Tags}{[required] Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: \verb{[\{"Key":"string","Value":"string"\}]}.}
 }
 \description{
 Assigns a set of key-value pairs to a resource.

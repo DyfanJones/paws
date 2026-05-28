@@ -7,8 +7,7 @@
 rekognition_delete_dataset(DatasetArn)
 }
 \arguments{
-\item{DatasetArn}{[required] The ARN of the Amazon Rekognition Custom Labels dataset that you want to
-delete.}
+\item{DatasetArn}{[required] The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

@@ -9,9 +9,7 @@ datapipeline_deactivate_pipeline(pipelineId, cancelActive = NULL)
 \arguments{
 \item{pipelineId}{[required] The ID of the pipeline.}
 
-\item{cancelActive}{Indicates whether to cancel any running objects. The default is true,
-which sets the state of any running objects to \code{CANCELED}. If this value
-is false, the pipeline is deactivated after all running objects finish.}
+\item{cancelActive}{Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to \code{CANCELED}. If this value is false, the pipeline is deactivated after all running objects finish.}
 }
 \description{
 Deactivates the specified running pipeline. The pipeline is set to the \code{DEACTIVATING} state until the deactivation process completes.

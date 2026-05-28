@@ -29,27 +29,23 @@ bedrockagentcorecontrol_create_agent_runtime(
 
 \item{networkConfiguration}{[required] The network configuration for the AgentCore Runtime.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 
 \item{description}{The description of the AgentCore Runtime.}
 
 \item{authorizerConfiguration}{The authorizer configuration for the AgentCore Runtime.}
 
-\item{requestHeaderConfiguration}{Configuration for HTTP request headers that will be passed through to
-the runtime.}
+\item{requestHeaderConfiguration}{Configuration for HTTP request headers that will be passed through to the runtime.}
+
+\item{protocolConfiguration}{The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.}
 
 \item{lifecycleConfiguration}{The life cycle configuration for the AgentCore Runtime.}
 
 \item{environmentVariables}{Environment variables to set in the AgentCore Runtime environment.}
 
-\item{filesystemConfigurations}{The filesystem configurations to mount into the AgentCore Runtime. Use
-filesystem configurations to provide persistent storage to your
-AgentCore Runtime sessions.}
+\item{filesystemConfigurations}{The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.}
 
-\item{tags}{A map of tag keys and values to assign to the agent runtime. Tags enable
-you to categorize your resources in different ways, for example, by
-purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates an Amazon Bedrock AgentCore Runtime.

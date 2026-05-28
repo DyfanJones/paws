@@ -7,8 +7,7 @@
 codecommit_put_repository_triggers(repositoryName, triggers)
 }
 \arguments{
-\item{repositoryName}{[required] The name of the repository where you want to create or update the
-trigger.}
+\item{repositoryName}{[required] The name of the repository where you want to create or update the trigger.}
 
 \item{triggers}{[required] The JSON block of configuration information for each trigger.}
 }

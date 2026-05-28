@@ -16,29 +16,19 @@ connect_update_user_config(
 )
 }
 \arguments{
-\item{AutoAcceptConfigs}{The list of auto-accept configuration settings for each channel. When
-auto-accept is enabled for a channel, available agents are automatically
-connected to contacts from that channel without needing to manually
-accept. Auto-accept connects agents to contacts in less than one second.}
+\item{AutoAcceptConfigs}{The list of auto-accept configuration settings for each channel. When auto-accept is enabled for a channel, available agents are automatically connected to contacts from that channel without needing to manually accept. Auto-accept connects agents to contacts in less than one second.}
 
-\item{AfterContactWorkConfigs}{The list of after contact work (ACW) timeout configuration settings for
-each channel. ACW timeout specifies how many seconds agents have for
-after contact work, such as entering notes about the contact. The
-minimum setting is 1 second, and the maximum is 2,000,000 seconds (24
-days). Enter 0 for an indefinite amount of time, meaning agents must
-manually choose to end ACW.}
+\item{AfterContactWorkConfigs}{The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.}
 
 \item{PhoneNumberConfigs}{The list of phone number configuration settings for each channel.}
 
-\item{PersistentConnectionConfigs}{The list of persistent connection configuration settings for each
-channel.}
+\item{PersistentConnectionConfigs}{The list of persistent connection configuration settings for each channel.}
 
 \item{VoiceEnhancementConfigs}{The list of voice enhancement configuration settings for each channel.}
 
 \item{UserId}{[required] The identifier of the user account.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 }
 \description{
 Updates the configuration settings for the specified user, including per-channel auto-accept and after contact work (ACW) timeout settings.

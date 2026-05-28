@@ -8,9 +8,7 @@ by the Amazon Resource Name (ARN)}
 costexplorer_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource. For a list of supported
-resources, see
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html}{ResourceTag}.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html}{ResourceTag}.}
 }
 \description{
 Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN).

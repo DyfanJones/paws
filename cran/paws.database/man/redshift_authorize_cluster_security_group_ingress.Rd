@@ -18,9 +18,7 @@ redshift_authorize_cluster_security_group_ingress(
 
 \item{EC2SecurityGroupName}{The EC2 security group to be added the Amazon Redshift security group.}
 
-\item{EC2SecurityGroupOwnerId}{The Amazon Web Services account number of the owner of the security
-group specified by the \emph{EC2SecurityGroupName} parameter. The Amazon Web
-Services Access Key ID is not an acceptable value.
+\item{EC2SecurityGroupOwnerId}{The Amazon Web Services account number of the owner of the security group specified by the \emph{EC2SecurityGroupName} parameter. The Amazon Web Services Access Key ID is not an acceptable value.
 
 Example: \code{111122223333}}
 }

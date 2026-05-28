@@ -13,8 +13,7 @@ workspaces_list_account_links(
 \arguments{
 \item{LinkStatusFilter}{Filters the account based on their link status.}
 
-\item{NextToken}{The token to use to retrieve the next page of results. This value is
-null when there are no more results to return.}
+\item{NextToken}{The token to use to retrieve the next page of results. This value is null when there are no more results to return.}
 
 \item{MaxResults}{The maximum number of accounts to return.}
 }

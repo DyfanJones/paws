@@ -8,12 +8,9 @@ a Qualification}
 mturk_accept_qualification_request(QualificationRequestId, IntegerValue = NULL)
 }
 \arguments{
-\item{QualificationRequestId}{[required] The ID of the Qualification request, as returned by the
-\code{GetQualificationRequests} operation.}
+\item{QualificationRequestId}{[required] The ID of the Qualification request, as returned by the \code{GetQualificationRequests} operation.}
 
-\item{IntegerValue}{The value of the Qualification. You can omit this value if you are using
-the presence or absence of the Qualification as the basis for a HIT
-requirement.}
+\item{IntegerValue}{The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.}
 }
 \description{
 The \code{\link[=mturk_accept_qualification_request]{accept_qualification_request}} operation approves a Worker's request for a Qualification.

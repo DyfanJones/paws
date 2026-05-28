@@ -12,21 +12,9 @@ NULL
 #'
 #' @param Name &#91;required&#93; A name for the rescore execution plan.
 #' @param Description A description for the rescore execution plan.
-#' @param CapacityUnits You can set additional capacity units to meet the needs of your rescore
-#' execution plan. You are given a single capacity unit by default. If you
-#' want to use the default capacity, you don't set additional capacity
-#' units. For more information on the default capacity and additional
-#' capacity units, see [Adjusting
-#' capacity](https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html).
-#' @param Tags A list of key-value pairs that identify or categorize your rescore
-#' execution plan. You can also use tags to help control access to the
-#' rescore execution plan. Tag keys and values can consist of Unicode
-#' letters, digits, white space, and any of the following symbols: _ . : /
-#' = + - @@.
-#' @param ClientToken A token that you provide to identify the request to create a rescore
-#' execution plan. Multiple calls to the
-#' `CreateRescoreExecutionPlanRequest` API with the same client token will
-#' create only one rescore execution plan.
+#' @param CapacityUnits You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see [Adjusting capacity](https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html).
+#' @param Tags A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @@.
+#' @param ClientToken A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the `CreateRescoreExecutionPlanRequest` API with the same client token will create only one rescore execution plan.
 #'
 #' @keywords internal
 #'
@@ -88,8 +76,7 @@ kendraranking_delete_rescore_execution_plan <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kendraranking_describe_rescore_execution_plan/](https://www.paws-r-sdk.com/docs/kendraranking_describe_rescore_execution_plan/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The identifier of the rescore execution plan that you want to get
-#' information on.
+#' @param Id &#91;required&#93; The identifier of the rescore execution plan that you want to get information on.
 #'
 #' @keywords internal
 #'
@@ -120,9 +107,7 @@ kendraranking_describe_rescore_execution_plan <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kendraranking_list_rescore_execution_plans/](https://www.paws-r-sdk.com/docs/kendraranking_list_rescore_execution_plans/) for full documentation.
 #'
-#' @param NextToken If the response is truncated, Amazon Kendra Intelligent Ranking returns
-#' a pagination token in the response. You can use this pagination token to
-#' retrieve the next set of rescore execution plans.
+#' @param NextToken If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.
 #' @param MaxResults The maximum number of rescore execution plans to return.
 #'
 #' @keywords internal
@@ -154,8 +139,7 @@ kendraranking_list_rescore_execution_plans <- function(NextToken = NULL, MaxResu
 #'
 #' See [https://www.paws-r-sdk.com/docs/kendraranking_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/kendraranking_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the rescore execution plan to get a
-#' list of tags for.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the rescore execution plan to get a list of tags for.
 #'
 #' @keywords internal
 #'
@@ -187,12 +171,9 @@ kendraranking_list_tags_for_resource <- function(ResourceARN) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kendraranking_rescore/](https://www.paws-r-sdk.com/docs/kendraranking_rescore/) for full documentation.
 #'
-#' @param RescoreExecutionPlanId &#91;required&#93; The identifier of the rescore execution plan. A rescore execution plan
-#' is an Amazon Kendra Intelligent Ranking resource used for provisioning
-#' the [`rescore`][kendraranking_rescore] API.
+#' @param RescoreExecutionPlanId &#91;required&#93; The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the [`rescore`][kendraranking_rescore] API.
 #' @param SearchQuery &#91;required&#93; The input query from the search service.
-#' @param Documents &#91;required&#93; The list of documents for Amazon Kendra Intelligent Ranking to rescore
-#' or rank on.
+#' @param Documents &#91;required&#93; The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.
 #'
 #' @keywords internal
 #'
@@ -224,8 +205,7 @@ kendraranking_rescore <- function(RescoreExecutionPlanId, SearchQuery, Documents
 #' See [https://www.paws-r-sdk.com/docs/kendraranking_tag_resource/](https://www.paws-r-sdk.com/docs/kendraranking_tag_resource/) for full documentation.
 #'
 #' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the rescore execution plan to tag.
-#' @param Tags &#91;required&#93; A list of tag keys to add to a rescore execution plan. If a tag already
-#' exists, the existing value is replaced with the new value.
+#' @param Tags &#91;required&#93; A list of tag keys to add to a rescore execution plan. If a tag already exists, the existing value is replaced with the new value.
 #'
 #' @keywords internal
 #'
@@ -256,10 +236,8 @@ kendraranking_tag_resource <- function(ResourceARN, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kendraranking_untag_resource/](https://www.paws-r-sdk.com/docs/kendraranking_untag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the rescore execution plan to remove
-#' the tag.
-#' @param TagKeys &#91;required&#93; A list of tag keys to remove from the rescore execution plan. If a tag
-#' key does not exist on the resource, it is ignored.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the rescore execution plan to remove the tag.
+#' @param TagKeys &#91;required&#93; A list of tag keys to remove from the rescore execution plan. If a tag key does not exist on the resource, it is ignored.
 #'
 #' @keywords internal
 #'
@@ -293,12 +271,7 @@ kendraranking_untag_resource <- function(ResourceARN, TagKeys) {
 #' @param Id &#91;required&#93; The identifier of the rescore execution plan that you want to update.
 #' @param Name A new name for the rescore execution plan.
 #' @param Description A new description for the rescore execution plan.
-#' @param CapacityUnits You can set additional capacity units to meet the needs of your rescore
-#' execution plan. You are given a single capacity unit by default. If you
-#' want to use the default capacity, you don't set additional capacity
-#' units. For more information on the default capacity and additional
-#' capacity units, see [Adjusting
-#' capacity](https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html).
+#' @param CapacityUnits You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see [Adjusting capacity](https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html).
 #'
 #' @keywords internal
 #'

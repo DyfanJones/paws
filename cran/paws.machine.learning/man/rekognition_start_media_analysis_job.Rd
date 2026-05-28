@@ -14,11 +14,7 @@ rekognition_start_media_analysis_job(
 )
 }
 \arguments{
-\item{ClientRequestToken}{Idempotency token used to prevent the accidental creation of duplicate
-versions. If you use the same token with multiple
-\code{StartMediaAnalysisJobRequest} requests, the same response is returned.
-Use \code{ClientRequestToken} to prevent the same request from being
-processed more than once.}
+\item{ClientRequestToken}{Idempotency token used to prevent the accidental creation of duplicate versions. If you use the same token with multiple \code{StartMediaAnalysisJobRequest} requests, the same response is returned. Use \code{ClientRequestToken} to prevent the same request from being processed more than once.}
 
 \item{JobName}{The name of the job. Does not have to be unique.}
 
@@ -28,10 +24,7 @@ processed more than once.}
 
 \item{OutputConfig}{[required] The Amazon S3 bucket location to store the results.}
 
-\item{KmsKeyId}{The identifier of customer managed AWS KMS key (name or ARN). The key is
-used to encrypt images copied into the service. The key is also used to
-encrypt results and manifest files written to the output Amazon S3
-bucket.}
+\item{KmsKeyId}{The identifier of customer managed AWS KMS key (name or ARN). The key is used to encrypt images copied into the service. The key is also used to encrypt results and manifest files written to the output Amazon S3 bucket.}
 }
 \description{
 Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket. The output is a manifest file and a summary of the manifest stored in the Amazon S3 bucket.

@@ -8,13 +8,9 @@ specified StackStatusFilter}
 cloudformation_list_stacks(NextToken = NULL, StackStatusFilter = NULL)
 }
 \arguments{
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 
-\item{StackStatusFilter}{Stack status to use as a filter. Specify one or more stack status codes
-to list only stacks with the specified status codes. For a complete list
-of stack status codes, see the \code{StackStatus} parameter of the Stack data
-type.}
+\item{StackStatusFilter}{Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the \code{StackStatus} parameter of the Stack data type.}
 }
 \description{
 Returns the summary information for stacks whose status matches the specified \code{StackStatusFilter}. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no \code{StackStatusFilter} is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).

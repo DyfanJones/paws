@@ -10,10 +10,7 @@ chatbot_delete_microsoft_teams_configured_team(TeamId)
 \arguments{
 \item{TeamId}{[required] The ID of the Microsoft Teams team authorized with AWS Chatbot.
 
-To get the team ID, you must perform the initial authorization flow with
-Microsoft Teams in the AWS Chatbot console. Then you can copy and paste
-the team ID from the console. For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup}{Step 1: Configure a Microsoft Teams client}
-in the \emph{AWS Chatbot Administrator Guide}.}
+To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup}{Step 1: Configure a Microsoft Teams client} in the \emph{AWS Chatbot Administrator Guide}.}
 }
 \description{
 Deletes the Microsoft Teams team authorization allowing for channels to be configured in that Microsoft Teams team. Note that the Microsoft Teams team must have no channels configured to remove it.

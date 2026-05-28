@@ -9,11 +9,9 @@ connect_batch_delete_data_table_value(InstanceId, DataTableId, Values)
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias.}
 
-\item{Values}{[required] A list of value identifiers to delete, each specifying primary values,
-attribute name, and lock version information.}
+\item{Values}{[required] A list of value identifiers to delete, each specifying primary values, attribute name, and lock version information.}
 }
 \description{
 Deletes multiple values from a data table. API users may delete values at any time. When deletion is requested from the admin website, a warning is shown alerting the user of the most recent time the attribute and its values were accessed. System managed values are not deletable by customers.

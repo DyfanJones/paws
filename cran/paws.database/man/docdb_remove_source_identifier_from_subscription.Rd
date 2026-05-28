@@ -11,11 +11,9 @@ docdb_remove_source_identifier_from_subscription(
 )
 }
 \arguments{
-\item{SubscriptionName}{[required] The name of the Amazon DocumentDB event notification subscription that
-you want to remove a source identifier from.}
+\item{SubscriptionName}{[required] The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.}
 
-\item{SourceIdentifier}{[required] The source identifier to be removed from the subscription, such as the
-instance identifier for an instance, or the name of a security group.}
+\item{SourceIdentifier}{[required] The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group.}
 }
 \description{
 Removes a source identifier from an existing Amazon DocumentDB event notification subscription.

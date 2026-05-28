@@ -11,18 +11,11 @@ transcribeservice_update_call_analytics_category(
 )
 }
 \arguments{
-\item{CategoryName}{[required] The name of the Call Analytics category you want to update. Category
-names are case sensitive.}
+\item{CategoryName}{[required] The name of the Call Analytics category you want to update. Category names are case sensitive.}
 
-\item{Rules}{[required] The rules used for the updated Call Analytics category. The rules you
-provide in this field replace the ones that are currently being used in
-the specified category.}
+\item{Rules}{[required] The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.}
 
-\item{InputType}{Choose whether you want to update a real-time or a post-call category.
-The input type you specify must match the input type specified when the
-category was created. For example, if you created a category with the
-\code{POST_CALL} input type, you must use \code{POST_CALL} as the input type when
-updating this category.}
+\item{InputType}{Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the \code{POST_CALL} input type, you must use \code{POST_CALL} as the input type when updating this category.}
 }
 \description{
 Updates the specified Call Analytics category with new rules. Note that the \code{\link[=transcribeservice_update_call_analytics_category]{update_call_analytics_category}} operation overwrites all existing rules contained in the specified category. You cannot append additional rules onto an existing category.

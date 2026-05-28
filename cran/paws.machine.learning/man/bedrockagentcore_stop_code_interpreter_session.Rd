@@ -18,15 +18,11 @@ bedrockagentcore_stop_code_interpreter_session(
 
 \item{traceParent}{The parent trace information for distributed tracing.}
 
-\item{codeInterpreterIdentifier}{[required] The unique identifier of the code interpreter associated with the
-session.}
+\item{codeInterpreterIdentifier}{[required] The unique identifier of the code interpreter associated with the session.}
 
 \item{sessionId}{[required] The unique identifier of the code interpreter session to stop.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock AgentCore ignores the request, but does not
-return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error.}
 }
 \description{
 Terminates an active code interpreter session in Amazon Bedrock AgentCore. This operation stops the session, releases associated resources, and makes the session unavailable for further use.

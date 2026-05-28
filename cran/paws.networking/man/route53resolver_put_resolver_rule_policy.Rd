@@ -10,14 +10,9 @@ rule}
 route53resolver_put_resolver_rule_policy(Arn, ResolverRulePolicy)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the rule that you want to share with
-another account.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the rule that you want to share with another account.}
 
-\item{ResolverRulePolicy}{[required] An Identity and Access Management policy statement that lists the rules
-that you want to share with another Amazon Web Services account and the
-operations that you want the account to be able to perform. You can
-specify the following operations in the \code{Action} section of the
-statement:
+\item{ResolverRulePolicy}{[required] An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the \code{Action} section of the statement:
 \itemize{
 \item \code{route53resolver:GetResolverRule}
 \item \code{route53resolver:AssociateResolverRule}
@@ -26,9 +21,7 @@ statement:
 \item \code{route53resolver:ListResolverRuleAssociations}
 }
 
-In the \code{Resource} section of the statement, specify the ARN for the rule
-that you want to share with another account. Specify the same ARN that
-you specified in \code{Arn}.}
+In the \code{Resource} section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in \code{Arn}.}
 }
 \description{
 Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with, and the operations that you want the account to be able to perform on the rule.

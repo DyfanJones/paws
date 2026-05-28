@@ -15,33 +15,19 @@ connect_create_data_table(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The unique identifier for the Amazon Connect instance where the data
-table will be created.}
+\item{InstanceId}{[required] The unique identifier for the Amazon Connect instance where the data table will be created.}
 
-\item{Name}{[required] The name for the data table. Must conform to Connect human readable
-string specification and have 1-127 characters. Whitespace must be
-trimmed first. Must not start with the reserved case insensitive values
-'connect:' and 'aws:'. Must be unique for the instance using
-case-insensitive comparison.}
+\item{Name}{[required] The name for the data table. Must conform to Connect human readable string specification and have 1-127 characters. Whitespace must be trimmed first. Must not start with the reserved case insensitive values 'connect:' and 'aws:'. Must be unique for the instance using case-insensitive comparison.}
 
-\item{Description}{An optional description for the data table. Must conform to Connect
-human readable string specification and have 0-250 characters.
-Whitespace must be trimmed first.}
+\item{Description}{An optional description for the data table. Must conform to Connect human readable string specification and have 0-250 characters. Whitespace must be trimmed first.}
 
-\item{TimeZone}{[required] The IANA timezone identifier to use when resolving time based dynamic
-values. Required even if no time slices are specified.}
+\item{TimeZone}{[required] The IANA timezone identifier to use when resolving time based dynamic values. Required even if no time slices are specified.}
 
-\item{ValueLockLevel}{[required] The data level that concurrent value edits are locked on. One of
-DATA_TABLE, PRIMARY_VALUE, ATTRIBUTE, VALUE, and NONE. NONE is the
-default if unspecified. This determines how concurrent edits are handled
-when multiple users attempt to modify values simultaneously.}
+\item{ValueLockLevel}{[required] The data level that concurrent value edits are locked on. One of DATA_TABLE, PRIMARY_VALUE, ATTRIBUTE, VALUE, and NONE. NONE is the default if unspecified. This determines how concurrent edits are handled when multiple users attempt to modify values simultaneously.}
 
-\item{Status}{[required] The status of the data table. One of PUBLISHED or SAVED. Required
-parameter that determines the initial state of the table.}
+\item{Status}{[required] The status of the data table. One of PUBLISHED or SAVED. Required parameter that determines the initial state of the table.}
 
-\item{Tags}{Key value pairs for attribute based access control (TBAC or ABAC).
-Optional tags to apply to the data table for organization and access
-control purposes.}
+\item{Tags}{Key value pairs for attribute based access control (TBAC or ABAC). Optional tags to apply to the data table for organization and access control purposes.}
 }
 \description{
 Creates a new data table with the specified properties. Supports the creation of all table properties except for attributes and values. A table with no attributes and values is a valid state for a table. The number of tables per instance is limited to 100 per instance. Customers can request an increase by using Amazon Web Services Service Quotas.

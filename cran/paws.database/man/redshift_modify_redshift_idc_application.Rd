@@ -14,22 +14,15 @@ redshift_modify_redshift_idc_application(
 )
 }
 \arguments{
-\item{RedshiftIdcApplicationArn}{[required] The ARN for the Redshift application that integrates with IAM Identity
-Center.}
+\item{RedshiftIdcApplicationArn}{[required] The ARN for the Redshift application that integrates with IAM Identity Center.}
 
-\item{IdentityNamespace}{The namespace for the Amazon Redshift IAM Identity Center application to
-change. It determines which managed application verifies the connection
-token.}
+\item{IdentityNamespace}{The namespace for the Amazon Redshift IAM Identity Center application to change. It determines which managed application verifies the connection token.}
 
-\item{IamRoleArn}{The IAM role ARN associated with the Amazon Redshift IAM Identity Center
-application to change. It has the required permissions to be assumed and
-invoke the IDC Identity Center API.}
+\item{IamRoleArn}{The IAM role ARN associated with the Amazon Redshift IAM Identity Center application to change. It has the required permissions to be assumed and invoke the IDC Identity Center API.}
 
-\item{IdcDisplayName}{The display name for the Amazon Redshift IAM Identity Center application
-to change. It appears on the console.}
+\item{IdcDisplayName}{The display name for the Amazon Redshift IAM Identity Center application to change. It appears on the console.}
 
-\item{AuthorizedTokenIssuerList}{The authorized token issuer list for the Amazon Redshift IAM Identity
-Center application to change.}
+\item{AuthorizedTokenIssuerList}{The authorized token issuer list for the Amazon Redshift IAM Identity Center application to change.}
 
 \item{ServiceIntegrations}{A collection of service integrations associated with the application.}
 }

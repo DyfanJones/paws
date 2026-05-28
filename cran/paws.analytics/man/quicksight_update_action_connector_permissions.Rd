@@ -15,13 +15,11 @@ quicksight_update_action_connector_permissions(
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID that contains the action connector.}
 
-\item{ActionConnectorId}{[required] The unique identifier of the action connector whose permissions you want
-to update.}
+\item{ActionConnectorId}{[required] The unique identifier of the action connector whose permissions you want to update.}
 
 \item{GrantPermissions}{The permissions to grant to users and groups for this action connector.}
 
-\item{RevokePermissions}{The permissions to revoke from users and groups for this action
-connector.}
+\item{RevokePermissions}{The permissions to revoke from users and groups for this action connector.}
 }
 \description{
 Updates the permissions for an action connector by granting or revoking access for specific users and groups. You can control who can view, use, or manage the action connector.

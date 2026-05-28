@@ -11,11 +11,9 @@ elasticache_modify_cache_subnet_group(
 )
 }
 \arguments{
-\item{CacheSubnetGroupName}{[required] The name for the cache subnet group. This value is stored as a lowercase
-string.
+\item{CacheSubnetGroupName}{[required] The name for the cache subnet group. This value is stored as a lowercase string.
 
-Constraints: Must contain no more than 255 alphanumeric characters or
-hyphens.
+Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
 
 Example: \code{mysubnetgroup}}
 

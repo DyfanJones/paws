@@ -10,12 +10,9 @@ elasticache_delete_cache_cluster(
 )
 }
 \arguments{
-\item{CacheClusterId}{[required] The cluster identifier for the cluster to be deleted. This parameter is
-not case sensitive.}
+\item{CacheClusterId}{[required] The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.}
 
-\item{FinalSnapshotIdentifier}{The user-supplied name of a final cluster snapshot. This is the unique
-name that identifies the snapshot. ElastiCache creates the snapshot, and
-then deletes the cluster immediately afterward.}
+\item{FinalSnapshotIdentifier}{The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.}
 }
 \description{
 Deletes a previously provisioned cluster. \code{\link[=elasticache_delete_cache_cluster]{delete_cache_cluster}} deletes all associated cache nodes, node endpoints and the cluster itself. When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the cluster; you cannot cancel or revert this operation.

@@ -19,8 +19,7 @@ glue_modify_integration(
 
 \item{DataFilter}{Selects source tables for the integration using Maxwell filter syntax.}
 
-\item{IntegrationConfig}{The configuration settings for the integration. Currently, only the
-RefreshInterval can be modified.}
+\item{IntegrationConfig}{The configuration settings for the integration. Currently, only the RefreshInterval can be modified.}
 
 \item{IntegrationName}{A unique name for an integration in Glue.}
 }

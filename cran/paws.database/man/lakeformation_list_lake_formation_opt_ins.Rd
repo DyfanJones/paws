@@ -13,12 +13,13 @@ lakeformation_list_lake_formation_opt_ins(
 )
 }
 \arguments{
+\item{Principal}{The Lake Formation principal. Supported principals are IAM users or IAM roles.}
+
 \item{Resource}{A structure for the resource.}
 
 \item{MaxResults}{The maximum number of results to return.}
 
-\item{NextToken}{A continuation token, if this is not the first call to retrieve this
-list.}
+\item{NextToken}{A continuation token, if this is not the first call to retrieve this list.}
 }
 \description{
 Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.

@@ -14,10 +14,7 @@ kinesis_delete_stream(
 \arguments{
 \item{StreamName}{The name of the stream to delete.}
 
-\item{EnforceConsumerDeletion}{If this parameter is unset (\code{null}) or if you set it to \code{false}, and the
-stream has registered consumers, the call to
-\code{\link[=kinesis_delete_stream]{delete_stream}} fails with a
-\code{ResourceInUseException}.}
+\item{EnforceConsumerDeletion}{If this parameter is unset (\code{null}) or if you set it to \code{false}, and the stream has registered consumers, the call to \code{\link[=kinesis_delete_stream]{delete_stream}} fails with a \code{ResourceInUseException}.}
 
 \item{StreamARN}{The ARN of the stream.}
 

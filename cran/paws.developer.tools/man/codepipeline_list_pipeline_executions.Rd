@@ -12,20 +12,13 @@ codepipeline_list_pipeline_executions(
 )
 }
 \arguments{
-\item{pipelineName}{[required] The name of the pipeline for which you want to get execution summary
-information.}
+\item{pipelineName}{[required] The name of the pipeline for which you want to get execution summary information.}
 
-\item{maxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value. Pipeline history is limited to the most recent 12 months, based
-on pipeline execution start times. Default value is 100.}
+\item{maxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.}
 
 \item{filter}{The pipeline execution to filter on.}
 
-\item{nextToken}{The token that was returned from the previous
-\code{\link[=codepipeline_list_pipeline_executions]{list_pipeline_executions}}
-call, which can be used to return the next set of pipeline executions in
-the list.}
+\item{nextToken}{The token that was returned from the previous \code{\link[=codepipeline_list_pipeline_executions]{list_pipeline_executions}} call, which can be used to return the next set of pipeline executions in the list.}
 }
 \description{
 Gets a summary of the most recent executions for a pipeline.

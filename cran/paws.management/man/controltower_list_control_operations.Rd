@@ -11,9 +11,7 @@ controltower_list_control_operations(
 )
 }
 \arguments{
-\item{filter}{An input filter for the
-\code{\link[=controltower_list_control_operations]{list_control_operations}} API
-that lets you select the types of control operations to view.}
+\item{filter}{An input filter for the \code{\link[=controltower_list_control_operations]{list_control_operations}} API that lets you select the types of control operations to view.}
 
 \item{nextToken}{A pagination token.}
 

@@ -7,8 +7,7 @@
 quicksight_delete_brand_assignment(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that owns the brand
-assignment.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that owns the brand assignment.}
 }
 \description{
 Deletes a brand assignment.

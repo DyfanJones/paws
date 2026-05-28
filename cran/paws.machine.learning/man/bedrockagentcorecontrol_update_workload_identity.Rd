@@ -12,8 +12,7 @@ bedrockagentcorecontrol_update_workload_identity(
 \arguments{
 \item{name}{[required] The name of the workload identity to update.}
 
-\item{allowedResourceOauth2ReturnUrls}{The new list of allowed OAuth2 return URLs for resources associated with
-this workload identity. This list replaces the existing list.}
+\item{allowedResourceOauth2ReturnUrls}{The new list of allowed OAuth2 return URLs for resources associated with this workload identity. This list replaces the existing list.}
 }
 \description{
 Updates an existing workload identity.

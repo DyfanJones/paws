@@ -7,9 +7,7 @@
 devopsguru_add_notification_channel(Config)
 }
 \arguments{
-\item{Config}{[required] A \code{NotificationChannelConfig} object that specifies what type of
-notification channel to add. The one supported notification channel is
-Amazon Simple Notification Service (Amazon SNS).}
+\item{Config}{[required] A \code{NotificationChannelConfig} object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).}
 }
 \description{
 Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps Guru events, such as when an insight is generated.

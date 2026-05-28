@@ -18,41 +18,25 @@ datazone_update_subscription_target(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a subscription
-target is to be updated.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a subscription target is to be updated.}
 
-\item{environmentIdentifier}{[required] The identifier of the environment in which a subscription target is to
-be updated.}
+\item{environmentIdentifier}{[required] The identifier of the environment in which a subscription target is to be updated.}
 
 \item{identifier}{[required] Identifier of the subscription target that is to be updated.}
 
-\item{name}{The name to be updated as part of the
-\code{\link[=datazone_update_subscription_target]{update_subscription_target}}
-action.}
+\item{name}{The name to be updated as part of the \code{\link[=datazone_update_subscription_target]{update_subscription_target}} action.}
 
-\item{authorizedPrincipals}{The authorized principals to be updated as part of the
-\code{\link[=datazone_update_subscription_target]{update_subscription_target}}
-action.}
+\item{authorizedPrincipals}{The authorized principals to be updated as part of the \code{\link[=datazone_update_subscription_target]{update_subscription_target}} action.}
 
-\item{applicableAssetTypes}{The applicable asset types to be updated as part of the
-\code{\link[=datazone_update_subscription_target]{update_subscription_target}}
-action.}
+\item{applicableAssetTypes}{The applicable asset types to be updated as part of the \code{\link[=datazone_update_subscription_target]{update_subscription_target}} action.}
 
-\item{subscriptionTargetConfig}{The configuration to be updated as part of the
-\code{\link[=datazone_update_subscription_target]{update_subscription_target}}
-action.}
+\item{subscriptionTargetConfig}{The configuration to be updated as part of the \code{\link[=datazone_update_subscription_target]{update_subscription_target}} action.}
 
-\item{manageAccessRole}{The manage access role to be updated as part of the
-\code{\link[=datazone_update_subscription_target]{update_subscription_target}}
-action.}
+\item{manageAccessRole}{The manage access role to be updated as part of the \code{\link[=datazone_update_subscription_target]{update_subscription_target}} action.}
 
-\item{provider}{The provider to be updated as part of the
-\code{\link[=datazone_update_subscription_target]{update_subscription_target}}
-action.}
+\item{provider}{The provider to be updated as part of the \code{\link[=datazone_update_subscription_target]{update_subscription_target}} action.}
 
-\item{subscriptionGrantCreationMode}{Determines the subscription grant creation mode for this target,
-defining if grants are auto-created upon subscription approval or
-managed manually.}
+\item{subscriptionGrantCreationMode}{Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.}
 }
 \description{
 Updates the specified subscription target in Amazon DataZone.

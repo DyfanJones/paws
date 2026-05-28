@@ -30,13 +30,9 @@ bedrock_create_model_import_job(
 
 \item{importedModelTags}{Tags to attach to the imported model.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{vpcConfig}{VPC configuration parameters for the private Virtual Private Cloud (VPC)
-that contains the resources you are using for the import job.}
+\item{vpcConfig}{VPC configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for the import job.}
 
 \item{importedModelKmsKeyId}{The imported model is encrypted at rest using this key.}
 }

@@ -7,8 +7,7 @@
 personalize_describe_feature_transformation(featureTransformationArn)
 }
 \arguments{
-\item{featureTransformationArn}{[required] The Amazon Resource Name (ARN) of the feature transformation to
-describe.}
+\item{featureTransformationArn}{[required] The Amazon Resource Name (ARN) of the feature transformation to describe.}
 }
 \description{
 Describes the given feature transformation.

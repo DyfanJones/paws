@@ -7,8 +7,7 @@
 lexmodelsv2_delete_bot_replica(botId, replicaRegion)
 }
 \arguments{
-\item{botId}{[required] The unique ID of the replicated bot to be deleted from the secondary
-region}
+\item{botId}{[required] The unique ID of the replicated bot to be deleted from the secondary region}
 
 \item{replicaRegion}{[required] The secondary region of the replicated bot that will be deleted.}
 }

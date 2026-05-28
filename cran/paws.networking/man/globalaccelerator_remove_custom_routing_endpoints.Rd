@@ -10,11 +10,9 @@ globalaccelerator_remove_custom_routing_endpoints(
 )
 }
 \arguments{
-\item{EndpointIds}{[required] The IDs for the endpoints. For custom routing accelerators, endpoint IDs
-are the virtual private cloud (VPC) subnet IDs.}
+\item{EndpointIds}{[required] The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.}
 
-\item{EndpointGroupArn}{[required] The Amazon Resource Name (ARN) of the endpoint group to remove endpoints
-from.}
+\item{EndpointGroupArn}{[required] The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.}
 }
 \description{
 Remove endpoints from a custom routing accelerator.

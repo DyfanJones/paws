@@ -7,11 +7,9 @@
 quicksight_list_topics(AwsAccountId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topics that
-you want to list.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topics that you want to list.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

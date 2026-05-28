@@ -7,12 +7,9 @@
 quicksight_describe_analysis(AwsAccountId, AnalysisId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis.
-You must be using the Amazon Web Services account that the analysis is
-in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.}
 
-\item{AnalysisId}{[required] The ID of the analysis that you're describing. The ID is part of the URL
-of the analysis.}
+\item{AnalysisId}{[required] The ID of the analysis that you're describing. The ID is part of the URL of the analysis.}
 }
 \description{
 Provides a summary of the metadata for an analysis.

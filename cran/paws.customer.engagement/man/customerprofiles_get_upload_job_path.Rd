@@ -10,8 +10,7 @@ customerprofiles_get_upload_job_path(DomainName, JobId)
 \arguments{
 \item{DomainName}{[required] The unique name of the domain containing the upload job.}
 
-\item{JobId}{[required] The unique identifier of the upload job to retrieve the upload path for.
-This is generated from the CreateUploadJob API.}
+\item{JobId}{[required] The unique identifier of the upload job to retrieve the upload path for. This is generated from the CreateUploadJob API.}
 }
 \description{
 This API retrieves the pre-signed URL and client token for uploading the file associated with the upload job.

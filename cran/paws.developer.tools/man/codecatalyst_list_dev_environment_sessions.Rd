@@ -19,13 +19,9 @@ codecatalyst_list_dev_environment_sessions(
 
 \item{devEnvironmentId}{[required] The system-generated unique ID of the Dev Environment.}
 
-\item{nextToken}{A token returned from a call to this API to indicate the next batch of
-results to return, if any.}
+\item{nextToken}{A token returned from a call to this API to indicate the next batch of results to return, if any.}
 
-\item{maxResults}{The maximum number of results to show in a single call to this API. If
-the number of results is larger than the number you specified, the
-response will include a \code{NextToken} element, which you can use to obtain
-additional results.}
+\item{maxResults}{The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a \code{NextToken} element, which you can use to obtain additional results.}
 }
 \description{
 Retrieves a list of active sessions for a Dev Environment in a project.

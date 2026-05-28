@@ -5,8 +5,7 @@ NULL
 #' AWS Route53 Recovery Control Config
 #'
 #' @description
-#' Recovery Control Configuration API Reference for Amazon Route 53
-#' Application Recovery Controller
+#' Recovery Control Configuration API Reference for Amazon Route 53 Application Recovery Controller
 #'
 #' @param
 #' config

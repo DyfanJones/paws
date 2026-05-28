@@ -9,8 +9,7 @@ bedrockagentcorecontrol_update_api_key_credential_provider(name, apiKey)
 \arguments{
 \item{name}{[required] The name of the API key credential provider to update.}
 
-\item{apiKey}{[required] The new API key to use for authentication. This value replaces the
-existing API key and is encrypted and stored securely.}
+\item{apiKey}{[required] The new API key to use for authentication. This value replaces the existing API key and is encrypted and stored securely.}
 }
 \description{
 Updates an existing API key credential provider.

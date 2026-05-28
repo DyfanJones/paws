@@ -15,28 +15,19 @@ sagemaker_create_hub_content_presigned_urls(
 )
 }
 \arguments{
-\item{HubName}{[required] The name or Amazon Resource Name (ARN) of the hub that contains the
-content. For public content, use \code{SageMakerPublicHub}.}
+\item{HubName}{[required] The name or Amazon Resource Name (ARN) of the hub that contains the content. For public content, use \code{SageMakerPublicHub}.}
 
-\item{HubContentType}{[required] The type of hub content to access. Valid values include \code{Model},
-\code{Notebook}, and \code{ModelReference}.}
+\item{HubContentType}{[required] The type of hub content to access. Valid values include \code{Model}, \code{Notebook}, and \code{ModelReference}.}
 
-\item{HubContentName}{[required] The name of the hub content for which to generate presigned URLs. This
-identifies the specific model or content within the hub.}
+\item{HubContentName}{[required] The name of the hub content for which to generate presigned URLs. This identifies the specific model or content within the hub.}
 
-\item{HubContentVersion}{The version of the hub content. If not specified, the latest version is
-used.}
+\item{HubContentVersion}{The version of the hub content. If not specified, the latest version is used.}
 
-\item{AccessConfig}{Configuration settings for accessing the hub content, including end-user
-license agreement acceptance for gated models and expected S3 URL
-validation.}
+\item{AccessConfig}{Configuration settings for accessing the hub content, including end-user license agreement acceptance for gated models and expected S3 URL validation.}
 
-\item{MaxResults}{The maximum number of presigned URLs to return in the response. Default
-value is 100. Large models may contain hundreds of files, requiring
-pagination to retrieve all URLs.}
+\item{MaxResults}{The maximum number of presigned URLs to return in the response. Default value is 100. Large models may contain hundreds of files, requiring pagination to retrieve all URLs.}
 
-\item{NextToken}{A token for pagination. Use this token to retrieve the next set of
-presigned URLs when the response is truncated.}
+\item{NextToken}{A token for pagination. Use this token to retrieve the next set of presigned URLs when the response is truncated.}
 }
 \description{
 Creates presigned URLs for accessing hub content artifacts. This operation generates time-limited, secure URLs that allow direct download of model artifacts and associated files from Amazon SageMaker hub content, including gated models that require end-user license agreement acceptance.

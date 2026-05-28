@@ -19,8 +19,7 @@ networkmanager_put_attachment_routing_policy_label(
 
 \item{RoutingPolicyLabel}{[required] The routing policy label to apply to the attachment.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Applies a routing policy label to an attachment for traffic routing decisions.

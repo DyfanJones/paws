@@ -27,10 +27,10 @@ bedrockagentcore_create_payment_instrument(
 
 \item{paymentInstrumentDetails}{[required] The details of the payment instrument.}
 
-\item{clientToken}{Idempotency token to ensure request uniqueness.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
-Create a new payment instrument for a connector
+Create a new payment instrument for a connector.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_create_payment_instrument/} for full documentation.
 }

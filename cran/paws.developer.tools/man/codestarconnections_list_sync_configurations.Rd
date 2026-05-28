@@ -12,14 +12,11 @@ codestarconnections_list_sync_configurations(
 )
 }
 \arguments{
-\item{MaxResults}{A non-zero, non-negative integer used to limit the number of returned
-results.}
+\item{MaxResults}{A non-zero, non-negative integer used to limit the number of returned results.}
 
-\item{NextToken}{An enumeration token that allows the operation to batch the results of
-the operation.}
+\item{NextToken}{An enumeration token that allows the operation to batch the results of the operation.}
 
-\item{RepositoryLinkId}{[required] The ID of the repository link for the requested list of sync
-configurations.}
+\item{RepositoryLinkId}{[required] The ID of the repository link for the requested list of sync configurations.}
 
 \item{SyncType}{[required] The sync type for the requested list of sync configurations.}
 }

@@ -17,26 +17,19 @@ billingconductor_create_billing_group(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure
-idempotency of the request. Idempotency ensures that an API request
-completes no more than one time. With an idempotent request, if the
-original request completes successfully, any subsequent retries complete
-successfully without performing any further actions.}
+\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.}
 
 \item{Name}{[required] The billing group name. The names must be unique.}
 
-\item{AccountGrouping}{[required] The set of accounts that will be under the billing group. The set of
-accounts resemble the linked accounts in a consolidated billing family.}
+\item{AccountGrouping}{[required] The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family.}
 
-\item{ComputationPreference}{[required] The preferences and settings that will be used to compute the Amazon Web
-Services charges for a billing group.}
+\item{ComputationPreference}{[required] The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.}
 
 \item{PrimaryAccountId}{The account ID that serves as the main account in a billing group.}
 
 \item{Description}{The description of the billing group.}
 
-\item{Tags}{A map that contains tag keys and tag values that are attached to a
-billing group. This feature isn't available during the beta.}
+\item{Tags}{A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta.}
 }
 \description{
 Creates a billing group that resembles a consolidated billing family that Amazon Web Services charges, based off of the predefined pricing plan computation.

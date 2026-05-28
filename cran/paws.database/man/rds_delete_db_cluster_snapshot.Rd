@@ -9,8 +9,7 @@ rds_delete_db_cluster_snapshot(DBClusterSnapshotIdentifier)
 \arguments{
 \item{DBClusterSnapshotIdentifier}{[required] The identifier of the DB cluster snapshot to delete.
 
-Constraints: Must be the name of an existing DB cluster snapshot in the
-\code{available} state.}
+Constraints: Must be the name of an existing DB cluster snapshot in the \code{available} state.}
 }
 \description{
 Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.

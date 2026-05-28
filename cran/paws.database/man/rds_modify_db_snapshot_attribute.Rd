@@ -17,33 +17,17 @@ rds_modify_db_snapshot_attribute(
 
 \item{AttributeName}{[required] The name of the DB snapshot attribute to modify.
 
-To manage authorization for other Amazon Web Services accounts to copy
-or restore a manual DB snapshot, set this value to \code{restore}.
+To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to \code{restore}.
 
-To view the list of attributes available to modify, use the
-\code{\link[=rds_describe_db_snapshot_attributes]{describe_db_snapshot_attributes}}
-API operation.}
+To view the list of attributes available to modify, use the \code{\link[=rds_describe_db_snapshot_attributes]{describe_db_snapshot_attributes}} API operation.}
 
-\item{ValuesToAdd}{A list of DB snapshot attributes to add to the attribute specified by
-\code{AttributeName}.
+\item{ValuesToAdd}{A list of DB snapshot attributes to add to the attribute specified by \code{AttributeName}.
 
-To authorize other Amazon Web Services accounts to copy or restore a
-manual snapshot, set this list to include one or more Amazon Web
-Services account IDs, or \code{all} to make the manual DB snapshot restorable
-by any Amazon Web Services account. Do not add the \code{all} value for any
-manual DB snapshots that contain private information that you don't want
-available to all Amazon Web Services accounts.}
+To authorize other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include one or more Amazon Web Services account IDs, or \code{all} to make the manual DB snapshot restorable by any Amazon Web Services account. Do not add the \code{all} value for any manual DB snapshots that contain private information that you don't want available to all Amazon Web Services accounts.}
 
-\item{ValuesToRemove}{A list of DB snapshot attributes to remove from the attribute specified
-by \code{AttributeName}.
+\item{ValuesToRemove}{A list of DB snapshot attributes to remove from the attribute specified by \code{AttributeName}.
 
-To remove authorization for other Amazon Web Services accounts to copy
-or restore a manual snapshot, set this list to include one or more
-Amazon Web Services account identifiers, or \code{all} to remove
-authorization for any Amazon Web Services account to copy or restore the
-DB snapshot. If you specify \code{all}, an Amazon Web Services account whose
-account ID is explicitly added to the \code{restore} attribute can still copy
-or restore the manual DB snapshot.}
+To remove authorization for other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include one or more Amazon Web Services account identifiers, or \code{all} to remove authorization for any Amazon Web Services account to copy or restore the DB snapshot. If you specify \code{all}, an Amazon Web Services account whose account ID is explicitly added to the \code{restore} attribute can still copy or restore the manual DB snapshot.}
 }
 \description{
 Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.

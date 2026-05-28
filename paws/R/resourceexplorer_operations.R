@@ -7,25 +7,14 @@ NULL
 #' Region in which you call this operation
 #'
 #' @description
-#' Sets the specified view as the default for the Amazon Web Services
-#' Region in which you call this operation. When a user performs a
-#' [`search`][resourceexplorer_search] that doesn't explicitly specify
-#' which view to use, then Amazon Web Services Resource Explorer
-#' automatically chooses this default view for searches performed in this
-#' Amazon Web Services Region.
+#' Sets the specified view as the default for the Amazon Web Services Region in which you call this operation. When a user performs a [`search`][resourceexplorer_search] that doesn't explicitly specify which view to use, then Amazon Web Services Resource Explorer automatically chooses this default view for searches performed in this Amazon Web Services Region.
 #' 
-#' If an Amazon Web Services Region doesn't have a default view configured,
-#' then users must explicitly specify a view with every
-#' [`search`][resourceexplorer_search] operation performed in that Region.
+#' If an Amazon Web Services Region doesn't have a default view configured, then users must explicitly specify a view with every [`search`][resourceexplorer_search] operation performed in that Region.
 #'
 #' @usage
 #' resourceexplorer_associate_default_view(ViewArn)
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view to set as the default for the Amazon Web Services Region and
-#' Amazon Web Services account in which you call this operation. The
-#' specified view must already exist in the called Region.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -74,9 +63,7 @@ resourceexplorer_associate_default_view <- function(ViewArn) {
 #' @usage
 #' resourceexplorer_batch_get_view(ViewArns)
 #'
-#' @param ViewArns A list of [Amazon resource names
-#' (ARNs)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' that identify the views you want details for.
+#' @param ViewArns A list of [Amazon resource names (ARNs)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) that identify the views you want details for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -147,73 +134,33 @@ resourceexplorer_batch_get_view <- function(ViewArns = NULL) {
 #' Services Region in which you called this operation by creating an index
 #'
 #' @description
-#' Turns on Amazon Web Services Resource Explorer in the Amazon Web
-#' Services Region in which you called this operation by creating an index.
-#' Resource Explorer begins discovering the resources in this Region and
-#' stores the details about the resources in the index so that they can be
-#' queried by using the [`search`][resourceexplorer_search] operation. You
-#' can create only one index in a Region.
+#' Turns on Amazon Web Services Resource Explorer in the Amazon Web Services Region in which you called this operation by creating an index. Resource Explorer begins discovering the resources in this Region and stores the details about the resources in the index so that they can be queried by using the [`search`][resourceexplorer_search] operation. You can create only one index in a Region.
 #' 
-#' This operation creates only a *local* index. To promote the local index
-#' in one Amazon Web Services Region into the aggregator index for the
-#' Amazon Web Services account, use the
-#' [`update_index_type`][resourceexplorer_update_index_type] operation. For
-#' more information, see [Turning on cross-Region search by creating an
-#' aggregator
-#' index](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' This operation creates only a *local* index. To promote the local index in one Amazon Web Services Region into the aggregator index for the Amazon Web Services account, use the [`update_index_type`][resourceexplorer_update_index_type] operation. For more information, see [Turning on cross-Region search by creating an aggregator index](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' For more details about what happens when you turn on Resource Explorer
-#' in an Amazon Web Services Region, see [Turn on Resource Explorer to
-#' index your resources in an Amazon Web Services
-#' Region](https://docs.aws.amazon.com/resource-explorer/latest/userguide/)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' For more details about what happens when you turn on Resource Explorer in an Amazon Web Services Region, see [Turn on Resource Explorer to index your resources in an Amazon Web Services Region](https://docs.aws.amazon.com/resource-explorer/latest/userguide/) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' If this is the first Amazon Web Services Region in which you've created
-#' an index for Resource Explorer, then this operation also [creates a
-#' service-linked
-#' role](https://docs.aws.amazon.com/resource-explorer/latest/userguide/security_iam_service-linked-roles.html)
-#' in your Amazon Web Services account that allows Resource Explorer to
-#' enumerate your resources to populate the index.
+#' If this is the first Amazon Web Services Region in which you've created an index for Resource Explorer, then this operation also [creates a service-linked role](https://docs.aws.amazon.com/resource-explorer/latest/userguide/security_iam_service-linked-roles.html) in your Amazon Web Services account that allows Resource Explorer to enumerate your resources to populate the index.
 #' 
 #' -   **Action**: `resource-explorer-2:CreateIndex`
 #' 
-#'     **Resource**: The ARN of the index (as it will exist after the
-#'     operation completes) in the Amazon Web Services Region and account
-#'     in which you're trying to create the index. Use the wildcard
-#'     character (`*`) at the end of the string to match the eventual UUID.
-#'     For example, the following `Resource` element restricts the role or
-#'     user to creating an index in only the `us-east-2` Region of the
-#'     specified account.
+#'     **Resource**: The ARN of the index (as it will exist after the operation completes) in the Amazon Web Services Region and account in which you're trying to create the index. Use the wildcard character (`*`) at the end of the string to match the eventual UUID. For example, the following `Resource` element restricts the role or user to creating an index in only the `us-east-2` Region of the specified account.
 #' 
 #'     `"Resource": "arn:aws:resource-explorer-2:us-west-2:<account-id>:index/*"`
 #' 
-#'     Alternatively, you can use `"Resource": "*"` to allow the role or
-#'     user to create an index in any Region.
+#'     Alternatively, you can use `"Resource": "*"` to allow the role or user to create an index in any Region.
 #' 
 #' -   **Action**: `iam:CreateServiceLinkedRole`
 #' 
 #'     **Resource**: No specific resource (*).
 #' 
-#'     This permission is required only the first time you create an index
-#'     to turn on Resource Explorer in the account. Resource Explorer uses
-#'     this to create the [service-linked role needed to index the
-#'     resources in your
-#'     account](https://docs.aws.amazon.com/resource-explorer/latest/userguide/security_iam_service-linked-roles.html).
-#'     Resource Explorer uses the same service-linked role for all
-#'     additional indexes you create afterwards.
+#'     This permission is required only the first time you create an index to turn on Resource Explorer in the account. Resource Explorer uses this to create the [service-linked role needed to index the resources in your account](https://docs.aws.amazon.com/resource-explorer/latest/userguide/security_iam_service-linked-roles.html). Resource Explorer uses the same service-linked role for all additional indexes you create afterwards.
 #'
 #' @usage
 #' resourceexplorer_create_index(ClientToken, Tags)
 #'
-#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value
-#' to prevent the accidental creation of duplicate versions. We recommend
-#' that you generate a [UUID-type
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to
-#' ensure the uniqueness of your index.
-#' @param Tags The specified tags are attached only to the index created in this Amazon
-#' Web Services Region. The tags aren't attached to any of the resources
-#' listed in the index.
+#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value to prevent the accidental creation of duplicate versions. We recommend that you generate a [UUID-type value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to ensure the uniqueness of your index.
+#' @param Tags The specified tags are attached only to the index created in this Amazon Web Services Region. The tags aren't attached to any of the resources listed in the index.
 #'
 #' @return
 #' A list with the following syntax:
@@ -265,24 +212,15 @@ resourceexplorer_create_index <- function(ClientToken = NULL, Tags = NULL) {
 #' Web Services Regions
 #'
 #' @description
-#' Creates a Resource Explorer setup configuration across multiple Amazon
-#' Web Services Regions. This operation sets up indexes and views in the
-#' specified Regions. This operation can also be used to set an aggregator
-#' Region for cross-Region resource search.
+#' Creates a Resource Explorer setup configuration across multiple Amazon Web Services Regions. This operation sets up indexes and views in the specified Regions. This operation can also be used to set an aggregator Region for cross-Region resource search.
 #'
 #' @usage
 #' resourceexplorer_create_resource_explorer_setup(RegionList,
 #'   AggregatorRegions, ViewName)
 #'
-#' @param RegionList &#91;required&#93; A list of Amazon Web Services Regions where Resource Explorer should be
-#' configured. Each Region in the list will have a user-owned index
-#' created.
-#' @param AggregatorRegions A list of Amazon Web Services Regions that should be configured as
-#' aggregator Regions. Aggregator Regions receive replicated index
-#' information from all other Regions where there is a user-owned index.
-#' @param ViewName &#91;required&#93; The name for the view to be created as part of the Resource Explorer
-#' setup. The view name must be unique within the Amazon Web Services
-#' account and Region.
+#' @param RegionList &#91;required&#93; A list of Amazon Web Services Regions where Resource Explorer should be configured. Each Region in the list will have a user-owned index created.
+#' @param AggregatorRegions A list of Amazon Web Services Regions that should be configured as aggregator Regions. Aggregator Regions receive replicated index information from all other Regions where there is a user-owned index.
+#' @param ViewName &#91;required&#93; The name for the view to be created as part of the Resource Explorer setup. The view name must be unique within the Amazon Web Services account and Region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -332,63 +270,27 @@ resourceexplorer_create_resource_explorer_setup <- function(RegionList, Aggregat
 #' Creates a view that users can query by using the Search operation
 #'
 #' @description
-#' Creates a view that users can query by using the
-#' [`search`][resourceexplorer_search] operation. Results from queries that
-#' you make using this view include only resources that match the view's
-#' `Filters`. For more information about Amazon Web Services Resource
-#' Explorer views, see [Managing
-#' views](https://docs.aws.amazon.com/resource-explorer/latest/userguide/)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' Creates a view that users can query by using the [`search`][resourceexplorer_search] operation. Results from queries that you make using this view include only resources that match the view's `Filters`. For more information about Amazon Web Services Resource Explorer views, see [Managing views](https://docs.aws.amazon.com/resource-explorer/latest/userguide/) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' Only the principals with an IAM identity-based policy that grants
-#' `Allow` to the [`search`][resourceexplorer_search] action on a
-#' `Resource` with the [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of this view can [`search`][resourceexplorer_search] using views you
-#' create with this operation.
+#' Only the principals with an IAM identity-based policy that grants `Allow` to the [`search`][resourceexplorer_search] action on a `Resource` with the [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of this view can [`search`][resourceexplorer_search] using views you create with this operation.
 #'
 #' @usage
 #' resourceexplorer_create_view(ClientToken, ViewName, IncludedProperties,
 #'   Scope, Filters, Tags)
 #'
-#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value
-#' to prevent the accidental creation of duplicate versions. We recommend
-#' that you generate a [UUID-type
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to
-#' ensure the uniqueness of your views.
-#' @param ViewName &#91;required&#93; The name of the new view. This name appears in the list of views in
-#' Resource Explorer.
+#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value to prevent the accidental creation of duplicate versions. We recommend that you generate a [UUID-type value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to ensure the uniqueness of your views.
+#' @param ViewName &#91;required&#93; The name of the new view. This name appears in the list of views in Resource Explorer.
 #' 
-#' The name must be no more than 64 characters long, and can include
-#' letters, digits, and the dash (-) character. The name must be unique
-#' within its Amazon Web Services Region.
-#' @param IncludedProperties Specifies optional fields that you want included in search results from
-#' this view. It is a list of objects that each describe a field to
-#' include.
+#' The name must be no more than 64 characters long, and can include letters, digits, and the dash (-) character. The name must be unique within its Amazon Web Services Region.
+#' @param IncludedProperties Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.
 #' 
-#' The default is an empty list, with no optional fields included in the
-#' results.
-#' @param Scope The root ARN of the account, an organizational unit (OU), or an
-#' organization ARN. If left empty, the default is account.
-#' @param Filters An array of strings that specify which resources are included in the
-#' results of queries made using this view. When you use this view in a
-#' [`search`][resourceexplorer_search] operation, the filter string is
-#' combined with the search's `QueryString` parameter using a logical `AND`
-#' operator.
+#' The default is an empty list, with no optional fields included in the results.
+#' @param Scope The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.
+#' @param Filters An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a [`search`][resourceexplorer_search] operation, the filter string is combined with the search's `QueryString` parameter using a logical `AND` operator.
 #' 
-#' For information about the supported syntax, see [Search query reference
-#' for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' For information about the supported syntax, see [Search query reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' This query string in the context of this operation supports only [filter
-#' prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters)
-#' with optional
-#' [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators).
-#' It doesn't support free-form text. For example, the string
-#' `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2
-#' resources in any Amazon Web Services Region that begins with the letters
-#' `us` and is *not* tagged with a key `Stage` that has the value `prod`.
+#' This query string in the context of this operation supports only [filter prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters) with optional [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators). It doesn't support free-form text. For example, the string `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters `us` and is *not* tagged with a key `Stage` that has the value `prod`.
 #' @param Tags Tag key and value pairs that are attached to the view.
 #'
 #' @return
@@ -463,27 +365,14 @@ resourceexplorer_create_view <- function(ClientToken = NULL, ViewName, IncludedP
 #' Explorer in the specified Amazon Web Services Region
 #'
 #' @description
-#' Deletes the specified index and turns off Amazon Web Services Resource
-#' Explorer in the specified Amazon Web Services Region. When you delete an
-#' index, Resource Explorer stops discovering and indexing resources in
-#' that Region. Resource Explorer also deletes all views in that Region.
-#' These actions occur as asynchronous background tasks. You can check to
-#' see when the actions are complete by using the
-#' [`get_index`][resourceexplorer_get_index] operation and checking the
-#' `Status` response value.
+#' Deletes the specified index and turns off Amazon Web Services Resource Explorer in the specified Amazon Web Services Region. When you delete an index, Resource Explorer stops discovering and indexing resources in that Region. Resource Explorer also deletes all views in that Region. These actions occur as asynchronous background tasks. You can check to see when the actions are complete by using the [`get_index`][resourceexplorer_get_index] operation and checking the `Status` response value.
 #' 
-#' If the index you delete is the aggregator index for the Amazon Web
-#' Services account, you must wait 24 hours before you can promote another
-#' local index to be the aggregator index for the account. Users can't
-#' perform account-wide searches using Resource Explorer until another
-#' aggregator index is configured.
+#' If the index you delete is the aggregator index for the Amazon Web Services account, you must wait 24 hours before you can promote another local index to be the aggregator index for the account. Users can't perform account-wide searches using Resource Explorer until another aggregator index is configured.
 #'
 #' @usage
 #' resourceexplorer_delete_index(Arn)
 #'
-#' @param Arn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the index that you want to delete.
+#' @param Arn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the index that you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -531,21 +420,14 @@ resourceexplorer_delete_index <- function(Arn) {
 #' Deletes a Resource Explorer setup configuration
 #'
 #' @description
-#' Deletes a Resource Explorer setup configuration. This operation removes
-#' indexes and views from the specified Regions or all Regions where
-#' Resource Explorer is configured.
+#' Deletes a Resource Explorer setup configuration. This operation removes indexes and views from the specified Regions or all Regions where Resource Explorer is configured.
 #'
 #' @usage
 #' resourceexplorer_delete_resource_explorer_setup(RegionList,
 #'   DeleteInAllRegions)
 #'
-#' @param RegionList A list of Amazon Web Services Regions from which to delete the Resource
-#' Explorer configuration. If not specified, the operation uses the
-#' `DeleteInAllRegions` parameter to determine scope.
-#' @param DeleteInAllRegions Specifies whether to delete Resource Explorer configuration from all
-#' Regions where it is currently enabled. If this parameter is set to
-#' `true`, a value for `RegionList` must not be provided. Otherwise, the
-#' operation fails with a `ValidationException` error.
+#' @param RegionList A list of Amazon Web Services Regions from which to delete the Resource Explorer configuration. If not specified, the operation uses the `DeleteInAllRegions` parameter to determine scope.
+#' @param DeleteInAllRegions Specifies whether to delete Resource Explorer configuration from all Regions where it is currently enabled. If this parameter is set to `true`, a value for `RegionList` must not be provided. Otherwise, the operation fails with a `ValidationException` error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -594,19 +476,12 @@ resourceexplorer_delete_resource_explorer_setup <- function(RegionList = NULL, D
 #' @description
 #' Deletes the specified view.
 #' 
-#' If the specified view is the default view for its Amazon Web Services
-#' Region, then all [`search`][resourceexplorer_search] operations in that
-#' Region must explicitly specify the view to use until you configure a new
-#' default by calling the
-#' [`associate_default_view`][resourceexplorer_associate_default_view]
-#' operation.
+#' If the specified view is the default view for its Amazon Web Services Region, then all [`search`][resourceexplorer_search] operations in that Region must explicitly specify the view to use until you configure a new default by calling the [`associate_default_view`][resourceexplorer_associate_default_view] operation.
 #'
 #' @usage
 #' resourceexplorer_delete_view(ViewArn)
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view that you want to delete.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view that you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -651,16 +526,9 @@ resourceexplorer_delete_view <- function(ViewArn) {
 #' no longer has a default view
 #'
 #' @description
-#' After you call this operation, the affected Amazon Web Services Region
-#' no longer has a default view. All [`search`][resourceexplorer_search]
-#' operations in that Region must explicitly specify a view or the
-#' operation fails. You can configure a new default by calling the
-#' [`associate_default_view`][resourceexplorer_associate_default_view]
-#' operation.
+#' After you call this operation, the affected Amazon Web Services Region no longer has a default view. All [`search`][resourceexplorer_search] operations in that Region must explicitly specify a view or the operation fails. You can configure a new default by calling the [`associate_default_view`][resourceexplorer_associate_default_view] operation.
 #' 
-#' If an Amazon Web Services Region doesn't have a default view configured,
-#' then users must explicitly specify a view with every
-#' [`search`][resourceexplorer_search] operation performed in that Region.
+#' If an Amazon Web Services Region doesn't have a default view configured, then users must explicitly specify a view with every [`search`][resourceexplorer_search] operation performed in that Region.
 #'
 #' @usage
 #' resourceexplorer_disassociate_default_view()
@@ -701,10 +569,7 @@ resourceexplorer_disassociate_default_view <- function() {
 #' multi-account search feature
 #'
 #' @description
-#' Retrieves the status of your account's Amazon Web Services service
-#' access, and validates the service linked role required to access the
-#' multi-account search feature. Only the management account can invoke
-#' this API call.
+#' Retrieves the status of your account's Amazon Web Services service access, and validates the service linked role required to access the multi-account search feature. Only the management account can invoke this API call.
 #'
 #' @usage
 #' resourceexplorer_get_account_level_service_configuration()
@@ -752,10 +617,7 @@ resourceexplorer_get_account_level_service_configuration <- function() {
 #' for the Amazon Web Services Region in which you call this operation
 #'
 #' @description
-#' Retrieves the Amazon Resource Name (ARN) of the view that is the default
-#' for the Amazon Web Services Region in which you call this operation. You
-#' can then call [`get_view`][resourceexplorer_get_view] to retrieve the
-#' details of that view.
+#' Retrieves the Amazon Resource Name (ARN) of the view that is the default for the Amazon Web Services Region in which you call this operation. You can then call [`get_view`][resourceexplorer_get_view] to retrieve the details of that view.
 #'
 #' @usage
 #' resourceexplorer_get_default_view()
@@ -800,8 +662,7 @@ resourceexplorer_get_default_view <- function() {
 #' in the Amazon Web Services Region in which you invoked the operation
 #'
 #' @description
-#' Retrieves details about the Amazon Web Services Resource Explorer index
-#' in the Amazon Web Services Region in which you invoked the operation.
+#' Retrieves details about the Amazon Web Services Resource Explorer index in the Amazon Web Services Region in which you invoked the operation.
 #'
 #' @usage
 #' resourceexplorer_get_index()
@@ -862,8 +723,7 @@ resourceexplorer_get_index <- function() {
 #' Retrieves details of the specified Amazon Web Services-managed view
 #'
 #' @description
-#' Retrieves details of the specified [Amazon Web Services-managed
-#' view](https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html).
+#' Retrieves details of the specified [Amazon Web Services-managed view](https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html).
 #'
 #' @usage
 #' resourceexplorer_get_managed_view(ManagedViewArn)
@@ -931,25 +791,15 @@ resourceexplorer_get_managed_view <- function(ManagedViewArn) {
 #' Retrieves the status and details of a Resource Explorer setup operation
 #'
 #' @description
-#' Retrieves the status and details of a Resource Explorer setup operation.
-#' This operation returns information about the progress of creating or
-#' deleting Resource Explorer configurations across Regions.
+#' Retrieves the status and details of a Resource Explorer setup operation. This operation returns information about the progress of creating or deleting Resource Explorer configurations across Regions.
 #'
 #' @usage
 #' resourceexplorer_get_resource_explorer_setup(TaskId, MaxResults,
 #'   NextToken)
 #'
-#' @param TaskId &#91;required&#93; The unique identifier of the setup task to retrieve status information
-#' for. This ID is returned by
-#' [`create_resource_explorer_setup`][resourceexplorer_create_resource_explorer_setup]
-#' or
-#' [`delete_resource_explorer_setup`][resourceexplorer_delete_resource_explorer_setup]
-#' operations.
-#' @param MaxResults The maximum number of Region status results to return in a single
-#' response. Valid values are between `1` and `100`.
-#' @param NextToken The pagination token from a previous
-#' [`get_resource_explorer_setup`][resourceexplorer_get_resource_explorer_setup]
-#' response. Use this token to retrieve the next set of results.
+#' @param TaskId &#91;required&#93; The unique identifier of the setup task to retrieve status information for. This ID is returned by [`create_resource_explorer_setup`][resourceexplorer_create_resource_explorer_setup] or [`delete_resource_explorer_setup`][resourceexplorer_delete_resource_explorer_setup] operations.
+#' @param MaxResults The maximum number of Region status results to return in a single response. Valid values are between `1` and `100`.
+#' @param NextToken The pagination token from a previous [`get_resource_explorer_setup`][resourceexplorer_get_resource_explorer_setup] response. Use this token to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1037,9 +887,7 @@ resourceexplorer_get_resource_explorer_setup <- function(TaskId, MaxResults = NU
 #' Amazon Web Services Region
 #'
 #' @description
-#' Retrieves information about the Resource Explorer index in the current
-#' Amazon Web Services Region. This operation returns the ARN and type of
-#' the index if one exists.
+#' Retrieves information about the Resource Explorer index in the current Amazon Web Services Region. This operation returns the ARN and type of the index if one exists.
 #'
 #' @usage
 #' resourceexplorer_get_service_index()
@@ -1084,15 +932,12 @@ resourceexplorer_get_service_index <- function() {
 #' Retrieves details about a specific Resource Explorer service view
 #'
 #' @description
-#' Retrieves details about a specific Resource Explorer service view. This
-#' operation returns the configuration and properties of the specified
-#' view.
+#' Retrieves details about a specific Resource Explorer service view. This operation returns the configuration and properties of the specified view.
 #'
 #' @usage
 #' resourceexplorer_get_service_view(ServiceViewArn)
 #'
-#' @param ServiceViewArn &#91;required&#93; The Amazon Resource Name (ARN) of the service view to retrieve details
-#' for.
+#' @param ServiceViewArn &#91;required&#93; The Amazon Resource Name (ARN) of the service view to retrieve details for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1154,9 +999,7 @@ resourceexplorer_get_service_view <- function(ServiceViewArn) {
 #' @usage
 #' resourceexplorer_get_view(ViewArn)
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view that you want information about.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view that you want information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1221,35 +1064,19 @@ resourceexplorer_get_view <- function(ViewArn) {
 #' Services Resource Explorer
 #'
 #' @description
-#' Retrieves a list of all of the indexes in Amazon Web Services Regions
-#' that are currently collecting resource information for Amazon Web
-#' Services Resource Explorer.
+#' Retrieves a list of all of the indexes in Amazon Web Services Regions that are currently collecting resource information for Amazon Web Services Resource Explorer.
 #'
 #' @usage
 #' resourceexplorer_list_indexes(Type, Regions, MaxResults, NextToken)
 #'
-#' @param Type If specified, limits the output to only indexes of the specified Type,
-#' either `LOCAL` or `AGGREGATOR`.
+#' @param Type If specified, limits the output to only indexes of the specified Type, either `LOCAL` or `AGGREGATOR`.
 #' 
 #' Use this option to discover the aggregator index for your account.
-#' @param Regions If specified, limits the response to only information about the index in
-#' the specified list of Amazon Web Services Regions.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param Regions If specified, limits the response to only information about the index in the specified list of Amazon Web Services Regions.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1307,34 +1134,17 @@ resourceexplorer_list_indexes <- function(Type = NULL, Regions = NULL, MaxResult
 #' Web Services Resource Explorer
 #'
 #' @description
-#' Retrieves a list of a member's indexes in all Amazon Web Services
-#' Regions that are currently collecting resource information for Amazon
-#' Web Services Resource Explorer. Only the management account or a
-#' delegated administrator with service access enabled can invoke this API
-#' call.
+#' Retrieves a list of a member's indexes in all Amazon Web Services Regions that are currently collecting resource information for Amazon Web Services Resource Explorer. Only the management account or a delegated administrator with service access enabled can invoke this API call.
 #'
 #' @usage
 #' resourceexplorer_list_indexes_for_members(AccountIdList, MaxResults,
 #'   NextToken)
 #'
-#' @param AccountIdList &#91;required&#93; The account IDs will limit the output to only indexes from these
-#' accounts.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param AccountIdList &#91;required&#93; The account IDs will limit the output to only indexes from these accounts.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1392,34 +1202,17 @@ resourceexplorer_list_indexes_for_members <- function(AccountIdList, MaxResults 
 #' which you call this operation
 #'
 #' @description
-#' Lists the Amazon resource names (ARNs) of the [Amazon Web
-#' Services-managed
-#' views](https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html)
-#' available in the Amazon Web Services Region in which you call this
-#' operation.
+#' Lists the Amazon resource names (ARNs) of the [Amazon Web Services-managed views](https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html) available in the Amazon Web Services Region in which you call this operation.
 #'
 #' @usage
 #' resourceexplorer_list_managed_views(MaxResults, NextToken,
 #'   ServicePrincipal)
 #'
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
-#' @param ServicePrincipal Specifies a service principal name. If specified, then the operation
-#' only returns the managed views that are managed by the input service.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
+#' @param ServicePrincipal Specifies a service principal name. If specified, then the operation only returns the managed views that are managed by the input service.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1469,59 +1262,23 @@ resourceexplorer_list_managed_views <- function(MaxResults = NULL, NextToken = N
 #' criteria
 #'
 #' @description
-#' Returns a list of resources and their details that match the specified
-#' criteria. This query must use a view. If you don’t explicitly specify a
-#' view, then Resource Explorer uses the default view for the Amazon Web
-#' Services Region in which you call this operation.
+#' Returns a list of resources and their details that match the specified criteria. This query must use a view. If you don’t explicitly specify a view, then Resource Explorer uses the default view for the Amazon Web Services Region in which you call this operation.
 #'
 #' @usage
 #' resourceexplorer_list_resources(Filters, MaxResults, ViewArn, NextToken)
 #'
-#' @param Filters An array of strings that specify which resources are included in the
-#' results of queries made using this view. When you use this view in a
-#' [`search`][resourceexplorer_search] operation, the filter string is
-#' combined with the search's `QueryString` parameter using a logical `AND`
-#' operator.
+#' @param Filters An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a [`search`][resourceexplorer_search] operation, the filter string is combined with the search's `QueryString` parameter using a logical `AND` operator.
 #' 
-#' For information about the supported syntax, see [Search query reference
-#' for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' For information about the supported syntax, see [Search query reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' This query string in the context of this operation supports only [filter
-#' prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters)
-#' with optional
-#' [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators).
-#' It doesn't support free-form text. For example, the string
-#' `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2
-#' resources in any Amazon Web Services Region that begins with the letters
-#' `us` and is *not* tagged with a key `Stage` that has the value `prod`.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' This query string in the context of this operation supports only [filter prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters) with optional [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators). It doesn't support free-form text. For example, the string `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters `us` and is *not* tagged with a key `Stage` that has the value `prod`.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param ViewArn Specifies the Amazon resource name (ARN) of the view to use for the
-#' query. If you don't specify a value for this parameter, then the
-#' operation automatically uses the default view for the Amazon Web
-#' Services Region in which you called this operation. If the Region either
-#' doesn't have a default view or if you don't have permission to use the
-#' default view, then the operation fails with a 401 Unauthorized
-#' exception.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param ViewArn Specifies the Amazon resource name (ARN) of the view to use for the query. If you don't specify a value for this parameter, then the operation automatically uses the default view for the Amazon Web Services Region in which you called this operation. If the Region either doesn't have a default view or if you don't have permission to use the default view, then the operation fails with a 401 Unauthorized exception.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #' 
-#' The [`list_resources`][resourceexplorer_list_resources] operation does
-#' not generate a `NextToken` if you set `MaxResults` to 1000.
+#' The [`list_resources`][resourceexplorer_list_resources] operation does not generate a `NextToken` if you set `MaxResults` to 1000.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1593,20 +1350,14 @@ resourceexplorer_list_resources <- function(Filters = NULL, MaxResults = NULL, V
 #' Services Regions
 #'
 #' @description
-#' Lists all Resource Explorer indexes across the specified Amazon Web
-#' Services Regions. This operation returns information about indexes
-#' including their ARNs, types, and Regions.
+#' Lists all Resource Explorer indexes across the specified Amazon Web Services Regions. This operation returns information about indexes including their ARNs, types, and Regions.
 #'
 #' @usage
 #' resourceexplorer_list_service_indexes(Regions, MaxResults, NextToken)
 #'
-#' @param Regions A list of Amazon Web Services Regions to include in the search for
-#' indexes. If not specified, indexes from all Regions are returned.
-#' @param MaxResults The maximum number of index results to return in a single response.
-#' Valid values are between `1` and `100`.
-#' @param NextToken The pagination token from a previous
-#' [`list_service_indexes`][resourceexplorer_list_service_indexes]
-#' response. Use this token to retrieve the next set of results.
+#' @param Regions A list of Amazon Web Services Regions to include in the search for indexes. If not specified, indexes from all Regions are returned.
+#' @param MaxResults The maximum number of index results to return in a single response. Valid values are between `1` and `100`.
+#' @param NextToken The pagination token from a previous [`list_service_indexes`][resourceexplorer_list_service_indexes] response. Use this token to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1662,18 +1413,13 @@ resourceexplorer_list_service_indexes <- function(Regions = NULL, MaxResults = N
 #' Amazon Web Services account
 #'
 #' @description
-#' Lists all Resource Explorer service views available in the current
-#' Amazon Web Services account. This operation returns the ARNs of
-#' available service views.
+#' Lists all Resource Explorer service views available in the current Amazon Web Services account. This operation returns the ARNs of available service views.
 #'
 #' @usage
 #' resourceexplorer_list_service_views(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of service view results to return in a single
-#' response. Valid values are between `1` and `50`.
-#' @param NextToken The pagination token from a previous
-#' [`list_service_views`][resourceexplorer_list_service_views] response.
-#' Use this token to retrieve the next set of results.
+#' @param MaxResults The maximum number of service view results to return in a single response. Valid values are between `1` and `50`.
+#' @param NextToken The pagination token from a previous [`list_service_views`][resourceexplorer_list_service_views] response. Use this token to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1722,25 +1468,14 @@ resourceexplorer_list_service_views <- function(MaxResults = NULL, NextToken = N
 #' streaming access to your Resource Explorer data
 #'
 #' @description
-#' Returns a list of Amazon Web Services services that have been granted
-#' streaming access to your Resource Explorer data. Streaming access allows
-#' Amazon Web Services services to receive real-time updates about your
-#' resources as they are indexed by Resource Explorer.
+#' Returns a list of Amazon Web Services services that have been granted streaming access to your Resource Explorer data. Streaming access allows Amazon Web Services services to receive real-time updates about your resources as they are indexed by Resource Explorer.
 #'
 #' @usage
 #' resourceexplorer_list_streaming_access_for_services(MaxResults,
 #'   NextToken)
 #'
-#' @param MaxResults The maximum number of streaming access entries to return in the
-#' response. If there are more results available, the response includes a
-#' NextToken value that you can use in a subsequent call to get the next
-#' set of results. The value must be between 1 and 50. If you don't specify
-#' a value, the default is 50.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' @param MaxResults The maximum number of streaming access entries to return in the response. If there are more results available, the response includes a NextToken value that you can use in a subsequent call to get the next set of results. The value must be between 1 and 50. If you don't specify a value, the default is 50.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1794,28 +1529,15 @@ resourceexplorer_list_streaming_access_for_services <- function(MaxResults = NUL
 #' Services Resource Explorer
 #'
 #' @description
-#' Retrieves a list of all resource types currently supported by Amazon Web
-#' Services Resource Explorer.
+#' Retrieves a list of all resource types currently supported by Amazon Web Services Resource Explorer.
 #'
 #' @usage
 #' resourceexplorer_list_supported_resource_types(NextToken, MaxResults)
 #'
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1871,9 +1593,7 @@ resourceexplorer_list_supported_resource_types <- function(NextToken = NULL, Max
 #' @usage
 #' resourceexplorer_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view or index that you want to attach tags to.
+#' @param resourceArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view or index that you want to attach tags to.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1920,36 +1640,17 @@ resourceexplorer_list_tags_for_resource <- function(resourceArn) {
 #' Amazon Web Services Region in which you call this operation
 #'
 #' @description
-#' Lists the [Amazon resource names
-#' (ARNs)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the views available in the Amazon Web Services Region in which you
-#' call this operation.
+#' Lists the [Amazon resource names (ARNs)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the views available in the Amazon Web Services Region in which you call this operation.
 #' 
-#' Always check the `NextToken` response parameter for a `null` value when
-#' calling a paginated operation. These operations can occasionally return
-#' an empty set of results even when there are more results available. The
-#' `NextToken` response parameter value is `null` *only* when there are no
-#' more results to display.
+#' Always check the `NextToken` response parameter for a `null` value when calling a paginated operation. These operations can occasionally return an empty set of results even when there are more results available. The `NextToken` response parameter value is `null` *only* when there are no more results to display.
 #'
 #' @usage
 #' resourceexplorer_list_views(NextToken, MaxResults)
 #'
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1998,64 +1699,29 @@ resourceexplorer_list_views <- function(NextToken = NULL, MaxResults = NULL) {
 #' match the specified criteria
 #'
 #' @description
-#' Searches for resources and displays details about all resources that
-#' match the specified criteria. You must specify a query string.
+#' Searches for resources and displays details about all resources that match the specified criteria. You must specify a query string.
 #' 
-#' All search queries must use a view. If you don't explicitly specify a
-#' view, then Amazon Web Services Resource Explorer uses the default view
-#' for the Amazon Web Services Region in which you call this operation. The
-#' results are the logical intersection of the results that match both the
-#' `QueryString` parameter supplied to this operation and the
-#' `SearchFilter` parameter attached to the view.
+#' All search queries must use a view. If you don't explicitly specify a view, then Amazon Web Services Resource Explorer uses the default view for the Amazon Web Services Region in which you call this operation. The results are the logical intersection of the results that match both the `QueryString` parameter supplied to this operation and the `SearchFilter` parameter attached to the view.
 #' 
-#' For the complete syntax supported by the `QueryString` parameter, see
-#' [Search query syntax reference for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
+#' For the complete syntax supported by the `QueryString` parameter, see [Search query syntax reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
 #' 
-#' If your search results are empty, or are missing results that you think
-#' should be there, see [Troubleshooting Resource Explorer
-#' search](https://docs.aws.amazon.com/resource-explorer/latest/userguide/troubleshooting_search.html).
+#' If your search results are empty, or are missing results that you think should be there, see [Troubleshooting Resource Explorer search](https://docs.aws.amazon.com/resource-explorer/latest/userguide/troubleshooting_search.html).
 #'
 #' @usage
 #' resourceexplorer_search(QueryString, MaxResults, ViewArn, NextToken)
 #'
-#' @param QueryString &#91;required&#93; A string that includes keywords and filters that specify the resources
-#' that you want to include in the results.
+#' @param QueryString &#91;required&#93; A string that includes keywords and filters that specify the resources that you want to include in the results.
 #' 
-#' For the complete syntax supported by the `QueryString` parameter, see
-#' [Search query syntax reference for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
+#' For the complete syntax supported by the `QueryString` parameter, see [Search query syntax reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
 #' 
-#' The search is completely case insensitive. You can specify an empty
-#' string to return all results up to the limit of 1,000 total results.
+#' The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.
 #' 
-#' The operation can return only the first 1,000 results. If the resource
-#' you want is not included, then use a different value for `QueryString`
-#' to refine the results.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for `QueryString` to refine the results.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param ViewArn Specifies the [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view to use for the query. If you don't specify a value for this
-#' parameter, then the operation automatically uses the default view for
-#' the Amazon Web Services Region in which you called this operation. If
-#' the Region either doesn't have a default view or if you don't have
-#' permission to use the default view, then the operation fails with a
-#' `401 Unauthorized` exception.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param ViewArn Specifies the [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view to use for the query. If you don't specify a value for this parameter, then the operation automatically uses the default view for the Amazon Web Services Region in which you called this operation. If the Region either doesn't have a default view or if you don't have permission to use the default view, then the operation fails with a `401 Unauthorized` exception.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2129,16 +1795,13 @@ resourceexplorer_search <- function(QueryString, MaxResults = NULL, ViewArn = NU
 #' Resource Explorer view or index
 #'
 #' @description
-#' Adds one or more tag key and value pairs to an Amazon Web Services
-#' Resource Explorer view or index.
+#' Adds one or more tag key and value pairs to an Amazon Web Services Resource Explorer view or index.
 #'
 #' @usage
 #' resourceexplorer_tag_resource(resourceArn, Tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to
-#' attach tags to.
-#' @param Tags A list of tag key and value pairs that you want to attach to the
-#' specified view or index.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to attach tags to.
+#' @param Tags A list of tag key and value pairs that you want to attach to the specified view or index.
 #'
 #' @return
 #' An empty list.
@@ -2181,16 +1844,13 @@ resourceexplorer_tag_resource <- function(resourceArn, Tags = NULL) {
 #' Resource Explorer view or index
 #'
 #' @description
-#' Removes one or more tag key and value pairs from an Amazon Web Services
-#' Resource Explorer view or index.
+#' Removes one or more tag key and value pairs from an Amazon Web Services Resource Explorer view or index.
 #'
 #' @usage
 #' resourceexplorer_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to
-#' remove tags from.
-#' @param tagKeys &#91;required&#93; A list of the keys for the tags that you want to remove from the
-#' specified view or index.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to remove tags from.
+#' @param tagKeys &#91;required&#93; A list of the keys for the tags that you want to remove from the specified view or index.
 #'
 #' @return
 #' An empty list.
@@ -2233,76 +1893,29 @@ resourceexplorer_untag_resource <- function(resourceArn, tagKeys) {
 #' other
 #'
 #' @description
-#' Changes the type of the index from one of the following types to the
-#' other. For more information about indexes and the role they perform in
-#' Amazon Web Services Resource Explorer, see [Turning on cross-Region
-#' search by creating an aggregator
-#' index](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' Changes the type of the index from one of the following types to the other. For more information about indexes and the role they perform in Amazon Web Services Resource Explorer, see [Turning on cross-Region search by creating an aggregator index](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
 #' -   **`AGGREGATOR` index type**
 #' 
-#'     The index contains information about resources from all Amazon Web
-#'     Services Regions in the Amazon Web Services account in which you've
-#'     created a Resource Explorer index. Resource information from all
-#'     other Regions is replicated to this Region's index.
+#'     The index contains information about resources from all Amazon Web Services Regions in the Amazon Web Services account in which you've created a Resource Explorer index. Resource information from all other Regions is replicated to this Region's index.
 #' 
-#'     When you change the index type to `AGGREGATOR`, Resource Explorer
-#'     turns on replication of all discovered resource information from the
-#'     other Amazon Web Services Regions in your account to this index. You
-#'     can then, from this Region only, perform resource search queries
-#'     that span all Amazon Web Services Regions in the Amazon Web Services
-#'     account. Turning on replication from all other Regions is performed
-#'     by asynchronous background tasks. You can check the status of the
-#'     asynchronous tasks by using the
-#'     [`get_index`][resourceexplorer_get_index] operation. When the
-#'     asynchronous tasks complete, the `Status` response of that operation
-#'     changes from `UPDATING` to `ACTIVE`. After that, you can start to
-#'     see results from other Amazon Web Services Regions in query results.
-#'     However, it can take several hours for replication from all other
-#'     Regions to complete.
+#'     When you change the index type to `AGGREGATOR`, Resource Explorer turns on replication of all discovered resource information from the other Amazon Web Services Regions in your account to this index. You can then, from this Region only, perform resource search queries that span all Amazon Web Services Regions in the Amazon Web Services account. Turning on replication from all other Regions is performed by asynchronous background tasks. You can check the status of the asynchronous tasks by using the [`get_index`][resourceexplorer_get_index] operation. When the asynchronous tasks complete, the `Status` response of that operation changes from `UPDATING` to `ACTIVE`. After that, you can start to see results from other Amazon Web Services Regions in query results. However, it can take several hours for replication from all other Regions to complete.
 #' 
-#'     You can have only one aggregator index per Amazon Web Services
-#'     account. Before you can promote a different index to be the
-#'     aggregator index for the account, you must first demote the existing
-#'     aggregator index to type `LOCAL`.
+#'     You can have only one aggregator index per Amazon Web Services account. Before you can promote a different index to be the aggregator index for the account, you must first demote the existing aggregator index to type `LOCAL`.
 #' 
 #' -   **`LOCAL` index type**
 #' 
-#'     The index contains information about resources in only the Amazon
-#'     Web Services Region in which the index exists. If an aggregator
-#'     index in another Region exists, then information in this local index
-#'     is replicated to the aggregator index.
+#'     The index contains information about resources in only the Amazon Web Services Region in which the index exists. If an aggregator index in another Region exists, then information in this local index is replicated to the aggregator index.
 #' 
-#'     When you change the index type to `LOCAL`, Resource Explorer turns
-#'     off the replication of resource information from all other Amazon
-#'     Web Services Regions in the Amazon Web Services account to this
-#'     Region. The aggregator index remains in the `UPDATING` state until
-#'     all replication with other Regions successfully stops. You can check
-#'     the status of the asynchronous task by using the
-#'     [`get_index`][resourceexplorer_get_index] operation. When Resource
-#'     Explorer successfully stops all replication with other Regions, the
-#'     `Status` response of that operation changes from `UPDATING` to
-#'     `ACTIVE`. Separately, the resource information from other Regions
-#'     that was previously stored in the index is deleted within 30 days by
-#'     another background task. Until that asynchronous task completes,
-#'     some results from other Regions can continue to appear in search
-#'     results.
+#'     When you change the index type to `LOCAL`, Resource Explorer turns off the replication of resource information from all other Amazon Web Services Regions in the Amazon Web Services account to this Region. The aggregator index remains in the `UPDATING` state until all replication with other Regions successfully stops. You can check the status of the asynchronous task by using the [`get_index`][resourceexplorer_get_index] operation. When Resource Explorer successfully stops all replication with other Regions, the `Status` response of that operation changes from `UPDATING` to `ACTIVE`. Separately, the resource information from other Regions that was previously stored in the index is deleted within 30 days by another background task. Until that asynchronous task completes, some results from other Regions can continue to appear in search results.
 #' 
-#'     After you demote an aggregator index to a local index, you must wait
-#'     24 hours before you can promote another index to be the new
-#'     aggregator index for the account.
+#'     After you demote an aggregator index to a local index, you must wait 24 hours before you can promote another index to be the new aggregator index for the account.
 #'
 #' @usage
 #' resourceexplorer_update_index_type(Arn, Type)
 #'
-#' @param Arn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the index that you want to update.
-#' @param Type &#91;required&#93; The type of the index. To understand the difference between `LOCAL` and
-#' `AGGREGATOR`, see [Turning on cross-Region
-#' search](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' @param Arn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the index that you want to update.
+#' @param Type &#91;required&#93; The type of the index. To understand the difference between `LOCAL` and `AGGREGATOR`, see [Turning on cross-Region search](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2352,41 +1965,20 @@ resourceexplorer_update_index_type <- function(Arn, Type) {
 #' Modifies some of the details of a view
 #'
 #' @description
-#' Modifies some of the details of a view. You can change the filter string
-#' and the list of included properties. You can't change the name of the
-#' view.
+#' Modifies some of the details of a view. You can change the filter string and the list of included properties. You can't change the name of the view.
 #'
 #' @usage
 #' resourceexplorer_update_view(ViewArn, IncludedProperties, Filters)
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view that you want to modify.
-#' @param IncludedProperties Specifies optional fields that you want included in search results from
-#' this view. It is a list of objects that each describe a field to
-#' include.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view that you want to modify.
+#' @param IncludedProperties Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.
 #' 
-#' The default is an empty list, with no optional fields included in the
-#' results.
-#' @param Filters An array of strings that specify which resources are included in the
-#' results of queries made using this view. When you use this view in a
-#' [`search`][resourceexplorer_search] operation, the filter string is
-#' combined with the search's `QueryString` parameter using a logical `AND`
-#' operator.
+#' The default is an empty list, with no optional fields included in the results.
+#' @param Filters An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a [`search`][resourceexplorer_search] operation, the filter string is combined with the search's `QueryString` parameter using a logical `AND` operator.
 #' 
-#' For information about the supported syntax, see [Search query reference
-#' for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' For information about the supported syntax, see [Search query reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' This query string in the context of this operation supports only [filter
-#' prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters)
-#' with optional
-#' [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators).
-#' It doesn't support free-form text. For example, the string
-#' `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2
-#' resources in any Amazon Web Services Region that begins with the letters
-#' `us` and is *not* tagged with a key `Stage` that has the value `prod`.
+#' This query string in the context of this operation supports only [filter prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters) with optional [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators). It doesn't support free-form text. For example, the string `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters `us` and is *not* tagged with a key `Stage` that has the value `prod`.
 #'
 #' @return
 #' A list with the following syntax:

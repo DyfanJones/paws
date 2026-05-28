@@ -23,15 +23,13 @@ Constraints: Maximum length of 256 characters.}
 
 \item{Type}{The type of the link.
 
-Constraints: Maximum length of 128 characters. Cannot include the
-following characters: | \\ ^}
+Constraints: Maximum length of 128 characters. Cannot include the following characters: | \\ ^}
 
 \item{Bandwidth}{[required] The upload speed and download speed in Mbps.}
 
 \item{Provider}{The provider of the link.
 
-Constraints: Maximum length of 128 characters. Cannot include the
-following characters: | \\ ^}
+Constraints: Maximum length of 128 characters. Cannot include the following characters: | \\ ^}
 
 \item{SiteId}{[required] The ID of the site.}
 

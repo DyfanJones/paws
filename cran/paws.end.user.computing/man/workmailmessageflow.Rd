@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-The WorkMail Message Flow API provides access to email messages as they
-are being sent and received by a WorkMail organization.
+The WorkMail Message Flow API provides access to email messages as they are being sent and received by a WorkMail organization.
 }
 \section{Service syntax}{
 

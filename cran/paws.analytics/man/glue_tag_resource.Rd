@@ -7,8 +7,7 @@
 glue_tag_resource(ResourceArn, TagsToAdd)
 }
 \arguments{
-\item{ResourceArn}{[required] The ARN of the Glue resource to which to add the tags. For more
-information about Glue resource ARNs, see the \href{https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id}{Glue ARN string pattern}.}
+\item{ResourceArn}{[required] The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the \href{https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id}{Glue ARN string pattern}.}
 
 \item{TagsToAdd}{[required] Tags to add to this resource.}
 }

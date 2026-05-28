@@ -10,8 +10,7 @@ networkfirewall_describe_firewall_policy(
 )
 }
 \arguments{
-\item{FirewallPolicyName}{The descriptive name of the firewall policy. You can't change the name
-of a firewall policy after you create it.
+\item{FirewallPolicyName}{The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 

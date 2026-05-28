@@ -7,11 +7,9 @@
 cloudfront_associate_alias(TargetDistributionId, Alias)
 }
 \arguments{
-\item{TargetDistributionId}{[required] The ID of the standard distribution that you're associating the alias
-with.}
+\item{TargetDistributionId}{[required] The ID of the standard distribution that you're associating the alias with.}
 
-\item{Alias}{[required] The alias (also known as a CNAME) to add to the target standard
-distribution.}
+\item{Alias}{[required] The alias (also known as a CNAME) to add to the target standard distribution.}
 }
 \description{
 The \code{\link[=cloudfront_associate_alias]{associate_alias}} API operation only supports standard distributions. To move domains between distribution tenants and/or standard distributions, we recommend that you use the \code{\link[=cloudfront_update_domain_association]{update_domain_association}} API operation instead.

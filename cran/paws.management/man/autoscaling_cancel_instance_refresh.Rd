@@ -12,11 +12,9 @@ autoscaling_cancel_instance_refresh(
 \arguments{
 \item{AutoScalingGroupName}{[required] The name of the Auto Scaling group.}
 
-\item{WaitForTransitioningInstances}{When cancelling an instance refresh, this indicates whether to wait for
-in-flight launches and terminations to complete. The default is true.
+\item{WaitForTransitioningInstances}{When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.
 
-When set to false, Amazon EC2 Auto Scaling cancels the instance refresh
-without waiting for any pending launches or terminations to complete.}
+When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.}
 }
 \description{
 Cancels an instance refresh or rollback that is in progress. If an instance refresh or rollback is not in progress, an \code{ActiveInstanceRefreshNotFound} error occurs.

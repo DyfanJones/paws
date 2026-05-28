@@ -19,8 +19,7 @@ datazone_create_subscription_target(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which subscription target is
-created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which subscription target is created.}
 
 \item{environmentIdentifier}{[required] The ID of the environment in which subscription target is created.}
 
@@ -38,12 +37,9 @@ created.}
 
 \item{provider}{The provider of the subscription target.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 
-\item{subscriptionGrantCreationMode}{Determines the subscription grant creation mode for this target,
-defining if grants are auto-created upon subscription approval or
-managed manually.}
+\item{subscriptionGrantCreationMode}{Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.}
 }
 \description{
 Creates a subscription target in Amazon DataZone.

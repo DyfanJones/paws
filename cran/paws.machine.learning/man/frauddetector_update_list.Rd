@@ -15,11 +15,9 @@ frauddetector_update_list(
 \arguments{
 \item{name}{[required] The name of the list to update.}
 
-\item{elements}{One or more list elements to add or replace. If you are providing the
-elements, make sure to specify the \code{updateMode} to use.
+\item{elements}{One or more list elements to add or replace. If you are providing the elements, make sure to specify the \code{updateMode} to use.
 
-If you are deleting all elements from the list, use \code{REPLACE} for the
-\code{updateMode} and provide an empty list (0 elements).}
+If you are deleting all elements from the list, use \code{REPLACE} for the \code{updateMode} and provide an empty list (0 elements).}
 
 \item{description}{The new description.}
 
@@ -32,9 +30,7 @@ If you are deleting all elements from the list, use \code{REPLACE} for the
 
 \item{variableType}{The variable type you want to assign to the list.
 
-You cannot update a variable type of a list that already has a variable
-type assigned to it. You can assign a variable type to a list only if
-the list does not already have a variable type.}
+You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.}
 }
 \description{
 Updates a list.

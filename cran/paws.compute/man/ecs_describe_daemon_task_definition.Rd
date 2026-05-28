@@ -7,9 +7,7 @@
 ecs_describe_daemon_task_definition(daemonTaskDefinition)
 }
 \arguments{
-\item{daemonTaskDefinition}{[required] The \code{family} for the latest \code{ACTIVE} revision, \code{family} and \code{revision}
-(\code{family:revision}) for a specific revision in the family, or full
-Amazon Resource Name (ARN) of the daemon task definition to describe.}
+\item{daemonTaskDefinition}{[required] The \code{family} for the latest \code{ACTIVE} revision, \code{family} and \code{revision} (\code{family:revision}) for a specific revision in the family, or full Amazon Resource Name (ARN) of the daemon task definition to describe.}
 }
 \description{
 Describes a daemon task definition. You can specify a \code{family} and \code{revision} to find information about a specific daemon task definition, or you can simply specify the family to find the latest \code{ACTIVE} revision in that family.

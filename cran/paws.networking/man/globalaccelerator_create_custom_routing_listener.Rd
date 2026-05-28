@@ -12,17 +12,13 @@ globalaccelerator_create_custom_routing_listener(
 )
 }
 \arguments{
-\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator for a custom routing
-listener.}
+\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.}
 
-\item{PortRanges}{[required] The port range to support for connections from clients to your
-accelerator.
+\item{PortRanges}{[required] The port range to support for connections from clients to your accelerator.
 
-Separately, you set port ranges for endpoints. For more information, see
-\href{https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html}{About endpoints for custom routing accelerators}.}
+Separately, you set port ranges for endpoints. For more information, see \href{https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html}{About endpoints for custom routing accelerators}.}
 
-\item{IdempotencyToken}{[required] A unique, case-sensitive identifier that you provide to ensure the
-idempotency—that is, the uniqueness—of the request.}
+\item{IdempotencyToken}{[required] A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.}
 }
 \description{
 Create a listener to process inbound connections from clients to a custom routing accelerator. Connections arrive to assigned static IP addresses on the port range that you specify.

@@ -12,13 +12,9 @@ quicksight_update_default_q_business_application(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Quick Sight account that is connected to the Amazon Q
-Business application that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Quick Sight account that is connected to the Amazon Q Business application that you want to update.}
 
-\item{Namespace}{The Quick Sight namespace that contains the linked Amazon Q Business
-application. If this field is left blank, the default namespace is used.
-Currently, the default namespace is the only valid value for this
-parameter.}
+\item{Namespace}{The Quick Sight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.}
 
 \item{ApplicationId}{[required] The ID of the Amazon Q Business application that you want to update.}
 }

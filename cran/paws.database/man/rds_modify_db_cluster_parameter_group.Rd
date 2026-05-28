@@ -13,14 +13,9 @@ rds_modify_db_cluster_parameter_group(DBClusterParameterGroupName, Parameters)
 
 Valid Values (for the application method): \code{immediate | pending-reboot}
 
-You can use the \code{immediate} value with dynamic parameters only. You can
-use the \code{pending-reboot} value for both dynamic and static parameters.
+You can use the \code{immediate} value with dynamic parameters only. You can use the \code{pending-reboot} value for both dynamic and static parameters.
 
-When the application method is \code{immediate}, changes to dynamic
-parameters are applied immediately to the DB clusters associated with
-the parameter group. When the application method is \code{pending-reboot},
-changes to dynamic and static parameters are applied after a reboot
-without failover to the DB clusters associated with the parameter group.}
+When the application method is \code{immediate}, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is \code{pending-reboot}, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.}
 }
 \description{
 Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the following: \code{ParameterName}, \code{ParameterValue}, and \code{ApplyMethod}. A maximum of 20 parameters can be modified in a single request.

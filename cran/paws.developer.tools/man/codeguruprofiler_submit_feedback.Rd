@@ -13,14 +13,11 @@ codeguruprofiler_submit_feedback(
 )
 }
 \arguments{
-\item{anomalyInstanceId}{[required] The universally unique identifier (UUID) of the
-\href{https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html}{\code{AnomalyInstance}}
-object that is included in the analysis data.}
+\item{anomalyInstanceId}{[required] The universally unique identifier (UUID) of the \href{https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html}{\code{AnomalyInstance}} object that is included in the analysis data.}
 
 \item{comment}{Optional feedback about this anomaly.}
 
-\item{profilingGroupName}{[required] The name of the profiling group that is associated with the analysis
-data.}
+\item{profilingGroupName}{[required] The name of the profiling group that is associated with the analysis data.}
 
 \item{type}{[required] The feedback tpye. Thee are two valid values, \code{Positive} and \code{Negative}.}
 }

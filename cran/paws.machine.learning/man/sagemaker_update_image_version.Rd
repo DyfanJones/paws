@@ -32,24 +32,17 @@ sagemaker_update_image_version(
 
 \item{VendorGuidance}{The availability of the image version specified by the maintainer.
 \itemize{
-\item \code{NOT_PROVIDED}: The maintainers did not provide a status for image
-version stability.
+\item \code{NOT_PROVIDED}: The maintainers did not provide a status for image version stability.
 \item \code{STABLE}: The image version is stable.
-\item \code{TO_BE_ARCHIVED}: The image version is set to be archived. Custom
-image versions that are set to be archived are automatically
-archived after three months.
-\item \code{ARCHIVED}: The image version is archived. Archived image versions
-are not searchable and are no longer actively supported.
+\item \code{TO_BE_ARCHIVED}: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.
+\item \code{ARCHIVED}: The image version is archived. Archived image versions are not searchable and are no longer actively supported.
 }}
 
 \item{JobType}{Indicates SageMaker AI job type compatibility.
 \itemize{
-\item \code{TRAINING}: The image version is compatible with SageMaker AI
-training jobs.
-\item \code{INFERENCE}: The image version is compatible with SageMaker AI
-inference jobs.
-\item \code{NOTEBOOK_KERNEL}: The image version is compatible with SageMaker AI
-notebook kernels.
+\item \code{TRAINING}: The image version is compatible with SageMaker AI training jobs.
+\item \code{INFERENCE}: The image version is compatible with SageMaker AI inference jobs.
+\item \code{NOTEBOOK_KERNEL}: The image version is compatible with SageMaker AI notebook kernels.
 }}
 
 \item{MLFramework}{The machine learning framework vended in the image version.}

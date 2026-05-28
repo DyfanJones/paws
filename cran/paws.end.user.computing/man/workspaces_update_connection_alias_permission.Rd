@@ -12,11 +12,9 @@ workspaces_update_connection_alias_permission(
 )
 }
 \arguments{
-\item{AliasId}{[required] The identifier of the connection alias that you want to update
-permissions for.}
+\item{AliasId}{[required] The identifier of the connection alias that you want to update permissions for.}
 
-\item{ConnectionAliasPermission}{[required] Indicates whether to share or unshare the connection alias with the
-specified Amazon Web Services account.}
+\item{ConnectionAliasPermission}{[required] Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.}
 }
 \description{
 Shares or unshares a connection alias with one account by specifying whether that account has permission to associate the connection alias with a directory. If the association permission is granted, the connection alias is shared with that account. If the association permission is revoked, the connection alias is unshared with the account. For more information, see \href{https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html}{Cross-Region Redirection for Amazon WorkSpaces}.

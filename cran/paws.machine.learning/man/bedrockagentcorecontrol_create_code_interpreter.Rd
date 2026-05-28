@@ -15,27 +15,19 @@ bedrockagentcorecontrol_create_code_interpreter(
 )
 }
 \arguments{
-\item{name}{[required] The name of the code interpreter. The name must be unique within your
-account.}
+\item{name}{[required] The name of the code interpreter. The name must be unique within your account.}
 
 \item{description}{The description of the code interpreter.}
 
-\item{executionRoleArn}{The Amazon Resource Name (ARN) of the IAM role that provides permissions
-for the code interpreter to access Amazon Web Services services.}
+\item{executionRoleArn}{The Amazon Resource Name (ARN) of the IAM role that provides permissions for the code interpreter to access Amazon Web Services services.}
 
-\item{networkConfiguration}{[required] The network configuration for the code interpreter. This configuration
-specifies the network mode for the code interpreter.}
+\item{networkConfiguration}{[required] The network configuration for the code interpreter. This configuration specifies the network mode for the code interpreter.}
 
 \item{certificates}{A list of certificates to install in the code interpreter.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock AgentCore ignores the request but does not
-return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.}
 
-\item{tags}{A map of tag keys and values to assign to the code interpreter. Tags
-enable you to categorize your resources in different ways, for example,
-by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the code interpreter. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a custom code interpreter.

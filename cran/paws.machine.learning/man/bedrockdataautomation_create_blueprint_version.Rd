@@ -12,6 +12,8 @@ bedrockdataautomation_create_blueprint_version(
 }
 \arguments{
 \item{blueprintArn}{[required] ARN generated at the server side when a Blueprint is created}
+
+\item{clientToken}{Client specified token used for idempotency checks}
 }
 \description{
 Creates a new version of an existing Amazon Bedrock Data Automation Blueprint

@@ -16,16 +16,12 @@ xray_update_group(
 
 \item{GroupARN}{The ARN that was generated upon creation.}
 
-\item{FilterExpression}{The updated filter expression defining criteria by which to group
-traces.}
+\item{FilterExpression}{The updated filter expression defining criteria by which to group traces.}
 
 \item{InsightsConfiguration}{The structure containing configurations related to insights.
 \itemize{
-\item The InsightsEnabled boolean can be set to true to enable insights
-for the group or false to disable insights for the group.
-\item The NotificationsEnabled boolean can be set to true to enable
-insights notifications for the group. Notifications can only be
-enabled on a group with InsightsEnabled set to true.
+\item The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.
+\item The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.
 }}
 }
 \description{

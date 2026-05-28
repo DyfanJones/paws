@@ -9,11 +9,7 @@ cloudfront_disassociate_distribution_tenant_web_acl(Id, IfMatch = NULL)
 \arguments{
 \item{Id}{[required] The ID of the distribution tenant.}
 
-\item{IfMatch}{The current version of the distribution tenant that you're
-disassociating from the WAF web ACL. This is the \code{ETag} value returned
-in the response to the
-\code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API
-operation.}
+\item{IfMatch}{The current version of the distribution tenant that you're disassociating from the WAF web ACL. This is the \code{ETag} value returned in the response to the \code{\link[=cloudfront_get_distribution_tenant]{get_distribution_tenant}} API operation.}
 }
 \description{
 Disassociates a distribution tenant from the WAF web ACL.

@@ -34,17 +34,13 @@ Constraints:
 \item Cannot end with a hyphen or contain two consecutive hyphens
 }}
 
-\item{RestoreType}{The type of restore to be performed. You can specify one of the
-following values:
+\item{RestoreType}{The type of restore to be performed. You can specify one of the following values:
 \itemize{
-\item \code{full-copy} - The new DB cluster is restored as a full copy of the
-source DB cluster.
-\item \code{copy-on-write} - The new DB cluster is restored as a clone of the
-source DB cluster.
+\item \code{full-copy} - The new DB cluster is restored as a full copy of the source DB cluster.
+\item \code{copy-on-write} - The new DB cluster is restored as a clone of the source DB cluster.
 }
 
-If you don't specify a \code{RestoreType} value, then the new DB cluster is
-restored as a full copy of the source DB cluster.}
+If you don't specify a \code{RestoreType} value, then the new DB cluster is restored as a full copy of the source DB cluster.}
 
 \item{SourceDBClusterIdentifier}{[required] The identifier of the source DB cluster from which to restore.
 
@@ -55,27 +51,23 @@ Constraints:
 
 \item{RestoreToTime}{The date and time to restore the DB cluster to.
 
-Valid Values: Value must be a time in Universal Coordinated Time (UTC)
-format
+Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
 
 Constraints:
 \itemize{
 \item Must be before the latest restorable time for the DB instance
-\item Must be specified if \code{UseLatestRestorableTime} parameter is not
-provided
+\item Must be specified if \code{UseLatestRestorableTime} parameter is not provided
 \item Cannot be specified if \code{UseLatestRestorableTime} parameter is true
 \item Cannot be specified if \code{RestoreType} parameter is \code{copy-on-write}
 }
 
 Example: \verb{2015-03-07T23:45:00Z}}
 
-\item{UseLatestRestorableTime}{A value that is set to \code{true} to restore the DB cluster to the latest
-restorable backup time, and \code{false} otherwise.
+\item{UseLatestRestorableTime}{A value that is set to \code{true} to restore the DB cluster to the latest restorable backup time, and \code{false} otherwise.
 
 Default: \code{false}
 
-Constraints: Cannot be specified if \code{RestoreToTime} parameter is
-provided.}
+Constraints: Cannot be specified if \code{RestoreToTime} parameter is provided.}
 
 \item{Port}{The port number on which the new DB cluster accepts connections.
 
@@ -85,8 +77,7 @@ Default: The same port as the original DB cluster.}
 
 \item{DBSubnetGroupName}{The DB subnet group name to use for the new DB cluster.
 
-Constraints: If supplied, must match the name of an existing
-DBSubnetGroup.
+Constraints: If supplied, must match the name of an existing DBSubnetGroup.
 
 Example: \code{mySubnetgroup}}
 
@@ -96,58 +87,38 @@ Example: \code{mySubnetgroup}}
 
 \item{Tags}{The tags to be applied to the restored DB cluster.}
 
-\item{KmsKeyId}{The Amazon KMS key identifier to use when restoring an encrypted DB
-cluster from an encrypted DB cluster.
+\item{KmsKeyId}{The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
 
-The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-encryption key. If you are restoring a DB cluster with the same Amazon
-account that owns the KMS encryption key used to encrypt the new DB
-cluster, then you can use the KMS key alias instead of the ARN for the
-KMS encryption key.
+The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 
-You can restore to a new DB cluster and encrypt the new DB cluster with
-a KMS key that is different than the KMS key used to encrypt the source
-DB cluster. The new DB cluster is encrypted with the KMS key identified
-by the \code{KmsKeyId} parameter.
+You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the \code{KmsKeyId} parameter.
 
-If you do not specify a value for the \code{KmsKeyId} parameter, then the
-following will occur:
+If you do not specify a value for the \code{KmsKeyId} parameter, then the following will occur:
 \itemize{
-\item If the DB cluster is encrypted, then the restored DB cluster is
-encrypted using the KMS key that was used to encrypt the source DB
-cluster.
-\item If the DB cluster is not encrypted, then the restored DB cluster is
-not encrypted.
+\item If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.
+\item If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
 }
 
-If \code{DBClusterIdentifier} refers to a DB cluster that is not encrypted,
-then the restore request is rejected.}
+If \code{DBClusterIdentifier} refers to a DB cluster that is not encrypted, then the restore request is rejected.}
 
-\item{EnableIAMDatabaseAuthentication}{True to enable mapping of Amazon Identity and Access Management (IAM)
-accounts to database accounts, and otherwise false.
+\item{EnableIAMDatabaseAuthentication}{True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.
 
 Default: \code{false}}
 
-\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB cluster is to export to CloudWatch
-Logs.}
+\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB cluster is to export to CloudWatch Logs.}
 
-\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with the new DB
-cluster.
+\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with the new DB cluster.
 
 Constraints:
 \itemize{
-\item If supplied, must match the name of an existing
-DBClusterParameterGroup.
+\item If supplied, must match the name of an existing DBClusterParameterGroup.
 }}
 
-\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection
-enabled. The database can't be deleted when deletion protection is
-enabled. By default, deletion protection is disabled.}
+\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.}
 
 \item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of a Neptune Serverless DB cluster.
 
-For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless}
-in the \emph{Amazon Neptune User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless} in the \emph{Amazon Neptune User Guide}.}
 
 \item{StorageType}{Specifies the storage type to be associated with the DB cluster.
 

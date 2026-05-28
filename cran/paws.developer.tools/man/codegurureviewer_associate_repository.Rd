@@ -16,28 +16,18 @@ codegurureviewer_associate_repository(
 \arguments{
 \item{Repository}{[required] The repository to associate.}
 
-\item{ClientRequestToken}{Amazon CodeGuru Reviewer uses this value to prevent the accidental
-creation of duplicate repository associations if there are failures and
-retries.}
+\item{ClientRequestToken}{Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.}
 
-\item{Tags}{An array of key-value pairs used to tag an associated repository. A tag
-is a custom attribute label with two parts:
+\item{Tags}{An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
 \itemize{
-\item A \emph{tag key} (for example, \code{CostCenter}, \code{Environment}, \code{Project}, or
-\code{Secret}). Tag keys are case sensitive.
-\item An optional field known as a \emph{tag value} (for example,
-\code{111122223333}, \code{Production}, or a team name). Omitting the tag
-value is the same as using an empty string. Like tag keys, tag
-values are case sensitive.
+\item A \emph{tag key} (for example, \code{CostCenter}, \code{Environment}, \code{Project}, or \code{Secret}). Tag keys are case sensitive.
+\item An optional field known as a \emph{tag value} (for example, \code{111122223333}, \code{Production}, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.
 }}
 
 \item{KMSKeyDetails}{A \code{KMSKeyDetails} object that contains:
 \itemize{
-\item The encryption option for this repository association. It is either
-owned by Amazon Web Services Key Management Service (KMS)
-(\code{AWS_OWNED_CMK}) or customer managed (\code{CUSTOMER_MANAGED_CMK}).
-\item The ID of the Amazon Web Services KMS key that is associated with
-this repository association.
+\item The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (\code{AWS_OWNED_CMK}) or customer managed (\code{CUSTOMER_MANAGED_CMK}).
+\item The ID of the Amazon Web Services KMS key that is associated with this repository association.
 }}
 }
 \description{

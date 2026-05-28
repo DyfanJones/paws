@@ -14,8 +14,7 @@ billingconductor_list_pricing_plans_associated_with_pricing_rule(
 \arguments{
 \item{BillingPeriod}{The pricing plan billing period for which associations will be listed.}
 
-\item{PricingRuleArn}{[required] The pricing rule Amazon Resource Name (ARN) for which associations will
-be listed.}
+\item{PricingRuleArn}{[required] The pricing rule Amazon Resource Name (ARN) for which associations will be listed.}
 
 \item{MaxResults}{The optional maximum number of pricing rule associations to retrieve.}
 

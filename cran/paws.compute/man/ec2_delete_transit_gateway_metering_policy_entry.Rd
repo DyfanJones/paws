@@ -11,15 +11,11 @@ ec2_delete_transit_gateway_metering_policy_entry(
 )
 }
 \arguments{
-\item{TransitGatewayMeteringPolicyId}{[required] The ID of the transit gateway metering policy containing the entry to
-delete.}
+\item{TransitGatewayMeteringPolicyId}{[required] The ID of the transit gateway metering policy containing the entry to delete.}
 
 \item{PolicyRuleNumber}{[required] The rule number of the metering policy entry to delete.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Deletes an entry from a transit gateway metering policy.

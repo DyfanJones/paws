@@ -26,12 +26,9 @@ opensearchservice_create_package(
 
 \item{PackageConfiguration}{The configuration parameters for the package being created.}
 
-\item{EngineVersion}{The version of the Amazon OpenSearch Service engine for which is
-compatible with the package. This can only be specified for package type
-\code{ZIP-PLUGIN}}
+\item{EngineVersion}{The version of the Amazon OpenSearch Service engine for which is compatible with the package. This can only be specified for package type \code{ZIP-PLUGIN}}
 
-\item{PackageVendingOptions}{The vending options for the package being created. They determine if the
-package can be vended to other users.}
+\item{PackageVendingOptions}{The vending options for the package being created. They determine if the package can be vended to other users.}
 
 \item{PackageEncryptionOptions}{The encryption parameters for the package being created.}
 }

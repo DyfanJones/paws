@@ -7,15 +7,11 @@
 devopsguru_list_insights(StatusFilter, MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{StatusFilter}{[required] A filter used to filter the returned insights by their status. You can
-specify one status filter.}
+\item{StatusFilter}{[required] A filter used to filter the returned insights by their status. You can specify one status filter.}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time and status (\code{ONGOING}, \code{CLOSED}, or \code{ANY}).

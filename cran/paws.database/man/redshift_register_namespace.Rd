@@ -8,11 +8,9 @@ Glue Data Catalog}
 redshift_register_namespace(NamespaceIdentifier, ConsumerIdentifiers)
 }
 \arguments{
-\item{NamespaceIdentifier}{[required] The unique identifier of the cluster or serverless namespace that you
-want to register.}
+\item{NamespaceIdentifier}{[required] The unique identifier of the cluster or serverless namespace that you want to register.}
 
-\item{ConsumerIdentifiers}{[required] An array containing the ID of the consumer account that you want to
-register the namespace to.}
+\item{ConsumerIdentifiers}{[required] An array containing the ID of the consumer account that you want to register the namespace to.}
 }
 \description{
 Registers a cluster or serverless namespace to the Amazon Web Services Glue Data Catalog.

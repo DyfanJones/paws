@@ -13,22 +13,15 @@ ec2_describe_capacity_manager_data_exports(
 )
 }
 \arguments{
-\item{CapacityManagerDataExportIds}{The IDs of the data export configurations to describe. If not specified,
-all export configurations are returned.}
+\item{CapacityManagerDataExportIds}{The IDs of the data export configurations to describe. If not specified, all export configurations are returned.}
 
-\item{MaxResults}{The maximum number of results to return in a single call. If not
-specified, up to 1000 results are returned.}
+\item{MaxResults}{The maximum number of results to return in a single call. If not specified, up to 1000 results are returned.}
 
-\item{NextToken}{The token for the next page of results. Use this value in a subsequent
-call to retrieve additional results.}
+\item{NextToken}{The token for the next page of results. Use this value in a subsequent call to retrieve additional results.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{Filters}{One or more filters to narrow the results. Supported filters include
-export status, creation date, and S3 bucket name.}
+\item{Filters}{One or more filters to narrow the results. Supported filters include export status, creation date, and S3 bucket name.}
 }
 \description{
 Describes one or more Capacity Manager data export configurations. Returns information about export settings, delivery status, and recent export activity.

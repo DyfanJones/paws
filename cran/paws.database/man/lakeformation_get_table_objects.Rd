@@ -17,36 +17,26 @@ lakeformation_get_table_objects(
 )
 }
 \arguments{
-\item{CatalogId}{The catalog containing the governed table. Defaults to the caller’s
-account.}
+\item{CatalogId}{The catalog containing the governed table. Defaults to the caller’s account.}
 
 \item{DatabaseName}{[required] The database containing the governed table.}
 
 \item{TableName}{[required] The governed table for which to retrieve objects.}
 
-\item{TransactionId}{The transaction ID at which to read the governed table contents. If this
-transaction has aborted, an error is returned. If not set, defaults to
-the most recent committed transaction. Cannot be specified along with
-\code{QueryAsOfTime}.}
+\item{TransactionId}{The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with \code{QueryAsOfTime}.}
 
-\item{QueryAsOfTime}{The time as of when to read the governed table contents. If not set, the
-most recent transaction commit time is used. Cannot be specified along
-with \code{TransactionId}.}
+\item{QueryAsOfTime}{The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with \code{TransactionId}.}
 
-\item{PartitionPredicate}{A predicate to filter the objects returned based on the partition keys
-defined in the governed table.
+\item{PartitionPredicate}{A predicate to filter the objects returned based on the partition keys defined in the governed table.
 \itemize{
 \item The comparison operators supported are: =, \>, \<, \>=, \<=
 \item The logical operators supported are: AND
-\item The data types supported are integer, long, date(yyyy-MM-dd),
-timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string
-and decimal.
+\item The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.
 }}
 
 \item{MaxResults}{Specifies how many values to return in a page.}
 
-\item{NextToken}{A continuation token if this is not the first call to retrieve these
-objects.}
+\item{NextToken}{A continuation token if this is not the first call to retrieve these objects.}
 }
 \description{
 Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries.

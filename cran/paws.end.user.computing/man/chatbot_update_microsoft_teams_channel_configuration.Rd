@@ -16,27 +16,21 @@ chatbot_update_microsoft_teams_channel_configuration(
 )
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the TeamsChannelConfiguration to
-update.}
+\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the TeamsChannelConfiguration to update.}
 
 \item{ChannelId}{[required] The ID of the Microsoft Teams channel.}
 
 \item{ChannelName}{The name of the Microsoft Teams channel.}
 
-\item{SnsTopicArns}{The Amazon Resource Names (ARNs) of the SNS topics that deliver
-notifications to AWS Chatbot.}
+\item{SnsTopicArns}{The Amazon Resource Names (ARNs) of the SNS topics that deliver notifications to AWS Chatbot.}
 
-\item{IamRoleArn}{A user-defined role that AWS Chatbot assumes. This is not the
-service-linked role.
+\item{IamRoleArn}{A user-defined role that AWS Chatbot assumes. This is not the service-linked role.
 
-For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html}{IAM policies for AWS Chatbot}
-in the \emph{AWS Chatbot Administrator Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html}{IAM policies for AWS Chatbot} in the \emph{AWS Chatbot Administrator Guide}.}
 
 \item{LoggingLevel}{Logging levels include \code{ERROR}, \code{INFO}, or \code{NONE}.}
 
-\item{GuardrailPolicyArns}{The list of IAM policy ARNs that are applied as channel guardrails. The
-AWS managed \code{AdministratorAccess} policy is applied by default if this
-is not set.}
+\item{GuardrailPolicyArns}{The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed \code{AdministratorAccess} policy is applied by default if this is not set.}
 
 \item{UserAuthorizationRequired}{Enables use of a user role requirement in your chat configuration.}
 }

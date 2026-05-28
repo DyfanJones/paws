@@ -16,26 +16,19 @@ sagemaker_create_ai_benchmark_job(
 )
 }
 \arguments{
-\item{AIBenchmarkJobName}{[required] The name of the AI benchmark job. The name must be unique within your
-Amazon Web Services account in the current Amazon Web Services Region.}
+\item{AIBenchmarkJobName}{[required] The name of the AI benchmark job. The name must be unique within your Amazon Web Services account in the current Amazon Web Services Region.}
 
-\item{BenchmarkTarget}{[required] The target endpoint to benchmark. Specify a SageMaker endpoint by
-providing its name or Amazon Resource Name (ARN).}
+\item{BenchmarkTarget}{[required] The target endpoint to benchmark. Specify a SageMaker endpoint by providing its name or Amazon Resource Name (ARN).}
 
-\item{OutputConfig}{[required] The output configuration for the benchmark job, including the Amazon S3
-location where benchmark results are stored.}
+\item{OutputConfig}{[required] The output configuration for the benchmark job, including the Amazon S3 location where benchmark results are stored.}
 
-\item{AIWorkloadConfigIdentifier}{[required] The name or Amazon Resource Name (ARN) of the AI workload configuration
-to use for this benchmark job.}
+\item{AIWorkloadConfigIdentifier}{[required] The name or Amazon Resource Name (ARN) of the AI workload configuration to use for this benchmark job.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that enables Amazon
-SageMaker AI to perform tasks on your behalf.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.}
 
 \item{NetworkConfig}{The network configuration for the benchmark job, including VPC settings.}
 
-\item{Tags}{The metadata that you apply to Amazon Web Services resources to help you
-categorize and organize them. Each tag consists of a key and a value,
-both of which you define.}
+\item{Tags}{The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define.}
 }
 \description{
 Creates a benchmark job that runs performance benchmarks against inference infrastructure using a predefined AI workload configuration. The benchmark job measures metrics such as latency, throughput, and cost for your generative AI inference endpoints.

@@ -13,12 +13,9 @@ neptunedata_cancel_ml_model_transform_job(
 \arguments{
 \item{id}{[required] The unique ID of the model transform job to be canceled.}
 
-\item{neptuneIamRoleArn}{The ARN of an IAM role that provides Neptune access to SageMaker and
-Amazon S3 resources. This must be listed in your DB cluster parameter
-group or an error will occur.}
+\item{neptuneIamRoleArn}{The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.}
 
-\item{clean}{If this flag is set to \code{TRUE}, all Neptune ML S3 artifacts should be
-deleted when the job is stopped. The default is \code{FALSE}.}
+\item{clean}{If this flag is set to \code{TRUE}, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is \code{FALSE}.}
 }
 \description{
 Cancels a specified model transform job. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-model-transform.html}{Use a trained model to generate new model artifacts}.

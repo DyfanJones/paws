@@ -26,8 +26,7 @@ licensemanagerusersubscriptions_list_user_associations(
 \item Domain
 }}
 
-\item{NextToken}{A token to specify where to start paginating. This is the nextToken from
-a previously truncated response.}
+\item{NextToken}{A token to specify where to start paginating. This is the nextToken from a previously truncated response.}
 }
 \description{
 Lists user associations for an identity provider.

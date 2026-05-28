@@ -8,8 +8,7 @@ specifying the steps}
 quicksight_get_flow_metadata(AwsAccountId, FlowId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow that
-you are getting metadata for.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow that you are getting metadata for.}
 
 \item{FlowId}{[required] The unique identifier of the flow.}
 }

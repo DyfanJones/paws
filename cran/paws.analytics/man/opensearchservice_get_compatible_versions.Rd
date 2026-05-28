@@ -8,8 +8,7 @@ you can upgrade them to}
 opensearchservice_get_compatible_versions(DomainName = NULL)
 }
 \arguments{
-\item{DomainName}{The name of an existing domain. Provide this parameter to limit the
-results to a single domain.}
+\item{DomainName}{The name of an existing domain. Provide this parameter to limit the results to a single domain.}
 }
 \description{
 Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.

@@ -5,8 +5,7 @@ NULL
 #' Amazon Lex Model Building V2
 #'
 #' @description
-#' Amazon Lex Model Building Service provides APIs for creating, managing,
-#' and deploying conversational bots and their components.
+#' Amazon Lex Model Building Service provides APIs for creating, managing, and deploying conversational bots and their components.
 #'
 #' @param
 #' config

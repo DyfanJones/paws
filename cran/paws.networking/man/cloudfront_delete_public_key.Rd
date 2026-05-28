@@ -9,8 +9,7 @@ cloudfront_delete_public_key(Id, IfMatch = NULL)
 \arguments{
 \item{Id}{[required] The ID of the public key you want to remove from CloudFront.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-public key identity to delete. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the public key identity to delete. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Remove a public key you previously added to CloudFront.

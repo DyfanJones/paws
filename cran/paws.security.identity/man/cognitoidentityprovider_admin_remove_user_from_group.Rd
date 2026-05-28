@@ -11,17 +11,11 @@ cognitoidentityprovider_admin_remove_user_from_group(
 )
 }
 \arguments{
-\item{UserPoolId}{[required] The ID of the user pool that contains the group and the user that you
-want to remove.}
+\item{UserPoolId}{[required] The ID of the user pool that contains the group and the user that you want to remove.}
 
-\item{Username}{[required] The name of the user that you want to query or modify. The value of this
-parameter is typically your user's username, but it can be any of their
-alias attributes. If \code{username} isn't an alias attribute in your user
-pool, this value must be the \code{sub} of a local user or the username of a
-user from a third-party IdP.}
+\item{Username}{[required] The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If \code{username} isn't an alias attribute in your user pool, this value must be the \code{sub} of a local user or the username of a user from a third-party IdP.}
 
-\item{GroupName}{[required] The name of the group that you want to remove the user from, for example
-\code{MyTestGroup}.}
+\item{GroupName}{[required] The name of the group that you want to remove the user from, for example \code{MyTestGroup}.}
 }
 \description{
 Given a username and a group name, removes them from the group. User pool groups are identifiers that you can reference from the contents of ID and access tokens, and set preferred IAM roles for identity-pool authentication. For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html}{Adding groups to a user pool}.

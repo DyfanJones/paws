@@ -14,43 +14,17 @@ bedrockagentcorecontrol_create_policy(
 )
 }
 \arguments{
-\item{name}{[required] The customer-assigned immutable name for the policy. Must be unique
-within the account. This name is used for policy identification and
-cannot be changed after creation.}
+\item{name}{[required] The customer-assigned immutable name for the policy. Must be unique within the account. This name is used for policy identification and cannot be changed after creation.}
 
-\item{definition}{[required] The Cedar policy statement that defines the access control rules. This
-contains the actual policy logic written in Cedar policy language,
-specifying effect (permit or forbid), principals, actions, resources,
-and conditions for agent behavior control.}
+\item{definition}{[required] The Cedar policy statement that defines the access control rules. This contains the actual policy logic written in Cedar policy language, specifying effect (permit or forbid), principals, actions, resources, and conditions for agent behavior control.}
 
-\item{description}{A human-readable description of the policy's purpose and functionality
-(1-4,096 characters). This helps policy administrators understand the
-policy's intent, business rules, and operational scope. Use this field
-to document why the policy exists, what business requirement it
-addresses, and any special considerations for maintenance. Clear
-descriptions are essential for policy governance, auditing, and
-troubleshooting.}
+\item{description}{A human-readable description of the policy's purpose and functionality (1-4,096 characters). This helps policy administrators understand the policy's intent, business rules, and operational scope. Use this field to document why the policy exists, what business requirement it addresses, and any special considerations for maintenance. Clear descriptions are essential for policy governance, auditing, and troubleshooting.}
 
-\item{validationMode}{The validation mode for the policy creation. Determines how Cedar
-analyzer validation results are handled during policy creation.
-FAIL_ON_ANY_FINDINGS (default) runs the Cedar analyzer to validate the
-policy against the Cedar schema and tool context, failing creation if
-the analyzer detects any validation issues to ensure strict conformance.
-IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows policy creation
-even if validation issues are detected, useful for testing or when the
-policy schema is evolving. Use FAIL_ON_ANY_FINDINGS for production
-policies to ensure correctness, and IGNORE_ALL_FINDINGS only when you
-understand and accept the analyzer findings.}
+\item{validationMode}{The validation mode for the policy creation. Determines how Cedar analyzer validation results are handled during policy creation. FAIL_ON_ANY_FINDINGS (default) runs the Cedar analyzer to validate the policy against the Cedar schema and tool context, failing creation if the analyzer detects any validation issues to ensure strict conformance. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows policy creation even if validation issues are detected, useful for testing or when the policy schema is evolving. Use FAIL_ON_ANY_FINDINGS for production policies to ensure correctness, and IGNORE_ALL_FINDINGS only when you understand and accept the analyzer findings.}
 
-\item{policyEngineId}{[required] The identifier of the policy engine which contains this policy. Policy
-engines group related policies and provide the execution context for
-policy evaluation.}
+\item{policyEngineId}{[required] The identifier of the policy engine which contains this policy. Policy engines group related policies and provide the execution context for policy evaluation.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure the idempotency of the
-request. The AWS SDK automatically generates this token, so you don't
-need to provide it in most cases. If you retry a request with the same
-client token, the service returns the same response without creating a
-duplicate policy.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure the idempotency of the request. The AWS SDK automatically generates this token, so you don't need to provide it in most cases. If you retry a request with the same client token, the service returns the same response without creating a duplicate policy.}
 }
 \description{
 Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic control over agentic interactions with AgentCore Gateway. Using the Cedar policy language, you can define fine-grained policies that specify which interactions with Gateway tools are permitted based on input parameters and OAuth claims, ensuring agents operate within defined boundaries and business rules. The policy is validated during creation against the Cedar schema generated from the Gateway's tools' input schemas, which defines the available tools, their parameters, and expected data types. This is an asynchronous operation. Use the \code{\link[=bedrockagentcorecontrol_get_policy]{get_policy}} operation to poll the \code{status} field to track completion.

@@ -15,8 +15,7 @@ panorama_list_application_instance_node_instances(
 
 \item{MaxResults}{The maximum number of node instances to return in one page of results.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 }
 \description{
 Returns a list of application node instances.

@@ -14,8 +14,7 @@ redshift_describe_snapshot_schedules(
 )
 }
 \arguments{
-\item{ClusterIdentifier}{The unique identifier for the cluster whose snapshot schedules you want
-to view.}
+\item{ClusterIdentifier}{The unique identifier for the cluster whose snapshot schedules you want to view.}
 
 \item{ScheduleIdentifier}{A unique identifier for a snapshot schedule.}
 
@@ -23,18 +22,9 @@ to view.}
 
 \item{TagValues}{The value corresponding to the key of the snapshot schedule tag.}
 
-\item{Marker}{A value that indicates the starting point for the next set of response
-records in a subsequent request. If a value is returned in a response,
-you can retrieve the next set of records by providing this returned
-marker value in the \code{marker} parameter and retrying the command. If the
-\code{marker} field is empty, all response records have been retrieved for
-the request.}
+\item{Marker}{A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the \code{marker} parameter and retrying the command. If the \code{marker} field is empty, all response records have been retrieved for the request.}
 
-\item{MaxRecords}{The maximum number or response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned \code{marker} value.}
+\item{MaxRecords}{The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned \code{marker} value.}
 }
 \description{
 Returns a list of snapshot schedules.

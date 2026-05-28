@@ -7,9 +7,7 @@
 elasticsearchservice_dissociate_package(PackageID, DomainName)
 }
 \arguments{
-\item{PackageID}{[required] Internal ID of the package that you want to associate with a domain. Use
-\code{\link[=elasticsearchservice_describe_packages]{describe_packages}} to find
-this value.}
+\item{PackageID}{[required] Internal ID of the package that you want to associate with a domain. Use \code{\link[=elasticsearchservice_describe_packages]{describe_packages}} to find this value.}
 
 \item{DomainName}{[required] Name of the domain that you want to associate the package with.}
 }

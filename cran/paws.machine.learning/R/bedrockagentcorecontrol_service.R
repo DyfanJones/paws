@@ -5,9 +5,7 @@ NULL
 #' Amazon Bedrock AgentCore Control
 #'
 #' @description
-#' Welcome to the Amazon Bedrock AgentCore Control plane API reference.
-#' Control plane actions configure, create, modify, and monitor Amazon Web
-#' Services resources.
+#' Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control plane actions configure, create, modify, and monitor Amazon Web Services resources.
 #'
 #' @param
 #' config
@@ -85,13 +83,14 @@ NULL
 #' @examples
 #' \dontrun{
 #' svc <- bedrockagentcorecontrol()
-#' svc$create_agent_runtime(
+#' svc$add_dataset_examples(
 #'   Foo = 123
 #' )
 #' }
 #'
 #' @section Operations:
 #' \tabular{ll}{
+#'  \link[=bedrockagentcorecontrol_add_dataset_examples]{add_dataset_examples} \tab Adds examples to the dataset's DRAFT\cr
 #'  \link[=bedrockagentcorecontrol_create_agent_runtime]{create_agent_runtime} \tab Creates an Amazon Bedrock AgentCore Runtime\cr
 #'  \link[=bedrockagentcorecontrol_create_agent_runtime_endpoint]{create_agent_runtime_endpoint} \tab Creates an AgentCore Runtime endpoint\cr
 #'  \link[=bedrockagentcorecontrol_create_api_key_credential_provider]{create_api_key_credential_provider} \tab Creates a new API key credential provider\cr
@@ -99,6 +98,8 @@ NULL
 #'  \link[=bedrockagentcorecontrol_create_browser_profile]{create_browser_profile} \tab Creates a browser profile in Amazon Bedrock AgentCore\cr
 #'  \link[=bedrockagentcorecontrol_create_code_interpreter]{create_code_interpreter} \tab Creates a custom code interpreter\cr
 #'  \link[=bedrockagentcorecontrol_create_configuration_bundle]{create_configuration_bundle} \tab Creates a new configuration bundle resource\cr
+#'  \link[=bedrockagentcorecontrol_create_dataset]{create_dataset} \tab Creates a new Dataset resource asynchronously\cr
+#'  \link[=bedrockagentcorecontrol_create_dataset_version]{create_dataset_version} \tab Publishes the current DRAFT as a new numbered version\cr
 #'  \link[=bedrockagentcorecontrol_create_evaluator]{create_evaluator} \tab Creates a custom evaluator for agent quality assessment\cr
 #'  \link[=bedrockagentcorecontrol_create_gateway]{create_gateway} \tab Creates a gateway for Amazon Bedrock Agent\cr
 #'  \link[=bedrockagentcorecontrol_create_gateway_rule]{create_gateway_rule} \tab Creates a rule for a gateway\cr
@@ -122,6 +123,8 @@ NULL
 #'  \link[=bedrockagentcorecontrol_delete_browser_profile]{delete_browser_profile} \tab Deletes a browser profile\cr
 #'  \link[=bedrockagentcorecontrol_delete_code_interpreter]{delete_code_interpreter} \tab Deletes a custom code interpreter\cr
 #'  \link[=bedrockagentcorecontrol_delete_configuration_bundle]{delete_configuration_bundle} \tab Deletes a configuration bundle and all of its versions\cr
+#'  \link[=bedrockagentcorecontrol_delete_dataset]{delete_dataset} \tab Deletes a dataset version or an entire dataset (all versions + name claim)\cr
+#'  \link[=bedrockagentcorecontrol_delete_dataset_examples]{delete_dataset_examples} \tab Deletes specific examples by ID from DRAFT\cr
 #'  \link[=bedrockagentcorecontrol_delete_evaluator]{delete_evaluator} \tab Deletes a custom evaluator\cr
 #'  \link[=bedrockagentcorecontrol_delete_gateway]{delete_gateway} \tab Deletes a gateway\cr
 #'  \link[=bedrockagentcorecontrol_delete_gateway_rule]{delete_gateway_rule} \tab Deletes a gateway rule\cr
@@ -147,6 +150,7 @@ NULL
 #'  \link[=bedrockagentcorecontrol_get_code_interpreter]{get_code_interpreter} \tab Gets information about a custom code interpreter\cr
 #'  \link[=bedrockagentcorecontrol_get_configuration_bundle]{get_configuration_bundle} \tab Gets the latest version of a configuration bundle\cr
 #'  \link[=bedrockagentcorecontrol_get_configuration_bundle_version]{get_configuration_bundle_version} \tab Gets a specific version of a configuration bundle by its version identifier\cr
+#'  \link[=bedrockagentcorecontrol_get_dataset]{get_dataset} \tab Retrieves dataset metadata only\cr
 #'  \link[=bedrockagentcorecontrol_get_evaluator]{get_evaluator} \tab Retrieves detailed information about an evaluator, including its configuration, status, and metadata\cr
 #'  \link[=bedrockagentcorecontrol_get_gateway]{get_gateway} \tab Retrieves information about a specific Gateway\cr
 #'  \link[=bedrockagentcorecontrol_get_gateway_rule]{get_gateway_rule} \tab Retrieves detailed information about a specific gateway rule\cr
@@ -160,7 +164,10 @@ NULL
 #'  \link[=bedrockagentcorecontrol_get_payment_manager]{get_payment_manager} \tab Retrieves information about a specific payment manager\cr
 #'  \link[=bedrockagentcorecontrol_get_policy]{get_policy} \tab Retrieves detailed information about a specific policy within the AgentCore Policy system\cr
 #'  \link[=bedrockagentcorecontrol_get_policy_engine]{get_policy_engine} \tab Retrieves detailed information about a specific policy engine within the AgentCore Policy system\cr
+#'  \link[=bedrockagentcorecontrol_get_policy_engine_summary]{get_policy_engine_summary} \tab Retrieves a metadata-only summary of a specific policy engine without decrypting customer content\cr
 #'  \link[=bedrockagentcorecontrol_get_policy_generation]{get_policy_generation} \tab Retrieves information about a policy generation request within the AgentCore Policy system\cr
+#'  \link[=bedrockagentcorecontrol_get_policy_generation_summary]{get_policy_generation_summary} \tab Retrieves a metadata-only summary of a specific policy generation request without decrypting customer content\cr
+#'  \link[=bedrockagentcorecontrol_get_policy_summary]{get_policy_summary} \tab Retrieves a metadata-only summary of a specific policy without decrypting customer content\cr
 #'  \link[=bedrockagentcorecontrol_get_registry]{get_registry} \tab Retrieves information about a specific registry\cr
 #'  \link[=bedrockagentcorecontrol_get_registry_record]{get_registry_record} \tab Retrieves information about a specific registry record\cr
 #'  \link[=bedrockagentcorecontrol_get_resource_policy]{get_resource_policy} \tab Retrieves the resource-based policy for a specified resource\cr
@@ -175,6 +182,9 @@ NULL
 #'  \link[=bedrockagentcorecontrol_list_code_interpreters]{list_code_interpreters} \tab Lists all custom code interpreters in your account\cr
 #'  \link[=bedrockagentcorecontrol_list_configuration_bundles]{list_configuration_bundles} \tab Lists all configuration bundles in the account\cr
 #'  \link[=bedrockagentcorecontrol_list_configuration_bundle_versions]{list_configuration_bundle_versions} \tab Lists all versions of a configuration bundle, with optional filtering by branch name or creation source\cr
+#'  \link[=bedrockagentcorecontrol_list_dataset_examples]{list_dataset_examples} \tab Returns paginated examples from the dataset\cr
+#'  \link[=bedrockagentcorecontrol_list_datasets]{list_datasets} \tab Lists all datasets in the caller's account, paginated\cr
+#'  \link[=bedrockagentcorecontrol_list_dataset_versions]{list_dataset_versions} \tab Lists all published versions of a dataset, sorted by version number descending (newest first)\cr
 #'  \link[=bedrockagentcorecontrol_list_evaluators]{list_evaluators} \tab Lists all available evaluators, including both builtin evaluators provided by the service and custom evaluators created by the user\cr
 #'  \link[=bedrockagentcorecontrol_list_gateway_rules]{list_gateway_rules} \tab Lists all rules for a gateway\cr
 #'  \link[=bedrockagentcorecontrol_list_gateways]{list_gateways} \tab Lists all gateways in the account\cr
@@ -188,8 +198,11 @@ NULL
 #'  \link[=bedrockagentcorecontrol_list_payment_managers]{list_payment_managers} \tab Lists all payment managers in the account\cr
 #'  \link[=bedrockagentcorecontrol_list_policies]{list_policies} \tab Retrieves a list of policies within the AgentCore Policy engine\cr
 #'  \link[=bedrockagentcorecontrol_list_policy_engines]{list_policy_engines} \tab Retrieves a list of policy engines within the AgentCore Policy system\cr
+#'  \link[=bedrockagentcorecontrol_list_policy_engine_summaries]{list_policy_engine_summaries} \tab Retrieves a paginated list of metadata-only policy engine summaries without decrypting customer content\cr
 #'  \link[=bedrockagentcorecontrol_list_policy_generation_assets]{list_policy_generation_assets} \tab Retrieves a list of generated policy assets from a policy generation request within the AgentCore Policy system\cr
 #'  \link[=bedrockagentcorecontrol_list_policy_generations]{list_policy_generations} \tab Retrieves a list of policy generation requests within the AgentCore Policy system\cr
+#'  \link[=bedrockagentcorecontrol_list_policy_generation_summaries]{list_policy_generation_summaries} \tab Retrieves a paginated list of metadata-only policy generation summaries within a policy engine without decrypting customer content\cr
+#'  \link[=bedrockagentcorecontrol_list_policy_summaries]{list_policy_summaries} \tab Retrieves a paginated list of metadata-only policy summaries within a policy engine without decrypting customer content\cr
 #'  \link[=bedrockagentcorecontrol_list_registries]{list_registries} \tab Lists all registries in the account\cr
 #'  \link[=bedrockagentcorecontrol_list_registry_records]{list_registry_records} \tab Lists registry records within a registry\cr
 #'  \link[=bedrockagentcorecontrol_list_tags_for_resource]{list_tags_for_resource} \tab Lists the tags associated with the specified resource\cr
@@ -205,6 +218,8 @@ NULL
 #'  \link[=bedrockagentcorecontrol_update_agent_runtime_endpoint]{update_agent_runtime_endpoint} \tab Updates an existing Amazon Bedrock AgentCore Runtime endpoint\cr
 #'  \link[=bedrockagentcorecontrol_update_api_key_credential_provider]{update_api_key_credential_provider} \tab Updates an existing API key credential provider\cr
 #'  \link[=bedrockagentcorecontrol_update_configuration_bundle]{update_configuration_bundle} \tab Updates a configuration bundle by creating a new version with the specified changes\cr
+#'  \link[=bedrockagentcorecontrol_update_dataset]{update_dataset} \tab Updates a dataset's metadata\cr
+#'  \link[=bedrockagentcorecontrol_update_dataset_examples]{update_dataset_examples} \tab Updates multiple existing examples in-place on DRAFT\cr
 #'  \link[=bedrockagentcorecontrol_update_evaluator]{update_evaluator} \tab Updates a custom evaluator's configuration, description, or evaluation level\cr
 #'  \link[=bedrockagentcorecontrol_update_gateway]{update_gateway} \tab Updates an existing gateway\cr
 #'  \link[=bedrockagentcorecontrol_update_gateway_rule]{update_gateway_rule} \tab Updates a gateway rule's priority, conditions, actions, or description\cr

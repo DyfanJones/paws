@@ -25,9 +25,7 @@ frauddetector_list_event_predictions(
 
 \item{predictionTimeRange}{The time period for when the predictions were generated.}
 
-\item{nextToken}{Identifies the next page of results to return. Use the token to make the
-call again to retrieve the next page. Keep all other arguments
-unchanged. Each pagination token expires after 24 hours.}
+\item{nextToken}{Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.}
 
 \item{maxResults}{The maximum number of predictions to return for the request.}
 }

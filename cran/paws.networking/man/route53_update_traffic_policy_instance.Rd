@@ -16,15 +16,11 @@ route53_update_traffic_policy_instance(
 \arguments{
 \item{Id}{[required] The ID of the traffic policy instance that you want to update.}
 
-\item{TTL}{[required] The TTL that you want Amazon Route 53 to assign to all of the updated
-resource record sets.}
+\item{TTL}{[required] The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.}
 
-\item{TrafficPolicyId}{[required] The ID of the traffic policy that you want Amazon Route 53 to use to
-update resource record sets for the specified traffic policy instance.}
+\item{TrafficPolicyId}{[required] The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.}
 
-\item{TrafficPolicyVersion}{[required] The version of the traffic policy that you want Amazon Route 53 to use
-to update resource record sets for the specified traffic policy
-instance.}
+\item{TrafficPolicyVersion}{[required] The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.}
 }
 \description{
 After you submit a \code{\link[=route53_update_traffic_policy_instance]{update_traffic_policy_instance}} request, there's a brief delay while Route 53 creates the resource record sets that are specified in the traffic policy definition. Use \code{\link[=route53_get_traffic_policy_instance]{get_traffic_policy_instance}} with the \code{id} of updated traffic policy instance confirm that the \code{\link[=route53_update_traffic_policy_instance]{update_traffic_policy_instance}} request completed successfully. For more information, see the \code{State} response element.

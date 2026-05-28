@@ -8,20 +8,13 @@ workgroup}
 athena_create_notebook(WorkGroup, Name, ClientRequestToken = NULL)
 }
 \arguments{
-\item{WorkGroup}{[required] The name of the Spark enabled workgroup in which the notebook will be
-created.}
+\item{WorkGroup}{[required] The name of the Spark enabled workgroup in which the notebook will be created.}
 
-\item{Name}{[required] The name of the \code{ipynb} file to be created in the Spark workgroup,
-without the \code{.ipynb} extension.}
+\item{Name}{[required] The name of the \code{ipynb} file to be created in the Spark workgroup, without the \code{.ipynb} extension.}
 
-\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the
-notebook is idempotent (executes only once).
+\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).
 
-This token is listed as not required because Amazon Web Services SDKs
-(for example the Amazon Web Services SDK for Java) auto-generate the
-token for you. If you are not using the Amazon Web Services SDK or the
-Amazon Web Services CLI, you must provide this token or the action will
-fail.}
+This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.}
 }
 \description{
 Creates an empty \code{ipynb} file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists.

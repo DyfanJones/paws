@@ -116,7 +116,7 @@ bedrockdataautomationruntime_invoke_data_automation_async <- function(clientToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
 #'
 #' @keywords internal
 #'
@@ -147,8 +147,8 @@ bedrockdataautomationruntime_list_tags_for_resource <- function(resourceARN) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_tag_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_tag_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tags &#91;required&#93; List of tags
 #'
 #' @keywords internal
 #'
@@ -179,8 +179,8 @@ bedrockdataautomationruntime_tag_resource <- function(resourceARN, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_untag_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_untag_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tagKeys &#91;required&#93; List of tag keys
 #'
 #' @keywords internal
 #'

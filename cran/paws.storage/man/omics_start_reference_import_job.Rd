@@ -17,8 +17,7 @@ omics_start_reference_import_job(
 
 \item{roleArn}{[required] A service role for the job.}
 
-\item{clientToken}{To ensure that jobs don't run multiple times, specify a unique token for
-each job.}
+\item{clientToken}{To ensure that jobs don't run multiple times, specify a unique token for each job.}
 
 \item{sources}{[required] The job's source files.}
 }

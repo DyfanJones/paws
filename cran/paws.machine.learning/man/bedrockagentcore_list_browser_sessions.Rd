@@ -13,22 +13,13 @@ bedrockagentcore_list_browser_sessions(
 )
 }
 \arguments{
-\item{browserIdentifier}{[required] The unique identifier of the browser to list sessions for. If specified,
-only sessions for this browser are returned. If not specified, sessions
-for all browsers are returned.}
+\item{browserIdentifier}{[required] The unique identifier of the browser to list sessions for. If specified, only sessions for this browser are returned. If not specified, sessions for all browsers are returned.}
 
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 10. Valid values range from 1 to 100. To retrieve the remaining
-results, make another call with the returned \code{nextToken} value.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 10. Valid values range from 1 to 100. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results. If not specified, Amazon Bedrock AgentCore returns the first
-page of results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. If not specified, Amazon Bedrock AgentCore returns the first page of results.}
 
-\item{status}{The status of the browser sessions to list. Valid values include ACTIVE,
-STOPPING, and STOPPED. If not specified, sessions with any status are
-returned.}
+\item{status}{The status of the browser sessions to list. Valid values include ACTIVE, STOPPING, and STOPPED. If not specified, sessions with any status are returned.}
 }
 \description{
 Retrieves a list of browser sessions in Amazon Bedrock AgentCore that match the specified criteria. This operation returns summary information about each session, including identifiers, status, and timestamps.

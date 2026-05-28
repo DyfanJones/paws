@@ -12,23 +12,13 @@ datazone_list_domain_units_for_parent(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the domain in which you want to list domain units for a parent
-domain unit.}
+\item{domainIdentifier}{[required] The ID of the domain in which you want to list domain units for a parent domain unit.}
 
 \item{parentDomainUnitIdentifier}{[required] The ID of the parent domain unit.}
 
-\item{maxResults}{The maximum number of domain units to return in a single call to
-ListDomainUnitsForParent. When the number of domain units to be listed
-is greater than the value of MaxResults, the response contains a
-NextToken value that you can use in a subsequent call to
-ListDomainUnitsForParent to list the next set of domain units.}
+\item{maxResults}{The maximum number of domain units to return in a single call to ListDomainUnitsForParent. When the number of domain units to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListDomainUnitsForParent to list the next set of domain units.}
 
-\item{nextToken}{When the number of domain units is greater than the default value for
-the MaxResults parameter, or if you explicitly specify a value for
-MaxResults that is less than the number of domain units, the response
-includes a pagination token named NextToken. You can specify this
-NextToken value in a subsequent call to ListDomainUnitsForParent to list
-the next set of domain units.}
+\item{nextToken}{When the number of domain units is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of domain units, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListDomainUnitsForParent to list the next set of domain units.}
 }
 \description{
 Lists child domain units for the specified parent domain unit.

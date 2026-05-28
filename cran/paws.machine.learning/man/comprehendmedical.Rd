@@ -53,13 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Comprehend Medical extracts structured information from
-unstructured clinical text. Use these actions to gain insight in your
-documents. Amazon Comprehend Medical only detects entities in English
-language texts. Amazon Comprehend Medical places limits on the sizes of
-files allowed for different API operations. To learn more, see
-\href{https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html}{Guidelines and quotas}
-in the \emph{Amazon Comprehend Medical Developer Guide}.
+Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain insight in your documents. Amazon Comprehend Medical only detects entities in English language texts. Amazon Comprehend Medical places limits on the sizes of files allowed for different API operations. To learn more, see \href{https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html}{Guidelines and quotas} in the \emph{Amazon Comprehend Medical Developer Guide}.
 }
 \section{Service syntax}{
 

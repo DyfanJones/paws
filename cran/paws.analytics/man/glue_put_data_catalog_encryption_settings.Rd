@@ -10,8 +10,7 @@ glue_put_data_catalog_encryption_settings(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog to set the security configuration for. If
-none is provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{DataCatalogEncryptionSettings}{[required] The security configuration to set.}
 }

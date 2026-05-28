@@ -7,16 +7,11 @@ NULL
 #' @description
 #' Amazon Managed Workflows for Apache Airflow
 #' 
-#' This section contains the Amazon Managed Workflows for Apache Airflow
-#' (MWAA) API reference documentation. For more information, see [What is
-#' Amazon
-#' MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html).
+#' This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see [What is Amazon MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html).
 #' 
 #' **Endpoints**
 #' 
-#' -   `api.airflow.{region}.amazonaws.com` (use
-#'     `api.airflow.{region}.api.aws` for IPv6) - This endpoint is used for
-#'     environment management.
+#' -   `api.airflow.{region}.amazonaws.com` (use `api.airflow.{region}.api.aws` for IPv6) - This endpoint is used for environment management.
 #' 
 #'     -   [`create_environment`][mwaa_create_environment]
 #' 
@@ -34,9 +29,7 @@ NULL
 #' 
 #'     -   [`update_environment`][mwaa_update_environment]
 #' 
-#' -   `env.airflow.{region}.amazonaws.com` (use
-#'     `env.airflow.{region}.api.aws` for IPv6) - This endpoint is used to
-#'     operate the Airflow environment.
+#' -   `env.airflow.{region}.amazonaws.com` (use `env.airflow.{region}.api.aws` for IPv6) - This endpoint is used to operate the Airflow environment.
 #' 
 #'     -   [`create_cli_token`][mwaa_create_cli_token]
 #' 
@@ -46,9 +39,7 @@ NULL
 #' 
 #' **Regions**
 #' 
-#' For a list of supported regions, see [Amazon MWAA endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/mwaa.html) in the
-#' *Amazon Web Services General Reference*.
+#' For a list of supported regions, see [Amazon MWAA endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/mwaa.html) in the *Amazon Web Services General Reference*.
 #'
 #' @param
 #' config

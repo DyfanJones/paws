@@ -10,9 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_add_notification_channel/](https://www.paws-r-sdk.com/docs/devopsguru_add_notification_channel/) for full documentation.
 #'
-#' @param Config &#91;required&#93; A `NotificationChannelConfig` object that specifies what type of
-#' notification channel to add. The one supported notification channel is
-#' Amazon Simple Notification Service (Amazon SNS).
+#' @param Config &#91;required&#93; A `NotificationChannelConfig` object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
 #'
 #' @keywords internal
 #'
@@ -111,13 +109,8 @@ devopsguru_describe_account_health <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_describe_account_overview/](https://www.paws-r-sdk.com/docs/devopsguru_describe_account_overview/) for full documentation.
 #'
-#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred after this day.
-#' @param ToTime The end of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred before this day. If this is not specified, then the current day
-#' is used.
+#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.
+#' @param ToTime The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
 #'
 #' @keywords internal
 #'
@@ -310,13 +303,8 @@ devopsguru_describe_organization_health <- function(AccountIds = NULL, Organizat
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_describe_organization_overview/](https://www.paws-r-sdk.com/docs/devopsguru_describe_organization_overview/) for full documentation.
 #'
-#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred after this day.
-#' @param ToTime The end of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred before this day. If this is not specified, then the current day
-#' is used.
+#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.
+#' @param ToTime The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
 #' @param AccountIds The ID of the Amazon Web Services account.
 #' @param OrganizationalUnitIds The ID of the organizational unit.
 #'
@@ -349,21 +337,11 @@ devopsguru_describe_organization_overview <- function(FromTime, ToTime = NULL, A
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_describe_organization_resource_collection_health/](https://www.paws-r-sdk.com/docs/devopsguru_describe_organization_resource_collection_health/) for full documentation.
 #'
-#' @param OrganizationResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how
-#' analyzed Amazon Web Services resources are defined. The two types of
-#' Amazon Web Services resource collections supported are Amazon Web
-#' Services CloudFormation stacks and Amazon Web Services resources that
-#' contain the same Amazon Web Services tag. DevOps Guru can be configured
-#' to analyze the Amazon Web Services resources that are defined in the
-#' stacks or that are tagged using the same tag *key*. You can specify up
-#' to 500 Amazon Web Services CloudFormation stacks.
+#' @param OrganizationResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
 #' @param AccountIds The ID of the Amazon Web Services account.
 #' @param OrganizationalUnitIds The ID of the organizational unit.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #'
 #' @keywords internal
 #'
@@ -396,16 +374,8 @@ devopsguru_describe_organization_resource_collection_health <- function(Organiza
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_describe_resource_collection_health/](https://www.paws-r-sdk.com/docs/devopsguru_describe_resource_collection_health/) for full documentation.
 #'
-#' @param ResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how
-#' analyzed Amazon Web Services resources are defined. The two types of
-#' Amazon Web Services resource collections supported are Amazon Web
-#' Services CloudFormation stacks and Amazon Web Services resources that
-#' contain the same Amazon Web Services tag. DevOps Guru can be configured
-#' to analyze the Amazon Web Services resources that are defined in the
-#' stacks or that are tagged using the same tag *key*. You can specify up
-#' to 500 Amazon Web Services CloudFormation stacks.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param ResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -469,8 +439,7 @@ devopsguru_describe_service_integration <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_get_cost_estimation/](https://www.paws-r-sdk.com/docs/devopsguru_get_cost_estimation/) for full documentation.
 #'
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -502,11 +471,8 @@ devopsguru_get_cost_estimation <- function(NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_get_resource_collection/](https://www.paws-r-sdk.com/docs/devopsguru_get_resource_collection/) for full documentation.
 #'
-#' @param ResourceCollectionType &#91;required&#93; The type of Amazon Web Services resource collections to return. The one
-#' valid value is `CLOUD_FORMATION` for Amazon Web Services CloudFormation
-#' stacks.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param ResourceCollectionType &#91;required&#93; The type of Amazon Web Services resource collections to return. The one valid value is `CLOUD_FORMATION` for Amazon Web Services CloudFormation stacks.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -539,13 +505,9 @@ devopsguru_get_resource_collection <- function(ResourceCollectionType, NextToken
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_anomalies_for_insight/](https://www.paws-r-sdk.com/docs/devopsguru_list_anomalies_for_insight/) for full documentation.
 #'
 #' @param InsightId &#91;required&#93; The ID of the insight. The returned anomalies belong to this insight.
-#' @param StartTimeRange A time range used to specify when the requested anomalies started. All
-#' returned anomalies started during this time range.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StartTimeRange A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param AccountId The ID of the Amazon Web Services account.
 #' @param Filters Specifies one or more service names that are used to list anomalies.
 #'
@@ -579,11 +541,8 @@ devopsguru_list_anomalies_for_insight <- function(InsightId, StartTimeRange = NU
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_anomalous_log_groups/](https://www.paws-r-sdk.com/docs/devopsguru_list_anomalous_log_groups/) for full documentation.
 #'
 #' @param InsightId &#91;required&#93; The ID of the insight containing the log groups.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -616,11 +575,8 @@ devopsguru_list_anomalous_log_groups <- function(InsightId, MaxResults = NULL, N
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_events/](https://www.paws-r-sdk.com/docs/devopsguru_list_events/) for full documentation.
 #'
 #' @param Filters &#91;required&#93; A `ListEventsFilters` object used to specify which events to return.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param AccountId The ID of the Amazon Web Services account.
 #'
 #' @keywords internal
@@ -652,13 +608,9 @@ devopsguru_list_events <- function(Filters, MaxResults = NULL, NextToken = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_insights/](https://www.paws-r-sdk.com/docs/devopsguru_list_insights/) for full documentation.
 #'
-#' @param StatusFilter &#91;required&#93; A filter used to filter the returned insights by their status. You can
-#' specify one status filter.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StatusFilter &#91;required&#93; A filter used to filter the returned insights by their status. You can specify one status filter.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -690,13 +642,9 @@ devopsguru_list_insights <- function(StatusFilter, MaxResults = NULL, NextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_monitored_resources/](https://www.paws-r-sdk.com/docs/devopsguru_list_monitored_resources/) for full documentation.
 #'
-#' @param Filters Filters to determine which monitored resources you want to retrieve. You
-#' can filter by resource type or resource permission status.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param Filters Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -727,8 +675,7 @@ devopsguru_list_monitored_resources <- function(Filters = NULL, MaxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_notification_channels/](https://www.paws-r-sdk.com/docs/devopsguru_list_notification_channels/) for full documentation.
 #'
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -759,14 +706,11 @@ devopsguru_list_notification_channels <- function(NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_organization_insights/](https://www.paws-r-sdk.com/docs/devopsguru_list_organization_insights/) for full documentation.
 #'
-#' @param StatusFilter &#91;required&#93; 
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param StatusFilter &#91;required&#93; A filter used by [`list_insights`][devopsguru_list_insights] to specify which insights to return.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param AccountIds The ID of the Amazon Web Services account.
 #' @param OrganizationalUnitIds The ID of the organizational unit.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @keywords internal
 #'
@@ -798,8 +742,7 @@ devopsguru_list_organization_insights <- function(StatusFilter, MaxResults = NUL
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_list_recommendations/](https://www.paws-r-sdk.com/docs/devopsguru_list_recommendations/) for full documentation.
 #'
 #' @param InsightId &#91;required&#93; The ID of the requested insight.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param Locale A locale that specifies the language to use for recommendations.
 #' @param AccountId The ID of the Amazon Web Services account.
 #'
@@ -832,8 +775,7 @@ devopsguru_list_recommendations <- function(InsightId, NextToken = NULL, Locale 
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_put_feedback/](https://www.paws-r-sdk.com/docs/devopsguru_put_feedback/) for full documentation.
 #'
-#' @param InsightFeedback The feedback from customers is about the recommendations in this
-#' insight.
+#' @param InsightFeedback The feedback from customers is about the recommendations in this insight.
 #'
 #' @keywords internal
 #'
@@ -895,15 +837,10 @@ devopsguru_remove_notification_channel <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_search_insights/](https://www.paws-r-sdk.com/docs/devopsguru_search_insights/) for full documentation.
 #'
-#' @param StartTimeRange &#91;required&#93; The start of the time range passed in. Returned insights occurred after
-#' this time.
-#' @param Filters A `SearchInsightsFilters` object that is used to set the severity and
-#' status filters on your insight search.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StartTimeRange &#91;required&#93; The start of the time range passed in. Returned insights occurred after this time.
+#' @param Filters A `SearchInsightsFilters` object that is used to set the severity and status filters on your insight search.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param Type &#91;required&#93; The type of insights you are searching for (`REACTIVE` or `PROACTIVE`).
 #'
 #' @keywords internal
@@ -936,14 +873,10 @@ devopsguru_search_insights <- function(StartTimeRange, Filters = NULL, MaxResult
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_search_organization_insights/](https://www.paws-r-sdk.com/docs/devopsguru_search_organization_insights/) for full documentation.
 #'
 #' @param AccountIds &#91;required&#93; The ID of the Amazon Web Services account.
-#' @param StartTimeRange &#91;required&#93; 
-#' @param Filters A `SearchOrganizationInsightsFilters` object that is used to set the
-#' severity and status filters on your insight search.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StartTimeRange &#91;required&#93; A time range used to specify when the behavior of an insight or anomaly started.
+#' @param Filters A `SearchOrganizationInsightsFilters` object that is used to set the severity and status filters on your insight search.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param Type &#91;required&#93; The type of insights you are searching for (`REACTIVE` or `PROACTIVE`).
 #'
 #' @keywords internal
@@ -976,8 +909,7 @@ devopsguru_search_organization_insights <- function(AccountIds, StartTimeRange, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_start_cost_estimation/](https://www.paws-r-sdk.com/docs/devopsguru_start_cost_estimation/) for full documentation.
 #'
-#' @param ResourceCollection &#91;required&#93; The collection of Amazon Web Services resources used to create a monthly
-#' DevOps Guru cost estimate.
+#' @param ResourceCollection &#91;required&#93; The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.
 #' @param ClientToken The idempotency token used to identify each cost estimate request.
 #'
 #' @keywords internal
@@ -1010,8 +942,7 @@ devopsguru_start_cost_estimation <- function(ResourceCollection, ClientToken = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_update_event_sources_config/](https://www.paws-r-sdk.com/docs/devopsguru_update_event_sources_config/) for full documentation.
 #'
-#' @param EventSources Configuration information about the integration of DevOps Guru as the
-#' Consumer via EventBridge with another AWS Service.
+#' @param EventSources Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.
 #'
 #' @keywords internal
 #'
@@ -1042,9 +973,8 @@ devopsguru_update_event_sources_config <- function(EventSources = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_update_resource_collection/](https://www.paws-r-sdk.com/docs/devopsguru_update_resource_collection/) for full documentation.
 #'
-#' @param Action &#91;required&#93; Specifies if the resource collection in the request is added or deleted
-#' to the resource collection.
-#' @param ResourceCollection &#91;required&#93; 
+#' @param Action &#91;required&#93; Specifies if the resource collection in the request is added or deleted to the resource collection.
+#' @param ResourceCollection &#91;required&#93; A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
 #'
 #' @keywords internal
 #'
@@ -1076,9 +1006,7 @@ devopsguru_update_resource_collection <- function(Action, ResourceCollection) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/devopsguru_update_service_integration/](https://www.paws-r-sdk.com/docs/devopsguru_update_service_integration/) for full documentation.
 #'
-#' @param ServiceIntegration &#91;required&#93; An `IntegratedServiceConfig` object used to specify the integrated
-#' service you want to update, and whether you want to update it to enabled
-#' or disabled.
+#' @param ServiceIntegration &#91;required&#93; An `IntegratedServiceConfig` object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.
 #'
 #' @keywords internal
 #'

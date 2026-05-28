@@ -10,8 +10,7 @@ codeguruprofiler_update_profiling_group(
 )
 }
 \arguments{
-\item{agentOrchestrationConfig}{[required] Specifies whether profiling is enabled or disabled for a profiling
-group.}
+\item{agentOrchestrationConfig}{[required] Specifies whether profiling is enabled or disabled for a profiling group.}
 
 \item{profilingGroupName}{[required] The name of the profiling group to update.}
 }

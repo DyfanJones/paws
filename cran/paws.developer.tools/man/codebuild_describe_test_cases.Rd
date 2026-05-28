@@ -14,17 +14,9 @@ codebuild_describe_test_cases(
 \arguments{
 \item{reportArn}{[required] The ARN of the report for which test cases are returned.}
 
-\item{nextToken}{During a previous call, the maximum number of items that can be returned
-is the value specified in \code{maxResults}. If there more items in the list,
-then a unique string called a \emph{nextToken} is returned. To get the next
-batch of items in the list, call this operation again, adding the next
-token to the call. To get all of the items in the list, keep calling
-this operation with each subsequent next token that is returned, until
-no more next tokens are returned.}
+\item{nextToken}{During a previous call, the maximum number of items that can be returned is the value specified in \code{maxResults}. If there more items in the list, then a unique string called a \emph{nextToken} is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.}
 
-\item{maxResults}{The maximum number of paginated test cases returned per response. Use
-\code{nextToken} to iterate pages in the list of returned \code{TestCase} objects.
-The default value is 100.}
+\item{maxResults}{The maximum number of paginated test cases returned per response. Use \code{nextToken} to iterate pages in the list of returned \code{TestCase} objects. The default value is 100.}
 
 \item{filter}{A \code{TestCaseFilter} object used to filter the returned reports.}
 }

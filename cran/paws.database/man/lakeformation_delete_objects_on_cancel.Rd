@@ -15,8 +15,7 @@ lakeformation_delete_objects_on_cancel(
 )
 }
 \arguments{
-\item{CatalogId}{The Glue data catalog that contains the governed table. Defaults to the
-current account ID.}
+\item{CatalogId}{The Glue data catalog that contains the governed table. Defaults to the current account ID.}
 
 \item{DatabaseName}{[required] The database that contains the governed table.}
 
@@ -24,8 +23,7 @@ current account ID.}
 
 \item{TransactionId}{[required] ID of the transaction that the writes occur in.}
 
-\item{Objects}{[required] A list of VirtualObject structures, which indicates the Amazon S3
-objects to be deleted if the transaction cancels.}
+\item{Objects}{[required] A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.}
 }
 \description{
 For a specific governed table, provides a list of Amazon S3 objects that will be written during the current transaction and that can be automatically deleted if the transaction is canceled. Without this call, no Amazon S3 objects are automatically deleted when a transaction cancels.

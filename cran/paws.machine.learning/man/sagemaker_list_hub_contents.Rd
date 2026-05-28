@@ -36,10 +36,7 @@ sagemaker_list_hub_contents(
 
 \item{MaxResults}{The maximum amount of hub content to list.}
 
-\item{NextToken}{If the response to a previous
-\code{\link[=sagemaker_list_hub_contents]{list_hub_contents}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of hub content, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_hub_contents]{list_hub_contents}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of hub content, use the token in the next request.}
 }
 \description{
 List the contents of a hub.

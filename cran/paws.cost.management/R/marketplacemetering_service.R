@@ -7,27 +7,19 @@ NULL
 #' @description
 #' Amazon Web Services Marketplace Metering Service
 #' 
-#' This reference provides descriptions of the low-level Marketplace
-#' Metering Service API.
+#' This reference provides descriptions of the low-level Marketplace Metering Service API.
 #' 
-#' Amazon Web Services Marketplace sellers can use this API to submit usage
-#' data for custom usage dimensions.
+#' Amazon Web Services Marketplace sellers can use this API to submit usage data for custom usage dimensions.
 #' 
-#' For information about the permissions that you need to use this API, see
-#' [Amazon Web Services Marketplace metering and entitlement API
-#' permissions](https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html)
-#' in the *Amazon Web Services Marketplace Seller Guide.*
+#' For information about the permissions that you need to use this API, see [Amazon Web Services Marketplace metering and entitlement API permissions](https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html) in the *Amazon Web Services Marketplace Seller Guide.*
 #' 
 #' **Submitting metering records**
 #' 
 #' *MeterUsage*
 #' 
-#' -   Submits the metering record for an Amazon Web Services Marketplace
-#'     product.
+#' -   Submits the metering record for an Amazon Web Services Marketplace product.
 #' 
-#' -   Called from: Amazon Elastic Compute Cloud (Amazon EC2) instance or a
-#'     container running on either Amazon Elastic Kubernetes Service
-#'     (Amazon EKS) or Amazon Elastic Container Service (Amazon ECS)
+#' -   Called from: Amazon Elastic Compute Cloud (Amazon EC2) instance or a container running on either Amazon Elastic Kubernetes Service (Amazon EKS) or Amazon Elastic Container Service (Amazon ECS)
 #' 
 #' -   Supported product types: Amazon Machine Images (AMIs) and containers
 #' 
@@ -35,15 +27,7 @@ NULL
 #' 
 #' *BatchMeterUsage*
 #' 
-#' -   Submits the metering record for a set of customers.
-#'     [`batch_meter_usage`][marketplacemetering_batch_meter_usage] API
-#'     calls are captured by CloudTrail. You can use CloudTrail to verify
-#'     that the software as a subscription (SaaS) metering records that you
-#'     sent are accurate by searching for records with the `eventName` of
-#'     [`batch_meter_usage`][marketplacemetering_batch_meter_usage]. You
-#'     can also use CloudTrail to audit records over time. For more
-#'     information, see the [CloudTrail User
-#'     Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html).
+#' -   Submits the metering record for a set of customers. [`batch_meter_usage`][marketplacemetering_batch_meter_usage] API calls are captured by CloudTrail. You can use CloudTrail to verify that the software as a subscription (SaaS) metering records that you sent are accurate by searching for records with the `eventName` of [`batch_meter_usage`][marketplacemetering_batch_meter_usage]. You can also use CloudTrail to audit records over time. For more information, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html).
 #' 
 #' -   Called from: SaaS applications
 #' 
@@ -55,10 +39,7 @@ NULL
 #' 
 #' *ResolveCustomer*
 #' 
-#' -   Resolves the registration token that the buyer submits through the
-#'     browser during the registration process. Obtains a
-#'     `CustomerIdentifier` along with the `CustomerAWSAccountId`,
-#'     `ProductCode`, and `LicenseArn`.
+#' -   Resolves the registration token that the buyer submits through the browser during the registration process. Obtains a `CustomerIdentifier` along with the `CustomerAWSAccountId`, `ProductCode`, and `LicenseArn`.
 #' 
 #' -   Called from: SaaS application during the registration process
 #' 
@@ -70,18 +51,7 @@ NULL
 #' 
 #' *RegisteredUsage*
 #' 
-#' -   Provides software entitlement and metering. Paid container software
-#'     products sold through Amazon Web Services Marketplace must integrate
-#'     with the Marketplace Metering Service and call the
-#'     [`register_usage`][marketplacemetering_register_usage] operation.
-#'     Free and Bring Your Own License model (BYOL) products for Amazon ECS
-#'     or Amazon EKS aren't required to call
-#'     [`register_usage`][marketplacemetering_register_usage]. However, you
-#'     can do so if you want to receive usage data in your seller reports.
-#'     For more information about using the
-#'     [`register_usage`][marketplacemetering_register_usage] operation,
-#'     see [Container-based
-#'     products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
+#' -   Provides software entitlement and metering. Paid container software products sold through Amazon Web Services Marketplace must integrate with the Marketplace Metering Service and call the [`register_usage`][marketplacemetering_register_usage] operation. Free and Bring Your Own License model (BYOL) products for Amazon ECS or Amazon EKS aren't required to call [`register_usage`][marketplacemetering_register_usage]. However, you can do so if you want to receive usage data in your seller reports. For more information about using the [`register_usage`][marketplacemetering_register_usage] operation, see [Container-based products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
 #' 
 #' -   Called from: Paid container software products
 #' 
@@ -91,33 +61,17 @@ NULL
 #' 
 #' **Entitlement custom metering for container products**
 #' 
-#' -   MeterUsage API is available in GovCloud Regions but only supports
-#'     AMI FCP products in GovCloud Regions. Flexible Consumption Pricing
-#'     (FCP) Container products aren’t supported in GovCloud Regions:
-#'     us-gov-west-1 and us-gov-east-1. For more information, see
-#'     [Container-based
-#'     products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
+#' -   MeterUsage API is available in GovCloud Regions but only supports AMI FCP products in GovCloud Regions. Flexible Consumption Pricing (FCP) Container products aren’t supported in GovCloud Regions: us-gov-west-1 and us-gov-east-1. For more information, see [Container-based products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
 #' 
-#' -   Custom metering for container products are called using the
-#'     MeterUsage API. The API is used for FCP AMI and FCP Container
-#'     product metering.
+#' -   Custom metering for container products are called using the MeterUsage API. The API is used for FCP AMI and FCP Container product metering.
 #' 
-#' **Custom metering for Amazon EKS is available in 17 Amazon Web Services
-#' Regions**
+#' **Custom metering for Amazon EKS is available in 17 Amazon Web Services Regions**
 #' 
-#' -   The metering service supports Amazon ECS and EKS for Flexible
-#'     Consumption Pricing (FCP) products using MeterUsage API. Amazon ECS
-#'     is supported in all Amazon Web Services Regions that MeterUsage API
-#'     is available except for GovCloud.
+#' -   The metering service supports Amazon ECS and EKS for Flexible Consumption Pricing (FCP) products using MeterUsage API. Amazon ECS is supported in all Amazon Web Services Regions that MeterUsage API is available except for GovCloud.
 #' 
-#' -   Amazon EKS is supported in the following: us-east-1, us-east-2,
-#'     us-west-1, us-west-2, eu-west-1, eu-central-1, eu-west-2, eu-west-3,
-#'     eu-north-1, ap-east-1, ap-southeast-1, ap-northeast-1,
-#'     ap-southeast-2, ap-northeast-2, ap-south-1, ca-central-1, sa-east-1.
+#' -   Amazon EKS is supported in the following: us-east-1, us-east-2, us-west-1, us-west-2, eu-west-1, eu-central-1, eu-west-2, eu-west-3, eu-north-1, ap-east-1, ap-southeast-1, ap-northeast-1, ap-southeast-2, ap-northeast-2, ap-south-1, ca-central-1, sa-east-1.
 #' 
-#'     For questions about adding Amazon Web Services Regions for metering,
-#'     contact [Amazon Web Services Marketplace Seller
-#'     Operations](mailto://aws.amazon.com/marketplace/management/contact-us/).
+#'     For questions about adding Amazon Web Services Regions for metering, contact [Amazon Web Services Marketplace Seller Operations](mailto://aws.amazon.com/marketplace/management/contact-us/).
 #'
 #' @param
 #' config

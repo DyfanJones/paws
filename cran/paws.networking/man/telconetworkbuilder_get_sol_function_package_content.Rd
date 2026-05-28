@@ -7,8 +7,7 @@
 telconetworkbuilder_get_sol_function_package_content(accept, vnfPkgId)
 }
 \arguments{
-\item{accept}{[required] The format of the package that you want to download from the function
-packages.}
+\item{accept}{[required] The format of the package that you want to download from the function packages.}
 
 \item{vnfPkgId}{[required] ID of the function package.}
 }

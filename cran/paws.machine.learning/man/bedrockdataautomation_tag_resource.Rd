@@ -7,9 +7,9 @@
 bedrockdataautomation_tag_resource(resourceARN, tags)
 }
 \arguments{
-\item{resourceARN}{[required]}
+\item{resourceARN}{[required] ARN of a taggable resource}
 
-\item{tags}{[required]}
+\item{tags}{[required] List of tags}
 }
 \description{
 Tag an Amazon Bedrock Data Automation resource

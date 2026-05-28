@@ -19,12 +19,9 @@ connectcases_search_related_items(
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{filters}{The list of types of related items and their parameters to use for
-filtering.}
+\item{filters}{The list of types of related items and their parameters to use for filtering.}
 }
 \description{
 Searches for related items that are associated with a case.

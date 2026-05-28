@@ -9,12 +9,9 @@ kendra_list_faqs(IndexId, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{IndexId}{[required] The index for the FAQs.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of FAQs.}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.}
 
-\item{MaxResults}{The maximum number of FAQs to return in the response. If there are fewer
-results in the list, this response contains only the actual results.}
+\item{MaxResults}{The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.}
 }
 \description{
 Gets a list of FAQs associated with an index.

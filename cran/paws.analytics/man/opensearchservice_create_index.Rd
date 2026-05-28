@@ -8,15 +8,11 @@ for specified text fields}
 opensearchservice_create_index(DomainName, IndexName, IndexSchema)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.}
 
-\item{IndexName}{[required] The name of the index to create. Must be between 1 and 255 characters
-and follow OpenSearch naming conventions.}
+\item{IndexName}{[required] The name of the index to create. Must be between 1 and 255 characters and follow OpenSearch naming conventions.}
 
-\item{IndexSchema}{[required] The JSON schema defining index mappings, settings, and semantic
-enrichment configuration. The schema specifies which text fields should
-be automatically enriched for semantic search capabilities and includes
-OpenSearch index configuration parameters.}
+\item{IndexSchema}{[required] The JSON schema defining index mappings, settings, and semantic enrichment configuration. The schema specifies which text fields should be automatically enriched for semantic search capabilities and includes OpenSearch index configuration parameters.}
 }
 \description{
 Creates an OpenSearch index with optional automatic semantic enrichment for specified text fields. Automatic semantic enrichment enables semantic search capabilities without requiring machine learning expertise, improving search relevance by up to 20\% by understanding search intent and contextual meaning beyond keyword matching. The semantic enrichment process has zero impact on search latency as sparse encodings are stored directly within the index during indexing. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-semantic-enrichment.html}{Automatic semantic enrichment}.

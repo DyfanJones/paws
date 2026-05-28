@@ -15,8 +15,7 @@ inspector2_create_cis_scan_configuration(
 \arguments{
 \item{scanName}{[required] The scan name for the CIS scan configuration.}
 
-\item{securityLevel}{[required] The security level for the CIS scan configuration. Security level refers
-to the Benchmark levels that CIS assigns to a profile.}
+\item{securityLevel}{[required] The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.}
 
 \item{schedule}{[required] The schedule for the CIS scan configuration.}
 

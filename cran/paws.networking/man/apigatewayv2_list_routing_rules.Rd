@@ -18,8 +18,7 @@ apigatewayv2_list_routing_rules(
 
 \item{MaxResults}{The maximum number of elements to be returned for this resource.}
 
-\item{NextToken}{The next page of elements from this collection. Not valid for the last
-element of the collection.}
+\item{NextToken}{The next page of elements from this collection. Not valid for the last element of the collection.}
 }
 \description{
 Lists routing rules.

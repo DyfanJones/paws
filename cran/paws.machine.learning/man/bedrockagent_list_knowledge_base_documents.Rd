@@ -13,19 +13,13 @@ bedrockagent_list_knowledge_base_documents(
 )
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base that is connected to the
-data source.}
+\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base that is connected to the data source.}
 
 \item{dataSourceId}{[required] The unique identifier of the data source that contains the documents.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 }
 \description{
 Retrieves all the documents contained in a data source that is connected to a knowledge base. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html}{Ingest changes directly into a knowledge base} in the Amazon Bedrock User Guide.

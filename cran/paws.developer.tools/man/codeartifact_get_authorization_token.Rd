@@ -12,17 +12,11 @@ codeartifact_get_authorization_token(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that is in scope for the generated authorization
-token.}
+\item{domain}{[required] The name of the domain that is in scope for the generated authorization token.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{durationSeconds}{The time, in seconds, that the generated authorization token is valid.
-Valid values are \code{0} and any number between \code{900} (15 minutes) and
-\code{43200} (12 hours). A value of \code{0} will set the expiration of the
-authorization token to the same expiration of the user's role's
-temporary credentials.}
+\item{durationSeconds}{The time, in seconds, that the generated authorization token is valid. Valid values are \code{0} and any number between \code{900} (15 minutes) and \code{43200} (12 hours). A value of \code{0} will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.}
 }
 \description{
 Generates a temporary authorization token for accessing repositories in the domain. This API requires the \code{codeartifact:GetAuthorizationToken} and \code{sts:GetServiceBearerToken} permissions. For more information about authorization tokens, see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html}{CodeArtifact authentication and tokens}.

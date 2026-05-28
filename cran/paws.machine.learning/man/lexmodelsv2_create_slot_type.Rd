@@ -18,34 +18,21 @@ lexmodelsv2_create_slot_type(
 )
 }
 \arguments{
-\item{slotTypeName}{[required] The name for the slot. A slot type name must be unique within the
-intent.}
+\item{slotTypeName}{[required] The name for the slot. A slot type name must be unique within the intent.}
 
-\item{description}{A description of the slot type. Use the description to help identify the
-slot type in lists.}
+\item{description}{A description of the slot type. Use the description to help identify the slot type in lists.}
 
-\item{slotTypeValues}{A list of \code{SlotTypeValue} objects that defines the values that the slot
-type can take. Each value can have a list of synonyms, additional values
-that help train the machine learning model about the values that it
-resolves for a slot.}
+\item{slotTypeValues}{A list of \code{SlotTypeValue} objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.}
 
-\item{valueSelectionSetting}{Determines the strategy that Amazon Lex uses to select a value from the
-list of possible values. The field can be set to one of the following
-values:
+\item{valueSelectionSetting}{Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:
 \itemize{
-\item \code{ORIGINAL_VALUE} - Returns the value entered by the user, if the
-user value is similar to the slot value.
-\item \code{TOP_RESOLUTION} - If there is a resolution list for the slot,
-return the first value in the resolution list. If there is no
-resolution list, return null.
+\item \code{ORIGINAL_VALUE} - Returns the value entered by the user, if the user value is similar to the slot value.
+\item \code{TOP_RESOLUTION} - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.
 }
 
-If you don't specify the \code{valueSelectionSetting} parameter, the default
-is \code{ORIGINAL_VALUE}.}
+If you don't specify the \code{valueSelectionSetting} parameter, the default is \code{ORIGINAL_VALUE}.}
 
-\item{parentSlotTypeSignature}{The built-in slot type used as a parent of this slot type. When you
-define a parent slot type, the new slot type has the configuration of
-the parent slot type.
+\item{parentSlotTypeSignature}{The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.
 
 Only \code{AMAZON.AlphaNumeric} is supported.}
 
@@ -53,10 +40,7 @@ Only \code{AMAZON.AlphaNumeric} is supported.}
 
 \item{botVersion}{[required] The identifier of the bot version associated with this slot type.}
 
-\item{localeId}{[required] The identifier of the language and locale that the slot type will be
-used in. The string must match one of the supported locales. All of the
-bots, intents, and slots used by the slot type must have the same
-locale. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{externalSourceSetting}{Sets the type of external information used to create the slot type.}
 

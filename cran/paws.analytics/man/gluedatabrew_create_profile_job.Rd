@@ -24,47 +24,35 @@ gluedatabrew_create_profile_job(
 \arguments{
 \item{DatasetName}{[required] The name of the dataset that this job is to act upon.}
 
-\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of an encryption key that is used to
-protect the job.}
+\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.}
 
 \item{EncryptionMode}{The encryption mode for the job, which can be one of the following:
 \itemize{
-\item \code{SSE-KMS} - \code{SSE-KMS} - Server-side encryption with KMS-managed
-keys.
+\item \code{SSE-KMS} - \code{SSE-KMS} - Server-side encryption with KMS-managed keys.
 \item \code{SSE-S3} - Server-side encryption with keys managed by Amazon S3.
 }}
 
-\item{Name}{[required] The name of the job to be created. Valid characters are alphanumeric
-(A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
+\item{Name}{[required] The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
 
-\item{LogSubscription}{Enables or disables Amazon CloudWatch logging for the job. If logging is
-enabled, CloudWatch writes one log stream for each job run.}
+\item{LogSubscription}{Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.}
 
-\item{MaxCapacity}{The maximum number of nodes that DataBrew can use when the job processes
-data.}
+\item{MaxCapacity}{The maximum number of nodes that DataBrew can use when the job processes data.}
 
 \item{MaxRetries}{The maximum number of times to retry the job after a job run fails.}
 
-\item{OutputLocation}{[required]}
+\item{OutputLocation}{[required] Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.}
 
-\item{Configuration}{Configuration for profile jobs. Used to select columns, do evaluations,
-and override default parameters of evaluations. When configuration is
-null, the profile job will run with default settings.}
+\item{Configuration}{Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.}
 
 \item{ValidationConfigurations}{List of validation configurations that are applied to the profile job.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management
-(IAM) role to be assumed when DataBrew runs the job.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.}
 
 \item{Tags}{Metadata tags to apply to this job.}
 
-\item{Timeout}{The job's timeout in minutes. A job that attempts to run longer than
-this timeout period ends with a status of \code{TIMEOUT}.}
+\item{Timeout}{The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of \code{TIMEOUT}.}
 
-\item{JobSample}{Sample configuration for profile jobs only. Determines the number of
-rows on which the profile job will be executed. If a JobSample value is
-not provided, the default value will be used. The default value is
-CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.}
+\item{JobSample}{Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.}
 }
 \description{
 Creates a new job to analyze a dataset and create its data profile.

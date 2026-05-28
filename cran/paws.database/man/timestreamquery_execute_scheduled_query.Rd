@@ -14,16 +14,13 @@ timestreamquery_execute_scheduled_query(
 \arguments{
 \item{ScheduledQueryArn}{[required] ARN of the scheduled query.}
 
-\item{InvocationTime}{[required] The timestamp in UTC. Query will be run as if it was invoked at this
-timestamp.}
+\item{InvocationTime}{[required] The timestamp in UTC. Query will be run as if it was invoked at this timestamp.}
 
 \item{ClientToken}{Not used.}
 
 \item{QueryInsights}{Encapsulates settings for enabling \code{QueryInsights}.
 
-Enabling \code{QueryInsights} returns insights and metrics as a part of the
-Amazon SNS notification for the query that you executed. You can use
-\code{QueryInsights} to tune your query performance and cost.}
+Enabling \code{QueryInsights} returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use \code{QueryInsights} to tune your query performance and cost.}
 }
 \description{
 You can use this API to run a scheduled query manually.

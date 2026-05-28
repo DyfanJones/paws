@@ -16,9 +16,7 @@ lexmodelsv2_describe_bot_recommendation(
 
 \item{botVersion}{[required] The version of the bot associated with the bot recommendation.}
 
-\item{localeId}{[required] The identifier of the language and locale of the bot recommendation to
-describe. The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{botRecommendationId}{[required] The identifier of the bot recommendation to describe.}
 }

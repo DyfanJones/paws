@@ -16,20 +16,15 @@ connect_list_data_table_primary_values(
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table whose primary values should be
-listed.}
+\item{DataTableId}{[required] The unique identifier for the data table whose primary values should be listed.}
 
-\item{RecordIds}{Optional list of specific record IDs to retrieve. Used for
-CloudFormation to effectively describe records by ID. If NextToken is
-provided, this parameter is ignored.}
+\item{RecordIds}{Optional list of specific record IDs to retrieve. Used for CloudFormation to effectively describe records by ID. If NextToken is provided, this parameter is ignored.}
 
 \item{PrimaryAttributeValues}{Optional filter to retrieve primary values matching specific criteria.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
-\item{MaxResults}{The maximum number of data table primary values to return in one page of
-results.}
+\item{MaxResults}{The maximum number of data table primary values to return in one page of results.}
 }
 \description{
 Lists all primary value combinations for a given data table. Returns the unique combinations of primary attribute values that identify records in the table. Up to 100 records are returned per request.

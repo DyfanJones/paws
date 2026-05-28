@@ -11,17 +11,9 @@ resourceexplorer_list_streaming_access_for_services(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of streaming access entries to return in the
-response. If there are more results available, the response includes a
-NextToken value that you can use in a subsequent call to get the next
-set of results. The value must be between 1 and 50. If you don't specify
-a value, the default is 50.}
+\item{MaxResults}{The maximum number of streaming access entries to return in the response. If there are more results available, the response includes a NextToken value that you can use in a subsequent call to get the next set of results. The value must be between 1 and 50. If you don't specify a value, the default is 50.}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from. The pagination tokens expire after 24 hours.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from. The pagination tokens expire after 24 hours.}
 }
 \description{
 Returns a list of Amazon Web Services services that have been granted streaming access to your Resource Explorer data. Streaming access allows Amazon Web Services services to receive real-time updates about your resources as they are indexed by Resource Explorer.

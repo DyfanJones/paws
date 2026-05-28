@@ -12,18 +12,11 @@ quicksight_describe_account_customization(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to describe
-Quick Sight customizations for.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.}
 
-\item{Namespace}{The Quick Sight namespace that you want to describe Quick Sight
-customizations for.}
+\item{Namespace}{The Quick Sight namespace that you want to describe Quick Sight customizations for.}
 
-\item{Resolved}{The \code{Resolved} flag works with the other parameters to determine which
-view of Quick Sight customizations is returned. You can add this flag to
-your command to use the same view that Quick Sight uses to identify
-which customizations to apply to the console. Omit this flag, or set it
-to \code{no-resolved}, to reveal customizations that are configured at
-different levels.}
+\item{Resolved}{The \code{Resolved} flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to \code{no-resolved}, to reveal customizations that are configured at different levels.}
 }
 \description{
 Describes the customizations associated with the provided Amazon Web Services account and Amazon Quick Sight namespace. The Quick Sight console evaluates which customizations to apply by running this API operation with the \code{Resolved} flag included.

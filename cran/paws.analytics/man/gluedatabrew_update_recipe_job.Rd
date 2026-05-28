@@ -19,8 +19,7 @@ gluedatabrew_update_recipe_job(
 )
 }
 \arguments{
-\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of an encryption key that is used to
-protect the job.}
+\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.}
 
 \item{EncryptionMode}{The encryption mode for the job, which can be one of the following:
 \itemize{
@@ -30,27 +29,21 @@ protect the job.}
 
 \item{Name}{[required] The name of the job to update.}
 
-\item{LogSubscription}{Enables or disables Amazon CloudWatch logging for the job. If logging is
-enabled, CloudWatch writes one log stream for each job run.}
+\item{LogSubscription}{Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.}
 
-\item{MaxCapacity}{The maximum number of nodes that DataBrew can consume when the job
-processes data.}
+\item{MaxCapacity}{The maximum number of nodes that DataBrew can consume when the job processes data.}
 
 \item{MaxRetries}{The maximum number of times to retry the job after a job run fails.}
 
 \item{Outputs}{One or more artifacts that represent the output from running the job.}
 
-\item{DataCatalogOutputs}{One or more artifacts that represent the Glue Data Catalog output from
-running the job.}
+\item{DataCatalogOutputs}{One or more artifacts that represent the Glue Data Catalog output from running the job.}
 
-\item{DatabaseOutputs}{Represents a list of JDBC database output objects which defines the
-output destination for a DataBrew recipe job to write into.}
+\item{DatabaseOutputs}{Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management
-(IAM) role to be assumed when DataBrew runs the job.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.}
 
-\item{Timeout}{The job's timeout in minutes. A job that attempts to run longer than
-this timeout period ends with a status of \code{TIMEOUT}.}
+\item{Timeout}{The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of \code{TIMEOUT}.}
 }
 \description{
 Modifies the definition of an existing DataBrew recipe job.

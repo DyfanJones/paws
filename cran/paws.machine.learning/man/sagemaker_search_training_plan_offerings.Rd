@@ -18,48 +18,31 @@ sagemaker_search_training_plan_offerings(
 )
 }
 \arguments{
-\item{InstanceType}{The type of instance you want to search for in the available training
-plan offerings. This field allows you to filter the search results based
-on the specific compute resources you require for your SageMaker
-training jobs or SageMaker HyperPod clusters. When searching for
-training plan offerings, specifying the instance type helps you find
-Reserved Instances that match your computational needs.}
+\item{InstanceType}{The type of instance you want to search for in the available training plan offerings. This field allows you to filter the search results based on the specific compute resources you require for your SageMaker training jobs or SageMaker HyperPod clusters. When searching for training plan offerings, specifying the instance type helps you find Reserved Instances that match your computational needs.}
 
-\item{InstanceCount}{The number of instances you want to reserve in the training plan
-offerings. This allows you to specify the quantity of compute resources
-needed for your SageMaker training jobs or SageMaker HyperPod clusters,
-helping you find reserved capacity offerings that match your
-requirements.}
+\item{InstanceCount}{The number of instances you want to reserve in the training plan offerings. This allows you to specify the quantity of compute resources needed for your SageMaker training jobs or SageMaker HyperPod clusters, helping you find reserved capacity offerings that match your requirements.}
 
 \item{UltraServerType}{The type of UltraServer to search for, such as ml.u-p6e-gb200x72.}
 
 \item{UltraServerCount}{The number of UltraServers to search for.}
 
-\item{StartTimeAfter}{A filter to search for training plan offerings with a start time after a
-specified date.}
+\item{StartTimeAfter}{A filter to search for training plan offerings with a start time after a specified date.}
 
-\item{EndTimeBefore}{A filter to search for reserved capacity offerings with an end time
-before a specified date.}
+\item{EndTimeBefore}{A filter to search for reserved capacity offerings with an end time before a specified date.}
 
 \item{DurationHours}{The desired duration in hours for the training plan offerings.}
 
-\item{TargetResources}{The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod,
-SageMaker Endpoints) to search for in the offerings.
+\item{TargetResources}{The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints, Studio apps) to search for in the offerings.
 
 Training plans are specific to their target resource.
 \itemize{
-\item A training plan designed for SageMaker training jobs can only be
-used to schedule and run training jobs.
-\item A training plan for HyperPod clusters can be used exclusively to
-provide compute resources to a cluster's instance group.
-\item A training plan for SageMaker endpoints can be used exclusively to
-provide compute resources to SageMaker endpoints for model
-deployment.
+\item A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.
+\item A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.
+\item A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.
+\item A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.
 }}
 
-\item{TrainingPlanArn}{The Amazon Resource Name (ARN); of an existing training plan to search
-for extension offerings. When specified, the API returns extension
-offerings that can be used to extend the specified training plan.}
+\item{TrainingPlanArn}{The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.}
 }
 \description{
 Searches for available training plan offerings based on specified criteria.

@@ -7,8 +7,7 @@
 docdbelastic_get_pending_maintenance_action(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] Retrieves pending maintenance actions for a specific Amazon Resource
-Name (ARN).}
+\item{resourceArn}{[required] Retrieves pending maintenance actions for a specific Amazon Resource Name (ARN).}
 }
 \description{
 Retrieves all maintenance actions that are pending.

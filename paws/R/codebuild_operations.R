@@ -882,9 +882,7 @@ codebuild_batch_get_fleets <- function(names) {
 #' @usage
 #' codebuild_batch_get_projects(names)
 #'
-#' @param names &#91;required&#93; The names or ARNs of the build projects. To get information about a
-#' project shared with your Amazon Web Services account, its ARN must be
-#' specified. You cannot specify a shared project using its name.
+#' @param names &#91;required&#93; The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1600,177 +1598,91 @@ codebuild_batch_get_sandboxes <- function(ids) {
 #'   proxyConfiguration, imageId, fleetServiceRole, tags)
 #'
 #' @param name &#91;required&#93; The name of the compute fleet.
-#' @param baseCapacity &#91;required&#93; The initial number of machines allocated to the ﬂeet, which defines the
-#' number of builds that can run in parallel.
+#' @param baseCapacity &#91;required&#93; The initial number of machines allocated to the ﬂeet, which defines the number of builds that can run in parallel.
 #' @param environmentType &#91;required&#93; The environment type of the compute fleet.
 #' 
-#' -   The environment type `ARM_CONTAINER` is available only in regions US
-#'     East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland),
-#'     Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific
-#'     (Singapore), Asia Pacific (Sydney), EU (Frankfurt), and South
-#'     America (São Paulo).
+#' -   The environment type `ARM_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), EU (Frankfurt), and South America (São Paulo).
 #' 
-#' -   The environment type `ARM_EC2` is available only in regions US East
-#'     (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU
-#'     (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia
-#'     Pacific (Sydney), South America (São Paulo), and Asia Pacific
-#'     (Mumbai).
+#' -   The environment type `ARM_EC2` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `LINUX_CONTAINER` is available only in regions
-#'     US East (N. Virginia), US East (Ohio), US West (Oregon), EU
-#'     (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-#'     (Singapore), Asia Pacific (Sydney), South America (São Paulo), and
-#'     Asia Pacific (Mumbai).
+#' -   The environment type `LINUX_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `LINUX_EC2` is available only in regions US
-#'     East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland),
-#'     EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia
-#'     Pacific (Sydney), South America (São Paulo), and Asia Pacific
-#'     (Mumbai).
+#' -   The environment type `LINUX_EC2` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `LINUX_GPU_CONTAINER` is available only in
-#'     regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU
-#'     (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), and Asia Pacific
-#'     (Sydney).
+#' -   The environment type `LINUX_GPU_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), and Asia Pacific (Sydney).
 #' 
-#' -   The environment type `MAC_ARM` is available for Medium fleets only
-#'     in regions US East (N. Virginia), US East (Ohio), US West (Oregon),
-#'     Asia Pacific (Sydney), and EU (Frankfurt)
+#' -   The environment type `MAC_ARM` is available for Medium fleets only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), and EU (Frankfurt)
 #' 
-#' -   The environment type `MAC_ARM` is available for Large fleets only in
-#'     regions US East (N. Virginia), US East (Ohio), US West (Oregon), and
-#'     Asia Pacific (Sydney).
+#' -   The environment type `MAC_ARM` is available for Large fleets only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and Asia Pacific (Sydney).
 #' 
-#' -   The environment type `WINDOWS_EC2` is available only in regions US
-#'     East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland),
-#'     EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia
-#'     Pacific (Sydney), South America (São Paulo), and Asia Pacific
-#'     (Mumbai).
+#' -   The environment type `WINDOWS_EC2` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `WINDOWS_SERVER_2019_CONTAINER` is available
-#'     only in regions US East (N. Virginia), US East (Ohio), US West
-#'     (Oregon), Asia Pacific (Sydney), Asia Pacific (Tokyo), Asia Pacific
-#'     (Mumbai) and EU (Ireland).
+#' -   The environment type `WINDOWS_SERVER_2019_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), Asia Pacific (Tokyo), Asia Pacific (Mumbai) and EU (Ireland).
 #' 
-#' -   The environment type `WINDOWS_SERVER_2022_CONTAINER` is available
-#'     only in regions US East (N. Virginia), US East (Ohio), US West
-#'     (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Sydney), Asia
-#'     Pacific (Singapore), Asia Pacific (Tokyo), South America (São Paulo)
-#'     and Asia Pacific (Mumbai).
+#' -   The environment type `WINDOWS_SERVER_2022_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Sydney), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (São Paulo) and Asia Pacific (Mumbai).
 #' 
-#' For more information, see [Build environment compute
-#' types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html)
-#' in the *CodeBuild user guide*.
-#' @param computeType &#91;required&#93; Information about the compute resources the compute fleet uses.
-#' Available values include:
+#' For more information, see [Build environment compute types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html) in the *CodeBuild user guide*.
+#' @param computeType &#91;required&#93; Information about the compute resources the compute fleet uses. Available values include:
 #' 
-#' -   `ATTRIBUTE_BASED_COMPUTE`: Specify the amount of vCPUs, memory, disk
-#'     space, and the type of machine.
+#' -   `ATTRIBUTE_BASED_COMPUTE`: Specify the amount of vCPUs, memory, disk space, and the type of machine.
 #' 
-#'     If you use `ATTRIBUTE_BASED_COMPUTE`, you must define your
-#'     attributes by using `computeConfiguration`. CodeBuild will select
-#'     the cheapest instance that satisfies your specified attributes. For
-#'     more information, see [Reserved capacity environment
-#'     types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types)
-#'     in the *CodeBuild User Guide*.
+#'     If you use `ATTRIBUTE_BASED_COMPUTE`, you must define your attributes by using `computeConfiguration`. CodeBuild will select the cheapest instance that satisfies your specified attributes. For more information, see [Reserved capacity environment types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types) in the *CodeBuild User Guide*.
 #' 
-#' -   `CUSTOM_INSTANCE_TYPE`: Specify the instance type for your compute
-#'     fleet. For a list of supported instance types, see [Supported
-#'     instance
-#'     families](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types)
-#'     in the *CodeBuild User Guide*.
+#' -   `CUSTOM_INSTANCE_TYPE`: Specify the instance type for your compute fleet. For a list of supported instance types, see [Supported instance families](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types) in the *CodeBuild User Guide*.
 #' 
-#' -   `BUILD_GENERAL1_SMALL`: Use up to 4 GiB memory and 2 vCPUs for
-#'     builds.
+#' -   `BUILD_GENERAL1_SMALL`: Use up to 4 GiB memory and 2 vCPUs for builds.
 #' 
-#' -   `BUILD_GENERAL1_MEDIUM`: Use up to 8 GiB memory and 4 vCPUs for
-#'     builds.
+#' -   `BUILD_GENERAL1_MEDIUM`: Use up to 8 GiB memory and 4 vCPUs for builds.
 #' 
-#' -   `BUILD_GENERAL1_LARGE`: Use up to 16 GiB memory and 8 vCPUs for
-#'     builds, depending on your environment type.
+#' -   `BUILD_GENERAL1_LARGE`: Use up to 16 GiB memory and 8 vCPUs for builds, depending on your environment type.
 #' 
-#' -   `BUILD_GENERAL1_XLARGE`: Use up to 72 GiB memory and 36 vCPUs for
-#'     builds, depending on your environment type.
+#' -   `BUILD_GENERAL1_XLARGE`: Use up to 72 GiB memory and 36 vCPUs for builds, depending on your environment type.
 #' 
-#' -   `BUILD_GENERAL1_2XLARGE`: Use up to 144 GiB memory, 72 vCPUs, and
-#'     824 GB of SSD storage for builds. This compute type supports Docker
-#'     images up to 100 GB uncompressed.
+#' -   `BUILD_GENERAL1_2XLARGE`: Use up to 144 GiB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.
 #' 
-#' -   `BUILD_LAMBDA_1GB`: Use up to 1 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_1GB`: Use up to 1 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_2GB`: Use up to 2 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_2GB`: Use up to 2 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_4GB`: Use up to 4 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_4GB`: Use up to 4 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_8GB`: Use up to 8 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_8GB`: Use up to 8 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_10GB`: Use up to 10 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_10GB`: Use up to 10 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
 #' If you use `BUILD_GENERAL1_SMALL`:
 #' 
-#' -   For environment type `LINUX_CONTAINER`, you can use up to 4 GiB
-#'     memory and 2 vCPUs for builds.
+#' -   For environment type `LINUX_CONTAINER`, you can use up to 4 GiB memory and 2 vCPUs for builds.
 #' 
-#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 16 GiB
-#'     memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.
+#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 16 GiB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.
 #' 
-#' -   For environment type `ARM_CONTAINER`, you can use up to 4 GiB memory
-#'     and 2 vCPUs on ARM-based processors for builds.
+#' -   For environment type `ARM_CONTAINER`, you can use up to 4 GiB memory and 2 vCPUs on ARM-based processors for builds.
 #' 
 #' If you use `BUILD_GENERAL1_LARGE`:
 #' 
-#' -   For environment type `LINUX_CONTAINER`, you can use up to 16 GiB
-#'     memory and 8 vCPUs for builds.
+#' -   For environment type `LINUX_CONTAINER`, you can use up to 16 GiB memory and 8 vCPUs for builds.
 #' 
-#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 255
-#'     GiB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.
+#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 255 GiB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.
 #' 
-#' -   For environment type `ARM_CONTAINER`, you can use up to 16 GiB
-#'     memory and 8 vCPUs on ARM-based processors for builds.
+#' -   For environment type `ARM_CONTAINER`, you can use up to 16 GiB memory and 8 vCPUs on ARM-based processors for builds.
 #' 
-#' For more information, see [On-demand environment
-#' types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types)
-#' in the *CodeBuild User Guide.*
-#' @param computeConfiguration The compute configuration of the compute fleet. This is only required if
-#' `computeType` is set to `ATTRIBUTE_BASED_COMPUTE` or
-#' `CUSTOM_INSTANCE_TYPE`.
+#' For more information, see [On-demand environment types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types) in the *CodeBuild User Guide.*
+#' @param computeConfiguration The compute configuration of the compute fleet. This is only required if `computeType` is set to `ATTRIBUTE_BASED_COMPUTE` or `CUSTOM_INSTANCE_TYPE`.
 #' @param scalingConfiguration The scaling configuration of the compute fleet.
 #' @param overflowBehavior The compute fleet overflow behavior.
 #' 
-#' -   For overflow behavior `QUEUE`, your overflow builds need to wait on
-#'     the existing fleet instance to become available.
+#' -   For overflow behavior `QUEUE`, your overflow builds need to wait on the existing fleet instance to become available.
 #' 
-#' -   For overflow behavior `ON_DEMAND`, your overflow builds run on
-#'     CodeBuild on-demand.
+#' -   For overflow behavior `ON_DEMAND`, your overflow builds run on CodeBuild on-demand.
 #' 
-#'     If you choose to set your overflow behavior to on-demand while
-#'     creating a VPC-connected fleet, make sure that you add the required
-#'     VPC permissions to your project service role. For more information,
-#'     see [Example policy statement to allow CodeBuild access to Amazon
-#'     Web Services services required to create a VPC network
-#'     interface](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface).
-#' @param vpcConfig 
+#'     If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you add the required VPC permissions to your project service role. For more information, see [Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC network interface](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface).
+#' @param vpcConfig Information about the VPC configuration that CodeBuild accesses.
 #' @param proxyConfiguration The proxy configuration of the compute fleet.
 #' @param imageId The Amazon Machine Image (AMI) of the compute fleet.
-#' @param fleetServiceRole The service role associated with the compute fleet. For more
-#' information, see [Allow a user to add a permission policy for a fleet
-#' service
-#' role](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html)
-#' in the *CodeBuild User Guide*.
+#' @param fleetServiceRole The service role associated with the compute fleet. For more information, see [Allow a user to add a permission policy for a fleet service role](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html) in the *CodeBuild User Guide*.
 #' @param tags A list of tag key and value pairs associated with this compute fleet.
 #' 
-#' These tags are available for use by Amazon Web Services services that
-#' support CodeBuild build project tags.
+#' These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1944,86 +1856,48 @@ codebuild_create_fleet <- function(name, baseCapacity, environmentType, computeT
 #' @param description A description that makes the build project easy to identify.
 #' @param source &#91;required&#93; Information about the build input source code for the build project.
 #' @param secondarySources An array of `ProjectSource` objects.
-#' @param sourceVersion A version of the build input to be built for this project. If not
-#' specified, the latest version is used. If specified, it must be one of:
+#' @param sourceVersion A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:
 #' 
 #' -   For CodeCommit: the commit ID, branch, or Git tag to use.
 #' 
-#' -   For GitHub: the commit ID, pull request ID, branch name, or tag name
-#'     that corresponds to the version of the source code you want to
-#'     build. If a pull request ID is specified, it must use the format
-#'     `pr/pull-request-ID` (for example `pr/25`). If a branch name is
-#'     specified, the branch's HEAD commit ID is used. If not specified,
-#'     the default branch's HEAD commit ID is used.
+#' -   For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format `pr/pull-request-ID` (for example `pr/25`). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
 #' -   For GitLab: the commit ID, branch, or Git tag to use.
 #' 
-#' -   For Bitbucket: the commit ID, branch name, or tag name that
-#'     corresponds to the version of the source code you want to build. If
-#'     a branch name is specified, the branch's HEAD commit ID is used. If
-#'     not specified, the default branch's HEAD commit ID is used.
+#' -   For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
-#' -   For Amazon S3: the version ID of the object that represents the
-#'     build input ZIP file to use.
+#' -   For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
 #' 
-#' If `sourceVersion` is specified at the build level, then that version
-#' takes precedence over this `sourceVersion` (at the project level).
+#' If `sourceVersion` is specified at the build level, then that version takes precedence over this `sourceVersion` (at the project level).
 #' 
-#' For more information, see [Source Version Sample with
-#' CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html)
-#' in the *CodeBuild User Guide*.
-#' @param secondarySourceVersions An array of `ProjectSourceVersion` objects. If `secondarySourceVersions`
-#' is specified at the build level, then they take precedence over these
-#' `secondarySourceVersions` (at the project level).
+#' For more information, see [Source Version Sample with CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html) in the *CodeBuild User Guide*.
+#' @param secondarySourceVersions An array of `ProjectSourceVersion` objects. If `secondarySourceVersions` is specified at the build level, then they take precedence over these `secondarySourceVersions` (at the project level).
 #' @param artifacts &#91;required&#93; Information about the build output artifacts for the build project.
 #' @param secondaryArtifacts An array of `ProjectArtifacts` objects.
-#' @param cache Stores recently used information so that it can be quickly accessed at a
-#' later time.
+#' @param cache Stores recently used information so that it can be quickly accessed at a later time.
 #' @param environment &#91;required&#93; Information about the build environment for the build project.
-#' @param serviceRole &#91;required&#93; The ARN of the IAM role that enables CodeBuild to interact with
-#' dependent Amazon Web Services services on behalf of the Amazon Web
-#' Services account.
-#' @param timeoutInMinutes How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait
-#' before it times out any build that has not been marked as completed. The
-#' default is 60 minutes.
-#' @param queuedTimeoutInMinutes The number of minutes a build is allowed to be queued before it times
-#' out.
-#' @param encryptionKey The Key Management Service customer master key (CMK) to be used for
-#' encrypting the build output artifacts.
+#' @param serviceRole &#91;required&#93; The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.
+#' @param timeoutInMinutes How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.
+#' @param queuedTimeoutInMinutes The number of minutes a build is allowed to be queued before it times out.
+#' @param encryptionKey The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.
 #' 
-#' You can use a cross-account KMS key to encrypt the build output
-#' artifacts if your service role has permission to that key.
+#' You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.
 #' 
-#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if
-#' available, the CMK's alias (using the format `alias/<alias-name>`).
+#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format `alias/<alias-name>`).
 #' @param tags A list of tag key and value pairs associated with this build project.
 #' 
-#' These tags are available for use by Amazon Web Services services that
-#' support CodeBuild build project tags.
+#' These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
 #' @param vpcConfig VpcConfig enables CodeBuild to access resources in an Amazon VPC.
 #' 
-#' If you're using compute fleets during project creation, do not provide
-#' vpcConfig.
-#' @param badgeEnabled Set this to true to generate a publicly accessible URL for your
-#' project's build badge.
-#' @param logsConfig Information about logs for the build project. These can be logs in
-#' CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.
-#' @param fileSystemLocations An array of `ProjectFileSystemLocation` objects for a CodeBuild build
-#' project. A `ProjectFileSystemLocation` object specifies the
-#' `identifier`, `location`, `mountOptions`, `mountPoint`, and `type` of a
-#' file system created using Amazon Elastic File System.
-#' @param buildBatchConfig A ProjectBuildBatchConfig object that defines the batch build options
-#' for the project.
-#' @param concurrentBuildLimit The maximum number of concurrent builds that are allowed for this
-#' project.
+#' If you're using compute fleets during project creation, do not provide vpcConfig.
+#' @param badgeEnabled Set this to true to generate a publicly accessible URL for your project's build badge.
+#' @param logsConfig Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.
+#' @param fileSystemLocations An array of `ProjectFileSystemLocation` objects for a CodeBuild build project. A `ProjectFileSystemLocation` object specifies the `identifier`, `location`, `mountOptions`, `mountPoint`, and `type` of a file system created using Amazon Elastic File System.
+#' @param buildBatchConfig A ProjectBuildBatchConfig object that defines the batch build options for the project.
+#' @param concurrentBuildLimit The maximum number of concurrent builds that are allowed for this project.
 #' 
-#' New builds are only started if the current number of builds is less than
-#' or equal to this limit. If the current build count meets this limit, new
-#' builds are throttled and are not run.
-#' @param autoRetryLimit The maximum number of additional automatic retries after a failed build.
-#' For example, if the auto-retry limit is set to 2, CodeBuild will call
-#' the [`retry_build`][codebuild_retry_build] API to automatically retry
-#' your build for up to 2 additional times.
+#' New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.
+#' @param autoRetryLimit The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the [`retry_build`][codebuild_retry_build] API to automatically retry your build for up to 2 additional times.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2486,12 +2360,10 @@ codebuild_create_project <- function(name, description = NULL, source, secondary
 #'
 #' @param name &#91;required&#93; The name of the report group.
 #' @param type &#91;required&#93; The type of report group.
-#' @param exportConfig &#91;required&#93; A `ReportExportConfig` object that contains information about where the
-#' report group test results are exported.
+#' @param exportConfig &#91;required&#93; A `ReportExportConfig` object that contains information about where the report group test results are exported.
 #' @param tags A list of tag key and value pairs associated with this report group.
 #' 
-#' These tags are available for use by Amazon Web Services services that
-#' support CodeBuild report group tags.
+#' These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2584,61 +2456,31 @@ codebuild_create_report_group <- function(name, type, exportConfig, tags = NULL)
 #' repository
 #'
 #' @description
-#' For an existing CodeBuild build project that has its source code stored
-#' in a GitHub or Bitbucket repository, enables CodeBuild to start
-#' rebuilding the source code every time a code change is pushed to the
-#' repository.
+#' For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
 #' 
-#' If you enable webhooks for an CodeBuild project, and the project is used
-#' as a build step in CodePipeline, then two identical builds are created
-#' for each commit. One build is triggered through webhooks, and one
-#' through CodePipeline. Because billing is on a per-build basis, you are
-#' billed for both builds. Therefore, if you are using CodePipeline, we
-#' recommend that you disable webhooks in CodeBuild. In the CodeBuild
-#' console, clear the Webhook box. For more information, see step 5 in
-#' [Change a Build Project's
-#' Settings](https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console).
+#' If you enable webhooks for an CodeBuild project, and the project is used as a build step in CodePipeline, then two identical builds are created for each commit. One build is triggered through webhooks, and one through CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are using CodePipeline, we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the Webhook box. For more information, see step 5 in [Change a Build Project's Settings](https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console).
 #'
 #' @usage
 #' codebuild_create_webhook(projectName, branchFilter, filterGroups,
 #'   buildType, manualCreation, scopeConfiguration, pullRequestBuildPolicy)
 #'
 #' @param projectName &#91;required&#93; The name of the CodeBuild project.
-#' @param branchFilter A regular expression used to determine which repository branches are
-#' built when a webhook is triggered. If the name of a branch matches the
-#' regular expression, then it is built. If `branchFilter` is empty, then
-#' all branches are built.
+#' @param branchFilter A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If `branchFilter` is empty, then all branches are built.
 #' 
 #' It is recommended that you use `filterGroups` instead of `branchFilter`.
-#' @param filterGroups An array of arrays of `WebhookFilter` objects used to determine which
-#' webhooks are triggered. At least one `WebhookFilter` in the array must
-#' specify `EVENT` as its `type`.
+#' @param filterGroups An array of arrays of `WebhookFilter` objects used to determine which webhooks are triggered. At least one `WebhookFilter` in the array must specify `EVENT` as its `type`.
 #' 
-#' For a build to be triggered, at least one filter group in the
-#' `filterGroups` array must pass. For a filter group to pass, each of its
-#' filters must pass.
+#' For a build to be triggered, at least one filter group in the `filterGroups` array must pass. For a filter group to pass, each of its filters must pass.
 #' @param buildType Specifies the type of build this webhook will trigger.
 #' 
-#' `RUNNER_BUILDKITE_BUILD` is only available for `NO_SOURCE` source type
-#' projects configured for Buildkite runner builds. For more information
-#' about CodeBuild-hosted Buildkite runner builds, see [Tutorial: Configure
-#' a CodeBuild-hosted Buildkite
-#' runner](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html)
-#' in the *CodeBuild user guide*.
-#' @param manualCreation If manualCreation is true, CodeBuild doesn't create a webhook in GitHub
-#' and instead returns `payloadUrl` and `secret` values for the webhook.
-#' The `payloadUrl` and `secret` values in the output can be used to
-#' manually create a webhook within GitHub.
+#' `RUNNER_BUILDKITE_BUILD` is only available for `NO_SOURCE` source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see [Tutorial: Configure a CodeBuild-hosted Buildkite runner](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html) in the *CodeBuild user guide*.
+#' @param manualCreation If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns `payloadUrl` and `secret` values for the webhook. The `payloadUrl` and `secret` values in the output can be used to manually create a webhook within GitHub.
 #' 
 #' `manualCreation` is only available for GitHub webhooks.
 #' @param scopeConfiguration The scope configuration for global or organization webhooks.
 #' 
-#' Global or organization webhooks are only available for GitHub and Github
-#' Enterprise webhooks.
-#' @param pullRequestBuildPolicy A PullRequestBuildPolicy object that defines comment-based approval
-#' requirements for triggering builds on pull requests. This policy helps
-#' control when automated builds are executed based on contributor
-#' permissions and approval workflows.
+#' Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.
+#' @param pullRequestBuildPolicy A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2795,8 +2637,7 @@ codebuild_delete_build_batch <- function(id) {
 #' Deletes a compute fleet
 #'
 #' @description
-#' Deletes a compute fleet. When you delete a compute fleet, its builds are
-#' not deleted.
+#' Deletes a compute fleet. When you delete a compute fleet, its builds are not deleted.
 #'
 #' @usage
 #' codebuild_delete_fleet(arn)
@@ -2840,8 +2681,7 @@ codebuild_delete_fleet <- function(arn) {
 #' Deletes a build project
 #'
 #' @description
-#' Deletes a build project. When you delete a project, its builds are not
-#' deleted.
+#' Deletes a build project. When you delete a project, its builds are not deleted.
 #'
 #' @usage
 #' codebuild_delete_project(name)
@@ -2929,22 +2769,15 @@ codebuild_delete_report <- function(arn) {
 #' Deletes a report group
 #'
 #' @description
-#' Deletes a report group. Before you delete a report group, you must
-#' delete its reports.
+#' Deletes a report group. Before you delete a report group, you must delete its reports.
 #'
 #' @usage
 #' codebuild_delete_report_group(arn, deleteReports)
 #'
 #' @param arn &#91;required&#93; The ARN of the report group to delete.
-#' @param deleteReports If `true`, deletes any reports that belong to a report group before
-#' deleting the report group.
+#' @param deleteReports If `true`, deletes any reports that belong to a report group before deleting the report group.
 #' 
-#' If `false`, you must delete any reports in the report group. Use
-#' [`list_reports_for_report_group`][codebuild_list_reports_for_report_group]
-#' to get the reports in a report group. Use
-#' [`delete_report`][codebuild_delete_report] to delete the reports. If you
-#' call [`delete_report_group`][codebuild_delete_report_group] for a report
-#' group that contains one or more reports, an exception is thrown.
+#' If `false`, you must delete any reports in the report group. Use [`list_reports_for_report_group`][codebuild_list_reports_for_report_group] to get the reports in a report group. Use [`delete_report`][codebuild_delete_report] to delete the reports. If you call [`delete_report_group`][codebuild_delete_report_group] for a report group that contains one or more reports, an exception is thrown.
 #'
 #' @return
 #' An empty list.
@@ -3029,8 +2862,7 @@ codebuild_delete_resource_policy <- function(resourceArn) {
 #' credentials
 #'
 #' @description
-#' Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source
-#' credentials.
+#' Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
 #'
 #' @usage
 #' codebuild_delete_source_credentials(arn)
@@ -3081,9 +2913,7 @@ codebuild_delete_source_credentials <- function(arn) {
 #' source code every time a code change is pushed to the repository
 #'
 #' @description
-#' For an existing CodeBuild build project that has its source code stored
-#' in a GitHub or Bitbucket repository, stops CodeBuild from rebuilding the
-#' source code every time a code change is pushed to the repository.
+#' For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
 #'
 #' @usage
 #' codebuild_delete_webhook(projectName)
@@ -3134,10 +2964,7 @@ codebuild_delete_webhook <- function(projectName) {
 #'   sortOrder, sortBy, minLineCoveragePercentage, maxLineCoveragePercentage)
 #'
 #' @param reportArn &#91;required&#93; The ARN of the report for which test cases are returned.
-#' @param nextToken The `nextToken` value returned from a previous call to
-#' [`describe_code_coverages`][codebuild_describe_code_coverages]. This
-#' specifies the next item to return. To return the beginning of the list,
-#' exclude this parameter.
+#' @param nextToken The `nextToken` value returned from a previous call to [`describe_code_coverages`][codebuild_describe_code_coverages]. This specifies the next item to return. To return the beginning of the list, exclude this parameter.
 #' @param maxResults The maximum number of results to return.
 #' @param sortOrder Specifies if the results are sorted in ascending or descending order.
 #' @param sortBy Specifies how the results are sorted. Possible values are:
@@ -3222,16 +3049,8 @@ codebuild_describe_code_coverages <- function(reportArn, nextToken = NULL, maxRe
 #' codebuild_describe_test_cases(reportArn, nextToken, maxResults, filter)
 #'
 #' @param reportArn &#91;required&#93; The ARN of the report for which test cases are returned.
-#' @param nextToken During a previous call, the maximum number of items that can be returned
-#' is the value specified in `maxResults`. If there more items in the list,
-#' then a unique string called a *nextToken* is returned. To get the next
-#' batch of items in the list, call this operation again, adding the next
-#' token to the call. To get all of the items in the list, keep calling
-#' this operation with each subsequent next token that is returned, until
-#' no more next tokens are returned.
-#' @param maxResults The maximum number of paginated test cases returned per response. Use
-#' `nextToken` to iterate pages in the list of returned `TestCase` objects.
-#' The default value is 100.
+#' @param nextToken During a previous call, the maximum number of items that can be returned is the value specified in `maxResults`. If there more items in the list, then a unique string called a *nextToken* is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
+#' @param maxResults The maximum number of paginated test cases returned per response. Use `nextToken` to iterate pages in the list of returned `TestCase` objects. The default value is 100.
 #' @param filter A `TestCaseFilter` object used to filter the returned reports.
 #'
 #' @return
@@ -3298,20 +3117,17 @@ codebuild_describe_test_cases <- function(reportArn, nextToken = NULL, maxResult
 #' reports
 #'
 #' @description
-#' Analyzes and accumulates test report values for the specified test
-#' reports.
+#' Analyzes and accumulates test report values for the specified test reports.
 #'
 #' @usage
 #' codebuild_get_report_group_trend(reportGroupArn, numOfReports,
 #'   trendField)
 #'
 #' @param reportGroupArn &#91;required&#93; The ARN of the report group that contains the reports to analyze.
-#' @param numOfReports The number of reports to analyze. This operation always retrieves the
-#' most recent reports.
+#' @param numOfReports The number of reports to analyze. This operation always retrieves the most recent reports.
 #' 
 #' If this parameter is omitted, the most recent 100 reports are analyzed.
-#' @param trendField &#91;required&#93; The test report value to accumulate. This must be one of the following
-#' values:
+#' @param trendField &#91;required&#93; The test report value to accumulate. This must be one of the following values:
 #' 
 #' **Test reports:**
 #' 
@@ -3321,8 +3137,7 @@ codebuild_describe_test_cases <- function(reportArn, nextToken = NULL, maxResult
 #' 
 #' **PASS_RATE**
 #' 
-#' Accumulate the percentage of tests that passed for the specified test
-#' reports.
+#' Accumulate the percentage of tests that passed for the specified test reports.
 #' 
 #' **TOTAL**
 #' 
@@ -3332,8 +3147,7 @@ codebuild_describe_test_cases <- function(reportArn, nextToken = NULL, maxResult
 #' 
 #' **BRANCH_COVERAGE**
 #' 
-#' Accumulate the branch coverage percentages for the specified test
-#' reports.
+#' Accumulate the branch coverage percentages for the specified test reports.
 #' 
 #' **BRANCHES_COVERED**
 #' 
@@ -3460,28 +3274,17 @@ codebuild_get_resource_policy <- function(resourceArn) {
 #' GitLab Self Managed, or Bitbucket repository
 #'
 #' @description
-#' Imports the source repository credentials for an CodeBuild project that
-#' has its source code stored in a GitHub, GitHub Enterprise, GitLab,
-#' GitLab Self Managed, or Bitbucket repository.
+#' Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket repository.
 #'
 #' @usage
 #' codebuild_import_source_credentials(username, token, serverType,
 #'   authType, shouldOverwrite)
 #'
-#' @param username The Bitbucket username when the `authType` is BASIC_AUTH. This parameter
-#' is not valid for other types of source providers or connections.
-#' @param token &#91;required&#93; For GitHub or GitHub Enterprise, this is the personal access token. For
-#' Bitbucket, this is either the access token or the app password. For the
-#' `authType` CODECONNECTIONS, this is the `connectionArn`. For the
-#' `authType` SECRETS_MANAGER, this is the `secretArn`.
+#' @param username The Bitbucket username when the `authType` is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.
+#' @param token &#91;required&#93; For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password. For the `authType` CODECONNECTIONS, this is the `connectionArn`. For the `authType` SECRETS_MANAGER, this is the `secretArn`.
 #' @param serverType &#91;required&#93; The source provider used for this project.
-#' @param authType &#91;required&#93; The type of authentication used to connect to a GitHub, GitHub
-#' Enterprise, GitLab, GitLab Self Managed, or Bitbucket repository. An
-#' OAUTH connection is not supported by the API and must be created using
-#' the CodeBuild console.
-#' @param shouldOverwrite Set to `false` to prevent overwriting the repository source credentials.
-#' Set to `true` to overwrite the repository source credentials. The
-#' default value is `true`.
+#' @param authType &#91;required&#93; The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console.
+#' @param shouldOverwrite Set to `false` to prevent overwriting the repository source credentials. Set to `true` to overwrite the repository source credentials. The default value is `true`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3582,15 +3385,10 @@ codebuild_invalidate_project_cache <- function(projectName) {
 #' @param maxResults The maximum number of results to return.
 #' @param sortOrder Specifies the sort order of the returned items. Valid values include:
 #' 
-#' -   `ASCENDING`: List the batch build identifiers in ascending order by
-#'     identifier.
+#' -   `ASCENDING`: List the batch build identifiers in ascending order by identifier.
 #' 
-#' -   `DESCENDING`: List the batch build identifiers in descending order
-#'     by identifier.
-#' @param nextToken The `nextToken` value returned from a previous call to
-#' [`list_build_batches`][codebuild_list_build_batches]. This specifies the
-#' next item to return. To return the beginning of the list, exclude this
-#' parameter.
+#' -   `DESCENDING`: List the batch build identifiers in descending order by identifier.
+#' @param nextToken The `nextToken` value returned from a previous call to [`list_build_batches`][codebuild_list_build_batches]. This specifies the next item to return. To return the beginning of the list, exclude this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3653,15 +3451,10 @@ codebuild_list_build_batches <- function(filter = NULL, maxResults = NULL, sortO
 #' @param maxResults The maximum number of results to return.
 #' @param sortOrder Specifies the sort order of the returned items. Valid values include:
 #' 
-#' -   `ASCENDING`: List the batch build identifiers in ascending order by
-#'     identifier.
+#' -   `ASCENDING`: List the batch build identifiers in ascending order by identifier.
 #' 
-#' -   `DESCENDING`: List the batch build identifiers in descending order
-#'     by identifier.
-#' @param nextToken The `nextToken` value returned from a previous call to
-#' [`list_build_batches_for_project`][codebuild_list_build_batches_for_project].
-#' This specifies the next item to return. To return the beginning of the
-#' list, exclude this parameter.
+#' -   `DESCENDING`: List the batch build identifiers in descending order by identifier.
+#' @param nextToken The `nextToken` value returned from a previous call to [`list_build_batches_for_project`][codebuild_list_build_batches_for_project]. This specifies the next item to return. To return the beginning of the list, exclude this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3714,8 +3507,7 @@ codebuild_list_build_batches_for_project <- function(projectName = NULL, filter 
 #' Gets a list of build IDs, with each build ID representing a single build
 #'
 #' @description
-#' Gets a list of build IDs, with each build ID representing a single
-#' build.
+#' Gets a list of build IDs, with each build ID representing a single build.
 #'
 #' @usage
 #' codebuild_list_builds(sortOrder, nextToken)
@@ -3725,12 +3517,7 @@ codebuild_list_build_batches_for_project <- function(projectName = NULL, filter 
 #' -   `ASCENDING`: List the build IDs in ascending order by build ID.
 #' 
 #' -   `DESCENDING`: List the build IDs in descending order by build ID.
-#' @param nextToken During a previous call, if there are more than 100 items in the list,
-#' only the first 100 items are returned, along with a unique string called
-#' a *nextToken*. To get the next batch of items in the list, call this
-#' operation again, adding the next token to the call. To get all of the
-#' items in the list, keep calling this operation with each subsequent next
-#' token that is returned, until no more next tokens are returned.
+#' @param nextToken During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a *nextToken*. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3779,33 +3566,22 @@ codebuild_list_builds <- function(sortOrder = NULL, nextToken = NULL) {
 #' each build identifier representing a single build
 #'
 #' @description
-#' Gets a list of build identifiers for the specified build project, with
-#' each build identifier representing a single build.
+#' Gets a list of build identifiers for the specified build project, with each build identifier representing a single build.
 #'
 #' @usage
 #' codebuild_list_builds_for_project(projectName, sortOrder, nextToken)
 #'
 #' @param projectName &#91;required&#93; The name of the CodeBuild project.
-#' @param sortOrder The order to sort the results in. The results are sorted by build
-#' number, not the build identifier. If this is not specified, the results
-#' are sorted in descending order.
+#' @param sortOrder The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.
 #' 
 #' Valid values include:
 #' 
-#' -   `ASCENDING`: List the build identifiers in ascending order, by build
-#'     number.
+#' -   `ASCENDING`: List the build identifiers in ascending order, by build number.
 #' 
-#' -   `DESCENDING`: List the build identifiers in descending order, by
-#'     build number.
+#' -   `DESCENDING`: List the build identifiers in descending order, by build number.
 #' 
-#' If the project has more than 100 builds, setting the sort order will
-#' result in an error.
-#' @param nextToken During a previous call, if there are more than 100 items in the list,
-#' only the first 100 items are returned, along with a unique string called
-#' a *nextToken*. To get the next batch of items in the list, call this
-#' operation again, adding the next token to the call. To get all of the
-#' items in the list, keep calling this operation with each subsequent next
-#' token that is returned, until no more next tokens are returned.
+#' If the project has more than 100 builds, setting the sort order will result in an error.
+#' @param nextToken During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a *nextToken*. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3863,8 +3639,7 @@ codebuild_list_builds_for_project <- function(projectName, sortOrder = NULL, nex
 #' @param sandboxId &#91;required&#93; A `sandboxId` or `sandboxArn`.
 #' @param maxResults The maximum number of sandbox records to be retrieved.
 #' @param sortOrder The order in which sandbox records should be retrieved.
-#' @param nextToken The next token, if any, to get paginated results. You will get this
-#' value from previous execution of list sandboxes.
+#' @param nextToken The next token, if any, to get paginated results. You will get this value from previous execution of list sandboxes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4018,40 +3793,29 @@ codebuild_list_curated_environment_images <- function() {
 #' representing a single compute fleet
 #'
 #' @description
-#' Gets a list of compute fleet names with each compute fleet name
-#' representing a single compute fleet.
+#' Gets a list of compute fleet names with each compute fleet name representing a single compute fleet.
 #'
 #' @usage
 #' codebuild_list_fleets(nextToken, maxResults, sortOrder, sortBy)
 #'
-#' @param nextToken During a previous call, if there are more than 100 items in the list,
-#' only the first 100 items are returned, along with a unique string called
-#' a *nextToken*. To get the next batch of items in the list, call this
-#' operation again, adding the next token to the call. To get all of the
-#' items in the list, keep calling this operation with each subsequent next
-#' token that is returned, until no more next tokens are returned.
-#' @param maxResults The maximum number of paginated compute fleets returned per response.
-#' Use `nextToken` to iterate pages in the list of returned compute fleets.
+#' @param nextToken During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a *nextToken*. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
+#' @param maxResults The maximum number of paginated compute fleets returned per response. Use `nextToken` to iterate pages in the list of returned compute fleets.
 #' @param sortOrder The order in which to list compute fleets. Valid values include:
 #' 
 #' -   `ASCENDING`: List in ascending order.
 #' 
 #' -   `DESCENDING`: List in descending order.
 #' 
-#' Use `sortBy` to specify the criterion to be used to list compute fleet
-#' names.
-#' @param sortBy The criterion to be used to list compute fleet names. Valid values
-#' include:
+#' Use `sortBy` to specify the criterion to be used to list compute fleet names.
+#' @param sortBy The criterion to be used to list compute fleet names. Valid values include:
 #' 
 #' -   `CREATED_TIME`: List based on when each compute fleet was created.
 #' 
-#' -   `LAST_MODIFIED_TIME`: List based on when information about each
-#'     compute fleet was last changed.
+#' -   `LAST_MODIFIED_TIME`: List based on when information about each compute fleet was last changed.
 #' 
 #' -   `NAME`: List based on each compute fleet's name.
 #' 
-#' Use `sortOrder` to specify in what order to list the compute fleet names
-#' based on the preceding criteria.
+#' Use `sortOrder` to specify in what order to list the compute fleet names based on the preceding criteria.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4102,38 +3866,28 @@ codebuild_list_fleets <- function(nextToken = NULL, maxResults = NULL, sortOrder
 #' representing a single build project
 #'
 #' @description
-#' Gets a list of build project names, with each build project name
-#' representing a single build project.
+#' Gets a list of build project names, with each build project name representing a single build project.
 #'
 #' @usage
 #' codebuild_list_projects(sortBy, sortOrder, nextToken)
 #'
-#' @param sortBy The criterion to be used to list build project names. Valid values
-#' include:
+#' @param sortBy The criterion to be used to list build project names. Valid values include:
 #' 
 #' -   `CREATED_TIME`: List based on when each build project was created.
 #' 
-#' -   `LAST_MODIFIED_TIME`: List based on when information about each
-#'     build project was last changed.
+#' -   `LAST_MODIFIED_TIME`: List based on when information about each build project was last changed.
 #' 
 #' -   `NAME`: List based on each build project's name.
 #' 
-#' Use `sortOrder` to specify in what order to list the build project names
-#' based on the preceding criteria.
+#' Use `sortOrder` to specify in what order to list the build project names based on the preceding criteria.
 #' @param sortOrder The order in which to list build projects. Valid values include:
 #' 
 #' -   `ASCENDING`: List in ascending order.
 #' 
 #' -   `DESCENDING`: List in descending order.
 #' 
-#' Use `sortBy` to specify the criterion to be used to list build project
-#' names.
-#' @param nextToken During a previous call, if there are more than 100 items in the list,
-#' only the first 100 items are returned, along with a unique string called
-#' a *nextToken*. To get the next batch of items in the list, call this
-#' operation again, adding the next token to the call. To get all of the
-#' items in the list, keep calling this operation with each subsequent next
-#' token that is returned, until no more next tokens are returned.
+#' Use `sortBy` to specify the criterion to be used to list build project names.
+#' @param nextToken During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a *nextToken*. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4183,33 +3937,21 @@ codebuild_list_projects <- function(sortBy = NULL, sortOrder = NULL, nextToken =
 #' Services account
 #'
 #' @description
-#' Gets a list ARNs for the report groups in the current Amazon Web
-#' Services account.
+#' Gets a list ARNs for the report groups in the current Amazon Web Services account.
 #'
 #' @usage
 #' codebuild_list_report_groups(sortOrder, sortBy, nextToken, maxResults)
 #'
-#' @param sortOrder Used to specify the order to sort the list of returned report groups.
-#' Valid values are `ASCENDING` and `DESCENDING`.
-#' @param sortBy The criterion to be used to list build report groups. Valid values
-#' include:
+#' @param sortOrder Used to specify the order to sort the list of returned report groups. Valid values are `ASCENDING` and `DESCENDING`.
+#' @param sortBy The criterion to be used to list build report groups. Valid values include:
 #' 
 #' -   `CREATED_TIME`: List based on when each report group was created.
 #' 
-#' -   `LAST_MODIFIED_TIME`: List based on when each report group was last
-#'     changed.
+#' -   `LAST_MODIFIED_TIME`: List based on when each report group was last changed.
 #' 
 #' -   `NAME`: List based on each report group's name.
-#' @param nextToken During a previous call, the maximum number of items that can be returned
-#' is the value specified in `maxResults`. If there more items in the list,
-#' then a unique string called a *nextToken* is returned. To get the next
-#' batch of items in the list, call this operation again, adding the next
-#' token to the call. To get all of the items in the list, keep calling
-#' this operation with each subsequent next token that is returned, until
-#' no more next tokens are returned.
-#' @param maxResults The maximum number of paginated report groups returned per response. Use
-#' `nextToken` to iterate pages in the list of returned `ReportGroup`
-#' objects. The default value is 100.
+#' @param nextToken During a previous call, the maximum number of items that can be returned is the value specified in `maxResults`. If there more items in the list, then a unique string called a *nextToken* is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
+#' @param maxResults The maximum number of paginated report groups returned per response. Use `nextToken` to iterate pages in the list of returned `ReportGroup` objects. The default value is 100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4260,30 +4002,18 @@ codebuild_list_report_groups <- function(sortOrder = NULL, sortBy = NULL, nextTo
 #' Services account
 #'
 #' @description
-#' Returns a list of ARNs for the reports in the current Amazon Web
-#' Services account.
+#' Returns a list of ARNs for the reports in the current Amazon Web Services account.
 #'
 #' @usage
 #' codebuild_list_reports(sortOrder, nextToken, maxResults, filter)
 #'
-#' @param sortOrder Specifies the sort order for the list of returned reports. Valid values
-#' are:
+#' @param sortOrder Specifies the sort order for the list of returned reports. Valid values are:
 #' 
-#' -   `ASCENDING`: return reports in chronological order based on their
-#'     creation date.
+#' -   `ASCENDING`: return reports in chronological order based on their creation date.
 #' 
-#' -   `DESCENDING`: return reports in the reverse chronological order
-#'     based on their creation date.
-#' @param nextToken During a previous call, the maximum number of items that can be returned
-#' is the value specified in `maxResults`. If there more items in the list,
-#' then a unique string called a *nextToken* is returned. To get the next
-#' batch of items in the list, call this operation again, adding the next
-#' token to the call. To get all of the items in the list, keep calling
-#' this operation with each subsequent next token that is returned, until
-#' no more next tokens are returned.
-#' @param maxResults The maximum number of paginated reports returned per response. Use
-#' `nextToken` to iterate pages in the list of returned `Report` objects.
-#' The default value is 100.
+#' -   `DESCENDING`: return reports in the reverse chronological order based on their creation date.
+#' @param nextToken During a previous call, the maximum number of items that can be returned is the value specified in `maxResults`. If there more items in the list, then a unique string called a *nextToken* is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
+#' @param maxResults The maximum number of paginated reports returned per response. Use `nextToken` to iterate pages in the list of returned `Report` objects. The default value is 100.
 #' @param filter A `ReportFilter` object used to filter the returned reports.
 #'
 #' @return
@@ -4343,18 +4073,9 @@ codebuild_list_reports <- function(sortOrder = NULL, nextToken = NULL, maxResult
 #'   sortOrder, maxResults, filter)
 #'
 #' @param reportGroupArn &#91;required&#93; The ARN of the report group for which you want to return report ARNs.
-#' @param nextToken During a previous call, the maximum number of items that can be returned
-#' is the value specified in `maxResults`. If there more items in the list,
-#' then a unique string called a *nextToken* is returned. To get the next
-#' batch of items in the list, call this operation again, adding the next
-#' token to the call. To get all of the items in the list, keep calling
-#' this operation with each subsequent next token that is returned, until
-#' no more next tokens are returned.
-#' @param sortOrder Use to specify whether the results are returned in ascending or
-#' descending order.
-#' @param maxResults The maximum number of paginated reports in this report group returned
-#' per response. Use `nextToken` to iterate pages in the list of returned
-#' `Report` objects. The default value is 100.
+#' @param nextToken During a previous call, the maximum number of items that can be returned is the value specified in `maxResults`. If there more items in the list, then a unique string called a *nextToken* is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
+#' @param sortOrder Use to specify whether the results are returned in ascending or descending order.
+#' @param maxResults The maximum number of paginated reports in this report group returned per response. Use `nextToken` to iterate pages in the list of returned `Report` objects. The default value is 100.
 #' @param filter A `ReportFilter` object used to filter the returned reports.
 #'
 #' @return
@@ -4415,8 +4136,7 @@ codebuild_list_reports_for_report_group <- function(reportGroupArn, nextToken = 
 #'
 #' @param maxResults The maximum number of sandbox records to be retrieved.
 #' @param sortOrder The order in which sandbox records should be retrieved.
-#' @param nextToken The next token, if any, to get paginated results. You will get this
-#' value from previous execution of list sandboxes.
+#' @param nextToken The next token, if any, to get paginated results. You will get this value from previous execution of list sandboxes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4474,8 +4194,7 @@ codebuild_list_sandboxes <- function(maxResults = NULL, sortOrder = NULL, nextTo
 #' @param projectName &#91;required&#93; The CodeBuild project name.
 #' @param maxResults The maximum number of sandbox records to be retrieved.
 #' @param sortOrder The order in which sandbox records should be retrieved.
-#' @param nextToken The next token, if any, to get paginated results. You will get this
-#' value from previous execution of list sandboxes.
+#' @param nextToken The next token, if any, to get paginated results. You will get this value from previous execution of list sandboxes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4526,34 +4245,23 @@ codebuild_list_sandboxes_for_project <- function(projectName, maxResults = NULL,
 #' accounts or users
 #'
 #' @description
-#' Gets a list of projects that are shared with other Amazon Web Services
-#' accounts or users.
+#' Gets a list of projects that are shared with other Amazon Web Services accounts or users.
 #'
 #' @usage
 #' codebuild_list_shared_projects(sortBy, sortOrder, maxResults, nextToken)
 #'
-#' @param sortBy The criterion to be used to list build projects shared with the current
-#' Amazon Web Services account or user. Valid values include:
+#' @param sortBy The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:
 #' 
 #' -   `ARN`: List based on the ARN.
 #' 
-#' -   `MODIFIED_TIME`: List based on when information about the shared
-#'     project was last changed.
+#' -   `MODIFIED_TIME`: List based on when information about the shared project was last changed.
 #' @param sortOrder The order in which to list shared build projects. Valid values include:
 #' 
 #' -   `ASCENDING`: List in ascending order.
 #' 
 #' -   `DESCENDING`: List in descending order.
-#' @param maxResults The maximum number of paginated shared build projects returned per
-#' response. Use `nextToken` to iterate pages in the list of returned
-#' `Project` objects. The default value is 100.
-#' @param nextToken During a previous call, the maximum number of items that can be returned
-#' is the value specified in `maxResults`. If there more items in the list,
-#' then a unique string called a *nextToken* is returned. To get the next
-#' batch of items in the list, call this operation again, adding the next
-#' token to the call. To get all of the items in the list, keep calling
-#' this operation with each subsequent next token that is returned, until
-#' no more next tokens are returned.
+#' @param maxResults The maximum number of paginated shared build projects returned per response. Use `nextToken` to iterate pages in the list of returned `Project` objects. The default value is 100.
+#' @param nextToken During a previous call, the maximum number of items that can be returned is the value specified in `maxResults`. If there more items in the list, then a unique string called a *nextToken* is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4604,8 +4312,7 @@ codebuild_list_shared_projects <- function(sortBy = NULL, sortOrder = NULL, maxR
 #' Services accounts or users
 #'
 #' @description
-#' Gets a list of report groups that are shared with other Amazon Web
-#' Services accounts or users.
+#' Gets a list of report groups that are shared with other Amazon Web Services accounts or users.
 #'
 #' @usage
 #' codebuild_list_shared_report_groups(sortOrder, sortBy, nextToken,
@@ -4616,23 +4323,13 @@ codebuild_list_shared_projects <- function(sortBy = NULL, sortOrder = NULL, maxR
 #' -   `ASCENDING`: List in ascending order.
 #' 
 #' -   `DESCENDING`: List in descending order.
-#' @param sortBy The criterion to be used to list report groups shared with the current
-#' Amazon Web Services account or user. Valid values include:
+#' @param sortBy The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:
 #' 
 #' -   `ARN`: List based on the ARN.
 #' 
-#' -   `MODIFIED_TIME`: List based on when information about the shared
-#'     report group was last changed.
-#' @param nextToken During a previous call, the maximum number of items that can be returned
-#' is the value specified in `maxResults`. If there more items in the list,
-#' then a unique string called a *nextToken* is returned. To get the next
-#' batch of items in the list, call this operation again, adding the next
-#' token to the call. To get all of the items in the list, keep calling
-#' this operation with each subsequent next token that is returned, until
-#' no more next tokens are returned.
-#' @param maxResults The maximum number of paginated shared report groups per response. Use
-#' `nextToken` to iterate pages in the list of returned `ReportGroup`
-#' objects. The default value is 100.
+#' -   `MODIFIED_TIME`: List based on when information about the shared report group was last changed.
+#' @param nextToken During a previous call, the maximum number of items that can be returned is the value specified in `maxResults`. If there more items in the list, then a unique string called a *nextToken* is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
+#' @param maxResults The maximum number of paginated shared report groups per response. Use `nextToken` to iterate pages in the list of returned `ReportGroup` objects. The default value is 100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4736,19 +4433,13 @@ codebuild_list_source_credentials <- function() {
 #' Stores a resource policy for the ARN of a Project or ReportGroup object
 #'
 #' @description
-#' Stores a resource policy for the ARN of a `Project` or `ReportGroup`
-#' object.
+#' Stores a resource policy for the ARN of a `Project` or `ReportGroup` object.
 #'
 #' @usage
 #' codebuild_put_resource_policy(policy, resourceArn)
 #'
-#' @param policy &#91;required&#93; A JSON-formatted resource policy. For more information, see [Sharing a
-#' Project](https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share)
-#' and [Sharing a Report
-#' Group](https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share)
-#' in the *CodeBuild User Guide*.
-#' @param resourceArn &#91;required&#93; The ARN of the `Project` or `ReportGroup` resource you want to associate
-#' with a resource policy.
+#' @param policy &#91;required&#93; A JSON-formatted resource policy. For more information, see [Sharing a Project](https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share) and [Sharing a Report Group](https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share) in the *CodeBuild User Guide*.
+#' @param resourceArn &#91;required&#93; The ARN of the `Project` or `ReportGroup` resource you want to associate with a resource policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4799,12 +4490,7 @@ codebuild_put_resource_policy <- function(policy, resourceArn) {
 #' codebuild_retry_build(id, idempotencyToken)
 #'
 #' @param id Specifies the identifier of the build to restart.
-#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the
-#' idempotency of the [`retry_build`][codebuild_retry_build] request. The
-#' token is included in the [`retry_build`][codebuild_retry_build] request
-#' and is valid for five minutes. If you repeat the
-#' [`retry_build`][codebuild_retry_build] request with the same token, but
-#' change a parameter, CodeBuild returns a parameter mismatch error.
+#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the idempotency of the [`retry_build`][codebuild_retry_build] request. The token is included in the [`retry_build`][codebuild_retry_build] request and is valid for five minutes. If you repeat the [`retry_build`][codebuild_retry_build] request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5065,21 +4751,13 @@ codebuild_retry_build <- function(id = NULL, idempotencyToken = NULL) {
 #' Restarts a failed batch build
 #'
 #' @description
-#' Restarts a failed batch build. Only batch builds that have failed can be
-#' retried.
+#' Restarts a failed batch build. Only batch builds that have failed can be retried.
 #'
 #' @usage
 #' codebuild_retry_build_batch(id, idempotencyToken, retryType)
 #'
 #' @param id Specifies the identifier of the batch build to restart.
-#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the
-#' idempotency of the [`retry_build_batch`][codebuild_retry_build_batch]
-#' request. The token is included in the
-#' [`retry_build_batch`][codebuild_retry_build_batch] request and is valid
-#' for five minutes. If you repeat the
-#' [`retry_build_batch`][codebuild_retry_build_batch] request with the same
-#' token, but change a parameter, CodeBuild returns a parameter mismatch
-#' error.
+#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the idempotency of the [`retry_build_batch`][codebuild_retry_build_batch] request. The token is included in the [`retry_build_batch`][codebuild_retry_build_batch] request and is valid for five minutes. If you repeat the [`retry_build_batch`][codebuild_retry_build_batch] request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
 #' @param retryType Specifies the type of retry to perform.
 #'
 #' @return
@@ -5380,14 +5058,9 @@ codebuild_retry_build_batch <- function(id = NULL, idempotencyToken = NULL, retr
 #' Starts running a build with the settings defined in the project
 #'
 #' @description
-#' Starts running a build with the settings defined in the project. These
-#' setting include: how to run a build, where to get the source code, which
-#' build environment to use, which build commands to run, and where to
-#' store the build output.
+#' Starts running a build with the settings defined in the project. These setting include: how to run a build, where to get the source code, which build environment to use, which build commands to run, and where to store the build output.
 #' 
-#' You can also start a build run by overriding some of the build settings
-#' in the project. The overrides only apply for that specific start build
-#' request. The settings in the project are unaltered.
+#' You can also start a build run by overriding some of the build settings in the project. The overrides only apply for that specific start build request. The settings in the project are unaltered.
 #'
 #' @usage
 #' codebuild_start_build(projectName, secondarySourcesOverride,
@@ -5406,12 +5079,8 @@ codebuild_retry_build_batch <- function(id = NULL, idempotencyToken = NULL, retr
 #'
 #' @param projectName &#91;required&#93; The name of the CodeBuild build project to start running a build.
 #' @param secondarySourcesOverride An array of `ProjectSource` objects.
-#' @param secondarySourcesVersionOverride An array of `ProjectSourceVersion` objects that specify one or more
-#' versions of the project's secondary sources to be used for this build
-#' only.
-#' @param sourceVersion The version of the build input to be built, for this build only. If not
-#' specified, the latest version is used. If specified, the contents
-#' depends on the source provider:
+#' @param secondarySourcesVersionOverride An array of `ProjectSourceVersion` objects that specify one or more versions of the project's secondary sources to be used for this build only.
+#' @param sourceVersion The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:
 #' 
 #' **CodeCommit**
 #' 
@@ -5419,12 +5088,7 @@ codebuild_retry_build_batch <- function(id = NULL, idempotencyToken = NULL, retr
 #' 
 #' **GitHub**
 #' 
-#' The commit ID, pull request ID, branch name, or tag name that
-#' corresponds to the version of the source code you want to build. If a
-#' pull request ID is specified, it must use the format
-#' `pr/pull-request-ID` (for example `pr/25`). If a branch name is
-#' specified, the branch's HEAD commit ID is used. If not specified, the
-#' default branch's HEAD commit ID is used.
+#' The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format `pr/pull-request-ID` (for example `pr/25`). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
 #' **GitLab**
 #' 
@@ -5432,143 +5096,66 @@ codebuild_retry_build_batch <- function(id = NULL, idempotencyToken = NULL, retr
 #' 
 #' **Bitbucket**
 #' 
-#' The commit ID, branch name, or tag name that corresponds to the version
-#' of the source code you want to build. If a branch name is specified, the
-#' branch's HEAD commit ID is used. If not specified, the default branch's
-#' HEAD commit ID is used.
+#' The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
 #' **Amazon S3**
 #' 
-#' The version ID of the object that represents the build input ZIP file to
-#' use.
+#' The version ID of the object that represents the build input ZIP file to use.
 #' 
-#' If `sourceVersion` is specified at the project level, then this
-#' `sourceVersion` (at the build level) takes precedence.
+#' If `sourceVersion` is specified at the project level, then this `sourceVersion` (at the build level) takes precedence.
 #' 
-#' For more information, see [Source Version Sample with
-#' CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html)
-#' in the *CodeBuild User Guide*.
-#' @param artifactsOverride Build output artifact settings that override, for this build only, the
-#' latest ones already defined in the build project.
+#' For more information, see [Source Version Sample with CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html) in the *CodeBuild User Guide*.
+#' @param artifactsOverride Build output artifact settings that override, for this build only, the latest ones already defined in the build project.
 #' @param secondaryArtifactsOverride An array of `ProjectArtifacts` objects.
-#' @param environmentVariablesOverride A set of environment variables that overrides, for this build only, the
-#' latest ones already defined in the build project.
-#' @param sourceTypeOverride A source input type, for this build, that overrides the source input
-#' defined in the build project.
-#' @param sourceLocationOverride A location that overrides, for this build, the source location for the
-#' one defined in the build project.
-#' @param sourceAuthOverride An authorization type for this build that overrides the one defined in
-#' the build project. This override applies only if the build project's
-#' source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
-#' @param gitCloneDepthOverride The user-defined depth of history, with a minimum value of 0, that
-#' overrides, for this build only, any previous depth of history defined in
-#' the build project.
-#' @param gitSubmodulesConfigOverride Information about the Git submodules configuration for this build of an
-#' CodeBuild build project.
-#' @param buildspecOverride A buildspec file declaration that overrides the latest one defined in
-#' the build project, for this build only. The buildspec defined on the
-#' project is not changed.
+#' @param environmentVariablesOverride A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.
+#' @param sourceTypeOverride A source input type, for this build, that overrides the source input defined in the build project.
+#' @param sourceLocationOverride A location that overrides, for this build, the source location for the one defined in the build project.
+#' @param sourceAuthOverride An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
+#' @param gitCloneDepthOverride The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.
+#' @param gitSubmodulesConfigOverride Information about the Git submodules configuration for this build of an CodeBuild build project.
+#' @param buildspecOverride A buildspec file declaration that overrides the latest one defined in the build project, for this build only. The buildspec defined on the project is not changed.
 #' 
-#' If this value is set, it can be either an inline buildspec definition,
-#' the path to an alternate buildspec file relative to the value of the
-#' built-in `CODEBUILD_SRC_DIR` environment variable, or the path to an S3
-#' bucket. The bucket must be in the same Amazon Web Services Region as the
-#' build project. Specify the buildspec file using its ARN (for example,
-#' `arn:aws:s3:::my-codebuild-sample2/buildspec.yml`). If this value is not
-#' provided or is set to an empty string, the source code must contain a
-#' buildspec file in its root directory. For more information, see
-#' [Buildspec File Name and Storage
-#' Location](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage).
+#' If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in `CODEBUILD_SRC_DIR` environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, `arn:aws:s3:::my-codebuild-sample2/buildspec.yml`). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see [Buildspec File Name and Storage Location](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage).
 #' 
-#' Since this property allows you to change the build commands that will
-#' run in the container, you should note that an IAM principal with the
-#' ability to call this API and set this parameter can override the default
-#' settings. Moreover, we encourage that you use a trustworthy buildspec
-#' location like a file in your source repository or a Amazon S3 bucket.
-#' Alternatively, you can restrict overrides to the buildspec by using a
-#' condition key: [Prevent unauthorized modifications to project
-#' buildspec](https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html#action-context-keys-example-overridebuildspec.html).
-#' @param insecureSslOverride Enable this flag to override the insecure SSL setting that is specified
-#' in the build project. The insecure SSL setting determines whether to
-#' ignore SSL warnings while connecting to the project source code. This
-#' override applies only if the build's source is GitHub Enterprise.
-#' @param reportBuildStatusOverride Set to true to report to your source provider the status of a build's
-#' start and completion. If you use this option with a source provider
-#' other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
-#' Bitbucket, an `invalidInputException` is thrown.
+#' Since this property allows you to change the build commands that will run in the container, you should note that an IAM principal with the ability to call this API and set this parameter can override the default settings. Moreover, we encourage that you use a trustworthy buildspec location like a file in your source repository or a Amazon S3 bucket. Alternatively, you can restrict overrides to the buildspec by using a condition key: [Prevent unauthorized modifications to project buildspec](https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html#action-context-keys-example-overridebuildspec.html).
+#' @param insecureSslOverride Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.
+#' @param reportBuildStatusOverride Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket, an `invalidInputException` is thrown.
 #' 
-#' To be able to report the build status to the source provider, the user
-#' associated with the source provider must have write access to the repo.
-#' If the user does not have write access, the build status cannot be
-#' updated. For more information, see [Source provider
-#' access](https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html)
-#' in the *CodeBuild User Guide*.
+#' To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see [Source provider access](https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html) in the *CodeBuild User Guide*.
 #' 
-#' The status of a build triggered by a webhook is always reported to your
-#' source provider.
-#' @param buildStatusConfigOverride Contains information that defines how the build project reports the
-#' build status to the source provider. This option is only used when the
-#' source provider is `GITHUB`, `GITHUB_ENTERPRISE`, or `BITBUCKET`.
-#' @param environmentTypeOverride A container type for this build that overrides the one specified in the
-#' build project.
-#' @param imageOverride The name of an image for this build that overrides the one specified in
-#' the build project.
-#' @param computeTypeOverride The name of a compute type for this build that overrides the one
-#' specified in the build project.
-#' @param certificateOverride The name of a certificate for this build that overrides the one
-#' specified in the build project.
-#' @param cacheOverride A ProjectCache object specified for this build that overrides the one
-#' defined in the build project.
-#' @param serviceRoleOverride The name of a service role for this build that overrides the one
-#' specified in the build project.
+#' The status of a build triggered by a webhook is always reported to your source provider.
+#' @param buildStatusConfigOverride Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is `GITHUB`, `GITHUB_ENTERPRISE`, or `BITBUCKET`.
+#' @param environmentTypeOverride A container type for this build that overrides the one specified in the build project.
+#' @param imageOverride The name of an image for this build that overrides the one specified in the build project.
+#' @param computeTypeOverride The name of a compute type for this build that overrides the one specified in the build project.
+#' @param certificateOverride The name of a certificate for this build that overrides the one specified in the build project.
+#' @param cacheOverride A ProjectCache object specified for this build that overrides the one defined in the build project.
+#' @param serviceRoleOverride The name of a service role for this build that overrides the one specified in the build project.
 #' @param privilegedModeOverride Enable this flag to override privileged mode in the build project.
-#' @param timeoutInMinutesOverride The number of build timeout minutes, from 5 to 2160 (36 hours), that
-#' overrides, for this build only, the latest setting already defined in
-#' the build project.
-#' @param queuedTimeoutInMinutesOverride The number of minutes a build is allowed to be queued before it times
-#' out.
-#' @param encryptionKeyOverride The Key Management Service customer master key (CMK) that overrides the
-#' one specified in the build project. The CMK key encrypts the build
-#' output artifacts.
+#' @param timeoutInMinutesOverride The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.
+#' @param queuedTimeoutInMinutesOverride The number of minutes a build is allowed to be queued before it times out.
+#' @param encryptionKeyOverride The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.
 #' 
-#' You can use a cross-account KMS key to encrypt the build output
-#' artifacts if your service role has permission to that key.
+#' You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.
 #' 
-#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if
-#' available, the CMK's alias (using the format `alias/<alias-name>`).
-#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the
-#' idempotency of the StartBuild request. The token is included in the
-#' StartBuild request and is valid for 5 minutes. If you repeat the
-#' StartBuild request with the same token, but change a parameter,
-#' CodeBuild returns a parameter mismatch error.
-#' @param logsConfigOverride Log settings for this build that override the log settings defined in
-#' the build project.
+#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format `alias/<alias-name>`).
+#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
+#' @param logsConfigOverride Log settings for this build that override the log settings defined in the build project.
 #' @param registryCredentialOverride The credentials for access to a private registry.
-#' @param imagePullCredentialsTypeOverride The type of credentials CodeBuild uses to pull images in your build.
-#' There are two valid values:
+#' @param imagePullCredentialsTypeOverride The type of credentials CodeBuild uses to pull images in your build. There are two valid values:
 #' 
 #' **CODEBUILD**
 #' 
-#' Specifies that CodeBuild uses its own credentials. This requires that
-#' you modify your ECR repository policy to trust CodeBuild's service
-#' principal.
+#' Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.
 #' 
 #' **SERVICE_ROLE**
 #' 
 #' Specifies that CodeBuild uses your build project's service role.
 #' 
-#' When using a cross-account or private registry image, you must use
-#' `SERVICE_ROLE` credentials. When using an CodeBuild curated image, you
-#' must use `CODEBUILD` credentials.
-#' @param debugSessionEnabled Specifies if session debugging is enabled for this build. For more
-#' information, see [Viewing a running build in Session
-#' Manager](https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html).
-#' @param fleetOverride A ProjectFleet object specified for this build that overrides the one
-#' defined in the build project.
-#' @param autoRetryLimitOverride The maximum number of additional automatic retries after a failed build.
-#' For example, if the auto-retry limit is set to 2, CodeBuild will call
-#' the [`retry_build`][codebuild_retry_build] API to automatically retry
-#' your build for up to 2 additional times.
+#' When using a cross-account or private registry image, you must use `SERVICE_ROLE` credentials. When using an CodeBuild curated image, you must use `CODEBUILD` credentials.
+#' @param debugSessionEnabled Specifies if session debugging is enabled for this build. For more information, see [Viewing a running build in Session Manager](https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html).
+#' @param fleetOverride A ProjectFleet object specified for this build that overrides the one defined in the build project.
+#' @param autoRetryLimitOverride The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the [`retry_build`][codebuild_retry_build] API to automatically retry your build for up to 2 additional times.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5966,13 +5553,9 @@ codebuild_start_build <- function(projectName, secondarySourcesOverride = NULL, 
 #'   debugSessionEnabled)
 #'
 #' @param projectName &#91;required&#93; The name of the project.
-#' @param secondarySourcesOverride An array of `ProjectSource` objects that override the secondary sources
-#' defined in the batch build project.
-#' @param secondarySourcesVersionOverride An array of `ProjectSourceVersion` objects that override the secondary
-#' source versions in the batch build project.
-#' @param sourceVersion The version of the batch build input to be built, for this build only.
-#' If not specified, the latest version is used. If specified, the contents
-#' depends on the source provider:
+#' @param secondarySourcesOverride An array of `ProjectSource` objects that override the secondary sources defined in the batch build project.
+#' @param secondarySourcesVersionOverride An array of `ProjectSourceVersion` objects that override the secondary source versions in the batch build project.
+#' @param sourceVersion The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:
 #' 
 #' **CodeCommit**
 #' 
@@ -5980,131 +5563,64 @@ codebuild_start_build <- function(projectName, secondarySourcesOverride = NULL, 
 #' 
 #' **GitHub**
 #' 
-#' The commit ID, pull request ID, branch name, or tag name that
-#' corresponds to the version of the source code you want to build. If a
-#' pull request ID is specified, it must use the format
-#' `pr/pull-request-ID` (for example `pr/25`). If a branch name is
-#' specified, the branch's HEAD commit ID is used. If not specified, the
-#' default branch's HEAD commit ID is used.
+#' The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format `pr/pull-request-ID` (for example `pr/25`). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
 #' **Bitbucket**
 #' 
-#' The commit ID, branch name, or tag name that corresponds to the version
-#' of the source code you want to build. If a branch name is specified, the
-#' branch's HEAD commit ID is used. If not specified, the default branch's
-#' HEAD commit ID is used.
+#' The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
 #' **Amazon S3**
 #' 
-#' The version ID of the object that represents the build input ZIP file to
-#' use.
+#' The version ID of the object that represents the build input ZIP file to use.
 #' 
-#' If `sourceVersion` is specified at the project level, then this
-#' `sourceVersion` (at the build level) takes precedence.
+#' If `sourceVersion` is specified at the project level, then this `sourceVersion` (at the build level) takes precedence.
 #' 
-#' For more information, see [Source Version Sample with
-#' CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html)
-#' in the *CodeBuild User Guide*.
-#' @param artifactsOverride An array of `ProjectArtifacts` objects that contains information about
-#' the build output artifact overrides for the build project.
-#' @param secondaryArtifactsOverride An array of `ProjectArtifacts` objects that override the secondary
-#' artifacts defined in the batch build project.
-#' @param environmentVariablesOverride An array of `EnvironmentVariable` objects that override, or add to, the
-#' environment variables defined in the batch build project.
-#' @param sourceTypeOverride The source input type that overrides the source input defined in the
-#' batch build project.
-#' @param sourceLocationOverride A location that overrides, for this batch build, the source location
-#' defined in the batch build project.
-#' @param sourceAuthOverride A `SourceAuth` object that overrides the one defined in the batch build
-#' project. This override applies only if the build project's source is
-#' BitBucket or GitHub.
-#' @param gitCloneDepthOverride The user-defined depth of history, with a minimum value of 0, that
-#' overrides, for this batch build only, any previous depth of history
-#' defined in the batch build project.
-#' @param gitSubmodulesConfigOverride A `GitSubmodulesConfig` object that overrides the Git submodules
-#' configuration for this batch build.
-#' @param buildspecOverride A buildspec file declaration that overrides, for this build only, the
-#' latest one already defined in the build project.
+#' For more information, see [Source Version Sample with CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html) in the *CodeBuild User Guide*.
+#' @param artifactsOverride An array of `ProjectArtifacts` objects that contains information about the build output artifact overrides for the build project.
+#' @param secondaryArtifactsOverride An array of `ProjectArtifacts` objects that override the secondary artifacts defined in the batch build project.
+#' @param environmentVariablesOverride An array of `EnvironmentVariable` objects that override, or add to, the environment variables defined in the batch build project.
+#' @param sourceTypeOverride The source input type that overrides the source input defined in the batch build project.
+#' @param sourceLocationOverride A location that overrides, for this batch build, the source location defined in the batch build project.
+#' @param sourceAuthOverride A `SourceAuth` object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.
+#' @param gitCloneDepthOverride The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.
+#' @param gitSubmodulesConfigOverride A `GitSubmodulesConfig` object that overrides the Git submodules configuration for this batch build.
+#' @param buildspecOverride A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.
 #' 
-#' If this value is set, it can be either an inline buildspec definition,
-#' the path to an alternate buildspec file relative to the value of the
-#' built-in `CODEBUILD_SRC_DIR` environment variable, or the path to an S3
-#' bucket. The bucket must be in the same Amazon Web Services Region as the
-#' build project. Specify the buildspec file using its ARN (for example,
-#' `arn:aws:s3:::my-codebuild-sample2/buildspec.yml`). If this value is not
-#' provided or is set to an empty string, the source code must contain a
-#' buildspec file in its root directory. For more information, see
-#' [Buildspec File Name and Storage
-#' Location](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage).
-#' @param insecureSslOverride Enable this flag to override the insecure SSL setting that is specified
-#' in the batch build project. The insecure SSL setting determines whether
-#' to ignore SSL warnings while connecting to the project source code. This
-#' override applies only if the build's source is GitHub Enterprise.
-#' @param reportBuildBatchStatusOverride Set to `true` to report to your source provider the status of a batch
-#' build's start and completion. If you use this option with a source
-#' provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-#' `invalidInputException` is thrown.
+#' If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in `CODEBUILD_SRC_DIR` environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, `arn:aws:s3:::my-codebuild-sample2/buildspec.yml`). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see [Buildspec File Name and Storage Location](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage).
+#' @param insecureSslOverride Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.
+#' @param reportBuildBatchStatusOverride Set to `true` to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an `invalidInputException` is thrown.
 #' 
-#' The status of a build triggered by a webhook is always reported to your
-#' source provider.
-#' @param environmentTypeOverride A container type for this batch build that overrides the one specified
-#' in the batch build project.
-#' @param imageOverride The name of an image for this batch build that overrides the one
-#' specified in the batch build project.
-#' @param computeTypeOverride The name of a compute type for this batch build that overrides the one
-#' specified in the batch build project.
-#' @param certificateOverride The name of a certificate for this batch build that overrides the one
-#' specified in the batch build project.
+#' The status of a build triggered by a webhook is always reported to your source provider.
+#' @param environmentTypeOverride A container type for this batch build that overrides the one specified in the batch build project.
+#' @param imageOverride The name of an image for this batch build that overrides the one specified in the batch build project.
+#' @param computeTypeOverride The name of a compute type for this batch build that overrides the one specified in the batch build project.
+#' @param certificateOverride The name of a certificate for this batch build that overrides the one specified in the batch build project.
 #' @param cacheOverride A `ProjectCache` object that specifies cache overrides.
-#' @param serviceRoleOverride The name of a service role for this batch build that overrides the one
-#' specified in the batch build project.
+#' @param serviceRoleOverride The name of a service role for this batch build that overrides the one specified in the batch build project.
 #' @param privilegedModeOverride Enable this flag to override privileged mode in the batch build project.
 #' @param buildTimeoutInMinutesOverride Overrides the build timeout specified in the batch build project.
-#' @param queuedTimeoutInMinutesOverride The number of minutes a batch build is allowed to be queued before it
-#' times out.
-#' @param encryptionKeyOverride The Key Management Service customer master key (CMK) that overrides the
-#' one specified in the batch build project. The CMK key encrypts the build
-#' output artifacts.
+#' @param queuedTimeoutInMinutesOverride The number of minutes a batch build is allowed to be queued before it times out.
+#' @param encryptionKeyOverride The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.
 #' 
-#' You can use a cross-account KMS key to encrypt the build output
-#' artifacts if your service role has permission to that key.
+#' You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.
 #' 
-#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if
-#' available, the CMK's alias (using the format `alias/<alias-name>`).
-#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the
-#' idempotency of the [`start_build_batch`][codebuild_start_build_batch]
-#' request. The token is included in the
-#' [`start_build_batch`][codebuild_start_build_batch] request and is valid
-#' for five minutes. If you repeat the
-#' [`start_build_batch`][codebuild_start_build_batch] request with the same
-#' token, but change a parameter, CodeBuild returns a parameter mismatch
-#' error.
-#' @param logsConfigOverride A `LogsConfig` object that override the log settings defined in the
-#' batch build project.
-#' @param registryCredentialOverride A `RegistryCredential` object that overrides credentials for access to a
-#' private registry.
-#' @param imagePullCredentialsTypeOverride The type of credentials CodeBuild uses to pull images in your batch
-#' build. There are two valid values:
+#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format `alias/<alias-name>`).
+#' @param idempotencyToken A unique, case sensitive identifier you provide to ensure the idempotency of the [`start_build_batch`][codebuild_start_build_batch] request. The token is included in the [`start_build_batch`][codebuild_start_build_batch] request and is valid for five minutes. If you repeat the [`start_build_batch`][codebuild_start_build_batch] request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
+#' @param logsConfigOverride A `LogsConfig` object that override the log settings defined in the batch build project.
+#' @param registryCredentialOverride A `RegistryCredential` object that overrides credentials for access to a private registry.
+#' @param imagePullCredentialsTypeOverride The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values:
 #' 
 #' **CODEBUILD**
 #' 
-#' Specifies that CodeBuild uses its own credentials. This requires that
-#' you modify your ECR repository policy to trust CodeBuild's service
-#' principal.
+#' Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.
 #' 
 #' **SERVICE_ROLE**
 #' 
 #' Specifies that CodeBuild uses your build project's service role.
 #' 
-#' When using a cross-account or private registry image, you must use
-#' `SERVICE_ROLE` credentials. When using an CodeBuild curated image, you
-#' must use `CODEBUILD` credentials.
-#' @param buildBatchConfigOverride A `BuildBatchConfigOverride` object that contains batch build
-#' configuration overrides.
-#' @param debugSessionEnabled Specifies if session debugging is enabled for this batch build. For more
-#' information, see [Viewing a running build in Session
-#' Manager](https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html).
-#' Batch session debugging is not supported for matrix batch builds.
+#' When using a cross-account or private registry image, you must use `SERVICE_ROLE` credentials. When using an CodeBuild curated image, you must use `CODEBUILD` credentials.
+#' @param buildBatchConfigOverride A `BuildBatchConfigOverride` object that contains batch build configuration overrides.
+#' @param debugSessionEnabled Specifies if session debugging is enabled for this batch build. For more information, see [Viewing a running build in Session Manager](https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html). Batch session debugging is not supported for matrix batch builds.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7731,177 +7247,91 @@ codebuild_stop_sandbox <- function(id) {
 #'   proxyConfiguration, imageId, fleetServiceRole, tags)
 #'
 #' @param arn &#91;required&#93; The ARN of the compute fleet.
-#' @param baseCapacity The initial number of machines allocated to the compute ﬂeet, which
-#' defines the number of builds that can run in parallel.
+#' @param baseCapacity The initial number of machines allocated to the compute ﬂeet, which defines the number of builds that can run in parallel.
 #' @param environmentType The environment type of the compute fleet.
 #' 
-#' -   The environment type `ARM_CONTAINER` is available only in regions US
-#'     East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland),
-#'     Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific
-#'     (Singapore), Asia Pacific (Sydney), EU (Frankfurt), and South
-#'     America (São Paulo).
+#' -   The environment type `ARM_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), EU (Frankfurt), and South America (São Paulo).
 #' 
-#' -   The environment type `ARM_EC2` is available only in regions US East
-#'     (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU
-#'     (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia
-#'     Pacific (Sydney), South America (São Paulo), and Asia Pacific
-#'     (Mumbai).
+#' -   The environment type `ARM_EC2` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `LINUX_CONTAINER` is available only in regions
-#'     US East (N. Virginia), US East (Ohio), US West (Oregon), EU
-#'     (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-#'     (Singapore), Asia Pacific (Sydney), South America (São Paulo), and
-#'     Asia Pacific (Mumbai).
+#' -   The environment type `LINUX_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `LINUX_EC2` is available only in regions US
-#'     East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland),
-#'     EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia
-#'     Pacific (Sydney), South America (São Paulo), and Asia Pacific
-#'     (Mumbai).
+#' -   The environment type `LINUX_EC2` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `LINUX_GPU_CONTAINER` is available only in
-#'     regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU
-#'     (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), and Asia Pacific
-#'     (Sydney).
+#' -   The environment type `LINUX_GPU_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), and Asia Pacific (Sydney).
 #' 
-#' -   The environment type `MAC_ARM` is available for Medium fleets only
-#'     in regions US East (N. Virginia), US East (Ohio), US West (Oregon),
-#'     Asia Pacific (Sydney), and EU (Frankfurt)
+#' -   The environment type `MAC_ARM` is available for Medium fleets only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), and EU (Frankfurt)
 #' 
-#' -   The environment type `MAC_ARM` is available for Large fleets only in
-#'     regions US East (N. Virginia), US East (Ohio), US West (Oregon), and
-#'     Asia Pacific (Sydney).
+#' -   The environment type `MAC_ARM` is available for Large fleets only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and Asia Pacific (Sydney).
 #' 
-#' -   The environment type `WINDOWS_EC2` is available only in regions US
-#'     East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland),
-#'     EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia
-#'     Pacific (Sydney), South America (São Paulo), and Asia Pacific
-#'     (Mumbai).
+#' -   The environment type `WINDOWS_EC2` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia Pacific (Mumbai).
 #' 
-#' -   The environment type `WINDOWS_SERVER_2019_CONTAINER` is available
-#'     only in regions US East (N. Virginia), US East (Ohio), US West
-#'     (Oregon), Asia Pacific (Sydney), Asia Pacific (Tokyo), Asia Pacific
-#'     (Mumbai) and EU (Ireland).
+#' -   The environment type `WINDOWS_SERVER_2019_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), Asia Pacific (Tokyo), Asia Pacific (Mumbai) and EU (Ireland).
 #' 
-#' -   The environment type `WINDOWS_SERVER_2022_CONTAINER` is available
-#'     only in regions US East (N. Virginia), US East (Ohio), US West
-#'     (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Sydney), Asia
-#'     Pacific (Singapore), Asia Pacific (Tokyo), South America (São Paulo)
-#'     and Asia Pacific (Mumbai).
+#' -   The environment type `WINDOWS_SERVER_2022_CONTAINER` is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Sydney), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (São Paulo) and Asia Pacific (Mumbai).
 #' 
-#' For more information, see [Build environment compute
-#' types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html)
-#' in the *CodeBuild user guide*.
-#' @param computeType Information about the compute resources the compute fleet uses.
-#' Available values include:
+#' For more information, see [Build environment compute types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html) in the *CodeBuild user guide*.
+#' @param computeType Information about the compute resources the compute fleet uses. Available values include:
 #' 
-#' -   `ATTRIBUTE_BASED_COMPUTE`: Specify the amount of vCPUs, memory, disk
-#'     space, and the type of machine.
+#' -   `ATTRIBUTE_BASED_COMPUTE`: Specify the amount of vCPUs, memory, disk space, and the type of machine.
 #' 
-#'     If you use `ATTRIBUTE_BASED_COMPUTE`, you must define your
-#'     attributes by using `computeConfiguration`. CodeBuild will select
-#'     the cheapest instance that satisfies your specified attributes. For
-#'     more information, see [Reserved capacity environment
-#'     types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types)
-#'     in the *CodeBuild User Guide*.
+#'     If you use `ATTRIBUTE_BASED_COMPUTE`, you must define your attributes by using `computeConfiguration`. CodeBuild will select the cheapest instance that satisfies your specified attributes. For more information, see [Reserved capacity environment types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types) in the *CodeBuild User Guide*.
 #' 
-#' -   `CUSTOM_INSTANCE_TYPE`: Specify the instance type for your compute
-#'     fleet. For a list of supported instance types, see [Supported
-#'     instance
-#'     families](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types)
-#'     in the *CodeBuild User Guide*.
+#' -   `CUSTOM_INSTANCE_TYPE`: Specify the instance type for your compute fleet. For a list of supported instance types, see [Supported instance families](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types) in the *CodeBuild User Guide*.
 #' 
-#' -   `BUILD_GENERAL1_SMALL`: Use up to 4 GiB memory and 2 vCPUs for
-#'     builds.
+#' -   `BUILD_GENERAL1_SMALL`: Use up to 4 GiB memory and 2 vCPUs for builds.
 #' 
-#' -   `BUILD_GENERAL1_MEDIUM`: Use up to 8 GiB memory and 4 vCPUs for
-#'     builds.
+#' -   `BUILD_GENERAL1_MEDIUM`: Use up to 8 GiB memory and 4 vCPUs for builds.
 #' 
-#' -   `BUILD_GENERAL1_LARGE`: Use up to 16 GiB memory and 8 vCPUs for
-#'     builds, depending on your environment type.
+#' -   `BUILD_GENERAL1_LARGE`: Use up to 16 GiB memory and 8 vCPUs for builds, depending on your environment type.
 #' 
-#' -   `BUILD_GENERAL1_XLARGE`: Use up to 72 GiB memory and 36 vCPUs for
-#'     builds, depending on your environment type.
+#' -   `BUILD_GENERAL1_XLARGE`: Use up to 72 GiB memory and 36 vCPUs for builds, depending on your environment type.
 #' 
-#' -   `BUILD_GENERAL1_2XLARGE`: Use up to 144 GiB memory, 72 vCPUs, and
-#'     824 GB of SSD storage for builds. This compute type supports Docker
-#'     images up to 100 GB uncompressed.
+#' -   `BUILD_GENERAL1_2XLARGE`: Use up to 144 GiB memory, 72 vCPUs, and 824 GB of SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.
 #' 
-#' -   `BUILD_LAMBDA_1GB`: Use up to 1 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_1GB`: Use up to 1 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_2GB`: Use up to 2 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_2GB`: Use up to 2 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_4GB`: Use up to 4 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_4GB`: Use up to 4 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_8GB`: Use up to 8 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_8GB`: Use up to 8 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
-#' -   `BUILD_LAMBDA_10GB`: Use up to 10 GiB memory for builds. Only
-#'     available for environment type `LINUX_LAMBDA_CONTAINER` and
-#'     `ARM_LAMBDA_CONTAINER`.
+#' -   `BUILD_LAMBDA_10GB`: Use up to 10 GiB memory for builds. Only available for environment type `LINUX_LAMBDA_CONTAINER` and `ARM_LAMBDA_CONTAINER`.
 #' 
 #' If you use `BUILD_GENERAL1_SMALL`:
 #' 
-#' -   For environment type `LINUX_CONTAINER`, you can use up to 4 GiB
-#'     memory and 2 vCPUs for builds.
+#' -   For environment type `LINUX_CONTAINER`, you can use up to 4 GiB memory and 2 vCPUs for builds.
 #' 
-#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 16 GiB
-#'     memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.
+#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 16 GiB memory, 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.
 #' 
-#' -   For environment type `ARM_CONTAINER`, you can use up to 4 GiB memory
-#'     and 2 vCPUs on ARM-based processors for builds.
+#' -   For environment type `ARM_CONTAINER`, you can use up to 4 GiB memory and 2 vCPUs on ARM-based processors for builds.
 #' 
 #' If you use `BUILD_GENERAL1_LARGE`:
 #' 
-#' -   For environment type `LINUX_CONTAINER`, you can use up to 16 GiB
-#'     memory and 8 vCPUs for builds.
+#' -   For environment type `LINUX_CONTAINER`, you can use up to 16 GiB memory and 8 vCPUs for builds.
 #' 
-#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 255
-#'     GiB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.
+#' -   For environment type `LINUX_GPU_CONTAINER`, you can use up to 255 GiB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.
 #' 
-#' -   For environment type `ARM_CONTAINER`, you can use up to 16 GiB
-#'     memory and 8 vCPUs on ARM-based processors for builds.
+#' -   For environment type `ARM_CONTAINER`, you can use up to 16 GiB memory and 8 vCPUs on ARM-based processors for builds.
 #' 
-#' For more information, see [On-demand environment
-#' types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types)
-#' in the *CodeBuild User Guide.*
-#' @param computeConfiguration The compute configuration of the compute fleet. This is only required if
-#' `computeType` is set to `ATTRIBUTE_BASED_COMPUTE` or
-#' `CUSTOM_INSTANCE_TYPE`.
+#' For more information, see [On-demand environment types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types) in the *CodeBuild User Guide.*
+#' @param computeConfiguration The compute configuration of the compute fleet. This is only required if `computeType` is set to `ATTRIBUTE_BASED_COMPUTE` or `CUSTOM_INSTANCE_TYPE`.
 #' @param scalingConfiguration The scaling configuration of the compute fleet.
 #' @param overflowBehavior The compute fleet overflow behavior.
 #' 
-#' -   For overflow behavior `QUEUE`, your overflow builds need to wait on
-#'     the existing fleet instance to become available.
+#' -   For overflow behavior `QUEUE`, your overflow builds need to wait on the existing fleet instance to become available.
 #' 
-#' -   For overflow behavior `ON_DEMAND`, your overflow builds run on
-#'     CodeBuild on-demand.
+#' -   For overflow behavior `ON_DEMAND`, your overflow builds run on CodeBuild on-demand.
 #' 
-#'     If you choose to set your overflow behavior to on-demand while
-#'     creating a VPC-connected fleet, make sure that you add the required
-#'     VPC permissions to your project service role. For more information,
-#'     see [Example policy statement to allow CodeBuild access to Amazon
-#'     Web Services services required to create a VPC network
-#'     interface](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface).
-#' @param vpcConfig 
+#'     If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you add the required VPC permissions to your project service role. For more information, see [Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC network interface](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface).
+#' @param vpcConfig Information about the VPC configuration that CodeBuild accesses.
 #' @param proxyConfiguration The proxy configuration of the compute fleet.
 #' @param imageId The Amazon Machine Image (AMI) of the compute fleet.
-#' @param fleetServiceRole The service role associated with the compute fleet. For more
-#' information, see [Allow a user to add a permission policy for a fleet
-#' service
-#' role](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html)
-#' in the *CodeBuild User Guide*.
+#' @param fleetServiceRole The service role associated with the compute fleet. For more information, see [Allow a user to add a permission policy for a fleet service role](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html) in the *CodeBuild User Guide*.
 #' @param tags A list of tag key and value pairs associated with this compute fleet.
 #' 
-#' These tags are available for use by Amazon Web Services services that
-#' support CodeBuild build project tags.
+#' These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8075,90 +7505,50 @@ codebuild_update_fleet <- function(arn, baseCapacity = NULL, environmentType = N
 #' 
 #' You cannot change a build project's name.
 #' @param description A new or replacement description of the build project.
-#' @param source Information to be changed about the build input source code for the
-#' build project.
+#' @param source Information to be changed about the build input source code for the build project.
 #' @param secondarySources An array of `ProjectSource` objects.
-#' @param sourceVersion A version of the build input to be built for this project. If not
-#' specified, the latest version is used. If specified, it must be one of:
+#' @param sourceVersion A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:
 #' 
 #' -   For CodeCommit: the commit ID, branch, or Git tag to use.
 #' 
-#' -   For GitHub: the commit ID, pull request ID, branch name, or tag name
-#'     that corresponds to the version of the source code you want to
-#'     build. If a pull request ID is specified, it must use the format
-#'     `pr/pull-request-ID` (for example `pr/25`). If a branch name is
-#'     specified, the branch's HEAD commit ID is used. If not specified,
-#'     the default branch's HEAD commit ID is used.
+#' -   For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format `pr/pull-request-ID` (for example `pr/25`). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
 #' -   For GitLab: the commit ID, branch, or Git tag to use.
 #' 
-#' -   For Bitbucket: the commit ID, branch name, or tag name that
-#'     corresponds to the version of the source code you want to build. If
-#'     a branch name is specified, the branch's HEAD commit ID is used. If
-#'     not specified, the default branch's HEAD commit ID is used.
+#' -   For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 #' 
-#' -   For Amazon S3: the version ID of the object that represents the
-#'     build input ZIP file to use.
+#' -   For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
 #' 
-#' If `sourceVersion` is specified at the build level, then that version
-#' takes precedence over this `sourceVersion` (at the project level).
+#' If `sourceVersion` is specified at the build level, then that version takes precedence over this `sourceVersion` (at the project level).
 #' 
-#' For more information, see [Source Version Sample with
-#' CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html)
-#' in the *CodeBuild User Guide*.
-#' @param secondarySourceVersions An array of `ProjectSourceVersion` objects. If `secondarySourceVersions`
-#' is specified at the build level, then they take over these
-#' `secondarySourceVersions` (at the project level).
-#' @param artifacts Information to be changed about the build output artifacts for the build
-#' project.
+#' For more information, see [Source Version Sample with CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html) in the *CodeBuild User Guide*.
+#' @param secondarySourceVersions An array of `ProjectSourceVersion` objects. If `secondarySourceVersions` is specified at the build level, then they take over these `secondarySourceVersions` (at the project level).
+#' @param artifacts Information to be changed about the build output artifacts for the build project.
 #' @param secondaryArtifacts An array of `ProjectArtifact` objects.
-#' @param cache Stores recently used information so that it can be quickly accessed at a
-#' later time.
-#' @param environment Information to be changed about the build environment for the build
-#' project.
-#' @param serviceRole The replacement ARN of the IAM role that enables CodeBuild to interact
-#' with dependent Amazon Web Services services on behalf of the Amazon Web
-#' Services account.
-#' @param timeoutInMinutes The replacement value in minutes, from 5 to 2160 (36 hours), for
-#' CodeBuild to wait before timing out any related build that did not get
-#' marked as completed.
-#' @param queuedTimeoutInMinutes The number of minutes a build is allowed to be queued before it times
-#' out.
-#' @param encryptionKey The Key Management Service customer master key (CMK) to be used for
-#' encrypting the build output artifacts.
+#' @param cache Stores recently used information so that it can be quickly accessed at a later time.
+#' @param environment Information to be changed about the build environment for the build project.
+#' @param serviceRole The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.
+#' @param timeoutInMinutes The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.
+#' @param queuedTimeoutInMinutes The number of minutes a build is allowed to be queued before it times out.
+#' @param encryptionKey The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.
 #' 
-#' You can use a cross-account KMS key to encrypt the build output
-#' artifacts if your service role has permission to that key.
+#' You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.
 #' 
-#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if
-#' available, the CMK's alias (using the format `alias/<alias-name>`).
-#' @param tags An updated list of tag key and value pairs associated with this build
-#' project.
+#' You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format `alias/<alias-name>`).
+#' @param tags An updated list of tag key and value pairs associated with this build project.
 #' 
-#' These tags are available for use by Amazon Web Services services that
-#' support CodeBuild build project tags.
+#' These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
 #' @param vpcConfig VpcConfig enables CodeBuild to access resources in an Amazon VPC.
-#' @param badgeEnabled Set this to true to generate a publicly accessible URL for your
-#' project's build badge.
-#' @param logsConfig Information about logs for the build project. A project can create logs
-#' in CloudWatch Logs, logs in an S3 bucket, or both.
-#' @param fileSystemLocations An array of `ProjectFileSystemLocation` objects for a CodeBuild build
-#' project. A `ProjectFileSystemLocation` object specifies the
-#' `identifier`, `location`, `mountOptions`, `mountPoint`, and `type` of a
-#' file system created using Amazon Elastic File System.
-#' @param buildBatchConfig 
-#' @param concurrentBuildLimit The maximum number of concurrent builds that are allowed for this
-#' project.
+#' @param badgeEnabled Set this to true to generate a publicly accessible URL for your project's build badge.
+#' @param logsConfig Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both.
+#' @param fileSystemLocations An array of `ProjectFileSystemLocation` objects for a CodeBuild build project. A `ProjectFileSystemLocation` object specifies the `identifier`, `location`, `mountOptions`, `mountPoint`, and `type` of a file system created using Amazon Elastic File System.
+#' @param buildBatchConfig Contains configuration information about a batch build project.
+#' @param concurrentBuildLimit The maximum number of concurrent builds that are allowed for this project.
 #' 
-#' New builds are only started if the current number of builds is less than
-#' or equal to this limit. If the current build count meets this limit, new
-#' builds are throttled and are not run.
+#' New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.
 #' 
 #' To remove this limit, set this value to -1.
-#' @param autoRetryLimit The maximum number of additional automatic retries after a failed build.
-#' For example, if the auto-retry limit is set to 2, CodeBuild will call
-#' the [`retry_build`][codebuild_retry_build] API to automatically retry
-#' your build for up to 2 additional times.
+#' @param autoRetryLimit The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the [`retry_build`][codebuild_retry_build] API to automatically retry your build for up to 2 additional times.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8614,48 +8004,35 @@ codebuild_update_project <- function(name, description = NULL, source = NULL, se
 #' Changes the public visibility for a project
 #'
 #' @description
-#' Changes the public visibility for a project. The project's build
-#' results, logs, and artifacts are available to the general public. For
-#' more information, see [Public build
-#' projects](https://docs.aws.amazon.com/codebuild/latest/userguide/public-builds.html)
-#' in the *CodeBuild User Guide*.
+#' Changes the public visibility for a project. The project's build results, logs, and artifacts are available to the general public. For more information, see [Public build projects](https://docs.aws.amazon.com/codebuild/latest/userguide/public-builds.html) in the *CodeBuild User Guide*.
 #' 
 #' The following should be kept in mind when making your projects public:
 #' 
-#' -   All of a project's build results, logs, and artifacts, including
-#'     builds that were run when the project was private, are available to
-#'     the general public.
+#' -   All of a project's build results, logs, and artifacts, including builds that were run when the project was private, are available to the general public.
 #' 
-#' -   All build logs and artifacts are available to the public.
-#'     Environment variables, source code, and other sensitive information
-#'     may have been output to the build logs and artifacts. You must be
-#'     careful about what information is output to the build logs. Some
-#'     best practice are:
+#' -   All build logs and artifacts are available to the public. Environment variables, source code, and other sensitive information may have been output to the build logs and artifacts. You must be careful about what information is output to the build logs. Some best practice are:
 #' 
-#'     -   Do not store sensitive values in environment variables. We
-#'         recommend that you use an Amazon EC2 Systems Manager Parameter
-#'         Store or Secrets Manager to store sensitive values.
+#'     -   Do not store sensitive values in environment variables. We recommend that you use an Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store sensitive values.
 #' 
-#'     -   Follow [Best practices for using
-#'         webhooks](https://docs.aws.amazon.com/codebuild/latest/userguide/webhooks.html#webhook-best-practices)
-#'         in the *CodeBuild User Guide* to limit which entities can
-#'         trigger a build, and do not store the buildspec in the project
-#'         itself, to ensure that your webhooks are as secure as possible.
+#'     -   Follow [Best practices for using webhooks](https://docs.aws.amazon.com/codebuild/latest/userguide/webhooks.html#webhook-best-practices) in the *CodeBuild User Guide* to limit which entities can trigger a build, and do not store the buildspec in the project itself, to ensure that your webhooks are as secure as possible.
 #' 
-#' -   A malicious user can use public builds to distribute malicious
-#'     artifacts. We recommend that you review all pull requests to verify
-#'     that the pull request is a legitimate change. We also recommend that
-#'     you validate any artifacts with their checksums to make sure that
-#'     the correct artifacts are being downloaded.
+#' -   A malicious user can use public builds to distribute malicious artifacts. We recommend that you review all pull requests to verify that the pull request is a legitimate change. We also recommend that you validate any artifacts with their checksums to make sure that the correct artifacts are being downloaded.
 #'
 #' @usage
 #' codebuild_update_project_visibility(projectArn, projectVisibility,
 #'   resourceAccessRole)
 #'
 #' @param projectArn &#91;required&#93; The Amazon Resource Name (ARN) of the build project.
-#' @param projectVisibility &#91;required&#93; 
-#' @param resourceAccessRole The ARN of the IAM role that enables CodeBuild to access the CloudWatch
-#' Logs and Amazon S3 artifacts for the project's builds.
+#' @param projectVisibility &#91;required&#93; Specifies the visibility of the project's builds. Possible values are:
+#' 
+#' **PUBLIC_READ**
+#' 
+#' The project builds are visible to the public.
+#' 
+#' **PRIVATE**
+#' 
+#' The project builds are not visible to the public.
+#' @param resourceAccessRole The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8714,11 +8091,9 @@ codebuild_update_project_visibility <- function(projectArn, projectVisibility, r
 #' -   `S3`: The report results are exported to an S3 bucket.
 #' 
 #' -   `NO_EXPORT`: The report results are not exported.
-#' @param tags An updated list of tag key and value pairs associated with this report
-#' group.
+#' @param tags An updated list of tag key and value pairs associated with this report group.
 #' 
-#' These tags are available for use by Amazon Web Services services that
-#' support CodeBuild report group tags.
+#' These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8816,30 +8191,15 @@ codebuild_update_report_group <- function(arn, exportConfig = NULL, tags = NULL)
 #'   filterGroups, buildType, pullRequestBuildPolicy)
 #'
 #' @param projectName &#91;required&#93; The name of the CodeBuild project.
-#' @param branchFilter A regular expression used to determine which repository branches are
-#' built when a webhook is triggered. If the name of a branch matches the
-#' regular expression, then it is built. If `branchFilter` is empty, then
-#' all branches are built.
+#' @param branchFilter A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If `branchFilter` is empty, then all branches are built.
 #' 
 #' It is recommended that you use `filterGroups` instead of `branchFilter`.
-#' @param rotateSecret A boolean value that specifies whether the associated GitHub
-#' repository's secret token should be updated. If you use Bitbucket for
-#' your repository, `rotateSecret` is ignored.
-#' @param filterGroups An array of arrays of `WebhookFilter` objects used to determine if a
-#' webhook event can trigger a build. A filter group must contain at least
-#' one `EVENT` `WebhookFilter`.
+#' @param rotateSecret A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, `rotateSecret` is ignored.
+#' @param filterGroups An array of arrays of `WebhookFilter` objects used to determine if a webhook event can trigger a build. A filter group must contain at least one `EVENT` `WebhookFilter`.
 #' @param buildType Specifies the type of build this webhook will trigger.
 #' 
-#' `RUNNER_BUILDKITE_BUILD` is only available for `NO_SOURCE` source type
-#' projects configured for Buildkite runner builds. For more information
-#' about CodeBuild-hosted Buildkite runner builds, see [Tutorial: Configure
-#' a CodeBuild-hosted Buildkite
-#' runner](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html)
-#' in the *CodeBuild user guide*.
-#' @param pullRequestBuildPolicy A PullRequestBuildPolicy object that defines comment-based approval
-#' requirements for triggering builds on pull requests. This policy helps
-#' control when automated builds are executed based on contributor
-#' permissions and approval workflows.
+#' `RUNNER_BUILDKITE_BUILD` is only available for `NO_SOURCE` source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see [Tutorial: Configure a CodeBuild-hosted Buildkite runner](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html) in the *CodeBuild user guide*.
+#' @param pullRequestBuildPolicy A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.
 #'
 #' @return
 #' A list with the following syntax:

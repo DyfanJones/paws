@@ -20,14 +20,9 @@ ec2_modify_instance_cpu_options(
 
 \item{ThreadsPerCore}{The number of threads to run for each CPU core.}
 
-\item{NestedVirtualization}{Indicates whether to enable or disable nested virtualization for the
-instance. When nested virtualization is enabled, Virtual Secure Mode
-(VSM) is automatically disabled for the instance.}
+\item{NestedVirtualization}{Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.}
 
-\item{DryRun}{Checks whether you have the required permissions for the operation,
-without actually making the request, and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 By default, all vCPUs for the instance type are active when you launch an instance. When you configure the number of active vCPUs for the instance, it can help you save on licensing costs and optimize performance. The base cost of the instance remains unchanged.

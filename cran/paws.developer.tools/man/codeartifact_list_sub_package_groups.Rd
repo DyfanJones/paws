@@ -13,19 +13,15 @@ codeartifact_list_sub_package_groups(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain which contains the package group from which to
-list sub package groups.}
+\item{domain}{[required] The name of the domain which contains the package group from which to list sub package groups.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{packageGroup}{[required] The pattern of the package group from which to list sub package groups.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns a list of direct children of the specified package group.

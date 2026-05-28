@@ -14,13 +14,11 @@ memorydb_create_parameter_group(
 \arguments{
 \item{ParameterGroupName}{[required] The name of the parameter group.}
 
-\item{Family}{[required] The name of the parameter group family that the parameter group can be
-used with.}
+\item{Family}{[required] The name of the parameter group family that the parameter group can be used with.}
 
 \item{Description}{An optional description of the parameter group.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For more information, see \href{https://docs.aws.amazon.com/memorydb/latest/devguide/parametergroups.html}{Configuring engine parameters using parameter groups}.

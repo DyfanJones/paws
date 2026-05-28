@@ -13,25 +13,20 @@ redshiftserverless_get_credentials(
 )
 }
 \arguments{
-\item{customDomainName}{The custom domain name associated with the workgroup. The custom domain
-name or the workgroup name must be included in the request.}
+\item{customDomainName}{The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.}
 
 \item{dbName}{The name of the database to get temporary authorization to log on to.
 
 Constraints:
 \itemize{
 \item Must be 1 to 64 alphanumeric characters or hyphens.
-\item Must contain only uppercase or lowercase letters, numbers,
-underscore, plus sign, period (dot), at symbol (@), or hyphen.
+\item Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
 \item The first character must be a letter.
 \item Must not contain a colon ( : ) or slash ( / ).
-\item Cannot be a reserved word. A list of reserved words can be found in
-\href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words}
-in the Amazon Redshift Database Developer Guide
+\item Cannot be a reserved word. A list of reserved words can be found in \href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words} in the Amazon Redshift Database Developer Guide
 }}
 
-\item{durationSeconds}{The number of seconds until the returned temporary password expires. The
-minimum is 900 seconds, and the maximum is 3600 seconds.}
+\item{durationSeconds}{The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.}
 
 \item{workgroupName}{The name of the workgroup associated with the database.}
 }

@@ -7,8 +7,7 @@
 redshift_delete_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource of which its resource
-policy is deleted.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource of which its resource policy is deleted.}
 }
 \description{
 Deletes the resource policy for a specified resource.

@@ -5,13 +5,7 @@ NULL
 #' Amazon DataZone
 #'
 #' @description
-#' Amazon DataZone is a data management service that enables you to
-#' catalog, discover, govern, share, and analyze your data. With Amazon
-#' DataZone, you can share and access your data across accounts and
-#' supported regions. Amazon DataZone simplifies your experience across
-#' Amazon Web Services services, including, but not limited to, Amazon
-#' Redshift, Amazon Athena, Amazon Web Services Glue, and Amazon Web
-#' Services Lake Formation.
+#' Amazon DataZone is a data management service that enables you to catalog, discover, govern, share, and analyze your data. With Amazon DataZone, you can share and access your data across accounts and supported regions. Amazon DataZone simplifies your experience across Amazon Web Services services, including, but not limited to, Amazon Redshift, Amazon Athena, Amazon Web Services Glue, and Amazon Web Services Lake Formation.
 #'
 #' @param
 #' config
@@ -126,6 +120,7 @@ NULL
 #'  \link[=datazone_create_glossary_term]{create_glossary_term} \tab Creates a business glossary term\cr
 #'  \link[=datazone_create_group_profile]{create_group_profile} \tab Creates a group profile in Amazon DataZone\cr
 #'  \link[=datazone_create_listing_change_set]{create_listing_change_set} \tab Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog\cr
+#'  \link[=datazone_create_notebook]{create_notebook} \tab Creates a notebook in Amazon SageMaker Unified Studio\cr
 #'  \link[=datazone_create_project]{create_project} \tab Creates an Amazon DataZone project\cr
 #'  \link[=datazone_create_project_membership]{create_project_membership} \tab Creates a project membership in Amazon DataZone\cr
 #'  \link[=datazone_create_project_profile]{create_project_profile} \tab Creates a project profile\cr
@@ -153,6 +148,7 @@ NULL
 #'  \link[=datazone_delete_glossary]{delete_glossary} \tab Deletes a business glossary in Amazon DataZone\cr
 #'  \link[=datazone_delete_glossary_term]{delete_glossary_term} \tab Deletes a business glossary term in Amazon DataZone\cr
 #'  \link[=datazone_delete_listing]{delete_listing} \tab Deletes a listing (a record of an asset at a given time)\cr
+#'  \link[=datazone_delete_notebook]{delete_notebook} \tab Deletes a notebook in Amazon SageMaker Unified Studio\cr
 #'  \link[=datazone_delete_project]{delete_project} \tab Deletes a project in Amazon DataZone\cr
 #'  \link[=datazone_delete_project_membership]{delete_project_membership} \tab Deletes project membership in Amazon DataZone\cr
 #'  \link[=datazone_delete_project_profile]{delete_project_profile} \tab Deletes a project profile\cr
@@ -190,7 +186,9 @@ NULL
 #'  \link[=datazone_get_lineage_node]{get_lineage_node} \tab Gets the data lineage node\cr
 #'  \link[=datazone_get_listing]{get_listing} \tab Gets a listing (a record of an asset at a given time)\cr
 #'  \link[=datazone_get_metadata_generation_run]{get_metadata_generation_run} \tab Gets a metadata generation run in Amazon DataZone\cr
-#'  \link[=datazone_get_notebook_run]{get_notebook_run} \tab Gets the details of a notebook run in an Amazon DataZone domain\cr
+#'  \link[=datazone_get_notebook]{get_notebook} \tab Gets the details of a notebook in Amazon SageMaker Unified Studio\cr
+#'  \link[=datazone_get_notebook_export]{get_notebook_export} \tab Gets the details of a notebook export in Amazon SageMaker Unified Studio\cr
+#'  \link[=datazone_get_notebook_run]{get_notebook_run} \tab Gets the details of a notebook run in Amazon SageMaker Unified Studio\cr
 #'  \link[=datazone_get_project]{get_project} \tab Gets a project in Amazon DataZone\cr
 #'  \link[=datazone_get_project_profile]{get_project_profile} \tab The details of the project profile\cr
 #'  \link[=datazone_get_rule]{get_rule} \tab Gets the details of a rule in Amazon DataZone\cr
@@ -221,7 +219,8 @@ NULL
 #'  \link[=datazone_list_lineage_events]{list_lineage_events} \tab Lists lineage events\cr
 #'  \link[=datazone_list_lineage_node_history]{list_lineage_node_history} \tab Lists the history of the specified data lineage node\cr
 #'  \link[=datazone_list_metadata_generation_runs]{list_metadata_generation_runs} \tab Lists all metadata generation runs\cr
-#'  \link[=datazone_list_notebook_runs]{list_notebook_runs} \tab Lists notebook runs in an Amazon DataZone domain\cr
+#'  \link[=datazone_list_notebook_runs]{list_notebook_runs} \tab Lists notebook runs in Amazon SageMaker Unified Studio\cr
+#'  \link[=datazone_list_notebooks]{list_notebooks} \tab Lists notebooks in Amazon SageMaker Unified Studio\cr
 #'  \link[=datazone_list_notifications]{list_notifications} \tab Lists all Amazon DataZone notifications\cr
 #'  \link[=datazone_list_policy_grants]{list_policy_grants} \tab Lists policy grants\cr
 #'  \link[=datazone_list_project_memberships]{list_project_memberships} \tab Lists all members of the specified project\cr
@@ -251,8 +250,10 @@ NULL
 #'  \link[=datazone_search_user_profiles]{search_user_profiles} \tab Searches user profiles in Amazon DataZone\cr
 #'  \link[=datazone_start_data_source_run]{start_data_source_run} \tab Start the run of the specified data source in Amazon DataZone\cr
 #'  \link[=datazone_start_metadata_generation_run]{start_metadata_generation_run} \tab Starts the metadata generation run\cr
-#'  \link[=datazone_start_notebook_run]{start_notebook_run} \tab Starts a notebook run in an Amazon DataZone domain\cr
-#'  \link[=datazone_stop_notebook_run]{stop_notebook_run} \tab Stops a running notebook run in an Amazon DataZone domain\cr
+#'  \link[=datazone_start_notebook_export]{start_notebook_export} \tab Starts a notebook export in Amazon SageMaker Unified Studio\cr
+#'  \link[=datazone_start_notebook_import]{start_notebook_import} \tab Starts a notebook import in Amazon SageMaker Unified Studio\cr
+#'  \link[=datazone_start_notebook_run]{start_notebook_run} \tab Starts a notebook run in Amazon SageMaker Unified Studio\cr
+#'  \link[=datazone_stop_notebook_run]{stop_notebook_run} \tab Stops a running notebook run in Amazon SageMaker Unified Studio\cr
 #'  \link[=datazone_tag_resource]{tag_resource} \tab Tags a resource in Amazon DataZone\cr
 #'  \link[=datazone_untag_resource]{untag_resource} \tab Untags a resource in Amazon DataZone\cr
 #'  \link[=datazone_update_account_pool]{update_account_pool} \tab Updates the account pool\cr
@@ -268,6 +269,7 @@ NULL
 #'  \link[=datazone_update_glossary]{update_glossary} \tab Updates the business glossary in Amazon DataZone\cr
 #'  \link[=datazone_update_glossary_term]{update_glossary_term} \tab Updates a business glossary term in Amazon DataZone\cr
 #'  \link[=datazone_update_group_profile]{update_group_profile} \tab Updates the specified group profile in Amazon DataZone\cr
+#'  \link[=datazone_update_notebook]{update_notebook} \tab Updates a notebook in Amazon SageMaker Unified Studio\cr
 #'  \link[=datazone_update_project]{update_project} \tab Updates the specified project in Amazon DataZone\cr
 #'  \link[=datazone_update_project_profile]{update_project_profile} \tab Updates a project profile\cr
 #'  \link[=datazone_update_root_domain_unit_owner]{update_root_domain_unit_owner} \tab Updates the owner of the root domain unit\cr

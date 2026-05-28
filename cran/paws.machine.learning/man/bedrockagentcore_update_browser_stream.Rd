@@ -18,10 +18,7 @@ bedrockagentcore_update_browser_stream(
 
 \item{streamUpdate}{[required] The update to apply to the browser stream.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.}
 }
 \description{
 Updates a browser stream. To use this operation, you must have permissions to perform the bedrock:UpdateBrowserStream action.

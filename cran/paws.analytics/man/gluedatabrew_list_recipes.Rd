@@ -13,13 +13,9 @@ gluedatabrew_list_recipes(
 \arguments{
 \item{MaxResults}{The maximum number of results to return in this request.}
 
-\item{NextToken}{The token returned by a previous call to retrieve the next set of
-results.}
+\item{NextToken}{The token returned by a previous call to retrieve the next set of results.}
 
-\item{RecipeVersion}{Return only those recipes with a version identifier of \code{LATEST_WORKING}
-or \code{LATEST_PUBLISHED}. If \code{RecipeVersion} is omitted,
-\code{\link[=gluedatabrew_list_recipes]{list_recipes}} returns all of the
-\code{LATEST_PUBLISHED} recipe versions.
+\item{RecipeVersion}{Return only those recipes with a version identifier of \code{LATEST_WORKING} or \code{LATEST_PUBLISHED}. If \code{RecipeVersion} is omitted, \code{\link[=gluedatabrew_list_recipes]{list_recipes}} returns all of the \code{LATEST_PUBLISHED} recipe versions.
 
 Valid values: \code{LATEST_WORKING} | \code{LATEST_PUBLISHED}}
 }

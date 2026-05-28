@@ -8,13 +8,9 @@ Resource Name (ARN)}
 chatbot_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The value of the resource that will have the tag removed. An Amazon
-Resource Name (ARN) is an identifier for a specific AWS resource, such
-as a server, user, or role.}
+\item{ResourceARN}{[required] The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or role.}
 
-\item{TagKeys}{[required] TagKeys are key-value pairs assigned to ARNs that can be used to group
-and search for resources by type. This metadata can be attached to
-resources for any purpose.}
+\item{TagKeys}{[required] TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.}
 }
 \description{
 Detaches a key-value pair from a resource, as identified by its Amazon Resource Name (ARN). Resources are users, servers, roles, and other entities.

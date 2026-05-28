@@ -15,22 +15,17 @@ opensearchservice_add_direct_query_data_source(
 )
 }
 \arguments{
-\item{DataSourceName}{[required] A unique, user-defined label to identify the data source within your
-OpenSearch Service environment.}
+\item{DataSourceName}{[required] A unique, user-defined label to identify the data source within your OpenSearch Service environment.}
 
-\item{DataSourceType}{[required] The supported Amazon Web Services service that you want to use as the
-source for direct queries in OpenSearch Service.}
+\item{DataSourceType}{[required] The supported Amazon Web Services service that you want to use as the source for direct queries in OpenSearch Service.}
 
-\item{Description}{An optional text field for providing additional context and details
-about the data source.}
+\item{Description}{An optional text field for providing additional context and details about the data source.}
 
-\item{OpenSearchArns}{An optional list of Amazon Resource Names (ARNs) for the OpenSearch
-collections that are associated with the direct query data source. This
-field is required for CloudWatchLogs and SecurityLake datasource types.}
+\item{OpenSearchArns}{An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.}
 
-\item{DataSourceAccessPolicy}{An optional IAM access policy document that defines the permissions for
-accessing the data source. The policy document must be in valid JSON
-format and follow IAM policy syntax.}
+\item{DataSourceAccessPolicy}{An optional IAM access policy document that defines the permissions for accessing the data source. The policy document must be in valid JSON format and follow IAM policy syntax.}
+
+\item{TagList}{A list of tags attached to a domain.}
 }
 \description{
 Adds a new data source in Amazon OpenSearch Service so that you can perform direct queries on external data.

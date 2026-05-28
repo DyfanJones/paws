@@ -7,8 +7,7 @@
 codecommit_get_approval_rule_template(approvalRuleTemplateName)
 }
 \arguments{
-\item{approvalRuleTemplateName}{[required] The name of the approval rule template for which you want to get
-information.}
+\item{approvalRuleTemplateName}{[required] The name of the approval rule template for which you want to get information.}
 }
 \description{
 Returns information about a specified approval rule template.

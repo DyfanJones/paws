@@ -9,8 +9,7 @@ prometheusservice_delete_workspace(workspaceId, clientToken = NULL)
 \arguments{
 \item{workspaceId}{[required] The ID of the workspace to delete.}
 
-\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of
-the request. Case-sensitive.}
+\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.}
 }
 \description{
 Deletes an existing workspace.

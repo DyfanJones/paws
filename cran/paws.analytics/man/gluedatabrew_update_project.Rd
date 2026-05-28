@@ -7,8 +7,9 @@
 gluedatabrew_update_project(Sample = NULL, RoleArn, Name)
 }
 \arguments{
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to be assumed for this
-request.}
+\item{Sample}{Represents the sample size and sampling type for DataBrew to use for interactive data analysis.}
+
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.}
 
 \item{Name}{[required] The name of the project to be updated.}
 }

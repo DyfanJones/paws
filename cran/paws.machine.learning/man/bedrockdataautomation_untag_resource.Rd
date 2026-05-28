@@ -7,9 +7,9 @@
 bedrockdataautomation_untag_resource(resourceARN, tagKeys)
 }
 \arguments{
-\item{resourceARN}{[required]}
+\item{resourceARN}{[required] ARN of a taggable resource}
 
-\item{tagKeys}{[required]}
+\item{tagKeys}{[required] List of tag keys}
 }
 \description{
 Untag an Amazon Bedrock Data Automation resource

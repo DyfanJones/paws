@@ -9,8 +9,7 @@ lambda_list_capacity_providers(State = NULL, Marker = NULL, MaxItems = NULL)
 \arguments{
 \item{State}{Filter capacity providers by their current state.}
 
-\item{Marker}{Specify the pagination token that's returned by a previous request to
-retrieve the next page of results.}
+\item{Marker}{Specify the pagination token that's returned by a previous request to retrieve the next page of results.}
 
 \item{MaxItems}{The maximum number of capacity providers to return.}
 }

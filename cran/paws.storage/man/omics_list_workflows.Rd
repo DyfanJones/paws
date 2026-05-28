@@ -16,8 +16,7 @@ omics_list_workflows(
 
 \item{name}{Filter the list by workflow name.}
 
-\item{startingToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{startingToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of workflows to return in one page of results.}
 }

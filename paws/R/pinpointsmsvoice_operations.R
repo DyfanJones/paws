@@ -6,8 +6,7 @@ NULL
 #' Create a new configuration set
 #'
 #' @description
-#' Create a new configuration set. After you create the configuration set,
-#' you can add one or more event destinations to it.
+#' Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.
 #'
 #' @usage
 #' pinpointsmsvoice_create_configuration_set(ConfigurationSetName)
@@ -58,7 +57,7 @@ pinpointsmsvoice_create_configuration_set <- function(ConfigurationSetName = NUL
 #'   ConfigurationSetName, EventDestination, EventDestinationName)
 #'
 #' @param ConfigurationSetName &#91;required&#93; ConfigurationSetName
-#' @param EventDestination 
+#' @param EventDestination An object that defines an event destination.
 #' @param EventDestinationName A name that identifies the event destination.
 #'
 #' @return
@@ -209,9 +208,7 @@ pinpointsmsvoice_delete_configuration_set_event_destination <- function(Configur
 #' and the name of the event destination
 #'
 #' @description
-#' Obtain information about an event destination, including the types of
-#' events it reports, the Amazon Resource Name (ARN) of the destination,
-#' and the name of the event destination.
+#' Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.
 #'
 #' @usage
 #' pinpointsmsvoice_get_configuration_set_event_destinations(
@@ -281,16 +278,13 @@ pinpointsmsvoice_get_configuration_set_event_destinations <- function(Configurat
 #' account in the current region
 #'
 #' @description
-#' List all of the configuration sets associated with your Amazon Pinpoint
-#' account in the current region.
+#' List all of the configuration sets associated with your Amazon Pinpoint account in the current region.
 #'
 #' @usage
 #' pinpointsmsvoice_list_configuration_sets(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to the API that indicates the
-#' position in the list of results.
-#' @param PageSize Used to specify the number of items that should be returned in the
-#' response.
+#' @param NextToken A token returned from a previous call to the API that indicates the position in the list of results.
+#' @param PageSize Used to specify the number of items that should be returned in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -344,16 +338,11 @@ pinpointsmsvoice_list_configuration_sets <- function(NextToken = NULL, PageSize 
 #' pinpointsmsvoice_send_voice_message(CallerId, ConfigurationSetName,
 #'   Content, DestinationPhoneNumber, OriginationPhoneNumber)
 #'
-#' @param CallerId The phone number that appears on recipients' devices when they receive
-#' the message.
-#' @param ConfigurationSetName The name of the configuration set that you want to use to send the
-#' message.
-#' @param Content 
+#' @param CallerId The phone number that appears on recipients' devices when they receive the message.
+#' @param ConfigurationSetName The name of the configuration set that you want to use to send the message.
+#' @param Content An object that contains a voice message and information about the recipient that you want to send it to.
 #' @param DestinationPhoneNumber The phone number that you want to send the voice message to.
-#' @param OriginationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice
-#' message. This isn't necessarily the phone number that appears on
-#' recipients' devices when they receive the message, because you can
-#' specify a CallerId parameter in the request.
+#' @param OriginationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -415,17 +404,14 @@ pinpointsmsvoice_send_voice_message <- function(CallerId = NULL, ConfigurationSe
 #' Update an event destination in a configuration set
 #'
 #' @description
-#' Update an event destination in a configuration set. An event destination
-#' is a location that you publish information about your voice calls to.
-#' For example, you can log an event to an Amazon CloudWatch destination
-#' when a call fails.
+#' Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.
 #'
 #' @usage
 #' pinpointsmsvoice_update_configuration_set_event_destination(
 #'   ConfigurationSetName, EventDestination, EventDestinationName)
 #'
 #' @param ConfigurationSetName &#91;required&#93; ConfigurationSetName
-#' @param EventDestination 
+#' @param EventDestination An object that defines an event destination.
 #' @param EventDestinationName &#91;required&#93; EventDestinationName
 #'
 #' @return

@@ -7,8 +7,7 @@
 datazone_delete_glossary(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the business glossary is
-deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the business glossary is deleted.}
 
 \item{identifier}{[required] The ID of the business glossary that is deleted.}
 }

@@ -9,8 +9,7 @@ bedrockagentcorecontrol_delete_browser_profile(profileId, clientToken = NULL)
 \arguments{
 \item{profileId}{[required] The unique identifier of the browser profile to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Deletes a browser profile.

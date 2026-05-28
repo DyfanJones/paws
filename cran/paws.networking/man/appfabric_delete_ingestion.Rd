@@ -7,11 +7,9 @@
 appfabric_delete_ingestion(appBundleIdentifier, ingestionIdentifier)
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
-\item{ingestionIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the ingestion to use for the request.}
+\item{ingestionIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.}
 }
 \description{
 Deletes an ingestion. You must stop (disable) the ingestion and you must delete all associated ingestion destinations before you can delete an app ingestion.

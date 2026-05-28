@@ -23,22 +23,17 @@ bedrock_list_evaluation_jobs(
 
 \item{statusEquals}{A filter to only list evaluation jobs that are of a certain status.}
 
-\item{applicationTypeEquals}{A filter to only list evaluation jobs that are either model evaluations
-or knowledge base evaluations.}
+\item{applicationTypeEquals}{A filter to only list evaluation jobs that are either model evaluations or knowledge base evaluations.}
 
-\item{nameContains}{A filter to only list evaluation jobs that contain a specified string in
-the job name.}
+\item{nameContains}{A filter to only list evaluation jobs that contain a specified string in the job name.}
 
 \item{maxResults}{The maximum number of results to return.}
 
-\item{nextToken}{Continuation token from the previous response, for Amazon Bedrock to
-list the next set of results.}
+\item{nextToken}{Continuation token from the previous response, for Amazon Bedrock to list the next set of results.}
 
-\item{sortBy}{Specifies a creation time to sort the list of evaluation jobs by when
-they were created.}
+\item{sortBy}{Specifies a creation time to sort the list of evaluation jobs by when they were created.}
 
-\item{sortOrder}{Specifies whether to sort the list of evaluation jobs by either
-ascending or descending order.}
+\item{sortOrder}{Specifies whether to sort the list of evaluation jobs by either ascending or descending order.}
 }
 \description{
 Lists all existing evaluation jobs.

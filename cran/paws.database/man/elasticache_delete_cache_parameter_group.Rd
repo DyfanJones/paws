@@ -9,8 +9,7 @@ elasticache_delete_cache_parameter_group(CacheParameterGroupName)
 \arguments{
 \item{CacheParameterGroupName}{[required] The name of the cache parameter group to delete.
 
-The specified cache security group must not be associated with any
-clusters.}
+The specified cache security group must not be associated with any clusters.}
 }
 \description{
 Deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters. You cannot delete the default cache parameter groups in your account.

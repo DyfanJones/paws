@@ -53,44 +53,17 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Welcome to the \emph{End User Messaging SMS, version 2 API Reference}. This
-guide provides information about End User Messaging SMS, version 2 API
-resources, including supported HTTP methods, parameters, and schemas.
+Welcome to the \emph{End User Messaging SMS, version 2 API Reference}. This guide provides information about End User Messaging SMS, version 2 API resources, including supported HTTP methods, parameters, and schemas.
 
-Amazon Pinpoint is an Amazon Web Services service that you can use to
-engage with your recipients across multiple messaging channels. The End
-User Messaging SMS, version 2 API provides programmatic access to
-options that are unique to the SMS and voice channels. End User
-Messaging SMS, version 2 resources such as phone numbers, sender IDs,
-and opt-out lists can be used by the Amazon Pinpoint API.
+Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple messaging channels. The End User Messaging SMS, version 2 API provides programmatic access to options that are unique to the SMS and voice channels. End User Messaging SMS, version 2 resources such as phone numbers, sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
 
-If you're new to End User Messaging SMS, it's also helpful to review the
-\href{https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-sms-mms.html}{End User Messaging SMS User Guide},
-where you'll find tutorials, code samples, and procedures that
-demonstrate how to use End User Messaging SMS features programmatically
-and how to integrate functionality into mobile apps and other types of
-applications. The guide also provides key information, such as End User
-Messaging SMS integration with other Amazon Web Services services, and
-the quotas that apply to use of the service.
+If you're new to End User Messaging SMS, it's also helpful to review the \href{https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-sms-mms.html}{End User Messaging SMS User Guide}, where you'll find tutorials, code samples, and procedures that demonstrate how to use End User Messaging SMS features programmatically and how to integrate functionality into mobile apps and other types of applications. The guide also provides key information, such as End User Messaging SMS integration with other Amazon Web Services services, and the quotas that apply to use of the service.
 
 \strong{Regional availability}
 
-The \emph{End User Messaging SMS version 2 API Reference} is available in
-several Amazon Web Services Regions and it provides an endpoint for each
-of these Regions. For a list of all the Regions and endpoints where the
-API is currently available, see Amazon Web Services Service Endpoints
-and \href{https://docs.aws.amazon.com/general/latest/gr/pinpoint.html}{Amazon Pinpoint endpoints and quotas} in
-the Amazon Web Services General Reference. To learn more about Amazon
-Web Services Regions, see \href{https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html}{Managing Amazon Web Services Regions}
-in the Amazon Web Services General Reference.
+The \emph{End User Messaging SMS version 2 API Reference} is available in several Amazon Web Services Regions and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is currently available, see Amazon Web Services Service Endpoints and \href{https://docs.aws.amazon.com/general/latest/gr/pinpoint.html}{Amazon Pinpoint endpoints and quotas} in the Amazon Web Services General Reference. To learn more about Amazon Web Services Regions, see \href{https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html}{Managing Amazon Web Services Regions} in the Amazon Web Services General Reference.
 
-In each Region, Amazon Web Services maintains multiple Availability
-Zones. These Availability Zones are physically isolated from each other,
-but are united by private, low-latency, high-throughput, and highly
-redundant network connections. These Availability Zones enable us to
-provide very high levels of availability and redundancy, while also
-minimizing latency. To learn more about the number of Availability Zones
-that are available in each Region, see \href{https://aws.amazon.com/about-aws/global-infrastructure/}{Amazon Web Services Global Infrastructure.}
+In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see \href{https://aws.amazon.com/about-aws/global-infrastructure/}{Amazon Web Services Global Infrastructure.}
 }
 \section{Service syntax}{
 

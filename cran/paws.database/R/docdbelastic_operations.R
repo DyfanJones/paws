@@ -23,12 +23,9 @@ NULL
 #' -   `OS_UPDATE`
 #' 
 #' -   `MASTER_USER_PASSWORD_UPDATE`
-#' @param applyOn A specific date to apply the pending maintenance action. Required if
-#' opt-in-type is `APPLY_ON`. Format: `yyyy/MM/dd HH:mm-yyyy/MM/dd HH:mm`
-#' @param optInType &#91;required&#93; A value that specifies the type of opt-in request, or undoes an opt-in
-#' request. An opt-in request of type `IMMEDIATE` can't be undone.
-#' @param resourceArn &#91;required&#93; The Amazon DocumentDB Amazon Resource Name (ARN) of the resource to
-#' which the pending maintenance action applies.
+#' @param applyOn A specific date to apply the pending maintenance action. Required if opt-in-type is `APPLY_ON`. Format: `yyyy/MM/dd HH:mm-yyyy/MM/dd HH:mm`
+#' @param optInType &#91;required&#93; A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type `IMMEDIATE` can't be undone.
+#' @param resourceArn &#91;required&#93; The Amazon DocumentDB Amazon Resource Name (ARN) of the resource to which the pending maintenance action applies.
 #'
 #' @keywords internal
 #'
@@ -59,35 +56,17 @@ docdbelastic_apply_pending_maintenance_action <- function(applyAction, applyOn =
 #'
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_copy_cluster_snapshot/](https://www.paws-r-sdk.com/docs/docdbelastic_copy_cluster_snapshot/) for full documentation.
 #'
-#' @param copyTags Set to `true` to copy all tags from the source cluster snapshot to the
-#' target elastic cluster snapshot. The default is `false`.
-#' @param kmsKeyId The Amazon Web Services KMS key ID for an encrypted elastic cluster
-#' snapshot. The Amazon Web Services KMS key ID is the Amazon Resource Name
-#' (ARN), Amazon Web Services KMS key identifier, or the Amazon Web
-#' Services KMS key alias for the Amazon Web Services KMS encryption key.
+#' @param copyTags Set to `true` to copy all tags from the source cluster snapshot to the target elastic cluster snapshot. The default is `false`.
+#' @param kmsKeyId The Amazon Web Services KMS key ID for an encrypted elastic cluster snapshot. The Amazon Web Services KMS key ID is the Amazon Resource Name (ARN), Amazon Web Services KMS key identifier, or the Amazon Web Services KMS key alias for the Amazon Web Services KMS encryption key.
 #' 
-#' If you copy an encrypted elastic cluster snapshot from your Amazon Web
-#' Services account, you can specify a value for `KmsKeyId` to encrypt the
-#' copy with a new Amazon Web ServicesS KMS encryption key. If you don't
-#' specify a value for `KmsKeyId`, then the copy of the elastic cluster
-#' snapshot is encrypted with the same `AWS` KMS key as the source elastic
-#' cluster snapshot.
+#' If you copy an encrypted elastic cluster snapshot from your Amazon Web Services account, you can specify a value for `KmsKeyId` to encrypt the copy with a new Amazon Web ServicesS KMS encryption key. If you don't specify a value for `KmsKeyId`, then the copy of the elastic cluster snapshot is encrypted with the same `AWS` KMS key as the source elastic cluster snapshot.
 #' 
-#' To copy an encrypted elastic cluster snapshot to another Amazon Web
-#' Services region, set `KmsKeyId` to the Amazon Web Services KMS key ID
-#' that you want to use to encrypt the copy of the elastic cluster snapshot
-#' in the destination region. Amazon Web Services KMS encryption keys are
-#' specific to the Amazon Web Services region that they are created in, and
-#' you can't use encryption keys from one Amazon Web Services region in
-#' another Amazon Web Services region.
+#' To copy an encrypted elastic cluster snapshot to another Amazon Web Services region, set `KmsKeyId` to the Amazon Web Services KMS key ID that you want to use to encrypt the copy of the elastic cluster snapshot in the destination region. Amazon Web Services KMS encryption keys are specific to the Amazon Web Services region that they are created in, and you can't use encryption keys from one Amazon Web Services region in another Amazon Web Services region.
 #' 
-#' If you copy an unencrypted elastic cluster snapshot and specify a value
-#' for the `KmsKeyId` parameter, an error is returned.
-#' @param snapshotArn &#91;required&#93; The Amazon Resource Name (ARN) identifier of the elastic cluster
-#' snapshot.
+#' If you copy an unencrypted elastic cluster snapshot and specify a value for the `KmsKeyId` parameter, an error is returned.
+#' @param snapshotArn &#91;required&#93; The Amazon Resource Name (ARN) identifier of the elastic cluster snapshot.
 #' @param tags The tags to be assigned to the elastic cluster snapshot.
-#' @param targetSnapshotName &#91;required&#93; The identifier of the new elastic cluster snapshot to create from the
-#' source cluster snapshot. This parameter is not case sensitive.
+#' @param targetSnapshotName &#91;required&#93; The identifier of the new elastic cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.
 #' 
 #' Constraints:
 #' 
@@ -138,22 +117,17 @@ docdbelastic_copy_cluster_snapshot <- function(copyTags = NULL, kmsKeyId = NULL,
 #' -   The first character must be a letter.
 #' 
 #' -   Cannot be a reserved word.
-#' @param adminUserPassword &#91;required&#93; The password for the Amazon DocumentDB elastic clusters administrator.
-#' The password can contain any printable ASCII characters.
+#' @param adminUserPassword &#91;required&#93; The password for the Amazon DocumentDB elastic clusters administrator. The password can contain any printable ASCII characters.
 #' 
 #' *Constraints*:
 #' 
 #' -   Must contain from 8 to 100 characters.
 #' 
-#' -   Cannot contain a forward slash (/), double quote ("), or the "at"
-#'     symbol (@@).
-#' @param authType &#91;required&#93; The authentication type used to determine where to fetch the password
-#' used for accessing the elastic cluster. Valid types are `PLAIN_TEXT` or
-#' `SECRET_ARN`.
+#' -   Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@@).
+#' @param authType &#91;required&#93; The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are `PLAIN_TEXT` or `SECRET_ARN`.
 #' @param backupRetentionPeriod The number of days for which automatic snapshots are retained.
 #' @param clientToken The client token for the elastic cluster.
-#' @param clusterName &#91;required&#93; The name of the new elastic cluster. This parameter is stored as a
-#' lowercase string.
+#' @param clusterName &#91;required&#93; The name of the new elastic cluster. This parameter is stored as a lowercase string.
 #' 
 #' *Constraints*:
 #' 
@@ -166,40 +140,25 @@ docdbelastic_copy_cluster_snapshot <- function(copyTags = NULL, kmsKeyId = NULL,
 #' *Example*: `my-cluster`
 #' @param kmsKeyId The KMS key identifier to use to encrypt the new elastic cluster.
 #' 
-#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-#' encryption key. If you are creating a cluster using the same Amazon
-#' account that owns this KMS encryption key, you can use the KMS key alias
-#' instead of the ARN as the KMS encryption key.
+#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.
 #' 
-#' If an encryption key is not specified, Amazon DocumentDB uses the
-#' default encryption key that KMS creates for your account. Your account
-#' has a different default encryption key for each Amazon Region.
-#' @param preferredBackupWindow The daily time range during which automated backups are created if
-#' automated backups are enabled, as determined by the
-#' `backupRetentionPeriod`.
-#' @param preferredMaintenanceWindow The weekly time range during which system maintenance can occur, in
-#' Universal Coordinated Time (UTC).
+#' If an encryption key is not specified, Amazon DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.
+#' @param preferredBackupWindow The daily time range during which automated backups are created if automated backups are enabled, as determined by the `backupRetentionPeriod`.
+#' @param preferredMaintenanceWindow The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 #' 
 #' *Format*: `ddd:hh24:mi-ddd:hh24:mi`
 #' 
-#' *Default*: a 30-minute window selected at random from an 8-hour block of
-#' time for each Amazon Web Services Region, occurring on a random day of
-#' the week.
+#' *Default*: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.
 #' 
 #' *Valid days*: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 #' 
 #' *Constraints*: Minimum 30-minute window.
-#' @param shardCapacity &#91;required&#93; The number of vCPUs assigned to each elastic cluster shard. Maximum is
-#' 64. Allowed values are 2, 4, 8, 16, 32, 64.
+#' @param shardCapacity &#91;required&#93; The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.
 #' @param shardCount &#91;required&#93; The number of shards assigned to the elastic cluster. Maximum is 32.
-#' @param shardInstanceCount The number of replica instances applying to all shards in the elastic
-#' cluster. A `shardInstanceCount` value of 1 means there is one writer
-#' instance, and any additional instances are replicas that can be used for
-#' reads and to improve availability.
+#' @param shardInstanceCount The number of replica instances applying to all shards in the elastic cluster. A `shardInstanceCount` value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.
 #' @param subnetIds The Amazon EC2 subnet IDs for the new elastic cluster.
 #' @param tags The tags to be assigned to the new elastic cluster.
-#' @param vpcSecurityGroupIds A list of EC2 VPC security groups to associate with the new elastic
-#' cluster.
+#' @param vpcSecurityGroupIds A list of EC2 VPC security groups to associate with the new elastic cluster.
 #'
 #' @keywords internal
 #'
@@ -230,8 +189,7 @@ docdbelastic_create_cluster <- function(adminUserName, adminUserPassword, authTy
 #'
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_create_cluster_snapshot/](https://www.paws-r-sdk.com/docs/docdbelastic_create_cluster_snapshot/) for full documentation.
 #'
-#' @param clusterArn &#91;required&#93; The ARN identifier of the elastic cluster of which you want to create a
-#' snapshot.
+#' @param clusterArn &#91;required&#93; The ARN identifier of the elastic cluster of which you want to create a snapshot.
 #' @param snapshotName &#91;required&#93; The name of the new elastic cluster snapshot.
 #' @param tags The tags to be assigned to the new elastic cluster snapshot.
 #'
@@ -295,8 +253,7 @@ docdbelastic_delete_cluster <- function(clusterArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_delete_cluster_snapshot/](https://www.paws-r-sdk.com/docs/docdbelastic_delete_cluster_snapshot/) for full documentation.
 #'
-#' @param snapshotArn &#91;required&#93; The ARN identifier of the elastic cluster snapshot that is to be
-#' deleted.
+#' @param snapshotArn &#91;required&#93; The ARN identifier of the elastic cluster snapshot that is to be deleted.
 #'
 #' @keywords internal
 #'
@@ -389,8 +346,7 @@ docdbelastic_get_cluster_snapshot <- function(snapshotArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_get_pending_maintenance_action/](https://www.paws-r-sdk.com/docs/docdbelastic_get_pending_maintenance_action/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; Retrieves pending maintenance actions for a specific Amazon Resource
-#' Name (ARN).
+#' @param resourceArn &#91;required&#93; Retrieves pending maintenance actions for a specific Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -422,22 +378,15 @@ docdbelastic_get_pending_maintenance_action <- function(resourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_list_cluster_snapshots/](https://www.paws-r-sdk.com/docs/docdbelastic_list_cluster_snapshots/) for full documentation.
 #'
 #' @param clusterArn The ARN identifier of the elastic cluster.
-#' @param maxResults The maximum number of elastic cluster snapshot results to receive in the
-#' response.
-#' @param nextToken A pagination token provided by a previous request. If this parameter is
-#' specified, the response includes only records beyond this token, up to
-#' the value specified by `max-results`.
+#' @param maxResults The maximum number of elastic cluster snapshot results to receive in the response.
+#' @param nextToken A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by `max-results`.
 #' 
-#' If there is no more data in the responce, the `nextToken` will not be
-#' returned.
-#' @param snapshotType The type of cluster snapshots to be returned. You can specify one of the
-#' following values:
+#' If there is no more data in the responce, the `nextToken` will not be returned.
+#' @param snapshotType The type of cluster snapshots to be returned. You can specify one of the following values:
 #' 
-#' -   `automated` - Return all cluster snapshots that Amazon DocumentDB
-#'     has automatically created for your Amazon Web Services account.
+#' -   `automated` - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.
 #' 
-#' -   `manual` - Return all cluster snapshots that you have manually
-#'     created for your Amazon Web Services account.
+#' -   `manual` - Return all cluster snapshots that you have manually created for your Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -468,14 +417,10 @@ docdbelastic_list_cluster_snapshots <- function(clusterArn = NULL, maxResults = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_list_clusters/](https://www.paws-r-sdk.com/docs/docdbelastic_list_clusters/) for full documentation.
 #'
-#' @param maxResults The maximum number of elastic cluster snapshot results to receive in the
-#' response.
-#' @param nextToken A pagination token provided by a previous request. If this parameter is
-#' specified, the response includes only records beyond this token, up to
-#' the value specified by `max-results`.
+#' @param maxResults The maximum number of elastic cluster snapshot results to receive in the response.
+#' @param nextToken A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by `max-results`.
 #' 
-#' If there is no more data in the responce, the `nextToken` will not be
-#' returned.
+#' If there is no more data in the responce, the `nextToken` will not be returned.
 #'
 #' @keywords internal
 #'
@@ -506,13 +451,8 @@ docdbelastic_list_clusters <- function(maxResults = NULL, nextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_list_pending_maintenance_actions/](https://www.paws-r-sdk.com/docs/docdbelastic_list_pending_maintenance_actions/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to include in the response. If more
-#' records exist than the specified `maxResults` value, a pagination token
-#' (marker) is included in the response so that the remaining results can
-#' be retrieved.
-#' @param nextToken An optional pagination token provided by a previous request. If this
-#' parameter is specified, the response includes only records beyond the
-#' marker, up to the value specified by `maxResults`.
+#' @param maxResults The maximum number of results to include in the response. If more records exist than the specified `maxResults` value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.
+#' @param nextToken An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `maxResults`.
 #'
 #' @keywords internal
 #'
@@ -575,27 +515,16 @@ docdbelastic_list_tags_for_resource <- function(resourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_restore_cluster_from_snapshot/](https://www.paws-r-sdk.com/docs/docdbelastic_restore_cluster_from_snapshot/) for full documentation.
 #'
 #' @param clusterName &#91;required&#93; The name of the elastic cluster.
-#' @param kmsKeyId The KMS key identifier to use to encrypt the new Amazon DocumentDB
-#' elastic clusters cluster.
+#' @param kmsKeyId The KMS key identifier to use to encrypt the new Amazon DocumentDB elastic clusters cluster.
 #' 
-#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-#' encryption key. If you are creating a cluster using the same Amazon
-#' account that owns this KMS encryption key, you can use the KMS key alias
-#' instead of the ARN as the KMS encryption key.
+#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.
 #' 
-#' If an encryption key is not specified here, Amazon DocumentDB uses the
-#' default encryption key that KMS creates for your account. Your account
-#' has a different default encryption key for each Amazon Region.
+#' If an encryption key is not specified here, Amazon DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.
 #' @param shardCapacity The capacity of each shard in the new restored elastic cluster.
-#' @param shardInstanceCount The number of replica instances applying to all shards in the elastic
-#' cluster. A `shardInstanceCount` value of 1 means there is one writer
-#' instance, and any additional instances are replicas that can be used for
-#' reads and to improve availability.
+#' @param shardInstanceCount The number of replica instances applying to all shards in the elastic cluster. A `shardInstanceCount` value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.
 #' @param snapshotArn &#91;required&#93; The ARN identifier of the elastic cluster snapshot.
 #' @param subnetIds The Amazon EC2 subnet IDs for the elastic cluster.
-#' @param tags A list of the tag names to be assigned to the restored elastic cluster,
-#' in the form of an array of key-value pairs in which the key is the tag
-#' name and the value is the key value.
+#' @param tags A list of the tag names to be assigned to the restored elastic cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.
 #' @param vpcSecurityGroupIds A list of EC2 VPC security groups to associate with the elastic cluster.
 #'
 #' @keywords internal
@@ -753,39 +682,26 @@ docdbelastic_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/docdbelastic_update_cluster/](https://www.paws-r-sdk.com/docs/docdbelastic_update_cluster/) for full documentation.
 #'
-#' @param adminUserPassword The password associated with the elastic cluster administrator. This
-#' password can contain any printable ASCII character except forward slash
-#' (/), double quote ("), or the "at" symbol (@@).
+#' @param adminUserPassword The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@@).
 #' 
 #' *Constraints*: Must contain from 8 to 100 characters.
-#' @param authType The authentication type used to determine where to fetch the password
-#' used for accessing the elastic cluster. Valid types are `PLAIN_TEXT` or
-#' `SECRET_ARN`.
+#' @param authType The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are `PLAIN_TEXT` or `SECRET_ARN`.
 #' @param backupRetentionPeriod The number of days for which automatic snapshots are retained.
 #' @param clientToken The client token for the elastic cluster.
 #' @param clusterArn &#91;required&#93; The ARN identifier of the elastic cluster.
-#' @param preferredBackupWindow The daily time range during which automated backups are created if
-#' automated backups are enabled, as determined by the
-#' `backupRetentionPeriod`.
-#' @param preferredMaintenanceWindow The weekly time range during which system maintenance can occur, in
-#' Universal Coordinated Time (UTC).
+#' @param preferredBackupWindow The daily time range during which automated backups are created if automated backups are enabled, as determined by the `backupRetentionPeriod`.
+#' @param preferredMaintenanceWindow The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 #' 
 #' *Format*: `ddd:hh24:mi-ddd:hh24:mi`
 #' 
-#' *Default*: a 30-minute window selected at random from an 8-hour block of
-#' time for each Amazon Web Services Region, occurring on a random day of
-#' the week.
+#' *Default*: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.
 #' 
 #' *Valid days*: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 #' 
 #' *Constraints*: Minimum 30-minute window.
-#' @param shardCapacity The number of vCPUs assigned to each elastic cluster shard. Maximum is
-#' 64. Allowed values are 2, 4, 8, 16, 32, 64.
+#' @param shardCapacity The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.
 #' @param shardCount The number of shards assigned to the elastic cluster. Maximum is 32.
-#' @param shardInstanceCount The number of replica instances applying to all shards in the elastic
-#' cluster. A `shardInstanceCount` value of 1 means there is one writer
-#' instance, and any additional instances are replicas that can be used for
-#' reads and to improve availability.
+#' @param shardInstanceCount The number of replica instances applying to all shards in the elastic cluster. A `shardInstanceCount` value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.
 #' @param subnetIds The Amazon EC2 subnet IDs for the elastic cluster.
 #' @param vpcSecurityGroupIds A list of EC2 VPC security groups to associate with the elastic cluster.
 #'

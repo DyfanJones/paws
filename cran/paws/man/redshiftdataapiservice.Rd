@@ -53,13 +53,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-You can use the Amazon Redshift Data API to run queries on Amazon
-Redshift tables. You can run SQL statements, which are committed if the
-statement succeeds.
+You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds.
 
-For more information about the Amazon Redshift Data API and CLI usage
-examples, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html}{Using the Amazon Redshift Data API} in
-the \emph{Amazon Redshift Management Guide}.
+For more information about the Amazon Redshift Data API and CLI usage examples, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html}{Using the Amazon Redshift Data API} in the \emph{Amazon Redshift Management Guide}.
 }
 \section{Service syntax}{
 

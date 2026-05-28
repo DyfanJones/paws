@@ -76,9 +76,7 @@ simpledb_batch_put_attributes <- function(DomainName, Items) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/simpledb_create_domain/](https://www.paws-r-sdk.com/docs/simpledb_create_domain/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain to create. The name can range between 3 and 255
-#' characters and can contain the following characters: a-z, A-Z, 0-9,
-#' '_', '-', and '.'.
+#' @param DomainName &#91;required&#93; The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.
 #'
 #' @keywords internal
 #'
@@ -110,14 +108,9 @@ simpledb_create_domain <- function(DomainName) {
 #' See [https://www.paws-r-sdk.com/docs/simpledb_delete_attributes/](https://www.paws-r-sdk.com/docs/simpledb_delete_attributes/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain in which to perform the operation.
-#' @param ItemName &#91;required&#93; The name of the item. Similar to rows on a spreadsheet, items represent
-#' individual objects that contain one or more value-attribute pairs.
-#' @param Attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
-#' represent categories of data that can be assigned to items.
-#' @param Expected The update condition which, if specified, determines whether the
-#' specified attributes will be deleted or not. The update condition must
-#' be satisfied in order for this request to be processed and the
-#' attributes to be deleted.
+#' @param ItemName &#91;required&#93; The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.
+#' @param Attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.
+#' @param Expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.
 #'
 #' @keywords internal
 #'
@@ -215,11 +208,7 @@ simpledb_domain_metadata <- function(DomainName) {
 #' @param DomainName &#91;required&#93; The name of the domain in which to perform the operation.
 #' @param ItemName &#91;required&#93; The name of the item.
 #' @param AttributeNames The names of the attributes.
-#' @param ConsistentRead Determines whether or not strong consistency should be enforced when
-#' data is read from SimpleDB. If `true`, any data previously written to
-#' SimpleDB will be returned. Otherwise, results will be consistent
-#' eventually, and the client may not see data that was written immediately
-#' before your read.
+#' @param ConsistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If `true`, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.
 #'
 #' @keywords internal
 #'
@@ -251,10 +240,8 @@ simpledb_get_attributes <- function(DomainName, ItemName, AttributeNames = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/simpledb_list_domains/](https://www.paws-r-sdk.com/docs/simpledb_list_domains/) for full documentation.
 #'
-#' @param MaxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to
-#' 100. The default setting is 100.
-#' @param NextToken A string informing Amazon SimpleDB where to start the next list of
-#' domain names.
+#' @param MaxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.
+#' @param NextToken A string informing Amazon SimpleDB where to start the next list of domain names.
 #'
 #' @keywords internal
 #'
@@ -288,10 +275,7 @@ simpledb_list_domains <- function(MaxNumberOfDomains = NULL, NextToken = NULL) {
 #' @param DomainName &#91;required&#93; The name of the domain in which to perform the operation.
 #' @param ItemName &#91;required&#93; The name of the item.
 #' @param Attributes &#91;required&#93; The list of attributes.
-#' @param Expected The update condition which, if specified, determines whether the
-#' specified attributes will be updated or not. The update condition must
-#' be satisfied in order for this request to be processed and the
-#' attributes to be updated.
+#' @param Expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.
 #'
 #' @keywords internal
 #'
@@ -324,13 +308,8 @@ simpledb_put_attributes <- function(DomainName, ItemName, Attributes, Expected =
 #' See [https://www.paws-r-sdk.com/docs/simpledb_select/](https://www.paws-r-sdk.com/docs/simpledb_select/) for full documentation.
 #'
 #' @param SelectExpression &#91;required&#93; The expression used to query the domain.
-#' @param NextToken A string informing Amazon SimpleDB where to start the next list of
-#' `ItemNames`.
-#' @param ConsistentRead Determines whether or not strong consistency should be enforced when
-#' data is read from SimpleDB. If `true`, any data previously written to
-#' SimpleDB will be returned. Otherwise, results will be consistent
-#' eventually, and the client may not see data that was written immediately
-#' before your read.
+#' @param NextToken A string informing Amazon SimpleDB where to start the next list of `ItemNames`.
+#' @param ConsistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If `true`, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.
 #'
 #' @keywords internal
 #'

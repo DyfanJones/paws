@@ -14,8 +14,7 @@ sagemaker_create_context(
 )
 }
 \arguments{
-\item{ContextName}{[required] The name of the context. Must be unique to your account in an Amazon Web
-Services Region.}
+\item{ContextName}{[required] The name of the context. Must be unique to your account in an Amazon Web Services Region.}
 
 \item{Source}{[required] The source type, ID, and URI.}
 

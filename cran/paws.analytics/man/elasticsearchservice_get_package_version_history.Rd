@@ -16,9 +16,7 @@ elasticsearchservice_get_package_version_history(
 
 \item{MaxResults}{Limits results to a maximum number of versions.}
 
-\item{NextToken}{Used for pagination. Only necessary if a previous API call includes a
-non-null NextToken value. If provided, returns results for the next
-page.}
+\item{NextToken}{Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.}
 }
 \description{
 Returns a list of versions of the package, along with their creation time and commit message.

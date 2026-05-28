@@ -7,9 +7,7 @@
 kendraranking_list_rescore_execution_plans(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{If the response is truncated, Amazon Kendra Intelligent Ranking returns
-a pagination token in the response. You can use this pagination token to
-retrieve the next set of rescore execution plans.}
+\item{NextToken}{If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.}
 
 \item{MaxResults}{The maximum number of rescore execution plans to return.}
 }

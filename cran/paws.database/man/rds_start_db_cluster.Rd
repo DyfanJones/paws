@@ -9,8 +9,7 @@ operation}
 rds_start_db_cluster(DBClusterIdentifier)
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier of the Amazon Aurora DB cluster to be started.
-This parameter is stored as a lowercase string.}
+\item{DBClusterIdentifier}{[required] The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as a lowercase string.}
 }
 \description{
 Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web Services console, the stop-db-cluster CLI command, or the \code{\link[=rds_stop_db_cluster]{stop_db_cluster}} operation.

@@ -22,12 +22,9 @@ datazone_update_account_pool(
 
 \item{description}{The description of the account pool that is to be udpated.}
 
-\item{resolutionStrategy}{The mechanism used to resolve the account selection from the account
-pool.}
+\item{resolutionStrategy}{The mechanism used to resolve the account selection from the account pool.}
 
-\item{accountSource}{The source of accounts for the account pool. In the current release,
-it's either a static list of accounts provided by the customer or a
-custom Amazon Web Services Lambda handler.}
+\item{accountSource}{The source of accounts for the account pool. In the current release, it's either a static list of accounts provided by the customer or a custom Amazon Web Services Lambda handler.}
 }
 \description{
 Updates the account pool.

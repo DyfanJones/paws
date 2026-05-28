@@ -7,16 +7,11 @@
 lexmodelsv2_build_bot_locale(botId, botVersion, localeId)
 }
 \arguments{
-\item{botId}{[required] The identifier of the bot to build. The identifier is returned in the
-response from the \code{\link[=lexmodelsv2_create_bot]{create_bot}} operation.}
+\item{botId}{[required] The identifier of the bot to build. The identifier is returned in the response from the \code{\link[=lexmodelsv2_create_bot]{create_bot}} operation.}
 
-\item{botVersion}{[required] The version of the bot to build. This can only be the draft version of
-the bot.}
+\item{botVersion}{[required] The version of the bot to build. This can only be the draft version of the bot.}
 
-\item{localeId}{[required] The identifier of the language and locale that the bot will be used in.
-The string must match one of the supported locales. All of the intents,
-slot types, and slots used in the bot must have the same locale. For
-more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 }
 \description{
 Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot.

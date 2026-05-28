@@ -20,8 +20,7 @@ opensearchserviceserverless_update_security_policy(
 
 \item{policyVersion}{[required] The version of the policy being updated.}
 
-\item{description}{A description of the policy. Typically used to store information about
-the permissions defined in the policy.}
+\item{description}{A description of the policy. Typically used to store information about the permissions defined in the policy.}
 
 \item{policy}{The JSON policy document to use as the content for the new policy.}
 

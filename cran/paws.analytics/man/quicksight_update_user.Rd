@@ -20,42 +20,25 @@ quicksight_update_user(
 \arguments{
 \item{UserName}{[required] The Amazon Quick Sight user name that you want to update.}
 
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in.
-Currently, you use the ID for the Amazon Web Services account that
-contains your Amazon Quick Sight account.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{Namespace}{[required] The namespace. Currently, you should set this to \code{default}.}
 
 \item{Email}{[required] The email address of the user that you want to update.}
 
-\item{Role}{[required] The Amazon Quick Sight role of the user. The role can be one of the
-following default security cohorts:
+\item{Role}{[required] The Amazon Quick Sight role of the user. The role can be one of the following default security cohorts:
 \itemize{
 \item \code{READER}: A user who has read-only access to dashboards.
-\item \code{AUTHOR}: A user who can create data sources, datasets, analyses,
-and dashboards.
-\item \code{ADMIN}: A user who is an author, who can also manage Amazon Quick
-Sight settings.
-\item \code{READER_PRO}: Reader Pro adds Generative BI capabilities to the
-Reader role. Reader Pros have access to Amazon Q in Quick Sight, can
-build stories with Amazon Q, and can generate executive summaries
-from dashboards.
-\item \code{AUTHOR_PRO}: Author Pro adds Generative BI capabilities to the
-Author role. Author Pros can author dashboards with natural language
-with Amazon Q, build stories with Amazon Q, create Topics for Q&A,
-and generate executive summaries from dashboards.
-\item \code{ADMIN_PRO}: Admin Pros are Author Pros who can also manage Amazon
-Quick Sight administrative settings. Admin Pro users are billed at
-Author Pro pricing.
+\item \code{AUTHOR}: A user who can create data sources, datasets, analyses, and dashboards.
+\item \code{ADMIN}: A user who is an author, who can also manage Amazon Quick Sight settings.
+\item \code{READER_PRO}: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Quick Sight, can build stories with Amazon Q, and can generate executive summaries from dashboards.
+\item \code{AUTHOR_PRO}: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&A, and generate executive summaries from dashboards.
+\item \code{ADMIN_PRO}: Admin Pros are Author Pros who can also manage Amazon Quick Sight administrative settings. Admin Pro users are billed at Author Pro pricing.
 }
 
-The name of the Quick Sight role is invisible to the user except for the
-console screens dealing with permissions.}
+The name of the Quick Sight role is invisible to the user except for the console screens dealing with permissions.}
 
-\item{CustomPermissionsName}{(Enterprise edition only) The name of the custom permissions profile
-that you want to assign to this user. Customized permissions allows you
-to control a user's access by restricting access the following
-operations:
+\item{CustomPermissionsName}{(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:
 \itemize{
 \item Create and update data sources
 \item Create and update datasets
@@ -63,48 +46,22 @@ operations:
 \item Subscribe to email reports
 }
 
-A set of custom permissions includes any combination of these
-restrictions. Currently, you need to create the profile names for custom
-permission sets by using the Quick Sight console. Then, you use the
-\code{\link[=quicksight_register_user]{register_user}} API operation to assign the
-named set of permissions to a Quick Sight user.
+A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Quick Sight console. Then, you use the \code{\link[=quicksight_register_user]{register_user}} API operation to assign the named set of permissions to a Quick Sight user.
 
-Quick Sight custom permissions are applied through IAM policies.
-Therefore, they override the permissions typically granted by assigning
-Quick Sight users to one of the default security cohorts in Quick Sight
-(admin, author, reader).
+Quick Sight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Quick Sight users to one of the default security cohorts in Quick Sight (admin, author, reader).
 
-This feature is available only to Quick Sight Enterprise edition
-subscriptions.}
+This feature is available only to Quick Sight Enterprise edition subscriptions.}
 
-\item{UnapplyCustomPermissions}{A flag that you use to indicate that you want to remove all custom
-permissions from this user. Using this parameter resets the user to the
-state it was in before a custom permissions profile was applied. This
-parameter defaults to NULL and it doesn't accept any other value.}
+\item{UnapplyCustomPermissions}{A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.}
 
-\item{ExternalLoginFederationProviderType}{The type of supported external login provider that provides identity to
-let a user federate into Quick Sight with an associated Identity and
-Access Management(IAM) role. The type of supported external login
-provider can be one of the following.
+\item{ExternalLoginFederationProviderType}{The type of supported external login provider that provides identity to let a user federate into Quick Sight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.
 \itemize{
-\item \code{COGNITO}: Amazon Cognito. The provider URL is
-cognito-identity.amazonaws.com. When choosing the \code{COGNITO} provider
-type, don’t use the "CustomFederationProviderUrl" parameter which is
-only needed when the external provider is custom.
-\item \code{CUSTOM_OIDC}: Custom OpenID Connect (OIDC) provider. When choosing
-\code{CUSTOM_OIDC} type, use the \code{CustomFederationProviderUrl} parameter
-to provide the custom OIDC provider URL.
-\item \code{NONE}: This clears all the previously saved external login
-information for a user. Use the
-\code{\link[=quicksight_describe_user]{describe_user}} API operation to check
-the external login information.
+\item \code{COGNITO}: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the \code{COGNITO} provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.
+\item \code{CUSTOM_OIDC}: Custom OpenID Connect (OIDC) provider. When choosing \code{CUSTOM_OIDC} type, use the \code{CustomFederationProviderUrl} parameter to provide the custom OIDC provider URL.
+\item \code{NONE}: This clears all the previously saved external login information for a user. Use the \code{\link[=quicksight_describe_user]{describe_user}} API operation to check the external login information.
 }}
 
-\item{CustomFederationProviderUrl}{The URL of the custom OpenID Connect (OIDC) provider that provides
-identity to let a user federate into Quick Sight with an associated
-Identity and Access Management(IAM) role. This parameter should only be
-used when \code{ExternalLoginFederationProviderType} parameter is set to
-\code{CUSTOM_OIDC}.}
+\item{CustomFederationProviderUrl}{The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Quick Sight with an associated Identity and Access Management(IAM) role. This parameter should only be used when \code{ExternalLoginFederationProviderType} parameter is set to \code{CUSTOM_OIDC}.}
 
 \item{ExternalLoginId}{The identity ID for a user in the external login provider.}
 }

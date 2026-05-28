@@ -9,8 +9,7 @@ lakeformation_delete_lf_tag_expression(Name, CatalogId = NULL)
 \arguments{
 \item{Name}{[required] The name for the LF-Tag expression.}
 
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID in which
-the LF-Tag expression is saved.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID in which the LF-Tag expression is saved.}
 }
 \description{
 Deletes the LF-Tag expression. The caller must be a data lake admin or have \code{DROP} permissions on the LF-Tag expression. Deleting a LF-Tag expression will also delete all \code{LFTagPolicy} permissions referencing the LF-Tag expression.

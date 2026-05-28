@@ -17,8 +17,7 @@ omics_list_annotation_import_jobs(
 
 \item{ids}{IDs of annotation import jobs to retrieve.}
 
-\item{nextToken}{Specifies the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specifies the pagination token from a previous request to retrieve the next page of results.}
 
 \item{filter}{A filter to apply to the list.}
 }

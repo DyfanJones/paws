@@ -14,25 +14,20 @@ lexmodelsv2_list_intent_paths(
 )
 }
 \arguments{
-\item{botId}{[required] The identifier for the bot for which you want to retrieve intent path
-metrics.}
+\item{botId}{[required] The identifier for the bot for which you want to retrieve intent path metrics.}
 
-\item{startDateTime}{[required] The date and time that marks the beginning of the range of time for
-which you want to see intent path metrics.}
+\item{startDateTime}{[required] The date and time that marks the beginning of the range of time for which you want to see intent path metrics.}
 
-\item{endDateTime}{[required] The date and time that marks the end of the range of time for which you
-want to see intent path metrics.}
+\item{endDateTime}{[required] The date and time that marks the end of the range of time for which you want to see intent path metrics.}
 
-\item{intentPath}{[required] The intent path for which you want to retrieve metrics. Use a forward
-slash to separate intents in the path. For example:
+\item{intentPath}{[required] The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:
 \itemize{
 \item /BookCar
 \item /BookCar/BookHotel
 \item /BookHotel/BookCar
 }}
 
-\item{filters}{A list of objects, each describes a condition by which you want to
-filter the results.}
+\item{filters}{A list of objects, each describes a condition by which you want to filter the results.}
 }
 \description{
 Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following fields are required:

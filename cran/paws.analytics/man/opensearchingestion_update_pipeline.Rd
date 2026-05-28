@@ -22,20 +22,15 @@ opensearchingestion_update_pipeline(
 
 \item{MaxUnits}{The maximum pipeline capacity, in Ingestion Compute Units (ICUs)}
 
-\item{PipelineConfigurationBody}{The pipeline configuration in YAML format. The command accepts the
-pipeline configuration as a string or within a .yaml file. If you
-provide the configuration as a string, each new line must be escaped
-with \verb{\\\\n}.}
+\item{PipelineConfigurationBody}{The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \verb{\\\\n}.}
 
 \item{LogPublishingOptions}{Key-value pairs to configure log publishing.}
 
 \item{BufferOptions}{Key-value pairs to configure persistent buffering for the pipeline.}
 
-\item{EncryptionAtRestOptions}{Key-value pairs to configure encryption for data that is written to a
-persistent buffer.}
+\item{EncryptionAtRestOptions}{Key-value pairs to configure encryption for data that is written to a persistent buffer.}
 
-\item{PipelineRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants the pipeline
-permission to access Amazon Web Services resources.}
+\item{PipelineRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants the pipeline permission to access Amazon Web Services resources.}
 }
 \description{
 Updates an OpenSearch Ingestion pipeline. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/update-pipeline.html}{Updating Amazon OpenSearch Ingestion pipelines}.

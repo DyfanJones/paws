@@ -13,22 +13,9 @@ datazone_list_environment_blueprint_configurations(
 \arguments{
 \item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain.}
 
-\item{maxResults}{The maximum number of blueprint configurations to return in a single
-call to
-\code{\link[=datazone_list_environment_blueprint_configurations]{list_environment_blueprint_configurations}}.
-When the number of configurations to be listed is greater than the value
-of \code{MaxResults}, the response contains a \code{NextToken} value that you can
-use in a subsequent call to
-\code{\link[=datazone_list_environment_blueprint_configurations]{list_environment_blueprint_configurations}}
-to list the next set of configurations.}
+\item{maxResults}{The maximum number of blueprint configurations to return in a single call to \code{\link[=datazone_list_environment_blueprint_configurations]{list_environment_blueprint_configurations}}. When the number of configurations to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_environment_blueprint_configurations]{list_environment_blueprint_configurations}} to list the next set of configurations.}
 
-\item{nextToken}{When the number of blueprint configurations is greater than the default
-value for the \code{MaxResults} parameter, or if you explicitly specify a
-value for \code{MaxResults} that is less than the number of configurations,
-the response includes a pagination token named \code{NextToken}. You can
-specify this \code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_environment_blueprint_configurations]{list_environment_blueprint_configurations}}
-to list the next set of configurations.}
+\item{nextToken}{When the number of blueprint configurations is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of configurations, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_environment_blueprint_configurations]{list_environment_blueprint_configurations}} to list the next set of configurations.}
 }
 \description{
 Lists blueprint configurations for a Amazon DataZone environment.

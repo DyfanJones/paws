@@ -12,19 +12,13 @@ elasticache_copy_serverless_cache_snapshot(
 )
 }
 \arguments{
-\item{SourceServerlessCacheSnapshotName}{[required] The identifier of the existing serverless cache’s snapshot to be copied.
-Available for Valkey, Redis OSS and Serverless Memcached only.}
+\item{SourceServerlessCacheSnapshotName}{[required] The identifier of the existing serverless cache’s snapshot to be copied. Available for Valkey, Redis OSS and Serverless Memcached only.}
 
-\item{TargetServerlessCacheSnapshotName}{[required] The identifier for the snapshot to be created. Available for Valkey,
-Redis OSS and Serverless Memcached only. This value is stored as a
-lowercase string.}
+\item{TargetServerlessCacheSnapshotName}{[required] The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only. This value is stored as a lowercase string.}
 
-\item{KmsKeyId}{The identifier of the KMS key used to encrypt the target snapshot.
-Available for Valkey, Redis OSS and Serverless Memcached only.}
+\item{KmsKeyId}{The identifier of the KMS key used to encrypt the target snapshot. Available for Valkey, Redis OSS and Serverless Memcached only.}
 
-\item{Tags}{A list of tags to be added to the target snapshot resource. A tag is a
-key-value pair. Available for Valkey, Redis OSS and Serverless Memcached
-only. Default: NULL}
+\item{Tags}{A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Valkey, Redis OSS and Serverless Memcached only. Default: NULL}
 }
 \description{
 Creates a copy of an existing serverless cache’s snapshot. Available for Valkey, Redis OSS and Serverless Memcached only.

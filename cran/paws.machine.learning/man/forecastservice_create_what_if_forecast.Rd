@@ -14,36 +14,21 @@ forecastservice_create_what_if_forecast(
 )
 }
 \arguments{
-\item{WhatIfForecastName}{[required] The name of the what-if forecast. Names must be unique within each
-what-if analysis.}
+\item{WhatIfForecastName}{[required] The name of the what-if forecast. Names must be unique within each what-if analysis.}
 
 \item{WhatIfAnalysisArn}{[required] The Amazon Resource Name (ARN) of the what-if analysis.}
 
-\item{TimeSeriesTransformations}{The transformations that are applied to the baseline time series. Each
-transformation contains an action and a set of conditions. An action is
-applied only when all conditions are met. If no conditions are provided,
-the action is applied to all items.}
+\item{TimeSeriesTransformations}{The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.}
 
-\item{TimeSeriesReplacementsDataSource}{The replacement time series dataset, which contains the rows that you
-want to change in the related time series dataset. A replacement time
-series does not need to contain all rows that are in the baseline
-related time series. Include only the rows (measure-dimension
-combinations) that you want to include in the what-if forecast.
+\item{TimeSeriesReplacementsDataSource}{The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.
 
-This dataset is merged with the original time series to create a
-transformed dataset that is used for the what-if analysis.
+This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.
 
-This dataset should contain the items to modify (such as item_id or
-workforce_type), any relevant dimensions, the timestamp column, and at
-least one of the related time series columns. This file should not
-contain duplicate timestamps for the same time series.
+This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.
 
-Timestamps and item_ids not included in this dataset are not included in
-the what-if analysis.}
+Timestamps and item_ids not included in this dataset are not included in the what-if analysis.}
 
-\item{Tags}{A list of
-\href{https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html}{tags}
-to apply to the what if forecast.}
+\item{Tags}{A list of \href{https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html}{tags} to apply to the what if forecast.}
 }
 \description{
 A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if forecast incorporates either a replacement dataset or a set of transformations to the original dataset.

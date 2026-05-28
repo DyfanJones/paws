@@ -14,11 +14,9 @@ bedrockagentcore_batch_create_memory_records(
 \arguments{
 \item{memoryId}{[required] The unique ID of the memory resource where records will be created.}
 
-\item{records}{[required] A list of memory record creation inputs to be processed in the batch
-operation.}
+\item{records}{[required] A list of memory record creation inputs to be processed in the batch operation.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotent processing of
-the batch request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotent processing of the batch request.}
 }
 \description{
 Creates multiple memory records in a single batch operation for the specified memory with custom content.

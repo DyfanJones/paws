@@ -27,14 +27,9 @@ bedrockagentcorecontrol_create_payment_manager(
 
 \item{authorizerConfiguration}{The authorizer configuration for the payment manager.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that the payment manager
-assumes to access resources on your behalf.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that the payment manager assumes to access resources on your behalf.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
 \item{tags}{A map of tag keys and values to assign to the payment manager.}
 }

@@ -11,11 +11,7 @@ emr_get_cluster_session_credentials(ClusterId, ExecutionRoleArn = NULL)
 \arguments{
 \item{ClusterId}{[required] The unique identifier of the cluster.}
 
-\item{ExecutionRoleArn}{The Amazon Resource Name (ARN) of the runtime role for interactive
-workload submission on the cluster. The runtime role can be a
-cross-account IAM role. The runtime role ARN is a combination of account
-ID, role name, and role type using the following format:
-\code{arn:partition:service:region:account:resource}.}
+\item{ExecutionRoleArn}{The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: \code{arn:partition:service:region:account:resource}.}
 }
 \description{
 Provides temporary, HTTP basic credentials that are associated with a given runtime IAM role and used by a cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints that support username and password authentication.

@@ -17,22 +17,11 @@ kendraranking_create_rescore_execution_plan(
 
 \item{Description}{A description for the rescore execution plan.}
 
-\item{CapacityUnits}{You can set additional capacity units to meet the needs of your rescore
-execution plan. You are given a single capacity unit by default. If you
-want to use the default capacity, you don't set additional capacity
-units. For more information on the default capacity and additional
-capacity units, see \href{https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html}{Adjusting capacity}.}
+\item{CapacityUnits}{You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see \href{https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html}{Adjusting capacity}.}
 
-\item{Tags}{A list of key-value pairs that identify or categorize your rescore
-execution plan. You can also use tags to help control access to the
-rescore execution plan. Tag keys and values can consist of Unicode
-letters, digits, white space, and any of the following symbols: _ . : /
-= + - @.}
+\item{Tags}{A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.}
 
-\item{ClientToken}{A token that you provide to identify the request to create a rescore
-execution plan. Multiple calls to the
-\code{CreateRescoreExecutionPlanRequest} API with the same client token will
-create only one rescore execution plan.}
+\item{ClientToken}{A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the \code{CreateRescoreExecutionPlanRequest} API with the same client token will create only one rescore execution plan.}
 }
 \description{
 Creates a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the \code{\link[=kendraranking_rescore]{rescore}} API. You set the number of capacity units that you require for Amazon Kendra Intelligent Ranking to rescore or re-rank a search service's results.

@@ -17,30 +17,15 @@ textract_start_expense_analysis(
 \arguments{
 \item{DocumentLocation}{[required] The location of the document to be processed.}
 
-\item{ClientRequestToken}{The idempotent token that's used to identify the start request. If you
-use the same token with multiple
-\code{\link[=textract_start_document_text_detection]{start_document_text_detection}}
-requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to
-prevent the same job from being accidentally started more than once. For
-more information, see \href{https://docs.aws.amazon.com/textract/latest/dg/api-async.html}{Calling Amazon Textract Asynchronous Operations}}
+\item{ClientRequestToken}{The idempotent token that's used to identify the start request. If you use the same token with multiple \code{\link[=textract_start_document_text_detection]{start_document_text_detection}} requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the same job from being accidentally started more than once. For more information, see \href{https://docs.aws.amazon.com/textract/latest/dg/api-async.html}{Calling Amazon Textract Asynchronous Operations}}
 
-\item{JobTag}{An identifier you specify that's included in the completion notification
-published to the Amazon SNS topic. For example, you can use \code{JobTag} to
-identify the type of document that the completion notification
-corresponds to (such as a tax form or a receipt).}
+\item{JobTag}{An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use \code{JobTag} to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).}
 
-\item{NotificationChannel}{The Amazon SNS topic ARN that you want Amazon Textract to publish the
-completion status of the operation to.}
+\item{NotificationChannel}{The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.}
 
-\item{OutputConfig}{Sets if the output will go to a customer defined bucket. By default,
-Amazon Textract will save the results internally to be accessed by the
-\code{\link[=textract_get_expense_analysis]{get_expense_analysis}} operation.}
+\item{OutputConfig}{Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the \code{\link[=textract_get_expense_analysis]{get_expense_analysis}} operation.}
 
-\item{KMSKeyId}{The KMS key used to encrypt the inference results. This can be in either
-Key ID or Key Alias format. When a KMS key is provided, the KMS key will
-be used for server-side encryption of the objects in the customer
-bucket. When this parameter is not enabled, the result will be encrypted
-server side,using SSE-S3.}
+\item{KMSKeyId}{The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.}
 }
 \description{
 Starts the asynchronous analysis of invoices or receipts for data like contact information, items purchased, and vendor names.

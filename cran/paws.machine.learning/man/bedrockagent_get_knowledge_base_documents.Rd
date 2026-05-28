@@ -12,13 +12,11 @@ bedrockagent_get_knowledge_base_documents(
 )
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base that is connected to the
-data source.}
+\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base that is connected to the data source.}
 
 \item{dataSourceId}{[required] The unique identifier of the data source that contains the documents.}
 
-\item{documentIdentifiers}{[required] A list of objects, each of which contains information to identify a
-document for which to retrieve information.}
+\item{documentIdentifiers}{[required] A list of objects, each of which contains information to identify a document for which to retrieve information.}
 }
 \description{
 Retrieves specific documents from a data source that is connected to a knowledge base. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html}{Ingest changes directly into a knowledge base} in the Amazon Bedrock User Guide.

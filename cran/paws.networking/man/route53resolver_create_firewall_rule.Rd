@@ -23,91 +23,59 @@ route53resolver_create_firewall_rule(
 )
 }
 \arguments{
-\item{CreatorRequestId}{[required] A unique string that identifies the request and that allows you to retry
-failed requests without the risk of running the operation twice.
-\code{CreatorRequestId} can be any unique string, for example, a date/time
-stamp.}
+\item{CreatorRequestId}{[required] A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. \code{CreatorRequestId} can be any unique string, for example, a date/time stamp.}
 
-\item{FirewallRuleGroupId}{[required] The unique identifier of the firewall rule group where you want to
-create the rule.}
+\item{FirewallRuleGroupId}{[required] The unique identifier of the firewall rule group where you want to create the rule.}
 
-\item{FirewallDomainListId}{The ID of the domain list that you want to use in the rule. Can't be
-used together with \code{DnsThreatProtecton}.}
+\item{FirewallDomainListId}{The ID of the domain list that you want to use in the rule. Can't be used together with \code{DnsThreatProtecton}.}
 
-\item{Priority}{[required] The setting that determines the processing order of the rule in the rule
-group. DNS Firewall processes the rules in a rule group by order of
-priority, starting from the lowest setting.
+\item{Priority}{[required] The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.
 
-You must specify a unique priority for each rule in a rule group. To
-make it easier to insert rules later, leave space between the numbers,
-for example, use 100, 200, and so on. You can change the priority
-setting for the rules in a rule group at any time.}
+You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.}
 
-\item{Action}{[required] The action that DNS Firewall should take on a DNS query when it matches
-one of the domains in the rule's domain list, or a threat in a DNS
-Firewall Advanced rule:
+\item{Action}{[required] The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:
 \itemize{
-\item \code{ALLOW} - Permit the request to go through. Not available for DNS
-Firewall Advanced rules.
-\item \code{ALERT} - Permit the request and send metrics and logs to Cloud
-Watch.
-\item \code{BLOCK} - Disallow the request. This option requires additional
-details in the rule's \code{BlockResponse}.
+\item \code{ALLOW} - Permit the request to go through. Not available for DNS Firewall Advanced rules.
+\item \code{ALERT} - Permit the request and send metrics and logs to Cloud Watch.
+\item \code{BLOCK} - Disallow the request. This option requires additional details in the rule's \code{BlockResponse}.
 }}
 
-\item{BlockResponse}{The way that you want DNS Firewall to block the request, used with the
-rule action setting \code{BLOCK}.
+\item{BlockResponse}{The way that you want DNS Firewall to block the request, used with the rule action setting \code{BLOCK}.
 \itemize{
-\item \code{NODATA} - Respond indicating that the query was successful, but no
-response is available for it.
-\item \code{NXDOMAIN} - Respond indicating that the domain name that's in the
-query doesn't exist.
-\item \code{OVERRIDE} - Provide a custom override in the response. This option
-requires custom handling details in the rule's \verb{BlockOverride*}
-settings.
+\item \code{NODATA} - Respond indicating that the query was successful, but no response is available for it.
+\item \code{NXDOMAIN} - Respond indicating that the domain name that's in the query doesn't exist.
+\item \code{OVERRIDE} - Provide a custom override in the response. This option requires custom handling details in the rule's \verb{BlockOverride*} settings.
 }
 
 This setting is required if the rule action setting is \code{BLOCK}.}
 
-\item{BlockOverrideDomain}{The custom DNS record to send back in response to the query. Used for
-the rule action \code{BLOCK} with a \code{BlockResponse} setting of \code{OVERRIDE}.
+\item{BlockOverrideDomain}{The custom DNS record to send back in response to the query. Used for the rule action \code{BLOCK} with a \code{BlockResponse} setting of \code{OVERRIDE}.
 
 This setting is required if the \code{BlockResponse} setting is \code{OVERRIDE}.}
 
-\item{BlockOverrideDnsType}{The DNS record's type. This determines the format of the record value
-that you provided in \code{BlockOverrideDomain}. Used for the rule action
-\code{BLOCK} with a \code{BlockResponse} setting of \code{OVERRIDE}.
+\item{BlockOverrideDnsType}{The DNS record's type. This determines the format of the record value that you provided in \code{BlockOverrideDomain}. Used for the rule action \code{BLOCK} with a \code{BlockResponse} setting of \code{OVERRIDE}.
 
 This setting is required if the \code{BlockResponse} setting is \code{OVERRIDE}.}
 
-\item{BlockOverrideTtl}{The recommended amount of time, in seconds, for the DNS resolver or web
-browser to cache the provided override record. Used for the rule action
-\code{BLOCK} with a \code{BlockResponse} setting of \code{OVERRIDE}.
+\item{BlockOverrideTtl}{The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action \code{BLOCK} with a \code{BlockResponse} setting of \code{OVERRIDE}.
 
 This setting is required if the \code{BlockResponse} setting is \code{OVERRIDE}.}
 
 \item{Name}{[required] A name that lets you identify the rule in the rule group.}
 
-\item{FirewallDomainRedirectionAction}{How you want the the rule to evaluate DNS redirection in the DNS
-redirection chain, such as CNAME or DNAME.
+\item{FirewallDomainRedirectionAction}{How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.
 
-\code{INSPECT_REDIRECTION_DOMAIN}: (Default) inspects all domains in the
-redirection chain. The individual domains in the redirection chain must
-be added to the domain list.
+\code{INSPECT_REDIRECTION_DOMAIN}: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.
 
-\code{TRUST_REDIRECTION_DOMAIN}: Inspects only the first domain in the
-redirection chain. You don't need to add the subsequent domains in the
-domain in the redirection list to the domain list.}
+\code{TRUST_REDIRECTION_DOMAIN}: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.}
 
 \item{Qtype}{The DNS query type you want the rule to evaluate. Allowed values are;
 \itemize{
 \item A: Returns an IPv4 address.
 \item AAAA: Returns an Ipv6 address.
-\item CAA: Restricts CAs that can create SSL/TLS certifications for the
-domain.
+\item CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
 \item CNAME: Returns another domain name.
-\item DS: Record that identifies the DNSSEC signing key of a delegated
-zone.
+\item DS: Record that identifies the DNSSEC signing key of a delegated zone.
 \item MX: Specifies mail servers.
 \item NAPTR: Regular-expression-based rewriting of domain names.
 \item NS: Authoritative name servers.
@@ -116,23 +84,16 @@ zone.
 \item SPF: Lists the servers authorized to send emails from a domain.
 \item SRV: Application specific values that identify servers.
 \item TXT: Verifies email senders and application-specific values.
-\item A query type you define by using the DNS type ID, for example 28 for
-AAAA. The values must be defined as TYPENUMBER, where the NUMBER can
-be 1-65334, for example, TYPE28. For more information, see \href{https://en.wikipedia.org/wiki/List_of_DNS_record_types}{List of DNS record types}.
+\item A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see \href{https://en.wikipedia.org/wiki/List_of_DNS_record_types}{List of DNS record types}.
 }}
 
 \item{DnsThreatProtection}{Use to create a DNS Firewall Advanced rule.}
 
-\item{ConfidenceThreshold}{The confidence threshold for DNS Firewall Advanced. You must provide
-this value when you create a DNS Firewall Advanced rule. The confidence
-level values mean:
+\item{ConfidenceThreshold}{The confidence threshold for DNS Firewall Advanced. You must provide this value when you create a DNS Firewall Advanced rule. The confidence level values mean:
 \itemize{
-\item \code{LOW}: Provides the highest detection rate for threats, but also
-increases false positives.
-\item \code{MEDIUM}: Provides a balance between detecting threats and false
-positives.
-\item \code{HIGH}: Detects only the most well corroborated threats with a low
-rate of false positives.
+\item \code{LOW}: Provides the highest detection rate for threats, but also increases false positives.
+\item \code{MEDIUM}: Provides a balance between detecting threats and false positives.
+\item \code{HIGH}: Detects only the most well corroborated threats with a low rate of false positives.
 }}
 }
 \description{

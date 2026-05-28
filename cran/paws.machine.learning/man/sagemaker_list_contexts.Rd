@@ -20,22 +20,17 @@ sagemaker_list_contexts(
 
 \item{ContextType}{A filter that returns only contexts of the specified type.}
 
-\item{CreatedAfter}{A filter that returns only contexts created on or after the specified
-time.}
+\item{CreatedAfter}{A filter that returns only contexts created on or after the specified time.}
 
-\item{CreatedBefore}{A filter that returns only contexts created on or before the specified
-time.}
+\item{CreatedBefore}{A filter that returns only contexts created on or before the specified time.}
 
 \item{SortBy}{The property used to sort results. The default value is \code{CreationTime}.}
 
 \item{SortOrder}{The sort order. The default value is \code{Descending}.}
 
-\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_contexts]{list_contexts}}
-didn't return the full set of contexts, the call returns a token for
-getting the next set of contexts.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_contexts]{list_contexts}} didn't return the full set of contexts, the call returns a token for getting the next set of contexts.}
 
-\item{MaxResults}{The maximum number of contexts to return in the response. The default
-value is 10.}
+\item{MaxResults}{The maximum number of contexts to return in the response. The default value is 10.}
 }
 \description{
 Lists the contexts in your account and their properties.

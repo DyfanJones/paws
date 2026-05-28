@@ -14,11 +14,9 @@ panorama_list_application_instances(
 \arguments{
 \item{DeviceId}{The application instances' device ID.}
 
-\item{MaxResults}{The maximum number of application instances to return in one page of
-results.}
+\item{MaxResults}{The maximum number of application instances to return in one page of results.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{StatusFilter}{Only include instances with a specific status.}
 }

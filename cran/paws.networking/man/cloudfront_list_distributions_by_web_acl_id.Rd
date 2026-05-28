@@ -11,25 +11,15 @@ cloudfront_list_distributions_by_web_acl_id(
 )
 }
 \arguments{
-\item{Marker}{Use \code{Marker} and \code{MaxItems} to control pagination of results. If you
-have more than \code{MaxItems} distributions that satisfy the request, the
-response includes a \code{NextMarker} element. To get the next page of
-results, submit another request. For the value of \code{Marker}, specify the
-value of \code{NextMarker} from the last response. (For the first request,
-omit \code{Marker}.)}
+\item{Marker}{Use \code{Marker} and \code{MaxItems} to control pagination of results. If you have more than \code{MaxItems} distributions that satisfy the request, the response includes a \code{NextMarker} element. To get the next page of results, submit another request. For the value of \code{Marker}, specify the value of \code{NextMarker} from the last response. (For the first request, omit \code{Marker}.)}
 
-\item{MaxItems}{The maximum number of distributions that you want CloudFront to return
-in the response body. The maximum and default values are both 100.}
+\item{MaxItems}{The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.}
 
-\item{WebACLId}{[required] The ID of the WAF web ACL that you want to list the associated
-distributions. If you specify "null" for the ID, the request returns a
-list of the distributions that aren't associated with a web ACL.
+\item{WebACLId}{[required] The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
 
-For WAFV2, this is the ARN of the web ACL, such as
-\verb{arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111}.
+For WAFV2, this is the ARN of the web ACL, such as \verb{arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111}.
 
-For WAF Classic, this is the ID of the web ACL, such as
-\verb{a1b2c3d4-5678-90ab-cdef-EXAMPLE11111}.}
+For WAF Classic, this is the ID of the web ACL, such as \verb{a1b2c3d4-5678-90ab-cdef-EXAMPLE11111}.}
 }
 \description{
 List the distributions that are associated with a specified WAF web ACL.

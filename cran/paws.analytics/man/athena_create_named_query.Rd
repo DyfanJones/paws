@@ -22,18 +22,9 @@ athena_create_named_query(
 
 \item{QueryString}{[required] The contents of the query with all query statements.}
 
-\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the
-query is idempotent (executes only once). If another
-\code{\link[=athena_create_named_query]{create_named_query}} request is received,
-the same response is returned and another query is not created. If a
-parameter has changed, for example, the \code{QueryString}, an error is
-returned.
+\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another \code{\link[=athena_create_named_query]{create_named_query}} request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the \code{QueryString}, an error is returned.
 
-This token is listed as not required because Amazon Web Services SDKs
-(for example the Amazon Web Services SDK for Java) auto-generate the
-token for users. If you are not using the Amazon Web Services SDK or the
-Amazon Web Services CLI, you must provide this token or the action will
-fail.}
+This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.}
 
 \item{WorkGroup}{The name of the workgroup in which the named query is being created.}
 }

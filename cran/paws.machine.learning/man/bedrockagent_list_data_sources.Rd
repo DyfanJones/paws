@@ -12,17 +12,11 @@ bedrockagent_list_data_sources(
 )
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base for which to return a list
-of information.}
+\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base for which to return a list of information.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 }
 \description{
 Lists the data sources in a knowledge base and information about each one.

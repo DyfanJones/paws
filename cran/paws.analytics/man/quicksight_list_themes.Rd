@@ -12,22 +12,17 @@ quicksight_list_themes(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the themes that
-you're listing.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the themes that you're listing.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 
-\item{Type}{The type of themes that you want to list. Valid options include the
-following:
+\item{Type}{The type of themes that you want to list. Valid options include the following:
 \itemize{
 \item \code{ALL (default)}- Display all existing themes.
-\item \code{CUSTOM} - Display only the themes created by people using Amazon
-Quick Sight.
-\item \code{QUICKSIGHT} - Display only the starting themes defined by Quick
-Sight.
+\item \code{CUSTOM} - Display only the themes created by people using Amazon Quick Sight.
+\item \code{QUICKSIGHT} - Display only the starting themes defined by Quick Sight.
 }}
 }
 \description{

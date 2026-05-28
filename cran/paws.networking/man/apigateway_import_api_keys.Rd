@@ -7,14 +7,11 @@
 apigateway_import_api_keys(body, format, failOnWarnings = NULL)
 }
 \arguments{
-\item{body}{[required] The payload of the POST request to import API keys. For the payload
-format, see API Key File Format.}
+\item{body}{[required] The payload of the POST request to import API keys. For the payload format, see API Key File Format.}
 
-\item{format}{[required] A query parameter to specify the input format to imported API keys.
-Currently, only the \code{csv} format is supported.}
+\item{format}{[required] A query parameter to specify the input format to imported API keys. Currently, only the \code{csv} format is supported.}
 
-\item{failOnWarnings}{A query parameter to indicate whether to rollback ApiKey importation
-(\code{true}) or not (\code{false}) when error is encountered.}
+\item{failOnWarnings}{A query parameter to indicate whether to rollback ApiKey importation (\code{true}) or not (\code{false}) when error is encountered.}
 }
 \description{
 Import API keys from an external source, such as a CSV-formatted file.

@@ -12,16 +12,13 @@ globalaccelerator_list_cross_account_resources(
 )
 }
 \arguments{
-\item{AcceleratorArn}{The Amazon Resource Name (ARN) of an accelerator in a cross-account
-attachment.}
+\item{AcceleratorArn}{The Amazon Resource Name (ARN) of an accelerator in a cross-account attachment.}
 
 \item{ResourceOwnerAwsAccountId}{[required] The account ID of a resource owner in a cross-account attachment.}
 
-\item{MaxResults}{The number of cross-account resource objects that you want to return
-with this call. The default value is 10.}
+\item{MaxResults}{The number of cross-account resource objects that you want to return with this call. The default value is 10.}
 
-\item{NextToken}{The token for the next set of results. You receive this token from a
-previous call.}
+\item{NextToken}{The token for the next set of results. You receive this token from a previous call.}
 }
 \description{
 List the cross-account resources available to work with.

@@ -15,18 +15,13 @@ ec2_create_local_gateway_virtual_interface_group(
 \arguments{
 \item{LocalGatewayId}{[required] The ID of the local gateway.}
 
-\item{LocalBgpAsn}{The Autonomous System Number(ASN) for the local Border Gateway Protocol
-(BGP).}
+\item{LocalBgpAsn}{The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP).}
 
 \item{LocalBgpAsnExtended}{The extended 32-bit ASN for the local BGP configuration.}
 
-\item{TagSpecifications}{The tags to apply to the local gateway virtual interface group when the
-resource is being created.}
+\item{TagSpecifications}{The tags to apply to the local gateway virtual interface group when the resource is being created.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Create a local gateway virtual interface group.

@@ -7,9 +7,7 @@
 comprehendmedical_describe_icd10cm_inference_job(JobId)
 }
 \arguments{
-\item{JobId}{[required] The identifier that Amazon Comprehend Medical generated for the job.
-\verb{The StartICD10CMInferenceJob} operation returns this identifier in its
-response.}
+\item{JobId}{[required] The identifier that Amazon Comprehend Medical generated for the job. \verb{The StartICD10CMInferenceJob} operation returns this identifier in its response.}
 }
 \description{
 Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference job.

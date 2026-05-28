@@ -11,13 +11,9 @@ personalize_list_recommenders(
 )
 }
 \arguments{
-\item{datasetGroupArn}{The Amazon Resource Name (ARN) of the Domain dataset group to list the
-recommenders for. When a Domain dataset group is not specified, all the
-recommenders associated with the account are listed.}
+\item{datasetGroupArn}{The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_recommenders]{list_recommenders}} for getting the
-next set of recommenders (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_recommenders]{list_recommenders}} for getting the next set of recommenders (if they exist).}
 
 \item{maxResults}{The maximum number of recommenders to return.}
 }

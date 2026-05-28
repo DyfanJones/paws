@@ -7,15 +7,11 @@
 elasticache_remove_tags_from_resource(ResourceName, TagKeys)
 }
 \arguments{
-\item{ResourceName}{[required] The Amazon Resource Name (ARN) of the resource from which you want the
-tags removed, for example
-\code{arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster} or
-\code{arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot}.
+\item{ResourceName}{[required] The Amazon Resource Name (ARN) of the resource from which you want the tags removed, for example \code{arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster} or \code{arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot}.
 
 For more information about ARNs, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names (ARNs) and Amazon Service Namespaces}.}
 
-\item{TagKeys}{[required] A list of \code{TagKeys} identifying the tags you want removed from the named
-resource.}
+\item{TagKeys}{[required] A list of \code{TagKeys} identifying the tags you want removed from the named resource.}
 }
 \description{
 Removes the tags identified by the \code{TagKeys} list from the named resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on replication groups, those actions will be replicated to all nodes in the replication group. For more information, see \href{https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html}{Resource-level permissions}.

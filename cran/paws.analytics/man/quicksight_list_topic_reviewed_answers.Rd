@@ -7,12 +7,9 @@
 quicksight_list_topic_reviewed_answers(AwsAccountId, TopicId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that containd the reviewed
-answers that you want listed.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that containd the reviewed answers that you want listed.}
 
-\item{TopicId}{[required] The ID for the topic that contains the reviewed answer that you want to
-list. This ID is unique per Amazon Web Services Region for each Amazon
-Web Services account.}
+\item{TopicId}{[required] The ID for the topic that contains the reviewed answer that you want to list. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 }
 \description{
 Lists all reviewed answers for a Q Topic.

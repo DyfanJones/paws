@@ -13,12 +13,9 @@ cloudsearch_describe_expressions(
 \arguments{
 \item{DomainName}{[required] The name of the domain you want to describe.}
 
-\item{ExpressionNames}{Limits the \code{\link[=cloudsearch_describe_expressions]{describe_expressions}}
-response to the specified expressions. If not specified, all expressions
-are shown.}
+\item{ExpressionNames}{Limits the \code{\link[=cloudsearch_describe_expressions]{describe_expressions}} response to the specified expressions. If not specified, all expressions are shown.}
 
-\item{Deployed}{Whether to display the deployed configuration (\code{true}) or include any
-pending changes (\code{false}). Defaults to \code{false}.}
+\item{Deployed}{Whether to display the deployed configuration (\code{true}) or include any pending changes (\code{false}). Defaults to \code{false}.}
 }
 \description{
 Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the \code{Deployed} option to \code{true} to show the active configuration and exclude pending changes. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">}}Configuring Expressions\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

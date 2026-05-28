@@ -12,13 +12,11 @@ quicksight_list_self_upgrades(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the self-upgrade
-requests.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the self-upgrade requests.}
 
 \item{Namespace}{[required] The Quick namespace for the self-upgrade requests.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to return.}
 }

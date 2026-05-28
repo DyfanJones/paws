@@ -15,27 +15,17 @@ docdb_describe_pending_maintenance_actions(
 \arguments{
 \item{ResourceIdentifier}{The ARN of a resource to return pending maintenance actions for.}
 
-\item{Filters}{A filter that specifies one or more resources to return pending
-maintenance actions for.
+\item{Filters}{A filter that specifies one or more resources to return pending maintenance actions for.
 
 Supported filters:
 \itemize{
-\item \code{db-cluster-id} - Accepts cluster identifiers and cluster Amazon
-Resource Names (ARNs). The results list includes only pending
-maintenance actions for the clusters identified by these ARNs.
-\item \code{db-instance-id} - Accepts instance identifiers and instance ARNs.
-The results list includes only pending maintenance actions for the
-DB instances identified by these ARNs.
+\item \code{db-cluster-id} - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list includes only pending maintenance actions for the clusters identified by these ARNs.
+\item \code{db-instance-id} - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.
 }}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-(marker) is included in the response so that the remaining results can
-be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 

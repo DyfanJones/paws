@@ -13,11 +13,9 @@ kafka_update_broker_storage(
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the cluster.}
 
-\item{CurrentVersion}{[required] The version of cluster to update from. A successful operation will then
-generate a new version.}
+\item{CurrentVersion}{[required] The version of cluster to update from. A successful operation will then generate a new version.}
 
-\item{TargetBrokerEBSVolumeInfo}{[required] Describes the target volume size and the ID of the broker to apply the
-update to.}
+\item{TargetBrokerEBSVolumeInfo}{[required] Describes the target volume size and the ID of the broker to apply the update to.}
 }
 \description{
 Updates the EBS storage associated with MSK brokers.

@@ -26,52 +26,39 @@ bedrockagentcorecontrol_create_harness(
 )
 }
 \arguments{
-\item{harnessName}{[required] The name of the harness. Must start with a letter and contain only
-alphanumeric characters and underscores.}
+\item{harnessName}{[required] The name of the harness. Must start with a letter and contain only alphanumeric characters and underscores.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 
-\item{executionRoleArn}{[required] The ARN of the IAM role that the harness assumes when running. This role
-must have permissions for the services the agent needs to access, such
-as Amazon Bedrock for model invocation.}
+\item{executionRoleArn}{[required] The ARN of the IAM role that the harness assumes when running. This role must have permissions for the services the agent needs to access, such as Amazon Bedrock for model invocation.}
 
-\item{environment}{The compute environment configuration for the harness, including network
-and lifecycle settings.}
+\item{environment}{The compute environment configuration for the harness, including network and lifecycle settings.}
 
-\item{environmentArtifact}{The environment artifact for the harness, such as a custom container
-image containing additional dependencies.}
+\item{environmentArtifact}{The environment artifact for the harness, such as a custom container image containing additional dependencies.}
 
 \item{environmentVariables}{Environment variables to set in the harness runtime environment.}
 
-\item{model}{The model configuration for the harness. Supports Amazon Bedrock,
-OpenAI, and Google Gemini model providers.}
+\item{authorizerConfiguration}{Represents inbound authorization configuration options used to authenticate incoming requests.}
+
+\item{model}{The model configuration for the harness. Supports Amazon Bedrock, OpenAI, and Google Gemini model providers.}
 
 \item{systemPrompt}{The system prompt that defines the agent's behavior and instructions.}
 
-\item{tools}{The tools available to the agent, such as remote MCP servers, AgentCore
-Gateway, AgentCore Browser, Code Interpreter, or inline functions.}
+\item{tools}{The tools available to the agent, such as remote MCP servers, AgentCore Gateway, AgentCore Browser, Code Interpreter, or inline functions.}
 
-\item{skills}{The skills available to the agent. Skills are bundles of files that the
-agent can pull into its context on demand.}
+\item{skills}{The skills available to the agent. Skills are bundles of files that the agent can pull into its context on demand.}
 
-\item{allowedTools}{The tools that the agent is allowed to use. Supports glob patterns such
-as * for all tools, @builtin for all built-in tools, or}
+\item{allowedTools}{The tools that the agent is allowed to use. Supports glob patterns such as * for all tools, @builtin for all built-in tools, or @serverName/toolName for specific MCP server tools.}
 
-\item{memory}{The AgentCore Memory configuration for persisting conversation context
-across sessions.}
+\item{memory}{The AgentCore Memory configuration for persisting conversation context across sessions.}
 
-\item{truncation}{The truncation configuration for managing conversation context when it
-exceeds model limits.}
+\item{truncation}{The truncation configuration for managing conversation context when it exceeds model limits.}
 
-\item{maxIterations}{The maximum number of iterations the agent loop can execute per
-invocation.}
+\item{maxIterations}{The maximum number of iterations the agent loop can execute per invocation.}
 
-\item{maxTokens}{The maximum total number of output tokens the agent can generate across
-all model calls within a single invocation.}
+\item{maxTokens}{The maximum total number of output tokens the agent can generate across all model calls within a single invocation.}
 
-\item{timeoutSeconds}{The maximum duration in seconds for the agent loop execution per
-invocation.}
+\item{timeoutSeconds}{The maximum duration in seconds for the agent loop execution per invocation.}
 
 \item{tags}{Tags to apply to the harness resource.}
 }

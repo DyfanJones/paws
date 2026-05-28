@@ -8,8 +8,7 @@ association}
 route53profiles_get_profile_resource_association(ProfileResourceAssociationId)
 }
 \arguments{
-\item{ProfileResourceAssociationId}{[required] The ID of the profile resource association that you want to get
-information about.}
+\item{ProfileResourceAssociationId}{[required] The ID of the profile resource association that you want to get information about.}
 }
 \description{
 Returns information about a specified Route 53 Profile resource association.

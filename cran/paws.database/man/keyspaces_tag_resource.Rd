@@ -7,8 +7,7 @@
 keyspaces_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which
-to add tags.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.}
 
 \item{tags}{[required] The tags to be assigned to the Amazon Keyspaces resource.}
 }

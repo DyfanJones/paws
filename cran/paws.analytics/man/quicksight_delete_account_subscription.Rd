@@ -8,8 +8,7 @@ irreversible consequences across all Amazon Web Services regions:}
 quicksight_delete_account_subscription(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that you want to
-delete.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that you want to delete.}
 }
 \description{
 Deleting your Quick Sight account subscription has permanent, irreversible consequences across all Amazon Web Services regions:

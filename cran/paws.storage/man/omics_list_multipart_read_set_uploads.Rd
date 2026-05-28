@@ -16,8 +16,7 @@ omics_list_multipart_read_set_uploads(
 
 \item{maxResults}{The maximum number of multipart uploads returned in a page.}
 
-\item{nextToken}{Next token returned in the response of a previous
-ListMultipartReadSetUploads call. Used to get the next page of results.}
+\item{nextToken}{Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.}
 }
 \description{
 Lists in-progress multipart read set uploads for a sequence store and returns it in a JSON formatted output. Multipart read set uploads are initiated by the \code{CreateMultipartReadSetUploads} API operation. This operation returns a response with no body when the upload is complete.

@@ -23,22 +23,15 @@ sagemaker_list_monitoring_alert_history(
 
 \item{SortBy}{The field used to sort results. The default is \code{CreationTime}.}
 
-\item{SortOrder}{The sort order, whether \code{Ascending} or \code{Descending}, of the alert
-history. The default is \code{Descending}.}
+\item{SortOrder}{The sort order, whether \code{Ascending} or \code{Descending}, of the alert history. The default is \code{Descending}.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_monitoring_alert_history]{list_monitoring_alert_history}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of alerts in the history, use the token in the next
-request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_monitoring_alert_history]{list_monitoring_alert_history}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of alerts in the history, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of results to display. The default is 100.}
 
-\item{CreationTimeBefore}{A filter that returns only alerts created on or before the specified
-time.}
+\item{CreationTimeBefore}{A filter that returns only alerts created on or before the specified time.}
 
-\item{CreationTimeAfter}{A filter that returns only alerts created on or after the specified
-time.}
+\item{CreationTimeAfter}{A filter that returns only alerts created on or after the specified time.}
 
 \item{StatusEquals}{A filter that retrieves only alerts with a specific status.}
 }

@@ -9,10 +9,7 @@ kendra_list_experiences(IndexId, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{IndexId}{[required] The identifier of the index for your Amazon Kendra experience.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of Amazon Kendra
-experiences.}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.}
 
 \item{MaxResults}{The maximum number of returned Amazon Kendra experiences.}
 }

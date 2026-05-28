@@ -7,9 +7,11 @@
 wellarchitected_disassociate_lenses(WorkloadId, LensAliases)
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{LensAliases}{[required]}
+\item{LensAliases}{[required] List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.
+
+Identify a lens using its LensSummary$LensAlias.}
 }
 \description{
 Disassociate a lens from a workload.

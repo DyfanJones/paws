@@ -12,25 +12,15 @@ codecommit_create_pull_request(
 )
 }
 \arguments{
-\item{title}{[required] The title of the pull request. This title is used to identify the pull
-request to other users in the repository.}
+\item{title}{[required] The title of the pull request. This title is used to identify the pull request to other users in the repository.}
 
 \item{description}{A description of the pull request.}
 
-\item{targets}{[required] The targets for the pull request, including the source of the code to be
-reviewed (the source branch) and the destination where the creator of
-the pull request intends the code to be merged after the pull request is
-closed (the destination branch).}
+\item{targets}{[required] The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).}
 
-\item{clientRequestToken}{A unique, client-generated idempotency token that, when provided in a
-request, ensures the request cannot be repeated with a changed
-parameter. If a request is received with the same parameters and a token
-is included, the request returns information about the initial request
-that used that token.
+\item{clientRequestToken}{A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.
 
-The Amazon Web ServicesSDKs prepopulate client request tokens. If you
-are using an Amazon Web ServicesSDK, an idempotency token is created for
-you.}
+The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.}
 }
 \description{
 Creates a pull request in the specified repository.

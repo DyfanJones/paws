@@ -11,7 +11,7 @@ NULL
 #' @usage
 #' pinpoint_create_app(CreateApplicationRequest)
 #'
-#' @param CreateApplicationRequest &#91;required&#93; 
+#' @param CreateApplicationRequest &#91;required&#93; Specifies the display name of an application and the tags to associate with the application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -69,15 +69,13 @@ pinpoint_create_app <- function(CreateApplicationRequest) {
 #' existing campaign for an application
 #'
 #' @description
-#' Creates a new campaign for an application or updates the settings of an
-#' existing campaign for an application.
+#' Creates a new campaign for an application or updates the settings of an existing campaign for an application.
 #'
 #' @usage
 #' pinpoint_create_campaign(ApplicationId, WriteCampaignRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param WriteCampaignRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param WriteCampaignRequest &#91;required&#93; Specifies the configuration and other settings for a campaign.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1107,17 +1105,13 @@ pinpoint_create_campaign <- function(ApplicationId, WriteCampaignRequest) {
 #' channel
 #'
 #' @description
-#' Creates a message template for messages that are sent through the email
-#' channel.
+#' Creates a message template for messages that are sent through the email channel.
 #'
 #' @usage
 #' pinpoint_create_email_template(EmailTemplateRequest, TemplateName)
 #'
-#' @param EmailTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
+#' @param EmailTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1187,9 +1181,8 @@ pinpoint_create_email_template <- function(EmailTemplateRequest, TemplateName) {
 #' @usage
 #' pinpoint_create_export_job(ApplicationId, ExportJobRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param ExportJobRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param ExportJobRequest &#91;required&#93; Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1265,9 +1258,8 @@ pinpoint_create_export_job <- function(ApplicationId, ExportJobRequest) {
 #' @usage
 #' pinpoint_create_import_job(ApplicationId, ImportJobRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param ImportJobRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param ImportJobRequest &#91;required&#93; Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1347,17 +1339,13 @@ pinpoint_create_import_job <- function(ApplicationId, ImportJobRequest) {
 #' channel
 #'
 #' @description
-#' Creates a new message template for messages using the in-app message
-#' channel.
+#' Creates a new message template for messages using the in-app message channel.
 #'
 #' @usage
 #' pinpoint_create_in_app_template(InAppTemplateRequest, TemplateName)
 #'
-#' @param InAppTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
+#' @param InAppTemplateRequest &#91;required&#93; InApp Template Request.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1480,9 +1468,8 @@ pinpoint_create_in_app_template <- function(InAppTemplateRequest, TemplateName) 
 #' @usage
 #' pinpoint_create_journey(ApplicationId, WriteJourneyRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param WriteJourneyRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param WriteJourneyRequest &#91;required&#93; Specifies the configuration and other settings for a journey.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2479,18 +2466,14 @@ pinpoint_create_journey <- function(ApplicationId, WriteJourneyRequest) {
 #' notification channel
 #'
 #' @description
-#' Creates a message template for messages that are sent through a push
-#' notification channel.
+#' Creates a message template for messages that are sent through a push notification channel.
 #'
 #' @usage
 #' pinpoint_create_push_template(PushNotificationTemplateRequest,
 #'   TemplateName)
 #'
-#' @param PushNotificationTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
+#' @param PushNotificationTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2601,7 +2584,7 @@ pinpoint_create_push_template <- function(PushNotificationTemplateRequest, Templ
 #' pinpoint_create_recommender_configuration(
 #'   CreateRecommenderConfiguration)
 #'
-#' @param CreateRecommenderConfiguration &#91;required&#93; 
+#' @param CreateRecommenderConfiguration &#91;required&#93; Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2674,16 +2657,13 @@ pinpoint_create_recommender_configuration <- function(CreateRecommenderConfigura
 #' with an application
 #'
 #' @description
-#' Creates a new segment for an application or updates the configuration,
-#' dimension, and other settings for an existing segment that's associated
-#' with an application.
+#' Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.
 #'
 #' @usage
 #' pinpoint_create_segment(ApplicationId, WriteSegmentRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param WriteSegmentRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param WriteSegmentRequest &#91;required&#93; Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3122,17 +3102,13 @@ pinpoint_create_segment <- function(ApplicationId, WriteSegmentRequest) {
 #' channel
 #'
 #' @description
-#' Creates a message template for messages that are sent through the SMS
-#' channel.
+#' Creates a message template for messages that are sent through the SMS channel.
 #'
 #' @usage
 #' pinpoint_create_sms_template(SMSTemplateRequest, TemplateName)
 #'
-#' @param SMSTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
+#' @param SMSTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3190,17 +3166,13 @@ pinpoint_create_sms_template <- function(SMSTemplateRequest, TemplateName) {
 #' channel
 #'
 #' @description
-#' Creates a message template for messages that are sent through the voice
-#' channel.
+#' Creates a message template for messages that are sent through the voice channel.
 #'
 #' @usage
 #' pinpoint_create_voice_template(TemplateName, VoiceTemplateRequest)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param VoiceTemplateRequest &#91;required&#93; 
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param VoiceTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3259,14 +3231,12 @@ pinpoint_create_voice_template <- function(TemplateName, VoiceTemplateRequest) {
 #' settings for the channel
 #'
 #' @description
-#' Disables the ADM channel for an application and deletes any existing
-#' settings for the channel.
+#' Disables the ADM channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_adm_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3322,14 +3292,12 @@ pinpoint_delete_adm_channel <- function(ApplicationId) {
 #' settings for the channel
 #'
 #' @description
-#' Disables the APNs channel for an application and deletes any existing
-#' settings for the channel.
+#' Disables the APNs channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_apns_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3387,14 +3355,12 @@ pinpoint_delete_apns_channel <- function(ApplicationId) {
 #' existing settings for the channel
 #'
 #' @description
-#' Disables the APNs sandbox channel for an application and deletes any
-#' existing settings for the channel.
+#' Disables the APNs sandbox channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_apns_sandbox_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3452,14 +3418,12 @@ pinpoint_delete_apns_sandbox_channel <- function(ApplicationId) {
 #' existing settings for the channel
 #'
 #' @description
-#' Disables the APNs VoIP channel for an application and deletes any
-#' existing settings for the channel.
+#' Disables the APNs VoIP channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_apns_voip_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3517,14 +3481,12 @@ pinpoint_delete_apns_voip_channel <- function(ApplicationId) {
 #' any existing settings for the channel
 #'
 #' @description
-#' Disables the APNs VoIP sandbox channel for an application and deletes
-#' any existing settings for the channel.
+#' Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_apns_voip_sandbox_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3586,8 +3548,7 @@ pinpoint_delete_apns_voip_sandbox_channel <- function(ApplicationId) {
 #' @usage
 #' pinpoint_delete_app(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3640,14 +3601,12 @@ pinpoint_delete_app <- function(ApplicationId) {
 #' settings for the channel
 #'
 #' @description
-#' Disables the Baidu channel for an application and deletes any existing
-#' settings for the channel.
+#' Disables the Baidu channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_baidu_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3708,8 +3667,7 @@ pinpoint_delete_baidu_channel <- function(ApplicationId) {
 #' @usage
 #' pinpoint_delete_campaign(ApplicationId, CampaignId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign.
 #'
 #' @return
@@ -4256,14 +4214,12 @@ pinpoint_delete_campaign <- function(ApplicationId, CampaignId) {
 #' settings for the channel
 #'
 #' @description
-#' Disables the email channel for an application and deletes any existing
-#' settings for the channel.
+#' Disables the email channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_email_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4325,38 +4281,23 @@ pinpoint_delete_email_channel <- function(ApplicationId) {
 #' channel
 #'
 #' @description
-#' Deletes a message template for messages that were sent through the email
-#' channel.
+#' Deletes a message template for messages that were sent through the email channel.
 #'
 #' @usage
 #' pinpoint_delete_email_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4409,10 +4350,8 @@ pinpoint_delete_email_template <- function(TemplateName, Version = NULL) {
 #' @usage
 #' pinpoint_delete_endpoint(ApplicationId, EndpointId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EndpointId &#91;required&#93; The case insensitive unique identifier for the endpoint. The identifier
-#' can't contain `$`, `\{` or `\}`.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EndpointId &#91;required&#93; The case insensitive unique identifier for the endpoint. The identifier can't contain `$`, `\{` or `\}`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4507,8 +4446,7 @@ pinpoint_delete_endpoint <- function(ApplicationId, EndpointId) {
 #' @usage
 #' pinpoint_delete_event_stream(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4560,14 +4498,12 @@ pinpoint_delete_event_stream <- function(ApplicationId) {
 #' settings for the channel
 #'
 #' @description
-#' Disables the GCM channel for an application and deletes any existing
-#' settings for the channel.
+#' Disables the GCM channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_gcm_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4626,38 +4562,23 @@ pinpoint_delete_gcm_channel <- function(ApplicationId) {
 #' channel
 #'
 #' @description
-#' Deletes a message template for messages sent using the in-app message
-#' channel.
+#' Deletes a message template for messages sent using the in-app message channel.
 #'
 #' @usage
 #' pinpoint_delete_in_app_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4710,8 +4631,7 @@ pinpoint_delete_in_app_template <- function(TemplateName, Version = NULL) {
 #' @usage
 #' pinpoint_delete_journey(ApplicationId, JourneyId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
 #'
 #' @return
@@ -5236,38 +5156,23 @@ pinpoint_delete_journey <- function(ApplicationId, JourneyId) {
 #' notification channel
 #'
 #' @description
-#' Deletes a message template for messages that were sent through a push
-#' notification channel.
+#' Deletes a message template for messages that were sent through a push notification channel.
 #'
 #' @usage
 #' pinpoint_delete_push_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5320,9 +5225,7 @@ pinpoint_delete_push_template <- function(TemplateName, Version = NULL) {
 #' @usage
 #' pinpoint_delete_recommender_configuration(RecommenderId)
 #'
-#' @param RecommenderId &#91;required&#93; The unique identifier for the recommender model configuration. This
-#' identifier is displayed as the **Recommender ID** on the Amazon Pinpoint
-#' console.
+#' @param RecommenderId &#91;required&#93; The unique identifier for the recommender model configuration. This identifier is displayed as the **Recommender ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5386,8 +5289,7 @@ pinpoint_delete_recommender_configuration <- function(RecommenderId) {
 #' @usage
 #' pinpoint_delete_segment(ApplicationId, SegmentId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param SegmentId &#91;required&#93; The unique identifier for the segment.
 #'
 #' @return
@@ -5639,14 +5541,12 @@ pinpoint_delete_segment <- function(ApplicationId, SegmentId) {
 #' settings for the channel
 #'
 #' @description
-#' Disables the SMS channel for an application and deletes any existing
-#' settings for the channel.
+#' Disables the SMS channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_sms_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5706,38 +5606,23 @@ pinpoint_delete_sms_channel <- function(ApplicationId) {
 #' channel
 #'
 #' @description
-#' Deletes a message template for messages that were sent through the SMS
-#' channel.
+#' Deletes a message template for messages that were sent through the SMS channel.
 #'
 #' @usage
 #' pinpoint_delete_sms_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5790,8 +5675,7 @@ pinpoint_delete_sms_template <- function(TemplateName, Version = NULL) {
 #' @usage
 #' pinpoint_delete_user_endpoints(ApplicationId, UserId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param UserId &#91;required&#93; The unique identifier for the user.
 #'
 #' @return
@@ -5887,14 +5771,12 @@ pinpoint_delete_user_endpoints <- function(ApplicationId, UserId) {
 #' settings for the channel
 #'
 #' @description
-#' Disables the voice channel for an application and deletes any existing
-#' settings for the channel.
+#' Disables the voice channel for an application and deletes any existing settings for the channel.
 #'
 #' @usage
 #' pinpoint_delete_voice_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5950,38 +5832,23 @@ pinpoint_delete_voice_channel <- function(ApplicationId) {
 #' channel
 #'
 #' @description
-#' Deletes a message template for messages that were sent through the voice
-#' channel.
+#' Deletes a message template for messages that were sent through the voice channel.
 #'
 #' @usage
 #' pinpoint_delete_voice_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6030,14 +5897,12 @@ pinpoint_delete_voice_template <- function(TemplateName, Version = NULL) {
 #' for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the ADM channel
-#' for an application.
+#' Retrieves information about the status and settings of the ADM channel for an application.
 #'
 #' @usage
 #' pinpoint_get_adm_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6093,14 +5958,12 @@ pinpoint_get_adm_channel <- function(ApplicationId) {
 #' for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the APNs channel
-#' for an application.
+#' Retrieves information about the status and settings of the APNs channel for an application.
 #'
 #' @usage
 #' pinpoint_get_apns_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6158,14 +6021,12 @@ pinpoint_get_apns_channel <- function(ApplicationId) {
 #' channel for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the APNs sandbox
-#' channel for an application.
+#' Retrieves information about the status and settings of the APNs sandbox channel for an application.
 #'
 #' @usage
 #' pinpoint_get_apns_sandbox_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6223,14 +6084,12 @@ pinpoint_get_apns_sandbox_channel <- function(ApplicationId) {
 #' channel for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the APNs VoIP
-#' channel for an application.
+#' Retrieves information about the status and settings of the APNs VoIP channel for an application.
 #'
 #' @usage
 #' pinpoint_get_apns_voip_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6288,14 +6147,12 @@ pinpoint_get_apns_voip_channel <- function(ApplicationId) {
 #' sandbox channel for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the APNs VoIP
-#' sandbox channel for an application.
+#' Retrieves information about the status and settings of the APNs VoIP sandbox channel for an application.
 #'
 #' @usage
 #' pinpoint_get_apns_voip_sandbox_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6357,8 +6214,7 @@ pinpoint_get_apns_voip_sandbox_channel <- function(ApplicationId) {
 #' @usage
 #' pinpoint_get_app(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6411,37 +6267,18 @@ pinpoint_get_app <- function(ApplicationId) {
 #' applies to an application
 #'
 #' @description
-#' Retrieves (queries) pre-aggregated data for a standard metric that
-#' applies to an application.
+#' Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
 #'
 #' @usage
 #' pinpoint_get_application_date_range_kpi(ApplicationId, EndTime, KpiName,
 #'   NextToken, PageSize, StartTime)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EndTime The last date and time to retrieve data for, as part of an inclusive
-#' date range that filters the query results. This value should be in
-#' extended ISO 8601 format and use Coordinated Universal Time (UTC), for
-#' example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.
-#' @param KpiName &#91;required&#93; The name of the metric, also referred to as a *key performance indicator
-#' (KPI)*, to retrieve data for. This value describes the associated metric
-#' and consists of two or more terms, which are comprised of lowercase
-#' alphanumeric characters, separated by a hyphen. Examples are
-#' email-open-rate and successful-delivery-rate. For a list of valid
-#' values, see the [Amazon Pinpoint Developer
-#' Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html).
-#' @param NextToken The string that specifies which page of results to return in a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param StartTime The first date and time to retrieve data for, as part of an inclusive
-#' date range that filters the query results. This value should be in
-#' extended ISO 8601 format and use Coordinated Universal Time (UTC), for
-#' example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value
-#' should also be fewer than 90 days from the current day.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EndTime The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.
+#' @param KpiName &#91;required&#93; The name of the metric, also referred to as a *key performance indicator (KPI)*, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the [Amazon Pinpoint Developer Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html).
+#' @param NextToken The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param StartTime The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6529,8 +6366,7 @@ pinpoint_get_application_date_range_kpi <- function(ApplicationId, EndTime = NUL
 #' @usage
 #' pinpoint_get_application_settings(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6602,17 +6438,13 @@ pinpoint_get_application_settings <- function(ApplicationId) {
 #' with your Amazon Pinpoint account
 #'
 #' @description
-#' Retrieves information about all the applications that are associated
-#' with your Amazon Pinpoint account.
+#' Retrieves information about all the applications that are associated with your Amazon Pinpoint account.
 #'
 #' @usage
 #' pinpoint_get_apps(PageSize, Token)
 #'
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6671,14 +6503,12 @@ pinpoint_get_apps <- function(PageSize = NULL, Token = NULL) {
 #' for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the Baidu channel
-#' for an application.
+#' Retrieves information about the status and settings of the Baidu channel for an application.
 #'
 #' @usage
 #' pinpoint_get_baidu_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6735,14 +6565,12 @@ pinpoint_get_baidu_channel <- function(ApplicationId) {
 #' settings for a campaign
 #'
 #' @description
-#' Retrieves information about the status, configuration, and other
-#' settings for a campaign.
+#' Retrieves information about the status, configuration, and other settings for a campaign.
 #'
 #' @usage
 #' pinpoint_get_campaign(ApplicationId, CampaignId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign.
 #'
 #' @return
@@ -7294,14 +7122,10 @@ pinpoint_get_campaign <- function(ApplicationId, CampaignId) {
 #' pinpoint_get_campaign_activities(ApplicationId, CampaignId, PageSize,
 #'   Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7371,38 +7195,19 @@ pinpoint_get_campaign_activities <- function(ApplicationId, CampaignId, PageSize
 #' applies to a campaign
 #'
 #' @description
-#' Retrieves (queries) pre-aggregated data for a standard metric that
-#' applies to a campaign.
+#' Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
 #'
 #' @usage
 #' pinpoint_get_campaign_date_range_kpi(ApplicationId, CampaignId, EndTime,
 #'   KpiName, NextToken, PageSize, StartTime)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign.
-#' @param EndTime The last date and time to retrieve data for, as part of an inclusive
-#' date range that filters the query results. This value should be in
-#' extended ISO 8601 format and use Coordinated Universal Time (UTC), for
-#' example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.
-#' @param KpiName &#91;required&#93; The name of the metric, also referred to as a *key performance indicator
-#' (KPI)*, to retrieve data for. This value describes the associated metric
-#' and consists of two or more terms, which are comprised of lowercase
-#' alphanumeric characters, separated by a hyphen. Examples are
-#' email-open-rate and successful-delivery-rate. For a list of valid
-#' values, see the [Amazon Pinpoint Developer
-#' Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html).
-#' @param NextToken The string that specifies which page of results to return in a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param StartTime The first date and time to retrieve data for, as part of an inclusive
-#' date range that filters the query results. This value should be in
-#' extended ISO 8601 format and use Coordinated Universal Time (UTC), for
-#' example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value
-#' should also be fewer than 90 days from the current day.
+#' @param EndTime The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.
+#' @param KpiName &#91;required&#93; The name of the metric, also referred to as a *key performance indicator (KPI)*, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the [Amazon Pinpoint Developer Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html).
+#' @param NextToken The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param StartTime The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7488,14 +7293,12 @@ pinpoint_get_campaign_date_range_kpi <- function(ApplicationId, CampaignId, EndT
 #' settings for a specific version of a campaign
 #'
 #' @description
-#' Retrieves information about the status, configuration, and other
-#' settings for a specific version of a campaign.
+#' Retrieves information about the status, configuration, and other settings for a specific version of a campaign.
 #'
 #' @usage
 #' pinpoint_get_campaign_version(ApplicationId, CampaignId, Version)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign.
 #' @param Version &#91;required&#93; The unique version number (Version property) for the campaign version.
 #'
@@ -8044,21 +7847,16 @@ pinpoint_get_campaign_version <- function(ApplicationId, CampaignId, Version) {
 #' settings for all versions of a campaign
 #'
 #' @description
-#' Retrieves information about the status, configuration, and other
-#' settings for all versions of a campaign.
+#' Retrieves information about the status, configuration, and other settings for all versions of a campaign.
 #'
 #' @usage
 #' pinpoint_get_campaign_versions(ApplicationId, CampaignId, PageSize,
 #'   Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8611,19 +8409,14 @@ pinpoint_get_campaign_versions <- function(ApplicationId, CampaignId, PageSize =
 #' settings for all the campaigns that are associated with an application
 #'
 #' @description
-#' Retrieves information about the status, configuration, and other
-#' settings for all the campaigns that are associated with an application.
+#' Retrieves information about the status, configuration, and other settings for all the campaigns that are associated with an application.
 #'
 #' @usage
 #' pinpoint_get_campaigns(ApplicationId, PageSize, Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9175,14 +8968,12 @@ pinpoint_get_campaigns <- function(ApplicationId, PageSize = NULL, Token = NULL)
 #' an application
 #'
 #' @description
-#' Retrieves information about the history and status of each channel for
-#' an application.
+#' Retrieves information about the history and status of each channel for an application.
 #'
 #' @usage
 #' pinpoint_get_channels(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9241,14 +9032,12 @@ pinpoint_get_channels <- function(ApplicationId) {
 #' for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the email channel
-#' for an application.
+#' Retrieves information about the status and settings of the email channel for an application.
 #'
 #' @usage
 #' pinpoint_get_email_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9310,38 +9099,23 @@ pinpoint_get_email_channel <- function(ApplicationId) {
 #' that are sent through the email channel
 #'
 #' @description
-#' Retrieves the content and settings of a message template for messages
-#' that are sent through the email channel.
+#' Retrieves the content and settings of a message template for messages that are sent through the email channel.
 #'
 #' @usage
 #' pinpoint_get_email_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9409,16 +9183,13 @@ pinpoint_get_email_template <- function(TemplateName, Version = NULL) {
 #' endpoint for an application
 #'
 #' @description
-#' Retrieves information about the settings and attributes of a specific
-#' endpoint for an application.
+#' Retrieves information about the settings and attributes of a specific endpoint for an application.
 #'
 #' @usage
 #' pinpoint_get_endpoint(ApplicationId, EndpointId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EndpointId &#91;required&#93; The case insensitive unique identifier for the endpoint. The identifier
-#' can't contain `$`, `\{` or `\}`.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EndpointId &#91;required&#93; The case insensitive unique identifier for the endpoint. The identifier can't contain `$`, `\{` or `\}`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9508,14 +9279,12 @@ pinpoint_get_endpoint <- function(ApplicationId, EndpointId) {
 #' Retrieves information about the event stream settings for an application
 #'
 #' @description
-#' Retrieves information about the event stream settings for an
-#' application.
+#' Retrieves information about the event stream settings for an application.
 #'
 #' @usage
 #' pinpoint_get_event_stream(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9567,14 +9336,12 @@ pinpoint_get_event_stream <- function(ApplicationId) {
 #' job for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of a specific export
-#' job for an application.
+#' Retrieves information about the status and settings of a specific export job for an application.
 #'
 #' @usage
 #' pinpoint_get_export_job(ApplicationId, JobId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JobId &#91;required&#93; The unique identifier for the job.
 #'
 #' @return
@@ -9642,19 +9409,14 @@ pinpoint_get_export_job <- function(ApplicationId, JobId) {
 #' jobs for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of all the export
-#' jobs for an application.
+#' Retrieves information about the status and settings of all the export jobs for an application.
 #'
 #' @usage
 #' pinpoint_get_export_jobs(ApplicationId, PageSize, Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9727,14 +9489,12 @@ pinpoint_get_export_jobs <- function(ApplicationId, PageSize = NULL, Token = NUL
 #' for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the GCM channel
-#' for an application.
+#' Retrieves information about the status and settings of the GCM channel for an application.
 #'
 #' @usage
 #' pinpoint_get_gcm_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9793,14 +9553,12 @@ pinpoint_get_gcm_channel <- function(ApplicationId) {
 #' job for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of a specific import
-#' job for an application.
+#' Retrieves information about the status and settings of a specific import job for an application.
 #'
 #' @usage
 #' pinpoint_get_import_job(ApplicationId, JobId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JobId &#91;required&#93; The unique identifier for the job.
 #'
 #' @return
@@ -9872,19 +9630,14 @@ pinpoint_get_import_job <- function(ApplicationId, JobId) {
 #' jobs for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of all the import
-#' jobs for an application.
+#' Retrieves information about the status and settings of all the import jobs for an application.
 #'
 #' @usage
 #' pinpoint_get_import_jobs(ApplicationId, PageSize, Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9965,8 +9718,7 @@ pinpoint_get_import_jobs <- function(ApplicationId, PageSize = NULL, Token = NUL
 #' @usage
 #' pinpoint_get_in_app_messages(ApplicationId, EndpointId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param EndpointId &#91;required&#93; The unique identifier for the endpoint.
 #'
 #' @return
@@ -10122,38 +9874,23 @@ pinpoint_get_in_app_messages <- function(ApplicationId, EndpointId) {
 #' sent through the in-app channel
 #'
 #' @description
-#' Retrieves the content and settings of a message template for messages
-#' sent through the in-app channel.
+#' Retrieves the content and settings of a message template for messages sent through the in-app channel.
 #'
 #' @usage
 #' pinpoint_get_in_app_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10274,14 +10011,12 @@ pinpoint_get_in_app_template <- function(TemplateName, Version = NULL) {
 #' settings for a journey
 #'
 #' @description
-#' Retrieves information about the status, configuration, and other
-#' settings for a journey.
+#' Retrieves information about the status, configuration, and other settings for a journey.
 #'
 #' @usage
 #' pinpoint_get_journey(ApplicationId, JourneyId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
 #'
 #' @return
@@ -10806,38 +10541,19 @@ pinpoint_get_journey <- function(ApplicationId, JourneyId) {
 #' that applies to a journey
 #'
 #' @description
-#' Retrieves (queries) pre-aggregated data for a standard engagement metric
-#' that applies to a journey.
+#' Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a journey.
 #'
 #' @usage
 #' pinpoint_get_journey_date_range_kpi(ApplicationId, EndTime, JourneyId,
 #'   KpiName, NextToken, PageSize, StartTime)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EndTime The last date and time to retrieve data for, as part of an inclusive
-#' date range that filters the query results. This value should be in
-#' extended ISO 8601 format and use Coordinated Universal Time (UTC), for
-#' example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EndTime The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param KpiName &#91;required&#93; The name of the metric, also referred to as a *key performance indicator
-#' (KPI)*, to retrieve data for. This value describes the associated metric
-#' and consists of two or more terms, which are comprised of lowercase
-#' alphanumeric characters, separated by a hyphen. Examples are
-#' email-open-rate and successful-delivery-rate. For a list of valid
-#' values, see the [Amazon Pinpoint Developer
-#' Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html).
-#' @param NextToken The string that specifies which page of results to return in a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param StartTime The first date and time to retrieve data for, as part of an inclusive
-#' date range that filters the query results. This value should be in
-#' extended ISO 8601 format and use Coordinated Universal Time (UTC), for
-#' example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value
-#' should also be fewer than 90 days from the current day.
+#' @param KpiName &#91;required&#93; The name of the metric, also referred to as a *key performance indicator (KPI)*, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the [Amazon Pinpoint Developer Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html).
+#' @param NextToken The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param StartTime The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10923,23 +10639,17 @@ pinpoint_get_journey_date_range_kpi <- function(ApplicationId, EndTime = NULL, J
 #' that applies to a journey activity
 #'
 #' @description
-#' Retrieves (queries) pre-aggregated data for a standard execution metric
-#' that applies to a journey activity.
+#' Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity.
 #'
 #' @usage
 #' pinpoint_get_journey_execution_activity_metrics(ApplicationId,
 #'   JourneyActivityId, JourneyId, NextToken, PageSize)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyActivityId &#91;required&#93; The unique identifier for the journey activity.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param NextToken The `` string that specifies which page of results to return in a
-#' paginated response. This parameter is not supported for application,
-#' campaign, and journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
+#' @param NextToken The `` string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10997,22 +10707,16 @@ pinpoint_get_journey_execution_activity_metrics <- function(ApplicationId, Journ
 #' that applies to a journey
 #'
 #' @description
-#' Retrieves (queries) pre-aggregated data for a standard execution metric
-#' that applies to a journey.
+#' Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey.
 #'
 #' @usage
 #' pinpoint_get_journey_execution_metrics(ApplicationId, JourneyId,
 #'   NextToken, PageSize)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param NextToken The `` string that specifies which page of results to return in a
-#' paginated response. This parameter is not supported for application,
-#' campaign, and journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
+#' @param NextToken The `` string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11067,23 +10771,17 @@ pinpoint_get_journey_execution_metrics <- function(ApplicationId, JourneyId, Nex
 #' metric that applies to a journey activity
 #'
 #' @description
-#' Retrieves (queries) pre-aggregated data for a standard run execution
-#' metric that applies to a journey activity.
+#' Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey activity.
 #'
 #' @usage
 #' pinpoint_get_journey_run_execution_activity_metrics(ApplicationId,
 #'   JourneyActivityId, JourneyId, NextToken, PageSize, RunId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyActivityId &#91;required&#93; The unique identifier for the journey activity.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param NextToken The `` string that specifies which page of results to return in a
-#' paginated response. This parameter is not supported for application,
-#' campaign, and journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
+#' @param NextToken The `` string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 #' @param RunId &#91;required&#93; The unique identifier for the journey run.
 #'
 #' @return
@@ -11144,22 +10842,16 @@ pinpoint_get_journey_run_execution_activity_metrics <- function(ApplicationId, J
 #' metric that applies to a journey
 #'
 #' @description
-#' Retrieves (queries) pre-aggregated data for a standard run execution
-#' metric that applies to a journey.
+#' Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey.
 #'
 #' @usage
 #' pinpoint_get_journey_run_execution_metrics(ApplicationId, JourneyId,
 #'   NextToken, PageSize, RunId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param NextToken The `` string that specifies which page of results to return in a
-#' paginated response. This parameter is not supported for application,
-#' campaign, and journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
+#' @param NextToken The `` string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 #' @param RunId &#91;required&#93; The unique identifier for the journey run.
 #'
 #' @return
@@ -11221,14 +10913,10 @@ pinpoint_get_journey_run_execution_metrics <- function(ApplicationId, JourneyId,
 #' @usage
 #' pinpoint_get_journey_runs(ApplicationId, JourneyId, PageSize, Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11286,38 +10974,23 @@ pinpoint_get_journey_runs <- function(ApplicationId, JourneyId, PageSize = NULL,
 #' that are sent through a push notification channel
 #'
 #' @description
-#' Retrieves the content and settings of a message template for messages
-#' that are sent through a push notification channel.
+#' Retrieves the content and settings of a message template for messages that are sent through a push notification channel.
 #'
 #' @usage
 #' pinpoint_get_push_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11425,15 +11098,12 @@ pinpoint_get_push_template <- function(TemplateName, Version = NULL) {
 #' recommender model
 #'
 #' @description
-#' Retrieves information about an Amazon Pinpoint configuration for a
-#' recommender model.
+#' Retrieves information about an Amazon Pinpoint configuration for a recommender model.
 #'
 #' @usage
 #' pinpoint_get_recommender_configuration(RecommenderId)
 #'
-#' @param RecommenderId &#91;required&#93; The unique identifier for the recommender model configuration. This
-#' identifier is displayed as the **Recommender ID** on the Amazon Pinpoint
-#' console.
+#' @param RecommenderId &#91;required&#93; The unique identifier for the recommender model configuration. This identifier is displayed as the **Recommender ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11493,17 +11163,13 @@ pinpoint_get_recommender_configuration <- function(RecommenderId) {
 #' that are associated with your Amazon Pinpoint account
 #'
 #' @description
-#' Retrieves information about all the recommender model configurations
-#' that are associated with your Amazon Pinpoint account.
+#' Retrieves information about all the recommender model configurations that are associated with your Amazon Pinpoint account.
 #'
 #' @usage
 #' pinpoint_get_recommender_configurations(PageSize, Token)
 #'
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11569,14 +11235,12 @@ pinpoint_get_recommender_configurations <- function(PageSize = NULL, Token = NUL
 #' settings for a specific segment that's associated with an application
 #'
 #' @description
-#' Retrieves information about the configuration, dimension, and other
-#' settings for a specific segment that's associated with an application.
+#' Retrieves information about the configuration, dimension, and other settings for a specific segment that's associated with an application.
 #'
 #' @usage
 #' pinpoint_get_segment(ApplicationId, SegmentId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param SegmentId &#91;required&#93; The unique identifier for the segment.
 #'
 #' @return
@@ -11828,21 +11492,16 @@ pinpoint_get_segment <- function(ApplicationId, SegmentId) {
 #' for a segment
 #'
 #' @description
-#' Retrieves information about the status and settings of the export jobs
-#' for a segment.
+#' Retrieves information about the status and settings of the export jobs for a segment.
 #'
 #' @usage
 #' pinpoint_get_segment_export_jobs(ApplicationId, PageSize, SegmentId,
 #'   Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 #' @param SegmentId &#91;required&#93; The unique identifier for the segment.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11916,21 +11575,16 @@ pinpoint_get_segment_export_jobs <- function(ApplicationId, PageSize = NULL, Seg
 #' for a segment
 #'
 #' @description
-#' Retrieves information about the status and settings of the import jobs
-#' for a segment.
+#' Retrieves information about the status and settings of the import jobs for a segment.
 #'
 #' @usage
 #' pinpoint_get_segment_import_jobs(ApplicationId, PageSize, SegmentId,
 #'   Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 #' @param SegmentId &#91;required&#93; The unique identifier for the segment.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12009,15 +11663,12 @@ pinpoint_get_segment_import_jobs <- function(ApplicationId, PageSize = NULL, Seg
 #' application
 #'
 #' @description
-#' Retrieves information about the configuration, dimension, and other
-#' settings for a specific version of a segment that's associated with an
-#' application.
+#' Retrieves information about the configuration, dimension, and other settings for a specific version of a segment that's associated with an application.
 #'
 #' @usage
 #' pinpoint_get_segment_version(ApplicationId, SegmentId, Version)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param SegmentId &#91;required&#93; The unique identifier for the segment.
 #' @param Version &#91;required&#93; The unique version number (Version property) for the campaign version.
 #'
@@ -12272,21 +11923,15 @@ pinpoint_get_segment_version <- function(ApplicationId, SegmentId, Version) {
 #' with an application
 #'
 #' @description
-#' Retrieves information about the configuration, dimension, and other
-#' settings for all the versions of a specific segment that's associated
-#' with an application.
+#' Retrieves information about the configuration, dimension, and other settings for all the versions of a specific segment that's associated with an application.
 #'
 #' @usage
 #' pinpoint_get_segment_versions(ApplicationId, PageSize, SegmentId, Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 #' @param SegmentId &#91;required&#93; The unique identifier for the segment.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12544,19 +12189,14 @@ pinpoint_get_segment_versions <- function(ApplicationId, PageSize = NULL, Segmen
 #' settings for all the segments that are associated with an application
 #'
 #' @description
-#' Retrieves information about the configuration, dimension, and other
-#' settings for all the segments that are associated with an application.
+#' Retrieves information about the configuration, dimension, and other settings for all the segments that are associated with an application.
 #'
 #' @usage
 #' pinpoint_get_segments(ApplicationId, PageSize, Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12813,14 +12453,12 @@ pinpoint_get_segments <- function(ApplicationId, PageSize = NULL, Token = NULL) 
 #' for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the SMS channel
-#' for an application.
+#' Retrieves information about the status and settings of the SMS channel for an application.
 #'
 #' @usage
 #' pinpoint_get_sms_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12880,38 +12518,23 @@ pinpoint_get_sms_channel <- function(ApplicationId) {
 #' that are sent through the SMS channel
 #'
 #' @description
-#' Retrieves the content and settings of a message template for messages
-#' that are sent through the SMS channel.
+#' Retrieves the content and settings of a message template for messages that are sent through the SMS channel.
 #'
 #' @usage
 #' pinpoint_get_sms_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12971,14 +12594,12 @@ pinpoint_get_sms_template <- function(TemplateName, Version = NULL) {
 #' specific user ID
 #'
 #' @description
-#' Retrieves information about all the endpoints that are associated with a
-#' specific user ID.
+#' Retrieves information about all the endpoints that are associated with a specific user ID.
 #'
 #' @usage
 #' pinpoint_get_user_endpoints(ApplicationId, UserId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param UserId &#91;required&#93; The unique identifier for the user.
 #'
 #' @return
@@ -13074,14 +12695,12 @@ pinpoint_get_user_endpoints <- function(ApplicationId, UserId) {
 #' for an application
 #'
 #' @description
-#' Retrieves information about the status and settings of the voice channel
-#' for an application.
+#' Retrieves information about the status and settings of the voice channel for an application.
 #'
 #' @usage
 #' pinpoint_get_voice_channel(ApplicationId)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13137,38 +12756,23 @@ pinpoint_get_voice_channel <- function(ApplicationId) {
 #' that are sent through the voice channel
 #'
 #' @description
-#' Retrieves the content and settings of a message template for messages
-#' that are sent through the voice channel.
+#' Retrieves the content and settings of a message template for messages that are sent through the voice channel.
 #'
 #' @usage
 #' pinpoint_get_voice_template(TemplateName, Version)
 #'
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13229,19 +12833,14 @@ pinpoint_get_voice_template <- function(TemplateName, Version = NULL) {
 #' settings for all the journeys that are associated with an application
 #'
 #' @description
-#' Retrieves information about the status, configuration, and other
-#' settings for all the journeys that are associated with an application.
+#' Retrieves information about the status, configuration, and other settings for all the journeys that are associated with an application.
 #'
 #' @usage
 #' pinpoint_list_journeys(ApplicationId, PageSize, Token)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Token The NextToken string that specifies which page of results to return in a
-#' paginated response.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Token The NextToken string that specifies which page of results to return in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13771,8 +13370,7 @@ pinpoint_list_journeys <- function(ApplicationId, PageSize = NULL, Token = NULL)
 #' application, campaign, message template, or segment
 #'
 #' @description
-#' Retrieves all the tags (keys and values) that are associated with an
-#' application, campaign, message template, or segment.
+#' Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or segment.
 #'
 #' @usage
 #' pinpoint_list_tags_for_resource(ResourceArn)
@@ -13826,25 +13424,16 @@ pinpoint_list_tags_for_resource <- function(ResourceArn) {
 #' template
 #'
 #' @description
-#' Retrieves information about all the versions of a specific message
-#' template.
+#' Retrieves information about all the versions of a specific message template.
 #'
 #' @usage
 #' pinpoint_list_template_versions(NextToken, PageSize, TemplateName,
 #'   TemplateType)
 #'
-#' @param NextToken The string that specifies which page of results to return in a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param TemplateType &#91;required&#93; The type of channel that the message template is designed for. Valid
-#' values are: EMAIL, PUSH, SMS, and VOICE.
+#' @param NextToken The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param TemplateType &#91;required&#93; The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13907,24 +13496,15 @@ pinpoint_list_template_versions <- function(NextToken = NULL, PageSize = NULL, T
 #' associated with your Amazon Pinpoint account
 #'
 #' @description
-#' Retrieves information about all the message templates that are
-#' associated with your Amazon Pinpoint account.
+#' Retrieves information about all the message templates that are associated with your Amazon Pinpoint account.
 #'
 #' @usage
 #' pinpoint_list_templates(NextToken, PageSize, Prefix, TemplateType)
 #'
-#' @param NextToken The string that specifies which page of results to return in a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param PageSize The maximum number of items to include in each page of a paginated
-#' response. This parameter is not supported for application, campaign, and
-#' journey metrics.
-#' @param Prefix The substring to match in the names of the message templates to include
-#' in the results. If you specify this value, Amazon Pinpoint returns only
-#' those templates whose names begin with the value that you specify.
-#' @param TemplateType The type of message template to include in the results. Valid values
-#' are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in
-#' the results, don't include this parameter in your request.
+#' @param NextToken The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param PageSize The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
+#' @param Prefix The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.
+#' @param TemplateType The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13993,7 +13573,7 @@ pinpoint_list_templates <- function(NextToken = NULL, PageSize = NULL, Prefix = 
 #' @usage
 #' pinpoint_phone_number_validate(NumberValidateRequest)
 #'
-#' @param NumberValidateRequest &#91;required&#93; 
+#' @param NumberValidateRequest &#91;required&#93; Specifies a phone number to validate and retrieve information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14056,15 +13636,13 @@ pinpoint_phone_number_validate <- function(NumberValidateRequest) {
 #' an existing event stream for an application
 #'
 #' @description
-#' Creates a new event stream for an application or updates the settings of
-#' an existing event stream for an application.
+#' Creates a new event stream for an application or updates the settings of an existing event stream for an application.
 #'
 #' @usage
 #' pinpoint_put_event_stream(ApplicationId, WriteEventStream)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param WriteEventStream &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param WriteEventStream &#91;required&#93; Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14120,15 +13698,13 @@ pinpoint_put_event_stream <- function(ApplicationId, WriteEventStream) {
 #' endpoint data that existing events are associated with
 #'
 #' @description
-#' Creates a new event to record for endpoints, or creates or updates
-#' endpoint data that existing events are associated with.
+#' Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are associated with.
 #'
 #' @usage
 #' pinpoint_put_events(ApplicationId, EventsRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EventsRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EventsRequest &#91;required&#93; Specifies a batch of events to process.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14259,30 +13835,21 @@ pinpoint_put_events <- function(ApplicationId, EventsRequest) {
 #' the application
 #'
 #' @description
-#' Removes one or more custom attributes, of the same attribute type, from
-#' the application. Existing endpoints still have the attributes but Amazon
-#' Pinpoint will stop capturing new or changed values for these attributes.
+#' Removes one or more custom attributes, of the same attribute type, from the application. Existing endpoints still have the attributes but Amazon Pinpoint will stop capturing new or changed values for these attributes.
 #'
 #' @usage
 #' pinpoint_remove_attributes(ApplicationId, AttributeType,
 #'   UpdateAttributesRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param AttributeType &#91;required&#93; The type of attribute or attributes to remove. Valid values are:
 #' 
-#' -   endpoint-custom-attributes - Custom attributes that describe
-#'     endpoints, such as the date when an associated user opted in or out
-#'     of receiving communications from you through a specific type of
-#'     channel.
+#' -   endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.
 #' 
-#' -   endpoint-metric-attributes - Custom metrics that your app reports to
-#'     Amazon Pinpoint for endpoints, such as the number of app sessions or
-#'     the number of items left in a cart.
+#' -   endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.
 #' 
-#' -   endpoint-user-attributes - Custom attributes that describe users,
-#'     such as first name, last name, and age.
-#' @param UpdateAttributesRequest &#91;required&#93; 
+#' -   endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.
+#' @param UpdateAttributesRequest &#91;required&#93; Specifies one or more attributes to remove from all the endpoints that are associated with an application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14343,9 +13910,8 @@ pinpoint_remove_attributes <- function(ApplicationId, AttributeType, UpdateAttri
 #' @usage
 #' pinpoint_send_messages(ApplicationId, MessageRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param MessageRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param MessageRequest &#91;required&#93; Specifies the configuration and other settings for a message.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14662,7 +14228,7 @@ pinpoint_send_messages <- function(ApplicationId, MessageRequest) {
 #'   SendOTPMessageRequestParameters)
 #'
 #' @param ApplicationId &#91;required&#93; The unique ID of your Amazon Pinpoint application.
-#' @param SendOTPMessageRequestParameters &#91;required&#93; 
+#' @param SendOTPMessageRequestParameters &#91;required&#93; Send OTP message request parameters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14746,9 +14312,8 @@ pinpoint_send_otp_message <- function(ApplicationId, SendOTPMessageRequestParame
 #' @usage
 #' pinpoint_send_users_messages(ApplicationId, SendUsersMessageRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param SendUsersMessageRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param SendUsersMessageRequest &#91;required&#93; Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15036,14 +14601,13 @@ pinpoint_send_users_messages <- function(ApplicationId, SendUsersMessageRequest)
 #' message template, or segment
 #'
 #' @description
-#' Adds one or more tags (keys and values) to an application, campaign,
-#' message template, or segment.
+#' Adds one or more tags (keys and values) to an application, campaign, message template, or segment.
 #'
 #' @usage
 #' pinpoint_tag_resource(ResourceArn, TagsModel)
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource.
-#' @param TagsModel &#91;required&#93; 
+#' @param TagsModel &#91;required&#93; Specifies the tags (keys and values) for an application, campaign, message template, or segment.
 #'
 #' @return
 #' An empty list.
@@ -15088,16 +14652,13 @@ pinpoint_tag_resource <- function(ResourceArn, TagsModel) {
 #' campaign, message template, or segment
 #'
 #' @description
-#' Removes one or more tags (keys and values) from an application,
-#' campaign, message template, or segment.
+#' Removes one or more tags (keys and values) from an application, campaign, message template, or segment.
 #'
 #' @usage
 #' pinpoint_untag_resource(ResourceArn, TagKeys)
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource.
-#' @param TagKeys &#91;required&#93; The key of the tag to remove from the resource. To remove multiple tags,
-#' append the tagKeys parameter and argument for each additional tag to
-#' remove, separated by an ampersand (&).
+#' @param TagKeys &#91;required&#93; The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&).
 #'
 #' @return
 #' An empty list.
@@ -15140,15 +14701,13 @@ pinpoint_untag_resource <- function(ResourceArn, TagKeys) {
 #' settings of the ADM channel for an application
 #'
 #' @description
-#' Enables the ADM channel for an application or updates the status and
-#' settings of the ADM channel for an application.
+#' Enables the ADM channel for an application or updates the status and settings of the ADM channel for an application.
 #'
 #' @usage
 #' pinpoint_update_adm_channel(ADMChannelRequest, ApplicationId)
 #'
-#' @param ADMChannelRequest &#91;required&#93; 
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ADMChannelRequest &#91;required&#93; Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15209,15 +14768,13 @@ pinpoint_update_adm_channel <- function(ADMChannelRequest, ApplicationId) {
 #' settings of the APNs channel for an application
 #'
 #' @description
-#' Enables the APNs channel for an application or updates the status and
-#' settings of the APNs channel for an application.
+#' Enables the APNs channel for an application or updates the status and settings of the APNs channel for an application.
 #'
 #' @usage
 #' pinpoint_update_apns_channel(APNSChannelRequest, ApplicationId)
 #'
-#' @param APNSChannelRequest &#91;required&#93; 
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param APNSChannelRequest &#91;required&#93; Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15285,16 +14842,14 @@ pinpoint_update_apns_channel <- function(APNSChannelRequest, ApplicationId) {
 #' status and settings of the APNs sandbox channel for an application
 #'
 #' @description
-#' Enables the APNs sandbox channel for an application or updates the
-#' status and settings of the APNs sandbox channel for an application.
+#' Enables the APNs sandbox channel for an application or updates the status and settings of the APNs sandbox channel for an application.
 #'
 #' @usage
 #' pinpoint_update_apns_sandbox_channel(APNSSandboxChannelRequest,
 #'   ApplicationId)
 #'
-#' @param APNSSandboxChannelRequest &#91;required&#93; 
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param APNSSandboxChannelRequest &#91;required&#93; Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15362,15 +14917,13 @@ pinpoint_update_apns_sandbox_channel <- function(APNSSandboxChannelRequest, Appl
 #' and settings of the APNs VoIP channel for an application
 #'
 #' @description
-#' Enables the APNs VoIP channel for an application or updates the status
-#' and settings of the APNs VoIP channel for an application.
+#' Enables the APNs VoIP channel for an application or updates the status and settings of the APNs VoIP channel for an application.
 #'
 #' @usage
 #' pinpoint_update_apns_voip_channel(APNSVoipChannelRequest, ApplicationId)
 #'
-#' @param APNSVoipChannelRequest &#91;required&#93; 
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param APNSVoipChannelRequest &#91;required&#93; Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15438,16 +14991,14 @@ pinpoint_update_apns_voip_channel <- function(APNSVoipChannelRequest, Applicatio
 #' status and settings of the APNs VoIP sandbox channel for an application
 #'
 #' @description
-#' Enables the APNs VoIP sandbox channel for an application or updates the
-#' status and settings of the APNs VoIP sandbox channel for an application.
+#' Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the APNs VoIP sandbox channel for an application.
 #'
 #' @usage
 #' pinpoint_update_apns_voip_sandbox_channel(APNSVoipSandboxChannelRequest,
 #'   ApplicationId)
 #'
-#' @param APNSVoipSandboxChannelRequest &#91;required&#93; 
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param APNSVoipSandboxChannelRequest &#91;required&#93; Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15520,9 +15071,8 @@ pinpoint_update_apns_voip_sandbox_channel <- function(APNSVoipSandboxChannelRequ
 #' pinpoint_update_application_settings(ApplicationId,
 #'   WriteApplicationSettingsRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param WriteApplicationSettingsRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param WriteApplicationSettingsRequest &#91;required&#93; Specifies the default settings for an application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15622,15 +15172,13 @@ pinpoint_update_application_settings <- function(ApplicationId, WriteApplication
 #' settings of the Baidu channel for an application
 #'
 #' @description
-#' Enables the Baidu channel for an application or updates the status and
-#' settings of the Baidu channel for an application.
+#' Enables the Baidu channel for an application or updates the status and settings of the Baidu channel for an application.
 #'
 #' @usage
 #' pinpoint_update_baidu_channel(ApplicationId, BaiduChannelRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param BaiduChannelRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param BaiduChannelRequest &#91;required&#93; Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -15697,10 +15245,9 @@ pinpoint_update_baidu_channel <- function(ApplicationId, BaiduChannelRequest) {
 #' pinpoint_update_campaign(ApplicationId, CampaignId,
 #'   WriteCampaignRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign.
-#' @param WriteCampaignRequest &#91;required&#93; 
+#' @param WriteCampaignRequest &#91;required&#93; Specifies the configuration and other settings for a campaign.
 #'
 #' @return
 #' A list with the following syntax:
@@ -16731,15 +16278,13 @@ pinpoint_update_campaign <- function(ApplicationId, CampaignId, WriteCampaignReq
 #' settings of the email channel for an application
 #'
 #' @description
-#' Enables the email channel for an application or updates the status and
-#' settings of the email channel for an application.
+#' Enables the email channel for an application or updates the status and settings of the email channel for an application.
 #'
 #' @usage
 #' pinpoint_update_email_channel(ApplicationId, EmailChannelRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EmailChannelRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EmailChannelRequest &#91;required&#93; Specifies the status and settings of the email channel for an application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -16809,49 +16354,28 @@ pinpoint_update_email_channel <- function(ApplicationId, EmailChannelRequest) {
 #' the email channel
 #'
 #' @description
-#' Updates an existing message template for messages that are sent through
-#' the email channel.
+#' Updates an existing message template for messages that are sent through the email channel.
 #'
 #' @usage
 #' pinpoint_update_email_template(CreateNewVersion, EmailTemplateRequest,
 #'   TemplateName, Version)
 #'
-#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message
-#' template. Valid values are: true, save the updates as a new version;
-#' and, false, save the updates to (overwrite) the latest existing version
-#' of the template.
+#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint saves
-#' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don't specify a value
-#' for the version parameter. Otherwise, an error will occur.
-#' @param EmailTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.
+#' @param EmailTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -16918,20 +16442,14 @@ pinpoint_update_email_template <- function(CreateNewVersion = NULL, EmailTemplat
 #' attributes of an existing endpoint for an application
 #'
 #' @description
-#' Creates a new endpoint for an application or updates the settings and
-#' attributes of an existing endpoint for an application. You can also use
-#' this operation to define custom attributes for an endpoint. If an update
-#' includes one or more values for a custom attribute, Amazon Pinpoint
-#' replaces (overwrites) any existing values with the new values.
+#' Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an application. You can also use this operation to define custom attributes for an endpoint. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.
 #'
 #' @usage
 #' pinpoint_update_endpoint(ApplicationId, EndpointId, EndpointRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EndpointId &#91;required&#93; The case insensitive unique identifier for the endpoint. The identifier
-#' can't contain `$`, `\{` or `\}`.
-#' @param EndpointRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EndpointId &#91;required&#93; The case insensitive unique identifier for the endpoint. The identifier can't contain `$`, `\{` or `\}`.
+#' @param EndpointRequest &#91;required&#93; Specifies the channel type and other settings for an endpoint.
 #'
 #' @return
 #' A list with the following syntax:
@@ -17023,19 +16541,13 @@ pinpoint_update_endpoint <- function(ApplicationId, EndpointId, EndpointRequest)
 #' application
 #'
 #' @description
-#' Creates a new batch of endpoints for an application or updates the
-#' settings and attributes of a batch of existing endpoints for an
-#' application. You can also use this operation to define custom attributes
-#' for a batch of endpoints. If an update includes one or more values for a
-#' custom attribute, Amazon Pinpoint replaces (overwrites) any existing
-#' values with the new values.
+#' Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing endpoints for an application. You can also use this operation to define custom attributes for a batch of endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.
 #'
 #' @usage
 #' pinpoint_update_endpoints_batch(ApplicationId, EndpointBatchRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param EndpointBatchRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param EndpointBatchRequest &#91;required&#93; Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.
 #'
 #' @return
 #' A list with the following syntax:
@@ -17130,15 +16642,13 @@ pinpoint_update_endpoints_batch <- function(ApplicationId, EndpointBatchRequest)
 #' settings of the GCM channel for an application
 #'
 #' @description
-#' Enables the GCM channel for an application or updates the status and
-#' settings of the GCM channel for an application.
+#' Enables the GCM channel for an application or updates the status and settings of the GCM channel for an application.
 #'
 #' @usage
 #' pinpoint_update_gcm_channel(ApplicationId, GCMChannelRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param GCMChannelRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param GCMChannelRequest &#91;required&#93; Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
 #'
 #' @return
 #' A list with the following syntax:
@@ -17203,49 +16713,28 @@ pinpoint_update_gcm_channel <- function(ApplicationId, GCMChannelRequest) {
 #' in-app message channel
 #'
 #' @description
-#' Updates an existing message template for messages sent through the
-#' in-app message channel.
+#' Updates an existing message template for messages sent through the in-app message channel.
 #'
 #' @usage
 #' pinpoint_update_in_app_template(CreateNewVersion, InAppTemplateRequest,
 #'   TemplateName, Version)
 #'
-#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message
-#' template. Valid values are: true, save the updates as a new version;
-#' and, false, save the updates to (overwrite) the latest existing version
-#' of the template.
+#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint saves
-#' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don't specify a value
-#' for the version parameter. Otherwise, an error will occur.
-#' @param InAppTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.
+#' @param InAppTemplateRequest &#91;required&#93; InApp Template Request.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -17369,10 +16858,9 @@ pinpoint_update_in_app_template <- function(CreateNewVersion = NULL, InAppTempla
 #' @usage
 #' pinpoint_update_journey(ApplicationId, JourneyId, WriteJourneyRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param WriteJourneyRequest &#91;required&#93; 
+#' @param WriteJourneyRequest &#91;required&#93; Specifies the configuration and other settings for a journey.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18375,10 +17863,9 @@ pinpoint_update_journey <- function(ApplicationId, JourneyId, WriteJourneyReques
 #' pinpoint_update_journey_state(ApplicationId, JourneyId,
 #'   JourneyStateRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param JourneyId &#91;required&#93; The unique identifier for the journey.
-#' @param JourneyStateRequest &#91;required&#93; 
+#' @param JourneyStateRequest &#91;required&#93; Changes the status of a journey.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18905,49 +18392,28 @@ pinpoint_update_journey_state <- function(ApplicationId, JourneyId, JourneyState
 #' a push notification channel
 #'
 #' @description
-#' Updates an existing message template for messages that are sent through
-#' a push notification channel.
+#' Updates an existing message template for messages that are sent through a push notification channel.
 #'
 #' @usage
 #' pinpoint_update_push_template(CreateNewVersion,
 #'   PushNotificationTemplateRequest, TemplateName, Version)
 #'
-#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message
-#' template. Valid values are: true, save the updates as a new version;
-#' and, false, save the updates to (overwrite) the latest existing version
-#' of the template.
+#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint saves
-#' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don't specify a value
-#' for the version parameter. Otherwise, an error will occur.
-#' @param PushNotificationTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.
+#' @param PushNotificationTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19059,10 +18525,8 @@ pinpoint_update_push_template <- function(CreateNewVersion = NULL, PushNotificat
 #' pinpoint_update_recommender_configuration(RecommenderId,
 #'   UpdateRecommenderConfiguration)
 #'
-#' @param RecommenderId &#91;required&#93; The unique identifier for the recommender model configuration. This
-#' identifier is displayed as the **Recommender ID** on the Amazon Pinpoint
-#' console.
-#' @param UpdateRecommenderConfiguration &#91;required&#93; 
+#' @param RecommenderId &#91;required&#93; The unique identifier for the recommender model configuration. This identifier is displayed as the **Recommender ID** on the Amazon Pinpoint console.
+#' @param UpdateRecommenderConfiguration &#91;required&#93; Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19136,17 +18600,14 @@ pinpoint_update_recommender_configuration <- function(RecommenderId, UpdateRecom
 #' with an application
 #'
 #' @description
-#' Creates a new segment for an application or updates the configuration,
-#' dimension, and other settings for an existing segment that's associated
-#' with an application.
+#' Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.
 #'
 #' @usage
 #' pinpoint_update_segment(ApplicationId, SegmentId, WriteSegmentRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
 #' @param SegmentId &#91;required&#93; The unique identifier for the segment.
-#' @param WriteSegmentRequest &#91;required&#93; 
+#' @param WriteSegmentRequest &#91;required&#93; Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19586,15 +19047,13 @@ pinpoint_update_segment <- function(ApplicationId, SegmentId, WriteSegmentReques
 #' settings of the SMS channel for an application
 #'
 #' @description
-#' Enables the SMS channel for an application or updates the status and
-#' settings of the SMS channel for an application.
+#' Enables the SMS channel for an application or updates the status and settings of the SMS channel for an application.
 #'
 #' @usage
 #' pinpoint_update_sms_channel(ApplicationId, SMSChannelRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param SMSChannelRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param SMSChannelRequest &#91;required&#93; Specifies the status and settings of the SMS channel for an application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19659,49 +19118,28 @@ pinpoint_update_sms_channel <- function(ApplicationId, SMSChannelRequest) {
 #' the SMS channel
 #'
 #' @description
-#' Updates an existing message template for messages that are sent through
-#' the SMS channel.
+#' Updates an existing message template for messages that are sent through the SMS channel.
 #'
 #' @usage
 #' pinpoint_update_sms_template(CreateNewVersion, SMSTemplateRequest,
 #'   TemplateName, Version)
 #'
-#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message
-#' template. Valid values are: true, save the updates as a new version;
-#' and, false, save the updates to (overwrite) the latest existing version
-#' of the template.
+#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint saves
-#' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don't specify a value
-#' for the version parameter. Otherwise, an error will occur.
-#' @param SMSTemplateRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.
+#' @param SMSTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
+#' -   For a delete operation, deletes the template, including all versions of the template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19759,20 +19197,15 @@ pinpoint_update_sms_template <- function(CreateNewVersion = NULL, SMSTemplateReq
 #' Changes the status of a specific version of a message template to active
 #'
 #' @description
-#' Changes the status of a specific version of a message template to
-#' *active*.
+#' Changes the status of a specific version of a message template to *active*.
 #'
 #' @usage
 #' pinpoint_update_template_active_version(TemplateActiveVersionRequest,
 #'   TemplateName, TemplateType)
 #'
-#' @param TemplateActiveVersionRequest &#91;required&#93; 
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param TemplateType &#91;required&#93; The type of channel that the message template is designed for. Valid
-#' values are: EMAIL, PUSH, SMS, and VOICE.
+#' @param TemplateActiveVersionRequest &#91;required&#93; Specifies which version of a message template to use as the active version of the template.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param TemplateType &#91;required&#93; The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19824,15 +19257,13 @@ pinpoint_update_template_active_version <- function(TemplateActiveVersionRequest
 #' settings of the voice channel for an application
 #'
 #' @description
-#' Enables the voice channel for an application or updates the status and
-#' settings of the voice channel for an application.
+#' Enables the voice channel for an application or updates the status and settings of the voice channel for an application.
 #'
 #' @usage
 #' pinpoint_update_voice_channel(ApplicationId, VoiceChannelRequest)
 #'
-#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed
-#' as the **Project ID** on the Amazon Pinpoint console.
-#' @param VoiceChannelRequest &#91;required&#93; 
+#' @param ApplicationId &#91;required&#93; The unique identifier for the application. This identifier is displayed as the **Project ID** on the Amazon Pinpoint console.
+#' @param VoiceChannelRequest &#91;required&#93; Specifies the status and settings of the voice channel for an application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19891,49 +19322,28 @@ pinpoint_update_voice_channel <- function(ApplicationId, VoiceChannelRequest) {
 #' the voice channel
 #'
 #' @description
-#' Updates an existing message template for messages that are sent through
-#' the voice channel.
+#' Updates an existing message template for messages that are sent through the voice channel.
 #'
 #' @usage
 #' pinpoint_update_voice_template(CreateNewVersion, TemplateName, Version,
 #'   VoiceTemplateRequest)
 #'
-#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message
-#' template. Valid values are: true, save the updates as a new version;
-#' and, false, save the updates to (overwrite) the latest existing version
-#' of the template.
+#' @param CreateNewVersion Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint saves
-#' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don't specify a value
-#' for the version parameter. Otherwise, an error will occur.
-#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
-#' alphanumeric character and can contain a maximum of 128 characters. The
-#' characters can be alphanumeric characters, underscores (_), or hyphens
-#' (-). Template names are case sensitive.
-#' @param Version The unique identifier for the version of the message template to update,
-#' retrieve information about, or delete. To retrieve identifiers and other
-#' information for all the versions of a template, use the Template
-#' Versions resource.
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.
+#' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
+#' @param Version The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the Template Versions resource.
 #' 
-#' If specified, this value must match the identifier for an existing
-#' template version. If specified for an update operation, this value must
-#' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don't occur.
+#' If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don't specify a value for this parameter, Amazon Pinpoint does
-#' the following:
+#' If you don't specify a value for this parameter, Amazon Pinpoint does the following:
 #' 
-#' -   For a get operation, retrieves information about the active version
-#'     of the template.
+#' -   For a get operation, retrieves information about the active version of the template.
 #' 
-#' -   For an update operation, saves the updates to (overwrites) the
-#'     latest existing version of the template, if the create-new-version
-#'     parameter isn't used or is set to false.
+#' -   For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.
 #' 
-#' -   For a delete operation, deletes the template, including all versions
-#'     of the template.
-#' @param VoiceTemplateRequest &#91;required&#93; 
+#' -   For a delete operation, deletes the template, including all versions of the template.
+#' @param VoiceTemplateRequest &#91;required&#93; Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19999,7 +19409,7 @@ pinpoint_update_voice_template <- function(CreateNewVersion = NULL, TemplateName
 #'   VerifyOTPMessageRequestParameters)
 #'
 #' @param ApplicationId &#91;required&#93; The unique ID of your Amazon Pinpoint application.
-#' @param VerifyOTPMessageRequestParameters &#91;required&#93; 
+#' @param VerifyOTPMessageRequestParameters &#91;required&#93; Verify OTP message request.
 #'
 #' @return
 #' A list with the following syntax:

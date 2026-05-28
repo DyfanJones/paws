@@ -14,26 +14,15 @@ quicksight_start_dashboard_snapshot_job(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that the dashboard snapshot
-job is executed in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.}
 
 \item{DashboardId}{[required] The ID of the dashboard that you want to start a snapshot job for.}
 
-\item{SnapshotJobId}{[required] An ID for the dashboard snapshot job. This ID is unique to the dashboard
-while the job is running. This ID can be used to poll the status of a
-job with a
-\code{\link[=quicksight_describe_dashboard_snapshot_job]{describe_dashboard_snapshot_job}}
-while the job runs. You can reuse this ID for another job 24 hours after
-the current job is completed.}
+\item{SnapshotJobId}{[required] An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a \code{\link[=quicksight_describe_dashboard_snapshot_job]{describe_dashboard_snapshot_job}} while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.}
 
-\item{UserConfiguration}{A structure that contains information about the users that the dashboard
-snapshot is generated for. The users can be either anonymous users or
-registered users. Anonymous users cannot be used together with
-registered users.
+\item{UserConfiguration}{A structure that contains information about the users that the dashboard snapshot is generated for. The users can be either anonymous users or registered users. Anonymous users cannot be used together with registered users.
 
-When using identity-enhanced session credentials, set the
-UserConfiguration request attribute to null. Otherwise, the request will
-be invalid.}
+When using identity-enhanced session credentials, set the UserConfiguration request attribute to null. Otherwise, the request will be invalid.}
 
 \item{SnapshotConfiguration}{[required] A structure that describes the configuration of the dashboard snapshot.}
 }

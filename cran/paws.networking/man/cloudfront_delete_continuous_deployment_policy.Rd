@@ -7,11 +7,9 @@
 cloudfront_delete_continuous_deployment_policy(Id, IfMatch = NULL)
 }
 \arguments{
-\item{Id}{[required] The identifier of the continuous deployment policy that you are
-deleting.}
+\item{Id}{[required] The identifier of the continuous deployment policy that you are deleting.}
 
-\item{IfMatch}{The current version (\code{ETag} value) of the continuous deployment policy
-that you are deleting.}
+\item{IfMatch}{The current version (\code{ETag} value) of the continuous deployment policy that you are deleting.}
 }
 \description{
 Deletes a continuous deployment policy.

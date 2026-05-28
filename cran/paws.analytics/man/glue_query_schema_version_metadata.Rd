@@ -14,18 +14,15 @@ glue_query_schema_version_metadata(
 )
 }
 \arguments{
-\item{SchemaId}{A wrapper structure that may contain the schema name and Amazon Resource
-Name (ARN).}
+\item{SchemaId}{A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).}
 
 \item{SchemaVersionNumber}{The version number of the schema.}
 
 \item{SchemaVersionId}{The unique version ID of the schema version.}
 
-\item{MetadataList}{Search key-value pairs for metadata, if they are not provided all the
-metadata information will be fetched.}
+\item{MetadataList}{Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.}
 
-\item{MaxResults}{Maximum number of results required per page. If the value is not
-supplied, this will be defaulted to 25 per page.}
+\item{MaxResults}{Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 }

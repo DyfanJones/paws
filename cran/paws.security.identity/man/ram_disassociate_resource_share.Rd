@@ -14,55 +14,31 @@ ram_disassociate_resource_share(
 )
 }
 \arguments{
-\item{resourceShareArn}{[required] Specifies \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Name (ARN)}
-of the resource share that you want to remove resources or principals
-from.}
+\item{resourceShareArn}{[required] Specifies \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Name (ARN)} of the resource share that you want to remove resources or principals from.}
 
-\item{resourceArns}{Specifies a list of \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names (ARNs)}
-for one or more resources that you want to remove from the resource
-share. After the operation runs, these resources are no longer shared
-with principals associated with the resource share.}
+\item{resourceArns}{Specifies a list of \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names (ARNs)} for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.}
 
-\item{principals}{Specifies a list of one or more principals that no longer are to have
-access to the resources in this resource share.
+\item{principals}{Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.
 
 You can include the following values:
 \itemize{
 \item An Amazon Web Services account ID, for example: \code{123456789012}
-\item An \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Name (ARN)}
-of an organization in Organizations, for example:
-\verb{organizations::123456789012:organization/o-exampleorgid}
-\item An ARN of an organizational unit (OU) in Organizations, for example:
-\verb{organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123}
-\item An ARN of an IAM role, for example:
-\verb{iam::123456789012:role/rolename}
+\item An \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Name (ARN)} of an organization in Organizations, for example: \verb{organizations::123456789012:organization/o-exampleorgid}
+\item An ARN of an organizational unit (OU) in Organizations, for example: \verb{organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123}
+\item An ARN of an IAM role, for example: \verb{iam::123456789012:role/rolename}
 \item An ARN of an IAM user, for example: \verb{iam::123456789012user/username}
 \item A service principal name, for example: \code{service-id.amazonaws.com}
 }
 
-Not all resource types can be shared with IAM roles and users. For more
-information, see \href{https://docs.aws.amazon.com/ram/latest/userguide/#permissions-rbp-supported-resource-types}{Sharing with IAM roles and users}
-in the \emph{Resource Access Manager User Guide}.}
+Not all resource types can be shared with IAM roles and users. For more information, see \href{https://docs.aws.amazon.com/ram/latest/userguide/#permissions-rbp-supported-resource-types}{Sharing with IAM roles and users} in the \emph{Resource Access Manager User Guide}.}
 
-\item{clientToken}{Specifies a unique, case-sensitive identifier that you provide to ensure
-the idempotency of the request. This lets you safely retry the request
-without accidentally performing the same operation a second time.
-Passing the same value to a later call to an operation requires that you
-also pass the same value for all other parameters. We recommend that you
-use a \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{UUID type of value.}.
+\item{clientToken}{Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{UUID type of value.}.
 
-If you don't provide this value, then Amazon Web Services generates a
-random one for you.
+If you don't provide this value, then Amazon Web Services generates a random one for you.
 
-If you retry the operation with the same \code{ClientToken}, but with
-different parameters, the retry fails with an
-\code{IdempotentParameterMismatch} error.}
+If you retry the operation with the same \code{ClientToken}, but with different parameters, the retry fails with an \code{IdempotentParameterMismatch} error.}
 
-\item{sources}{Specifies source constraints (accounts, ARNs, organization IDs, or
-organization paths) to remove from the resource share. This enables
-granular management of source constraints while maintaining service
-principal associations. At least one source must remain when service
-principals are present.}
+\item{sources}{Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) to remove from the resource share. This enables granular management of source constraints while maintaining service principal associations. At least one source must remain when service principals are present.}
 }
 \description{
 Removes the specified principals, resources, or source constraints from participating in the specified resource share.

@@ -8,8 +8,7 @@ manual DB cluster snapshot}
 rds_describe_db_cluster_snapshot_attributes(DBClusterSnapshotIdentifier)
 }
 \arguments{
-\item{DBClusterSnapshotIdentifier}{[required] The identifier for the DB cluster snapshot to describe the attributes
-for.}
+\item{DBClusterSnapshotIdentifier}{[required] The identifier for the DB cluster snapshot to describe the attributes for.}
 }
 \description{
 Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.

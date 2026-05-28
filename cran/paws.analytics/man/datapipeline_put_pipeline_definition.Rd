@@ -14,8 +14,7 @@ datapipeline_put_pipeline_definition(
 \arguments{
 \item{pipelineId}{[required] The ID of the pipeline.}
 
-\item{pipelineObjects}{[required] The objects that define the pipeline. These objects overwrite the
-existing pipeline definition.}
+\item{pipelineObjects}{[required] The objects that define the pipeline. These objects overwrite the existing pipeline definition.}
 
 \item{parameterObjects}{The parameter objects used with the pipeline.}
 

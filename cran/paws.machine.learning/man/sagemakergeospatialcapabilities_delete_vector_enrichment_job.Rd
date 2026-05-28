@@ -7,8 +7,7 @@
 sagemakergeospatialcapabilities_delete_vector_enrichment_job(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the Vector Enrichment job being
-deleted.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted.}
 }
 \description{
 Use this operation to delete a Vector Enrichment job.

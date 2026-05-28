@@ -21,61 +21,24 @@ eks_update_pod_identity_association(
 
 \item{roleArn}{The new IAM role to change in the association.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
-\item{disableSessionTags}{Disable the automatic sessions tags that are appended by EKS Pod
-Identity.
+\item{disableSessionTags}{Disable the automatic sessions tags that are appended by EKS Pod Identity.
 
-EKS Pod Identity adds a pre-defined set of session tags when it assumes
-the role. You can use these tags to author a single role that can work
-across resources by allowing access to Amazon Web Services resources
-based on matching tags. By default, EKS Pod Identity attaches six tags,
-including tags for cluster name, namespace, and service account name.
-For the list of tags added by EKS Pod Identity, see \href{https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags}{List of session tags added by EKS Pod Identity}
-in the \emph{Amazon EKS User Guide}.
+EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see \href{https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags}{List of session tags added by EKS Pod Identity} in the \emph{Amazon EKS User Guide}.
 
-Amazon Web Services compresses inline session policies, managed policy
-ARNs, and session tags into a packed binary format that has a separate
-limit. If you receive a \code{PackedPolicyTooLarge} error indicating the
-packed binary format has exceeded the size limit, you can attempt to
-reduce the size by disabling the session tags added by EKS Pod Identity.}
+Amazon Web Services compresses inline session policies, managed policy ARNs, and session tags into a packed binary format that has a separate limit. If you receive a \code{PackedPolicyTooLarge} error indicating the packed binary format has exceeded the size limit, you can attempt to reduce the size by disabling the session tags added by EKS Pod Identity.}
 
-\item{targetRoleArn}{The Amazon Resource Name (ARN) of the target IAM role to associate with
-the service account. This role is assumed by using the EKS Pod Identity
-association role, then the credentials for this role are injected into
-the Pod.
+\item{targetRoleArn}{The Amazon Resource Name (ARN) of the target IAM role to associate with the service account. This role is assumed by using the EKS Pod Identity association role, then the credentials for this role are injected into the Pod.
 
-When you run applications on Amazon EKS, your application might need to
-access Amazon Web Services resources from a different role that exists
-in the same or different Amazon Web Services account. For example, your
-application running in “Account A” might need to access resources, such
-as buckets in “Account B” or within “Account A” itself. You can create a
-association to access Amazon Web Services resources in “Account B” by
-creating two IAM roles: a role in “Account A” and a role in “Account B”
-(which can be the same or different account), each with the necessary
-trust and permission policies. After you provide these roles in the \emph{IAM
-role} and \emph{Target IAM role} fields, EKS will perform role chaining to
-ensure your application gets the required permissions. This means Role A
-will assume Role B, allowing your Pods to securely access resources like
-S3 buckets in the target account.}
+When you run applications on Amazon EKS, your application might need to access Amazon Web Services resources from a different role that exists in the same or different Amazon Web Services account. For example, your application running in “Account A” might need to access resources, such as buckets in “Account B” or within “Account A” itself. You can create a association to access Amazon Web Services resources in “Account B” by creating two IAM roles: a role in “Account A” and a role in “Account B” (which can be the same or different account), each with the necessary trust and permission policies. After you provide these roles in the \emph{IAM role} and \emph{Target IAM role} fields, EKS will perform role chaining to ensure your application gets the required permissions. This means Role A will assume Role B, allowing your Pods to securely access resources like S3 buckets in the target account.}
 
-\item{policy}{An optional IAM policy in JSON format (as an escaped string) that
-applies additional restrictions to this pod identity association beyond
-the IAM policies attached to the IAM role. This policy is applied as the
-intersection of the role's policies and this policy, allowing you to
-reduce the permissions that applications in the pods can use. Use this
-policy to enforce least privilege access while still leveraging a shared
-IAM role across multiple applications.
+\item{policy}{An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.
 
 \strong{Important considerations}
 \itemize{
-\item \strong{Session tags:} When using this policy, \code{disableSessionTags} must
-be set to \code{true}.
-\item \strong{Target role permissions:} If you specify both a \code{TargetRoleArn}
-and a policy, the policy restrictions apply only to the target
-role's permissions, not to the initial role used for assuming the
-target role.
+\item \strong{Session tags:} When using this policy, \code{disableSessionTags} must be set to \code{true}.
+\item \strong{Target role permissions:} If you specify both a \code{TargetRoleArn} and a policy, the policy restrictions apply only to the target role's permissions, not to the initial role used for assuming the target role.
 }}
 }
 \description{

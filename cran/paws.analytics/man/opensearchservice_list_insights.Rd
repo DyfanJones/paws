@@ -14,23 +14,15 @@ opensearchservice_list_insights(
 )
 }
 \arguments{
-\item{Entity}{[required] The entity for which to list insights. Specifies the type and value of
-the entity, such as a domain name or Amazon Web Services account ID.}
+\item{Entity}{[required] The entity for which to list insights. Specifies the type and value of the entity, such as a domain name or Amazon Web Services account ID.}
 
-\item{TimeRange}{The time range for filtering insights, specified as epoch millisecond
-timestamps.}
+\item{TimeRange}{The time range for filtering insights, specified as epoch millisecond timestamps.}
 
-\item{SortOrder}{The sort order for the results. Possible values are \code{ASC} (ascending)
-and \code{DESC} (descending).}
+\item{SortOrder}{The sort order for the results. Possible values are \code{ASC} (ascending) and \code{DESC} (descending).}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{NextToken} to get the next page of results. Valid
-values are 1 to 500.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{NextToken} to get the next page of results. Valid values are 1 to 500.}
 
-\item{NextToken}{If your initial \code{\link[=opensearchservice_list_insights]{list_insights}}
-operation returns a \code{NextToken}, include the returned \code{NextToken} in
-subsequent \code{\link[=opensearchservice_list_insights]{list_insights}} operations
-to retrieve the next page of results.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_list_insights]{list_insights}} operation returns a \code{NextToken}, include the returned \code{NextToken} in subsequent \code{\link[=opensearchservice_list_insights]{list_insights}} operations to retrieve the next page of results.}
 }
 \description{
 Lists insights for an Amazon OpenSearch Service domain or Amazon Web Services account. Returns a paginated list of insights based on the specified entity, filters, time range, and sort order.

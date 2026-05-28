@@ -7,11 +7,9 @@
 cloud9_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Cloud9 development environment to
-remove tags from.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.}
 
-\item{TagKeys}{[required] The tag names of the tags to remove from the given Cloud9 development
-environment.}
+\item{TagKeys}{[required] The tag names of the tags to remove from the given Cloud9 development environment.}
 }
 \description{
 Removes tags from an Cloud9 development environment.

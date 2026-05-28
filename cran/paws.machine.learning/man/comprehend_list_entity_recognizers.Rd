@@ -12,14 +12,11 @@ comprehend_list_entity_recognizers(
 )
 }
 \arguments{
-\item{Filter}{Filters the list of entities returned. You can filter on \code{Status},
-\code{SubmitTimeBefore}, or \code{SubmitTimeAfter}. You can only set one filter at
-a time.}
+\item{Filter}{Filters the list of entities returned. You can filter on \code{Status}, \code{SubmitTimeBefore}, or \code{SubmitTimeAfter}. You can only set one filter at a time.}
 
 \item{NextToken}{Identifies the next page of results to return.}
 
-\item{MaxResults}{The maximum number of results to return on each page. The default is
-100.}
+\item{MaxResults}{The maximum number of results to return on each page. The default is 100.}
 }
 \description{
 Gets a list of the properties of all entity recognizers that you created, including recognizers currently in training. Allows you to filter the list of recognizers based on criteria such as status and submission time. This call returns up to 500 entity recognizers in the list, with a default number of 100 recognizers in the list.

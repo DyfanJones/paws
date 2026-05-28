@@ -18,36 +18,25 @@ sagemaker_list_cluster_events(
 )
 }
 \arguments{
-\item{ClusterName}{[required] The name or Amazon Resource Name (ARN) of the HyperPod cluster for which
-to list events.}
+\item{ClusterName}{[required] The name or Amazon Resource Name (ARN) of the HyperPod cluster for which to list events.}
 
-\item{InstanceGroupName}{The name of the instance group to filter events. If specified, only
-events related to this instance group are returned.}
+\item{InstanceGroupName}{The name of the instance group to filter events. If specified, only events related to this instance group are returned.}
 
-\item{NodeId}{The EC2 instance ID to filter events. If specified, only events related
-to this instance are returned.}
+\item{NodeId}{The EC2 instance ID to filter events. If specified, only events related to this instance are returned.}
 
-\item{EventTimeAfter}{The start of the time range for filtering events. Only events that
-occurred after this time are included in the results.}
+\item{EventTimeAfter}{The start of the time range for filtering events. Only events that occurred after this time are included in the results.}
 
-\item{EventTimeBefore}{The end of the time range for filtering events. Only events that
-occurred before this time are included in the results.}
+\item{EventTimeBefore}{The end of the time range for filtering events. Only events that occurred before this time are included in the results.}
 
-\item{SortBy}{The field to use for sorting the event list. Currently, the only
-supported value is \code{EventTime}.}
+\item{SortBy}{The field to use for sorting the event list. Currently, the only supported value is \code{EventTime}.}
 
-\item{SortOrder}{The order in which to sort the results. Valid values are \code{Ascending} or
-\code{Descending} (the default is \code{Descending}).}
+\item{SortOrder}{The order in which to sort the results. Valid values are \code{Ascending} or \code{Descending} (the default is \code{Descending}).}
 
-\item{ResourceType}{The type of resource for which to filter events. Valid values are
-\code{Cluster}, \code{InstanceGroup}, or \code{Instance}.}
+\item{ResourceType}{The type of resource for which to filter events. Valid values are \code{Cluster}, \code{InstanceGroup}, or \code{Instance}.}
 
-\item{MaxResults}{The maximum number of events to return in the response. Valid range is 1
-to 100.}
+\item{MaxResults}{The maximum number of events to return in the response. Valid range is 1 to 100.}
 
-\item{NextToken}{A token to retrieve the next set of results. This token is obtained from
-the output of a previous
-\code{\link[=sagemaker_list_cluster_events]{list_cluster_events}} call.}
+\item{NextToken}{A token to retrieve the next set of results. This token is obtained from the output of a previous \code{\link[=sagemaker_list_cluster_events]{list_cluster_events}} call.}
 }
 \description{
 Retrieves a list of event summaries for a specified HyperPod cluster. The operation supports filtering, sorting, and pagination of results. This functionality is only supported when the \code{NodeProvisioningMode} is set to \code{Continuous}.

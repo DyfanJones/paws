@@ -14,13 +14,9 @@ memorydb_reset_parameter_group(
 \arguments{
 \item{ParameterGroupName}{[required] The name of the parameter group to reset.}
 
-\item{AllParameters}{If true, all parameters in the parameter group are reset to their
-default values. If false, only the parameters listed by ParameterNames
-are reset to their default values.}
+\item{AllParameters}{If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.}
 
-\item{ParameterNames}{An array of parameter names to reset to their default values. If
-AllParameters is true, do not use ParameterNames. If AllParameters is
-false, you must specify the name of at least one parameter to reset.}
+\item{ParameterNames}{An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.}
 }
 \description{
 Modifies the parameters of a parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire parameter group, specify the AllParameters and ParameterGroupName parameters.

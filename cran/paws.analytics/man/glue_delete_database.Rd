@@ -7,11 +7,9 @@
 glue_delete_database(CatalogId = NULL, Name)
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which the database resides. If none is
-provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{Name}{[required] The name of the database to delete. For Hive compatibility, this must be
-all lowercase.}
+\item{Name}{[required] The name of the database to delete. For Hive compatibility, this must be all lowercase.}
 }
 \description{
 Removes a specified database from a Data Catalog.

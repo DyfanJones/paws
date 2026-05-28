@@ -7,8 +7,7 @@
 resourceexplorer_get_service_view(ServiceViewArn)
 }
 \arguments{
-\item{ServiceViewArn}{[required] The Amazon Resource Name (ARN) of the service view to retrieve details
-for.}
+\item{ServiceViewArn}{[required] The Amazon Resource Name (ARN) of the service view to retrieve details for.}
 }
 \description{
 Retrieves details about a specific Resource Explorer service view. This operation returns the configuration and properties of the specified view.

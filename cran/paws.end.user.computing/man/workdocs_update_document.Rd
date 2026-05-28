@@ -13,8 +13,7 @@ workdocs_update_document(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
@@ -22,8 +21,7 @@ Services administrator credentials to access the API.}
 
 \item{ParentFolderId}{The ID of the parent folder.}
 
-\item{ResourceState}{The resource state of the document. Only ACTIVE and RECYCLED are
-supported.}
+\item{ResourceState}{The resource state of the document. Only ACTIVE and RECYCLED are supported.}
 }
 \description{
 Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.

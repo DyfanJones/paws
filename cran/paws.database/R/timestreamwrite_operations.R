@@ -12,9 +12,8 @@ NULL
 #'
 #' @param ClientToken 
 #' @param DataModelConfiguration 
-#' @param DataSourceConfiguration &#91;required&#93; Defines configuration details about the data source for a batch load
-#' task.
-#' @param ReportConfiguration &#91;required&#93; 
+#' @param DataSourceConfiguration &#91;required&#93; Defines configuration details about the data source for a batch load task.
+#' @param ReportConfiguration &#91;required&#93; Report configuration for a batch load task. This contains details about where error reports are stored.
 #' @param TargetDatabaseName &#91;required&#93; Target Timestream database for a batch load task.
 #' @param TargetTableName &#91;required&#93; Target Timestream table for a batch load task.
 #' @param RecordVersion 
@@ -49,10 +48,7 @@ timestreamwrite_create_batch_load_task <- function(ClientToken = NULL, DataModel
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_create_database/](https://www.paws-r-sdk.com/docs/timestreamwrite_create_database/) for full documentation.
 #'
 #' @param DatabaseName &#91;required&#93; The name of the Timestream database.
-#' @param KmsKeyId The KMS key for the database. If the KMS key is not specified, the
-#' database will be encrypted with a Timestream managed KMS key located in
-#' your account. For more information, see [Amazon Web Services managed
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk).
+#' @param KmsKeyId The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a Timestream managed KMS key located in your account. For more information, see [Amazon Web Services managed keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk).
 #' @param Tags A list of key-value pairs to label the table.
 #'
 #' @keywords internal
@@ -86,11 +82,9 @@ timestreamwrite_create_database <- function(DatabaseName, KmsKeyId = NULL, Tags 
 #'
 #' @param DatabaseName &#91;required&#93; The name of the Timestream database.
 #' @param TableName &#91;required&#93; The name of the Timestream table.
-#' @param RetentionProperties The duration for which your time-series data must be stored in the
-#' memory store and the magnetic store.
+#' @param RetentionProperties The duration for which your time-series data must be stored in the memory store and the magnetic store.
 #' @param Tags A list of key-value pairs to label the table.
-#' @param MagneticStoreWriteProperties Contains properties to set on the table when enabling magnetic store
-#' writes.
+#' @param MagneticStoreWriteProperties Contains properties to set on the table when enabling magnetic store writes.
 #' @param Schema The schema of the table.
 #'
 #' @keywords internal
@@ -316,12 +310,8 @@ timestreamwrite_describe_table <- function(DatabaseName, TableName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_list_batch_load_tasks/](https://www.paws-r-sdk.com/docs/timestreamwrite_list_batch_load_tasks/) for full documentation.
 #'
-#' @param NextToken A token to specify where to start paginating. This is the NextToken from
-#' a previously truncated response.
-#' @param MaxResults The total number of items to return in the output. If the total number
-#' of items available is more than the value specified, a NextToken is
-#' provided in the output. To resume pagination, provide the NextToken
-#' value as argument of a subsequent API invocation.
+#' @param NextToken A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+#' @param MaxResults The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.
 #' @param TaskStatus Status of the batch load task.
 #'
 #' @keywords internal
@@ -353,12 +343,8 @@ timestreamwrite_list_batch_load_tasks <- function(NextToken = NULL, MaxResults =
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_list_databases/](https://www.paws-r-sdk.com/docs/timestreamwrite_list_databases/) for full documentation.
 #'
-#' @param NextToken The pagination token. To resume pagination, provide the NextToken value
-#' as argument of a subsequent API invocation.
-#' @param MaxResults The total number of items to return in the output. If the total number
-#' of items available is more than the value specified, a NextToken is
-#' provided in the output. To resume pagination, provide the NextToken
-#' value as argument of a subsequent API invocation.
+#' @param NextToken The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.
+#' @param MaxResults The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.
 #'
 #' @keywords internal
 #'
@@ -391,12 +377,8 @@ timestreamwrite_list_databases <- function(NextToken = NULL, MaxResults = NULL) 
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_list_tables/](https://www.paws-r-sdk.com/docs/timestreamwrite_list_tables/) for full documentation.
 #'
 #' @param DatabaseName The name of the Timestream database.
-#' @param NextToken The pagination token. To resume pagination, provide the NextToken value
-#' as argument of a subsequent API invocation.
-#' @param MaxResults The total number of items to return in the output. If the total number
-#' of items available is more than the value specified, a NextToken is
-#' provided in the output. To resume pagination, provide the NextToken
-#' value as argument of a subsequent API invocation.
+#' @param NextToken The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.
+#' @param MaxResults The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.
 #'
 #' @keywords internal
 #'
@@ -427,8 +409,7 @@ timestreamwrite_list_tables <- function(DatabaseName = NULL, NextToken = NULL, M
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/timestreamwrite_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Timestream resource with tags to be listed. This value is an Amazon
-#' Resource Name (ARN).
+#' @param ResourceARN &#91;required&#93; The Timestream resource with tags to be listed. This value is an Amazon Resource Name (ARN).
 #'
 #' @keywords internal
 #'
@@ -490,8 +471,7 @@ timestreamwrite_resume_batch_load_task <- function(TaskId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_tag_resource/](https://www.paws-r-sdk.com/docs/timestreamwrite_tag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; Identifies the Timestream resource to which tags should be added. This
-#' value is an Amazon Resource Name (ARN).
+#' @param ResourceARN &#91;required&#93; Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).
 #' @param Tags &#91;required&#93; The tags to be assigned to the Timestream resource.
 #'
 #' @keywords internal
@@ -523,10 +503,8 @@ timestreamwrite_tag_resource <- function(ResourceARN, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_untag_resource/](https://www.paws-r-sdk.com/docs/timestreamwrite_untag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Timestream resource that the tags will be removed from. This value
-#' is an Amazon Resource Name (ARN).
-#' @param TagKeys &#91;required&#93; A list of tags keys. Existing tags of the resource whose keys are
-#' members of this list will be removed from the Timestream resource.
+#' @param ResourceARN &#91;required&#93; The Timestream resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).
+#' @param TagKeys &#91;required&#93; A list of tags keys. Existing tags of the resource whose keys are members of this list will be removed from the Timestream resource.
 #'
 #' @keywords internal
 #'
@@ -558,17 +536,13 @@ timestreamwrite_untag_resource <- function(ResourceARN, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/timestreamwrite_update_database/](https://www.paws-r-sdk.com/docs/timestreamwrite_update_database/) for full documentation.
 #'
 #' @param DatabaseName &#91;required&#93; The name of the database.
-#' @param KmsKeyId &#91;required&#93; The identifier of the new KMS key (`KmsKeyId`) to be used to encrypt the
-#' data stored in the database. If the `KmsKeyId` currently registered with
-#' the database is the same as the `KmsKeyId` in the request, there will
-#' not be any update.
+#' @param KmsKeyId &#91;required&#93; The identifier of the new KMS key (`KmsKeyId`) to be used to encrypt the data stored in the database. If the `KmsKeyId` currently registered with the database is the same as the `KmsKeyId` in the request, there will not be any update.
 #' 
 #' You can specify the `KmsKeyId` using any of the following:
 #' 
 #' -   Key ID: `1234abcd-12ab-34cd-56ef-1234567890ab`
 #' 
-#' -   Key ARN:
-#'     `arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab`
+#' -   Key ARN: `arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab`
 #' 
 #' -   Alias name: `alias/ExampleAlias`
 #' 
@@ -607,8 +581,7 @@ timestreamwrite_update_database <- function(DatabaseName, KmsKeyId) {
 #' @param DatabaseName &#91;required&#93; The name of the Timestream database.
 #' @param TableName &#91;required&#93; The name of the Timestream table.
 #' @param RetentionProperties The retention duration of the memory store and the magnetic store.
-#' @param MagneticStoreWriteProperties Contains properties to set on the table when enabling magnetic store
-#' writes.
+#' @param MagneticStoreWriteProperties Contains properties to set on the table when enabling magnetic store writes.
 #' @param Schema The schema of the table.
 #'
 #' @keywords internal
@@ -642,15 +615,8 @@ timestreamwrite_update_table <- function(DatabaseName, TableName, RetentionPrope
 #'
 #' @param DatabaseName &#91;required&#93; The name of the Timestream database.
 #' @param TableName &#91;required&#93; The name of the Timestream table.
-#' @param CommonAttributes A record that contains the common measure, dimension, time, and version
-#' attributes shared across all the records in the request. The measure and
-#' dimension attributes specified will be merged with the measure and
-#' dimension attributes in the records object when the data is written into
-#' Timestream. Dimensions may not overlap, or a `ValidationException` will
-#' be thrown. In other words, a record must contain dimensions with unique
-#' names.
-#' @param Records &#91;required&#93; An array of records that contain the unique measure, dimension, time,
-#' and version attributes for each time-series data point.
+#' @param CommonAttributes A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a `ValidationException` will be thrown. In other words, a record must contain dimensions with unique names.
+#' @param Records &#91;required&#93; An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point.
 #'
 #' @keywords internal
 #'

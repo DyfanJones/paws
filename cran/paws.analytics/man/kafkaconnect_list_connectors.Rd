@@ -15,9 +15,7 @@ kafkaconnect_list_connectors(
 
 \item{maxResults}{The maximum number of connectors to list in one response.}
 
-\item{nextToken}{If the response of a ListConnectors operation is truncated, it will
-include a NextToken. Send this NextToken in a subsequent request to
-continue listing from where the previous operation left off.}
+\item{nextToken}{If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.}
 }
 \description{
 Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.

@@ -14,9 +14,7 @@ ssmsap_list_sub_check_rule_results(
 \arguments{
 \item{SubCheckResultId}{[required] The ID of the sub check result.}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.}
 
 \item{NextToken}{The token for the next page of results.}
 }

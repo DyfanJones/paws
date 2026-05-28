@@ -7,8 +7,7 @@
 acm_delete_certificate(CertificateArn)
 }
 \arguments{
-\item{CertificateArn}{[required] String that contains the ARN of the ACM certificate to be deleted. This
-must be of the form:
+\item{CertificateArn}{[required] String that contains the ARN of the ACM certificate to be deleted. This must be of the form:
 
 \code{arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012}
 

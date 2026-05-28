@@ -14,15 +14,13 @@ quicksight_list_iam_policy_assignments(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains these IAM policy
-assignments.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains these IAM policy assignments.}
 
 \item{AssignmentStatus}{The status of the assignments.}
 
 \item{Namespace}{[required] The namespace for the assignments.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

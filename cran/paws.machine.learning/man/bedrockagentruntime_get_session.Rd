@@ -7,8 +7,7 @@
 bedrockagentruntime_get_session(sessionIdentifier)
 }
 \arguments{
-\item{sessionIdentifier}{[required] A unique identifier for the session to retrieve. You can specify either
-the session's \code{sessionId} or its Amazon Resource Name (ARN).}
+\item{sessionIdentifier}{[required] A unique identifier for the session to retrieve. You can specify either the session's \code{sessionId} or its Amazon Resource Name (ARN).}
 }
 \description{
 Retrieves details about a specific session. For more information about sessions, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html}{Store and retrieve conversation history and context with Amazon Bedrock sessions}.

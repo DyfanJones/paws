@@ -7,8 +7,7 @@ NULL
 #' the first application version in the same call
 #'
 #' @description
-#' Creates an application, optionally including an AWS SAM file to create
-#' the first application version in the same call.
+#' Creates an application, optionally including an AWS SAM file to create the first application version in the same call.
 #'
 #' @usage
 #' serverlessapplicationrepository_create_application(Author, Description,
@@ -24,68 +23,54 @@ NULL
 #' @param Description &#91;required&#93; The description of the application.
 #' 
 #' Minimum length=1. Maximum length=256
-#' @param HomePageUrl A URL with more information about the application, for example the
-#' location of your GitHub repository for the application.
+#' @param HomePageUrl A URL with more information about the application, for example the location of your GitHub repository for the application.
 #' @param Labels Labels to improve discovery of apps in search results.
 #' 
 #' Minimum length=1. Maximum length=127. Maximum number of labels: 10
 #' 
 #' Pattern: "^\[a-zA-Z0-9+\\-_:\\/@@\]+$";
-#' @param LicenseBody A local text file that contains the license of the app that matches the
-#' spdxLicenseID value of your application. The file has the format
-#' file://\<path\>/\<filename\>.
+#' @param LicenseBody A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
+#' The file has the format file://\<path\>/\<filename\>.
 #' 
 #' Maximum size 5 MB
 #' 
-#' You can specify only one of licenseBody and licenseUrl; otherwise, an
-#' error results.
-#' @param LicenseUrl A link to the S3 object that contains the license of the app that
-#' matches the spdxLicenseID value of your application.
+#' You can specify only one of licenseBody and licenseUrl; otherwise, an error results.
+#' @param LicenseUrl A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.
 #' 
 #' Maximum size 5 MB
 #' 
-#' You can specify only one of licenseBody and licenseUrl; otherwise, an
-#' error results.
+#' You can specify only one of licenseBody and licenseUrl; otherwise, an error results.
 #' @param Name &#91;required&#93; The name of the application that you want to publish.
 #' 
 #' Minimum length=1. Maximum length=140
 #' 
 #' Pattern: "\[a-zA-Z0-9\\-\]+";
-#' @param ReadmeBody A local text readme file in Markdown language that contains a more
-#' detailed description of the application and how it works. The file has
-#' the format file://\<path\>/\<filename\>.
+#' @param ReadmeBody A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
+#' The file has the format file://\<path\>/\<filename\>.
 #' 
 #' Maximum size 5 MB
 #' 
-#' You can specify only one of readmeBody and readmeUrl; otherwise, an
-#' error results.
-#' @param ReadmeUrl A link to the S3 object in Markdown language that contains a more
-#' detailed description of the application and how it works.
+#' You can specify only one of readmeBody and readmeUrl; otherwise, an error results.
+#' @param ReadmeUrl A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.
 #' 
 #' Maximum size 5 MB
 #' 
-#' You can specify only one of readmeBody and readmeUrl; otherwise, an
-#' error results.
+#' You can specify only one of readmeBody and readmeUrl; otherwise, an error results.
 #' @param SemanticVersion The semantic version of the application:
 #' 
 #' <https://semver.org/>
-#' @param SourceCodeArchiveUrl A link to the S3 object that contains the ZIP archive of the source code
-#' for this version of your application.
+#' @param SourceCodeArchiveUrl A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
 #' 
 #' Maximum size 50 MB
-#' @param SourceCodeUrl A link to a public repository for the source code of your application,
-#' for example the URL of a specific GitHub commit.
+#' @param SourceCodeUrl A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.
 #' @param SpdxLicenseId A valid identifier from <https://spdx.org/licenses/>.
-#' @param TemplateBody The local raw packaged AWS SAM template file of your application. The
-#' file has the format file://\<path\>/\<filename\>.
+#' @param TemplateBody The local raw packaged AWS SAM template file of your application.
+#' The file has the format file://\<path\>/\<filename\>.
 #' 
-#' You can specify only one of templateBody and templateUrl; otherwise an
-#' error results.
-#' @param TemplateUrl A link to the S3 object containing the packaged AWS SAM template of your
-#' application.
+#' You can specify only one of templateBody and templateUrl; otherwise an error results.
+#' @param TemplateUrl A link to the S3 object containing the packaged AWS SAM template of your application.
 #' 
-#' You can specify only one of templateBody and templateUrl; otherwise an
-#' error results.
+#' You can specify only one of templateBody and templateUrl; otherwise an error results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -200,12 +185,10 @@ serverlessapplicationrepository_create_application <- function(Author, Descripti
 #'
 #' @param ApplicationId &#91;required&#93; The Amazon Resource Name (ARN) of the application.
 #' @param SemanticVersion &#91;required&#93; The semantic version of the new version.
-#' @param SourceCodeArchiveUrl A link to the S3 object that contains the ZIP archive of the source code
-#' for this version of your application.
+#' @param SourceCodeArchiveUrl A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
 #' 
 #' Maximum size 50 MB
-#' @param SourceCodeUrl A link to a public repository for the source code of your application,
-#' for example the URL of a specific GitHub commit.
+#' @param SourceCodeUrl A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.
 #' @param TemplateBody The raw packaged AWS SAM template of your application.
 #' @param TemplateUrl A link to the packaged AWS SAM template of your application.
 #'
@@ -295,12 +278,11 @@ serverlessapplicationrepository_create_application_version <- function(Applicati
 #'   RollbackConfiguration, SemanticVersion, StackName, Tags, TemplateId)
 #'
 #' @param ApplicationId &#91;required&#93; The Amazon Resource Name (ARN) of the application.
-#' @param Capabilities A list of values that you must specify before you can deploy certain
-#' applications. Some applications might include resources that can affect
-#' permissions in your AWS account, for example, by creating new AWS
-#' Identity and Access Management (IAM) users. For those applications, you
-#' must explicitly acknowledge their capabilities by specifying this
-#' parameter.
+#' @param Capabilities A list of values that you must specify before you can deploy certain applications.
+#' Some applications might include resources that can affect permissions in your AWS
+#' account, for example, by creating new AWS Identity and Access Management (IAM) users.
+#' For those applications, you must explicitly acknowledge their capabilities by
+#' specifying this parameter.
 #' 
 #' The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
 #' CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.
@@ -309,62 +291,49 @@ serverlessapplicationrepository_create_application_version <- function(Applicati
 #' CAPABILITY_NAMED_IAM:
 #' [AWS::IAM::Group](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-group.html),
 #' [AWS::IAM::InstanceProfile](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-instanceprofile.html),
-#' [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html),
-#' and
+#' [AWS::IAM::Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html), and
 #' [AWS::IAM::Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-role.html).
-#' If the application contains IAM resources, you can specify either
-#' CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM
-#' resources with custom names, you must specify CAPABILITY_NAMED_IAM.
+#' If the application contains IAM resources, you can specify either CAPABILITY_IAM
+#' or CAPABILITY_NAMED_IAM. If the application contains IAM resources
+#' with custom names, you must specify CAPABILITY_NAMED_IAM.
 #' 
-#' The following resources require you to specify
-#' CAPABILITY_RESOURCE_POLICY:
+#' The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
 #' [AWS::Lambda::Permission](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-lambda-permission.html),
 #' [AWS::IAM:Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html),
 #' [AWS::ApplicationAutoScaling::ScalingPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-applicationautoscaling-scalingpolicy.html),
 #' [AWS::S3::BucketPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-s3-bucketpolicy.html),
-#' [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-sqs-queuepolicy.html),
-#' and
+#' [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-sqs-queuepolicy.html), and
 #' [AWS::SNS:TopicPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-sns-topicpolicy.html).
 #' 
-#' Applications that contain one or more nested applications require you to
-#' specify CAPABILITY_AUTO_EXPAND.
+#' Applications that contain one or more nested applications require you to specify
+#' CAPABILITY_AUTO_EXPAND.
 #' 
-#' If your application template contains any of the above resources, we
-#' recommend that you review all permissions associated with the
-#' application before deploying. If you don't specify this parameter for an
-#' application that requires capabilities, the call will fail.
-#' @param ChangeSetName This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' If your application template contains any of the above resources, we recommend that you review
+#' all permissions associated with the application before deploying. If you don't specify
+#' this parameter for an application that requires capabilities, the call will fail.
+#' @param ChangeSetName This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
-#' @param ClientToken This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' @param ClientToken This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
-#' @param Description This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' @param Description This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
-#' @param NotificationArns This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' @param NotificationArns This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
 #' @param ParameterOverrides A list of parameter values for the parameters of the application.
-#' @param ResourceTypes This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' @param ResourceTypes This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
-#' @param RollbackConfiguration This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' @param RollbackConfiguration This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
 #' @param SemanticVersion The semantic version of the application:
 #' 
 #' <https://semver.org/>
-#' @param StackName &#91;required&#93; This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' @param StackName &#91;required&#93; This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
-#' @param Tags This property corresponds to the parameter of the same name for the *AWS
-#' CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
+#' @param Tags This property corresponds to the parameter of the same name for the *AWS CloudFormation \href{https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet}{CreateChangeSet}*
 #' API.
 #' @param TemplateId The UUID returned by CreateCloudFormationTemplate.
 #' 
-#' Pattern:
-#' \[0-9a-fA-F\]\{8\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{12\}
+#' Pattern: \[0-9a-fA-F\]\{8\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{12\}
 #'
 #' @return
 #' A list with the following syntax:
@@ -720,8 +689,7 @@ serverlessapplicationrepository_get_application_policy <- function(ApplicationId
 #' @param ApplicationId &#91;required&#93; The Amazon Resource Name (ARN) of the application.
 #' @param TemplateId &#91;required&#93; The UUID returned by CreateCloudFormationTemplate.
 #' 
-#' Pattern:
-#' \[0-9a-fA-F\]\{8\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{12\}
+#' Pattern: \[0-9a-fA-F\]\{8\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{4\}\\-\[0-9a-fA-F\]\{12\}
 #'
 #' @return
 #' A list with the following syntax:
@@ -961,8 +929,8 @@ serverlessapplicationrepository_list_applications <- function(MaxItems = NULL, N
 #' Sets the permission policy for an application
 #'
 #' @description
-#' Sets the permission policy for an application. For the list of actions
-#' supported for this operation, see [Application
+#' Sets the permission policy for an application. For the list of actions supported for this operation, see
+#' [Application
 #' Permissions](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/security_iam_resource-based-policy-examples.html#application-permissions)
 #' .
 #'
@@ -1044,8 +1012,7 @@ serverlessapplicationrepository_put_application_policy <- function(ApplicationId
 #' @description
 #' Unshares an application from an AWS Organization.
 #' 
-#' This operation can be called only from the organization's master
-#' account.
+#' This operation can be called only from the organization's master account.
 #'
 #' @usage
 #' serverlessapplicationrepository_unshare_application(ApplicationId,
@@ -1107,19 +1074,16 @@ serverlessapplicationrepository_unshare_application <- function(ApplicationId, O
 #' @param Description The description of the application.
 #' 
 #' Minimum length=1. Maximum length=256
-#' @param HomePageUrl A URL with more information about the application, for example the
-#' location of your GitHub repository for the application.
+#' @param HomePageUrl A URL with more information about the application, for example the location of your GitHub repository for the application.
 #' @param Labels Labels to improve discovery of apps in search results.
 #' 
 #' Minimum length=1. Maximum length=127. Maximum number of labels: 10
 #' 
 #' Pattern: "^\[a-zA-Z0-9+\\-_:\\/@@\]+$";
-#' @param ReadmeBody A text readme file in Markdown language that contains a more detailed
-#' description of the application and how it works.
+#' @param ReadmeBody A text readme file in Markdown language that contains a more detailed description of the application and how it works.
 #' 
 #' Maximum size 5 MB
-#' @param ReadmeUrl A link to the readme file in Markdown language that contains a more
-#' detailed description of the application and how it works.
+#' @param ReadmeUrl A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.
 #' 
 #' Maximum size 5 MB
 #'

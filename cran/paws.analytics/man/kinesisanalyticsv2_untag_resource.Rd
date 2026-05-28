@@ -8,8 +8,7 @@ application}
 kinesisanalyticsv2_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The ARN of the Managed Service for Apache Flink application from which
-to remove the tags.}
+\item{ResourceARN}{[required] The ARN of the Managed Service for Apache Flink application from which to remove the tags.}
 
 \item{TagKeys}{[required] A list of keys of tags to remove from the specified application.}
 }

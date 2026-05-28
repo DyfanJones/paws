@@ -12,8 +12,7 @@ s3tables_get_table(
 )
 }
 \arguments{
-\item{tableBucketARN}{The Amazon Resource Name (ARN) of the table bucket associated with the
-table.}
+\item{tableBucketARN}{The Amazon Resource Name (ARN) of the table bucket associated with the table.}
 
 \item{namespace}{The name of the namespace the table is associated with.}
 

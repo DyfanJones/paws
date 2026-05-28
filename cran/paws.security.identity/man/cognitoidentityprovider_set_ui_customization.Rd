@@ -13,21 +13,13 @@ cognitoidentityprovider_set_ui_customization(
 )
 }
 \arguments{
-\item{UserPoolId}{[required] The ID of the user pool where you want to apply branding to the classic
-hosted UI.}
+\item{UserPoolId}{[required] The ID of the user pool where you want to apply branding to the classic hosted UI.}
 
-\item{ClientId}{The ID of the app client that you want to customize. To apply a default
-style to all app clients not configured with client-level branding, set
-this parameter value to \code{ALL}.}
+\item{ClientId}{The ID of the app client that you want to customize. To apply a default style to all app clients not configured with client-level branding, set this parameter value to \code{ALL}.}
 
-\item{CSS}{A plaintext CSS file that contains the custom fields that you want to
-apply to your user pool or app client. To download a template, go to the
-Amazon Cognito console. Navigate to your user pool \emph{App clients} tab,
-select \emph{Login pages}, edit \emph{Hosted UI (classic) style}, and select the
-link to \verb{CSS template.css}.}
+\item{CSS}{A plaintext CSS file that contains the custom fields that you want to apply to your user pool or app client. To download a template, go to the Amazon Cognito console. Navigate to your user pool \emph{App clients} tab, select \emph{Login pages}, edit \emph{Hosted UI (classic) style}, and select the link to \verb{CSS template.css}.}
 
-\item{ImageFile}{The image that you want to set as your login in the classic hosted UI,
-as a Base64-formatted binary object.}
+\item{ImageFile}{The image that you want to set as your login in the classic hosted UI, as a Base64-formatted binary object.}
 }
 \description{
 Configures UI branding settings for domains with the hosted UI (classic) branding version. Your user pool must have a domain. Configure a domain with .

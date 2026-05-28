@@ -13,15 +13,9 @@ memorydb_describe_parameter_groups(
 \arguments{
 \item{ParameterGroupName}{The name of a specific parameter group to return details for.}
 
-\item{MaxResults}{The maximum number of records to include in the response. If more
-records exist than the specified MaxResults value, a token is included
-in the response so that the remaining results can be retrieved.}
+\item{MaxResults}{The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.}
 
-\item{NextToken}{An optional argument to pass in case the total number of records exceeds
-the value of MaxResults. If nextToken is returned, there are more
-results available. The value of nextToken is a unique pagination token
-for each page. Make the call again using the returned token to retrieve
-the next page. Keep all other arguments unchanged.}
+\item{NextToken}{An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.}
 }
 \description{
 Returns a list of parameter group descriptions. If a parameter group name is specified, the list contains only the descriptions for that group.

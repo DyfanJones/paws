@@ -9,12 +9,9 @@ neptunedata_delete_ml_endpoint(id, neptuneIamRoleArn = NULL, clean = NULL)
 \arguments{
 \item{id}{[required] The unique identifier of the inference endpoint.}
 
-\item{neptuneIamRoleArn}{The ARN of an IAM role providing Neptune access to SageMaker and Amazon
-S3 resources. This must be listed in your DB cluster parameter group or
-an error will be thrown.}
+\item{neptuneIamRoleArn}{The ARN of an IAM role providing Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will be thrown.}
 
-\item{clean}{If this flag is set to \code{TRUE}, all Neptune ML S3 artifacts should be
-deleted when the job is stopped. The default is \code{FALSE}.}
+\item{clean}{If this flag is set to \code{TRUE}, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is \code{FALSE}.}
 }
 \description{
 Cancels the creation of a Neptune ML inference endpoint. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-endpoints.html}{Managing inference endpoints using the endpoints command}.

@@ -7,13 +7,9 @@
 cloudfront_delete_key_group(Id, IfMatch = NULL)
 }
 \arguments{
-\item{Id}{[required] The identifier of the key group that you are deleting. To get the
-identifier, use \code{\link[=cloudfront_list_key_groups]{list_key_groups}}.}
+\item{Id}{[required] The identifier of the key group that you are deleting. To get the identifier, use \code{\link[=cloudfront_list_key_groups]{list_key_groups}}.}
 
-\item{IfMatch}{The version of the key group that you are deleting. The version is the
-key group's \code{ETag} value. To get the \code{ETag}, use
-\code{\link[=cloudfront_get_key_group]{get_key_group}} or
-\code{\link[=cloudfront_get_key_group_config]{get_key_group_config}}.}
+\item{IfMatch}{The version of the key group that you are deleting. The version is the key group's \code{ETag} value. To get the \code{ETag}, use \code{\link[=cloudfront_get_key_group]{get_key_group}} or \code{\link[=cloudfront_get_key_group_config]{get_key_group_config}}.}
 }
 \description{
 Deletes a key group.

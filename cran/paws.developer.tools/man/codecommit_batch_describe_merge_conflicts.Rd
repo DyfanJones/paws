@@ -20,14 +20,11 @@ codecommit_batch_describe_merge_conflicts(
 )
 }
 \arguments{
-\item{repositoryName}{[required] The name of the repository that contains the merge conflicts you want to
-review.}
+\item{repositoryName}{[required] The name of the repository that contains the merge conflicts you want to review.}
 
-\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
-\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
 \item{mergeOption}{[required] The merge option or strategy you want to use to merge the code.}
 
@@ -35,22 +32,13 @@ identify a commit (for example, a branch name or a full commit ID).}
 
 \item{maxConflictFiles}{The maximum number of files to include in the output.}
 
-\item{filePaths}{The path of the target files used to describe the conflicts. If not
-specified, the default is all conflict files.}
+\item{filePaths}{The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.}
 
-\item{conflictDetailLevel}{The level of conflict detail to use. If unspecified, the default
-FILE_LEVEL is used, which returns a not-mergeable result if the same
-file has differences in both branches. If LINE_LEVEL is specified, a
-conflict is considered not mergeable if the same file in both branches
-has differences on the same line.}
+\item{conflictDetailLevel}{The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.}
 
-\item{conflictResolutionStrategy}{Specifies which branch to use when resolving conflicts, or whether to
-attempt automatically merging two versions of a file. The default is
-NONE, which requires any conflicts to be resolved manually before the
-merge operation is successful.}
+\item{conflictResolutionStrategy}{Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.}
 
-\item{nextToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{nextToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 }
 \description{
 Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy.

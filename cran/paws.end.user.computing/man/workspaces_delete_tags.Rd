@@ -7,9 +7,7 @@
 workspaces_delete_tags(ResourceId, TagKeys)
 }
 \arguments{
-\item{ResourceId}{[required] The identifier of the WorkSpaces resource. The supported resource types
-are WorkSpaces, registered directories, images, custom bundles, IP
-access control groups, and connection aliases.}
+\item{ResourceId}{[required] The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.}
 
 \item{TagKeys}{[required] The tag keys.}
 }

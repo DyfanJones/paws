@@ -7,8 +7,7 @@
 datazone_delete_data_export_configuration(domainIdentifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The domain ID for which you want to delete the data export
-configuration.}
+\item{domainIdentifier}{[required] The domain ID for which you want to delete the data export configuration.}
 }
 \description{
 Deletes data export configuration for a domain.

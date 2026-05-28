@@ -11,13 +11,11 @@ datazone_revoke_subscription(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain where you want to revoke a
-subscription.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain where you want to revoke a subscription.}
 
 \item{identifier}{[required] The identifier of the revoked subscription.}
 
-\item{retainPermissions}{Specifies whether permissions are retained when the subscription is
-revoked.}
+\item{retainPermissions}{Specifies whether permissions are retained when the subscription is revoked.}
 }
 \description{
 Revokes a specified subscription in Amazon DataZone.

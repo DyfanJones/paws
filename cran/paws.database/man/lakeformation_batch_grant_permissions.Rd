@@ -7,13 +7,9 @@
 lakeformation_batch_grant_permissions(CatalogId = NULL, Entries)
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
-\item{Entries}{[required] A list of up to 20 entries for resource permissions to be granted by
-batch operation to the principal.}
+\item{Entries}{[required] A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.}
 }
 \description{
 Batch operation to grant permissions to the principal.

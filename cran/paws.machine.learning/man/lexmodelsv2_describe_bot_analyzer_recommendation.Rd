@@ -16,11 +16,9 @@ lexmodelsv2_describe_bot_analyzer_recommendation(
 
 \item{botAnalyzerRequestId}{[required] The unique identifier of the analysis request.}
 
-\item{nextToken}{If the response from a previous request was truncated, the \code{nextToken}
-value is used to retrieve the next page of recommendations.}
+\item{nextToken}{If the response from a previous request was truncated, the \code{nextToken} value is used to retrieve the next page of recommendations.}
 
-\item{maxResults}{The maximum number of recommendations to return in the response. The
-default is 5.}
+\item{maxResults}{The maximum number of recommendations to return in the response. The default is 5.}
 }
 \description{
 Retrieves the analysis results and recommendations for bot optimization. The analysis must be in \code{Available} status before recommendations can be retrieved.

@@ -13,9 +13,7 @@ personalize_list_solutions(
 \arguments{
 \item{datasetGroupArn}{The Amazon Resource Name (ARN) of the dataset group.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_solutions]{list_solutions}} for getting the next set
-of solutions (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_solutions]{list_solutions}} for getting the next set of solutions (if they exist).}
 
 \item{maxResults}{The maximum number of solutions to return.}
 }

@@ -8,8 +8,7 @@ registry information}
 glue_list_registries(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{Maximum number of results required per page. If the value is not
-supplied, this will be defaulted to 25 per page.}
+\item{MaxResults}{Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 }

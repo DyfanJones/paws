@@ -14,8 +14,7 @@ bedrockagentcorecontrol_create_agent_runtime_endpoint(
 )
 }
 \arguments{
-\item{agentRuntimeId}{[required] The unique identifier of the AgentCore Runtime to create an endpoint
-for.}
+\item{agentRuntimeId}{[required] The unique identifier of the AgentCore Runtime to create an endpoint for.}
 
 \item{name}{[required] The name of the AgentCore Runtime endpoint.}
 
@@ -23,12 +22,9 @@ for.}
 
 \item{description}{The description of the AgentCore Runtime endpoint.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 
-\item{tags}{A map of tag keys and values to assign to the agent runtime endpoint.
-Tags enable you to categorize your resources in different ways, for
-example, by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the agent runtime endpoint. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates an AgentCore Runtime endpoint.

@@ -10,11 +10,9 @@ route53resolver_associate_resolver_query_log_config(
 )
 }
 \arguments{
-\item{ResolverQueryLogConfigId}{[required] The ID of the query logging configuration that you want to associate a
-VPC with.}
+\item{ResolverQueryLogConfigId}{[required] The ID of the query logging configuration that you want to associate a VPC with.}
 
-\item{ResourceId}{[required] The ID of an Amazon VPC that you want this query logging configuration
-to log queries for.
+\item{ResourceId}{[required] The ID of an Amazon VPC that you want this query logging configuration to log queries for.
 
 The VPCs and the query logging configuration must be in the same Region.}
 }

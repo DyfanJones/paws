@@ -11,14 +11,11 @@ elasticsearchservice_describe_packages(
 )
 }
 \arguments{
-\item{Filters}{Only returns packages that match the \code{DescribePackagesFilterList}
-values.}
+\item{Filters}{Only returns packages that match the \code{DescribePackagesFilterList} values.}
 
 \item{MaxResults}{Limits results to a maximum number of packages.}
 
-\item{NextToken}{Used for pagination. Only necessary if a previous API call includes a
-non-null NextToken value. If provided, returns results for the next
-page.}
+\item{NextToken}{Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.}
 }
 \description{
 Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results, and pagination.

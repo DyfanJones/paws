@@ -14,25 +14,17 @@ ec2_describe_ipam_prefix_list_resolver_targets(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{Filters}{One or more filters to limit the results.}
 
-\item{MaxResults}{The maximum number of items to return for this request. To get the next
-page of items, make another request with the token returned in the
-output. For more information, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination}{Pagination}.}
+\item{MaxResults}{The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html#api-pagination}{Pagination}.}
 
 \item{NextToken}{The token for the next page of results.}
 
-\item{IpamPrefixListResolverTargetIds}{The IDs of the IPAM prefix list resolver Targets to describe. If not
-specified, all targets in your account are described.}
+\item{IpamPrefixListResolverTargetIds}{The IDs of the IPAM prefix list resolver Targets to describe. If not specified, all targets in your account are described.}
 
-\item{IpamPrefixListResolverId}{The ID of the IPAM prefix list resolver to filter targets by. Only
-targets associated with this resolver will be returned.}
+\item{IpamPrefixListResolverId}{The ID of the IPAM prefix list resolver to filter targets by. Only targets associated with this resolver will be returned.}
 }
 \description{
 Describes one or more IPAM prefix list resolver Targets. Use this operation to view the configuration and status of resolver targets.

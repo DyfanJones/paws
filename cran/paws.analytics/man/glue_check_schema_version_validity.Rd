@@ -7,8 +7,7 @@
 glue_check_schema_version_validity(DataFormat, SchemaDefinition)
 }
 \arguments{
-\item{DataFormat}{[required] The data format of the schema definition. Currently \code{AVRO}, \code{JSON} and
-\code{PROTOBUF} are supported.}
+\item{DataFormat}{[required] The data format of the schema definition. Currently \code{AVRO}, \code{JSON} and \code{PROTOBUF} are supported.}
 
 \item{SchemaDefinition}{[required] The definition of the schema that has to be validated.}
 }

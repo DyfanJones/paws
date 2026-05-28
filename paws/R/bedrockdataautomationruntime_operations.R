@@ -267,7 +267,7 @@ bedrockdataautomationruntime_invoke_data_automation_async <- function(clientToke
 #' @usage
 #' bedrockdataautomationruntime_list_tags_for_resource(resourceARN)
 #'
-#' @param resourceARN &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
 #'
 #' @return
 #' A list with the following syntax:
@@ -321,8 +321,8 @@ bedrockdataautomationruntime_list_tags_for_resource <- function(resourceARN) {
 #' @usage
 #' bedrockdataautomationruntime_tag_resource(resourceARN, tags)
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tags &#91;required&#93; List of tags
 #'
 #' @return
 #' An empty list.
@@ -372,8 +372,8 @@ bedrockdataautomationruntime_tag_resource <- function(resourceARN, tags) {
 #' @usage
 #' bedrockdataautomationruntime_untag_resource(resourceARN, tagKeys)
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tagKeys &#91;required&#93; List of tag keys
 #'
 #' @return
 #' An empty list.

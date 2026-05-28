@@ -13,12 +13,9 @@ directconnect_describe_interconnect_loa(
 \arguments{
 \item{interconnectId}{[required] The ID of the interconnect.}
 
-\item{providerName}{The name of the service provider who establishes connectivity on your
-behalf. If you supply this parameter, the LOA-CFA lists the provider
-name alongside your company name as the requester of the cross connect.}
+\item{providerName}{The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.}
 
-\item{loaContentType}{The standard media type for the LOA-CFA document. The only supported
-value is application/pdf.}
+\item{loaContentType}{The standard media type for the LOA-CFA document. The only supported value is application/pdf.}
 }
 \description{
 Deprecated. Use \code{\link[=directconnect_describe_loa]{describe_loa}} instead.

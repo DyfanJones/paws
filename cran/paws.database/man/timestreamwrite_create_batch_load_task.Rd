@@ -15,10 +15,9 @@ timestreamwrite_create_batch_load_task(
 )
 }
 \arguments{
-\item{DataSourceConfiguration}{[required] Defines configuration details about the data source for a batch load
-task.}
+\item{DataSourceConfiguration}{[required] Defines configuration details about the data source for a batch load task.}
 
-\item{ReportConfiguration}{[required]}
+\item{ReportConfiguration}{[required] Report configuration for a batch load task. This contains details about where error reports are stored.}
 
 \item{TargetDatabaseName}{[required] Target Timestream database for a batch load task.}
 

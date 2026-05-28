@@ -12,8 +12,7 @@ networkfirewall_start_analysis_report(
 )
 }
 \arguments{
-\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a
-firewall after you create it.
+\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 

@@ -15,11 +15,7 @@ codepipeline_poll_for_jobs(
 
 \item{maxBatchSize}{The maximum number of jobs to return in a poll for jobs call.}
 
-\item{queryParam}{A map of property names and values. For an action type with no queryable
-properties, this value must be null or an empty map. For an action type
-with a queryable property, you must supply that property as a key in the
-map. Only jobs whose action configuration matches the mapped value are
-returned.}
+\item{queryParam}{A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.}
 }
 \description{
 Returns information about any jobs for CodePipeline to act on. \code{\link[=codepipeline_poll_for_jobs]{poll_for_jobs}} is valid only for action types with "Custom" in the owner field. If the action type contains \code{AWS} or \code{ThirdParty} in the owner field, the \code{\link[=codepipeline_poll_for_jobs]{poll_for_jobs}} action returns an error.

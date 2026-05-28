@@ -15,21 +15,17 @@ codeartifact_describe_package(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the repository that contains the
-package.}
+\item{domain}{[required] The name of the domain that contains the repository that contains the package.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository that contains the requested package.}
 
 \item{format}{[required] A format that specifies the type of the requested package.}
 
-\item{namespace}{The namespace of the requested package. The package component that
-specifies its namespace depends on its type. For example:
+\item{namespace}{The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:
 
-The namespace is required when requesting packages of the following
-formats:
+The namespace is required when requesting packages of the following formats:
 \itemize{
 \item Maven
 \item Swift
@@ -37,9 +33,7 @@ formats:
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm or Swift package version is its \code{scope}.
 \item The namespace of a generic package is its \code{namespace}.
-\item Python, NuGet, Ruby, and Cargo package versions do not contain a
-corresponding component, package versions of those formats do not
-have a namespace.
+\item Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
 \item{package}{[required] The name of the requested package.}

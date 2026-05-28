@@ -14,14 +14,17 @@ glue_batch_get_partition(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the partitions in question reside. If
-none is supplied, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database where the partitions reside.}
 
 \item{TableName}{[required] The name of the partitions' table.}
 
 \item{PartitionsToGet}{[required] A list of partition values identifying the partitions to retrieve.}
+
+\item{AuditContext}{A structure containing the Lake Formation audit context.}
+
+\item{QuerySessionContext}{A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.}
 }
 \description{
 Retrieves partitions in a batch request.

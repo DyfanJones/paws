@@ -7,21 +7,11 @@ NULL
 #' @description
 #' Amazon Elasticsearch Configuration Service
 #' 
-#' Use the Amazon Elasticsearch Configuration API to create, configure, and
-#' manage Elasticsearch domains.
+#' Use the Amazon Elasticsearch Configuration API to create, configure, and manage Elasticsearch domains.
 #' 
-#' For sample code that uses the Configuration API, see the [Amazon
-#' Elasticsearch Service Developer
-#' Guide](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-samples.html).
-#' The guide also contains [sample code for sending signed HTTP requests to
-#' the Elasticsearch
-#' APIs](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/).
+#' For sample code that uses the Configuration API, see the [Amazon Elasticsearch Service Developer Guide](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-samples.html). The guide also contains [sample code for sending signed HTTP requests to the Elasticsearch APIs](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/).
 #' 
-#' The endpoint for configuration service requests is region-specific:
-#' es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For
-#' a current list of supported regions and endpoints, see <a
-#' href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions"
-#' target="_blank">Regions and Endpoints</a>.
+#' The endpoint for configuration service requests is region-specific: es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions" target="_blank">Regions and Endpoints</a>.
 #'
 #' @param
 #' config

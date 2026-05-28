@@ -10,11 +10,9 @@ quicksight_update_quick_sight_q_search_configuration(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick Sight
-Q Search configuration that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.}
 
-\item{QSearchStatus}{[required] The status of the Quick Sight Q Search configuration that the user wants
-to update.}
+\item{QSearchStatus}{[required] The status of the Quick Sight Q Search configuration that the user wants to update.}
 }
 \description{
 Updates the state of a Quick Sight Q Search configuration.

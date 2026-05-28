@@ -18,37 +18,25 @@ bedrockagentcorecontrol_update_registry_record(
 )
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry containing the record. You can specify
-either the Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 
-\item{recordId}{[required] The identifier of the registry record to update. You can specify either
-the Amazon Resource Name (ARN) or the ID of the record.}
+\item{recordId}{[required] The identifier of the registry record to update. You can specify either the Amazon Resource Name (ARN) or the ID of the record.}
 
 \item{name}{The updated name for the registry record.}
 
-\item{description}{The updated description for the registry record. To clear the
-description, include the \code{UpdatedDescription} wrapper with
-\code{optionalValue} not specified.}
+\item{description}{The updated description for the registry record. To clear the description, include the \code{UpdatedDescription} wrapper with \code{optionalValue} not specified.}
 
-\item{descriptorType}{The updated descriptor type for the registry record. Changing the
-descriptor type may require updating the \code{descriptors} field to match
-the new type's schema requirements.}
+\item{descriptorType}{The updated descriptor type for the registry record. Changing the descriptor type may require updating the \code{descriptors} field to match the new type's schema requirements.}
 
-\item{descriptors}{The updated descriptor-type-specific configuration containing the
-resource schema and metadata. Uses PATCH semantics where individual
-descriptor fields can be updated independently.}
+\item{descriptors}{The updated descriptor-type-specific configuration containing the resource schema and metadata. Uses PATCH semantics where individual descriptor fields can be updated independently.}
 
-\item{recordVersion}{The version of the registry record for optimistic locking. If provided,
-it must match the current version of the record. The service
-automatically increments the version after a successful update.}
+\item{recordVersion}{The version of the registry record for optimistic locking. If provided, it must match the current version of the record. The service automatically increments the version after a successful update.}
 
 \item{synchronizationType}{The updated synchronization type for the registry record.}
 
 \item{synchronizationConfiguration}{The updated synchronization configuration for the registry record.}
 
-\item{triggerSynchronization}{Whether to trigger synchronization using the stored or provided
-configuration. When set to \code{true}, the service will synchronize the
-record metadata from the configured external source.}
+\item{triggerSynchronization}{Whether to trigger synchronization using the stored or provided configuration. When set to \code{true}, the service will synchronize the record metadata from the configured external source.}
 }
 \description{
 Updates an existing registry record. This operation uses PATCH semantics, so you only need to specify the fields you want to change. The update is processed asynchronously and returns HTTP 202 Accepted.

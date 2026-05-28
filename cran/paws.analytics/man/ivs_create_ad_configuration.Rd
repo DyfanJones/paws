@@ -15,12 +15,7 @@ ivs_create_ad_configuration(
 
 \item{mediaTailorPlaybackConfigurations}{[required] List of integration configurations with media tailor resources.}
 
-\item{tags}{Array of 1-50 maps, each of the form \code{string:string (key:value)}. See
-\href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no service-specific constraints beyond
-what is documented there.}
+\item{tags}{Array of 1-50 maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.}
 }
 \description{
 Creates a new ad configuration to be used for server-side ad insertion.

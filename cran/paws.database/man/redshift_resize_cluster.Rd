@@ -19,15 +19,11 @@ redshift_resize_cluster(
 
 \item{ClusterType}{The new cluster type for the specified cluster.}
 
-\item{NodeType}{The new node type for the nodes you are adding. If not specified, the
-cluster's current node type is used.}
+\item{NodeType}{The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.}
 
-\item{NumberOfNodes}{The new number of nodes for the cluster. If not specified, the cluster's
-current number of nodes is used.}
+\item{NumberOfNodes}{The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.}
 
-\item{Classic}{A boolean value indicating whether the resize operation is using the
-classic resize process. If you don't provide this parameter or set the
-value to \code{false}, the resize type is elastic.}
+\item{Classic}{A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to \code{false}, the resize type is elastic.}
 
 \item{ReservedNodeId}{The identifier of the reserved node.}
 

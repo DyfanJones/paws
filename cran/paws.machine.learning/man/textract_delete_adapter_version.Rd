@@ -7,8 +7,7 @@
 textract_delete_adapter_version(AdapterId, AdapterVersion)
 }
 \arguments{
-\item{AdapterId}{[required] A string containing a unique ID for the adapter version that will be
-deleted.}
+\item{AdapterId}{[required] A string containing a unique ID for the adapter version that will be deleted.}
 
 \item{AdapterVersion}{[required] Specifies the adapter version to be deleted.}
 }

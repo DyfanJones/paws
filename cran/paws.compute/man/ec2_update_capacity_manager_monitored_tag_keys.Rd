@@ -12,19 +12,13 @@ ec2_update_capacity_manager_monitored_tag_keys(
 )
 }
 \arguments{
-\item{ActivateTagKeys}{The tag keys to activate for monitoring. Once activated, these tag keys
-will be included as dimensions in capacity metric data.}
+\item{ActivateTagKeys}{The tag keys to activate for monitoring. Once activated, these tag keys will be included as dimensions in capacity metric data.}
 
-\item{DeactivateTagKeys}{The tag keys to deactivate. Deactivated tag keys will no longer be
-included as dimensions in capacity metric data.}
+\item{DeactivateTagKeys}{The tag keys to deactivate. Deactivated tag keys will no longer be included as dimensions in capacity metric data.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Activates or deactivates tag keys for monitoring by EC2 Capacity Manager. Activated tag keys are included as dimensions in capacity metric data, enabling you to group and filter metrics by tag values.

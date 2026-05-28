@@ -13,17 +13,12 @@ codedeploy_list_deployment_targets(
 \arguments{
 \item{deploymentId}{[required] The unique ID of a deployment.}
 
-\item{nextToken}{A token identifier returned from the previous
-\code{\link[=codedeploy_list_deployment_targets]{list_deployment_targets}} call. It
-can be used to return the next set of deployment targets in the list.}
+\item{nextToken}{A token identifier returned from the previous \code{\link[=codedeploy_list_deployment_targets]{list_deployment_targets}} call. It can be used to return the next set of deployment targets in the list.}
 
 \item{targetFilters}{A key used to filter the returned targets. The two valid values are:
 \itemize{
-\item \code{TargetStatus} - A \code{TargetStatus} filter string can be \code{Failed},
-\code{InProgress}, \code{Pending}, \code{Ready}, \code{Skipped}, \code{Succeeded}, or
-\code{Unknown}.
-\item \code{ServerInstanceLabel} - A \code{ServerInstanceLabel} filter string can be
-\code{Blue} or \code{Green}.
+\item \code{TargetStatus} - A \code{TargetStatus} filter string can be \code{Failed}, \code{InProgress}, \code{Pending}, \code{Ready}, \code{Skipped}, \code{Succeeded}, or \code{Unknown}.
+\item \code{ServerInstanceLabel} - A \code{ServerInstanceLabel} filter string can be \code{Blue} or \code{Green}.
 }}
 }
 \description{

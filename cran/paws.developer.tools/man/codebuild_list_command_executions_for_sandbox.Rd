@@ -18,8 +18,7 @@ codebuild_list_command_executions_for_sandbox(
 
 \item{sortOrder}{The order in which sandbox records should be retrieved.}
 
-\item{nextToken}{The next token, if any, to get paginated results. You will get this
-value from previous execution of list sandboxes.}
+\item{nextToken}{The next token, if any, to get paginated results. You will get this value from previous execution of list sandboxes.}
 }
 \description{
 Gets a list of command executions for a sandbox.

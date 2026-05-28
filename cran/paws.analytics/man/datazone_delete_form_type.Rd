@@ -7,8 +7,7 @@
 datazone_delete_form_type(domainIdentifier, formTypeIdentifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the metadata form type is
-deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the metadata form type is deleted.}
 
 \item{formTypeIdentifier}{[required] The ID of the metadata form type that is deleted.}
 }

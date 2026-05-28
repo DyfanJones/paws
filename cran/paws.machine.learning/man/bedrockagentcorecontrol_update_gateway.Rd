@@ -22,14 +22,15 @@ bedrockagentcorecontrol_update_gateway(
 \arguments{
 \item{gatewayIdentifier}{[required] The identifier of the gateway to update.}
 
-\item{name}{[required] The name of the gateway. This name must be the same as the one when the
-gateway was created.}
+\item{name}{[required] The name of the gateway. This name must be the same as the one when the gateway was created.}
 
 \item{description}{The updated description for the gateway.}
 
 \item{roleArn}{[required] The updated IAM role ARN that provides permissions for the gateway.}
 
 \item{protocolType}{The updated protocol type for the gateway.}
+
+\item{protocolConfiguration}{The configuration for a gateway protocol. This structure defines how the gateway communicates with external services.}
 
 \item{authorizerType}{[required] The updated authorizer type for the gateway.}
 
@@ -39,19 +40,12 @@ gateway was created.}
 
 \item{interceptorConfigurations}{The updated interceptor configurations for the gateway.}
 
-\item{policyEngineConfiguration}{The updated policy engine configuration for the gateway. A policy engine
-is a collection of policies that evaluates and authorizes agent tool
-calls. When associated with a gateway, the policy engine intercepts all
-agent requests and determines whether to allow or deny each action based
-on the defined policies.}
+\item{policyEngineConfiguration}{The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.}
 
-\item{exceptionLevel}{The level of detail in error messages returned when invoking the
-gateway.
+\item{exceptionLevel}{The level of detail in error messages returned when invoking the gateway.
 \itemize{
-\item If the value is \code{DEBUG}, granular exception messages are returned to
-help a user debug the gateway.
-\item If the value is omitted, a generic error message is returned to the
-end user.
+\item If the value is \code{DEBUG}, granular exception messages are returned to help a user debug the gateway.
+\item If the value is omitted, a generic error message is returned to the end user.
 }}
 }
 \description{

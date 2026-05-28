@@ -12,14 +12,11 @@ quicksight_create_theme_alias(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme for
-the new theme alias.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme for the new theme alias.}
 
 \item{ThemeId}{[required] An ID for the theme alias.}
 
-\item{AliasName}{[required] The name that you want to give to the theme alias that you are creating.
-The alias name can't begin with a \code{$}. Alias names that start with \code{$}
-are reserved by Amazon Quick Sight.}
+\item{AliasName}{[required] The name that you want to give to the theme alias that you are creating. The alias name can't begin with a \code{$}. Alias names that start with \code{$} are reserved by Amazon Quick Sight.}
 
 \item{ThemeVersionNumber}{[required] The version number of the theme.}
 }

@@ -24,19 +24,11 @@ kendra_update_query_suggestions_block_list(
 
 \item{SourceS3Path}{The S3 path where your block list text file sits in S3.
 
-If you update your block list and provide the same path to the block
-list text file in S3, then Amazon Kendra reloads the file to refresh the
-block list. Amazon Kendra does not automatically refresh your block
-list. You need to call the
-\code{\link[=kendra_update_query_suggestions_block_list]{update_query_suggestions_block_list}}
-API to refresh you block list.
+If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the \code{\link[=kendra_update_query_suggestions_block_list]{update_query_suggestions_block_list}} API to refresh you block list.
 
-If you update your block list, then Amazon Kendra asynchronously
-refreshes all query suggestions with the latest content in the S3 file.
-This means changes might not take effect immediately.}
+If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.}
 
-\item{RoleArn}{The IAM (Identity and Access Management) role used to access the block
-list text file in S3.}
+\item{RoleArn}{The IAM (Identity and Access Management) role used to access the block list text file in S3.}
 }
 \description{
 Updates a block list used for query suggestions for an index.

@@ -13,18 +13,13 @@ pinpointsmsvoicev2_create_rcs_agent(
 )
 }
 \arguments{
-\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the RCS agent can't be
-deleted. You can change this value using the
-\code{\link[=pinpointsmsvoicev2_update_rcs_agent]{update_rcs_agent}} action.}
+\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the RCS agent can't be deleted. You can change this value using the \code{\link[=pinpointsmsvoicev2_update_rcs_agent]{update_rcs_agent}} action.}
 
-\item{OptOutListName}{The OptOutList to associate with the RCS agent. Valid values are either
-OptOutListName or OptOutListArn.}
+\item{OptOutListName}{The OptOutList to associate with the RCS agent. Valid values are either OptOutListName or OptOutListArn.}
 
 \item{Tags}{An array of tags (key and value pairs) associated with the RCS agent.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 Creates a new RCS agent for sending rich messages through the RCS channel. The RCS agent serves as an origination identity for sending RCS messages to your recipients.

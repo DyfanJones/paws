@@ -16,16 +16,9 @@ timestreamwrite_write_records(
 
 \item{TableName}{[required] The name of the Timestream table.}
 
-\item{CommonAttributes}{A record that contains the common measure, dimension, time, and version
-attributes shared across all the records in the request. The measure and
-dimension attributes specified will be merged with the measure and
-dimension attributes in the records object when the data is written into
-Timestream. Dimensions may not overlap, or a \code{ValidationException} will
-be thrown. In other words, a record must contain dimensions with unique
-names.}
+\item{CommonAttributes}{A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a \code{ValidationException} will be thrown. In other words, a record must contain dimensions with unique names.}
 
-\item{Records}{[required] An array of records that contain the unique measure, dimension, time,
-and version attributes for each time-series data point.}
+\item{Records}{[required] An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point.}
 }
 \description{
 Enables you to write your time-series data into Timestream. You can specify a single data point or a batch of data points to be inserted into the system. Timestream offers you a flexible schema that auto detects the column names and data types for your Timestream tables based on the dimension names and data types of the data points you specify when invoking writes into the database.

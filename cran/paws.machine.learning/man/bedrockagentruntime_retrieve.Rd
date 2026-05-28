@@ -17,12 +17,9 @@ bedrockagentruntime_retrieve(
 
 \item{knowledgeBaseId}{[required] The unique identifier of the knowledge base to query.}
 
-\item{nextToken}{If there are more results than can fit in the response, the response
-returns a \code{nextToken}. Use this token in the \code{nextToken} field of
-another request to retrieve the next batch of results.}
+\item{nextToken}{If there are more results than can fit in the response, the response returns a \code{nextToken}. Use this token in the \code{nextToken} field of another request to retrieve the next batch of results.}
 
-\item{retrievalConfiguration}{Contains configurations for the knowledge base query and retrieval
-process. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html}{Query configurations}.}
+\item{retrievalConfiguration}{Contains configurations for the knowledge base query and retrieval process. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html}{Query configurations}.}
 
 \item{retrievalQuery}{[required] Contains the query to send the knowledge base.}
 }

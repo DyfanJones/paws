@@ -14,11 +14,9 @@ redshift_describe_tags(
 )
 }
 \arguments{
-\item{ResourceName}{The Amazon Resource Name (ARN) for which you want to describe the tag or
-tags. For example, \code{arn:aws:redshift:us-east-2:123456789:cluster:t1}.}
+\item{ResourceName}{The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, \code{arn:aws:redshift:us-east-2:123456789:cluster:t1}.}
 
-\item{ResourceType}{The type of resource with which you want to view tags. Valid resource
-types are:
+\item{ResourceType}{The type of resource with which you want to view tags. Valid resource types are:
 \itemize{
 \item Cluster
 \item CIDR/IP
@@ -32,41 +30,18 @@ types are:
 \item Snapshot copy grant
 \item Integration (zero-ETL integration or S3 event integration)
 
-To describe the tags associated with an \code{integration}, don't specify
-\code{ResourceType}, instead specify the \code{ResourceName} of the
-integration.
+To describe the tags associated with an \code{integration}, don't specify \code{ResourceType}, instead specify the \code{ResourceName} of the integration.
 }
 
-For more information about Amazon Redshift resource types and
-constructing ARNs, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions}{Specifying Policy Elements: Actions, Effects, Resources, and Principals}
-in the Amazon Redshift Cluster Management Guide.}
+For more information about Amazon Redshift resource types and constructing ARNs, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions}{Specifying Policy Elements: Actions, Effects, Resources, and Principals} in the Amazon Redshift Cluster Management Guide.}
 
-\item{MaxRecords}{The maximum number or response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned \code{marker} value.}
+\item{MaxRecords}{The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned \code{marker} value.}
 
-\item{Marker}{A value that indicates the starting point for the next set of response
-records in a subsequent request. If a value is returned in a response,
-you can retrieve the next set of records by providing this returned
-marker value in the \code{marker} parameter and retrying the command. If the
-\code{marker} field is empty, all response records have been retrieved for
-the request.}
+\item{Marker}{A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the \code{marker} parameter and retrying the command. If the \code{marker} field is empty, all response records have been retrieved for the request.}
 
-\item{TagKeys}{A tag key or keys for which you want to return all matching resources
-that are associated with the specified key or keys. For example, suppose
-that you have resources tagged with keys called \code{owner} and
-\code{environment}. If you specify both of these tag keys in the request,
-Amazon Redshift returns a response with all resources that have either
-or both of these tag keys associated with them.}
+\item{TagKeys}{A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called \code{owner} and \code{environment}. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.}
 
-\item{TagValues}{A tag value or values for which you want to return all matching
-resources that are associated with the specified value or values. For
-example, suppose that you have resources tagged with values called
-\code{admin} and \code{test}. If you specify both of these tag values in the
-request, Amazon Redshift returns a response with all resources that have
-either or both of these tag values associated with them.}
+\item{TagValues}{A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called \code{admin} and \code{test}. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.}
 }
 \description{
 Returns a list of tags. You can return tags from a specific resource by specifying an ARN, or you can return all tags for a given type of resource, such as clusters, snapshots, and so on.

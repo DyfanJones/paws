@@ -8,9 +8,7 @@ operation}
 paymentcryptographycontrolplane_get_mpa_team_association(Action)
 }
 \arguments{
-\item{Action}{[required] The protected operation whose MPA team association you want to retrieve.
-Currently, the only supported value is
-\code{IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE}.}
+\item{Action}{[required] The protected operation whose MPA team association you want to retrieve. Currently, the only supported value is \code{IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE}.}
 }
 \description{
 Returns the Multi-Party Approval (MPA) team association for a protected operation.

@@ -18,13 +18,11 @@ timestreamwrite_create_table(
 
 \item{TableName}{[required] The name of the Timestream table.}
 
-\item{RetentionProperties}{The duration for which your time-series data must be stored in the
-memory store and the magnetic store.}
+\item{RetentionProperties}{The duration for which your time-series data must be stored in the memory store and the magnetic store.}
 
 \item{Tags}{A list of key-value pairs to label the table.}
 
-\item{MagneticStoreWriteProperties}{Contains properties to set on the table when enabling magnetic store
-writes.}
+\item{MagneticStoreWriteProperties}{Contains properties to set on the table when enabling magnetic store writes.}
 
 \item{Schema}{The schema of the table.}
 }

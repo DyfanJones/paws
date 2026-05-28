@@ -11,11 +11,7 @@ lexmodelsv2_delete_bot_alias(botAliasId, botId, skipResourceInUseCheck = NULL)
 
 \item{botId}{[required] The unique identifier of the bot associated with the alias to delete.}
 
-\item{skipResourceInUseCheck}{By default, Amazon Lex checks if any other resource, such as a bot
-network, is using the bot alias before it is deleted and throws a
-\code{ResourceInUseException} exception if the alias is being used by another
-resource. Set this parameter to \code{true} to skip this check and remove the
-alias even if it is being used by another resource.}
+\item{skipResourceInUseCheck}{By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a \code{ResourceInUseException} exception if the alias is being used by another resource. Set this parameter to \code{true} to skip this check and remove the alias even if it is being used by another resource.}
 }
 \description{
 Deletes the specified bot alias.

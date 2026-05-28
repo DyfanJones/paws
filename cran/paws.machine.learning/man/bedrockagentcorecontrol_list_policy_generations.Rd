@@ -12,13 +12,11 @@ bedrockagentcorecontrol_list_policy_generations(
 )
 }
 \arguments{
-\item{nextToken}{A pagination token for retrieving additional policy generations when
-results are paginated.}
+\item{nextToken}{A pagination token for retrieving additional policy generations when results are paginated.}
 
 \item{maxResults}{The maximum number of policy generations to return in a single response.}
 
-\item{policyEngineId}{[required] The identifier of the policy engine whose policy generations to
-retrieve.}
+\item{policyEngineId}{[required] The identifier of the policy engine whose policy generations to retrieve.}
 }
 \description{
 Retrieves a list of policy generation requests within the AgentCore Policy system. This operation supports pagination and filtering to help track and manage AI-powered policy generation operations.

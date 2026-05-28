@@ -30,36 +30,27 @@ keyspaces_restore_table(
 
 \item{restoreTimestamp}{The restore timestamp in ISO 8601 format.}
 
-\item{capacitySpecificationOverride}{Specifies the read/write throughput capacity mode for the target table.
-The options are:
+\item{capacitySpecificationOverride}{Specifies the read/write throughput capacity mode for the target table. The options are:
 \itemize{
 \item \code{throughputMode:PAY_PER_REQUEST}
-\item \code{throughputMode:PROVISIONED} - Provisioned capacity mode requires
-\code{readCapacityUnits} and \code{writeCapacityUnits} as input.
+\item \code{throughputMode:PROVISIONED} - Provisioned capacity mode requires \code{readCapacityUnits} and \code{writeCapacityUnits} as input.
 }
 
 The default is \code{throughput_mode:PAY_PER_REQUEST}.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html}{Read/write capacity modes}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html}{Read/write capacity modes} in the \emph{Amazon Keyspaces Developer Guide}.}
 
-\item{encryptionSpecificationOverride}{Specifies the encryption settings for the target table. You can choose
-one of the following KMS key (KMS key):
+\item{encryptionSpecificationOverride}{Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):
 \itemize{
 \item \code{type:AWS_OWNED_KMS_KEY} - This key is owned by Amazon Keyspaces.
-\item \code{type:CUSTOMER_MANAGED_KMS_KEY} - This key is stored in your account
-and is created, owned, and managed by you. This option requires the
-\code{kms_key_identifier} of the KMS key in Amazon Resource Name (ARN)
-format as input.
+\item \code{type:CUSTOMER_MANAGED_KMS_KEY} - This key is stored in your account and is created, owned, and managed by you. This option requires the \code{kms_key_identifier} of the KMS key in Amazon Resource Name (ARN) format as input.
 }
 
 The default is \code{type:AWS_OWNED_KMS_KEY}.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html}{Encryption at rest}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html}{Encryption at rest} in the \emph{Amazon Keyspaces Developer Guide}.}
 
-\item{pointInTimeRecoveryOverride}{Specifies the \code{pointInTimeRecovery} settings for the target table. The
-options are:
+\item{pointInTimeRecoveryOverride}{Specifies the \code{pointInTimeRecovery} settings for the target table. The options are:
 \itemize{
 \item \code{status=ENABLED}
 \item \code{status=DISABLED}
@@ -67,23 +58,15 @@ options are:
 
 If it's not specified, the default is \code{status=DISABLED}.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html}{Point-in-time recovery}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html}{Point-in-time recovery} in the \emph{Amazon Keyspaces Developer Guide}.}
 
 \item{tagsOverride}{A list of key-value pair tags to be attached to the restored table.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html}{Adding tags and labels to Amazon Keyspaces resources}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html}{Adding tags and labels to Amazon Keyspaces resources} in the \emph{Amazon Keyspaces Developer Guide}.}
 
-\item{autoScalingSpecification}{The optional auto scaling settings for the restored table in provisioned
-capacity mode. Specifies if the service can manage throughput capacity
-of a provisioned table automatically on your behalf. Amazon Keyspaces
-auto scaling helps you provision throughput capacity for variable
-workloads efficiently by increasing and decreasing your table's read and
-write capacity automatically in response to application traffic.
+\item{autoScalingSpecification}{The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.
 
-For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html}{Managing throughput capacity automatically with Amazon Keyspaces auto scaling}
-in the \emph{Amazon Keyspaces Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html}{Managing throughput capacity automatically with Amazon Keyspaces auto scaling} in the \emph{Amazon Keyspaces Developer Guide}.}
 
 \item{replicaSpecifications}{The optional Region specific settings of a multi-Regional table.}
 }

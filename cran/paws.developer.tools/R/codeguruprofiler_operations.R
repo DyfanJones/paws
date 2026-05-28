@@ -11,8 +11,7 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_add_notification_channels/](https://www.paws-r-sdk.com/docs/codeguruprofiler_add_notification_channels/) for full documentation.
 #'
 #' @param channels &#91;required&#93; One or 2 channels to report to when anomalies are detected.
-#' @param profilingGroupName &#91;required&#93; The name of the profiling group that we are setting up notifications
-#' for.
+#' @param profilingGroupName &#91;required&#93; The name of the profiling group that we are setting up notifications for.
 #'
 #' @keywords internal
 #'
@@ -44,28 +43,12 @@ codeguruprofiler_add_notification_channels <- function(channels, profilingGroupN
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_batch_get_frame_metric_data/](https://www.paws-r-sdk.com/docs/codeguruprofiler_batch_get_frame_metric_data/) for full documentation.
 #'
-#' @param endTime The end time of the time period for the returned time series values.
-#' This is specified using the ISO 8601 format. For example,
-#' 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
-#' 1:15:02 PM UTC.
-#' @param frameMetrics The details of the metrics that are used to request a time series of
-#' values. The metric includes the name of the frame, the aggregation type
-#' to calculate the metric value for the frame, and the thread states to
-#' use to get the count for the metric value of the frame.
-#' @param period The duration of the frame metrics used to return the time series values.
-#' Specify using the ISO 8601 format. The maximum period duration is one
-#' day (`PT24H` or `P1D`).
-#' @param profilingGroupName &#91;required&#93; The name of the profiling group associated with the the frame metrics
-#' used to return the time series values.
-#' @param startTime The start time of the time period for the frame metrics used to return
-#' the time series values. This is specified using the ISO 8601 format. For
-#' example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1,
-#' 2020 1:15:02 PM UTC.
-#' @param targetResolution The requested resolution of time steps for the returned time series of
-#' values. If the requested target resolution is not available due to data
-#' not being retained we provide a best effort result by falling back to
-#' the most granular available resolution after the target resolution.
-#' There are 3 valid values.
+#' @param endTime The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+#' @param frameMetrics The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.
+#' @param period The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (`PT24H` or `P1D`).
+#' @param profilingGroupName &#91;required&#93; The name of the profiling group associated with the the frame metrics used to return the time series values.
+#' @param startTime The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+#' @param targetResolution The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.
 #' 
 #' -   `P1D` — 1 day
 #' 
@@ -103,39 +86,27 @@ codeguruprofiler_batch_get_frame_metric_data <- function(endTime = NULL, frameMe
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_configure_agent/](https://www.paws-r-sdk.com/docs/codeguruprofiler_configure_agent/) for full documentation.
 #'
-#' @param fleetInstanceId A universally unique identifier (UUID) for a profiling instance. For
-#' example, if the profiling instance is an Amazon EC2 instance, it is the
-#' instance ID. If it is an AWS Fargate container, it is the container's
-#' task ID.
-#' @param metadata Metadata captured about the compute platform the agent is running on. It
-#' includes information about sampling and reporting. The valid fields are:
+#' @param fleetInstanceId A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.
+#' @param metadata Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:
 #' 
-#' -   `COMPUTE_PLATFORM` - The compute platform on which the agent is
-#'     running
+#' -   `COMPUTE_PLATFORM` - The compute platform on which the agent is running
 #' 
 #' -   `AGENT_ID` - The ID for an agent instance.
 #' 
 #' -   `AWS_REQUEST_ID` - The AWS request ID of a Lambda invocation.
 #' 
-#' -   `EXECUTION_ENVIRONMENT` - The execution environment a Lambda
-#'     function is running on.
+#' -   `EXECUTION_ENVIRONMENT` - The execution environment a Lambda function is running on.
 #' 
-#' -   `LAMBDA_FUNCTION_ARN` - The Amazon Resource Name (ARN) that is used
-#'     to invoke a Lambda function.
+#' -   `LAMBDA_FUNCTION_ARN` - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
 #' 
-#' -   `LAMBDA_MEMORY_LIMIT_IN_MB` - The memory allocated to a Lambda
-#'     function.
+#' -   `LAMBDA_MEMORY_LIMIT_IN_MB` - The memory allocated to a Lambda function.
 #' 
-#' -   `LAMBDA_REMAINING_TIME_IN_MILLISECONDS` - The time in milliseconds
-#'     before execution of a Lambda function times out.
+#' -   `LAMBDA_REMAINING_TIME_IN_MILLISECONDS` - The time in milliseconds before execution of a Lambda function times out.
 #' 
-#' -   `LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS` - The time in
-#'     milliseconds between two invocations of a Lambda function.
+#' -   `LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS` - The time in milliseconds between two invocations of a Lambda function.
 #' 
-#' -   `LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS` - The time in
-#'     milliseconds for the previous Lambda invocation.
-#' @param profilingGroupName &#91;required&#93; The name of the profiling group for which the configured agent is
-#' collecting profiling data.
+#' -   `LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS` - The time in milliseconds for the previous Lambda invocation.
+#' @param profilingGroupName &#91;required&#93; The name of the profiling group for which the configured agent is collecting profiling data.
 #'
 #' @keywords internal
 #'
@@ -166,16 +137,9 @@ codeguruprofiler_configure_agent <- function(fleetInstanceId = NULL, metadata = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_create_profiling_group/](https://www.paws-r-sdk.com/docs/codeguruprofiler_create_profiling_group/) for full documentation.
 #'
-#' @param agentOrchestrationConfig Specifies whether profiling is enabled or disabled for the created
-#' profiling group.
-#' @param clientToken &#91;required&#93; Amazon CodeGuru Profiler uses this universally unique identifier (UUID)
-#' to prevent the accidental creation of duplicate profiling groups if
-#' there are failures and retries.
-#' @param computePlatform The compute platform of the profiling group. Use `AWSLambda` if your
-#' application runs on AWS Lambda. Use `Default` if your application runs
-#' on a compute platform that is not AWS Lambda, such an Amazon EC2
-#' instance, an on-premises server, or a different platform. If not
-#' specified, `Default` is used.
+#' @param agentOrchestrationConfig Specifies whether profiling is enabled or disabled for the created profiling group.
+#' @param clientToken &#91;required&#93; Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries.
+#' @param computePlatform The compute platform of the profiling group. Use `AWSLambda` if your application runs on AWS Lambda. Use `Default` if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, `Default` is used.
 #' @param profilingGroupName &#91;required&#93; The name of the profiling group to create.
 #' @param tags A list of tags to add to the created profiling group.
 #'
@@ -272,28 +236,11 @@ codeguruprofiler_describe_profiling_group <- function(profilingGroupName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_get_findings_report_account_summary/](https://www.paws-r-sdk.com/docs/codeguruprofiler_get_findings_report_account_summary/) for full documentation.
 #'
-#' @param dailyReportsOnly A `Boolean` value indicating whether to only return reports from daily
-#' profiles. If set to `True`, only analysis data from daily profiles is
-#' returned. If set to `False`, analysis data is returned from smaller time
-#' windows (for example, one hour).
-#' @param maxResults The maximum number of results returned by
-#' [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary]
-#' in paginated output. When this parameter is used,
-#' [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary]
-#' only returns `maxResults` results in a single page along with a
-#' `nextToken` response element. The remaining results of the initial
-#' request can be seen by sending another
-#' [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary]
-#' request with the returned `nextToken` value.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary]
-#' request where `maxResults` was used and the results exceeded the value
-#' of that parameter. Pagination continues from the end of the previous
-#' results that returned the `nextToken` value.
+#' @param dailyReportsOnly A `Boolean` value indicating whether to only return reports from daily profiles. If set to `True`, only analysis data from daily profiles is returned. If set to `False`, analysis data is returned from smaller time windows (for example, one hour).
+#' @param maxResults The maximum number of results returned by [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary] in paginated output. When this parameter is used, [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary] request with the returned `nextToken` value.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`get_findings_report_account_summary`][codeguruprofiler_get_findings_report_account_summary] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
 #'
 #' @keywords internal
 #'
@@ -325,8 +272,7 @@ codeguruprofiler_get_findings_report_account_summary <- function(dailyReportsOnl
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_get_notification_configuration/](https://www.paws-r-sdk.com/docs/codeguruprofiler_get_notification_configuration/) for full documentation.
 #'
-#' @param profilingGroupName &#91;required&#93; The name of the profiling group we want to get the notification
-#' configuration for.
+#' @param profilingGroupName &#91;required&#93; The name of the profiling group we want to get the notification configuration for.
 #'
 #' @keywords internal
 #'
@@ -389,33 +335,20 @@ codeguruprofiler_get_policy <- function(profilingGroupName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_get_profile/](https://www.paws-r-sdk.com/docs/codeguruprofiler_get_profile/) for full documentation.
 #'
-#' @param accept The format of the returned profiling data. The format maps to the
-#' `Accept` and `Content-Type` headers of the HTTP request. You can specify
-#' one of the following: or the default .
+#' @param accept The format of the returned profiling data. The format maps to the `Accept` and `Content-Type` headers of the HTTP request. You can specify one of the following: or the default .
 #' 
-#'      <ul> <li> <p> <code>application/json</code> — standard JSON format </p> </li> <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> </ul> 
-#' @param endTime The end time of the requested profile. Specify using the ISO 8601
-#' format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond
-#' past June 1, 2020 1:15:02 PM UTC.
+#'      <ul> <li> <p> <code>application/json</code> — standard JSON format </p> </li> <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> </ul>
+#' @param endTime The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
 #' 
-#' If you specify `endTime`, then you must also specify `period` or
-#' `startTime`, but not both.
-#' @param maxDepth The maximum depth of the stacks in the code that is represented in the
-#' aggregated profile. For example, if CodeGuru Profiler finds a method
-#' `A`, which calls method `B`, which calls method `C`, which calls method
-#' `D`, then the depth is 4. If the `maxDepth` is set to 2, then the
-#' aggregated profile contains representations of methods `A` and `B`.
-#' @param period Used with `startTime` or `endTime` to specify the time range for the
-#' returned aggregated profile. Specify using the ISO 8601 format. For
-#' example, `P1DT1H1M1S`.
+#' If you specify `endTime`, then you must also specify `period` or `startTime`, but not both.
+#' @param maxDepth The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method `A`, which calls method `B`, which calls method `C`, which calls method `D`, then the depth is 4. If the `maxDepth` is set to 2, then the aggregated profile contains representations of methods `A` and `B`.
+#' @param period Used with `startTime` or `endTime` to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, `P1DT1H1M1S`.
 #' 
-#'      <p> To get the latest aggregated profile, specify only <code>period</code>. </p> 
+#'      <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
 #' @param profilingGroupName &#91;required&#93; The name of the profiling group to get.
-#' @param startTime The start time of the profile to get. Specify using the ISO 8601 format.
-#' For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June
-#' 1, 2020 1:15:02 PM UTC.
+#' @param startTime The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
 #' 
-#'      <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p> 
+#'      <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
 #'
 #' @keywords internal
 #'
@@ -447,12 +380,8 @@ codeguruprofiler_get_profile <- function(accept = NULL, endTime = NULL, maxDepth
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_get_recommendations/](https://www.paws-r-sdk.com/docs/codeguruprofiler_get_recommendations/) for full documentation.
 #'
-#' @param endTime &#91;required&#93; The start time of the profile to get analysis data about. You must
-#' specify `startTime` and `endTime`. This is specified using the ISO 8601
-#' format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond
-#' past June 1, 2020 1:15:02 PM UTC.
-#' @param locale The language used to provide analysis. Specify using a string that is
-#' one of the following `BCP 47` language codes.
+#' @param endTime &#91;required&#93; The start time of the profile to get analysis data about. You must specify `startTime` and `endTime`. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+#' @param locale The language used to provide analysis. Specify using a string that is one of the following `BCP 47` language codes.
 #' 
 #' -   `de-DE` - German, Germany
 #' 
@@ -476,10 +405,7 @@ codeguruprofiler_get_profile <- function(accept = NULL, endTime = NULL, maxDepth
 #' 
 #' -   `zh-TW` - Chinese, Taiwan
 #' @param profilingGroupName &#91;required&#93; The name of the profiling group to get analysis data about.
-#' @param startTime &#91;required&#93; The end time of the profile to get analysis data about. You must specify
-#' `startTime` and `endTime`. This is specified using the ISO 8601 format.
-#' For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June
-#' 1, 2020 1:15:02 PM UTC.
+#' @param startTime &#91;required&#93; The end time of the profile to get analysis data about. You must specify `startTime` and `endTime`. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
 #'
 #' @keywords internal
 #'
@@ -510,36 +436,14 @@ codeguruprofiler_get_recommendations <- function(endTime, locale = NULL, profili
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_list_findings_reports/](https://www.paws-r-sdk.com/docs/codeguruprofiler_list_findings_reports/) for full documentation.
 #'
-#' @param dailyReportsOnly A `Boolean` value indicating whether to only return reports from daily
-#' profiles. If set to `True`, only analysis data from daily profiles is
-#' returned. If set to `False`, analysis data is returned from smaller time
-#' windows (for example, one hour).
-#' @param endTime &#91;required&#93; The end time of the profile to get analysis data about. You must specify
-#' `startTime` and `endTime`. This is specified using the ISO 8601 format.
-#' For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June
-#' 1, 2020 1:15:02 PM UTC.
-#' @param maxResults The maximum number of report results returned by
-#' [`list_findings_reports`][codeguruprofiler_list_findings_reports] in
-#' paginated output. When this parameter is used,
-#' [`list_findings_reports`][codeguruprofiler_list_findings_reports] only
-#' returns `maxResults` results in a single page along with a `nextToken`
-#' response element. The remaining results of the initial request can be
-#' seen by sending another
-#' [`list_findings_reports`][codeguruprofiler_list_findings_reports]
-#' request with the returned `nextToken` value.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' `ListFindingsReportsRequest` request where `maxResults` was used and the
-#' results exceeded the value of that parameter. Pagination continues from
-#' the end of the previous results that returned the `nextToken` value.
+#' @param dailyReportsOnly A `Boolean` value indicating whether to only return reports from daily profiles. If set to `True`, only analysis data from daily profiles is returned. If set to `False`, analysis data is returned from smaller time windows (for example, one hour).
+#' @param endTime &#91;required&#93; The end time of the profile to get analysis data about. You must specify `startTime` and `endTime`. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+#' @param maxResults The maximum number of report results returned by [`list_findings_reports`][codeguruprofiler_list_findings_reports] in paginated output. When this parameter is used, [`list_findings_reports`][codeguruprofiler_list_findings_reports] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`list_findings_reports`][codeguruprofiler_list_findings_reports] request with the returned `nextToken` value.
+#' @param nextToken The `nextToken` value returned from a previous paginated `ListFindingsReportsRequest` request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
 #' @param profilingGroupName &#91;required&#93; The name of the profiling group from which to search for analysis data.
-#' @param startTime &#91;required&#93; The start time of the profile to get analysis data about. You must
-#' specify `startTime` and `endTime`. This is specified using the ISO 8601
-#' format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond
-#' past June 1, 2020 1:15:02 PM UTC.
+#' @param startTime &#91;required&#93; The start time of the profile to get analysis data about. You must specify `startTime` and `endTime`. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
 #'
 #' @keywords internal
 #'
@@ -573,29 +477,12 @@ codeguruprofiler_list_findings_reports <- function(dailyReportsOnly = NULL, endT
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_list_profile_times/](https://www.paws-r-sdk.com/docs/codeguruprofiler_list_profile_times/) for full documentation.
 #'
 #' @param endTime &#91;required&#93; The end time of the time range from which to list the profiles.
-#' @param maxResults The maximum number of profile time results returned by
-#' [`list_profile_times`][codeguruprofiler_list_profile_times] in paginated
-#' output. When this parameter is used,
-#' [`list_profile_times`][codeguruprofiler_list_profile_times] only returns
-#' `maxResults` results in a single page with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another
-#' [`list_profile_times`][codeguruprofiler_list_profile_times] request with
-#' the returned `nextToken` value.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`list_profile_times`][codeguruprofiler_list_profile_times] request
-#' where `maxResults` was used and the results exceeded the value of that
-#' parameter. Pagination continues from the end of the previous results
-#' that returned the `nextToken` value.
+#' @param maxResults The maximum number of profile time results returned by [`list_profile_times`][codeguruprofiler_list_profile_times] in paginated output. When this parameter is used, [`list_profile_times`][codeguruprofiler_list_profile_times] only returns `maxResults` results in a single page with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`list_profile_times`][codeguruprofiler_list_profile_times] request with the returned `nextToken` value.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`list_profile_times`][codeguruprofiler_list_profile_times] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
-#' @param orderBy The order (ascending or descending by start time of the profile) to use
-#' when listing profiles. Defaults to `TIMESTAMP_DESCENDING`.
-#' @param period &#91;required&#93; The aggregation period. This specifies the period during which an
-#' aggregation profile collects posted agent profiles for a profiling
-#' group. There are 3 valid values.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
+#' @param orderBy The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to `TIMESTAMP_DESCENDING`.
+#' @param period &#91;required&#93; The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values.
 #' 
 #' -   `P1D` — 1 day
 #' 
@@ -634,29 +521,11 @@ codeguruprofiler_list_profile_times <- function(endTime, maxResults = NULL, next
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_list_profiling_groups/](https://www.paws-r-sdk.com/docs/codeguruprofiler_list_profiling_groups/) for full documentation.
 #'
-#' @param includeDescription A `Boolean` value indicating whether to include a description. If
-#' `true`, then a list of
-#' [`ProfilingGroupDescription`](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html)
-#' objects that contain detailed information about profiling groups is
-#' returned. If `false`, then a list of profiling group names is returned.
-#' @param maxResults The maximum number of profiling groups results returned by
-#' [`list_profiling_groups`][codeguruprofiler_list_profiling_groups] in
-#' paginated output. When this parameter is used,
-#' [`list_profiling_groups`][codeguruprofiler_list_profiling_groups] only
-#' returns `maxResults` results in a single page along with a `nextToken`
-#' response element. The remaining results of the initial request can be
-#' seen by sending another
-#' [`list_profiling_groups`][codeguruprofiler_list_profiling_groups]
-#' request with the returned `nextToken` value.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`list_profiling_groups`][codeguruprofiler_list_profiling_groups]
-#' request where `maxResults` was used and the results exceeded the value
-#' of that parameter. Pagination continues from the end of the previous
-#' results that returned the `nextToken` value.
+#' @param includeDescription A `Boolean` value indicating whether to include a description. If `true`, then a list of [`ProfilingGroupDescription`](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html) objects that contain detailed information about profiling groups is returned. If `false`, then a list of profiling group names is returned.
+#' @param maxResults The maximum number of profiling groups results returned by [`list_profiling_groups`][codeguruprofiler_list_profiling_groups] in paginated output. When this parameter is used, [`list_profiling_groups`][codeguruprofiler_list_profiling_groups] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`list_profiling_groups`][codeguruprofiler_list_profiling_groups] request with the returned `nextToken` value.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`list_profiling_groups`][codeguruprofiler_list_profiling_groups] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
 #'
 #' @keywords internal
 #'
@@ -687,8 +556,7 @@ codeguruprofiler_list_profiling_groups <- function(includeDescription = NULL, ma
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/codeguruprofiler_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that contains the tags to
-#' return.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that contains the tags to return.
 #'
 #' @keywords internal
 #'
@@ -720,16 +588,11 @@ codeguruprofiler_list_tags_for_resource <- function(resourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_post_agent_profile/](https://www.paws-r-sdk.com/docs/codeguruprofiler_post_agent_profile/) for full documentation.
 #'
 #' @param agentProfile &#91;required&#93; The submitted profiling data.
-#' @param contentType &#91;required&#93; The format of the submitted profiling data. The format maps to the
-#' `Accept` and `Content-Type` headers of the HTTP request. You can specify
-#' one of the following: or the default .
+#' @param contentType &#91;required&#93; The format of the submitted profiling data. The format maps to the `Accept` and `Content-Type` headers of the HTTP request. You can specify one of the following: or the default .
 #' 
-#'      <ul> <li> <p> <code>application/json</code> — standard JSON format </p> </li> <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> </ul> 
-#' @param profileToken Amazon CodeGuru Profiler uses this universally unique identifier (UUID)
-#' to prevent the accidental submission of duplicate profiling data if
-#' there are failures and retries.
-#' @param profilingGroupName &#91;required&#93; The name of the profiling group with the aggregated profile that
-#' receives the submitted profiling data.
+#'      <ul> <li> <p> <code>application/json</code> — standard JSON format </p> </li> <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> </ul>
+#' @param profileToken Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries.
+#' @param profilingGroupName &#91;required&#93; The name of the profiling group with the aggregated profile that receives the submitted profiling data.
 #'
 #' @keywords internal
 #'
@@ -761,19 +624,10 @@ codeguruprofiler_post_agent_profile <- function(agentProfile, contentType, profi
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_put_permission/](https://www.paws-r-sdk.com/docs/codeguruprofiler_put_permission/) for full documentation.
 #'
-#' @param actionGroup &#91;required&#93; Specifies an action group that contains permissions to add to a
-#' profiling group resource. One action group is supported,
-#' `agentPermissions`, which grants permission to perform actions required
-#' by the profiling agent,
-#' [`configure_agent`][codeguruprofiler_configure_agent] and
-#' [`post_agent_profile`][codeguruprofiler_post_agent_profile] permissions.
-#' @param principals &#91;required&#93; A list ARNs for the roles and users you want to grant access to the
-#' profiling group. Wildcards are not are supported in the ARNs.
+#' @param actionGroup &#91;required&#93; Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, `agentPermissions`, which grants permission to perform actions required by the profiling agent, [`configure_agent`][codeguruprofiler_configure_agent] and [`post_agent_profile`][codeguruprofiler_post_agent_profile] permissions.
+#' @param principals &#91;required&#93; A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs.
 #' @param profilingGroupName &#91;required&#93; The name of the profiling group to grant access to.
-#' @param revisionId A universally unique identifier (UUID) for the revision of the policy
-#' you are adding to the profiling group. Do not specify this when you add
-#' permissions to a profiling group for the first time. If a policy already
-#' exists on the profiling group, you must specify the `revisionId`.
+#' @param revisionId A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the `revisionId`.
 #'
 #' @keywords internal
 #'
@@ -805,8 +659,7 @@ codeguruprofiler_put_permission <- function(actionGroup, principals, profilingGr
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_remove_notification_channel/](https://www.paws-r-sdk.com/docs/codeguruprofiler_remove_notification_channel/) for full documentation.
 #'
 #' @param channelId &#91;required&#93; The id of the channel that we want to stop receiving notifications.
-#' @param profilingGroupName &#91;required&#93; The name of the profiling group we want to change notification
-#' configuration for.
+#' @param profilingGroupName &#91;required&#93; The name of the profiling group we want to change notification configuration for.
 #'
 #' @keywords internal
 #'
@@ -838,14 +691,9 @@ codeguruprofiler_remove_notification_channel <- function(channelId, profilingGro
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_remove_permission/](https://www.paws-r-sdk.com/docs/codeguruprofiler_remove_permission/) for full documentation.
 #'
-#' @param actionGroup &#91;required&#93; Specifies an action group that contains the permissions to remove from a
-#' profiling group's resource-based policy. One action group is supported,
-#' `agentPermissions`, which grants
-#' [`configure_agent`][codeguruprofiler_configure_agent] and
-#' [`post_agent_profile`][codeguruprofiler_post_agent_profile] permissions.
+#' @param actionGroup &#91;required&#93; Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, `agentPermissions`, which grants [`configure_agent`][codeguruprofiler_configure_agent] and [`post_agent_profile`][codeguruprofiler_post_agent_profile] permissions.
 #' @param profilingGroupName &#91;required&#93; The name of the profiling group.
-#' @param revisionId &#91;required&#93; A universally unique identifier (UUID) for the revision of the
-#' resource-based policy from which you want to remove permissions.
+#' @param revisionId &#91;required&#93; A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions.
 #'
 #' @keywords internal
 #'
@@ -877,12 +725,9 @@ codeguruprofiler_remove_permission <- function(actionGroup, profilingGroupName, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_submit_feedback/](https://www.paws-r-sdk.com/docs/codeguruprofiler_submit_feedback/) for full documentation.
 #'
-#' @param anomalyInstanceId &#91;required&#93; The universally unique identifier (UUID) of the
-#' [`AnomalyInstance`](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html)
-#' object that is included in the analysis data.
+#' @param anomalyInstanceId &#91;required&#93; The universally unique identifier (UUID) of the [`AnomalyInstance`](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html) object that is included in the analysis data.
 #' @param comment Optional feedback about this anomaly.
-#' @param profilingGroupName &#91;required&#93; The name of the profiling group that is associated with the analysis
-#' data.
+#' @param profilingGroupName &#91;required&#93; The name of the profiling group that is associated with the analysis data.
 #' @param type &#91;required&#93; The feedback tpye. Thee are two valid values, `Positive` and `Negative`.
 #'
 #' @keywords internal
@@ -914,8 +759,7 @@ codeguruprofiler_submit_feedback <- function(anomalyInstanceId, comment = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_tag_resource/](https://www.paws-r-sdk.com/docs/codeguruprofiler_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that the tags are added
-#' to.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that the tags are added to.
 #' @param tags &#91;required&#93; The list of tags that are added to the specified resource.
 #'
 #' @keywords internal
@@ -947,10 +791,8 @@ codeguruprofiler_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_untag_resource/](https://www.paws-r-sdk.com/docs/codeguruprofiler_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that contains the tags to
-#' remove.
-#' @param tagKeys &#91;required&#93; A list of tag keys. Existing tags of resources with keys in this list
-#' are removed from the specified resource.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
+#' @param tagKeys &#91;required&#93; A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource.
 #'
 #' @keywords internal
 #'
@@ -981,8 +823,7 @@ codeguruprofiler_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codeguruprofiler_update_profiling_group/](https://www.paws-r-sdk.com/docs/codeguruprofiler_update_profiling_group/) for full documentation.
 #'
-#' @param agentOrchestrationConfig &#91;required&#93; Specifies whether profiling is enabled or disabled for a profiling
-#' group.
+#' @param agentOrchestrationConfig &#91;required&#93; Specifies whether profiling is enabled or disabled for a profiling group.
 #' @param profilingGroupName &#91;required&#93; The name of the profiling group to update.
 #'
 #' @keywords internal

@@ -58,15 +58,7 @@ resourcegroups_cancel_tag_sync_task <- function(TaskArn) {
 #' Creates a resource group with the specified name and description
 #'
 #' @description
-#' Creates a resource group with the specified name and description. You
-#' can optionally include either a resource query or a service
-#' configuration. For more information about constructing a resource query,
-#' see [Build queries and groups in Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/) in the
-#' *Resource Groups User Guide*. For more information about service-linked
-#' groups and service configurations, see [Service configurations for
-#' Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/about-slg.html).
+#' Creates a resource group with the specified name and description. You can optionally include either a resource query or a service configuration. For more information about constructing a resource query, see [Build queries and groups in Resource Groups](https://docs.aws.amazon.com/ARG/latest/userguide/) in the *Resource Groups User Guide*. For more information about service-linked groups and service configurations, see [Service configurations for Resource Groups](https://docs.aws.amazon.com/ARG/latest/APIReference/).
 #' 
 #' **Minimum permissions**
 #' 
@@ -78,38 +70,17 @@ resourcegroups_cancel_tag_sync_task <- function(TaskArn) {
 #' resourcegroups_create_group(Name, Description, ResourceQuery, Tags,
 #'   Configuration, Criticality, Owner, DisplayName)
 #'
-#' @param Name &#91;required&#93; The name of the group, which is the identifier of the group in other
-#' operations. You can't change the name of a resource group after you
-#' create it. A resource group name can consist of letters, numbers,
-#' hyphens, periods, and underscores. The name cannot start with `AWS`,
-#' `aws`, or any other possible capitalization; these are reserved. A
-#' resource group name must be unique within each Amazon Web Services
-#' Region in your Amazon Web Services account.
-#' @param Description The description of the resource group. Descriptions can consist of
-#' letters, numbers, hyphens, underscores, periods, and spaces.
-#' @param ResourceQuery The resource query that determines which Amazon Web Services resources
-#' are members of this group. For more information about resource queries,
-#' see [Create a tag-based group in Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag).
+#' @param Name &#91;required&#93; The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with `AWS`, `aws`, or any other possible capitalization; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.
+#' @param Description The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.
+#' @param ResourceQuery The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see [Create a tag-based group in Resource Groups](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag).
 #' 
-#' A resource group can contain either a `ResourceQuery` or a
-#' `Configuration`, but not both.
+#' A resource group can contain either a `ResourceQuery` or a `Configuration`, but not both.
 #' @param Tags The tags to add to the group. A tag is key-value pair string.
-#' @param Configuration A configuration associates the resource group with an Amazon Web
-#' Services service and specifies how the service can interact with the
-#' resources in the group. A configuration is an array of
-#' GroupConfigurationItem elements. For details about the syntax of service
-#' configurations, see [Service configurations for Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/about-slg.html).
+#' @param Configuration A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of GroupConfigurationItem elements. For details about the syntax of service configurations, see [Service configurations for Resource Groups](https://docs.aws.amazon.com/ARG/latest/APIReference/).
 #' 
-#' A resource group can contain either a `Configuration` or a
-#' `ResourceQuery`, but not both.
-#' @param Criticality The critical rank of the application group on a scale of 1 to 10, with a
-#' rank of 1 being the most critical, and a rank of 10 being least
-#' critical.
-#' @param Owner A name, email address or other identifier for the person or group who is
-#' considered as the owner of this application group within your
-#' organization.
+#' A resource group can contain either a `Configuration` or a `ResourceQuery`, but not both.
+#' @param Criticality The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.
+#' @param Owner A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.
 #' @param DisplayName The name of the application group, which you can change at any time.
 #'
 #' @return
@@ -225,9 +196,7 @@ resourcegroups_create_group <- function(Name, Description = NULL, ResourceQuery 
 #' Deletes the specified resource group
 #'
 #' @description
-#' Deletes the specified resource group. Deleting a resource group does not
-#' delete any resources that are members of the group; it only deletes the
-#' group structure.
+#' Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of the group; it only deletes the group structure.
 #' 
 #' **Minimum permissions**
 #' 
@@ -239,8 +208,7 @@ resourcegroups_create_group <- function(Name, Description = NULL, ResourceQuery 
 #' resourcegroups_delete_group(GroupName, Group)
 #'
 #' @param GroupName Deprecated - don't use this parameter. Use `Group` instead.
-#' @param Group The name or the Amazon resource name (ARN) of the resource group to
-#' delete.
+#' @param Group The name or the Amazon resource name (ARN) of the resource group to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -355,8 +323,7 @@ resourcegroups_get_account_settings <- function() {
 #' resourcegroups_get_group(GroupName, Group)
 #'
 #' @param GroupName Deprecated - don't use this parameter. Use `Group` instead.
-#' @param Group The name or the Amazon resource name (ARN) of the resource group to
-#' retrieve.
+#' @param Group The name or the Amazon resource name (ARN) of the resource group to retrieve.
 #'
 #' @return
 #' A list with the following syntax:
@@ -412,10 +379,7 @@ resourcegroups_get_group <- function(GroupName = NULL, Group = NULL) {
 #' resource group
 #'
 #' @description
-#' Retrieves the service configuration associated with the specified
-#' resource group. For details about the service configuration syntax, see
-#' [Service configurations for Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/about-slg.html).
+#' Retrieves the service configuration associated with the specified resource group. For details about the service configuration syntax, see [Service configurations for Resource Groups](https://docs.aws.amazon.com/ARG/latest/APIReference/).
 #' 
 #' **Minimum permissions**
 #' 
@@ -426,8 +390,7 @@ resourcegroups_get_group <- function(GroupName = NULL, Group = NULL) {
 #' @usage
 #' resourcegroups_get_group_configuration(Group)
 #'
-#' @param Group The name or the Amazon resource name (ARN) of the resource group for
-#' which you want to retrive the service configuration.
+#' @param Group The name or the Amazon resource name (ARN) of the resource group for which you want to retrive the service configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -501,10 +464,7 @@ resourcegroups_get_group_configuration <- function(Group = NULL) {
 #' group
 #'
 #' @description
-#' Retrieves the resource query associated with the specified resource
-#' group. For more information about resource queries, see [Create a
-#' tag-based group in Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag).
+#' Retrieves the resource query associated with the specified resource group. For more information about resource queries, see [Create a tag-based group in Resource Groups](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag).
 #' 
 #' **Minimum permissions**
 #' 
@@ -516,8 +476,7 @@ resourcegroups_get_group_configuration <- function(Group = NULL) {
 #' resourcegroups_get_group_query(GroupName, Group)
 #'
 #' @param GroupName Don't use this parameter. Use `Group` instead.
-#' @param Group The name or the Amazon resource name (ARN) of the resource group to
-#' query.
+#' @param Group The name or the Amazon resource name (ARN) of the resource group to query.
 #'
 #' @return
 #' A list with the following syntax:
@@ -638,8 +597,7 @@ resourcegroups_get_tag_sync_task <- function(TaskArn) {
 #' specified by an Amazon resource name (ARN)
 #'
 #' @description
-#' Returns a list of tags that are associated with a resource group,
-#' specified by an Amazon resource name (ARN).
+#' Returns a list of tags that are associated with a resource group, specified by an Amazon resource name (ARN).
 #' 
 #' **Minimum permissions**
 #' 
@@ -650,8 +608,7 @@ resourcegroups_get_tag_sync_task <- function(TaskArn) {
 #' @usage
 #' resourcegroups_get_tags(Arn)
 #'
-#' @param Arn &#91;required&#93; The Amazon resource name (ARN) of the resource group whose tags you want
-#' to retrieve.
+#' @param Arn &#91;required&#93; The Amazon resource name (ARN) of the resource group whose tags you want to retrieve.
 #'
 #' @return
 #' A list with the following syntax:
@@ -708,8 +665,7 @@ resourcegroups_get_tags <- function(Arn) {
 #' 
 #' -   `AWS::ResourceGroups::ApplicationGroup`
 #' 
-#' Other resource group types and resource types are not currently
-#' supported by this operation.
+#' Other resource group types and resource types are not currently supported by this operation.
 #' 
 #' **Minimum permissions**
 #' 
@@ -720,10 +676,8 @@ resourcegroups_get_tags <- function(Arn) {
 #' @usage
 #' resourcegroups_group_resources(Group, ResourceArns)
 #'
-#' @param Group &#91;required&#93; The name or the Amazon resource name (ARN) of the resource group to add
-#' resources to.
-#' @param ResourceArns &#91;required&#93; The list of Amazon resource names (ARNs) of the resources to be added to
-#' the group.
+#' @param Group &#91;required&#93; The name or the Amazon resource name (ARN) of the resource group to add resources to.
+#' @param ResourceArns &#91;required&#93; The list of Amazon resource names (ARNs) of the resources to be added to the group.
 #'
 #' @return
 #' A list with the following syntax:
@@ -785,8 +739,7 @@ resourcegroups_group_resources <- function(Group, ResourceArns) {
 #' members of a specified resource group
 #'
 #' @description
-#' Returns a list of Amazon resource names (ARNs) of the resources that are
-#' members of a specified resource group.
+#' Returns a list of Amazon resource names (ARNs) of the resources that are members of a specified resource group.
 #' 
 #' **Minimum permissions**
 #' 
@@ -804,52 +757,19 @@ resourcegroups_group_resources <- function(Group, ResourceArns) {
 #' resourcegroups_list_group_resources(GroupName, Group, Filters,
 #'   MaxResults, NextToken)
 #'
-#' @param GroupName *Deprecated - don't use this parameter. Use the Group request field
-#' instead.*
+#' @param GroupName *Deprecated - don't use this parameter. Use the Group request field instead.*
 #' @param Group The name or the Amazon resource name (ARN) of the resource group.
-#' @param Filters Filters, formatted as ResourceFilter objects, that you want to apply to
-#' a [`list_group_resources`][resourcegroups_list_group_resources]
-#' operation. Filters the results to include only those of the specified
-#' resource types.
+#' @param Filters Filters, formatted as ResourceFilter objects, that you want to apply to a [`list_group_resources`][resourcegroups_list_group_resources] operation. Filters the results to include only those of the specified resource types.
 #' 
-#' -   `resource-type` - Filter resources by their type. Specify up to five
-#'     resource types in the format `AWS::ServiceCode::ResourceType`. For
-#'     example, `AWS::EC2::Instance`, or `AWS::S3::Bucket`.
+#' -   `resource-type` - Filter resources by their type. Specify up to five resource types in the format `AWS::ServiceCode::ResourceType`. For example, `AWS::EC2::Instance`, or `AWS::S3::Bucket`.
 #' 
-#' When you specify a `resource-type` filter for
-#' [`list_group_resources`][resourcegroups_list_group_resources], Resource
-#' Groups validates your filter resource types against the types that are
-#' defined in the query associated with the group. For example, if a group
-#' contains only S3 buckets because its query specifies only that resource
-#' type, but your `resource-type` filter includes EC2 instances, AWS
-#' Resource Groups does not filter for EC2 instances. In this case, a
-#' [`list_group_resources`][resourcegroups_list_group_resources] request
-#' returns a `BadRequestException` error with a message similar to the
-#' following:
+#' When you specify a `resource-type` filter for [`list_group_resources`][resourcegroups_list_group_resources], Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your `resource-type` filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a [`list_group_resources`][resourcegroups_list_group_resources] request returns a `BadRequestException` error with a message similar to the following:
 #' 
 #' `The resource types specified as filters in the request are not valid.`
 #' 
-#' The error includes a list of resource types that failed the validation
-#' because they are not part of the query associated with the group. This
-#' validation doesn't occur when the group query specifies
-#' `AWS::AllSupported`, because a group based on such a query can contain
-#' any of the allowed resource types for the query type (tag-based or
-#' Amazon CloudFront stack-based queries).
-#' @param MaxResults The total number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' that is specific to the operation. If additional items exist beyond the
-#' maximum you specify, the `NextToken` response element is present and has
-#' a value (is not null). Include that value as the `NextToken` request
-#' parameter in the next call to the operation to get the next part of the
-#' results. Note that the service might return fewer results than the
-#' maximum even when there are more results available. You should check
-#' `NextToken` after every operation to ensure that you receive all of the
-#' results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' provided by a previous call's `NextToken` response to indicate where the
-#' output should continue from.
+#' The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies `AWS::AllSupported`, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).
+#' @param MaxResults The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value provided by a previous call's `NextToken` response to indicate where the output should continue from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -928,24 +848,16 @@ resourcegroups_list_group_resources <- function(GroupName = NULL, Group = NULL, 
 #' resource in the specified application group
 #'
 #' @description
-#' Returns the status of the last grouping or ungrouping action for each
-#' resource in the specified application group.
+#' Returns the status of the last grouping or ungrouping action for each resource in the specified application group.
 #'
 #' @usage
 #' resourcegroups_list_grouping_statuses(Group, MaxResults, Filters,
 #'   NextToken)
 #'
-#' @param Group &#91;required&#93; The application group identifier, expressed as an Amazon resource name
-#' (ARN) or the application group name.
-#' @param MaxResults The maximum number of resources and their statuses returned in the
-#' response.
-#' @param Filters The filter name and value pair that is used to return more specific
-#' results from a list of resources.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' provided by a previous call's `NextToken` response to indicate where the
-#' output should continue from.
+#' @param Group &#91;required&#93; The application group identifier, expressed as an Amazon resource name (ARN) or the application group name.
+#' @param MaxResults The maximum number of resources and their statuses returned in the response.
+#' @param Filters The filter name and value pair that is used to return more specific results from a list of resources.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value provided by a previous call's `NextToken` response to indicate where the output should continue from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1023,18 +935,11 @@ resourcegroups_list_grouping_statuses <- function(Group, MaxResults = NULL, Filt
 #' @usage
 #' resourcegroups_list_groups(Filters, MaxResults, NextToken)
 #'
-#' @param Filters Filters, formatted as GroupFilter objects, that you want to apply to a
-#' [`list_groups`][resourcegroups_list_groups] operation.
+#' @param Filters Filters, formatted as GroupFilter objects, that you want to apply to a [`list_groups`][resourcegroups_list_groups] operation.
 #' 
-#' -   `resource-type` - Filter the results to include only those resource
-#'     groups that have the specified resource type in their
-#'     `ResourceTypeFilter`. For example, `AWS::EC2::Instance` would return
-#'     any resource group with a `ResourceTypeFilter` that includes
-#'     `AWS::EC2::Instance`.
+#' -   `resource-type` - Filter the results to include only those resource groups that have the specified resource type in their `ResourceTypeFilter`. For example, `AWS::EC2::Instance` would return any resource group with a `ResourceTypeFilter` that includes `AWS::EC2::Instance`.
 #' 
-#' -   `configuration-type` - Filter the results to include only those
-#'     groups that have the specified configuration types attached. The
-#'     current supported values are:
+#' -   `configuration-type` - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:
 #' 
 #'     -   `AWS::ResourceGroups::ApplicationGroup`
 #' 
@@ -1049,21 +954,8 @@ resourcegroups_list_grouping_statuses <- function(Group, MaxResults = NULL, Filt
 #'     -   `AWS::EC2::HostManagement`
 #' 
 #'     -   `AWS::NetworkFirewall::RuleGroup`
-#' @param MaxResults The total number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' that is specific to the operation. If additional items exist beyond the
-#' maximum you specify, the `NextToken` response element is present and has
-#' a value (is not null). Include that value as the `NextToken` request
-#' parameter in the next call to the operation to get the next part of the
-#' results. Note that the service might return fewer results than the
-#' maximum even when there are more results available. You should check
-#' `NextToken` after every operation to ensure that you receive all of the
-#' results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' provided by a previous call's `NextToken` response to indicate where the
-#' output should continue from.
+#' @param MaxResults The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value provided by a previous call's `NextToken` response to indicate where the output should continue from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1145,20 +1037,14 @@ resourcegroups_list_groups <- function(Filters = NULL, MaxResults = NULL, NextTo
 #' 
 #' To run this command, you must have the following permissions:
 #' 
-#' -   `resource-groups:ListTagSyncTasks` with the group passed in the
-#'     filters as the resource or * if using no filters
+#' -   `resource-groups:ListTagSyncTasks` with the group passed in the filters as the resource or * if using no filters
 #'
 #' @usage
 #' resourcegroups_list_tag_sync_tasks(Filters, MaxResults, NextToken)
 #'
-#' @param Filters The Amazon resource name (ARN) or name of the application group for
-#' which you want to return a list of tag-sync tasks.
+#' @param Filters The Amazon resource name (ARN) or name of the application group for which you want to return a list of tag-sync tasks.
 #' @param MaxResults The maximum number of results to be included in the response.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' provided by a previous call's `NextToken` response to indicate where the
-#' output should continue from.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value provided by a previous call's `NextToken` response to indicate where the output should continue from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1228,10 +1114,7 @@ resourcegroups_list_tag_sync_tasks <- function(Filters = NULL, MaxResults = NULL
 #' Attaches a service configuration to the specified group
 #'
 #' @description
-#' Attaches a service configuration to the specified group. This occurs
-#' asynchronously, and can take time to complete. You can use
-#' [`get_group_configuration`][resourcegroups_get_group_configuration] to
-#' check the status of the update.
+#' Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to complete. You can use [`get_group_configuration`][resourcegroups_get_group_configuration] to check the status of the update.
 #' 
 #' **Minimum permissions**
 #' 
@@ -1242,20 +1125,12 @@ resourcegroups_list_tag_sync_tasks <- function(Filters = NULL, MaxResults = NULL
 #' @usage
 #' resourcegroups_put_group_configuration(Group, Configuration)
 #'
-#' @param Group The name or Amazon resource name (ARN) of the resource group with the
-#' configuration that you want to update.
-#' @param Configuration The new configuration to associate with the specified group. A
-#' configuration associates the resource group with an Amazon Web Services
-#' service and specifies how the service can interact with the resources in
-#' the group. A configuration is an array of GroupConfigurationItem
-#' elements.
+#' @param Group The name or Amazon resource name (ARN) of the resource group with the configuration that you want to update.
+#' @param Configuration The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of GroupConfigurationItem elements.
 #' 
-#' For information about the syntax of a service configuration, see
-#' [Service configurations for Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/about-slg.html).
+#' For information about the syntax of a service configuration, see [Service configurations for Resource Groups](https://docs.aws.amazon.com/ARG/latest/APIReference/).
 #' 
-#' A resource group can contain either a `Configuration` or a
-#' `ResourceQuery`, but not both.
+#' A resource group can contain either a `Configuration` or a `ResourceQuery`, but not both.
 #'
 #' @return
 #' An empty list.
@@ -1308,10 +1183,7 @@ resourcegroups_put_group_configuration <- function(Group = NULL, Configuration =
 #' the specified query
 #'
 #' @description
-#' Returns a list of Amazon Web Services resource identifiers that matches
-#' the specified query. The query uses the same format as a resource query
-#' in a [`create_group`][resourcegroups_create_group] or
-#' [`update_group_query`][resourcegroups_update_group_query] operation.
+#' Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a [`create_group`][resourcegroups_create_group] or [`update_group_query`][resourcegroups_update_group_query] operation.
 #' 
 #' **Minimum permissions**
 #' 
@@ -1328,24 +1200,9 @@ resourcegroups_put_group_configuration <- function(Group = NULL, Configuration =
 #' @usage
 #' resourcegroups_search_resources(ResourceQuery, MaxResults, NextToken)
 #'
-#' @param ResourceQuery &#91;required&#93; The search query, using the same formats that are supported for resource
-#' group definition. For more information, see
-#' [`create_group`][resourcegroups_create_group].
-#' @param MaxResults The total number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' that is specific to the operation. If additional items exist beyond the
-#' maximum you specify, the `NextToken` response element is present and has
-#' a value (is not null). Include that value as the `NextToken` request
-#' parameter in the next call to the operation to get the next part of the
-#' results. Note that the service might return fewer results than the
-#' maximum even when there are more results available. You should check
-#' `NextToken` after every operation to ensure that you receive all of the
-#' results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' provided by a previous call's `NextToken` response to indicate where the
-#' output should continue from.
+#' @param ResourceQuery &#91;required&#93; The search query, using the same formats that are supported for resource group definition. For more information, see [`create_group`][resourcegroups_create_group].
+#' @param MaxResults The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value provided by a previous call's `NextToken` response to indicate where the output should continue from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1407,20 +1264,9 @@ resourcegroups_search_resources <- function(ResourceQuery, MaxResults = NULL, Ne
 #' specific tag key-value pair to an application
 #'
 #' @description
-#' Creates a new tag-sync task to onboard and sync resources tagged with a
-#' specific tag key-value pair to an application. To start a tag-sync task,
-#' you need a [resource tagging
-#' role](https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#tag-sync-role).
-#' The resource tagging role grants permissions to tag and untag
-#' applications resources and must include a trust policy that allows
-#' Resource Groups to assume the role and perform resource tagging tasks on
-#' your behalf.
+#' Creates a new tag-sync task to onboard and sync resources tagged with a specific tag key-value pair to an application. To start a tag-sync task, you need a [resource tagging role](https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#tag-sync-role). The resource tagging role grants permissions to tag and untag applications resources and must include a trust policy that allows Resource Groups to assume the role and perform resource tagging tasks on your behalf.
 #' 
-#' For instructions on creating a tag-sync task, see [Create a tag-sync
-#' using the Resource Groups
-#' API](https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#create-tag-sync)
-#' in the *Amazon Web Services Service Catalog AppRegistry Administrator
-#' Guide*.
+#' For instructions on creating a tag-sync task, see [Create a tag-sync using the Resource Groups API](https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#create-tag-sync) in the *Amazon Web Services Service Catalog AppRegistry Administrator Guide*.
 #' 
 #' **Minimum permissions**
 #' 
@@ -1436,58 +1282,27 @@ resourcegroups_search_resources <- function(ResourceQuery, MaxResults = NULL, Ne
 #' resourcegroups_start_tag_sync_task(Group, TagKey, TagValue,
 #'   ResourceQuery, RoleArn)
 #'
-#' @param Group &#91;required&#93; The Amazon resource name (ARN) or name of the application group for
-#' which you want to create a tag-sync task.
-#' @param TagKey The tag key. Resources tagged with this tag key-value pair will be added
-#' to the application. If a resource with this tag is later untagged, the
-#' tag-sync task removes the resource from the application.
+#' @param Group &#91;required&#93; The Amazon resource name (ARN) or name of the application group for which you want to create a tag-sync task.
+#' @param TagKey The tag key. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.
 #' 
-#' When using the `TagKey` parameter, you must also specify the `TagValue`
-#' parameter. If you specify a tag key-value pair, you can't use the
-#' `ResourceQuery` parameter.
-#' @param TagValue The tag value. Resources tagged with this tag key-value pair will be
-#' added to the application. If a resource with this tag is later untagged,
-#' the tag-sync task removes the resource from the application.
+#' When using the `TagKey` parameter, you must also specify the `TagValue` parameter. If you specify a tag key-value pair, you can't use the `ResourceQuery` parameter.
+#' @param TagValue The tag value. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.
 #' 
-#' When using the `TagValue` parameter, you must also specify the `TagKey`
-#' parameter. If you specify a tag key-value pair, you can't use the
-#' `ResourceQuery` parameter.
-#' @param ResourceQuery The query you can use to create the tag-sync task. With this method, all
-#' resources matching the query are added to the specified application
-#' group. A `ResourceQuery` specifies both a query `Type` and a `Query`
-#' string as JSON string objects. For more information on defining a
-#' resource query for a tag-sync task, see the tag-based query type in
-#' [Types of resource group
-#' queries](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types)
-#' in *Resource Groups User Guide*.
+#' When using the `TagValue` parameter, you must also specify the `TagKey` parameter. If you specify a tag key-value pair, you can't use the `ResourceQuery` parameter.
+#' @param ResourceQuery The query you can use to create the tag-sync task. With this method, all resources matching the query are added to the specified application group. A `ResourceQuery` specifies both a query `Type` and a `Query` string as JSON string objects. For more information on defining a resource query for a tag-sync task, see the tag-based query type in [Types of resource group queries](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types) in *Resource Groups User Guide*.
 #' 
-#' When using the `ResourceQuery` parameter, you cannot use the `TagKey`
-#' and `TagValue` parameters.
+#' When using the `ResourceQuery` parameter, you cannot use the `TagKey` and `TagValue` parameters.
 #' 
-#' When you combine all of the elements together into a single string, any
-#' double quotes that are embedded inside another double quote pair must be
-#' escaped by preceding the embedded double quote with a backslash
-#' character (\\). For example, a complete `ResourceQuery` parameter must
-#' be formatted like the following CLI parameter example:
+#' When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\\). For example, a complete `ResourceQuery` parameter must be formatted like the following CLI parameter example:
 #' 
 #' `--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":[\"AWS::AllSupported\"],\"TagFilters\":[{\"Key\":\"Stage\",\"Values\":[\"Test\"]}]}"}'`
 #' 
-#' In the preceding example, all of the double quote characters in the
-#' value part of the `Query` element must be escaped because the value
-#' itself is surrounded by double quotes. For more information, see
-#' [Quoting
-#' strings](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html)
-#' in the *Command Line Interface User Guide*.
+#' In the preceding example, all of the double quote characters in the value part of the `Query` element must be escaped because the value itself is surrounded by double quotes. For more information, see [Quoting strings](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html) in the *Command Line Interface User Guide*.
 #' 
-#' For the complete list of resource types that you can use in the array
-#' value for `ResourceTypeFilters`, see [Resources you can use with
-#' Resource Groups and Tag
-#' Editor](https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html)
-#' in the *Resource Groups User Guide*. For example:
+#' For the complete list of resource types that you can use in the array value for `ResourceTypeFilters`, see [Resources you can use with Resource Groups and Tag Editor](https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html) in the *Resource Groups User Guide*. For example:
 #' 
 #' `"ResourceTypeFilters":["AWS::S3::Bucket", "AWS::EC2::Instance"]`
-#' @param RoleArn &#91;required&#93; The Amazon resource name (ARN) of the role assumed by the service to tag
-#' and untag resources on your behalf.
+#' @param RoleArn &#91;required&#93; The Amazon resource name (ARN) of the role assumed by the service to tag and untag resources on your behalf.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1548,14 +1363,9 @@ resourcegroups_start_tag_sync_task <- function(Group, TagKey = NULL, TagValue = 
 #' (ARN)
 #'
 #' @description
-#' Adds tags to a resource group with the specified Amazon resource name
-#' (ARN). Existing tags on a resource group are not changed if they are not
-#' specified in the request parameters.
+#' Adds tags to a resource group with the specified Amazon resource name (ARN). Existing tags on a resource group are not changed if they are not specified in the request parameters.
 #' 
-#' Do not store personally identifiable information (PII) or other
-#' confidential or sensitive information in tags. We use tags to provide
-#' you with billing and administration services. Tags are not intended to
-#' be used for private or sensitive data.
+#' Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.
 #' 
 #' **Minimum permissions**
 #' 
@@ -1566,10 +1376,8 @@ resourcegroups_start_tag_sync_task <- function(Group, TagKey = NULL, TagValue = 
 #' @usage
 #' resourcegroups_tag(Arn, Tags)
 #'
-#' @param Arn &#91;required&#93; The Amazon resource name (ARN) of the resource group to which to add
-#' tags.
-#' @param Tags &#91;required&#93; The tags to add to the specified resource group. A tag is a
-#' string-to-string map of key-value pairs.
+#' @param Arn &#91;required&#93; The Amazon resource name (ARN) of the resource group to which to add tags.
+#' @param Tags &#91;required&#93; The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1619,11 +1427,7 @@ resourcegroups_tag <- function(Arn, Tags) {
 #' Removes the specified resources from the specified group
 #'
 #' @description
-#' Removes the specified resources from the specified group. This operation
-#' works only with static groups that you populated using the
-#' [`group_resources`][resourcegroups_group_resources] operation. It
-#' doesn't work with any resource groups that are automatically populated
-#' by tag-based or CloudFormation stack-based queries.
+#' Removes the specified resources from the specified group. This operation works only with static groups that you populated using the [`group_resources`][resourcegroups_group_resources] operation. It doesn't work with any resource groups that are automatically populated by tag-based or CloudFormation stack-based queries.
 #' 
 #' **Minimum permissions**
 #' 
@@ -1634,10 +1438,8 @@ resourcegroups_tag <- function(Arn, Tags) {
 #' @usage
 #' resourcegroups_ungroup_resources(Group, ResourceArns)
 #'
-#' @param Group &#91;required&#93; The name or the Amazon resource name (ARN) of the resource group from
-#' which to remove the resources.
-#' @param ResourceArns &#91;required&#93; The Amazon resource names (ARNs) of the resources to be removed from the
-#' group.
+#' @param Group &#91;required&#93; The name or the Amazon resource name (ARN) of the resource group from which to remove the resources.
+#' @param ResourceArns &#91;required&#93; The Amazon resource names (ARNs) of the resources to be removed from the group.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1709,9 +1511,7 @@ resourcegroups_ungroup_resources <- function(Group, ResourceArns) {
 #' @usage
 #' resourcegroups_untag(Arn, Keys)
 #'
-#' @param Arn &#91;required&#93; The Amazon resource name (ARN) of the resource group from which to
-#' remove tags. The command removed both the specified keys and any values
-#' associated with those keys.
+#' @param Arn &#91;required&#93; The Amazon resource name (ARN) of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.
 #' @param Keys &#91;required&#93; The keys of the tags to be removed.
 #'
 #' @return
@@ -1764,22 +1564,15 @@ resourcegroups_untag <- function(Arn, Keys) {
 #' @description
 #' Turns on or turns off optional features in Resource Groups.
 #' 
-#' The preceding example shows that the request to turn on group lifecycle
-#' events is `IN_PROGRESS`. You can call the
-#' [`get_account_settings`][resourcegroups_get_account_settings] operation
-#' to check for completion by looking for `GroupLifecycleEventsStatus` to
-#' change to `ACTIVE`.
+#' The preceding example shows that the request to turn on group lifecycle events is `IN_PROGRESS`. You can call the [`get_account_settings`][resourcegroups_get_account_settings] operation to check for completion by looking for `GroupLifecycleEventsStatus` to change to `ACTIVE`.
 #'
 #' @usage
 #' resourcegroups_update_account_settings(
 #'   GroupLifecycleEventsDesiredStatus)
 #'
-#' @param GroupLifecycleEventsDesiredStatus Specifies whether you want to turn [group lifecycle
-#' events](https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html)
-#' on or off.
+#' @param GroupLifecycleEventsDesiredStatus Specifies whether you want to turn [group lifecycle events](https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html) on or off.
 #' 
-#' You can't turn on group lifecycle events if your resource groups quota
-#' is greater than 2,000.
+#' You can't turn on group lifecycle events if your resource groups quota is greater than 2,000.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1827,8 +1620,7 @@ resourcegroups_update_account_settings <- function(GroupLifecycleEventsDesiredSt
 #' Updates the description for an existing group
 #'
 #' @description
-#' Updates the description for an existing group. You cannot update the
-#' name of a resource group.
+#' Updates the description for an existing group. You cannot update the name of a resource group.
 #' 
 #' **Minimum permissions**
 #' 
@@ -1842,15 +1634,9 @@ resourcegroups_update_account_settings <- function(GroupLifecycleEventsDesiredSt
 #'
 #' @param GroupName Don't use this parameter. Use `Group` instead.
 #' @param Group The name or the ARN of the resource group to update.
-#' @param Description The new description that you want to update the resource group with.
-#' Descriptions can contain letters, numbers, hyphens, underscores,
-#' periods, and spaces.
-#' @param Criticality The critical rank of the application group on a scale of 1 to 10, with a
-#' rank of 1 being the most critical, and a rank of 10 being least
-#' critical.
-#' @param Owner A name, email address or other identifier for the person or group who is
-#' considered as the owner of this application group within your
-#' organization.
+#' @param Description The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.
+#' @param Criticality The critical rank of the application group on a scale of 1 to 10, with a rank of 1 being the most critical, and a rank of 10 being least critical.
+#' @param Owner A name, email address or other identifier for the person or group who is considered as the owner of this application group within your organization.
 #' @param DisplayName The name of the application group, which you can change at any time.
 #'
 #' @return
@@ -1910,9 +1696,7 @@ resourcegroups_update_group <- function(GroupName = NULL, Group = NULL, Descript
 #' Updates the resource query of a group
 #'
 #' @description
-#' Updates the resource query of a group. For more information about
-#' resource queries, see [Create a tag-based group in Resource
-#' Groups](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag).
+#' Updates the resource query of a group. For more information about resource queries, see [Create a tag-based group in Resource Groups](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag).
 #' 
 #' **Minimum permissions**
 #' 
@@ -1924,13 +1708,10 @@ resourcegroups_update_group <- function(GroupName = NULL, Group = NULL, Descript
 #' resourcegroups_update_group_query(GroupName, Group, ResourceQuery)
 #'
 #' @param GroupName Don't use this parameter. Use `Group` instead.
-#' @param Group The name or the Amazon resource name (ARN) of the resource group to
-#' query.
-#' @param ResourceQuery &#91;required&#93; The resource query to determine which Amazon Web Services resources are
-#' members of this resource group.
+#' @param Group The name or the Amazon resource name (ARN) of the resource group to query.
+#' @param ResourceQuery &#91;required&#93; The resource query to determine which Amazon Web Services resources are members of this resource group.
 #' 
-#' A resource group can contain either a `Configuration` or a
-#' `ResourceQuery`, but not both.
+#' A resource group can contain either a `Configuration` or a `ResourceQuery`, but not both.
 #'
 #' @return
 #' A list with the following syntax:

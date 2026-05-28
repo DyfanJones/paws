@@ -16,32 +16,19 @@ sagemaker_list_mlflow_tracking_servers(
 )
 }
 \arguments{
-\item{CreatedAfter}{Use the \code{CreatedAfter} filter to only list tracking servers created
-after a specific date and time. Listed tracking servers are shown with a
-date and time such as \code{"2024-03-16T01:46:56+00:00"}. The \code{CreatedAfter}
-parameter takes in a Unix timestamp. To convert a date and time into a
-Unix timestamp, see \href{https://www.epochconverter.com/}{EpochConverter}.}
+\item{CreatedAfter}{Use the \code{CreatedAfter} filter to only list tracking servers created after a specific date and time. Listed tracking servers are shown with a date and time such as \code{"2024-03-16T01:46:56+00:00"}. The \code{CreatedAfter} parameter takes in a Unix timestamp. To convert a date and time into a Unix timestamp, see \href{https://www.epochconverter.com/}{EpochConverter}.}
 
-\item{CreatedBefore}{Use the \code{CreatedBefore} filter to only list tracking servers created
-before a specific date and time. Listed tracking servers are shown with
-a date and time such as \code{"2024-03-16T01:46:56+00:00"}. The
-\code{CreatedBefore} parameter takes in a Unix timestamp. To convert a date
-and time into a Unix timestamp, see
-\href{https://www.epochconverter.com/}{EpochConverter}.}
+\item{CreatedBefore}{Use the \code{CreatedBefore} filter to only list tracking servers created before a specific date and time. Listed tracking servers are shown with a date and time such as \code{"2024-03-16T01:46:56+00:00"}. The \code{CreatedBefore} parameter takes in a Unix timestamp. To convert a date and time into a Unix timestamp, see \href{https://www.epochconverter.com/}{EpochConverter}.}
 
 \item{TrackingServerStatus}{Filter for tracking servers with a specified creation status.}
 
 \item{MlflowVersion}{Filter for tracking servers using the specified MLflow version.}
 
-\item{SortBy}{Filter for trackings servers sorting by name, creation time, or creation
-status.}
+\item{SortBy}{Filter for trackings servers sorting by name, creation time, or creation status.}
 
-\item{SortOrder}{Change the order of the listed tracking servers. By default, tracking
-servers are listed in \code{Descending} order by creation time. To change the
-list order, you can specify \code{SortOrder} to be \code{Ascending}.}
+\item{SortOrder}{Change the order of the listed tracking servers. By default, tracking servers are listed in \code{Descending} order by creation time. To change the list order, you can specify \code{SortOrder} to be \code{Ascending}.}
 
-\item{NextToken}{If the previous response was truncated, you will receive this token. Use
-it in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.}
 
 \item{MaxResults}{The maximum number of tracking servers to list.}
 }

@@ -9,8 +9,7 @@ apigateway_get_api_key(apiKey, includeValue = NULL)
 \arguments{
 \item{apiKey}{[required] The identifier of the ApiKey resource.}
 
-\item{includeValue}{A boolean flag to specify whether (\code{true}) or not (\code{false}) the result
-contains the key value.}
+\item{includeValue}{A boolean flag to specify whether (\code{true}) or not (\code{false}) the result contains the key value.}
 }
 \description{
 Gets information about the current ApiKey resource.

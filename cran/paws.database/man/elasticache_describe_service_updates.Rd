@@ -18,10 +18,7 @@ elasticache_describe_service_updates(
 
 \item{MaxRecords}{The maximum number of records to include in the response}
 
-\item{Marker}{An optional marker returned from a prior request. Use this marker for
-pagination of results from this operation. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns details of the service updates

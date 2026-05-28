@@ -11,12 +11,9 @@ personalize_list_dataset_import_jobs(
 )
 }
 \arguments{
-\item{datasetArn}{The Amazon Resource Name (ARN) of the dataset to list the dataset import
-jobs for.}
+\item{datasetArn}{The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_dataset_import_jobs]{list_dataset_import_jobs}} for
-getting the next set of dataset import jobs (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_dataset_import_jobs]{list_dataset_import_jobs}} for getting the next set of dataset import jobs (if they exist).}
 
 \item{maxResults}{The maximum number of dataset import jobs to return.}
 }

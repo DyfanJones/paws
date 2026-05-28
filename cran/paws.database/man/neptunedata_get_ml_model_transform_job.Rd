@@ -9,9 +9,7 @@ neptunedata_get_ml_model_transform_job(id, neptuneIamRoleArn = NULL)
 \arguments{
 \item{id}{[required] The unique identifier of the model-transform job to be reetrieved.}
 
-\item{neptuneIamRoleArn}{The ARN of an IAM role that provides Neptune access to SageMaker and
-Amazon S3 resources. This must be listed in your DB cluster parameter
-group or an error will occur.}
+\item{neptuneIamRoleArn}{The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.}
 }
 \description{
 Gets information about a specified model transform job. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-model-transform.html}{Use a trained model to generate new model artifacts}.

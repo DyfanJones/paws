@@ -21,7 +21,7 @@ bedrockagentcore_get_payment_session(
 \item{paymentSessionId}{[required] The ID of the payment session to retrieve.}
 }
 \description{
-Get a payment session
+Get a payment session.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_get_payment_session/} for full documentation.
 }

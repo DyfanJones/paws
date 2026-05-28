@@ -14,29 +14,17 @@ quicksight_generate_embed_url_for_registered_user(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the dashboard
-that you're embedding.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the dashboard that you're embedding.}
 
-\item{SessionLifetimeInMinutes}{How many minutes the session is valid. The session lifetime must be in
-[15-600] minutes range.}
+\item{SessionLifetimeInMinutes}{How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.}
 
 \item{UserArn}{[required] The Amazon Resource Name for the registered user.}
 
-\item{ExperienceConfiguration}{[required] The experience that you want to embed. For registered users, you can
-embed Quick dashboards, Amazon Quick Sight visuals, the Amazon Quick
-Sight Q search bar, the Amazon Quick Sight Generative Q&A experience, or
-the entire Amazon Quick Sight console.}
+\item{ExperienceConfiguration}{[required] The experience that you want to embed. For registered users, you can embed Quick dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon Quick Sight Generative Q&A experience, or the entire Amazon Quick Sight console.}
 
-\item{AllowedDomains}{The domains that you want to add to the allow list for access to the
-generated URL that is then embedded. This optional parameter overrides
-the static domains that are configured in the Manage Quick Sight menu in
-the Amazon Quick Sight console. Instead, it allows only the domains that
-you include in this parameter. You can list up to three domains or
-subdomains in each API call.
+\item{AllowedDomains}{The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage Quick Sight menu in the Amazon Quick Sight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.
 
-To include all subdomains under a specific domain to the allow list, use
-\code{*}. For example, \verb{https://*.sapp.amazon.com} includes all subdomains
-under \verb{https://sapp.amazon.com}.}
+To include all subdomains under a specific domain to the allow list, use \code{*}. For example, \verb{https://*.sapp.amazon.com} includes all subdomains under \verb{https://sapp.amazon.com}.}
 }
 \description{
 Generates an embed URL that you can use to embed an Amazon Quick experience in your website. This action can be used for any type of user registered in an Amazon Quick account. Before you use this action, make sure that you have configured the relevant Amazon Quick resource and permissions.

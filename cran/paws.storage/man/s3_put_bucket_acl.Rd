@@ -22,32 +22,19 @@ s3_put_bucket_acl(
 \arguments{
 \item{ACL}{The canned ACL to apply to the bucket.}
 
-\item{AccessControlPolicy}{Contains the elements that set the ACL permissions for an object per
-grantee.}
+\item{AccessControlPolicy}{Contains the elements that set the ACL permissions for an object per grantee.}
 
 \item{Bucket}{[required] The bucket to which to apply the ACL.}
 
-\item{ContentMD5}{The Base64 encoded 128-bit \code{MD5} digest of the data. This header must be
-used as a message integrity check to verify that the request body was
-not corrupted in transit. For more information, go to \href{https://www.ietf.org/rfc/rfc1864.txt}{RFC 1864.}
+\item{ContentMD5}{The Base64 encoded 128-bit \code{MD5} digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to \href{https://www.ietf.org/rfc/rfc1864.txt}{RFC 1864.}
 
-For requests made using the Amazon Web Services Command Line Interface
-(CLI) or Amazon Web Services SDKs, this field is calculated
-automatically.}
+For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.}
 
-\item{ChecksumAlgorithm}{Indicates the algorithm used to create the checksum for the request when
-you use the SDK. This header will not provide any additional
-functionality if you don't use the SDK. When you send this header, there
-must be a corresponding \code{x-amz-checksum} or \code{x-amz-trailer} header sent.
-Otherwise, Amazon S3 fails the request with the HTTP status code
-\verb{400 Bad Request}. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html}{Checking object integrity}
-in the \emph{Amazon S3 User Guide}.
+\item{ChecksumAlgorithm}{Indicates the algorithm used to create the checksum for the request when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding \code{x-amz-checksum} or \code{x-amz-trailer} header sent. Otherwise, Amazon S3 fails the request with the HTTP status code \verb{400 Bad Request}. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html}{Checking object integrity} in the \emph{Amazon S3 User Guide}.
 
-If you provide an individual checksum, Amazon S3 ignores any provided
-\code{ChecksumAlgorithm} parameter.}
+If you provide an individual checksum, Amazon S3 ignores any provided \code{ChecksumAlgorithm} parameter.}
 
-\item{GrantFullControl}{Allows grantee the read, write, read ACP, and write ACP permissions on
-the bucket.}
+\item{GrantFullControl}{Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.}
 
 \item{GrantRead}{Allows grantee to list the objects in the bucket.}
 
@@ -55,14 +42,11 @@ the bucket.}
 
 \item{GrantWrite}{Allows grantee to create new objects in the bucket.
 
-For the bucket and object owners of existing objects, also allows
-deletions and overwrites of those objects.}
+For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.}
 
 \item{GrantWriteACP}{Allows grantee to write the ACL for the applicable bucket.}
 
-\item{ExpectedBucketOwner}{The account ID of the expected bucket owner. If the account ID that you
-provide does not match the actual owner of the bucket, the request fails
-with the HTTP status code \verb{403 Forbidden} (access denied).}
+\item{ExpectedBucketOwner}{The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code \verb{403 Forbidden} (access denied).}
 }
 \description{
 End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee ACL in a request after October 1, 2025, the request will receive an \verb{HTTP 405} (Method Not Allowed) error.

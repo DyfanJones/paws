@@ -14,13 +14,11 @@ kinesis_subscribe_to_shard(
 )
 }
 \arguments{
-\item{ConsumerARN}{[required] For this parameter, use the value you obtained when you called
-\code{\link[=kinesis_register_stream_consumer]{register_stream_consumer}}.}
+\item{ConsumerARN}{[required] For this parameter, use the value you obtained when you called \code{\link[=kinesis_register_stream_consumer]{register_stream_consumer}}.}
 
 \item{StreamId}{Not Implemented. Reserved for future use.}
 
-\item{ShardId}{[required] The ID of the shard you want to subscribe to. To see a list of all the
-shards for a given stream, use \code{\link[=kinesis_list_shards]{list_shards}}.}
+\item{ShardId}{[required] The ID of the shard you want to subscribe to. To see a list of all the shards for a given stream, use \code{\link[=kinesis_list_shards]{list_shards}}.}
 
 \item{StartingPosition}{[required] The starting position in the data stream from which to start streaming.}
 }

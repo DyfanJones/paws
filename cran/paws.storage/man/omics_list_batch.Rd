@@ -14,11 +14,9 @@ omics_list_batch(
 )
 }
 \arguments{
-\item{maxItems}{The maximum number of batches to return. If not specified, defaults to
-100.}
+\item{maxItems}{The maximum number of batches to return. If not specified, defaults to 100.}
 
-\item{startingToken}{A pagination token returned from a prior
-\code{\link[=omics_list_batch]{list_batch}} call.}
+\item{startingToken}{A pagination token returned from a prior \code{\link[=omics_list_batch]{list_batch}} call.}
 
 \item{status}{Filter batches by status.}
 

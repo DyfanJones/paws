@@ -13,8 +13,7 @@ connectcases_update_layout(domainId, layoutId, name = NULL, content = NULL)
 
 \item{name}{The name of the layout. It must be unique per domain.}
 
-\item{content}{Information about which fields will be present in the layout, the order
-of the fields.}
+\item{content}{Information about which fields will be present in the layout, the order of the fields.}
 }
 \description{
 Updates the attributes of an existing layout.

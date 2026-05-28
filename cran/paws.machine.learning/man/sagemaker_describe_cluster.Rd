@@ -7,8 +7,7 @@
 sagemaker_describe_cluster(ClusterName)
 }
 \arguments{
-\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker
-HyperPod cluster.}
+\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.}
 }
 \description{
 Retrieves information of a SageMaker HyperPod cluster.

@@ -19,19 +19,11 @@ sagemaker_update_mlflow_app(
 
 \item{Name}{The name of the MLflow App to update.}
 
-\item{ArtifactStoreUri}{The new S3 URI for the general purpose bucket to use as the artifact
-store for the MLflow App.}
+\item{ArtifactStoreUri}{The new S3 URI for the general purpose bucket to use as the artifact store for the MLflow App.}
 
-\item{ModelRegistrationMode}{Whether to enable or disable automatic registration of new MLflow models
-to the SageMaker Model Registry. To enable automatic model registration,
-set this value to \code{AutoModelRegistrationEnabled}. To disable automatic
-model registration, set this value to \code{AutoModelRegistrationDisabled}.
-If not specified, \code{AutomaticModelRegistration} defaults to
-\code{AutoModelRegistrationEnabled}}
+\item{ModelRegistrationMode}{Whether to enable or disable automatic registration of new MLflow models to the SageMaker Model Registry. To enable automatic model registration, set this value to \code{AutoModelRegistrationEnabled}. To disable automatic model registration, set this value to \code{AutoModelRegistrationDisabled}. If not specified, \code{AutomaticModelRegistration} defaults to \code{AutoModelRegistrationEnabled}}
 
-\item{WeeklyMaintenanceWindowStart}{The new weekly maintenance window start day and time to update. The
-maintenance window day and time should be in Coordinated Universal Time
-(UTC) 24-hour standard time. For example: TUE:03:30.}
+\item{WeeklyMaintenanceWindowStart}{The new weekly maintenance window start day and time to update. The maintenance window day and time should be in Coordinated Universal Time (UTC) 24-hour standard time. For example: TUE:03:30.}
 
 \item{DefaultDomainIdList}{List of SageMaker Domain IDs for which this MLflow App is the default.}
 

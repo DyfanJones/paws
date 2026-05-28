@@ -7,12 +7,9 @@
 dynamodb_list_tags_of_resource(ResourceArn, NextToken = NULL)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon DynamoDB resource with tags to be listed. This value is an
-Amazon Resource Name (ARN).}
+\item{ResourceArn}{[required] The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).}
 
-\item{NextToken}{An optional string that, if supplied, must be copied from the output of
-a previous call to ListTagOfResource. When provided in this manner, this
-API fetches the next page of results.}
+\item{NextToken}{An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.}
 }
 \description{
 List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource up to 10 times per second, per account.

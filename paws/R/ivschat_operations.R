@@ -7,40 +7,23 @@ NULL
 #' establish an individual WebSocket chat connection to a room
 #'
 #' @description
-#' Creates an encrypted token that is used by a chat participant to
-#' establish an individual WebSocket chat connection to a room. When the
-#' token is used to connect to chat, the connection is valid for the
-#' session duration specified in the request. The token becomes invalid at
-#' the token-expiration timestamp included in the response.
+#' Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.
 #' 
-#' Use the `capabilities` field to permit an end user to send messages or
-#' moderate a room.
+#' Use the `capabilities` field to permit an end user to send messages or moderate a room.
 #' 
-#' The `attributes` field securely attaches structured data to the chat
-#' session; the data is included within each message sent by the end user
-#' and received by other participants in the room. Common use cases for
-#' attributes include passing end-user profile data like an icon, display
-#' name, colors, badges, and other display features.
+#' The `attributes` field securely attaches structured data to the chat session; the data is included within each message sent by the end user and received by other participants in the room. Common use cases for attributes include passing end-user profile data like an icon, display name, colors, badges, and other display features.
 #' 
-#' Encryption keys are owned by Amazon IVS Chat and never used directly by
-#' your application.
+#' Encryption keys are owned by Amazon IVS Chat and never used directly by your application.
 #'
 #' @usage
 #' ivschat_create_chat_token(roomIdentifier, userId, capabilities,
 #'   sessionDurationInMinutes, attributes)
 #'
-#' @param roomIdentifier &#91;required&#93; Identifier of the room that the client is trying to access. Currently
-#' this must be an ARN.
-#' @param userId &#91;required&#93; Application-provided ID that uniquely identifies the user associated
-#' with this token. This can be any UTF-8 encoded text.
-#' @param capabilities Set of capabilities that the user is allowed to perform in the room.
-#' Default: None (the capability to view messages is implicitly included in
-#' all requests).
-#' @param sessionDurationInMinutes Session duration (in minutes), after which the session expires. Default:
-#' 60 (1 hour).
-#' @param attributes Application-provided attributes to encode into the token and attach to a
-#' chat session. Map keys and values can contain UTF-8 encoded text. The
-#' maximum length of this field is 1 KB total.
+#' @param roomIdentifier &#91;required&#93; Identifier of the room that the client is trying to access. Currently this must be an ARN.
+#' @param userId &#91;required&#93; Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.
+#' @param capabilities Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).
+#' @param sessionDurationInMinutes Session duration (in minutes), after which the session expires. Default: 60 (1 hour).
+#' @param attributes Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.
 #'
 #' @return
 #' A list with the following syntax:
@@ -99,24 +82,15 @@ ivschat_create_chat_token <- function(roomIdentifier, userId, capabilities = NUL
 #' sent messages
 #'
 #' @description
-#' Creates a logging configuration that allows clients to store and record
-#' sent messages.
+#' Creates a logging configuration that allows clients to store and record sent messages.
 #'
 #' @usage
 #' ivschat_create_logging_configuration(name, destinationConfiguration,
 #'   tags)
 #'
 #' @param name Logging-configuration name. The value does not need to be unique.
-#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where chat
-#' content will be logged. There can be only one type of destination
-#' (`cloudWatchLogs`, `firehose`, or `s3`) in a `destinationConfiguration`.
-#' @param tags Tags to attach to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS Chat has no constraints on tags beyond what is
-#' documented there.
+#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (`cloudWatchLogs`, `firehose`, or `s3`) in a `destinationConfiguration`.
+#' @param tags Tags to attach to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -205,19 +179,10 @@ ivschat_create_logging_configuration <- function(name = NULL, destinationConfigu
 #'   loggingConfigurationIdentifiers)
 #'
 #' @param name Room name. The value does not need to be unique.
-#' @param maximumMessageRatePerSecond Maximum number of messages per second that can be sent to the room (by
-#' all clients). Default: 10.
-#' @param maximumMessageLength Maximum number of characters in a single message. Messages are expected
-#' to be UTF-8 encoded and this limit applies specifically to
-#' rune/code-point count, not number of bytes. Default: 500.
+#' @param maximumMessageRatePerSecond Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
+#' @param maximumMessageLength Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.
 #' @param messageReviewHandler Configuration information for optional review of messages.
-#' @param tags Tags to attach to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS Chat has no constraints beyond what is
-#' documented there.
+#' @param tags Tags to attach to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
 #' @param loggingConfigurationIdentifiers Array of logging-configuration identifiers attached to the room.
 #'
 #' @return
@@ -340,22 +305,13 @@ ivschat_delete_logging_configuration <- function(identifier) {
 #' client’s chat history
 #'
 #' @description
-#' Sends an event to a specific room which directs clients to delete a
-#' specific message; that is, unrender it from view and delete it from the
-#' client’s chat history. This event’s `EventName` is `aws:DELETE_MESSAGE`.
-#' This replicates the
-#' [DeleteMessage](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html)
-#' WebSocket operation in the Amazon IVS Chat Messaging API.
+#' Sends an event to a specific room which directs clients to delete a specific message; that is, unrender it from view and delete it from the client’s chat history. This event’s `EventName` is `aws:DELETE_MESSAGE`. This replicates the [DeleteMessage](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html) WebSocket operation in the Amazon IVS Chat Messaging API.
 #'
 #' @usage
 #' ivschat_delete_message(roomIdentifier, id, reason)
 #'
-#' @param roomIdentifier &#91;required&#93; Identifier of the room where the message should be deleted. Currently
-#' this must be an ARN.
-#' @param id &#91;required&#93; ID of the message to be deleted. This is the `Id` field in the received
-#' message (see [Message
-#' (Subscribe)](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html)
-#' in the Chat Messaging API).
+#' @param roomIdentifier &#91;required&#93; Identifier of the room where the message should be deleted. Currently this must be an ARN.
+#' @param id &#91;required&#93; ID of the message to be deleted. This is the `Id` field in the received message (see [Message (Subscribe)](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html) in the Chat Messaging API).
 #' @param reason Reason for deleting the message.
 #'
 #' @return
@@ -446,16 +402,12 @@ ivschat_delete_room <- function(identifier) {
 #' Disconnects all connections using a specified user ID from a room
 #'
 #' @description
-#' Disconnects all connections using a specified user ID from a room. This
-#' replicates the
-#' [DisconnectUser](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-disconnectuser-publish.html)
-#' WebSocket operation in the Amazon IVS Chat Messaging API.
+#' Disconnects all connections using a specified user ID from a room. This replicates the [DisconnectUser](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-disconnectuser-publish.html) WebSocket operation in the Amazon IVS Chat Messaging API.
 #'
 #' @usage
 #' ivschat_disconnect_user(roomIdentifier, userId, reason)
 #'
-#' @param roomIdentifier &#91;required&#93; Identifier of the room from which the user's clients should be
-#' disconnected. Currently this must be an ARN.
+#' @param roomIdentifier &#91;required&#93; Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.
 #' @param userId &#91;required&#93; ID of the user (connection) to disconnect from the room.
 #' @param reason Reason for disconnecting the user.
 #'
@@ -575,8 +527,7 @@ ivschat_get_logging_configuration <- function(identifier) {
 #' @usage
 #' ivschat_get_room(identifier)
 #'
-#' @param identifier &#91;required&#93; Identifier of the room for which the configuration is to be retrieved.
-#' Currently this must be an ARN.
+#' @param identifier &#91;required&#93; Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.
 #'
 #' @return
 #' A list with the following syntax:
@@ -641,14 +592,12 @@ ivschat_get_room <- function(identifier) {
 #' AWS region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all your logging configurations in the
-#' AWS region where the API request is processed.
+#' Gets summary information about all your logging configurations in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivschat_list_logging_configurations(nextToken, maxResults)
 #'
-#' @param nextToken The first logging configurations to retrieve. This is used for
-#' pagination; see the `nextToken` response field.
+#' @param nextToken The first logging configurations to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of logging configurations to return. Default: 50.
 #'
 #' @return
@@ -723,17 +672,14 @@ ivschat_list_logging_configurations <- function(nextToken = NULL, maxResults = N
 #' the API request is processed
 #'
 #' @description
-#' Gets summary information about all your rooms in the AWS region where
-#' the API request is processed. Results are sorted in descending order of
-#' `updateTime`.
+#' Gets summary information about all your rooms in the AWS region where the API request is processed. Results are sorted in descending order of `updateTime`.
 #'
 #' @usage
 #' ivschat_list_rooms(name, nextToken, maxResults, messageReviewHandlerUri,
 #'   loggingConfigurationIdentifier)
 #'
 #' @param name Filters the list to match the specified room name.
-#' @param nextToken The first room to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first room to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of rooms to return. Default: 50.
 #' @param messageReviewHandlerUri Filters the list to match the specified message review handler URI.
 #' @param loggingConfigurationIdentifier Logging-configuration identifier.
@@ -858,18 +804,14 @@ ivschat_list_tags_for_resource <- function(resourceArn) {
 #' Sends an event to a room
 #'
 #' @description
-#' Sends an event to a room. Use this within your application’s business
-#' logic to send events to clients of a room; e.g., to notify clients to
-#' change the way the chat UI is rendered.
+#' Sends an event to a room. Use this within your application’s business logic to send events to clients of a room; e.g., to notify clients to change the way the chat UI is rendered.
 #'
 #' @usage
 #' ivschat_send_event(roomIdentifier, eventName, attributes)
 #'
-#' @param roomIdentifier &#91;required&#93; Identifier of the room to which the event will be sent. Currently this
-#' must be an ARN.
+#' @param roomIdentifier &#91;required&#93; Identifier of the room to which the event will be sent. Currently this must be an ARN.
 #' @param eventName &#91;required&#93; Application-defined name of the event to send to clients.
-#' @param attributes Application-defined metadata to attach to the event sent to clients. The
-#' maximum length of the metadata is 1 KB total.
+#' @param attributes Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.
 #'
 #' @return
 #' A list with the following syntax:
@@ -923,13 +865,7 @@ ivschat_send_event <- function(roomIdentifier, eventName, attributes = NULL) {
 #' ivschat_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be tagged. The ARN must be URL-encoded.
-#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS Chat has no constraints beyond what is
-#' documented there.
+#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -977,13 +913,7 @@ ivschat_tag_resource <- function(resourceArn, tags) {
 #' ivschat_untag_resource(resourceArn, tagKeys)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be untagged. The ARN must be URL-encoded.
-#' @param tagKeys &#91;required&#93; Array of tags to be removed. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS Chat has no constraints beyond what is
-#' documented there.
+#' @param tagKeys &#91;required&#93; Array of tags to be removed. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -1033,9 +963,7 @@ ivschat_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param identifier &#91;required&#93; Identifier of the logging configuration to be updated.
 #' @param name Logging-configuration name. The value does not need to be unique.
-#' @param destinationConfiguration A complex type that contains a destination configuration for where chat
-#' content will be logged. There can be only one type of destination
-#' (`cloudWatchLogs`, `firehose`, or `s3`) in a `destinationConfiguration`.
+#' @param destinationConfiguration A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (`cloudWatchLogs`, `firehose`, or `s3`) in a `destinationConfiguration`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1123,14 +1051,9 @@ ivschat_update_logging_configuration <- function(identifier, name = NULL, destin
 #'
 #' @param identifier &#91;required&#93; Identifier of the room to be updated. Currently this must be an ARN.
 #' @param name Room name. The value does not need to be unique.
-#' @param maximumMessageRatePerSecond Maximum number of messages per second that can be sent to the room (by
-#' all clients). Default: 10.
-#' @param maximumMessageLength The maximum number of characters in a single message. Messages are
-#' expected to be UTF-8 encoded and this limit applies specifically to
-#' rune/code-point count, not number of bytes. Default: 500.
-#' @param messageReviewHandler Configuration information for optional review of messages. Specify an
-#' empty `uri` string to disassociate a message review handler from the
-#' specified room.
+#' @param maximumMessageRatePerSecond Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.
+#' @param maximumMessageLength The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.
+#' @param messageReviewHandler Configuration information for optional review of messages. Specify an empty `uri` string to disassociate a message review handler from the specified room.
 #' @param loggingConfigurationIdentifiers Array of logging-configuration identifiers attached to the room.
 #'
 #' @return

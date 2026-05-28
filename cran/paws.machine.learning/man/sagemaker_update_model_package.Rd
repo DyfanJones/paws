@@ -30,38 +30,20 @@ sagemaker_update_model_package(
 
 \item{CustomerMetadataProperties}{The metadata properties associated with the model package versions.}
 
-\item{CustomerMetadataPropertiesToRemove}{The metadata properties associated with the model package versions to
-remove.}
+\item{CustomerMetadataPropertiesToRemove}{The metadata properties associated with the model package versions to remove.}
 
-\item{AdditionalInferenceSpecificationsToAdd}{An array of additional Inference Specification objects to be added to
-the existing array additional Inference Specification. Total number of
-additional Inference Specifications can not exceed 15. Each additional
-Inference Specification specifies artifacts based on this model package
-that can be used on inference endpoints. Generally used with SageMaker
-Neo to store the compiled artifacts.}
+\item{AdditionalInferenceSpecificationsToAdd}{An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.}
 
-\item{InferenceSpecification}{Specifies details about inference jobs that you can run with models
-based on this model package, including the following information:
+\item{InferenceSpecification}{Specifies details about inference jobs that you can run with models based on this model package, including the following information:
 \itemize{
-\item The Amazon ECR paths of containers that contain the inference code
-and model artifacts.
-\item The instance types that the model package supports for transform
-jobs and real-time endpoints used for inference.
-\item The input and output content formats that the model package supports
-for inference.
+\item The Amazon ECR paths of containers that contain the inference code and model artifacts.
+\item The instance types that the model package supports for transform jobs and real-time endpoints used for inference.
+\item The input and output content formats that the model package supports for inference.
 }}
 
 \item{SourceUri}{The URI of the source for the model package.}
 
-\item{ModelCard}{The model card associated with the model package. Since
-\code{ModelPackageModelCard} is tied to a model package, it is a specific
-usage of a model card and its schema is simplified compared to the
-schema of \code{ModelCard}. The \code{ModelPackageModelCard} schema does not
-include \code{model_package_details}, and \code{model_overview} is composed of the
-\code{model_creator} and \code{model_artifact} properties. For more information
-about the model package model card schema, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema}{Model package model card schema}.
-For more information about the model card associated with the model
-package, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html}{View the Details of a Model Version}.}
+\item{ModelCard}{The model card associated with the model package. Since \code{ModelPackageModelCard} is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of \code{ModelCard}. The \code{ModelPackageModelCard} schema does not include \code{model_package_details}, and \code{model_overview} is composed of the \code{model_creator} and \code{model_artifact} properties. For more information about the model package model card schema, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema}{Model package model card schema}. For more information about the model card associated with the model package, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html}{View the Details of a Model Version}.}
 
 \item{ModelLifeCycle}{A structure describing the current state of the model in its life cycle.}
 

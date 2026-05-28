@@ -9,10 +9,7 @@ ssoadmin_remove_region(InstanceArn, RegionName)
 \arguments{
 \item{InstanceArn}{[required] The Amazon Resource Name (ARN) of the IAM Identity Center instance.}
 
-\item{RegionName}{[required] The name of the Amazon Web Services Region to remove from the IAM
-Identity Center instance. The Region name must be 1-32 characters long
-and follow the pattern of Amazon Web Services Region names (for example,
-us-east-1). The primary Region cannot be removed.}
+\item{RegionName}{[required] The name of the Amazon Web Services Region to remove from the IAM Identity Center instance. The Region name must be 1-32 characters long and follow the pattern of Amazon Web Services Region names (for example, us-east-1). The primary Region cannot be removed.}
 }
 \description{
 Removes an additional Region from an IAM Identity Center instance. This operation initiates an asynchronous workflow to clean up IAM Identity Center resources in the specified additional Region. The Region status is set to REMOVING and the Region record is deleted when the workflow completes. The request must be made from the primary Region. The target Region cannot be the primary Region, and no other add or remove Region workflows can be in progress.

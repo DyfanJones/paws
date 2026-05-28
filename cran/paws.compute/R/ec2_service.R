@@ -5,9 +5,29 @@ NULL
 #' Amazon Elastic Compute Cloud
 #'
 #' @description
-#' You can access the features of Amazon Elastic Compute Cloud (Amazon EC2)
-#' programmatically. For more information, see the [Amazon EC2 Developer
-#' Guide](https://docs.aws.amazon.com/ec2/latest/devguide/).
+#' This is the *Amazon EC2 API Reference*. It provides descriptions, API request parameters, and the XML response for each of the Amazon EC2 Query API actions. Note that the Amazon EC2 API includes actions for Amazon EC2 plus additional services, such as Amazon EBS and Amazon VPC.
+#' 
+#' **Learn more**
+#' 
+#' -   To learn about using the Query API, see [Using the API for Amazon EC2](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-low-level-api.html).
+#' 
+#' -   To learn about the permissions required to call an Amazon EC2 API action, see [Actions, resources, and condition keys for Amazon EC2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html).
+#' 
+#' -   To get the list of API actions by service and resource, see [Actions by service](https://docs.aws.amazon.com/ec2/latest/devguide/OperationList-query.html).
+#' 
+#' -   To get the alphabetical list of API actions, see .
+#' 
+#' -   To get descriptions of the API error codes, see [Error codes for the Amazon EC2 API](https://docs.aws.amazon.com/ec2/latest/devguide/errors-overview.html).
+#' 
+#' Alternatively, use one of the following methods to access the Amazon EC2 API, instead of using the Query API directly:
+#' 
+#' -   [Amazon Web Services CLI Command Reference - ec2 commands](https://docs.aws.amazon.com/cli/latest/reference/ec2/)
+#' 
+#' -   [CloudFormation - Amazon EC2 resource type reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/AWS_EC2.html)
+#' 
+#' -   [Amazon Web Services Tools for PowerShell Cmdlet Reference - Amazon EC2 cmdlets](https://docs.aws.amazon.com/powershell/v5/reference/items/EC2_cmdlets.html)
+#' 
+#' -   [Amazon Web Services SDKs](https://builder.aws.com/build/tools)
 #'
 #' @param
 #' config
@@ -434,6 +454,7 @@ NULL
 #'  \link[=ec2_describe_ipam_byoasn]{describe_ipam_byoasn} \tab Describes your Autonomous System Numbers (ASNs), their provisioning statuses, and the BYOIP CIDRs with which they are associated\cr
 #'  \link[=ec2_describe_ipam_external_resource_verification_tokens]{describe_ipam_external_resource_verification_tokens} \tab Describe verification tokens\cr
 #'  \link[=ec2_describe_ipam_policies]{describe_ipam_policies} \tab Describes one or more IPAM policies\cr
+#'  \link[=ec2_describe_ipam_pool_allocations]{describe_ipam_pool_allocations} \tab Describes IPAM pool allocations\cr
 #'  \link[=ec2_describe_ipam_pools]{describe_ipam_pools} \tab Get information about your IPAM pools\cr
 #'  \link[=ec2_describe_ipam_prefix_list_resolvers]{describe_ipam_prefix_list_resolvers} \tab Describes one or more IPAM prefix list resolvers\cr
 #'  \link[=ec2_describe_ipam_prefix_list_resolver_targets]{describe_ipam_prefix_list_resolver_targets} \tab Describes one or more IPAM prefix list resolver Targets\cr
@@ -727,6 +748,7 @@ NULL
 #'  \link[=ec2_modify_ipam]{modify_ipam} \tab Modify the configurations of an IPAM\cr
 #'  \link[=ec2_modify_ipam_policy_allocation_rules]{modify_ipam_policy_allocation_rules} \tab Modifies the allocation rules in an IPAM policy\cr
 #'  \link[=ec2_modify_ipam_pool]{modify_ipam_pool} \tab Modify the configurations of an IPAM pool\cr
+#'  \link[=ec2_modify_ipam_pool_allocation]{modify_ipam_pool_allocation} \tab Modifies the description of an IPAM pool allocation\cr
 #'  \link[=ec2_modify_ipam_prefix_list_resolver]{modify_ipam_prefix_list_resolver} \tab Modifies an IPAM prefix list resolver\cr
 #'  \link[=ec2_modify_ipam_prefix_list_resolver_target]{modify_ipam_prefix_list_resolver_target} \tab Modifies an IPAM prefix list resolver target\cr
 #'  \link[=ec2_modify_ipam_resource_cidr]{modify_ipam_resource_cidr} \tab Modify a resource CIDR\cr

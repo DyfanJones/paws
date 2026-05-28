@@ -7,8 +7,7 @@
 verifiedpermissions_get_policy_store_alias(aliasName)
 }
 \arguments{
-\item{aliasName}{[required] Specifies the name of the policy store alias that you want information
-about.
+\item{aliasName}{[required] Specifies the name of the policy store alias that you want information about.
 
 The alias name must always be prefixed with \verb{policy-store-alias/}.}
 }

@@ -7,8 +7,7 @@
 globalaccelerator_describe_cross_account_attachment(AttachmentArn)
 }
 \arguments{
-\item{AttachmentArn}{[required] The Amazon Resource Name (ARN) for the cross-account attachment to
-describe.}
+\item{AttachmentArn}{[required] The Amazon Resource Name (ARN) for the cross-account attachment to describe.}
 }
 \description{
 Gets configuration information about a cross-account attachment.

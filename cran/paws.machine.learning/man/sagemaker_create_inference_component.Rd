@@ -20,24 +20,15 @@ sagemaker_create_inference_component(
 
 \item{EndpointName}{[required] The name of an existing endpoint where you host the inference component.}
 
-\item{VariantName}{The name of an existing production variant where you host the inference
-component.}
+\item{VariantName}{The name of an existing production variant where you host the inference component.}
 
-\item{Specification}{Details about the resources to deploy with this inference component,
-including the model, container, and compute resources.}
+\item{Specification}{Details about the resources to deploy with this inference component, including the model, container, and compute resources.}
 
-\item{Specifications}{A list of specification objects for the inference component, one per
-instance type. Use this parameter when you want to deploy a different
-model or resource configuration for the inference component on each
-instance type. You can use either this parameter or the singular
-\code{Specification} parameter, but not both.}
+\item{Specifications}{A list of specification objects for the inference component, one per instance type. Use this parameter when you want to deploy a different model or resource configuration for the inference component on each instance type. You can use either this parameter or the singular \code{Specification} parameter, but not both.}
 
-\item{RuntimeConfig}{Runtime settings for a model that is deployed with an inference
-component.}
+\item{RuntimeConfig}{Runtime settings for a model that is deployed with an inference component.}
 
-\item{Tags}{A list of key-value pairs associated with the model. For more
-information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources}
-in the \emph{Amazon Web Services General Reference}.}
+\item{Tags}{A list of key-value pairs associated with the model. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources} in the \emph{Amazon Web Services General Reference}.}
 }
 \description{
 Creates an inference component, which is a SageMaker AI hosting object that you can use to deploy a model to an endpoint. In the inference component settings, you specify the model, the endpoint, and how the model utilizes the resources that the endpoint hosts. You can optimize resource utilization by tailoring how the required CPU cores, accelerators, and memory are allocated. You can deploy multiple inference components to an endpoint, where each inference component contains one model and the resource utilization needs for that individual model. After you deploy an inference component, you can directly invoke the associated model when you use the InvokeEndpoint API action.

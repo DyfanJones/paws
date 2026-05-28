@@ -18,8 +18,7 @@ licensemanagerusersubscriptions_list_license_server_endpoints(
 \item IdentityProviderArn
 }}
 
-\item{NextToken}{A token to specify where to start paginating. This is the nextToken from
-a previously truncated response.}
+\item{NextToken}{A token to specify where to start paginating. This is the nextToken from a previously truncated response.}
 }
 \description{
 List the Remote Desktop Services (RDS) License Server endpoints

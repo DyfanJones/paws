@@ -106,13 +106,7 @@ ivs_batch_start_viewer_session_revocation <- function(viewerSessions) {
 #'
 #' @param name Ad configuration name. Defaults to “”.
 #' @param mediaTailorPlaybackConfigurations &#91;required&#93; List of integration configurations with media tailor resources.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @keywords internal
 #'
@@ -144,42 +138,16 @@ ivs_create_ad_configuration <- function(name = NULL, mediaTailorPlaybackConfigur
 #' See [https://www.paws-r-sdk.com/docs/ivs_create_channel/](https://www.paws-r-sdk.com/docs/ivs_create_channel/) for full documentation.
 #'
 #' @param name Channel name.
-#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video
-#' up to Full HD. Use `LOW` for near-real-time interaction with viewers.
-#' Default: `LOW`.
-#' @param type Channel type, which determines the allowable resolution and bitrate. *If
-#' you exceed the allowable input resolution or bitrate, the stream
-#' probably will disconnect immediately.* Default: `STANDARD`. For details,
-#' see [Channel
-#' Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
-#' @param authorized Whether the channel is private (enabled for playback authorization).
-#' Default: `false`.
-#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the
-#' ARN and enables recording. Default: "" (empty string, recording is
-#' disabled).
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
-#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default:
-#' `false`.
-#' @param preset Optional transcode preset for the channel. This is selectable only for
-#' `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types,
-#' the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel
-#' types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
-#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies
-#' the ARN and enables playback restriction. Default: "" (empty string, no
-#' playback restriction policy is applied).
-#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack
-#' input configuration is specified.
-#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If
-#' `multitrackInputConfiguration` is specified and `enabled` is `true`,
-#' then `containerFormat` is required and must be set to `FRAGMENTED_MP4`.
-#' Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`.
-#' Default: `TS`.
+#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video up to Full HD. Use `LOW` for near-real-time interaction with viewers. Default: `LOW`.
+#' @param type Channel type, which determines the allowable resolution and bitrate. *If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.* Default: `STANDARD`. For details, see [Channel Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
+#' @param authorized Whether the channel is private (enabled for playback authorization). Default: `false`.
+#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default: `false`.
+#' @param preset Optional transcode preset for the channel. This is selectable only for `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types, the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
+#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).
+#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.
+#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If `multitrackInputConfiguration` is specified and `enabled` is `true`, then `containerFormat` is required and must be set to `FRAGMENTED_MP4`. Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`. Default: `TS`.
 #' @param adConfigurationArn ARN of the ad configuration associated with the channel.
 #'
 #' @keywords internal
@@ -212,24 +180,11 @@ ivs_create_channel <- function(name = NULL, latencyMode = NULL, type = NULL, aut
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_create_playback_restriction_policy/](https://www.paws-r-sdk.com/docs/ivs_create_playback_restriction_policy/) for full documentation.
 #'
-#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed
-#' values are the officially assigned [ISO 3166-1
-#' alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
-#' Default: All countries (an empty array).
-#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are
-#' the same as valid values of the Origin header defined at
-#' [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin).
-#' Default: All origins (an empty array).
-#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default:
-#' `false`.
+#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed values are the officially assigned [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes. Default: All countries (an empty array).
+#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin). Default: All origins (an empty array).
+#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default: `false`.
 #' @param name Playback-restriction-policy name. The value does not need to be unique.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @keywords internal
 #'
@@ -262,21 +217,10 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #' See [https://www.paws-r-sdk.com/docs/ivs_create_recording_configuration/](https://www.paws-r-sdk.com/docs/ivs_create_recording_configuration/) for full documentation.
 #'
 #' @param name Recording-configuration name. The value does not need to be unique.
-#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where
-#' recorded video will be stored.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
-#' @param thumbnailConfiguration A complex type that allows you to enable/disable the recording of
-#' thumbnails for a live session and modify the interval at which
-#' thumbnails are generated for the live session.
-#' @param recordingReconnectWindowSeconds If a broadcast disconnects and then reconnects within the specified
-#' interval, the multiple streams will be considered a single broadcast and
-#' merged together. Default: 0.
+#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where recorded video will be stored.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+#' @param thumbnailConfiguration A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.
+#' @param recordingReconnectWindowSeconds If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.
 #' @param renditionConfiguration Object that describes which renditions should be recorded for a stream.
 #'
 #' @keywords internal
@@ -310,13 +254,7 @@ ivs_create_recording_configuration <- function(name = NULL, destinationConfigura
 #' See [https://www.paws-r-sdk.com/docs/ivs_create_stream_key/](https://www.paws-r-sdk.com/docs/ivs_create_stream_key/) for full documentation.
 #'
 #' @param channelArn &#91;required&#93; ARN of the channel for which to create the stream key.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @keywords internal
 #'
@@ -753,9 +691,7 @@ ivs_get_stream_key <- function(arn) {
 #' See [https://www.paws-r-sdk.com/docs/ivs_get_stream_session/](https://www.paws-r-sdk.com/docs/ivs_get_stream_session/) for full documentation.
 #'
 #' @param channelArn &#91;required&#93; ARN of the channel resource
-#' @param streamId Unique identifier for a live or previously live stream in the specified
-#' channel. If no `streamId` is provided, this returns the most recent
-#' stream session for the channel, if it exists.
+#' @param streamId Unique identifier for a live or previously live stream in the specified channel. If no `streamId` is provided, this returns the most recent stream session for the channel, if it exists.
 #'
 #' @keywords internal
 #'
@@ -789,13 +725,7 @@ ivs_get_stream_session <- function(channelArn, streamId = NULL) {
 #'
 #' @param publicKeyMaterial &#91;required&#93; The public portion of a customer-generated key pair.
 #' @param name Playback-key-pair name. The value does not need to be unique.
-#' @param tags Any tags provided with the request are added to the playback key pair
-#' tags. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Any tags provided with the request are added to the playback key pair tags. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @keywords internal
 #'
@@ -860,10 +790,8 @@ ivs_insert_ad_break <- function(channelArn, durationSeconds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_ad_configurations/](https://www.paws-r-sdk.com/docs/ivs_list_ad_configurations/) for full documentation.
 #'
-#' @param nextToken The first ad configuration to retrieve. This is used for pagination; see
-#' the `nextToken` response field.
-#' @param maxResults Maximum number of ad configurations to return. Default: your service
-#' quota or 100, whichever is smaller.
+#' @param nextToken The first ad configuration to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of ad configurations to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @keywords internal
 #'
@@ -896,12 +824,10 @@ ivs_list_ad_configurations <- function(nextToken = NULL, maxResults = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_channels/](https://www.paws-r-sdk.com/docs/ivs_list_channels/) for full documentation.
 #'
 #' @param filterByName Filters the channel list to match the specified name.
-#' @param filterByRecordingConfigurationArn Filters the channel list to match the specified recording-configuration
-#' ARN.
+#' @param filterByRecordingConfigurationArn Filters the channel list to match the specified recording-configuration ARN.
 #' @param filterByPlaybackRestrictionPolicyArn Filters the channel list to match the specified policy.
 #' @param filterByAdConfigurationArn Filters the channel list to match the specified ad configuration ARN.
-#' @param nextToken The first channel to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first channel to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of channels to return. Default: 100.
 #'
 #' @keywords internal
@@ -933,10 +859,8 @@ ivs_list_channels <- function(filterByName = NULL, filterByRecordingConfiguratio
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_playback_key_pairs/](https://www.paws-r-sdk.com/docs/ivs_list_playback_key_pairs/) for full documentation.
 #'
-#' @param nextToken The first key pair to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
-#' @param maxResults Maximum number of key pairs to return. Default: your service quota or
-#' 100, whichever is smaller.
+#' @param nextToken The first key pair to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @keywords internal
 #'
@@ -967,8 +891,7 @@ ivs_list_playback_key_pairs <- function(nextToken = NULL, maxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_playback_restriction_policies/](https://www.paws-r-sdk.com/docs/ivs_list_playback_restriction_policies/) for full documentation.
 #'
-#' @param nextToken The first policy to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first policy to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of policies to return. Default: 1.
 #'
 #' @keywords internal
@@ -1002,10 +925,8 @@ ivs_list_playback_restriction_policies <- function(nextToken = NULL, maxResults 
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_recording_configurations/](https://www.paws-r-sdk.com/docs/ivs_list_recording_configurations/) for full documentation.
 #'
-#' @param nextToken The first recording configuration to retrieve. This is used for
-#' pagination; see the `nextToken` response field.
-#' @param maxResults Maximum number of recording configurations to return. Default: your
-#' service quota or 100, whichever is smaller.
+#' @param nextToken The first recording configuration to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @keywords internal
 #'
@@ -1037,8 +958,7 @@ ivs_list_recording_configurations <- function(nextToken = NULL, maxResults = NUL
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_stream_keys/](https://www.paws-r-sdk.com/docs/ivs_list_stream_keys/) for full documentation.
 #'
 #' @param channelArn &#91;required&#93; Channel ARN used to filter the list.
-#' @param nextToken The first stream key to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first stream key to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streamKeys to return. Default: 1.
 #'
 #' @keywords internal
@@ -1072,8 +992,7 @@ ivs_list_stream_keys <- function(channelArn, nextToken = NULL, maxResults = NULL
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_stream_sessions/](https://www.paws-r-sdk.com/docs/ivs_list_stream_sessions/) for full documentation.
 #'
 #' @param channelArn &#91;required&#93; Channel ARN used to filter the list.
-#' @param nextToken The first stream to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first stream to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streams to return. Default: 100.
 #'
 #' @keywords internal
@@ -1107,8 +1026,7 @@ ivs_list_stream_sessions <- function(channelArn, nextToken = NULL, maxResults = 
 #' See [https://www.paws-r-sdk.com/docs/ivs_list_streams/](https://www.paws-r-sdk.com/docs/ivs_list_streams/) for full documentation.
 #'
 #' @param filterBy Filters the stream list to match the specified criterion.
-#' @param nextToken The first stream to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first stream to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streams to return. Default: 100.
 #'
 #' @keywords internal
@@ -1171,8 +1089,7 @@ ivs_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_put_metadata/](https://www.paws-r-sdk.com/docs/ivs_put_metadata/) for full documentation.
 #'
-#' @param channelArn &#91;required&#93; ARN of the channel into which metadata is inserted. This channel must
-#' have an active stream.
+#' @param channelArn &#91;required&#93; ARN of the channel into which metadata is inserted. This channel must have an active stream.
 #' @param metadata &#91;required&#93; Metadata to insert into the stream. Maximum: 1 KB per request.
 #'
 #' @keywords internal
@@ -1206,12 +1123,8 @@ ivs_put_metadata <- function(channelArn, metadata) {
 #' See [https://www.paws-r-sdk.com/docs/ivs_start_viewer_session_revocation/](https://www.paws-r-sdk.com/docs/ivs_start_viewer_session_revocation/) for full documentation.
 #'
 #' @param channelArn &#91;required&#93; The ARN of the channel associated with the viewer session to revoke.
-#' @param viewerId &#91;required&#93; The ID of the viewer associated with the viewer session to revoke. Do
-#' not use this field for personally identifying, confidential, or
-#' sensitive information.
-#' @param viewerSessionVersionsLessThanOrEqualTo An optional filter on which versions of the viewer session to revoke.
-#' All versions less than or equal to the specified version will be
-#' revoked. Default: 0.
+#' @param viewerId &#91;required&#93; The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.
+#' @param viewerSessionVersionsLessThanOrEqualTo An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.
 #'
 #' @keywords internal
 #'
@@ -1274,15 +1187,8 @@ ivs_stop_stream <- function(channelArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_tag_resource/](https://www.paws-r-sdk.com/docs/ivs_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be added or updated. The ARN
-#' must be URL-encoded.
-#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
+#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @keywords internal
 #'
@@ -1313,15 +1219,8 @@ ivs_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ivs_untag_resource/](https://www.paws-r-sdk.com/docs/ivs_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be removed. The ARN must be
-#' URL-encoded.
-#' @param tagKeys &#91;required&#93; Array of tag keys (strings) for the tags to be removed. See [Best
-#' practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.
+#' @param tagKeys &#91;required&#93; Array of tag keys (strings) for the tags to be removed. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @keywords internal
 #'
@@ -1354,33 +1253,15 @@ ivs_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param arn &#91;required&#93; ARN of the channel to be updated.
 #' @param name Channel name.
-#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video
-#' up to Full HD. Use `LOW` for near-real-time interaction with viewers.
-#' @param type Channel type, which determines the allowable resolution and bitrate. *If
-#' you exceed the allowable input resolution or bitrate, the stream
-#' probably will disconnect immediately.* Default: `STANDARD`. For details,
-#' see [Channel
-#' Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
+#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video up to Full HD. Use `LOW` for near-real-time interaction with viewers.
+#' @param type Channel type, which determines the allowable resolution and bitrate. *If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.* Default: `STANDARD`. For details, see [Channel Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
 #' @param authorized Whether the channel is private (enabled for playback authorization).
-#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the
-#' ARN and enables recording. If this is set to an empty string, recording
-#' is disabled.
-#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default:
-#' `false`.
-#' @param preset Optional transcode preset for the channel. This is selectable only for
-#' `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types,
-#' the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel
-#' types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
-#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies
-#' the ARN and enables playback restriction. If this is set to an empty
-#' string, playback restriction policy is disabled.
-#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack
-#' input configuration is specified.
-#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If
-#' `multitrackInputConfiguration` is specified and `enabled` is `true`,
-#' then `containerFormat` is required and must be set to `FRAGMENTED_MP4`.
-#' Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`.
-#' Default: `TS`.
+#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.
+#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default: `false`.
+#' @param preset Optional transcode preset for the channel. This is selectable only for `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types, the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
+#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.
+#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.
+#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If `multitrackInputConfiguration` is specified and `enabled` is `true`, then `containerFormat` is required and must be set to `FRAGMENTED_MP4`. Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`. Default: `TS`.
 #' @param adConfigurationArn ARN of the ad configuration associated with the channel.
 #'
 #' @keywords internal
@@ -1413,16 +1294,9 @@ ivs_update_channel <- function(arn, name = NULL, latencyMode = NULL, type = NULL
 #' See [https://www.paws-r-sdk.com/docs/ivs_update_playback_restriction_policy/](https://www.paws-r-sdk.com/docs/ivs_update_playback_restriction_policy/) for full documentation.
 #'
 #' @param arn &#91;required&#93; ARN of the playback-restriction-policy to be updated.
-#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed
-#' values are the officially assigned [ISO 3166-1
-#' alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
-#' Default: All countries (an empty array).
-#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are
-#' the same as valid values of the Origin header defined at
-#' [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin).
-#' Default: All origins (an empty array).
-#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default:
-#' `false`.
+#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed values are the officially assigned [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes. Default: All countries (an empty array).
+#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin). Default: All origins (an empty array).
+#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default: `false`.
 #' @param name Playback-restriction-policy name. The value does not need to be unique.
 #'
 #' @keywords internal

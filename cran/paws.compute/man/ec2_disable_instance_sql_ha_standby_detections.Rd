@@ -9,13 +9,9 @@ monitoring}
 ec2_disable_instance_sql_ha_standby_detections(InstanceIds, DryRun = NULL)
 }
 \arguments{
-\item{InstanceIds}{[required] The IDs of the instances to disable from SQL Server High Availability
-standby detection monitoring.}
+\item{InstanceIds}{[required] The IDs of the instances to disable from SQL Server High Availability standby detection monitoring.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Disable Amazon EC2 instances running in an SQL Server High Availability cluster from SQL Server High Availability instance standby detection monitoring. Once disabled, Amazon Web Services no longer monitors the metadata for the instances to determine whether they are active or standby nodes in the SQL Server High Availability cluster.

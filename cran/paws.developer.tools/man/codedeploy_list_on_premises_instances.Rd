@@ -13,18 +13,13 @@ codedeploy_list_on_premises_instances(
 \arguments{
 \item{registrationStatus}{The registration status of the on-premises instances:
 \itemize{
-\item \code{Deregistered}: Include deregistered on-premises instances in the
-resulting list.
-\item \code{Registered}: Include registered on-premises instances in the
-resulting list.
+\item \code{Deregistered}: Include deregistered on-premises instances in the resulting list.
+\item \code{Registered}: Include registered on-premises instances in the resulting list.
 }}
 
-\item{tagFilters}{The on-premises instance tags that are used to restrict the on-premises
-instance names returned.}
+\item{tagFilters}{The on-premises instance tags that are used to restrict the on-premises instance names returned.}
 
-\item{nextToken}{An identifier returned from the previous list on-premises instances
-call. It can be used to return the next set of on-premises instances in
-the list.}
+\item{nextToken}{An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.}
 }
 \description{
 Gets a list of names for one or more on-premises instances.

@@ -7,8 +7,7 @@
 workspaces_delete_client_branding(ResourceId, Platforms)
 }
 \arguments{
-\item{ResourceId}{[required] The directory identifier of the WorkSpace for which you want to delete
-client branding.}
+\item{ResourceId}{[required] The directory identifier of the WorkSpace for which you want to delete client branding.}
 
 \item{Platforms}{[required] The device type for which you want to delete client branding.}
 }

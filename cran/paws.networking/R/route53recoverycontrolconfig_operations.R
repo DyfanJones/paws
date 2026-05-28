@@ -10,13 +10,10 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_cluster/](https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_cluster/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
 #' @param ClusterName &#91;required&#93; The name of the cluster.
 #' @param Tags The tags associated with the cluster.
-#' @param NetworkType The network type of the cluster. NetworkType can be one of the
-#' following: IPV4, DUALSTACK.
+#' @param NetworkType The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.
 #'
 #' @keywords internal
 #'
@@ -47,9 +44,7 @@ route53recoverycontrolconfig_create_cluster <- function(ClientToken = NULL, Clus
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_control_panel/](https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_control_panel/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster for the control panel.
 #' @param ControlPanelName &#91;required&#93; The name of the control panel.
 #' @param Tags The tags associated with the control panel.
@@ -83,13 +78,9 @@ route53recoverycontrolconfig_create_control_panel <- function(ClientToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_routing_control/](https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_routing_control/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
-#' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster that includes the routing
-#' control.
-#' @param ControlPanelArn The Amazon Resource Name (ARN) of the control panel that includes the
-#' routing control.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
+#' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster that includes the routing control.
+#' @param ControlPanelArn The Amazon Resource Name (ARN) of the control panel that includes the routing control.
 #' @param RoutingControlName &#91;required&#93; The name of the routing control.
 #'
 #' @keywords internal
@@ -122,9 +113,7 @@ route53recoverycontrolconfig_create_routing_control <- function(ClientToken = NU
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_safety_rule/](https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_create_safety_rule/) for full documentation.
 #'
 #' @param AssertionRule The assertion rule requested.
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
 #' @param GatingRule The gating rule requested.
 #' @param Tags The tags associated with the safety rule.
 #'
@@ -219,8 +208,7 @@ route53recoverycontrolconfig_delete_control_panel <- function(ControlPanelArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_delete_routing_control/](https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_delete_routing_control/) for full documentation.
 #'
-#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) of the routing control that you're
-#' deleting.
+#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) of the routing control that you're deleting.
 #'
 #' @keywords internal
 #'
@@ -699,8 +687,7 @@ route53recoverycontrolconfig_untag_resource <- function(ResourceArn, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_update_cluster/](https://www.paws-r-sdk.com/docs/route53recoverycontrolconfig_update_cluster/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster.
-#' @param NetworkType &#91;required&#93; The network type of the cluster. NetworkType can be one of the
-#' following: IPV4, DUALSTACK.
+#' @param NetworkType &#91;required&#93; The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.
 #'
 #' @keywords internal
 #'

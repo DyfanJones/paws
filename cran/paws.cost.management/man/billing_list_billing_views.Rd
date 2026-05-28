@@ -16,29 +16,21 @@ billing_list_billing_views(
 )
 }
 \arguments{
-\item{activeTimeRange}{The time range for the billing views listed. \code{PRIMARY} billing view is
-always listed. \code{BILLING_GROUP} billing views are listed for time ranges
-when the associated billing group resource in Billing Conductor is
-active. The time range must be within one calendar month.}
+\item{activeTimeRange}{The time range for the billing views listed. \code{PRIMARY} billing view is always listed. \code{BILLING_GROUP} billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month.}
 
-\item{arns}{The Amazon Resource Name (ARN) that can be used to uniquely identify the
-billing view.}
+\item{arns}{The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.}
 
 \item{billingViewTypes}{The type of billing view.}
 
-\item{names}{Filters the list of billing views by name. You can specify search
-criteria to match billing view names based on the search option
-provided.}
+\item{names}{Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.}
 
 \item{ownerAccountId}{The list of owners of the billing view.}
 
-\item{sourceAccountId}{Filters the results to include only billing views that use the specified
-account as a source.}
+\item{sourceAccountId}{Filters the results to include only billing views that use the specified account as a source.}
 
 \item{maxResults}{The maximum number of billing views to retrieve. Default is 100.}
 
-\item{nextToken}{The pagination token that is used on subsequent calls to list billing
-views.}
+\item{nextToken}{The pagination token that is used on subsequent calls to list billing views.}
 }
 \description{
 Lists the billing views available for a given time period.

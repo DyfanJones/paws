@@ -14,34 +14,23 @@ guardduty_update_filter(
 )
 }
 \arguments{
-\item{DetectorId}{[required] The unique ID of the detector that specifies the GuardDuty service where
-you want to update a filter.
+\item{DetectorId}{[required] The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.
 
-To find the \code{detectorId} in the current Region, see the Settings page in
-the GuardDuty console, or run the
-\code{\link[=guardduty_list_detectors]{list_detectors}} API.}
+To find the \code{detectorId} in the current Region, see the Settings page in the GuardDuty console, or run the \code{\link[=guardduty_list_detectors]{list_detectors}} API.}
 
 \item{FilterName}{[required] The name of the filter.}
 
-\item{Description}{The description of the filter. Valid characters include alphanumeric
-characters, and special characters such as hyphen, period, colon,
-underscore, parentheses (\code{{ }}, \verb{[ ]}, and \verb{( )}), forward slash,
-horizontal tab, vertical tab, newline, form feed, return, and
-whitespace.
+\item{Description}{The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (\code{{ }}, \verb{[ ]}, and \verb{( )}), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
 
 [ ]: R:\%20}
 
-\item{Action}{Specifies the action that is to be applied to the findings that match
-the filter.
+\item{Action}{Specifies the action that is to be applied to the findings that match the filter.
 
 Default: NOOP}
 
-\item{Rank}{Specifies the position of the filter in the list of current filters.
-Also specifies the order in which this filter is applied to the
-findings.}
+\item{Rank}{Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.}
 
-\item{FindingCriteria}{Represents the criteria to be used in the filter for querying findings.
-The following fields are available for filtering:
+\item{FindingCriteria}{Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:
 \itemize{
 \item accountId
 \item arn
@@ -722,9 +711,7 @@ Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
 \item service.userFeedback
 \item severity
 
-To configure severity based filters, use the following for the
-\href{https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html}{FindingCriteria}
-condition:
+To configure severity based filters, use the following for the \href{https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html}{FindingCriteria} condition:
 \itemize{
 \item \strong{Low}: \verb{["1", "2", "3"]}
 \item \strong{Medium}: \verb{["4", "5", "6"]}
@@ -732,8 +719,7 @@ condition:
 \item \strong{Critical}: \verb{["9", "10"]}
 }
 
-For more information, see \href{https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html}{Findings severity levels}
-in the \emph{Amazon GuardDuty User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html}{Findings severity levels} in the \emph{Amazon GuardDuty User Guide}.
 \item title
 \item type
 \item updatedAt

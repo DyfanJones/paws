@@ -15,15 +15,11 @@ quicksight_update_ip_restriction(
 \arguments{
 \item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the IP rules.}
 
-\item{IpRestrictionRuleMap}{A map that describes the updated IP rules with CIDR ranges and
-descriptions.}
+\item{IpRestrictionRuleMap}{A map that describes the updated IP rules with CIDR ranges and descriptions.}
 
-\item{VpcIdRestrictionRuleMap}{A map of VPC IDs and their corresponding rules. When you configure this
-parameter, traffic from all VPC endpoints that are present in the
-specified VPC is allowed.}
+\item{VpcIdRestrictionRuleMap}{A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints that are present in the specified VPC is allowed.}
 
-\item{VpcEndpointIdRestrictionRuleMap}{A map of allowed VPC endpoint IDs and their corresponding rule
-descriptions.}
+\item{VpcEndpointIdRestrictionRuleMap}{A map of allowed VPC endpoint IDs and their corresponding rule descriptions.}
 
 \item{Enabled}{A value that specifies whether IP rules are turned on.}
 }

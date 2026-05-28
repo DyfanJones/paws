@@ -11,11 +11,9 @@ bedrock_register_marketplace_model_endpoint(
 )
 }
 \arguments{
-\item{endpointIdentifier}{[required] The ARN of the Amazon SageMaker endpoint you want to register with
-Amazon Bedrock Marketplace.}
+\item{endpointIdentifier}{[required] The ARN of the Amazon SageMaker endpoint you want to register with Amazon Bedrock Marketplace.}
 
-\item{modelSourceIdentifier}{[required] The ARN of the model from Amazon Bedrock Marketplace that is deployed on
-the endpoint.}
+\item{modelSourceIdentifier}{[required] The ARN of the model from Amazon Bedrock Marketplace that is deployed on the endpoint.}
 }
 \description{
 Registers an existing Amazon SageMaker endpoint with Amazon Bedrock Marketplace, allowing it to be used with Amazon Bedrock APIs.

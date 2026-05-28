@@ -15,20 +15,11 @@ redshift_revoke_cluster_security_group_ingress(
 \arguments{
 \item{ClusterSecurityGroupName}{[required] The name of the security Group from which to revoke the ingress rule.}
 
-\item{CIDRIP}{The IP range for which to revoke access. This range must be a valid
-Classless Inter-Domain Routing (CIDR) block of IP addresses. If \code{CIDRIP}
-is specified, \code{EC2SecurityGroupName} and \code{EC2SecurityGroupOwnerId}
-cannot be provided.}
+\item{CIDRIP}{The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If \code{CIDRIP} is specified, \code{EC2SecurityGroupName} and \code{EC2SecurityGroupOwnerId} cannot be provided.}
 
-\item{EC2SecurityGroupName}{The name of the EC2 Security Group whose access is to be revoked. If
-\code{EC2SecurityGroupName} is specified, \code{EC2SecurityGroupOwnerId} must also
-be provided and \code{CIDRIP} cannot be provided.}
+\item{EC2SecurityGroupName}{The name of the EC2 Security Group whose access is to be revoked. If \code{EC2SecurityGroupName} is specified, \code{EC2SecurityGroupOwnerId} must also be provided and \code{CIDRIP} cannot be provided.}
 
-\item{EC2SecurityGroupOwnerId}{The Amazon Web Services account number of the owner of the security
-group specified in the \code{EC2SecurityGroupName} parameter. The Amazon Web
-Services access key ID is not an acceptable value. If
-\code{EC2SecurityGroupOwnerId} is specified, \code{EC2SecurityGroupName} must also
-be provided. and \code{CIDRIP} cannot be provided.
+\item{EC2SecurityGroupOwnerId}{The Amazon Web Services account number of the owner of the security group specified in the \code{EC2SecurityGroupName} parameter. The Amazon Web Services access key ID is not an acceptable value. If \code{EC2SecurityGroupOwnerId} is specified, \code{EC2SecurityGroupName} must also be provided. and \code{CIDRIP} cannot be provided.
 
 Example: \code{111122223333}}
 }

@@ -35,8 +35,7 @@ cloudwatchlogs_update_scheduled_query(
 
 \item{timezone}{The updated timezone for evaluating the schedule expression.}
 
-\item{startTimeOffset}{The updated time offset in seconds that defines the lookback period for
-the query.}
+\item{startTimeOffset}{The updated time offset in seconds that defines the lookback period for the query.}
 
 \item{destinationConfiguration}{The updated configuration for where to deliver query results.}
 
@@ -44,8 +43,7 @@ the query.}
 
 \item{scheduleEndTime}{The updated end time for the scheduled query in Unix epoch format.}
 
-\item{executionRoleArn}{[required] The updated ARN of the IAM role that grants permissions to execute the
-query and deliver results.}
+\item{executionRoleArn}{[required] The updated ARN of the IAM role that grants permissions to execute the query and deliver results.}
 
 \item{state}{The updated state of the scheduled query.}
 }

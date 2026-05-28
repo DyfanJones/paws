@@ -20,8 +20,7 @@ datazone_create_connection(
 \arguments{
 \item{awsLocation}{The location where the connection is created.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 
 \item{configurations}{The configurations of the connection.}
 

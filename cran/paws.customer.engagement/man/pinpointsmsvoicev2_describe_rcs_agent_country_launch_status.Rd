@@ -14,18 +14,15 @@ pinpointsmsvoicev2_describe_rcs_agent_country_launch_status(
 )
 }
 \arguments{
-\item{RcsAgentId}{[required] The unique identifier of the RCS agent. You can use either the
-RcsAgentId or RcsAgentArn.}
+\item{RcsAgentId}{[required] The unique identifier of the RCS agent. You can use either the RcsAgentId or RcsAgentArn.}
 
-\item{IsoCountryCodes}{An array of two-character ISO country codes, in ISO 3166-1 alpha-2
-format, to filter the results.}
+\item{IsoCountryCodes}{An array of two-character ISO country codes, in ISO 3166-1 alpha-2 format, to filter the results.}
 
 \item{Filters}{An array of CountryLaunchStatusFilter objects to filter the results.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 }
 \description{
 Retrieves the per-country launch status of an RCS agent, including carrier-level details for each country.

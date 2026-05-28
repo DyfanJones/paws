@@ -17,8 +17,7 @@ lookoutequipment_list_labels(
 \arguments{
 \item{LabelGroupName}{[required] Returns the name of the label group.}
 
-\item{IntervalStartTime}{Returns all the labels with a end time equal to or later than the start
-time given.}
+\item{IntervalStartTime}{Returns all the labels with a end time equal to or later than the start time given.}
 
 \item{IntervalEndTime}{Returns all labels with a start time earlier than the end time given.}
 
@@ -26,8 +25,7 @@ time given.}
 
 \item{Equipment}{Lists the labels that pertain to a particular piece of equipment.}
 
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-label groups.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of label groups.}
 
 \item{MaxResults}{Specifies the maximum number of labels to list.}
 }

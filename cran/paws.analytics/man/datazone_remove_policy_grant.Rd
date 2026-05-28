@@ -25,11 +25,9 @@ datazone_remove_policy_grant(
 
 \item{principal}{[required] The principal from which you want to remove a policy grant.}
 
-\item{grantIdentifier}{The ID of the policy grant that is to be removed from a specified
-entity.}
+\item{grantIdentifier}{The ID of the policy grant that is to be removed from a specified entity.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Removes a policy grant.

@@ -13,9 +13,15 @@ wellarchitected_list_lenses(
 )
 }
 \arguments{
+\item{NextToken}{The token to use to retrieve the next set of results.}
+
+\item{MaxResults}{The maximum number of results to return for this request.}
+
 \item{LensType}{The type of lenses to be returned.}
 
 \item{LensStatus}{The status of lenses to be returned.}
+
+\item{LensName}{The full name of the lens.}
 }
 \description{
 List the available lenses.

@@ -9,11 +9,9 @@ name}
 route53_change_resource_record_sets(HostedZoneId, ChangeBatch)
 }
 \arguments{
-\item{HostedZoneId}{[required] The ID of the hosted zone that contains the resource record sets that
-you want to change.}
+\item{HostedZoneId}{[required] The ID of the hosted zone that contains the resource record sets that you want to change.}
 
-\item{ChangeBatch}{[required] A complex type that contains an optional comment and the \code{Changes}
-element.}
+\item{ChangeBatch}{[required] A complex type that contains an optional comment and the \code{Changes} element.}
 }
 \description{
 Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified domain name or subdomain name. For example, you can use \code{\link[=route53_change_resource_record_sets]{change_resource_record_sets}} to create a resource record set that routes traffic for test.example.com to a web server that has an IP address of 192.0.2.44.

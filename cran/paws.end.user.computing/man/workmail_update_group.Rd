@@ -15,11 +15,9 @@ workmail_update_group(
 
 \item{GroupId}{[required] The identifier for the group to be updated.
 
-The identifier can accept \emph{GroupId}, \emph{Groupname}, or \emph{email}. The
-following identity formats are available:
+The identifier can accept \emph{GroupId}, \emph{Groupname}, or \emph{email}. The following identity formats are available:
 \itemize{
-\item Group ID: 12345678-1234-1234-1234-123456789012 or
-S-1-1-12-1234567890-123456789-123456789-1234
+\item Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 \item Email address: group@domain.tld
 \item Group name: group
 }}

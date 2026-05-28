@@ -10,20 +10,13 @@ route53resolver_update_firewall_config(ResourceId, FirewallFailOpen)
 \arguments{
 \item{ResourceId}{[required] The ID of the VPC that the configuration is for.}
 
-\item{FirewallFailOpen}{[required] Determines how Route 53 Resolver handles queries during failures, for
-example when all traffic that is sent to DNS Firewall fails to receive a
-reply.
+\item{FirewallFailOpen}{[required] Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply.
 \itemize{
-\item By default, fail open is disabled, which means the failure mode is
-closed. This approach favors security over availability. DNS
-Firewall blocks queries that it is unable to evaluate properly.
-\item If you enable this option, the failure mode is open. This approach
-favors availability over security. DNS Firewall allows queries to
-proceed if it is unable to properly evaluate them.
+\item By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly.
+\item If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them.
 }
 
-This behavior is only enforced for VPCs that have at least one DNS
-Firewall rule group association.}
+This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association.}
 }
 \description{
 Updates the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC).

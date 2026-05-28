@@ -7,8 +7,7 @@ NULL
 #' search connection request
 #'
 #' @description
-#' Allows the destination domain owner to accept an inbound cross-cluster
-#' search connection request.
+#' Allows the destination domain owner to accept an inbound cross-cluster search connection request.
 #'
 #' @usage
 #' elasticsearchservice_accept_inbound_cross_cluster_search_connection(
@@ -74,12 +73,7 @@ elasticsearchservice_accept_inbound_cross_cluster_search_connection <- function(
 #' Attaches tags to an existing Elasticsearch domain
 #'
 #' @description
-#' Attaches tags to an existing Elasticsearch domain. Tags are a set of
-#' case-sensitive key value pairs. An Elasticsearch domain may have up to
-#' 10 tags. See <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/#es-managedomains-awsresorcetagging"
-#' target="_blank">Tagging Amazon Elasticsearch Service Domains for more
-#' information.</a>
+#' Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/#es-managedomains-awsresorcetagging" target="_blank">Tagging Amazon Elasticsearch Service Domains for more information.</a>
 #'
 #' @usage
 #' elasticsearchservice_add_tags(ARN, TagList)
@@ -135,9 +129,7 @@ elasticsearchservice_add_tags <- function(ARN, TagList) {
 #' @usage
 #' elasticsearchservice_associate_package(PackageID, DomainName)
 #'
-#' @param PackageID &#91;required&#93; Internal ID of the package that you want to associate with a domain. Use
-#' [`describe_packages`][elasticsearchservice_describe_packages] to find
-#' this value.
+#' @param PackageID &#91;required&#93; Internal ID of the package that you want to associate with a domain. Use [`describe_packages`][elasticsearchservice_describe_packages] to find this value.
 #' @param DomainName &#91;required&#93; Name of the domain that you want to associate the package with.
 #'
 #' @return
@@ -199,8 +191,7 @@ elasticsearchservice_associate_package <- function(PackageID, DomainName) {
 #' of an interface VPC endpoint
 #'
 #' @description
-#' Provides access to an Amazon OpenSearch Service domain through the use
-#' of an interface VPC endpoint.
+#' Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 #'
 #' @usage
 #' elasticsearchservice_authorize_vpc_endpoint_access(DomainName, Account)
@@ -255,15 +246,13 @@ elasticsearchservice_authorize_vpc_endpoint_access <- function(DomainName, Accou
 #' domain
 #'
 #' @description
-#' Cancels a pending configuration change on an Amazon OpenSearch Service
-#' domain.
+#' Cancels a pending configuration change on an Amazon OpenSearch Service domain.
 #'
 #' @usage
 #' elasticsearchservice_cancel_domain_config_change(DomainName, DryRun)
 #'
 #' @param DomainName &#91;required&#93; Name of the OpenSearch Service domain configuration request to cancel.
-#' @param DryRun When set to **True**, returns the list of change IDs and properties that
-#' will be cancelled without actually cancelling the change.
+#' @param DryRun When set to **True**, returns the list of change IDs and properties that will be cancelled without actually cancelling the change.
 #'
 #' @return
 #' A list with the following syntax:
@@ -318,16 +307,13 @@ elasticsearchservice_cancel_domain_config_change <- function(DomainName, DryRun 
 #' Cancels a scheduled service software update for an Amazon ES domain
 #'
 #' @description
-#' Cancels a scheduled service software update for an Amazon ES domain. You
-#' can only perform this operation before the `AutomatedUpdateDate` and
-#' when the `UpdateStatus` is in the `PENDING_UPDATE` state.
+#' Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before the `AutomatedUpdateDate` and when the `UpdateStatus` is in the `PENDING_UPDATE` state.
 #'
 #' @usage
 #' elasticsearchservice_cancel_elasticsearch_service_software_update(
 #'   DomainName)
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that you want to stop the latest service software
-#' update on.
+#' @param DomainName &#91;required&#93; The name of the domain that you want to stop the latest service software update on.
 #'
 #' @return
 #' A list with the following syntax:
@@ -382,10 +368,7 @@ elasticsearchservice_cancel_elasticsearch_service_software_update <- function(Do
 #' Creates a new Elasticsearch domain
 #'
 #' @description
-#' Creates a new Elasticsearch domain. For more information, see <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomains"
-#' target="_blank">Creating Elasticsearch Domains</a> in the *Amazon
-#' Elasticsearch Service Developer Guide*.
+#' Creates a new Elasticsearch domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the *Amazon Elasticsearch Service Developer Guide*.
 #'
 #' @usage
 #' elasticsearchservice_create_elasticsearch_domain(DomainName,
@@ -393,48 +376,31 @@ elasticsearchservice_cancel_elasticsearch_service_software_update <- function(Do
 #'   AccessPolicies, SnapshotOptions, VPCOptions, CognitoOptions,
 #'   EncryptionAtRestOptions, NodeToNodeEncryptionOptions, AdvancedOptions,
 #'   LogPublishingOptions, DomainEndpointOptions, AdvancedSecurityOptions,
-#'   AutoTuneOptions, TagList, DeploymentStrategyOptions)
+#'   AutoTuneOptions, TagList, DeploymentStrategyOptions,
+#'   AutomatedSnapshotPauseOptions)
 #'
-#' @param DomainName &#91;required&#93; The name of the Elasticsearch domain that you are creating. Domain names
-#' are unique across the domains owned by an account within an AWS region.
-#' Domain names must start with a lowercase letter and can contain the
-#' following characters: a-z (lowercase), 0-9, and - (hyphen).
-#' @param ElasticsearchVersion String of format X.Y to specify version for the Elasticsearch domain eg.
-#' "1.5" or "2.3". For more information, see <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomains"
-#' target="_blank">Creating Elasticsearch Domains</a> in the *Amazon
-#' Elasticsearch Service Developer Guide*.
-#' @param ElasticsearchClusterConfig Configuration options for an Elasticsearch domain. Specifies the
-#' instance type and number of instances in the domain cluster.
-#' @param EBSOptions Options to enable, disable and specify the type and size of EBS storage
-#' volumes.
+#' @param DomainName &#91;required&#93; The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param ElasticsearchVersion String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the *Amazon Elasticsearch Service Developer Guide*.
+#' @param ElasticsearchClusterConfig Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.
+#' @param EBSOptions Options to enable, disable and specify the type and size of EBS storage volumes.
 #' @param AccessPolicies IAM access policy as a JSON-formatted string.
-#' @param SnapshotOptions Option to set time, in UTC format, of the daily automated snapshot.
-#' Default value is 0 hours.
-#' @param VPCOptions Options to specify the subnets and security groups for VPC endpoint. For
-#' more information, see <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-creating-vpc"
-#' target="_blank">Creating a VPC</a> in *VPC Endpoints for Amazon
-#' Elasticsearch Service Domains*
-#' @param CognitoOptions Options to specify the Cognito user and identity pools for Kibana
-#' authentication. For more information, see <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-#' target="_blank">Amazon Cognito Authentication for Kibana</a>.
+#' @param SnapshotOptions Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+#' @param VPCOptions Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in *VPC Endpoints for Amazon Elasticsearch Service Domains*
+#' @param CognitoOptions Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.
 #' @param EncryptionAtRestOptions Specifies the Encryption At Rest Options.
 #' @param NodeToNodeEncryptionOptions Specifies the NodeToNodeEncryptionOptions.
-#' @param AdvancedOptions Option to allow references to indices in an HTTP request body. Must be
-#' `false` when configuring access to individual sub-resources. By default,
-#' the value is `true`. See <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomain-configure-advanced-options"
-#' target="_blank">Configuration Advanced Options</a> for more information.
-#' @param LogPublishingOptions Map of `LogType` and `LogPublishingOption`, each containing options to
-#' publish a given type of Elasticsearch log.
-#' @param DomainEndpointOptions Options to specify configuration that will be applied to the domain
-#' endpoint.
+#' @param AdvancedOptions Option to allow references to indices in an HTTP request body. Must be `false` when configuring access to individual sub-resources. By default, the value is `true`. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.
+#' @param LogPublishingOptions Map of `LogType` and `LogPublishingOption`, each containing options to publish a given type of Elasticsearch log.
+#' @param DomainEndpointOptions Options to specify configuration that will be applied to the domain endpoint.
 #' @param AdvancedSecurityOptions Specifies advanced security options.
 #' @param AutoTuneOptions Specifies Auto-Tune options.
 #' @param TagList A list of `Tag` added during domain creation.
 #' @param DeploymentStrategyOptions Specifies the deployment strategy options.
+#' @param AutomatedSnapshotPauseOptions Specifies the automated snapshot pause options for the domain.
+#' 
+#' Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.
+#' 
+#' Maximum suspension duration: 3 days.
 #'
 #' @return
 #' A list with the following syntax:
@@ -579,6 +545,16 @@ elasticsearchservice_cancel_elasticsearch_service_software_update <- function(Do
 #'     ),
 #'     DeploymentStrategyOptions = list(
 #'       DeploymentStrategy = "Default"|"CapacityOptimized"
+#'     ),
+#'     AutomatedSnapshotPauseOptions = list(
+#'       Enabled = TRUE|FALSE,
+#'       StartTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       EndTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       State = "Active"|"Completed"|"Scheduled"|"Disabled"
 #'     )
 #'   )
 #' )
@@ -699,6 +675,15 @@ elasticsearchservice_cancel_elasticsearch_service_software_update <- function(Do
 #'   ),
 #'   DeploymentStrategyOptions = list(
 #'     DeploymentStrategy = "Default"|"CapacityOptimized"
+#'   ),
+#'   AutomatedSnapshotPauseOptions = list(
+#'     Enabled = TRUE|FALSE,
+#'     StartTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     EndTime = as.POSIXct(
+#'       "2015-01-01"
+#'     )
 #'   )
 #' )
 #' ```
@@ -708,7 +693,7 @@ elasticsearchservice_cancel_elasticsearch_service_software_update <- function(Do
 #' @rdname elasticsearchservice_create_elasticsearch_domain
 #'
 #' @aliases elasticsearchservice_create_elasticsearch_domain
-elasticsearchservice_create_elasticsearch_domain <- function(DomainName, ElasticsearchVersion = NULL, ElasticsearchClusterConfig = NULL, EBSOptions = NULL, AccessPolicies = NULL, SnapshotOptions = NULL, VPCOptions = NULL, CognitoOptions = NULL, EncryptionAtRestOptions = NULL, NodeToNodeEncryptionOptions = NULL, AdvancedOptions = NULL, LogPublishingOptions = NULL, DomainEndpointOptions = NULL, AdvancedSecurityOptions = NULL, AutoTuneOptions = NULL, TagList = NULL, DeploymentStrategyOptions = NULL) {
+elasticsearchservice_create_elasticsearch_domain <- function(DomainName, ElasticsearchVersion = NULL, ElasticsearchClusterConfig = NULL, EBSOptions = NULL, AccessPolicies = NULL, SnapshotOptions = NULL, VPCOptions = NULL, CognitoOptions = NULL, EncryptionAtRestOptions = NULL, NodeToNodeEncryptionOptions = NULL, AdvancedOptions = NULL, LogPublishingOptions = NULL, DomainEndpointOptions = NULL, AdvancedSecurityOptions = NULL, AutoTuneOptions = NULL, TagList = NULL, DeploymentStrategyOptions = NULL, AutomatedSnapshotPauseOptions = NULL) {
   op <- new_operation(
     name = "CreateElasticsearchDomain",
     http_method = "POST",
@@ -717,7 +702,7 @@ elasticsearchservice_create_elasticsearch_domain <- function(DomainName, Elastic
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .elasticsearchservice$create_elasticsearch_domain_input(DomainName = DomainName, ElasticsearchVersion = ElasticsearchVersion, ElasticsearchClusterConfig = ElasticsearchClusterConfig, EBSOptions = EBSOptions, AccessPolicies = AccessPolicies, SnapshotOptions = SnapshotOptions, VPCOptions = VPCOptions, CognitoOptions = CognitoOptions, EncryptionAtRestOptions = EncryptionAtRestOptions, NodeToNodeEncryptionOptions = NodeToNodeEncryptionOptions, AdvancedOptions = AdvancedOptions, LogPublishingOptions = LogPublishingOptions, DomainEndpointOptions = DomainEndpointOptions, AdvancedSecurityOptions = AdvancedSecurityOptions, AutoTuneOptions = AutoTuneOptions, TagList = TagList, DeploymentStrategyOptions = DeploymentStrategyOptions)
+  input <- .elasticsearchservice$create_elasticsearch_domain_input(DomainName = DomainName, ElasticsearchVersion = ElasticsearchVersion, ElasticsearchClusterConfig = ElasticsearchClusterConfig, EBSOptions = EBSOptions, AccessPolicies = AccessPolicies, SnapshotOptions = SnapshotOptions, VPCOptions = VPCOptions, CognitoOptions = CognitoOptions, EncryptionAtRestOptions = EncryptionAtRestOptions, NodeToNodeEncryptionOptions = NodeToNodeEncryptionOptions, AdvancedOptions = AdvancedOptions, LogPublishingOptions = LogPublishingOptions, DomainEndpointOptions = DomainEndpointOptions, AdvancedSecurityOptions = AdvancedSecurityOptions, AutoTuneOptions = AutoTuneOptions, TagList = TagList, DeploymentStrategyOptions = DeploymentStrategyOptions, AutomatedSnapshotPauseOptions = AutomatedSnapshotPauseOptions)
   output <- .elasticsearchservice$create_elasticsearch_domain_output()
   config <- get_config()
   svc <- .elasticsearchservice$service(config, op)
@@ -731,18 +716,15 @@ elasticsearchservice_create_elasticsearch_domain <- function(DomainName, Elastic
 #' destination domain
 #'
 #' @description
-#' Creates a new cross-cluster search connection from a source domain to a
-#' destination domain.
+#' Creates a new cross-cluster search connection from a source domain to a destination domain.
 #'
 #' @usage
 #' elasticsearchservice_create_outbound_cross_cluster_search_connection(
 #'   SourceDomainInfo, DestinationDomainInfo, ConnectionAlias)
 #'
 #' @param SourceDomainInfo &#91;required&#93; Specifies the `DomainInformation` for the source Elasticsearch domain.
-#' @param DestinationDomainInfo &#91;required&#93; Specifies the `DomainInformation` for the destination Elasticsearch
-#' domain.
-#' @param ConnectionAlias &#91;required&#93; Specifies the connection alias that will be used by the customer for
-#' this connection.
+#' @param DestinationDomainInfo &#91;required&#93; Specifies the `DomainInformation` for the destination Elasticsearch domain.
+#' @param ConnectionAlias &#91;required&#93; Specifies the connection alias that will be used by the customer for this connection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -967,14 +949,12 @@ elasticsearchservice_create_vpc_endpoint <- function(DomainArn, VpcOptions, Clie
 #' data
 #'
 #' @description
-#' Permanently deletes the specified Elasticsearch domain and all of its
-#' data. Once a domain is deleted, it cannot be recovered.
+#' Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.
 #'
 #' @usage
 #' elasticsearchservice_delete_elasticsearch_domain(DomainName)
 #'
-#' @param DomainName &#91;required&#93; The name of the Elasticsearch domain that you want to permanently
-#' delete.
+#' @param DomainName &#91;required&#93; The name of the Elasticsearch domain that you want to permanently delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1119,6 +1099,16 @@ elasticsearchservice_create_vpc_endpoint <- function(DomainArn, VpcOptions, Clie
 #'     ),
 #'     DeploymentStrategyOptions = list(
 #'       DeploymentStrategy = "Default"|"CapacityOptimized"
+#'     ),
+#'     AutomatedSnapshotPauseOptions = list(
+#'       Enabled = TRUE|FALSE,
+#'       StartTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       EndTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       State = "Active"|"Completed"|"Scheduled"|"Disabled"
 #'     )
 #'   )
 #' )
@@ -1159,13 +1149,7 @@ elasticsearchservice_delete_elasticsearch_domain <- function(DomainName) {
 #' manage and maintain VPC domains
 #'
 #' @description
-#' Deletes the service-linked role that Elasticsearch Service uses to
-#' manage and maintain VPC domains. Role deletion will fail if any existing
-#' VPC domains use the role. You must delete any such Elasticsearch domains
-#' before deleting the role. See <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-enabling-slr"
-#' target="_blank">Deleting Elasticsearch Service Role</a> in *VPC
-#' Endpoints for Amazon Elasticsearch Service Domains*.
+#' Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-enabling-slr" target="_blank">Deleting Elasticsearch Service Role</a> in *VPC Endpoints for Amazon Elasticsearch Service Domains*.
 #'
 #' @usage
 #' elasticsearchservice_delete_elasticsearch_service_role()
@@ -1205,8 +1189,7 @@ elasticsearchservice_delete_elasticsearch_service_role <- function() {
 #' cross-cluster search connection
 #'
 #' @description
-#' Allows the destination domain owner to delete an existing inbound
-#' cross-cluster search connection.
+#' Allows the destination domain owner to delete an existing inbound cross-cluster search connection.
 #'
 #' @usage
 #' elasticsearchservice_delete_inbound_cross_cluster_search_connection(
@@ -1273,8 +1256,7 @@ elasticsearchservice_delete_inbound_cross_cluster_search_connection <- function(
 #' cross-cluster search connection
 #'
 #' @description
-#' Allows the source domain owner to delete an existing outbound
-#' cross-cluster search connection.
+#' Allows the source domain owner to delete an existing outbound cross-cluster search connection.
 #'
 #' @usage
 #' elasticsearchservice_delete_outbound_cross_cluster_search_connection(
@@ -1346,9 +1328,7 @@ elasticsearchservice_delete_outbound_cross_cluster_search_connection <- function
 #' @usage
 #' elasticsearchservice_delete_package(PackageID)
 #'
-#' @param PackageID &#91;required&#93; Internal ID of the package that you want to delete. Use
-#' [`describe_packages`][elasticsearchservice_describe_packages] to find
-#' this value.
+#' @param PackageID &#91;required&#93; Internal ID of the package that you want to delete. Use [`describe_packages`][elasticsearchservice_describe_packages] to find this value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1465,19 +1445,15 @@ elasticsearchservice_delete_vpc_endpoint <- function(VpcEndpointId) {
 #' scheduled date
 #'
 #' @description
-#' Provides scheduled Auto-Tune action details for the Elasticsearch
-#' domain, such as Auto-Tune action type, description, severity, and
-#' scheduled date.
+#' Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as Auto-Tune action type, description, severity, and scheduled date.
 #'
 #' @usage
 #' elasticsearchservice_describe_domain_auto_tunes(DomainName, MaxResults,
 #'   NextToken)
 #'
 #' @param DomainName &#91;required&#93; Specifies the domain name for which you want Auto-Tune action details.
-#' @param MaxResults Set this value to limit the number of results returned. If not
-#' specified, defaults to 100.
-#' @param NextToken NextToken is sent in case the earlier API call results contain the
-#' NextToken. It is used for pagination.
+#' @param MaxResults Set this value to limit the number of results returned. If not specified, defaults to 100.
+#' @param NextToken NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1539,17 +1515,14 @@ elasticsearchservice_describe_domain_auto_tunes <- function(DomainName, MaxResul
 #' a domain, including a change ID, status, and progress stages
 #'
 #' @description
-#' Returns information about the current blue/green deployment happening on
-#' a domain, including a change ID, status, and progress stages.
+#' Returns information about the current blue/green deployment happening on a domain, including a change ID, status, and progress stages.
 #'
 #' @usage
 #' elasticsearchservice_describe_domain_change_progress(DomainName,
 #'   ChangeId)
 #'
 #' @param DomainName &#91;required&#93; The domain you want to get the progress information about.
-#' @param ChangeId The specific change ID for which you want to get progress information.
-#' This is an optional parameter. If omitted, the service returns
-#' information about the most recent configuration change.
+#' @param ChangeId The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1624,9 +1597,7 @@ elasticsearchservice_describe_domain_change_progress <- function(DomainName, Cha
 #' domain ARN
 #'
 #' @description
-#' Returns domain configuration information about the specified
-#' Elasticsearch domain, including the domain ID, domain endpoint, and
-#' domain ARN.
+#' Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.
 #'
 #' @usage
 #' elasticsearchservice_describe_elasticsearch_domain(DomainName)
@@ -1776,6 +1747,16 @@ elasticsearchservice_describe_domain_change_progress <- function(DomainName, Cha
 #'     ),
 #'     DeploymentStrategyOptions = list(
 #'       DeploymentStrategy = "Default"|"CapacityOptimized"
+#'     ),
+#'     AutomatedSnapshotPauseOptions = list(
+#'       Enabled = TRUE|FALSE,
+#'       StartTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       EndTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       State = "Active"|"Completed"|"Scheduled"|"Disabled"
 #'     )
 #'   )
 #' )
@@ -1817,9 +1798,7 @@ elasticsearchservice_describe_elasticsearch_domain <- function(DomainName) {
 #' and update date for cluster options
 #'
 #' @description
-#' Provides cluster configuration information about the specified
-#' Elasticsearch domain, such as the state, creation date, update version,
-#' and update date for cluster options.
+#' Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.
 #'
 #' @usage
 #' elasticsearchservice_describe_elasticsearch_domain_config(DomainName)
@@ -2153,6 +2132,29 @@ elasticsearchservice_describe_elasticsearch_domain <- function(DomainName) {
 #'         State = "RequiresIndexDocuments"|"Processing"|"Active",
 #'         PendingDeletion = TRUE|FALSE
 #'       )
+#'     ),
+#'     AutomatedSnapshotPauseOptions = list(
+#'       Options = list(
+#'         Enabled = TRUE|FALSE,
+#'         StartTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         EndTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         State = "Active"|"Completed"|"Scheduled"|"Disabled"
+#'       ),
+#'       Status = list(
+#'         CreationDate = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         UpdateDate = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         UpdateVersion = 123,
+#'         State = "RequiresIndexDocuments"|"Processing"|"Active",
+#'         PendingDeletion = TRUE|FALSE
+#'       )
 #'     )
 #'   )
 #' )
@@ -2194,9 +2196,7 @@ elasticsearchservice_describe_elasticsearch_domain_config <- function(DomainName
 #' domain ARN
 #'
 #' @description
-#' Returns domain configuration information about the specified
-#' Elasticsearch domains, including the domain ID, domain endpoint, and
-#' domain ARN.
+#' Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.
 #'
 #' @usage
 #' elasticsearchservice_describe_elasticsearch_domains(DomainNames)
@@ -2347,6 +2347,16 @@ elasticsearchservice_describe_elasticsearch_domain_config <- function(DomainName
 #'       ),
 #'       DeploymentStrategyOptions = list(
 #'         DeploymentStrategy = "Default"|"CapacityOptimized"
+#'       ),
+#'       AutomatedSnapshotPauseOptions = list(
+#'         Enabled = TRUE|FALSE,
+#'         StartTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         EndTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         State = "Active"|"Completed"|"Scheduled"|"Disabled"
 #'       )
 #'     )
 #'   )
@@ -2390,19 +2400,14 @@ elasticsearchservice_describe_elasticsearch_domains <- function(DomainNames) {
 #' ElasticsearchVersion
 #'
 #' @description
-#' Describe Elasticsearch Limits for a given InstanceType and
-#' ElasticsearchVersion. When modifying existing Domain, specify the
-#' ` DomainName ` to know what Limits are supported for modifying.
+#' Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the ` DomainName ` to know what Limits are supported for modifying.
 #'
 #' @usage
 #' elasticsearchservice_describe_elasticsearch_instance_type_limits(
 #'   DomainName, InstanceType, ElasticsearchVersion)
 #'
-#' @param DomainName DomainName represents the name of the Domain that we are trying to
-#' modify. This should be present only if we are querying for Elasticsearch
-#' ` Limits ` for existing domain.
-#' @param InstanceType &#91;required&#93; The instance type for an Elasticsearch cluster for which Elasticsearch
-#' ` Limits ` are needed.
+#' @param DomainName DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch ` Limits ` for existing domain.
+#' @param InstanceType &#91;required&#93; The instance type for an Elasticsearch cluster for which Elasticsearch ` Limits ` are needed.
 #' @param ElasticsearchVersion &#91;required&#93; Version of Elasticsearch for which ` Limits ` are needed.
 #'
 #' @return
@@ -2481,25 +2486,21 @@ elasticsearchservice_describe_elasticsearch_instance_type_limits <- function(Dom
 #' domain
 #'
 #' @description
-#' Lists all the inbound cross-cluster search connections for a destination
-#' domain.
+#' Lists all the inbound cross-cluster search connections for a destination domain.
 #'
 #' @usage
 #' elasticsearchservice_describe_inbound_cross_cluster_search_connections(
 #'   Filters, MaxResults, NextToken)
 #'
-#' @param Filters A list of filters used to match properties for inbound cross-cluster
-#' search connection. Available `Filter` names for this operation are:
+#' @param Filters A list of filters used to match properties for inbound cross-cluster search connection. Available `Filter` names for this operation are:
 #' 
 #' -   cross-cluster-search-connection-id
 #' -   source-domain-info.domain-name
 #' -   source-domain-info.owner-id
 #' -   source-domain-info.region
 #' -   destination-domain-info.domain-name
-#' @param MaxResults Set this value to limit the number of results returned. If not
-#' specified, defaults to 100.
-#' @param NextToken NextToken is sent in case the earlier API call results contain the
-#' NextToken. It is used for pagination.
+#' @param MaxResults Set this value to limit the number of results returned. If not specified, defaults to 100.
+#' @param NextToken NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2572,25 +2573,21 @@ elasticsearchservice_describe_inbound_cross_cluster_search_connections <- functi
 #' domain
 #'
 #' @description
-#' Lists all the outbound cross-cluster search connections for a source
-#' domain.
+#' Lists all the outbound cross-cluster search connections for a source domain.
 #'
 #' @usage
 #' elasticsearchservice_describe_outbound_cross_cluster_search_connections(
 #'   Filters, MaxResults, NextToken)
 #'
-#' @param Filters A list of filters used to match properties for outbound cross-cluster
-#' search connection. Available `Filter` names for this operation are:
+#' @param Filters A list of filters used to match properties for outbound cross-cluster search connection. Available `Filter` names for this operation are:
 #' 
 #' -   cross-cluster-search-connection-id
 #' -   destination-domain-info.domain-name
 #' -   destination-domain-info.owner-id
 #' -   destination-domain-info.region
 #' -   source-domain-info.domain-name
-#' @param MaxResults Set this value to limit the number of results returned. If not
-#' specified, defaults to 100.
-#' @param NextToken NextToken is sent in case the earlier API call results contain the
-#' NextToken. It is used for pagination.
+#' @param MaxResults Set this value to limit the number of results returned. If not specified, defaults to 100.
+#' @param NextToken NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2663,18 +2660,14 @@ elasticsearchservice_describe_outbound_cross_cluster_search_connections <- funct
 #' Describes all packages available to Amazon ES
 #'
 #' @description
-#' Describes all packages available to Amazon ES. Includes options for
-#' filtering, limiting the number of results, and pagination.
+#' Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results, and pagination.
 #'
 #' @usage
 #' elasticsearchservice_describe_packages(Filters, MaxResults, NextToken)
 #'
-#' @param Filters Only returns packages that match the `DescribePackagesFilterList`
-#' values.
+#' @param Filters Only returns packages that match the `DescribePackagesFilterList` values.
 #' @param MaxResults Limits results to a maximum number of packages.
-#' @param NextToken Used for pagination. Only necessary if a previous API call includes a
-#' non-null NextToken value. If provided, returns results for the next
-#' page.
+#' @param NextToken Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2753,13 +2746,9 @@ elasticsearchservice_describe_packages <- function(Filters = NULL, MaxResults = 
 #' elasticsearchservice_describe_reserved_elasticsearch_instance_offerings(
 #'   ReservedElasticsearchInstanceOfferingId, MaxResults, NextToken)
 #'
-#' @param ReservedElasticsearchInstanceOfferingId The offering identifier filter value. Use this parameter to show only
-#' the available offering that matches the specified reservation
-#' identifier.
-#' @param MaxResults Set this value to limit the number of results returned. If not
-#' specified, defaults to 100.
-#' @param NextToken NextToken should be sent in case if earlier API call produced result
-#' containing NextToken. It is used for pagination.
+#' @param ReservedElasticsearchInstanceOfferingId The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.
+#' @param MaxResults Set this value to limit the number of results returned. If not specified, defaults to 100.
+#' @param NextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2823,20 +2812,15 @@ elasticsearchservice_describe_reserved_elasticsearch_instance_offerings <- funct
 #' account
 #'
 #' @description
-#' Returns information about reserved Elasticsearch instances for this
-#' account.
+#' Returns information about reserved Elasticsearch instances for this account.
 #'
 #' @usage
 #' elasticsearchservice_describe_reserved_elasticsearch_instances(
 #'   ReservedElasticsearchInstanceId, MaxResults, NextToken)
 #'
-#' @param ReservedElasticsearchInstanceId The reserved instance identifier filter value. Use this parameter to
-#' show only the reservation that matches the specified reserved
-#' Elasticsearch instance ID.
-#' @param MaxResults Set this value to limit the number of results returned. If not
-#' specified, defaults to 100.
-#' @param NextToken NextToken should be sent in case if earlier API call produced result
-#' containing NextToken. It is used for pagination.
+#' @param ReservedElasticsearchInstanceId The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.
+#' @param MaxResults Set this value to limit the number of results returned. If not specified, defaults to 100.
+#' @param NextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2989,9 +2973,7 @@ elasticsearchservice_describe_vpc_endpoints <- function(VpcEndpointIds) {
 #' @usage
 #' elasticsearchservice_dissociate_package(PackageID, DomainName)
 #'
-#' @param PackageID &#91;required&#93; Internal ID of the package that you want to associate with a domain. Use
-#' [`describe_packages`][elasticsearchservice_describe_packages] to find
-#' this value.
+#' @param PackageID &#91;required&#93; Internal ID of the package that you want to associate with a domain. Use [`describe_packages`][elasticsearchservice_describe_packages] to find this value.
 #' @param DomainName &#91;required&#93; Name of the domain that you want to associate the package with.
 #'
 #' @return
@@ -3052,14 +3034,12 @@ elasticsearchservice_dissociate_package <- function(PackageID, DomainName) {
 #' Returns a list of upgrade compatible Elastisearch versions
 #'
 #' @description
-#' Returns a list of upgrade compatible Elastisearch versions. You can
-#' optionally pass a ` DomainName ` to get all upgrade compatible
-#' Elasticsearch versions for that specific domain.
+#' Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a ` DomainName ` to get all upgrade compatible Elasticsearch versions for that specific domain.
 #'
 #' @usage
 #' elasticsearchservice_get_compatible_elasticsearch_versions(DomainName)
 #'
-#' @param DomainName 
+#' @param DomainName The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @return
 #' A list with the following syntax:
@@ -3111,8 +3091,7 @@ elasticsearchservice_get_compatible_elasticsearch_versions <- function(DomainNam
 #' time and commit message
 #'
 #' @description
-#' Returns a list of versions of the package, along with their creation
-#' time and commit message.
+#' Returns a list of versions of the package, along with their creation time and commit message.
 #'
 #' @usage
 #' elasticsearchservice_get_package_version_history(PackageID, MaxResults,
@@ -3120,9 +3099,7 @@ elasticsearchservice_get_compatible_elasticsearch_versions <- function(DomainNam
 #'
 #' @param PackageID &#91;required&#93; Returns an audit history of versions of the package.
 #' @param MaxResults Limits results to a maximum number of versions.
-#' @param NextToken Used for pagination. Only necessary if a previous API call includes a
-#' non-null NextToken value. If provided, returns results for the next
-#' page.
+#' @param NextToken Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3179,16 +3156,15 @@ elasticsearchservice_get_package_version_history <- function(PackageID, MaxResul
 #' performed on the domain
 #'
 #' @description
-#' Retrieves the complete history of the last 10 upgrades that were
-#' performed on the domain.
+#' Retrieves the complete history of the last 10 upgrades that were performed on the domain.
 #'
 #' @usage
 #' elasticsearchservice_get_upgrade_history(DomainName, MaxResults,
 #'   NextToken)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param MaxResults 
-#' @param NextToken 
+#' @param DomainName &#91;required&#93; The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param MaxResults Set this value to limit the number of results returned.
+#' @param NextToken Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3254,13 +3230,12 @@ elasticsearchservice_get_upgrade_history <- function(DomainName, MaxResults = NU
 #' check that was performed on the domain
 #'
 #' @description
-#' Retrieves the latest status of the last upgrade or upgrade eligibility
-#' check that was performed on the domain.
+#' Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
 #'
 #' @usage
 #' elasticsearchservice_get_upgrade_status(DomainName)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @return
 #' A list with the following syntax:
@@ -3307,14 +3282,12 @@ elasticsearchservice_get_upgrade_status <- function(DomainName) {
 #' user's account
 #'
 #' @description
-#' Returns the name of all Elasticsearch domains owned by the current
-#' user's account.
+#' Returns the name of all Elasticsearch domains owned by the current user's account.
 #'
 #' @usage
 #' elasticsearchservice_list_domain_names(EngineType)
 #'
-#' @param EngineType Optional parameter to filter the output by domain engine type.
-#' Acceptable values are 'Elasticsearch' and 'OpenSearch'.
+#' @param EngineType Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3371,9 +3344,7 @@ elasticsearchservice_list_domain_names <- function(EngineType = NULL) {
 #'
 #' @param PackageID &#91;required&#93; The package for which to list domains.
 #' @param MaxResults Limits results to a maximum number of domains.
-#' @param NextToken Used for pagination. Only necessary if a previous API call includes a
-#' non-null NextToken value. If provided, returns results for the next
-#' page.
+#' @param NextToken Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3438,22 +3409,16 @@ elasticsearchservice_list_domains_for_package <- function(PackageID, MaxResults 
 #' ElasticsearchVersion
 #'
 #' @description
-#' List all Elasticsearch instance types that are supported for given
-#' ElasticsearchVersion
+#' List all Elasticsearch instance types that are supported for given ElasticsearchVersion
 #'
 #' @usage
 #' elasticsearchservice_list_elasticsearch_instance_types(
 #'   ElasticsearchVersion, DomainName, MaxResults, NextToken)
 #'
-#' @param ElasticsearchVersion &#91;required&#93; Version of Elasticsearch for which list of supported elasticsearch
-#' instance types are needed.
-#' @param DomainName DomainName represents the name of the Domain that we are trying to
-#' modify. This should be present only if we are querying for list of
-#' available Elasticsearch instance types when modifying existing domain.
-#' @param MaxResults Set this value to limit the number of results returned. Value provided
-#' must be greater than 30 else it wont be honored.
-#' @param NextToken NextToken should be sent in case if earlier API call produced result
-#' containing NextToken. It is used for pagination.
+#' @param ElasticsearchVersion &#91;required&#93; Version of Elasticsearch for which list of supported elasticsearch instance types are needed.
+#' @param DomainName DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.
+#' @param MaxResults Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.
+#' @param NextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3508,9 +3473,8 @@ elasticsearchservice_list_elasticsearch_instance_types <- function(Elasticsearch
 #' @usage
 #' elasticsearchservice_list_elasticsearch_versions(MaxResults, NextToken)
 #'
-#' @param MaxResults Set this value to limit the number of results returned. Value provided
-#' must be greater than 10 else it wont be honored.
-#' @param NextToken 
+#' @param MaxResults Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.
+#' @param NextToken Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3566,9 +3530,7 @@ elasticsearchservice_list_elasticsearch_versions <- function(MaxResults = NULL, 
 #'
 #' @param DomainName &#91;required&#93; The name of the domain for which you want to list associated packages.
 #' @param MaxResults Limits results to a maximum number of packages.
-#' @param NextToken Used for pagination. Only necessary if a previous API call includes a
-#' non-null NextToken value. If provided, returns results for the next
-#' page.
+#' @param NextToken Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3637,8 +3599,7 @@ elasticsearchservice_list_packages_for_domain <- function(DomainName, MaxResults
 #' @usage
 #' elasticsearchservice_list_tags(ARN)
 #'
-#' @param ARN &#91;required&#93; Specify the `ARN` for the Elasticsearch domain to which the tags are
-#' attached that you want to view.
+#' @param ARN &#91;required&#93; Specify the `ARN` for the Elasticsearch domain to which the tags are attached that you want to view.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3689,15 +3650,12 @@ elasticsearchservice_list_tags <- function(ARN) {
 #' VPC endpoint
 #'
 #' @description
-#' Retrieves information about each principal that is allowed to access a
-#' given Amazon OpenSearch Service domain through the use of an interface
-#' VPC endpoint.
+#' Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 #'
 #' @usage
 #' elasticsearchservice_list_vpc_endpoint_access(DomainName, NextToken)
 #'
-#' @param DomainName &#91;required&#93; The name of the OpenSearch Service domain to retrieve access information
-#' for.
+#' @param DomainName &#91;required&#93; The name of the OpenSearch Service domain to retrieve access information for.
 #' @param NextToken Provides an identifier to allow retrieval of paginated results.
 #'
 #' @return
@@ -3750,8 +3708,7 @@ elasticsearchservice_list_vpc_endpoint_access <- function(DomainName, NextToken 
 #' current account and Region
 #'
 #' @description
-#' Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the
-#' current account and Region.
+#' Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current account and Region.
 #'
 #' @usage
 #' elasticsearchservice_list_vpc_endpoints(NextToken)
@@ -3809,8 +3766,7 @@ elasticsearchservice_list_vpc_endpoints <- function(NextToken = NULL) {
 #' with a particular domain
 #'
 #' @description
-#' Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated
-#' with a particular domain.
+#' Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.
 #'
 #' @usage
 #' elasticsearchservice_list_vpc_endpoints_for_domain(DomainName,
@@ -3926,8 +3882,7 @@ elasticsearchservice_purchase_reserved_elasticsearch_instance_offering <- functi
 #' search connection request
 #'
 #' @description
-#' Allows the destination domain owner to reject an inbound cross-cluster
-#' search connection request.
+#' Allows the destination domain owner to reject an inbound cross-cluster search connection request.
 #'
 #' @usage
 #' elasticsearchservice_reject_inbound_cross_cluster_search_connection(
@@ -3994,16 +3949,13 @@ elasticsearchservice_reject_inbound_cross_cluster_search_connection <- function(
 #' domain
 #'
 #' @description
-#' Removes the specified set of tags from the specified Elasticsearch
-#' domain.
+#' Removes the specified set of tags from the specified Elasticsearch domain.
 #'
 #' @usage
 #' elasticsearchservice_remove_tags(ARN, TagKeys)
 #'
-#' @param ARN &#91;required&#93; Specifies the `ARN` for the Elasticsearch domain from which you want to
-#' delete the specified tags.
-#' @param TagKeys &#91;required&#93; Specifies the `TagKey` list which you want to remove from the
-#' Elasticsearch domain.
+#' @param ARN &#91;required&#93; Specifies the `ARN` for the Elasticsearch domain from which you want to delete the specified tags.
+#' @param TagKeys &#91;required&#93; Specifies the `TagKey` list which you want to remove from the Elasticsearch domain.
 #'
 #' @return
 #' An empty list.
@@ -4046,8 +3998,7 @@ elasticsearchservice_remove_tags <- function(ARN, TagKeys) {
 #' through an interface VPC endpoint
 #'
 #' @description
-#' Revokes access to an Amazon OpenSearch Service domain that was provided
-#' through an interface VPC endpoint.
+#' Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
 #'
 #' @usage
 #' elasticsearchservice_revoke_vpc_endpoint_access(DomainName, Account)
@@ -4099,8 +4050,7 @@ elasticsearchservice_revoke_vpc_endpoint_access <- function(DomainName, Account)
 #' elasticsearchservice_start_elasticsearch_service_software_update(
 #'   DomainName)
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that you want to update to the latest service
-#' software.
+#' @param DomainName &#91;required&#93; The name of the domain that you want to update to the latest service software.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4156,9 +4106,7 @@ elasticsearchservice_start_elasticsearch_service_software_update <- function(Dom
 #' domain, setting as setting the instance type and the number of instances
 #'
 #' @description
-#' Modifies the cluster configuration of the specified Elasticsearch
-#' domain, setting as setting the instance type and the number of
-#' instances.
+#' Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances.
 #'
 #' @usage
 #' elasticsearchservice_update_elasticsearch_domain_config(DomainName,
@@ -4166,43 +4114,29 @@ elasticsearchservice_start_elasticsearch_service_software_update <- function(Dom
 #'   CognitoOptions, AdvancedOptions, AccessPolicies, LogPublishingOptions,
 #'   DomainEndpointOptions, AdvancedSecurityOptions,
 #'   NodeToNodeEncryptionOptions, EncryptionAtRestOptions, AutoTuneOptions,
-#'   DryRun, DeploymentStrategyOptions)
+#'   DryRun, DeploymentStrategyOptions, AutomatedSnapshotPauseOptions)
 #'
 #' @param DomainName &#91;required&#93; The name of the Elasticsearch domain that you are updating.
 #' @param ElasticsearchClusterConfig The type and number of instances to instantiate for the domain cluster.
 #' @param EBSOptions Specify the type and size of the EBS volume that you want to use.
-#' @param SnapshotOptions Option to set the time, in UTC format, for the daily automated snapshot.
-#' Default value is `0` hours.
-#' @param VPCOptions Options to specify the subnets and security groups for VPC endpoint. For
-#' more information, see <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-creating-vpc"
-#' target="_blank">Creating a VPC</a> in *VPC Endpoints for Amazon
-#' Elasticsearch Service Domains*
-#' @param CognitoOptions Options to specify the Cognito user and identity pools for Kibana
-#' authentication. For more information, see <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-#' target="_blank">Amazon Cognito Authentication for Kibana</a>.
-#' @param AdvancedOptions Modifies the advanced option to allow references to indices in an HTTP
-#' request body. Must be `false` when configuring access to individual
-#' sub-resources. By default, the value is `true`. See <a
-#' href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomain-configure-advanced-options"
-#' target="_blank">Configuration Advanced Options</a> for more information.
+#' @param SnapshotOptions Option to set the time, in UTC format, for the daily automated snapshot. Default value is `0` hours.
+#' @param VPCOptions Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in *VPC Endpoints for Amazon Elasticsearch Service Domains*
+#' @param CognitoOptions Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.
+#' @param AdvancedOptions Modifies the advanced option to allow references to indices in an HTTP request body. Must be `false` when configuring access to individual sub-resources. By default, the value is `true`. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.
 #' @param AccessPolicies IAM access policy as a JSON-formatted string.
-#' @param LogPublishingOptions Map of `LogType` and `LogPublishingOption`, each containing options to
-#' publish a given type of Elasticsearch log.
-#' @param DomainEndpointOptions Options to specify configuration that will be applied to the domain
-#' endpoint.
+#' @param LogPublishingOptions Map of `LogType` and `LogPublishingOption`, each containing options to publish a given type of Elasticsearch log.
+#' @param DomainEndpointOptions Options to specify configuration that will be applied to the domain endpoint.
 #' @param AdvancedSecurityOptions Specifies advanced security options.
 #' @param NodeToNodeEncryptionOptions Specifies the NodeToNodeEncryptionOptions.
 #' @param EncryptionAtRestOptions Specifies the Encryption At Rest Options.
 #' @param AutoTuneOptions Specifies Auto-Tune options.
-#' @param DryRun This flag, when set to True, specifies whether the
-#' `UpdateElasticsearchDomain` request should return the results of
-#' validation checks without actually applying the change. This flag, when
-#' set to True, specifies the deployment mechanism through which the update
-#' shall be applied on the domain. This will not actually perform the
-#' Update.
+#' @param DryRun This flag, when set to True, specifies whether the `UpdateElasticsearchDomain` request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update.
 #' @param DeploymentStrategyOptions Specifies the deployment strategy options.
+#' @param AutomatedSnapshotPauseOptions Specifies the automated snapshot pause options for the domain.
+#' 
+#' Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.
+#' 
+#' Maximum suspension duration: 3 days.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4531,6 +4465,29 @@ elasticsearchservice_start_elasticsearch_service_software_update <- function(Dom
 #'         State = "RequiresIndexDocuments"|"Processing"|"Active",
 #'         PendingDeletion = TRUE|FALSE
 #'       )
+#'     ),
+#'     AutomatedSnapshotPauseOptions = list(
+#'       Options = list(
+#'         Enabled = TRUE|FALSE,
+#'         StartTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         EndTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         State = "Active"|"Completed"|"Scheduled"|"Disabled"
+#'       ),
+#'       Status = list(
+#'         CreationDate = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         UpdateDate = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         UpdateVersion = 123,
+#'         State = "RequiresIndexDocuments"|"Processing"|"Active",
+#'         PendingDeletion = TRUE|FALSE
+#'       )
 #'     )
 #'   ),
 #'   DryRunResults = list(
@@ -4650,6 +4607,15 @@ elasticsearchservice_start_elasticsearch_service_software_update <- function(Dom
 #'   DryRun = TRUE|FALSE,
 #'   DeploymentStrategyOptions = list(
 #'     DeploymentStrategy = "Default"|"CapacityOptimized"
+#'   ),
+#'   AutomatedSnapshotPauseOptions = list(
+#'     Enabled = TRUE|FALSE,
+#'     StartTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     EndTime = as.POSIXct(
+#'       "2015-01-01"
+#'     )
 #'   )
 #' )
 #' ```
@@ -4659,7 +4625,7 @@ elasticsearchservice_start_elasticsearch_service_software_update <- function(Dom
 #' @rdname elasticsearchservice_update_elasticsearch_domain_config
 #'
 #' @aliases elasticsearchservice_update_elasticsearch_domain_config
-elasticsearchservice_update_elasticsearch_domain_config <- function(DomainName, ElasticsearchClusterConfig = NULL, EBSOptions = NULL, SnapshotOptions = NULL, VPCOptions = NULL, CognitoOptions = NULL, AdvancedOptions = NULL, AccessPolicies = NULL, LogPublishingOptions = NULL, DomainEndpointOptions = NULL, AdvancedSecurityOptions = NULL, NodeToNodeEncryptionOptions = NULL, EncryptionAtRestOptions = NULL, AutoTuneOptions = NULL, DryRun = NULL, DeploymentStrategyOptions = NULL) {
+elasticsearchservice_update_elasticsearch_domain_config <- function(DomainName, ElasticsearchClusterConfig = NULL, EBSOptions = NULL, SnapshotOptions = NULL, VPCOptions = NULL, CognitoOptions = NULL, AdvancedOptions = NULL, AccessPolicies = NULL, LogPublishingOptions = NULL, DomainEndpointOptions = NULL, AdvancedSecurityOptions = NULL, NodeToNodeEncryptionOptions = NULL, EncryptionAtRestOptions = NULL, AutoTuneOptions = NULL, DryRun = NULL, DeploymentStrategyOptions = NULL, AutomatedSnapshotPauseOptions = NULL) {
   op <- new_operation(
     name = "UpdateElasticsearchDomainConfig",
     http_method = "POST",
@@ -4668,7 +4634,7 @@ elasticsearchservice_update_elasticsearch_domain_config <- function(DomainName, 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .elasticsearchservice$update_elasticsearch_domain_config_input(DomainName = DomainName, ElasticsearchClusterConfig = ElasticsearchClusterConfig, EBSOptions = EBSOptions, SnapshotOptions = SnapshotOptions, VPCOptions = VPCOptions, CognitoOptions = CognitoOptions, AdvancedOptions = AdvancedOptions, AccessPolicies = AccessPolicies, LogPublishingOptions = LogPublishingOptions, DomainEndpointOptions = DomainEndpointOptions, AdvancedSecurityOptions = AdvancedSecurityOptions, NodeToNodeEncryptionOptions = NodeToNodeEncryptionOptions, EncryptionAtRestOptions = EncryptionAtRestOptions, AutoTuneOptions = AutoTuneOptions, DryRun = DryRun, DeploymentStrategyOptions = DeploymentStrategyOptions)
+  input <- .elasticsearchservice$update_elasticsearch_domain_config_input(DomainName = DomainName, ElasticsearchClusterConfig = ElasticsearchClusterConfig, EBSOptions = EBSOptions, SnapshotOptions = SnapshotOptions, VPCOptions = VPCOptions, CognitoOptions = CognitoOptions, AdvancedOptions = AdvancedOptions, AccessPolicies = AccessPolicies, LogPublishingOptions = LogPublishingOptions, DomainEndpointOptions = DomainEndpointOptions, AdvancedSecurityOptions = AdvancedSecurityOptions, NodeToNodeEncryptionOptions = NodeToNodeEncryptionOptions, EncryptionAtRestOptions = EncryptionAtRestOptions, AutoTuneOptions = AutoTuneOptions, DryRun = DryRun, DeploymentStrategyOptions = DeploymentStrategyOptions, AutomatedSnapshotPauseOptions = AutomatedSnapshotPauseOptions)
   output <- .elasticsearchservice$update_elasticsearch_domain_config_output()
   config <- get_config()
   svc <- .elasticsearchservice$service(config, op)
@@ -4688,10 +4654,9 @@ elasticsearchservice_update_elasticsearch_domain_config <- function(DomainName, 
 #'   PackageDescription, CommitMessage)
 #'
 #' @param PackageID &#91;required&#93; Unique identifier for the package.
-#' @param PackageSource &#91;required&#93; 
+#' @param PackageSource &#91;required&#93; The S3 location for importing the package specified as `S3BucketName` and `S3Key`
 #' @param PackageDescription New description of the package.
-#' @param CommitMessage An info message for the new version which will be shown as part of
-#' `GetPackageVersionHistoryResponse`.
+#' @param CommitMessage An info message for the new version which will be shown as part of `GetPackageVersionHistoryResponse`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4835,17 +4800,15 @@ elasticsearchservice_update_vpc_endpoint <- function(VpcEndpointId, VpcOptions) 
 #' eligibility check to a compatible Elasticsearch version
 #'
 #' @description
-#' Allows you to either upgrade your domain or perform an Upgrade
-#' eligibility check to a compatible Elasticsearch version.
+#' Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch version.
 #'
 #' @usage
 #' elasticsearchservice_upgrade_elasticsearch_domain(DomainName,
 #'   TargetVersion, PerformCheckOnly)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param TargetVersion &#91;required&#93; The version of Elasticsearch that you intend to upgrade the domain to.
-#' @param PerformCheckOnly This flag, when set to True, indicates that an Upgrade Eligibility Check
-#' needs to be performed. This will not actually perform the Upgrade.
+#' @param PerformCheckOnly This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.
 #'
 #' @return
 #' A list with the following syntax:

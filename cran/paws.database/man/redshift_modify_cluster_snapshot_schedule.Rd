@@ -11,14 +11,11 @@ redshift_modify_cluster_snapshot_schedule(
 )
 }
 \arguments{
-\item{ClusterIdentifier}{[required] A unique identifier for the cluster whose snapshot schedule you want to
-modify.}
+\item{ClusterIdentifier}{[required] A unique identifier for the cluster whose snapshot schedule you want to modify.}
 
-\item{ScheduleIdentifier}{A unique alphanumeric identifier for the schedule that you want to
-associate with the cluster.}
+\item{ScheduleIdentifier}{A unique alphanumeric identifier for the schedule that you want to associate with the cluster.}
 
-\item{DisassociateSchedule}{A boolean to indicate whether to remove the assoiciation between the
-cluster and the schedule.}
+\item{DisassociateSchedule}{A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.}
 }
 \description{
 Modifies a snapshot schedule for a cluster.

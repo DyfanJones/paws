@@ -13,41 +13,26 @@ dynamodb_transact_write_items(
 )
 }
 \arguments{
-\item{TransactItems}{[required] An ordered array of up to 100 \code{TransactWriteItem} objects, each of which
-contains a \code{ConditionCheck}, \code{Put}, \code{Update}, or \code{Delete} object. These
-can operate on items in different tables, but the tables must reside in
-the same Amazon Web Services account and Region, and no two of them can
-operate on the same item.}
+\item{TransactItems}{[required] An ordered array of up to 100 \code{TransactWriteItem} objects, each of which contains a \code{ConditionCheck}, \code{Put}, \code{Update}, or \code{Delete} object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item.}
 
-\item{ReturnItemCollectionMetrics}{Determines whether item collection metrics are returned. If set to
-\code{SIZE}, the response includes statistics about item collections (if
-any), that were modified during the operation and are returned in the
-response. If set to \code{NONE} (the default), no statistics are returned.}
+\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:
+\itemize{
+\item \code{INDEXES} - The response includes the aggregate \code{ConsumedCapacity} for the operation, together with \code{ConsumedCapacity} for each table and secondary index that was accessed.
 
-\item{ClientRequestToken}{Providing a \code{ClientRequestToken} makes the call to
-\code{\link[=dynamodb_transact_write_items]{transact_write_items}} idempotent,
-meaning that multiple identical calls have the same effect as one single
-call.
+Note that some operations, such as \code{\link[=dynamodb_get_item]{get_item}} and \code{\link[=dynamodb_batch_get_item]{batch_get_item}}, do not access any indexes at all. In these cases, specifying \code{INDEXES} will only return \code{ConsumedCapacity} information for table(s).
+\item \code{TOTAL} - The response includes only the aggregate \code{ConsumedCapacity} for the operation.
+\item \code{NONE} - No \code{ConsumedCapacity} details are included in the response.
+}}
 
-Although multiple identical calls using the same client request token
-produce the same result on the server (no side effects), the responses
-to the calls might not be the same. If the \code{ReturnConsumedCapacity}
-parameter is set, then the initial
-\code{\link[=dynamodb_transact_write_items]{transact_write_items}} call returns the
-amount of write capacity units consumed in making the changes.
-Subsequent \code{\link[=dynamodb_transact_write_items]{transact_write_items}} calls
-with the same client token return the number of read capacity units
-consumed in reading the item.
+\item{ReturnItemCollectionMetrics}{Determines whether item collection metrics are returned. If set to \code{SIZE}, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to \code{NONE} (the default), no statistics are returned.}
 
-A client request token is valid for 10 minutes after the first request
-that uses it is completed. After 10 minutes, any request with the same
-client token is treated as a new request. Do not resubmit the same
-request with the same client token for more than 10 minutes, or the
-result might not be idempotent.
+\item{ClientRequestToken}{Providing a \code{ClientRequestToken} makes the call to \code{\link[=dynamodb_transact_write_items]{transact_write_items}} idempotent, meaning that multiple identical calls have the same effect as one single call.
 
-If you submit a request with the same client token but a change in other
-parameters within the 10-minute idempotency window, DynamoDB returns an
-\code{IdempotentParameterMismatch} exception.}
+Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the \code{ReturnConsumedCapacity} parameter is set, then the initial \code{\link[=dynamodb_transact_write_items]{transact_write_items}} call returns the amount of write capacity units consumed in making the changes. Subsequent \code{\link[=dynamodb_transact_write_items]{transact_write_items}} calls with the same client token return the number of read capacity units consumed in reading the item.
+
+A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.
+
+If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an \code{IdempotentParameterMismatch} exception.}
 }
 \description{
 \code{\link[=dynamodb_transact_write_items]{transact_write_items}} is a synchronous write operation that groups up to 100 action requests. These actions can target items in different tables, but not in different Amazon Web Services accounts or Regions, and no two actions can target the same item. For example, you cannot both \code{ConditionCheck} and \code{Update} the same item. The aggregate size of the items in the transaction cannot exceed 4 MB.

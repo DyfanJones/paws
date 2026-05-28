@@ -11,18 +11,9 @@ transcribeservice_list_call_analytics_categories(
 )
 }
 \arguments{
-\item{NextToken}{If your
-\code{\link[=transcribeservice_list_call_analytics_categories]{list_call_analytics_categories}}
-request returns more results than can be displayed, \code{NextToken} is
-displayed in the response with an associated string. To get the next
-page of results, copy this string and repeat your request, including
-\code{NextToken} with the value of the copied string. Repeat as needed to
-view all your results.}
+\item{NextToken}{If your \code{\link[=transcribeservice_list_call_analytics_categories]{list_call_analytics_categories}} request returns more results than can be displayed, \code{NextToken} is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including \code{NextToken} with the value of the copied string. Repeat as needed to view all your results.}
 
-\item{MaxResults}{The maximum number of Call Analytics categories to return in each page
-of results. If there are fewer results than the value that you specify,
-only the actual results are returned. If you do not specify a value, a
-default of 5 is used.}
+\item{MaxResults}{The maximum number of Call Analytics categories to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.}
 }
 \description{
 Provides a list of Call Analytics categories, including all rules that make up each category.

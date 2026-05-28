@@ -15,25 +15,19 @@ glue_get_table(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the table resides. If none is provided,
-the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{[required] The name of the database in the catalog in which the table resides. For
-Hive compatibility, this name is entirely lowercase.}
+\item{DatabaseName}{[required] The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.}
 
-\item{Name}{[required] The name of the table for which to retrieve the definition. For Hive
-compatibility, this name is entirely lowercase.}
+\item{Name}{[required] The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.}
 
 \item{TransactionId}{The transaction ID at which to read the table contents.}
 
-\item{QueryAsOfTime}{The time as of when to read the table contents. If not set, the most
-recent transaction commit time will be used. Cannot be specified along
-with \code{TransactionId}.}
+\item{QueryAsOfTime}{The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with \code{TransactionId}.}
 
 \item{AuditContext}{A structure containing the Lake Formation \href{https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html}{audit context}.}
 
-\item{IncludeStatusDetails}{Specifies whether to include status details related to a request to
-create or update an Glue Data Catalog view.}
+\item{IncludeStatusDetails}{Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.}
 }
 \description{
 Retrieves the \code{Table} definition in a Data Catalog for a specified table.

@@ -11,29 +11,22 @@ neptune_delete_db_cluster(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier for the DB cluster to be deleted. This
-parameter isn't case-sensitive.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
 \item Must match an existing DBClusterIdentifier.
 }}
 
-\item{SkipFinalSnapshot}{Determines whether a final DB cluster snapshot is created before the DB
-cluster is deleted. If \code{true} is specified, no DB cluster snapshot is
-created. If \code{false} is specified, a DB cluster snapshot is created
-before the DB cluster is deleted.
+\item{SkipFinalSnapshot}{Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If \code{true} is specified, no DB cluster snapshot is created. If \code{false} is specified, a DB cluster snapshot is created before the DB cluster is deleted.
 
-You must specify a \code{FinalDBSnapshotIdentifier} parameter if
-\code{SkipFinalSnapshot} is \code{false}.
+You must specify a \code{FinalDBSnapshotIdentifier} parameter if \code{SkipFinalSnapshot} is \code{false}.
 
 Default: \code{false}}
 
-\item{FinalDBSnapshotIdentifier}{The DB cluster snapshot identifier of the new DB cluster snapshot
-created when \code{SkipFinalSnapshot} is set to \code{false}.
+\item{FinalDBSnapshotIdentifier}{The DB cluster snapshot identifier of the new DB cluster snapshot created when \code{SkipFinalSnapshot} is set to \code{false}.
 
-Specifying this parameter and also setting the \code{SkipFinalSnapshot}
-parameter to true results in an error.
+Specifying this parameter and also setting the \code{SkipFinalSnapshot} parameter to true results in an error.
 
 Constraints:
 \itemize{

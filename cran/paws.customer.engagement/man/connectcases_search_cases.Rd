@@ -17,19 +17,15 @@ connectcases_search_cases(
 \arguments{
 \item{domainId}{[required] The unique identifier of the Cases domain.}
 
-\item{maxResults}{The maximum number of cases to return. When no value is provided, 25 is
-the default.}
+\item{maxResults}{The maximum number of cases to return. When no value is provided, 25 is the default.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{searchTerm}{A word or phrase used to perform a quick search.}
 
 \item{filter}{A list of filter objects.}
 
-\item{sorts}{A list of sorts where each sort specifies a field and their sort order
-to be applied to the results.}
+\item{sorts}{A list of sorts where each sort specifies a field and their sort order to be applied to the results.}
 
 \item{fields}{The list of field identifiers to be returned as part of the response.}
 }

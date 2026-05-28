@@ -22,8 +22,7 @@ route53domains_update_domain_contact(
 
 \item{TechContact}{Provides detailed contact information.}
 
-\item{Consent}{Customer's consent for the owner change request. Required if the domain
-is not free (consent price is more than $0.00).}
+\item{Consent}{Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).}
 
 \item{BillingContact}{Provides detailed contact information.}
 }

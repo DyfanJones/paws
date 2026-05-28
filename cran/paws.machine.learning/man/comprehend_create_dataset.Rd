@@ -16,22 +16,17 @@ comprehend_create_dataset(
 )
 }
 \arguments{
-\item{FlywheelArn}{[required] The Amazon Resource Number (ARN) of the flywheel of the flywheel to
-receive the data.}
+\item{FlywheelArn}{[required] The Amazon Resource Number (ARN) of the flywheel of the flywheel to receive the data.}
 
 \item{DatasetName}{[required] Name of the dataset.}
 
-\item{DatasetType}{The dataset type. You can specify that the data in a dataset is for
-training the model or for testing the model.}
+\item{DatasetType}{The dataset type. You can specify that the data in a dataset is for training the model or for testing the model.}
 
 \item{Description}{Description of the dataset.}
 
-\item{InputDataConfig}{[required] Information about the input data configuration. The type of input data
-varies based on the format of the input and whether the data is for a
-classifier model or an entity recognition model.}
+\item{InputDataConfig}{[required] Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.}
 
-\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request
-token, Amazon Comprehend generates one.}
+\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.}
 
 \item{Tags}{Tags for the dataset.}
 }

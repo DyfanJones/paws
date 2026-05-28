@@ -25,15 +25,12 @@ bedrockagentcore_get_payment_instrument_balance(
 
 \item{paymentInstrumentId}{[required] The ID of the payment instrument to query balance for.}
 
-\item{chain}{[required] The specific blockchain chain to query balance on. Required because
-balances are chain-specific — the same wallet address may hold different
-token balances on different chains.}
+\item{chain}{[required] The specific blockchain chain to query balance on. Required because balances are chain-specific.}
 
-\item{token}{[required] The token to query balance for. Required to specify which supported
-token's balance to return.}
+\item{token}{[required] The token to query balance for. Only tokens supported for X402 payments are returned.}
 }
 \description{
-Get the balance of a payment instrument
+Get the balance of a payment instrument.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_get_payment_instrument_balance/} for full documentation.
 }

@@ -14,8 +14,7 @@ lookoutequipment_list_models(
 )
 }
 \arguments{
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-machine learning models.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of machine learning models.}
 
 \item{MaxResults}{Specifies the maximum number of machine learning models to list.}
 
@@ -23,8 +22,7 @@ machine learning models.}
 
 \item{ModelNameBeginsWith}{The beginning of the name of the machine learning models being listed.}
 
-\item{DatasetNameBeginsWith}{The beginning of the name of the dataset of the machine learning models
-to be listed.}
+\item{DatasetNameBeginsWith}{The beginning of the name of the dataset of the machine learning models to be listed.}
 }
 \description{
 Generates a list of all models in the account, including model name and ARN, dataset, and status.

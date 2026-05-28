@@ -19,8 +19,7 @@ omics_list_runs_in_batch(
 
 \item{maxItems}{The maximum number of runs to return.}
 
-\item{startingToken}{A pagination token returned from a prior
-\code{\link[=omics_list_runs_in_batch]{list_runs_in_batch}} call.}
+\item{startingToken}{A pagination token returned from a prior \code{\link[=omics_list_runs_in_batch]{list_runs_in_batch}} call.}
 
 \item{submissionStatus}{Filter runs by submission status.}
 

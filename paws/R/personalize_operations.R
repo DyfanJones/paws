@@ -7,32 +7,17 @@ NULL
 #' in Amazon S3 and exports the recommendations to an Amazon S3 bucket
 #'
 #' @description
-#' Generates batch recommendations based on a list of items or users stored
-#' in Amazon S3 and exports the recommendations to an Amazon S3 bucket.
+#' Generates batch recommendations based on a list of items or users stored in Amazon S3 and exports the recommendations to an Amazon S3 bucket.
 #' 
-#' To generate batch recommendations, specify the ARN of a solution version
-#' and an Amazon S3 URI for the input and output data. For user
-#' personalization, popular items, and personalized ranking solutions, the
-#' batch inference job generates a list of recommended items for each user
-#' ID in the input file. For related items solutions, the job generates a
-#' list of recommended items for each item ID in the input file.
+#' To generate batch recommendations, specify the ARN of a solution version and an Amazon S3 URI for the input and output data. For user personalization, popular items, and personalized ranking solutions, the batch inference job generates a list of recommended items for each user ID in the input file. For related items solutions, the job generates a list of recommended items for each item ID in the input file.
 #' 
-#' For more information, see [Creating a batch inference
-#' job](https://docs.aws.amazon.com/personalize/latest/dg/getting-batch-recommendations.html)
-#' .
+#' For more information, see [Creating a batch inference job](https://docs.aws.amazon.com/personalize/latest/dg/getting-batch-recommendations.html) .
 #' 
-#' If you use the Similar-Items recipe, Amazon Personalize can add
-#' descriptive themes to batch recommendations. To generate themes, set the
-#' job's mode to `THEME_GENERATION` and specify the name of the field that
-#' contains item names in the input data.
+#' If you use the Similar-Items recipe, Amazon Personalize can add descriptive themes to batch recommendations. To generate themes, set the job's mode to `THEME_GENERATION` and specify the name of the field that contains item names in the input data.
 #' 
-#' For more information about generating themes, see [Batch recommendations
-#' with themes from Content
-#' Generator](https://docs.aws.amazon.com/personalize/latest/dg/themed-batch-recommendations.html)
-#' .
+#' For more information about generating themes, see [Batch recommendations with themes from Content Generator](https://docs.aws.amazon.com/personalize/latest/dg/themed-batch-recommendations.html) .
 #' 
-#' You can't get batch recommendations with the Trending-Now or
-#' Next-Best-Action recipes.
+#' You can't get batch recommendations with the Trending-Now or Next-Best-Action recipes.
 #'
 #' @usage
 #' personalize_create_batch_inference_job(jobName, solutionVersionArn,
@@ -41,31 +26,18 @@ NULL
 #'   themeGenerationConfig)
 #'
 #' @param jobName &#91;required&#93; The name of the batch inference job to create.
-#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version that will be used
-#' to generate the batch inference recommendations.
-#' @param filterArn The ARN of the filter to apply to the batch inference job. For more
-#' information on using filters, see [Filtering batch
-#' recommendations](https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html).
+#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.
+#' @param filterArn The ARN of the filter to apply to the batch inference job. For more information on using filters, see [Filtering batch recommendations](https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html).
 #' @param numResults The number of recommendations to retrieve.
-#' @param jobInput &#91;required&#93; The Amazon S3 path that leads to the input file to base your
-#' recommendations on. The input material must be in JSON format.
+#' @param jobInput &#91;required&#93; The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.
 #' @param jobOutput &#91;required&#93; The path to the Amazon S3 bucket where the job's output will be stored.
-#' @param roleArn &#91;required&#93; The ARN of the Amazon Identity and Access Management role that has
-#' permissions to read and write to your input and output Amazon S3 buckets
-#' respectively.
+#' @param roleArn &#91;required&#93; The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.
 #' @param batchInferenceJobConfig The configuration details of a batch inference job.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the batch inference job.
-#' @param batchInferenceJobMode The mode of the batch inference job. To generate descriptive themes for
-#' groups of similar items, set the job mode to `THEME_GENERATION`. If you
-#' don't want to generate themes, use the default `BATCH_INFERENCE`.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the batch inference job.
+#' @param batchInferenceJobMode The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to `THEME_GENERATION`. If you don't want to generate themes, use the default `BATCH_INFERENCE`.
 #' 
-#' When you get batch recommendations with themes, you will incur
-#' additional costs. For more information, see [Amazon Personalize
-#' pricing](https://aws.amazon.com/personalize/pricing/).
-#' @param themeGenerationConfig For theme generation jobs, specify the name of the column in your Items
-#' dataset that contains each item's name.
+#' When you get batch recommendations with themes, you will incur additional costs. For more information, see [Amazon Personalize pricing](https://aws.amazon.com/personalize/pricing/).
+#' @param themeGenerationConfig For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.
 #'
 #' @return
 #' A list with the following syntax:
@@ -145,33 +117,20 @@ personalize_create_batch_inference_job <- function(jobName, solutionVersionArn, 
 #' Creates a batch segment job
 #'
 #' @description
-#' Creates a batch segment job. The operation can handle up to 50 million
-#' records and the input file must be in JSON format. For more information,
-#' see [Getting batch recommendations and user
-#' segments](https://docs.aws.amazon.com/personalize/latest/dg/).
+#' Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see [Getting batch recommendations and user segments](https://docs.aws.amazon.com/personalize/latest/dg/).
 #'
 #' @usage
 #' personalize_create_batch_segment_job(jobName, solutionVersionArn,
 #'   filterArn, numResults, jobInput, jobOutput, roleArn, tags)
 #'
 #' @param jobName &#91;required&#93; The name of the batch segment job to create.
-#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version you want the
-#' batch segment job to use to generate batch segments.
-#' @param filterArn The ARN of the filter to apply to the batch segment job. For more
-#' information on using filters, see [Filtering batch
-#' recommendations](https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html).
-#' @param numResults The number of predicted users generated by the batch segment job for
-#' each line of input data. The maximum number of users per segment is 5
-#' million.
-#' @param jobInput &#91;required&#93; The Amazon S3 path for the input data used to generate the batch segment
-#' job.
+#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.
+#' @param filterArn The ARN of the filter to apply to the batch segment job. For more information on using filters, see [Filtering batch recommendations](https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html).
+#' @param numResults The number of predicted users generated by the batch segment job for each line of input data. The maximum number of users per segment is 5 million.
+#' @param jobInput &#91;required&#93; The Amazon S3 path for the input data used to generate the batch segment job.
 #' @param jobOutput &#91;required&#93; The Amazon S3 path for the bucket where the job's output will be stored.
-#' @param roleArn &#91;required&#93; The ARN of the Amazon Identity and Access Management role that has
-#' permissions to read and write to your input and output Amazon S3 buckets
-#' respectively.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the batch segment job.
+#' @param roleArn &#91;required&#93; The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the batch segment job.
 #'
 #' @return
 #' A list with the following syntax:
@@ -237,47 +196,21 @@ personalize_create_batch_segment_job <- function(jobName, solutionVersionArn, fi
 #' You incur campaign costs while it is active
 #'
 #' @description
-#' You incur campaign costs while it is active. To avoid unnecessary costs,
-#' make sure to delete the campaign when you are finished. For information
-#' about campaign costs, see [Amazon Personalize
-#' pricing](https://aws.amazon.com/personalize/pricing/).
+#' You incur campaign costs while it is active. To avoid unnecessary costs, make sure to delete the campaign when you are finished. For information about campaign costs, see [Amazon Personalize pricing](https://aws.amazon.com/personalize/pricing/).
 #' 
-#' Creates a campaign that deploys a solution version. When a client calls
-#' the
-#' [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html)
-#' and
-#' [GetPersonalizedRanking](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html)
-#' APIs, a campaign is specified in the request.
+#' Creates a campaign that deploys a solution version. When a client calls the [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html) and [GetPersonalizedRanking](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html) APIs, a campaign is specified in the request.
 #' 
 #' **Minimum Provisioned TPS and Auto-Scaling**
 #' 
-#' A high `minProvisionedTPS` will increase your cost. We recommend
-#' starting with 1 for `minProvisionedTPS` (the default). Track your usage
-#' using Amazon CloudWatch metrics, and increase the `minProvisionedTPS` as
-#' necessary.
+#' A high `minProvisionedTPS` will increase your cost. We recommend starting with 1 for `minProvisionedTPS` (the default). Track your usage using Amazon CloudWatch metrics, and increase the `minProvisionedTPS` as necessary.
 #' 
-#' When you create an Amazon Personalize campaign, you can specify the
-#' minimum provisioned transactions per second (`minProvisionedTPS`) for
-#' the campaign. This is the baseline transaction throughput for the
-#' campaign provisioned by Amazon Personalize. It sets the minimum billing
-#' charge for the campaign while it is active. A transaction is a single
-#' `GetRecommendations` or `GetPersonalizedRanking` request. The default
-#' `minProvisionedTPS` is 1.
+#' When you create an Amazon Personalize campaign, you can specify the minimum provisioned transactions per second (`minProvisionedTPS`) for the campaign. This is the baseline transaction throughput for the campaign provisioned by Amazon Personalize. It sets the minimum billing charge for the campaign while it is active. A transaction is a single `GetRecommendations` or `GetPersonalizedRanking` request. The default `minProvisionedTPS` is 1.
 #' 
-#' If your TPS increases beyond the `minProvisionedTPS`, Amazon Personalize
-#' auto-scales the provisioned capacity up and down, but never below
-#' `minProvisionedTPS`. There's a short time delay while the capacity is
-#' increased that might cause loss of transactions. When your traffic
-#' reduces, capacity returns to the `minProvisionedTPS`.
+#' If your TPS increases beyond the `minProvisionedTPS`, Amazon Personalize auto-scales the provisioned capacity up and down, but never below `minProvisionedTPS`. There's a short time delay while the capacity is increased that might cause loss of transactions. When your traffic reduces, capacity returns to the `minProvisionedTPS`.
 #' 
-#' You are charged for the the minimum provisioned TPS or, if your requests
-#' exceed the `minProvisionedTPS`, the actual TPS. The actual TPS is the
-#' total number of recommendation requests you make. We recommend starting
-#' with a low `minProvisionedTPS`, track your usage using Amazon CloudWatch
-#' metrics, and then increase the `minProvisionedTPS` as necessary.
+#' You are charged for the the minimum provisioned TPS or, if your requests exceed the `minProvisionedTPS`, the actual TPS. The actual TPS is the total number of recommendation requests you make. We recommend starting with a low `minProvisionedTPS`, track your usage using Amazon CloudWatch metrics, and then increase the `minProvisionedTPS` as necessary.
 #' 
-#' For more information about campaign costs, see [Amazon Personalize
-#' pricing](https://aws.amazon.com/personalize/pricing/).
+#' For more information about campaign costs, see [Amazon Personalize pricing](https://aws.amazon.com/personalize/pricing/).
 #' 
 #' **Status**
 #' 
@@ -287,11 +220,9 @@ personalize_create_batch_segment_job <- function(jobName, solutionVersionArn, fi
 #' 
 #' -   DELETE PENDING \> DELETE IN_PROGRESS
 #' 
-#' To get the campaign status, call
-#' [`describe_campaign`][personalize_describe_campaign].
+#' To get the campaign status, call [`describe_campaign`][personalize_describe_campaign].
 #' 
-#' Wait until the `status` of the campaign is `ACTIVE` before asking the
-#' campaign for recommendations.
+#' Wait until the `status` of the campaign is `ACTIVE` before asking the campaign for recommendations.
 #' 
 #' **Related APIs**
 #' 
@@ -307,31 +238,15 @@ personalize_create_batch_segment_job <- function(jobName, solutionVersionArn, fi
 #' personalize_create_campaign(name, solutionVersionArn, minProvisionedTPS,
 #'   campaignConfig, tags)
 #'
-#' @param name &#91;required&#93; A name for the new campaign. The campaign name must be unique within
-#' your account.
-#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model to deploy with the
-#' campaign. To specify the latest solution version of your solution,
-#' specify the ARN of your *solution* in `SolutionArn/$LATEST` format. You
-#' must use this format if you set `syncWithLatestSolutionVersion` to
-#' `True` in the
-#' [CampaignConfig](https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html).
+#' @param name &#91;required&#93; A name for the new campaign. The campaign name must be unique within your account.
+#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your *solution* in `SolutionArn/$LATEST` format. You must use this format if you set `syncWithLatestSolutionVersion` to `True` in the [CampaignConfig](https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html).
 #' 
-#' To deploy a model that isn't the latest solution version of your
-#' solution, specify the ARN of the solution version.
+#' To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.
 #' 
-#' For more information about automatic campaign updates, see [Enabling
-#' automatic campaign
-#' updates](https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update).
-#' @param minProvisionedTPS Specifies the requested minimum provisioned transactions
-#' (recommendations) per second that Amazon Personalize will support. A
-#' high `minProvisionedTPS` will increase your bill. We recommend starting
-#' with 1 for `minProvisionedTPS` (the default). Track your usage using
-#' Amazon CloudWatch metrics, and increase the `minProvisionedTPS` as
-#' necessary.
+#' For more information about automatic campaign updates, see [Enabling automatic campaign updates](https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update).
+#' @param minProvisionedTPS Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high `minProvisionedTPS` will increase your bill. We recommend starting with 1 for `minProvisionedTPS` (the default). Track your usage using Amazon CloudWatch metrics, and increase the `minProvisionedTPS` as necessary.
 #' @param campaignConfig The configuration details of a campaign.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the campaign.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the campaign.
 #'
 #' @return
 #' A list with the following syntax:
@@ -394,33 +309,13 @@ personalize_create_campaign <- function(name, solutionVersionArn, minProvisioned
 #' an Amazon Personalize dataset group in batches
 #'
 #' @description
-#' Creates a batch job that deletes all references to specific users from
-#' an Amazon Personalize dataset group in batches. You specify the users to
-#' delete in a CSV file of userIds in an Amazon S3 bucket. After a job
-#' completes, Amazon Personalize no longer trains on the users’ data and no
-#' longer considers the users when generating user segments. For more
-#' information about creating a data deletion job, see [Deleting
-#' users](https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html).
+#' Creates a batch job that deletes all references to specific users from an Amazon Personalize dataset group in batches. You specify the users to delete in a CSV file of userIds in an Amazon S3 bucket. After a job completes, Amazon Personalize no longer trains on the users’ data and no longer considers the users when generating user segments. For more information about creating a data deletion job, see [Deleting users](https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html).
 #' 
-#' -   Your input file must be a CSV file with a single USER_ID column that
-#'     lists the users IDs. For more information about preparing the CSV
-#'     file, see [Preparing your data deletion file and uploading it to
-#'     Amazon
-#'     S3](https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html).
+#' -   Your input file must be a CSV file with a single USER_ID column that lists the users IDs. For more information about preparing the CSV file, see [Preparing your data deletion file and uploading it to Amazon S3](https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html).
 #' 
-#' -   To give Amazon Personalize permission to access your input CSV file
-#'     of userIds, you must specify an IAM service role that has permission
-#'     to read from the data source. This role needs `GetObject` and
-#'     `ListBucket` permissions for the bucket and its content. These
-#'     permissions are the same as importing data. For information on
-#'     granting access to your Amazon S3 bucket, see [Giving Amazon
-#'     Personalize Access to Amazon S3
-#'     Resources](https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html).
+#' -   To give Amazon Personalize permission to access your input CSV file of userIds, you must specify an IAM service role that has permission to read from the data source. This role needs `GetObject` and `ListBucket` permissions for the bucket and its content. These permissions are the same as importing data. For information on granting access to your Amazon S3 bucket, see [Giving Amazon Personalize Access to Amazon S3 Resources](https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html).
 #' 
-#' After you create a job, it can take up to a day to delete all references
-#' to the users from datasets and models. Until the job completes, Amazon
-#' Personalize continues to use the data when training. And if you use a
-#' User Segmentation recipe, the users might appear in user segments.
+#' After you create a job, it can take up to a day to delete all references to the users from datasets and models. Until the job completes, Amazon Personalize continues to use the data when training. And if you use a User Segmentation recipe, the users might appear in user segments.
 #' 
 #' **Status**
 #' 
@@ -428,11 +323,7 @@ personalize_create_campaign <- function(name, solutionVersionArn, minProvisioned
 #' 
 #' -   PENDING \> IN_PROGRESS \> COMPLETED -or- FAILED
 #' 
-#' To get the status of the data deletion job, call
-#' [`describe_data_deletion_job`][personalize_describe_data_deletion_job]
-#' API operation and specify the Amazon Resource Name (ARN) of the job. If
-#' the status is FAILED, the response includes a `failureReason` key, which
-#' describes why the job failed.
+#' To get the status of the data deletion job, call [`describe_data_deletion_job`][personalize_describe_data_deletion_job] API operation and specify the Amazon Resource Name (ARN) of the job. If the status is FAILED, the response includes a `failureReason` key, which describes why the job failed.
 #' 
 #' **Related APIs**
 #' 
@@ -445,15 +336,10 @@ personalize_create_campaign <- function(name, solutionVersionArn, minProvisioned
 #'   dataSource, roleArn, tags)
 #'
 #' @param jobName &#91;required&#93; The name for the data deletion job.
-#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group that has the
-#' datasets you want to delete records from.
-#' @param dataSource &#91;required&#93; The Amazon S3 bucket that contains the list of userIds of the users to
-#' delete.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that has permissions to
-#' read from the Amazon S3 data source.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the data deletion job.
+#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group that has the datasets you want to delete records from.
+#' @param dataSource &#91;required&#93; The Amazon S3 bucket that contains the list of userIds of the users to delete.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that has permissions to read from the Amazon S3 data source.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the data deletion job.
 #'
 #' @return
 #' A list with the following syntax:
@@ -508,9 +394,7 @@ personalize_create_data_deletion_job <- function(jobName, datasetGroupArn, dataS
 #' Creates an empty dataset and adds it to the specified dataset group
 #'
 #' @description
-#' Creates an empty dataset and adds it to the specified dataset group. Use
-#' [`create_dataset_import_job`][personalize_create_dataset_import_job] to
-#' import your training data to a dataset.
+#' Creates an empty dataset and adds it to the specified dataset group. Use [`create_dataset_import_job`][personalize_create_dataset_import_job] to import your training data to a dataset.
 #' 
 #' There are 5 types of datasets:
 #' 
@@ -524,9 +408,7 @@ personalize_create_data_deletion_job <- function(jobName, datasetGroupArn, dataS
 #' 
 #' -   Actions
 #' 
-#' Each dataset type has an associated schema with required field types.
-#' Only the `Item interactions` dataset is required in order to train a
-#' model (also referred to as creating a solution).
+#' Each dataset type has an associated schema with required field types. Only the `Item interactions` dataset is required in order to train a model (also referred to as creating a solution).
 #' 
 #' A dataset can be in one of the following states:
 #' 
@@ -534,8 +416,7 @@ personalize_create_data_deletion_job <- function(jobName, datasetGroupArn, dataS
 #' 
 #' -   DELETE PENDING \> DELETE IN_PROGRESS
 #' 
-#' To get the status of the dataset, call
-#' [`describe_dataset`][personalize_describe_dataset].
+#' To get the status of the dataset, call [`describe_dataset`][personalize_describe_dataset].
 #' 
 #' **Related APIs**
 #' 
@@ -552,10 +433,8 @@ personalize_create_data_deletion_job <- function(jobName, datasetGroupArn, dataS
 #'   datasetType, tags)
 #'
 #' @param name &#91;required&#93; The name for the dataset.
-#' @param schemaArn &#91;required&#93; The ARN of the schema to associate with the dataset. The schema defines
-#' the dataset fields.
-#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group to add the dataset
-#' to.
+#' @param schemaArn &#91;required&#93; The ARN of the schema to associate with the dataset. The schema defines the dataset fields.
+#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group to add the dataset to.
 #' @param datasetType &#91;required&#93; The type of dataset.
 #' 
 #' One of the following (case insensitive) values:
@@ -569,9 +448,7 @@ personalize_create_data_deletion_job <- function(jobName, datasetGroupArn, dataS
 #' -   Actions
 #' 
 #' -   Action_Interactions
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the dataset.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the dataset.
 #'
 #' @return
 #' A list with the following syntax:
@@ -624,13 +501,7 @@ personalize_create_dataset <- function(name, schemaArn, datasetGroupArn, dataset
 #' Creates a job that exports data from your dataset to an Amazon S3 bucket
 #'
 #' @description
-#' Creates a job that exports data from your dataset to an Amazon S3
-#' bucket. To allow Amazon Personalize to export the training data, you
-#' must specify an service-linked IAM role that gives Amazon Personalize
-#' `PutObject` permissions for your Amazon S3 bucket. For information, see
-#' [Exporting a
-#' dataset](https://docs.aws.amazon.com/personalize/latest/dg/export-data.html)
-#' in the Amazon Personalize developer guide.
+#' Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export the training data, you must specify an service-linked IAM role that gives Amazon Personalize `PutObject` permissions for your Amazon S3 bucket. For information, see [Exporting a dataset](https://docs.aws.amazon.com/personalize/latest/dg/export-data.html) in the Amazon Personalize developer guide.
 #' 
 #' **Status**
 #' 
@@ -638,31 +509,18 @@ personalize_create_dataset <- function(name, schemaArn, datasetGroupArn, dataset
 #' 
 #' -   CREATE PENDING \> CREATE IN_PROGRESS \> ACTIVE -or- CREATE FAILED
 #' 
-#' To get the status of the export job, call
-#' [`describe_dataset_export_job`][personalize_describe_dataset_export_job],
-#' and specify the Amazon Resource Name (ARN) of the dataset export job.
-#' The dataset export is complete when the status shows as ACTIVE. If the
-#' status shows as CREATE FAILED, the response includes a `failureReason`
-#' key, which describes why the job failed.
+#' To get the status of the export job, call [`describe_dataset_export_job`][personalize_describe_dataset_export_job], and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a `failureReason` key, which describes why the job failed.
 #'
 #' @usage
 #' personalize_create_dataset_export_job(jobName, datasetArn,
 #'   ingestionMode, roleArn, jobOutput, tags)
 #'
 #' @param jobName &#91;required&#93; The name for the dataset export job.
-#' @param datasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset that contains the data to
-#' export.
-#' @param ingestionMode The data to export, based on how you imported the data. You can choose
-#' to export only `BULK` data that you imported using a dataset import job,
-#' only `PUT` data that you imported incrementally (using the console,
-#' PutEvents, PutUsers and PutItems operations), or `ALL` for both types.
-#' The default value is `PUT`.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM service role that has
-#' permissions to add data to your output Amazon S3 bucket.
+#' @param datasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset that contains the data to export.
+#' @param ingestionMode The data to export, based on how you imported the data. You can choose to export only `BULK` data that you imported using a dataset import job, only `PUT` data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or `ALL` for both types. The default value is `PUT`.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.
 #' @param jobOutput &#91;required&#93; The path to the Amazon S3 bucket where the job's output is stored.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the dataset export job.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the dataset export job.
 #'
 #' @return
 #' A list with the following syntax:
@@ -721,9 +579,7 @@ personalize_create_dataset_export_job <- function(jobName, datasetArn, ingestion
 #' Creates an empty dataset group
 #'
 #' @description
-#' Creates an empty dataset group. A dataset group is a container for
-#' Amazon Personalize resources. A dataset group can contain at most three
-#' datasets, one for each type of dataset:
+#' Creates an empty dataset group. A dataset group is a container for Amazon Personalize resources. A dataset group can contain at most three datasets, one for each type of dataset:
 #' 
 #' -   Item interactions
 #' 
@@ -735,13 +591,7 @@ personalize_create_dataset_export_job <- function(jobName, datasetArn, ingestion
 #' 
 #' -   Action interactions
 #' 
-#' A dataset group can be a Domain dataset group, where you specify a
-#' domain and use pre-configured resources like recommenders, or a Custom
-#' dataset group, where you use custom resources, such as a solution with a
-#' solution version, that you deploy with a campaign. If you start with a
-#' Domain dataset group, you can still add custom resources such as
-#' solutions and solution versions trained with recipes for custom use
-#' cases and deployed with campaigns.
+#' A dataset group can be a Domain dataset group, where you specify a domain and use pre-configured resources like recommenders, or a Custom dataset group, where you use custom resources, such as a solution with a solution version, that you deploy with a campaign. If you start with a Domain dataset group, you can still add custom resources such as solutions and solution versions trained with recipes for custom use cases and deployed with campaigns.
 #' 
 #' A dataset group can be in one of the following states:
 #' 
@@ -749,18 +599,11 @@ personalize_create_dataset_export_job <- function(jobName, datasetArn, ingestion
 #' 
 #' -   DELETE PENDING
 #' 
-#' To get the status of the dataset group, call
-#' [`describe_dataset_group`][personalize_describe_dataset_group]. If the
-#' status shows as CREATE FAILED, the response includes a `failureReason`
-#' key, which describes why the creation failed.
+#' To get the status of the dataset group, call [`describe_dataset_group`][personalize_describe_dataset_group]. If the status shows as CREATE FAILED, the response includes a `failureReason` key, which describes why the creation failed.
 #' 
-#' You must wait until the `status` of the dataset group is `ACTIVE` before
-#' adding a dataset to the group.
+#' You must wait until the `status` of the dataset group is `ACTIVE` before adding a dataset to the group.
 #' 
-#' You can specify an Key Management Service (KMS) key to encrypt the
-#' datasets in the group. If you specify a KMS key, you must also include
-#' an Identity and Access Management (IAM) role that has permission to
-#' access the key.
+#' You can specify an Key Management Service (KMS) key to encrypt the datasets in the group. If you specify a KMS key, you must also include an Identity and Access Management (IAM) role that has permission to access the key.
 #' 
 #' **APIs that require a dataset group ARN in the request**
 #' 
@@ -782,19 +625,10 @@ personalize_create_dataset_export_job <- function(jobName, datasetArn, ingestion
 #' personalize_create_dataset_group(name, roleArn, kmsKeyArn, domain, tags)
 #'
 #' @param name &#91;required&#93; The name for the new dataset group.
-#' @param roleArn The ARN of the Identity and Access Management (IAM) role that has
-#' permissions to access the Key Management Service (KMS) key. Supplying an
-#' IAM role is only valid when also specifying a KMS key.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of a Key Management Service (KMS) key
-#' used to encrypt the datasets.
-#' @param domain The domain of the dataset group. Specify a domain to create a Domain
-#' dataset group. The domain you specify determines the default schemas for
-#' datasets and the use cases available for recommenders. If you don't
-#' specify a domain, you create a Custom dataset group with solution
-#' versions that you deploy with a campaign.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the dataset group.
+#' @param roleArn The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.
+#' @param domain The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the dataset group.
 #'
 #' @return
 #' A list with the following syntax:
@@ -849,25 +683,11 @@ personalize_create_dataset_group <- function(name, roleArn = NULL, kmsKeyArn = N
 #' Amazon S3 bucket) to an Amazon Personalize dataset
 #'
 #' @description
-#' Creates a job that imports training data from your data source (an
-#' Amazon S3 bucket) to an Amazon Personalize dataset. To allow Amazon
-#' Personalize to import the training data, you must specify an IAM service
-#' role that has permission to read from the data source, as Amazon
-#' Personalize makes a copy of your data and processes it internally. For
-#' information on granting access to your Amazon S3 bucket, see [Giving
-#' Amazon Personalize Access to Amazon S3
-#' Resources](https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html).
+#' Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import the training data, you must specify an IAM service role that has permission to read from the data source, as Amazon Personalize makes a copy of your data and processes it internally. For information on granting access to your Amazon S3 bucket, see [Giving Amazon Personalize Access to Amazon S3 Resources](https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html).
 #' 
-#' If you already created a recommender or deployed a custom solution
-#' version with a campaign, how new bulk records influence recommendations
-#' depends on the domain use case or recipe that you use. For more
-#' information, see [How new data influences real-time
-#' recommendations](https://docs.aws.amazon.com/personalize/latest/dg/how-new-data-influences-recommendations.html).
+#' If you already created a recommender or deployed a custom solution version with a campaign, how new bulk records influence recommendations depends on the domain use case or recipe that you use. For more information, see [How new data influences real-time recommendations](https://docs.aws.amazon.com/personalize/latest/dg/how-new-data-influences-recommendations.html).
 #' 
-#' By default, a dataset import job replaces any existing data in the
-#' dataset that you imported in bulk. To add new records without replacing
-#' existing data, specify INCREMENTAL for the import mode in the
-#' CreateDatasetImportJob operation.
+#' By default, a dataset import job replaces any existing data in the dataset that you imported in bulk. To add new records without replacing existing data, specify INCREMENTAL for the import mode in the CreateDatasetImportJob operation.
 #' 
 #' **Status**
 #' 
@@ -875,15 +695,9 @@ personalize_create_dataset_group <- function(name, roleArn = NULL, kmsKeyArn = N
 #' 
 #' -   CREATE PENDING \> CREATE IN_PROGRESS \> ACTIVE -or- CREATE FAILED
 #' 
-#' To get the status of the import job, call
-#' [`describe_dataset_import_job`][personalize_describe_dataset_import_job],
-#' providing the Amazon Resource Name (ARN) of the dataset import job. The
-#' dataset import is complete when the status shows as ACTIVE. If the
-#' status shows as CREATE FAILED, the response includes a `failureReason`
-#' key, which describes why the job failed.
+#' To get the status of the import job, call [`describe_dataset_import_job`][personalize_describe_dataset_import_job], providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a `failureReason` key, which describes why the job failed.
 #' 
-#' Importing takes time. You must wait until the status shows as ACTIVE
-#' before training a model using the dataset.
+#' Importing takes time. You must wait until the status shows as ACTIVE before training a model using the dataset.
 #' 
 #' **Related APIs**
 #' 
@@ -898,23 +712,14 @@ personalize_create_dataset_group <- function(name, roleArn = NULL, kmsKeyArn = N
 #' @param jobName &#91;required&#93; The name for the dataset import job.
 #' @param datasetArn &#91;required&#93; The ARN of the dataset that receives the imported data.
 #' @param dataSource &#91;required&#93; The Amazon S3 bucket that contains the training data to import.
-#' @param roleArn The ARN of the IAM role that has permissions to read from the Amazon S3
-#' data source.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the dataset import job.
-#' @param importMode Specify how to add the new records to an existing dataset. The default
-#' import mode is `FULL`. If you haven't imported bulk records into the
-#' dataset previously, you can only specify `FULL`.
+#' @param roleArn The ARN of the IAM role that has permissions to read from the Amazon S3 data source.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the dataset import job.
+#' @param importMode Specify how to add the new records to an existing dataset. The default import mode is `FULL`. If you haven't imported bulk records into the dataset previously, you can only specify `FULL`.
 #' 
-#' -   Specify `FULL` to overwrite all existing bulk data in your dataset.
-#'     Data you imported individually is not replaced.
+#' -   Specify `FULL` to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.
 #' 
-#' -   Specify `INCREMENTAL` to append the new records to the existing data
-#'     in your dataset. Amazon Personalize replaces any record with the
-#'     same ID with the new one.
-#' @param publishAttributionMetricsToS3 If you created a metric attribution, specify whether to publish metrics
-#' for this import job to Amazon S3
+#' -   Specify `INCREMENTAL` to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.
+#' @param publishAttributionMetricsToS3 If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
 #'
 #' @return
 #' A list with the following syntax:
@@ -972,22 +777,11 @@ personalize_create_dataset_import_job <- function(jobName, datasetArn, dataSourc
 #' specified dataset group using the PutEvents API
 #'
 #' @description
-#' Creates an event tracker that you use when adding event data to a
-#' specified dataset group using the
-#' [PutEvents](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html)
-#' API.
+#' Creates an event tracker that you use when adding event data to a specified dataset group using the [PutEvents](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html) API.
 #' 
-#' Only one event tracker can be associated with a dataset group. You will
-#' get an error if you call
-#' [`create_event_tracker`][personalize_create_event_tracker] using the
-#' same dataset group as an existing event tracker.
+#' Only one event tracker can be associated with a dataset group. You will get an error if you call [`create_event_tracker`][personalize_create_event_tracker] using the same dataset group as an existing event tracker.
 #' 
-#' When you create an event tracker, the response includes a tracking ID,
-#' which you pass as a parameter when you use the
-#' [PutEvents](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html)
-#' operation. Amazon Personalize then appends the event data to the Item
-#' interactions dataset of the dataset group you specify in your event
-#' tracker.
+#' When you create an event tracker, the response includes a tracking ID, which you pass as a parameter when you use the [PutEvents](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html) operation. Amazon Personalize then appends the event data to the Item interactions dataset of the dataset group you specify in your event tracker.
 #' 
 #' The event tracker can be in one of the following states:
 #' 
@@ -995,11 +789,9 @@ personalize_create_dataset_import_job <- function(jobName, datasetArn, dataSourc
 #' 
 #' -   DELETE PENDING \> DELETE IN_PROGRESS
 #' 
-#' To get the status of the event tracker, call
-#' [`describe_event_tracker`][personalize_describe_event_tracker].
+#' To get the status of the event tracker, call [`describe_event_tracker`][personalize_describe_event_tracker].
 #' 
-#' The event tracker must be in the ACTIVE state before using the tracking
-#' ID.
+#' The event tracker must be in the ACTIVE state before using the tracking ID.
 #' 
 #' **Related APIs**
 #' 
@@ -1013,11 +805,8 @@ personalize_create_dataset_import_job <- function(jobName, datasetArn, dataSourc
 #' personalize_create_event_tracker(name, datasetGroupArn, tags)
 #'
 #' @param name &#91;required&#93; The name for the event tracker.
-#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group that receives the
-#' event data.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the event tracker.
+#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group that receives the event data.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the event tracker.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1069,23 +858,15 @@ personalize_create_event_tracker <- function(name, datasetGroupArn, tags = NULL)
 #' Creates a recommendation filter
 #'
 #' @description
-#' Creates a recommendation filter. For more information, see [Filtering
-#' recommendations and user
-#' segments](https://docs.aws.amazon.com/personalize/latest/dg/filter.html).
+#' Creates a recommendation filter. For more information, see [Filtering recommendations and user segments](https://docs.aws.amazon.com/personalize/latest/dg/filter.html).
 #'
 #' @usage
 #' personalize_create_filter(name, datasetGroupArn, filterExpression, tags)
 #'
 #' @param name &#91;required&#93; The name of the filter to create.
 #' @param datasetGroupArn &#91;required&#93; The ARN of the dataset group that the filter will belong to.
-#' @param filterExpression &#91;required&#93; The filter expression defines which items are included or excluded from
-#' recommendations. Filter expression must follow specific format rules.
-#' For information about filter expression structure and syntax, see
-#' [Filter
-#' expressions](https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html).
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the filter.
+#' @param filterExpression &#91;required&#93; The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see [Filter expressions](https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html).
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the filter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1137,24 +918,15 @@ personalize_create_filter <- function(name, datasetGroupArn, filterExpression, t
 #' Creates a metric attribution
 #'
 #' @description
-#' Creates a metric attribution. A metric attribution creates reports on
-#' the data that you import into Amazon Personalize. Depending on how you
-#' imported the data, you can view reports in Amazon CloudWatch or Amazon
-#' S3. For more information, see [Measuring impact of
-#' recommendations](https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html).
+#' Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see [Measuring impact of recommendations](https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html).
 #'
 #' @usage
 #' personalize_create_metric_attribution(name, datasetGroupArn, metrics,
 #'   metricsOutputConfig)
 #'
 #' @param name &#91;required&#93; A name for the metric attribution.
-#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination dataset group for the
-#' metric attribution.
-#' @param metrics &#91;required&#93; A list of metric attributes for the metric attribution. Each metric
-#' attribute specifies an event type to track and a function. Available
-#' functions are `SUM()` or `SAMPLECOUNT()`. For SUM() functions, provide
-#' the dataset type (either Interactions or Items) and column to sum as a
-#' parameter. For example SUM(Items.PRICE).
+#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.
+#' @param metrics &#91;required&#93; A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are `SUM()` or `SAMPLECOUNT()`. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).
 #' @param metricsOutputConfig &#91;required&#93; The output configuration details for the metric attribution.
 #'
 #' @return
@@ -1215,42 +987,17 @@ personalize_create_metric_attribution <- function(name, datasetGroupArn, metrics
 #' you specify
 #'
 #' @description
-#' Creates a recommender with the recipe (a Domain dataset group use case)
-#' you specify. You create recommenders for a Domain dataset group and
-#' specify the recommender's Amazon Resource Name (ARN) when you make a
-#' [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html)
-#' request.
+#' Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html) request.
 #' 
 #' **Minimum recommendation requests per second**
 #' 
-#' A high `minRecommendationRequestsPerSecond` will increase your bill. We
-#' recommend starting with 1 for `minRecommendationRequestsPerSecond` (the
-#' default). Track your usage using Amazon CloudWatch metrics, and increase
-#' the `minRecommendationRequestsPerSecond` as necessary.
+#' A high `minRecommendationRequestsPerSecond` will increase your bill. We recommend starting with 1 for `minRecommendationRequestsPerSecond` (the default). Track your usage using Amazon CloudWatch metrics, and increase the `minRecommendationRequestsPerSecond` as necessary.
 #' 
-#' When you create a recommender, you can configure the recommender's
-#' minimum recommendation requests per second. The minimum recommendation
-#' requests per second (`minRecommendationRequestsPerSecond`) specifies the
-#' baseline recommendation request throughput provisioned by Amazon
-#' Personalize. The default minRecommendationRequestsPerSecond is `1`. A
-#' recommendation request is a single `GetRecommendations` operation.
-#' Request throughput is measured in requests per second and Amazon
-#' Personalize uses your requests per second to derive your requests per
-#' hour and the price of your recommender usage.
+#' When you create a recommender, you can configure the recommender's minimum recommendation requests per second. The minimum recommendation requests per second (`minRecommendationRequestsPerSecond`) specifies the baseline recommendation request throughput provisioned by Amazon Personalize. The default minRecommendationRequestsPerSecond is `1`. A recommendation request is a single `GetRecommendations` operation. Request throughput is measured in requests per second and Amazon Personalize uses your requests per second to derive your requests per hour and the price of your recommender usage.
 #' 
-#' If your requests per second increases beyond
-#' `minRecommendationRequestsPerSecond`, Amazon Personalize auto-scales the
-#' provisioned capacity up and down, but never below
-#' `minRecommendationRequestsPerSecond`. There's a short time delay while
-#' the capacity is increased that might cause loss of requests.
+#' If your requests per second increases beyond `minRecommendationRequestsPerSecond`, Amazon Personalize auto-scales the provisioned capacity up and down, but never below `minRecommendationRequestsPerSecond`. There's a short time delay while the capacity is increased that might cause loss of requests.
 #' 
-#' Your bill is the greater of either the minimum requests per hour (based
-#' on minRecommendationRequestsPerSecond) or the actual number of requests.
-#' The actual request throughput used is calculated as the average
-#' requests/second within a one-hour window. We recommend starting with the
-#' default `minRecommendationRequestsPerSecond`, track your usage using
-#' Amazon CloudWatch metrics, and then increase the
-#' `minRecommendationRequestsPerSecond` as necessary.
+#' Your bill is the greater of either the minimum requests per hour (based on minRecommendationRequestsPerSecond) or the actual number of requests. The actual request throughput used is calculated as the average requests/second within a one-hour window. We recommend starting with the default `minRecommendationRequestsPerSecond`, track your usage using Amazon CloudWatch metrics, and then increase the `minRecommendationRequestsPerSecond` as necessary.
 #' 
 #' **Status**
 #' 
@@ -1258,16 +1005,13 @@ personalize_create_metric_attribution <- function(name, datasetGroupArn, metrics
 #' 
 #' -   CREATE PENDING \> CREATE IN_PROGRESS \> ACTIVE -or- CREATE FAILED
 #' 
-#' -   STOP PENDING \> STOP IN_PROGRESS \> INACTIVE \> START PENDING \>
-#'     START IN_PROGRESS \> ACTIVE
+#' -   STOP PENDING \> STOP IN_PROGRESS \> INACTIVE \> START PENDING \> START IN_PROGRESS \> ACTIVE
 #' 
 #' -   DELETE PENDING \> DELETE IN_PROGRESS
 #' 
-#' To get the recommender status, call
-#' [`describe_recommender`][personalize_describe_recommender].
+#' To get the recommender status, call [`describe_recommender`][personalize_describe_recommender].
 #' 
-#' Wait until the `status` of the recommender is `ACTIVE` before asking the
-#' recommender for recommendations.
+#' Wait until the `status` of the recommender is `ACTIVE` before asking the recommender for recommendations.
 #' 
 #' **Related APIs**
 #' 
@@ -1284,17 +1028,10 @@ personalize_create_metric_attribution <- function(name, datasetGroupArn, metrics
 #'   recommenderConfig, tags)
 #'
 #' @param name &#91;required&#93; The name of the recommender.
-#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination domain dataset group
-#' for the recommender.
-#' @param recipeArn &#91;required&#93; The Amazon Resource Name (ARN) of the recipe that the recommender will
-#' use. For a recommender, a recipe is a Domain dataset group use case.
-#' Only Domain dataset group use cases can be used to create a recommender.
-#' For information about use cases see [Choosing recommender use
-#' cases](https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html).
+#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.
+#' @param recipeArn &#91;required&#93; The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see [Choosing recommender use cases](https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html).
 #' @param recommenderConfig The configuration details of the recommender.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the recommender.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the recommender.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1365,14 +1102,9 @@ personalize_create_recommender <- function(name, datasetGroupArn, recipeArn, rec
 #' Creates an Amazon Personalize schema from the specified schema string
 #'
 #' @description
-#' Creates an Amazon Personalize schema from the specified schema string.
-#' The schema you create must be in Avro JSON format.
+#' Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON format.
 #' 
-#' Amazon Personalize recognizes three schema variants. Each schema is
-#' associated with a dataset type and has a set of required field and
-#' keywords. If you are creating a schema for a dataset in a Domain dataset
-#' group, you provide the domain of the Domain dataset group. You specify a
-#' schema when you call [`create_dataset`][personalize_create_dataset].
+#' Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset type and has a set of required field and keywords. If you are creating a schema for a dataset in a Domain dataset group, you provide the domain of the Domain dataset group. You specify a schema when you call [`create_dataset`][personalize_create_dataset].
 #' 
 #' **Related APIs**
 #' 
@@ -1387,9 +1119,7 @@ personalize_create_recommender <- function(name, datasetGroupArn, recipeArn, rec
 #'
 #' @param name &#91;required&#93; The name for the schema.
 #' @param schema &#91;required&#93; A schema in Avro JSON format.
-#' @param domain The domain for the schema. If you are creating a schema for a dataset in
-#' a Domain dataset group, specify the domain you chose when you created
-#' the Domain dataset group.
+#' @param domain The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1435,51 +1165,19 @@ personalize_create_schema <- function(name, schema, domain = NULL) {
 #' By default, all new solutions use automatic training
 #'
 #' @description
-#' By default, all new solutions use automatic training. With automatic
-#' training, you incur training costs while your solution is active. To
-#' avoid unnecessary costs, when you are finished you can [update the
-#' solution](https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html)
-#' to turn off automatic training. For information about training costs,
-#' see [Amazon Personalize
-#' pricing](https://aws.amazon.com/personalize/pricing/).
+#' By default, all new solutions use automatic training. With automatic training, you incur training costs while your solution is active. To avoid unnecessary costs, when you are finished you can [update the solution](https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html) to turn off automatic training. For information about training costs, see [Amazon Personalize pricing](https://aws.amazon.com/personalize/pricing/).
 #' 
-#' Creates the configuration for training a model (creating a solution
-#' version). This configuration includes the recipe to use for model
-#' training and optional training configuration, such as columns to use in
-#' training and feature transformation parameters. For more information
-#' about configuring a solution, see [Creating and configuring a
-#' solution](https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html).
+#' Creates the configuration for training a model (creating a solution version). This configuration includes the recipe to use for model training and optional training configuration, such as columns to use in training and feature transformation parameters. For more information about configuring a solution, see [Creating and configuring a solution](https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html).
 #' 
-#' By default, new solutions use automatic training to create solution
-#' versions every 7 days. You can change the training frequency. Automatic
-#' solution version creation starts within one hour after the solution is
-#' ACTIVE. If you manually create a solution version within the hour, the
-#' solution skips the first automatic training. For more information, see
-#' [Configuring automatic
-#' training](https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html).
+#' By default, new solutions use automatic training to create solution versions every 7 days. You can change the training frequency. Automatic solution version creation starts within one hour after the solution is ACTIVE. If you manually create a solution version within the hour, the solution skips the first automatic training. For more information, see [Configuring automatic training](https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html).
 #' 
-#' To turn off automatic training, set `performAutoTraining` to false. If
-#' you turn off automatic training, you must manually create a solution
-#' version by calling the
-#' [`create_solution_version`][personalize_create_solution_version]
-#' operation.
+#' To turn off automatic training, set `performAutoTraining` to false. If you turn off automatic training, you must manually create a solution version by calling the [`create_solution_version`][personalize_create_solution_version] operation.
 #' 
-#' After training starts, you can get the solution version's Amazon
-#' Resource Name (ARN) with the
-#' [`list_solution_versions`][personalize_list_solution_versions] API
-#' operation. To get its status, use the
-#' [`describe_solution_version`][personalize_describe_solution_version].
+#' After training starts, you can get the solution version's Amazon Resource Name (ARN) with the [`list_solution_versions`][personalize_list_solution_versions] API operation. To get its status, use the [`describe_solution_version`][personalize_describe_solution_version].
 #' 
-#' After training completes you can evaluate model accuracy by calling
-#' [`get_solution_metrics`][personalize_get_solution_metrics]. When you are
-#' satisfied with the solution version, you deploy it using
-#' [`create_campaign`][personalize_create_campaign]. The campaign provides
-#' recommendations to a client through the
-#' [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html)
-#' API.
+#' After training completes you can evaluate model accuracy by calling [`get_solution_metrics`][personalize_get_solution_metrics]. When you are satisfied with the solution version, you deploy it using [`create_campaign`][personalize_create_campaign]. The campaign provides recommendations to a client through the [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html) API.
 #' 
-#' Amazon Personalize doesn't support configuring the `hpoObjective` for
-#' solution hyperparameter optimization at this time.
+#' Amazon Personalize doesn't support configuring the `hpoObjective` for solution hyperparameter optimization at this time.
 #' 
 #' **Status**
 #' 
@@ -1489,10 +1187,7 @@ personalize_create_schema <- function(name, schema, domain = NULL) {
 #' 
 #' -   DELETE PENDING \> DELETE IN_PROGRESS
 #' 
-#' To get the status of the solution, call
-#' [`describe_solution`][personalize_describe_solution]. If you use manual
-#' training, the status must be ACTIVE before you call
-#' [`create_solution_version`][personalize_create_solution_version].
+#' To get the status of the solution, call [`describe_solution`][personalize_describe_solution]. If you use manual training, the status must be ACTIVE before you call [`create_solution_version`][personalize_create_solution_version].
 #' 
 #' **Related APIs**
 #' 
@@ -1517,68 +1212,29 @@ personalize_create_schema <- function(name, schema, domain = NULL) {
 #'   datasetGroupArn, eventType, solutionConfig, tags)
 #'
 #' @param name &#91;required&#93; The name for the solution.
-#' @param performHPO Whether to perform hyperparameter optimization (HPO) on the specified or
-#' selected recipe. The default is `false`.
+#' @param performHPO Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is `false`.
 #' 
-#' When performing AutoML, this parameter is always `true` and you should
-#' not set it to `false`.
-#' @param performAutoML We don't recommend enabling automated machine learning. Instead, match
-#' your use case to the available Amazon Personalize recipes. For more
-#' information, see [Choosing a
-#' recipe](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html).
+#' When performing AutoML, this parameter is always `true` and you should not set it to `false`.
+#' @param performAutoML We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see [Choosing a recipe](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html).
 #' 
-#' Whether to perform automated machine learning (AutoML). The default is
-#' `false`. For this case, you must specify `recipeArn`.
+#' Whether to perform automated machine learning (AutoML). The default is `false`. For this case, you must specify `recipeArn`.
 #' 
-#' When set to `true`, Amazon Personalize analyzes your training data and
-#' selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In
-#' this case, you must omit `recipeArn`. Amazon Personalize determines the
-#' optimal recipe by running tests with different values for the
-#' hyperparameters. AutoML lengthens the training process as compared to
-#' selecting a specific recipe.
-#' @param performAutoTraining Whether the solution uses automatic training to create new solution
-#' versions (trained models). The default is `True` and the solution
-#' automatically creates new solution versions every 7 days. You can change
-#' the training frequency by specifying a `schedulingExpression` in the
-#' `AutoTrainingConfig` as part of solution configuration. For more
-#' information about automatic training, see [Configuring automatic
-#' training](https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html).
+#' When set to `true`, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit `recipeArn`. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.
+#' @param performAutoTraining Whether the solution uses automatic training to create new solution versions (trained models). The default is `True` and the solution automatically creates new solution versions every 7 days. You can change the training frequency by specifying a `schedulingExpression` in the `AutoTrainingConfig` as part of solution configuration. For more information about automatic training, see [Configuring automatic training](https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html).
 #' 
-#' Automatic solution version creation starts within one hour after the
-#' solution is ACTIVE. If you manually create a solution version within the
-#' hour, the solution skips the first automatic training.
+#' Automatic solution version creation starts within one hour after the solution is ACTIVE. If you manually create a solution version within the hour, the solution skips the first automatic training.
 #' 
-#' After training starts, you can get the solution version's Amazon
-#' Resource Name (ARN) with the
-#' [`list_solution_versions`][personalize_list_solution_versions] API
-#' operation. To get its status, use the
-#' [`describe_solution_version`][personalize_describe_solution_version].
-#' @param performIncrementalUpdate Whether to perform incremental training updates on your model. When
-#' enabled, this allows the model to learn from new data more frequently
-#' without requiring full retraining, which enables near real-time
-#' personalization. This parameter is supported only for solutions that use
-#' the semantic-similarity recipe.
-#' @param recipeArn The Amazon Resource Name (ARN) of the recipe to use for model training.
-#' This is required when `performAutoML` is false. For information about
-#' different Amazon Personalize recipes and their ARNs, see [Choosing a
-#' recipe](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html).
-#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group that provides the
-#' training data.
-#' @param eventType When your have multiple event types (using an `EVENT_TYPE` schema
-#' field), this parameter specifies which event type (for example, 'click'
-#' or 'like') is used for training the model.
+#' After training starts, you can get the solution version's Amazon Resource Name (ARN) with the [`list_solution_versions`][personalize_list_solution_versions] API operation. To get its status, use the [`describe_solution_version`][personalize_describe_solution_version].
+#' @param performIncrementalUpdate Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.
+#' @param recipeArn The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when `performAutoML` is false. For information about different Amazon Personalize recipes and their ARNs, see [Choosing a recipe](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html).
+#' @param datasetGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset group that provides the training data.
+#' @param eventType When your have multiple event types (using an `EVENT_TYPE` schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.
 #' 
-#' If you do not provide an `eventType`, Amazon Personalize will use all
-#' interactions for training with equal weight regardless of type.
-#' @param solutionConfig The configuration properties for the solution. When `performAutoML` is
-#' set to true, Amazon Personalize only evaluates the `autoMLConfig`
-#' section of the solution configuration.
+#' If you do not provide an `eventType`, Amazon Personalize will use all interactions for training with equal weight regardless of type.
+#' @param solutionConfig The configuration properties for the solution. When `performAutoML` is set to true, Amazon Personalize only evaluates the `autoMLConfig` section of the solution configuration.
 #' 
-#' Amazon Personalize doesn't support configuring the `hpoObjective` at
-#' this time.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the solution.
+#' Amazon Personalize doesn't support configuring the `hpoObjective` at this time.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the solution.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1713,12 +1369,7 @@ personalize_create_solution <- function(name, performHPO = NULL, performAutoML =
 #' Trains or retrains an active solution in a Custom dataset group
 #'
 #' @description
-#' Trains or retrains an active solution in a Custom dataset group. A
-#' solution is created using the
-#' [`create_solution`][personalize_create_solution] operation and must be
-#' in the ACTIVE state before calling
-#' [`create_solution_version`][personalize_create_solution_version]. A new
-#' version of the solution is created every time you call this operation.
+#' Trains or retrains an active solution in a Custom dataset group. A solution is created using the [`create_solution`][personalize_create_solution] operation and must be in the ACTIVE state before calling [`create_solution_version`][personalize_create_solution_version]. A new version of the solution is created every time you call this operation.
 #' 
 #' **Status**
 #' 
@@ -1736,13 +1387,9 @@ personalize_create_solution <- function(name, performHPO = NULL, performAutoML =
 #' 
 #' -   CREATE STOPPED
 #' 
-#' To get the status of the version, call
-#' [`describe_solution_version`][personalize_describe_solution_version].
-#' Wait until the status shows as ACTIVE before calling
-#' [`create_campaign`][personalize_create_campaign].
+#' To get the status of the version, call [`describe_solution_version`][personalize_describe_solution_version]. Wait until the status shows as ACTIVE before calling [`create_campaign`][personalize_create_campaign].
 #' 
-#' If the status shows as CREATE FAILED, the response includes a
-#' `failureReason` key, which describes why the job failed.
+#' If the status shows as CREATE FAILED, the response includes a `failureReason` key, which describes why the job failed.
 #' 
 #' **Related APIs**
 #' 
@@ -1763,34 +1410,13 @@ personalize_create_solution <- function(name, performHPO = NULL, performAutoML =
 #'   tags)
 #'
 #' @param name The name of the solution version.
-#' @param solutionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution containing the training
-#' configuration information.
-#' @param trainingMode The scope of training to be performed when creating the solution
-#' version. The default is `FULL`. This creates a completely new model
-#' based on the entirety of the training data from the datasets in your
-#' dataset group.
+#' @param solutionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution containing the training configuration information.
+#' @param trainingMode The scope of training to be performed when creating the solution version. The default is `FULL`. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group.
 #' 
-#' If you use
-#' [User-Personalization](https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html),
-#' you can specify a training mode of `UPDATE`. This updates the model to
-#' consider new items for recommendations. It is not a full retraining. You
-#' should still complete a full retraining weekly. If you specify `UPDATE`,
-#' Amazon Personalize will stop automatic updates for the solution version.
-#' To resume updates, create a new solution with training mode set to
-#' `FULL` and deploy it in a campaign. For more information about automatic
-#' updates, see [Automatic
-#' updates](https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates).
+#' If you use [User-Personalization](https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html), you can specify a training mode of `UPDATE`. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify `UPDATE`, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to `FULL` and deploy it in a campaign. For more information about automatic updates, see [Automatic updates](https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates).
 #' 
-#' The `UPDATE` option can only be used when you already have an active
-#' solution version created from the input solution using the `FULL` option
-#' and the input solution was trained with the
-#' [User-Personalization](https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html)
-#' recipe or the legacy
-#' [HRNN-Coldstart](https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html)
-#' recipe.
-#' @param tags A list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' to apply to the solution version.
+#' The `UPDATE` option can only be used when you already have an active solution version created from the input solution using the `FULL` option and the input solution was trained with the [User-Personalization](https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html) recipe or the legacy [HRNN-Coldstart](https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html) recipe.
+#' @param tags A list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) to apply to the solution version.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1842,12 +1468,7 @@ personalize_create_solution_version <- function(name = NULL, solutionArn, traini
 #' Removes a campaign by deleting the solution deployment
 #'
 #' @description
-#' Removes a campaign by deleting the solution deployment. The solution
-#' that the campaign is based on is not deleted and can be redeployed when
-#' needed. A deleted campaign can no longer be specified in a
-#' [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html)
-#' request. For information on creating campaigns, see
-#' [`create_campaign`][personalize_create_campaign].
+#' Removes a campaign by deleting the solution deployment. The solution that the campaign is based on is not deleted and can be redeployed when needed. A deleted campaign can no longer be specified in a [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html) request. For information on creating campaigns, see [`create_campaign`][personalize_create_campaign].
 #'
 #' @usage
 #' personalize_delete_campaign(campaignArn)
@@ -1891,11 +1512,7 @@ personalize_delete_campaign <- function(campaignArn) {
 #' Deletes a dataset
 #'
 #' @description
-#' Deletes a dataset. You can't delete a dataset if an associated
-#' `DatasetImportJob` or `SolutionVersion` is in the CREATE PENDING or IN
-#' PROGRESS state. For more information about deleting datasets, see
-#' [Deleting a
-#' dataset](https://docs.aws.amazon.com/personalize/latest/dg/delete-dataset.html).
+#' Deletes a dataset. You can't delete a dataset if an associated `DatasetImportJob` or `SolutionVersion` is in the CREATE PENDING or IN PROGRESS state. For more information about deleting datasets, see [Deleting a dataset](https://docs.aws.amazon.com/personalize/latest/dg/delete-dataset.html).
 #'
 #' @usage
 #' personalize_delete_dataset(datasetArn)
@@ -1939,8 +1556,7 @@ personalize_delete_dataset <- function(datasetArn) {
 #' Deletes a dataset group
 #'
 #' @description
-#' Deletes a dataset group. Before you delete a dataset group, you must
-#' delete the following:
+#' Deletes a dataset group. Before you delete a dataset group, you must delete the following:
 #' 
 #' -   All associated event trackers.
 #' 
@@ -1990,9 +1606,7 @@ personalize_delete_dataset_group <- function(datasetGroupArn) {
 #' Deletes the event tracker
 #'
 #' @description
-#' Deletes the event tracker. Does not delete the dataset from the dataset
-#' group. For more information on event trackers, see
-#' [`create_event_tracker`][personalize_create_event_tracker].
+#' Deletes the event tracker. Does not delete the dataset from the dataset group. For more information on event trackers, see [`create_event_tracker`][personalize_create_event_tracker].
 #'
 #' @usage
 #' personalize_delete_event_tracker(eventTrackerArn)
@@ -2124,10 +1738,7 @@ personalize_delete_metric_attribution <- function(metricAttributionArn) {
 #' Deactivates and removes a recommender
 #'
 #' @description
-#' Deactivates and removes a recommender. A deleted recommender can no
-#' longer be specified in a
-#' [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html)
-#' request.
+#' Deactivates and removes a recommender. A deleted recommender can no longer be specified in a [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html) request.
 #'
 #' @usage
 #' personalize_delete_recommender(recommenderArn)
@@ -2171,9 +1782,7 @@ personalize_delete_recommender <- function(recommenderArn) {
 #' Deletes a schema
 #'
 #' @description
-#' Deletes a schema. Before deleting a schema, you must delete all datasets
-#' referencing the schema. For more information on schemas, see
-#' [`create_schema`][personalize_create_schema].
+#' Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more information on schemas, see [`create_schema`][personalize_create_schema].
 #'
 #' @usage
 #' personalize_delete_schema(schemaArn)
@@ -2217,14 +1826,7 @@ personalize_delete_schema <- function(schemaArn) {
 #' Deletes all versions of a solution and the Solution object itself
 #'
 #' @description
-#' Deletes all versions of a solution and the `Solution` object itself.
-#' Before deleting a solution, you must delete all campaigns based on the
-#' solution. To determine what campaigns are using the solution, call
-#' [`list_campaigns`][personalize_list_campaigns] and supply the Amazon
-#' Resource Name (ARN) of the solution. You can't delete a solution if an
-#' associated `SolutionVersion` is in the CREATE PENDING or IN PROGRESS
-#' state. For more information on solutions, see
-#' [`create_solution`][personalize_create_solution].
+#' Deletes all versions of a solution and the `Solution` object itself. Before deleting a solution, you must delete all campaigns based on the solution. To determine what campaigns are using the solution, call [`list_campaigns`][personalize_list_campaigns] and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution if an associated `SolutionVersion` is in the CREATE PENDING or IN PROGRESS state. For more information on solutions, see [`create_solution`][personalize_create_solution].
 #'
 #' @usage
 #' personalize_delete_solution(solutionArn)
@@ -2367,9 +1969,7 @@ personalize_describe_algorithm <- function(algorithmArn) {
 #' ARN of the solution version used to generate the recommendations
 #'
 #' @description
-#' Gets the properties of a batch inference job including name, Amazon
-#' Resource Name (ARN), status, input and output configurations, and the
-#' ARN of the solution version used to generate the recommendations.
+#' Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate the recommendations.
 #'
 #' @usage
 #' personalize_describe_batch_inference_job(batchInferenceJobArn)
@@ -2461,9 +2061,7 @@ personalize_describe_batch_inference_job <- function(batchInferenceJobArn) {
 #' ARN of the solution version used to generate segments
 #'
 #' @description
-#' Gets the properties of a batch segment job including name, Amazon
-#' Resource Name (ARN), status, input and output configurations, and the
-#' ARN of the solution version used to generate segments.
+#' Gets the properties of a batch segment job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate segments.
 #'
 #' @usage
 #' personalize_describe_batch_segment_job(batchSegmentJobArn)
@@ -2547,11 +2145,9 @@ personalize_describe_batch_segment_job <- function(batchSegmentJobArn) {
 #' 
 #' -   DELETE PENDING \> DELETE IN_PROGRESS
 #' 
-#' When the `status` is `CREATE FAILED`, the response includes the
-#' `failureReason` key, which describes why.
+#' When the `status` is `CREATE FAILED`, the response includes the `failureReason` key, which describes why.
 #' 
-#' For more information on campaigns, see
-#' [`create_campaign`][personalize_create_campaign].
+#' For more information on campaigns, see [`create_campaign`][personalize_create_campaign].
 #'
 #' @usage
 #' personalize_describe_campaign(campaignArn)
@@ -2646,9 +2242,7 @@ personalize_describe_campaign <- function(campaignArn) {
 #' including the job status
 #'
 #' @description
-#' Describes the data deletion job created by
-#' [`create_data_deletion_job`][personalize_create_data_deletion_job],
-#' including the job status.
+#' Describes the data deletion job created by [`create_data_deletion_job`][personalize_create_data_deletion_job], including the job status.
 #'
 #' @usage
 #' personalize_describe_data_deletion_job(dataDeletionJobArn)
@@ -2714,8 +2308,7 @@ personalize_describe_data_deletion_job <- function(dataDeletionJobArn) {
 #' Describes the given dataset
 #'
 #' @description
-#' Describes the given dataset. For more information on datasets, see
-#' [`create_dataset`][personalize_create_dataset].
+#' Describes the given dataset. For more information on datasets, see [`create_dataset`][personalize_create_dataset].
 #'
 #' @usage
 #' personalize_describe_dataset(datasetArn)
@@ -2790,9 +2383,7 @@ personalize_describe_dataset <- function(datasetArn) {
 #' including the export job status
 #'
 #' @description
-#' Describes the dataset export job created by
-#' [`create_dataset_export_job`][personalize_create_dataset_export_job],
-#' including the export job status.
+#' Describes the dataset export job created by [`create_dataset_export_job`][personalize_create_dataset_export_job], including the export job status.
 #'
 #' @usage
 #' personalize_describe_dataset_export_job(datasetExportJobArn)
@@ -2861,8 +2452,7 @@ personalize_describe_dataset_export_job <- function(datasetExportJobArn) {
 #' Describes the given dataset group
 #'
 #' @description
-#' Describes the given dataset group. For more information on dataset
-#' groups, see [`create_dataset_group`][personalize_create_dataset_group].
+#' Describes the given dataset group. For more information on dataset groups, see [`create_dataset_group`][personalize_create_dataset_group].
 #'
 #' @usage
 #' personalize_describe_dataset_group(datasetGroupArn)
@@ -2926,9 +2516,7 @@ personalize_describe_dataset_group <- function(datasetGroupArn) {
 #' including the import job status
 #'
 #' @description
-#' Describes the dataset import job created by
-#' [`create_dataset_import_job`][personalize_create_dataset_import_job],
-#' including the import job status.
+#' Describes the dataset import job created by [`create_dataset_import_job`][personalize_create_dataset_import_job], including the import job status.
 #'
 #' @usage
 #' personalize_describe_dataset_import_job(datasetImportJobArn)
@@ -2995,9 +2583,7 @@ personalize_describe_dataset_import_job <- function(datasetImportJobArn) {
 #' Describes an event tracker
 #'
 #' @description
-#' Describes an event tracker. The response includes the `trackingId` and
-#' `status` of the event tracker. For more information on event trackers,
-#' see [`create_event_tracker`][personalize_create_event_tracker].
+#' Describes an event tracker. The response includes the `trackingId` and `status` of the event tracker. For more information on event trackers, see [`create_event_tracker`][personalize_create_event_tracker].
 #'
 #' @usage
 #' personalize_describe_event_tracker(eventTrackerArn)
@@ -3064,8 +2650,7 @@ personalize_describe_event_tracker <- function(eventTrackerArn) {
 #' @usage
 #' personalize_describe_feature_transformation(featureTransformationArn)
 #'
-#' @param featureTransformationArn &#91;required&#93; The Amazon Resource Name (ARN) of the feature transformation to
-#' describe.
+#' @param featureTransformationArn &#91;required&#93; The Amazon Resource Name (ARN) of the feature transformation to describe.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3260,18 +2845,9 @@ personalize_describe_metric_attribution <- function(metricAttributionArn) {
 #' 
 #' -   Hyperparameters that govern the training.
 #' 
-#' -   Feature transformation information for modifying the input data
-#'     before training.
+#' -   Feature transformation information for modifying the input data before training.
 #' 
-#' Amazon Personalize provides a set of predefined recipes. You specify a
-#' recipe when you create a solution with the
-#' [`create_solution`][personalize_create_solution] API.
-#' [`create_solution`][personalize_create_solution] trains a model by using
-#' the algorithm in the specified recipe and a training dataset. The
-#' solution, when deployed as a campaign, can provide recommendations using
-#' the
-#' [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html)
-#' API.
+#' Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a solution with the [`create_solution`][personalize_create_solution] API. [`create_solution`][personalize_create_solution] trains a model by using the algorithm in the specified recipe and a training dataset. The solution, when deployed as a campaign, can provide recommendations using the [GetRecommendations](https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html) API.
 #'
 #' @usage
 #' personalize_describe_recipe(recipeArn)
@@ -3340,19 +2916,15 @@ personalize_describe_recipe <- function(recipeArn) {
 #' 
 #' -   CREATE PENDING \> CREATE IN_PROGRESS \> ACTIVE -or- CREATE FAILED
 #' 
-#' -   STOP PENDING \> STOP IN_PROGRESS \> INACTIVE \> START PENDING \>
-#'     START IN_PROGRESS \> ACTIVE
+#' -   STOP PENDING \> STOP IN_PROGRESS \> INACTIVE \> START PENDING \> START IN_PROGRESS \> ACTIVE
 #' 
 #' -   DELETE PENDING \> DELETE IN_PROGRESS
 #' 
-#' When the `status` is `CREATE FAILED`, the response includes the
-#' `failureReason` key, which describes why.
+#' When the `status` is `CREATE FAILED`, the response includes the `failureReason` key, which describes why.
 #' 
-#' The `modelMetrics` key is null when the recommender is being created or
-#' deleted.
+#' The `modelMetrics` key is null when the recommender is being created or deleted.
 #' 
-#' For more information on recommenders, see
-#' [`create_recommender`][personalize_create_recommender].
+#' For more information on recommenders, see [`create_recommender`][personalize_create_recommender].
 #'
 #' @usage
 #' personalize_describe_recommender(recommenderArn)
@@ -3465,8 +3037,7 @@ personalize_describe_recommender <- function(recommenderArn) {
 #' Describes a schema
 #'
 #' @description
-#' Describes a schema. For more information on schemas, see
-#' [`create_schema`][personalize_create_schema].
+#' Describes a schema. For more information on schemas, see [`create_schema`][personalize_create_schema].
 #'
 #' @usage
 #' personalize_describe_schema(schemaArn)
@@ -3526,8 +3097,7 @@ personalize_describe_schema <- function(schemaArn) {
 #' Describes a solution
 #'
 #' @description
-#' Describes a solution. For more information on solutions, see
-#' [`create_solution`][personalize_create_solution].
+#' Describes a solution. For more information on solutions, see [`create_solution`][personalize_create_solution].
 #'
 #' @usage
 #' personalize_describe_solution(solutionArn)
@@ -3713,8 +3283,7 @@ personalize_describe_solution <- function(solutionArn) {
 #' Describes a specific version of a solution
 #'
 #' @description
-#' Describes a specific version of a solution. For more information on
-#' solutions, see [`create_solution`][personalize_create_solution]
+#' Describes a specific version of a solution. For more information on solutions, see [`create_solution`][personalize_create_solution]
 #'
 #' @usage
 #' personalize_describe_solution_version(solutionVersionArn)
@@ -3872,8 +3441,7 @@ personalize_describe_solution_version <- function(solutionVersionArn) {
 #' @usage
 #' personalize_get_solution_metrics(solutionVersionArn)
 #'
-#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version for which to get
-#' metrics.
+#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version for which to get metrics.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3921,18 +3489,15 @@ personalize_get_solution_metrics <- function(solutionVersionArn) {
 #' a solution version
 #'
 #' @description
-#' Gets a list of the batch inference jobs that have been performed off of
-#' a solution version.
+#' Gets a list of the batch inference jobs that have been performed off of a solution version.
 #'
 #' @usage
 #' personalize_list_batch_inference_jobs(solutionVersionArn, nextToken,
 #'   maxResults)
 #'
-#' @param solutionVersionArn The Amazon Resource Name (ARN) of the solution version from which the
-#' batch inference jobs were created.
+#' @param solutionVersionArn The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.
 #' @param nextToken The token to request the next page of results.
-#' @param maxResults The maximum number of batch inference job results to return in each
-#' page. The default value is 100.
+#' @param maxResults The maximum number of batch inference job results to return in each page. The default value is 100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3995,18 +3560,15 @@ personalize_list_batch_inference_jobs <- function(solutionVersionArn = NULL, nex
 #' solution version that you specify
 #'
 #' @description
-#' Gets a list of the batch segment jobs that have been performed off of a
-#' solution version that you specify.
+#' Gets a list of the batch segment jobs that have been performed off of a solution version that you specify.
 #'
 #' @usage
 #' personalize_list_batch_segment_jobs(solutionVersionArn, nextToken,
 #'   maxResults)
 #'
-#' @param solutionVersionArn The Amazon Resource Name (ARN) of the solution version that the batch
-#' segment jobs used to generate batch segments.
+#' @param solutionVersionArn The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.
 #' @param nextToken The token to request the next page of results.
-#' @param maxResults The maximum number of batch segment job results to return in each page.
-#' The default value is 100.
+#' @param maxResults The maximum number of batch segment job results to return in each page. The default value is 100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4067,21 +3629,13 @@ personalize_list_batch_segment_jobs <- function(solutionVersionArn = NULL, nextT
 #' Returns a list of campaigns that use the given solution
 #'
 #' @description
-#' Returns a list of campaigns that use the given solution. When a solution
-#' is not specified, all the campaigns associated with the account are
-#' listed. The response provides the properties for each campaign,
-#' including the Amazon Resource Name (ARN). For more information on
-#' campaigns, see [`create_campaign`][personalize_create_campaign].
+#' Returns a list of campaigns that use the given solution. When a solution is not specified, all the campaigns associated with the account are listed. The response provides the properties for each campaign, including the Amazon Resource Name (ARN). For more information on campaigns, see [`create_campaign`][personalize_create_campaign].
 #'
 #' @usage
 #' personalize_list_campaigns(solutionArn, nextToken, maxResults)
 #'
-#' @param solutionArn The Amazon Resource Name (ARN) of the solution to list the campaigns
-#' for. When a solution is not specified, all the campaigns associated with
-#' the account are listed.
-#' @param nextToken A token returned from the previous call to
-#' [`list_campaigns`][personalize_list_campaigns] for getting the next set
-#' of campaigns (if they exist).
+#' @param solutionArn The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.
+#' @param nextToken A token returned from the previous call to [`list_campaigns`][personalize_list_campaigns] for getting the next set of campaigns (if they exist).
 #' @param maxResults The maximum number of campaigns to return.
 #'
 #' @return
@@ -4143,23 +3697,14 @@ personalize_list_campaigns <- function(solutionArn = NULL, nextToken = NULL, max
 #' creation time, with the most recent first
 #'
 #' @description
-#' Returns a list of data deletion jobs for a dataset group ordered by
-#' creation time, with the most recent first. When a dataset group is not
-#' specified, all the data deletion jobs associated with the account are
-#' listed. The response provides the properties for each job, including the
-#' Amazon Resource Name (ARN). For more information on data deletion jobs,
-#' see [Deleting
-#' users](https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html).
+#' Returns a list of data deletion jobs for a dataset group ordered by creation time, with the most recent first. When a dataset group is not specified, all the data deletion jobs associated with the account are listed. The response provides the properties for each job, including the Amazon Resource Name (ARN). For more information on data deletion jobs, see [Deleting users](https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html).
 #'
 #' @usage
 #' personalize_list_data_deletion_jobs(datasetGroupArn, nextToken,
 #'   maxResults)
 #'
-#' @param datasetGroupArn The Amazon Resource Name (ARN) of the dataset group to list data
-#' deletion jobs for.
-#' @param nextToken A token returned from the previous call to
-#' [`list_data_deletion_jobs`][personalize_list_data_deletion_jobs] for
-#' getting the next set of jobs (if they exist).
+#' @param datasetGroupArn The Amazon Resource Name (ARN) of the dataset group to list data deletion jobs for.
+#' @param nextToken A token returned from the previous call to [`list_data_deletion_jobs`][personalize_list_data_deletion_jobs] for getting the next set of jobs (if they exist).
 #' @param maxResults The maximum number of data deletion jobs to return.
 #'
 #' @return
@@ -4221,23 +3766,13 @@ personalize_list_data_deletion_jobs <- function(datasetGroupArn = NULL, nextToke
 #' Returns a list of dataset export jobs that use the given dataset
 #'
 #' @description
-#' Returns a list of dataset export jobs that use the given dataset. When a
-#' dataset is not specified, all the dataset export jobs associated with
-#' the account are listed. The response provides the properties for each
-#' dataset export job, including the Amazon Resource Name (ARN). For more
-#' information on dataset export jobs, see
-#' [`create_dataset_export_job`][personalize_create_dataset_export_job].
-#' For more information on datasets, see
-#' [`create_dataset`][personalize_create_dataset].
+#' Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the dataset export jobs associated with the account are listed. The response provides the properties for each dataset export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see [`create_dataset_export_job`][personalize_create_dataset_export_job]. For more information on datasets, see [`create_dataset`][personalize_create_dataset].
 #'
 #' @usage
 #' personalize_list_dataset_export_jobs(datasetArn, nextToken, maxResults)
 #'
-#' @param datasetArn The Amazon Resource Name (ARN) of the dataset to list the dataset export
-#' jobs for.
-#' @param nextToken A token returned from the previous call to
-#' [`list_dataset_export_jobs`][personalize_list_dataset_export_jobs] for
-#' getting the next set of dataset export jobs (if they exist).
+#' @param datasetArn The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.
+#' @param nextToken A token returned from the previous call to [`list_dataset_export_jobs`][personalize_list_dataset_export_jobs] for getting the next set of dataset export jobs (if they exist).
 #' @param maxResults The maximum number of dataset export jobs to return.
 #'
 #' @return
@@ -4298,17 +3833,12 @@ personalize_list_dataset_export_jobs <- function(datasetArn = NULL, nextToken = 
 #' Returns a list of dataset groups
 #'
 #' @description
-#' Returns a list of dataset groups. The response provides the properties
-#' for each dataset group, including the Amazon Resource Name (ARN). For
-#' more information on dataset groups, see
-#' [`create_dataset_group`][personalize_create_dataset_group].
+#' Returns a list of dataset groups. The response provides the properties for each dataset group, including the Amazon Resource Name (ARN). For more information on dataset groups, see [`create_dataset_group`][personalize_create_dataset_group].
 #'
 #' @usage
 #' personalize_list_dataset_groups(nextToken, maxResults)
 #'
-#' @param nextToken A token returned from the previous call to
-#' [`list_dataset_groups`][personalize_list_dataset_groups] for getting the
-#' next set of dataset groups (if they exist).
+#' @param nextToken A token returned from the previous call to [`list_dataset_groups`][personalize_list_dataset_groups] for getting the next set of dataset groups (if they exist).
 #' @param maxResults The maximum number of dataset groups to return.
 #'
 #' @return
@@ -4369,23 +3899,13 @@ personalize_list_dataset_groups <- function(nextToken = NULL, maxResults = NULL)
 #' Returns a list of dataset import jobs that use the given dataset
 #'
 #' @description
-#' Returns a list of dataset import jobs that use the given dataset. When a
-#' dataset is not specified, all the dataset import jobs associated with
-#' the account are listed. The response provides the properties for each
-#' dataset import job, including the Amazon Resource Name (ARN). For more
-#' information on dataset import jobs, see
-#' [`create_dataset_import_job`][personalize_create_dataset_import_job].
-#' For more information on datasets, see
-#' [`create_dataset`][personalize_create_dataset].
+#' Returns a list of dataset import jobs that use the given dataset. When a dataset is not specified, all the dataset import jobs associated with the account are listed. The response provides the properties for each dataset import job, including the Amazon Resource Name (ARN). For more information on dataset import jobs, see [`create_dataset_import_job`][personalize_create_dataset_import_job]. For more information on datasets, see [`create_dataset`][personalize_create_dataset].
 #'
 #' @usage
 #' personalize_list_dataset_import_jobs(datasetArn, nextToken, maxResults)
 #'
-#' @param datasetArn The Amazon Resource Name (ARN) of the dataset to list the dataset import
-#' jobs for.
-#' @param nextToken A token returned from the previous call to
-#' [`list_dataset_import_jobs`][personalize_list_dataset_import_jobs] for
-#' getting the next set of dataset import jobs (if they exist).
+#' @param datasetArn The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.
+#' @param nextToken A token returned from the previous call to [`list_dataset_import_jobs`][personalize_list_dataset_import_jobs] for getting the next set of dataset import jobs (if they exist).
 #' @param maxResults The maximum number of dataset import jobs to return.
 #'
 #' @return
@@ -4447,19 +3967,13 @@ personalize_list_dataset_import_jobs <- function(datasetArn = NULL, nextToken = 
 #' Returns the list of datasets contained in the given dataset group
 #'
 #' @description
-#' Returns the list of datasets contained in the given dataset group. The
-#' response provides the properties for each dataset, including the Amazon
-#' Resource Name (ARN). For more information on datasets, see
-#' [`create_dataset`][personalize_create_dataset].
+#' Returns the list of datasets contained in the given dataset group. The response provides the properties for each dataset, including the Amazon Resource Name (ARN). For more information on datasets, see [`create_dataset`][personalize_create_dataset].
 #'
 #' @usage
 #' personalize_list_datasets(datasetGroupArn, nextToken, maxResults)
 #'
-#' @param datasetGroupArn The Amazon Resource Name (ARN) of the dataset group that contains the
-#' datasets to list.
-#' @param nextToken A token returned from the previous call to
-#' [`list_datasets`][personalize_list_datasets] for getting the next set of
-#' dataset import jobs (if they exist).
+#' @param datasetGroupArn The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.
+#' @param nextToken A token returned from the previous call to [`list_datasets`][personalize_list_datasets] for getting the next set of dataset import jobs (if they exist).
 #' @param maxResults The maximum number of datasets to return.
 #'
 #' @return
@@ -4520,19 +4034,13 @@ personalize_list_datasets <- function(datasetGroupArn = NULL, nextToken = NULL, 
 #' Returns the list of event trackers associated with the account
 #'
 #' @description
-#' Returns the list of event trackers associated with the account. The
-#' response provides the properties for each event tracker, including the
-#' Amazon Resource Name (ARN) and tracking ID. For more information on
-#' event trackers, see
-#' [`create_event_tracker`][personalize_create_event_tracker].
+#' Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see [`create_event_tracker`][personalize_create_event_tracker].
 #'
 #' @usage
 #' personalize_list_event_trackers(datasetGroupArn, nextToken, maxResults)
 #'
 #' @param datasetGroupArn The ARN of a dataset group used to filter the response.
-#' @param nextToken A token returned from the previous call to
-#' [`list_event_trackers`][personalize_list_event_trackers] for getting the
-#' next set of event trackers (if they exist).
+#' @param nextToken A token returned from the previous call to [`list_event_trackers`][personalize_list_event_trackers] for getting the next set of event trackers (if they exist).
 #' @param maxResults The maximum number of event trackers to return.
 #'
 #' @return
@@ -4598,9 +4106,7 @@ personalize_list_event_trackers <- function(datasetGroupArn = NULL, nextToken = 
 #' personalize_list_filters(datasetGroupArn, nextToken, maxResults)
 #'
 #' @param datasetGroupArn The ARN of the dataset group that contains the filters.
-#' @param nextToken A token returned from the previous call to
-#' [`list_filters`][personalize_list_filters] for getting the next set of
-#' filters (if they exist).
+#' @param nextToken A token returned from the previous call to [`list_filters`][personalize_list_filters] for getting the next set of filters (if they exist).
 #' @param maxResults The maximum number of filters to return.
 #'
 #' @return
@@ -4668,10 +4174,8 @@ personalize_list_filters <- function(datasetGroupArn = NULL, nextToken = NULL, m
 #' personalize_list_metric_attribution_metrics(metricAttributionArn,
 #'   nextToken, maxResults)
 #'
-#' @param metricAttributionArn The Amazon Resource Name (ARN) of the metric attribution to retrieve
-#' attributes for.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param metricAttributionArn The Amazon Resource Name (ARN) of the metric attribution to retrieve attributes for.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of metrics to return in one page of results.
 #'
 #' @return
@@ -4732,10 +4236,8 @@ personalize_list_metric_attribution_metrics <- function(metricAttributionArn = N
 #'   maxResults)
 #'
 #' @param datasetGroupArn The metric attributions' dataset group Amazon Resource Name (ARN).
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
-#' @param maxResults The maximum number of metric attributions to return in one page of
-#' results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+#' @param maxResults The maximum number of metric attributions to return in one page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4795,21 +4297,15 @@ personalize_list_metric_attributions <- function(datasetGroupArn = NULL, nextTok
 #' Returns a list of available recipes
 #'
 #' @description
-#' Returns a list of available recipes. The response provides the
-#' properties for each recipe, including the recipe's Amazon Resource Name
-#' (ARN).
+#' Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's Amazon Resource Name (ARN).
 #'
 #' @usage
 #' personalize_list_recipes(recipeProvider, nextToken, maxResults, domain)
 #'
 #' @param recipeProvider The default is `SERVICE`.
-#' @param nextToken A token returned from the previous call to
-#' [`list_recipes`][personalize_list_recipes] for getting the next set of
-#' recipes (if they exist).
+#' @param nextToken A token returned from the previous call to [`list_recipes`][personalize_list_recipes] for getting the next set of recipes (if they exist).
 #' @param maxResults The maximum number of recipes to return.
-#' @param domain Filters returned recipes by domain for a Domain dataset group. Only
-#' recipes (Domain dataset group use cases) for this domain are included in
-#' the response. If you don't specify a domain, all recipes are returned.
+#' @param domain Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4870,22 +4366,13 @@ personalize_list_recipes <- function(recipeProvider = NULL, nextToken = NULL, ma
 #' Returns a list of recommenders in a given Domain dataset group
 #'
 #' @description
-#' Returns a list of recommenders in a given Domain dataset group. When a
-#' Domain dataset group is not specified, all the recommenders associated
-#' with the account are listed. The response provides the properties for
-#' each recommender, including the Amazon Resource Name (ARN). For more
-#' information on recommenders, see
-#' [`create_recommender`][personalize_create_recommender].
+#' Returns a list of recommenders in a given Domain dataset group. When a Domain dataset group is not specified, all the recommenders associated with the account are listed. The response provides the properties for each recommender, including the Amazon Resource Name (ARN). For more information on recommenders, see [`create_recommender`][personalize_create_recommender].
 #'
 #' @usage
 #' personalize_list_recommenders(datasetGroupArn, nextToken, maxResults)
 #'
-#' @param datasetGroupArn The Amazon Resource Name (ARN) of the Domain dataset group to list the
-#' recommenders for. When a Domain dataset group is not specified, all the
-#' recommenders associated with the account are listed.
-#' @param nextToken A token returned from the previous call to
-#' [`list_recommenders`][personalize_list_recommenders] for getting the
-#' next set of recommenders (if they exist).
+#' @param datasetGroupArn The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.
+#' @param nextToken A token returned from the previous call to [`list_recommenders`][personalize_list_recommenders] for getting the next set of recommenders (if they exist).
 #' @param maxResults The maximum number of recommenders to return.
 #'
 #' @return
@@ -4966,17 +4453,12 @@ personalize_list_recommenders <- function(datasetGroupArn = NULL, nextToken = NU
 #' Returns the list of schemas associated with the account
 #'
 #' @description
-#' Returns the list of schemas associated with the account. The response
-#' provides the properties for each schema, including the Amazon Resource
-#' Name (ARN). For more information on schemas, see
-#' [`create_schema`][personalize_create_schema].
+#' Returns the list of schemas associated with the account. The response provides the properties for each schema, including the Amazon Resource Name (ARN). For more information on schemas, see [`create_schema`][personalize_create_schema].
 #'
 #' @usage
 #' personalize_list_schemas(nextToken, maxResults)
 #'
-#' @param nextToken A token returned from the previous call to
-#' [`list_schemas`][personalize_list_schemas] for getting the next set of
-#' schemas (if they exist).
+#' @param nextToken A token returned from the previous call to [`list_schemas`][personalize_list_schemas] for getting the next set of schemas (if they exist).
 #' @param maxResults The maximum number of schemas to return.
 #'
 #' @return
@@ -5035,18 +4517,13 @@ personalize_list_schemas <- function(nextToken = NULL, maxResults = NULL) {
 #' Returns a list of solution versions for the given solution
 #'
 #' @description
-#' Returns a list of solution versions for the given solution. When a
-#' solution is not specified, all the solution versions associated with the
-#' account are listed. The response provides the properties for each
-#' solution version, including the Amazon Resource Name (ARN).
+#' Returns a list of solution versions for the given solution. When a solution is not specified, all the solution versions associated with the account are listed. The response provides the properties for each solution version, including the Amazon Resource Name (ARN).
 #'
 #' @usage
 #' personalize_list_solution_versions(solutionArn, nextToken, maxResults)
 #'
 #' @param solutionArn The Amazon Resource Name (ARN) of the solution.
-#' @param nextToken A token returned from the previous call to
-#' [`list_solution_versions`][personalize_list_solution_versions] for
-#' getting the next set of solution versions (if they exist).
+#' @param nextToken A token returned from the previous call to [`list_solution_versions`][personalize_list_solution_versions] for getting the next set of solution versions (if they exist).
 #' @param maxResults The maximum number of solution versions to return.
 #'
 #' @return
@@ -5108,19 +4585,13 @@ personalize_list_solution_versions <- function(solutionArn = NULL, nextToken = N
 #' Returns a list of solutions in a given dataset group
 #'
 #' @description
-#' Returns a list of solutions in a given dataset group. When a dataset
-#' group is not specified, all the solutions associated with the account
-#' are listed. The response provides the properties for each solution,
-#' including the Amazon Resource Name (ARN). For more information on
-#' solutions, see [`create_solution`][personalize_create_solution].
+#' Returns a list of solutions in a given dataset group. When a dataset group is not specified, all the solutions associated with the account are listed. The response provides the properties for each solution, including the Amazon Resource Name (ARN). For more information on solutions, see [`create_solution`][personalize_create_solution].
 #'
 #' @usage
 #' personalize_list_solutions(datasetGroupArn, nextToken, maxResults)
 #'
 #' @param datasetGroupArn The Amazon Resource Name (ARN) of the dataset group.
-#' @param nextToken A token returned from the previous call to
-#' [`list_solutions`][personalize_list_solutions] for getting the next set
-#' of solutions (if they exist).
+#' @param nextToken A token returned from the previous call to [`list_solutions`][personalize_list_solutions] for getting the next set of solutions (if they exist).
 #' @param maxResults The maximum number of solutions to return.
 #'
 #' @return
@@ -5181,9 +4652,7 @@ personalize_list_solutions <- function(datasetGroupArn = NULL, nextToken = NULL,
 #' Get a list of tags attached to a resource
 #'
 #' @description
-#' Get a list of
-#' [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html)
-#' attached to a resource.
+#' Get a list of [tags](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html) attached to a resource.
 #'
 #' @usage
 #' personalize_list_tags_for_resource(resourceArn)
@@ -5237,9 +4706,7 @@ personalize_list_tags_for_resource <- function(resourceArn) {
 #' Starts a recommender that is INACTIVE
 #'
 #' @description
-#' Starts a recommender that is INACTIVE. Starting a recommender does not
-#' create any new models, but resumes billing and automatic retraining for
-#' the recommender.
+#' Starts a recommender that is INACTIVE. Starting a recommender does not create any new models, but resumes billing and automatic retraining for the recommender.
 #'
 #' @usage
 #' personalize_start_recommender(recommenderArn)
@@ -5288,8 +4755,7 @@ personalize_start_recommender <- function(recommenderArn) {
 #' Stops a recommender that is ACTIVE
 #'
 #' @description
-#' Stops a recommender that is ACTIVE. Stopping a recommender halts billing
-#' and automatic retraining for the recommender.
+#' Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic retraining for the recommender.
 #'
 #' @usage
 #' personalize_stop_recommender(recommenderArn)
@@ -5339,11 +4805,9 @@ personalize_stop_recommender <- function(recommenderArn) {
 #' or CREATE IN_PROGRESS
 #'
 #' @description
-#' Stops creating a solution version that is in a state of CREATE_PENDING
-#' or CREATE IN_PROGRESS.
+#' Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
 #' 
-#' Depending on the current state of the solution version, the solution
-#' version state changes as follows:
+#' Depending on the current state of the solution version, the solution version state changes as follows:
 #' 
 #' -   CREATE_PENDING \> CREATE_STOPPED
 #' 
@@ -5351,15 +4815,12 @@ personalize_stop_recommender <- function(recommenderArn) {
 #' 
 #' -   CREATE_IN_PROGRESS \> CREATE_STOPPING \> CREATE_STOPPED
 #' 
-#' You are billed for all of the training completed up until you stop the
-#' solution version creation. You cannot resume creating a solution version
-#' once it has been stopped.
+#' You are billed for all of the training completed up until you stop the solution version creation. You cannot resume creating a solution version once it has been stopped.
 #'
 #' @usage
 #' personalize_stop_solution_version_creation(solutionVersionArn)
 #'
-#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version you want to stop
-#' creating.
+#' @param solutionVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution version you want to stop creating.
 #'
 #' @return
 #' An empty list.
@@ -5404,9 +4865,7 @@ personalize_stop_solution_version_creation <- function(solutionVersionArn) {
 #' personalize_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; The resource's Amazon Resource Name (ARN).
-#' @param tags &#91;required&#93; Tags to apply to the resource. For more information see [Tagging Amazon
-#' Personalize
-#' resources](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html).
+#' @param tags &#91;required&#93; Tags to apply to the resource. For more information see [Tagging Amazon Personalize resources](https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html).
 #'
 #' @return
 #' An empty list.
@@ -5451,9 +4910,7 @@ personalize_tag_resource <- function(resourceArn, tags) {
 #' Removes the specified tags that are attached to a resource
 #'
 #' @description
-#' Removes the specified tags that are attached to a resource. For more
-#' information, see [Removing tags from Amazon Personalize
-#' resources](https://docs.aws.amazon.com/personalize/latest/dg/tags-remove.html).
+#' Removes the specified tags that are attached to a resource. For more information, see [Removing tags from Amazon Personalize resources](https://docs.aws.amazon.com/personalize/latest/dg/tags-remove.html).
 #'
 #' @usage
 #' personalize_untag_resource(resourceArn, tagKeys)
@@ -5503,58 +4960,31 @@ personalize_untag_resource <- function(resourceArn, tagKeys) {
 #' your campaign's configuration
 #'
 #' @description
-#' Updates a campaign to deploy a retrained solution version with an
-#' existing campaign, change your campaign's `minProvisionedTPS`, or modify
-#' your campaign's configuration. For example, you can set
-#' `enableMetadataWithRecommendations` to true for an existing campaign.
+#' Updates a campaign to deploy a retrained solution version with an existing campaign, change your campaign's `minProvisionedTPS`, or modify your campaign's configuration. For example, you can set `enableMetadataWithRecommendations` to true for an existing campaign.
 #' 
-#' To update a campaign to start automatically using the latest solution
-#' version, specify the following:
+#' To update a campaign to start automatically using the latest solution version, specify the following:
 #' 
-#' -   For the `SolutionVersionArn` parameter, specify the Amazon Resource
-#'     Name (ARN) of your solution in `SolutionArn/$LATEST` format.
+#' -   For the `SolutionVersionArn` parameter, specify the Amazon Resource Name (ARN) of your solution in `SolutionArn/$LATEST` format.
 #' 
-#' -   In the `campaignConfig`, set `syncWithLatestSolutionVersion` to
-#'     `true`.
+#' -   In the `campaignConfig`, set `syncWithLatestSolutionVersion` to `true`.
 #' 
-#' To update a campaign, the campaign status must be ACTIVE or CREATE
-#' FAILED. Check the campaign status using the
-#' [`describe_campaign`][personalize_describe_campaign] operation.
+#' To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign status using the [`describe_campaign`][personalize_describe_campaign] operation.
 #' 
-#' You can still get recommendations from a campaign while an update is in
-#' progress. The campaign will use the previous solution version and
-#' campaign configuration to generate recommendations until the latest
-#' campaign update status is `Active`.
+#' You can still get recommendations from a campaign while an update is in progress. The campaign will use the previous solution version and campaign configuration to generate recommendations until the latest campaign update status is `Active`.
 #' 
-#' For more information about updating a campaign, including code samples,
-#' see [Updating a
-#' campaign](https://docs.aws.amazon.com/personalize/latest/dg/update-campaigns.html).
-#' For more information about campaigns, see [Creating a
-#' campaign](https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html).
+#' For more information about updating a campaign, including code samples, see [Updating a campaign](https://docs.aws.amazon.com/personalize/latest/dg/update-campaigns.html). For more information about campaigns, see [Creating a campaign](https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html).
 #'
 #' @usage
 #' personalize_update_campaign(campaignArn, solutionVersionArn,
 #'   minProvisionedTPS, campaignConfig)
 #'
 #' @param campaignArn &#91;required&#93; The Amazon Resource Name (ARN) of the campaign.
-#' @param solutionVersionArn The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-#' latest solution version of your solution, specify the ARN of your
-#' *solution* in `SolutionArn/$LATEST` format. You must use this format if
-#' you set `syncWithLatestSolutionVersion` to `True` in the
-#' [CampaignConfig](https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html).
+#' @param solutionVersionArn The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution, specify the ARN of your *solution* in `SolutionArn/$LATEST` format. You must use this format if you set `syncWithLatestSolutionVersion` to `True` in the [CampaignConfig](https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html).
 #' 
-#' To deploy a model that isn't the latest solution version of your
-#' solution, specify the ARN of the solution version.
+#' To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.
 #' 
-#' For more information about automatic campaign updates, see [Enabling
-#' automatic campaign
-#' updates](https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update).
-#' @param minProvisionedTPS Specifies the requested minimum provisioned transactions
-#' (recommendations) per second that Amazon Personalize will support. A
-#' high `minProvisionedTPS` will increase your bill. We recommend starting
-#' with 1 for `minProvisionedTPS` (the default). Track your usage using
-#' Amazon CloudWatch metrics, and increase the `minProvisionedTPS` as
-#' necessary.
+#' For more information about automatic campaign updates, see [Enabling automatic campaign updates](https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update).
+#' @param minProvisionedTPS Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high `minProvisionedTPS` will increase your bill. We recommend starting with 1 for `minProvisionedTPS` (the default). Track your usage using Amazon CloudWatch metrics, and increase the `minProvisionedTPS` as necessary.
 #' @param campaignConfig The configuration details of a campaign.
 #'
 #' @return
@@ -5611,9 +5041,7 @@ personalize_update_campaign <- function(campaignArn, solutionVersionArn = NULL, 
 #' Update a dataset to replace its schema with a new or existing one
 #'
 #' @description
-#' Update a dataset to replace its schema with a new or existing one. For
-#' more information, see [Replacing a dataset's
-#' schema](https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html).
+#' Update a dataset to replace its schema with a new or existing one. For more information, see [Replacing a dataset's schema](https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html).
 #'
 #' @usage
 #' personalize_update_dataset(datasetArn, schemaArn)
@@ -5734,14 +5162,7 @@ personalize_update_metric_attribution <- function(addMetrics = NULL, removeMetri
 #' Updates the recommender to modify the recommender configuration
 #'
 #' @description
-#' Updates the recommender to modify the recommender configuration. If you
-#' update the recommender to modify the columns used in training, Amazon
-#' Personalize automatically starts a full retraining of the models backing
-#' your recommender. While the update completes, you can still get
-#' recommendations from the recommender. The recommender uses the previous
-#' configuration until the update completes. To track the status of this
-#' update, use the `latestRecommenderUpdate` returned in the
-#' [`describe_recommender`][personalize_describe_recommender] operation.
+#' Updates the recommender to modify the recommender configuration. If you update the recommender to modify the columns used in training, Amazon Personalize automatically starts a full retraining of the models backing your recommender. While the update completes, you can still get recommendations from the recommender. The recommender uses the previous configuration until the update completes. To track the status of this update, use the `latestRecommenderUpdate` returned in the [`describe_recommender`][personalize_describe_recommender] operation.
 #'
 #' @usage
 #' personalize_update_recommender(recommenderArn, recommenderConfig)
@@ -5811,48 +5232,25 @@ personalize_update_recommender <- function(recommenderArn, recommenderConfig) {
 #' training configuration
 #'
 #' @description
-#' Updates an Amazon Personalize solution to use a different automatic
-#' training configuration. When you update a solution, you can change
-#' whether the solution uses automatic training, and you can change the
-#' training frequency. For more information about updating a solution, see
-#' [Updating a
-#' solution](https://docs.aws.amazon.com/personalize/latest/dg/updating-solution.html).
+#' Updates an Amazon Personalize solution to use a different automatic training configuration. When you update a solution, you can change whether the solution uses automatic training, and you can change the training frequency. For more information about updating a solution, see [Updating a solution](https://docs.aws.amazon.com/personalize/latest/dg/updating-solution.html).
 #' 
 #' A solution update can be in one of the following states:
 #' 
 #' CREATE PENDING \> CREATE IN_PROGRESS \> ACTIVE -or- CREATE FAILED
 #' 
-#' To get the status of a solution update, call the
-#' [`describe_solution`][personalize_describe_solution] API operation and
-#' find the status in the `latestSolutionUpdate`.
+#' To get the status of a solution update, call the [`describe_solution`][personalize_describe_solution] API operation and find the status in the `latestSolutionUpdate`.
 #'
 #' @usage
 #' personalize_update_solution(solutionArn, performAutoTraining,
 #'   performIncrementalUpdate, solutionUpdateConfig)
 #'
 #' @param solutionArn &#91;required&#93; The Amazon Resource Name (ARN) of the solution to update.
-#' @param performAutoTraining Whether the solution uses automatic training to create new solution
-#' versions (trained models). You can change the training frequency by
-#' specifying a `schedulingExpression` in the `AutoTrainingConfig` as part
-#' of solution configuration.
+#' @param performAutoTraining Whether the solution uses automatic training to create new solution versions (trained models). You can change the training frequency by specifying a `schedulingExpression` in the `AutoTrainingConfig` as part of solution configuration.
 #' 
-#' If you turn on automatic training, the first automatic training starts
-#' within one hour after the solution update completes. If you manually
-#' create a solution version within the hour, the solution skips the first
-#' automatic training. For more information about automatic training, see
-#' [Configuring automatic
-#' training](https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html).
+#' If you turn on automatic training, the first automatic training starts within one hour after the solution update completes. If you manually create a solution version within the hour, the solution skips the first automatic training. For more information about automatic training, see [Configuring automatic training](https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html).
 #' 
-#' After training starts, you can get the solution version's Amazon
-#' Resource Name (ARN) with the
-#' [`list_solution_versions`][personalize_list_solution_versions] API
-#' operation. To get its status, use the
-#' [`describe_solution_version`][personalize_describe_solution_version].
-#' @param performIncrementalUpdate Whether to perform incremental training updates on your model. When
-#' enabled, this allows the model to learn from new data more frequently
-#' without requiring full retraining, which enables near real-time
-#' personalization. This parameter is supported only for solutions that use
-#' the semantic-similarity recipe.
+#' After training starts, you can get the solution version's Amazon Resource Name (ARN) with the [`list_solution_versions`][personalize_list_solution_versions] API operation. To get its status, use the [`describe_solution_version`][personalize_describe_solution_version].
+#' @param performIncrementalUpdate Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.
 #' @param solutionUpdateConfig The new configuration details of the solution.
 #'
 #' @return

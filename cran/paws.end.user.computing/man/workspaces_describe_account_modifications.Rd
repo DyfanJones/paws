@@ -8,8 +8,7 @@ Bring Your Own License (BYOL) for the specified account}
 workspaces_describe_account_modifications(NextToken = NULL)
 }
 \arguments{
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 }
 \description{
 Retrieves a list that describes modifications to the configuration of Bring Your Own License (BYOL) for the specified account.

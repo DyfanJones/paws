@@ -7,8 +7,7 @@
 forecastservice_delete_resource_tree(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the parent resource to delete. All
-child resources of the parent resource will also be deleted.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.}
 }
 \description{
 Deletes an entire resource tree. This operation will delete the parent resource and its child resources.

@@ -27,8 +27,7 @@ fis_update_experiment_template(
 
 \item{actions}{The actions for the experiment.}
 
-\item{roleArn}{The Amazon Resource Name (ARN) of an IAM role that grants the FIS
-service permission to perform service actions on your behalf.}
+\item{roleArn}{The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.}
 
 \item{logConfiguration}{The configuration for experiment logging.}
 

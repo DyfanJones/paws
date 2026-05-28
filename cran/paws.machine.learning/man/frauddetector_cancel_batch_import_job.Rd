@@ -9,8 +9,7 @@ frauddetector_cancel_batch_import_job(jobId)
 \arguments{
 \item{jobId}{[required] The ID of an in-progress batch import job to cancel.
 
-Amazon Fraud Detector will throw an error if the batch import job is in
-\code{FAILED}, \code{CANCELED}, or \code{COMPLETED} state.}
+Amazon Fraud Detector will throw an error if the batch import job is in \code{FAILED}, \code{CANCELED}, or \code{COMPLETED} state.}
 }
 \description{
 Cancels an in-progress batch import job.

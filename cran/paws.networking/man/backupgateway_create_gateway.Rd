@@ -18,8 +18,7 @@ backupgateway_create_gateway(
 
 \item{GatewayType}{[required] The type of created gateway.}
 
-\item{Tags}{A list of up to 50 tags to assign to the gateway. Each tag is a
-key-value pair.}
+\item{Tags}{A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.}
 }
 \description{
 Creates a backup gateway. After you create a gateway, you can associate it with a server using the \code{\link[=backupgateway_associate_gateway_to_server]{associate_gateway_to_server}} operation.

@@ -13,9 +13,13 @@ wellarchitected_create_profile_share(
 \arguments{
 \item{ProfileArn}{[required] The profile ARN.}
 
-\item{SharedWith}{[required]}
+\item{SharedWith}{[required] The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.}
 
-\item{ClientRequestToken}{[required]}
+\item{ClientRequestToken}{[required] A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+
+You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+
+This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.}
 }
 \description{
 Create a profile share.

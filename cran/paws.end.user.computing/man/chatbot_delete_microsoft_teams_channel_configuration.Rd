@@ -7,8 +7,7 @@
 chatbot_delete_microsoft_teams_channel_configuration(ChatConfigurationArn)
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration
-associated with the user identity to delete.}
+\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.}
 }
 \description{
 Deletes a Microsoft Teams channel configuration for AWS Chatbot

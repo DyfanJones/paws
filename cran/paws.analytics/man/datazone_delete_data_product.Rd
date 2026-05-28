@@ -7,8 +7,7 @@
 datazone_delete_data_product(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the data product is
-deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the data product is deleted.}
 
 \item{identifier}{[required] The identifier of the data product that is deleted.}
 }

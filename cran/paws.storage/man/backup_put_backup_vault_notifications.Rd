@@ -12,17 +12,11 @@ backup_put_backup_vault_notifications(
 )
 }
 \arguments{
-\item{BackupVaultName}{[required] The name of a logical container where backups are stored. Backup vaults
-are identified by names that are unique to the account used to create
-them and the Amazon Web Services Region where they are created.}
+\item{BackupVaultName}{[required] The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.}
 
-\item{SNSTopicArn}{[required] The Amazon Resource Name (ARN) that specifies the topic for a backup
-vault’s events; for example,
-\code{arn:aws:sns:us-west-2:111122223333:MyVaultTopic}.}
+\item{SNSTopicArn}{[required] The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, \code{arn:aws:sns:us-west-2:111122223333:MyVaultTopic}.}
 
-\item{BackupVaultEvents}{[required] An array of events that indicate the status of jobs to back up resources
-to the backup vault. For the list of supported events, common use cases,
-and code samples, see \href{https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html}{Notification options with Backup}.}
+\item{BackupVaultEvents}{[required] An array of events that indicate the status of jobs to back up resources to the backup vault. For the list of supported events, common use cases, and code samples, see \href{https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html}{Notification options with Backup}.}
 }
 \description{
 Turns on notifications on a backup vault for the specified topic and events.

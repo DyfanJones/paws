@@ -5,20 +5,9 @@ NULL
 #' Payment Cryptography Data Plane
 #'
 #' @description
-#' You use the Amazon Web Services Payment Cryptography Data Plane to
-#' manage how encryption keys are used for payment-related transaction
-#' processing and associated cryptographic operations. You can encrypt,
-#' decrypt, generate, verify, and translate payment-related cryptographic
-#' operations in Amazon Web Services Payment Cryptography. For more
-#' information, see [Data
-#' operations](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' You use the Amazon Web Services Payment Cryptography Data Plane to manage how encryption keys are used for payment-related transaction processing and associated cryptographic operations. You can encrypt, decrypt, generate, verify, and translate payment-related cryptographic operations in Amazon Web Services Payment Cryptography. For more information, see [Data operations](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' 
-#' To manage your encryption keys, you use the [Amazon Web Services Payment
-#' Cryptography Control
-#' Plane](https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/Welcome.html).
-#' You can create, import, export, share, manage, and delete keys. You can
-#' also manage Identity and Access Management (IAM) policies for keys.
+#' To manage your encryption keys, you use the [Amazon Web Services Payment Cryptography Control Plane](https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/Welcome.html). You can create, import, export, share, manage, and delete keys. You can also manage Identity and Access Management (IAM) policies for keys.
 #'
 #' @param
 #' config
@@ -105,7 +94,8 @@ NULL
 #' \tabular{ll}{
 #'  \link[=paymentcryptographydataplane_decrypt_data]{decrypt_data} \tab Decrypts ciphertext data to plaintext using a symmetric (TDES, AES), asymmetric (RSA), or derived (DUKPT or EMV) encryption key scheme\cr
 #'  \link[=paymentcryptographydataplane_encrypt_data]{encrypt_data} \tab Encrypts plaintext data to ciphertext using a symmetric (TDES, AES), asymmetric (RSA), or derived (DUKPT or EMV) encryption key scheme\cr
-#'  \link[=paymentcryptographydataplane_generate_as_2805_kek_validation]{generate_as_2805_kek_validation} \tab Establishes node-to-node initialization between payment processing nodes such as an acquirer, issuer or payment network using Australian Standard 2805 (AS2805)\cr
+#'  \link[=paymentcryptographydataplane_generate_as_2805_kek_validation]{generate_as_2805_kek_validation} \tab Generates a KekValidationRequest or a KekValidationResponse for node-to-node initialization between payment processing nodes using Australian Standard 2805 (AS2805)\cr
+#'  \link[=paymentcryptographydataplane_generate_auth_request_cryptogram]{generate_auth_request_cryptogram} \tab Generates an Authorization Request Cryptogram (ARQC) for an EMV chip payment card authorization\cr
 #'  \link[=paymentcryptographydataplane_generate_card_validation_data]{generate_card_validation_data} \tab Generates card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2), or Card Security Codes (CSC)\cr
 #'  \link[=paymentcryptographydataplane_generate_mac]{generate_mac} \tab Generates a Message Authentication Code (MAC) cryptogram within Amazon Web Services Payment Cryptography\cr
 #'  \link[=paymentcryptographydataplane_generate_mac_emv_pin_change]{generate_mac_emv_pin_change} \tab Generates an issuer script mac for EMV payment cards that use offline PINs as the cardholder verification method (CVM)\cr

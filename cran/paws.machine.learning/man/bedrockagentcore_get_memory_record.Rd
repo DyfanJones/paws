@@ -7,8 +7,7 @@
 bedrockagentcore_get_memory_record(memoryId, memoryRecordId)
 }
 \arguments{
-\item{memoryId}{[required] The identifier of the AgentCore Memory resource containing the memory
-record.}
+\item{memoryId}{[required] The identifier of the AgentCore Memory resource containing the memory record.}
 
 \item{memoryRecordId}{[required] The identifier of the memory record to retrieve.}
 }

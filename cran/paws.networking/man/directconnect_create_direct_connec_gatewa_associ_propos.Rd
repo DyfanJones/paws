@@ -16,15 +16,13 @@ directconnect_create_direct_connect_gateway_association_proposal(
 \arguments{
 \item{directConnectGatewayId}{[required] The ID of the Direct Connect gateway.}
 
-\item{directConnectGatewayOwnerAccount}{[required] The ID of the Amazon Web Services account that owns the Direct Connect
-gateway.}
+\item{directConnectGatewayOwnerAccount}{[required] The ID of the Amazon Web Services account that owns the Direct Connect gateway.}
 
 \item{gatewayId}{[required] The ID of the virtual private gateway or transit gateway.}
 
 \item{addAllowedPrefixesToDirectConnectGateway}{The Amazon VPC prefixes to advertise to the Direct Connect gateway.}
 
-\item{removeAllowedPrefixesToDirectConnectGateway}{The Amazon VPC prefixes to no longer advertise to the Direct Connect
-gateway.}
+\item{removeAllowedPrefixesToDirectConnectGateway}{The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.}
 }
 \description{
 Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified Direct Connect gateway.

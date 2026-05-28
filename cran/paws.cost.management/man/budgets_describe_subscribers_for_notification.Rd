@@ -13,18 +13,15 @@ budgets_describe_subscribers_for_notification(
 )
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose subscribers you
-want descriptions of.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose subscribers you want descriptions of.}
 
 \item{BudgetName}{[required] The name of the budget whose subscribers you want descriptions of.}
 
 \item{Notification}{[required] The notification whose subscribers you want to list.}
 
-\item{MaxResults}{An optional integer that represents how many entries a paginated
-response contains.}
+\item{MaxResults}{An optional integer that represents how many entries a paginated response contains.}
 
-\item{NextToken}{The pagination token that you include in your request to indicate the
-next set of results that you want to retrieve.}
+\item{NextToken}{The pagination token that you include in your request to indicate the next set of results that you want to retrieve.}
 }
 \description{
 Lists the subscribers that are associated with a notification.

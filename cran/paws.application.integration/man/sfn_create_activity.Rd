@@ -7,10 +7,7 @@
 sfn_create_activity(name, tags = NULL, encryptionConfiguration = NULL)
 }
 \arguments{
-\item{name}{[required] The name of the activity to create. This name must be unique for your
-Amazon Web Services account and region for 90 days. For more
-information, see \href{https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions}{Limits Related to State Machine Executions}
-in the \emph{Step Functions Developer Guide}.
+\item{name}{[required] The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see \href{https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions}{Limits Related to State Machine Executions} in the \emph{Step Functions Developer Guide}.
 
 A name must \emph{not} contain:
 \itemize{
@@ -23,19 +20,15 @@ A name must \emph{not} contain:
 \item invalid characters (\verb{ U+10FFFF})
 }
 
-To enable logging with CloudWatch Logs, the name should only contain
-0-9, A-Z, a-z, - and _.
+To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
 
 [ ]: R:\%20}
 
 \item{tags}{The list of tags to add to a resource.
 
-An array of key-value pairs. For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html}{Using Cost Allocation Tags}
-in the \emph{Amazon Web Services Billing and Cost Management User Guide}, and
-\href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html}{Controlling Access Using IAM Tags}.
+An array of key-value pairs. For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html}{Using Cost Allocation Tags} in the \emph{Amazon Web Services Billing and Cost Management User Guide}, and \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html}{Controlling Access Using IAM Tags}.
 
-Tags may only contain Unicode letters, digits, white space, or these
-symbols: \verb{_ . : / = + - @}.}
+Tags may only contain Unicode letters, digits, white space, or these symbols: \verb{_ . : / = + - @}.}
 
 \item{encryptionConfiguration}{Settings to configure server-side encryption.}
 }

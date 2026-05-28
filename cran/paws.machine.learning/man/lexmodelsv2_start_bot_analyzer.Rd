@@ -16,13 +16,11 @@ lexmodelsv2_start_bot_analyzer(
 \arguments{
 \item{botId}{[required] The unique identifier of the bot to analyze.}
 
-\item{analysisScope}{[required] The scope of analysis to perform. Currently only \code{BotLocale} scope is
-supported.
+\item{analysisScope}{[required] The scope of analysis to perform. Currently only \code{BotLocale} scope is supported.
 
 Valid Values: \code{BotLocale}}
 
-\item{localeId}{The locale identifier for the bot locale to analyze. Required when
-\code{analysisScope} is \code{BotLocale}.}
+\item{localeId}{The locale identifier for the bot locale to analyze. Required when \code{analysisScope} is \code{BotLocale}.}
 
 \item{botVersion}{The version of the bot to analyze. Defaults to \code{DRAFT} if not specified.}
 }

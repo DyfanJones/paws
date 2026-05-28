@@ -8,8 +8,7 @@ Amazon Web Services resources}
 devopsguru_start_cost_estimation(ResourceCollection, ClientToken = NULL)
 }
 \arguments{
-\item{ResourceCollection}{[required] The collection of Amazon Web Services resources used to create a monthly
-DevOps Guru cost estimate.}
+\item{ResourceCollection}{[required] The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.}
 
 \item{ClientToken}{The idempotency token used to identify each cost estimate request.}
 }

@@ -11,18 +11,13 @@ workspaces_describe_workspace_bundles(
 )
 }
 \arguments{
-\item{BundleIds}{The identifiers of the bundles. You cannot combine this parameter with
-any other filter.}
+\item{BundleIds}{The identifiers of the bundles. You cannot combine this parameter with any other filter.}
 
-\item{Owner}{The owner of the bundles. You cannot combine this parameter with any
-other filter.
+\item{Owner}{The owner of the bundles. You cannot combine this parameter with any other filter.
 
-To describe the bundles provided by Amazon Web Services, specify
-\code{AMAZON}. To describe the bundles that belong to your account, don't
-specify a value.}
+To describe the bundles provided by Amazon Web Services, specify \code{AMAZON}. To describe the bundles that belong to your account, don't specify a value.}
 
-\item{NextToken}{The token for the next set of results. (You received this token from a
-previous call.)}
+\item{NextToken}{The token for the next set of results. (You received this token from a previous call.)}
 }
 \description{
 Retrieves a list that describes the available WorkSpace bundles.

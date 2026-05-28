@@ -11,8 +11,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_abort_document_version_upload/](https://www.paws-r-sdk.com/docs/workdocs_abort_document_version_upload/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param VersionId &#91;required&#93; The ID of the version.
 #'
@@ -46,8 +45,7 @@ workdocs_abort_document_version_upload <- function(AuthenticationToken = NULL, D
 #' See [https://www.paws-r-sdk.com/docs/workdocs_activate_user/](https://www.paws-r-sdk.com/docs/workdocs_activate_user/) for full documentation.
 #'
 #' @param UserId &#91;required&#93; The ID of the user.
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #'
 #' @keywords internal
 #'
@@ -78,8 +76,7 @@ workdocs_activate_user <- function(UserId, AuthenticationToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_add_resource_permissions/](https://www.paws-r-sdk.com/docs/workdocs_add_resource_permissions/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param ResourceId &#91;required&#93; The ID of the resource.
 #' @param Principals &#91;required&#93; The users, groups, or organization being granted permission.
 #' @param NotificationOptions The notification options.
@@ -113,19 +110,14 @@ workdocs_add_resource_permissions <- function(AuthenticationToken = NULL, Resour
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_create_comment/](https://www.paws-r-sdk.com/docs/workdocs_create_comment/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param VersionId &#91;required&#93; The ID of the document version.
 #' @param ParentId The ID of the parent comment.
 #' @param ThreadId The ID of the root comment in the thread.
 #' @param Text &#91;required&#93; The text of the comment.
-#' @param Visibility The visibility of the comment. Options are either PRIVATE, where the
-#' comment is visible only to the comment author and document owner and
-#' co-owners, or PUBLIC, where the comment is visible to document owners,
-#' co-owners, and contributors.
-#' @param NotifyCollaborators Set this parameter to TRUE to send an email out to the document
-#' collaborators after the comment is created.
+#' @param Visibility The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.
+#' @param NotifyCollaborators Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.
 #'
 #' @keywords internal
 #'
@@ -157,11 +149,9 @@ workdocs_create_comment <- function(AuthenticationToken = NULL, DocumentId, Vers
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_create_custom_metadata/](https://www.paws-r-sdk.com/docs/workdocs_create_custom_metadata/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param ResourceId &#91;required&#93; The ID of the resource.
-#' @param VersionId The ID of the version, if the custom metadata is being added to a
-#' document version.
+#' @param VersionId The ID of the version, if the custom metadata is being added to a document version.
 #' @param CustomMetadata &#91;required&#93; Custom metadata in the form of name-value pairs.
 #'
 #' @keywords internal
@@ -193,8 +183,7 @@ workdocs_create_custom_metadata <- function(AuthenticationToken = NULL, Resource
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_create_folder/](https://www.paws-r-sdk.com/docs/workdocs_create_folder/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param Name The name of the new folder.
 #' @param ParentFolderId &#91;required&#93; The ID of the parent folder.
 #'
@@ -230,8 +219,7 @@ workdocs_create_folder <- function(AuthenticationToken = NULL, Name = NULL, Pare
 #'
 #' @param ResourceId &#91;required&#93; The ID of the resource.
 #' @param Labels &#91;required&#93; List of labels to add to the resource.
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #'
 #' @keywords internal
 #'
@@ -263,10 +251,8 @@ workdocs_create_labels <- function(ResourceId, Labels, AuthenticationToken = NUL
 #' See [https://www.paws-r-sdk.com/docs/workdocs_create_notification_subscription/](https://www.paws-r-sdk.com/docs/workdocs_create_notification_subscription/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The ID of the organization.
-#' @param Endpoint &#91;required&#93; The endpoint to receive the notifications. If the protocol is HTTPS, the
-#' endpoint is a URL that begins with `https`.
-#' @param Protocol &#91;required&#93; The protocol to use. The supported value is https, which delivers
-#' JSON-encoded messages using HTTPS POST.
+#' @param Endpoint &#91;required&#93; The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with `https`.
+#' @param Protocol &#91;required&#93; The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
 #' @param SubscriptionType &#91;required&#93; The notification type.
 #'
 #' @keywords internal
@@ -306,8 +292,7 @@ workdocs_create_notification_subscription <- function(OrganizationId, Endpoint, 
 #' @param Password &#91;required&#93; The password of the user.
 #' @param TimeZoneId The time zone ID of the user.
 #' @param StorageRule The amount of storage for the user.
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #'
 #' @keywords internal
 #'
@@ -340,8 +325,7 @@ workdocs_create_user <- function(OrganizationId = NULL, Username, EmailAddress =
 #' See [https://www.paws-r-sdk.com/docs/workdocs_deactivate_user/](https://www.paws-r-sdk.com/docs/workdocs_deactivate_user/) for full documentation.
 #'
 #' @param UserId &#91;required&#93; The ID of the user.
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #'
 #' @keywords internal
 #'
@@ -372,8 +356,7 @@ workdocs_deactivate_user <- function(UserId, AuthenticationToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_comment/](https://www.paws-r-sdk.com/docs/workdocs_delete_comment/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param VersionId &#91;required&#93; The ID of the document version.
 #' @param CommentId &#91;required&#93; The ID of the comment.
@@ -407,14 +390,11 @@ workdocs_delete_comment <- function(AuthenticationToken = NULL, DocumentId, Vers
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_custom_metadata/](https://www.paws-r-sdk.com/docs/workdocs_delete_custom_metadata/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param ResourceId &#91;required&#93; The ID of the resource, either a document or folder.
-#' @param VersionId The ID of the version, if the custom metadata is being deleted from a
-#' document version.
+#' @param VersionId The ID of the version, if the custom metadata is being deleted from a document version.
 #' @param Keys List of properties to remove.
-#' @param DeleteAll Flag to indicate removal of all custom metadata properties from the
-#' specified resource.
+#' @param DeleteAll Flag to indicate removal of all custom metadata properties from the specified resource.
 #'
 #' @keywords internal
 #'
@@ -445,8 +425,7 @@ workdocs_delete_custom_metadata <- function(AuthenticationToken = NULL, Resource
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_document/](https://www.paws-r-sdk.com/docs/workdocs_delete_document/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #'
 #' @keywords internal
@@ -478,8 +457,7 @@ workdocs_delete_document <- function(AuthenticationToken = NULL, DocumentId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_document_version/](https://www.paws-r-sdk.com/docs/workdocs_delete_document_version/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document associated with the version being deleted.
 #' @param VersionId &#91;required&#93; The ID of the version being deleted.
 #' @param DeletePriorVersions &#91;required&#93; Deletes all versions of a document prior to the current version.
@@ -513,8 +491,7 @@ workdocs_delete_document_version <- function(AuthenticationToken = NULL, Documen
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_folder/](https://www.paws-r-sdk.com/docs/workdocs_delete_folder/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param FolderId &#91;required&#93; The ID of the folder.
 #'
 #' @keywords internal
@@ -546,8 +523,7 @@ workdocs_delete_folder <- function(AuthenticationToken = NULL, FolderId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_folder_contents/](https://www.paws-r-sdk.com/docs/workdocs_delete_folder_contents/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param FolderId &#91;required&#93; The ID of the folder.
 #'
 #' @keywords internal
@@ -580,8 +556,7 @@ workdocs_delete_folder_contents <- function(AuthenticationToken = NULL, FolderId
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_labels/](https://www.paws-r-sdk.com/docs/workdocs_delete_labels/) for full documentation.
 #'
 #' @param ResourceId &#91;required&#93; The ID of the resource.
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param Labels List of labels to delete from the resource.
 #' @param DeleteAll Flag to request removal of all labels from the specified resource.
 #'
@@ -646,9 +621,7 @@ workdocs_delete_notification_subscription <- function(SubscriptionId, Organizati
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_delete_user/](https://www.paws-r-sdk.com/docs/workdocs_delete_user/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Do not set this field when using
-#' administrative API actions, as in accessing the API using Amazon Web
-#' Services credentials.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.
 #' @param UserId &#91;required&#93; The ID of the user.
 #'
 #' @keywords internal
@@ -680,26 +653,14 @@ workdocs_delete_user <- function(AuthenticationToken = NULL, UserId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_activities/](https://www.paws-r-sdk.com/docs/workdocs_describe_activities/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
-#' @param StartTime The timestamp that determines the starting time of the activities. The
-#' response includes the activities performed after the specified
-#' timestamp.
-#' @param EndTime The timestamp that determines the end time of the activities. The
-#' response includes the activities performed before the specified
-#' timestamp.
-#' @param OrganizationId The ID of the organization. This is a mandatory parameter when using
-#' administrative API (SigV4) requests.
-#' @param ActivityTypes Specifies which activity types to include in the response. If this field
-#' is left empty, all activity types are returned.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
+#' @param StartTime The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.
+#' @param EndTime The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.
+#' @param OrganizationId The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.
+#' @param ActivityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.
 #' @param ResourceId The document or folder ID for which to describe activity types.
-#' @param UserId The ID of the user who performed the action. The response includes
-#' activities pertaining to this user. This is an optional parameter and is
-#' only applicable for administrative API (SigV4) requests.
-#' @param IncludeIndirectActivities Includes indirect activities. An indirect activity results from a direct
-#' activity performed on a parent resource. For example, sharing a parent
-#' folder (the direct activity) shares all of the subfolders and documents
-#' within the parent folder (the indirect activity).
+#' @param UserId The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.
+#' @param IncludeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).
 #' @param Limit The maximum number of items to return.
 #' @param Marker The marker for the next set of results.
 #'
@@ -732,13 +693,11 @@ workdocs_describe_activities <- function(AuthenticationToken = NULL, StartTime =
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_comments/](https://www.paws-r-sdk.com/docs/workdocs_describe_comments/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param VersionId &#91;required&#93; The ID of the document version.
 #' @param Limit The maximum number of items to return.
-#' @param Marker The marker for the next set of results. This marker was received from a
-#' previous call.
+#' @param Marker The marker for the next set of results. This marker was received from a previous call.
 #'
 #' @keywords internal
 #'
@@ -769,16 +728,12 @@ workdocs_describe_comments <- function(AuthenticationToken = NULL, DocumentId, V
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_document_versions/](https://www.paws-r-sdk.com/docs/workdocs_describe_document_versions/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call.)
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call.)
 #' @param Limit The maximum number of versions to return with this call.
-#' @param Include A comma-separated list of values. Specify "INITIALIZED" to include
-#' incomplete versions.
-#' @param Fields Specify "SOURCE" to include initialized versions and a URL for the
-#' source document.
+#' @param Include A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.
+#' @param Fields Specify "SOURCE" to include initialized versions and a URL for the source document.
 #'
 #' @keywords internal
 #'
@@ -810,17 +765,14 @@ workdocs_describe_document_versions <- function(AuthenticationToken = NULL, Docu
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_folder_contents/](https://www.paws-r-sdk.com/docs/workdocs_describe_folder_contents/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param FolderId &#91;required&#93; The ID of the folder.
 #' @param Sort The sorting criteria.
 #' @param Order The order for the contents of the folder.
 #' @param Limit The maximum number of items to return with this call.
-#' @param Marker The marker for the next set of results. This marker was received from a
-#' previous call.
+#' @param Marker The marker for the next set of results. This marker was received from a previous call.
 #' @param Type The type of items.
-#' @param Include The contents to include. Specify "INITIALIZED" to include initialized
-#' documents.
+#' @param Include The contents to include. Specify "INITIALIZED" to include initialized documents.
 #'
 #' @keywords internal
 #'
@@ -851,12 +803,10 @@ workdocs_describe_folder_contents <- function(AuthenticationToken = NULL, Folder
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_groups/](https://www.paws-r-sdk.com/docs/workdocs_describe_groups/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param SearchQuery &#91;required&#93; A query to describe groups by group name.
 #' @param OrganizationId The ID of the organization.
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call.)
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call.)
 #' @param Limit The maximum number of items to return with this call.
 #'
 #' @keywords internal
@@ -889,8 +839,7 @@ workdocs_describe_groups <- function(AuthenticationToken = NULL, SearchQuery, Or
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_notification_subscriptions/](https://www.paws-r-sdk.com/docs/workdocs_describe_notification_subscriptions/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The ID of the organization.
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call.)
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call.)
 #' @param Limit The maximum number of items to return with this call.
 #'
 #' @keywords internal
@@ -922,13 +871,11 @@ workdocs_describe_notification_subscriptions <- function(OrganizationId, Marker 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_resource_permissions/](https://www.paws-r-sdk.com/docs/workdocs_describe_resource_permissions/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param ResourceId &#91;required&#93; The ID of the resource.
 #' @param PrincipalId The ID of the principal to filter permissions by.
 #' @param Limit The maximum number of items to return with this call.
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call)
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call)
 #'
 #' @keywords internal
 #'
@@ -962,8 +909,7 @@ workdocs_describe_resource_permissions <- function(AuthenticationToken = NULL, R
 #'
 #' @param AuthenticationToken &#91;required&#93; Amazon WorkDocs authentication token.
 #' @param Limit The maximum number of items to return.
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call.)
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call.)
 #'
 #' @keywords internal
 #'
@@ -994,36 +940,24 @@ workdocs_describe_root_folders <- function(AuthenticationToken, Limit = NULL, Ma
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_describe_users/](https://www.paws-r-sdk.com/docs/workdocs_describe_users/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param OrganizationId The ID of the organization.
 #' @param UserIds The IDs of the users.
-#' @param Query A query to filter users by user name. Remember the following about the
-#' `Userids` and `Query` parameters:
+#' @param Query A query to filter users by user name. Remember the following about the `Userids` and `Query` parameters:
 #' 
-#' -   If you don't use either parameter, the API returns a paginated list
-#'     of all users on the site.
+#' -   If you don't use either parameter, the API returns a paginated list of all users on the site.
 #' 
 #' -   If you use both parameters, the API ignores the `Query` parameter.
 #' 
-#' -   The `Userid` parameter only returns user names that match a
-#'     corresponding user ID.
+#' -   The `Userid` parameter only returns user names that match a corresponding user ID.
 #' 
-#' -   The `Query` parameter runs a "prefix" search for users by the
-#'     `GivenName`, `SurName`, or `UserName` fields included in a
-#'     [`create_user`][workdocs_create_user] API call. For example,
-#'     querying on `Ma` returns Márcia Oliveira, María García, and Mateo
-#'     Jackson. If you use multiple characters, the API only returns data
-#'     that matches all characters. For example, querying on `Ma J` only
-#'     returns Mateo Jackson.
+#' -   The `Query` parameter runs a "prefix" search for users by the `GivenName`, `SurName`, or `UserName` fields included in a [`create_user`][workdocs_create_user] API call. For example, querying on `Ma` returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on `Ma J` only returns Mateo Jackson.
 #' @param Include The state of the users. Specify "ALL" to include inactive users.
 #' @param Order The order for the results.
 #' @param Sort The sorting criteria.
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call.)
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call.)
 #' @param Limit The maximum number of items to return.
-#' @param Fields A comma-separated list of values. Specify "STORAGE_METADATA" to include
-#' the user storage quota and utilization information.
+#' @param Fields A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.
 #'
 #' @keywords internal
 #'
@@ -1086,8 +1020,7 @@ workdocs_get_current_user <- function(AuthenticationToken) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_get_document/](https://www.paws-r-sdk.com/docs/workdocs_get_document/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param IncludeCustomMetadata Set this to `TRUE` to include custom metadata in the response.
 #'
@@ -1121,12 +1054,10 @@ workdocs_get_document <- function(AuthenticationToken = NULL, DocumentId, Includ
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_get_document_path/](https://www.paws-r-sdk.com/docs/workdocs_get_document_path/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param Limit The maximum number of levels in the hierarchy to return.
-#' @param Fields A comma-separated list of values. Specify `NAME` to include the names of
-#' the parent folders.
+#' @param Fields A comma-separated list of values. Specify `NAME` to include the names of the parent folders.
 #' @param Marker This value is not supported.
 #'
 #' @keywords internal
@@ -1158,12 +1089,10 @@ workdocs_get_document_path <- function(AuthenticationToken = NULL, DocumentId, L
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_get_document_version/](https://www.paws-r-sdk.com/docs/workdocs_get_document_version/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param VersionId &#91;required&#93; The version ID of the document.
-#' @param Fields A comma-separated list of values. Specify "SOURCE" to include a URL for
-#' the source document.
+#' @param Fields A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.
 #' @param IncludeCustomMetadata Set this to TRUE to include custom metadata in the response.
 #'
 #' @keywords internal
@@ -1195,8 +1124,7 @@ workdocs_get_document_version <- function(AuthenticationToken = NULL, DocumentId
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_get_folder/](https://www.paws-r-sdk.com/docs/workdocs_get_folder/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param FolderId &#91;required&#93; The ID of the folder.
 #' @param IncludeCustomMetadata Set to TRUE to include custom metadata in the response.
 #'
@@ -1230,12 +1158,10 @@ workdocs_get_folder <- function(AuthenticationToken = NULL, FolderId, IncludeCus
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_get_folder_path/](https://www.paws-r-sdk.com/docs/workdocs_get_folder_path/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param FolderId &#91;required&#93; The ID of the folder.
 #' @param Limit The maximum number of levels in the hierarchy to return.
-#' @param Fields A comma-separated list of values. Specify "NAME" to include the names of
-#' the parent folders.
+#' @param Fields A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
 #' @param Marker This value is not supported.
 #'
 #' @keywords internal
@@ -1267,14 +1193,11 @@ workdocs_get_folder_path <- function(AuthenticationToken = NULL, FolderId, Limit
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_get_resources/](https://www.paws-r-sdk.com/docs/workdocs_get_resources/) for full documentation.
 #'
-#' @param AuthenticationToken The Amazon WorkDocs authentication token. Not required when using Amazon
-#' Web Services administrator credentials to access the API.
-#' @param UserId The user ID for the resource collection. This is a required field for
-#' accessing the API operation using IAM credentials.
+#' @param AuthenticationToken The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
+#' @param UserId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.
 #' @param CollectionType The collection type.
 #' @param Limit The maximum number of resources to return.
-#' @param Marker The marker for the next set of results. This marker was received from a
-#' previous call.
+#' @param Marker The marker for the next set of results. This marker was received from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1305,8 +1228,7 @@ workdocs_get_resources <- function(AuthenticationToken = NULL, UserId = NULL, Co
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_initiate_document_version_upload/](https://www.paws-r-sdk.com/docs/workdocs_initiate_document_version_upload/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param Id The ID of the document.
 #' @param Name The name of the document.
 #' @param ContentCreatedTimestamp The timestamp when the content of the document was originally created.
@@ -1344,8 +1266,7 @@ workdocs_initiate_document_version_upload <- function(AuthenticationToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_remove_all_resource_permissions/](https://www.paws-r-sdk.com/docs/workdocs_remove_all_resource_permissions/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param ResourceId &#91;required&#93; The ID of the resource.
 #'
 #' @keywords internal
@@ -1378,8 +1299,7 @@ workdocs_remove_all_resource_permissions <- function(AuthenticationToken = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_remove_resource_permission/](https://www.paws-r-sdk.com/docs/workdocs_remove_resource_permission/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param ResourceId &#91;required&#93; The ID of the resource.
 #' @param PrincipalId &#91;required&#93; The principal ID of the resource.
 #' @param PrincipalType The principal type of the resource.
@@ -1413,8 +1333,7 @@ workdocs_remove_resource_permission <- function(AuthenticationToken = NULL, Reso
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_restore_document_versions/](https://www.paws-r-sdk.com/docs/workdocs_restore_document_versions/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #'
 #' @keywords internal
@@ -1447,18 +1366,11 @@ workdocs_restore_document_versions <- function(AuthenticationToken = NULL, Docum
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_search_resources/](https://www.paws-r-sdk.com/docs/workdocs_search_resources/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
-#' @param QueryText The String to search for. Searches across different text fields based on
-#' request parameters. Use double quotes around the query string for exact
-#' phrase matches.
-#' @param QueryScopes Filter based on the text field type. A Folder has only a name and no
-#' content. A Comment has only content and no name. A Document or Document
-#' Version has a name and content
-#' @param OrganizationId Filters based on the resource owner OrgId. This is a mandatory parameter
-#' when using Admin SigV4 credentials.
-#' @param AdditionalResponseFields A list of attributes to include in the response. Used to request fields
-#' that are not normally returned in a standard response.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
+#' @param QueryText The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.
+#' @param QueryScopes Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content
+#' @param OrganizationId Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.
+#' @param AdditionalResponseFields A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.
 #' @param Filters Filters results based on entity metadata.
 #' @param OrderBy Order by results in one or more categories.
 #' @param Limit Max results count per page.
@@ -1493,13 +1405,11 @@ workdocs_search_resources <- function(AuthenticationToken = NULL, QueryText = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_update_document/](https://www.paws-r-sdk.com/docs/workdocs_update_document/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param Name The name of the document.
 #' @param ParentFolderId The ID of the parent folder.
-#' @param ResourceState The resource state of the document. Only ACTIVE and RECYCLED are
-#' supported.
+#' @param ResourceState The resource state of the document. Only ACTIVE and RECYCLED are supported.
 #'
 #' @keywords internal
 #'
@@ -1530,8 +1440,7 @@ workdocs_update_document <- function(AuthenticationToken = NULL, DocumentId, Nam
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_update_document_version/](https://www.paws-r-sdk.com/docs/workdocs_update_document_version/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param DocumentId &#91;required&#93; The ID of the document.
 #' @param VersionId &#91;required&#93; The version ID of the document.
 #' @param VersionStatus The status of the version.
@@ -1565,13 +1474,11 @@ workdocs_update_document_version <- function(AuthenticationToken = NULL, Documen
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_update_folder/](https://www.paws-r-sdk.com/docs/workdocs_update_folder/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param FolderId &#91;required&#93; The ID of the folder.
 #' @param Name The name of the folder.
 #' @param ParentFolderId The ID of the parent folder.
-#' @param ResourceState The resource state of the folder. Only ACTIVE and RECYCLED are accepted
-#' values from the API.
+#' @param ResourceState The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.
 #'
 #' @keywords internal
 #'
@@ -1603,8 +1510,7 @@ workdocs_update_folder <- function(AuthenticationToken = NULL, FolderId, Name = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workdocs_update_user/](https://www.paws-r-sdk.com/docs/workdocs_update_user/) for full documentation.
 #'
-#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web
-#' Services administrator credentials to access the API.
+#' @param AuthenticationToken Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.
 #' @param UserId &#91;required&#93; The ID of the user.
 #' @param GivenName The given name of the user.
 #' @param Surname The surname of the user.
@@ -1612,8 +1518,7 @@ workdocs_update_folder <- function(AuthenticationToken = NULL, FolderId, Name = 
 #' @param StorageRule The amount of storage for the user.
 #' @param TimeZoneId The time zone ID of the user.
 #' @param Locale The locale of the user.
-#' @param GrantPoweruserPrivileges Boolean value to determine whether the user is granted Power user
-#' privileges.
+#' @param GrantPoweruserPrivileges Boolean value to determine whether the user is granted Power user privileges.
 #'
 #' @keywords internal
 #'

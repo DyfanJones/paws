@@ -18,24 +18,17 @@ paymentcryptographydataplane_generate_mac_emv_pin_change(
 \arguments{
 \item{NewPinPekIdentifier}{[required] The \code{keyARN} of the PEK protecting the incoming new encrypted PIN block.}
 
-\item{NewEncryptedPinBlock}{[required] The incoming new encrypted PIN block data for offline pin change on an
-EMV card.}
+\item{NewEncryptedPinBlock}{[required] The incoming new encrypted PIN block data for offline pin change on an EMV card.}
 
-\item{PinBlockFormat}{[required] The PIN encoding format of the incoming new encrypted PIN block as
-specified in ISO 9564.}
+\item{PinBlockFormat}{[required] The PIN encoding format of the incoming new encrypted PIN block as specified in ISO 9564.}
 
-\item{SecureMessagingIntegrityKeyIdentifier}{[required] The \code{keyARN} of the issuer master key (IMK-SMI) used to authenticate the
-issuer script response.}
+\item{SecureMessagingIntegrityKeyIdentifier}{[required] The \code{keyARN} of the issuer master key (IMK-SMI) used to authenticate the issuer script response.}
 
-\item{SecureMessagingConfidentialityKeyIdentifier}{[required] The \code{keyARN} of the issuer master key (IMK-SMC) used to protect the PIN
-block data in the issuer script response.}
+\item{SecureMessagingConfidentialityKeyIdentifier}{[required] The \code{keyARN} of the issuer master key (IMK-SMC) used to protect the PIN block data in the issuer script response.}
 
-\item{MessageData}{[required] The message data is the APDU command from the card reader or terminal.
-The target encrypted PIN block, after translation to ISO2 format, is
-appended to this message data to generate an issuer script response.}
+\item{MessageData}{[required] The message data is the APDU command from the card reader or terminal. The target encrypted PIN block, after translation to ISO2 format, is appended to this message data to generate an issuer script response.}
 
-\item{DerivationMethodAttributes}{[required] The attributes and data values to derive payment card specific
-confidentiality and integrity keys.}
+\item{DerivationMethodAttributes}{[required] The attributes and data values to derive payment card specific confidentiality and integrity keys.}
 }
 \description{
 Generates an issuer script mac for EMV payment cards that use offline PINs as the cardholder verification method (CVM).

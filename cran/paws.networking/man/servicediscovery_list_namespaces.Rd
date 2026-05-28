@@ -13,30 +13,17 @@ servicediscovery_list_namespaces(
 )
 }
 \arguments{
-\item{NextToken}{For the first \code{\link[=servicediscovery_list_namespaces]{list_namespaces}}
-request, omit this value.
+\item{NextToken}{For the first \code{\link[=servicediscovery_list_namespaces]{list_namespaces}} request, omit this value.
 
-If the response contains \code{NextToken}, submit another
-\code{\link[=servicediscovery_list_namespaces]{list_namespaces}} request to get the
-next group of results. Specify the value of \code{NextToken} from the
-previous response in the next request.
+If the response contains \code{NextToken}, submit another \code{\link[=servicediscovery_list_namespaces]{list_namespaces}} request to get the next group of results. Specify the value of \code{NextToken} from the previous response in the next request.
 
-Cloud Map gets \code{MaxResults} namespaces and then filters them based on
-the specified criteria. It's possible that no namespaces in the first
-\code{MaxResults} namespaces matched the specified criteria but that
-subsequent groups of \code{MaxResults} namespaces do contain namespaces that
-match the criteria.}
+Cloud Map gets \code{MaxResults} namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first \code{MaxResults} namespaces matched the specified criteria but that subsequent groups of \code{MaxResults} namespaces do contain namespaces that match the criteria.}
 
-\item{MaxResults}{The maximum number of namespaces that you want Cloud Map to return in
-the response to a \code{\link[=servicediscovery_list_namespaces]{list_namespaces}}
-request. If you don't specify a value for \code{MaxResults}, Cloud Map
-returns up to 100 namespaces.}
+\item{MaxResults}{The maximum number of namespaces that you want Cloud Map to return in the response to a \code{\link[=servicediscovery_list_namespaces]{list_namespaces}} request. If you don't specify a value for \code{MaxResults}, Cloud Map returns up to 100 namespaces.}
 
-\item{Filters}{A complex type that contains specifications for the namespaces that you
-want to list.
+\item{Filters}{A complex type that contains specifications for the namespaces that you want to list.
 
-If you specify more than one filter, a namespace must match all filters
-to be returned by \code{\link[=servicediscovery_list_namespaces]{list_namespaces}}.}
+If you specify more than one filter, a namespace must match all filters to be returned by \code{\link[=servicediscovery_list_namespaces]{list_namespaces}}.}
 }
 \description{
 Lists summary information about the namespaces that were created by the current Amazon Web Services account and shared with the current Amazon Web Services account.

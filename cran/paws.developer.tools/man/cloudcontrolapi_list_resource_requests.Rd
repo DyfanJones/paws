@@ -11,19 +11,11 @@ cloudcontrolapi_list_resource_requests(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of results to be returned with a single call. If the
-number of available results exceeds this maximum, the response includes
-a \code{NextToken} value that you can assign to the \code{NextToken} request
-parameter to get the next set of results.
+\item{MaxResults}{The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a \code{NextToken} value that you can assign to the \code{NextToken} request parameter to get the next set of results.
 
 The default is \code{20}.}
 
-\item{NextToken}{If the previous paginated request didn't return all of the remaining
-results, the response object's \code{NextToken} parameter value is set to a
-token. To retrieve the next set of results, call this action again and
-assign that token to the request object's \code{NextToken} parameter. If
-there are no remaining results, the previous response object's
-\code{NextToken} parameter is set to \code{null}.}
+\item{NextToken}{If the previous paginated request didn't return all of the remaining results, the response object's \code{NextToken} parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's \code{NextToken} parameter. If there are no remaining results, the previous response object's \code{NextToken} parameter is set to \code{null}.}
 
 \item{ResourceRequestStatusFilter}{The filter criteria to apply to the requests returned.}
 }

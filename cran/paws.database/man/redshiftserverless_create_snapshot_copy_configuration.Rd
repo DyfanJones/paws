@@ -13,16 +13,13 @@ redshiftserverless_create_snapshot_copy_configuration(
 )
 }
 \arguments{
-\item{destinationKmsKeyId}{The KMS key to use to encrypt your snapshots in the destination Amazon
-Web Services Region.}
+\item{destinationKmsKeyId}{The KMS key to use to encrypt your snapshots in the destination Amazon Web Services Region.}
 
-\item{destinationRegion}{[required] The destination Amazon Web Services Region that you want to copy
-snapshots to.}
+\item{destinationRegion}{[required] The destination Amazon Web Services Region that you want to copy snapshots to.}
 
 \item{namespaceName}{[required] The name of the namespace to copy snapshots from.}
 
-\item{snapshotRetentionPeriod}{The retention period of the snapshots that you copy to the destination
-Amazon Web Services Region.}
+\item{snapshotRetentionPeriod}{The retention period of the snapshots that you copy to the destination Amazon Web Services Region.}
 }
 \description{
 Creates a snapshot copy configuration that lets you copy snapshots to another Amazon Web Services Region.

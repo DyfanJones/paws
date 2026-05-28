@@ -8,11 +8,9 @@ domain}
 elasticsearchservice_remove_tags(ARN, TagKeys)
 }
 \arguments{
-\item{ARN}{[required] Specifies the \code{ARN} for the Elasticsearch domain from which you want to
-delete the specified tags.}
+\item{ARN}{[required] Specifies the \code{ARN} for the Elasticsearch domain from which you want to delete the specified tags.}
 
-\item{TagKeys}{[required] Specifies the \code{TagKey} list which you want to remove from the
-Elasticsearch domain.}
+\item{TagKeys}{[required] Specifies the \code{TagKey} list which you want to remove from the Elasticsearch domain.}
 }
 \description{
 Removes the specified set of tags from the specified Elasticsearch domain.

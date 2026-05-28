@@ -18,8 +18,7 @@ neptune_create_global_cluster(
 \arguments{
 \item{GlobalClusterIdentifier}{[required] The cluster identifier of the new global database cluster.}
 
-\item{SourceDBClusterIdentifier}{(\emph{Optional}) The Amazon Resource Name (ARN) of an existing Neptune DB
-cluster to use as the primary cluster of the new global database.}
+\item{SourceDBClusterIdentifier}{(\emph{Optional}) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.}
 
 \item{Engine}{The name of the database engine to be used in the global database.
 
@@ -29,11 +28,9 @@ Valid values: \code{neptune}}
 
 Valid values: \verb{1.2.0.0} or above.}
 
-\item{DeletionProtection}{The deletion protection setting for the new global database. The global
-database can't be deleted when deletion protection is enabled.}
+\item{DeletionProtection}{The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.}
 
-\item{DatabaseName}{The name for the new global database (up to 64 alpha-numeric
-characters).}
+\item{DatabaseName}{The name for the new global database (up to 64 alpha-numeric characters).}
 
 \item{Tags}{Tags to assign to the global cluster.}
 

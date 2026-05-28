@@ -13,18 +13,13 @@ redshift_disassociate_data_share_consumer(
 )
 }
 \arguments{
-\item{DataShareArn}{[required] The Amazon Resource Name (ARN) of the datashare to remove association
-for.}
+\item{DataShareArn}{[required] The Amazon Resource Name (ARN) of the datashare to remove association for.}
 
-\item{DisassociateEntireAccount}{A value that specifies whether association for the datashare is removed
-from the entire account.}
+\item{DisassociateEntireAccount}{A value that specifies whether association for the datashare is removed from the entire account.}
 
-\item{ConsumerArn}{The Amazon Resource Name (ARN) of the consumer namespace that
-association for the datashare is removed from.}
+\item{ConsumerArn}{The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.}
 
-\item{ConsumerRegion}{From a datashare consumer account, removes association of a datashare
-from all the existing and future namespaces in the specified Amazon Web
-Services Region.}
+\item{ConsumerRegion}{From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.}
 }
 \description{
 From a datashare consumer account, remove association for the specified datashare.

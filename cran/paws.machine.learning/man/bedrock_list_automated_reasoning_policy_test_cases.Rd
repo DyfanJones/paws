@@ -11,11 +11,9 @@ bedrock_list_automated_reasoning_policy_test_cases(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-which to list tests.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for which to list tests.}
 
-\item{nextToken}{The pagination token from a previous request to retrieve the next page
-of results.}
+\item{nextToken}{The pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of tests to return in a single call.}
 }

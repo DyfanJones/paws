@@ -8,24 +8,13 @@ using a specified service}
 servicediscovery_list_instances(ServiceId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that you want to
-list instances for. For services created in a shared namespace, specify
-the service ARN. For more information about shared namespaces, see
-\href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing}
-in the \emph{Cloud Map Developer Guide}.}
+\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that you want to list instances for. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing} in the \emph{Cloud Map Developer Guide}.}
 
-\item{NextToken}{For the first \code{\link[=servicediscovery_list_instances]{list_instances}}
-request, omit this value.
+\item{NextToken}{For the first \code{\link[=servicediscovery_list_instances]{list_instances}} request, omit this value.
 
-If more than \code{MaxResults} instances match the specified criteria, you
-can submit another \code{\link[=servicediscovery_list_instances]{list_instances}}
-request to get the next group of results. Specify the value of
-\code{NextToken} from the previous response in the next request.}
+If more than \code{MaxResults} instances match the specified criteria, you can submit another \code{\link[=servicediscovery_list_instances]{list_instances}} request to get the next group of results. Specify the value of \code{NextToken} from the previous response in the next request.}
 
-\item{MaxResults}{The maximum number of instances that you want Cloud Map to return in the
-response to a \code{\link[=servicediscovery_list_instances]{list_instances}}
-request. If you don't specify a value for \code{MaxResults}, Cloud Map
-returns up to 100 instances.}
+\item{MaxResults}{The maximum number of instances that you want Cloud Map to return in the response to a \code{\link[=servicediscovery_list_instances]{list_instances}} request. If you don't specify a value for \code{MaxResults}, Cloud Map returns up to 100 instances.}
 }
 \description{
 Lists summary information about the instances that you registered by using a specified service.

@@ -8,22 +8,13 @@ Directory (AD) infrastructure and Amazon Web Services}
 directoryservice_create_hybrid_ad(SecretArn, AssessmentId, Tags = NULL)
 }
 \arguments{
-\item{SecretArn}{[required] The Amazon Resource Name (ARN) of the Amazon Web Services Secrets
-Manager secret that contains the credentials for the service account
-used to join hybrid domain controllers to your self-managed AD domain.
-This secret is used once and not stored.
+\item{SecretArn}{[required] The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials for the service account used to join hybrid domain controllers to your self-managed AD domain. This secret is used once and not stored.
 
-The secret must contain key-value pairs with keys matching
-\code{customerAdAdminDomainUsername} and \code{customerAdAdminDomainPassword}. For
-example:
-\verb{\{"customerAdAdminDomainUsername":"carlos_salazar","customerAdAdminDomainPassword":"ExamplePassword123!"\}}.}
+The secret must contain key-value pairs with keys matching \code{customerAdAdminDomainUsername} and \code{customerAdAdminDomainPassword}. For example: \verb{\{"customerAdAdminDomainUsername":"carlos_salazar","customerAdAdminDomainPassword":"ExamplePassword123!"\}}.}
 
-\item{AssessmentId}{[required] The unique identifier of the successful directory assessment that
-validates your self-managed AD environment. You must have a successful
-directory assessment before you create a hybrid directory.}
+\item{AssessmentId}{[required] The unique identifier of the successful directory assessment that validates your self-managed AD environment. You must have a successful directory assessment before you create a hybrid directory.}
 
-\item{Tags}{The tags to be assigned to the directory. Each tag consists of a key and
-value pair. You can specify multiple tags as a list.}
+\item{Tags}{The tags to be assigned to the directory. Each tag consists of a key and value pair. You can specify multiple tags as a list.}
 }
 \description{
 Creates a hybrid directory that connects your self-managed Active Directory (AD) infrastructure and Amazon Web Services.

@@ -22,82 +22,43 @@ sagemakerruntime_invoke_endpoint(
 )
 }
 \arguments{
-\item{EndpointName}{[required] The name of the endpoint that you specified when you created the
-endpoint using the
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html}{CreateEndpoint}
-API.}
+\item{EndpointName}{[required] The name of the endpoint that you specified when you created the endpoint using the \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html}{CreateEndpoint} API.}
 
-\item{Body}{[required] Provides input data, in the format specified in the \code{ContentType}
-request header. Amazon SageMaker AI passes all of the data in the body
-to the model.
+\item{Body}{[required] Provides input data, in the format specified in the \code{ContentType} request header. Amazon SageMaker AI passes all of the data in the body to the model.
 
 For information about the format of the request body, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html}{Common Data Formats-Inference}.}
 
 \item{ContentType}{The MIME type of the input data in the request body.}
 
-\item{Accept}{The desired MIME type of the inference response from the model
-container.}
+\item{Accept}{The desired MIME type of the inference response from the model container.}
 
-\item{CustomAttributes}{Provides additional information about a request for an inference
-submitted to a model hosted at an Amazon SageMaker AI endpoint. The
-information is an opaque value that is forwarded verbatim. You could use
-this value, for example, to provide an ID that you can use to track a
-request or to provide other metadata that a service endpoint was
-programmed to process. The value must consist of no more than 1024
-visible US-ASCII characters as specified in \href{https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6}{Section 3.3.6. Field Value Components}
-of the Hypertext Transfer Protocol (HTTP/1.1).
+\item{CustomAttributes}{Provides additional information about a request for an inference submitted to a model hosted at an Amazon SageMaker AI endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to provide an ID that you can use to track a request or to provide other metadata that a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as specified in \href{https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6}{Section 3.3.6. Field Value Components} of the Hypertext Transfer Protocol (HTTP/1.1).
 
-The code in your model is responsible for setting or updating any custom
-attributes in the response. If your code does not set this value in the
-response, an empty value is returned. For example, if a custom attribute
-represents the trace ID, your model can prepend the custom attribute
-with \verb{Trace ID:} in your post-processing function.
+The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with \verb{Trace ID:} in your post-processing function.
 
-This feature is currently supported in the Amazon Web Services SDKs but
-not in the Amazon SageMaker AI Python SDK.}
+This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker AI Python SDK.}
 
 \item{TargetModel}{The model to request for inference when invoking a multi-model endpoint.}
 
-\item{TargetVariant}{Specify the production variant to send the inference request to when
-invoking an endpoint that is running two or more variants. Note that
-this parameter overrides the default behavior for the endpoint, which is
-to distribute the invocation traffic based on the variant weights.
+\item{TargetVariant}{Specify the production variant to send the inference request to when invoking an endpoint that is running two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute the invocation traffic based on the variant weights.
 
-For information about how to use variant targeting to perform a/b
-testing, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html}{Test models in production}}
+For information about how to use variant targeting to perform a/b testing, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html}{Test models in production}}
 
-\item{TargetContainerHostname}{If the endpoint hosts multiple containers and is configured to use
-direct invocation, this parameter specifies the host name of the
-container to invoke.}
+\item{TargetContainerHostname}{If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies the host name of the container to invoke.}
 
-\item{InferenceId}{If you provide a value, it is added to the captured data when you enable
-data capture on the endpoint. For information about data capture, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html}{Capture Data}.}
+\item{InferenceId}{If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For information about data capture, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html}{Capture Data}.}
 
-\item{EnableExplanations}{An optional JMESPath expression used to override the
-\code{EnableExplanations} parameter of the \code{ClarifyExplainerConfig} API. See
-the
-\href{https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable}{EnableExplanations}
-section in the developer guide for more information.}
+\item{EnableExplanations}{An optional JMESPath expression used to override the \code{EnableExplanations} parameter of the \code{ClarifyExplainerConfig} API. See the \href{https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable}{EnableExplanations} section in the developer guide for more information.}
 
-\item{InferenceComponentName}{If the endpoint hosts one or more inference components, this parameter
-specifies the name of inference component to invoke.}
+\item{InferenceComponentName}{If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.}
 
-\item{SessionId}{Creates a stateful session or identifies an existing one. You can do one
-of the following:
+\item{SessionId}{Creates a stateful session or identifies an existing one. You can do one of the following:
 \itemize{
 \item Create a stateful session by specifying the value \code{NEW_SESSION}.
-\item Send your request to an existing stateful session by specifying the
-ID of that session.
+\item Send your request to an existing stateful session by specifying the ID of that session.
 }
 
-With a stateful session, you can send multiple requests to a stateful
-model. When you create a session with a stateful model, the model must
-create the session ID and set the expiration time. The model must also
-provide that information in the response to your request. You can get
-the ID and timestamp from the \code{NewSessionId} response parameter. For any
-subsequent request where you specify that session ID, SageMaker AI
-routes the request to the same instance that supports the session.}
+With a stateful session, you can send multiple requests to a stateful model. When you create a session with a stateful model, the model must create the session ID and set the expiration time. The model must also provide that information in the response to your request. You can get the ID and timestamp from the \code{NewSessionId} response parameter. For any subsequent request where you specify that session ID, SageMaker AI routes the request to the same instance that supports the session.}
 }
 \description{
 After you deploy a model into production using Amazon SageMaker AI hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint.

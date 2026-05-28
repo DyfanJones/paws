@@ -10,9 +10,7 @@ s3control_list_tags_for_resource(AccountId, ResourceArn)
 \arguments{
 \item{AccountId}{[required] The Amazon Web Services account ID of the resource owner.}
 
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the S3 resource that you want to list
-tags for. The tagged resource can be a directory bucket, S3 Storage Lens
-group or S3 Access Grants instance, registered location, or grant.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the S3 resource that you want to list tags for. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.}
 }
 \description{
 This operation allows you to list all of the tags for a specified resource. Each tag is a label consisting of a key and value. Tags can help you organize, track costs for, and control access to resources.

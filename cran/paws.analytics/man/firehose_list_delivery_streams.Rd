@@ -15,19 +15,13 @@ firehose_list_delivery_streams(
 
 \item{DeliveryStreamType}{The Firehose stream type. This can be one of the following values:
 \itemize{
-\item \code{DirectPut}: Provider applications access the Firehose stream
-directly.
-\item \code{KinesisStreamAsSource}: The Firehose stream uses a Kinesis data
-stream as a source.
+\item \code{DirectPut}: Provider applications access the Firehose stream directly.
+\item \code{KinesisStreamAsSource}: The Firehose stream uses a Kinesis data stream as a source.
 }
 
-This parameter is optional. If this parameter is omitted, Firehose
-streams of all types are returned.}
+This parameter is optional. If this parameter is omitted, Firehose streams of all types are returned.}
 
-\item{ExclusiveStartDeliveryStreamName}{The list of Firehose streams returned by this call to
-\code{\link[=firehose_list_delivery_streams]{list_delivery_streams}} will start
-with the Firehose stream whose name comes alphabetically immediately
-after the name you specify in \code{ExclusiveStartDeliveryStreamName}.}
+\item{ExclusiveStartDeliveryStreamName}{The list of Firehose streams returned by this call to \code{\link[=firehose_list_delivery_streams]{list_delivery_streams}} will start with the Firehose stream whose name comes alphabetically immediately after the name you specify in \code{ExclusiveStartDeliveryStreamName}.}
 }
 \description{
 Lists your Firehose streams in alphabetical order of their names.

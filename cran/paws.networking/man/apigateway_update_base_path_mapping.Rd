@@ -14,8 +14,7 @@ apigateway_update_base_path_mapping(
 \arguments{
 \item{domainName}{[required] The domain name of the BasePathMapping resource to change.}
 
-\item{domainNameId}{The identifier for the domain name resource. Supported only for private
-custom domain names.}
+\item{domainNameId}{The identifier for the domain name resource. Supported only for private custom domain names.}
 
 \item{basePath}{[required] The base path of the BasePathMapping resource to change.
 

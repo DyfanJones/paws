@@ -17,39 +17,25 @@ redshiftserverless_update_namespace(
 )
 }
 \arguments{
-\item{adminPasswordSecretKmsKeyId}{The ID of the Key Management Service (KMS) key used to encrypt and store
-the namespace's admin credentials secret. You can only use this
-parameter if \code{manageAdminPassword} is true.}
+\item{adminPasswordSecretKmsKeyId}{The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if \code{manageAdminPassword} is true.}
 
-\item{adminUserPassword}{The password of the administrator for the first database created in the
-namespace. This parameter must be updated together with \code{adminUsername}.
+\item{adminUserPassword}{The password of the administrator for the first database created in the namespace. This parameter must be updated together with \code{adminUsername}.
 
 You can't use \code{adminUserPassword} if \code{manageAdminPassword} is true.}
 
-\item{adminUsername}{The username of the administrator for the first database created in the
-namespace. This parameter must be updated together with
-\code{adminUserPassword}.}
+\item{adminUsername}{The username of the administrator for the first database created in the namespace. This parameter must be updated together with \code{adminUserPassword}.}
 
-\item{defaultIamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to set as a default in
-the namespace. This parameter must be updated together with \code{iamRoles}.}
+\item{defaultIamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with \code{iamRoles}.}
 
-\item{iamRoles}{A list of IAM roles to associate with the namespace. This parameter must
-be updated together with \code{defaultIamRoleArn}.}
+\item{iamRoles}{A list of IAM roles to associate with the namespace. This parameter must be updated together with \code{defaultIamRoleArn}.}
 
-\item{kmsKeyId}{The ID of the Amazon Web Services Key Management Service key used to
-encrypt your data.}
+\item{kmsKeyId}{The ID of the Amazon Web Services Key Management Service key used to encrypt your data.}
 
-\item{logExports}{The types of logs the namespace can export. The export types are
-\code{userlog}, \code{connectionlog}, and \code{useractivitylog}.}
+\item{logExports}{The types of logs the namespace can export. The export types are \code{userlog}, \code{connectionlog}, and \code{useractivitylog}.}
 
-\item{manageAdminPassword}{If \code{true}, Amazon Redshift uses Secrets Manager to manage the
-namespace's admin credentials. You can't use \code{adminUserPassword} if
-\code{manageAdminPassword} is true. If \code{manageAdminPassword} is false or not
-set, Amazon Redshift uses \code{adminUserPassword} for the admin user
-account's password.}
+\item{manageAdminPassword}{If \code{true}, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use \code{adminUserPassword} if \code{manageAdminPassword} is true. If \code{manageAdminPassword} is false or not set, Amazon Redshift uses \code{adminUserPassword} for the admin user account's password.}
 
-\item{namespaceName}{[required] The name of the namespace to update. You can't update the name of a
-namespace once it is created.}
+\item{namespaceName}{[required] The name of the namespace to update. You can't update the name of a namespace once it is created.}
 }
 \description{
 Updates a namespace with the specified settings. Unless required, you can't update multiple parameters in one request. For example, you must specify both \code{adminUsername} and \code{adminUserPassword} to update either field, but you can't update both \code{kmsKeyId} and \code{logExports} in a single request.

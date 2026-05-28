@@ -7,8 +7,7 @@
 timestreamquery_cancel_query(QueryId)
 }
 \arguments{
-\item{QueryId}{[required] The ID of the query that needs to be cancelled. \code{QueryID} is returned as
-part of the query result.}
+\item{QueryId}{[required] The ID of the query that needs to be cancelled. \code{QueryID} is returned as part of the query result.}
 }
 \description{
 Cancels a query that has been issued. Cancellation is provided only if the query has not completed running before the cancellation request was issued. Because cancellation is an idempotent operation, subsequent cancellation requests will return a \code{CancellationMessage}, indicating that the query has already been canceled. See \href{https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html}{code sample} for details.

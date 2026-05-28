@@ -9,12 +9,9 @@ cloudfrontkeyvaluestore_list_keys(KvsARN, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{KvsARN}{[required] The Amazon Resource Name (ARN) of the Key Value Store.}
 
-\item{NextToken}{If nextToken is returned in the response, there are more results
-available. Make the next call using the returned token to retrieve the
-next page.}
+\item{NextToken}{If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.}
 
-\item{MaxResults}{Maximum number of results that are returned per call. The default is 10
-and maximum allowed page is 50.}
+\item{MaxResults}{Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.}
 }
 \description{
 Returns a list of key value pairs.

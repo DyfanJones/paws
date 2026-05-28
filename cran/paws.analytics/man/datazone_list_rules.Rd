@@ -37,18 +37,9 @@ datazone_list_rules(
 
 \item{includeCascaded}{Specifies whether to include cascading rules in the results.}
 
-\item{maxResults}{The maximum number of rules to return in a single call to
-\code{\link[=datazone_list_rules]{list_rules}}. When the number of rules to be
-listed is greater than the value of \code{MaxResults}, the response contains
-a \code{NextToken} value that you can use in a subsequent call to
-\code{\link[=datazone_list_rules]{list_rules}} to list the next set of rules.}
+\item{maxResults}{The maximum number of rules to return in a single call to \code{\link[=datazone_list_rules]{list_rules}}. When the number of rules to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_rules]{list_rules}} to list the next set of rules.}
 
-\item{nextToken}{When the number of rules is greater than the default value for the
-\code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of rules, the response
-includes a pagination token named \code{NextToken}. You can specify this
-\code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_rules]{list_rules}} to list the next set of rules.}
+\item{nextToken}{When the number of rules is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of rules, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_rules]{list_rules}} to list the next set of rules.}
 }
 \description{
 Lists existing rules. In Amazon DataZone, a rule is a formal agreement that enforces specific requirements across user workflows (e.g., publishing assets to the catalog, requesting subscriptions, creating projects) within the Amazon DataZone data portal. These rules help maintain consistency, ensure compliance, and uphold governance standards in data management processes. For instance, a metadata enforcement rule can specify the required information for creating a subscription request or publishing a data asset to the catalog, ensuring alignment with organizational standards.

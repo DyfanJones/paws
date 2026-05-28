@@ -23,13 +23,9 @@ datazone_create_domain(
 
 \item{singleSignOn}{The single-sign on configuration of the Amazon DataZone domain.}
 
-\item{domainExecutionRole}{The domain execution role that is created when an Amazon DataZone domain
-is created. The domain execution role is created in the Amazon Web
-Services account that houses the Amazon DataZone domain.}
+\item{domainExecutionRole}{The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.}
 
-\item{kmsKeyIdentifier}{The identifier of the Amazon Web Services Key Management Service (KMS)
-key that is used to encrypt the Amazon DataZone domain, metadata, and
-reporting data.}
+\item{kmsKeyIdentifier}{The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.}
 
 \item{tags}{The tags specified for the Amazon DataZone domain.}
 
@@ -37,8 +33,7 @@ reporting data.}
 
 \item{serviceRole}{The service role of the domain that is created.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates an Amazon DataZone domain.

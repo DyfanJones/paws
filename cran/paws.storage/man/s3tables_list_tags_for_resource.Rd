@@ -7,10 +7,7 @@
 s3tables_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you
-want to list tags for. The tagged resource can be a table bucket or a
-table. For a list of all S3 resources that support tagging, see
-\href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags}{Managing tags for Amazon S3 resources}.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you want to list tags for. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags}{Managing tags for Amazon S3 resources}.}
 }
 \description{
 Lists all of the tags applied to a specified Amazon S3 Tables resource. Each tag is a label consisting of a key and value pair. Tags can help you organize, track costs for, and control access to resources.

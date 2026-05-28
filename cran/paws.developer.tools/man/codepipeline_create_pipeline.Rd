@@ -7,8 +7,7 @@
 codepipeline_create_pipeline(pipeline, tags = NULL)
 }
 \arguments{
-\item{pipeline}{[required] Represents the structure of actions and stages to be performed in the
-pipeline.}
+\item{pipeline}{[required] Represents the structure of actions and stages to be performed in the pipeline.}
 
 \item{tags}{The tags for the pipeline.}
 }

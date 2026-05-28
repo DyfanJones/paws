@@ -14,21 +14,13 @@ ec2_get_ipam_prefix_list_resolver_version_entries(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{IpamPrefixListResolverId}{[required] The ID of the IPAM prefix list resolver whose version entries you want
-to retrieve.}
+\item{IpamPrefixListResolverId}{[required] The ID of the IPAM prefix list resolver whose version entries you want to retrieve.}
 
-\item{IpamPrefixListResolverVersion}{[required] The version number of the resolver for which to retrieve CIDR entries.
-If not specified, the latest version is used.}
+\item{IpamPrefixListResolverVersion}{[required] The version number of the resolver for which to retrieve CIDR entries. If not specified, the latest version is used.}
 
-\item{MaxResults}{The maximum number of items to return for this request. To get the next
-page of items, make another request with the token returned in the
-output. For more information, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination}{Pagination}.}
+\item{MaxResults}{The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html#api-pagination}{Pagination}.}
 
 \item{NextToken}{The token for the next page of results.}
 }

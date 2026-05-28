@@ -10,8 +10,7 @@ gluedatabrew_list_recipe_versions(MaxResults = NULL, NextToken = NULL, Name)
 \arguments{
 \item{MaxResults}{The maximum number of results to return in this request.}
 
-\item{NextToken}{The token returned by a previous call to retrieve the next set of
-results.}
+\item{NextToken}{The token returned by a previous call to retrieve the next set of results.}
 
 \item{Name}{[required] The name of the recipe for which to return version information.}
 }

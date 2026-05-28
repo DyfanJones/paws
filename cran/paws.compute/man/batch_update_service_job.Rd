@@ -9,13 +9,9 @@ batch_update_service_job(jobId, schedulingPriority)
 \arguments{
 \item{jobId}{[required] The Batch job ID of the job to update.}
 
-\item{schedulingPriority}{[required] The scheduling priority for the job. This only affects jobs in job
-queues with a quota-share or fair-share scheduling policy. Jobs with a
-higher scheduling priority are scheduled before jobs with a lower
-scheduling priority within a share.
+\item{schedulingPriority}{[required] The scheduling priority for the job. This only affects jobs in job queues with a quota-share or fair-share scheduling policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority within a share.
 
-The minimum supported value is 0 and the maximum supported value is
-9999.}
+The minimum supported value is 0 and the maximum supported value is 9999.}
 }
 \description{
 Updates the priority of a specified service job in an Batch job queue.

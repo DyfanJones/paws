@@ -24,8 +24,7 @@ customerprofiles_create_segment_definition(
 
 \item{Description}{The description of the segment definition.}
 
-\item{SegmentGroups}{Specifies the base segments and dimensions for a segment definition
-along with their respective relationship.}
+\item{SegmentGroups}{Specifies the base segments and dimensions for a segment definition along with their respective relationship.}
 
 \item{SegmentSqlQuery}{The segment SQL query.}
 

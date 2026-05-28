@@ -22,14 +22,9 @@ bedrockagentcorecontrol_update_payment_manager(
 
 \item{authorizerConfiguration}{The updated authorizer configuration for the payment manager.}
 
-\item{roleArn}{The updated Amazon Resource Name (ARN) of the IAM role for the payment
-manager.}
+\item{roleArn}{The updated Amazon Resource Name (ARN) of the IAM role for the payment manager.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 }
 \description{
 Updates an existing payment manager. This operation uses PATCH semantics, so you only need to specify the fields you want to change.

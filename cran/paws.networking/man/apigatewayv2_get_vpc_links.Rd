@@ -9,8 +9,7 @@ apigatewayv2_get_vpc_links(MaxResults = NULL, NextToken = NULL)
 \arguments{
 \item{MaxResults}{The maximum number of elements to be returned for this resource.}
 
-\item{NextToken}{The next page of elements from this collection. Not valid for the last
-element of the collection.}
+\item{NextToken}{The next page of elements from this collection. Not valid for the last element of the collection.}
 }
 \description{
 Gets a collection of VPC links.

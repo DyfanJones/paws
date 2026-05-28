@@ -18,32 +18,20 @@ sagemaker_create_presigned_domain_url(
 
 \item{UserProfileName}{[required] The name of the UserProfile to sign-in as.}
 
-\item{SessionExpirationDurationInSeconds}{The session expiration duration in seconds. This value defaults to
-43200.}
+\item{SessionExpirationDurationInSeconds}{The session expiration duration in seconds. This value defaults to 43200.}
 
-\item{ExpiresInSeconds}{The number of seconds until the pre-signed URL expires. This value
-defaults to 300.}
+\item{ExpiresInSeconds}{The number of seconds until the pre-signed URL expires. This value defaults to 300.}
 
 \item{SpaceName}{The name of the space.}
 
-\item{LandingUri}{The landing page that the user is directed to when accessing the
-presigned URL. Using this value, users can access Studio or Studio
-Classic, even if it is not the default experience for the domain. The
-supported values are:
+\item{LandingUri}{The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:
 \itemize{
-\item \code{studio::relative/path}: Directs users to the relative path in
-Studio.
-\item \code{app:JupyterServer:relative/path}: Directs users to the relative
-path in the Studio Classic application.
-\item \code{app:JupyterLab:relative/path}: Directs users to the relative path
-in the JupyterLab application.
-\item \code{app:RStudioServerPro:relative/path}: Directs users to the relative
-path in the RStudio application.
-\item \code{app:CodeEditor:relative/path}: Directs users to the relative path
-in the Code Editor, based on Code-OSS, Visual Studio Code - Open
-Source application.
-\item \code{app:Canvas:relative/path}: Directs users to the relative path in
-the Canvas application.
+\item \code{studio::relative/path}: Directs users to the relative path in Studio.
+\item \code{app:JupyterServer:relative/path}: Directs users to the relative path in the Studio Classic application.
+\item \code{app:JupyterLab:relative/path}: Directs users to the relative path in the JupyterLab application.
+\item \code{app:RStudioServerPro:relative/path}: Directs users to the relative path in the RStudio application.
+\item \code{app:CodeEditor:relative/path}: Directs users to the relative path in the Code Editor, based on Code-OSS, Visual Studio Code - Open Source application.
+\item \code{app:Canvas:relative/path}: Directs users to the relative path in the Canvas application.
 }}
 }
 \description{

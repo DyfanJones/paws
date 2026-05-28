@@ -12,19 +12,11 @@ sesv2_list_reputation_entities(
 )
 }
 \arguments{
-\item{Filter}{An object that contains filters to apply when listing reputation
-entities. You can filter by entity type, reputation impact, sending
-status, or entity reference prefix.}
+\item{Filter}{An object that contains filters to apply when listing reputation entities. You can filter by entity type, reputation impact, sending status, or entity reference prefix.}
 
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=sesv2_list_reputation_entities]{list_reputation_entities}} to indicate
-the position in the list of reputation entities.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=sesv2_list_reputation_entities]{list_reputation_entities}} to indicate the position in the list of reputation entities.}
 
-\item{PageSize}{The number of results to show in a single call to
-\code{\link[=sesv2_list_reputation_entities]{list_reputation_entities}}. If the
-number of results is larger than the number you specified in this
-parameter, then the response includes a \code{NextToken} element, which you
-can use to obtain additional results.}
+\item{PageSize}{The number of results to show in a single call to \code{\link[=sesv2_list_reputation_entities]{list_reputation_entities}}. If the number of results is larger than the number you specified in this parameter, then the response includes a \code{NextToken} element, which you can use to obtain additional results.}
 }
 \description{
 List reputation entities in your Amazon SES account in the current Amazon Web Services Region. You can filter the results by entity type, reputation impact, sending status, or entity reference prefix.

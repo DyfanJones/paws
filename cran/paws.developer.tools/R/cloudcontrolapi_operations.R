@@ -10,8 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_cancel_resource_request/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_cancel_resource_request/) for full documentation.
 #'
-#' @param RequestToken &#91;required&#93; The `RequestToken` of the `ProgressEvent` object returned by the
-#' resource operation request.
+#' @param RequestToken &#91;required&#93; The `RequestToken` of the `ProgressEvent` object returned by the resource operation request.
 #'
 #' @keywords internal
 #'
@@ -43,39 +42,20 @@ cloudcontrolapi_cancel_resource_request <- function(RequestToken) {
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_create_resource/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_create_resource/) for full documentation.
 #'
 #' @param TypeName &#91;required&#93; The name of the resource type.
-#' @param TypeVersionId For private resource types, the type version to use in this resource
-#' operation. If you do not specify a resource version, CloudFormation uses
-#' the default version.
-#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role for Cloud Control API to use when performing this resource
-#' operation. The role specified must have the permissions required for
-#' this operation. The necessary permissions for each event handler are
-#' defined in the ` handlers ` section of the [resource type definition
-#' schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
+#' @param TypeVersionId For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.
+#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the ` handlers ` section of the [resource type definition schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
 #' 
-#' If you do not specify a role, Cloud Control API uses a temporary session
-#' created using your Amazon Web Services user credentials.
+#' If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.
 #' 
-#' For more information, see [Specifying
-#' credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
-#' @param ClientToken A unique identifier to ensure the idempotency of the resource request.
-#' As a best practice, specify this token to ensure idempotency, so that
-#' Amazon Web Services Cloud Control API can accurately distinguish between
-#' request retries and new resource requests. You might retry a resource
-#' request to ensure that it was successfully received.
+#' For more information, see [Specifying credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions) in the *Amazon Web Services Cloud Control API User Guide*.
+#' @param ClientToken A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.
 #' 
-#' A client token is valid for 36 hours once used. After that, a resource
-#' request with the same client token is treated as a new request.
+#' A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.
 #' 
-#' If you do not specify a client token, one is generated for inclusion in
-#' the request.
+#' If you do not specify a client token, one is generated for inclusion in the request.
 #' 
-#' For more information, see [Ensuring resource operation requests are
-#' unique](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
-#' @param DesiredState &#91;required&#93; Structured data format representing the desired state of the resource,
-#' consisting of that resource's properties and their desired values.
+#' For more information, see [Ensuring resource operation requests are unique](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency) in the *Amazon Web Services Cloud Control API User Guide*.
+#' @param DesiredState &#91;required&#93; Structured data format representing the desired state of the resource, consisting of that resource's properties and their desired values.
 #' 
 #' Cloud Control API currently supports JSON as a structured data format.
 #' 
@@ -85,15 +65,9 @@ cloudcontrolapi_cancel_resource_request <- function(RequestToken) {
 #' 
 #' -   A local path containing the desired state in JSON data format
 #' 
-#' For more information, see [Composing the desired state of the
-#' resource](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
+#' For more information, see [Composing the desired state of the resource](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate) in the *Amazon Web Services Cloud Control API User Guide*.
 #' 
-#' For more information about the properties of a specific resource, refer
-#' to the related topic for the resource in the [Resource and property
-#' types
-#' reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-template-resource-type-ref.html)
-#' in the *CloudFormation Users Guide*.
+#' For more information about the properties of a specific resource, refer to the related topic for the resource in the [Resource and property types reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-template-resource-type-ref.html) in the *CloudFormation Users Guide*.
 #'
 #' @keywords internal
 #'
@@ -125,52 +99,26 @@ cloudcontrolapi_create_resource <- function(TypeName, TypeVersionId = NULL, Role
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_delete_resource/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_delete_resource/) for full documentation.
 #'
 #' @param TypeName &#91;required&#93; The name of the resource type.
-#' @param TypeVersionId For private resource types, the type version to use in this resource
-#' operation. If you do not specify a resource version, CloudFormation uses
-#' the default version.
-#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role for Cloud Control API to use when performing this resource
-#' operation. The role specified must have the permissions required for
-#' this operation. The necessary permissions for each event handler are
-#' defined in the ` handlers ` section of the [resource type definition
-#' schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
+#' @param TypeVersionId For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.
+#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the ` handlers ` section of the [resource type definition schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
 #' 
-#' If you do not specify a role, Cloud Control API uses a temporary session
-#' created using your Amazon Web Services user credentials.
+#' If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.
 #' 
-#' For more information, see [Specifying
-#' credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
-#' @param ClientToken A unique identifier to ensure the idempotency of the resource request.
-#' As a best practice, specify this token to ensure idempotency, so that
-#' Amazon Web Services Cloud Control API can accurately distinguish between
-#' request retries and new resource requests. You might retry a resource
-#' request to ensure that it was successfully received.
+#' For more information, see [Specifying credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions) in the *Amazon Web Services Cloud Control API User Guide*.
+#' @param ClientToken A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.
 #' 
-#' A client token is valid for 36 hours once used. After that, a resource
-#' request with the same client token is treated as a new request.
+#' A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.
 #' 
-#' If you do not specify a client token, one is generated for inclusion in
-#' the request.
+#' If you do not specify a client token, one is generated for inclusion in the request.
 #' 
-#' For more information, see [Ensuring resource operation requests are
-#' unique](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
+#' For more information, see [Ensuring resource operation requests are unique](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency) in the *Amazon Web Services Cloud Control API User Guide*.
 #' @param Identifier &#91;required&#93; The identifier for the resource.
 #' 
-#' You can specify the primary identifier, or any secondary identifier
-#' defined for the resource type in its resource schema. You can only
-#' specify one identifier. Primary identifiers can be specified as a string
-#' or JSON; secondary identifiers must be specified as JSON.
+#' You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.
 #' 
-#' For compound primary identifiers (that is, one that consists of multiple
-#' resource properties strung together), to specify the primary identifier
-#' as a string, list the property values *in the order they are specified*
-#' in the primary identifier definition, separated by `|`.
+#' For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values *in the order they are specified* in the primary identifier definition, separated by `|`.
 #' 
-#' For more information, see [Identifying
-#' resources](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
+#' For more information, see [Identifying resources](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html) in the *Amazon Web Services Cloud Control API User Guide*.
 #'
 #' @keywords internal
 #'
@@ -202,37 +150,19 @@ cloudcontrolapi_delete_resource <- function(TypeName, TypeVersionId = NULL, Role
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_get_resource/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_get_resource/) for full documentation.
 #'
 #' @param TypeName &#91;required&#93; The name of the resource type.
-#' @param TypeVersionId For private resource types, the type version to use in this resource
-#' operation. If you do not specify a resource version, CloudFormation uses
-#' the default version.
-#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role for Cloud Control API to use when performing this resource
-#' operation. The role specified must have the permissions required for
-#' this operation. The necessary permissions for each event handler are
-#' defined in the ` handlers ` section of the [resource type definition
-#' schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
+#' @param TypeVersionId For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.
+#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the ` handlers ` section of the [resource type definition schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
 #' 
-#' If you do not specify a role, Cloud Control API uses a temporary session
-#' created using your Amazon Web Services user credentials.
+#' If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.
 #' 
-#' For more information, see [Specifying
-#' credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
+#' For more information, see [Specifying credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions) in the *Amazon Web Services Cloud Control API User Guide*.
 #' @param Identifier &#91;required&#93; The identifier for the resource.
 #' 
-#' You can specify the primary identifier, or any secondary identifier
-#' defined for the resource type in its resource schema. You can only
-#' specify one identifier. Primary identifiers can be specified as a string
-#' or JSON; secondary identifiers must be specified as JSON.
+#' You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.
 #' 
-#' For compound primary identifiers (that is, one that consists of multiple
-#' resource properties strung together), to specify the primary identifier
-#' as a string, list the property values *in the order they are specified*
-#' in the primary identifier definition, separated by `|`.
+#' For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values *in the order they are specified* in the primary identifier definition, separated by `|`.
 #' 
-#' For more information, see [Identifying
-#' resources](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
+#' For more information, see [Identifying resources](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html) in the *Amazon Web Services Cloud Control API User Guide*.
 #'
 #' @keywords internal
 #'
@@ -263,11 +193,9 @@ cloudcontrolapi_get_resource <- function(TypeName, TypeVersionId = NULL, RoleArn
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_get_resource_request_status/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_get_resource_request_status/) for full documentation.
 #'
-#' @param RequestToken &#91;required&#93; A unique token used to track the progress of the resource operation
-#' request.
+#' @param RequestToken &#91;required&#93; A unique token used to track the progress of the resource operation request.
 #' 
-#' Request tokens are included in the `ProgressEvent` type returned by a
-#' resource operation request.
+#' Request tokens are included in the `ProgressEvent` type returned by a resource operation request.
 #'
 #' @keywords internal
 #'
@@ -298,18 +226,10 @@ cloudcontrolapi_get_resource_request_status <- function(RequestToken) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_list_resource_requests/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_list_resource_requests/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to be returned with a single call. If the
-#' number of available results exceeds this maximum, the response includes
-#' a `NextToken` value that you can assign to the `NextToken` request
-#' parameter to get the next set of results.
+#' @param MaxResults The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a `NextToken` value that you can assign to the `NextToken` request parameter to get the next set of results.
 #' 
 #' The default is `20`.
-#' @param NextToken If the previous paginated request didn't return all of the remaining
-#' results, the response object's `NextToken` parameter value is set to a
-#' token. To retrieve the next set of results, call this action again and
-#' assign that token to the request object's `NextToken` parameter. If
-#' there are no remaining results, the previous response object's
-#' `NextToken` parameter is set to `null`.
+#' @param NextToken If the previous paginated request didn't return all of the remaining results, the response object's `NextToken` parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's `NextToken` parameter. If there are no remaining results, the previous response object's `NextToken` parameter is set to `null`.
 #' @param ResourceRequestStatusFilter The filter criteria to apply to the requests returned.
 #'
 #' @keywords internal
@@ -342,28 +262,13 @@ cloudcontrolapi_list_resource_requests <- function(MaxResults = NULL, NextToken 
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_list_resources/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_list_resources/) for full documentation.
 #'
 #' @param TypeName &#91;required&#93; The name of the resource type.
-#' @param TypeVersionId For private resource types, the type version to use in this resource
-#' operation. If you do not specify a resource version, CloudFormation uses
-#' the default version.
-#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role for Cloud Control API to use when performing this resource
-#' operation. The role specified must have the permissions required for
-#' this operation. The necessary permissions for each event handler are
-#' defined in the ` handlers ` section of the [resource type definition
-#' schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
+#' @param TypeVersionId For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.
+#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the ` handlers ` section of the [resource type definition schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
 #' 
-#' If you do not specify a role, Cloud Control API uses a temporary session
-#' created using your Amazon Web Services user credentials.
+#' If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.
 #' 
-#' For more information, see [Specifying
-#' credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
-#' @param NextToken If the previous paginated request didn't return all of the remaining
-#' results, the response object's `NextToken` parameter value is set to a
-#' token. To retrieve the next set of results, call this action again and
-#' assign that token to the request object's `NextToken` parameter. If
-#' there are no remaining results, the previous response object's
-#' `NextToken` parameter is set to `null`.
+#' For more information, see [Specifying credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions) in the *Amazon Web Services Cloud Control API User Guide*.
+#' @param NextToken If the previous paginated request didn't return all of the remaining results, the response object's `NextToken` parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's `NextToken` parameter. If there are no remaining results, the previous response object's `NextToken` parameter is set to `null`.
 #' @param MaxResults Reserved.
 #' @param ResourceModel The resource model to use to select the resources to return.
 #'
@@ -397,57 +302,27 @@ cloudcontrolapi_list_resources <- function(TypeName, TypeVersionId = NULL, RoleA
 #' See [https://www.paws-r-sdk.com/docs/cloudcontrolapi_update_resource/](https://www.paws-r-sdk.com/docs/cloudcontrolapi_update_resource/) for full documentation.
 #'
 #' @param TypeName &#91;required&#93; The name of the resource type.
-#' @param TypeVersionId For private resource types, the type version to use in this resource
-#' operation. If you do not specify a resource version, CloudFormation uses
-#' the default version.
-#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management
-#' (IAM) role for Cloud Control API to use when performing this resource
-#' operation. The role specified must have the permissions required for
-#' this operation. The necessary permissions for each event handler are
-#' defined in the ` handlers ` section of the [resource type definition
-#' schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
+#' @param TypeVersionId For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.
+#' @param RoleArn The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the ` handlers ` section of the [resource type definition schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html).
 #' 
-#' If you do not specify a role, Cloud Control API uses a temporary session
-#' created using your Amazon Web Services user credentials.
+#' If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.
 #' 
-#' For more information, see [Specifying
-#' credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
-#' @param ClientToken A unique identifier to ensure the idempotency of the resource request.
-#' As a best practice, specify this token to ensure idempotency, so that
-#' Amazon Web Services Cloud Control API can accurately distinguish between
-#' request retries and new resource requests. You might retry a resource
-#' request to ensure that it was successfully received.
+#' For more information, see [Specifying credentials](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions) in the *Amazon Web Services Cloud Control API User Guide*.
+#' @param ClientToken A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.
 #' 
-#' A client token is valid for 36 hours once used. After that, a resource
-#' request with the same client token is treated as a new request.
+#' A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.
 #' 
-#' If you do not specify a client token, one is generated for inclusion in
-#' the request.
+#' If you do not specify a client token, one is generated for inclusion in the request.
 #' 
-#' For more information, see [Ensuring resource operation requests are
-#' unique](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
+#' For more information, see [Ensuring resource operation requests are unique](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency) in the *Amazon Web Services Cloud Control API User Guide*.
 #' @param Identifier &#91;required&#93; The identifier for the resource.
 #' 
-#' You can specify the primary identifier, or any secondary identifier
-#' defined for the resource type in its resource schema. You can only
-#' specify one identifier. Primary identifiers can be specified as a string
-#' or JSON; secondary identifiers must be specified as JSON.
+#' You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.
 #' 
-#' For compound primary identifiers (that is, one that consists of multiple
-#' resource properties strung together), to specify the primary identifier
-#' as a string, list the property values *in the order they are specified*
-#' in the primary identifier definition, separated by `|`.
+#' For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values *in the order they are specified* in the primary identifier definition, separated by `|`.
 #' 
-#' For more information, see [Identifying
-#' resources](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
-#' @param PatchDocument &#91;required&#93; A JavaScript Object Notation (JSON) document listing the patch
-#' operations that represent the updates to apply to the current resource
-#' properties. For details, see [Composing the patch
-#' document](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch)
-#' in the *Amazon Web Services Cloud Control API User Guide*.
+#' For more information, see [Identifying resources](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html) in the *Amazon Web Services Cloud Control API User Guide*.
+#' @param PatchDocument &#91;required&#93; A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see [Composing the patch document](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch) in the *Amazon Web Services Cloud Control API User Guide*.
 #'
 #' @keywords internal
 #'

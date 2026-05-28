@@ -7,9 +7,11 @@
 wellarchitected_get_milestone(WorkloadId, MilestoneNumber)
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{MilestoneNumber}{[required]}
+\item{MilestoneNumber}{[required] The milestone number.
+
+A workload can have a maximum of 100 milestones.}
 }
 \description{
 Get a milestone for an existing workload.

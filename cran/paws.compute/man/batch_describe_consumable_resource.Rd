@@ -7,8 +7,7 @@
 batch_describe_consumable_resource(consumableResource)
 }
 \arguments{
-\item{consumableResource}{[required] The name or ARN of the consumable resource whose description will be
-returned.}
+\item{consumableResource}{[required] The name or ARN of the consumable resource whose description will be returned.}
 }
 \description{
 Returns a description of the specified consumable resource.

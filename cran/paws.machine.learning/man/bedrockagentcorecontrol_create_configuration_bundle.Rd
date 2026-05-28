@@ -16,32 +16,21 @@ bedrockagentcorecontrol_create_configuration_bundle(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{bundleName}{[required] The name for the configuration bundle. Names must be unique within your
-account.}
+\item{bundleName}{[required] The name for the configuration bundle. Names must be unique within your account.}
 
 \item{description}{The description for the configuration bundle.}
 
-\item{components}{[required] A map of component identifiers to their configurations. Each component
-represents a configurable element within the bundle.}
+\item{components}{[required] A map of component identifiers to their configurations. Each component represents a configurable element within the bundle.}
 
-\item{branchName}{The branch name for version tracking. Defaults to \code{mainline} if not
-specified.}
+\item{branchName}{The branch name for version tracking. Defaults to \code{mainline} if not specified.}
 
-\item{commitMessage}{A commit message describing the initial version of the configuration
-bundle.}
+\item{commitMessage}{A commit message describing the initial version of the configuration bundle.}
 
-\item{createdBy}{The source that created this version, including the source name and
-optional ARN.}
+\item{createdBy}{The source that created this version, including the source name and optional ARN.}
 
-\item{tags}{A map of tag keys and values to assign to the configuration bundle. Tags
-enable you to categorize your resources in different ways, for example,
-by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the configuration bundle. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a new configuration bundle resource. A configuration bundle stores versioned component configurations for agent evaluation workflows.

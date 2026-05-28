@@ -16,13 +16,7 @@ mturk_create_additional_assignments_for_hit(
 
 \item{NumberOfAdditionalAssignments}{[required] The number of additional assignments to request for this HIT.}
 
-\item{UniqueRequestToken}{A unique identifier for this request, which allows you to retry the call
-on error without extending the HIT multiple times. This is useful in
-cases such as network timeouts where it is unclear whether or not the
-call succeeded on the server. If the extend HIT already exists in the
-system from a previous call using the same \code{UniqueRequestToken},
-subsequent calls will return an error with a message containing the
-request ID.}
+\item{UniqueRequestToken}{A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same \code{UniqueRequestToken}, subsequent calls will return an error with a message containing the request ID.}
 }
 \description{
 The \code{\link[=mturk_create_additional_assignments_for_hit]{create_additional_assignments_for_hit}} operation increases the maximum number of assignments of an existing HIT.

@@ -30,24 +30,17 @@ Valid Values:
 
 \item{Filters}{This parameter isn't currently supported.}
 
-\item{DefaultOnly}{Specifies whether to return only the default platform versions for each
-engine. The default platform version is the version used for new DB
-clusters.}
+\item{DefaultOnly}{Specifies whether to return only the default platform versions for each engine. The default platform version is the version used for new DB clusters.}
 
-\item{IncludeAll}{Specifies whether to also include platform versions which are no longer
-in use.}
+\item{IncludeAll}{Specifies whether to also include platform versions which are no longer in use.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more than
-the \code{MaxRecords} value is available, a pagination token called a marker
-is included in the response so you can retrieve the remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more than the \code{MaxRecords} value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.
 
 Default: 20
 
 Constraints: Minimum 1, maximum 200.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Describes the properties of specific platform versions for Aurora Serverless v2.

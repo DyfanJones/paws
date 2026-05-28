@@ -8,8 +8,7 @@ stream processor, or Custom Labels model}
 rekognition_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] Amazon Resource Name (ARN) of the model, collection, or stream processor
-that you want to assign the tags to.}
+\item{ResourceArn}{[required] Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.}
 
 \item{Tags}{[required] The key-value tags to assign to the resource.}
 }

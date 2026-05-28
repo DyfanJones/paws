@@ -13,17 +13,13 @@ pricing_describe_services(
 )
 }
 \arguments{
-\item{ServiceCode}{The code for the service whose information you want to retrieve, such as
-\code{AmazonEC2}. You can use the \code{ServiceCode} to filter the results in a
-\code{\link[=pricing_get_products]{get_products}} call. To retrieve a list of all
-services, leave this blank.}
+\item{ServiceCode}{The code for the service whose information you want to retrieve, such as \code{AmazonEC2}. You can use the \code{ServiceCode} to filter the results in a \code{\link[=pricing_get_products]{get_products}} call. To retrieve a list of all services, leave this blank.}
 
 \item{FormatVersion}{The format version that you want the response to be in.
 
 Valid values are: \code{aws_v1}}
 
-\item{NextToken}{The pagination token that indicates the next set of results that you
-want to retrieve.}
+\item{NextToken}{The pagination token that indicates the next set of results that you want to retrieve.}
 
 \item{MaxResults}{The maximum number of results that you want returned in the response.}
 }

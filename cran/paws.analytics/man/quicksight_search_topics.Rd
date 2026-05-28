@@ -12,13 +12,11 @@ quicksight_search_topics(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that
-you want to find.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that you want to find.}
 
 \item{Filters}{[required] The filters that you want to use to search for the topic.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

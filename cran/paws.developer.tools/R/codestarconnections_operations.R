@@ -12,12 +12,10 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_create_connection/](https://www.paws-r-sdk.com/docs/codestarconnections_create_connection/) for full documentation.
 #'
-#' @param ProviderType The name of the external provider where your third-party code repository
-#' is configured.
+#' @param ProviderType The name of the external provider where your third-party code repository is configured.
 #' @param ConnectionName &#91;required&#93; The name of the connection to be created.
 #' @param Tags The key-value pair to use when tagging the resource.
-#' @param HostArn The Amazon Resource Name (ARN) of the host associated with the
-#' connection to be created.
+#' @param HostArn The Amazon Resource Name (ARN) of the host associated with the connection to be created.
 #'
 #' @keywords internal
 #'
@@ -50,15 +48,9 @@ codestarconnections_create_connection <- function(ProviderType = NULL, Connectio
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_create_host/](https://www.paws-r-sdk.com/docs/codestarconnections_create_host/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the host to be created.
-#' @param ProviderType &#91;required&#93; The name of the installed provider to be associated with your
-#' connection. The host resource represents the infrastructure where your
-#' provider type is installed. The valid provider type is GitHub Enterprise
-#' Server.
-#' @param ProviderEndpoint &#91;required&#93; The endpoint of the infrastructure to be represented by the host after
-#' it is created.
-#' @param VpcConfiguration The VPC configuration to be provisioned for the host. A VPC must be
-#' configured and the infrastructure to be represented by the host must
-#' already be connected to the VPC.
+#' @param ProviderType &#91;required&#93; The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.
+#' @param ProviderEndpoint &#91;required&#93; The endpoint of the infrastructure to be represented by the host after it is created.
+#' @param VpcConfiguration The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.
 #' @param Tags Tags for the host to be created.
 #'
 #' @keywords internal
@@ -90,13 +82,10 @@ codestarconnections_create_host <- function(Name, ProviderType, ProviderEndpoint
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_create_repository_link/](https://www.paws-r-sdk.com/docs/codestarconnections_create_repository_link/) for full documentation.
 #'
-#' @param ConnectionArn &#91;required&#93; The Amazon Resource Name (ARN) of the connection to be associated with
-#' the repository link.
-#' @param OwnerId &#91;required&#93; The owner ID for the repository associated with a specific sync
-#' configuration, such as the owner ID in GitHub.
+#' @param ConnectionArn &#91;required&#93; The Amazon Resource Name (ARN) of the connection to be associated with the repository link.
+#' @param OwnerId &#91;required&#93; The owner ID for the repository associated with a specific sync configuration, such as the owner ID in GitHub.
 #' @param RepositoryName &#91;required&#93; The name of the repository to be associated with the repository link.
-#' @param EncryptionKeyArn The Amazon Resource Name (ARN) encryption key for the repository to be
-#' associated with the repository link.
+#' @param EncryptionKeyArn The Amazon Resource Name (ARN) encryption key for the repository to be associated with the repository link.
 #' @param Tags The tags for the repository to be associated with the repository link.
 #'
 #' @keywords internal
@@ -131,21 +120,12 @@ codestarconnections_create_repository_link <- function(ConnectionArn, OwnerId, R
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_create_sync_configuration/](https://www.paws-r-sdk.com/docs/codestarconnections_create_sync_configuration/) for full documentation.
 #'
 #' @param Branch &#91;required&#93; The branch in the repository from which changes will be synced.
-#' @param ConfigFile &#91;required&#93; The file name of the configuration file that manages syncing between the
-#' connection and the repository. This configuration file is stored in the
-#' repository.
-#' @param RepositoryLinkId &#91;required&#93; The ID of the repository link created for the connection. A repository
-#' link allows Git sync to monitor and sync changes to files in a specified
-#' Git repository.
-#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource (for example, a
-#' CloudFormation stack in the case of CFN_STACK_SYNC) that will be
-#' synchronized from the linked repository.
-#' @param RoleArn &#91;required&#93; The ARN of the IAM role that grants permission for Amazon Web Services
-#' to use Git sync to update a given Amazon Web Services resource on your
-#' behalf.
+#' @param ConfigFile &#91;required&#93; The file name of the configuration file that manages syncing between the connection and the repository. This configuration file is stored in the repository.
+#' @param RepositoryLinkId &#91;required&#93; The ID of the repository link created for the connection. A repository link allows Git sync to monitor and sync changes to files in a specified Git repository.
+#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource (for example, a CloudFormation stack in the case of CFN_STACK_SYNC) that will be synchronized from the linked repository.
+#' @param RoleArn &#91;required&#93; The ARN of the IAM role that grants permission for Amazon Web Services to use Git sync to update a given Amazon Web Services resource on your behalf.
 #' @param SyncType &#91;required&#93; The type of sync configuration.
-#' @param PublishDeploymentStatus Whether to enable or disable publishing of deployment status to source
-#' providers.
+#' @param PublishDeploymentStatus Whether to enable or disable publishing of deployment status to source providers.
 #' @param TriggerResourceUpdateOn When to trigger Git sync to begin the stack update.
 #'
 #' @keywords internal
@@ -274,8 +254,7 @@ codestarconnections_delete_repository_link <- function(RepositoryLinkId) {
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_delete_sync_configuration/](https://www.paws-r-sdk.com/docs/codestarconnections_delete_sync_configuration/) for full documentation.
 #'
 #' @param SyncType &#91;required&#93; The type of sync configuration to be deleted.
-#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource associated with the sync
-#' configuration to be deleted.
+#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource associated with the sync configuration to be deleted.
 #'
 #' @keywords internal
 #'
@@ -401,8 +380,7 @@ codestarconnections_get_repository_link <- function(RepositoryLinkId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_get_repository_sync_status/](https://www.paws-r-sdk.com/docs/codestarconnections_get_repository_sync_status/) for full documentation.
 #'
-#' @param Branch &#91;required&#93; The branch of the repository link for the requested repository sync
-#' status.
+#' @param Branch &#91;required&#93; The branch of the repository link for the requested repository sync status.
 #' @param RepositoryLinkId &#91;required&#93; The repository link ID for the requested repository sync status.
 #' @param SyncType &#91;required&#93; The sync type of the requested sync status.
 #'
@@ -436,8 +414,7 @@ codestarconnections_get_repository_sync_status <- function(Branch, RepositoryLin
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_get_resource_sync_status/](https://www.paws-r-sdk.com/docs/codestarconnections_get_resource_sync_status/) for full documentation.
 #'
-#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource for the sync status with
-#' the Git repository.
+#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource for the sync status with the Git repository.
 #' @param SyncType &#91;required&#93; The sync type for the sync status with the Git repository.
 #'
 #' @keywords internal
@@ -470,8 +447,7 @@ codestarconnections_get_resource_sync_status <- function(ResourceName, SyncType)
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_get_sync_blocker_summary/](https://www.paws-r-sdk.com/docs/codestarconnections_get_sync_blocker_summary/) for full documentation.
 #'
 #' @param SyncType &#91;required&#93; The sync type for the sync blocker summary.
-#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource currently blocked from
-#' automatically being synced from a Git repository.
+#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource currently blocked from automatically being synced from a Git repository.
 #'
 #' @keywords internal
 #'
@@ -503,10 +479,8 @@ codestarconnections_get_sync_blocker_summary <- function(SyncType, ResourceName)
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_get_sync_configuration/](https://www.paws-r-sdk.com/docs/codestarconnections_get_sync_configuration/) for full documentation.
 #'
-#' @param SyncType &#91;required&#93; The sync type for the sync configuration for which you want to retrieve
-#' information.
-#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource for the sync configuration
-#' for which you want to retrieve information.
+#' @param SyncType &#91;required&#93; The sync type for the sync configuration for which you want to retrieve information.
+#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource for the sync configuration for which you want to retrieve information.
 #'
 #' @keywords internal
 #'
@@ -537,16 +511,10 @@ codestarconnections_get_sync_configuration <- function(SyncType, ResourceName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_list_connections/](https://www.paws-r-sdk.com/docs/codestarconnections_list_connections/) for full documentation.
 #'
-#' @param ProviderTypeFilter Filters the list of connections to those associated with a specified
-#' provider, such as Bitbucket.
-#' @param HostArnFilter Filters the list of connections to those associated with a specified
-#' host.
-#' @param MaxResults The maximum number of results to return in a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The token that was returned from the previous
-#' [`list_connections`][codestarconnections_list_connections] call, which
-#' can be used to return the next set of connections in the list.
+#' @param ProviderTypeFilter Filters the list of connections to those associated with a specified provider, such as Bitbucket.
+#' @param HostArnFilter Filters the list of connections to those associated with a specified host.
+#' @param MaxResults The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The token that was returned from the previous [`list_connections`][codestarconnections_list_connections] call, which can be used to return the next set of connections in the list.
 #'
 #' @keywords internal
 #'
@@ -577,12 +545,8 @@ codestarconnections_list_connections <- function(ProviderTypeFilter = NULL, Host
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_list_hosts/](https://www.paws-r-sdk.com/docs/codestarconnections_list_hosts/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to return in a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The token that was returned from the previous
-#' [`list_hosts`][codestarconnections_list_hosts] call, which can be used
-#' to return the next set of hosts in the list.
+#' @param MaxResults The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The token that was returned from the previous [`list_hosts`][codestarconnections_list_hosts] call, which can be used to return the next set of hosts in the list.
 #'
 #' @keywords internal
 #'
@@ -613,10 +577,8 @@ codestarconnections_list_hosts <- function(MaxResults = NULL, NextToken = NULL) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_list_repository_links/](https://www.paws-r-sdk.com/docs/codestarconnections_list_repository_links/) for full documentation.
 #'
-#' @param MaxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
-#' @param NextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
+#' @param MaxResults A non-zero, non-negative integer used to limit the number of returned results.
+#' @param NextToken An enumeration token that, when provided in a request, returns the next batch of the results.
 #'
 #' @keywords internal
 #'
@@ -648,10 +610,8 @@ codestarconnections_list_repository_links <- function(MaxResults = NULL, NextTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_list_repository_sync_definitions/](https://www.paws-r-sdk.com/docs/codestarconnections_list_repository_sync_definitions/) for full documentation.
 #'
-#' @param RepositoryLinkId &#91;required&#93; The ID of the repository link for the sync definition for which you want
-#' to retrieve information.
-#' @param SyncType &#91;required&#93; The sync type of the repository link for the the sync definition for
-#' which you want to retrieve information.
+#' @param RepositoryLinkId &#91;required&#93; The ID of the repository link for the sync definition for which you want to retrieve information.
+#' @param SyncType &#91;required&#93; The sync type of the repository link for the the sync definition for which you want to retrieve information.
 #'
 #' @keywords internal
 #'
@@ -682,12 +642,9 @@ codestarconnections_list_repository_sync_definitions <- function(RepositoryLinkI
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_list_sync_configurations/](https://www.paws-r-sdk.com/docs/codestarconnections_list_sync_configurations/) for full documentation.
 #'
-#' @param MaxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
-#' @param NextToken An enumeration token that allows the operation to batch the results of
-#' the operation.
-#' @param RepositoryLinkId &#91;required&#93; The ID of the repository link for the requested list of sync
-#' configurations.
+#' @param MaxResults A non-zero, non-negative integer used to limit the number of returned results.
+#' @param NextToken An enumeration token that allows the operation to batch the results of the operation.
+#' @param RepositoryLinkId &#91;required&#93; The ID of the repository link for the requested list of sync configurations.
 #' @param SyncType &#91;required&#93; The sync type for the requested list of sync configurations.
 #'
 #' @keywords internal
@@ -720,8 +677,7 @@ codestarconnections_list_sync_configurations <- function(MaxResults = NULL, Next
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/codestarconnections_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to get
-#' information about tags, if any.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.
 #'
 #' @keywords internal
 #'
@@ -752,8 +708,7 @@ codestarconnections_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_tag_resource/](https://www.paws-r-sdk.com/docs/codestarconnections_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to add
-#' or update tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
 #' @param Tags &#91;required&#93; The tags you want to modify or add to the resource.
 #'
 #' @keywords internal
@@ -819,9 +774,7 @@ codestarconnections_untag_resource <- function(ResourceArn, TagKeys) {
 #'
 #' @param HostArn &#91;required&#93; The Amazon Resource Name (ARN) of the host to be updated.
 #' @param ProviderEndpoint The URL or endpoint of the host to be updated.
-#' @param VpcConfiguration The VPC configuration of the host to be updated. A VPC must be
-#' configured and the infrastructure to be represented by the host must
-#' already be connected to the VPC.
+#' @param VpcConfiguration The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.
 #'
 #' @keywords internal
 #'
@@ -853,12 +806,8 @@ codestarconnections_update_host <- function(HostArn, ProviderEndpoint = NULL, Vp
 #'
 #' See [https://www.paws-r-sdk.com/docs/codestarconnections_update_repository_link/](https://www.paws-r-sdk.com/docs/codestarconnections_update_repository_link/) for full documentation.
 #'
-#' @param ConnectionArn The Amazon Resource Name (ARN) of the connection for the repository link
-#' to be updated. The updated connection ARN must have the same
-#' providerType (such as GitHub) as the original connection ARN for the
-#' repo link.
-#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of the encryption key for the repository
-#' link to be updated.
+#' @param ConnectionArn The Amazon Resource Name (ARN) of the connection for the repository link to be updated. The updated connection ARN must have the same providerType (such as GitHub) as the original connection ARN for the repo link.
+#' @param EncryptionKeyArn The Amazon Resource Name (ARN) of the encryption key for the repository link to be updated.
 #' @param RepositoryLinkId &#91;required&#93; The ID of the repository link to be updated.
 #'
 #' @keywords internal
@@ -929,12 +878,10 @@ codestarconnections_update_sync_blocker <- function(Id, SyncType, ResourceName, 
 #' @param Branch The branch for the sync configuration to be updated.
 #' @param ConfigFile The configuration file for the sync configuration to be updated.
 #' @param RepositoryLinkId The ID of the repository link for the sync configuration to be updated.
-#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource for the sync configuration
-#' to be updated.
+#' @param ResourceName &#91;required&#93; The name of the Amazon Web Services resource for the sync configuration to be updated.
 #' @param RoleArn The ARN of the IAM role for the sync configuration to be updated.
 #' @param SyncType &#91;required&#93; The sync type for the sync configuration to be updated.
-#' @param PublishDeploymentStatus Whether to enable or disable publishing of deployment status to source
-#' providers.
+#' @param PublishDeploymentStatus Whether to enable or disable publishing of deployment status to source providers.
 #' @param TriggerResourceUpdateOn When to trigger Git sync to begin the stack update.
 #'
 #' @keywords internal

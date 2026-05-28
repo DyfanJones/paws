@@ -17,22 +17,17 @@ networkfirewall_start_flow_flush(
 \arguments{
 \item{FirewallArn}{[required] The Amazon Resource Name (ARN) of the firewall.}
 
-\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For
-example, \verb{us-east-2a}.
+\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For example, \verb{us-east-2a}.
 
-Defines the scope a flow operation. You can use up to 20 filters to
-configure a single flow operation.}
+Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.}
 
 \item{VpcEndpointAssociationArn}{The Amazon Resource Name (ARN) of a VPC endpoint association.}
 
 \item{VpcEndpointId}{A unique identifier for the primary endpoint associated with a firewall.}
 
-\item{MinimumFlowAgeInSeconds}{The reqested \code{FlowOperation} ignores flows with an age (in seconds)
-lower than \code{MinimumFlowAgeInSeconds}. You provide this for start
-commands.}
+\item{MinimumFlowAgeInSeconds}{The reqested \code{FlowOperation} ignores flows with an age (in seconds) lower than \code{MinimumFlowAgeInSeconds}. You provide this for start commands.}
 
-\item{FlowFilters}{[required] Defines the scope a flow operation. You can use up to 20 filters to
-configure a single flow operation.}
+\item{FlowFilters}{[required] Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.}
 }
 \description{
 Begins the flushing of traffic from the firewall, according to the filters you define. When the operation starts, impacted flows are temporarily marked as timed out before the Suricata engine prunes, or flushes, the flows from the firewall table.

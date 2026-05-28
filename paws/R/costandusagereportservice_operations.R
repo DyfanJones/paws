@@ -6,14 +6,12 @@ NULL
 #' Deletes the specified report
 #'
 #' @description
-#' Deletes the specified report. Any tags associated with the report are
-#' also deleted.
+#' Deletes the specified report. Any tags associated with the report are also deleted.
 #'
 #' @usage
 #' costandusagereportservice_delete_report_definition(ReportName)
 #'
-#' @param ReportName &#91;required&#93; The name of the report that you want to delete. The name must be unique,
-#' is case sensitive, and can't include spaces.
+#' @param ReportName &#91;required&#93; The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.
 #'
 #' @return
 #' A list with the following syntax:
@@ -67,15 +65,14 @@ costandusagereportservice_delete_report_definition <- function(ReportName) {
 #' account
 #'
 #' @description
-#' Lists the Amazon Web Services Cost and Usage Report available to this
-#' account.
+#' Lists the Amazon Web Services Cost and Usage Report available to this account.
 #'
 #' @usage
 #' costandusagereportservice_describe_report_definitions(MaxResults,
 #'   NextToken)
 #'
-#' @param MaxResults 
-#' @param NextToken 
+#' @param MaxResults The maximum number of results that Amazon Web Services returns for the operation.
+#' @param NextToken A generic string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -158,8 +155,7 @@ costandusagereportservice_describe_report_definitions <- function(MaxResults = N
 #' @usage
 #' costandusagereportservice_list_tags_for_resource(ReportName)
 #'
-#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be returned
-#' for.
+#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be returned for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -214,8 +210,8 @@ costandusagereportservice_list_tags_for_resource <- function(ReportName) {
 #' costandusagereportservice_modify_report_definition(ReportName,
 #'   ReportDefinition)
 #'
-#' @param ReportName &#91;required&#93; 
-#' @param ReportDefinition &#91;required&#93; 
+#' @param ReportName &#91;required&#93; The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
+#' @param ReportDefinition &#91;required&#93; The definition of Amazon Web Services Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.
 #'
 #' @return
 #' An empty list.
@@ -281,8 +277,7 @@ costandusagereportservice_modify_report_definition <- function(ReportName, Repor
 #' @usage
 #' costandusagereportservice_put_report_definition(ReportDefinition, Tags)
 #'
-#' @param ReportDefinition &#91;required&#93; Represents the output of the PutReportDefinition operation. The content
-#' consists of the detailed metadata and data file information.
+#' @param ReportDefinition &#91;required&#93; Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.
 #' @param Tags The tags to be assigned to the report definition resource.
 #'
 #' @return
@@ -378,8 +373,7 @@ costandusagereportservice_put_report_definition <- function(ReportDefinition, Ta
 #' @usage
 #' costandusagereportservice_tag_resource(ReportName, Tags)
 #'
-#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be associated
-#' with.
+#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be associated with.
 #' @param Tags &#91;required&#93; The tags to be assigned to the report definition resource.
 #'
 #' @return
@@ -430,8 +424,7 @@ costandusagereportservice_tag_resource <- function(ReportName, Tags) {
 #' @usage
 #' costandusagereportservice_untag_resource(ReportName, TagKeys)
 #'
-#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be
-#' disassociated from.
+#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be disassociated from.
 #' @param TagKeys &#91;required&#93; The tags to be disassociated from the report definition resource.
 #'
 #' @return

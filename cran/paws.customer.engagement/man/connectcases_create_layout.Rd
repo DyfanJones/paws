@@ -11,8 +11,7 @@ connectcases_create_layout(domainId, name, content)
 
 \item{name}{[required] The name of the layout. It must be unique for the Cases domain.}
 
-\item{content}{[required] Information about which fields will be present in the layout, and
-information about the order of the fields.}
+\item{content}{[required] Information about which fields will be present in the layout, and information about the order of the fields.}
 }
 \description{
 Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:

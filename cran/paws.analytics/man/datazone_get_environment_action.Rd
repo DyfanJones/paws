@@ -11,9 +11,7 @@ datazone_get_environment_action(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the
-\code{\link[=datazone_get_environment_action]{get_environment_action}} API is
-invoked.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the \code{\link[=datazone_get_environment_action]{get_environment_action}} API is invoked.}
 
 \item{environmentIdentifier}{[required] The environment ID of the environment action.}
 

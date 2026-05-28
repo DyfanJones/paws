@@ -13,8 +13,7 @@ glue_update_column_statistics_for_partition(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the partitions in question reside. If
-none is supplied, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database where the partitions reside.}
 

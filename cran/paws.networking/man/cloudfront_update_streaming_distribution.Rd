@@ -15,8 +15,7 @@ cloudfront_update_streaming_distribution(
 
 \item{Id}{[required] The streaming distribution's id.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-streaming distribution's configuration. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the streaming distribution's configuration. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Update a streaming distribution.

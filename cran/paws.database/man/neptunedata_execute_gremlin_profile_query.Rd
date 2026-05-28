@@ -17,20 +17,13 @@ neptunedata_execute_gremlin_profile_query(
 \arguments{
 \item{gremlinQuery}{[required] The Gremlin query string to profile.}
 
-\item{results}{If this flag is set to \code{TRUE}, the query results are gathered and
-displayed as part of the profile report. If \code{FALSE}, only the result
-count is displayed.}
+\item{results}{If this flag is set to \code{TRUE}, the query results are gathered and displayed as part of the profile report. If \code{FALSE}, only the result count is displayed.}
 
-\item{chop}{If non-zero, causes the results string to be truncated at that number of
-characters. If set to zero, the string contains all the results.}
+\item{chop}{If non-zero, causes the results string to be truncated at that number of characters. If set to zero, the string contains all the results.}
 
-\item{serializer}{If non-null, the gathered results are returned in a serialized response
-message in the format specified by this parameter. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html}{Gremlin profile API in Neptune}
-for more information.}
+\item{serializer}{If non-null, the gathered results are returned in a serialized response message in the format specified by this parameter. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html}{Gremlin profile API in Neptune} for more information.}
 
-\item{indexOps}{If this flag is set to \code{TRUE}, the results include a detailed report of
-all index operations that took place during query execution and
-serialization.}
+\item{indexOps}{If this flag is set to \code{TRUE}, the results include a detailed report of all index operations that took place during query execution and serialization.}
 }
 \description{
 Executes a Gremlin Profile query, which runs a specified traversal, collects various metrics about the run, and produces a profile report as output. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html}{Gremlin profile API in Neptune} for details.

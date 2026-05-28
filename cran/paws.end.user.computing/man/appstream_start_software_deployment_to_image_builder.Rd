@@ -13,8 +13,7 @@ appstream_start_software_deployment_to_image_builder(
 \arguments{
 \item{ImageBuilderName}{[required] The name of the target image builder instance.}
 
-\item{RetryFailedDeployments}{Whether to retry previously failed license included application
-deployments.}
+\item{RetryFailedDeployments}{Whether to retry previously failed license included application deployments.}
 }
 \description{
 Initiates license included applications deployment to an image builder instance.

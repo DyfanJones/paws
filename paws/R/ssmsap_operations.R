@@ -60,9 +60,7 @@ ssmsap_delete_resource_permission <- function(ActionType = NULL, SourceResourceA
 #' Deregister an SAP application with AWS Systems Manager for SAP
 #'
 #' @description
-#' Deregister an SAP application with AWS Systems Manager for SAP. This
-#' action does not aﬀect the existing setup of your SAP workloads on Amazon
-#' EC2.
+#' Deregister an SAP application with AWS Systems Manager for SAP. This action does not aﬀect the existing setup of your SAP workloads on Amazon EC2.
 #'
 #' @usage
 #' ssmsap_deregister_application(ApplicationId)
@@ -106,8 +104,7 @@ ssmsap_deregister_application <- function(ApplicationId) {
 #' Gets an application registered with AWS Systems Manager for SAP
 #'
 #' @description
-#' Gets an application registered with AWS Systems Manager for SAP. It also
-#' returns the components of the application.
+#' Gets an application registered with AWS Systems Manager for SAP. It also returns the components of the application.
 #'
 #' @usage
 #' ssmsap_get_application(ApplicationId, ApplicationArn, AppRegistryArn)
@@ -181,8 +178,7 @@ ssmsap_get_application <- function(ApplicationId = NULL, ApplicationArn = NULL, 
 #' for SAP
 #'
 #' @description
-#' Gets the component of an application registered with AWS Systems Manager
-#' for SAP.
+#' Gets the component of an application registered with AWS Systems Manager for SAP.
 #'
 #' @usage
 #' ssmsap_get_component(ApplicationId, ComponentId)
@@ -294,8 +290,7 @@ ssmsap_get_component <- function(ApplicationId, ComponentId) {
 #' operation ID
 #'
 #' @description
-#' Gets the details of a configuration check operation by specifying the
-#' operation ID.
+#' Gets the details of a configuration check operation by specifying the operation ID.
 #'
 #' @usage
 #' ssmsap_get_configuration_check_operation(OperationId)
@@ -366,8 +361,7 @@ ssmsap_get_configuration_check_operation <- function(OperationId) {
 #' Manager for SAP
 #'
 #' @description
-#' Gets the SAP HANA database of an application registered with AWS Systems
-#' Manager for SAP.
+#' Gets the SAP HANA database of an application registered with AWS Systems Manager for SAP.
 #'
 #' @usage
 #' ssmsap_get_database(ApplicationId, ComponentId, DatabaseId, DatabaseArn)
@@ -574,9 +568,7 @@ ssmsap_get_resource_permission <- function(ActionType = NULL, ResourceArn) {
 #' ssmsap_list_applications(NextToken, MaxResults, Filters)
 #'
 #' @param NextToken The token for the next page of results.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param Filters The filter of name, value, and operator.
 #'
 #' @return
@@ -647,12 +639,9 @@ ssmsap_list_applications <- function(NextToken = NULL, MaxResults = NULL, Filter
 #'
 #' @param ApplicationId The ID of the application.
 #' @param NextToken The token for the next page of results.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' 
-#' If you do not specify a value for MaxResults, the request returns 50
-#' items per page by default.
+#' If you do not specify a value for MaxResults, the request returns 50 items per page by default.
 #'
 #' @return
 #' A list with the following syntax:
@@ -710,15 +699,12 @@ ssmsap_list_components <- function(ApplicationId = NULL, NextToken = NULL, MaxRe
 #' SAP
 #'
 #' @description
-#' Lists all configuration check types supported by AWS Systems Manager for
-#' SAP.
+#' Lists all configuration check types supported by AWS Systems Manager for SAP.
 #'
 #' @usage
 #' ssmsap_list_configuration_check_definitions(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #'
 #' @return
@@ -775,25 +761,19 @@ ssmsap_list_configuration_check_definitions <- function(MaxResults = NULL, NextT
 #' Manager for SAP
 #'
 #' @description
-#' Lists the configuration check operations performed by AWS Systems
-#' Manager for SAP.
+#' Lists the configuration check operations performed by AWS Systems Manager for SAP.
 #'
 #' @usage
 #' ssmsap_list_configuration_check_operations(ApplicationId, ListMode,
 #'   MaxResults, NextToken, Filters)
 #'
 #' @param ApplicationId &#91;required&#93; The ID of the application.
-#' @param ListMode The mode for listing configuration check operations. Defaults to
-#' "LATEST_PER_CHECK".
+#' @param ListMode The mode for listing configuration check operations. Defaults to "LATEST_PER_CHECK".
 #' 
-#' -   LATEST_PER_CHECK - Will list the latest configuration check
-#'     operation per check type.
+#' -   LATEST_PER_CHECK - Will list the latest configuration check operation per check type.
 #' 
-#' -   ALL_OPERATIONS - Will list all configuration check operations
-#'     performed on the application.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' -   ALL_OPERATIONS - Will list all configuration check operations performed on the application.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #' @param Filters The filters of an operation.
 #'
@@ -874,8 +854,7 @@ ssmsap_list_configuration_check_operations <- function(ApplicationId, ListMode =
 #' Systems Manager for SAP
 #'
 #' @description
-#' Lists the SAP HANA databases of an application registered with AWS
-#' Systems Manager for SAP.
+#' Lists the SAP HANA databases of an application registered with AWS Systems Manager for SAP.
 #'
 #' @usage
 #' ssmsap_list_databases(ApplicationId, ComponentId, NextToken, MaxResults)
@@ -883,10 +862,7 @@ ssmsap_list_configuration_check_operations <- function(ApplicationId, ListMode =
 #' @param ApplicationId The ID of the application.
 #' @param ComponentId The ID of the component.
 #' @param NextToken The token for the next page of results.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value. If you do not specify a value for MaxResults, the request returns
-#' 50 items per page by default.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.
 #'
 #' @return
 #' A list with the following syntax:
@@ -947,26 +923,20 @@ ssmsap_list_databases <- function(ApplicationId = NULL, ComponentId = NULL, Next
 #' @description
 #' Returns a list of operations events.
 #' 
-#' Available parameters include `OperationID`, as well as optional
-#' parameters `MaxResults`, `NextToken`, and `Filters`.
+#' Available parameters include `OperationID`, as well as optional parameters `MaxResults`, `NextToken`, and `Filters`.
 #'
 #' @usage
 #' ssmsap_list_operation_events(OperationId, MaxResults, NextToken,
 #'   Filters)
 #'
 #' @param OperationId &#91;required&#93; The ID of the operation.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' 
-#' If you do not specify a value for `MaxResults`, the request returns 50
-#' items per page by default.
-#' @param NextToken The token to use to retrieve the next page of results. This value is
-#' null when there are no more results to return.
+#' If you do not specify a value for `MaxResults`, the request returns 50 items per page by default.
+#' @param NextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.
 #' @param Filters Optionally specify filters to narrow the returned operation event items.
 #' 
-#' Valid filter names include `status`, `resourceID`, and `resourceType`.
-#' The valid operator for all three filters is `Equals`.
+#' Valid filter names include `status`, `resourceID`, and `resourceType`. The valid operator for all three filters is `Equals`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1039,10 +1009,7 @@ ssmsap_list_operation_events <- function(OperationId, MaxResults = NULL, NextTok
 #' ssmsap_list_operations(ApplicationId, MaxResults, NextToken, Filters)
 #'
 #' @param ApplicationId &#91;required&#93; The ID of the application.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value. If you do not specify a value for MaxResults, the request returns
-#' 50 items per page by default.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.
 #' @param NextToken The token for the next page of results.
 #' @param Filters The filters of an operation.
 #'
@@ -1120,16 +1087,13 @@ ssmsap_list_operations <- function(ApplicationId, MaxResults = NULL, NextToken =
 #' Lists the sub-check results of a specified configuration check operation
 #'
 #' @description
-#' Lists the sub-check results of a specified configuration check
-#' operation.
+#' Lists the sub-check results of a specified configuration check operation.
 #'
 #' @usage
 #' ssmsap_list_sub_check_results(OperationId, MaxResults, NextToken)
 #'
 #' @param OperationId &#91;required&#93; The ID of the configuration check operation.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #'
 #' @return
@@ -1187,17 +1151,14 @@ ssmsap_list_sub_check_results <- function(OperationId, MaxResults = NULL, NextTo
 #' check operation
 #'
 #' @description
-#' Lists the rules of a specified sub-check belonging to a configuration
-#' check operation.
+#' Lists the rules of a specified sub-check belonging to a configuration check operation.
 #'
 #' @usage
 #' ssmsap_list_sub_check_rule_results(SubCheckResultId, MaxResults,
 #'   NextToken)
 #'
 #' @param SubCheckResultId &#91;required&#93; The ID of the sub check result.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #'
 #' @return
@@ -1256,8 +1217,7 @@ ssmsap_list_sub_check_rule_results <- function(SubCheckResultId, MaxResults = NU
 #' with AWS Systems Manager for SAP
 #'
 #' @description
-#' Lists all tags on an SAP HANA application and/or database registered
-#' with AWS Systems Manager for SAP.
+#' Lists all tags on an SAP HANA application and/or database registered with AWS Systems Manager for SAP.
 #'
 #' @usage
 #' ssmsap_list_tags_for_resource(resourceArn)
@@ -1362,17 +1322,13 @@ ssmsap_put_resource_permission <- function(ActionType, SourceResourceArn, Resour
 #' Register an SAP application with AWS Systems Manager for SAP
 #'
 #' @description
-#' Register an SAP application with AWS Systems Manager for SAP. You must
-#' meet the following requirements before registering.
+#' Register an SAP application with AWS Systems Manager for SAP. You must meet the following requirements before registering.
 #' 
-#' The SAP application you want to register with AWS Systems Manager for
-#' SAP is running on Amazon EC2.
+#' The SAP application you want to register with AWS Systems Manager for SAP is running on Amazon EC2.
 #' 
-#' AWS Systems Manager Agent must be setup on an Amazon EC2 instance along
-#' with the required IAM permissions.
+#' AWS Systems Manager Agent must be setup on an Amazon EC2 instance along with the required IAM permissions.
 #' 
-#' Amazon EC2 instance(s) must have access to the secrets created in AWS
-#' Secrets Manager to manage SAP applications and components.
+#' Amazon EC2 instance(s) must have access to the secrets created in AWS Secrets Manager to manage SAP applications and components.
 #'
 #' @usage
 #' ssmsap_register_application(ApplicationId, ApplicationType, Instances,
@@ -1386,11 +1342,9 @@ ssmsap_put_resource_permission <- function(ActionType, SourceResourceArn, Resour
 #' @param Tags The tags to be attached to the SAP application.
 #' @param Credentials The credentials of the SAP application.
 #' @param DatabaseArn The Amazon Resource Name of the SAP HANA database.
-#' @param ComponentsInfo This is an optional parameter for component details to which the SAP
-#' ABAP application is attached, such as Web Dispatcher.
+#' @param ComponentsInfo This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.
 #' 
-#' This is an array of ApplicationComponent objects. You may input 0 to 5
-#' items.
+#' This is an array of ApplicationComponent objects. You may input 0 to 5 items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1576,8 +1530,7 @@ ssmsap_start_application_refresh <- function(ApplicationId) {
 #' Initiates configuration check operations against a specified application
 #'
 #' @description
-#' Initiates configuration check operations against a specified
-#' application.
+#' Initiates configuration check operations against a specified application.
 #'
 #' @usage
 #' ssmsap_start_configuration_checks(ApplicationId, ConfigurationCheckIds)
@@ -1655,8 +1608,7 @@ ssmsap_start_configuration_checks <- function(ApplicationId, ConfigurationCheckI
 #' @description
 #' Request is an operation to stop an application.
 #' 
-#' Parameter `ApplicationId` is required. Parameters `StopConnectedEntity`
-#' and `IncludeEc2InstanceShutdown` are optional.
+#' Parameter `ApplicationId` is required. Parameters `StopConnectedEntity` and `IncludeEc2InstanceShutdown` are optional.
 #'
 #' @usage
 #' ssmsap_stop_application(ApplicationId, StopConnectedEntity,
@@ -1665,11 +1617,8 @@ ssmsap_start_configuration_checks <- function(ApplicationId, ConfigurationCheckI
 #' @param ApplicationId &#91;required&#93; The ID of the application.
 #' @param StopConnectedEntity Specify the `ConnectedEntityType`. Accepted type is `DBMS`.
 #' 
-#' If this parameter is included, the connected DBMS (Database Management
-#' System) will be stopped.
-#' @param IncludeEc2InstanceShutdown Boolean. If included and if set to `True`, the StopApplication operation
-#' will shut down the associated Amazon EC2 instance in addition to the
-#' application.
+#' If this parameter is included, the connected DBMS (Database Management System) will be stopped.
+#' @param IncludeEc2InstanceShutdown Boolean. If included and if set to `True`, the StopApplication operation will shut down the associated Amazon EC2 instance in addition to the application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1769,8 +1718,7 @@ ssmsap_tag_resource <- function(resourceArn, tags) {
 #' ssmsap_untag_resource(resourceArn, tagKeys)
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource.
-#' @param tagKeys &#91;required&#93; Adds/updates or removes credentials for applications registered with AWS
-#' Systems Manager for SAP.
+#' @param tagKeys &#91;required&#93; Adds/updates or removes credentials for applications registered with AWS Systems Manager for SAP.
 #'
 #' @return
 #' An empty list.
@@ -1813,8 +1761,7 @@ ssmsap_untag_resource <- function(resourceArn, tagKeys) {
 #' Manager for SAP
 #'
 #' @description
-#' Updates the settings of an application registered with AWS Systems
-#' Manager for SAP.
+#' Updates the settings of an application registered with AWS Systems Manager for SAP.
 #'
 #' @usage
 #' ssmsap_update_application_settings(ApplicationId,
@@ -1824,8 +1771,7 @@ ssmsap_untag_resource <- function(resourceArn, tagKeys) {
 #' @param CredentialsToAddOrUpdate The credentials to be added or updated.
 #' @param CredentialsToRemove The credentials to be removed.
 #' @param Backint Installation of AWS Backint Agent for SAP HANA.
-#' @param DatabaseArn The Amazon Resource Name of the SAP HANA database that replaces the
-#' current SAP HANA connection with the SAP_ABAP application.
+#' @param DatabaseArn The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.
 #'
 #' @return
 #' A list with the following syntax:

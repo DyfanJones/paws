@@ -26,34 +26,24 @@ bedrock_list_custom_models(
 
 \item{nameContains}{Return custom models only if the job name contains these characters.}
 
-\item{baseModelArnEquals}{Return custom models only if the base model Amazon Resource Name (ARN)
-matches this parameter.}
+\item{baseModelArnEquals}{Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.}
 
-\item{foundationModelArnEquals}{Return custom models only if the foundation model Amazon Resource Name
-(ARN) matches this parameter.}
+\item{foundationModelArnEquals}{Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 
 \item{sortBy}{The field to sort by in the returned list of models.}
 
 \item{sortOrder}{The sort order of the results.}
 
-\item{isOwned}{Return custom models depending on if the current account owns them
-(\code{true}) or if they were shared with the current account (\code{false}).}
+\item{isOwned}{Return custom models depending on if the current account owns them (\code{true}) or if they were shared with the current account (\code{false}).}
 
 \item{modelStatus}{The status of them model to filter results by. Possible values include:
 \itemize{
-\item \code{Creating} - Include only models that are currently being created
-and validated.
-\item \code{Active} - Include only models that have been successfully created
-and are ready for use.
+\item \code{Creating} - Include only models that are currently being created and validated.
+\item \code{Active} - Include only models that have been successfully created and are ready for use.
 \item \code{Failed} - Include only models where the creation process failed.
 }
 

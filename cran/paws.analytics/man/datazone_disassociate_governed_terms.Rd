@@ -12,16 +12,13 @@ datazone_disassociate_governed_terms(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the domain where you want to disassociate restricted terms
-from an asset.}
+\item{domainIdentifier}{[required] The ID of the domain where you want to disassociate restricted terms from an asset.}
 
 \item{entityIdentifier}{[required] The ID of an asset from which you want to disassociate restricted terms.}
 
-\item{entityType}{[required] The type of the asset from which you want to disassociate restricted
-terms.}
+\item{entityType}{[required] The type of the asset from which you want to disassociate restricted terms.}
 
-\item{governedGlossaryTerms}{[required] The restricted glossary terms that you want to disassociate from an
-asset.}
+\item{governedGlossaryTerms}{[required] The restricted glossary terms that you want to disassociate from an asset.}
 }
 \description{
 Disassociates restricted terms from an asset.

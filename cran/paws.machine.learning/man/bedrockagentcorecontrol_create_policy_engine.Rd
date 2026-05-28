@@ -13,28 +13,15 @@ bedrockagentcorecontrol_create_policy_engine(
 )
 }
 \arguments{
-\item{name}{[required] The customer-assigned immutable name for the policy engine. This name
-identifies the policy engine and cannot be changed after creation.}
+\item{name}{[required] The customer-assigned immutable name for the policy engine. This name identifies the policy engine and cannot be changed after creation.}
 
-\item{description}{A human-readable description of the policy engine's purpose and scope
-(1-4,096 characters). This helps administrators understand the policy
-engine's role in the overall governance strategy. Document which Gateway
-this engine will be associated with, what types of tools or workflows it
-governs, and the team or service responsible for maintaining it. Clear
-descriptions are essential when managing multiple policy engines across
-different services or environments.}
+\item{description}{A human-readable description of the policy engine's purpose and scope (1-4,096 characters). This helps administrators understand the policy engine's role in the overall governance strategy. Document which Gateway this engine will be associated with, what types of tools or workflows it governs, and the team or service responsible for maintaining it. Clear descriptions are essential when managing multiple policy engines across different services or environments.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request with the same client
-token, the service returns the same response without creating a
-duplicate policy engine.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request with the same client token, the service returns the same response without creating a duplicate policy engine.}
 
-\item{encryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy
-engine data.}
+\item{encryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.}
 
-\item{tags}{A map of tag keys and values to assign to an AgentCore Policy. Tags
-enable you to categorize your resources in different ways, for example,
-by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to an AgentCore Policy. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a new policy engine within the AgentCore Policy system. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with Gateways (each Gateway can be associated with at most one policy engine, but multiple Gateways can be associated with the same engine), the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. This is an asynchronous operation. Use the \code{\link[=bedrockagentcorecontrol_get_policy_engine]{get_policy_engine}} operation to poll the \code{status} field to track completion.

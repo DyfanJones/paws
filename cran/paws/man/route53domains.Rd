@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Route 53 API actions let you register domain names and perform
-related operations.
+Amazon Route 53 API actions let you register domain names and perform related operations.
 }
 \section{Service syntax}{
 

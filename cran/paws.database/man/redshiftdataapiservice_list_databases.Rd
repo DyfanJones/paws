@@ -15,34 +15,19 @@ redshiftdataapiservice_list_databases(
 )
 }
 \arguments{
-\item{ClusterIdentifier}{The cluster identifier. This parameter is required when connecting to a
-cluster and authenticating using either Secrets Manager or temporary
-credentials.}
+\item{ClusterIdentifier}{The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.}
 
-\item{Database}{[required] The name of the database. This parameter is required when authenticating
-using either Secrets Manager or temporary credentials.}
+\item{Database}{[required] The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.}
 
-\item{SecretArn}{The name or ARN of the secret that enables access to the database. This
-parameter is required when authenticating using Secrets Manager.}
+\item{SecretArn}{The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.}
 
-\item{DbUser}{The database user name. This parameter is required when connecting to a
-cluster as a database user and authenticating using temporary
-credentials.}
+\item{DbUser}{The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.}
 
-\item{NextToken}{A value that indicates the starting point for the next set of response
-records in a subsequent request. If a value is returned in a response,
-you can retrieve the next set of records by providing this returned
-NextToken value in the next NextToken parameter and retrying the
-command. If the NextToken field is empty, all response records have been
-retrieved for the request.}
+\item{NextToken}{A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.}
 
-\item{MaxResults}{The maximum number of databases to return in the response. If more
-databases exist than fit in one response, then \code{NextToken} is returned
-to page through the results.}
+\item{MaxResults}{The maximum number of databases to return in the response. If more databases exist than fit in one response, then \code{NextToken} is returned to page through the results.}
 
-\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). This
-parameter is required when connecting to a serverless workgroup and
-authenticating using either Secrets Manager or temporary credentials.}
+\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.}
 }
 \description{
 List the databases in a cluster. A token is returned to page through the database list. Depending on the authorization method, use one of the following combinations of request parameters:

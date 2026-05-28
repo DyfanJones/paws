@@ -13,20 +13,15 @@ ssoadmin_update_permission_set(
 )
 }
 \arguments{
-\item{InstanceArn}{[required] The ARN of the IAM Identity Center instance under which the operation
-will be executed. For more information about ARNs, see Amazon Resource
-Names (ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon
-Web Services General Reference}.}
+\item{InstanceArn}{[required] The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web Services General Reference}.}
 
 \item{PermissionSetArn}{[required] The ARN of the permission set.}
 
 \item{Description}{The description of the PermissionSet.}
 
-\item{SessionDuration}{The length of time that the application user sessions are valid for in
-the ISO-8601 standard.}
+\item{SessionDuration}{The length of time that the application user sessions are valid for in the ISO-8601 standard.}
 
-\item{RelayState}{Used to redirect users within the application during the federation
-authentication process.}
+\item{RelayState}{Used to redirect users within the application during the federation authentication process.}
 }
 \description{
 Updates an existing permission set.

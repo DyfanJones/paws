@@ -7,25 +7,21 @@
 bedrockagentcorecontrol_list_registries(
   maxResults = NULL,
   nextToken = NULL,
-  status = NULL
+  status = NULL,
+  authorizerType = NULL
 )
 }
 \arguments{
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 
-\item{status}{Filter registries by their current status. Possible values include
-\code{CREATING}, \code{READY}, \code{UPDATING}, \code{CREATE_FAILED}, \code{UPDATE_FAILED},
-\code{DELETING}, and \code{DELETE_FAILED}.}
+\item{status}{Filter registries by their current status. Possible values include \code{CREATING}, \code{READY}, \code{UPDATING}, \code{CREATE_FAILED}, \code{UPDATE_FAILED}, \code{DELETING}, and \code{DELETE_FAILED}.}
+
+\item{authorizerType}{Filter registries by their authorizer type. Possible values are \code{CUSTOM_JWT} and \code{AWS_IAM}. For more information about authorizer types, see the \code{RegistryAuthorizerType} enum.}
 }
 \description{
-Lists all registries in the account. You can optionally filter results by status using the \code{status} parameter.
+Lists all registries in the account. You can optionally filter results by status using the \code{status} parameter, or by authorizer type using the \code{authorizerType} parameter.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcorecontrol_list_registries/} for full documentation.
 }

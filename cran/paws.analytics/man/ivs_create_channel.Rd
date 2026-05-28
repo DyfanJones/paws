@@ -22,49 +22,25 @@ ivs_create_channel(
 \arguments{
 \item{name}{Channel name.}
 
-\item{latencyMode}{Channel latency mode. Use \code{NORMAL} to broadcast and deliver live video
-up to Full HD. Use \code{LOW} for near-real-time interaction with viewers.
-Default: \code{LOW}.}
+\item{latencyMode}{Channel latency mode. Use \code{NORMAL} to broadcast and deliver live video up to Full HD. Use \code{LOW} for near-real-time interaction with viewers. Default: \code{LOW}.}
 
-\item{type}{Channel type, which determines the allowable resolution and bitrate. \emph{If
-you exceed the allowable input resolution or bitrate, the stream
-probably will disconnect immediately.} Default: \code{STANDARD}. For details,
-see \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/}{Channel Types}.}
+\item{type}{Channel type, which determines the allowable resolution and bitrate. \emph{If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.} Default: \code{STANDARD}. For details, see \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/}{Channel Types}.}
 
-\item{authorized}{Whether the channel is private (enabled for playback authorization).
-Default: \code{false}.}
+\item{authorized}{Whether the channel is private (enabled for playback authorization). Default: \code{false}.}
 
-\item{recordingConfigurationArn}{Recording-configuration ARN. A valid ARN value here both specifies the
-ARN and enables recording. Default: "" (empty string, recording is
-disabled).}
+\item{recordingConfigurationArn}{Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).}
 
-\item{tags}{Array of 1-50 maps, each of the form \code{string:string (key:value)}. See
-\href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no service-specific constraints beyond
-what is documented there.}
+\item{tags}{Array of 1-50 maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.}
 
-\item{insecureIngest}{Whether the channel allows insecure RTMP and SRT ingest. Default:
-\code{false}.}
+\item{insecureIngest}{Whether the channel allows insecure RTMP and SRT ingest. Default: \code{false}.}
 
-\item{preset}{Optional transcode preset for the channel. This is selectable only for
-\code{ADVANCED_HD} and \code{ADVANCED_SD} channel types. For those channel types,
-the default \code{preset} is \code{HIGHER_BANDWIDTH_DELIVERY}. For other channel
-types (\code{BASIC} and \code{STANDARD}), \code{preset} is the empty string (\code{""}).}
+\item{preset}{Optional transcode preset for the channel. This is selectable only for \code{ADVANCED_HD} and \code{ADVANCED_SD} channel types. For those channel types, the default \code{preset} is \code{HIGHER_BANDWIDTH_DELIVERY}. For other channel types (\code{BASIC} and \code{STANDARD}), \code{preset} is the empty string (\code{""}).}
 
-\item{playbackRestrictionPolicyArn}{Playback-restriction-policy ARN. A valid ARN value here both specifies
-the ARN and enables playback restriction. Default: "" (empty string, no
-playback restriction policy is applied).}
+\item{playbackRestrictionPolicyArn}{Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).}
 
-\item{multitrackInputConfiguration}{Object specifying multitrack input configuration. Default: no multitrack
-input configuration is specified.}
+\item{multitrackInputConfiguration}{Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.}
 
-\item{containerFormat}{Indicates which content-packaging format is used (MPEG-TS or fMP4). If
-\code{multitrackInputConfiguration} is specified and \code{enabled} is \code{true},
-then \code{containerFormat} is required and must be set to \code{FRAGMENTED_MP4}.
-Otherwise, \code{containerFormat} may be set to \code{TS} or \code{FRAGMENTED_MP4}.
-Default: \code{TS}.}
+\item{containerFormat}{Indicates which content-packaging format is used (MPEG-TS or fMP4). If \code{multitrackInputConfiguration} is specified and \code{enabled} is \code{true}, then \code{containerFormat} is required and must be set to \code{FRAGMENTED_MP4}. Otherwise, \code{containerFormat} may be set to \code{TS} or \code{FRAGMENTED_MP4}. Default: \code{TS}.}
 
 \item{adConfigurationArn}{ARN of the ad configuration associated with the channel.}
 }

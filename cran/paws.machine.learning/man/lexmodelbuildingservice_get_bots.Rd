@@ -11,17 +11,11 @@ lexmodelbuildingservice_get_bots(
 )
 }
 \arguments{
-\item{nextToken}{A pagination token that fetches the next page of bots. If the response
-to this call is truncated, Amazon Lex returns a pagination token in the
-response. To fetch the next page of bots, specify the pagination token
-in the next request.}
+\item{nextToken}{A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request.}
 
-\item{maxResults}{The maximum number of bots to return in the response that the request
-will return. The default is 10.}
+\item{maxResults}{The maximum number of bots to return in the response that the request will return. The default is 10.}
 
-\item{nameContains}{Substring to match in bot names. A bot will be returned if any part of
-its name matches the substring. For example, "xyz" matches both "xyzabc"
-and "abcxyz."}
+\item{nameContains}{Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."}
 }
 \description{
 Returns bot information as follows:

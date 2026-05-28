@@ -12,9 +12,7 @@ docdb_describe_db_clusters(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{The user-provided cluster identifier. If this parameter is specified,
-information from only the specific cluster is returned. This parameter
-isn't case sensitive.
+\item{DBClusterIdentifier}{The user-provided cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case sensitive.
 
 Constraints:
 \itemize{
@@ -25,23 +23,16 @@ Constraints:
 
 Supported filters:
 \itemize{
-\item \code{db-cluster-id} - Accepts cluster identifiers and cluster Amazon
-Resource Names (ARNs). The results list only includes information
-about the clusters identified by these ARNs.
+\item \code{db-cluster-id} - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list only includes information about the clusters identified by these ARNs.
 }}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-(marker) is included in the response so that the remaining results can
-be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns information about provisioned Amazon DocumentDB clusters. This API operation supports pagination. For certain management features such as cluster and instance lifecycle management, Amazon DocumentDB leverages operational technology that is shared with Amazon RDS and Amazon Neptune. Use the \verb{filterName=engine,Values=docdb} filter parameter to return only Amazon DocumentDB clusters.

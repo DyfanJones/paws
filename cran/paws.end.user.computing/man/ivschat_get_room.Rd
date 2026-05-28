@@ -7,8 +7,7 @@
 ivschat_get_room(identifier)
 }
 \arguments{
-\item{identifier}{[required] Identifier of the room for which the configuration is to be retrieved.
-Currently this must be an ARN.}
+\item{identifier}{[required] Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.}
 }
 \description{
 Gets the specified room.

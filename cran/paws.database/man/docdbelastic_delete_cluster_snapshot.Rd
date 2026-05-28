@@ -7,8 +7,7 @@
 docdbelastic_delete_cluster_snapshot(snapshotArn)
 }
 \arguments{
-\item{snapshotArn}{[required] The ARN identifier of the elastic cluster snapshot that is to be
-deleted.}
+\item{snapshotArn}{[required] The ARN identifier of the elastic cluster snapshot that is to be deleted.}
 }
 \description{
 Delete an elastic cluster snapshot.

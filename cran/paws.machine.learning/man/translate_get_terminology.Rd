@@ -11,14 +11,9 @@ translate_get_terminology(Name, TerminologyDataFormat = NULL)
 
 \item{TerminologyDataFormat}{The data format of the custom terminology being retrieved.
 
-If you don't specify this parameter, Amazon Translate returns a file
-with the same format as the file that was imported to create the
-terminology.
+If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology.
 
-If you specify this parameter when you retrieve a multi-directional
-terminology resource, you must specify the same format as the input file
-that was imported to create it. Otherwise, Amazon Translate throws an
-error.}
+If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.}
 }
 \description{
 Retrieves a custom terminology.

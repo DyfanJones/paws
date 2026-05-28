@@ -9,9 +9,7 @@ route53_update_hosted_zone_comment(Id, Comment = NULL)
 \arguments{
 \item{Id}{[required] The ID for the hosted zone that you want to update the comment for.}
 
-\item{Comment}{The new comment for the hosted zone. If you don't specify a value for
-\code{Comment}, Amazon Route 53 deletes the existing value of the \code{Comment}
-element, if any.}
+\item{Comment}{The new comment for the hosted zone. If you don't specify a value for \code{Comment}, Amazon Route 53 deletes the existing value of the \code{Comment} element, if any.}
 }
 \description{
 Updates the comment for a specified hosted zone.

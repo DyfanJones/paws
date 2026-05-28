@@ -8,12 +8,9 @@ current Amazon Web Services Region}
 bedrockagentcorecontrol_list_memories(maxResults = NULL, nextToken = NULL)
 }
 \arguments{
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 10. The maximum value is 50.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists the available Amazon Bedrock AgentCore Memory resources in the current Amazon Web Services Region.

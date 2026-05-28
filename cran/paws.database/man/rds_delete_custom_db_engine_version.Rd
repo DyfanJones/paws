@@ -27,10 +27,7 @@ RDS Custom for SQL Server supports the following values:
 
 RDS for SQL Server supports only \code{sqlserver-dev-ee}.}
 
-\item{EngineVersion}{[required] The custom engine version (CEV) for your DB instance. This option is
-required for RDS Custom, but optional for Amazon RDS. The combination of
-\code{Engine} and \code{EngineVersion} is unique per customer per Amazon Web
-Services Region.}
+\item{EngineVersion}{[required] The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of \code{Engine} and \code{EngineVersion} is unique per customer per Amazon Web Services Region.}
 }
 \description{
 Deletes a custom engine version. To run this command, make sure you meet the following prerequisites:

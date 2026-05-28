@@ -16,8 +16,7 @@ redshift_describe_cluster_versions(
 
 Example: \code{1.0}}
 
-\item{ClusterParameterGroupFamily}{The name of a specific cluster parameter group family to return details
-for.
+\item{ClusterParameterGroupFamily}{The name of a specific cluster parameter group family to return details for.
 
 Constraints:
 \itemize{
@@ -26,23 +25,13 @@ Constraints:
 \item Cannot end with a hyphen or contain two consecutive hyphens
 }}
 
-\item{MaxRecords}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.
+\item{MaxRecords}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 
 Default: \code{100}
 
 Constraints: minimum 20, maximum 100.}
 
-\item{Marker}{An optional parameter that specifies the starting point to return a set
-of response records. When the results of a
-\code{\link[=redshift_describe_cluster_versions]{describe_cluster_versions}}
-request exceed the value specified in \code{MaxRecords}, Amazon Web Services
-returns a value in the \code{Marker} field of the response. You can retrieve
-the next set of response records by providing the returned marker value
-in the \code{Marker} parameter and retrying the request.}
+\item{Marker}{An optional parameter that specifies the starting point to return a set of response records. When the results of a \code{\link[=redshift_describe_cluster_versions]{describe_cluster_versions}} request exceed the value specified in \code{MaxRecords}, Amazon Web Services returns a value in the \code{Marker} field of the response. You can retrieve the next set of response records by providing the returned marker value in the \code{Marker} parameter and retrying the request.}
 }
 \description{
 Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to \href{https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html}{Amazon Redshift Clusters} in the \emph{Amazon Redshift Cluster Management Guide}.

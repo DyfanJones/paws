@@ -11,8 +11,7 @@ chatbot_delete_slack_user_identity(
 )
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The ARN of the SlackChannelConfiguration associated with the user
-identity to delete.}
+\item{ChatConfigurationArn}{[required] The ARN of the SlackChannelConfiguration associated with the user identity to delete.}
 
 \item{SlackTeamId}{[required] The ID of the Slack workspace authorized with AWS Chatbot.}
 

@@ -7,8 +7,7 @@
 bedrock_delete_inference_profile(inferenceProfileIdentifier)
 }
 \arguments{
-\item{inferenceProfileIdentifier}{[required] The Amazon Resource Name (ARN) or ID of the application inference
-profile to delete.}
+\item{inferenceProfileIdentifier}{[required] The Amazon Resource Name (ARN) or ID of the application inference profile to delete.}
 }
 \description{
 Deletes an application inference profile. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html}{Increase throughput and resilience with cross-region inference in Amazon Bedrock}. in the Amazon Bedrock User Guide.

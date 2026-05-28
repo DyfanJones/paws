@@ -7,11 +7,9 @@
 s3_delete_bucket_metadata_configuration(Bucket, ExpectedBucketOwner = NULL)
 }
 \arguments{
-\item{Bucket}{[required] The general purpose bucket that you want to remove the metadata
-configuration from.}
+\item{Bucket}{[required] The general purpose bucket that you want to remove the metadata configuration from.}
 
-\item{ExpectedBucketOwner}{The expected bucket owner of the general purpose bucket that you want to
-remove the metadata table configuration from.}
+\item{ExpectedBucketOwner}{The expected bucket owner of the general purpose bucket that you want to remove the metadata table configuration from.}
 }
 \description{
 Deletes an S3 Metadata configuration from a general purpose bucket. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html}{Accelerating data discovery with S3 Metadata} in the \emph{Amazon S3 User Guide}.

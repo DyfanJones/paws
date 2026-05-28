@@ -13,8 +13,7 @@ sagemaker_update_inference_component_runtime_config(
 \arguments{
 \item{InferenceComponentName}{[required] The name of the inference component to update.}
 
-\item{DesiredRuntimeConfig}{[required] Runtime settings for a model that is deployed with an inference
-component.}
+\item{DesiredRuntimeConfig}{[required] Runtime settings for a model that is deployed with an inference component.}
 }
 \description{
 Runtime settings for a model that is deployed with an inference component.

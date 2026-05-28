@@ -28,20 +28,9 @@ datazone_list_notifications(
 
 \item{taskStatus}{The task status of notifications.}
 
-\item{maxResults}{The maximum number of notifications to return in a single call to
-\code{\link[=datazone_list_notifications]{list_notifications}}. When the number of
-notifications to be listed is greater than the value of \code{MaxResults},
-the response contains a \code{NextToken} value that you can use in a
-subsequent call to \code{\link[=datazone_list_notifications]{list_notifications}}
-to list the next set of notifications.}
+\item{maxResults}{The maximum number of notifications to return in a single call to \code{\link[=datazone_list_notifications]{list_notifications}}. When the number of notifications to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_notifications]{list_notifications}} to list the next set of notifications.}
 
-\item{nextToken}{When the number of notifications is greater than the default value for
-the \code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of notifications, the response
-includes a pagination token named \code{NextToken}. You can specify this
-\code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_notifications]{list_notifications}} to list the next set
-of notifications.}
+\item{nextToken}{When the number of notifications is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of notifications, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_notifications]{list_notifications}} to list the next set of notifications.}
 }
 \description{
 Lists all Amazon DataZone notifications.

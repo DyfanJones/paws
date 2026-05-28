@@ -12,17 +12,11 @@ cloudfront_list_distributions_by_response_headers_policy_id(
 )
 }
 \arguments{
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list of distribution IDs. The response includes distribution IDs in
-the list that occur after the marker. To get the next page of the list,
-set this field's value to the value of \code{NextMarker} from the current
-page's response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
-\item{MaxItems}{The maximum number of distribution IDs that you want to get in the
-response.}
+\item{MaxItems}{The maximum number of distribution IDs that you want to get in the response.}
 
-\item{ResponseHeadersPolicyId}{[required] The ID of the response headers policy whose associated distribution IDs
-you want to list.}
+\item{ResponseHeadersPolicyId}{[required] The ID of the response headers policy whose associated distribution IDs you want to list.}
 }
 \description{
 Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified response headers policy.

@@ -7,11 +7,9 @@
 cloudcontrolapi_get_resource_request_status(RequestToken)
 }
 \arguments{
-\item{RequestToken}{[required] A unique token used to track the progress of the resource operation
-request.
+\item{RequestToken}{[required] A unique token used to track the progress of the resource operation request.
 
-Request tokens are included in the \code{ProgressEvent} type returned by a
-resource operation request.}
+Request tokens are included in the \code{ProgressEvent} type returned by a resource operation request.}
 }
 \description{
 Returns the current status of a resource operation request. For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-track}{Tracking the progress of resource operation requests} in the \emph{Amazon Web Services Cloud Control API User Guide}.

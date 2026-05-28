@@ -8,8 +8,7 @@ user's account}
 elasticsearchservice_list_domain_names(EngineType = NULL)
 }
 \arguments{
-\item{EngineType}{Optional parameter to filter the output by domain engine type.
-Acceptable values are 'Elasticsearch' and 'OpenSearch'.}
+\item{EngineType}{Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'.}
 }
 \description{
 Returns the name of all Elasticsearch domains owned by the current user's account.

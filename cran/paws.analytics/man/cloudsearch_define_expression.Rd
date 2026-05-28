@@ -7,9 +7,9 @@
 cloudsearch_define_expression(DomainName, Expression)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 
-\item{Expression}{[required]}
+\item{Expression}{[required] A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.}
 }
 \description{
 Configures an \code{Expression} for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">}}Configuring Expressions\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

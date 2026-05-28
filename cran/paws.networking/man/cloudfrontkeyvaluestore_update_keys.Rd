@@ -15,8 +15,7 @@ cloudfrontkeyvaluestore_update_keys(
 \arguments{
 \item{KvsARN}{[required] The Amazon Resource Name (ARN) of the Key Value Store.}
 
-\item{IfMatch}{[required] The current version (ETag) of the Key Value Store that you are updating
-keys of, which you can get using DescribeKeyValueStore.}
+\item{IfMatch}{[required] The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.}
 
 \item{Puts}{List of key value pairs to put.}
 

@@ -8,9 +8,7 @@ user}
 cognitoidentityprovider_get_user(AccessToken)
 }
 \arguments{
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 }
 \description{
 Gets user attributes and and MFA settings for the currently signed-in user.

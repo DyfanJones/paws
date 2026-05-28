@@ -11,14 +11,9 @@ bedrockagentcorecontrol_get_policy_generation(
 )
 }
 \arguments{
-\item{policyGenerationId}{[required] The unique identifier of the policy generation request to be retrieved.
-This must be a valid generation ID from a previous
-\code{\link[=bedrockagentcorecontrol_start_policy_generation]{start_policy_generation}}
-call.}
+\item{policyGenerationId}{[required] The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous \code{\link[=bedrockagentcorecontrol_start_policy_generation]{start_policy_generation}} call.}
 
-\item{policyEngineId}{[required] The identifier of the policy engine associated with the policy
-generation request. This provides the context for the generation
-operation and schema validation.}
+\item{policyEngineId}{[required] The identifier of the policy engine associated with the policy generation request. This provides the context for the generation operation and schema validation.}
 }
 \description{
 Retrieves information about a policy generation request within the AgentCore Policy system. Policy generation converts natural language descriptions into Cedar policy statements using AI-powered translation, enabling non-technical users to create policies.

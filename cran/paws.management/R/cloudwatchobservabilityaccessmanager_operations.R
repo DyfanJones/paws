@@ -11,8 +11,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_create_link/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_create_link/) for full documentation.
 #'
-#' @param LabelTemplate &#91;required&#93; Specify a friendly human-readable name to use to identify this source
-#' account when you are viewing data from it in the monitoring account.
+#' @param LabelTemplate &#91;required&#93; Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.
 #' 
 #' You can use a custom label or use the following variables:
 #' 
@@ -20,34 +19,19 @@ NULL
 #' 
 #' -   `$AccountEmail` is the globally unique email address of the account
 #' 
-#' -   `$AccountEmailNoDomain` is the email address of the account without
-#'     the domain name
+#' -   `$AccountEmailNoDomain` is the email address of the account without the domain name
 #' 
-#' In the Amazon Web Services GovCloud (US-East) and Amazon Web Services
-#' GovCloud (US-West) Regions, the only supported option is to use custom
-#' labels, and the `$AccountName`, `$AccountEmail`, and
-#' `$AccountEmailNoDomain` variables all resolve as *account-id* instead of
-#' the specified variable.
-#' @param LinkConfiguration Use this structure to optionally create filters that specify that only
-#' some metric namespaces or log groups are to be shared from the source
-#' account to the monitoring account.
-#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source
-#' account shares with the monitoring account.
-#' @param SinkIdentifier &#91;required&#93; The ARN of the sink to use to create this link. You can use
-#' [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks] to find
-#' the ARNs of sinks.
+#' In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the `$AccountName`, `$AccountEmail`, and `$AccountEmailNoDomain` variables all resolve as *account-id* instead of the specified variable.
+#' @param LinkConfiguration Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.
+#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source account shares with the monitoring account.
+#' @param SinkIdentifier &#91;required&#93; The ARN of the sink to use to create this link. You can use [`list_sinks`][cloudwatchobservabilityaccessmanager_list_sinks] to find the ARNs of sinks.
 #' 
-#' For more information about sinks, see
-#' [`create_sink`][cloudwatchobservabilityaccessmanager_create_sink].
+#' For more information about sinks, see [`create_sink`][cloudwatchobservabilityaccessmanager_create_sink].
 #' @param Tags Assigns one or more tags (key-value pairs) to the link.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' For more information about using tags to control access, see
-#' [Controlling access to Amazon Web Services resources using
-#' tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
+#' For more information about using tags to control access, see [Controlling access to Amazon Web Services resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
 #'
 #' @keywords internal
 #'
@@ -82,13 +66,9 @@ cloudwatchobservabilityaccessmanager_create_link <- function(LabelTemplate, Link
 #' @param Name &#91;required&#93; A name for the sink.
 #' @param Tags Assigns one or more tags (key-value pairs) to the link.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' For more information about using tags to control access, see
-#' [Controlling access to Amazon Web Services resources using
-#' tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
+#' For more information about using tags to control access, see [Controlling access to Amazon Web Services resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
 #'
 #' @keywords internal
 #'
@@ -182,11 +162,7 @@ cloudwatchobservabilityaccessmanager_delete_sink <- function(Identifier) {
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_get_link/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_get_link/) for full documentation.
 #'
 #' @param Identifier &#91;required&#93; The ARN of the link to retrieve information for.
-#' @param IncludeTags Specifies whether to include the tags associated with the link in the
-#' response. When `IncludeTags` is set to `true` and the caller has the
-#' required permission, `oam:ListTagsForResource`, the API will return the
-#' tags for the specified resource. If the caller doesn't have the required
-#' permission, `oam:ListTagsForResource`, the API will raise an exception.
+#' @param IncludeTags Specifies whether to include the tags associated with the link in the response. When `IncludeTags` is set to `true` and the caller has the required permission, `oam:ListTagsForResource`, the API will return the tags for the specified resource. If the caller doesn't have the required permission, `oam:ListTagsForResource`, the API will raise an exception.
 #' 
 #' The default value is `false`.
 #'
@@ -220,11 +196,7 @@ cloudwatchobservabilityaccessmanager_get_link <- function(Identifier, IncludeTag
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_get_sink/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_get_sink/) for full documentation.
 #'
 #' @param Identifier &#91;required&#93; The ARN of the sink to retrieve information for.
-#' @param IncludeTags Specifies whether to include the tags associated with the sink in the
-#' response. When `IncludeTags` is set to `true` and the caller has the
-#' required permission, `oam:ListTagsForResource`, the API will return the
-#' tags for the specified resource. If the caller doesn't have the required
-#' permission, `oam:ListTagsForResource`, the API will raise an exception.
+#' @param IncludeTags Specifies whether to include the tags associated with the sink in the response. When `IncludeTags` is set to `true` and the caller has the required permission, `oam:ListTagsForResource`, the API will return the tags for the specified resource. If the caller doesn't have the required permission, `oam:ListTagsForResource`, the API will raise an exception.
 #' 
 #' The default value is `false`.
 #'
@@ -290,8 +262,7 @@ cloudwatchobservabilityaccessmanager_get_sink_policy <- function(SinkIdentifier)
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_list_attached_links/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_list_attached_links/) for full documentation.
 #'
 #' @param MaxResults Limits the number of returned links to the specified number.
-#' @param NextToken The token for the next set of items to return. You received this token
-#' from a previous call.
+#' @param NextToken The token for the next set of items to return. You received this token from a previous call.
 #' @param SinkIdentifier &#91;required&#93; The ARN of the sink that you want to retrieve links for.
 #'
 #' @keywords internal
@@ -325,8 +296,7 @@ cloudwatchobservabilityaccessmanager_list_attached_links <- function(MaxResults 
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_list_links/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_list_links/) for full documentation.
 #'
 #' @param MaxResults Limits the number of returned links to the specified number.
-#' @param NextToken The token for the next set of items to return. You received this token
-#' from a previous call.
+#' @param NextToken The token for the next set of items to return. You received this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -359,8 +329,7 @@ cloudwatchobservabilityaccessmanager_list_links <- function(MaxResults = NULL, N
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_list_sinks/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_list_sinks/) for full documentation.
 #'
 #' @param MaxResults Limits the number of returned links to the specified number.
-#' @param NextToken The token for the next set of items to return. You received this token
-#' from a previous call.
+#' @param NextToken The token for the next set of items to return. You received this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -393,20 +362,13 @@ cloudwatchobservabilityaccessmanager_list_sinks <- function(MaxResults = NULL, N
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource that you want to view tags for.
 #' 
-#' The ARN format of a sink is
-#' `arn:aws:oam:Region:account-id:sink/sink-id `
+#' The ARN format of a sink is `arn:aws:oam:Region:account-id:sink/sink-id `
 #' 
-#' The ARN format of a link is
-#' `arn:aws:oam:Region:account-id:link/link-id `
+#' The ARN format of a link is `arn:aws:oam:Region:account-id:link/link-id `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' 
-#' Unlike tagging permissions in other Amazon Web Services services, to
-#' retrieve the list of tags for links or sinks you must have the
-#' `oam:RequestTag` permission. The `aws:ReguestTag` permission does not
-#' allow you to tag and untag links and sinks.
+#' Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links or sinks you must have the `oam:RequestTag` permission. The `aws:ReguestTag` permission does not allow you to tag and untag links and sinks.
 #'
 #' @keywords internal
 #'
@@ -438,14 +400,11 @@ cloudwatchobservabilityaccessmanager_list_tags_for_resource <- function(Resource
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_put_sink_policy/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_put_sink_policy/) for full documentation.
 #'
-#' @param Policy &#91;required&#93; The JSON policy to use. If you are updating an existing policy, the
-#' entire existing policy is replaced by what you specify here.
+#' @param Policy &#91;required&#93; The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.
 #' 
-#' The policy must be in JSON string format with quotation marks escaped
-#' and no newlines.
+#' The policy must be in JSON string format with quotation marks escaped and no newlines.
 #' 
-#' For examples of different types of policies, see the **Examples**
-#' section on this page.
+#' For examples of different types of policies, see the **Examples** section on this page.
 #' @param SinkIdentifier &#91;required&#93; The ARN of the sink to attach this policy to.
 #'
 #' @keywords internal
@@ -479,15 +438,11 @@ cloudwatchobservabilityaccessmanager_put_sink_policy <- function(Policy, SinkIde
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource that you're adding tags to.
 #' 
-#' The ARN format of a sink is
-#' `arn:aws:oam:Region:account-id:sink/sink-id `
+#' The ARN format of a sink is `arn:aws:oam:Region:account-id:sink/sink-id `
 #' 
-#' The ARN format of a link is
-#' `arn:aws:oam:Region:account-id:link/link-id `
+#' The ARN format of a link is `arn:aws:oam:Region:account-id:link/link-id `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' @param Tags &#91;required&#93; The list of key-value pairs to associate with the resource.
 #'
 #' @keywords internal
@@ -521,15 +476,11 @@ cloudwatchobservabilityaccessmanager_tag_resource <- function(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource that you're removing tags from.
 #' 
-#' The ARN format of a sink is
-#' `arn:aws:oam:Region:account-id:sink/sink-id `
+#' The ARN format of a sink is `arn:aws:oam:Region:account-id:sink/sink-id `
 #' 
-#' The ARN format of a link is
-#' `arn:aws:oam:Region:account-id:link/link-id `
+#' The ARN format of a link is `arn:aws:oam:Region:account-id:link/link-id `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' @param TagKeys &#91;required&#93; The list of tag keys to remove from the resource.
 #'
 #' @keywords internal
@@ -563,19 +514,11 @@ cloudwatchobservabilityaccessmanager_untag_resource <- function(ResourceArn, Tag
 #' See [https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_update_link/](https://www.paws-r-sdk.com/docs/cloudwatchobservabilityaccessmanager_update_link/) for full documentation.
 #'
 #' @param Identifier &#91;required&#93; The ARN of the link that you want to update.
-#' @param IncludeTags Specifies whether to include the tags associated with the link in the
-#' response after the update operation. When `IncludeTags` is set to `true`
-#' and the caller has the required permission, `oam:ListTagsForResource`,
-#' the API will return the tags for the specified resource. If the caller
-#' doesn't have the required permission, `oam:ListTagsForResource`, the API
-#' will raise an exception.
+#' @param IncludeTags Specifies whether to include the tags associated with the link in the response after the update operation. When `IncludeTags` is set to `true` and the caller has the required permission, `oam:ListTagsForResource`, the API will return the tags for the specified resource. If the caller doesn't have the required permission, `oam:ListTagsForResource`, the API will raise an exception.
 #' 
 #' The default value is `false`.
-#' @param LinkConfiguration Use this structure to filter which metric namespaces and which log
-#' groups are to be shared from the source account to the monitoring
-#' account.
-#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source
-#' account will send to the monitoring account.
+#' @param LinkConfiguration Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.
+#' @param ResourceTypes &#91;required&#93; An array of strings that define which types of data that the source account will send to the monitoring account.
 #' 
 #' Your input here replaces the current set of data types that are shared.
 #'

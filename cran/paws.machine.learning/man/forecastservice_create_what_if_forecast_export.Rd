@@ -18,17 +18,11 @@ forecastservice_create_what_if_forecast_export(
 
 \item{WhatIfForecastArns}{[required] The list of what-if forecast Amazon Resource Names (ARNs) to export.}
 
-\item{Destination}{[required] The location where you want to save the forecast and an Identity and
-Access Management (IAM) role that Amazon Forecast can assume to access
-the location. The forecast must be exported to an Amazon S3 bucket.
+\item{Destination}{[required] The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
 
-If encryption is used, \code{Destination} must include an Key Management
-Service (KMS) key. The IAM role must allow Amazon Forecast permission to
-access the key.}
+If encryption is used, \code{Destination} must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.}
 
-\item{Tags}{A list of
-\href{https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html}{tags}
-to apply to the what if forecast.}
+\item{Tags}{A list of \href{https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html}{tags} to apply to the what if forecast.}
 
 \item{Format}{The format of the exported data, CSV or PARQUET.}
 }

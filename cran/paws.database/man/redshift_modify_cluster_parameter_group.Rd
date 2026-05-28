@@ -9,15 +9,11 @@ redshift_modify_cluster_parameter_group(ParameterGroupName, Parameters)
 \arguments{
 \item{ParameterGroupName}{[required] The name of the parameter group to be modified.}
 
-\item{Parameters}{[required] An array of parameters to be modified. A maximum of 20 parameters can be
-modified in a single request.
+\item{Parameters}{[required] An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.
 
-For each parameter to be modified, you must supply at least the
-parameter name and parameter value; other name-value pairs of the
-parameter are optional.
+For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.
 
-For the workload management (WLM) configuration, you must supply all the
-name-value pairs in the wlm_json_configuration parameter.}
+For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.}
 }
 \description{
 Modifies the parameters of a parameter group. For the parameters parameter, it can't contain ASCII characters.

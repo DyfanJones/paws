@@ -8,8 +8,7 @@ that is attached to an app monitor}
 cloudwatchrum_get_resource_policy(Name)
 }
 \arguments{
-\item{Name}{[required] The name of the app monitor that is associated with the resource-based
-policy that you want to view.}
+\item{Name}{[required] The name of the app monitor that is associated with the resource-based policy that you want to view.}
 }
 \description{
 Use this operation to retrieve information about a resource-based policy that is attached to an app monitor.

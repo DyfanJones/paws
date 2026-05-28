@@ -7,15 +7,11 @@
 docdbelastic_list_clusters(maxResults = NULL, nextToken = NULL)
 }
 \arguments{
-\item{maxResults}{The maximum number of elastic cluster snapshot results to receive in the
-response.}
+\item{maxResults}{The maximum number of elastic cluster snapshot results to receive in the response.}
 
-\item{nextToken}{A pagination token provided by a previous request. If this parameter is
-specified, the response includes only records beyond this token, up to
-the value specified by \code{max-results}.
+\item{nextToken}{A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by \code{max-results}.
 
-If there is no more data in the responce, the \code{nextToken} will not be
-returned.}
+If there is no more data in the responce, the \code{nextToken} will not be returned.}
 }
 \description{
 Returns information about provisioned Amazon DocumentDB elastic clusters.

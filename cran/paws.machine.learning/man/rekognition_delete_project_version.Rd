@@ -8,8 +8,7 @@ Rekognition Custom Labels model or a custom adapter}
 rekognition_delete_project_version(ProjectVersionArn)
 }
 \arguments{
-\item{ProjectVersionArn}{[required] The Amazon Resource Name (ARN) of the project version that you want to
-delete.}
+\item{ProjectVersionArn}{[required] The Amazon Resource Name (ARN) of the project version that you want to delete.}
 }
 \description{
 Deletes a Rekognition project model or project version, like a Amazon Rekognition Custom Labels model or a custom adapter.

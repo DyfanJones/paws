@@ -9,9 +9,7 @@ connect_list_test_cases(InstanceId, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 }

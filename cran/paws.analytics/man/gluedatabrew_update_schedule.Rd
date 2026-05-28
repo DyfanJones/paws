@@ -9,9 +9,7 @@ gluedatabrew_update_schedule(JobNames = NULL, CronExpression, Name)
 \arguments{
 \item{JobNames}{The name or names of one or more jobs to be run for this schedule.}
 
-\item{CronExpression}{[required] The date or dates and time or times when the jobs are to be run. For
-more information, see \href{https://docs.aws.amazon.com/databrew/latest/dg/}{Cron expressions} in the
-\emph{Glue DataBrew Developer Guide}.}
+\item{CronExpression}{[required] The date or dates and time or times when the jobs are to be run. For more information, see \href{https://docs.aws.amazon.com/databrew/latest/dg/}{Cron expressions} in the \emph{Glue DataBrew Developer Guide}.}
 
 \item{Name}{[required] The name of the schedule to update.}
 }

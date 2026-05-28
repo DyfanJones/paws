@@ -7,13 +7,11 @@
 quicksight_list_brands(AwsAccountId, MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that owns the brands that you
-want to list.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that owns the brands that you want to list.}
 
 \item{MaxResults}{The maximum number of results to be returned in a single request.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 }
 \description{
 Lists all brands in an Quick Sight account.

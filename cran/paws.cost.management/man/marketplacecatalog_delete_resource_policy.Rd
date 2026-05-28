@@ -8,8 +8,7 @@ resource ARN}
 marketplacecatalog_delete_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the entity resource that is associated
-with the resource policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.}
 }
 \description{
 Deletes a resource-based policy on an entity that is identified by its resource ARN.

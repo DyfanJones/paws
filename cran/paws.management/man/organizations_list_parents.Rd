@@ -8,28 +8,17 @@ parent of the specified child OU or account}
 organizations_list_parents(ChildId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{ChildId}{[required] ID for the OU or account whose parent containers you want to list. Don't
-specify a root.
+\item{ChildId}{[required] ID for the OU or account whose parent containers you want to list. Don't specify a root.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for a child ID
-string requires one of the following:
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for a child ID string requires one of the following:
 \itemize{
 \item \strong{Account} - A string that consists of exactly 12 digits.
-\item \strong{Organizational unit (OU)} - A string that begins with "ou-"
-followed by from 4 to 32 lowercase letters or digits (the ID of the
-root that contains the OU). This string is followed by a second "-"
-dash and from 8 to 32 additional lowercase letters or digits.
+\item \strong{Organizational unit (OU)} - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
 }}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 Lists the root or organizational units (OUs) that serve as the immediate parent of the specified child OU or account. This operation, along with \code{\link[=organizations_list_children]{list_children}} enables you to traverse the tree structure that makes up this root.

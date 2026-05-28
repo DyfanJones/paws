@@ -2,7 +2,7 @@
 % Please edit documentation in R/bedrockagentcore_operations.R
 \name{bedrockagentcore_list_payment_sessions}
 \alias{bedrockagentcore_list_payment_sessions}
-\title{List payment manager sessions}
+\title{List payment sessions}
 \usage{
 bedrockagentcore_list_payment_sessions(
   userId = NULL,
@@ -24,7 +24,7 @@ bedrockagentcore_list_payment_sessions(
 \item{maxResults}{Maximum number of results to return in a single response.}
 }
 \description{
-List payment manager sessions
+List payment sessions.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_list_payment_sessions/} for full documentation.
 }

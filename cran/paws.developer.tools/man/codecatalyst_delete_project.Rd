@@ -9,8 +9,7 @@ codecatalyst_delete_project(spaceName, name)
 \arguments{
 \item{spaceName}{[required] The name of the space.}
 
-\item{name}{[required] The name of the project in the space. To retrieve a list of project
-names, use \code{\link[=codecatalyst_list_projects]{list_projects}}.}
+\item{name}{[required] The name of the project in the space. To retrieve a list of project names, use \code{\link[=codecatalyst_list_projects]{list_projects}}.}
 }
 \description{
 Deletes a project in a space.

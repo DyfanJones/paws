@@ -7,8 +7,7 @@
 codecommit_delete_pull_request_approval_rule(pullRequestId, approvalRuleName)
 }
 \arguments{
-\item{pullRequestId}{[required] The system-generated ID of the pull request that contains the approval
-rule you want to delete.}
+\item{pullRequestId}{[required] The system-generated ID of the pull request that contains the approval rule you want to delete.}
 
 \item{approvalRuleName}{[required] The name of the approval rule you want to delete.}
 }

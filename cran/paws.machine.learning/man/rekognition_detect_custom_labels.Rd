@@ -12,26 +12,25 @@ rekognition_detect_custom_labels(
 )
 }
 \arguments{
-\item{ProjectVersionArn}{[required] The ARN of the model version that you want to use. Only models
-associated with Custom Labels projects accepted by the operation. If a
-provided ARN refers to a model version associated with a project for a
-different feature type, then an InvalidParameterException is returned.}
+\item{ProjectVersionArn}{[required] The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.}
 
-\item{Image}{[required]}
+\item{Image}{[required] Provides the input image either as bytes or an S3 object.
 
-\item{MaxResults}{Maximum number of results you want the service to return in the
-response. The service returns the specified number of highest confidence
-labels ranked from highest confidence to lowest.}
+You pass image bytes to an Amazon Rekognition API operation by using the \code{Bytes} property. For example, you would use the \code{Bytes} property to pass an image loaded from a local file system. Image bytes passed by using the \code{Bytes} property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations.
 
-\item{MinConfidence}{Specifies the minimum confidence level for the labels to return.
-\code{\link[=rekognition_detect_custom_labels]{detect_custom_labels}} doesn't
-return any labels with a confidence value that's lower than this
-specified value. If you specify a value of 0,
-\code{\link[=rekognition_detect_custom_labels]{detect_custom_labels}} returns all
-labels, regardless of the assumed threshold applied to each label. If
-you don't specify a value for \code{MinConfidence},
-\code{\link[=rekognition_detect_custom_labels]{detect_custom_labels}} returns
-labels based on the assumed threshold of each label.}
+For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.
+
+You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the \code{S3Object} property. Images stored in an S3 bucket do not need to be base64-encoded.
+
+The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
+
+If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.
+
+For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.}
+
+\item{MaxResults}{Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.}
+
+\item{MinConfidence}{Specifies the minimum confidence level for the labels to return. \code{\link[=rekognition_detect_custom_labels]{detect_custom_labels}} doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, \code{\link[=rekognition_detect_custom_labels]{detect_custom_labels}} returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for \code{MinConfidence}, \code{\link[=rekognition_detect_custom_labels]{detect_custom_labels}} returns labels based on the assumed threshold of each label.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

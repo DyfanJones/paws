@@ -18,16 +18,11 @@ ivschat_update_room(
 
 \item{name}{Room name. The value does not need to be unique.}
 
-\item{maximumMessageRatePerSecond}{Maximum number of messages per second that can be sent to the room (by
-all clients). Default: 10.}
+\item{maximumMessageRatePerSecond}{Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.}
 
-\item{maximumMessageLength}{The maximum number of characters in a single message. Messages are
-expected to be UTF-8 encoded and this limit applies specifically to
-rune/code-point count, not number of bytes. Default: 500.}
+\item{maximumMessageLength}{The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.}
 
-\item{messageReviewHandler}{Configuration information for optional review of messages. Specify an
-empty \code{uri} string to disassociate a message review handler from the
-specified room.}
+\item{messageReviewHandler}{Configuration information for optional review of messages. Specify an empty \code{uri} string to disassociate a message review handler from the specified room.}
 
 \item{loggingConfigurationIdentifiers}{Array of logging-configuration identifiers attached to the room.}
 }

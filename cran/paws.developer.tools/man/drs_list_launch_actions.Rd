@@ -12,7 +12,7 @@ drs_list_launch_actions(
 )
 }
 \arguments{
-\item{resourceId}{[required]}
+\item{resourceId}{[required] Launch configuration template Id or Source Server Id}
 
 \item{filters}{Filters to apply when listing resource launch actions.}
 

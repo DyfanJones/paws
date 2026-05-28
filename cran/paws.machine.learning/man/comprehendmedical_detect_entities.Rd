@@ -7,8 +7,7 @@
 comprehendmedical_detect_entities(Text)
 }
 \arguments{
-\item{Text}{[required] A UTF-8 text string containing the clinical content being examined for
-entities.}
+\item{Text}{[required] A UTF-8 text string containing the clinical content being examined for entities.}
 }
 \description{
 The \code{\link[=comprehendmedical_detect_entities]{detect_entities}} operation is deprecated. You should use the \code{\link[=comprehendmedical_detect_entities_v2]{detect_entities_v2}} operation instead.

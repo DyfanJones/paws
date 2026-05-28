@@ -14,22 +14,17 @@ lookoutequipment_create_label_group(
 \arguments{
 \item{LabelGroupName}{[required] Names a group of labels.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 
-\item{FaultCodes}{The acceptable fault codes (indicating the type of anomaly associated
-with the label) that can be used with this label group.
+\item{FaultCodes}{The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 
-\item{ClientToken}{[required] A unique identifier for the request to create a label group. If you do
-not set the client request token, Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one.}
 
 \item{Tags}{Tags that provide metadata about the label group you are creating.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 }
 \description{
 Creates a group of labels.

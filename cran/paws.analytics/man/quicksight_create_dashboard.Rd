@@ -24,98 +24,53 @@ quicksight_create_dashboard(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account where you want to create the
-dashboard.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account where you want to create the dashboard.}
 
 \item{DashboardId}{[required] The ID for the dashboard, also added to the IAM policy.}
 
 \item{Name}{[required] The display name of the dashboard.}
 
-\item{Parameters}{The parameters for the creation of the dashboard, which you want to use
-to override the default settings. A dashboard can have any type of
-parameters, and some parameters might accept multiple values.}
+\item{Parameters}{The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values.}
 
-\item{Permissions}{A structure that contains the permissions of the dashboard. You can use
-this structure for granting permissions by providing a list of IAM
-action information for each principal ARN.
+\item{Permissions}{A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN.
 
 To specify no permissions, omit the permissions list.}
 
-\item{SourceEntity}{The entity that you are using as a source when you create the dashboard.
-In \code{SourceEntity}, you specify the type of object you're using as
-source. You can only create a dashboard from a template, so you use a
-\code{SourceTemplate} entity. If you need to create a dashboard from an
-analysis, first convert the analysis to a template by using the
-\code{\link[=quicksight_create_template]{create_template}} API operation. For
-\code{SourceTemplate}, specify the Amazon Resource Name (ARN) of the source
-template. The \code{SourceTemplate}ARN can contain any Amazon Web Services
-account and any Amazon Quick Sight-supported Amazon Web Services Region.
+\item{SourceEntity}{The entity that you are using as a source when you create the dashboard. In \code{SourceEntity}, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a \code{SourceTemplate} entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the \code{\link[=quicksight_create_template]{create_template}} API operation. For \code{SourceTemplate}, specify the Amazon Resource Name (ARN) of the source template. The \code{SourceTemplate}ARN can contain any Amazon Web Services account and any Amazon Quick Sight-supported Amazon Web Services Region.
 
-Use the \code{DataSetReferences} entity within \code{SourceTemplate} to list the
-replacement datasets for the placeholders listed in the original. The
-schema in each dataset must match its placeholder.
+Use the \code{DataSetReferences} entity within \code{SourceTemplate} to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder.
 
-Either a \code{SourceEntity} or a \code{Definition} must be provided in order for
-the request to be valid.}
+Either a \code{SourceEntity} or a \code{Definition} must be provided in order for the request to be valid.}
 
-\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags
-assigned to the dashboard.}
+\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.}
 
 \item{VersionDescription}{A description for the first version of the dashboard being created.}
 
 \item{DashboardPublishOptions}{Options for publishing the dashboard when you create it:
 \itemize{
-\item \code{AvailabilityStatus} for \code{AdHocFilteringOption} - This status can be
-either \code{ENABLED} or \code{DISABLED}. When this is set to \code{DISABLED},
-Amazon Quick Sight disables the left filter pane on the published
-dashboard, which can be used for ad hoc (one-time) filtering. This
-option is \code{ENABLED} by default.
-\item \code{AvailabilityStatus} for \code{ExportToCSVOption} - This status can be
-either \code{ENABLED} or \code{DISABLED}. The visual option to export data to
-.CSV format isn't enabled when this is set to \code{DISABLED}. This
-option is \code{ENABLED} by default.
-\item \code{VisibilityState} for \code{SheetControlsOption} - This visibility state
-can be either \code{COLLAPSED} or \code{EXPANDED}. This option is \code{COLLAPSED}
-by default.
-\item \code{AvailabilityStatus} for \code{QuickSuiteActionsOption} - This status can
-be either \code{ENABLED} or \code{DISABLED}. Features related to Actions in
-Amazon Quick Suite on dashboards are disabled when this is set to
-\code{DISABLED}. This option is \code{DISABLED} by default.
-\item \code{AvailabilityStatus} for \code{ExecutiveSummaryOption} - This status can
-be either \code{ENABLED} or \code{DISABLED}. The option to build an executive
-summary is disabled when this is set to \code{DISABLED}. This option is
-\code{ENABLED} by default.
-\item \code{AvailabilityStatus} for \code{DataStoriesSharingOption} - This status
-can be either \code{ENABLED} or \code{DISABLED}. The option to share a data
-story is disabled when this is set to \code{DISABLED}. This option is
-\code{ENABLED} by default.
+\item \code{AvailabilityStatus} for \code{AdHocFilteringOption} - This status can be either \code{ENABLED} or \code{DISABLED}. When this is set to \code{DISABLED}, Amazon Quick Sight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is \code{ENABLED} by default.
+\item \code{AvailabilityStatus} for \code{ExportToCSVOption} - This status can be either \code{ENABLED} or \code{DISABLED}. The visual option to export data to .CSV format isn't enabled when this is set to \code{DISABLED}. This option is \code{ENABLED} by default.
+\item \code{VisibilityState} for \code{SheetControlsOption} - This visibility state can be either \code{COLLAPSED} or \code{EXPANDED}. This option is \code{COLLAPSED} by default.
+\item \code{AvailabilityStatus} for \code{QuickSuiteActionsOption} - This status can be either \code{ENABLED} or \code{DISABLED}. Features related to Actions in Amazon Quick Suite on dashboards are disabled when this is set to \code{DISABLED}. This option is \code{DISABLED} by default.
+\item \code{AvailabilityStatus} for \code{ExecutiveSummaryOption} - This status can be either \code{ENABLED} or \code{DISABLED}. The option to build an executive summary is disabled when this is set to \code{DISABLED}. This option is \code{ENABLED} by default.
+\item \code{AvailabilityStatus} for \code{DataStoriesSharingOption} - This status can be either \code{ENABLED} or \code{DISABLED}. The option to share a data story is disabled when this is set to \code{DISABLED}. This option is \code{ENABLED} by default.
 }}
 
-\item{ThemeArn}{The Amazon Resource Name (ARN) of the theme that is being used for this
-dashboard. If you add a value for this field, it overrides the value
-that is used in the source entity. The theme ARN must exist in the same
-Amazon Web Services account where you create the dashboard.}
+\item{ThemeArn}{The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.}
 
 \item{Definition}{The definition of a dashboard.
 
-A definition is the data model of all features in a Dashboard, Template,
-or Analysis.
+A definition is the data model of all features in a Dashboard, Template, or Analysis.
 
-Either a \code{SourceEntity} or a \code{Definition} must be provided in order for
-the request to be valid.}
+Either a \code{SourceEntity} or a \code{Definition} must be provided in order for the request to be valid.}
 
-\item{ValidationStrategy}{The option to relax the validation needed to create a dashboard with
-definition objects. This option skips the validation step for specific
-errors.}
+\item{ValidationStrategy}{The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.}
 
-\item{FolderArns}{When you create the dashboard, Amazon Quick Sight adds the dashboard to
-these folders.}
+\item{FolderArns}{When you create the dashboard, Amazon Quick Sight adds the dashboard to these folders.}
 
-\item{LinkSharingConfiguration}{A structure that contains the permissions of a shareable link to the
-dashboard.}
+\item{LinkSharingConfiguration}{A structure that contains the permissions of a shareable link to the dashboard.}
 
-\item{LinkEntities}{A list of analysis Amazon Resource Names (ARNs) to be linked to the
-dashboard.}
+\item{LinkEntities}{A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.}
 }
 \description{
 Creates a dashboard from either a template or directly with a \code{DashboardDefinition}. To first create a template, see the \code{\link[=quicksight_create_template]{create_template}} API operation.

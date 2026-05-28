@@ -23,11 +23,9 @@ apigatewayv2_create_stage(
 
 \item{ApiId}{[required] The API identifier.}
 
-\item{AutoDeploy}{Specifies whether updates to an API automatically trigger a new
-deployment. The default value is false.}
+\item{AutoDeploy}{Specifies whether updates to an API automatically trigger a new deployment. The default value is false.}
 
-\item{ClientCertificateId}{The identifier of a client certificate for a Stage. Supported only for
-WebSocket APIs.}
+\item{ClientCertificateId}{The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.}
 
 \item{DefaultRouteSettings}{The default route settings for the stage.}
 
@@ -39,12 +37,9 @@ WebSocket APIs.}
 
 \item{StageName}{[required] The name of the stage.}
 
-\item{StageVariables}{A map that defines the stage variables for a Stage. Variable names can
-have alphanumeric and underscore characters, and the values must match
-[A-Za-z0-9-._~:/?#&=,]+.}
+\item{StageVariables}{A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.}
 
-\item{Tags}{The collection of tags. Each tag element is associated with a given
-resource.}
+\item{Tags}{The collection of tags. Each tag element is associated with a given resource.}
 }
 \description{
 Creates a Stage for an API.

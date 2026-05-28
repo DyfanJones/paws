@@ -7,9 +7,9 @@
 connectcampaignservicev2_update_campaign_entry_limits(id, entryLimitsConfig)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{entryLimitsConfig}{[required]}
+\item{entryLimitsConfig}{[required] Campaign entry limits config}
 }
 \description{
 Updates the entry limits config for a campaign. This API is idempotent.

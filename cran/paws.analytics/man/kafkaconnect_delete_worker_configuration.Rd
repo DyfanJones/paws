@@ -7,8 +7,7 @@
 kafkaconnect_delete_worker_configuration(workerConfigurationArn)
 }
 \arguments{
-\item{workerConfigurationArn}{[required] The Amazon Resource Name (ARN) of the worker configuration that you want
-to delete.}
+\item{workerConfigurationArn}{[required] The Amazon Resource Name (ARN) of the worker configuration that you want to delete.}
 }
 \description{
 Deletes the specified worker configuration.

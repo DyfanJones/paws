@@ -21,18 +21,15 @@ datazone_create_environment(
 )
 }
 \arguments{
-\item{projectIdentifier}{[required] The identifier of the Amazon DataZone project in which this environment
-is created.}
+\item{projectIdentifier}{[required] The identifier of the Amazon DataZone project in which this environment is created.}
 
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which the environment is
-created.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which the environment is created.}
 
 \item{description}{The description of the Amazon DataZone environment.}
 
 \item{name}{[required] The name of the Amazon DataZone environment.}
 
-\item{environmentProfileIdentifier}{The identifier of the environment profile that is used to create this
-Amazon DataZone environment.}
+\item{environmentProfileIdentifier}{The identifier of the environment profile that is used to create this Amazon DataZone environment.}
 
 \item{userParameters}{The user parameters of this Amazon DataZone environment.}
 

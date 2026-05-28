@@ -14,25 +14,15 @@ codecommit_get_merge_options(
 )
 }
 \arguments{
-\item{repositoryName}{[required] The name of the repository that contains the commits about which you
-want to get merge options.}
+\item{repositoryName}{[required] The name of the repository that contains the commits about which you want to get merge options.}
 
-\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
-\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
-\item{conflictDetailLevel}{The level of conflict detail to use. If unspecified, the default
-FILE_LEVEL is used, which returns a not-mergeable result if the same
-file has differences in both branches. If LINE_LEVEL is specified, a
-conflict is considered not mergeable if the same file in both branches
-has differences on the same line.}
+\item{conflictDetailLevel}{The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.}
 
-\item{conflictResolutionStrategy}{Specifies which branch to use when resolving conflicts, or whether to
-attempt automatically merging two versions of a file. The default is
-NONE, which requires any conflicts to be resolved manually before the
-merge operation is successful.}
+\item{conflictResolutionStrategy}{Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.}
 }
 \description{
 Returns information about the merge options available for merging two specified branches. For details about why a merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.

@@ -13,20 +13,13 @@ vpclattice_create_target_group(
 )
 }
 \arguments{
-\item{name}{[required] The name of the target group. The name must be unique within the
-account. The valid characters are a-z, 0-9, and hyphens (-). You can't
-use a hyphen as the first or last character, or immediately after
-another hyphen.}
+\item{name}{[required] The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.}
 
 \item{type}{[required] The type of target group.}
 
 \item{config}{The target group configuration.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token and parameters, the retry
-succeeds without performing any actions. If the parameters aren't
-identical, the retry fails.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.}
 
 \item{tags}{The tags for the target group.}
 }

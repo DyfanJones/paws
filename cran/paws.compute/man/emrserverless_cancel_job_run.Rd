@@ -15,8 +15,7 @@ emrserverless_cancel_job_run(
 
 \item{jobRunId}{[required] The ID of the job run to cancel.}
 
-\item{shutdownGracePeriodInSeconds}{The duration in seconds to wait before forcefully terminating the job
-after cancellation is requested.}
+\item{shutdownGracePeriodInSeconds}{The duration in seconds to wait before forcefully terminating the job after cancellation is requested.}
 }
 \description{
 Cancels a job run.

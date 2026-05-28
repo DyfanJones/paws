@@ -15,12 +15,9 @@ quicksight_update_vpc_connection(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that contains the VPC
-connection that you want to update.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.}
 
-\item{VPCConnectionId}{[required] The ID of the VPC connection that you're updating. This ID is a unique
-identifier for each Amazon Web Services Region in an Amazon Web Services
-account.}
+\item{VPCConnectionId}{[required] The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.}
 
 \item{Name}{[required] The display name for the VPC connection.}
 

@@ -20,8 +20,7 @@ emrserverless_list_sessions(
 
 \item{maxResults}{The maximum number of sessions to return in each page of results.}
 
-\item{states}{An optional filter for session states. Note that if this filter contains
-multiple states, the resulting list will be grouped by the state.}
+\item{states}{An optional filter for session states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.}
 
 \item{createdAtAfter}{The lower bound of the option to filter by creation date and time.}
 

@@ -21,34 +21,17 @@ NULL
 #' -   A name cannot end with a hyphen or contain two consecutive hyphens.
 #' @param NodeType &#91;required&#93; The compute and memory capacity of the nodes in the cluster.
 #' @param Description A description of the cluster.
-#' @param ReplicationFactor &#91;required&#93; The number of nodes in the DAX cluster. A replication factor of 1 will
-#' create a single-node cluster, without any read replicas. For additional
-#' fault tolerance, you can create a multiple node cluster with one or more
-#' read replicas. To do this, set `ReplicationFactor` to a number between 3
-#' (one primary and two read replicas) and 10 (one primary and nine read
-#' replicas). `If the AvailabilityZones` parameter is provided, its length
-#' must equal the `ReplicationFactor`.
+#' @param ReplicationFactor &#91;required&#93; The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set `ReplicationFactor` to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). `If the AvailabilityZones` parameter is provided, its length must equal the `ReplicationFactor`.
 #' 
-#' Amazon Web Services recommends that you have at least two read replicas
-#' per cluster.
-#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will reside
-#' after the cluster has been created or updated. If provided, the length
-#' of this list must equal the `ReplicationFactor` parameter. If you omit
-#' this parameter, DAX will spread the nodes across Availability Zones for
-#' the highest availability.
+#' Amazon Web Services recommends that you have at least two read replicas per cluster.
+#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the `ReplicationFactor` parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
 #' @param SubnetGroupName The name of the subnet group to be used for the replication group.
 #' 
-#' DAX clusters can only run in an Amazon VPC environment. All of the
-#' subnets that you specify in a subnet group must exist in the same VPC.
-#' @param SecurityGroupIds A list of security group IDs to be assigned to each node in the DAX
-#' cluster. (Each of the security group ID is system-generated.)
+#' DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.
+#' @param SecurityGroupIds A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)
 #' 
-#' If this parameter is not specified, DAX assigns the default VPC security
-#' group to each node.
-#' @param PreferredMaintenanceWindow Specifies the weekly time range during which maintenance on the DAX
-#' cluster is performed. It is specified as a range in the format
-#' ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-#' is a 60 minute period. Valid values for `ddd` are:
+#' If this parameter is not specified, DAX assigns the default VPC security group to each node.
+#' @param PreferredMaintenanceWindow Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for `ddd` are:
 #' 
 #' -   `sun`
 #' 
@@ -66,38 +49,28 @@ NULL
 #' 
 #' Example: `sun:05:00-sun:09:00`
 #' 
-#' If you don't specify a preferred maintenance window when you create or
-#' modify a cache cluster, DAX assigns a 60-minute maintenance window on a
-#' randomly selected day of the week.
-#' @param NotificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-#' notifications will be sent.
+#' If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.
+#' @param NotificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
 #' 
 #' The Amazon SNS topic owner must be same as the DAX cluster owner.
-#' @param IamRoleArn &#91;required&#93; A valid Amazon Resource Name (ARN) that identifies an IAM role. At
-#' runtime, DAX will assume this role and use the role's permissions to
-#' access DynamoDB on your behalf.
+#' @param IamRoleArn &#91;required&#93; A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.
 #' @param ParameterGroupName The parameter group to be associated with the DAX cluster.
 #' @param Tags A set of tags to associate with the DAX cluster.
-#' @param SSESpecification Represents the settings used to enable server-side encryption on the
-#' cluster.
-#' @param ClusterEndpointEncryptionType The type of encryption the cluster's endpoint should support. Values
-#' are:
+#' @param SSESpecification Represents the settings used to enable server-side encryption on the cluster.
+#' @param ClusterEndpointEncryptionType The type of encryption the cluster's endpoint should support. Values are:
 #' 
 #' -   `NONE` for no encryption
 #' 
 #' -   `TLS` for Transport Layer Security
-#' @param NetworkType Specifies the IP protocol(s) the cluster uses for network
-#' communications. Values are:
+#' @param NetworkType Specifies the IP protocol(s) the cluster uses for network communications. Values are:
 #' 
 #' -   `ipv4` - The cluster is accessible only through IPv4 addresses
 #' 
 #' -   `ipv6` - The cluster is accessible only through IPv6 addresses
 #' 
-#' -   `dual_stack` - The cluster is accessible through both IPv4 and IPv6
-#'     addresses.
+#' -   `dual_stack` - The cluster is accessible through both IPv4 and IPv6 addresses.
 #' 
-#' If no explicit `NetworkType` is provided, the network type is derived
-#' based on the subnet group's configuration.
+#' If no explicit `NetworkType` is provided, the network type is derived based on the subnet group's configuration.
 #'
 #' @keywords internal
 #'
@@ -128,8 +101,7 @@ dax_create_cluster <- function(ClusterName, NodeType, Description = NULL, Replic
 #'
 #' See [https://www.paws-r-sdk.com/docs/dax_create_parameter_group/](https://www.paws-r-sdk.com/docs/dax_create_parameter_group/) for full documentation.
 #'
-#' @param ParameterGroupName &#91;required&#93; The name of the parameter group to apply to all of the clusters in this
-#' replication group.
+#' @param ParameterGroupName &#91;required&#93; The name of the parameter group to apply to all of the clusters in this replication group.
 #' @param Description A description of the parameter group.
 #'
 #' @keywords internal
@@ -324,15 +296,10 @@ dax_delete_subnet_group <- function(SubnetGroupName) {
 #' See [https://www.paws-r-sdk.com/docs/dax_describe_clusters/](https://www.paws-r-sdk.com/docs/dax_describe_clusters/) for full documentation.
 #'
 #' @param ClusterNames The names of the DAX clusters being described.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @keywords internal
 #'
@@ -364,15 +331,10 @@ dax_describe_clusters <- function(ClusterNames = NULL, MaxResults = NULL, NextTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/dax_describe_default_parameters/](https://www.paws-r-sdk.com/docs/dax_describe_default_parameters/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @keywords internal
 #'
@@ -403,24 +365,15 @@ dax_describe_default_parameters <- function(MaxResults = NULL, NextToken = NULL)
 #'
 #' See [https://www.paws-r-sdk.com/docs/dax_describe_events/](https://www.paws-r-sdk.com/docs/dax_describe_events/) for full documentation.
 #'
-#' @param SourceName The identifier of the event source for which events will be returned. If
-#' not specified, then all sources are included in the response.
-#' @param SourceType The event source to retrieve events for. If no value is specified, all
-#' events are returned.
-#' @param StartTime The beginning of the time interval to retrieve events for, specified in
-#' ISO 8601 format.
-#' @param EndTime The end of the time interval for which to retrieve events, specified in
-#' ISO 8601 format.
+#' @param SourceName The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.
+#' @param SourceType The event source to retrieve events for. If no value is specified, all events are returned.
+#' @param StartTime The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+#' @param EndTime The end of the time interval for which to retrieve events, specified in ISO 8601 format.
 #' @param Duration The number of minutes' worth of events to retrieve.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @keywords internal
 #'
@@ -452,15 +405,10 @@ dax_describe_events <- function(SourceName = NULL, SourceType = NULL, StartTime 
 #' See [https://www.paws-r-sdk.com/docs/dax_describe_parameter_groups/](https://www.paws-r-sdk.com/docs/dax_describe_parameter_groups/) for full documentation.
 #'
 #' @param ParameterGroupNames The names of the parameter groups.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @keywords internal
 #'
@@ -492,17 +440,11 @@ dax_describe_parameter_groups <- function(ParameterGroupNames = NULL, MaxResults
 #' See [https://www.paws-r-sdk.com/docs/dax_describe_parameters/](https://www.paws-r-sdk.com/docs/dax_describe_parameters/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group.
-#' @param Source How the parameter is defined. For example, `system` denotes a
-#' system-defined parameter.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param Source How the parameter is defined. For example, `system` denotes a system-defined parameter.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @keywords internal
 #'
@@ -534,15 +476,10 @@ dax_describe_parameters <- function(ParameterGroupName, Source = NULL, MaxResult
 #' See [https://www.paws-r-sdk.com/docs/dax_describe_subnet_groups/](https://www.paws-r-sdk.com/docs/dax_describe_subnet_groups/) for full documentation.
 #'
 #' @param SubnetGroupNames The name of the subnet group.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @keywords internal
 #'
@@ -575,10 +512,7 @@ dax_describe_subnet_groups <- function(SubnetGroupNames = NULL, MaxResults = NUL
 #'
 #' @param ClusterName &#91;required&#93; The name of the DAX cluster that will receive additional nodes.
 #' @param NewReplicationFactor &#91;required&#93; The new number of nodes for the DAX cluster.
-#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will be created.
-#' All nodes belonging to the cluster are placed in these Availability
-#' Zones. Use this parameter if you want to distribute the nodes across
-#' multiple AZs.
+#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
 #'
 #' @keywords internal
 #'
@@ -610,9 +544,7 @@ dax_increase_replication_factor <- function(ClusterName, NewReplicationFactor, A
 #' See [https://www.paws-r-sdk.com/docs/dax_list_tags/](https://www.paws-r-sdk.com/docs/dax_list_tags/) for full documentation.
 #'
 #' @param ResourceName &#91;required&#93; The name of the DAX resource to which the tags belong.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.
 #'
 #' @keywords internal
 #'
@@ -708,8 +640,7 @@ dax_tag_resource <- function(ResourceName, Tags) {
 #' See [https://www.paws-r-sdk.com/docs/dax_untag_resource/](https://www.paws-r-sdk.com/docs/dax_untag_resource/) for full documentation.
 #'
 #' @param ResourceName &#91;required&#93; The name of the DAX resource from which the tags should be removed.
-#' @param TagKeys &#91;required&#93; A list of tag keys. If the DAX cluster has any tags with these keys,
-#' then the tags are removed from the cluster.
+#' @param TagKeys &#91;required&#93; A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.
 #'
 #' @keywords internal
 #'
@@ -742,18 +673,11 @@ dax_untag_resource <- function(ResourceName, TagKeys) {
 #'
 #' @param ClusterName &#91;required&#93; The name of the DAX cluster to be modified.
 #' @param Description A description of the changes being made to the cluster.
-#' @param PreferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be
-#' performed. For example: `sun:01:00-sun:09:00`. Cluster maintenance
-#' normally takes less than 30 minutes, and is performed automatically
-#' within the maintenance window.
+#' @param PreferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be performed. For example: `sun:01:00-sun:09:00`. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.
 #' @param NotificationTopicArn The Amazon Resource Name (ARN) that identifies the topic.
-#' @param NotificationTopicStatus The current state of the topic. A value of “active” means that
-#' notifications will be sent to the topic. A value of “inactive” means
-#' that notifications will not be sent to the topic.
+#' @param NotificationTopicStatus The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.
 #' @param ParameterGroupName The name of a parameter group for this cluster.
-#' @param SecurityGroupIds A list of user-specified security group IDs to be assigned to each node
-#' in the DAX cluster. If this parameter is not specified, DAX assigns the
-#' default VPC security group to each node.
+#' @param SecurityGroupIds A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.
 #'
 #' @keywords internal
 #'
@@ -785,12 +709,9 @@ dax_update_cluster <- function(ClusterName, Description = NULL, PreferredMainten
 #' See [https://www.paws-r-sdk.com/docs/dax_update_parameter_group/](https://www.paws-r-sdk.com/docs/dax_update_parameter_group/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group.
-#' @param ParameterNameValues &#91;required&#93; An array of name-value pairs for the parameters in the group. Each
-#' element in the array represents a single parameter.
+#' @param ParameterNameValues &#91;required&#93; An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
 #' 
-#' `record-ttl-millis` and `query-ttl-millis` are the only supported
-#' parameter names. For more details, see [Configuring TTL
-#' Settings](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl).
+#' `record-ttl-millis` and `query-ttl-millis` are the only supported parameter names. For more details, see [Configuring TTL Settings](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl).
 #'
 #' @keywords internal
 #'

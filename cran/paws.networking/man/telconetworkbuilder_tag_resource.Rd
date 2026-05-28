@@ -9,10 +9,7 @@ telconetworkbuilder_tag_resource(resourceArn, tags)
 \arguments{
 \item{resourceArn}{[required] Resource ARN.}
 
-\item{tags}{[required] A tag is a label that you assign to an Amazon Web Services resource.
-Each tag consists of a key and an optional value. You can use tags to
-search and filter your resources or track your Amazon Web Services
-costs.}
+\item{tags}{[required] A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.}
 }
 \description{
 Tags an AWS TNB resource.

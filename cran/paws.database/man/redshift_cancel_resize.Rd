@@ -7,8 +7,7 @@
 redshift_cancel_resize(ClusterIdentifier)
 }
 \arguments{
-\item{ClusterIdentifier}{[required] The unique identifier for the cluster that you want to cancel a resize
-operation for.}
+\item{ClusterIdentifier}{[required] The unique identifier for the cluster that you want to cancel a resize operation for.}
 }
 \description{
 Cancels a resize operation for a cluster.

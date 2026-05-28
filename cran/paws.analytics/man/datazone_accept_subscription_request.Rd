@@ -13,14 +13,11 @@ datazone_accept_subscription_request(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The Amazon DataZone domain where the specified subscription request is
-being accepted.}
+\item{domainIdentifier}{[required] The Amazon DataZone domain where the specified subscription request is being accepted.}
 
-\item{identifier}{[required] The unique identifier of the subscription request that is to be
-accepted.}
+\item{identifier}{[required] The unique identifier of the subscription request that is to be accepted.}
 
-\item{decisionComment}{A description that specifies the reason for accepting the specified
-subscription request.}
+\item{decisionComment}{A description that specifies the reason for accepting the specified subscription request.}
 
 \item{assetScopes}{The asset scopes of the accept subscription request.}
 

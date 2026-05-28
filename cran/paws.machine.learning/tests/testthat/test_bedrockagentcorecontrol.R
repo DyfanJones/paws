@@ -24,6 +24,10 @@ test_that("list_configuration_bundles", {
   expect_error(svc$list_configuration_bundles(), NA)
 })
 
+test_that("list_datasets", {
+  expect_error(svc$list_datasets(), NA)
+})
+
 test_that("list_evaluators", {
   expect_error(svc$list_evaluators(), NA)
 })
@@ -54,6 +58,10 @@ test_that("list_payment_credential_providers", {
 
 test_that("list_payment_managers", {
   expect_error(svc$list_payment_managers(), NA)
+})
+
+test_that("list_policy_engine_summaries", {
+  expect_error(svc$list_policy_engine_summaries(), NA)
 })
 
 test_that("list_policy_engines", {

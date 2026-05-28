@@ -33,11 +33,9 @@ docdb_create_db_cluster(
 )
 }
 \arguments{
-\item{AvailabilityZones}{A list of Amazon EC2 Availability Zones that instances in the cluster
-can be created in.}
+\item{AvailabilityZones}{A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.}
 
-\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must
-specify a minimum value of 1.
+\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must specify a minimum value of 1.
 
 Default: 1
 
@@ -63,8 +61,7 @@ Example: \code{my-cluster}}
 
 \item{DBSubnetGroupName}{A subnet group to associate with this cluster.
 
-Constraints: Must match the name of an existing \code{DBSubnetGroup}. Must
-not be default.
+Constraints: Must match the name of an existing \code{DBSubnetGroup}. Must not be default.
 
 Example: \code{mySubnetgroup}}
 
@@ -72,13 +69,9 @@ Example: \code{mySubnetgroup}}
 
 Valid values: \code{docdb}}
 
-\item{EngineVersion}{The version number of the database engine to use. The \code{--engine-version}
-will default to the latest major engine version. For production
-workloads, we recommend explicitly declaring this parameter with the
-intended major engine version.}
+\item{EngineVersion}{The version number of the database engine to use. The \code{--engine-version} will default to the latest major engine version. For production workloads, we recommend explicitly declaring this parameter with the intended major engine version.}
 
-\item{Port}{The port number on which the instances in the cluster accept
-connections.}
+\item{Port}{The port number on which the instances in the cluster accept connections.}
 
 \item{MasterUsername}{The name of the master user for the cluster.
 
@@ -89,18 +82,13 @@ Constraints:
 \item Cannot be a reserved word for the chosen database engine.
 }}
 
-\item{MasterUserPassword}{The password for the master database user. This password can contain any
-printable ASCII character except forward slash (/), double quote ("), or
-the "at" symbol (@).
+\item{MasterUserPassword}{The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).
 
 Constraints: Must contain from 8 to 100 characters.}
 
-\item{PreferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled using the \code{BackupRetentionPeriod}
-parameter.
+\item{PreferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled using the \code{BackupRetentionPeriod} parameter.
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region.
 
 Constraints:
 \itemize{
@@ -110,14 +98,11 @@ Constraints:
 \item Must be at least 30 minutes.
 }}
 
-\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 Format: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region, occurring on a random
-day of the week.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.
 
 Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 
@@ -129,87 +114,52 @@ Constraints: Minimum 30-minute window.}
 
 \item{KmsKeyId}{The KMS key identifier for an encrypted cluster.
 
-The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-encryption key. If you are creating a cluster using the same Amazon Web
-Services account that owns the KMS encryption key that is used to
-encrypt the new cluster, you can use the KMS key alias instead of the
-ARN for the KMS encryption key.
+The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.
 
 If an encryption key is not specified in \code{KmsKeyId}:
 \itemize{
-\item If the \code{StorageEncrypted} parameter is \code{true}, Amazon DocumentDB
-uses your default encryption key.
+\item If the \code{StorageEncrypted} parameter is \code{true}, Amazon DocumentDB uses your default encryption key.
 }
 
-KMS creates the default encryption key for your Amazon Web Services
-account. Your Amazon Web Services account has a different default
-encryption key for each Amazon Web Services Regions.}
+KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.}
 
 \item{PreSignedUrl}{Not currently supported.}
 
-\item{EnableCloudwatchLogsExports}{A list of log types that need to be enabled for exporting to Amazon
-CloudWatch Logs. You can enable audit logs or profiler logs. For more
-information, see \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html}{Auditing Amazon DocumentDB Events}
-and \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html}{Profiling Amazon DocumentDB Operations}.}
+\item{EnableCloudwatchLogsExports}{A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html}{Auditing Amazon DocumentDB Events} and \href{https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html}{Profiling Amazon DocumentDB Operations}.}
 
-\item{DeletionProtection}{Specifies whether this cluster can be deleted. If \code{DeletionProtection}
-is enabled, the cluster cannot be deleted unless it is modified and
-\code{DeletionProtection} is disabled. \code{DeletionProtection} protects clusters
-from being accidentally deleted.}
+\item{DeletionProtection}{Specifies whether this cluster can be deleted. If \code{DeletionProtection} is enabled, the cluster cannot be deleted unless it is modified and \code{DeletionProtection} is disabled. \code{DeletionProtection} protects clusters from being accidentally deleted.}
 
 \item{GlobalClusterIdentifier}{The cluster identifier of the new global cluster.}
 
 \item{StorageType}{The storage type to associate with the DB cluster.
 
-For information on storage types for Amazon DocumentDB clusters, see
-Cluster storage configurations in the \emph{Amazon DocumentDB Developer
-Guide}.
+For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the \emph{Amazon DocumentDB Developer Guide}.
 
 Valid values for storage type - \code{standard | iopt1}
 
 Default value is \code{standard }
 
-When you create an Amazon DocumentDB cluster with the storage type set
-to \code{iopt1}, the storage type is returned in the response. The storage
-type isn't returned when you set it to \code{standard}.}
+When you create an Amazon DocumentDB cluster with the storage type set to \code{iopt1}, the storage type is returned in the response. The storage type isn't returned when you set it to \code{standard}.}
 
-\item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of an Amazon DocumentDB Serverless
-cluster.}
+\item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.}
 
-\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web
-Services Secrets Manager.
+\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
 
-Constraint: You can't manage the master user password with Amazon Web
-Services Secrets Manager if \code{MasterUserPassword} is specified.}
+Constraint: You can't manage the master user password with Amazon Web Services Secrets Manager if \code{MasterUserPassword} is specified.}
 
-\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is
-automatically generated and managed in Amazon Web Services Secrets
-Manager. This setting is valid only if the master user password is
-managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for
-the DB cluster.
+\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager. This setting is valid only if the master user password is managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the DB cluster.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
-If you don't specify \code{MasterUserSecretKmsKeyId}, then the
-\code{aws/secretsmanager} KMS key is used to encrypt the secret. If the
-secret is in a different Amazon Web Services account, then you can't use
-the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use
-a customer managed KMS key.
+If you don't specify \code{MasterUserSecretKmsKeyId}, then the \code{aws/secretsmanager} KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use a customer managed KMS key.
 
-There is a default KMS key for your Amazon Web Services account. Your
-Amazon Web Services account has a different default KMS key for each
-Amazon Web Services Region.}
+There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.}
 
 \item{NetworkType}{The network type of the cluster.
 
-The network type is determined by the \code{DBSubnetGroup} specified for the
-cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the
-IPv4 and the IPv6 protocols (\code{DUAL}).
+The network type is determined by the \code{DBSubnetGroup} specified for the cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (\code{DUAL}).
 
-For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html}{DocumentDB clusters in a VPC}
-in the Amazon DocumentDB Developer Guide.
+For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html}{DocumentDB clusters in a VPC} in the Amazon DocumentDB Developer Guide.
 
 Valid Values: \code{IPV4} | \code{DUAL}}
 }

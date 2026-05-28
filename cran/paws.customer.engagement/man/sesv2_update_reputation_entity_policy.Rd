@@ -11,15 +11,11 @@ sesv2_update_reputation_entity_policy(
 )
 }
 \arguments{
-\item{ReputationEntityType}{[required] The type of reputation entity. Currently, only \code{RESOURCE} type entities
-are supported.}
+\item{ReputationEntityType}{[required] The type of reputation entity. Currently, only \code{RESOURCE} type entities are supported.}
 
-\item{ReputationEntityReference}{[required] The unique identifier for the reputation entity. For resource-type
-entities, this is the Amazon Resource Name (ARN) of the resource.}
+\item{ReputationEntityReference}{[required] The unique identifier for the reputation entity. For resource-type entities, this is the Amazon Resource Name (ARN) of the resource.}
 
-\item{ReputationEntityPolicy}{[required] The Amazon Resource Name (ARN) of the reputation management policy to
-apply to this entity. This is an Amazon Web Services Amazon SES-managed
-policy.}
+\item{ReputationEntityPolicy}{[required] The Amazon Resource Name (ARN) of the reputation management policy to apply to this entity. This is an Amazon Web Services Amazon SES-managed policy.}
 }
 \description{
 Update the reputation management policy for a reputation entity. The policy determines how the entity responds to reputation findings, such as automatically pausing sending when certain thresholds are exceeded.

@@ -7,11 +7,9 @@
 keyspaces_untag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Keyspaces resource that the tags will be removed from. This
-value is an Amazon Resource Name (ARN).}
+\item{resourceArn}{[required] The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).}
 
-\item{tags}{[required] A list of existing tags to be removed from the Amazon Keyspaces
-resource.}
+\item{tags}{[required] A list of existing tags to be removed from the Amazon Keyspaces resource.}
 }
 \description{
 Removes the association of tags from a Amazon Keyspaces resource.

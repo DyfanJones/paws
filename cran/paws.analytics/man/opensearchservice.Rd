@@ -53,11 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Use the Amazon OpenSearch Service configuration API to create,
-configure, and manage OpenSearch Service domains. The endpoint for
-configuration service requests is Region specific:
-es.\emph{region}.amazonaws.com. For example, es.us-east-1.amazonaws.com. For
-a current list of supported Regions and endpoints, see \href{https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions}{Amazon Web Services service endpoints}.
+Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains. The endpoint for configuration service requests is Region specific: es.\emph{region}.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see \href{https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions}{Amazon Web Services service endpoints}.
 }
 \section{Service syntax}{
 

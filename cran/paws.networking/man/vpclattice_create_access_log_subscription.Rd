@@ -14,17 +14,11 @@ vpclattice_create_access_log_subscription(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token and parameters, the retry
-succeeds without performing any actions. If the parameters aren't
-identical, the retry fails.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.}
 
 \item{resourceIdentifier}{[required] The ID or ARN of the service network or service.}
 
-\item{destinationArn}{[required] The Amazon Resource Name (ARN) of the destination. The supported
-destination types are CloudWatch Log groups, Kinesis Data Firehose
-delivery streams, and Amazon S3 buckets.}
+\item{destinationArn}{[required] The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.}
 
 \item{serviceNetworkLogType}{The type of log that monitors your Amazon VPC Lattice service networks.}
 

@@ -7,23 +7,15 @@
 bedrockruntime_count_tokens(modelId, input)
 }
 \arguments{
-\item{modelId}{[required] The unique identifier or ARN of the foundation model to use for token
-counting. Each model processes tokens differently, so the token count is
-specific to the model you specify.}
+\item{modelId}{[required] The unique identifier or ARN of the foundation model to use for token counting. Each model processes tokens differently, so the token count is specific to the model you specify.}
 
-\item{input}{[required] The input for which to count tokens. The structure of this parameter
-depends on whether you're counting tokens for an
-\code{\link[=bedrockruntime_invoke_model]{invoke_model}} or
-\code{\link[=bedrockruntime_converse]{converse}} request:
+\item{input}{[required] The input for which to count tokens. The structure of this parameter depends on whether you're counting tokens for an \code{\link[=bedrockruntime_invoke_model]{invoke_model}} or \code{\link[=bedrockruntime_converse]{converse}} request:
 \itemize{
-\item For \code{\link[=bedrockruntime_invoke_model]{invoke_model}} requests, provide
-the request body in the \code{invokeModel} field
-\item For \code{\link[=bedrockruntime_converse]{converse}} requests, provide the
-messages and system content in the \code{converse} field
+\item For \code{\link[=bedrockruntime_invoke_model]{invoke_model}} requests, provide the request body in the \code{invokeModel} field
+\item For \code{\link[=bedrockruntime_converse]{converse}} requests, provide the messages and system content in the \code{converse} field
 }
 
-The input format must be compatible with the model specified in the
-\code{modelId} parameter.}
+The input format must be compatible with the model specified in the \code{modelId} parameter.}
 }
 \description{
 Returns the token count for a given inference request. This operation helps you estimate token usage before sending requests to foundation models by returning the token count that would be used if the same input were sent to the model in an inference request.

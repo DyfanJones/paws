@@ -12,14 +12,11 @@ bedrock_delete_automated_reasoning_policy_build_workflow(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-build workflow you want to delete.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow you want to delete.}
 
 \item{buildWorkflowId}{[required] The unique identifier of the build workflow to delete.}
 
-\item{lastUpdatedAt}{[required] The timestamp when the build workflow was last updated. This is used for
-optimistic concurrency control to prevent accidental deletion of
-workflows that have been modified.}
+\item{lastUpdatedAt}{[required] The timestamp when the build workflow was last updated. This is used for optimistic concurrency control to prevent accidental deletion of workflows that have been modified.}
 }
 \description{
 Deletes an Automated Reasoning policy build workflow and its associated artifacts. This permanently removes the workflow history and any generated assets.

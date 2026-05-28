@@ -7,8 +7,7 @@
 xray_get_indexing_rules(NextToken = NULL)
 }
 \arguments{
-\item{NextToken}{Specify the pagination token returned by a previous request to retrieve
-the next page of indexes.}
+\item{NextToken}{Specify the pagination token returned by a previous request to retrieve the next page of indexes.}
 }
 \description{
 Retrieves all indexing rules.

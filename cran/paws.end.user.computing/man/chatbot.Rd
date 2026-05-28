@@ -48,9 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-The \emph{AWS Chatbot API Reference} provides descriptions, API request
-parameters, and the XML response for each of the AWS Chatbot API
-actions.
+The \emph{AWS Chatbot API Reference} provides descriptions, API request parameters, and the XML response for each of the AWS Chatbot API actions.
 
 AWS Chatbot APIs are currently available in the following Regions:
 \itemize{
@@ -60,12 +58,9 @@ AWS Chatbot APIs are currently available in the following Regions:
 \item Europe (Ireland) - \code{eu-west-1}
 }
 
-The AWS Chatbot console can only be used in US East (Ohio). Your
-configuration data however, is stored in each of the relevant available
-Regions.
+The AWS Chatbot console can only be used in US East (Ohio). Your configuration data however, is stored in each of the relevant available Regions.
 
-Your AWS CloudTrail events are logged in whatever Region you call from,
-not US East (N. Virginia) by default.
+Your AWS CloudTrail events are logged in whatever Region you call from, not US East (N. Virginia) by default.
 }
 \section{Service syntax}{
 

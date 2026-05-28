@@ -19,27 +19,13 @@ sagemaker_update_endpoint(
 
 \item{EndpointConfigName}{[required] The name of the new endpoint configuration.}
 
-\item{RetainAllVariantProperties}{When updating endpoint resources, enables or disables the retention of
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html}{variant properties},
-such as the instance count or the variant weight. To retain the variant
-properties of an endpoint when updating it, set
-\code{RetainAllVariantProperties} to \code{true}. To use the variant properties
-specified in a new \code{EndpointConfig} call when updating an endpoint, set
-\code{RetainAllVariantProperties} to \code{false}. The default is \code{false}.}
+\item{RetainAllVariantProperties}{When updating endpoint resources, enables or disables the retention of \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html}{variant properties}, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set \code{RetainAllVariantProperties} to \code{true}. To use the variant properties specified in a new \code{EndpointConfig} call when updating an endpoint, set \code{RetainAllVariantProperties} to \code{false}. The default is \code{false}.}
 
-\item{ExcludeRetainedVariantProperties}{When you are updating endpoint resources with
-\code{RetainAllVariantProperties}, whose value is set to \code{true},
-\code{ExcludeRetainedVariantProperties} specifies the list of type
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html}{VariantProperty}
-to override with the values provided by \code{EndpointConfig}. If you don't
-specify a value for \code{ExcludeRetainedVariantProperties}, no variant
-properties are overridden.}
+\item{ExcludeRetainedVariantProperties}{When you are updating endpoint resources with \code{RetainAllVariantProperties}, whose value is set to \code{true}, \code{ExcludeRetainedVariantProperties} specifies the list of type \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html}{VariantProperty} to override with the values provided by \code{EndpointConfig}. If you don't specify a value for \code{ExcludeRetainedVariantProperties}, no variant properties are overridden.}
 
-\item{DeploymentConfig}{The deployment configuration for an endpoint, which contains the desired
-deployment strategy and rollback configurations.}
+\item{DeploymentConfig}{The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.}
 
-\item{RetainDeploymentConfig}{Specifies whether to reuse the last deployment configuration. The
-default value is false (the configuration is not reused).}
+\item{RetainDeploymentConfig}{Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).}
 }
 \description{
 Deploys the \code{EndpointConfig} specified in the request to a new fleet of instances. SageMaker shifts endpoint traffic to the new instances with the updated endpoint configuration and then deletes the old instances using the previous \code{EndpointConfig} (there is no availability loss). For more information about how to control the update and traffic shifting process, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails.html}{Update models in production}.

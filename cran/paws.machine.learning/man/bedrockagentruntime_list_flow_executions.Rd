@@ -16,12 +16,9 @@ bedrockagentruntime_list_flow_executions(
 
 \item{flowIdentifier}{[required] The unique identifier of the flow to list executions for.}
 
-\item{maxResults}{The maximum number of flow executions to return in a single response. If
-more executions exist than the specified \code{maxResults} value, a token is
-included in the response so that the remaining results can be retrieved.}
+\item{maxResults}{The maximum number of flow executions to return in a single response. If more executions exist than the specified \code{maxResults} value, a token is included in the response so that the remaining results can be retrieved.}
 
-\item{nextToken}{A token to retrieve the next set of results. This value is returned in
-the response if more results are available.}
+\item{nextToken}{A token to retrieve the next set of results. This value is returned in the response if more results are available.}
 }
 \description{
 Lists all executions of a flow. Results can be paginated and include summary information about each execution, such as status, start and end times, and the execution's Amazon Resource Name (ARN).

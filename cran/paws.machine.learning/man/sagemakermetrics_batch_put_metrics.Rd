@@ -7,8 +7,7 @@
 sagemakermetrics_batch_put_metrics(TrialComponentName, MetricData)
 }
 \arguments{
-\item{TrialComponentName}{[required] The name of the Trial Component to associate with the metrics. The Trial
-Component name must be entirely lowercase.}
+\item{TrialComponentName}{[required] The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.}
 
 \item{MetricData}{[required] A list of raw metric values to put.}
 }

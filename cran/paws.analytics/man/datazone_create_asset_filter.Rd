@@ -24,8 +24,7 @@ datazone_create_asset_filter(
 
 \item{configuration}{[required] The configuration of the asset filter.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a data asset filter.

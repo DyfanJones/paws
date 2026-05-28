@@ -7,8 +7,7 @@
 voiceid_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Voice ID resource for which you
-want to list the tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.}
 }
 \description{
 Lists all tags associated with a specified Voice ID resource.

@@ -11,11 +11,9 @@ kinesisanalyticsv2_describe_application_version(
 )
 }
 \arguments{
-\item{ApplicationName}{[required] The name of the application for which you want to get the version
-description.}
+\item{ApplicationName}{[required] The name of the application for which you want to get the version description.}
 
-\item{ApplicationVersionId}{[required] The ID of the application version for which you want to get the
-description.}
+\item{ApplicationVersionId}{[required] The ID of the application version for which you want to get the description.}
 }
 \description{
 Provides a detailed description of a specified version of the application. To see a list of all the versions of an application, invoke the \code{\link[=kinesisanalyticsv2_list_application_versions]{list_application_versions}} operation.

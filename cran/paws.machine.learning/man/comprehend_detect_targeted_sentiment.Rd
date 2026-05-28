@@ -10,8 +10,7 @@ comprehend_detect_targeted_sentiment(Text, LanguageCode)
 \arguments{
 \item{Text}{[required] A UTF-8 text string. The maximum string length is 5 KB.}
 
-\item{LanguageCode}{[required] The language of the input documents. Currently, English is the only
-supported language.}
+\item{LanguageCode}{[required] The language of the input documents. Currently, English is the only supported language.}
 }
 \description{
 Inspects the input text and returns a sentiment analysis for each entity identified in the text.

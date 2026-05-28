@@ -44,12 +44,10 @@ codecommit_associate_approval_rule_template_with_repository <- function(approval
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_batch_associate_approval_rule_template_with_repositories/](https://www.paws-r-sdk.com/docs/codecommit_batch_associate_approval_rule_template_with_repositories/) for full documentation.
 #'
-#' @param approvalRuleTemplateName &#91;required&#93; The name of the template you want to associate with one or more
-#' repositories.
+#' @param approvalRuleTemplateName &#91;required&#93; The name of the template you want to associate with one or more repositories.
 #' @param repositoryNames &#91;required&#93; The names of the repositories you want to associate with the template.
 #' 
-#' The length constraint limit is for each string in the array. The array
-#' itself can be empty.
+#' The length constraint limit is for each string in the array. The array itself can be empty.
 #'
 #' @keywords internal
 #'
@@ -82,28 +80,16 @@ codecommit_batch_associate_approval_rule_template_with_repositories <- function(
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_batch_describe_merge_conflicts/](https://www.paws-r-sdk.com/docs/codecommit_batch_describe_merge_conflicts/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository that contains the merge conflicts you want to
-#' review.
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
+#' @param repositoryName &#91;required&#93; The name of the repository that contains the merge conflicts you want to review.
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
 #' @param mergeOption &#91;required&#93; The merge option or strategy you want to use to merge the code.
 #' @param maxMergeHunks The maximum number of merge hunks to include in the output.
 #' @param maxConflictFiles The maximum number of files to include in the output.
-#' @param filePaths The path of the target files used to describe the conflicts. If not
-#' specified, the default is all conflict files.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
+#' @param filePaths The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
 #'
 #' @keywords internal
 #'
@@ -135,13 +121,10 @@ codecommit_batch_describe_merge_conflicts <- function(repositoryName, destinatio
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_batch_disassociate_approval_rule_template_from_repositories/](https://www.paws-r-sdk.com/docs/codecommit_batch_disassociate_approval_rule_template_from_repositories/) for full documentation.
 #'
-#' @param approvalRuleTemplateName &#91;required&#93; The name of the template that you want to disassociate from one or more
-#' repositories.
-#' @param repositoryNames &#91;required&#93; The repository names that you want to disassociate from the approval
-#' rule template.
+#' @param approvalRuleTemplateName &#91;required&#93; The name of the template that you want to disassociate from one or more repositories.
+#' @param repositoryNames &#91;required&#93; The repository names that you want to disassociate from the approval rule template.
 #' 
-#' The length constraint limit is for each string in the array. The array
-#' itself can be empty.
+#' The length constraint limit is for each string in the array. The array itself can be empty.
 #'
 #' @keywords internal
 #'
@@ -175,8 +158,7 @@ codecommit_batch_disassociate_approval_rule_template_from_repositories <- functi
 #'
 #' @param commitIds &#91;required&#93; The full commit IDs of the commits to get information about.
 #' 
-#' You must supply the full SHA IDs of each commit. You cannot use
-#' shortened SHA IDs.
+#' You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the commits.
 #'
 #' @keywords internal
@@ -210,8 +192,7 @@ codecommit_batch_get_commits <- function(commitIds, repositoryName) {
 #'
 #' @param repositoryNames &#91;required&#93; The names of the repositories to get information about.
 #' 
-#' The length constraint limit is for each string in the array. The array
-#' itself can be empty.
+#' The length constraint limit is for each string in the array. The array itself can be empty.
 #'
 #' @keywords internal
 #'
@@ -243,47 +224,23 @@ codecommit_batch_get_repositories <- function(repositoryNames) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_create_approval_rule_template/](https://www.paws-r-sdk.com/docs/codecommit_create_approval_rule_template/) for full documentation.
 #'
-#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template. Provide descriptive names,
-#' because this name is applied to the approval rules created automatically
-#' in associated repositories.
-#' @param approvalRuleTemplateContent &#91;required&#93; The content of the approval rule that is created on pull requests in
-#' associated repositories. If you specify one or more destination
-#' references (branches), approval rules are created in an associated
-#' repository only if their destination references (branches) match those
-#' specified in the template.
+#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.
+#' @param approvalRuleTemplateContent &#91;required&#93; The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.
 #' 
-#' When you create the content of the approval rule template, you can
-#' specify approvers in an approval pool in one of two ways:
+#' When you create the content of the approval rule template, you can specify approvers in an approval pool in one of two ways:
 #' 
-#' -   **CodeCommitApprovers**: This option only requires an Amazon Web
-#'     Services account and a resource. It can be used for both IAM users
-#'     and federated access users whose name matches the provided resource
-#'     name. This is a very powerful option that offers a great deal of
-#'     flexibility. For example, if you specify the Amazon Web Services
-#'     account *123456789012* and *Mary_Major*, all of the following are
-#'     counted as approvals coming from that user:
+#' -   **CodeCommitApprovers**: This option only requires an Amazon Web Services account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services account *123456789012* and *Mary_Major*, all of the following are counted as approvals coming from that user:
 #' 
-#'     -   An IAM user in the account
-#'         (arn:aws:iam::*123456789012*:user/*Mary_Major*)
+#'     -   An IAM user in the account (arn:aws:iam::*123456789012*:user/*Mary_Major*)
 #' 
-#'     -   A federated user identified in IAM as Mary_Major
-#'         (arn:aws:sts::*123456789012*:federated-user/*Mary_Major*)
+#'     -   A federated user identified in IAM as Mary_Major (arn:aws:sts::*123456789012*:federated-user/*Mary_Major*)
 #' 
-#'     This option does not recognize an active session of someone assuming
-#'     the role of CodeCommitReview with a role session name of
-#'     *Mary_Major*
-#'     (arn:aws:sts::*123456789012*:assumed-role/CodeCommitReview/*Mary_Major*)
-#'     unless you include a wildcard (*Mary_Major).
+#'     This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of *Mary_Major* (arn:aws:sts::*123456789012*:assumed-role/CodeCommitReview/*Mary_Major*) unless you include a wildcard (*Mary_Major).
 #' 
-#' -   **Fully qualified ARN**: This option allows you to specify the fully
-#'     qualified Amazon Resource Name (ARN) of the IAM user or role.
+#' -   **Fully qualified ARN**: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role.
 #' 
-#' For more information about IAM ARNs, wildcards, and formats, see [IAM
-#' Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html)
-#' in the *IAM User Guide*.
-#' @param approvalRuleTemplateDescription The description of the approval rule template. Consider providing a
-#' description that explains what this template does and when it might be
-#' appropriate to associate it with repositories.
+#' For more information about IAM ARNs, wildcards, and formats, see [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html) in the *IAM User Guide*.
+#' @param approvalRuleTemplateDescription The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.
 #'
 #' @keywords internal
 #'
@@ -349,20 +306,13 @@ codecommit_create_branch <- function(repositoryName, branchName, commitId) {
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where you create the commit.
 #' @param branchName &#91;required&#93; The name of the branch where you create the commit.
-#' @param parentCommitId The ID of the commit that is the parent of the commit you create. Not
-#' required if this is an empty repository.
-#' @param authorName The name of the author who created the commit. This information is used
-#' as both the author and committer for the commit.
+#' @param parentCommitId The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.
+#' @param authorName The name of the author who created the commit. This information is used as both the author and committer for the commit.
 #' @param email The email address of the person who created the commit.
-#' @param commitMessage The commit message you want to include in the commit. Commit messages
-#' are limited to 256 KB. If no message is specified, a default message is
-#' used.
-#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder
-#' structure if the changes leave the folders empty. If true, a ..gitkeep
-#' file is created for empty folders. The default is false.
+#' @param commitMessage The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.
+#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.
 #' @param putFiles The files to add or update in this commit.
-#' @param deleteFiles The files to delete in this commit. These files still exist in earlier
-#' commits.
+#' @param deleteFiles The files to delete in this commit. These files still exist in earlier commits.
 #' @param setFileModes The file modes to update for files in this commit.
 #'
 #' @keywords internal
@@ -394,22 +344,12 @@ codecommit_create_commit <- function(repositoryName, branchName, parentCommitId 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_create_pull_request/](https://www.paws-r-sdk.com/docs/codecommit_create_pull_request/) for full documentation.
 #'
-#' @param title &#91;required&#93; The title of the pull request. This title is used to identify the pull
-#' request to other users in the repository.
+#' @param title &#91;required&#93; The title of the pull request. This title is used to identify the pull request to other users in the repository.
 #' @param description A description of the pull request.
-#' @param targets &#91;required&#93; The targets for the pull request, including the source of the code to be
-#' reviewed (the source branch) and the destination where the creator of
-#' the pull request intends the code to be merged after the pull request is
-#' closed (the destination branch).
-#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a
-#' request, ensures the request cannot be repeated with a changed
-#' parameter. If a request is received with the same parameters and a token
-#' is included, the request returns information about the initial request
-#' that used that token.
+#' @param targets &#91;required&#93; The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).
+#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.
 #' 
-#' The Amazon Web ServicesSDKs prepopulate client request tokens. If you
-#' are using an Amazon Web ServicesSDK, an idempotency token is created for
-#' you.
+#' The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.
 #'
 #' @keywords internal
 #'
@@ -440,43 +380,23 @@ codecommit_create_pull_request <- function(title, description = NULL, targets, c
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_create_pull_request_approval_rule/](https://www.paws-r-sdk.com/docs/codecommit_create_pull_request_approval_rule/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request for which you want to create
-#' the approval rule.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request for which you want to create the approval rule.
 #' @param approvalRuleName &#91;required&#93; The name for the approval rule.
-#' @param approvalRuleContent &#91;required&#93; The content of the approval rule, including the number of approvals
-#' needed and the structure of an approval pool defined for approvals, if
-#' any. For more information about approval pools, see the CodeCommit User
-#' Guide.
+#' @param approvalRuleContent &#91;required&#93; The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.
 #' 
-#' When you create the content of the approval rule, you can specify
-#' approvers in an approval pool in one of two ways:
+#' When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:
 #' 
-#' -   **CodeCommitApprovers**: This option only requires an Amazon Web
-#'     Services account and a resource. It can be used for both IAM users
-#'     and federated access users whose name matches the provided resource
-#'     name. This is a very powerful option that offers a great deal of
-#'     flexibility. For example, if you specify the Amazon Web Services
-#'     account *123456789012* and *Mary_Major*, all of the following would
-#'     be counted as approvals coming from that user:
+#' -   **CodeCommitApprovers**: This option only requires an Amazon Web Services account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services account *123456789012* and *Mary_Major*, all of the following would be counted as approvals coming from that user:
 #' 
-#'     -   An IAM user in the account
-#'         (arn:aws:iam::*123456789012*:user/*Mary_Major*)
+#'     -   An IAM user in the account (arn:aws:iam::*123456789012*:user/*Mary_Major*)
 #' 
-#'     -   A federated user identified in IAM as Mary_Major
-#'         (arn:aws:sts::*123456789012*:federated-user/*Mary_Major*)
+#'     -   A federated user identified in IAM as Mary_Major (arn:aws:sts::*123456789012*:federated-user/*Mary_Major*)
 #' 
-#'     This option does not recognize an active session of someone assuming
-#'     the role of CodeCommitReview with a role session name of
-#'     *Mary_Major*
-#'     (arn:aws:sts::*123456789012*:assumed-role/CodeCommitReview/*Mary_Major*)
-#'     unless you include a wildcard (*Mary_Major).
+#'     This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of *Mary_Major* (arn:aws:sts::*123456789012*:assumed-role/CodeCommitReview/*Mary_Major*) unless you include a wildcard (*Mary_Major).
 #' 
-#' -   **Fully qualified ARN**: This option allows you to specify the fully
-#'     qualified Amazon Resource Name (ARN) of the IAM user or role.
+#' -   **Fully qualified ARN**: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role.
 #' 
-#' For more information about IAM ARNs, wildcards, and formats, see [IAM
-#' Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html)
-#' in the *IAM User Guide*.
+#' For more information about IAM ARNs, wildcards, and formats, see [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html) in the *IAM User Guide*.
 #'
 #' @keywords internal
 #'
@@ -509,30 +429,14 @@ codecommit_create_pull_request_approval_rule <- function(pullRequestId, approval
 #'
 #' @param repositoryName &#91;required&#93; The name of the new repository to be created.
 #' 
-#' The repository name must be unique across the calling Amazon Web
-#' Services account. Repository names are limited to 100 alphanumeric,
-#' dash, and underscore characters, and cannot include certain characters.
-#' For more information about the limits on repository names, see
-#' [Quotas](https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html)
-#' in the *CodeCommit User Guide*. The suffix .git is prohibited.
+#' The repository name must be unique across the calling Amazon Web Services account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see [Quotas](https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html) in the *CodeCommit User Guide*. The suffix .git is prohibited.
 #' @param repositoryDescription A comment or description about the new repository.
 #' 
-#' The description field for a repository accepts all HTML characters and
-#' all valid Unicode characters. Applications that do not HTML-encode the
-#' description and display it in a webpage can expose users to potentially
-#' malicious code. Make sure that you HTML-encode the description field in
-#' any application that uses this API to display the repository description
-#' on a webpage.
+#' The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.
 #' @param tags One or more tag key-value pairs to use when tagging this repository.
-#' @param kmsKeyId The ID of the encryption key. You can view the ID of an encryption key
-#' in the KMS console, or use the KMS APIs to programmatically retrieve a
-#' key ID. For more information about acceptable values for kmsKeyID, see
-#' [KeyId](https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId)
-#' in the Decrypt API description in the *Key Management Service API
-#' Reference*.
+#' @param kmsKeyId The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for kmsKeyID, see [KeyId](https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId) in the Decrypt API description in the *Key Management Service API Reference*.
 #' 
-#' If no key is specified, the default `aws/codecommit` Amazon Web Services
-#' managed key is used.
+#' If no key is specified, the default `aws/codecommit` Amazon Web Services managed key is used.
 #'
 #' @keywords internal
 #'
@@ -564,32 +468,17 @@ codecommit_create_repository <- function(repositoryName, repositoryDescription =
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_create_unreferenced_merge_commit/](https://www.paws-r-sdk.com/docs/codecommit_create_unreferenced_merge_commit/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository where you want to create the unreferenced
-#' merge commit.
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
+#' @param repositoryName &#91;required&#93; The name of the repository where you want to create the unreferenced merge commit.
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
 #' @param mergeOption &#91;required&#93; The merge option or strategy you want to use to merge the code.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
-#' @param authorName The name of the author who created the unreferenced commit. This
-#' information is used as both the author and committer for the commit.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
+#' @param authorName The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.
 #' @param email The email address for the person who created the unreferenced commit.
 #' @param commitMessage The commit message for the unreferenced commit.
-#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder
-#' structure if the changes leave the folders empty. If this is specified
-#' as true, a .gitkeep file is created for empty folders. The default is
-#' false.
-#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to
-#' use when resolving conflicts during a merge.
+#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.
+#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
 #'
 #' @keywords internal
 #'
@@ -685,10 +574,7 @@ codecommit_delete_branch <- function(repositoryName, branchName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_delete_comment_content/](https://www.paws-r-sdk.com/docs/codecommit_delete_comment_content/) for full documentation.
 #'
-#' @param commentId &#91;required&#93; The unique, system-generated ID of the comment. To get this ID, use
-#' [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit]
-#' or
-#' [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
+#' @param commentId &#91;required&#93; The unique, system-generated ID of the comment. To get this ID, use [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit] or [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
 #'
 #' @keywords internal
 #'
@@ -721,28 +607,12 @@ codecommit_delete_comment_content <- function(commentId) {
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the file to delete.
 #' @param branchName &#91;required&#93; The name of the branch where the commit that deletes the file is made.
-#' @param filePath &#91;required&#93; The fully qualified path to the file that to be deleted, including the
-#' full name and extension of that file. For example, /examples/file.md is
-#' a fully qualified path to a file named file.md in a folder named
-#' examples.
-#' @param parentCommitId &#91;required&#93; The ID of the commit that is the tip of the branch where you want to
-#' create the commit that deletes the file. This must be the HEAD commit
-#' for the branch. The commit that deletes the file is created from this
-#' commit ID.
-#' @param keepEmptyFolders If a file is the only object in the folder or directory, specifies
-#' whether to delete the folder or directory that contains the file. By
-#' default, empty folders are deleted. This includes empty folders that are
-#' part of the directory structure. For example, if the path to a file is
-#' dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file
-#' in dir4 also deletes the empty folders dir4, dir3, and dir2.
-#' @param commitMessage The commit message you want to include as part of deleting the file.
-#' Commit messages are limited to 256 KB. If no message is specified, a
-#' default message is used.
-#' @param name The name of the author of the commit that deletes the file. If no name
-#' is specified, the user's ARN is used as the author name and committer
-#' name.
-#' @param email The email address for the commit that deletes the file. If no email
-#' address is specified, the email address is left blank.
+#' @param filePath &#91;required&#93; The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
+#' @param parentCommitId &#91;required&#93; The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.
+#' @param keepEmptyFolders If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
+#' @param commitMessage The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.
+#' @param name The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.
+#' @param email The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.
 #'
 #' @keywords internal
 #'
@@ -773,8 +643,7 @@ codecommit_delete_file <- function(repositoryName, branchName, filePath, parentC
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_delete_pull_request_approval_rule/](https://www.paws-r-sdk.com/docs/codecommit_delete_pull_request_approval_rule/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request that contains the approval
-#' rule you want to delete.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request that contains the approval rule you want to delete.
 #' @param approvalRuleName &#91;required&#93; The name of the approval rule you want to delete.
 #'
 #' @keywords internal
@@ -839,26 +708,15 @@ codecommit_delete_repository <- function(repositoryName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_describe_merge_conflicts/](https://www.paws-r-sdk.com/docs/codecommit_describe_merge_conflicts/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository where you want to get information about a
-#' merge conflict.
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
+#' @param repositoryName &#91;required&#93; The name of the repository where you want to get information about a merge conflict.
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
 #' @param mergeOption &#91;required&#93; The merge option or strategy you want to use to merge the code.
 #' @param maxMergeHunks The maximum number of merge hunks to include in the output.
 #' @param filePath &#91;required&#93; The path of the target files used to describe the conflicts.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
 #'
 #' @keywords internal
 #'
@@ -889,18 +747,11 @@ codecommit_describe_merge_conflicts <- function(repositoryName, destinationCommi
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_describe_pull_request_events/](https://www.paws-r-sdk.com/docs/codecommit_describe_pull_request_events/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
-#' @param pullRequestEventType Optional. The pull request event type about which you want to return
-#' information.
-#' @param actorArn The Amazon Resource Name (ARN) of the user whose actions resulted in the
-#' event. Examples include updating the pull request with more commits or
-#' changing the status of a pull request.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results. The default is 100 events, which is also the maximum number of
-#' events that can be returned in a result.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param pullRequestEventType Optional. The pull request event type about which you want to return information.
+#' @param actorArn The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.
 #'
 #' @keywords internal
 #'
@@ -933,8 +784,7 @@ codecommit_describe_pull_request_events <- function(pullRequestId, pullRequestEv
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_disassociate_approval_rule_template_from_repository/](https://www.paws-r-sdk.com/docs/codecommit_disassociate_approval_rule_template_from_repository/) for full documentation.
 #'
-#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template to disassociate from a specified
-#' repository.
+#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template to disassociate from a specified repository.
 #' @param repositoryName &#91;required&#93; The name of the repository you want to disassociate from the template.
 #'
 #' @keywords internal
@@ -968,9 +818,7 @@ codecommit_disassociate_approval_rule_template_from_repository <- function(appro
 #' See [https://www.paws-r-sdk.com/docs/codecommit_evaluate_pull_request_approval_rules/](https://www.paws-r-sdk.com/docs/codecommit_evaluate_pull_request_approval_rules/) for full documentation.
 #'
 #' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request you want to evaluate.
-#' @param revisionId &#91;required&#93; The system-generated ID for the pull request revision. To retrieve the
-#' most recent revision ID for a pull request, use
-#' [`get_pull_request`][codecommit_get_pull_request].
+#' @param revisionId &#91;required&#93; The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use [`get_pull_request`][codecommit_get_pull_request].
 #'
 #' @keywords internal
 #'
@@ -1001,8 +849,7 @@ codecommit_evaluate_pull_request_approval_rules <- function(pullRequestId, revis
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_approval_rule_template/](https://www.paws-r-sdk.com/docs/codecommit_get_approval_rule_template/) for full documentation.
 #'
-#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template for which you want to get
-#' information.
+#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template for which you want to get information.
 #'
 #' @keywords internal
 #'
@@ -1067,8 +914,7 @@ codecommit_get_blob <- function(repositoryName, blobId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_branch/](https://www.paws-r-sdk.com/docs/codecommit_get_branch/) for full documentation.
 #'
-#' @param repositoryName The name of the repository that contains the branch for which you want
-#' to retrieve information.
+#' @param repositoryName The name of the repository that contains the branch for which you want to retrieve information.
 #' @param branchName The name of the branch for which you want to retrieve information.
 #'
 #' @keywords internal
@@ -1101,10 +947,7 @@ codecommit_get_branch <- function(repositoryName = NULL, branchName = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_comment/](https://www.paws-r-sdk.com/docs/codecommit_get_comment/) for full documentation.
 #'
-#' @param commentId &#91;required&#93; The unique, system-generated ID of the comment. To get this ID, use
-#' [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit]
-#' or
-#' [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
+#' @param commentId &#91;required&#93; The unique, system-generated ID of the comment. To get this ID, use [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit] or [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
 #'
 #' @keywords internal
 #'
@@ -1136,12 +979,9 @@ codecommit_get_comment <- function(commentId) {
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_comment_reactions/](https://www.paws-r-sdk.com/docs/codecommit_get_comment_reactions/) for full documentation.
 #'
 #' @param commentId &#91;required&#93; The ID of the comment for which you want to get reactions information.
-#' @param reactionUserArn Optional. The Amazon Resource Name (ARN) of the user or identity for
-#' which you want to get reaction information.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results. The default is the same as the allowed maximum, 1,000.
+#' @param reactionUserArn Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.
 #'
 #' @keywords internal
 #'
@@ -1174,14 +1014,10 @@ codecommit_get_comment_reactions <- function(commentId, reactionUserArn = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_comments_for_compared_commit/](https://www.paws-r-sdk.com/docs/codecommit_get_comments_for_compared_commit/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where you want to compare commits.
-#' @param beforeCommitId To establish the directionality of the comparison, the full commit ID of
-#' the before commit.
-#' @param afterCommitId &#91;required&#93; To establish the directionality of the comparison, the full commit ID of
-#' the after commit.
-#' @param nextToken An enumeration token that when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results. The default is 100 comments, but you can configure up to 500.
+#' @param beforeCommitId To establish the directionality of the comparison, the full commit ID of the before commit.
+#' @param afterCommitId &#91;required&#93; To establish the directionality of the comparison, the full commit ID of the after commit.
+#' @param nextToken An enumeration token that when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.
 #'
 #' @keywords internal
 #'
@@ -1212,24 +1048,12 @@ codecommit_get_comments_for_compared_commit <- function(repositoryName, beforeCo
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_comments_for_pull_request/](https://www.paws-r-sdk.com/docs/codecommit_get_comments_for_pull_request/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
-#' @param repositoryName The name of the repository that contains the pull request. Requirement
-#' is conditional: `repositoryName` must be specified when `beforeCommitId`
-#' and `afterCommitId` are included.
-#' @param beforeCommitId The full commit ID of the commit in the destination branch that was the
-#' tip of the branch at the time the pull request was created. Requirement
-#' is conditional: `beforeCommitId` must be specified when `repositoryName`
-#' is included.
-#' @param afterCommitId The full commit ID of the commit in the source branch that was the tip
-#' of the branch at the time the comment was made. Requirement is
-#' conditional: `afterCommitId` must be specified when `repositoryName` is
-#' included.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results. The default is 100 comments. You can return up to 500 comments
-#' with a single request.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param repositoryName The name of the repository that contains the pull request. Requirement is conditional: `repositoryName` must be specified when `beforeCommitId` and `afterCommitId` are included.
+#' @param beforeCommitId The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created. Requirement is conditional: `beforeCommitId` must be specified when `repositoryName` is included.
+#' @param afterCommitId The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made. Requirement is conditional: `afterCommitId` must be specified when `repositoryName` is included.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.
 #'
 #' @keywords internal
 #'
@@ -1296,25 +1120,12 @@ codecommit_get_commit <- function(repositoryName, commitId) {
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_differences/](https://www.paws-r-sdk.com/docs/codecommit_get_differences/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where you want to get differences.
-#' @param beforeCommitSpecifier The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, the full commit ID). Optional. If not
-#' specified, all changes before the `afterCommitSpecifier` value are
-#' shown. If you do not use `beforeCommitSpecifier` in your request,
-#' consider limiting the results with `maxResults`.
-#' @param afterCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit.
-#' @param beforePath The file path in which to check for differences. Limits the results to
-#' this path. Can also be used to specify the previous name of a directory
-#' or folder. If `beforePath` and `afterPath` are not specified,
-#' differences are shown for all paths.
-#' @param afterPath The file path in which to check differences. Limits the results to this
-#' path. Can also be used to specify the changed name of a directory or
-#' folder, if it has changed. If not specified, differences are shown for
-#' all paths.
-#' @param MaxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
-#' @param NextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
+#' @param beforeCommitSpecifier The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the `afterCommitSpecifier` value are shown. If you do not use `beforeCommitSpecifier` in your request, consider limiting the results with `maxResults`.
+#' @param afterCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
+#' @param beforePath The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If `beforePath` and `afterPath` are not specified, differences are shown for all paths.
+#' @param afterPath The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.
+#' @param MaxResults A non-zero, non-negative integer used to limit the number of returned results.
+#' @param NextToken An enumeration token that, when provided in a request, returns the next batch of the results.
 #'
 #' @keywords internal
 #'
@@ -1347,13 +1158,8 @@ codecommit_get_differences <- function(repositoryName, beforeCommitSpecifier = N
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_file/](https://www.paws-r-sdk.com/docs/codecommit_get_file/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the file.
-#' @param commitSpecifier The fully quaified reference that identifies the commit that contains
-#' the file. For example, you can specify a full commit ID, a tag, a branch
-#' name, or a reference such as refs/heads/main. If none is provided, the
-#' head commit is used.
-#' @param filePath &#91;required&#93; The fully qualified path to the file, including the full name and
-#' extension of the file. For example, /examples/file.md is the fully
-#' qualified path to a file named file.md in a folder named examples.
+#' @param commitSpecifier The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.
+#' @param filePath &#91;required&#93; The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
 #'
 #' @keywords internal
 #'
@@ -1385,15 +1191,8 @@ codecommit_get_file <- function(repositoryName, commitSpecifier = NULL, filePath
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_folder/](https://www.paws-r-sdk.com/docs/codecommit_get_folder/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository.
-#' @param commitSpecifier A fully qualified reference used to identify a commit that contains the
-#' version of the folder's content to return. A fully qualified reference
-#' can be a commit ID, branch name, tag, or reference such as HEAD. If no
-#' specifier is provided, the folder content is returned as it exists in
-#' the HEAD commit.
-#' @param folderPath &#91;required&#93; The fully qualified path to the folder whose contents are returned,
-#' including the folder name. For example, /examples is a fully-qualified
-#' path to a folder named examples that was created off of the root
-#' directory (/) of a repository.
+#' @param commitSpecifier A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.
+#' @param folderPath &#91;required&#93; The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
 #'
 #' @keywords internal
 #'
@@ -1424,21 +1223,11 @@ codecommit_get_folder <- function(repositoryName, commitSpecifier = NULL, folder
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_merge_commit/](https://www.paws-r-sdk.com/docs/codecommit_get_merge_commit/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository that contains the merge commit about which
-#' you want to get information.
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
+#' @param repositoryName &#91;required&#93; The name of the repository that contains the merge commit about which you want to get information.
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
 #'
 #' @keywords internal
 #'
@@ -1471,23 +1260,13 @@ codecommit_get_merge_commit <- function(repositoryName, sourceCommitSpecifier, d
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_merge_conflicts/](https://www.paws-r-sdk.com/docs/codecommit_get_merge_conflicts/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where the pull request was created.
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
 #' @param mergeOption &#91;required&#93; The merge option or strategy you want to use to merge the code.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
 #' @param maxConflictFiles The maximum number of files to include in the output.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
 #'
 #' @keywords internal
 #'
@@ -1519,21 +1298,11 @@ codecommit_get_merge_conflicts <- function(repositoryName, destinationCommitSpec
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_merge_options/](https://www.paws-r-sdk.com/docs/codecommit_get_merge_options/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository that contains the commits about which you
-#' want to get merge options.
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
+#' @param repositoryName &#91;required&#93; The name of the repository that contains the commits about which you want to get merge options.
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
 #'
 #' @keywords internal
 #'
@@ -1564,8 +1333,7 @@ codecommit_get_merge_options <- function(repositoryName, sourceCommitSpecifier, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_pull_request/](https://www.paws-r-sdk.com/docs/codecommit_get_pull_request/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
 #'
 #' @keywords internal
 #'
@@ -1631,11 +1399,8 @@ codecommit_get_pull_request_approval_states <- function(pullRequestId, revisionI
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_get_pull_request_override_state/](https://www.paws-r-sdk.com/docs/codecommit_get_pull_request_override_state/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The ID of the pull request for which you want to get information about
-#' whether approval rules have been set aside (overridden).
-#' @param revisionId &#91;required&#93; The system-generated ID of the revision for the pull request. To
-#' retrieve the most recent revision ID, use
-#' [`get_pull_request`][codecommit_get_pull_request].
+#' @param pullRequestId &#91;required&#93; The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).
+#' @param revisionId &#91;required&#93; The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use [`get_pull_request`][codecommit_get_pull_request].
 #'
 #' @keywords internal
 #'
@@ -1729,10 +1494,8 @@ codecommit_get_repository_triggers <- function(repositoryName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_list_approval_rule_templates/](https://www.paws-r-sdk.com/docs/codecommit_list_approval_rule_templates/) for full documentation.
 #'
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results.
 #'
 #' @keywords internal
 #'
@@ -1764,12 +1527,9 @@ codecommit_list_approval_rule_templates <- function(nextToken = NULL, maxResults
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_list_associated_approval_rule_templates_for_repository/](https://www.paws-r-sdk.com/docs/codecommit_list_associated_approval_rule_templates_for_repository/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository for which you want to list all associated
-#' approval rule templates.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
+#' @param repositoryName &#91;required&#93; The name of the repository for which you want to list all associated approval rule templates.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results.
 #'
 #' @keywords internal
 #'
@@ -1833,14 +1593,9 @@ codecommit_list_branches <- function(repositoryName, nextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/codecommit_list_file_commit_history/](https://www.paws-r-sdk.com/docs/codecommit_list_file_commit_history/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the file.
-#' @param commitSpecifier The fully quaified reference that identifies the commit that contains
-#' the file. For example, you can specify a full commit ID, a tag, a branch
-#' name, or a reference such as `refs/heads/main`. If none is provided, the
-#' head commit is used.
-#' @param filePath &#91;required&#93; The full path of the file whose history you want to retrieve, including
-#' the name of the file.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
+#' @param commitSpecifier The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as `refs/heads/main`. If none is provided, the head commit is used.
+#' @param filePath &#91;required&#93; The full path of the file whose history you want to retrieve, including the name of the file.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results.
 #' @param nextToken An enumeration token that allows the operation to batch the results.
 #'
 #' @keywords internal
@@ -1873,15 +1628,10 @@ codecommit_list_file_commit_history <- function(repositoryName, commitSpecifier 
 #' See [https://www.paws-r-sdk.com/docs/codecommit_list_pull_requests/](https://www.paws-r-sdk.com/docs/codecommit_list_pull_requests/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository for which you want to list pull requests.
-#' @param authorArn Optional. The Amazon Resource Name (ARN) of the user who created the
-#' pull request. If used, this filters the results to pull requests created
-#' by that user.
-#' @param pullRequestStatus Optional. The status of the pull request. If used, this refines the
-#' results to the pull requests that match the specified status.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
+#' @param authorArn Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.
+#' @param pullRequestStatus Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results.
 #'
 #' @keywords internal
 #'
@@ -1912,10 +1662,7 @@ codecommit_list_pull_requests <- function(repositoryName, authorArn = NULL, pull
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_list_repositories/](https://www.paws-r-sdk.com/docs/codecommit_list_repositories/) for full documentation.
 #'
-#' @param nextToken An enumeration token that allows the operation to batch the results of
-#' the operation. Batch sizes are 1,000 for list repository operations.
-#' When the client sends the token back to CodeCommit, another page of
-#' 1,000 records is retrieved.
+#' @param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.
 #' @param sortBy The criteria used to sort the results of a list repositories operation.
 #' @param order The order in which to sort the results of a list repositories operation.
 #'
@@ -1949,12 +1696,9 @@ codecommit_list_repositories <- function(nextToken = NULL, sortBy = NULL, order 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_list_repositories_for_approval_rule_template/](https://www.paws-r-sdk.com/docs/codecommit_list_repositories_for_approval_rule_template/) for full documentation.
 #'
-#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template for which you want to list
-#' repositories that are associated with that template.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
-#' @param maxResults A non-zero, non-negative integer used to limit the number of returned
-#' results.
+#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template for which you want to list repositories that are associated with that template.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
+#' @param maxResults A non-zero, non-negative integer used to limit the number of returned results.
 #'
 #' @keywords internal
 #'
@@ -1986,10 +1730,8 @@ codecommit_list_repositories_for_approval_rule_template <- function(approvalRule
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/codecommit_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to get
-#' information about tags, if any.
-#' @param nextToken An enumeration token that, when provided in a request, returns the next
-#' batch of the results.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.
+#' @param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.
 #'
 #' @keywords internal
 #'
@@ -2021,10 +1763,8 @@ codecommit_list_tags_for_resource <- function(resourceArn, nextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/codecommit_merge_branches_by_fast_forward/](https://www.paws-r-sdk.com/docs/codecommit_merge_branches_by_fast_forward/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where you want to merge two branches.
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
 #' @param targetBranch The branch where the merge is applied.
 #'
 #' @keywords internal
@@ -2057,31 +1797,16 @@ codecommit_merge_branches_by_fast_forward <- function(repositoryName, sourceComm
 #' See [https://www.paws-r-sdk.com/docs/codecommit_merge_branches_by_squash/](https://www.paws-r-sdk.com/docs/codecommit_merge_branches_by_squash/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where you want to merge two branches.
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
 #' @param targetBranch The branch where the merge is applied.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
-#' @param authorName The name of the author who created the commit. This information is used
-#' as both the author and committer for the commit.
-#' @param email The email address of the person merging the branches. This information
-#' is used in the commit information for the merge.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
+#' @param authorName The name of the author who created the commit. This information is used as both the author and committer for the commit.
+#' @param email The email address of the person merging the branches. This information is used in the commit information for the merge.
 #' @param commitMessage The commit message for the merge.
-#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder
-#' structure if the changes leave the folders empty. If this is specified
-#' as true, a .gitkeep file is created for empty folders. The default is
-#' false.
-#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to
-#' use when resolving conflicts during a merge.
+#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.
+#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
 #'
 #' @keywords internal
 #'
@@ -2113,30 +1838,16 @@ codecommit_merge_branches_by_squash <- function(repositoryName, sourceCommitSpec
 #' See [https://www.paws-r-sdk.com/docs/codecommit_merge_branches_by_three_way/](https://www.paws-r-sdk.com/docs/codecommit_merge_branches_by_three_way/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where you want to merge two branches.
-#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
-#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to
-#' identify a commit (for example, a branch name or a full commit ID).
+#' @param sourceCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
+#' @param destinationCommitSpecifier &#91;required&#93; The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).
 #' @param targetBranch The branch where the merge is applied.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
-#' @param authorName The name of the author who created the commit. This information is used
-#' as both the author and committer for the commit.
-#' @param email The email address of the person merging the branches. This information
-#' is used in the commit information for the merge.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
+#' @param authorName The name of the author who created the commit. This information is used as both the author and committer for the commit.
+#' @param email The email address of the person merging the branches. This information is used in the commit information for the merge.
 #' @param commitMessage The commit message to include in the commit information for the merge.
-#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder
-#' structure if the changes leave the folders empty. If true, a .gitkeep
-#' file is created for empty folders. The default is false.
-#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to
-#' use when resolving conflicts during a merge.
+#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.
+#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
 #'
 #' @keywords internal
 #'
@@ -2169,13 +1880,9 @@ codecommit_merge_branches_by_three_way <- function(repositoryName, sourceCommitS
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_merge_pull_request_by_fast_forward/](https://www.paws-r-sdk.com/docs/codecommit_merge_pull_request_by_fast_forward/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
 #' @param repositoryName &#91;required&#93; The name of the repository where the pull request was created.
-#' @param sourceCommitId The full commit ID of the original or updated commit in the pull request
-#' source branch. Pass this value if you want an exception thrown if the
-#' current commit ID of the tip of the source branch does not match this
-#' commit ID.
+#' @param sourceCommitId The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.
 #'
 #' @keywords internal
 #'
@@ -2208,32 +1915,16 @@ codecommit_merge_pull_request_by_fast_forward <- function(pullRequestId, reposit
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_merge_pull_request_by_squash/](https://www.paws-r-sdk.com/docs/codecommit_merge_pull_request_by_squash/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
 #' @param repositoryName &#91;required&#93; The name of the repository where the pull request was created.
-#' @param sourceCommitId The full commit ID of the original or updated commit in the pull request
-#' source branch. Pass this value if you want an exception thrown if the
-#' current commit ID of the tip of the source branch does not match this
-#' commit ID.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
+#' @param sourceCommitId The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
 #' @param commitMessage The commit message to include in the commit information for the merge.
-#' @param authorName The name of the author who created the commit. This information is used
-#' as both the author and committer for the commit.
-#' @param email The email address of the person merging the branches. This information
-#' is used in the commit information for the merge.
-#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder
-#' structure if the changes leave the folders empty. If true, a .gitkeep
-#' file is created for empty folders. The default is false.
-#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to
-#' use when resolving conflicts during a merge.
+#' @param authorName The name of the author who created the commit. This information is used as both the author and committer for the commit.
+#' @param email The email address of the person merging the branches. This information is used in the commit information for the merge.
+#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.
+#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
 #'
 #' @keywords internal
 #'
@@ -2266,32 +1957,16 @@ codecommit_merge_pull_request_by_squash <- function(pullRequestId, repositoryNam
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_merge_pull_request_by_three_way/](https://www.paws-r-sdk.com/docs/codecommit_merge_pull_request_by_three_way/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
 #' @param repositoryName &#91;required&#93; The name of the repository where the pull request was created.
-#' @param sourceCommitId The full commit ID of the original or updated commit in the pull request
-#' source branch. Pass this value if you want an exception thrown if the
-#' current commit ID of the tip of the source branch does not match this
-#' commit ID.
-#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default
-#' FILE_LEVEL is used, which returns a not-mergeable result if the same
-#' file has differences in both branches. If LINE_LEVEL is specified, a
-#' conflict is considered not mergeable if the same file in both branches
-#' has differences on the same line.
-#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to
-#' attempt automatically merging two versions of a file. The default is
-#' NONE, which requires any conflicts to be resolved manually before the
-#' merge operation is successful.
+#' @param sourceCommitId The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.
+#' @param conflictDetailLevel The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.
+#' @param conflictResolutionStrategy Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.
 #' @param commitMessage The commit message to include in the commit information for the merge.
-#' @param authorName The name of the author who created the commit. This information is used
-#' as both the author and committer for the commit.
-#' @param email The email address of the person merging the branches. This information
-#' is used in the commit information for the merge.
-#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder
-#' structure if the changes leave the folders empty. If true, a .gitkeep
-#' file is created for empty folders. The default is false.
-#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to
-#' use when resolving conflicts during a merge.
+#' @param authorName The name of the author who created the commit. This information is used as both the author and committer for the commit.
+#' @param email The email address of the person merging the branches. This information is used in the commit information for the merge.
+#' @param keepEmptyFolders If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.
+#' @param conflictResolution If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
 #'
 #' @keywords internal
 #'
@@ -2323,15 +1998,9 @@ codecommit_merge_pull_request_by_three_way <- function(pullRequestId, repository
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_override_pull_request_approval_rules/](https://www.paws-r-sdk.com/docs/codecommit_override_pull_request_approval_rules/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request for which you want to
-#' override all approval rule requirements. To get this information, use
-#' [`get_pull_request`][codecommit_get_pull_request].
-#' @param revisionId &#91;required&#93; The system-generated ID of the most recent revision of the pull request.
-#' You cannot override approval rules for anything but the most recent
-#' revision of a pull request. To get the revision ID, use GetPullRequest.
-#' @param overrideStatus &#91;required&#93; Whether you want to set aside approval rule requirements for the pull
-#' request (OVERRIDE) or revoke a previous override and apply approval rule
-#' requirements (REVOKE). REVOKE status is not stored.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use [`get_pull_request`][codecommit_get_pull_request].
+#' @param revisionId &#91;required&#93; The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.
+#' @param overrideStatus &#91;required&#93; Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.
 #'
 #' @keywords internal
 #'
@@ -2362,20 +2031,12 @@ codecommit_override_pull_request_approval_rules <- function(pullRequestId, revis
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_post_comment_for_compared_commit/](https://www.paws-r-sdk.com/docs/codecommit_post_comment_for_compared_commit/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository where you want to post a comment on the
-#' comparison between commits.
-#' @param beforeCommitId To establish the directionality of the comparison, the full commit ID of
-#' the before commit. Required for commenting on any commit unless that
-#' commit is the initial commit.
-#' @param afterCommitId &#91;required&#93; To establish the directionality of the comparison, the full commit ID of
-#' the after commit.
+#' @param repositoryName &#91;required&#93; The name of the repository where you want to post a comment on the comparison between commits.
+#' @param beforeCommitId To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.
+#' @param afterCommitId &#91;required&#93; To establish the directionality of the comparison, the full commit ID of the after commit.
 #' @param location The location of the comparison where you want to comment.
 #' @param content &#91;required&#93; The content of the comment you want to make.
-#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a
-#' request, ensures the request cannot be repeated with a changed
-#' parameter. If a request is received with the same parameters and a token
-#' is included, the request returns information about the initial request
-#' that used that token.
+#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.
 #'
 #' @keywords internal
 #'
@@ -2406,25 +2067,13 @@ codecommit_post_comment_for_compared_commit <- function(repositoryName, beforeCo
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_post_comment_for_pull_request/](https://www.paws-r-sdk.com/docs/codecommit_post_comment_for_pull_request/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
-#' @param repositoryName &#91;required&#93; The name of the repository where you want to post a comment on a pull
-#' request.
-#' @param beforeCommitId &#91;required&#93; The full commit ID of the commit in the destination branch that was the
-#' tip of the branch at the time the pull request was created.
-#' @param afterCommitId &#91;required&#93; The full commit ID of the commit in the source branch that is the
-#' current tip of the branch for the pull request when you post the
-#' comment.
-#' @param location The location of the change where you want to post your comment. If no
-#' location is provided, the comment is posted as a general comment on the
-#' pull request difference between the before commit ID and the after
-#' commit ID.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param repositoryName &#91;required&#93; The name of the repository where you want to post a comment on a pull request.
+#' @param beforeCommitId &#91;required&#93; The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.
+#' @param afterCommitId &#91;required&#93; The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.
+#' @param location The location of the change where you want to post your comment. If no location is provided, the comment is posted as a general comment on the pull request difference between the before commit ID and the after commit ID.
 #' @param content &#91;required&#93; The content of your comment on the change.
-#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a
-#' request, ensures the request cannot be repeated with a changed
-#' parameter. If a request is received with the same parameters and a token
-#' is included, the request returns information about the initial request
-#' that used that token.
+#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.
 #'
 #' @keywords internal
 #'
@@ -2456,16 +2105,8 @@ codecommit_post_comment_for_pull_request <- function(pullRequestId, repositoryNa
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_post_comment_reply/](https://www.paws-r-sdk.com/docs/codecommit_post_comment_reply/) for full documentation.
 #'
-#' @param inReplyTo &#91;required&#93; The system-generated ID of the comment to which you want to reply. To
-#' get this ID, use
-#' [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit]
-#' or
-#' [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
-#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a
-#' request, ensures the request cannot be repeated with a changed
-#' parameter. If a request is received with the same parameters and a token
-#' is included, the request returns information about the initial request
-#' that used that token.
+#' @param inReplyTo &#91;required&#93; The system-generated ID of the comment to which you want to reply. To get this ID, use [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit] or [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
+#' @param clientRequestToken A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.
 #' @param content &#91;required&#93; The contents of your reply to a comment.
 #'
 #' @keywords internal
@@ -2499,11 +2140,7 @@ codecommit_post_comment_reply <- function(inReplyTo, clientRequestToken = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/codecommit_put_comment_reaction/](https://www.paws-r-sdk.com/docs/codecommit_put_comment_reaction/) for full documentation.
 #'
 #' @param commentId &#91;required&#93; The ID of the comment to which you want to add or update a reaction.
-#' @param reactionValue &#91;required&#93; The emoji reaction you want to add or update. To remove a reaction,
-#' provide a value of blank or null. You can also provide the value of
-#' none. For information about emoji reaction values supported in
-#' CodeCommit, see the [CodeCommit User
-#' Guide](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table).
+#' @param reactionValue &#91;required&#93; The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the [CodeCommit User Guide](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table).
 #'
 #' @keywords internal
 #'
@@ -2536,29 +2173,17 @@ codecommit_put_comment_reaction <- function(commentId, reactionValue) {
 #' See [https://www.paws-r-sdk.com/docs/codecommit_put_file/](https://www.paws-r-sdk.com/docs/codecommit_put_file/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository where you want to add or update the file.
-#' @param branchName &#91;required&#93; The name of the branch where you want to add or update the file. If this
-#' is an empty repository, this branch is created.
+#' @param branchName &#91;required&#93; The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.
 #' @param fileContent &#91;required&#93; The content of the file, in binary object format.
-#' @param filePath &#91;required&#93; The name of the file you want to add or update, including the relative
-#' path to the file in the repository.
+#' @param filePath &#91;required&#93; The name of the file you want to add or update, including the relative path to the file in the repository.
 #' 
-#' If the path does not currently exist in the repository, the path is
-#' created as part of adding the file.
-#' @param fileMode The file mode permissions of the blob. Valid file mode permissions are
-#' listed here.
-#' @param parentCommitId The full commit ID of the head commit in the branch where you want to
-#' add or update the file. If this is an empty repository, no commit ID is
-#' required. If this is not an empty repository, a commit ID is required.
+#' If the path does not currently exist in the repository, the path is created as part of adding the file.
+#' @param fileMode The file mode permissions of the blob. Valid file mode permissions are listed here.
+#' @param parentCommitId The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required.
 #' 
-#' The commit ID must match the ID of the head commit at the time of the
-#' operation. Otherwise, an error occurs, and the file is not added or
-#' updated.
-#' @param commitMessage A message about why this file was added or updated. Although it is
-#' optional, a message makes the commit history for your repository more
-#' useful.
-#' @param name The name of the person adding or updating the file. Although it is
-#' optional, a name makes the commit history for your repository more
-#' useful.
+#' The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.
+#' @param commitMessage A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.
+#' @param name The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.
 #' @param email An email address for the person adding or updating the file.
 #'
 #' @keywords internal
@@ -2590,8 +2215,7 @@ codecommit_put_file <- function(repositoryName, branchName, fileContent, filePat
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_put_repository_triggers/](https://www.paws-r-sdk.com/docs/codecommit_put_repository_triggers/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository where you want to create or update the
-#' trigger.
+#' @param repositoryName &#91;required&#93; The name of the repository where you want to create or update the trigger.
 #' @param triggers &#91;required&#93; The JSON block of configuration information for each trigger.
 #'
 #' @keywords internal
@@ -2623,8 +2247,7 @@ codecommit_put_repository_triggers <- function(repositoryName, triggers) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_tag_resource/](https://www.paws-r-sdk.com/docs/codecommit_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to add
-#' or update tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
 #' @param tags &#91;required&#93; The key-value pair to use when tagging this repository.
 #'
 #' @keywords internal
@@ -2689,8 +2312,7 @@ codecommit_test_repository_triggers <- function(repositoryName, triggers) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_untag_resource/](https://www.paws-r-sdk.com/docs/codecommit_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to
-#' remove tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which you want to remove tags.
 #' @param tagKeys &#91;required&#93; The tag key for each tag that you want to remove from the resource.
 #'
 #' @keywords internal
@@ -2722,13 +2344,9 @@ codecommit_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_approval_rule_template_content/](https://www.paws-r-sdk.com/docs/codecommit_update_approval_rule_template_content/) for full documentation.
 #'
-#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template where you want to update the
-#' content of the rule.
-#' @param newRuleContent &#91;required&#93; The content that replaces the existing content of the rule. Content
-#' statements must be complete. You cannot provide only the changes.
-#' @param existingRuleContentSha256 The SHA-256 hash signature for the content of the approval rule. You can
-#' retrieve this information by using
-#' [`get_pull_request`][codecommit_get_pull_request].
+#' @param approvalRuleTemplateName &#91;required&#93; The name of the approval rule template where you want to update the content of the rule.
+#' @param newRuleContent &#91;required&#93; The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.
+#' @param existingRuleContentSha256 The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using [`get_pull_request`][codecommit_get_pull_request].
 #'
 #' @keywords internal
 #'
@@ -2823,11 +2441,7 @@ codecommit_update_approval_rule_template_name <- function(oldApprovalRuleTemplat
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_comment/](https://www.paws-r-sdk.com/docs/codecommit_update_comment/) for full documentation.
 #'
-#' @param commentId &#91;required&#93; The system-generated ID of the comment you want to update. To get this
-#' ID, use
-#' [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit]
-#' or
-#' [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
+#' @param commentId &#91;required&#93; The system-generated ID of the comment you want to update. To get this ID, use [`get_comments_for_compared_commit`][codecommit_get_comments_for_compared_commit] or [`get_comments_for_pull_request`][codecommit_get_comments_for_pull_request].
 #' @param content &#91;required&#93; The updated content to replace the existing content of the comment.
 #'
 #' @keywords internal
@@ -2859,8 +2473,7 @@ codecommit_update_comment <- function(commentId, content) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_default_branch/](https://www.paws-r-sdk.com/docs/codecommit_update_default_branch/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository for which you want to set or change the
-#' default branch.
+#' @param repositoryName &#91;required&#93; The name of the repository for which you want to set or change the default branch.
 #' @param defaultBranchName &#91;required&#93; The name of the branch to set as the default branch.
 #'
 #' @keywords internal
@@ -2895,40 +2508,22 @@ codecommit_update_default_branch <- function(repositoryName, defaultBranchName) 
 #'
 #' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request.
 #' @param approvalRuleName &#91;required&#93; The name of the approval rule you want to update.
-#' @param existingRuleContentSha256 The SHA-256 hash signature for the content of the approval rule. You can
-#' retrieve this information by using
-#' [`get_pull_request`][codecommit_get_pull_request].
+#' @param existingRuleContentSha256 The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using [`get_pull_request`][codecommit_get_pull_request].
 #' @param newRuleContent &#91;required&#93; The updated content for the approval rule.
 #' 
-#' When you update the content of the approval rule, you can specify
-#' approvers in an approval pool in one of two ways:
+#' When you update the content of the approval rule, you can specify approvers in an approval pool in one of two ways:
 #' 
-#' -   **CodeCommitApprovers**: This option only requires an Amazon Web
-#'     Services account and a resource. It can be used for both IAM users
-#'     and federated access users whose name matches the provided resource
-#'     name. This is a very powerful option that offers a great deal of
-#'     flexibility. For example, if you specify the Amazon Web Services
-#'     account *123456789012* and *Mary_Major*, all of the following are
-#'     counted as approvals coming from that user:
+#' -   **CodeCommitApprovers**: This option only requires an Amazon Web Services account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services account *123456789012* and *Mary_Major*, all of the following are counted as approvals coming from that user:
 #' 
-#'     -   An IAM user in the account
-#'         (arn:aws:iam::*123456789012*:user/*Mary_Major*)
+#'     -   An IAM user in the account (arn:aws:iam::*123456789012*:user/*Mary_Major*)
 #' 
-#'     -   A federated user identified in IAM as Mary_Major
-#'         (arn:aws:sts::*123456789012*:federated-user/*Mary_Major*)
+#'     -   A federated user identified in IAM as Mary_Major (arn:aws:sts::*123456789012*:federated-user/*Mary_Major*)
 #' 
-#'     This option does not recognize an active session of someone assuming
-#'     the role of CodeCommitReview with a role session name of
-#'     *Mary_Major*
-#'     (arn:aws:sts::*123456789012*:assumed-role/CodeCommitReview/*Mary_Major*)
-#'     unless you include a wildcard (*Mary_Major).
+#'     This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of *Mary_Major* (arn:aws:sts::*123456789012*:assumed-role/CodeCommitReview/*Mary_Major*) unless you include a wildcard (*Mary_Major).
 #' 
-#' -   **Fully qualified ARN**: This option allows you to specify the fully
-#'     qualified Amazon Resource Name (ARN) of the IAM user or role.
+#' -   **Fully qualified ARN**: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role.
 #' 
-#' For more information about IAM ARNs, wildcards, and formats, see [IAM
-#' Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html)
-#' in the *IAM User Guide*.
+#' For more information about IAM ARNs, wildcards, and formats, see [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html) in the *IAM User Guide*.
 #'
 #' @keywords internal
 #'
@@ -2992,10 +2587,8 @@ codecommit_update_pull_request_approval_state <- function(pullRequestId, revisio
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_pull_request_description/](https://www.paws-r-sdk.com/docs/codecommit_update_pull_request_description/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
-#' @param description &#91;required&#93; The updated content of the description for the pull request. This
-#' content replaces the existing description.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param description &#91;required&#93; The updated content of the description for the pull request. This content replaces the existing description.
 #'
 #' @keywords internal
 #'
@@ -3026,11 +2619,8 @@ codecommit_update_pull_request_description <- function(pullRequestId, descriptio
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_pull_request_status/](https://www.paws-r-sdk.com/docs/codecommit_update_pull_request_status/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
-#' @param pullRequestStatus &#91;required&#93; The status of the pull request. The only valid operations are to update
-#' the status from `OPEN` to `OPEN`, `OPEN` to `CLOSED` or from `CLOSED` to
-#' `CLOSED`.
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param pullRequestStatus &#91;required&#93; The status of the pull request. The only valid operations are to update the status from `OPEN` to `OPEN`, `OPEN` to `CLOSED` or from `CLOSED` to `CLOSED`.
 #'
 #' @keywords internal
 #'
@@ -3061,8 +2651,7 @@ codecommit_update_pull_request_status <- function(pullRequestId, pullRequestStat
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_pull_request_title/](https://www.paws-r-sdk.com/docs/codecommit_update_pull_request_title/) for full documentation.
 #'
-#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use
-#' [`list_pull_requests`][codecommit_list_pull_requests].
+#' @param pullRequestId &#91;required&#93; The system-generated ID of the pull request. To get this ID, use [`list_pull_requests`][codecommit_list_pull_requests].
 #' @param title &#91;required&#93; The updated title of the pull request. This replaces the existing title.
 #'
 #' @keywords internal
@@ -3094,10 +2683,8 @@ codecommit_update_pull_request_title <- function(pullRequestId, title) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_repository_description/](https://www.paws-r-sdk.com/docs/codecommit_update_repository_description/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository to set or change the comment or description
-#' for.
-#' @param repositoryDescription The new comment or description for the specified repository. Repository
-#' descriptions are limited to 1,000 characters.
+#' @param repositoryName &#91;required&#93; The name of the repository to set or change the comment or description for.
+#' @param repositoryDescription The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.
 #'
 #' @keywords internal
 #'
@@ -3129,14 +2716,8 @@ codecommit_update_repository_description <- function(repositoryName, repositoryD
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecommit_update_repository_encryption_key/](https://www.paws-r-sdk.com/docs/codecommit_update_repository_encryption_key/) for full documentation.
 #'
-#' @param repositoryName &#91;required&#93; The name of the repository for which you want to update the KMS
-#' encryption key used to encrypt and decrypt the repository.
-#' @param kmsKeyId &#91;required&#93; The ID of the encryption key. You can view the ID of an encryption key
-#' in the KMS console, or use the KMS APIs to programmatically retrieve a
-#' key ID. For more information about acceptable values for keyID, see
-#' [KeyId](https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId)
-#' in the Decrypt API description in the *Key Management Service API
-#' Reference*.
+#' @param repositoryName &#91;required&#93; The name of the repository for which you want to update the KMS encryption key used to encrypt and decrypt the repository.
+#' @param kmsKeyId &#91;required&#93; The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for keyID, see [KeyId](https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId) in the Decrypt API description in the *Key Management Service API Reference*.
 #'
 #' @keywords internal
 #'

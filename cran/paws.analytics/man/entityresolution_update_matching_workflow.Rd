@@ -19,25 +19,17 @@ entityresolution_update_matching_workflow(
 
 \item{description}{A description of the workflow.}
 
-\item{inputSourceConfig}{[required] A list of \code{InputSource} objects, which have the fields \code{InputSourceARN}
-and \code{SchemaName}.}
+\item{inputSourceConfig}{[required] A list of \code{InputSource} objects, which have the fields \code{InputSourceARN} and \code{SchemaName}.}
 
-\item{outputSourceConfig}{[required] A list of \code{OutputSource} objects, each of which contains fields
-\code{outputS3Path}, \code{applyNormalization}, \code{KMSArn}, and \code{output}.}
+\item{outputSourceConfig}{[required] A list of \code{OutputSource} objects, each of which contains fields \code{outputS3Path}, \code{applyNormalization}, \code{KMSArn}, and \code{output}.}
 
-\item{resolutionTechniques}{[required] An object which defines the \code{resolutionType} and the
-\code{ruleBasedProperties}.}
+\item{resolutionTechniques}{[required] An object which defines the \code{resolutionType} and the \code{ruleBasedProperties}.}
 
-\item{incrementalRunConfig}{Optional. An object that defines the incremental run type. This object
-contains only the \code{incrementalRunType} field, which appears as
-"Automatic" in the console.
+\item{incrementalRunConfig}{Optional. An object that defines the incremental run type. This object contains only the \code{incrementalRunType} field, which appears as "Automatic" in the console.
 
-For workflows where \code{resolutionType} is \code{ML_MATCHING} or \code{PROVIDER},
-incremental processing is not supported.}
+For workflows where \code{resolutionType} is \code{ML_MATCHING} or \code{PROVIDER}, incremental processing is not supported.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-assumes this role to create resources on your behalf as part of workflow
-execution.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.}
 }
 \description{
 Updates an existing matching workflow. The workflow must already exist for this operation to succeed.

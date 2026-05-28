@@ -7,8 +7,7 @@
 route53profiles_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to remove
-tags from.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to remove tags from.}
 
 \item{TagKeys}{[required] The tags that you want to remove to the specified resource.}
 }

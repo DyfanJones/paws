@@ -15,18 +15,19 @@ wellarchitected_list_share_invitations(
 )
 }
 \arguments{
-\item{LensNamePrefix}{An optional string added to the beginning of each lens name returned in
-the results.}
+\item{WorkloadNamePrefix}{An optional string added to the beginning of each workload name returned in the results.}
+
+\item{LensNamePrefix}{An optional string added to the beginning of each lens name returned in the results.}
 
 \item{ShareResourceType}{The type of share invitations to be returned.}
 
+\item{NextToken}{The token to use to retrieve the next set of results.}
+
 \item{MaxResults}{The maximum number of results to return for this request.}
 
-\item{ProfileNamePrefix}{An optional string added to the beginning of each profile name returned
-in the results.}
+\item{ProfileNamePrefix}{An optional string added to the beginning of each profile name returned in the results.}
 
-\item{TemplateNamePrefix}{An optional string added to the beginning of each review template name
-returned in the results.}
+\item{TemplateNamePrefix}{An optional string added to the beginning of each review template name returned in the results.}
 }
 \description{
 List the share invitations.

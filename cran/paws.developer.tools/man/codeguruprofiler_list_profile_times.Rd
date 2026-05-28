@@ -19,32 +19,15 @@ codeguruprofiler_list_profile_times(
 \arguments{
 \item{endTime}{[required] The end time of the time range from which to list the profiles.}
 
-\item{maxResults}{The maximum number of profile time results returned by
-\code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} in paginated
-output. When this parameter is used,
-\code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} only returns
-\code{maxResults} results in a single page with a \code{nextToken} response
-element. The remaining results of the initial request can be seen by
-sending another
-\code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} request with
-the returned \code{nextToken} value.}
+\item{maxResults}{The maximum number of profile time results returned by \code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} in paginated output. When this parameter is used, \code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} only returns \code{maxResults} results in a single page with a \code{nextToken} response element. The remaining results of the initial request can be seen by sending another \code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} request with the returned \code{nextToken} value.}
 
-\item{nextToken}{The \code{nextToken} value returned from a previous paginated
-\code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} request
-where \code{maxResults} was used and the results exceeded the value of that
-parameter. Pagination continues from the end of the previous results
-that returned the \code{nextToken} value.
+\item{nextToken}{The \code{nextToken} value returned from a previous paginated \code{\link[=codeguruprofiler_list_profile_times]{list_profile_times}} request where \code{maxResults} was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the \code{nextToken} value.
 
-This token should be treated as an opaque identifier that is only used
-to retrieve the next items in a list and not for other programmatic
-purposes.}
+This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.}
 
-\item{orderBy}{The order (ascending or descending by start time of the profile) to use
-when listing profiles. Defaults to \code{TIMESTAMP_DESCENDING}.}
+\item{orderBy}{The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to \code{TIMESTAMP_DESCENDING}.}
 
-\item{period}{[required] The aggregation period. This specifies the period during which an
-aggregation profile collects posted agent profiles for a profiling
-group. There are 3 valid values.
+\item{period}{[required] The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values.
 \itemize{
 \item \code{P1D} — 1 day
 \item \code{PT1H} — 1 hour

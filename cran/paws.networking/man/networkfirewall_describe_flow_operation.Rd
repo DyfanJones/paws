@@ -15,18 +15,15 @@ networkfirewall_describe_flow_operation(
 \arguments{
 \item{FirewallArn}{[required] The Amazon Resource Name (ARN) of the firewall.}
 
-\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For
-example, \verb{us-east-2a}.
+\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For example, \verb{us-east-2a}.
 
-Defines the scope a flow operation. You can use up to 20 filters to
-configure a single flow operation.}
+Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.}
 
 \item{VpcEndpointAssociationArn}{The Amazon Resource Name (ARN) of a VPC endpoint association.}
 
 \item{VpcEndpointId}{A unique identifier for the primary endpoint associated with a firewall.}
 
-\item{FlowOperationId}{[required] A unique identifier for the flow operation. This ID is returned in the
-responses to start and list commands. You provide to describe commands.}
+\item{FlowOperationId}{[required] A unique identifier for the flow operation. This ID is returned in the responses to start and list commands. You provide to describe commands.}
 }
 \description{
 Returns key information about a specific flow operation.

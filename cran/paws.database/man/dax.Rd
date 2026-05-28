@@ -48,13 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-DAX is a managed caching service engineered for Amazon DynamoDB. DAX
-dramatically speeds up database reads by caching frequently-accessed
-data from DynamoDB, so applications can access that data with
-sub-millisecond latency. You can create a DAX cluster easily, using the
-Amazon Web Services Management Console. With a few simple modifications
-to your code, your application can begin taking advantage of the DAX
-cluster and realize significant improvements in read performance.
+DAX is a managed caching service engineered for Amazon DynamoDB. DAX dramatically speeds up database reads by caching frequently-accessed data from DynamoDB, so applications can access that data with sub-millisecond latency. You can create a DAX cluster easily, using the Amazon Web Services Management Console. With a few simple modifications to your code, your application can begin taking advantage of the DAX cluster and realize significant improvements in read performance.
 }
 \section{Service syntax}{
 

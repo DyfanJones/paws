@@ -23,15 +23,11 @@ customerprofiles_update_domain_layout(
 
 \item{DisplayName}{The display name of the layout}
 
-\item{IsDefault}{If set to true for a layout, this layout will be used by default to view
-data. If set to false, then the layout will not be used by default, but
-it can be used to view data by explicitly selecting it in the console.}
+\item{IsDefault}{If set to true for a layout, this layout will be used by default to view data. If set to false, then the layout will not be used by default, but it can be used to view data by explicitly selecting it in the console.}
 
-\item{LayoutType}{The type of layout that can be used to view data under a Customer
-Profiles domain.}
+\item{LayoutType}{The type of layout that can be used to view data under a Customer Profiles domain.}
 
-\item{Layout}{A customizable layout that can be used to view data under a Customer
-Profiles domain.}
+\item{Layout}{A customizable layout that can be used to view data under a Customer Profiles domain.}
 }
 \description{
 Updates the layout used to view data for a specific domain. This API can only be invoked from the Amazon Connect admin website.

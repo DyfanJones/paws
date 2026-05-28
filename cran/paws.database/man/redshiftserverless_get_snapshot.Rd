@@ -11,8 +11,7 @@ redshiftserverless_get_snapshot(
 )
 }
 \arguments{
-\item{ownerAccount}{The owner Amazon Web Services account of a snapshot shared with another
-user.}
+\item{ownerAccount}{The owner Amazon Web Services account of a snapshot shared with another user.}
 
 \item{snapshotArn}{The Amazon Resource Name (ARN) of the snapshot to return.}
 

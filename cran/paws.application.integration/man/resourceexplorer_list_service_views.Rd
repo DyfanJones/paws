@@ -8,12 +8,9 @@ Amazon Web Services account}
 resourceexplorer_list_service_views(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{The maximum number of service view results to return in a single
-response. Valid values are between \code{1} and \code{50}.}
+\item{MaxResults}{The maximum number of service view results to return in a single response. Valid values are between \code{1} and \code{50}.}
 
-\item{NextToken}{The pagination token from a previous
-\code{\link[=resourceexplorer_list_service_views]{list_service_views}} response.
-Use this token to retrieve the next set of results.}
+\item{NextToken}{The pagination token from a previous \code{\link[=resourceexplorer_list_service_views]{list_service_views}} response. Use this token to retrieve the next set of results.}
 }
 \description{
 Lists all Resource Explorer service views available in the current Amazon Web Services account. This operation returns the ARNs of available service views.

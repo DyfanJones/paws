@@ -15,39 +15,27 @@ verifiedpermissions_is_authorized(
 )
 }
 \arguments{
-\item{policyStoreId}{[required] Specifies the ID of the policy store. Policies in this policy store will
-be used to make an authorization decision for the input.
+\item{policyStoreId}{[required] Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.
 
-To specify a policy store, use its ID or alias name. When using an alias
-name, prefix it with \verb{policy-store-alias/}. For example:
+To specify a policy store, use its ID or alias name. When using an alias name, prefix it with \verb{policy-store-alias/}. For example:
 \itemize{
 \item ID: \code{PSEXAMPLEabcdefg111111}
 \item Alias name: \code{policy-store-alias/example-policy-store}
 }
 
-To view aliases, use
-\code{\link[=verifiedpermissions_list_policy_store_aliases]{list_policy_store_aliases}}.}
+To view aliases, use \code{\link[=verifiedpermissions_list_policy_store_aliases]{list_policy_store_aliases}}.}
 
-\item{principal}{Specifies the principal for which the authorization decision is to be
-made.}
+\item{principal}{Specifies the principal for which the authorization decision is to be made.}
 
-\item{action}{Specifies the requested action to be authorized. For example, is the
-principal authorized to perform this action on the resource?}
+\item{action}{Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?}
 
-\item{resource}{Specifies the resource for which the authorization decision is to be
-made.}
+\item{resource}{Specifies the resource for which the authorization decision is to be made.}
 
-\item{context}{Specifies additional context that can be used to make more granular
-authorization decisions.}
+\item{context}{Specifies additional context that can be used to make more granular authorization decisions.}
 
-\item{entities}{(Optional) Specifies the list of resources and principals and their
-associated attributes that Verified Permissions can examine when
-evaluating the policies. These additional entities and their attributes
-can be referenced and checked by conditional elements in the policies in
-the specified policy store.
+\item{entities}{(Optional) Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.
 
-You can include only principal and resource entities in this parameter;
-you can't include actions. You must specify actions in the schema.}
+You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.}
 }
 \description{
 Makes an authorization decision about a service request described in the parameters. The information in the parameters can also define additional context that Verified Permissions can include in the evaluation. The request is evaluated against all matching policies in the specified policy store. The result of the decision is either \code{Allow} or \code{Deny}, along with a list of the policies that resulted in the decision.

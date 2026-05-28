@@ -21,10 +21,7 @@ bedrockagentcore_stop_browser_session(
 
 \item{sessionId}{[required] The unique identifier of the browser session to stop.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock AgentCore ignores the request, but does not
-return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error.}
 }
 \description{
 Terminates an active browser session in Amazon Bedrock AgentCore. This operation stops the session, releases associated resources, and makes the session unavailable for further use.

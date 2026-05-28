@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-This section contains documentation for the Amazon Lex V2 Runtime V2 API
-operations.
+This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
 }
 \section{Service syntax}{
 

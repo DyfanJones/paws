@@ -7,8 +7,7 @@
 datazone_get_account_pool(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the domain in which the account pool lives whose details are
-to be displayed.}
+\item{domainIdentifier}{[required] The ID of the domain in which the account pool lives whose details are to be displayed.}
 
 \item{identifier}{[required] The ID of the account pool whose details are to be displayed.}
 }

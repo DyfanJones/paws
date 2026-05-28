@@ -4,12 +4,21 @@
 \alias{cloudfront_create_trust_store}
 \title{Creates a trust store}
 \usage{
-cloudfront_create_trust_store(Name, CaCertificatesBundleSource, Tags = NULL)
+cloudfront_create_trust_store(
+  Name,
+  CaCertificatesBundleSource,
+  UseClientCertificateOCSPEndpoint = NULL,
+  Tags = NULL
+)
 }
 \arguments{
 \item{Name}{[required] A name for the trust store.}
 
 \item{CaCertificatesBundleSource}{[required] The CA certificates bundle source for the trust store.}
+
+\item{UseClientCertificateOCSPEndpoint}{A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.}
+
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
 }
 \description{
 Creates a trust store.

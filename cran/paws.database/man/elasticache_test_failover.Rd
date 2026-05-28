@@ -9,13 +9,9 @@ replication group (called cluster in the console)}
 elasticache_test_failover(ReplicationGroupId, NodeGroupId)
 }
 \arguments{
-\item{ReplicationGroupId}{[required] The name of the replication group (console: cluster) whose automatic
-failover is being tested by this operation.}
+\item{ReplicationGroupId}{[required] The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.}
 
-\item{NodeGroupId}{[required] The name of the node group (called shard in the console) in this
-replication group on which automatic failover is to be tested. You may
-test automatic failover on up to 15 node groups in any rolling 24-hour
-period.}
+\item{NodeGroupId}{[required] The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.}
 }
 \description{
 Represents the input of a \code{\link[=elasticache_test_failover]{test_failover}} operation which tests automatic failover on a specified node group (called shard in the console) in a replication group (called cluster in the console).

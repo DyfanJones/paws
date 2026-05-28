@@ -15,11 +15,9 @@ cloudwatchlogs_describe_import_task_batches(
 \arguments{
 \item{importId}{[required] The ID of the import task to get batch information for.}
 
-\item{batchImportStatus}{Optional filter to list import batches by their status. Accepts multiple
-status values: IN_PROGRESS, CANCELLED, COMPLETED and FAILED.}
+\item{batchImportStatus}{Optional filter to list import batches by their status. Accepts multiple status values: IN_PROGRESS, CANCELLED, COMPLETED and FAILED.}
 
-\item{limit}{The maximum number of import batches to return in the response. Default:
-10}
+\item{limit}{The maximum number of import batches to return in the response. Default: 10}
 
 \item{nextToken}{The pagination token for the next set of results.}
 }

@@ -17,15 +17,13 @@ ivs_list_channels(
 \arguments{
 \item{filterByName}{Filters the channel list to match the specified name.}
 
-\item{filterByRecordingConfigurationArn}{Filters the channel list to match the specified recording-configuration
-ARN.}
+\item{filterByRecordingConfigurationArn}{Filters the channel list to match the specified recording-configuration ARN.}
 
 \item{filterByPlaybackRestrictionPolicyArn}{Filters the channel list to match the specified policy.}
 
 \item{filterByAdConfigurationArn}{Filters the channel list to match the specified ad configuration ARN.}
 
-\item{nextToken}{The first channel to retrieve. This is used for pagination; see the
-\code{nextToken} response field.}
+\item{nextToken}{The first channel to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of channels to return. Default: 100.}
 }

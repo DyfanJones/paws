@@ -14,18 +14,11 @@ ivsrealtime_create_stage(
 \arguments{
 \item{name}{Optional name that can be specified for the stage being created.}
 
-\item{participantTokenConfigurations}{Array of participant token configuration objects to attach to the new
-stage.}
+\item{participantTokenConfigurations}{Array of participant token configuration objects to attach to the new stage.}
 
-\item{tags}{Tags attached to the resource. Array of maps, each of the form
-\code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging AWS Resources and Tag Editor} for details, including
-restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no constraints on tags beyond what is
-documented there.}
+\item{tags}{Tags attached to the resource. Array of maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging AWS Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.}
 
-\item{autoParticipantRecordingConfiguration}{Configuration object for individual participant recording, to attach to
-the new stage.}
+\item{autoParticipantRecordingConfiguration}{Configuration object for individual participant recording, to attach to the new stage.}
 }
 \description{
 Creates a new stage (and optionally participant tokens).

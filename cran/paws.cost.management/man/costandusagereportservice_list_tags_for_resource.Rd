@@ -7,8 +7,7 @@
 costandusagereportservice_list_tags_for_resource(ReportName)
 }
 \arguments{
-\item{ReportName}{[required] The report name of the report definition that tags are to be returned
-for.}
+\item{ReportName}{[required] The report name of the report definition that tags are to be returned for.}
 }
 \description{
 Lists the tags associated with the specified report definition.

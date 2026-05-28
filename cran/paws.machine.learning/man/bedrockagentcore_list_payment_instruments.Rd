@@ -27,7 +27,7 @@ bedrockagentcore_list_payment_instruments(
 \item{maxResults}{Maximum number of results to return in a single response.}
 }
 \description{
-List payment instruments for a manager
+List payment instruments for a manager.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_list_payment_instruments/} for full documentation.
 }

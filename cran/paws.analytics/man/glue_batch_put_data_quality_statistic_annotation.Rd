@@ -10,10 +10,7 @@ glue_batch_put_data_quality_statistic_annotation(
 )
 }
 \arguments{
-\item{InclusionAnnotations}{[required] A list of \code{DatapointInclusionAnnotation}'s. The InclusionAnnotations
-must contain a profileId and statisticId. If there are multiple
-InclusionAnnotations, the list must refer to a single statisticId across
-multiple profileIds.}
+\item{InclusionAnnotations}{[required] A list of \code{DatapointInclusionAnnotation}'s. The InclusionAnnotations must contain a profileId and statisticId. If there are multiple InclusionAnnotations, the list must refer to a single statisticId across multiple profileIds.}
 
 \item{ClientToken}{Client Token.}
 }

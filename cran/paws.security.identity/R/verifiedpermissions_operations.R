@@ -42,28 +42,19 @@ verifiedpermissions_batch_get_policy <- function(requests) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_batch_is_authorized/](https://www.paws-r-sdk.com/docs/verifiedpermissions_batch_is_authorized/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will
-#' be used to make the authorization decisions for the input.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will be used to make the authorization decisions for the input.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param entities (Optional) Specifies the list of resources and principals and their
-#' associated attributes that Verified Permissions can examine when
-#' evaluating the policies. These additional entities and their attributes
-#' can be referenced and checked by conditional elements in the policies in
-#' the specified policy store.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param entities (Optional) Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.
 #' 
-#' You can include only principal and resource entities in this parameter;
-#' you can't include actions. You must specify actions in the schema.
-#' @param requests &#91;required&#93; An array of up to 30 requests that you want Verified Permissions to
-#' evaluate.
+#' You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.
+#' @param requests &#91;required&#93; An array of up to 30 requests that you want Verified Permissions to evaluate.
 #'
 #' @keywords internal
 #'
@@ -95,52 +86,29 @@ verifiedpermissions_batch_is_authorized <- function(policyStoreId, entities = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_batch_is_authorized_with_token/](https://www.paws-r-sdk.com/docs/verifiedpermissions_batch_is_authorized_with_token/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will
-#' be used to make an authorization decision for the input.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param identityToken Specifies an identity (ID) token for the principal that you want to
-#' authorize in each request. This token is provided to you by the identity
-#' provider (IdP) associated with the specified identity source. You must
-#' specify either an `accessToken`, an `identityToken`, or both.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param identityToken Specifies an identity (ID) token for the principal that you want to authorize in each request. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an `accessToken`, an `identityToken`, or both.
 #' 
-#' Must be an ID token. Verified Permissions returns an error if the
-#' `token_use` claim in the submitted token isn't `id`.
-#' @param accessToken Specifies an access token for the principal that you want to authorize
-#' in each request. This token is provided to you by the identity provider
-#' (IdP) associated with the specified identity source. You must specify
-#' either an `accessToken`, an `identityToken`, or both.
+#' Must be an ID token. Verified Permissions returns an error if the `token_use` claim in the submitted token isn't `id`.
+#' @param accessToken Specifies an access token for the principal that you want to authorize in each request. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an `accessToken`, an `identityToken`, or both.
 #' 
-#' Must be an access token. Verified Permissions returns an error if the
-#' `token_use` claim in the submitted token isn't `access`.
-#' @param entities (Optional) Specifies the list of resources and their associated
-#' attributes that Verified Permissions can examine when evaluating the
-#' policies. These additional entities and their attributes can be
-#' referenced and checked by conditional elements in the policies in the
-#' specified policy store.
+#' Must be an access token. Verified Permissions returns an error if the `token_use` claim in the submitted token isn't `access`.
+#' @param entities (Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.
 #' 
-#' You can't include principals in this parameter, only resource and action
-#' entities. This parameter can't include any entities of a type that
-#' matches the user or group entity types that you defined in your identity
-#' source.
+#' You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.
 #' 
-#' -   The
-#'     [`batch_is_authorized_with_token`][verifiedpermissions_batch_is_authorized_with_token]
-#'     operation takes principal attributes from ***only*** the
-#'     `identityToken` or `accessToken` passed to the operation.
+#' -   The [`batch_is_authorized_with_token`][verifiedpermissions_batch_is_authorized_with_token] operation takes principal attributes from ***only*** the `identityToken` or `accessToken` passed to the operation.
 #' 
-#' -   For action entities, you can include only their `Identifier` and
-#'     `EntityType`.
-#' @param requests &#91;required&#93; An array of up to 30 requests that you want Verified Permissions to
-#' evaluate.
+#' -   For action entities, you can include only their `Identifier` and `EntityType`.
+#' @param requests &#91;required&#93; An array of up to 30 requests that you want Verified Permissions to evaluate.
 #'
 #' @keywords internal
 #'
@@ -172,41 +140,24 @@ verifiedpermissions_batch_is_authorized_with_token <- function(policyStoreId, id
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_create_identity_source/](https://www.paws-r-sdk.com/docs/verifiedpermissions_create_identity_source/) for full documentation.
 #'
-#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the
-#' idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an `ConflictException` error.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `ConflictException` error.
 #' 
-#' Verified Permissions recognizes a `ClientToken` for eight hours. After
-#' eight hours, the next request with the same parameters performs the
-#' operation again regardless of the value of `ClientToken`.
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store in which you want to store this
-#' identity source. Only policies and requests made using this policy store
-#' can reference identities from the identity provider configured in the
-#' new identity source.
+#' Verified Permissions recognizes a `ClientToken` for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of `ClientToken`.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param configuration &#91;required&#93; Specifies the details required to communicate with the identity provider
-#' (IdP) associated with this identity source.
-#' @param principalEntityType Specifies the namespace and data type of the principals generated for
-#' identities authenticated by the new identity source.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param configuration &#91;required&#93; Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.
+#' @param principalEntityType Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.
 #'
 #' @keywords internal
 #'
@@ -237,46 +188,26 @@ verifiedpermissions_create_identity_source <- function(clientToken = NULL, polic
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy/](https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy/) for full documentation.
 #'
-#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the
-#' idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an `ConflictException` error.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `ConflictException` error.
 #' 
-#' Verified Permissions recognizes a `ClientToken` for eight hours. After
-#' eight hours, the next request with the same parameters performs the
-#' operation again regardless of the value of `ClientToken`.
-#' @param policyStoreId &#91;required&#93; Specifies the `PolicyStoreId` of the policy store you want to store the
-#' policy in.
+#' Verified Permissions recognizes a `ClientToken` for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of `ClientToken`.
+#' @param policyStoreId &#91;required&#93; Specifies the `PolicyStoreId` of the policy store you want to store the policy in.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param definition &#91;required&#93; A structure that specifies the policy type and content to use for the
-#' new policy. You must include either a static or a templateLinked
-#' element. The policy content must be written in the Cedar policy
-#' language.
-#' @param name Specifies a name for the policy that is unique among all policies within
-#' the policy store. You can use the name in place of the policy ID in API
-#' operations that reference the policy. The name must be prefixed with
-#' `name/`.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param definition &#91;required&#93; A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.
+#' @param name Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with `name/`.
 #' 
-#' If you specify a name that is already associated with another policy in
-#' the policy store, you receive a `ConflictException` error.
+#' If you specify a name that is already associated with another policy in the policy store, you receive a `ConflictException` error.
 #'
 #' @keywords internal
 #'
@@ -307,47 +238,25 @@ verifiedpermissions_create_policy <- function(clientToken = NULL, policyStoreId,
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy_store/](https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy_store/) for full documentation.
 #'
-#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the
-#' idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an `ConflictException` error.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `ConflictException` error.
 #' 
-#' Verified Permissions recognizes a `ClientToken` for eight hours. After
-#' eight hours, the next request with the same parameters performs the
-#' operation again regardless of the value of `ClientToken`.
+#' Verified Permissions recognizes a `ClientToken` for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of `ClientToken`.
 #' @param validationSettings &#91;required&#93; Specifies the validation setting for this policy store.
 #' 
 #' Currently, the only valid and required value is `Mode`.
 #' 
-#' We recommend that you turn on `STRICT` mode only after you define a
-#' schema. If a schema doesn't exist, then `STRICT` mode causes any policy
-#' to fail validation, and Verified Permissions rejects the policy. You can
-#' turn off validation by using the
-#' [`update_policy_store`][verifiedpermissions_update_policy_store]. Then,
-#' when you have a schema defined, use
-#' [`update_policy_store`][verifiedpermissions_update_policy_store] again
-#' to turn validation back on.
-#' @param description Descriptive text that you can provide to help with identification of the
-#' current policy store.
-#' @param deletionProtection Specifies whether the policy store can be deleted. If enabled, the
-#' policy store can't be deleted.
+#' We recommend that you turn on `STRICT` mode only after you define a schema. If a schema doesn't exist, then `STRICT` mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the [`update_policy_store`][verifiedpermissions_update_policy_store]. Then, when you have a schema defined, use [`update_policy_store`][verifiedpermissions_update_policy_store] again to turn validation back on.
+#' @param description Descriptive text that you can provide to help with identification of the current policy store.
+#' @param deletionProtection Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.
 #' 
 #' The default state is `DISABLED`.
-#' @param encryptionSettings Specifies the encryption settings used to encrypt the policy store and
-#' their child resources. Allows for the ability to use a customer owned
-#' KMS key for encryption of data.
+#' @param encryptionSettings Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.
 #' 
-#' This is an optional field to be used when providing a customer-managed
-#' KMS key for encryption.
+#' This is an optional field to be used when providing a customer-managed KMS key for encryption.
 #' @param tags The list of key-value pairs to associate with the policy store.
 #'
 #' @keywords internal
@@ -379,15 +288,12 @@ verifiedpermissions_create_policy_store <- function(clientToken = NULL, validati
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy_store_alias/](https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy_store_alias/) for full documentation.
 #'
-#' @param aliasName &#91;required&#93; Specifies the name of the policy store alias to create. The name must be
-#' unique within your Amazon Web Services account and Amazon Web Services
-#' Region.
+#' @param aliasName &#91;required&#93; Specifies the name of the policy store alias to create. The name must be unique within your Amazon Web Services account and Amazon Web Services Region.
 #' 
 #' The alias name must always be prefixed with `policy-store-alias/`.
 #' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store to associate with the alias.
 #' 
-#' The associated policy store must be specified using its ID. The alias
-#' name cannot be used.
+#' The associated policy store must be specified using its ID. The alias name cannot be used.
 #'
 #' @keywords internal
 #'
@@ -418,44 +324,27 @@ verifiedpermissions_create_policy_store_alias <- function(aliasName, policyStore
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy_template/](https://www.paws-r-sdk.com/docs/verifiedpermissions_create_policy_template/) for full documentation.
 #'
-#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the
-#' idempotency of the request. This lets you safely retry the request
-#' without accidentally performing the same operation a second time.
-#' Passing the same value to a later call to an operation requires that you
-#' also pass the same value for all other parameters. We recommend that you
-#' use a [UUID type of
-#' value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+#' @param clientToken Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a [UUID type of value.](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 #' 
-#' If you don't provide this value, then Amazon Web Services generates a
-#' random one for you.
+#' If you don't provide this value, then Amazon Web Services generates a random one for you.
 #' 
-#' If you retry the operation with the same `ClientToken`, but with
-#' different parameters, the retry fails with an `ConflictException` error.
+#' If you retry the operation with the same `ClientToken`, but with different parameters, the retry fails with an `ConflictException` error.
 #' 
-#' Verified Permissions recognizes a `ClientToken` for eight hours. After
-#' eight hours, the next request with the same parameters performs the
-#' operation again regardless of the value of `ClientToken`.
+#' Verified Permissions recognizes a `ClientToken` for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of `ClientToken`.
 #' @param policyStoreId &#91;required&#93; The ID of the policy store in which to create the policy template.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param description Specifies a description for the policy template.
-#' @param statement &#91;required&#93; Specifies the content that you want to use for the new policy template,
-#' written in the Cedar policy language.
-#' @param name Specifies a name for the policy template that is unique among all policy
-#' templates within the policy store. You can use the name in place of the
-#' policy template ID in API operations that reference the policy template.
-#' The name must be prefixed with `name/`.
+#' @param statement &#91;required&#93; Specifies the content that you want to use for the new policy template, written in the Cedar policy language.
+#' @param name Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with `name/`.
 #' 
-#' If you specify a name that is already associated with another policy
-#' template in the policy store, you receive a `ConflictException` error.
+#' If you specify a name that is already associated with another policy template in the policy store, you receive a `ConflictException` error.
 #'
 #' @keywords internal
 #'
@@ -487,18 +376,15 @@ verifiedpermissions_create_policy_template <- function(clientToken = NULL, polic
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_delete_identity_source/](https://www.paws-r-sdk.com/docs/verifiedpermissions_delete_identity_source/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity source
-#' that you want to delete.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity source that you want to delete.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param identitySourceId &#91;required&#93; Specifies the ID of the identity source that you want to delete.
 #'
 #' @keywords internal
@@ -530,22 +416,18 @@ verifiedpermissions_delete_identity_source <- function(policyStoreId, identitySo
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_delete_policy/](https://www.paws-r-sdk.com/docs/verifiedpermissions_delete_policy/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy that you
-#' want to delete.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy that you want to delete.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param policyId &#91;required&#93; Specifies the ID of the policy that you want to delete.
 #' 
-#' You can use the policy name in place of the policy ID. When using a
-#' name, prefix it with `name/`. For example:
+#' You can use the policy name in place of the policy ID. When using a name, prefix it with `name/`. For example:
 #' 
 #' -   ID: `SPEXAMPLEabcdefg111111`
 #' 
@@ -582,8 +464,7 @@ verifiedpermissions_delete_policy <- function(policyStoreId, policyId) {
 #'
 #' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that you want to delete.
 #' 
-#' To specify a policy store, the alias name cannot be used. Only the ID
-#' can be used.
+#' To specify a policy store, the alias name cannot be used. Only the ID can be used.
 #'
 #' @keywords internal
 #'
@@ -617,11 +498,16 @@ verifiedpermissions_delete_policy_store <- function(policyStoreId) {
 #' @param aliasName &#91;required&#93; Specifies the name of the policy store alias that you want to delete.
 #' 
 #' The alias name must always be prefixed with `policy-store-alias/`.
+#' @param deletionMode Specifies the deletion mode for the policy store alias. The valid values are:
+#' 
+#' -   **SoftDelete** – The policy store alias enters the `PendingDeletion` state. This is the default behavior when no `deletionMode` is specified.
+#' 
+#' -   **HardDelete** – The policy store alias is immediately deleted, bypassing the `PendingDeletion` state.
 #'
 #' @keywords internal
 #'
 #' @rdname verifiedpermissions_delete_policy_store_alias
-verifiedpermissions_delete_policy_store_alias <- function(aliasName) {
+verifiedpermissions_delete_policy_store_alias <- function(aliasName, deletionMode = NULL) {
   op <- new_operation(
     name = "DeletePolicyStoreAlias",
     http_method = "POST",
@@ -630,7 +516,7 @@ verifiedpermissions_delete_policy_store_alias <- function(aliasName) {
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .verifiedpermissions$delete_policy_store_alias_input(aliasName = aliasName)
+  input <- .verifiedpermissions$delete_policy_store_alias_input(aliasName = aliasName, deletionMode = deletionMode)
   output <- .verifiedpermissions$delete_policy_store_alias_output()
   config <- get_config()
   svc <- .verifiedpermissions$service(config, op)
@@ -647,22 +533,18 @@ verifiedpermissions_delete_policy_store_alias <- function(aliasName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_delete_policy_template/](https://www.paws-r-sdk.com/docs/verifiedpermissions_delete_policy_template/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy template
-#' that you want to delete.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy template that you want to delete.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param policyTemplateId &#91;required&#93; Specifies the ID of the policy template that you want to delete.
 #' 
-#' You can use the policy template name in place of the policy template ID.
-#' When using a name, prefix it with `name/`. For example:
+#' You can use the policy template name in place of the policy template ID. When using a name, prefix it with `name/`. For example:
 #' 
 #' -   ID: `PTEXAMPLEabcdefg111111`
 #' 
@@ -697,18 +579,15 @@ verifiedpermissions_delete_policy_template <- function(policyStoreId, policyTemp
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_get_identity_source/](https://www.paws-r-sdk.com/docs/verifiedpermissions_get_identity_source/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity source
-#' you want information about.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity source you want information about.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param identitySourceId &#91;required&#93; Specifies the ID of the identity source you want information about.
 #'
 #' @keywords internal
@@ -740,22 +619,18 @@ verifiedpermissions_get_identity_source <- function(policyStoreId, identitySourc
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_get_policy/](https://www.paws-r-sdk.com/docs/verifiedpermissions_get_policy/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy that you
-#' want information about.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy that you want information about.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param policyId &#91;required&#93; Specifies the ID of the policy you want information about.
 #' 
-#' You can use the policy name in place of the policy ID. When using a
-#' name, prefix it with `name/`. For example:
+#' You can use the policy name in place of the policy ID. When using a name, prefix it with `name/`. For example:
 #' 
 #' -   ID: `SPEXAMPLEabcdefg111111`
 #' 
@@ -792,22 +667,16 @@ verifiedpermissions_get_policy <- function(policyStoreId, policyId) {
 #'
 #' @param policyStoreId &#91;required&#93; Specifies the policy store that you want information about.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param tags Specifies whether to return the tags that are attached to the policy
-#' store. If this parameter is included in the API call, the tags are
-#' returned, otherwise they are not returned.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param tags Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.
 #' 
-#' If this parameter is included in the API call but there are no tags
-#' attached to the policy store, the `tags` response parameter is omitted
-#' from the response.
+#' If this parameter is included in the API call but there are no tags attached to the policy store, the `tags` response parameter is omitted from the response.
 #'
 #' @keywords internal
 #'
@@ -838,8 +707,7 @@ verifiedpermissions_get_policy_store <- function(policyStoreId, tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_get_policy_store_alias/](https://www.paws-r-sdk.com/docs/verifiedpermissions_get_policy_store_alias/) for full documentation.
 #'
-#' @param aliasName &#91;required&#93; Specifies the name of the policy store alias that you want information
-#' about.
+#' @param aliasName &#91;required&#93; Specifies the name of the policy store alias that you want information about.
 #' 
 #' The alias name must always be prefixed with `policy-store-alias/`.
 #'
@@ -873,22 +741,18 @@ verifiedpermissions_get_policy_store_alias <- function(aliasName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_get_policy_template/](https://www.paws-r-sdk.com/docs/verifiedpermissions_get_policy_template/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy template
-#' that you want information about.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy template that you want information about.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param policyTemplateId &#91;required&#93; Specifies the ID of the policy template that you want information about.
 #' 
-#' You can use the policy template name in place of the policy template ID.
-#' When using a name, prefix it with `name/`. For example:
+#' You can use the policy template name in place of the policy template ID. When using a name, prefix it with `name/`. For example:
 #' 
 #' -   ID: `PTEXAMPLEabcdefg111111`
 #' 
@@ -926,15 +790,13 @@ verifiedpermissions_get_policy_template <- function(policyStoreId, policyTemplat
 #'
 #' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the schema.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #'
 #' @keywords internal
 #'
@@ -966,34 +828,22 @@ verifiedpermissions_get_schema <- function(policyStoreId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_is_authorized/](https://www.paws-r-sdk.com/docs/verifiedpermissions_is_authorized/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will
-#' be used to make an authorization decision for the input.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param principal Specifies the principal for which the authorization decision is to be
-#' made.
-#' @param action Specifies the requested action to be authorized. For example, is the
-#' principal authorized to perform this action on the resource?
-#' @param resource Specifies the resource for which the authorization decision is to be
-#' made.
-#' @param context Specifies additional context that can be used to make more granular
-#' authorization decisions.
-#' @param entities (Optional) Specifies the list of resources and principals and their
-#' associated attributes that Verified Permissions can examine when
-#' evaluating the policies. These additional entities and their attributes
-#' can be referenced and checked by conditional elements in the policies in
-#' the specified policy store.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param principal Specifies the principal for which the authorization decision is to be made.
+#' @param action Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?
+#' @param resource Specifies the resource for which the authorization decision is to be made.
+#' @param context Specifies additional context that can be used to make more granular authorization decisions.
+#' @param entities (Optional) Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.
 #' 
-#' You can include only principal and resource entities in this parameter;
-#' you can't include actions. You must specify actions in the schema.
+#' You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.
 #'
 #' @keywords internal
 #'
@@ -1025,56 +875,31 @@ verifiedpermissions_is_authorized <- function(policyStoreId, principal = NULL, a
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_is_authorized_with_token/](https://www.paws-r-sdk.com/docs/verifiedpermissions_is_authorized_with_token/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will
-#' be used to make an authorization decision for the input.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param identityToken Specifies an identity token for the principal to be authorized. This
-#' token is provided to you by the identity provider (IdP) associated with
-#' the specified identity source. You must specify either an `accessToken`,
-#' an `identityToken`, or both.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param identityToken Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an `accessToken`, an `identityToken`, or both.
 #' 
-#' Must be an ID token. Verified Permissions returns an error if the
-#' `token_use` claim in the submitted token isn't `id`.
-#' @param accessToken Specifies an access token for the principal to be authorized. This token
-#' is provided to you by the identity provider (IdP) associated with the
-#' specified identity source. You must specify either an `accessToken`, an
-#' `identityToken`, or both.
+#' Must be an ID token. Verified Permissions returns an error if the `token_use` claim in the submitted token isn't `id`.
+#' @param accessToken Specifies an access token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an `accessToken`, an `identityToken`, or both.
 #' 
-#' Must be an access token. Verified Permissions returns an error if the
-#' `token_use` claim in the submitted token isn't `access`.
-#' @param action Specifies the requested action to be authorized. Is the specified
-#' principal authorized to perform this action on the specified resource.
-#' @param resource Specifies the resource for which the authorization decision is made. For
-#' example, is the principal allowed to perform the action on the resource?
-#' @param context Specifies additional context that can be used to make more granular
-#' authorization decisions.
-#' @param entities (Optional) Specifies the list of resources and their associated
-#' attributes that Verified Permissions can examine when evaluating the
-#' policies. These additional entities and their attributes can be
-#' referenced and checked by conditional elements in the policies in the
-#' specified policy store.
+#' Must be an access token. Verified Permissions returns an error if the `token_use` claim in the submitted token isn't `access`.
+#' @param action Specifies the requested action to be authorized. Is the specified principal authorized to perform this action on the specified resource.
+#' @param resource Specifies the resource for which the authorization decision is made. For example, is the principal allowed to perform the action on the resource?
+#' @param context Specifies additional context that can be used to make more granular authorization decisions.
+#' @param entities (Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.
 #' 
-#' You can't include principals in this parameter, only resource and action
-#' entities. This parameter can't include any entities of a type that
-#' matches the user or group entity types that you defined in your identity
-#' source.
+#' You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.
 #' 
-#' -   The
-#'     [`is_authorized_with_token`][verifiedpermissions_is_authorized_with_token]
-#'     operation takes principal attributes from ***only*** the
-#'     `identityToken` or `accessToken` passed to the operation.
+#' -   The [`is_authorized_with_token`][verifiedpermissions_is_authorized_with_token] operation takes principal attributes from ***only*** the `identityToken` or `accessToken` passed to the operation.
 #' 
-#' -   For action entities, you can include only their `Identifier` and
-#'     `EntityType`.
+#' -   For action entities, you can include only their `Identifier` and `EntityType`.
 #'
 #' @keywords internal
 #'
@@ -1106,37 +931,20 @@ verifiedpermissions_is_authorized_with_token <- function(policyStoreId, identity
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_list_identity_sources/](https://www.paws-r-sdk.com/docs/verifiedpermissions_list_identity_sources/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity sources
-#' that you want to list.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity sources that you want to list.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `NextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `NextToken` response to
-#' request the next page of results.
-#' @param maxResults Specifies the total number of results that you want included in each
-#' response. If additional items exist beyond the number you specify, the
-#' `NextToken` response element is returned with a value (not null).
-#' Include the specified value as the `NextToken` request parameter in the
-#' next call to the operation to get the next set of results. Note that the
-#' service might return fewer results than the maximum even when there are
-#' more results available. You should check `NextToken` after every
-#' operation to ensure that you receive all of the results.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `NextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `NextToken` response to request the next page of results.
+#' @param maxResults Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the `NextToken` response element is returned with a value (not null). Include the specified value as the `NextToken` request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #' 
-#' If you do not specify this parameter, the operation defaults to 10
-#' identity sources per response. You can specify a maximum of 50 identity
-#' sources per response.
-#' @param filters Specifies characteristics of an identity source that you can use to
-#' limit the output to matching identity sources.
+#' If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 50 identity sources per response.
+#' @param filters Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.
 #'
 #' @keywords internal
 #'
@@ -1170,35 +978,18 @@ verifiedpermissions_list_identity_sources <- function(policyStoreId, nextToken =
 #'
 #' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store you want to list policies from.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `NextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `NextToken` response to
-#' request the next page of results.
-#' @param maxResults Specifies the total number of results that you want included in each
-#' response. If additional items exist beyond the number you specify, the
-#' `NextToken` response element is returned with a value (not null).
-#' Include the specified value as the `NextToken` request parameter in the
-#' next call to the operation to get the next set of results. Note that the
-#' service might return fewer results than the maximum even when there are
-#' more results available. You should check `NextToken` after every
-#' operation to ensure that you receive all of the results.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `NextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `NextToken` response to request the next page of results.
+#' @param maxResults Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the `NextToken` response element is returned with a value (not null). Include the specified value as the `NextToken` request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #' 
-#' If you do not specify this parameter, the operation defaults to 10
-#' policies per response. You can specify a maximum of 50 policies per
-#' response.
-#' @param filter Specifies a filter that limits the response to only policies that match
-#' the specified criteria. For example, you list only the policies that
-#' reference a specified principal.
+#' If you do not specify this parameter, the operation defaults to 10 policies per response. You can specify a maximum of 50 policies per response.
+#' @param filter Specifies a filter that limits the response to only policies that match the specified criteria. For example, you list only the policies that reference a specified principal.
 #'
 #' @keywords internal
 #'
@@ -1230,26 +1021,11 @@ verifiedpermissions_list_policies <- function(policyStoreId, nextToken = NULL, m
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_list_policy_store_aliases/](https://www.paws-r-sdk.com/docs/verifiedpermissions_list_policy_store_aliases/) for full documentation.
 #'
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `NextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `NextToken` response to
-#' request the next page of results.
-#' @param maxResults Specifies the total number of results that you want included in each
-#' response. If additional items exist beyond the number you specify, the
-#' `NextToken` response element is returned with a value (not null).
-#' Include the specified value as the `NextToken` request parameter in the
-#' next call to the operation to get the next set of results. Note that the
-#' service might return fewer results than the maximum even when there are
-#' more results available. You should check `NextToken` after every
-#' operation to ensure that you receive all of the results.
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `NextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `NextToken` response to request the next page of results.
+#' @param maxResults Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the `NextToken` response element is returned with a value (not null). Include the specified value as the `NextToken` request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #' 
-#' If you do not specify this parameter, the operation defaults to 5 policy
-#' store aliases per response. You can specify a maximum of 50 policy store
-#' aliases per response.
-#' @param filter Specifies a filter to narrow the results. You can filter by
-#' `policyStoreId` to list only the policy store aliases associated with a
-#' specific policy store.
+#' If you do not specify this parameter, the operation defaults to 5 policy store aliases per response. You can specify a maximum of 50 policy store aliases per response.
+#' @param filter Specifies a filter to narrow the results. You can filter by `policyStoreId` to list only the policy store aliases associated with a specific policy store.
 #'
 #' @keywords internal
 #'
@@ -1281,23 +1057,10 @@ verifiedpermissions_list_policy_store_aliases <- function(nextToken = NULL, maxR
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_list_policy_stores/](https://www.paws-r-sdk.com/docs/verifiedpermissions_list_policy_stores/) for full documentation.
 #'
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `NextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `NextToken` response to
-#' request the next page of results.
-#' @param maxResults Specifies the total number of results that you want included in each
-#' response. If additional items exist beyond the number you specify, the
-#' `NextToken` response element is returned with a value (not null).
-#' Include the specified value as the `NextToken` request parameter in the
-#' next call to the operation to get the next set of results. Note that the
-#' service might return fewer results than the maximum even when there are
-#' more results available. You should check `NextToken` after every
-#' operation to ensure that you receive all of the results.
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `NextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `NextToken` response to request the next page of results.
+#' @param maxResults Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the `NextToken` response element is returned with a value (not null). Include the specified value as the `NextToken` request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #' 
-#' If you do not specify this parameter, the operation defaults to 10
-#' policy stores per response. You can specify a maximum of 50 policy
-#' stores per response.
+#' If you do not specify this parameter, the operation defaults to 10 policy stores per response. You can specify a maximum of 50 policy stores per response.
 #'
 #' @keywords internal
 #'
@@ -1329,35 +1092,19 @@ verifiedpermissions_list_policy_stores <- function(nextToken = NULL, maxResults 
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_list_policy_templates/](https://www.paws-r-sdk.com/docs/verifiedpermissions_list_policy_templates/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy templates
-#' you want to list.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy templates you want to list.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `NextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `NextToken` response to
-#' request the next page of results.
-#' @param maxResults Specifies the total number of results that you want included in each
-#' response. If additional items exist beyond the number you specify, the
-#' `NextToken` response element is returned with a value (not null).
-#' Include the specified value as the `NextToken` request parameter in the
-#' next call to the operation to get the next set of results. Note that the
-#' service might return fewer results than the maximum even when there are
-#' more results available. You should check `NextToken` after every
-#' operation to ensure that you receive all of the results.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `NextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `NextToken` response to request the next page of results.
+#' @param maxResults Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the `NextToken` response element is returned with a value (not null). Include the specified value as the `NextToken` request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #' 
-#' If you do not specify this parameter, the operation defaults to 10
-#' policy templates per response. You can specify a maximum of 50 policy
-#' templates per response.
+#' If you do not specify this parameter, the operation defaults to 10 policy templates per response. You can specify a maximum of 50 policy templates per response.
 #'
 #' @keywords internal
 #'
@@ -1422,17 +1169,14 @@ verifiedpermissions_list_tags_for_resource <- function(resourceArn) {
 #'
 #' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store in which to place the schema.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param definition &#91;required&#93; Specifies the definition of the schema to be stored. The schema
-#' definition must be written in Cedar schema JSON.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param definition &#91;required&#93; Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.
 #'
 #' @keywords internal
 #'
@@ -1531,23 +1275,18 @@ verifiedpermissions_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_update_identity_source/](https://www.paws-r-sdk.com/docs/verifiedpermissions_update_identity_source/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity source
-#' that you want to update.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the identity source that you want to update.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param identitySourceId &#91;required&#93; Specifies the ID of the identity source that you want to update.
-#' @param updateConfiguration &#91;required&#93; Specifies the details required to communicate with the identity provider
-#' (IdP) associated with this identity source.
-#' @param principalEntityType Specifies the data type of principals generated for identities
-#' authenticated by the identity source.
+#' @param updateConfiguration &#91;required&#93; Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.
+#' @param principalEntityType Specifies the data type of principals generated for identities authenticated by the identity source.
 #'
 #' @keywords internal
 #'
@@ -1578,32 +1317,25 @@ verifiedpermissions_update_identity_source <- function(policyStoreId, identitySo
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_update_policy/](https://www.paws-r-sdk.com/docs/verifiedpermissions_update_policy/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy that you
-#' want to update.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy that you want to update.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param policyId &#91;required&#93; Specifies the ID of the policy that you want to update. To find this
-#' value, you can use [`list_policies`][verifiedpermissions_list_policies].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param policyId &#91;required&#93; Specifies the ID of the policy that you want to update. To find this value, you can use [`list_policies`][verifiedpermissions_list_policies].
 #' 
-#' You can use the policy name in place of the policy ID. When using a
-#' name, prefix it with `name/`. For example:
+#' You can use the policy name in place of the policy ID. When using a name, prefix it with `name/`. For example:
 #' 
 #' -   ID: `SPEXAMPLEabcdefg111111`
 #' 
 #' -   Name: `name/example-policy`
-#' @param definition Specifies the updated policy content that you want to replace on the
-#' specified policy. The content must be valid Cedar policy language text.
+#' @param definition Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.
 #' 
-#' If you don't specify this parameter, the existing policy definition
-#' remains unchanged.
+#' If you don't specify this parameter, the existing policy definition remains unchanged.
 #' 
 #' You can change only the following elements from the policy definition:
 #' 
@@ -1620,16 +1352,11 @@ verifiedpermissions_update_identity_source <- function(policyStoreId, identitySo
 #' -   The `principal` referenced by the policy.
 #' 
 #' -   The `resource` referenced by the policy.
-#' @param name Specifies a name for the policy that is unique among all policies within
-#' the policy store. You can use the name in place of the policy ID in API
-#' operations that reference the policy. The name must be prefixed with
-#' `name/`.
+#' @param name Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with `name/`.
 #' 
-#' If you don't include the name in an update request, the existing name is
-#' unchanged. To remove a name, set it to an empty string (`""`).
+#' If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (`""`).
 #' 
-#' If you specify a name that is already associated with another policy in
-#' the policy store, you receive a `ConflictException` error.
+#' If you specify a name that is already associated with another policy in the policy store, you receive a `ConflictException` error.
 #'
 #' @keywords internal
 #'
@@ -1662,25 +1389,18 @@ verifiedpermissions_update_policy <- function(policyStoreId, policyId, definitio
 #'
 #' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that you want to update
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
-#' @param validationSettings &#91;required&#93; A structure that defines the validation settings that want to enable for
-#' the policy store.
-#' @param deletionProtection Specifies whether the policy store can be deleted. If enabled, the
-#' policy store can't be deleted.
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' @param validationSettings &#91;required&#93; A structure that defines the validation settings that want to enable for the policy store.
+#' @param deletionProtection Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.
 #' 
-#' When you call
-#' [`update_policy_store`][verifiedpermissions_update_policy_store], this
-#' parameter is unchanged unless explicitly included in the call.
-#' @param description Descriptive text that you can provide to help with identification of the
-#' current policy store.
+#' When you call [`update_policy_store`][verifiedpermissions_update_policy_store], this parameter is unchanged unless explicitly included in the call.
+#' @param description Descriptive text that you can provide to help with identification of the current policy store.
 #'
 #' @keywords internal
 #'
@@ -1711,29 +1431,24 @@ verifiedpermissions_update_policy_store <- function(policyStoreId, validationSet
 #'
 #' See [https://www.paws-r-sdk.com/docs/verifiedpermissions_update_policy_template/](https://www.paws-r-sdk.com/docs/verifiedpermissions_update_policy_template/) for full documentation.
 #'
-#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy template
-#' that you want to update.
+#' @param policyStoreId &#91;required&#93; Specifies the ID of the policy store that contains the policy template that you want to update.
 #' 
-#' To specify a policy store, use its ID or alias name. When using an alias
-#' name, prefix it with `policy-store-alias/`. For example:
+#' To specify a policy store, use its ID or alias name. When using an alias name, prefix it with `policy-store-alias/`. For example:
 #' 
 #' -   ID: `PSEXAMPLEabcdefg111111`
 #' 
 #' -   Alias name: `policy-store-alias/example-policy-store`
 #' 
-#' To view aliases, use
-#' [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
+#' To view aliases, use [`list_policy_store_aliases`][verifiedpermissions_list_policy_store_aliases].
 #' @param policyTemplateId &#91;required&#93; Specifies the ID of the policy template that you want to update.
 #' 
-#' You can use the policy template name in place of the policy template ID.
-#' When using a name, prefix it with `name/`. For example:
+#' You can use the policy template name in place of the policy template ID. When using a name, prefix it with `name/`. For example:
 #' 
 #' -   ID: `PTEXAMPLEabcdefg111111`
 #' 
 #' -   Name: `name/example-policy-template`
 #' @param description Specifies a new description to apply to the policy template.
-#' @param statement &#91;required&#93; Specifies new statement content written in Cedar policy language to
-#' replace the current body of the policy template.
+#' @param statement &#91;required&#93; Specifies new statement content written in Cedar policy language to replace the current body of the policy template.
 #' 
 #' You can change only the following elements of the policy body:
 #' 
@@ -1748,16 +1463,11 @@ verifiedpermissions_update_policy_store <- function(policyStoreId, validationSet
 #' -   The `principal` referenced by the policy template.
 #' 
 #' -   The `resource` referenced by the policy template.
-#' @param name Specifies a name for the policy template that is unique among all policy
-#' templates within the policy store. You can use the name in place of the
-#' policy template ID in API operations that reference the policy template.
-#' The name must be prefixed with `name/`.
+#' @param name Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with `name/`.
 #' 
-#' If you don't include the name in an update request, the existing name is
-#' unchanged. To remove a name, set it to an empty string (`""`).
+#' If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (`""`).
 #' 
-#' If you specify a name that is already associated with another policy
-#' template in the policy store, you receive a `ConflictException` error.
+#' If you specify a name that is already associated with another policy template in the policy store, you receive a `ConflictException` error.
 #'
 #' @keywords internal
 #'

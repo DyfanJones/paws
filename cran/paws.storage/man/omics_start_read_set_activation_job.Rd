@@ -14,8 +14,7 @@ omics_start_read_set_activation_job(
 \arguments{
 \item{sequenceStoreId}{[required] The read set's sequence store ID.}
 
-\item{clientToken}{To ensure that jobs don't run multiple times, specify a unique token for
-each job.}
+\item{clientToken}{To ensure that jobs don't run multiple times, specify a unique token for each job.}
 
 \item{sources}{[required] The job's source files.}
 }

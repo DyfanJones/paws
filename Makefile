@@ -94,8 +94,10 @@ deps:
 	@echo "get project dependencies"
 	@Rscript -e "if (!require(devtools)) install.packages('devtools')"
 	@Rscript -e "if (!require(pak)) install.packages('pak')"
-	@Rscript -e "pak::local_install_dev_deps('make.paws')"
 	@Rscript -e "pak::local_install_dev_deps('paws.common')"
+	@Rscript -e "pak::local_install_dev_deps('make.paws')"
+	@Rscript -e "pak::local_install('paws.common')"
+	@Rscript -e "pak::local_install('make.paws')"
 	@command -v pandoc >/dev/null 2>&1 || echo "Please install Pandoc. See https://pandoc.org." >&2
 	@if [ ! -d ${IN_DIR}/apis ]; then git submodule init && git submodule update; fi
 
